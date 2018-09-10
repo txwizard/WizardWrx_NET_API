@@ -1,0 +1,572 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class TimeDisplayFormatter
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class TimeDisplayFormatter
+   ">
+    <meta name="generator" content="docfx 2.39.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="WizardWrx.Core.TimeDisplayFormatter">
+  
+  
+  <h1 id="WizardWrx_Core_TimeDisplayFormatter" data-uid="WizardWrx.Core.TimeDisplayFormatter" class="text-break">Class TimeDisplayFormatter
+  </h1>
+  <div class="markdown level0 summary"><p>Use instances of this class to return dates and times, uniformly
+formatted by rules set by way of its properties.</p>
+<p>This class is sealed, and cannot be inherited.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">TimeDisplayFormatter</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="WizardWrx.Core.html">WizardWrx.Core</a></h6>
+  <h6><strong>Assembly</strong>: WizardWrx.Core.dll</h6>
+  <h5 id="WizardWrx_Core_TimeDisplayFormatter_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class TimeDisplayFormatter</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="WizardWrx_Core_TimeDisplayFormatter__ctor_" data-uid="WizardWrx.Core.TimeDisplayFormatter.#ctor*"></a>
+  <h4 id="WizardWrx_Core_TimeDisplayFormatter__ctor" data-uid="WizardWrx.Core.TimeDisplayFormatter.#ctor">TimeDisplayFormatter()</h4>
+  <div class="markdown level1 summary"><p>The default constructor initializes an instance that follows the
+default preferences built into the class. Hence, methods called on
+objects created by it are guaranteed to yield a usable string unless
+the DateTime value supplied to the method is, itself, invalid.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TimeDisplayFormatter()</code></pre>
+  </div>
+  <h5 id="WizardWrx_Core_TimeDisplayFormatter__ctor_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Rather than attempt to create the numerous constructors that would
+be required to cover every possible combination of properties, there
+is just one constructor. All properties are read-write. Use them to
+change the operating parameters.</p>
+<p>If you always use the same combination of settings, you can wrap
+your own class around an instance of this one.</p>
+</div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="WizardWrx_Core_TimeDisplayFormatter_CalendarDateFormat_" data-uid="WizardWrx.Core.TimeDisplayFormatter.CalendarDateFormat*"></a>
+  <h4 id="WizardWrx_Core_TimeDisplayFormatter_CalendarDateFormat" data-uid="WizardWrx.Core.TimeDisplayFormatter.CalendarDateFormat">CalendarDateFormat</h4>
+  <div class="markdown level1 summary"><p>Set this property to override the default formatting of calendar
+dates, which is governed by the active CultureInfo settings, which
+are, themselves, governed by the active Regional Settings of the
+operating system.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TimeDisplayFormatter.DateFieldOrder CalendarDateFormat { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.Core.TimeDisplayFormatter.DateFieldOrder.html">TimeDisplayFormatter.DateFieldOrder</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_TimeDisplayFormatter_HoursFormat_" data-uid="WizardWrx.Core.TimeDisplayFormatter.HoursFormat*"></a>
+  <h4 id="WizardWrx_Core_TimeDisplayFormatter_HoursFormat" data-uid="WizardWrx.Core.TimeDisplayFormatter.HoursFormat">HoursFormat</h4>
+  <div class="markdown level1 summary"><p>Set the display format for hours. See the HoursFormatType enumeration
+for more details.</p>
+<p>When the value is DateFieldOrder.CultureInfoShortDate, the
+HoursFormat and TimePrecision properties are ignored.</p>
+<p>The default format is Military, and the value must be a member of
+the HoursFormatType enumeration. If an invalid value is specified, a
+System.ArgumentOutOfRangeException exception is thrown, and the
+property value is unchanged.</p>
+<p>When the value of this property is CultureInfoShortTime, the
+TimePrecision property is ignored.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TimeDisplayFormatter.HoursFormatType HoursFormat { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.Core.TimeDisplayFormatter.HoursFormatType.html">TimeDisplayFormatter.HoursFormatType</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_TimeDisplayFormatter_MachineTimeZone_" data-uid="WizardWrx.Core.TimeDisplayFormatter.MachineTimeZone*"></a>
+  <h4 id="WizardWrx_Core_TimeDisplayFormatter_MachineTimeZone" data-uid="WizardWrx.Core.TimeDisplayFormatter.MachineTimeZone">MachineTimeZone</h4>
+  <div class="markdown level1 summary"><p>This static property provides convenience access to the
+CurrentTimeZone property maintained in a static TimeZone instance
+for its own use.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TimeZone MachineTimeZone { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.TimeZone</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_TimeDisplayFormatter_ShowAmPmAsUC_" data-uid="WizardWrx.Core.TimeDisplayFormatter.ShowAmPmAsUC*"></a>
+  <h4 id="WizardWrx_Core_TimeDisplayFormatter_ShowAmPmAsUC" data-uid="WizardWrx.Core.TimeDisplayFormatter.ShowAmPmAsUC">ShowAmPmAsUC</h4>
+  <div class="markdown level1 summary"><p>Set this property to TRUE to have the AM and PM tokens displayed in
+upper case.</p>
+<p>Unless the HoursFormat property is HoursFormatType.Civilian, this
+property is ignored.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ShowAmPmAsUC { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_TimeDisplayFormatter_ShowTimeZone_" data-uid="WizardWrx.Core.TimeDisplayFormatter.ShowTimeZone*"></a>
+  <h4 id="WizardWrx_Core_TimeDisplayFormatter_ShowTimeZone" data-uid="WizardWrx.Core.TimeDisplayFormatter.ShowTimeZone">ShowTimeZone</h4>
+  <div class="markdown level1 summary"><p>Set this property to TRUE to have the local time zone displayed with
+the time. By default, the time zone is omitted.</p>
+<p>This property is applied independently of the HoursFormatType and
+Precision properties.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ShowTimeZone { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_TimeDisplayFormatter_ShowWeekday_" data-uid="WizardWrx.Core.TimeDisplayFormatter.ShowWeekday*"></a>
+  <h4 id="WizardWrx_Core_TimeDisplayFormatter_ShowWeekday" data-uid="WizardWrx.Core.TimeDisplayFormatter.ShowWeekday">ShowWeekday</h4>
+  <div class="markdown level1 summary"><p>Set this property to TRUE to have the local weekday name displayed
+with the time. By default, the weekday name is omitted.</p>
+<p>This property is applied independently of the HoursFormatType and
+Precision properties.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ShowWeekday { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_TimeDisplayFormatter_TimePrecision_" data-uid="WizardWrx.Core.TimeDisplayFormatter.TimePrecision*"></a>
+  <h4 id="WizardWrx_Core_TimeDisplayFormatter_TimePrecision" data-uid="WizardWrx.Core.TimeDisplayFormatter.TimePrecision">TimePrecision</h4>
+  <div class="markdown level1 summary"><p>This property governs the precision used for time displays. The
+class default is HMST.</p>
+<p>When the value of the HoursFormat property is CultureInfoShortTime,
+the value of this property is ignored.</p>
+<p>For additional information, see the TimePrecisionType enumeration.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TimeDisplayFormatter.TimePrecisionType TimePrecision { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.Core.TimeDisplayFormatter.TimePrecisionType.html">TimeDisplayFormatter.TimePrecisionType</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="WizardWrx_Core_TimeDisplayFormatter_FormatCurrentTime_" data-uid="WizardWrx.Core.TimeDisplayFormatter.FormatCurrentTime*"></a>
+  <h4 id="WizardWrx_Core_TimeDisplayFormatter_FormatCurrentTime" data-uid="WizardWrx.Core.TimeDisplayFormatter.FormatCurrentTime">FormatCurrentTime()</h4>
+  <div class="markdown level1 summary"><p>Format the current time.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string FormatCurrentTime()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The current time, formatted as dictated by the current settings of
+the properties of the class instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_TimeDisplayFormatter_FormatThisTime_" data-uid="WizardWrx.Core.TimeDisplayFormatter.FormatThisTime*"></a>
+  <h4 id="WizardWrx_Core_TimeDisplayFormatter_FormatThisTime_System_DateTime_" data-uid="WizardWrx.Core.TimeDisplayFormatter.FormatThisTime(System.DateTime)">FormatThisTime(DateTime)</h4>
+  <div class="markdown level1 summary"><p>Format the specified time.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string FormatThisTime(DateTime pdtmThisTime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">pdtmThisTime</span></td>
+        <td><p>The DateTime instance to format.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The input time, formatted as dictated by the current settings of the
+properties of the class instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_TimeDisplayFormatter_GetTimeZoneForTime_" data-uid="WizardWrx.Core.TimeDisplayFormatter.GetTimeZoneForTime*"></a>
+  <h4 id="WizardWrx_Core_TimeDisplayFormatter_GetTimeZoneForTime_System_DateTime_" data-uid="WizardWrx.Core.TimeDisplayFormatter.GetTimeZoneForTime(System.DateTime)">GetTimeZoneForTime(DateTime)</h4>
+  <div class="markdown level1 summary"><p>Return the time zone name that corresponds to a local time.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string GetTimeZoneForTime(DateTime pdtmTheTime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">pdtmTheTime</span></td>
+        <td><p>Specify the System.DateTime for which the correct time zone string
+is required.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>If the DateTimeKind of argument pdtmTheTime is Local, the return
+value is a string representation of the spelled out time zone name.
+Otherwise, an ArgumentException is thrown.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_TimeDisplayFormatter_PrepareLocalAndUTCTimes_" data-uid="WizardWrx.Core.TimeDisplayFormatter.PrepareLocalAndUTCTimes*"></a>
+  <h4 id="WizardWrx_Core_TimeDisplayFormatter_PrepareLocalAndUTCTimes_System_DateTime_System_DateTime_" data-uid="WizardWrx.Core.TimeDisplayFormatter.PrepareLocalAndUTCTimes(System.DateTime,System.DateTime)">PrepareLocalAndUTCTimes(DateTime, DateTime)</h4>
+  <div class="markdown level1 summary"><p>Given a pair of DateTime structures, return them in a standardized
+format.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string PrepareLocalAndUTCTimes(DateTime dtmTimeLocal, DateTime dtmTimeUtc)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">dtmTimeLocal</span></td>
+        <td><p>Specify the local time to include in the standardized message.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">dtmTimeUtc</span></td>
+        <td><p>Specify the UTC time to include in the standardized message.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The returned string is of the format {0} ({1} UTC), where {0} is
+replaced with the local time, while {1} is replaced with the
+corresponding UTC time.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_TimeDisplayFormatter_PrepareLocalAndUTCTimes_System_DateTime_System_DateTime__examples">Examples</h5>
+  <p>2017/03/27 18:18:58 (2017/03/27 23:18:58 UTC)</p>
+
+  <h3 id="seealso">See Also</h3>
+  <div class="seealso">
+      <div><a class="xref" href="WizardWrx.DisplayFormats.html">DisplayFormats</a></div>
+      <div><a class="xref" href="WizardWrx.SysDateFormatters.html">SysDateFormatters</a></div>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

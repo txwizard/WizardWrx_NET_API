@@ -1,0 +1,4201 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class CmdLneArgsBasic
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class CmdLneArgsBasic
+   ">
+    <meta name="generator" content="docfx 2.39.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="WizardWrx.Core.CmdLneArgsBasic">
+  
+  
+  <h1 id="WizardWrx_Core_CmdLneArgsBasic" data-uid="WizardWrx.Core.CmdLneArgsBasic" class="text-break">Class CmdLneArgsBasic
+  </h1>
+  <div class="markdown level0 summary"><p>An instance of this class efficiently processes command line switches,
+named arguments, and positional arguments, in such a way that they are
+easily accessible. The command line is completely parsed in a single
+pass.</p>
+<p>Switches, named arguments, and positional arguments may be freely mixed
+in any way; your users aren't confined to specifying all switches and/or
+named arguments first, last, or in any other order.</p>
+<p>Since command line parsing happens in the constructor, your code must
+define all the rules in its parameters. To that end, there are 26
+constructors, which provide access to all of the rich capabilities of
+this object. In spite of the multitude of constructors, their
+organization, coupled with consistent naming and documentation of their
+arguments, is intended to make their features readily accessible.</p>
+<p>While it is fairly trivial to reverse engineer the underlying Dictionary
+object, and read the arguments directly, the supported method of reading
+them is through its methods: GetArgByName, GetArgByPosition, and
+GetSwitchByName.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">CmdLneArgsBasic</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="WizardWrx.Core.html">WizardWrx.Core</a></h6>
+  <h6><strong>Assembly</strong>: WizardWrx.Core.dll</h6>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class CmdLneArgsBasic</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor">CmdLneArgsBasic()</h4>
+  <div class="markdown level1 summary"><p>Initialize an instance that supports exclusively positional
+arguments.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic()</code></pre>
+  </div>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Char___" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Char[])">CmdLneArgsBasic(Char[])</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, all having a
+default value of Properties.Resources.SWITCH_IS_OFF.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(char[] pachrValidSwitches)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span>[]</td>
+        <td><span class="parametername">pachrValidSwitches</span></td>
+        <td><p>Array of characters, each of which is a valid (supported) switch.
+All switches are initialized to Properties.Resources.SWITCH_IS_OFF.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Char___System_Collections_Generic_Dictionary_System_String_System_String__" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Char[],System.Collections.Generic.Dictionary{System.String,System.String})">CmdLneArgsBasic(Char[], Dictionary&lt;String, String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, each having
+the default value defined by the class, and a separate list of valid
+named arguments, each defined as a DictionaryItem, with its default
+value given in the value member.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(char[] pachrValidSwitches, Dictionary&lt;string, string&gt; pdctValidNamedArgs)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span>[]</td>
+        <td><span class="parametername">pachrValidSwitches</span></td>
+        <td><p>Array of characters, each of which is a valid (supported) switch.
+All switches are initialized to Properties.Resources.SWITCH_IS_OFF.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidNamedArgs</span></td>
+        <td><p>Dictionary, keyed by argument name, a string, containing its desired
+default value, also a string.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Char___System_Collections_Generic_Dictionary_System_String_System_String__System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Char[],System.Collections.Generic.Dictionary{System.String,System.String},System.Int32)">CmdLneArgsBasic(Char[], Dictionary&lt;String, String&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, each having
+the default value defined by the class, and a separate list of valid
+named arguments, each defined as a DictionaryItem, with its default
+value given in the value member.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(char[] pachrValidSwitches, Dictionary&lt;string, string&gt; pdctValidNamedArgs, int pintPositionalArgCountLimit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span>[]</td>
+        <td><span class="parametername">pachrValidSwitches</span></td>
+        <td><p>Array of characters, each of which is a valid (supported) switch.
+All switches are initialized to Properties.Resources.SWITCH_IS_OFF.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidNamedArgs</span></td>
+        <td><p>Dictionary, keyed by argument name, a string, containing its desired
+default value, also a string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintPositionalArgCountLimit</span></td>
+        <td><p>The default limit on the number of positional arguments is
+POSITIONAL_ARGS_COUNT_LIMIT, which is currently set to 9. Use this
+argument to set a lower or higher limit.</p>
+<p>A pintPositionalArgCountLimit value of less than zero is discarded
+silently, and the default limit remains in force.</p>
+<p>Please see Remarks for important security considerations.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Char___System_Collections_Generic_Dictionary_System_String_System_String__System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>SECURITY NOTE</p>
+<p>All constructors in this class enforce a limit on the number of
+positional arguments permitted. The default limit is 9, which is
+defined as a public constant, POSITIONAL_ARGS_COUNT_LIMIT.</p>
+<p>This limit is imposed to protect your program from being fed an
+excessively long command line, in an attempt to cause a denial of
+service. Although few applications require more than nine positional
+command line arguments, the level is made adjustable, to meet that
+once per career need for more than nine arguments.</p>
+<p>While objects of this class cannot do anything about the number of
+characters in the command line (That is the responsibility of the
+Common Language Runtime.), they can, and do, limit the amount of
+memory allowed to be consumed to hold arguments parsed from it.</p>
+<p>No such limits are imposed on switches and named arguments, because
+the number of valid arguments (hence, the upper limit on memory
+consumed by them) is under programmer control, and unlikely to be an
+issue, since invalid arguments are discarded.</p>
+<p>WHY NINE?</p>
+<p>I chose the number nine mostly for historical reasons. Starting with
+MS-DOS 1.0, the number of positional parameters supported by batch
+files (without resorting to tricks with SHIFT) is 9.</p>
+<p>This limit has been carried forward into modern command processors,
+including CMD.EXE, the default console mode command processor of
+Windows NT, 2000, XP, Vista, etc.</p>
+</div>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Char___System_Collections_Generic_Dictionary_System_String_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Char[],System.Collections.Generic.Dictionary{System.String,System.String},WizardWrx.Core.CmdLneArgsBasic.ArgMatching)">CmdLneArgsBasic(Char[], Dictionary&lt;String, String&gt;, CmdLneArgsBasic.ArgMatching)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid named arguments, in
+a dictionary strings, where each value is the corresponding default,
+and a list of valid switches in an array of characters, with their
+default values as the class default.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(char[] pachrValidSwitches, Dictionary&lt;string, string&gt; pdctValidNamedArgs, CmdLneArgsBasic.ArgMatching penmArgMatching)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span>[]</td>
+        <td><span class="parametername">pachrValidSwitches</span></td>
+        <td><p>Array of characters, each of which is a valid (supported) switch.
+All switches are initialized to Properties.Resources.SWITCH_IS_OFF.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidNamedArgs</span></td>
+        <td><p>Dictionary, keyed by argument name, a string, containing its desired
+default value, also a string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.Core.CmdLneArgsBasic.ArgMatching.html">CmdLneArgsBasic.ArgMatching</a></td>
+        <td><span class="parametername">penmArgMatching</span></td>
+        <td><p>Use this member of the CmdLneArgs.ArgMatching enumeration to set the
+argument matching rules. At present, two rules are defined. See the
+IntelliSense documentation of any CmdLneArgs argument for details.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Char___System_Collections_Generic_Dictionary_System_String_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Char[],System.Collections.Generic.Dictionary{System.String,System.String},WizardWrx.Core.CmdLneArgsBasic.ArgMatching,System.Int32)">CmdLneArgsBasic(Char[], Dictionary&lt;String, String&gt;, CmdLneArgsBasic.ArgMatching, Int32)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, each having
+the default value defined by the class, and a separate list of valid
+named arguments, each defined as a DictionaryItem, with its default
+value given in the value member.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(char[] pachrValidSwitches, Dictionary&lt;string, string&gt; pdctValidNamedArgs, CmdLneArgsBasic.ArgMatching penmArgMatching, int pintPositionalArgCountLimit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span>[]</td>
+        <td><span class="parametername">pachrValidSwitches</span></td>
+        <td><p>Array of characters, each of which is a valid (supported) switch.
+All switches are initialized to Properties.Resources.SWITCH_IS_OFF.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidNamedArgs</span></td>
+        <td><p>Dictionary, keyed by argument name, a string, containing its desired
+default value, also a string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.Core.CmdLneArgsBasic.ArgMatching.html">CmdLneArgsBasic.ArgMatching</a></td>
+        <td><span class="parametername">penmArgMatching</span></td>
+        <td><p>Use this member of the CmdLneArgs.ArgMatching enumeration to set the
+argument matching rules. At present, two rules are defined. See the
+IntelliSense documentation of any CmdLneArgs argument for details.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintPositionalArgCountLimit</span></td>
+        <td><p>The default limit on the number of positional arguments is
+POSITIONAL_ARGS_COUNT_LIMIT, which is currently set to 9. Use this
+argument to set a lower or higher limit.</p>
+<p>A pintPositionalArgCountLimit value of less than zero is discarded
+silently, and the default limit remains in force.</p>
+<p>Please see Remarks for important security considerations.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Char___System_Collections_Generic_Dictionary_System_String_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>SECURITY NOTE</p>
+<p>All constructors in this class enforce a limit on the number of
+positional arguments permitted. The default limit is 9, which is
+defined as a public constant, POSITIONAL_ARGS_COUNT_LIMIT.</p>
+<p>This limit is imposed to protect your program from being fed an
+excessively long command line, in an attempt to cause a denial of
+service. Although few applications require more than nine positional
+command line arguments, the level is made adjustable, to meet that
+once per career need for more than nine arguments.</p>
+<p>While objects of this class cannot do anything about the number of
+characters in the command line (That is the responsibility of the
+Common Language Runtime.), they can, and do, limit the amount of
+memory allowed to be consumed to hold arguments parsed from it.</p>
+<p>No such limits are imposed on switches and named arguments, because
+the number of valid arguments (hence, the upper limit on memory
+consumed by them) is under programmer control, and unlikely to be an
+issue, since invalid arguments are discarded.</p>
+<p>WHY NINE?</p>
+<p>I chose the number nine mostly for historical reasons. Starting with
+MS-DOS 1.0, the number of positional parameters supported by batch
+files (without resorting to tricks with SHIFT) is 9.</p>
+<p>This limit has been carried forward into modern command processors,
+including CMD.EXE, the default console mode command processor of
+Windows NT, 2000, XP, Vista, etc.</p>
+</div>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Char___System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Char[],System.Int32)">CmdLneArgsBasic(Char[], Int32)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, all having a
+default value of Properties.Resources.SWITCH_IS_OFF.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(char[] pachrValidSwitches, int pintPositionalArgCountLimit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span>[]</td>
+        <td><span class="parametername">pachrValidSwitches</span></td>
+        <td><p>Array of characters, each of which is a valid (supported) switch.
+All switches are initialized to Properties.Resources.SWITCH_IS_OFF.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintPositionalArgCountLimit</span></td>
+        <td><p>The default limit on the number of positional arguments is
+POSITIONAL_ARGS_COUNT_LIMIT, which is currently set to 9. Use this
+argument to set a lower or higher limit.</p>
+<p>A pintPositionalArgCountLimit value of less than zero is discarded
+silently, and the default limit remains in force.</p>
+<p>Please see Remarks for important security considerations.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Char___System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>SECURITY NOTE</p>
+<p>All constructors in this class enforce a limit on the number of
+positional arguments permitted. The default limit is 9, which is
+defined as a public constant, POSITIONAL_ARGS_COUNT_LIMIT.</p>
+<p>This limit is imposed to protect your program from being fed an
+excessively long command line, in an attempt to cause a denial of
+service. Although few applications require more than nine positional
+command line arguments, the level is made adjustable, to meet that
+once per career need for more than nine arguments.</p>
+<p>While objects of this class cannot do anything about the number of
+characters in the command line (That is the responsibility of the
+Common Language Runtime.), they can, and do, limit the amount of
+memory allowed to be consumed to hold arguments parsed from it.</p>
+<p>No such limits are imposed on switches and named arguments, because
+the number of valid arguments (hence, the upper limit on memory
+consumed by them) is under programmer control, and unlikely to be an
+issue, since invalid arguments are discarded.</p>
+<p>WHY NINE?</p>
+<p>I chose the number nine mostly for historical reasons. Starting with
+MS-DOS 1.0, the number of positional parameters supported by batch
+files (without resorting to tricks with SHIFT) is 9.</p>
+<p>This limit has been carried forward into modern command processors,
+including CMD.EXE, the default console mode command processor of
+Windows NT, 2000, XP, Vista, etc.</p>
+</div>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Char___System_String___" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Char[],System.String[])">CmdLneArgsBasic(Char[], String[])</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with lists of valid switches and named arguments.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(char[] pachrValidSwitches, string[] pastrValidNamedArgs)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span>[]</td>
+        <td><span class="parametername">pachrValidSwitches</span></td>
+        <td><p>Array of characters, each of which is a valid (supported) switch.
+All switches are initialized to Properties.Resources.SWITCH_IS_OFF.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">pastrValidNamedArgs</span></td>
+        <td><p>Array of strings, each of which is a valid (supported) argument
+name. All arguments are initialized to VALUE_NOT_SET.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Char___System_String___System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Char[],System.String[],System.Int32)">CmdLneArgsBasic(Char[], String[], Int32)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with lists of valid switches and named arguments.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(char[] pachrValidSwitches, string[] pastrValidNamedArgs, int pintPositionalArgCountLimit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span>[]</td>
+        <td><span class="parametername">pachrValidSwitches</span></td>
+        <td><p>Array of characters, each of which is a valid (supported) switch.
+All switches are initialized to Properties.Resources.SWITCH_IS_OFF.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">pastrValidNamedArgs</span></td>
+        <td><p>Array of strings, each of which is a valid (supported) argument
+name. All arguments are initialized to VALUE_NOT_SET.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintPositionalArgCountLimit</span></td>
+        <td><p>The default limit on the number of positional arguments is
+POSITIONAL_ARGS_COUNT_LIMIT, which is currently set to 9. Use this
+argument to set a lower or higher limit.</p>
+<p>A pintPositionalArgCountLimit value of less than zero is discarded
+silently, and the default limit remains in force.</p>
+<p>Please see Remarks for important security considerations.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Char___System_String___System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>SECURITY NOTE</p>
+<p>All constructors in this class enforce a limit on the number of
+positional arguments permitted. The default limit is 9, which is
+defined as a public constant, POSITIONAL_ARGS_COUNT_LIMIT.</p>
+<p>This limit is imposed to protect your program from being fed an
+excessively long command line, in an attempt to cause a denial of
+service. Although few applications require more than nine positional
+command line arguments, the level is made adjustable, to meet that
+once per career need for more than nine arguments.</p>
+<p>While objects of this class cannot do anything about the number of
+characters in the command line (That is the responsibility of the
+Common Language Runtime.), they can, and do, limit the amount of
+memory allowed to be consumed to hold arguments parsed from it.</p>
+<p>No such limits are imposed on switches and named arguments, because
+the number of valid arguments (hence, the upper limit on memory
+consumed by them) is under programmer control, and unlikely to be an
+issue, since invalid arguments are discarded.</p>
+<p>WHY NINE?</p>
+<p>I chose the number nine mostly for historical reasons. Starting with
+MS-DOS 1.0, the number of positional parameters supported by batch
+files (without resorting to tricks with SHIFT) is 9.</p>
+<p>This limit has been carried forward into modern command processors,
+including CMD.EXE, the default console mode command processor of
+Windows NT, 2000, XP, Vista, etc.</p>
+</div>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Char___System_String___WizardWrx_Core_CmdLneArgsBasic_ArgMatching_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Char[],System.String[],WizardWrx.Core.CmdLneArgsBasic.ArgMatching)">CmdLneArgsBasic(Char[], String[], CmdLneArgsBasic.ArgMatching)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with lists of valid switches and named arguments.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(char[] pachrValidSwitches, string[] pastrValidNamedArgs, CmdLneArgsBasic.ArgMatching penmArgMatching)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span>[]</td>
+        <td><span class="parametername">pachrValidSwitches</span></td>
+        <td><p>Array of characters, each of which is a valid (supported) switch.
+All switches are initialized to Properties.Resources.SWITCH_IS_OFF.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">pastrValidNamedArgs</span></td>
+        <td><p>Array of strings, each of which is a valid (supported) argument
+name. All arguments are initialized to VALUE_NOT_SET.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.Core.CmdLneArgsBasic.ArgMatching.html">CmdLneArgsBasic.ArgMatching</a></td>
+        <td><span class="parametername">penmArgMatching</span></td>
+        <td><p>Use this member of the CmdLneArgs.ArgMatching enumeration to set the
+argument matching rules. At present, two rules are defined. See the
+IntelliSense documentation of any CmdLneArgs argument for details.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Char___System_String___WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Char[],System.String[],WizardWrx.Core.CmdLneArgsBasic.ArgMatching,System.Int32)">CmdLneArgsBasic(Char[], String[], CmdLneArgsBasic.ArgMatching, Int32)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with lists of valid switches and named arguments.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(char[] pachrValidSwitches, string[] pastrValidNamedArgs, CmdLneArgsBasic.ArgMatching penmArgMatching, int pintPositionalArgCountLimit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span>[]</td>
+        <td><span class="parametername">pachrValidSwitches</span></td>
+        <td><p>Array of characters, each of which is a valid (supported) switch.
+All switches are initialized to Properties.Resources.SWITCH_IS_OFF.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">pastrValidNamedArgs</span></td>
+        <td><p>Array of strings, each of which is a valid (supported) argument
+name. All arguments are initialized to VALUE_NOT_SET.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.Core.CmdLneArgsBasic.ArgMatching.html">CmdLneArgsBasic.ArgMatching</a></td>
+        <td><span class="parametername">penmArgMatching</span></td>
+        <td><p>Use this member of the CmdLneArgs.ArgMatching enumeration to set the
+argument matching rules. At present, two rules are defined. See the
+IntelliSense documentation of any CmdLneArgs argument for details.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintPositionalArgCountLimit</span></td>
+        <td><p>The default limit on the number of positional arguments is
+POSITIONAL_ARGS_COUNT_LIMIT, which is currently set to 9. Use this
+argument to set a lower or higher limit.</p>
+<p>A pintPositionalArgCountLimit value of less than zero is discarded
+silently, and the default limit remains in force.</p>
+<p>Please see Remarks for important security considerations.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Char___System_String___WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>SECURITY NOTE</p>
+<p>All constructors in this class enforce a limit on the number of
+positional arguments permitted. The default limit is 9, which is
+defined as a public constant, POSITIONAL_ARGS_COUNT_LIMIT.</p>
+<p>This limit is imposed to protect your program from being fed an
+excessively long command line, in an attempt to cause a denial of
+service. Although few applications require more than nine positional
+command line arguments, the level is made adjustable, to meet that
+once per career need for more than nine arguments.</p>
+<p>While objects of this class cannot do anything about the number of
+characters in the command line (That is the responsibility of the
+Common Language Runtime.), they can, and do, limit the amount of
+memory allowed to be consumed to hold arguments parsed from it.</p>
+<p>No such limits are imposed on switches and named arguments, because
+the number of valid arguments (hence, the upper limit on memory
+consumed by them) is under programmer control, and unlikely to be an
+issue, since invalid arguments are discarded.</p>
+<p>WHY NINE?</p>
+<p>I chose the number nine mostly for historical reasons. Starting with
+MS-DOS 1.0, the number of positional parameters supported by batch
+files (without resorting to tricks with SHIFT) is 9.</p>
+<p>This limit has been carried forward into modern command processors,
+including CMD.EXE, the default console mode command processor of
+Windows NT, 2000, XP, Vista, etc.</p>
+</div>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Char___WizardWrx_Core_CmdLneArgsBasic_ArgMatching_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Char[],WizardWrx.Core.CmdLneArgsBasic.ArgMatching)">CmdLneArgsBasic(Char[], CmdLneArgsBasic.ArgMatching)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, all having a
+default value of Properties.Resources.SWITCH_IS_OFF.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(char[] pachrValidSwitches, CmdLneArgsBasic.ArgMatching penmArgMatching)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span>[]</td>
+        <td><span class="parametername">pachrValidSwitches</span></td>
+        <td><p>Array of characters, each of which is a valid (supported) switch.
+All switches are initialized to Properties.Resources.SWITCH_IS_OFF.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.Core.CmdLneArgsBasic.ArgMatching.html">CmdLneArgsBasic.ArgMatching</a></td>
+        <td><span class="parametername">penmArgMatching</span></td>
+        <td><p>Use this member of the CmdLneArgs.ArgMatching enumeration to set the
+argument matching rules. At present, two rules are defined. See the
+IntelliSense documentation of any CmdLneArgs argument for details.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Char___WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Char[],WizardWrx.Core.CmdLneArgsBasic.ArgMatching,System.Int32)">CmdLneArgsBasic(Char[], CmdLneArgsBasic.ArgMatching, Int32)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, all having a
+default value of Properties.Resources.SWITCH_IS_OFF.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(char[] pachrValidSwitches, CmdLneArgsBasic.ArgMatching penmArgMatching, int pintPositionalArgCountLimit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span>[]</td>
+        <td><span class="parametername">pachrValidSwitches</span></td>
+        <td><p>Array of characters, each of which is a valid (supported) switch.
+All switches are initialized to Properties.Resources.SWITCH_IS_OFF.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.Core.CmdLneArgsBasic.ArgMatching.html">CmdLneArgsBasic.ArgMatching</a></td>
+        <td><span class="parametername">penmArgMatching</span></td>
+        <td><p>Use this member of the CmdLneArgs.ArgMatching enumeration to set the
+argument matching rules. At present, two rules are defined. See the
+IntelliSense documentation of any CmdLneArgs argument for details.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintPositionalArgCountLimit</span></td>
+        <td><p>The default limit on the number of positional arguments is
+POSITIONAL_ARGS_COUNT_LIMIT, which is currently set to 9. Use this
+argument to set a lower or higher limit.</p>
+<p>A pintPositionalArgCountLimit value of less than zero is discarded
+silently, and the default limit remains in force.</p>
+<p>Please see Remarks for important security considerations.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Char___WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>SECURITY NOTE</p>
+<p>All constructors in this class enforce a limit on the number of
+positional arguments permitted. The default limit is 9, which is
+defined as a public constant, POSITIONAL_ARGS_COUNT_LIMIT.</p>
+<p>This limit is imposed to protect your program from being fed an
+excessively long command line, in an attempt to cause a denial of
+service. Although few applications require more than nine positional
+command line arguments, the level is made adjustable, to meet that
+once per career need for more than nine arguments.</p>
+<p>While objects of this class cannot do anything about the number of
+characters in the command line (That is the responsibility of the
+Common Language Runtime.), they can, and do, limit the amount of
+memory allowed to be consumed to hold arguments parsed from it.</p>
+<p>No such limits are imposed on switches and named arguments, because
+the number of valid arguments (hence, the upper limit on memory
+consumed by them) is under programmer control, and unlikely to be an
+issue, since invalid arguments are discarded.</p>
+<p>WHY NINE?</p>
+<p>I chose the number nine mostly for historical reasons. Starting with
+MS-DOS 1.0, the number of positional parameters supported by batch
+files (without resorting to tricks with SHIFT) is 9.</p>
+<p>This limit has been carried forward into modern command processors,
+including CMD.EXE, the default console mode command processor of
+Windows NT, 2000, XP, Vista, etc.</p>
+</div>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Collections.Generic.Dictionary{System.Char,System.String})">CmdLneArgsBasic(Dictionary&lt;Char, String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, each having
+the value specified in the corresponding item in pdctValidSwitches.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;char, string&gt; pdctValidSwitches)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidSwitches</span></td>
+        <td><p>Dictionary, keyed by switch name, a character, containing its desired
+default value, a string.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__System_Collections_Generic_Dictionary_System_String_System_String__" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Collections.Generic.Dictionary{System.Char,System.String},System.Collections.Generic.Dictionary{System.String,System.String})">CmdLneArgsBasic(Dictionary&lt;Char, String&gt;, Dictionary&lt;String, String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, each having
+the default value specified in the corresponding item in
+pdctValidSwitches, and a separate list of valid named arguments,
+defined in the same manner.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;char, string&gt; pdctValidSwitches, Dictionary&lt;string, string&gt; pdctValidNamedArgs)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidSwitches</span></td>
+        <td><p>Dictionary, keyed by switch name, a character, containing its desired
+default value, a string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidNamedArgs</span></td>
+        <td><p>Dictionary, keyed by argument name, a string, containing its desired
+default value, also a string.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__System_Collections_Generic_Dictionary_System_String_System_String__System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Collections.Generic.Dictionary{System.Char,System.String},System.Collections.Generic.Dictionary{System.String,System.String},System.Int32)">CmdLneArgsBasic(Dictionary&lt;Char, String&gt;, Dictionary&lt;String, String&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, each having
+the default value specified in the corresponding item in
+pdctValidSwitches, and a separate list of valid named arguments,
+defined in the same manner.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;char, string&gt; pdctValidSwitches, Dictionary&lt;string, string&gt; pdctValidNamedArgs, int pintPositionalArgCountLimit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidSwitches</span></td>
+        <td><p>Dictionary, keyed by switch name, a character, containing its desired
+default value, a string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidNamedArgs</span></td>
+        <td><p>Dictionary, keyed by argument name, a string, containing its desired
+default value, also a string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintPositionalArgCountLimit</span></td>
+        <td><p>The default limit on the number of positional arguments is
+POSITIONAL_ARGS_COUNT_LIMIT, which is currently set to 9. Use this
+argument to set a lower or higher limit.</p>
+<p>A pintPositionalArgCountLimit value of less than zero is discarded
+silently, and the default limit remains in force.</p>
+<p>Please see Remarks for important security considerations.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__System_Collections_Generic_Dictionary_System_String_System_String__System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>SECURITY NOTE</p>
+<p>All constructors in this class enforce a limit on the number of
+positional arguments permitted. The default limit is 9, which is
+defined as a public constant, POSITIONAL_ARGS_COUNT_LIMIT.</p>
+<p>This limit is imposed to protect your program from being fed an
+excessively long command line, in an attempt to cause a denial of
+service. Although few applications require more than nine positional
+command line arguments, the level is made adjustable, to meet that
+once per career need for more than nine arguments.</p>
+<p>While objects of this class cannot do anything about the number of
+characters in the command line (That is the responsibility of the
+Common Language Runtime.), they can, and do, limit the amount of
+memory allowed to be consumed to hold arguments parsed from it.</p>
+<p>No such limits are imposed on switches and named arguments, because
+the number of valid arguments (hence, the upper limit on memory
+consumed by them) is under programmer control, and unlikely to be an
+issue, since invalid arguments are discarded.</p>
+<p>WHY NINE?</p>
+<p>I chose the number nine mostly for historical reasons. Starting with
+MS-DOS 1.0, the number of positional parameters supported by batch
+files (without resorting to tricks with SHIFT) is 9.</p>
+<p>This limit has been carried forward into modern command processors,
+including CMD.EXE, the default console mode command processor of
+Windows NT, 2000, XP, Vista, etc.</p>
+</div>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__System_Collections_Generic_Dictionary_System_String_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Collections.Generic.Dictionary{System.Char,System.String},System.Collections.Generic.Dictionary{System.String,System.String},WizardWrx.Core.CmdLneArgsBasic.ArgMatching)">CmdLneArgsBasic(Dictionary&lt;Char, String&gt;, Dictionary&lt;String, String&gt;, CmdLneArgsBasic.ArgMatching)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, each having
+the default value specified in the corresponding item in
+pdctValidSwitches, and a separate list of valid named arguments,
+defined in the same manner.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;char, string&gt; pdctValidSwitches, Dictionary&lt;string, string&gt; pdctValidNamedArgs, CmdLneArgsBasic.ArgMatching penmArgMatching)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidSwitches</span></td>
+        <td><p>Dictionary, keyed by switch name, a character, containing its desired
+default value, a string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidNamedArgs</span></td>
+        <td><p>Dictionary, keyed by argument name, a string, containing its desired
+default value, also a string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.Core.CmdLneArgsBasic.ArgMatching.html">CmdLneArgsBasic.ArgMatching</a></td>
+        <td><span class="parametername">penmArgMatching</span></td>
+        <td><p>Use this member of the CmdLneArgs.ArgMatching enumeration to set the
+argument matching rules. At present, two rules are defined. See the
+IntelliSense documentation of any CmdLneArgs argument for details.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__System_Collections_Generic_Dictionary_System_String_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Collections.Generic.Dictionary{System.Char,System.String},System.Collections.Generic.Dictionary{System.String,System.String},WizardWrx.Core.CmdLneArgsBasic.ArgMatching,System.Int32)">CmdLneArgsBasic(Dictionary&lt;Char, String&gt;, Dictionary&lt;String, String&gt;, CmdLneArgsBasic.ArgMatching, Int32)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, each having
+the default value specified in the corresponding item in
+pdctValidSwitches, and a separate list of valid named arguments,
+defined in the same manner.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;char, string&gt; pdctValidSwitches, Dictionary&lt;string, string&gt; pdctValidNamedArgs, CmdLneArgsBasic.ArgMatching penmArgMatching, int pintPositionalArgCountLimit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidSwitches</span></td>
+        <td><p>Dictionary, keyed by switch name, a character, containing its desired
+default value, a string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidNamedArgs</span></td>
+        <td><p>Dictionary, keyed by argument name, a string, containing its desired
+default value, also a string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.Core.CmdLneArgsBasic.ArgMatching.html">CmdLneArgsBasic.ArgMatching</a></td>
+        <td><span class="parametername">penmArgMatching</span></td>
+        <td><p>Use this member of the CmdLneArgs.ArgMatching enumeration to set the
+argument matching rules. At present, two rules are defined. See the
+IntelliSense documentation of any CmdLneArgs argument for details.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintPositionalArgCountLimit</span></td>
+        <td><p>The default limit on the number of positional arguments is
+POSITIONAL_ARGS_COUNT_LIMIT, which is currently set to 9. Use this
+argument to set a lower or higher limit.</p>
+<p>A pintPositionalArgCountLimit value of less than zero is discarded
+silently, and the default limit remains in force.</p>
+<p>Please see Remarks for important security considerations.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__System_Collections_Generic_Dictionary_System_String_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>SECURITY NOTE</p>
+<p>All constructors in this class enforce a limit on the number of
+positional arguments permitted. The default limit is 9, which is
+defined as a public constant, POSITIONAL_ARGS_COUNT_LIMIT.</p>
+<p>This limit is imposed to protect your program from being fed an
+excessively long command line, in an attempt to cause a denial of
+service. Although few applications require more than nine positional
+command line arguments, the level is made adjustable, to meet that
+once per career need for more than nine arguments.</p>
+<p>While objects of this class cannot do anything about the number of
+characters in the command line (That is the responsibility of the
+Common Language Runtime.), they can, and do, limit the amount of
+memory allowed to be consumed to hold arguments parsed from it.</p>
+<p>No such limits are imposed on switches and named arguments, because
+the number of valid arguments (hence, the upper limit on memory
+consumed by them) is under programmer control, and unlikely to be an
+issue, since invalid arguments are discarded.</p>
+<p>WHY NINE?</p>
+<p>I chose the number nine mostly for historical reasons. Starting with
+MS-DOS 1.0, the number of positional parameters supported by batch
+files (without resorting to tricks with SHIFT) is 9.</p>
+<p>This limit has been carried forward into modern command processors,
+including CMD.EXE, the default console mode command processor of
+Windows NT, 2000, XP, Vista, etc.</p>
+</div>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Collections.Generic.Dictionary{System.Char,System.String},System.Int32)">CmdLneArgsBasic(Dictionary&lt;Char, String&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, each having
+the value specified in the corresponding item in pdctValidSwitches.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;char, string&gt; pdctValidSwitches, int pintPositionalArgCountLimit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidSwitches</span></td>
+        <td><p>Dictionary, keyed by switch name, a character, containing its desired
+default value, a string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintPositionalArgCountLimit</span></td>
+        <td><p>The default limit on the number of positional arguments is
+POSITIONAL_ARGS_COUNT_LIMIT, which is currently set to 9. Use this
+argument to set a lower or higher limit.</p>
+<p>A pintPositionalArgCountLimit value of less than zero is discarded
+silently, and the default limit remains in force.</p>
+<p>Please see Remarks for important security considerations.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>SECURITY NOTE</p>
+<p>All constructors in this class enforce a limit on the number of
+positional arguments permitted. The default limit is 9, which is
+defined as a public constant, POSITIONAL_ARGS_COUNT_LIMIT.</p>
+<p>This limit is imposed to protect your program from being fed an
+excessively long command line, in an attempt to cause a denial of
+service. Although few applications require more than nine positional
+command line arguments, the level is made adjustable, to meet that
+once per career need for more than nine arguments.</p>
+<p>While objects of this class cannot do anything about the number of
+characters in the command line (That is the responsibility of the
+Common Language Runtime.), they can, and do, limit the amount of
+memory allowed to be consumed to hold arguments parsed from it.</p>
+<p>No such limits are imposed on switches and named arguments, because
+the number of valid arguments (hence, the upper limit on memory
+consumed by them) is under programmer control, and unlikely to be an
+issue, since invalid arguments are discarded.</p>
+<p>WHY NINE?</p>
+<p>I chose the number nine mostly for historical reasons. Starting with
+MS-DOS 1.0, the number of positional parameters supported by batch
+files (without resorting to tricks with SHIFT) is 9.</p>
+<p>This limit has been carried forward into modern command processors,
+including CMD.EXE, the default console mode command processor of
+Windows NT, 2000, XP, Vista, etc.</p>
+</div>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__System_String___System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Collections.Generic.Dictionary{System.Char,System.String},System.String[],System.Int32)">CmdLneArgsBasic(Dictionary&lt;Char, String&gt;, String[], Int32)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, each having
+its default value defined by the value member of a DictionaryItem,
+and a separate list of valid named arguments, defined in an array of
+strings, with the default value supplied by the class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;char, string&gt; pdctValidSwitches, string[] pastrValidNamedArgs, int pintPositionalArgCountLimit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidSwitches</span></td>
+        <td><p>Dictionary, keyed by switch name, a character, containing its desired
+default value, a string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">pastrValidNamedArgs</span></td>
+        <td><p>Array of strings, each of which is a valid (supported) argument
+name. All arguments are initialized to VALUE_NOT_SET.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintPositionalArgCountLimit</span></td>
+        <td><p>The default limit on the number of positional arguments is
+POSITIONAL_ARGS_COUNT_LIMIT, which is currently set to 9. Use this
+argument to set a lower or higher limit.</p>
+<p>A pintPositionalArgCountLimit value of less than zero is discarded
+silently, and the default limit remains in force.</p>
+<p>Please see Remarks for important security considerations.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__System_String___System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>SECURITY NOTE</p>
+<p>All constructors in this class enforce a limit on the number of
+positional arguments permitted. The default limit is 9, which is
+defined as a public constant, POSITIONAL_ARGS_COUNT_LIMIT.</p>
+<p>This limit is imposed to protect your program from being fed an
+excessively long command line, in an attempt to cause a denial of
+service. Although few applications require more than nine positional
+command line arguments, the level is made adjustable, to meet that
+once per career need for more than nine arguments.</p>
+<p>While objects of this class cannot do anything about the number of
+characters in the command line (That is the responsibility of the
+Common Language Runtime.), they can, and do, limit the amount of
+memory allowed to be consumed to hold arguments parsed from it.</p>
+<p>No such limits are imposed on switches and named arguments, because
+the number of valid arguments (hence, the upper limit on memory
+consumed by them) is under programmer control, and unlikely to be an
+issue, since invalid arguments are discarded.</p>
+<p>WHY NINE?</p>
+<p>I chose the number nine mostly for historical reasons. Starting with
+MS-DOS 1.0, the number of positional parameters supported by batch
+files (without resorting to tricks with SHIFT) is 9.</p>
+<p>This limit has been carried forward into modern command processors,
+including CMD.EXE, the default console mode command processor of
+Windows NT, 2000, XP, Vista, etc.</p>
+</div>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__System_String___WizardWrx_Core_CmdLneArgsBasic_ArgMatching_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Collections.Generic.Dictionary{System.Char,System.String},System.String[],WizardWrx.Core.CmdLneArgsBasic.ArgMatching)">CmdLneArgsBasic(Dictionary&lt;Char, String&gt;, String[], CmdLneArgsBasic.ArgMatching)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, each having
+the default value specified in the corresponding item in
+pdctValidSwitches, and a separate list of valid named arguments, in
+an array of strings, with the class supplying a standard default.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;char, string&gt; pdctValidSwitches, string[] pastrValidNamedArgs, CmdLneArgsBasic.ArgMatching penmArgMatching)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidSwitches</span></td>
+        <td><p>Dictionary, keyed by switch name, a character, containing its desired
+default value, a string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">pastrValidNamedArgs</span></td>
+        <td><p>Array of strings, each of which is a valid (supported) argument
+name. All arguments are initialized to VALUE_NOT_SET.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.Core.CmdLneArgsBasic.ArgMatching.html">CmdLneArgsBasic.ArgMatching</a></td>
+        <td><span class="parametername">penmArgMatching</span></td>
+        <td><p>Use this member of the CmdLneArgs.ArgMatching enumeration to set the
+argument matching rules. At present, two rules are defined. See the
+IntelliSense documentation of any CmdLneArgs argument for details.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__System_String___WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Collections.Generic.Dictionary{System.Char,System.String},System.String[],WizardWrx.Core.CmdLneArgsBasic.ArgMatching,System.Int32)">CmdLneArgsBasic(Dictionary&lt;Char, String&gt;, String[], CmdLneArgsBasic.ArgMatching, Int32)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, each having
+its default value defined by the value member of a DictionaryItem,
+and a separate list of valid named arguments, each defined as a
+DictionaryItem, with its default value given in the value member.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;char, string&gt; pdctValidSwitches, string[] pastrValidNamedArgs, CmdLneArgsBasic.ArgMatching penmArgMatching, int pintPositionalArgCountLimit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidSwitches</span></td>
+        <td><p>Dictionary, keyed by switch name, a character, containing its desired
+default value, a string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">pastrValidNamedArgs</span></td>
+        <td><p>Array of strings, each of which is a valid (supported) argument
+name. All arguments are initialized to VALUE_NOT_SET.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.Core.CmdLneArgsBasic.ArgMatching.html">CmdLneArgsBasic.ArgMatching</a></td>
+        <td><span class="parametername">penmArgMatching</span></td>
+        <td><p>Use this member of the CmdLneArgs.ArgMatching enumeration to set the
+argument matching rules. At present, two rules are defined. See the
+IntelliSense documentation of any CmdLneArgs argument for details.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintPositionalArgCountLimit</span></td>
+        <td><p>The default limit on the number of positional arguments is
+POSITIONAL_ARGS_COUNT_LIMIT, which is currently set to 9. Use this
+argument to set a lower or higher limit.</p>
+<p>A pintPositionalArgCountLimit value of less than zero is discarded
+silently, and the default limit remains in force.</p>
+<p>Please see Remarks for important security considerations.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__System_String___WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>SECURITY NOTE</p>
+<p>All constructors in this class enforce a limit on the number of
+positional arguments permitted. The default limit is 9, which is
+defined as a public constant, POSITIONAL_ARGS_COUNT_LIMIT.</p>
+<p>This limit is imposed to protect your program from being fed an
+excessively long command line, in an attempt to cause a denial of
+service. Although few applications require more than nine positional
+command line arguments, the level is made adjustable, to meet that
+once per career need for more than nine arguments.</p>
+<p>While objects of this class cannot do anything about the number of
+characters in the command line (That is the responsibility of the
+Common Language Runtime.), they can, and do, limit the amount of
+memory allowed to be consumed to hold arguments parsed from it.</p>
+<p>No such limits are imposed on switches and named arguments, because
+the number of valid arguments (hence, the upper limit on memory
+consumed by them) is under programmer control, and unlikely to be an
+issue, since invalid arguments are discarded.</p>
+<p>WHY NINE?</p>
+<p>I chose the number nine mostly for historical reasons. Starting with
+MS-DOS 1.0, the number of positional parameters supported by batch
+files (without resorting to tricks with SHIFT) is 9.</p>
+<p>This limit has been carried forward into modern command processors,
+including CMD.EXE, the default console mode command processor of
+Windows NT, 2000, XP, Vista, etc.</p>
+</div>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Collections.Generic.Dictionary{System.Char,System.String},WizardWrx.Core.CmdLneArgsBasic.ArgMatching)">CmdLneArgsBasic(Dictionary&lt;Char, String&gt;, CmdLneArgsBasic.ArgMatching)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, each having
+the value specified in the corresponding item in pdctValidSwitches.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;char, string&gt; pdctValidSwitches, CmdLneArgsBasic.ArgMatching penmArgMatching)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidSwitches</span></td>
+        <td><p>Dictionary, keyed by switch name, a character, containing its desired
+default value, a string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.Core.CmdLneArgsBasic.ArgMatching.html">CmdLneArgsBasic.ArgMatching</a></td>
+        <td><span class="parametername">penmArgMatching</span></td>
+        <td><p>Use this member of the CmdLneArgs.ArgMatching enumeration to set the
+argument matching rules. At present, two rules are defined. See the
+IntelliSense documentation of any CmdLneArgs argument for details.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Collections.Generic.Dictionary{System.Char,System.String},WizardWrx.Core.CmdLneArgsBasic.ArgMatching,System.Int32)">CmdLneArgsBasic(Dictionary&lt;Char, String&gt;, CmdLneArgsBasic.ArgMatching, Int32)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, each having
+the value specified in the corresponding item in pdctValidSwitches.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;char, string&gt; pdctValidSwitches, CmdLneArgsBasic.ArgMatching penmArgMatching, int pintPositionalArgCountLimit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidSwitches</span></td>
+        <td><p>Dictionary, keyed by switch name, a character, containing its desired
+default value, a string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.Core.CmdLneArgsBasic.ArgMatching.html">CmdLneArgsBasic.ArgMatching</a></td>
+        <td><span class="parametername">penmArgMatching</span></td>
+        <td><p>Use this member of the CmdLneArgs.ArgMatching enumeration to set the
+argument matching rules. At present, two rules are defined. See the
+IntelliSense documentation of any CmdLneArgs argument for details.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintPositionalArgCountLimit</span></td>
+        <td><p>The default limit on the number of positional arguments is
+POSITIONAL_ARGS_COUNT_LIMIT, which is currently set to 9. Use this
+argument to set a lower or higher limit.</p>
+<p>A pintPositionalArgCountLimit value of less than zero is discarded
+silently, and the default limit remains in force.</p>
+<p>Please see Remarks for important security considerations.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>SECURITY NOTE</p>
+<p>All constructors in this class enforce a limit on the number of
+positional arguments permitted. The default limit is 9, which is
+defined as a public constant, POSITIONAL_ARGS_COUNT_LIMIT.</p>
+<p>This limit is imposed to protect your program from being fed an
+excessively long command line, in an attempt to cause a denial of
+service. Although few applications require more than nine positional
+command line arguments, the level is made adjustable, to meet that
+once per career need for more than nine arguments.</p>
+<p>While objects of this class cannot do anything about the number of
+characters in the command line (That is the responsibility of the
+Common Language Runtime.), they can, and do, limit the amount of
+memory allowed to be consumed to hold arguments parsed from it.</p>
+<p>No such limits are imposed on switches and named arguments, because
+the number of valid arguments (hence, the upper limit on memory
+consumed by them) is under programmer control, and unlikely to be an
+issue, since invalid arguments are discarded.</p>
+<p>WHY NINE?</p>
+<p>I chose the number nine mostly for historical reasons. Starting with
+MS-DOS 1.0, the number of positional parameters supported by batch
+files (without resorting to tricks with SHIFT) is 9.</p>
+<p>This limit has been carried forward into modern command processors,
+including CMD.EXE, the default console mode command processor of
+Windows NT, 2000, XP, Vista, etc.</p>
+</div>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_String_System_String__" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Collections.Generic.Dictionary{System.String,System.String})">CmdLneArgsBasic(Dictionary&lt;String, String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid named arguments, each
+having the default value specified in the corresponding item in
+pdctValidNamedArgs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;string, string&gt; pdctValidNamedArgs)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidNamedArgs</span></td>
+        <td><p>Dictionary, keyed by argument name, a string, containing its desired
+default value, also a string.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_String_System_String__System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Collections.Generic.Dictionary{System.String,System.String},System.Int32)">CmdLneArgsBasic(Dictionary&lt;String, String&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid named arguments, each
+having the default value specified in the corresponding item in
+pdctValidNamedArgs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;string, string&gt; pdctValidNamedArgs, int pintPositionalArgCountLimit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidNamedArgs</span></td>
+        <td><p>Dictionary, keyed by argument name, a string, containing its desired
+default value, also a string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintPositionalArgCountLimit</span></td>
+        <td><p>The default limit on the number of positional arguments is
+POSITIONAL_ARGS_COUNT_LIMIT, which is currently set to 9. Use this
+argument to set a lower or higher limit.</p>
+<p>A pintPositionalArgCountLimit value of less than zero is discarded
+silently, and the default limit remains in force.</p>
+<p>Please see Remarks for important security considerations.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_String_System_String__System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>SECURITY NOTE</p>
+<p>All constructors in this class enforce a limit on the number of
+positional arguments permitted. The default limit is 9, which is
+defined as a public constant, POSITIONAL_ARGS_COUNT_LIMIT.</p>
+<p>This limit is imposed to protect your program from being fed an
+excessively long command line, in an attempt to cause a denial of
+service. Although few applications require more than nine positional
+command line arguments, the level is made adjustable, to meet that
+once per career need for more than nine arguments.</p>
+<p>While objects of this class cannot do anything about the number of
+characters in the command line (That is the responsibility of the
+Common Language Runtime.), they can, and do, limit the amount of
+memory allowed to be consumed to hold arguments parsed from it.</p>
+<p>No such limits are imposed on switches and named arguments, because
+the number of valid arguments (hence, the upper limit on memory
+consumed by them) is under programmer control, and unlikely to be an
+issue, since invalid arguments are discarded.</p>
+<p>WHY NINE?</p>
+<p>I chose the number nine mostly for historical reasons. Starting with
+MS-DOS 1.0, the number of positional parameters supported by batch
+files (without resorting to tricks with SHIFT) is 9.</p>
+<p>This limit has been carried forward into modern command processors,
+including CMD.EXE, the default console mode command processor of
+Windows NT, 2000, XP, Vista, etc.</p>
+</div>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_String_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Collections.Generic.Dictionary{System.String,System.String},WizardWrx.Core.CmdLneArgsBasic.ArgMatching)">CmdLneArgsBasic(Dictionary&lt;String, String&gt;, CmdLneArgsBasic.ArgMatching)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid named arguments, each
+having the default value specified in the corresponding item in
+pdctValidNamedArgs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;string, string&gt; pdctValidNamedArgs, CmdLneArgsBasic.ArgMatching penmArgMatching)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidNamedArgs</span></td>
+        <td><p>Dictionary, keyed by argument name, a string, containing its desired
+default value, also a string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.Core.CmdLneArgsBasic.ArgMatching.html">CmdLneArgsBasic.ArgMatching</a></td>
+        <td><span class="parametername">penmArgMatching</span></td>
+        <td><p>Use this member of the CmdLneArgs.ArgMatching enumeration to set the
+argument matching rules. At present, two rules are defined. See the
+IntelliSense documentation of any CmdLneArgs argument for details.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_String_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Collections.Generic.Dictionary{System.String,System.String},WizardWrx.Core.CmdLneArgsBasic.ArgMatching,System.Int32)">CmdLneArgsBasic(Dictionary&lt;String, String&gt;, CmdLneArgsBasic.ArgMatching, Int32)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid named arguments, each
+having the default value specified in the corresponding item in
+pdctValidNamedArgs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;string, string&gt; pdctValidNamedArgs, CmdLneArgsBasic.ArgMatching penmArgMatching, int pintPositionalArgCountLimit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidNamedArgs</span></td>
+        <td><p>Dictionary, keyed by argument name, a string, containing its desired
+default value, also a string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.Core.CmdLneArgsBasic.ArgMatching.html">CmdLneArgsBasic.ArgMatching</a></td>
+        <td><span class="parametername">penmArgMatching</span></td>
+        <td><p>Use this member of the CmdLneArgs.ArgMatching enumeration to set the
+argument matching rules. At present, two rules are defined. See the
+IntelliSense documentation of any CmdLneArgs argument for details.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintPositionalArgCountLimit</span></td>
+        <td><p>The default limit on the number of positional arguments is
+POSITIONAL_ARGS_COUNT_LIMIT, which is currently set to 9. Use this
+argument to set a lower or higher limit.</p>
+<p>A pintPositionalArgCountLimit value of less than zero is discarded
+silently, and the default limit remains in force.</p>
+<p>Please see Remarks for important security considerations.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_String_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>SECURITY NOTE</p>
+<p>All constructors in this class enforce a limit on the number of
+positional arguments permitted. The default limit is 9, which is
+defined as a public constant, POSITIONAL_ARGS_COUNT_LIMIT.</p>
+<p>This limit is imposed to protect your program from being fed an
+excessively long command line, in an attempt to cause a denial of
+service. Although few applications require more than nine positional
+command line arguments, the level is made adjustable, to meet that
+once per career need for more than nine arguments.</p>
+<p>While objects of this class cannot do anything about the number of
+characters in the command line (That is the responsibility of the
+Common Language Runtime.), they can, and do, limit the amount of
+memory allowed to be consumed to hold arguments parsed from it.</p>
+<p>No such limits are imposed on switches and named arguments, because
+the number of valid arguments (hence, the upper limit on memory
+consumed by them) is under programmer control, and unlikely to be an
+issue, since invalid arguments are discarded.</p>
+<p>WHY NINE?</p>
+<p>I chose the number nine mostly for historical reasons. Starting with
+MS-DOS 1.0, the number of positional parameters supported by batch
+files (without resorting to tricks with SHIFT) is 9.</p>
+<p>This limit has been carried forward into modern command processors,
+including CMD.EXE, the default console mode command processor of
+Windows NT, 2000, XP, Vista, etc.</p>
+</div>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Int32)">CmdLneArgsBasic(Int32)</h4>
+  <div class="markdown level1 summary"><p>Initialize an instance that supports exclusively positional
+arguments, and enforces a user-specified limit, in lieu of a default
+limit of 99 positional arguments</p>
+<p>Please see Remarks for important security considerations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(int pintPositionalArgCountLimit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintPositionalArgCountLimit</span></td>
+        <td><p>The default limit on the number of positional arguments is
+POSITIONAL_ARGS_COUNT_LIMIT, which is currently set to 9. Use this
+argument to set a lower or higher limit.</p>
+<p>A pintPositionalArgCountLimit value of less than zero is discarded
+silently, and the default limit remains in force.</p>
+<p>Please see Remarks for important security considerations.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>SECURITY NOTE</p>
+<p>All constructors in this class enforce a limit on the number of
+positional arguments permitted. The default limit is 9, which is
+defined as a public constant, POSITIONAL_ARGS_COUNT_LIMIT.</p>
+<p>This limit is imposed to protect your program from being fed an
+excessively long command line, in an attempt to cause a denial of
+service. Although few applications require more than nine positional
+command line arguments, the level is made adjustable, to meet that
+once per career need for more than nine arguments.</p>
+<p>While objects of this class cannot do anything about the number of
+characters in the command line (That is the responsibility of the
+Common Language Runtime.), they can, and do, limit the amount of
+memory allowed to be consumed to hold arguments parsed from it.</p>
+<p>No such limits are imposed on switches and named arguments, because
+the number of valid arguments (hence, the upper limit on memory
+consumed by them) is under programmer control, and unlikely to be an
+issue, since invalid arguments are discarded.</p>
+<p>WHY NINE?</p>
+<p>I chose the number nine mostly for historical reasons. Starting with
+MS-DOS 1.0, the number of positional parameters supported by batch
+files (without resorting to tricks with SHIFT) is 9.</p>
+<p>This limit has been carried forward into modern command processors,
+including CMD.EXE, the default console mode command processor of
+Windows NT, 2000, XP, Vista, etc.</p>
+</div>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_String___" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.String[])">CmdLneArgsBasic(String[])</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid named arguments, each
+having a default value of VALUE_NOT_SET.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(string[] pastrValidNamedArgs)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">pastrValidNamedArgs</span></td>
+        <td><p>Array of strings, each of which is a valid (supported) argument
+name. All arguments are initialized to VALUE_NOT_SET.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_String___System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.String[],System.Int32)">CmdLneArgsBasic(String[], Int32)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid named arguments, each
+having a default value of VALUE_NOT_SET.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(string[] pastrValidNamedArgs, int pintPositionalArgCountLimit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">pastrValidNamedArgs</span></td>
+        <td><p>Array of strings, each of which is a valid (supported) argument
+name. All arguments are initialized to VALUE_NOT_SET.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintPositionalArgCountLimit</span></td>
+        <td><p>The default limit on the number of positional arguments is
+POSITIONAL_ARGS_COUNT_LIMIT, which is currently set to 9. Use this
+argument to set a lower or higher limit.</p>
+<p>A pintPositionalArgCountLimit value of less than zero is discarded
+silently, and the default limit remains in force.</p>
+<p>Please see Remarks for important security considerations.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_String___System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>SECURITY NOTE</p>
+<p>All constructors in this class enforce a limit on the number of
+positional arguments permitted. The default limit is 9, which is
+defined as a public constant, POSITIONAL_ARGS_COUNT_LIMIT.</p>
+<p>This limit is imposed to protect your program from being fed an
+excessively long command line, in an attempt to cause a denial of
+service. Although few applications require more than nine positional
+command line arguments, the level is made adjustable, to meet that
+once per career need for more than nine arguments.</p>
+<p>While objects of this class cannot do anything about the number of
+characters in the command line (That is the responsibility of the
+Common Language Runtime.), they can, and do, limit the amount of
+memory allowed to be consumed to hold arguments parsed from it.</p>
+<p>No such limits are imposed on switches and named arguments, because
+the number of valid arguments (hence, the upper limit on memory
+consumed by them) is under programmer control, and unlikely to be an
+issue, since invalid arguments are discarded.</p>
+<p>WHY NINE?</p>
+<p>I chose the number nine mostly for historical reasons. Starting with
+MS-DOS 1.0, the number of positional parameters supported by batch
+files (without resorting to tricks with SHIFT) is 9.</p>
+<p>This limit has been carried forward into modern command processors,
+including CMD.EXE, the default console mode command processor of
+Windows NT, 2000, XP, Vista, etc.</p>
+</div>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_String___WizardWrx_Core_CmdLneArgsBasic_ArgMatching_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.String[],WizardWrx.Core.CmdLneArgsBasic.ArgMatching)">CmdLneArgsBasic(String[], CmdLneArgsBasic.ArgMatching)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid named arguments, each
+having a default value of VALUE_NOT_SET.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(string[] pastrValidNamedArgs, CmdLneArgsBasic.ArgMatching penmArgMatching)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">pastrValidNamedArgs</span></td>
+        <td><p>Array of strings, each of which is a valid (supported) argument
+name. All arguments are initialized to VALUE_NOT_SET.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.Core.CmdLneArgsBasic.ArgMatching.html">CmdLneArgsBasic.ArgMatching</a></td>
+        <td><span class="parametername">penmArgMatching</span></td>
+        <td><p>Use this member of the CmdLneArgs.ArgMatching enumeration to set the
+argument matching rules. At present, two rules are defined. See the
+IntelliSense documentation of any CmdLneArgs argument for details.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_String___WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.String[],WizardWrx.Core.CmdLneArgsBasic.ArgMatching,System.Int32)">CmdLneArgsBasic(String[], CmdLneArgsBasic.ArgMatching, Int32)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid named arguments, each
+having a default value of VALUE_NOT_SET.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(string[] pastrValidNamedArgs, CmdLneArgsBasic.ArgMatching penmArgMatching, int pintPositionalArgCountLimit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">pastrValidNamedArgs</span></td>
+        <td><p>Array of strings, each of which is a valid (supported) argument
+name. All arguments are initialized to VALUE_NOT_SET.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.Core.CmdLneArgsBasic.ArgMatching.html">CmdLneArgsBasic.ArgMatching</a></td>
+        <td><span class="parametername">penmArgMatching</span></td>
+        <td><p>Use this member of the CmdLneArgs.ArgMatching enumeration to set the
+argument matching rules. At present, two rules are defined. See the
+IntelliSense documentation of any CmdLneArgs argument for details.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintPositionalArgCountLimit</span></td>
+        <td><p>The default limit on the number of positional arguments is
+POSITIONAL_ARGS_COUNT_LIMIT, which is currently set to 9. Use this
+argument to set a lower or higher limit.</p>
+<p>A pintPositionalArgCountLimit value of less than zero is discarded
+silently, and the default limit remains in force.</p>
+<p>Please see Remarks for important security considerations.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_String___WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>SECURITY NOTE</p>
+<p>All constructors in this class enforce a limit on the number of
+positional arguments permitted. The default limit is 9, which is
+defined as a public constant, POSITIONAL_ARGS_COUNT_LIMIT.</p>
+<p>This limit is imposed to protect your program from being fed an
+excessively long command line, in an attempt to cause a denial of
+service. Although few applications require more than nine positional
+command line arguments, the level is made adjustable, to meet that
+once per career need for more than nine arguments.</p>
+<p>While objects of this class cannot do anything about the number of
+characters in the command line (That is the responsibility of the
+Common Language Runtime.), they can, and do, limit the amount of
+memory allowed to be consumed to hold arguments parsed from it.</p>
+<p>No such limits are imposed on switches and named arguments, because
+the number of valid arguments (hence, the upper limit on memory
+consumed by them) is under programmer control, and unlikely to be an
+issue, since invalid arguments are discarded.</p>
+<p>WHY NINE?</p>
+<p>I chose the number nine mostly for historical reasons. Starting with
+MS-DOS 1.0, the number of positional parameters supported by batch
+files (without resorting to tricks with SHIFT) is 9.</p>
+<p>This limit has been carried forward into modern command processors,
+including CMD.EXE, the default console mode command processor of
+Windows NT, 2000, XP, Vista, etc.</p>
+</div>
+  <h3 id="fields">Fields
+  </h3>
+  
+  
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_ARG_LIST_HAS_ARGS" data-uid="WizardWrx.Core.CmdLneArgsBasic.ARG_LIST_HAS_ARGS">ARG_LIST_HAS_ARGS</h4>
+  <div class="markdown level1 summary"><p>When the ArgListIsEmpty property has this value, the command line
+contains at least one argument. See Remarks.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const bool ARG_LIST_HAS_ARGS = false</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic_ARG_LIST_HAS_ARGS_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>ArgListIsEmpty being false means only that there is an argument in
+the command line, which may be invalid. Check the ArgMatching array
+or the two invalid argument counters, InvalidNamedArgsInCmd and
+InvalidSwitchesInCmd.</p>
+</div>
+  
+  
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_ARG_LIST_IS_EMPTY" data-uid="WizardWrx.Core.CmdLneArgsBasic.ARG_LIST_IS_EMPTY">ARG_LIST_IS_EMPTY</h4>
+  <div class="markdown level1 summary"><p>When the ArgListIsEmpty property has this value, the command line is
+empty, consisting solely of the name of the executing assembly.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const bool ARG_LIST_IS_EMPTY = true</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_BLANK_AS_DEFAULT_ALLOWED" data-uid="WizardWrx.Core.CmdLneArgsBasic.BLANK_AS_DEFAULT_ALLOWED">BLANK_AS_DEFAULT_ALLOWED</h4>
+  <div class="markdown level1 summary"><p>When the AllowEmptyStringAsDefault property has this value, an empty
+string is permitted as a default value. See the Remarks section of
+the on-line documentation of the AllowEmptyStringAsDefault property
+for complete details.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const bool BLANK_AS_DEFAULT_ALLOWED = true</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_BLANK_AS_DEFAULT_FORBIDDEN" data-uid="WizardWrx.Core.CmdLneArgsBasic.BLANK_AS_DEFAULT_FORBIDDEN">BLANK_AS_DEFAULT_FORBIDDEN</h4>
+  <div class="markdown level1 summary"><p>When the AllowEmptyStringAsDefault property has this value, an empty
+string as a default value is forbidden. See the Remarks section of
+the on-line documentation of the AllowEmptyStringAsDefault property
+for complete details.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const bool BLANK_AS_DEFAULT_FORBIDDEN = false</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_FIRST_POSITIONAL_ARG" data-uid="WizardWrx.Core.CmdLneArgsBasic.FIRST_POSITIONAL_ARG">FIRST_POSITIONAL_ARG</h4>
+  <div class="markdown level1 summary"><p>Use this constant with the GetArgByPosition method to get the first
+positional argument, or as the initializer of a For loop to get all
+positional arguments.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int FIRST_POSITIONAL_ARG = 1</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_NAME_VALUE_DELIMITER" data-uid="WizardWrx.Core.CmdLneArgsBasic.NAME_VALUE_DELIMITER">NAME_VALUE_DELIMITER</h4>
+  <div class="markdown level1 summary"><p>This class uses the equal sign as its delimiter between the name and
+value of named arguments.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const char NAME_VALUE_DELIMITER = '='</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_NONE" data-uid="WizardWrx.Core.CmdLneArgsBasic.NONE">NONE</h4>
+  <div class="markdown level1 summary"><p>Counts are initialized to this value (zero). Making it public
+simplifies coding well-documented tests.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int NONE = 0</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_POSITIONAL_ARGS_COUNT_LIMIT" data-uid="WizardWrx.Core.CmdLneArgsBasic.POSITIONAL_ARGS_COUNT_LIMIT">POSITIONAL_ARGS_COUNT_LIMIT</h4>
+  <div class="markdown level1 summary"><p>This constant defines the default number of positional arguments
+that instances of this class will capture.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int POSITIONAL_ARGS_COUNT_LIMIT = 9</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_VALUE_NOT_SET" data-uid="WizardWrx.Core.CmdLneArgsBasic.VALUE_NOT_SET">VALUE_NOT_SET</h4>
+  <div class="markdown level1 summary"><p>This symbolic constant maps to the empty string, and indicates that
+a specified named or positional argument was omitted from the
+command line.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string VALUE_NOT_SET = &quot;&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic_AllowEmptyStringAsDefault_" data-uid="WizardWrx.Core.CmdLneArgsBasic.AllowEmptyStringAsDefault*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_AllowEmptyStringAsDefault" data-uid="WizardWrx.Core.CmdLneArgsBasic.AllowEmptyStringAsDefault">AllowEmptyStringAsDefault</h4>
+  <div class="markdown level1 summary"><p>The value of this property determines how the GetArgDefaultToUse and
+GetSwitchDefaultToUse methods treat an empty string supplied as a
+default value to return. See Remarks for complete details.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool AllowEmptyStringAsDefault { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic_AllowEmptyStringAsDefault_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The AllowEmptyStringAsDefault property is initialized to FALSE, to
+maintain backwards compatibility with previous versions of the
+library that exports this class.</p>
+<p>By default switches return a string value of &quot;OFF&quot; to indicate their
+omission from the command line. To override this behavior, you must
+call the two-argument overload of GetSwitchDefaultToUse, specifying
+a default string value as the second argument.</p>
+<p>Prior to version 2.0, this overload treated both null references
+(Nothing in Visual Basic) and empty strings equally, returning the
+class default value of &quot;OFF&quot; in both cases.</p>
+<p>Beginning with version 2.0, this behavior can be overridden in one
+of two ways.</p>
+<ol>
+<li><p>Setting the AllowEmptyStringAsDefault property to TRUE (signified
+by symbolic constant BLANK_AS_DEFAULT_ALLOWED) changes the behavior
+for the entire class for the rest of its lifetime, or until it is
+set back to its default, whichever comes first.</p>
+</li>
+<li><p>Calling method GetSwitchDefaultToUse or GetArgDefaultToUse with a
+third (Boolean) argument that affects only the behavior of that one
+call, regardless of the current AllowEmptyStringAsDefault setting.
+This method leaves the AllowEmptyStringAsDefault property unchanged.</p>
+</li>
+</ol>
+</div>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic_ArgListIsEmpty_" data-uid="WizardWrx.Core.CmdLneArgsBasic.ArgListIsEmpty*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_ArgListIsEmpty" data-uid="WizardWrx.Core.CmdLneArgsBasic.ArgListIsEmpty">ArgListIsEmpty</h4>
+  <div class="markdown level1 summary"><p>This property returns True (ARG_LIST_IS_EMPTY) when the command line
+is devoid of arguments.</p>
+<p>Otherwise, it returns False (ARG_LIST_HAS_ARGS), indicating that the
+command line contains at least one argument. See Remarks.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ArgListIsEmpty { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic_ArgListIsEmpty_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>ArgListIsEmpty being false means only that there is an argument in
+the command line, which may be invalid. Check the ArgMatching array
+or the two invalid argument counters, InvalidNamedArgsInCmd and
+InvalidSwitchesInCmd.</p>
+</div>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic_ArgumentMatching_" data-uid="WizardWrx.Core.CmdLneArgsBasic.ArgumentMatching*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_ArgumentMatching" data-uid="WizardWrx.Core.CmdLneArgsBasic.ArgumentMatching">ArgumentMatching</h4>
+  <div class="markdown level1 summary"><p>Although you cannot change the rules in the middle of the game,
+transparency is highly desirable.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic.ArgMatching ArgumentMatching { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.Core.CmdLneArgsBasic.ArgMatching.html">CmdLneArgsBasic.ArgMatching</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic_ArgumentTypeArray_" data-uid="WizardWrx.Core.CmdLneArgsBasic.ArgumentTypeArray*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_ArgumentTypeArray" data-uid="WizardWrx.Core.CmdLneArgsBasic.ArgumentTypeArray">ArgumentTypeArray</h4>
+  <div class="markdown level1 summary"><p>This property is an array of ArgType enumerated types, which has one
+element for each command line argument. Use this list to find and
+report invalid command line arguments, if any.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic.ArgType[] ArgumentTypeArray { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.Core.CmdLneArgsBasic.ArgType.html">CmdLneArgsBasic.ArgType</a>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic_Count_" data-uid="WizardWrx.Core.CmdLneArgsBasic.Count*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_Count" data-uid="WizardWrx.Core.CmdLneArgsBasic.Count">Count</h4>
+  <div class="markdown level1 summary"><p>Get the total number of valid arguments of all types.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Count { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic_DefinedNamedArgs_" data-uid="WizardWrx.Core.CmdLneArgsBasic.DefinedNamedArgs*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_DefinedNamedArgs" data-uid="WizardWrx.Core.CmdLneArgsBasic.DefinedNamedArgs">DefinedNamedArgs</h4>
+  <div class="markdown level1 summary"><p>Get the count of named arguments defined by the constructor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int DefinedNamedArgs { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic_DefinedSwitches_" data-uid="WizardWrx.Core.CmdLneArgsBasic.DefinedSwitches*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_DefinedSwitches" data-uid="WizardWrx.Core.CmdLneArgsBasic.DefinedSwitches">DefinedSwitches</h4>
+  <div class="markdown level1 summary"><p>Count of switches defined by the constructor</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int DefinedSwitches { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic_InvalidArgsCount_" data-uid="WizardWrx.Core.CmdLneArgsBasic.InvalidArgsCount*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_InvalidArgsCount" data-uid="WizardWrx.Core.CmdLneArgsBasic.InvalidArgsCount">InvalidArgsCount</h4>
+  <div class="markdown level1 summary"><p>Total number of invalid arguments found in the command line. This is
+the sum of InvalidNamedArgsInCmd and InvalidSwitchesInCmd. Use it as
+a quick check for invalid arguments.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int InvalidArgsCount { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic_InvalidNamedArgsInCmd_" data-uid="WizardWrx.Core.CmdLneArgsBasic.InvalidNamedArgsInCmd*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_InvalidNamedArgsInCmd" data-uid="WizardWrx.Core.CmdLneArgsBasic.InvalidNamedArgsInCmd">InvalidNamedArgsInCmd</h4>
+  <div class="markdown level1 summary"><p>Count of invalid named arguments found in the command line.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int InvalidNamedArgsInCmd { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic_InvalidSwitchesInCmd_" data-uid="WizardWrx.Core.CmdLneArgsBasic.InvalidSwitchesInCmd*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_InvalidSwitchesInCmd" data-uid="WizardWrx.Core.CmdLneArgsBasic.InvalidSwitchesInCmd">InvalidSwitchesInCmd</h4>
+  <div class="markdown level1 summary"><p>Count of invalid switches found in the command line.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int InvalidSwitchesInCmd { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic_PositionalArgsInCmdLine_" data-uid="WizardWrx.Core.CmdLneArgsBasic.PositionalArgsInCmdLine*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_PositionalArgsInCmdLine" data-uid="WizardWrx.Core.CmdLneArgsBasic.PositionalArgsInCmdLine">PositionalArgsInCmdLine</h4>
+  <div class="markdown level1 summary"><p>Count of positional arguments found in the command line.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int PositionalArgsInCmdLine { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic_SWITCH_IS_OFF_" data-uid="WizardWrx.Core.CmdLneArgsBasic.SWITCH_IS_OFF*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_SWITCH_IS_OFF" data-uid="WizardWrx.Core.CmdLneArgsBasic.SWITCH_IS_OFF">SWITCH_IS_OFF</h4>
+  <div class="markdown level1 summary"><p>Gets the SWITCH_IS_OFF string, which is loaded from the string
+resources of the DLL into a private static read-only string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string SWITCH_IS_OFF { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic_SWITCH_IS_OFF_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This static read-only property replaces a like named constant, which
+I moved into the resource strings because that is really where it
+belongs, so that the library can be adapted for another language by
+substituting a localized string resource.</p>
+<p>While the simplest approach would be to assign these names to the
+private strings, and mark them public, doing so would obscure their
+their true nature.</p>
+</div>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic_SWITCH_IS_ON_" data-uid="WizardWrx.Core.CmdLneArgsBasic.SWITCH_IS_ON*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_SWITCH_IS_ON" data-uid="WizardWrx.Core.CmdLneArgsBasic.SWITCH_IS_ON">SWITCH_IS_ON</h4>
+  <div class="markdown level1 summary"><p>Gets the SWITCH_IS_ON string, which is loaded from the string
+resources of the DLL into a private static read-only string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string SWITCH_IS_ON { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic_SWITCH_IS_ON_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This static read-only property replaces a like named constant, which
+I moved into the resource strings because that is really where it
+belongs, so that the library can be adapted for another language by
+substituting a localized string resource.</p>
+<p>While the simplest approach would be to assign these names to the
+private strings, and mark them public, doing so would obscure their
+their true nature.</p>
+</div>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic_ValidNamedArgsInCmdLine_" data-uid="WizardWrx.Core.CmdLneArgsBasic.ValidNamedArgsInCmdLine*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_ValidNamedArgsInCmdLine" data-uid="WizardWrx.Core.CmdLneArgsBasic.ValidNamedArgsInCmdLine">ValidNamedArgsInCmdLine</h4>
+  <div class="markdown level1 summary"><p>Count of valid named arguments found in the command line.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ValidNamedArgsInCmdLine { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic_ValidSwitchesInCmdLine_" data-uid="WizardWrx.Core.CmdLneArgsBasic.ValidSwitchesInCmdLine*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_ValidSwitchesInCmdLine" data-uid="WizardWrx.Core.CmdLneArgsBasic.ValidSwitchesInCmdLine">ValidSwitchesInCmdLine</h4>
+  <div class="markdown level1 summary"><p>Count of valid switches found in the command line.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ValidSwitchesInCmdLine { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic_ArgNameFromKeyValue_" data-uid="WizardWrx.Core.CmdLneArgsBasic.ArgNameFromKeyValue*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_ArgNameFromKeyValue_System_String_" data-uid="WizardWrx.Core.CmdLneArgsBasic.ArgNameFromKeyValue(System.String)">ArgNameFromKeyValue(String)</h4>
+  <div class="markdown level1 summary"><p>Extract the argument name from a string that consists of the key
+(index) of the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string ArgNameFromKeyValue(string pstrArgKey)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrArgKey</span></td>
+        <td><p>Specify the key to parse and strip, so that it can be fed into an
+instance method to retrieve the value of a named argument or switch.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>If the function succeeds, the return value is the name of a named
+argument or of a switch, which can be fed into GetArgByName,
+GetSwitchByName, or one of their siblings.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic_ArgNameFromKeyValue_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Since this class derives from a Dictionary whose keys and values are
+strings, given the string that becomes the pstrArgKey argument of
+this method, you could just as easily get the value directly.
+However, if you did so, you would lose the benefit of default value
+assignment, not to mention the accessors that bundle conversions to
+Integer, Boolean, and Character types. Moreover, reaching into the
+base class makes it slightly less obvious that the value retrieved
+is that of a command line argument, let alone its name and intrinsic
+type (switch versus named argument versus positional argument).</p>
+<p>A wiser design would hide the dictionary from view. Notwithstanding
+this one-off use, it is not too late to do so, since this is the
+only case in which I have reached into the base class in this way.</p>
+</div>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic_FirstCharFromString_" data-uid="WizardWrx.Core.CmdLneArgsBasic.FirstCharFromString*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_FirstCharFromString_System_String_" data-uid="WizardWrx.Core.CmdLneArgsBasic.FirstCharFromString(System.String)">FirstCharFromString(String)</h4>
+  <div class="markdown level1 summary"><p>Extract the first character from a string, and return it as a char
+value type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static char FirstCharFromString(string pstrIn)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrIn</span></td>
+        <td><p>The first character in this string is returned.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><p>The return value is the first character of string pstrIn, as a
+scalar value type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td><p>If the input string, pstrIn, is null or empty, an ArgumentException
+is thrown. See the next overload for an alternative that doesn't
+throw exceptions.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic_FirstCharFromString_" data-uid="WizardWrx.Core.CmdLneArgsBasic.FirstCharFromString*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_FirstCharFromString_System_String_System_Char_" data-uid="WizardWrx.Core.CmdLneArgsBasic.FirstCharFromString(System.String,System.Char)">FirstCharFromString(String, Char)</h4>
+  <div class="markdown level1 summary"><p>Extract the first character from a string, and return it as a char
+value type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static char FirstCharFromString(string pstrIn, char pchrDefault)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrIn</span></td>
+        <td><p>The first character in this string is returned.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">pchrDefault</span></td>
+        <td><p>If string pstrIn is null or empty, this character is returned.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><p>The return value is the first character of string pstrIn, as a
+scalar value type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic_GetArgByMultipleAliases_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetArgByMultipleAliases*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_GetArgByMultipleAliases_System_String___" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetArgByMultipleAliases(System.String[])">GetArgByMultipleAliases(String[])</h4>
+  <div class="markdown level1 summary"><p>Return the value of an argument that has two or more aliases.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetArgByMultipleAliases(string[] pastrValiddArgNames)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">pastrValiddArgNames</span></td>
+        <td><p>This is an array of strings, each of which is the name of a command
+line argument that is a synonym. See Remarks.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The return value is the specified value, or its default value, of
+none of the synonyms appears in the input. See Remarks.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic_GetArgByMultipleAliases_System_String____remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Arguments are evaluated in the order specified in pastrValiddArgNames,
+Synonyms are assumed to return the same default value.</p>
+</div>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic_GetArgByName_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetArgByName*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_GetArgByName_System_String_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetArgByName(System.String)">GetArgByName(String)</h4>
+  <div class="markdown level1 summary"><p>Given the external name of a named argument (the name that was
+supplied to the constructor), return its value, which is either the
+value given on the command line or the default specified in this
+method call.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetArgByName(string pstrArgName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrArgName</span></td>
+        <td><p>Specify the external name of the argument, as it was identified to
+the constructor.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>If the requested name is valid, and the argument was entered on the
+command line, the value supplied on the command line is returned. If
+the argument was omitted from the command line, or if the specified
+name is invalid, the value specified in argument pstrDefault is
+returned.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic_GetArgByName_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This overload is a wrapper around the second overload,
+GetArgByName ( int, string ), which does the real work.
+This method calls it internally, passing a default value of
+VALUE_NOT_SET.</p>
+</div>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic_GetArgByName_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetArgByName*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_GetArgByName_System_String_System_String_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetArgByName(System.String,System.String)">GetArgByName(String, String)</h4>
+  <div class="markdown level1 summary"><p>Given the external name of a named argument (the name that was
+supplied to the constructor), return its value, which is either the
+value given on the command line or the default specified in this
+method call.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetArgByName(string pstrArgName, string pstrDefault)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrArgName</span></td>
+        <td><p>Specify the external name of the argument, as it was identified to
+the constructor.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrDefault</span></td>
+        <td><p>Specify a default value to return if the argument was omitted from
+the command line, or VALUE_NOT_SET or a null reference (Nothing in
+Visual Basic), to use an empty string as the default.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>If the requested name is valid, and the argument was entered on the
+command line, the value supplied on the command line is returned. If
+the argument was omitted from the command line, or if the specified
+name is invalid, the value specified in argument pstrDefault is
+returned.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic_GetArgByName_System_String_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>POTENTIAL BREAKING CHANGE:</p>
+<p>When the AllowEmptyStringAsDefault property is FALSE and argument
+pstrDefault is a null reference, this method returns the null
+reference. Previous versions returned the empty string anyway, which
+wasn't the intended behavior, and a missing command line argument
+thereby escaped detection.</p>
+<p>Hence, going forward, when pstrDefault is NULL, you must be prepared
+to handle a null reference as the return value.</p>
+</div>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic_GetArgByName_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetArgByName*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_GetArgByName_System_String_System_String_System_Boolean_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetArgByName(System.String,System.String,System.Boolean)">GetArgByName(String, String, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Given the external name of a named argument (the name that was
+supplied to the constructor), return its value, which is either the
+value given on the command line or the default specified in this
+method call.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetArgByName(string pstrArgName, string pstrDefault, bool pfAllowEmptyStringAsDefault)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrArgName</span></td>
+        <td><p>Specify the external name of the argument, as it was identified to
+the constructor.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrDefault</span></td>
+        <td><p>Specify a default value to return if the argument was omitted from
+the command line, or VALUE_NOT_SET or a null reference (Nothing in
+Visual Basic), to use an empty string as the default.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">pfAllowEmptyStringAsDefault</span></td>
+        <td><p>Set this to TRUE if you want an empty string for the value of the
+pstrDefault argument treated as a valid default value. Otherwise,
+empty strings are treated as null references (Nothing in Visual
+Basic).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>If the requested name is valid, and the argument was entered on the
+command line, the value supplied on the command line is returned. If
+the argument was omitted from the command line, or if the specified
+name is invalid, the value specified in argument pstrDefault is
+returned.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic_GetArgByName_System_String_System_String_System_Boolean__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>POTENTIAL BREAKING CHANGE:</p>
+<p>When the AllowEmptyStringAsDefault property is FALSE and argument
+pstrDefault is a null reference, this method returns the null
+reference. Previous versions returned the empty string anyway, which
+wasn't the intended behavior, and a missing command line argument
+thereby escaped detection.</p>
+<p>Hence, going forward, when pstrDefault is NULL, you must be prepared
+to handle a null reference as the return value.</p>
+</div>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic_GetArgByNameAsChar_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetArgByNameAsChar*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_GetArgByNameAsChar_System_String_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetArgByNameAsChar(System.String)">GetArgByNameAsChar(String)</h4>
+  <div class="markdown level1 summary"><p>Given the external name of a named argument (the name that was
+supplied to the constructor), return its value, which is either the
+value given on the command line or the default specified in this
+method call.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public char GetArgByNameAsChar(string pstrArgName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrArgName</span></td>
+        <td><p>Specify the external name of the argument, as it was identified to
+the constructor.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><p>If the requested name is valid, and the argument was entered on the
+command line, the value supplied on the command line is returned. If
+the argument was omitted from the command line, or if the specified
+name is invalid, the value specified in argument pchrDefault is
+returned.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic_GetArgByNameAsChar_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method returns through GetArgByName, by way of
+FirstCharFromString. Hence, everything that applies to either of
+them applies as well to this method.</p>
+</div>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic_GetArgByNameAsChar_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetArgByNameAsChar*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_GetArgByNameAsChar_System_String_System_Char_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetArgByNameAsChar(System.String,System.Char)">GetArgByNameAsChar(String, Char)</h4>
+  <div class="markdown level1 summary"><p>Given the external name of a named argument (the name that was
+supplied to the constructor), return its value, which is either the
+value given on the command line or the default specified in this
+method call.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public char GetArgByNameAsChar(string pstrArgName, char pchrDefault)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrArgName</span></td>
+        <td><p>Specify the external name of the argument, as it was identified to
+the constructor.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">pchrDefault</span></td>
+        <td><p>Specify a default value to return if the argument was omitted from
+the command line, or VALUE_NOT_SET or a null reference (Nothing in
+Visual Basic), to use a null character as the default.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><p>If the requested name is valid, and the argument was entered on the
+command line, the value supplied on the command line is returned. If
+the argument was omitted from the command line, or if the specified
+name is invalid, the value specified in argument pchrDefault is
+returned.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic_GetArgByNameAsChar_System_String_System_Char__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method returns through GetArgByName, by way of
+FirstCharFromString. Hence, everything that applies to either of
+them applies as well to this method.</p>
+</div>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic_GetArgByNameAsChar_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetArgByNameAsChar*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_GetArgByNameAsChar_System_String_System_Char_System_Boolean_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetArgByNameAsChar(System.String,System.Char,System.Boolean)">GetArgByNameAsChar(String, Char, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Given the external name of a named argument (the name that was
+supplied to the constructor), return its value, which is either the
+value given on the command line or the default specified in this
+method call.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public char GetArgByNameAsChar(string pstrArgName, char pchrDefault, bool pfAllowEmptyStringAsDefault)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrArgName</span></td>
+        <td><p>Specify the external name of the argument, as it was identified to
+the constructor.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">pchrDefault</span></td>
+        <td><p>Specify a default value to return if the argument was omitted from
+the command line, or VALUE_NOT_SET or a null reference (Nothing in
+Visual Basic), to use a null character as the default.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">pfAllowEmptyStringAsDefault</span></td>
+        <td><p>Set this to TRUE if you want an empty string for the value of the
+pstrDefault argument treated as a valid default value. Otherwise,
+empty strings are treated as null references (Nothing in Visual
+Basic).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><p>If the requested name is valid, and the argument was entered on the
+command line, the value supplied on the command line is returned. If
+the argument was omitted from the command line, or if the specified
+name is invalid, the value specified in argument pchrDefault is
+returned.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic_GetArgByNameAsChar_System_String_System_Char_System_Boolean__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method returns through GetArgByName, by way of
+FirstCharFromString. Hence, everything that applies to either of
+them applies as well to this method.</p>
+</div>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic_GetArgByNameAsInt_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetArgByNameAsInt*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_GetArgByNameAsInt_System_String_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetArgByNameAsInt(System.String)">GetArgByNameAsInt(String)</h4>
+  <div class="markdown level1 summary"><p>If the value of a switch is an integer, return it. Otherwise, return
+zero.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetArgByNameAsInt(string pstrArgName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrArgName</span></td>
+        <td><p>Specify the external name of the argument, as it was identified to
+the constructor.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>This method passes the value returned by GetArgByName to the
+int.TryParse method. Hence, everything that applies to either of
+them applies as well to this method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic_GetArgByNameAsInt_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetArgByNameAsInt*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_GetArgByNameAsInt_System_String_System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetArgByNameAsInt(System.String,System.Int32)">GetArgByNameAsInt(String, Int32)</h4>
+  <div class="markdown level1 summary"><p>If the value of a switch is an integer, return it. Otherwise, return
+pintDefault.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetArgByNameAsInt(string pstrArgName, int pintDefault)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrArgName</span></td>
+        <td><p>Specify the external name of the argument, as it was identified to
+the constructor.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintDefault</span></td>
+        <td><p>Specify a default value to return if the argument was omitted from
+the command line.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>This method passes the value returned by GetArgByName to the
+int.TryParse method. Hence, everything that applies to either of
+them applies as well to this method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic_GetArgByNameAsInt_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetArgByNameAsInt*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_GetArgByNameAsInt_System_String_System_Int32_System_Boolean_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetArgByNameAsInt(System.String,System.Int32,System.Boolean)">GetArgByNameAsInt(String, Int32, Boolean)</h4>
+  <div class="markdown level1 summary"><p>If the value of a switch is an integer, return it. Otherwise, return
+pintDefault.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetArgByNameAsInt(string pstrArgName, int pintDefault, bool pfAllowEmptyStringAsDefault)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrArgName</span></td>
+        <td><p>Specify the external name of the argument, as it was identified to
+the constructor.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintDefault</span></td>
+        <td><p>Specify a default value to return if the argument was omitted from
+the command line.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">pfAllowEmptyStringAsDefault</span></td>
+        <td><p>Set this to TRUE if you want an empty string for the value of the
+pstrDefault argument treated as a valid default value. Otherwise,
+empty strings are treated as null references (Nothing in Visual
+Basic).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>This method passes the value returned by GetArgByName to the
+int.TryParse method. Hence, everything that applies to either of
+them applies as well to this method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic_GetArgByPosition_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetArgByPosition*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_GetArgByPosition_System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetArgByPosition(System.Int32)">GetArgByPosition(Int32)</h4>
+  <div class="markdown level1 summary"><p>Get a positional argument by its ordinal position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetArgByPosition(int pintIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintIndex</span></td>
+        <td><p>Position of argument in list. Arguments are numbered from 1.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The argument value at the ordinal position specified by pintIndex is
+returned, unless pintIndex is out of range, in which case an empty
+string is returned.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic_GetArgByPosition_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This overload is a wrapper around the second overload,
+GetArgByPosition ( int, string ), which does the real work.
+This method calls it internally, passing a default value of
+VALUE_NOT_SET.</p>
+</div>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic_GetArgByPosition_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetArgByPosition*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_GetArgByPosition_System_Int32_System_String_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetArgByPosition(System.Int32,System.String)">GetArgByPosition(Int32, String)</h4>
+  <div class="markdown level1 summary"><p>Get a positional argument by its ordinal position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetArgByPosition(int pintIndex, string pstrDefault)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintIndex</span></td>
+        <td><p>Position of argument in list. Arguments are numbered from 1.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrDefault</span></td>
+        <td><p>Default value to return if argument ordinal is greater than the
+number of positional arguments entered on the command line.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The argument value at the ordinal position specified by pintIndex is
+returned, unless pintIndex is out of range, in which case, the
+default value specified in pstrDefault is returned.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic_GetArgByPosition_System_Int32_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>POTENTIAL BREAKING CHANGE:</p>
+<p>When the AllowEmptyStringAsDefault property is FALSE and argument
+pstrDefault is a null reference, this method returns the null
+reference. Previous versions returned the empty string anyway, which
+wasn't the intended behavior, and a missing command line argument
+thereby escaped detection.</p>
+<p>Hence, going forward, when pstrDefault is NULL, you must be prepared
+to handle a null reference as the return value.</p>
+</div>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic_GetArgByPositionAsInt_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetArgByPositionAsInt*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_GetArgByPositionAsInt_System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetArgByPositionAsInt(System.Int32)">GetArgByPositionAsInt(Int32)</h4>
+  <div class="markdown level1 summary"><p>If the value of a switch is an integer, return it. Otherwise, return
+zero.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetArgByPositionAsInt(int pintIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintIndex</span></td>
+        <td><p>Position of argument in list. Arguments are numbered from 1.
+the constructor.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>This method passes the value returned by GetArgByPosition to the
+int.TryParse method. Hence, everything that applies to either of
+them applies as well to this method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic_GetArgByPositionAsInt_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetArgByPositionAsInt*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_GetArgByPositionAsInt_System_Int32_System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetArgByPositionAsInt(System.Int32,System.Int32)">GetArgByPositionAsInt(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>If the value of a switch is an integer, return it. Otherwise, return
+pintDefault.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetArgByPositionAsInt(int pintIndex, int pintDefault)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintIndex</span></td>
+        <td><p>Position of argument in list. Arguments are numbered from 1.
+the constructor.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintDefault</span></td>
+        <td><p>Specify a default value to return if the argument was omitted from
+the command line.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>This method passes the value returned by GetArgByPosition to the
+int.TryParse method. Hence, everything that applies to either of
+them applies as well to this method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic_GetBooleanSwitchByName_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetBooleanSwitchByName*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_GetBooleanSwitchByName_System_Char_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetBooleanSwitchByName(System.Char)">GetBooleanSwitchByName(Char)</h4>
+  <div class="markdown level1 summary"><p>Test for the presence of a defined switch. The modifier, if any, is
+ignored.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool GetBooleanSwitchByName(char pchrName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">pchrName</span></td>
+        <td><p>Character to identify switch. This must be one of the characters
+stored in the array, or used as keys in the dictionary passed into
+the instance constructor.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>The return value is TRUE if the switch is present, with or without a
+modifier (which is ignored). Otherwise, the return value is FALSE.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic_GetSwitchByName_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetSwitchByName*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_GetSwitchByName_System_Char_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetSwitchByName(System.Char)">GetSwitchByName(Char)</h4>
+  <div class="markdown level1 summary"><p>Return the value stored for a switch argument.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetSwitchByName(char pchrName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">pchrName</span></td>
+        <td><p>Character to identify switch. This must be one of the characters
+stored in the array, or used as keys in the dictionary passed into
+the instance constructor.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>If the switch was defined in the constructor, and it was specified
+on the command line of the executing assembly, the value defined on
+the command line is returned. Otherwise, the default value, if any,
+passed into the constructor is returned. Failing both of those, the
+generic default value constant, Properties.Resources.SWITCH_IS_OFF,
+is returned.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic_GetSwitchByName_System_Char__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This overload is a wrapper around the other overload,
+GetSwitchByName ( char, string ), which does the real work.
+This method calls it internally, passing a default value of
+Properties.Resources.SWITCH_IS_OFF.</p>
+</div>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic_GetSwitchByName_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetSwitchByName*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_GetSwitchByName_System_Char_System_String_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetSwitchByName(System.Char,System.String)">GetSwitchByName(Char, String)</h4>
+  <div class="markdown level1 summary"><p>Return the value stored for a switch argument.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetSwitchByName(char pchrName, string pstrDefault)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">pchrName</span></td>
+        <td><p>Character to identify switch. This must be one of the characters
+stored in the array, or used as keys in the dictionary passed into
+the instance constructor.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrDefault</span></td>
+        <td><p>Default value to return if argument pchrName is not in the list of
+valid switches passed into the constructor. See pchrName.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>If the switch was defined in the constructor, and it was specified
+on the command line of the executing assembly, the value defined on
+the command line is returned. Otherwise, the default value, if any,
+passed into the constructor is returned. Failing both of those, the
+generic default value constant, Properties.Resources.SWITCH_IS_OFF,
+is returned.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic_GetSwitchByName_System_Char_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>POTENTIAL BREAKING CHANGE:</p>
+<p>When the AllowEmptyStringAsDefault property is FALSE and argument
+pstrDefault is a null reference, this method returns the null
+reference. Previous versions returned the empty string anyway, which
+wasn't the intended behavior, and a missing command line argument
+thereby escaped detection.</p>
+<p>Hence, going forward, when pstrDefault is NULL, you must be prepared
+to handle a null reference as the return value.</p>
+</div>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic_GetSwitchByName_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetSwitchByName*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_GetSwitchByName_System_Char_System_String_System_Boolean_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetSwitchByName(System.Char,System.String,System.Boolean)">GetSwitchByName(Char, String, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Return the value stored for a switch argument.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetSwitchByName(char pchrName, string pstrDefault, bool pfAllowEmptyStringAsDefault)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">pchrName</span></td>
+        <td><p>Character to identify switch. This must be one of the characters
+stored in the array, or used as keys in the dictionary passed into
+the instance constructor.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrDefault</span></td>
+        <td><p>Default value to return if argument pchrName is not in the list of
+valid switches passed into the constructor. See pchrName.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">pfAllowEmptyStringAsDefault</span></td>
+        <td><p>Set this to TRUE if you want an empty string for the value of the
+pstrDefault argument treated as a valid default value. Otherwise,
+empty strings are treated as null references (Nothing in Visual
+Basic).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>If the switch was defined in the constructor, and it was specified
+on the command line of the executing assembly, the value defined on
+the command line is returned. Otherwise, the default value, if any,
+passed into the constructor is returned. Failing both of those, the
+generic default value constant, Properties.Resources.SWITCH_IS_OFF,
+is returned.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic_GetSwitchByNameAsInt_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetSwitchByNameAsInt*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_GetSwitchByNameAsInt_System_Char_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetSwitchByNameAsInt(System.Char)">GetSwitchByNameAsInt(Char)</h4>
+  <div class="markdown level1 summary"><p>If the value of a switch is an integer, return it. Otherwise, return
+zero.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetSwitchByNameAsInt(char pchrArgName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">pchrArgName</span></td>
+        <td><p>Specify the external name of the argument, as it was identified to
+the constructor.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>This method passes the value returned by GetSwitchByName to the
+int.TryParse method. Hence, everything that applies to either of
+them applies as well to this method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic_GetSwitchByNameAsInt_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetSwitchByNameAsInt*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_GetSwitchByNameAsInt_System_Char_System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetSwitchByNameAsInt(System.Char,System.Int32)">GetSwitchByNameAsInt(Char, Int32)</h4>
+  <div class="markdown level1 summary"><p>If the value of a switch is an integer, return it. Otherwise, return
+pintDefault.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetSwitchByNameAsInt(char pchrArgName, int pintDefault)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">pchrArgName</span></td>
+        <td><p>Specify the external name of the argument, as it was identified to
+the constructor.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintDefault</span></td>
+        <td><p>Specify a default value to return if the argument was omitted from
+the command line.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>This method passes the value returned by GetSwitchByName to the
+int.TryParse method. Hence, everything that applies to either of
+them applies as well to this method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_CmdLneArgsBasic_GetSwitchByNameAsInt_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetSwitchByNameAsInt*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic_GetSwitchByNameAsInt_System_Char_System_Int32_System_Boolean_" data-uid="WizardWrx.Core.CmdLneArgsBasic.GetSwitchByNameAsInt(System.Char,System.Int32,System.Boolean)">GetSwitchByNameAsInt(Char, Int32, Boolean)</h4>
+  <div class="markdown level1 summary"><p>If the value of a switch is an integer, return it. Otherwise, return
+pintDefault.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetSwitchByNameAsInt(char pchrArgName, int pintDefault, bool pfAllowEmptyStringAsDefault)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">pchrArgName</span></td>
+        <td><p>Specify the external name of the argument, as it was identified to
+the constructor.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintDefault</span></td>
+        <td><p>Specify a default value to return if the argument was omitted from
+the command line.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">pfAllowEmptyStringAsDefault</span></td>
+        <td><p>Set this to TRUE if you want an empty string for the value of the
+pstrDefault argument treated as a valid default value. Otherwise,
+empty strings are treated as null references (Nothing in Visual
+Basic).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>This method passes the value returned by GetSwitchByName to the
+int.TryParse method. Hence, everything that applies to either of
+them applies as well to this method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

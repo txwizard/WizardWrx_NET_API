@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="DEFAULT_EVENT_SOURCE_ID" xml:space="preserve">
+    <value>DefaultWindowsEventSourceID</value>
+    <comment>If present, the ExceptionLogger class reads this string into its private event source ID string, and uses it as its default event source ID.</comment>
+  </data>
+  <data name="ERRMSG_ARGNAME_TPL" xml:space="preserve">
+    <value>Argument Name    = {0}{1}</value>
+    <comment>Argument exception reports use this template to display the argument name in a way that makes it easier to find.</comment>
+  </data>
+  <data name="ERRMSG_ARGVALUE_TPL" xml:space="preserve">
+    <value>Argument Value   = {0}{1}</value>
+    <comment>Argument exception reports use this template to display the argument value in a way that makes it easier to find.</comment>
+  </data>
+  <data name="ERRMSG_ASM_SUBSYSTEM" xml:space="preserve">
+    <value>While attempting to identify the subsystem of {0}, GetExeSubsystem returned exit code {1}: {2}</value>
+    <comment>The system is in serious trouble if this message appears.</comment>
+  </data>
+  <data name="ERRMSG_EX_EVTMSG_TPL" xml:space="preserve">
+    <value>An {0} exception was caught in routine {1}:{3}               Message          = {2}{3}</value>
+    <comment>This is the standard message template used by all exception reporting routines in the ExceptionLogger class.</comment>
+  </data>
+  <data name="ERRMSG_EX_MSG_TPL" xml:space="preserve">
+    <value>An {0} exception was caught in routine {1}:{3}               Message          = {2}{3}</value>
+    <comment>This is the standard message template used by all exception reporting routines in the ExceptionLogger class.</comment>
+  </data>
+  <data name="ERRMSG_FILENAME_TPL" xml:space="preserve">
+    <value>File Name        = {0}{1}</value>
+    <comment>This message accompanies any I/O exception for which the file name is known.</comment>
+  </data>
+  <data name="ERRMSG_FORMATSTRING_TPL" xml:space="preserve">
+    <value>Format String    = {0}{1}</value>
+    <comment>This message accompanies a FormatException report, to which it adds the offending string.</comment>
+  </data>
+  <data name="ERRMSG_INNER" xml:space="preserve">
+    <value>Inner Exception:{1}               Message          = {0}{1}</value>
+    <comment>Innner exceptions are reported via this template.</comment>
+  </data>
+  <data name="ERRMSG_METHOD" xml:space="preserve">
+    <value>Exception Method = {0}{1}</value>
+    <comment>Exception reports use this template to label the name of the method in which the exception arose.</comment>
+  </data>
+  <data name="ERRMSG_OBJNAME_TPL" xml:space="preserve">
+    <value>Object Name      = {0}{1}</value>
+    <comment>Exception reports use this template when they need to display the name of an object.</comment>
+  </data>
+  <data name="ERRMSG_SOURCE" xml:space="preserve">
+    <value>Exception Source = {0}{1}</value>
+    <comment>Exception reports use this template to display the source, typically the name of a service or executable program.</comment>
+  </data>
+  <data name="ERRMSG_UNBALANCED" xml:space="preserve">
+    <value>The sizes of internal tables s_astrTrimStart and s_astrExceptionTypeNames are unequal.{2}    s_astrTrimStart Elemnent Count          = {0}{2}    s_astrExceptionTypeNames  Elemnent Count = {1}{2}</value>
+    <comment>Most designers would do an assertion for the type of error that this message is intended to report. I wanted the option of reporting such an error at run time in all builds, against the remote possibility of an internal table becoming corrupted.</comment>
+  </data>
+  <data name="STACKTRACE_TPL" xml:space="preserve">
+    <value>{1}Stack Trace Begin:{1}{0}{1}End of Stack Trace{1}{1}</value>
+    <comment>Exception reports use this template to beautify the stack trace.</comment>
+  </data>
+  <data name="THIS_IS_THE_LAST" xml:space="preserve">
+    <value>There are no further exceptions to report.{0}</value>
+    <comment>Use this to report that there are no more inner exceptions.</comment>
+  </data>
+  <data name="PRODUCT_NAME_AND_VERSION_TPL" xml:space="preserve">
+    <value>{0}, version {1}</value>
+    <comment>StateManager.GetAssemblyProductAndVersion uses this string to format a version string for use as a window caption.</comment>
+  </data>
+  <data name="ERRMSG_CONFIG_FILE_IS_EMPTY" xml:space="preserve">
+    <value>The specified DLL configuration file, {0}, exists, but is empty</value>
+    <comment>The Abstract AssemblyLocatorBase class emits this message.</comment>
+  </data>
+  <data name="ERRMSG_MISSING_CONFIG_FILE" xml:space="preserve">
+    <value>There is no valid configuration file for DLL file {0}.</value>
+    <comment>The Abstract AssemblyLocatorBase class emits this message.</comment>
+  </data>
+  <data name="ERRMSG_HRESULT" xml:space="preserve">
+    <value>HRESULT = {0} ({1} decimal){2}</value>
+    <comment>Use this to display an HRESULT is both hexadecimal and decimal formats.</comment>
+  </data>
+  <data name="OUTPUT_OPTIONS_DISPLAY_FORMAT" xml:space="preserve">
+    <value>OutputOptions {0}= {1} ({2} decimal = {3})</value>
+    <comment>Used by ExceptionLogger method OutputOptionsDisplay</comment>
+  </data>
+  <data name="ERRMSG_INVALID_ERROREXITOPTIONS" xml:space="preserve">
+    <value>An internal error has occurred.{1}Internal routine GetReservedErrorMessage was called with an invalid ErrorExitOptions value of {0}.</value>
+    <comment>The ExceptionLogger.GetReservedErrorMessage uses this message to report that it was called with an invalid ErrorExitOptions value. </comment>
+  </data>
+  <data name="ERRMSG_RUNTIME_SEE_EVENT_LOG" xml:space="preserve">
+    <value>A run-time exception forced the program to end prematurely.{0}Pleasr see he (0) event log for a message with event source = (0).</value>
+    <comment>The ExceptionLogger.GetReservedErrorMessage uses this message to report that a run-time exception was reported in a Windows event log.</comment>
+  </data>
+  <data name="ERRMSG_RUNTIME_SEE_MESSAGE_ABOVE" xml:space="preserve">
+    <value>A run-time exception forced the program to end prematurely.{0}Please see the message just above this line.</value>
+    <comment>The ExceptionLogger.GetReservedErrorMessage uses this message to report that a run-time exception was reported in the consoue output stream.</comment>
+  </data>
+  <data name="ERRMSG_INV_TZINFO" xml:space="preserve">
+    <value>CORRUPTED SYSTEM REGISTRY: The GetDisplayTimeZone method found the specified key, but the corresponding Registry key is corrupted.{1}                           Specified ID = {0}</value>
+    <comment>The GetSystemTimeZoneInfo method emits this string as an exception report.</comment>
+  </data>
+  <data name="ERRMSG_NO_MEMORY" xml:space="preserve">
+    <value>SYSTEM RESOURCE FAMINE: The GetDisplayTimeZone method ran out of memory.</value>
+    <comment>The GetSystemTimeZoneInfo method emits this string as an exception report.</comment>
+  </data>
+  <data name="ERRMSG_NULL_TZ_ID" xml:space="preserve">
+    <value>INTERNAL ERROR: The GetDisplayTimeZone method let a null pstrTimeZoneID through to TimeZoneInfo.FindSystemTimeZoneById.</value>
+    <comment>The GetSystemTimeZoneInfo method emits this string as an exception report.</comment>
+  </data>
+  <data name="ERRMSG_RUNTIME" xml:space="preserve">
+    <value>RUNTIME EXCEPTION: The GetDisplayTimeZone method found the specified key, but the corresponding Registry key is corrupted.{1}                    Specified ID = {0}</value>
+    <comment>The GetDisplayTimeZone method emits this string as an exception report.</comment>
+  </data>
+  <data name="ERRMSG_SECURITY" xml:space="preserve">
+    <value>ACCESS VIOLATION: The GetDisplayTimeZone method cannot read the Registry keys where the time zone information is kept. The process has insufficient access permissions on that key.</value>
+    <comment>The GetSystemTimeZoneInfo method emits this string as an exception report.</comment>
+  </data>
+  <data name="ERRMSG_TZ_NOT_FOUND" xml:space="preserve">
+    <value>INTERNAL or DATA ERROR: The GetDisplayTimeZone method let a pstrTimeZoneID that isn't registered on this computer through to TimeZoneInfo.FindSystemTimeZoneById.{1}                        Specified ID = {0}</value>
+    <comment>The GetSystemTimeZoneInfo method emits this string as an exception report.</comment>
+  </data>
+  <data name="MSG_MUST_INITIALIZE_PESUBSYSTEMINFO" xml:space="preserve">
+    <value>The assembly that defines the entry point of the process must call{0}ExtendedProcessInfo.PESubsystemInfo.InitializeInstance before{0}the first StreamStateInfo instance is constructed.</value>
+    <comment>The StreamStateInfo constructor formats an exception when it is called before the first (possibly only) call to ExtendedProcessInfo.PESubsystemInfo.InitializeInstance.</comment>
+  </data>
+  <data name="MSG_UNSUPPORTED_PE_SUBSYSTEM" xml:space="preserve">
+    <value>Only assemblies that run in the character mode subsystem are supported.{2}The subsytem ID of the entry assembly is {0} ({1}).</value>
+    <comment>The StreamStateInfo constructor formats an exception when the entry assembly is anything other than a console mode assembly.</comment>
+  </data>
+  <data name="MSG_XLATE_SUBSYST_INVALID_ID" xml:space="preserve">
+    <value>The subsystem ID must be greater than zero and less than ten.</value>
+    <comment>The PESubsystemInfo.GetPESubsystemDescription routine uses this template to report a subsystem ID value that is out of range, and probablyy roignated somewhere other than PESubsystemInfo.GetPESubsystemDescription.</comment>
+  </data>
+  <data name="STREAMSTATEINFO_TOSTRING_TEMPLATE" xml:space="preserve">
+    <value>StreamID = {0} ({1}), ConsoleStreamState = {2}, RedirectFileName = {3}</value>
+    <comment>Template used by Tostring override on StreamStateInfo</comment>
+  </data>
+  <data name="STREAM_NAME_STDERR_LONG" xml:space="preserve">
+    <value>Standard Error</value>
+    <comment>EN-US long name of standard error stream</comment>
+  </data>
+  <data name="STREAM_NAME_STDERR_SHORT" xml:space="preserve">
+    <value>StdError</value>
+    <comment>EN-US short name of standard error stream</comment>
+  </data>
+  <data name="STREAM_NAME_STDIN_LONG" xml:space="preserve">
+    <value>Standard Input</value>
+    <comment>EN-US long name of standard input stream</comment>
+  </data>
+  <data name="STREAM_NAME_STDIN_SHORT" xml:space="preserve">
+    <value>StdIn</value>
+    <comment>EN-US short name of standard inpout stream</comment>
+  </data>
+  <data name="STREAM_NAME_STDOUT_LONG" xml:space="preserve">
+    <value>Standard Output</value>
+    <comment>EN-US long name of standard output stream</comment>
+  </data>
+  <data name="STREAM_NAME_STDOUT_SHORT" xml:space="preserve">
+    <value>StdOut</value>
+    <comment>EN-US shortname of standard output stream</comment>
+  </data>
+  <data name="STREAM_NAME_UNSPECIFIED_LONG" xml:space="preserve">
+    <value>Invalid Value</value>
+    <comment>EN-US unspecified stream name</comment>
+  </data>
+  <data name="STREAM_NAME_UNSPECIFIED_SHORT" xml:space="preserve">
+    <value>Unsupported</value>
+    <comment>EN-US unspecified stream name</comment>
+  </data>
+  <data name="ERRMSG_STD_HANDLE_STATE" xml:space="preserve">
+    <value>The StandardHandleState routine reported an exception.\nException Code = 0x{0} ({1} decimal): {2}</value>
+    <comment>Static method GetStdHandleFQFN uses this string to format the error message that it returns when StandardHandleState returns an error.</comment>
+  </data>
+  <data name="MSG_APP_CHARACTER_MODE_APPS_ONLY" xml:space="preserve">
+    <value>The GetStdHandleFQFN routine supports only character mode (console mode) applications.</value>
+    <comment>Static method GetStdHandleFQFN returns this string when the calling routine originated in a graphical mode (GUI) program.</comment>
+  </data>
+  <data name="MSG_CONSOLE_HAS_STD_HANDLE" xml:space="preserve">
+    <value>, NOT redirected</value>
+    <comment>Static method GetStdHandleFQFN returns this string when the specified handle is attached to its console.</comment>
+  </data>
+  <data name="EXCEPTION_DLL_CONFIG_IS_MISSING" xml:space="preserve">
+    <value>DLL configuration file, {0}.config, which defines the default event source ID string, is missing.</value>
+    <comment>Deliver this message in place of the null reference exception in ExceptionLogger.GetDefaultEventSourceID.</comment>
+  </data>
+  <data name="EXCEPTION_MESSAGE_NULL_REFERENCE" xml:space="preserve">
+    <value>Object reference not set to an instance of an object.</value>
+    <comment>This is the English text reported by the null reference exception.</comment>
+  </data>
+</root>

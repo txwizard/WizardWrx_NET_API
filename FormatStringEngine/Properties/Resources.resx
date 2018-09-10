@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ERRMSG_FORMAT_COMPONENT_IS_EMPTY" xml:space="preserve">
+    <value>The Format compoent of the FormatItem is empty. The colon that signals its presence is immediately followed by a closing brace.</value>
+  </data>
+  <data name="ERRMSG_FORMAT_ITEM_DETAILS" xml:space="preserve">
+    <value>{3}    Format String        = {0}{3}    Format Item Number   = {1}{3}    Proposed Replacement = {2}</value>
+    <comment>Private method DeclineUpgrade uses this template to append the argument list to a message on behalf of public method UpgradeFormatItem.</comment>
+  </data>
+  <data name="ERRMSG_FORMAT_ITEM_ITEMFORMAT_SUBSTRING" xml:space="preserve">
+    <value>The format substring of a FormatStringItem cannot be the empty string.</value>
+    <comment>This string is the Argument Name value for the ArgumentException thrown by the 4th overload of the FormatStringItem constructor.</comment>
+  </data>
+  <data name="ERRMSG_FORMAT_STRING_ERROR_TPL" xml:space="preserve">
+    <value>Offset = {0}, Character = {1}, Parser State = {2}, Message = {3}</value>
+  </data>
+  <data name="ERRMSG_INVALID_APPEARANCE_ORDER" xml:space="preserve">
+    <value>The ApperanceOrder property of a FormatItem object must be greater than zero.</value>
+  </data>
+  <data name="ERRMSG_INVALID_FORMAT_ITEM" xml:space="preserve">
+    <value>TThe specified format item upgrade string is invalid.{0}</value>
+    <comment>UpgradeFormatItem uses this template when it throws an InvalidOperationException exception.</comment>
+  </data>
+  <data name="ERRMSG_INVALID_INDEX_FOR_FORMAT_ITEM" xml:space="preserve">
+    <value>Value must be a positive integer.</value>
+    <comment>This string is the Message value for the ArgumentOutOfRangeException thrown by static method EvaluateIndex.</comment>
+  </data>
+  <data name="ERRMSG_INVALID_RAW_LENGTH" xml:space="preserve">
+    <value>The specified RawLength value is invalid.</value>
+  </data>
+  <data name="ERRMSG_INVALID_WIDTH_FORMAT_ITEM" xml:space="preserve">
+    <value>Value must be greater than zero.</value>
+    <comment>This string is the Message value for the ArgumentOutOfRangeException thrown by static method EvaluateWidth.</comment>
+  </data>
+  <data name="ERRMSG_LAST_ITEM_INCOMPLETE" xml:space="preserve">
+    <value>The last format item in the string is incomplete.</value>
+    <comment>This message goes onto the list unless the final state is ProcessingLiterals.</comment>
+  </data>
+  <data name="ERRMSG_MINIMUM_WIDTH_ALREADY_INITIALIZED" xml:space="preserve">
+    <value>The MinimumWidth property is already initialized. Call the UpdateMinimumWidth method to add digits.</value>
+  </data>
+  <data name="ERRMSG_MISSING_FORMAT_ITEM" xml:space="preserve">
+    <value>The specified format string is missing the specified format item.{0}</value>
+    <comment>UpgradeFormatItem uses this template when it throws an InvalidOperationException exception.</comment>
+  </data>
+  <data name="ERRMSG_NONDIGIT_AFTER_LEFTBRACE" xml:space="preserve">
+    <value>Nondigit immediately following left brace.</value>
+  </data>
+  <data name="ERRMSG_RAW_LENGTH_ALREADY_SET" xml:space="preserve">
+    <value>The RawLength property is immutable, and has already been set.</value>
+  </data>
+  <data name="FORMAT_ITEM_APPEARANCE_ORDER" xml:space="preserve">
+    <value>ApperanceOrder property of FormatItem object</value>
+    <comment>This string identifies the property to an ArgumentOutOfRangeException exception thrown by the property setter.</comment>
+  </data>
+  <data name="FORMAT_ITEM_INDEX_PROPERTY" xml:space="preserve">
+    <value>Index property of FormatStringItem object</value>
+    <comment>This string is the Argument Name value for the ArgumentOutOfRangeException thrown by static method EvaluateIndex.</comment>
+  </data>
+  <data name="FORMAT_ITEM_ITEMFORMAT_SUBSTRING" xml:space="preserve">
+    <value>Index property of FormatStringItem object</value>
+    <comment>This string is the Argument Name value for the ArgumentException thrown by the 4th overload of the FormatStringItem constructor.</comment>
+  </data>
+  <data name="FORMAT_ITEM_MINIMUM_WIDTH_PROPERTY" xml:space="preserve">
+    <value>MinimumWidth property of FormatStringItem object</value>
+    <comment>This string is the Argument Name value for the ArgumentOutOfRangeException thrown by static method EvaluateWidth.</comment>
+  </data>
+  <data name="PARSER_INPUT_STRING" xml:space="preserve">
+    <value>FormatString property</value>
+    <comment>The FormatStringParser constructor uses this string to identify the argument to the ArgumentOutOfRangeException exception that it throws when it doesn't like what it sees.</comment>
+  </data>
+  <data name="RAW_LENGTH_PROPERTY_LABEL" xml:space="preserve">
+    <value>RawLength Property Value of FormatItem Object</value>
+  </data>
+  <data name="X_OF_Y_FIXED_TEXT" xml:space="preserve">
+    <value>{0} of {1}</value>
+    <comment>Format item zero is replaced at run time with a composite format item whose alignment component is determined by the length of the string that replaces format item one.</comment>
+  </data>
+</root>

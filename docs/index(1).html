@@ -1,0 +1,332 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>WizardWrx .NET API</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="WizardWrx .NET API">
+    <meta name="generator" content="docfx 2.39.1.0">
+
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="placeholder">WizardWrx .NET API</h1>
+
+<p>The purpose of these class libraries is to expedite development of new
+applications that target any version of the Microsoft .NET Framework, from
+version 2.0 up. The classes in these libraries define numerous constants, most
+assigned to the base WizardWrx namespace, and utility classes, organized into
+subsidiary namespaces.</p>
+
+<p>The following sections summarize the classes in each namespace. Unless indicated
+otherwise, each class is exposed by a library of the same name as the namespace.
+To use them, add a reference to the indicated library, and add a using directive
+that specifies the corresponding namespace.</p>
+
+<p>Since there are no name collisions, you may safely set references to all 6
+namespaces in the same source module.</p>
+
+<h2>WizardWrx: The Root Namespace</h2>
+
+<p>These classes are defined in <code>WizardWrx.Common.dll</code>.</p>
+
+<ul>
+<li><p><strong>CSVFileInfo</strong>defines constants for working with CSV style files.</p></li>
+<li><p><strong>DisplayFormats</strong>defines conostants that express standard format string for
+use with the ToString method on most objects and string.Format, along with a set
+of static methods for formatting dates, times, and time spans.</p></li>
+<li><p><strong>FileIOFlags</strong>defines constants that clarify the intent of the flags that
+modify the behavior of stream I/O methods.</p></li>
+<li><p><strong>ListInfo</strong>exposes handy constants for working with buffers, lists, and
+substrings.</p></li>
+<li><p><strong>MagicBooleans</strong>defines frequently used Boolean values whose correct values
+are easier to remember with the help of a mnemonic. The constants defined herein
+are pairs. The first part of the name of each pair associates it with the method
+or constructor with which it is intended to be used. The remainder of the name
+identifies the behavior elicited from the object or method by specifying this
+value.</p></li>
+<li><p><strong>MagicNumbers</strong>defines constants for commonly used magic numbers. Others are
+defined in companion class ArrayInfo, while SpecialCharacters defines character
+representations of the visually ambiguous numbers and letters for use in place
+of literals.</p></li>
+<li><p><strong>NumericFormats</strong>defines standard numeric format strings, for use with the
+string.format method and its derivatives and relatives.</p></li>
+<li><p><strong>PathPositions</strong>defines constants to document path string parsing.</p></li>
+<li><p><strong>RegExpSupport</strong>defines constants, some built from others by static methods,
+to expedite common tasks that use regular expressions.</p></li>
+<li><p><strong>SpecialCharacters</strong>defines constants to use when you want or need your
+listings to be crystal clear about certain ambiguous character literals, such as
+commas, periods, asterisks, etc.</p></li>
+<li><p><strong>SpecialStrings</strong>defines special purpose strings that are either difficult
+to get right in the first place, or display ambiguously in text editors and
+printed source code listings.</p></li>
+<li><p><strong>StringTricks</strong>defines static methods for performing common tasks not
+provided by the System.String class. Most, but not all, have been superseded by
+extension methods, but they remain for backwards compatibility with internal
+consumers that have yet to be updated.</p></li>
+</ul>
+
+<h2>WizardWrx.ConsoleStreams Namespace</h2>
+
+<ul>
+<li><p><strong>DefaultErrorMessageColors</strong>expose the default fatal and nonfatal exception
+message colors, which are defined in a standard application configuration file
+that is linked to the assembly that defines this class.</p></li>
+<li><p><strong>DigestFile</strong>exposes static methods for computing message digests for files,
+using the most common algorithms. (This class is defined in <code>WizardWrx.Core__.dll</code>.)</p></li>
+<li><p><strong>DigestString</strong>exposes static methods for computing message digests for
+strings, using the most common algorithms. (This class is defined in
+<code>WizardWrx.Core__.dll</code>.)</p></li>
+<li><p><strong>FileInfoExtensionMethods</strong>extends the System.IO.FileInfo class with methods
+for testing, setting, and clearing file attribute flags, including saving and
+restoring flags to their initial states. (This class is defined in
+<code>WizardWrx.Core__.dll</code>.)</p></li>
+<li><p><strong>FileNameTricks</strong>exposes numerous static methods for manipulating file names.
+Unlike the objects in the System.File namespace, these methods don't need a real
+file object. All work on strings that represent file names. (This class is
+defined in <code>WizardWrx.Core__.dll</code>.)</p></li>
+<li><p><strong>GenericSingletonBase<T></strong>is a complete implementation of the Singleton
+design pattern that takes advantage of a guarantee made by the framework that it
+won't bother to call a static constructor on a class until its first use, and
+that a static constructor is never called more than once, no matter how many
+subsequent references to the class occur. (This class is defined in
+<code>WizardWrx.Core__.dll</code>.)</p></li>
+<li><p><strong>ListHelpers</strong>exposes methods for merging sorted lists of items, and to
+simplify working with the values returned through the IComparable interface.
+(This class is defined in <code>WizardWrx.Core__.dll</code>.)</p></li>
+<li><p><strong>ErrorMessagesInColor</strong>exposes Console.Error.Write and
+Console.Error.WriteLine methods that write in living color. Use instance
+methods as drop-in replacements for Console.Error.Write and
+Console.Error.WriteLine.</p></li>
+<li><p><strong>MessageInColor</strong>expose a combination of static and instance methods that
+reduce writing console messages in any supported combination of foreground and
+background colors to method calls that mirror the Console.Write and
+Console.WriteLine methods that you already know and use.</p></li>
+<li><p><strong>StandardHandleInfo</strong>is a static class that provides type-safe managed
+methods to determine the true redirection state of a standard console handle,
+including, if applicable, learning the name of the file to which it is
+redirected.</p></li>
+<li><p><strong>NumberFormatters</strong>exposes methods to further simplify formatting of
+integers, floating point (single precision real numbers) and double precision
+real numbers. For integers, these methods cover both decimal and the most
+frequently used hexadecimal representations, spanning from two through sixteen
+hexadecimal glyphs. (This class is defined in <code>WizardWrx.Core__.dll</code>.)</p></li>
+<li><p><strong>ReportDetail</strong>instances represent generic report details, with labels and
+formats for printing them. (This class is defined in <code>WizardWrx.Core__.dll</code>.)</p></li>
+<li><p><strong>ReportHelpers</strong>exposes methods to help prepare strings for use on reports.
+(This class is defined in <code>WizardWrx.Core__.dll</code>.)</p></li>
+<li><p><strong>StringExtensions</strong>is a class of extension methods for performing common
+tasks not provided by the System.String class. All but the four Pad methods are
+derived from long established routines in companion class StringTricks.
+(This class is defined in <code>WizardWrx.Core__.dll</code>.)</p></li>
+<li><p><strong>SyncRoot</strong>provide classes that must be made thread-safe with locks over
+which the class has complete control. (This class is defined in
+<code>WizardWrx.Core__.dll</code>.)</p></li>
+<li><p><strong>SysDateFormatters</strong>implements my stalwart date and time formatter,
+ReformatSysDateP6C, which I created initially as a Windows Interface Language
+(WIL, a. k. a. WinBatch) library function, Reformat<em>Date</em>YmdHms_P6C, in October
+2001, although its roots go back much further in my WIL script development.
+(This class is defined in <code>WizardWrx.Core__.dll</code>.)</p></li>
+<li><p><strong>TextBlocks</strong>exposes methods for creating and manipulating test blocks.
+(This class is defined in <code>WizardWrx.Core__.dll</code>.)</p></li>
+</ul>
+
+<h2>WizardWrx.Core Namespace</h2>
+
+<ul>
+<li><p><strong>AgedFileInfo</strong>extends a FileInfo object with a custom IComparable interface
+implementation. This class and AgedFileInfoCollection are designed to be used
+together to achieve the goal of processing a list of the files that match a file
+specification from newest to oldest. These objects are not intended for
+independent use, since they must go into a collection that can be sorted to
+leverage the IComparable interface implementation that permits them to be sorted
+in reverse order by LastWriteTimeUTC.</p></li>
+<li><p><strong>AgedFileInfoCollection</strong>hides its data in a List of AgedFileInfo objects,
+which its constructors assemble from permutations of the array of FileInfo
+objects returned by the GetFiles method on the DirectoryInfo instance that is
+fed into it.</p></li>
+<li><p><strong>AssemblyLocatorBase</strong>is an abstract class that can be used to get the fully
+qualified name of the file from which the assembly in which the derived class is
+defined was loaded. Given the location from which an assembly was loaded, you
+can learn almost anything else you need to know about that file, such as its size,
+age, and directory. Given the directory, you can locate satellite files, such as
+custom configuration files. Utility methods on the base class support substituting
+the name of the directory from the assembly location into file name strings to
+derive the absolute name of a satellite file.</p></li>
+<li><p><strong>BasicSystemInfoDisplayMessages</strong>exposes static methods that simplify
+displaying information about the processor on which the calling process is
+executing that is otherwise hard to determine accurately.</p></li>
+<li><p><strong>ByteArrayFormatters</strong>exposes static methods that format byte arrays into
+strings of hexadecimal numerals for display on reports and in windows.</p></li>
+<li><p><strong>CmdLneArgsBasic</strong>efficiently processes command line switches,
+named arguments, and positional arguments, in such a way that they are easily
+accessible. The constructor parses the command line. Switches, named arguments,
+and positional arguments may be freely mixed in any way; your users aren't
+confined to specifying all switches and/or named arguments first, last, or in
+any other order. While it is fairly trivial to reverse engineer the underlying
+Dictionary object and read the arguments directly, the supported method of
+reading them is through its methods: GetArgByName, GetArgByPosition, and
+GetSwitchByName.</p></li>
+<li><p><strong>PropertyDefaults</strong>Expose the AppSettingsSection associated with this DLL,
+as opposed to settings associated with the entry assembly. The settings exposed
+by this class inhabit a configuration file that is associated with the DLL,
+itself, as opposed to the application configuration. Though its format is
+similar to that of the application configuration file, the DLL configuration
+lives in its own configuration file that has the same name as the DLL, with an
+additional suffix of .config. The rationale behind segregating these settings is
+that the affected application properties are ones that you want to keep
+consistent, or nearly so, across large groups of applications. Keeping them in a
+dedicated configuration file that travels with the DLL that implements them
+eliminates the thankless task of adding them to every application configuration
+file.</p></li>
+<li><p><strong>RegistryValues</strong>exposes static methods for efficiently testing for the
+presence of named values in a Registry key that behave more like the Item
+property of a collection, and retrieving Registry value types that require a
+transformation of one sort or another to get them into the appropriate native
+type.</p></li>
+<li><p><strong>TimeDisplayFormatter</strong>exposes instance methods that return dates and times,
+uniformly formatted by rules set by way of its properties.</p></li>
+<li><p><strong>TraceLogger</strong>exposes methods that support every conceivable combination of
+local and UTC time stamps for trace logging.</p></li>
+<li><p><strong>UnmanagedLibrary</strong>is a managed wrapper over the native LoadLibrary,
+GetProcAddress, and FreeLibrary calls.</p></li>
+</ul>
+
+<h2>WizardWrx.DLLConfigurationManager Namespace</h2>
+
+<ul>
+<li><p><em>ExceptionLogger</em>exposes methods for formatting data from instances of the
+System.Exception class, and commonly used derived classes, and displaying the
+formatted data on a console (strictly speaking, on STDOUT, which can be
+redirected to a file), and recording them in a Windows event log.</p></li>
+<li><p><strong>IniFileReader</strong>provides a managed interface to GetPrivateProfileString in
+the Windows API, with methods to retrieve the values of individual keys and
+lists of the keys in a section or the sections in a file.</p></li>
+<li><p><strong>StateManager</strong>is a Singleton that maintains run-time information about the
+executing assembly, assumed to be a desktop application, that calls it into
+being. Since it implements the Singleton design pattern, there is never more
+than one instance.</p></li>
+</ul>
+
+<h2>WizardWrx.EmbeddedTextFile Namespace</h2>
+
+<ul>
+<li><p><strong>ByteOrderMark</strong>evaluates arbitrary byte arrays for the presence of a Byte
+Order Mark.</p></li>
+<li><p><strong>Readers</strong>exposes methods for loading text from custom resources that are
+embedded in an assembly. This class uses <strong>ByteOrderMark</strong> to safely dispose of
+a leading Byte Order Mark that may open the text stream.</p></li>
+</ul>
+
+<h2>WizardWrx.FormatStringEngine Namespace</h2>
+
+<ul>
+<li><p><strong>FormatItem</strong>is an infrastructure class; instances represent a FormatItem
+found in the FormatString associated with the FormatStringParser that owns it.
+The static methods of this class are public, and are very handy for creating
+compact summary reports.</p></li>
+<li><p><strong>FormatItemsCollection</strong>holds the collection of FormatItems found in a
+FormatString. While the class, itself, is marked Public, everything else about
+it is marked as Internal, so that only instances of classes defined in this
+assembly can create a collection or add items to it, while instances of the
+FormatStringParser class expose it as a read only property.</p></li>
+<li><p><strong>FormatStringError</strong>exposes detailed information about errors in format
+strings detected by a <strong>FormatStringParser</strong> constructor. The constructed
+instance exposes a collection of these if it finds errors in the input string.</p></li>
+<li><p><strong>FormatStringParser</strong>parses format control strings that you intend to use
+with string.Format or one of the Write or WriteLine methods of a stream object,
+such as a Console or TextWriter. Properties and methods report on its
+attributes, including its FormaItems, and errors flagged by the parser.</p></li>
+</ul>
+
+<p>Use the links to on the left side of this page
+	to visit the documentation.
+</p>
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

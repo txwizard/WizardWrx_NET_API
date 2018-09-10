@@ -1,0 +1,33 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="DLLServices2TestStand.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ExceptionGUIDsListingFile" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">$$DATADIRNAME$$\ExceptionGUIDsListingFile.TXT</Value>
+    </Setting>
+    <Setting Name="ExcceptionMessageTable" Type="System.String" Scope="User">
+      <Value Profile="(Default)">$$DATADIRNAME$$\ExcceptionMessageTable.TXT</Value>
+    </Setting>
+    <Setting Name="DependentAssemblyInfoReport" Type="System.String" Scope="User">
+      <Value Profile="(Default)">$$DATADIRNAME$$\DependentAssemblyInfoReport.TXT</Value>
+    </Setting>
+    <Setting Name="Data_Directory" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">.\Test_Data</Value>
+    </Setting>
+    <Setting Name="MaxStringLength_Input" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">MaxStringLength.TXT</Value>
+    </Setting>
+    <Setting Name="MergeNewItemsIntoArray_Master" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">$$DATADIRNAME$$\MergeNewItemsIntoArray_Master.TXT</Value>
+    </Setting>
+    <Setting Name="MergeNewItemsIntoArray_Cases" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">$$DATADIRNAME$$\MergeNewItemsIntoArray_Case_??.TXT</Value>
+    </Setting>
+    <Setting Name="MergeNewItemsIntoArray_Outputs" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">$$DATADIRNAME$$\MergeNewItemsIntoArray_Output_$$CASENBR$$.TXT</Value>
+    </Setting>
+    <Setting Name="MergeNewItemsIntoArray_Summary" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">$$DATADIRNAME$$\MergeNewItemsIntoArray_Summary.TXT</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

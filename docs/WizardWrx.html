@@ -1,0 +1,308 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Namespace WizardWrx
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Namespace WizardWrx
+   ">
+    <meta name="generator" content="docfx 2.39.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="WizardWrx">
+  
+  <h1 id="WizardWrx" data-uid="WizardWrx" class="text-break">Namespace WizardWrx
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+    <h3 id="classes">Classes
+  </h3>
+      <h4><a class="xref" href="WizardWrx.ArrayInfo.html">ArrayInfo</a></h4>
+      <section><p>This class organizes constants and routines for working with arrays. The
+constants are mostly synonyms for constants that exist in other classes
+and assemblies.</p>
+<p>Since static classes are implicitly sealed, this class cannot be inherited.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.ASCII_Character_Display_Table.html">ASCII_Character_Display_Table</a></h4>
+      <section><p>Provide read only access to a table of ASCII characters and text to
+display for selected special characters.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.ASCIICharacterDisplayInfo.html">ASCIICharacterDisplayInfo</a></h4>
+      <section><p>Instances of this class represent individual ASCII characters. Since the
+NUL character is defined, and occupies the first element, the numeric
+code that corresponds to a character maps directly to the corresponding
+element in this array.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.CSVFileInfo.html">CSVFileInfo</a></h4>
+      <section><p>Use these constants and service routines to simplify working with CSV
+type files.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.DisplayFormats.html">DisplayFormats</a></h4>
+      <section><p>Pass these constants to the ToString method on an object of the
+appropriate type to render the object for printing.</p>
+<p>The comment associated with each constant identifies the types for
+which it is appropriate.</p>
+<p>There are service methods to facilitate using the Date/Time formatting
+constants, which cannot be fed to ToString, except, perhaps, with a
+custom formatting engine. Use these service methods, or call the
+ReformatSysDate function, which also belongs to this library, directly.</p>
+<p>NOTE: The time formatting strings and routines in this class are time
+zone agnostic. If you want or need the time zone, use the companion
+method, GetDisplayTimeZone, defined in sibling class Util.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.FileInfoExtension.html">FileInfoExtension</a></h4>
+      <section><p>Extend the System.IO.FileInfo class with methods for testing, setting,
+and clearing file attribute flags, including the ability to save and
+restore flags to their initial states.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.FileInfoExtensionMethods.html">FileInfoExtensionMethods</a></h4>
+      <section><p>The new extension methods that supersede the instance methods on the
+companion FileInfoExtension class go into a dedicated class, because a
+static class must expose them.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.FileIOFlags.html">FileIOFlags</a></h4>
+      <section><p>Use these flags to document stream I/O method calls.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.FileNameTricks.html">FileNameTricks</a></h4>
+      <section><p>This class exposes numerous static methods for manipulating file names.
+Unlike the objects in the System.File namespace, these methods don't
+need a real file object. All work on strings that represent file names.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.GenericSingletonBase-1.html">GenericSingletonBase&lt;T&gt;</a></h4>
+      <section><p>Abstract class GenericSingletonBase is a complete implementation of the
+Singleton design pattern that takes full advantage of the Microsoft .NET
+Framework. Please see the Remarks for further details.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.ListHelpers.html">ListHelpers</a></h4>
+      <section><p>This class exposes methods for merging sorted lists of items, and to
+simplify working with the values returned through the IComparable
+interface.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.ListInfo.html">ListInfo</a></h4>
+      <section><p>This static class exposes handy constants for working with buffers,
+lists, and substrings.</p>
+<p>Since static classes are implicitly sealed, this class cannot be inherited.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.Logic.html">Logic</a></h4>
+      <section><p>This sealed class exposes methods that encapsulate many common, tricky
+loop state tests.</p>
+<p>Since static classes are implicitly sealed, this class cannot be inherited.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.MagicBooleans.html">MagicBooleans</a></h4>
+      <section><p>This class defines frequently used Boolean values whose correct values
+are easier to remember with the help of a mnemonic.</p>
+<p>This class is one of a constellation of static classes that define a
+wide variety of symbolic constants that I use to make my code easier to
+understand when I need a refresher or am about to change it.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.MagicNumbers.html">MagicNumbers</a></h4>
+      <section><p>This class defines constants for commonly used magic numbers. Others are
+defined in companion class ArrayInfo, while SpecialCharacters defines
+character representations of the visually ambiguous numbers and letters,
+for use in place of literals.</p>
+<p>Since static classes are implicitly sealed, this class cannot be inherited.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.NumberFormatters.html">NumberFormatters</a></h4>
+      <section><p>This static class exposes methods to further simplify formatting of
+integers, floating point (single precision real numbers) and double
+precision real numbers. For integers, these methods cover both decimal
+and the most frequently used hexadecimal representations, spanning from
+two through sixteen hexadecimal glyphs.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.NumericFormats.html">NumericFormats</a></h4>
+      <section><p>This class defines standard numeric format strings, for use with the
+string.format method and its derivatives and relatives.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.PathPositions.html">PathPositions</a></h4>
+      <section><p>Use these constants to document path string parsing.</p>
+<p>Since static classes are implicitly sealed, this class cannot be inherited.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.RegExpSupport.html">RegExpSupport</a></h4>
+      <section><p>Constants, some built from others by static methods, to expedite common
+tasks that use regular expressions.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.ReportDetail.html">ReportDetail</a></h4>
+      <section><p>Instances of this class are generic report details, with labels and
+formats for printing them.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.ReportDetail.LabelChangedEventArgs.html">ReportDetail.LabelChangedEventArgs</a></h4>
+      <section><p>The LabelChanged event needs to pass two integers to the event sink.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.ReportDetails.html">ReportDetails</a></h4>
+      <section><p>This class holds the details for a report. Static object locks are used
+throughout to ensure synchronized access.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.ReportHelpers.html">ReportHelpers</a></h4>
+      <section><p>This static class exposes methods to help prepare strings for use on
+reports.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.SpecialCharacters.html">SpecialCharacters</a></h4>
+      <section><p>Use these constants when you want or need your listings to be crystal
+clear about certain ambiguous literals.</p>
+<p>Since static classes are implicitly sealed, this class cannot be inherited.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.SpecialStrings.html">SpecialStrings</a></h4>
+      <section><p>This class defines special purpose strings that are either difficult to
+get right in the first place, or display ambiguously in text editors and
+printed source code listings.</p>
+<p>Since static classes are implicitly sealed, this class cannot be inherited.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.StringExtensions.html">StringExtensions</a></h4>
+      <section><p>This is a class of extension methods for performing common tasks not
+provided by the System.String class. All but the four Pad methods are
+derived from long established routines in companion class StringTricks.</p>
+<p>Just as importing the System.Linq namespace makes its generic extension
+methods visible, importing the root WizardWrx namespace, accompanied by
+a reference to WizardWrx.Core, makes these methods visible on every
+instance of System.string.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.StringTricks.html">StringTricks</a></h4>
+      <section><p>This is a class of static methods (functions) for performing common
+tasks not provided by the System.String class. Most, but not all, have
+become obsolete, and are being retired in favor of the StringExtensions
+class in the WizardWrx.Core namespace.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.SyncRoot.html">SyncRoot</a></h4>
+      <section><p>Use instances of this class to provide classes that must be made
+thread-safe with locks over which the class has complete control.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.SysDateFormatters.html">SysDateFormatters</a></h4>
+      <section><p>This class implements my stalwart date formatter, ReformatSysDateP6C,
+which I created initially as a Windows Interface Language (WIL,
+a. k. a. WinBatch) library function, Reformat_Date_YmdHms_P6C, in
+October 2001, although its roots go back much further in my WIL script
+development.</p>
+<p>Since static classes are implicitly sealed, this class cannot be inherited.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.TextBlocks.html">TextBlocks</a></h4>
+      <section><p>Methods for creating and manipulating test blocks.</p>
+</section>
+    <h3 id="structs">Structs
+  </h3>
+      <h4><a class="xref" href="WizardWrx.ReportDetail.ItemDisplayOrder.html">ReportDetail.ItemDisplayOrder</a></h4>
+      <section><p>This one-member structure prevents the Common Language Runtime from
+misdirecting the signed integer Value argument of a constructor,
+which might have a valid value of zero, into a constructor that
+expects a DisplayOrder value, which is prohibited from being zero.</p>
+</section>
+    <h3 id="enums">Enums
+  </h3>
+      <h4><a class="xref" href="WizardWrx.FileInfoExtension.enmInitialStatus.html">FileInfoExtension.enmInitialStatus</a></h4>
+      <section><p>Define the three possible initial states.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.FileNameTricks.TerminaBackslash.html">FileNameTricks.TerminaBackslash</a></h4>
+      <section><p>Use a member of this enumeration with FileDirName and PathFixup, to
+specify whether you want a path string with or without a trailing
+backslash.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.ListHelpers.CompareResult.html">ListHelpers.CompareResult</a></h4>
+      <section><p>The CompareTwoOfAKind method returns a member of this enumeration,
+providing for the CompareTo method of the IComparable interface that
+it encapsulates with a tad of syntactic sugar.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.NumericFormats.HexFormatDecoration.html">NumericFormats.HexFormatDecoration</a></h4>
+      <section><p>Use this enumeration with the third argument to IntegerToHexStr.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.ReportDetail.State.html">ReportDetail.State</a></h4>
+      <section><p>This enumeration keeps track of the state of the instance.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.ReportHelpers.Alignment.html">ReportHelpers.Alignment</a></h4>
+      <section><p>Set the penmAlignment argument of the AdjustToMaximumWidth method to
+a member of this enumeration.</p>
+</section>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

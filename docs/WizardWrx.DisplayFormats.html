@@ -1,0 +1,648 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class DisplayFormats
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class DisplayFormats
+   ">
+    <meta name="generator" content="docfx 2.39.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="WizardWrx.DisplayFormats">
+  
+  
+  <h1 id="WizardWrx_DisplayFormats" data-uid="WizardWrx.DisplayFormats" class="text-break">Class DisplayFormats
+  </h1>
+  <div class="markdown level0 summary"><p>Pass these constants to the ToString method on an object of the
+appropriate type to render the object for printing.</p>
+<p>The comment associated with each constant identifies the types for
+which it is appropriate.</p>
+<p>There are service methods to facilitate using the Date/Time formatting
+constants, which cannot be fed to ToString, except, perhaps, with a
+custom formatting engine. Use these service methods, or call the
+ReformatSysDate function, which also belongs to this library, directly.</p>
+<p>NOTE: The time formatting strings and routines in this class are time
+zone agnostic. If you want or need the time zone, use the companion
+method, GetDisplayTimeZone, defined in sibling class Util.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">DisplayFormats</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="WizardWrx.html">WizardWrx</a></h6>
+  <h6><strong>Assembly</strong>: WizardWrx.Common.dll</h6>
+  <h5 id="WizardWrx_DisplayFormats_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class DisplayFormats</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  
+  
+  <h4 id="WizardWrx_DisplayFormats_HEXADECIMAL_16" data-uid="WizardWrx.DisplayFormats.HEXADECIMAL_16">HEXADECIMAL_16</h4>
+  <div class="markdown level1 summary"><p>Pass this constant to the ToString method on any integral type to
+format it as a string of 16 hexadecimal digits.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string HEXADECIMAL_16 = &quot;X16&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="WizardWrx_DisplayFormats_HEXADECIMAL_2" data-uid="WizardWrx.DisplayFormats.HEXADECIMAL_2">HEXADECIMAL_2</h4>
+  <div class="markdown level1 summary"><p>Pass this constant to the ToString method on any integral type to
+format it as a string of 2 hexadecimal digits.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string HEXADECIMAL_2 = &quot;X2&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="WizardWrx_DisplayFormats_HEXADECIMAL_4" data-uid="WizardWrx.DisplayFormats.HEXADECIMAL_4">HEXADECIMAL_4</h4>
+  <div class="markdown level1 summary"><p>Pass this constant to the ToString method on any integral type to
+format it as a string of 4 hexadecimal digits.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string HEXADECIMAL_4 = &quot;X4&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="WizardWrx_DisplayFormats_HEXADECIMAL_8" data-uid="WizardWrx.DisplayFormats.HEXADECIMAL_8">HEXADECIMAL_8</h4>
+  <div class="markdown level1 summary"><p>Pass this constant to the ToString method on any integral type to
+format it as a string of 8 hexadecimal digits.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string HEXADECIMAL_8 = &quot;X8&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="WizardWrx_DisplayFormats_HEXADECIMAL_LC" data-uid="WizardWrx.DisplayFormats.HEXADECIMAL_LC">HEXADECIMAL_LC</h4>
+  <div class="markdown level1 summary"><p>Pass this constant to the ToString method on any integral type to
+format it as an arbitrary string of hexadecimal digits, using lower
+case glyphs..</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string HEXADECIMAL_LC = &quot;x&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="WizardWrx_DisplayFormats_HEXADECIMAL_PREFIX_0H_LC" data-uid="WizardWrx.DisplayFormats.HEXADECIMAL_PREFIX_0H_LC">HEXADECIMAL_PREFIX_0H_LC</h4>
+  <div class="markdown level1 summary"><p>Substitute this into a format string as a prefix to a hexadecimal
+number display. This string renders exactly as shown, 0h.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string HEXADECIMAL_PREFIX_0H_LC = &quot;0h&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="WizardWrx_DisplayFormats_HEXADECIMAL_PREFIX_0H_UC" data-uid="WizardWrx.DisplayFormats.HEXADECIMAL_PREFIX_0H_UC">HEXADECIMAL_PREFIX_0H_UC</h4>
+  <div class="markdown level1 summary"><p>Substitute this into a format string as a prefix to a hexadecimal
+number display. This string renders exactly as shown, 0H.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string HEXADECIMAL_PREFIX_0H_UC = &quot;0H&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="WizardWrx_DisplayFormats_HEXADECIMAL_PREFIX_0X_LC" data-uid="WizardWrx.DisplayFormats.HEXADECIMAL_PREFIX_0X_LC">HEXADECIMAL_PREFIX_0X_LC</h4>
+  <div class="markdown level1 summary"><p>Substitute this into a format string as a prefix to a hexadecimal
+number display. This string renders exactly as shown, 0x.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string HEXADECIMAL_PREFIX_0X_LC = &quot;0x&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="WizardWrx_DisplayFormats_HEXADECIMAL_PREFIX_0X_UC" data-uid="WizardWrx.DisplayFormats.HEXADECIMAL_PREFIX_0X_UC">HEXADECIMAL_PREFIX_0X_UC</h4>
+  <div class="markdown level1 summary"><p>Substitute this into a format string as a prefix to a hexadecimal
+number display. This string renders exactly as shown, 0X.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string HEXADECIMAL_PREFIX_0X_UC = &quot;0X&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="WizardWrx_DisplayFormats_HEXADECIMAL_UC" data-uid="WizardWrx.DisplayFormats.HEXADECIMAL_UC">HEXADECIMAL_UC</h4>
+  <div class="markdown level1 summary"><p>Pass this constant to the ToString method on any integral type to
+format it as an arbitrary string of hexadecimal digits, using upper
+case glyphs..</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string HEXADECIMAL_UC = &quot;X&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="WizardWrx_DisplayFormats_INTEGER_PER_REG_SETTINGS" data-uid="WizardWrx.DisplayFormats.INTEGER_PER_REG_SETTINGS">INTEGER_PER_REG_SETTINGS</h4>
+  <div class="markdown level1 summary"><p>Use this string to format an integer per the Regional Settings
+applet in the Windows Control Panel, overriding its default setting
+for digits after the decimal point, which is meaningless for an
+integer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string INTEGER_PER_REG_SETTINGS = &quot;N0&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="WizardWrx_DisplayFormats_NUMBER_PER_REG_SETTINGS" data-uid="WizardWrx.DisplayFormats.NUMBER_PER_REG_SETTINGS">NUMBER_PER_REG_SETTINGS</h4>
+  <div class="markdown level1 summary"><p>Pass this constant to the ToString method on any integral type to
+format it according to the current settings in the Regional Settings
+part of the Windows Control Panel.</p>
+<p>This format string causes the formatting engine to obey ALL of the
+settings, including the number of digits to display after the
+decimal point for a whole number.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string NUMBER_PER_REG_SETTINGS = &quot;N&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="WizardWrx_DisplayFormats_NUMBER_PER_REG_SETTINGS_0D" data-uid="WizardWrx.DisplayFormats.NUMBER_PER_REG_SETTINGS_0D">NUMBER_PER_REG_SETTINGS_0D</h4>
+  <div class="markdown level1 summary"><p>Pass this constant to the ToString method on any integral type to
+format it according to the current settings in the Regional Settings
+part of the Windows Control Panel.</p>
+<p>This format string causes the formatting engine to obey all of the
+settings, EXCEPT the number of digits to display after the decimal
+point for a whole number.</p>
+<p>This format string overrides the digits after decimal value
+specified by the iDigits value of Windows Registry key
+HKCU\Control Panel\International, causing it to behave as if it had
+been set to 0.</p>
+<p>The override applies only to the instance ToString method being
+called; the Registry is unchanged.</p>
+<p>See <a href="http://technet.microsoft.com/en-us/library/cc978638.aspx">http://technet.microsoft.com/en-us/library/cc978638.aspx</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string NUMBER_PER_REG_SETTINGS_0D = &quot;N0&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="WizardWrx_DisplayFormats_NUMBER_PER_REG_SETTINGS_2D" data-uid="WizardWrx.DisplayFormats.NUMBER_PER_REG_SETTINGS_2D">NUMBER_PER_REG_SETTINGS_2D</h4>
+  <div class="markdown level1 summary"><p>Pass this constant to the ToString method on any integral type to
+format it according to the current settings in the Regional Settings
+part of the Windows Control Panel.</p>
+<p>This format string causes the formatting engine to obey all of the
+settings, EXCEPT the number of digits to display after the decimal
+point for a whole number.</p>
+<p>This format string overrides the digits after decimal value
+specified by the iDigits value of Windows Registry key
+HKCU\Control Panel\International, causing it to behave as if it had
+been set to 2, which happens to be the default for a US
+installation. Nevertheless, uses this value if changes made by the
+user would mess up your work.</p>
+<p>The override applies only to the instance ToString method being
+called; the Registry is unchanged.</p>
+<p>See <a href="http://technet.microsoft.com/en-us/library/cc978638.aspx">http://technet.microsoft.com/en-us/library/cc978638.aspx</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string NUMBER_PER_REG_SETTINGS_2D = &quot;N2&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="WizardWrx_DisplayFormats_NUMBER_PER_REG_SETTINGS_3D" data-uid="WizardWrx.DisplayFormats.NUMBER_PER_REG_SETTINGS_3D">NUMBER_PER_REG_SETTINGS_3D</h4>
+  <div class="markdown level1 summary"><p>Pass this constant to the ToString method on any integral type to
+format it according to the current settings in the Regional Settings
+part of the Windows Control Panel.</p>
+<p>This format string causes the formatting engine to obey all of the
+settings, EXCEPT the number of digits to display after the decimal
+point for a whole number.</p>
+<p>This format string overrides the digits after decimal value
+specified by the iDigits value of Windows Registry key
+HKCU\Control Panel\International, causing it to behave as if it had
+been set to 3.</p>
+<p>The override applies only to the instance ToString method being
+called; the Registry is unchanged.</p>
+<p>See <a href="http://technet.microsoft.com/en-us/library/cc978638.aspx">http://technet.microsoft.com/en-us/library/cc978638.aspx</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string NUMBER_PER_REG_SETTINGS_3D = &quot;N3&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="WizardWrx_DisplayFormats_PERCENT" data-uid="WizardWrx.DisplayFormats.PERCENT">PERCENT</h4>
+  <div class="markdown level1 summary"><p>Pass this constant to the ToString method on a single or double
+precision floating point number to be displayed as an integral
+percentage.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string PERCENT = &quot;P&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="WizardWrx_DisplayFormats_PERCENT_DIGITS_2" data-uid="WizardWrx.DisplayFormats.PERCENT_DIGITS_2">PERCENT_DIGITS_2</h4>
+  <div class="markdown level1 summary"><p>Pass this constant to the ToString method on a single or double
+precision floating point number to be displayed as a fixed point
+percentage, accurate to two decimal places.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string PERCENT_DIGITS_2 = &quot;P2&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

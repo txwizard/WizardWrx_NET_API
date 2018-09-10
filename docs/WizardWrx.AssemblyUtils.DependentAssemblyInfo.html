@@ -1,0 +1,533 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class DependentAssemblyInfo
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class DependentAssemblyInfo
+   ">
+    <meta name="generator" content="docfx 2.39.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="WizardWrx.AssemblyUtils.DependentAssemblyInfo">
+  
+  
+  <h1 id="WizardWrx_AssemblyUtils_DependentAssemblyInfo" data-uid="WizardWrx.AssemblyUtils.DependentAssemblyInfo" class="text-break">Class DependentAssemblyInfo
+  </h1>
+  <div class="markdown level0 summary"><p>An instance of this class is created for each assembly listed as a
+dependent, and is used to track the assemblies that must be loaded to
+query their properties.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">DependentAssemblyInfo</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.IComparable</span>&lt;<a class="xref" href="WizardWrx.AssemblyUtils.DependentAssemblyInfo.html">DependentAssemblyInfo</a>&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="WizardWrx.AssemblyUtils.html">WizardWrx.AssemblyUtils</a></h6>
+  <h6><strong>Assembly</strong>: WizardWrx.AssemblyUtils.dll</h6>
+  <h5 id="WizardWrx_AssemblyUtils_DependentAssemblyInfo_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class DependentAssemblyInfo : IComparable&lt;DependentAssemblyInfo&gt;</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="WizardWrx_AssemblyUtils_DependentAssemblyInfo__ctor_" data-uid="WizardWrx.AssemblyUtils.DependentAssemblyInfo.#ctor*"></a>
+  <h4 id="WizardWrx_AssemblyUtils_DependentAssemblyInfo__ctor_System_Reflection_AssemblyName_" data-uid="WizardWrx.AssemblyUtils.DependentAssemblyInfo.#ctor(System.Reflection.AssemblyName)">DependentAssemblyInfo(AssemblyName)</h4>
+  <div class="markdown level1 summary"><p>The public constructor requires an AssemblyName from which to
+create an initialized instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DependentAssemblyInfo(AssemblyName panmAssemblyName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Reflection.AssemblyName</span></td>
+        <td><span class="parametername">panmAssemblyName</span></td>
+        <td><p>AssemblyName fully describes an assembly, including properties that
+give direct access to the base (simple) name, version, culture, and
+public key token.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  
+  
+  <h4 id="WizardWrx_AssemblyUtils_DependentAssemblyInfo_IS_LOADED" data-uid="WizardWrx.AssemblyUtils.DependentAssemblyInfo.IS_LOADED">IS_LOADED</h4>
+  <div class="markdown level1 summary"><p>The IsLoaded property has this value when the assembly is loaded
+when the DependentAssemblies query loop runs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const bool IS_LOADED = true</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="WizardWrx_AssemblyUtils_DependentAssemblyInfo_NOT_LOADED" data-uid="WizardWrx.AssemblyUtils.DependentAssemblyInfo.NOT_LOADED">NOT_LOADED</h4>
+  <div class="markdown level1 summary"><p>The IsLoaded property has this value when the assembly is unloaded
+when the DependentAssemblies query loop runs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const bool NOT_LOADED = false</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="WizardWrx_AssemblyUtils_DependentAssemblyInfo_AssemblyDetails_" data-uid="WizardWrx.AssemblyUtils.DependentAssemblyInfo.AssemblyDetails*"></a>
+  <h4 id="WizardWrx_AssemblyUtils_DependentAssemblyInfo_AssemblyDetails" data-uid="WizardWrx.AssemblyUtils.DependentAssemblyInfo.AssemblyDetails">AssemblyDetails</h4>
+  <div class="markdown level1 summary"><p>Get the Assembly, itself. If it was already loaded for use, this is
+a reference to the live assembly. Otherwise, it is a copy that was
+loaded for reflection, and will be unloaded by the destructor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Assembly AssemblyDetails { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Reflection.Assembly</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_AssemblyUtils_DependentAssemblyInfo_FullName_" data-uid="WizardWrx.AssemblyUtils.DependentAssemblyInfo.FullName*"></a>
+  <h4 id="WizardWrx_AssemblyUtils_DependentAssemblyInfo_FullName" data-uid="WizardWrx.AssemblyUtils.DependentAssemblyInfo.FullName">FullName</h4>
+  <div class="markdown level1 summary"><p>Get the FullName of the assembly.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string FullName { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_AssemblyUtils_DependentAssemblyInfo_IsLoaded_" data-uid="WizardWrx.AssemblyUtils.DependentAssemblyInfo.IsLoaded*"></a>
+  <h4 id="WizardWrx_AssemblyUtils_DependentAssemblyInfo_IsLoaded" data-uid="WizardWrx.AssemblyUtils.DependentAssemblyInfo.IsLoaded">IsLoaded</h4>
+  <div class="markdown level1 summary"><p>Get the load state of the assembly.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsLoaded { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="WizardWrx_AssemblyUtils_DependentAssemblyInfo_DestroyOwneAppdDomains_" data-uid="WizardWrx.AssemblyUtils.DependentAssemblyInfo.DestroyOwneAppdDomains*"></a>
+  <h4 id="WizardWrx_AssemblyUtils_DependentAssemblyInfo_DestroyOwneAppdDomains" data-uid="WizardWrx.AssemblyUtils.DependentAssemblyInfo.DestroyOwneAppdDomains">DestroyOwneAppdDomains()</h4>
+  <div class="markdown level1 summary"><p>You must call this method once, when you are finished using the
+object, but before it goes out of scope, to unload the private
+AppDomain, along with the assemblies that were loaded into it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DestroyOwneAppdDomains()</code></pre>
+  </div>
+  <h5 id="WizardWrx_AssemblyUtils_DependentAssemblyInfo_DestroyOwneAppdDomains_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This activity cannot be performed by a destructor, because the
+unload fails with HRESULT 0x80131015 when the unload is initiated by
+a destructor, or when a destructor is active.</p>
+</div>
+  
+  
+  <a id="WizardWrx_AssemblyUtils_DependentAssemblyInfo_Equals_" data-uid="WizardWrx.AssemblyUtils.DependentAssemblyInfo.Equals*"></a>
+  <h4 id="WizardWrx_AssemblyUtils_DependentAssemblyInfo_Equals_System_Object_" data-uid="WizardWrx.AssemblyUtils.DependentAssemblyInfo.Equals(System.Object)">Equals(Object)</h4>
+  <div class="markdown level1 summary"><p>Test a pair of object instances for logical equality.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>Supply a reference to the other object to test for equality with the
+calling instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>This method returns TRUE if the two objects are of the same or
+equivalent types and their FullName properties are equal. Otherwise,
+the return value is FALSE.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Object.Equals(System.Object)</span></div>
+  
+  
+  <a id="WizardWrx_AssemblyUtils_DependentAssemblyInfo_GetHashCode_" data-uid="WizardWrx.AssemblyUtils.DependentAssemblyInfo.GetHashCode*"></a>
+  <h4 id="WizardWrx_AssemblyUtils_DependentAssemblyInfo_GetHashCode" data-uid="WizardWrx.AssemblyUtils.DependentAssemblyInfo.GetHashCode">GetHashCode()</h4>
+  <div class="markdown level1 summary"><p>Return the HashCode property of the FullName property of the instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Object.GetHashCode()</span></div>
+  
+  
+  <a id="WizardWrx_AssemblyUtils_DependentAssemblyInfo_LoadForInspection_" data-uid="WizardWrx.AssemblyUtils.DependentAssemblyInfo.LoadForInspection*"></a>
+  <h4 id="WizardWrx_AssemblyUtils_DependentAssemblyInfo_LoadForInspection" data-uid="WizardWrx.AssemblyUtils.DependentAssemblyInfo.LoadForInspection">LoadForInspection()</h4>
+  <div class="markdown level1 summary"><p>The name of this method reflects its motivation, which was to report
+on the assemblies upon which a specified &quot;root&quot; assembly depends.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void LoadForInspection()</code></pre>
+  </div>
+  
+  
+  <a id="WizardWrx_AssemblyUtils_DependentAssemblyInfo_MarkAsLoaded_" data-uid="WizardWrx.AssemblyUtils.DependentAssemblyInfo.MarkAsLoaded*"></a>
+  <h4 id="WizardWrx_AssemblyUtils_DependentAssemblyInfo_MarkAsLoaded_System_Reflection_Assembly_" data-uid="WizardWrx.AssemblyUtils.DependentAssemblyInfo.MarkAsLoaded(System.Reflection.Assembly)">MarkAsLoaded(Assembly)</h4>
+  <div class="markdown level1 summary"><p>Call this method to mark an assembly as loaded.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void MarkAsLoaded(Assembly pasmThis)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Reflection.Assembly</span></td>
+        <td><span class="parametername">pasmThis</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_AssemblyUtils_DependentAssemblyInfo_ToString_" data-uid="WizardWrx.AssemblyUtils.DependentAssemblyInfo.ToString*"></a>
+  <h4 id="WizardWrx_AssemblyUtils_DependentAssemblyInfo_ToString" data-uid="WizardWrx.AssemblyUtils.DependentAssemblyInfo.ToString">ToString()</h4>
+  <div class="markdown level1 summary"><p>Return a string representation of the instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The returned string consists of the object type, as it would be
+reported by the base ToString method, followed by the FullName and
+IsLoaded property values.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Object.ToString()</span></div>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  
+  
+  <a id="WizardWrx_AssemblyUtils_DependentAssemblyInfo_System_IComparable_WizardWrx_AssemblyUtils_DependentAssemblyInfo__CompareTo_" data-uid="WizardWrx.AssemblyUtils.DependentAssemblyInfo.System#IComparable{WizardWrx#AssemblyUtils#DependentAssemblyInfo}#CompareTo*"></a>
+  <h4 id="WizardWrx_AssemblyUtils_DependentAssemblyInfo_System_IComparable_WizardWrx_AssemblyUtils_DependentAssemblyInfo__CompareTo_WizardWrx_AssemblyUtils_DependentAssemblyInfo_" data-uid="WizardWrx.AssemblyUtils.DependentAssemblyInfo.System#IComparable{WizardWrx#AssemblyUtils#DependentAssemblyInfo}#CompareTo(WizardWrx.AssemblyUtils.DependentAssemblyInfo)">IComparable&lt;DependentAssemblyInfo&gt;.CompareTo(DependentAssemblyInfo)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int IComparable&lt;DependentAssemblyInfo&gt;.CompareTo(DependentAssemblyInfo other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.AssemblyUtils.DependentAssemblyInfo.html">DependentAssemblyInfo</a></td>
+        <td><span class="parametername">other</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.IComparable&lt;T&gt;</span>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

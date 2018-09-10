@@ -1,0 +1,753 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class PESubsystemInfo
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class PESubsystemInfo
+   ">
+    <meta name="generator" content="docfx 2.39.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="WizardWrx.AssemblyUtils.PESubsystemInfo">
+  
+  
+  <h1 id="WizardWrx_AssemblyUtils_PESubsystemInfo" data-uid="WizardWrx.AssemblyUtils.PESubsystemInfo" class="text-break">Class PESubsystemInfo
+  </h1>
+  <div class="markdown level0 summary"><p>This class exposes methods for obtaining the subsystem ID encoded into
+the NT header of a Windows Portable Executable (PE) file. Such files
+include, but are not limited to, character mode and graphical mode
+programs implemented in both native or managed programming languages,
+dynamic link libraries, and device drivers.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="WizardWrx.GenericSingletonBase-1.html">GenericSingletonBase</a>&lt;<a class="xref" href="WizardWrx.AssemblyUtils.PESubsystemInfo.html">PESubsystemInfo</a>&gt;</div>
+    <div class="level2"><span class="xref">PESubsystemInfo</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="WizardWrx.GenericSingletonBase-1.html#WizardWrx_GenericSingletonBase_1_s_genTheOnlyInstance">GenericSingletonBase&lt;PESubsystemInfo&gt;.s_genTheOnlyInstance</a>
+    </div>
+    <div>
+      <a class="xref" href="WizardWrx.GenericSingletonBase-1.html#WizardWrx_GenericSingletonBase_1_TheOnlyInstance">GenericSingletonBase&lt;PESubsystemInfo&gt;.TheOnlyInstance</a>
+    </div>
+    <div>
+      <a class="xref" href="WizardWrx.GenericSingletonBase-1.html#WizardWrx_GenericSingletonBase_1_GetTheSingleInstance">GenericSingletonBase&lt;PESubsystemInfo&gt;.GetTheSingleInstance()</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="WizardWrx.AssemblyUtils.html">WizardWrx.AssemblyUtils</a></h6>
+  <h6><strong>Assembly</strong>: WizardWrx.AssemblyUtils.dll</h6>
+  <h5 id="WizardWrx_AssemblyUtils_PESubsystemInfo_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class PESubsystemInfo : GenericSingletonBase&lt;PESubsystemInfo&gt;</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  
+  
+  <h4 id="WizardWrx_AssemblyUtils_PESubsystemInfo_IMAGE_SUBSYSTEM_UNKNOWN" data-uid="WizardWrx.AssemblyUtils.PESubsystemInfo.IMAGE_SUBSYSTEM_UNKNOWN">IMAGE_SUBSYSTEM_UNKNOWN</h4>
+  <div class="markdown level1 summary"><p>The ProcessSubsystmID property returns this value until the private
+constructor initializes it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const short IMAGE_SUBSYSTEM_UNKNOWN = 0</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int16</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="WizardWrx_AssemblyUtils_PESubsystemInfo_IMAGE_SUBSYSTEM_WINDOWS_CUI" data-uid="WizardWrx.AssemblyUtils.PESubsystemInfo.IMAGE_SUBSYSTEM_WINDOWS_CUI">IMAGE_SUBSYSTEM_WINDOWS_CUI</h4>
+  <div class="markdown level1 summary"><p>The ProcessSubsystmID property returns this value when queried on an
+PESubsystemInfo singleton instance that was initialized by a console
+(character mode) entry assembly.</p>
+<p>Static method GetPESubsystemID returns this value when queried about
+the subsystem ID of a console (character mode) assembly or compiled
+native program.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const short IMAGE_SUBSYSTEM_WINDOWS_CUI = 3</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int16</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="WizardWrx_AssemblyUtils_PESubsystemInfo_IMAGE_SUBSYSTEM_WINDOWS_GUI" data-uid="WizardWrx.AssemblyUtils.PESubsystemInfo.IMAGE_SUBSYSTEM_WINDOWS_GUI">IMAGE_SUBSYSTEM_WINDOWS_GUI</h4>
+  <div class="markdown level1 summary"><p>The ProcessSubsystmID property returns this value when queried on an
+PESubsystemInfo singleton instance that was initialized by a Windows
+(graphical mode) entry assembly.</p>
+<p>Static method GetPESubsystemID returns this value when queried about
+the subsystem ID of a Windows (graphical mode) assembly or compiled
+native program.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const short IMAGE_SUBSYSTEM_WINDOWS_GUI = 2</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int16</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="WizardWrx_AssemblyUtils_PESubsystemInfo_DefaultAppDomainSubsystem_" data-uid="WizardWrx.AssemblyUtils.PESubsystemInfo.DefaultAppDomainSubsystem*"></a>
+  <h4 id="WizardWrx_AssemblyUtils_PESubsystemInfo_DefaultAppDomainSubsystem" data-uid="WizardWrx.AssemblyUtils.PESubsystemInfo.DefaultAppDomainSubsystem">DefaultAppDomainSubsystem</h4>
+  <div class="markdown level1 summary"><p>Get the subsystem in which the default application domain executes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PESubsystemInfo.PESubsystemID DefaultAppDomainSubsystem { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.AssemblyUtils.PESubsystemInfo.PESubsystemID.html">PESubsystemInfo.PESubsystemID</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_AssemblyUtils_PESubsystemInfo_DefaultAppDomainSubsystem_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="WizardWrx.AssemblyUtils.PESubsystemInfo.html#WizardWrx_AssemblyUtils_PESubsystemInfo_DefaultAppDomainSubsystemID">DefaultAppDomainSubsystemID</a></div>
+  </div>
+  
+  
+  <a id="WizardWrx_AssemblyUtils_PESubsystemInfo_DefaultAppDomainSubsystemID_" data-uid="WizardWrx.AssemblyUtils.PESubsystemInfo.DefaultAppDomainSubsystemID*"></a>
+  <h4 id="WizardWrx_AssemblyUtils_PESubsystemInfo_DefaultAppDomainSubsystemID" data-uid="WizardWrx.AssemblyUtils.PESubsystemInfo.DefaultAppDomainSubsystemID">DefaultAppDomainSubsystemID</h4>
+  <div class="markdown level1 summary"><p>Get the subsystem ID of the default application domain.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public short DefaultAppDomainSubsystemID { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int16</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_AssemblyUtils_PESubsystemInfo_DefaultAppDomainSubsystemID_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="WizardWrx.AssemblyUtils.PESubsystemInfo.html#WizardWrx_AssemblyUtils_PESubsystemInfo_DefaultAppDomainSubsystem">DefaultAppDomainSubsystem</a></div>
+  </div>
+  
+  
+  <a id="WizardWrx_AssemblyUtils_PESubsystemInfo_DefaultDomainEntryAssemblyName_" data-uid="WizardWrx.AssemblyUtils.PESubsystemInfo.DefaultDomainEntryAssemblyName*"></a>
+  <h4 id="WizardWrx_AssemblyUtils_PESubsystemInfo_DefaultDomainEntryAssemblyName" data-uid="WizardWrx.AssemblyUtils.PESubsystemInfo.DefaultDomainEntryAssemblyName">DefaultDomainEntryAssemblyName</h4>
+  <div class="markdown level1 summary"><p>Get the fully qualified AssemblyName of the first assembly that was
+loaded into the default application domain.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AssemblyName DefaultDomainEntryAssemblyName { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Reflection.AssemblyName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_AssemblyUtils_PESubsystemInfo_DefaultDomainEntryAssemblyName_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>AssemblyName has properties that expose the parts of an assembly
+name, its simple name, version, culture, and public key token.</p>
+</div>
+  
+  
+  <a id="WizardWrx_AssemblyUtils_PESubsystemInfo_DomainEntryAssemblyLocation_" data-uid="WizardWrx.AssemblyUtils.PESubsystemInfo.DomainEntryAssemblyLocation*"></a>
+  <h4 id="WizardWrx_AssemblyUtils_PESubsystemInfo_DomainEntryAssemblyLocation" data-uid="WizardWrx.AssemblyUtils.PESubsystemInfo.DomainEntryAssemblyLocation">DomainEntryAssemblyLocation</h4>
+  <div class="markdown level1 summary"><p>Get the fully qualified name of the file from which the first
+assembly that was loaded into the default application domain was
+read.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string DomainEntryAssemblyLocation { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="WizardWrx_AssemblyUtils_PESubsystemInfo_GetPESubsystem_" data-uid="WizardWrx.AssemblyUtils.PESubsystemInfo.GetPESubsystem*"></a>
+  <h4 id="WizardWrx_AssemblyUtils_PESubsystemInfo_GetPESubsystem_System_String_" data-uid="WizardWrx.AssemblyUtils.PESubsystemInfo.GetPESubsystem(System.String)">GetPESubsystem(String)</h4>
+  <div class="markdown level1 summary"><p>Use this wrapper to get the PESubsystemID enumeration member
+equivalent to the integer returned by GetPESubsystemID.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static PESubsystemInfo.PESubsystemID GetPESubsystem(string pstrFileName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrFileName</span></td>
+        <td><p>This string must be the name of a file that can be found in the
+current security context. Names may be either relative or fully
+qualified. Relative file names are resolved relative to the current
+working directory.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.AssemblyUtils.PESubsystemInfo.PESubsystemID.html">PESubsystemInfo.PESubsystemID</a></td>
+        <td><p>If the function succeeds, its return value is a PESubsystemID member
+that corresponds to the 16-bit integer returned by GetPESubsystemID,
+which it calls internally.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_AssemblyUtils_PESubsystemInfo_GetPESubsystem_System_String__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="WizardWrx.AssemblyUtils.PESubsystemInfo.html#WizardWrx_AssemblyUtils_PESubsystemInfo_GetPESubsystemID_System_String_">GetPESubsystemID(String)</a></div>
+  </div>
+  
+  
+  <a id="WizardWrx_AssemblyUtils_PESubsystemInfo_GetPESubsystemDescription_" data-uid="WizardWrx.AssemblyUtils.PESubsystemInfo.GetPESubsystemDescription*"></a>
+  <h4 id="WizardWrx_AssemblyUtils_PESubsystemInfo_GetPESubsystemDescription_System_Int16_WizardWrx_AssemblyUtils_PESubsystemInfo_SubsystemDescription_" data-uid="WizardWrx.AssemblyUtils.PESubsystemInfo.GetPESubsystemDescription(System.Int16,WizardWrx.AssemblyUtils.PESubsystemInfo.SubsystemDescription)">GetPESubsystemDescription(Int16, PESubsystemInfo.SubsystemDescription)</h4>
+  <div class="markdown level1 summary"><p>Get the short (one or two word) or long (complete, grammatically
+correct sentence) description that corresponds to a Portable
+Executable (PE) subsystem ID, such as the value returned by passing
+a file name to GetPESubsystemID.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string GetPESubsystemDescription(short pintSubsystemID, PESubsystemInfo.SubsystemDescription penmSubsystemDescription)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int16</span></td>
+        <td><span class="parametername">pintSubsystemID</span></td>
+        <td><p>Specify the subsystem ID for which the corresponding short or long
+description is wanted. Suitable inputs include the signed integer
+returned by GetPESubsystemID, which may be called as a nested method
+if you have no further use for the subsystem ID.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.AssemblyUtils.PESubsystemInfo.SubsystemDescription.html">PESubsystemInfo.SubsystemDescription</a></td>
+        <td><span class="parametername">penmSubsystemDescription</span></td>
+        <td><p>A member of the SubsystemDescription specifies whether to return the
+short (one or two word) description or the long (complete sentence)
+description that corresponds to the specified subsystem ID.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>If the function succeeds, the return value is a string containing a
+short or long description that corresponds to a specified subsystem
+ID.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentOutOfRangeException</span></td>
+        <td><p>If the subsystem ID specified by argument pintSubsystemID is either
+negative or greater than the largest valid subsystem ID (9, at
+present, though future editions of the Microsoft Platform SDK might
+define additional IDs), an ArgumentOutOfRangeException exception is
+thrown, which reports the</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.ComponentModel.InvalidEnumArgumentException</span></td>
+        <td><p>An System.ComponentModel.InvalidEnumArgumentException exception is
+thrown when the second argument, penmSubsystemDescription, is either
+SubsystemDescription.Unspecified or is not a valid member of the
+SubsystemDescription enumeration. Unspecified is defined, but marked
+as invalid to ensure that if penmSubsystemDescription is a variable,
+it is initialized.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_AssemblyUtils_PESubsystemInfo_GetPESubsystemDescription_System_Int16_WizardWrx_AssemblyUtils_PESubsystemInfo_SubsystemDescription__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="WizardWrx.AssemblyUtils.PESubsystemInfo.html#WizardWrx_AssemblyUtils_PESubsystemInfo_GetPESubsystemID_System_String_">GetPESubsystemID(String)</a></div>
+      <div><a class="xref" href="WizardWrx.AssemblyUtils.PESubsystemInfo.html#WizardWrx_AssemblyUtils_PESubsystemInfo_GetPESubsystemDescription_WizardWrx_AssemblyUtils_PESubsystemInfo_PESubsystemID_WizardWrx_AssemblyUtils_PESubsystemInfo_SubsystemDescription_">GetPESubsystemDescription(PESubsystemInfo.PESubsystemID, PESubsystemInfo.SubsystemDescription)</a></div>
+  </div>
+  
+  
+  <a id="WizardWrx_AssemblyUtils_PESubsystemInfo_GetPESubsystemDescription_" data-uid="WizardWrx.AssemblyUtils.PESubsystemInfo.GetPESubsystemDescription*"></a>
+  <h4 id="WizardWrx_AssemblyUtils_PESubsystemInfo_GetPESubsystemDescription_WizardWrx_AssemblyUtils_PESubsystemInfo_PESubsystemID_WizardWrx_AssemblyUtils_PESubsystemInfo_SubsystemDescription_" data-uid="WizardWrx.AssemblyUtils.PESubsystemInfo.GetPESubsystemDescription(WizardWrx.AssemblyUtils.PESubsystemInfo.PESubsystemID,WizardWrx.AssemblyUtils.PESubsystemInfo.SubsystemDescription)">GetPESubsystemDescription(PESubsystemInfo.PESubsystemID, PESubsystemInfo.SubsystemDescription)</h4>
+  <div class="markdown level1 summary"><p>Get the short (one or two word) or long (complete, grammatically
+correct sentence) description that corresponds to a Portable
+Executable (PE) subsystem ID, such as the value returned by passing
+a file name to GetPESubsystemID.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string GetPESubsystemDescription(PESubsystemInfo.PESubsystemID penmSubsystemID, PESubsystemInfo.SubsystemDescription penmSubsystemDescription)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.AssemblyUtils.PESubsystemInfo.PESubsystemID.html">PESubsystemInfo.PESubsystemID</a></td>
+        <td><span class="parametername">penmSubsystemID</span></td>
+        <td><p>Specify the PESubsystemID enumeration value for which the
+corresponding string is needed. Suitable inputs include the value
+returned by GetPESubsystem or the DefaultDomainSubsystem property
+returned by the singleton instance.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.AssemblyUtils.PESubsystemInfo.SubsystemDescription.html">PESubsystemInfo.SubsystemDescription</a></td>
+        <td><span class="parametername">penmSubsystemDescription</span></td>
+        <td><p>A member of the SubsystemDescription specifies whether to return the
+short (one or two word) description or the long (complete sentence)
+description that corresponds to the specified subsystem ID.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>If the function succeeds, the return value is a string containing a
+short or long description that corresponds to a specified subsystem
+ID.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_AssemblyUtils_PESubsystemInfo_GetPESubsystemDescription_WizardWrx_AssemblyUtils_PESubsystemInfo_PESubsystemID_WizardWrx_AssemblyUtils_PESubsystemInfo_SubsystemDescription__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method casts penmSubsystemID to Int16, and feeds it to
+GetPESubsystemDescription, since the cast wound be necessary, sooner
+or later, to use the lookup tables that contain the descriptions.</p>
+</div>
+  <h5 id="WizardWrx_AssemblyUtils_PESubsystemInfo_GetPESubsystemDescription_WizardWrx_AssemblyUtils_PESubsystemInfo_PESubsystemID_WizardWrx_AssemblyUtils_PESubsystemInfo_SubsystemDescription__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="WizardWrx.AssemblyUtils.PESubsystemInfo.html#WizardWrx_AssemblyUtils_PESubsystemInfo_GetPESubsystemID_System_String_">GetPESubsystemID(String)</a></div>
+      <div><a class="xref" href="WizardWrx.AssemblyUtils.PESubsystemInfo.html#WizardWrx_AssemblyUtils_PESubsystemInfo_GetPESubsystemDescription_System_Int16_WizardWrx_AssemblyUtils_PESubsystemInfo_SubsystemDescription_">GetPESubsystemDescription(Int16, PESubsystemInfo.SubsystemDescription)</a></div>
+  </div>
+  
+  
+  <a id="WizardWrx_AssemblyUtils_PESubsystemInfo_GetPESubsystemID_" data-uid="WizardWrx.AssemblyUtils.PESubsystemInfo.GetPESubsystemID*"></a>
+  <h4 id="WizardWrx_AssemblyUtils_PESubsystemInfo_GetPESubsystemID_System_String_" data-uid="WizardWrx.AssemblyUtils.PESubsystemInfo.GetPESubsystemID(System.String)">GetPESubsystemID(String)</h4>
+  <div class="markdown level1 summary"><p>Call this method with the name of a file to get its subsystem ID.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static short GetPESubsystemID(string pstrFileName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrFileName</span></td>
+        <td><p>This string must be the name of a file that can be found in the
+current security context. Names may be either relative or fully
+qualified. Relative file names are resolved relative to the current
+working directory.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int16</span></td>
+        <td><p>If the specified file exists and is a valid Windows Portable
+Executable (PE) file, its subsystem ID is returned. Since the ID is
+represented internally as a 16 bit signed integer, the return type
+of Int16 is guaranteed to be correct, regardless of the machine
+architecture. Debuggers and stack traces may represent this type as
+a short, a common alias for Int16.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td><p>The following conditions elicit an ArgumentException exception.</p>
+<ol>
+<li><p>String argument pstrFileName is a null reference or points to the
+empty string.</p>
+</li>
+<li><p>String argument pstrFileName specifies a file that cannot be
+found in the current security context.</p>
+</li>
+<li><p>String argument pstrFileName specifies a file that is too small
+to contain a valid PE header, let alone its associated code and'
+data.</p>
+</li>
+</ol>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Exception</span></td>
+        <td><p>The following conditions elicit an Exception (the garden variety
+exception class) exception.</p>
+<ol>
+<li><p>The file read returned, indicating that fewer than the expected
+number of bytes was read. This is probably the result of an internal
+programming error, and is unlikely to arise in practice, since this
+type of error should elicit an I/O exception.</p>
+</li>
+<li><p>The Int16 (16 bit signed integer) that marks the start of a valid
+DOS file header is missing.</p>
+</li>
+<li><p>The DWORD (32 bit unsigned integer) in the DOS header that should
+point to the start of the NT header is either null, or it points to
+a location beyond the first 1024 bytes of the file.</p>
+</li>
+<li><p>The magic Int32 (32 bit signed integer) that marks the start of
+the NT header is not where the pointer in the DOS header says it
+should be.</p>
+</li>
+<li><p>The I/O subsystem threw an exception. A new garden variety
+exception object is created, the I/O exception is attached as its
+InnerException property, and the new exception is thrown up the call
+stack.</p>
+</li>
+</ol>
+<p>Wrapping the I/O exception in a garden variety exception lets the
+final exception report include the name of the file that was being
+processed when the exception arose, which may provide useful clues
+about its root cause.</p>
+<ol start="6">
+<li>A completely unexpected event gave rise to an exception. A new
+garden variety exception object is created, the original exception
+is attached as its InnerException property, and the new exception is
+thrown up the call stack.</li>
+</ol>
+<p>Wrapping the original I/O exception in a new exception lets the
+final exception report include the name of the file that was being
+processed when the exception arose, which may provide useful clues
+about its root cause.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_AssemblyUtils_PESubsystemInfo_GetPESubsystemID_System_String__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="WizardWrx.AssemblyUtils.PESubsystemInfo.html#WizardWrx_AssemblyUtils_PESubsystemInfo_GetPESubsystem_System_String_">GetPESubsystem(String)</a></div>
+      <div><a class="xref" href="WizardWrx.AssemblyUtils.PESubsystemInfo.html#WizardWrx_AssemblyUtils_PESubsystemInfo_GetPESubsystemDescription_WizardWrx_AssemblyUtils_PESubsystemInfo_PESubsystemID_WizardWrx_AssemblyUtils_PESubsystemInfo_SubsystemDescription_">GetPESubsystemDescription(PESubsystemInfo.PESubsystemID, PESubsystemInfo.SubsystemDescription)</a></div>
+      <div><a class="xref" href="WizardWrx.AssemblyUtils.PESubsystemInfo.html#WizardWrx_AssemblyUtils_PESubsystemInfo_DefaultAppDomainSubsystemID">DefaultAppDomainSubsystemID</a></div>
+  </div>
+  
+  
+  <a id="WizardWrx_AssemblyUtils_PESubsystemInfo_ToString_" data-uid="WizardWrx.AssemblyUtils.PESubsystemInfo.ToString*"></a>
+  <h4 id="WizardWrx_AssemblyUtils_PESubsystemInfo_ToString" data-uid="WizardWrx.AssemblyUtils.PESubsystemInfo.ToString">ToString()</h4>
+  <div class="markdown level1 summary"><p>Override the default ToString method to display the subsystem type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The returned string resembles the following example.</p>
+<p>{{Subsystem ID = Console (3)}} WizardWrx.AssemblyUtils.PESubsystemInfo</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Object.ToString()</span></div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

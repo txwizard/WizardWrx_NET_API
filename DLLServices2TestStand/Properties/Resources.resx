@@ -1,0 +1,622 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BOJ_MSG_TPL" xml:space="preserve">
+    <value>{0}, version {1} BOJ{4}{2} ({3} UTC){4}</value>
+    <comment>Since it isn't allowed to use ConsoleAppAids2, this assembly must provide its own logo banner.</comment>
+  </data>
+  <data name="CHOP_TEST_REPORT" xml:space="preserve">
+    <value>Chop Test {0}: Input String Length  = {1}, Value = {2}{5}             Output String Length = {3}, Value = {4}{5}</value>
+    <comment>The ChopChop test method uses this as its output format.</comment>
+  </data>
+  <data name="CMDARG_ENUMERATE_EXCEPTION_GUIDS" xml:space="preserve">
+    <value>EnumExcpetionGUIDs</value>
+    <comment>Select this one-off task to process a list of exception types that is baked into the routine that implements it.</comment>
+  </data>
+  <data name="CMDARG_GENERATE_EXCEPTION_MESSAGE_FORMAT_TABLE" xml:space="preserve">
+    <value>GenerateExceptionMessageFormatTable</value>
+    <comment>Select this one-off task to generate the configuration file for the exception message formatters.</comment>
+  </data>
+  <data name="CMDARG_REDIRECTION_DETECTION" xml:space="preserve">
+    <value>RedirectionDetection</value>
+    <comment>Use this command line argument to engage the redirection detection routine testsrs.</comment>
+  </data>
+  <data name="CMDARG_REDIRECTION_STATE_TESTS" xml:space="preserve">
+    <value>RedirectionStateTests</value>
+    <comment>Use this command line argument to engage  the redirection detector comparisons.</comment>
+  </data>
+  <data name="COLOR_MESSAGE_TEXT" xml:space="preserve">
+    <value>{2}This text should appear as {0} letters on a {1} background.{2}</value>
+    <comment>This message is used to report the conrfigured colors for a category of messages.</comment>
+  </data>
+  <data name="DEFAULT_EXCEPTION_COLORS_MESSAGE" xml:space="preserve">
+    <value>The default colors of a {0} exception, as seen through{4}{1}, are {2} text on a {3} background.{4}</value>
+    <comment>This message describes the colors of a type of exception report.</comment>
+  </data>
+  <data name="DEFAULT_EXCEPTION_COLORS_METHOD_1" xml:space="preserve">
+    <value>the GetDefaultErrorMessageColors method</value>
+    <comment>This message describes one of two methods that queries the DLL configuration file in which the default error message colors are stored.</comment>
+  </data>
+  <data name="DEFAULT_EXCEPTION_COLORS_METHOD_2" xml:space="preserve">
+    <value>the GetDefaultMessageColors method</value>
+    <comment>This message describes one of two methods that queries the DLL configuration file in which the default error message colors are stored.</comment>
+  </data>
+  <data name="DEFAULT_EXCEPTION_COLORS_PROPERTIES" xml:space="preserve">
+    <value>individdual properties</value>
+  </data>
+  <data name="EOJ_MSG_TPL" xml:space="preserve">
+    <value>{0} EOJ{2}Running time = {1}{2}Press ENTER to exit the program.</value>
+    <comment>This is the last message written on the console.</comment>
+  </data>
+  <data name="ERRMSG_LIMIT_CONDITON" xml:space="preserve">
+    <value>Value must belong to the LimitConditon enumeration.</value>
+  </data>
+  <data name="ERRMSG_LIMIT_VALUE" xml:space="preserve">
+    <value>Value must belong to the LimitValue enumeration.</value>
+  </data>
+  <data name="ERRMSG_NEW_CLASS_TESTS_20140914" xml:space="preserve">
+    <value>ABORTING: Method NewClassTests_20140914.{0} failed, returning a status code of {1}</value>
+  </data>
+  <data name="ERRMSG_RUNTIME" xml:space="preserve">
+    <value>A run-time exception was caught and reported.</value>
+    <comment>Exit code 1 is reserved for reporting runtime errors.</comment>
+  </data>
+  <data name="ERRMSG_SUCCESS" xml:space="preserve">
+    <value>Processing completed without errors.</value>
+    <comment>This message is never displayed; it holds the spot in the array that is reserved for exit code zero.</comment>
+  </data>
+  <data name="EXCEPTION_IS_FATAL" xml:space="preserve">
+    <value>fatal</value>
+    <comment>This string belongs in WizardWrx.Common.dll.</comment>
+  </data>
+  <data name="EXCEPTION_IS_RECOVERABLE" xml:space="preserve">
+    <value>recoverable</value>
+    <comment>This string belongs in WizardWrx.Common.dll.</comment>
+  </data>
+  <data name="MESSAGE_EMPTY_STRING" xml:space="preserve">
+    <value>[Empty String}</value>
+    <comment>This string belongs in WizardWrx.Common.dll.</comment>
+  </data>
+  <data name="MESSAGE_NULL_STRING" xml:space="preserve">
+    <value>[Null String}</value>
+    <comment>This string belongs in WizardWrx.Common.dll.</comment>
+  </data>
+  <data name="MSG_APP_DOMAIN_ENTRY_ASM_LOCATION" xml:space="preserve">
+    <value>    Absolute Location of Entry Assembly                = {0}</value>
+    <comment>The DisplayDefaultAppDomainProperties method formats a line for its report from this template, which contains the label and a placeholder.</comment>
+  </data>
+  <data name="MSG_APP_DOMAIN_ENTRY_ASM_NAME" xml:space="preserve">
+    <value>{1}    Name of Entry Assembly                             = {0}</value>
+    <comment>The DisplayDefaultAppDomainProperties method formats a line for its report from this template, which contains the label and a placeholder.</comment>
+  </data>
+  <data name="MSG_APP_DOMAIN_SUBSYSTEM" xml:space="preserve">
+    <value>{3}    Entry Assembly Subsystem                           = {0} ({1}): {2}{3}</value>
+    <comment>The DisplayDefaultAppDomainProperties method formats a line for its report from this template, which contains the label and a placeholder.</comment>
+  </data>
+  <data name="MSG_ASBSOLUTE_ASSEMBLYNAME" xml:space="preserve">
+    <value>{1}Fully qualified program name, per StateManager GetAssemblyFQFN method = {0}</value>
+    <comment>Since this message immediately follows the banner, it needs a leading line feed.</comment>
+  </data>
+  <data name="MSG_ASSEMBLY_SUBSYSTEM" xml:space="preserve">
+    <value>{2}Executable Subsystem = {0}: {1}{2}</value>
+  </data>
+  <data name="MSG_BASE_DIRECTORY_NAME" xml:space="preserve">
+    <value>    BaseDirectory                                      = {0}</value>
+    <comment>The DisplayDefaultAppDomainProperties method formats a line for its report from this template, which contains the label and a placeholder.</comment>
+  </data>
+  <data name="MSG_CURRENT_MACHINE_TIME" xml:space="preserve">
+    <value>    Current Machine Time     = {0} ({1} UTC)</value>
+    <comment>The DisplayProcessProperties uses this string to label a report about the properties of the executing process.</comment>
+  </data>
+  <data name="MSG_DFLT_APP_IDENTITY_NULL" xml:space="preserve">
+    <value>    ApplicationIdentity                                = NULL</value>
+    <comment>The DisplayDefaultAppDomainProperties method formats a line for its report from this template, which contains the label and a placeholder.</comment>
+  </data>
+  <data name="MSG_DFLT_DOMAIN_IDENTITY_CODEBASE" xml:space="preserve">
+    <value>    ActivationContext.Identity.CodeBase                = {0}</value>
+    <comment>The DisplayDefaultAppDomainProperties method formats a console message from this template.</comment>
+  </data>
+  <data name="MSG_DFLT_DOMAIN_IDENTITY_FULLNAME" xml:space="preserve">
+    <value>    ActivationContext.Identity.FullName                = {0}</value>
+    <comment>The DisplayDefaultAppDomainProperties method formats a console message from this template.</comment>
+  </data>
+  <data name="MSG_DFLT_DOMAIN_PROPS_FOOTER" xml:space="preserve">
+    <value>{0}End of property listing for default application domain{0}</value>
+    <comment>The DisplayDefaultAppDomainProperties method formats a console message from this template.</comment>
+  </data>
+  <data name="MSG_DFLT_DOMAIN_PROPS_HEADER" xml:space="preserve">
+    <value>{0}The default application domain exhibits the following properties.{0}</value>
+    <comment>The DisplayDefaultAppDomainProperties method formats a console message from this template.</comment>
+  </data>
+  <data name="MSG_DFLT_SETUP_INFO_NULL" xml:space="preserve">
+    <value>    SetupInformation                                   = NULL</value>
+    <comment>The DisplayDefaultAppDomainProperties method formats a line for its report from this template, which contains the label and a placeholder.</comment>
+  </data>
+  <data name="MSG_DOMAIN_MGR_APP_BASE" xml:space="preserve">
+    <value>    DomainManager.SetupInformation.ApplicationBase     = {0}</value>
+    <comment>The DisplayDefaultAppDomainProperties method formats a line for its report from this template, which contains the label and a placeholder.</comment>
+  </data>
+  <data name="MSG_DOMAIN_MGR_APP_NAME" xml:space="preserve">
+    <value>    DomainManager.SetupInformation.ApplicationName     = {0}</value>
+    <comment>The DisplayDefaultAppDomainProperties method formats a line for its report from this template, which contains the label and a placeholder.</comment>
+  </data>
+  <data name="MSG_DOMAIN_MGR_FRIENDLY_NAME" xml:space="preserve">
+    <value>    DomainManager.FriendlyName                         = {0}</value>
+    <comment>The DisplayDefaultAppDomainProperties method formats a line for its report from this template, which contains the label and a placeholder.</comment>
+  </data>
+  <data name="MSG_DOMAIN_MGR_ID" xml:space="preserve">
+    <value>    DomainManager.Id                                   = {0}</value>
+    <comment>The DisplayDefaultAppDomainProperties method formats a line for its report from this template, which contains the label and a placeholder.</comment>
+  </data>
+  <data name="MSG_ENTRY_ASM_FULLNAME" xml:space="preserve">
+    <value>    DomainManager.EntryAssembly.FullName               = {0}</value>
+    <comment>The DisplayDefaultAppDomainProperties method formats a line for its report from this template, which contains the label and a placeholder.</comment>
+  </data>
+  <data name="MSG_ENTRY_ASM_LOCATION" xml:space="preserve">
+    <value>    DomainManager.EntryAssembly.Location               = {0}</value>
+    <comment>The DisplayDefaultAppDomainProperties method formats a line for its report from this template, which contains the label and a placeholder.</comment>
+  </data>
+  <data name="MSG_HANDLEBASE_NULL" xml:space="preserve">
+    <value>HandleBase</value>
+  </data>
+  <data name="MSG_HANDLE_IS_ATTACHED" xml:space="preserve">
+    <value>attached to a console</value>
+  </data>
+  <data name="MSG_HANDLE_IS_REDIRECTED" xml:space="preserve">
+    <value>redirected to a file or pipe</value>
+  </data>
+  <data name="MSG_HANDLE_IS_UNDEFINED" xml:space="preserve">
+    <value>unknown</value>
+  </data>
+  <data name="MSG_LOOP_LIMIT_VALUES" xml:space="preserve">
+    <value>Loop Limit Values: Start = {0}{2}                   Stop  = {1}{2}</value>
+    <comment>Token 2 is my mechanismo for embedding a newline.</comment>
+  </data>
+  <data name="MSG_LOOP_STATE_EQ" xml:space="preserve">
+    <value>{0}Evaluate loop state with a Equal To Limit:{0}</value>
+  </data>
+  <data name="MSG_LOOP_STATE_GE" xml:space="preserve">
+    <value>{0}Evaluate loop state with a Greater Than or Equal To Limit:{0}</value>
+  </data>
+  <data name="MSG_LOOP_STATE_GT" xml:space="preserve">
+    <value>{0}Evaluate loop state with a Greater Than Limit:{0}</value>
+  </data>
+  <data name="MSG_LOOP_STATE_LE" xml:space="preserve">
+    <value>{0}Evaluate loop state with a Less Than or Equal To Limit:{0}</value>
+    <comment>Token 0 is my mechanismo for embedding a newline.</comment>
+  </data>
+  <data name="MSG_LOOP_STATE_LT" xml:space="preserve">
+    <value>{0}Evaluate loop state with a Less Than Limit:{0}</value>
+    <comment>Token 0 is my mechanismo for embedding a newline.</comment>
+  </data>
+  <data name="MSG_LOOP_STATE_TABLE_DATA" xml:space="preserve">
+    <value>{0}{5}{1}{5}{2}{5}{3}{5}{4}{5}</value>
+    <comment>Construct a TSV list, where token 4 is the TAB character.</comment>
+  </data>
+  <data name="MSG_LOOP_STATE_TABLE_LABELS" xml:space="preserve">
+    <value>Index{0}First{0}Next{0}More{0}Last</value>
+    <comment>Construct a TSV list, where token 0 is the TAB character.</comment>
+  </data>
+  <data name="MSG_PHOTO_OP" xml:space="preserve">
+    <value>Press ENTER to resume the program.</value>
+    <comment>The PauseForPictures method displays this message.</comment>
+  </data>
+  <data name="MSG_PINVOKE_WIN32" xml:space="preserve">
+    <value>PInvokeW32</value>
+  </data>
+  <data name="MSG_NO_DOMAIN_MANAGER" xml:space="preserve">
+    <value>    DomainManager                                      = NULL</value>
+    <comment>The DisplayDefaultAppDomainProperties method formats a console message from this template.</comment>
+  </data>
+  <data name="MSG_NULL_ACTIVATION_CONTEXT" xml:space="preserve">
+    <value>    ActivationContext                                  = NULL</value>
+    <comment>The DisplayDefaultAppDomainProperties method uses this message to report a null activation context.</comment>
+  </data>
+  <data name="MSG_PROCESS_ENTRY_ASM_NAME" xml:space="preserve">
+    <value>    Name of Entry Assembly   = {0}</value>
+    <comment>The DisplayProcessProperties uses this string to label a report about the properties of the executing process.</comment>
+  </data>
+  <data name="MSG_PROCESS_ENTRY_ASM_SUBSYSTEM" xml:space="preserve">
+    <value>    Entry Assembly Subsystem = {0} ({1}): {2}{3}</value>
+    <comment>The DisplayProcessProperties uses this string to label a report about the properties of the executing process.</comment>
+  </data>
+  <data name="MSG_PROCESS_ID" xml:space="preserve">
+    <value>    Process ID               = 0x{0:X8} ({1} decimal){2}</value>
+    <comment>The DisplayProcessProperties uses this string to label a report about the properties of the executing process.</comment>
+  </data>
+  <data name="MSG_PROCESS_PROPERTIES_FOOTER" xml:space="preserve">
+    <value>{0}End of property listing for current process{0}</value>
+    <comment>The DisplayProcessProperties method formats its report footerfrom this template.</comment>
+  </data>
+  <data name="MSG_PROCESS_PROPERTIES_HEADER" xml:space="preserve">
+    <value>{0}The current process has the following properties.{0}</value>
+    <comment>The DisplayProcessProperties method formats its report header from this template.</comment>
+  </data>
+  <data name="MSG_PROCESS_STARTUP_TIME" xml:space="preserve">
+    <value>    Process Startup Time     = {0} ({1} UTC)</value>
+    <comment>The DisplayProcessProperties uses this string to label a report about the properties of the executing process.</comment>
+  </data>
+  <data name="MSG_REDIRECTION_STATE_TEST_TIMING" xml:space="preserve">
+    <value>Redirection State Test Method = {0}: Iterations   = {1}{5}                                            Start Time   = {2}{5}                                            Finish Time  = {3}{5}                                            Elapsed Time = {4}{5}{5}</value>
+    <comment>Display this message at the end of each test.</comment>
+  </data>
+  <data name="MSG_REG_KEY_VALUE" xml:space="preserve">
+    <value>    Public method RegistryValues.RegQueryValue: Key Name   = {0}{4}                                                Value Name = {1}{4}                                                Value Type = {2}{4}                                                Value Data = {3}{4}</value>
+  </data>
+  <data name="MSG_SHOWING_CONFIGURED_COLORS" xml:space="preserve">
+    <value>The colors shown below were read from WizardWrx.DllServices2.dll.config.{0}</value>
+    <comment>This message displays at the top of the first page of error message colors. The display routine is expected to supply a newline for the format item.</comment>
+  </data>
+  <data name="MSG_SHOWING_LIBRARY_INFO" xml:space="preserve">
+    <value>{0}The next screen displays selected properties of the library that is about to be exercised.{0}</value>
+    <comment>This message displays in advance of the first pause.</comment>
+  </data>
+  <data name="MSG_SHOWING_PROGRAMMATIC_COLORS" xml:space="preserve">
+    <value>The colors shown below were supplied by the test stand program.{0}</value>
+    <comment>This message displays at the top of the second page of error message colors. The display routine is expected to supply a newline for the format item.</comment>
+  </data>
+  <data name="MSG_STANDARD_HANDLE_STATE" xml:space="preserve">
+    <value>Console handle {0} is {1}{2}</value>
+    <comment>This string belongs in WizardWrx.Common.dll.</comment>
+  </data>
+  <data name="MSG_STDERR" xml:space="preserve">
+    <value>Standard Error (STDERR, a. k. a., Console.Error)</value>
+    <comment>This string belongs in WizardWrx.Common.dll.</comment>
+  </data>
+  <data name="MSG_STDIN" xml:space="preserve">
+    <value>Standard Input (STDIN, a. k. a., Console.In)</value>
+    <comment>This string belongs in WizardWrx.Common.dll.</comment>
+  </data>
+  <data name="MSG_STDOUT" xml:space="preserve">
+    <value>Standard Output (STDOUT, a. k. a., Console.Out)</value>
+    <comment>This string belongs in WizardWrx.Common.dll.</comment>
+  </data>
+  <data name="MSG_SUBSTRING_SUMMARY_1" xml:space="preserve">
+    <value> substrings</value>
+  </data>
+  <data name="MSG_SUBSTRING_SUMMARY_2" xml:space="preserve">
+    <value>, as follows:</value>
+  </data>
+  <data name="MSG_SUBSTRING_VALUE" xml:space="preserve">
+    <value>        Value # {0} = {1}{2}</value>
+  </data>
+  <data name="MSG_UNLESS_BEGIN" xml:space="preserve">
+    <value>Unless Idiom Tests Begin:{0}</value>
+  </data>
+  <data name="MSG_UNLESS_END" xml:space="preserve">
+    <value>{0}Unless Idiom Tests Done!{0}</value>
+  </data>
+  <data name="MSG_UNLESS_WHAT" xml:space="preserve">
+    <value>    Boolean Expression = {0}, Unless = {1}</value>
+    <comment>A new UnlessWhat method uses this as its report template.</comment>
+  </data>
+  <data name="MSG_VERSIONIFNO_TESTS_BEGIN" xml:space="preserve">
+    <value>{0}Testing StateManager.GetAssemblyProductAndVersion:{0}</value>
+  </data>
+  <data name="MSG_VERSIONINFO" xml:space="preserve">
+    <value>    Entry Assembly product version ({0}, {1} parts) = {2}</value>
+  </data>
+  <data name="MSG_VERSIONINFO_TESTS_DONE" xml:space="preserve">
+    <value>{1}    Entry Assembly default product version = {0}{1}{1}StateManager.GetAssemblyProductAndVersion Tests Completed{1}</value>
+  </data>
+  <data name="REGEXP_TEST_ALL_BUT_LAST" xml:space="preserve">
+    <value>    Public method RegExpSupport.FileMatchesRegExpMask = {0,-5}, for filename = {1} and mask = {2}</value>
+    <comment>I moved this method into RegExpSupport, which is exported by WizardWrx.Core.dll, and belongs to the root WizardWrx namespace. The Util class is finally GONE!</comment>
+  </data>
+  <data name="REGEXP_TEST_LAST" xml:space="preserve">
+    <value>    Public method RegExpSupport.FileMatchesRegExpMask = {0,-5}, for filename = {1} and mask = {2}{3}</value>
+    <comment>I moved this method into RegExpSupport, which is exported by WizardWrx.Core.dll, and belongs to the root WizardWrx namespace. The Util class is finally GONE!</comment>
+  </data>
+  <data name="TEST_EXCEPTION_LABEL" xml:space="preserve">
+    <value>Exception Test Case {0}{1}</value>
+  </data>
+  <data name="TEST_EXCEPTION_MESSAGE" xml:space="preserve">
+    <value>Test Exception Message Number {0} </value>
+  </data>
+  <data name="CMDARG_LIST_COMMON_STRINGS" xml:space="preserve">
+    <value>EnumerateStringResourcesInAssembly</value>
+    <comment>Use this command line argument to engage the routine that displays the string resources stored in WizardWrx.Common.dll, which are publicy visible.</comment>
+  </data>
+  <data name="IDS_BAD_MASTER_LABEL_ROW" xml:space="preserve">
+    <value>The format of the label row in the master input file is invalid.{3}It should contain {0} TAB delimited fields.{3}The supplied label contains {1} fields.{3}The label row follows.{2}{3}</value>
+  </data>
+  <data name="IDS_MERGENEWITEMSINTOARRAY_LABELS" xml:space="preserve">
+    <value>Description\tFileName\tModDate\tSize\tLineCount</value>
+    <comment>Class MergeNewItemsIntoArray_Tester uses this string.</comment>
+  </data>
+  <data name="IDS_COMPARETO_MISMATCH" xml:space="preserve">
+    <value>Comparison must involve objects of the same type.</value>
+  </data>
+  <data name="IDS_DESCR_MASTER_FILE" xml:space="preserve">
+    <value>Master File</value>
+  </data>
+  <data name="IDS_DESCR_NEWITEMS_FILE" xml:space="preserve">
+    <value>New Items File</value>
+  </data>
+  <data name="IDS_DESCR_OUTPUT_FILE" xml:space="preserve">
+    <value>Output File</value>
+  </data>
+  <data name="IDS_INCONSISTENT_INPUTS" xml:space="preserve">
+    <value>Input files are inconsistent{2}Label row of master file = {0}{2}Label Row of current file = {1}</value>
+  </data>
+  <data name="IDS_INVALID_KEY" xml:space="preserve">
+    <value>Key field {0} in record {1} is invalid. All keys must be integers.</value>
+  </data>
+  <data name="IDS_MSG_FILE_NOT_FOUND" xml:space="preserve">
+    <value>Not Found</value>
+    <comment>This string belongs in WizardWrx.Common.dll.</comment>
+  </data>
+  <data name="ERRMSG_LITERAL_ERROR" xml:space="preserve">
+    <value>This literal is made plural if the error count is greater than 1.</value>
+  </data>
+  <data name="IDS_ASCII_TABLE_ITEM" xml:space="preserve">
+    <value>Character {0} ({1}): Display Value = {2}{3}</value>
+    <comment>ASCII_Table_Gen prints each detail through this template. The third format item is either empty, or a parenthesized comment.</comment>
+  </data>
+  <data name="IDS_ASCII_TABLE_PREAMBLE" xml:space="preserve">
+    <value>{0}The following table lists key attributes of every ASCII character.{0}</value>
+    <comment>ASCII_Table_Gen prints thismessage above the table.</comment>
+  </data>
+  <data name="IDS_DATAFILE_FQFN" xml:space="preserve">
+    <value>Fully Qualified Name of Input File</value>
+  </data>
+  <data name="IDS_DATAFILE_LINES" xml:space="preserve">
+    <value>Number of Lines in Input File</value>
+  </data>
+  <data name="IDS_DATAFILE_MODDATE" xml:space="preserve">
+    <value>Date Input File Last Modified</value>
+  </data>
+  <data name="IDS_DATAFILE_SIZE" xml:space="preserve">
+    <value>Size, in Bytes, of Input File</value>
+  </data>
+  <data name="IDS_DATA_SOURCE" xml:space="preserve">
+    <value>Source of Test Data</value>
+  </data>
+  <data name="IDS_LENGTH_OF_LONGEST" xml:space="preserve">
+    <value>Length of Longest Line</value>
+  </data>
+  <data name="IDS_UNSUPPORTED_DATASOURCE" xml:space="preserve">
+    <value>Internal variable _enmDataSource has an unsupported value of {0}.</value>
+  </data>
+  <data name="MSG_FORMAT_ERROR_DETAILS" xml:space="preserve">
+    <value>Details for error {0}:</value>
+  </data>
+  <data name="IDS_MAX_STRLEN_BEGIN" xml:space="preserve">
+    <value>{0}Begin Tests of MaxStringLength Method:{0}</value>
+  </data>
+  <data name="IDS_MAX_STRLEN_END" xml:space="preserve">
+    <value>{0}MaxStringLength tests completed.{0}</value>
+  </data>
+  <data name="IDS_TEST_BEGIN" xml:space="preserve">
+    <value>    Test # {0}:{1}</value>
+    <comment>This string belongs in WizardWrx.Common.dll.</comment>
+  </data>
+  <data name="IDS_TEST_END" xml:space="preserve">
+    <value>{1}    Test # {0} done{1}</value>
+    <comment>This string belongs in WizardWrx.Common.dll.</comment>
+  </data>
+  <data name="IDS_TEST_FAIL" xml:space="preserve">
+    <value>FAIL</value>
+    <comment>This string belongs in WizardWrx.Common.dll.</comment>
+  </data>
+  <data name="IDS_TEST_PASS" xml:space="preserve">
+    <value>Pass</value>
+    <comment>This string belongs in WizardWrx.Common.dll.</comment>
+  </data>
+  <data name="IDS_MERGENEWITEMSINTOARRAY_BEGIN" xml:space="preserve">
+    <value>{0}Begin Tests of MergeNewItemsIntoArray Method:{0}</value>
+  </data>
+  <data name="IDS_MERGENEWITEMSINTOARRAY_END" xml:space="preserve">
+    <value>{0}MergeNewItemsIntoArray tests completed.{0}</value>
+  </data>
+  <data name="IDS_MSG_BEGIN" xml:space="preserve">
+    <value>Begin</value>
+    <comment>This string belongs in WizardWrx.Common.dll.</comment>
+  </data>
+  <data name="IDS_MSG_DONE" xml:space="preserve">
+    <value>Done!</value>
+    <comment>This string belongs in WizardWrx.Common.dll.</comment>
+  </data>
+  <data name="ERRMSG_INVALID_TEST_INDEX" xml:space="preserve">
+    <value>The specified test index, {0}, is too high.{2}Valid values are positive integers less than {1}.</value>
+    <comment>The DoThisTest method formats an error message from this template.</comment>
+  </data>
+  <data name="IDS_MSG_LONGEST_LABEL" xml:space="preserve">
+    <value>Longest Label = {0}</value>
+  </data>
+  <data name="IDS_MSG_LONGEST_VALUE" xml:space="preserve">
+    <value>Longest Value = {0}{1}</value>
+  </data>
+  <data name="IDS_MSG_REPORT_LABEL_1" xml:space="preserve">
+    <value>Report Label 1</value>
+    <comment>This is one of a set string that is used to exercise the report formatter.</comment>
+  </data>
+  <data name="IDS_MSG_REPORT_LABEL_2" xml:space="preserve">
+    <value>Report Label 2</value>
+    <comment>This is one of a set string that is used to exercise the report formatter.</comment>
+  </data>
+  <data name="IDS_MSG_REPORT_LABEL_3" xml:space="preserve">
+    <value>Report Label 3</value>
+    <comment>This is one of a set string that is used to exercise the report formatter.</comment>
+  </data>
+  <data name="IDS_MSG_REPORT_LABEL_4" xml:space="preserve">
+    <value>Report Label 4</value>
+    <comment>This is one of a set string that is used to exercise the report formatter.</comment>
+  </data>
+  <data name="IDS_MSG_REPORT_LABEL_5" xml:space="preserve">
+    <value>Report Label 5</value>
+    <comment>This is one of a set string that is used to exercise the report formatter.</comment>
+  </data>
+  <data name="IDS_REALLY_LONG_STRING" xml:space="preserve">
+    <value>This long string is for testing another routine, for use in right-alingining numeric values in a report.</value>
+  </data>
+  <data name="MSG_EXCETIONS_COUNTED" xml:space="preserve">
+    <value>{1}Total exceptions logged = {0}</value>
+  </data>
+  <data name="MSG_NEW_TEST" xml:space="preserve">
+    <value>Case {0} of {1}:{2}</value>
+    <comment>ReportHelpersTests uses this string as a label, along with a a ReportDetails collection.</comment>
+  </data>
+  <data name="MSG_PENMALIGNMENT" xml:space="preserve">
+    <value>    Argument penmAlignment, an Alignment</value>
+    <comment>ReportHelpersTests uses this string as a label, along with a a ReportDetails collection.</comment>
+  </data>
+  <data name="MSG_PSTRFORMATSTRING" xml:space="preserve">
+    <value>    Argument pstrFormatString, a string&lt;</value>
+    <comment>ReportHelpersTests uses this string as a label, along with a a ReportDetails collection.</comment>
+  </data>
+  <data name="MSG_PUINTITEMINDEX" xml:space="preserve">
+    <value>    Argument puintItemIndex, an uint</value>
+    <comment>ReportHelpersTests uses this string as a label, along with a a ReportDetails collection.</comment>
+  </data>
+  <data name="MSG_PUINTMAXIMUMWIDTH" xml:space="preserve">
+    <value>    Argument puintMaximumWidth, an uint&lt;</value>
+    <comment>ReportHelpersTests uses this string as a label, along with a a ReportDetails collection.</comment>
+  </data>
+  <data name="MSG_REPORT_DETAILS_AUTO_ORDERED" xml:space="preserve">
+    <value>{0}The DisplayOrder properties are auto-generated.{0}</value>
+  </data>
+  <data name="MSG_REPORT_DETAILS_SELECTIVELY_OVERRIDDEN" xml:space="preserve">
+    <value>{0}The DisplayOrder properties of selected items were explicitly set.{0}</value>
+  </data>
+  <data name="MSG_REPORT_DETAILS_UNSORTED" xml:space="preserve">
+    <value>{0}The test collection is UNsorted.{0}</value>
+    <comment>ImportsFromSharedUtl4.ReportDetailsTests displays this message, wrapped in newlines, when pfTestSorting is TRUE.</comment>
+  </data>
+  <data name="MSG_SAMPLE_FORMAT_STRING" xml:space="preserve">
+    <value>Token 0 = {0}, Token 1 ={1}, Token 2 - {2}, Token 3 = {3}</value>
+    <comment>ReportHelpersTests uses this string to exercise the UpgradeFormatItem method.</comment>
+  </data>
+  <data name="MSG_SHOW_SAMPLE_BEFORE_AND_AFTER" xml:space="preserve">
+    <value>{2}    Sample Format: Before Transformation = {0}{2}                   After Transformation  = {1}{2}</value>
+    <comment>ReportHelpersTests uses this string to document the performance of the UpgradeFormatItem method.</comment>
+  </data>
+  <data name="MSG_UPGRADED_FORMAT" xml:space="preserve">
+    <value>        Upgraded Format String</value>
+    <comment>ReportHelpersTests uses this string as a label, along with a a ReportDetails collection.</comment>
+  </data>
+  <data name="MSG_WARNING_SUPERFLUOUS_ARGS_DISCARDED" xml:space="preserve">
+    <value>{1}CAUTION: Command line argument {0} trumps all others.{1}         Remaining arguments will be ignored.{1}</value>
+    <comment>Routine InitializeTestSelections in class ImportsFromSharedUtl4 generates a warning message from this template.</comment>
+  </data>
+  <data name="CMDARG_EVENT_MSG_CLEANUP_TESTS" xml:space="preserve">
+    <value>EventMessageCleanupTests</value>
+    <comment>Use this command line argument to engage the event log cleanup option testsrs.</comment>
+  </data>
+</root>

@@ -1,0 +1,643 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class AssemblyLocatorBase
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class AssemblyLocatorBase
+   ">
+    <meta name="generator" content="docfx 2.39.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="WizardWrx.Core.AssemblyLocatorBase">
+  
+  
+  <h1 id="WizardWrx_Core_AssemblyLocatorBase" data-uid="WizardWrx.Core.AssemblyLocatorBase" class="text-break">Class AssemblyLocatorBase
+  </h1>
+  <div class="markdown level0 summary"><p>Use a class derived from this class to get the fully qualified name of
+the file from which the assembly in which the derived class is defined
+was loaded. See Remarks.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">AssemblyLocatorBase</span></div>
+      <div class="level2"><a class="xref" href="WizardWrx.Core.PropertyDefaults.html">PropertyDefaults</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="WizardWrx.Core.html">WizardWrx.Core</a></h6>
+  <h6><strong>Assembly</strong>: WizardWrx.Core.dll</h6>
+  <h5 id="WizardWrx_Core_AssemblyLocatorBase_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class AssemblyLocatorBase</code></pre>
+  </div>
+  <h5 id="WizardWrx_Core_AssemblyLocatorBase_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>Given the location from which an assembly was loaded, you can learn
+almost anything else you need to know about that file, such as its size,
+age, and directory. Given the directory, you can locate satellite files,
+such as custom configuration files.</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="WizardWrx_Core_AssemblyLocatorBase__ctor_" data-uid="WizardWrx.Core.AssemblyLocatorBase.#ctor*"></a>
+  <h4 id="WizardWrx_Core_AssemblyLocatorBase__ctor" data-uid="WizardWrx.Core.AssemblyLocatorBase.#ctor">AssemblyLocatorBase()</h4>
+  <div class="markdown level1 summary"><p>Initialize the one and only property of this class, which holds the
+fully qualified path from which the containing assembly was loaded.</p>
+<p>Use this constructor to link the configuration file to the assembly
+that defines this class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AssemblyLocatorBase()</code></pre>
+  </div>
+  <h5 id="WizardWrx_Core_AssemblyLocatorBase__ctor_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>IMPORTANT: If the assembly loads from the Global Assembly Cache, its
+configuration file must be stored in the application directory. Be
+aware that if an assembly exists in the Global Assembly Cache, it
+loads from there, even if there is a copy in the application
+directory.</p>
+</div>
+  
+  
+  <a id="WizardWrx_Core_AssemblyLocatorBase__ctor_" data-uid="WizardWrx.Core.AssemblyLocatorBase.#ctor*"></a>
+  <h4 id="WizardWrx_Core_AssemblyLocatorBase__ctor_System_Reflection_Assembly_" data-uid="WizardWrx.Core.AssemblyLocatorBase.#ctor(System.Reflection.Assembly)">AssemblyLocatorBase(Assembly)</h4>
+  <div class="markdown level1 summary"><p>Initialize the one and only property of this class, which holds the
+fully qualified path from which the containing assembly was loaded.</p>
+<p>Use this constructor to link the configuration file to the assembly
+that defines this class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AssemblyLocatorBase(Assembly pasmLinkedAssembly)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Reflection.Assembly</span></td>
+        <td><span class="parametername">pasmLinkedAssembly</span></td>
+        <td><p>Pass in a reference to the assembly to which the configuration file
+is linked. For example, you can use the executing assembly of the
+object at the top of the inheritance tree.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_AssemblyLocatorBase__ctor_System_Reflection_Assembly__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>IMPORTANT: If the assembly loads from the Global Assembly Cache, its
+configuration file must be stored in the application directory. Be
+aware that if an assembly exists in the Global Assembly Cache, it
+loads from there, even if there is a copy in the application
+directory.</p>
+</div>
+  <h3 id="fields">Fields
+  </h3>
+  
+  
+  <h4 id="WizardWrx_Core_AssemblyLocatorBase_ASSEMBLYDATAPATH_TOKEN" data-uid="WizardWrx.Core.AssemblyLocatorBase.ASSEMBLYDATAPATH_TOKEN">ASSEMBLYDATAPATH_TOKEN</h4>
+  <div class="markdown level1 summary"><p>Use this token in file names stored in DLL configuration files to
+explicitly state that the file is expected to inhabit the directory
+from which the assembly is loaded, unless the assembly was loaded
+from the Global Assembly Cache (GAC). In that case, substitute the
+application directory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string ASSEMBLYDATAPATH_TOKEN = &quot;$$AssemblyDataPath$$&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="WizardWrx_Core_AssemblyLocatorBase_AssemblyDataPath_" data-uid="WizardWrx.Core.AssemblyLocatorBase.AssemblyDataPath*"></a>
+  <h4 id="WizardWrx_Core_AssemblyLocatorBase_AssemblyDataPath" data-uid="WizardWrx.Core.AssemblyLocatorBase.AssemblyDataPath">AssemblyDataPath</h4>
+  <div class="markdown level1 summary"><p>Gets a string containing the fully qualified path of the directory
+from which the assembly was loaded, unless it was loaded from the
+Global Assembly Cache (GAC). In that case, the return value is the
+fully qualified name of the directory from which the first assembly
+was loaded into the current process. See Remarks.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string AssemblyDataPath { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_AssemblyLocatorBase_AssemblyDataPath_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>So far as I know, assemblies must load from one of two locations.
+Unsigned assemblies MUST load from the application directory. If the
+assembly is signed with a strong name, it MAY  be loaded from either
+the application directory or the Global Assembly Cache. If a signed
+assembly is in the local GAC, it loads from there, even if there is
+a copy in the application directory.</p>
+</div>
+  
+  
+  <a id="WizardWrx_Core_AssemblyLocatorBase_AssemblyLocation_" data-uid="WizardWrx.Core.AssemblyLocatorBase.AssemblyLocation*"></a>
+  <h4 id="WizardWrx_Core_AssemblyLocatorBase_AssemblyLocation" data-uid="WizardWrx.Core.AssemblyLocatorBase.AssemblyLocation">AssemblyLocation</h4>
+  <div class="markdown level1 summary"><p>Gets a string containing the fully qualified file name from which
+the assembly in which the derived class is defined was loaded.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string AssemblyLocation { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_AssemblyLocatorBase_ConfigMessage_" data-uid="WizardWrx.Core.AssemblyLocatorBase.ConfigMessage*"></a>
+  <h4 id="WizardWrx_Core_AssemblyLocatorBase_ConfigMessage" data-uid="WizardWrx.Core.AssemblyLocatorBase.ConfigMessage">ConfigMessage</h4>
+  <div class="markdown level1 summary"><p>This property returns a message when the configuration file is
+missing or empty. Under normal conditions, it returns the empty
+string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ConfigMessage { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_AssemblyLocatorBase_DLLConfiguration_" data-uid="WizardWrx.Core.AssemblyLocatorBase.DLLConfiguration*"></a>
+  <h4 id="WizardWrx_Core_AssemblyLocatorBase_DLLConfiguration" data-uid="WizardWrx.Core.AssemblyLocatorBase.DLLConfiguration">DLLConfiguration</h4>
+  <div class="markdown level1 summary"><p>Gets a reference to the entire Configuration object tied to the
+assembly in which the derived class is defined.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Configuration DLLConfiguration { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Configuration.Configuration</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_AssemblyLocatorBase_DLLettingsSection_" data-uid="WizardWrx.Core.AssemblyLocatorBase.DLLettingsSection*"></a>
+  <h4 id="WizardWrx_Core_AssemblyLocatorBase_DLLettingsSection" data-uid="WizardWrx.Core.AssemblyLocatorBase.DLLettingsSection">DLLettingsSection</h4>
+  <div class="markdown level1 summary"><p>Gets a reference to the entire AppSettingsSection object tied to
+the assembly in which the derived class is defined.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected AppSettingsSection DLLettingsSection { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Configuration.AppSettingsSection</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_AssemblyLocatorBase_DLLettingsSection_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Since this property starts from the ConfigurationManager object
+returned by its DLLConfiguration sibling, it requires only a single
+statement, with a little help from an explicit cast.</p>
+</div>
+  
+  
+  <a id="WizardWrx_Core_AssemblyLocatorBase_DLLSettings_" data-uid="WizardWrx.Core.AssemblyLocatorBase.DLLSettings*"></a>
+  <h4 id="WizardWrx_Core_AssemblyLocatorBase_DLLSettings" data-uid="WizardWrx.Core.AssemblyLocatorBase.DLLSettings">DLLSettings</h4>
+  <div class="markdown level1 summary"><p>Gets the DLL Settings section as a KeyValueConfigurationCollection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected KeyValueConfigurationCollection DLLSettings { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Configuration.KeyValueConfigurationCollection</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="WizardWrx_Core_AssemblyLocatorBase_GetAssemblyBuildDate_" data-uid="WizardWrx.Core.AssemblyLocatorBase.GetAssemblyBuildDate*"></a>
+  <h4 id="WizardWrx_Core_AssemblyLocatorBase_GetAssemblyBuildDate_System_DateTimeKind_" data-uid="WizardWrx.Core.AssemblyLocatorBase.GetAssemblyBuildDate(System.DateTimeKind)">GetAssemblyBuildDate(DateTimeKind)</h4>
+  <div class="markdown level1 summary"><p>Return the LastWriteTime of the file that contains the executing
+assembly. For all practical purposes, that is the date on which the
+assembly was built.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected DateTime GetAssemblyBuildDate(DateTimeKind pdtmKind)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTimeKind</span></td>
+        <td><span class="parametername">pdtmKind</span></td>
+        <td><p>This DateTimeKind enumeration member specifies whether to report the
+LastWriteTime or the LastWriteTimeUtc.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><p>The return value is a fully initialized DateTime structure, which
+contains the requested LastWriteTime (Local or UTC) of the file that
+contains the code of the executing assembly.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_AssemblyLocatorBase_GetAssemblyVersion_" data-uid="WizardWrx.Core.AssemblyLocatorBase.GetAssemblyVersion*"></a>
+  <h4 id="WizardWrx_Core_AssemblyLocatorBase_GetAssemblyVersion" data-uid="WizardWrx.Core.AssemblyLocatorBase.GetAssemblyVersion">GetAssemblyVersion()</h4>
+  <div class="markdown level1 summary"><p>Return the Version structure, to expedite parsing its parts.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Version GetAssemblyVersion()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Version</span></td>
+        <td><p>The return value is the version component of the fully qualified
+assembly name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_AssemblyLocatorBase_GetAssemblyVersionString_" data-uid="WizardWrx.Core.AssemblyLocatorBase.GetAssemblyVersionString*"></a>
+  <h4 id="WizardWrx_Core_AssemblyLocatorBase_GetAssemblyVersionString" data-uid="WizardWrx.Core.AssemblyLocatorBase.GetAssemblyVersionString">GetAssemblyVersionString()</h4>
+  <div class="markdown level1 summary"><p>Return the complete version of the executing assembly.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected string GetAssemblyVersionString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The return value is a string representation of all version number
+&quot;octets&quot; - Major, Minor, Build, and Revision.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_AssemblyLocatorBase_GetDLLSetting_" data-uid="WizardWrx.Core.AssemblyLocatorBase.GetDLLSetting*"></a>
+  <h4 id="WizardWrx_Core_AssemblyLocatorBase_GetDLLSetting_System_String_" data-uid="WizardWrx.Core.AssemblyLocatorBase.GetDLLSetting(System.String)">GetDLLSetting(String)</h4>
+  <div class="markdown level1 summary"><p>Return the specified setting value, as a string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetDLLSetting(string pstrSettingsKey)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrSettingsKey</span></td>
+        <td><p>This string is the name (key) of the desired setting.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The return value is a string representation of the value stored in
+the named key.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_Core_AssemblyLocatorBase_SetPropertiesFromDLLConfiguration_" data-uid="WizardWrx.Core.AssemblyLocatorBase.SetPropertiesFromDLLConfiguration*"></a>
+  <h4 id="WizardWrx_Core_AssemblyLocatorBase_SetPropertiesFromDLLConfiguration_System_Type_" data-uid="WizardWrx.Core.AssemblyLocatorBase.SetPropertiesFromDLLConfiguration(System.Type)">SetPropertiesFromDLLConfiguration(Type)</h4>
+  <div class="markdown level1 summary"><p>Set the like named properties from the linked configuration file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected int SetPropertiesFromDLLConfiguration(Type pderivedType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Type</span></td>
+        <td><span class="parametername">pderivedType</span></td>
+        <td><p>When the derived class constructor calls this method, it must pass in a
+reference to its own Type property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The return value is the count of properties that were set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_AssemblyLocatorBase_SetPropertiesFromDLLConfiguration_System_Type__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This can almost certainly be simplified by enumerating the settings,
+but either way risks a NOT FOUND exception.</p>
+<p>This method uses some fairly tricky Reflection gymnastics to map the
+key names in a configuration file to property names on an object.</p>
+</div>
+  <h3 id="seealso">See Also</h3>
+  <div class="seealso">
+      <div><a class="xref" href="WizardWrx.Core.PropertyDefaults.html">PropertyDefaults</a></div>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,881 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class FileInfoExtensionMethods
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class FileInfoExtensionMethods
+   ">
+    <meta name="generator" content="docfx 2.39.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="WizardWrx.FileInfoExtensionMethods">
+  
+  
+  <h1 id="WizardWrx_FileInfoExtensionMethods" data-uid="WizardWrx.FileInfoExtensionMethods" class="text-break">Class FileInfoExtensionMethods
+  </h1>
+  <div class="markdown level0 summary"><p>The new extension methods that supersede the instance methods on the
+companion FileInfoExtension class go into a dedicated class, because a
+static class must expose them.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">FileInfoExtensionMethods</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="WizardWrx.html">WizardWrx</a></h6>
+  <h6><strong>Assembly</strong>: WizardWrx.Core.dll</h6>
+  <h5 id="WizardWrx_FileInfoExtensionMethods_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class FileInfoExtensionMethods</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="WizardWrx_FileInfoExtensionMethods_FileAttributeArchiveClear_" data-uid="WizardWrx.FileInfoExtensionMethods.FileAttributeArchiveClear*"></a>
+  <h4 id="WizardWrx_FileInfoExtensionMethods_FileAttributeArchiveClear_System_IO_FileInfo_" data-uid="WizardWrx.FileInfoExtensionMethods.FileAttributeArchiveClear(System.IO.FileInfo)">FileAttributeArchiveClear(FileInfo)</h4>
+  <div class="markdown level1 summary"><p>Clear the Archive FileAttributes on a file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static FileInfoExtension.enmInitialStatus FileAttributeArchiveClear(this FileInfo pfi)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.FileInfo</span></td>
+        <td><span class="parametername">pfi</span></td>
+        <td><p>As an extension method, the first argument must be a reference to
+the instance that invoked it, which is used in much the same way as
+the implicit this parameter that leads the list of parameters for a
+call to any C=+ instance method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.FileInfoExtension.enmInitialStatus.html">FileInfoExtension.enmInitialStatus</a></td>
+        <td><p>If the Archive attribute is set on entry, the return value is
+WasSet; otherwise, it is WasCleared.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_FileInfoExtensionMethods_FileAttributeArchiveReinstate_" data-uid="WizardWrx.FileInfoExtensionMethods.FileAttributeArchiveReinstate*"></a>
+  <h4 id="WizardWrx_FileInfoExtensionMethods_FileAttributeArchiveReinstate_System_IO_FileInfo_WizardWrx_FileInfoExtension_enmInitialStatus_" data-uid="WizardWrx.FileInfoExtensionMethods.FileAttributeArchiveReinstate(System.IO.FileInfo,WizardWrx.FileInfoExtension.enmInitialStatus)">FileAttributeArchiveReinstate(FileInfo, FileInfoExtension.enmInitialStatus)</h4>
+  <div class="markdown level1 summary"><p>Reinstate the Archive flag on the specified file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static FileInfoExtension.enmInitialStatus FileAttributeArchiveReinstate(this FileInfo pfi, FileInfoExtension.enmInitialStatus penmInitialStatus)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.FileInfo</span></td>
+        <td><span class="parametername">pfi</span></td>
+        <td><p>As an extension method, the first argument must be a reference to
+the instance that invoked it, which is used in much the same way as
+the implicit this parameter that leads the list of parameters for a
+call to any C=+ instance method.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.FileInfoExtension.enmInitialStatus.html">FileInfoExtension.enmInitialStatus</a></td>
+        <td><span class="parametername">penmInitialStatus</span></td>
+        <td><p>Specify the FileInfoExtension.enmInitialStatus value returned by the last call to
+FileAttributeArchiveClear.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.FileInfoExtension.enmInitialStatus.html">FileInfoExtension.enmInitialStatus</a></td>
+        <td><p>If the Archive attribute is set on entry, the return value is
+WasSet; otherwise, it is WasCleared.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_FileInfoExtensionMethods_FileAttributeArchiveSet_" data-uid="WizardWrx.FileInfoExtensionMethods.FileAttributeArchiveSet*"></a>
+  <h4 id="WizardWrx_FileInfoExtensionMethods_FileAttributeArchiveSet_System_IO_FileInfo_" data-uid="WizardWrx.FileInfoExtensionMethods.FileAttributeArchiveSet(System.IO.FileInfo)">FileAttributeArchiveSet(FileInfo)</h4>
+  <div class="markdown level1 summary"><p>Set the Archive FileAttributes on a file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static FileInfoExtension.enmInitialStatus FileAttributeArchiveSet(this FileInfo pfi)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.FileInfo</span></td>
+        <td><span class="parametername">pfi</span></td>
+        <td><p>As an extension method, the first argument must be a reference to
+the instance that invoked it, which is used in much the same way as
+the implicit this parameter that leads the list of parameters for a
+call to any C=+ instance method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.FileInfoExtension.enmInitialStatus.html">FileInfoExtension.enmInitialStatus</a></td>
+        <td><p>If the Archive attribute is set on entry, the return value is
+WasSet; otherwise, it is WasCleared.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_FileInfoExtensionMethods_FileAttributeClear_" data-uid="WizardWrx.FileInfoExtensionMethods.FileAttributeClear*"></a>
+  <h4 id="WizardWrx_FileInfoExtensionMethods_FileAttributeClear_System_IO_FileInfo_System_IO_FileAttributes_" data-uid="WizardWrx.FileInfoExtensionMethods.FileAttributeClear(System.IO.FileInfo,System.IO.FileAttributes)">FileAttributeClear(FileInfo, FileAttributes)</h4>
+  <div class="markdown level1 summary"><p>Clear the specified FileAttributes bit(s).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static FileInfoExtension.enmInitialStatus FileAttributeClear(this FileInfo pfi, FileAttributes penmFileAttributes)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.FileInfo</span></td>
+        <td><span class="parametername">pfi</span></td>
+        <td><p>As an extension method, the first argument must be a reference to
+the instance that invoked it, which is used in much the same way as
+the implicit this parameter that leads the list of parameters for a
+call to any C=+ instance method.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.FileAttributes</span></td>
+        <td><span class="parametername">penmFileAttributes</span></td>
+        <td><p>This argument specifies the member(s) of the FileAttributes bitwise
+enumeration to clear.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.FileInfoExtension.enmInitialStatus.html">FileInfoExtension.enmInitialStatus</a></td>
+        <td><p>If the specified bit (It's usually just one.) is set on entry, the
+return value is WasSet; otherwise, it is WasCleared.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_FileInfoExtensionMethods_FileAttributeHiddenClear_" data-uid="WizardWrx.FileInfoExtensionMethods.FileAttributeHiddenClear*"></a>
+  <h4 id="WizardWrx_FileInfoExtensionMethods_FileAttributeHiddenClear_System_IO_FileInfo_" data-uid="WizardWrx.FileInfoExtensionMethods.FileAttributeHiddenClear(System.IO.FileInfo)">FileAttributeHiddenClear(FileInfo)</h4>
+  <div class="markdown level1 summary"><p>Clear the Hidden FileAttributes on a file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static FileInfoExtension.enmInitialStatus FileAttributeHiddenClear(this FileInfo pfi)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.FileInfo</span></td>
+        <td><span class="parametername">pfi</span></td>
+        <td><p>As an extension method, the first argument must be a reference to
+the instance that invoked it, which is used in much the same way as
+the implicit this parameter that leads the list of parameters for a
+call to any C=+ instance method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.FileInfoExtension.enmInitialStatus.html">FileInfoExtension.enmInitialStatus</a></td>
+        <td><p>If the Hidden attribute is set on entry, the return value is
+WasSet; otherwise, it is WasCleared.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_FileInfoExtensionMethods_FileAttributeHiddeneReinstate_" data-uid="WizardWrx.FileInfoExtensionMethods.FileAttributeHiddeneReinstate*"></a>
+  <h4 id="WizardWrx_FileInfoExtensionMethods_FileAttributeHiddeneReinstate_System_IO_FileInfo_WizardWrx_FileInfoExtension_enmInitialStatus_" data-uid="WizardWrx.FileInfoExtensionMethods.FileAttributeHiddeneReinstate(System.IO.FileInfo,WizardWrx.FileInfoExtension.enmInitialStatus)">FileAttributeHiddeneReinstate(FileInfo, FileInfoExtension.enmInitialStatus)</h4>
+  <div class="markdown level1 summary"><p>Reinstate the Hidden flag on the specified file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static FileInfoExtension.enmInitialStatus FileAttributeHiddeneReinstate(this FileInfo pfi, FileInfoExtension.enmInitialStatus penmInitialStatus)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.FileInfo</span></td>
+        <td><span class="parametername">pfi</span></td>
+        <td><p>As an extension method, the first argument must be a reference to
+the instance that invoked it, which is used in much the same way as
+the implicit this parameter that leads the list of parameters for a
+call to any C=+ instance method.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.FileInfoExtension.enmInitialStatus.html">FileInfoExtension.enmInitialStatus</a></td>
+        <td><span class="parametername">penmInitialStatus</span></td>
+        <td><p>Specify the FileInfoExtension.enmInitialStatus value returned by the last call to
+FileAttributeArchiveClear.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.FileInfoExtension.enmInitialStatus.html">FileInfoExtension.enmInitialStatus</a></td>
+        <td><p>If the Hidden attribute is set on entry, the return value is
+WasSet; otherwise, it is WasCleared.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_FileInfoExtensionMethods_FileAttributeHiddenSet_" data-uid="WizardWrx.FileInfoExtensionMethods.FileAttributeHiddenSet*"></a>
+  <h4 id="WizardWrx_FileInfoExtensionMethods_FileAttributeHiddenSet_System_IO_FileInfo_" data-uid="WizardWrx.FileInfoExtensionMethods.FileAttributeHiddenSet(System.IO.FileInfo)">FileAttributeHiddenSet(FileInfo)</h4>
+  <div class="markdown level1 summary"><p>Set the Hidden FileAttributes on a file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static FileInfoExtension.enmInitialStatus FileAttributeHiddenSet(this FileInfo pfi)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.FileInfo</span></td>
+        <td><span class="parametername">pfi</span></td>
+        <td><p>As an extension method, the first argument must be a reference to
+the instance that invoked it, which is used in much the same way as
+the implicit this parameter that leads the list of parameters for a
+call to any C=+ instance method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.FileInfoExtension.enmInitialStatus.html">FileInfoExtension.enmInitialStatus</a></td>
+        <td><p>If the Hidden attribute is set on entry, the return value is
+WasSet; otherwise, it is WasCleared.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_FileInfoExtensionMethods_FileAttributeReadOnlyClear_" data-uid="WizardWrx.FileInfoExtensionMethods.FileAttributeReadOnlyClear*"></a>
+  <h4 id="WizardWrx_FileInfoExtensionMethods_FileAttributeReadOnlyClear_System_IO_FileInfo_" data-uid="WizardWrx.FileInfoExtensionMethods.FileAttributeReadOnlyClear(System.IO.FileInfo)">FileAttributeReadOnlyClear(FileInfo)</h4>
+  <div class="markdown level1 summary"><p>Clear the ReadOnly FileAttributes on a file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static FileInfoExtension.enmInitialStatus FileAttributeReadOnlyClear(this FileInfo pfi)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.FileInfo</span></td>
+        <td><span class="parametername">pfi</span></td>
+        <td><p>As an extension method, the first argument must be a reference to
+the instance that invoked it, which is used in much the same way as
+the implicit this parameter that leads the list of parameters for a
+call to any C=+ instance method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.FileInfoExtension.enmInitialStatus.html">FileInfoExtension.enmInitialStatus</a></td>
+        <td><p>If the ReadOnly attribute is set on entry, the return value is
+WasSet; otherwise, it is WasCleared.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_FileInfoExtensionMethods_FileAttributeReadOnlyReinstate_" data-uid="WizardWrx.FileInfoExtensionMethods.FileAttributeReadOnlyReinstate*"></a>
+  <h4 id="WizardWrx_FileInfoExtensionMethods_FileAttributeReadOnlyReinstate_System_IO_FileInfo_WizardWrx_FileInfoExtension_enmInitialStatus_" data-uid="WizardWrx.FileInfoExtensionMethods.FileAttributeReadOnlyReinstate(System.IO.FileInfo,WizardWrx.FileInfoExtension.enmInitialStatus)">FileAttributeReadOnlyReinstate(FileInfo, FileInfoExtension.enmInitialStatus)</h4>
+  <div class="markdown level1 summary"><p>Reinstate the ReadOnly flag on the specified file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static FileInfoExtension.enmInitialStatus FileAttributeReadOnlyReinstate(this FileInfo pfi, FileInfoExtension.enmInitialStatus penmInitialStatus)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.FileInfo</span></td>
+        <td><span class="parametername">pfi</span></td>
+        <td><p>As an extension method, the first argument must be a reference to
+the instance that invoked it, which is used in much the same way as
+the implicit this parameter that leads the list of parameters for a
+call to any C=+ instance method.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.FileInfoExtension.enmInitialStatus.html">FileInfoExtension.enmInitialStatus</a></td>
+        <td><span class="parametername">penmInitialStatus</span></td>
+        <td><p>Specify the FileInfoExtension.enmInitialStatus value returned by the last call to
+FileAttributeArchiveClear.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.FileInfoExtension.enmInitialStatus.html">FileInfoExtension.enmInitialStatus</a></td>
+        <td><p>If the ReadOnly attribute is set on entry, the return value is
+WasSet; otherwise, it is WasCleared.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_FileInfoExtensionMethods_FileAttributeReadOnlySet_" data-uid="WizardWrx.FileInfoExtensionMethods.FileAttributeReadOnlySet*"></a>
+  <h4 id="WizardWrx_FileInfoExtensionMethods_FileAttributeReadOnlySet_System_IO_FileInfo_" data-uid="WizardWrx.FileInfoExtensionMethods.FileAttributeReadOnlySet(System.IO.FileInfo)">FileAttributeReadOnlySet(FileInfo)</h4>
+  <div class="markdown level1 summary"><p>Set the ReadOnly FileAttributes on a file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static FileInfoExtension.enmInitialStatus FileAttributeReadOnlySet(this FileInfo pfi)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.FileInfo</span></td>
+        <td><span class="parametername">pfi</span></td>
+        <td><p>As an extension method, the first argument must be a reference to
+the instance that invoked it, which is used in much the same way as
+the implicit this parameter that leads the list of parameters for a
+call to any C=+ instance method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.FileInfoExtension.enmInitialStatus.html">FileInfoExtension.enmInitialStatus</a></td>
+        <td><p>If the ReadOnly attribute is set on entry, the return value is
+WasSet; otherwise, it is WasCleared.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_FileInfoExtensionMethods_FileAttributeSet_" data-uid="WizardWrx.FileInfoExtensionMethods.FileAttributeSet*"></a>
+  <h4 id="WizardWrx_FileInfoExtensionMethods_FileAttributeSet_System_IO_FileInfo_System_IO_FileAttributes_" data-uid="WizardWrx.FileInfoExtensionMethods.FileAttributeSet(System.IO.FileInfo,System.IO.FileAttributes)">FileAttributeSet(FileInfo, FileAttributes)</h4>
+  <div class="markdown level1 summary"><p>Set the specified FileAttributes bit(s).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static FileInfoExtension.enmInitialStatus FileAttributeSet(this FileInfo pfi, FileAttributes penmFileAttributes)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.FileInfo</span></td>
+        <td><span class="parametername">pfi</span></td>
+        <td><p>As an extension method, the first argument must be a reference to
+the instance that invoked it, which is used in much the same way as
+the implicit this parameter that leads the list of parameters for a
+call to any C=+ instance method.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.FileAttributes</span></td>
+        <td><span class="parametername">penmFileAttributes</span></td>
+        <td><p>This argument specifies the member(s) of the FileAttributes bitwise
+enumeration to clear.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.FileInfoExtension.enmInitialStatus.html">FileInfoExtension.enmInitialStatus</a></td>
+        <td><p>If the specified bit (It's usually just one.) is set on entry, the
+return value is WasSet; otherwise, it is WasCleared.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_FileInfoExtensionMethods_FileAttributeSystemClear_" data-uid="WizardWrx.FileInfoExtensionMethods.FileAttributeSystemClear*"></a>
+  <h4 id="WizardWrx_FileInfoExtensionMethods_FileAttributeSystemClear_System_IO_FileInfo_" data-uid="WizardWrx.FileInfoExtensionMethods.FileAttributeSystemClear(System.IO.FileInfo)">FileAttributeSystemClear(FileInfo)</h4>
+  <div class="markdown level1 summary"><p>Clear the System FileAttributes on a file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static FileInfoExtension.enmInitialStatus FileAttributeSystemClear(this FileInfo pfi)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.FileInfo</span></td>
+        <td><span class="parametername">pfi</span></td>
+        <td><p>As an extension method, the first argument must be a reference to
+the instance that invoked it, which is used in much the same way as
+the implicit this parameter that leads the list of parameters for a
+call to any C=+ instance method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.FileInfoExtension.enmInitialStatus.html">FileInfoExtension.enmInitialStatus</a></td>
+        <td><p>If the specified bit (It's usually just one.) is set on entry, the
+return value is WasSet; otherwise, it is WasCleared.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_FileInfoExtensionMethods_FileAttributeSystemReinstate_" data-uid="WizardWrx.FileInfoExtensionMethods.FileAttributeSystemReinstate*"></a>
+  <h4 id="WizardWrx_FileInfoExtensionMethods_FileAttributeSystemReinstate_System_IO_FileInfo_WizardWrx_FileInfoExtension_enmInitialStatus_" data-uid="WizardWrx.FileInfoExtensionMethods.FileAttributeSystemReinstate(System.IO.FileInfo,WizardWrx.FileInfoExtension.enmInitialStatus)">FileAttributeSystemReinstate(FileInfo, FileInfoExtension.enmInitialStatus)</h4>
+  <div class="markdown level1 summary"><p>Reinstate the System flag on the specified file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static FileInfoExtension.enmInitialStatus FileAttributeSystemReinstate(this FileInfo pfi, FileInfoExtension.enmInitialStatus penmInitialStatus)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.FileInfo</span></td>
+        <td><span class="parametername">pfi</span></td>
+        <td><p>As an extension method, the first argument must be a reference to
+the instance that invoked it, which is used in much the same way as
+the implicit this parameter that leads the list of parameters for a
+call to any C=+ instance method.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.FileInfoExtension.enmInitialStatus.html">FileInfoExtension.enmInitialStatus</a></td>
+        <td><span class="parametername">penmInitialStatus</span></td>
+        <td><p>Specify the FileInfoExtension.enmInitialStatus value returned by the last call to
+FileAttributeArchiveClear.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.FileInfoExtension.enmInitialStatus.html">FileInfoExtension.enmInitialStatus</a></td>
+        <td><p>If the System attribute is set on entry, the return value is
+WasSet; otherwise, it is WasCleared.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_FileInfoExtensionMethods_FileAttributeSystemSet_" data-uid="WizardWrx.FileInfoExtensionMethods.FileAttributeSystemSet*"></a>
+  <h4 id="WizardWrx_FileInfoExtensionMethods_FileAttributeSystemSet_System_IO_FileInfo_" data-uid="WizardWrx.FileInfoExtensionMethods.FileAttributeSystemSet(System.IO.FileInfo)">FileAttributeSystemSet(FileInfo)</h4>
+  <div class="markdown level1 summary"><p>Set the System FileAttributes on a file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static FileInfoExtension.enmInitialStatus FileAttributeSystemSet(this FileInfo pfi)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.FileInfo</span></td>
+        <td><span class="parametername">pfi</span></td>
+        <td><p>As an extension method, the first argument must be a reference to
+the instance that invoked it, which is used in much the same way as
+the implicit this parameter that leads the list of parameters for a
+call to any C=+ instance method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.FileInfoExtension.enmInitialStatus.html">FileInfoExtension.enmInitialStatus</a></td>
+        <td><p>If the specified bit (It's usually just one.) is set on entry, the
+return value is WasSet; otherwise, it is WasCleared.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

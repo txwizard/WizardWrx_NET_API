@@ -1,0 +1,1291 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class StateManager
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class StateManager
+   ">
+    <meta name="generator" content="docfx 2.39.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="WizardWrx.DLLConfigurationManager.StateManager">
+  
+  
+  <h1 id="WizardWrx_DLLConfigurationManager_StateManager" data-uid="WizardWrx.DLLConfigurationManager.StateManager" class="text-break">Class StateManager
+  </h1>
+  <div class="markdown level0 summary"><p>This class maintains run-time information about the executing assembly,
+assumed to be a desktop application, that calls it into being. Since it
+implements the Singleton design pattern, there is never more than one
+instance.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="WizardWrx.GenericSingletonBase-1.html">GenericSingletonBase</a>&lt;<a class="xref" href="WizardWrx.DLLConfigurationManager.StateManager.html">StateManager</a>&gt;</div>
+    <div class="level2"><span class="xref">StateManager</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="WizardWrx.GenericSingletonBase-1.html#WizardWrx_GenericSingletonBase_1_s_genTheOnlyInstance">GenericSingletonBase&lt;StateManager&gt;.s_genTheOnlyInstance</a>
+    </div>
+    <div>
+      <a class="xref" href="WizardWrx.GenericSingletonBase-1.html#WizardWrx_GenericSingletonBase_1_TheOnlyInstance">GenericSingletonBase&lt;StateManager&gt;.TheOnlyInstance</a>
+    </div>
+    <div>
+      <a class="xref" href="WizardWrx.GenericSingletonBase-1.html#WizardWrx_GenericSingletonBase_1_GetTheSingleInstance">GenericSingletonBase&lt;StateManager&gt;.GetTheSingleInstance()</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="WizardWrx.DLLConfigurationManager.html">WizardWrx.DLLConfigurationManager</a></h6>
+  <h6><strong>Assembly</strong>: WizardWrx.DLLConfigurationManager.dll</h6>
+  <h5 id="WizardWrx_DLLConfigurationManager_StateManager_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class StateManager : GenericSingletonBase&lt;StateManager&gt;</code></pre>
+  </div>
+  <h5 id="WizardWrx_DLLConfigurationManager_StateManager_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>This class has several read-write properties, all of which are protected
+by thread-safe accessors. Both the Get and Set methods are protected, so
+that a get request blocks until a set request executing in another thread
+completes.</p>
+</div>
+  <h3 id="fields">Fields
+  </h3>
+  
+  
+  <h4 id="WizardWrx_DLLConfigurationManager_StateManager_ASSEMBLYVERSION_COMPLETE" data-uid="WizardWrx.DLLConfigurationManager.StateManager.ASSEMBLYVERSION_COMPLETE">ASSEMBLYVERSION_COMPLETE</h4>
+  <div class="markdown level1 summary"><p>Specify this constant to the ToString method of a System.Version
+object (e. g., of an Assembly) to cause it to return the entire
+version string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int ASSEMBLYVERSION_COMPLETE = 4</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="WizardWrx_DLLConfigurationManager_StateManager_ASSEMBLYVERSION_EXCEPT_REVISION" data-uid="WizardWrx.DLLConfigurationManager.StateManager.ASSEMBLYVERSION_EXCEPT_REVISION">ASSEMBLYVERSION_EXCEPT_REVISION</h4>
+  <div class="markdown level1 summary"><p>Specify this constant to the ToString method of a System.Version
+object (e. g., of an Assembly) to cause it to return all but the
+build number.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int ASSEMBLYVERSION_EXCEPT_REVISION = 3</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="WizardWrx_DLLConfigurationManager_StateManager_ASSEMBLYVERSION_MAJOR_AND_MINOR" data-uid="WizardWrx.DLLConfigurationManager.StateManager.ASSEMBLYVERSION_MAJOR_AND_MINOR">ASSEMBLYVERSION_MAJOR_AND_MINOR</h4>
+  <div class="markdown level1 summary"><p>Specify this constant to the ToString method of a System.Version
+object (e. g., of an Assembly) to cause it to return only the
+major and minor version numbers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int ASSEMBLYVERSION_MAJOR_AND_MINOR = 2</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="WizardWrx_DLLConfigurationManager_StateManager_ASSEMBLYVERSION_MAJOR_ONLY" data-uid="WizardWrx.DLLConfigurationManager.StateManager.ASSEMBLYVERSION_MAJOR_ONLY">ASSEMBLYVERSION_MAJOR_ONLY</h4>
+  <div class="markdown level1 summary"><p>Specify this constant to the ToString method of a System.Version
+object (e. g., of an Assembly) to cause it to return only the
+major version number.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int ASSEMBLYVERSION_MAJOR_ONLY = 1</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="WizardWrx_DLLConfigurationManager_StateManager_UNSUPPORTED_EXE_SUBSYSTEM" data-uid="WizardWrx.DLLConfigurationManager.StateManager.UNSUPPORTED_EXE_SUBSYSTEM">UNSUPPORTED_EXE_SUBSYSTEM</h4>
+  <div class="markdown level1 summary"><p>The DWLastDllError property returns this value when
+StandardHandleState is called by code running in anything except the
+Windows character mode subsystem.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int UNSUPPORTED_EXE_SUBSYSTEM = 536870913</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="WizardWrx_DLLConfigurationManager_StateManager_AppErrorMessages_" data-uid="WizardWrx.DLLConfigurationManager.StateManager.AppErrorMessages*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_StateManager_AppErrorMessages" data-uid="WizardWrx.DLLConfigurationManager.StateManager.AppErrorMessages">AppErrorMessages</h4>
+  <div class="markdown level1 summary"><p>Make the array of error messages available, for reading only, under
+guard of a lock, to ensure that another thread isn't adding to the
+array while it is being returned.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string[] AppErrorMessages { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_DLLConfigurationManager_StateManager_AppExceptionLogger_" data-uid="WizardWrx.DLLConfigurationManager.StateManager.AppExceptionLogger*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_StateManager_AppExceptionLogger" data-uid="WizardWrx.DLLConfigurationManager.StateManager.AppExceptionLogger">AppExceptionLogger</h4>
+  <div class="markdown level1 summary"><p>This property returns a reference to the singleton ExceptionLogger,
+which is created immediately following creation of this instance.
+Hence, by the time the reference is returned, this reference is
+guaranteed to be valid and read only for work.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ExceptionLogger AppExceptionLogger { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.DLLConfigurationManager.ExceptionLogger.html">ExceptionLogger</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_DLLConfigurationManager_StateManager_AppReturnCode_" data-uid="WizardWrx.DLLConfigurationManager.StateManager.AppReturnCode*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_StateManager_AppReturnCode" data-uid="WizardWrx.DLLConfigurationManager.StateManager.AppReturnCode">AppReturnCode</h4>
+  <div class="markdown level1 summary"><p>Use this read/write property to set the application return code from
+anywhere, so that you don't have to use another, potentially awkward,
+method to get the word back to the main routine.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int AppReturnCode { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_DLLConfigurationManager_StateManager_AppReturnCode_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Access to this property is synchronized by an internally managed
+object lock.</p>
+</div>
+  
+  
+  <a id="WizardWrx_DLLConfigurationManager_StateManager_AppRootAssemblyFileBaseName_" data-uid="WizardWrx.DLLConfigurationManager.StateManager.AppRootAssemblyFileBaseName*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_StateManager_AppRootAssemblyFileBaseName" data-uid="WizardWrx.DLLConfigurationManager.StateManager.AppRootAssemblyFileBaseName">AppRootAssemblyFileBaseName</h4>
+  <div class="markdown level1 summary"><p>This property is a shortcut to the AssemblyFileBaseName property of
+the AppRootAssembly property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string AppRootAssemblyFileBaseName { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_DLLConfigurationManager_StateManager_AppRootAssemblyFileBaseName_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Since the underlying property is read only, and has a static
+initializer, it is thread-safe without the overhead of a lock.</p>
+</div>
+  
+  
+  <a id="WizardWrx_DLLConfigurationManager_StateManager_AppRootAssemblyFileDirName_" data-uid="WizardWrx.DLLConfigurationManager.StateManager.AppRootAssemblyFileDirName*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_StateManager_AppRootAssemblyFileDirName" data-uid="WizardWrx.DLLConfigurationManager.StateManager.AppRootAssemblyFileDirName">AppRootAssemblyFileDirName</h4>
+  <div class="markdown level1 summary"><p>This property is a shortcut to the AssembyDirName property of
+the AppRootAssembly property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string AppRootAssemblyFileDirName { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_DLLConfigurationManager_StateManager_AppRootAssemblyFileDirName_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Since the underlying property is read only, and has a static
+initializer, it is thread-safe without the overhead of a lock.</p>
+</div>
+  
+  
+  <a id="WizardWrx_DLLConfigurationManager_StateManager_AppRootAssemblyFileName_" data-uid="WizardWrx.DLLConfigurationManager.StateManager.AppRootAssemblyFileName*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_StateManager_AppRootAssemblyFileName" data-uid="WizardWrx.DLLConfigurationManager.StateManager.AppRootAssemblyFileName">AppRootAssemblyFileName</h4>
+  <div class="markdown level1 summary"><p>This property is a shortcut to the AssemblyFileName property of
+the AppRootAssembly property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string AppRootAssemblyFileName { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_DLLConfigurationManager_StateManager_AppRootAssemblyFileName_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Since the underlying property is read only, and has a static
+initializer, it is thread-safe without the overhead of a lock.</p>
+</div>
+  
+  
+  <a id="WizardWrx_DLLConfigurationManager_StateManager_AppRootAssemblyName_" data-uid="WizardWrx.DLLConfigurationManager.StateManager.AppRootAssemblyName*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_StateManager_AppRootAssemblyName" data-uid="WizardWrx.DLLConfigurationManager.StateManager.AppRootAssemblyName">AppRootAssemblyName</h4>
+  <div class="markdown level1 summary"><p>This property returns the fully qualified name of the root assembly,
+the first assembly that loaded into the default application domain.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public _AssemblyName AppRootAssemblyName { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Runtime.InteropServices._AssemblyName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_DLLConfigurationManager_StateManager_AppRootAssemblyName_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This property yields a wealth of information about the assembly,
+including all four parts of its version number, its public key
+token, if it has one, and its culture.</p>
+</div>
+  <h5 id="WizardWrx_DLLConfigurationManager_StateManager_AppRootAssemblyName_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="WizardWrx.DLLConfigurationManager.StateManager.html#WizardWrx_DLLConfigurationManager_StateManager_GetAssemblyProductAndVersion">GetAssemblyProductAndVersion()</a></div>
+      <div><a class="xref" href="WizardWrx.DLLConfigurationManager.StateManager.html#WizardWrx_DLLConfigurationManager_StateManager_GetAssemblyProductAndVersion_WizardWrx_DLLConfigurationManager_StateManager_AssemblyVersionRequest_">GetAssemblyProductAndVersion(StateManager.AssemblyVersionRequest)</a></div>
+  </div>
+  
+  
+  <a id="WizardWrx_DLLConfigurationManager_StateManager_AppStartupTimeLocal_" data-uid="WizardWrx.DLLConfigurationManager.StateManager.AppStartupTimeLocal*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_StateManager_AppStartupTimeLocal" data-uid="WizardWrx.DLLConfigurationManager.StateManager.AppStartupTimeLocal">AppStartupTimeLocal</h4>
+  <div class="markdown level1 summary"><p>This property is a shortcut to the StartupTime property of
+the AppRootAssembly property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DateTime AppStartupTimeLocal { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_DLLConfigurationManager_StateManager_AppStartupTimeLocal_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Since the underlying property is read only, and has a static
+initializer, it is thread-safe without the overhead of a lock.</p>
+</div>
+  
+  
+  <a id="WizardWrx_DLLConfigurationManager_StateManager_AppStartupTimeUtc_" data-uid="WizardWrx.DLLConfigurationManager.StateManager.AppStartupTimeUtc*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_StateManager_AppStartupTimeUtc" data-uid="WizardWrx.DLLConfigurationManager.StateManager.AppStartupTimeUtc">AppStartupTimeUtc</h4>
+  <div class="markdown level1 summary"><p>This property is a shortcut to the StartupTimeUTC property of
+the AppRootAssembly property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DateTime AppStartupTimeUtc { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_DLLConfigurationManager_StateManager_AppStartupTimeUtc_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Since the underlying property is read only, and has a static
+initializer, it is thread-safe without the overhead of a lock.</p>
+</div>
+  
+  
+  <a id="WizardWrx_DLLConfigurationManager_StateManager_AppSubsystemID_" data-uid="WizardWrx.DLLConfigurationManager.StateManager.AppSubsystemID*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_StateManager_AppSubsystemID" data-uid="WizardWrx.DLLConfigurationManager.StateManager.AppSubsystemID">AppSubsystemID</h4>
+  <div class="markdown level1 summary"><p>Return the ID of the subsystem in which the assembly runs. Call the
+GetAppSubsystemString method to translate the ID into a human
+readable message. The translation is way too expensive to expose as
+a property, and too infrequently needed to justify having the
+constructor store it in a string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public short AppSubsystemID { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int16</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_DLLConfigurationManager_StateManager_AppSubsystemID_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="WizardWrx.DLLConfigurationManager.StateManager.html#WizardWrx_DLLConfigurationManager_StateManager_GetAppSubsystemID">GetAppSubsystemID()</a></div>
+      <div><a class="xref" href="WizardWrx.DLLConfigurationManager.StateManager.html#WizardWrx_DLLConfigurationManager_StateManager_GetAppSubsystemString">GetAppSubsystemString()</a></div>
+  </div>
+  
+  
+  <a id="WizardWrx_DLLConfigurationManager_StateManager_AppUptime_" data-uid="WizardWrx.DLLConfigurationManager.StateManager.AppUptime*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_StateManager_AppUptime" data-uid="WizardWrx.DLLConfigurationManager.StateManager.AppUptime">AppUptime</h4>
+  <div class="markdown level1 summary"><p>Gets the elapsed time since the application started.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TimeSpan AppUptime { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.TimeSpan</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_DLLConfigurationManager_StateManager_ConsoleMessageTimeFormat_" data-uid="WizardWrx.DLLConfigurationManager.StateManager.ConsoleMessageTimeFormat*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_StateManager_ConsoleMessageTimeFormat" data-uid="WizardWrx.DLLConfigurationManager.StateManager.ConsoleMessageTimeFormat">ConsoleMessageTimeFormat</h4>
+  <div class="markdown level1 summary"><p>Use this property to get a reference to the FormattedLocalTime
+object that governs the formatting of the times displayed in the BOJ
+and EOJ messages.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TimeDisplayFormatter ConsoleMessageTimeFormat { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.Core.TimeDisplayFormatter.html">TimeDisplayFormatter</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_DLLConfigurationManager_StateManager_DefaultEventSourceID_" data-uid="WizardWrx.DLLConfigurationManager.StateManager.DefaultEventSourceID*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_StateManager_DefaultEventSourceID" data-uid="WizardWrx.DLLConfigurationManager.StateManager.DefaultEventSourceID">DefaultEventSourceID</h4>
+  <div class="markdown level1 summary"><p>Gets the registered default event source ID.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string DefaultEventSourceID { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_DLLConfigurationManager_StateManager_DefaultEventSourceID_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If no event source is registered, this property returns the
+WIZARDWRX_EVENT_SOURCE_ID string static ExceptionLogger string.</p>
+</div>
+  
+  
+  <a id="WizardWrx_DLLConfigurationManager_StateManager_DWLastDllError_" data-uid="WizardWrx.DLLConfigurationManager.StateManager.DWLastDllError*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_StateManager_DWLastDllError" data-uid="WizardWrx.DLLConfigurationManager.StateManager.DWLastDllError">DWLastDllError</h4>
+  <div class="markdown level1 summary"><p>Query this property for the value returned by GetLastError.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int DWLastDllError { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_DLLConfigurationManager_StateManager_DWLastDllError_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Strictly speaking, the value is returned by Marshal.GetLastWin32Error.</p>
+</div>
+  
+  
+  <a id="WizardWrx_DLLConfigurationManager_StateManager_InitialWorkingDirectoryName_" data-uid="WizardWrx.DLLConfigurationManager.StateManager.InitialWorkingDirectoryName*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_StateManager_InitialWorkingDirectoryName" data-uid="WizardWrx.DLLConfigurationManager.StateManager.InitialWorkingDirectoryName">InitialWorkingDirectoryName</h4>
+  <div class="markdown level1 summary"><p>Gets the initial working directory, which reflects its value when
+the application started.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string InitialWorkingDirectoryName { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_DLLConfigurationManager_StateManager_InitialWorkingDirectoryName_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This property has a static initializer, and is never changed.</p>
+</div>
+  
+  
+  <a id="WizardWrx_DLLConfigurationManager_StateManager_ShowUTCTime_" data-uid="WizardWrx.DLLConfigurationManager.StateManager.ShowUTCTime*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_StateManager_ShowUTCTime" data-uid="WizardWrx.DLLConfigurationManager.StateManager.ShowUTCTime">ShowUTCTime</h4>
+  <div class="markdown level1 summary"><p>Set this property to TRUE to cause UTC times to be displayed in all
+time stamps included in console BOJ and EOJ messages.</p>
+<p>Set it to FALSE to display only local times. The class default
+setting is TRUE.</p>
+<p>See the Remarks listed with the class definition.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ShowUTCTime { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="WizardWrx_DLLConfigurationManager_StateManager_FormatSystemErrorMessage_" data-uid="WizardWrx.DLLConfigurationManager.StateManager.FormatSystemErrorMessage*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_StateManager_FormatSystemErrorMessage_System_Int32_" data-uid="WizardWrx.DLLConfigurationManager.StateManager.FormatSystemErrorMessage(System.Int32)">FormatSystemErrorMessage(Int32)</h4>
+  <div class="markdown level1 summary"><p>Return the message associated with a system status code.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string FormatSystemErrorMessage(int pdwLastError)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pdwLastError</span></td>
+        <td><p>Specify the status code for which the system message is desired.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>A new Win32Exception exception is constructed from the specified
+status code, and its Message property is returned.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_DLLConfigurationManager_StateManager_FormatSystemErrorMessage_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This convenience method amounts to syntactic sugar. Since it is very
+unlikely to ever be called by the method that motivated me to create
+it, I'll let it go ahead and call through it, even though calling
+the constructor directly, passing in the static member that holds the
+status code would be a couple of orders of magnitude more efficient.</p>
+</div>
+  
+  
+  <a id="WizardWrx_DLLConfigurationManager_StateManager_GetAppSubsystemID_" data-uid="WizardWrx.DLLConfigurationManager.StateManager.GetAppSubsystemID*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_StateManager_GetAppSubsystemID" data-uid="WizardWrx.DLLConfigurationManager.StateManager.GetAppSubsystemID">GetAppSubsystemID()</h4>
+  <div class="markdown level1 summary"><p>Return the AppSubsystemID property, explicitly cast to a PESubsystemID.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PESubsystemInfo.PESubsystemID GetAppSubsystemID()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.AssemblyUtils.PESubsystemInfo.PESubsystemID.html">PESubsystemInfo.PESubsystemID</a></td>
+        <td><p>The return value is the AppSubsystemID property, cast to a member of
+the ESubsystemInfo.PESubsystemID enumeration.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_DLLConfigurationManager_StateManager_GetAppSubsystemID_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method provides a more meaningful interpretation of the AppSubsystemID value.</p>
+<p>This routine is implemented as an instance method, so that its code runs only as needed.</p>
+</div>
+  <h5 id="WizardWrx_DLLConfigurationManager_StateManager_GetAppSubsystemID_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="WizardWrx.DLLConfigurationManager.StateManager.html#WizardWrx_DLLConfigurationManager_StateManager_AppSubsystemID">AppSubsystemID</a></div>
+      <div><a class="xref" href="WizardWrx.DLLConfigurationManager.StateManager.html#WizardWrx_DLLConfigurationManager_StateManager_GetAppSubsystemString">GetAppSubsystemString()</a></div>
+  </div>
+  
+  
+  <a id="WizardWrx_DLLConfigurationManager_StateManager_GetAppSubsystemString_" data-uid="WizardWrx.DLLConfigurationManager.StateManager.GetAppSubsystemString*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_StateManager_GetAppSubsystemString" data-uid="WizardWrx.DLLConfigurationManager.StateManager.GetAppSubsystemString">GetAppSubsystemString()</h4>
+  <div class="markdown level1 summary"><p>Return a sentence that identifies the subsystem in which the
+assembly that started the current process runs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetAppSubsystemString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The return value is a short sentence that describes the subsystem in
+which the assembly that started the current process runs.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_DLLConfigurationManager_StateManager_GetAppSubsystemString_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>I made this a method so that it is computed strictly as needed, even
+in a debugging session when the Visual Studio Hosting process runs
+all the property getters when an object is expanded in the locals or
+watch window.</p>
+<p>This method is much more expensive than GetAssemblyFQFN, because it
+gets the returned string from a string resource.</p>
+</div>
+  
+  
+  <a id="WizardWrx_DLLConfigurationManager_StateManager_GetAssemblyFQFN_" data-uid="WizardWrx.DLLConfigurationManager.StateManager.GetAssemblyFQFN*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_StateManager_GetAssemblyFQFN" data-uid="WizardWrx.DLLConfigurationManager.StateManager.GetAssemblyFQFN">GetAssemblyFQFN()</h4>
+  <div class="markdown level1 summary"><p>Return the fully qualified name of the assembly that started the
+current process.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetAssemblyFQFN()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The return value is a string that contains the fully qualified name
+of the assembly that started the current process.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_DLLConfigurationManager_StateManager_GetAssemblyFQFN_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>I made this a method so that it is computed as needed, even in a
+debugging session when the Visual Studio Hosting process runs all
+the property getters when an object is expanded in the locals and
+watch windows.</p>
+</div>
+  
+  
+  <a id="WizardWrx_DLLConfigurationManager_StateManager_GetAssemblyProductAndVersion_" data-uid="WizardWrx.DLLConfigurationManager.StateManager.GetAssemblyProductAndVersion*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_StateManager_GetAssemblyProductAndVersion" data-uid="WizardWrx.DLLConfigurationManager.StateManager.GetAssemblyProductAndVersion">GetAssemblyProductAndVersion()</h4>
+  <div class="markdown level1 summary"><p>Get the assembly product name and version number is a string that is
+suitable for use as a window caption.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetAssemblyProductAndVersion()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The return value is a string, suitable for use as the caption of a
+window, such as a form or message box. The returned string contains
+the product name, followed by the entire 4-part version string.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_DLLConfigurationManager_StateManager_GetAssemblyProductAndVersion_" data-uid="WizardWrx.DLLConfigurationManager.StateManager.GetAssemblyProductAndVersion*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_StateManager_GetAssemblyProductAndVersion_WizardWrx_DLLConfigurationManager_StateManager_AssemblyVersionRequest_" data-uid="WizardWrx.DLLConfigurationManager.StateManager.GetAssemblyProductAndVersion(WizardWrx.DLLConfigurationManager.StateManager.AssemblyVersionRequest)">GetAssemblyProductAndVersion(StateManager.AssemblyVersionRequest)</h4>
+  <div class="markdown level1 summary"><p>Get the assembly product name and version number is a string that is
+suitable for use as a window caption.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetAssemblyProductAndVersion(StateManager.AssemblyVersionRequest penmAssemblyVersionRequest)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.DLLConfigurationManager.StateManager.AssemblyVersionRequest.html">StateManager.AssemblyVersionRequest</a></td>
+        <td><span class="parametername">penmAssemblyVersionRequest</span></td>
+        <td><p>Use a member of the AssemblyVersionRequest enumeration to indicate
+how many parts of the four-part version number to include.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The return value is a string, suitable for use as the caption of a
+window, such as a form or message box. The returned string contains
+the product name, followed by the specified number of parts of the
+product version.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_DLLConfigurationManager_StateManager_GetAssemblyProductAndVersion_WizardWrx_DLLConfigurationManager_StateManager_AssemblyVersionRequest__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="WizardWrx.DLLConfigurationManager.StateManager.html#WizardWrx_DLLConfigurationManager_StateManager_AppRootAssemblyName">AppRootAssemblyName</a></div>
+  </div>
+  
+  
+  <a id="WizardWrx_DLLConfigurationManager_StateManager_GetStdHandleFQFN_" data-uid="WizardWrx.DLLConfigurationManager.StateManager.GetStdHandleFQFN*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_StateManager_GetStdHandleFQFN_WizardWrx_ConsoleStreams_StandardHandleInfo_StandardConsoleHandle_" data-uid="WizardWrx.DLLConfigurationManager.StateManager.GetStdHandleFQFN(WizardWrx.ConsoleStreams.StandardHandleInfo.StandardConsoleHandle)">GetStdHandleFQFN(StandardHandleInfo.StandardConsoleHandle)</h4>
+  <div class="markdown level1 summary"><p>Report the file, if any, to which the specified standard handle is
+redirected.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetStdHandleFQFN(StandardHandleInfo.StandardConsoleHandle penmStdHandle)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.ConsoleStreams.StandardHandleInfo.StandardConsoleHandle.html">StandardHandleInfo.StandardConsoleHandle</a></td>
+        <td><span class="parametername">penmStdHandle</span></td>
+        <td><p>Specify the StandardHandleInfo.StandardConsoleHandle member that
+corresponds to the handle for which you wish to know whether it is
+attached or redirected.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>If the function succeeds and the handle is redirected, the return
+value is the name of the file to which the specified handle is
+redirected.</p>
+<p>Otherwise, the return value is one of two strings that explain the
+error.</p>
+<p>Properties.Resources.MSG_APP_CHARACTER_MODE_APPS_ONLY is the
+complete text of the message displayed when the calling routine is
+running in the Windows graphical mode subsystem.</p>
+<p>Properties.Resources.ERRMSG_STD_HANDLE_STATE is the beginning of a
+message, which is followed by the returned system status code, shown
+in both hexadecimal and decimal notation, followed by the associated
+system message.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="WizardWrx_DLLConfigurationManager_StateManager_GetTheSingleInstance_" data-uid="WizardWrx.DLLConfigurationManager.StateManager.GetTheSingleInstance*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_StateManager_GetTheSingleInstance_System_Reflection_Assembly_" data-uid="WizardWrx.DLLConfigurationManager.StateManager.GetTheSingleInstance(System.Reflection.Assembly)">GetTheSingleInstance(Assembly)</h4>
+  <div class="markdown level1 summary"><p>Call this method from any class that exposes a reference to the
+singleton as a read only property. Please see the Remarks section.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;The hidden static constructor makes this use case redundant.&quot;)]
+public static StateManager GetTheSingleInstance(Assembly pasmCallingAssembly)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Reflection.Assembly</span></td>
+        <td><span class="parametername">pasmCallingAssembly</span></td>
+        <td><p>Pass in a reference to the assembly that is calling this method on
+behalf of an object that exposes a reference to this object as a
+read only property. Please see the Remarks section.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.DLLConfigurationManager.StateManager.html">StateManager</a></td>
+        <td><p>The return value is a reference to the singleton, which is created
+the first time the method is called. Subsequent calls return a
+reference to the singleton.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_DLLConfigurationManager_StateManager_GetTheSingleInstance_System_Reflection_Assembly__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Since making a protected constructor safe for use by a class that
+implements the Singleton design pattern, and a class that calls this
+method causes System.Reflection.Assembly.GetCalllingAssembly to
+report the assembly in which the call executes as the calling
+assembly, any such method must explicitly identify the assembly that
+contains the process entry point.</p>
+<p>When the Visual Studio Hosting Process is enabled, it becomes the
+entry assembly, hiding the &quot;real&quot; entry assembly (the assembly under
+test), System.Reflection.Assembly.GetEntryAssembly cannot be used
+safely. Moreover, since the Visual Studio Hosting Process runs in
+the graphical (Windows) subsystem, the entry assembly cannot be used
+to correctly determine whether the entry assembly runs in the
+character mode subsystem.</p>
+<p>Although the class needs only the Location property off the Assembly
+instance, I elected to call for the entire Assembly to be passed in,
+to make the needs of this method unambiguous. Since the calling
+method must call one of two static methods on the Assembly class,
+both of which return instances of Assembly, this doesn't impose any
+extra burden on the calling assembly.</p>
+</div>
+  
+  
+  <a id="WizardWrx_DLLConfigurationManager_StateManager_LoadErrorMessageTable_" data-uid="WizardWrx.DLLConfigurationManager.StateManager.LoadErrorMessageTable*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_StateManager_LoadErrorMessageTable_System_String___" data-uid="WizardWrx.DLLConfigurationManager.StateManager.LoadErrorMessageTable(System.String[])">LoadErrorMessageTable(String[])</h4>
+  <div class="markdown level1 summary"><p>Load the table of error messages for use with the ErrorExit method.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int LoadErrorMessageTable(string[] pastrErrorMessages)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">pastrErrorMessages</span></td>
+        <td><p>Array of strings, for use as error messages. See Remarks.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>Count of error messages loaded into the object. Hence, the Ubound of
+the array is one less than the return value, and its LBound is zero.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_DLLConfigurationManager_StateManager_LoadErrorMessageTable_System_String____remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Error message numbers are array subscripts. This imposes two
+requirements on the list.</p>
+<ol>
+<li><p>You must supply a message for the default exit code of zero,
+even if you don't use it.</p>
+</li>
+<li><p>Status codes must be sequentially numbered.</p>
+</li>
+</ol>
+<p>The second requirement can be relaxed, at the cost of inserting one
+or more dummy error messages, which may be empty strings, to account
+for the skipped numbers. The obvious disadvantage is some bloat in
+the message table.</p>
+<p>You must call this method before your program can get a useful error
+message from ErrorExit. Although the call to ErrorExit succeeds, the
+message is &quot;Internal error: Unknown status code,&quot; followed by the
+supplied raw exit code.</p>
+</div>
+  
+  
+  <a id="WizardWrx_DLLConfigurationManager_StateManager_StandardHandleState_" data-uid="WizardWrx.DLLConfigurationManager.StateManager.StandardHandleState*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_StateManager_StandardHandleState_WizardWrx_ConsoleStreams_StandardHandleInfo_StandardConsoleHandle_" data-uid="WizardWrx.DLLConfigurationManager.StateManager.StandardHandleState(WizardWrx.ConsoleStreams.StandardHandleInfo.StandardConsoleHandle)">StandardHandleState(StandardHandleInfo.StandardConsoleHandle)</h4>
+  <div class="markdown level1 summary"><p>Evaluate whether a standard handle is attached to a console or
+redirected.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public StandardHandleInfo.StandardHandleState StandardHandleState(StandardHandleInfo.StandardConsoleHandle penmStdHandle)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.ConsoleStreams.StandardHandleInfo.StandardConsoleHandle.html">StandardHandleInfo.StandardConsoleHandle</a></td>
+        <td><span class="parametername">penmStdHandle</span></td>
+        <td><p>Specify the StandardHandleInfo.StandardConsoleHandle member that
+corresponds to the handle for which you wish to know whether it is
+attached or redirected.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.ConsoleStreams.StandardHandleInfo.StandardHandleState.html">StandardHandleInfo.StandardHandleState</a></td>
+        <td><p>If the function succeeds, the return value is either ShsAttached or
+ShsRedirected. Otherwise, there was an error, and you should call
+Marshal.GetLastWin32Error to determine exactly what happened. The
+singleton has a private property where the return value is stored.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
