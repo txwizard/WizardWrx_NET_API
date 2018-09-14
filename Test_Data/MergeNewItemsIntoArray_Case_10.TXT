@@ -1,0 +1,4 @@
+Key	Value
+3000	The value stored in this slot is 3000.
+4000	The value stored in this slot is 4000.
+6000	The value stored in this slot is 6000.

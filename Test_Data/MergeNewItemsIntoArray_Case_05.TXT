@@ -1,0 +1,3 @@
+Key	Value
+250	The value stored in this slot is 250.
+750	The value stored in this slot is 750.

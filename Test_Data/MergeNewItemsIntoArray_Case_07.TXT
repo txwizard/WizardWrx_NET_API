@@ -1,0 +1,4 @@
+Key	Value
+25	The value stored in this slot is 25.
+1550	The value stored in this slot is 1550.
+2200	The value stored in this slot is 2200.

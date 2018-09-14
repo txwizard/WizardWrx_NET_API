@@ -54,7 +54,8 @@
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
     "template": [
-      "default"
+      "default" ,
+      "templates/C#_Libraries"
     ],
     "postProcessors": [],
     "markdownEngineName": "markdig",

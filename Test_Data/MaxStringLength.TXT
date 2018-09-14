@@ -1,0 +1,4 @@
+The quick brown fox jumped over the lazy dog.
+Hello, world! You're looking C#!
+This is a test. In an actual application, this sentence would tell you something important.
+I shall do neither, for I have killed my captain and friend.

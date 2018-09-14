@@ -242,7 +242,7 @@ namespace DLLServices2TestStand
 				strReportLabels ,
 				SpecialCharacters.PIPE_CHAR );
 
-			foreach ( string strNewDataFile in Directory.GetFiles ( Program.AbsoluteDataDirectoryName , strNewItemsListFileSpec , SearchOption.TopDirectoryOnly ) )
+			foreach ( string strNewDataFile in Directory.GetFiles ( Program.s_strAbsoluteDataDirectoryName , strNewItemsListFileSpec , SearchOption.TopDirectoryOnly ) )
 			{
 				strInputFileName = SelectInputFle (
 					intTestNumber ,
@@ -250,7 +250,7 @@ namespace DLLServices2TestStand
 					strOutputFileFQFN );
 				strOutputFileFQFN = MergeOutputFQFN (
 					strOutputFilenmetemplate ,
-					Program.AbsoluteDataDirectoryName ,
+					Program.s_strAbsoluteDataDirectoryName ,
 					intMaxDigitsInCaseNumber ,
 					++intTestNumber );
 

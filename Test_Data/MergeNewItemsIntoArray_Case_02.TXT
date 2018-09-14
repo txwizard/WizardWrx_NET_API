@@ -1,0 +1,2 @@
+Key	Value
+2100	The value stored in this slot is 2100.

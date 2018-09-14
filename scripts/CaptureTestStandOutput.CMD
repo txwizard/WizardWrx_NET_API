@@ -72,6 +72,8 @@ goto SKIPREM
 ::  Date       By  Synopsis
 ::  ---------- --- -------------------------------------------------------------
 ::  2017/08/28 DAG Create this script from CaptureTestStandOutput_DEBUG.CMD.
+::  2018/08/28 DAG Amend to send output to the new Test_Reports directory off
+::                 the solution root directory.
 ::  ============================================================================
 
 :SKIPREM
@@ -92,14 +94,14 @@ goto SKIPREM
         pushd %_ScriptDir%
         pushd ..\_NOTES
 
-        ..\DLLServices2TestStand\bin\%_Confiuration%\DLLServices2TestStand.exe > DLLServices2TestStand_7_0_Output_%_Confiuration%.LOG
+        ..\DLLServices2TestStand\bin\%_Confiuration%\DLLServices2TestStand.exe > ..\Test_Reports\DLLServices2TestStand_Output_%_Confiuration%.LOG
         echo.
         echo -------------------------------------------------------------------
         echo DLLServices2TestStand.exe exit code = %ERRORLEVEL%
         echo -------------------------------------------------------------------
         echo.
 
-        Date2FN.exe -r DLLServices2TestStand_7_0_Output_%_Confiuration%.LOG
+        Date2FN.exe -r ..\Test_Reports\DLLServices2TestStand_Output_%_Confiuration%.LOG
 
         if exist DLLServices2TestStand_7_0_%_Confiuration%_Trace.LOG (
             Date2FN.exe -r DLLServices2TestStand_7_0_%_Confiuration%_Trace.LOG
@@ -111,8 +113,8 @@ goto SKIPREM
             echo.
         )
 
-        call ExportFromEventLogNDays.CMD Application DLLServices2TestStand_7_0_%_Confiuration%_ApplicationEvents.TXT
-        Date2fn.exe -r DLLServices2TestStand_7_0_%_Confiuration%_ApplicationEvents.TXT
+        call ExportFromEventLogNDays.CMD Application ..\Test_Reports\DLLServices2TestStand_%_Confiuration%_ApplicationEvents.TXT
+        Date2fn.exe -r ..\Test_Reports\DLLServices2TestStand_%_Confiuration%_ApplicationEvents.TXT
 
         echo.
         echo EOJ %~nx0 for %_Confiuration% configuration

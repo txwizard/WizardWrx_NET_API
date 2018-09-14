@@ -1,0 +1,6 @@
+Key	Value
+10	The value stored in this slot is 10.
+150	The value stored in this slot is 150.
+900	The value stored in this slot is 810000. The previous value was 900.
+2100	The value stored in this slot is 4410000. Its value was 2100.
+2500	The value stored in this slot is 2500.

@@ -1,0 +1,36 @@
+Key	Value
+2	The value stored in this slot is 2.
+4	The value stored in this slot is 4.
+6	The value stored in this slot is 6.
+10	The value stored in this slot is 10.
+25	The value stored in this slot is 25.
+50	The value stored in this slot is 50.
+100	The value stored in this slot is 100.
+150	The value stored in this slot is 150.
+200	The value stored in this slot is 200.
+250	The value stored in this slot is 250.
+300	The value stored in this slot is 300.
+400	The value stored in this slot is 400.
+450	The value stored in this slot is 450.
+500	The value stored in this slot is 500.
+600	The value stored in this slot is 600.
+700	The value stored in this slot is 700.
+750	The value stored in this slot is 750.
+800	The value stored in this slot is 800.
+900	The value stored in this slot is 810000. The previous value was 900.
+950	The value stored in this slot is 950.
+1000	The value stored in this slot is 1000.
+1100	The value stored in this slot is 1100.
+1200	The value stored in this slot is 1440000. The previous value was 1200.
+1300	The value stored in this slot is 1300.
+1400	The new value stored in this slot is 1960000. The previous value was 1400.
+1500	The value stored in this slot is 1500.
+1550	The value stored in this slot is 1550.
+1600	The value stored in this slot is 1600.
+1700	The value stored in this slot is 1700.
+1800	The value stored in this slot is 1800.
+1900	The value stored in this slot is 1900.
+2000	The value stored in this slot is 2000.
+2100	The value stored in this slot is 4410000. Its value was 2100.
+2200	The value stored in this slot is 2200.
+2500	The value stored in this slot is 2500.

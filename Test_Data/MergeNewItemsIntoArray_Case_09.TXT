@@ -1,0 +1,4 @@
+Key	Value
+2	The value stored in this slot is 2.
+4	The value stored in this slot is 4.
+6	The value stored in this slot is 6.

@@ -186,6 +186,8 @@
 	2017/09/10 7.0     DAG    Integrate the unit tests that cover the classes
                               that were merged into this library constellation
                               from WizardWrx.SharedUtl4 and elsewhere.
+
+	2017/09/13 7.0     DAG    Add the "s_" prefix to AbsoluteDataDirectoryName.
     ============================================================================
 */
 
@@ -219,7 +221,7 @@ namespace DLLServices2TestStand
 		internal const bool OMIT_LINEFEED = false;
 		internal const bool APPEND_LINEFEED = true;
 
-		internal static readonly string AbsoluteDataDirectoryName = Path.Combine (
+		internal static readonly string s_strAbsoluteDataDirectoryName = Path.Combine (
 			Environment.CurrentDirectory ,
 			Properties.Settings.Default.Data_Directory.EnsureLastCharIs ( System.IO.Path.DirectorySeparatorChar ) );
 
@@ -231,7 +233,7 @@ namespace DLLServices2TestStand
 			( int ) StateManager.AssemblyVersionRequest.MajorMinorExceptRevision ,
 			( int ) StateManager.AssemblyVersionRequest.MajorMinroBuildRevision ,
 			( int ) StateManager.AssemblyVersionRequest.Complete ,
-			WizardWrx.MagicNumbers.ZERO
+			MagicNumbers.ZERO
 		};	// s_aenmAssemblyVersionRequests
 
 		static readonly Type [ ] s_atypCommonExceptionTypes = new Type [ ] 
@@ -1036,7 +1038,7 @@ FinalReport:
 
 			return pstrRawSettingValue.Replace (
 				DATA_DIRECTORY_NAME_TOKEN ,
-				AbsoluteDataDirectoryName );
+				s_strAbsoluteDataDirectoryName );
 		}	// AbsolutePathStringFromSettings method
 
 
