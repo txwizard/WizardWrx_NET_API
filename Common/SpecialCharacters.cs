@@ -23,7 +23,7 @@
 
     Author:             David A. Gray
 
-    License:            Copyright (C) 2014-2017, David A. Gray 
+    License:            Copyright (C) 2014-2018, David A. Gray 
 						All rights reserved.
 
                         Redistribution and use in source and binary forms, with
@@ -110,6 +110,10 @@
                               last otherwise successful build, and define a few
                               more special characters: NOLBREAKING_SPACE,
                               CHECK_MARK_CHAR, LAST_ASCII_CHAR.
+
+	2018/10/07 7.1     DAG    Cross reference the new SpecialStrings.SPACE_CHAR,
+	                          and put the out-of-order constants into alphabetic
+							  order by name.
     ============================================================================
 */
 
@@ -132,6 +136,20 @@ namespace WizardWrx
 	public static class SpecialCharacters
     {
 		/// <summary>
+		/// Use this when your code requires a ampersand literal, when you want the
+		/// listing to be crystal clear about what it is.
+		/// </summary>
+		/// <seealso cref="SpecialStrings.AMPERSAND"/>
+		/// <seealso cref="COMMA"/>
+		/// <seealso cref="HASH_TAG"/>
+		/// <seealso cref="PERCENT_SIGN"/>
+		/// <seealso cref="PIPE_CHAR"/>
+		/// <seealso cref="SEMICOLON"/>
+		/// <seealso cref="TAB_CHAR"/>
+		/// <seealso cref="UNDERSCORE_CHAR"/>
+		public const char AMPERSAND = '&';
+
+		/// <summary>
 		/// Asterisks are everywhere; use this constant to make asterisks that
 		/// are intended to be treated as characters unambiguous.
 		/// </summary>
@@ -144,6 +162,55 @@ namespace WizardWrx
 		/// <seealso cref="TAB_CHAR"/>
 		/// <seealso cref="UNDERSCORE_CHAR"/>
 		public const char ASTERISK = '*';
+
+		/// <summary>
+		/// Use this when your code requires the AT character literal, when you
+		/// want the listing to be crystal clear about what it is.
+		/// </summary>
+		/// <seealso cref="AT_SIGN"/>
+		/// <seealso cref="COMMA"/>
+		/// <seealso cref="HASH_TAG"/>
+		/// <seealso cref="PERCENT_SIGN"/>
+		/// <seealso cref="PIPE_CHAR"/>
+		/// <seealso cref="SEMICOLON"/>
+		/// <seealso cref="TAB_CHAR"/>
+		/// <seealso cref="UNDERSCORE_CHAR"/>
+		public const char AT_CHAR = '@';
+
+		/// <summary>
+		/// Use this in your code to specify a left French brace, also called a
+		/// left brace or opening brace, as a character literal.
+		/// </summary>
+		/// <remarks>
+		/// In addition to implementing DLM_FORMAT_ITEM_BEGIN for a specific use
+		/// case, I implemented the generic use case and its twin, BRACE_RIGHT.
+		/// </remarks>
+		/// <seealso cref="DLM_FORMAT_ITEM_BEGIN"/>
+		/// <seealso cref="BRACE_RIGHT"/>
+		public const char BRACE_LEFT = '{';
+
+		/// <summary>
+		/// Use this in your code to specify a right French brace, also called a
+		/// right brace or closing brace, as a character literal.
+		/// </summary>
+		/// <seealso cref="BRACE_LEFT"/>
+		public const char BRACE_RIGHT = '}';
+
+		/// <summary>
+		/// Use this in your code to specify a left square bracket, also called
+		/// an opening bracket, as a character literal.
+		/// </summary>
+		/// <seealso cref="BRACKET_RIGHT"/>
+		/// <seealso cref="BRACE_LEFT"/>
+		public const char BRACKET_LEFT = '[';
+
+		/// <summary>
+		/// Use this in your code to specify a right square bracket, also called
+		/// a closing bracket, as a character literal.
+		/// </summary>
+		/// <seealso cref="BRACKET_LEFT"/>
+		/// <seealso cref="BRACE_RIGHT"/>
+		public const char BRACKET_RIGHT = ']';
 
 		/// <summary>
 		/// Both ASTERISK_CHAR and ASTERISK resolve to the same character.
@@ -189,11 +256,38 @@ namespace WizardWrx
 		public const char CARRIAGE_RETURN = '\r';
 
 		/// <summary>
-		/// Use this character to unambiguously denote a period character, for
-		/// example, when specifying a delimiter character or appending a full
-		/// stop character to a string.
+		/// Numeric character 0, for use in code where it might be mistaken for
+		/// a letter O.
 		/// </summary>
-		public const char FULL_STOP = '.';
+		/// <seealso cref="CHAR_LC_O"/>
+		/// <seealso cref="CHAR_UC_O"/>
+		public const char CHAR_NUMERAL_0 = '0';
+
+		/// <summary>
+		/// Numeric character 1, for use in code where it might be mistaken for
+		/// a lower case l or an upper case I.
+		/// </summary>
+		/// <seealso cref="CHAR_UC_I"/>
+		/// <seealso cref="CHAR_LC_L"/>
+		public const char CHAR_NUMERAL_1 = '1';
+
+		/// <summary>
+		/// Numeric character 2, for use in code where it might be mistaken for
+		/// a letter Z or a numeral 7.
+		/// </summary>
+		/// <seealso cref="CHAR_LC_Z"/>
+		/// <seealso cref="CHAR_UC_Z"/>
+		/// <seealso cref="CHAR_NUMERAL_7"/>
+		public const char CHAR_NUMERAL_2 = '2';
+
+		/// <summary>
+		/// Numeric character 2, for use in code where it might be mistaken for
+		/// a letter Z or a numeral 7.
+		/// </summary>
+		/// <seealso cref="CHAR_LC_Z"/>
+		/// <seealso cref="CHAR_UC_Z"/>
+		/// <seealso cref="CHAR_NUMERAL_2"/>
+		public const char CHAR_NUMERAL_7 = '7';
 
 		/// <summary>
 		/// Lower case I, for use in code, where it might be easily mistaken for
@@ -260,104 +354,6 @@ namespace WizardWrx
 		/// <seealso cref="CHAR_NUMERAL_2"/>
 		/// <seealso cref="CHAR_NUMERAL_7"/>
 		public const char CHAR_UC_Z = 'Z';
-
-		/// <summary>
-		/// Numeric character 0, for use in code where it might be mistaken for
-		/// a letter O.
-		/// </summary>
-		/// <seealso cref="CHAR_LC_O"/>
-		/// <seealso cref="CHAR_UC_O"/>
-		public const char CHAR_NUMERAL_0 = '0';
-
-		/// <summary>
-		/// Numeric character 1, for use in code where it might be mistaken for
-		/// a lower case l or an upper case I.
-		/// </summary>
-		/// <seealso cref="CHAR_UC_I"/>
-		/// <seealso cref="CHAR_LC_L"/>
-		public const char CHAR_NUMERAL_1 = '1';
-
-		/// <summary>
-		/// Numeric character 2, for use in code where it might be mistaken for
-		/// a letter Z or a numeral 7.
-		/// </summary>
-		/// <seealso cref="CHAR_LC_Z"/>
-		/// <seealso cref="CHAR_UC_Z"/>
-		/// <seealso cref="CHAR_NUMERAL_7"/>
-		public const char CHAR_NUMERAL_2 = '2';
-
-		/// <summary>
-		/// Numeric character 2, for use in code where it might be mistaken for
-		/// a letter Z or a numeral 7.
-		/// </summary>
-		/// <seealso cref="CHAR_LC_Z"/>
-		/// <seealso cref="CHAR_UC_Z"/>
-		/// <seealso cref="CHAR_NUMERAL_2"/>
-		public const char CHAR_NUMERAL_7 = '7';
-
-		/// <summary>
-		/// Use this when your code requires a ampersand literal, when you want the
-		/// listing to be crystal clear about what it is.
-		/// </summary>
-		/// <seealso cref="SpecialStrings.AMPERSAND"/>
-		/// <seealso cref="COMMA"/>
-		/// <seealso cref="HASH_TAG"/>
-		/// <seealso cref="PERCENT_SIGN"/>
-		/// <seealso cref="PIPE_CHAR"/>
-		/// <seealso cref="SEMICOLON"/>
-		/// <seealso cref="TAB_CHAR"/>
-		/// <seealso cref="UNDERSCORE_CHAR"/>
-		public const char AMPERSAND = '&';
-
-		/// <summary>
-		/// Use this when your code requires the AT character literal, when you
-		/// want the listing to be crystal clear about what it is.
-		/// </summary>
-		/// <seealso cref="AT_SIGN"/>
-		/// <seealso cref="COMMA"/>
-		/// <seealso cref="HASH_TAG"/>
-		/// <seealso cref="PERCENT_SIGN"/>
-		/// <seealso cref="PIPE_CHAR"/>
-		/// <seealso cref="SEMICOLON"/>
-		/// <seealso cref="TAB_CHAR"/>
-		/// <seealso cref="UNDERSCORE_CHAR"/>
-		public const char AT_CHAR = '@';
-
-		/// <summary>
-		/// Use this in your code to specify a left French brace, also called a
-		/// left brace or opening brace, as a character literal.
-		/// </summary>
-		/// <remarks>
-		/// In addition to implementing DLM_FORMAT_ITEM_BEGIN for a specific use
-		/// case, I implemented the generic use case and its twin, BRACE_RIGHT.
-		/// </remarks>
-		/// <seealso cref="DLM_FORMAT_ITEM_BEGIN"/>
-		/// <seealso cref="BRACE_RIGHT"/>
-		public const char BRACE_LEFT = '{';
-
-		/// <summary>
-		/// Use this in your code to specify a right French brace, also called a
-		/// right brace or closing brace, as a character literal.
-		/// </summary>
-		/// <seealso cref="BRACE_LEFT"/>
-		public const char BRACE_RIGHT = '}';
-
-		/// <summary>
-		/// Use this in your code to specify a left square bracket, also called
-		/// an opening bracket, as a character literal.
-		/// </summary>
-		/// <seealso cref="BRACKET_RIGHT"/>
-		/// <seealso cref="BRACE_LEFT"/>
-		public const char BRACKET_LEFT = '[';
-
-		/// <summary>
-		/// Use this in your code to specify a right square bracket, also called
-		/// a closing bracket, as a character literal.
-		/// </summary>
-		/// <seealso cref="BRACKET_LEFT"/>
-		/// <seealso cref="BRACE_RIGHT"/>
-		public const char BRACKET_RIGHT = ']';
-
 
 		/// <summary>
 		/// The check-mark character prints as such only in selected Windows
@@ -439,6 +435,13 @@ namespace WizardWrx
 		/// <seealso cref="HASH_TAG"/>
 		/// <seealso cref="UNDERSCORE_CHAR"/>
 		public const char EQUALS_SIGN = '=';
+
+		/// <summary>
+		/// Use this character to unambiguously denote a period character, for
+		/// example, when specifying a delimiter character or appending a full
+		/// stop character to a string.
+		/// </summary>
+		public const char FULL_STOP = '.';
 
 		/// <summary>
 		/// Use this constant to specify a hash-tag literal character
@@ -557,10 +560,11 @@ namespace WizardWrx
 		/// <seealso cref="SPACE_CHAR"/>
         public const char SINGLE_QUOTE = '\x0027';
 
-        /// <summary>
-        /// Use this when your code requires a single space when you want the
-        /// listing to be crystal clear about what it is.
-        /// </summary>
+		/// <summary>
+		/// Use this when your code requires a single space when you want the
+		/// listing to be crystal clear about what it is.
+		/// </summary>
+		/// <seealso cref="SpecialStrings.SPACE_CHAR"/>
 		/// <seealso cref="DOUBLE_QUOTE"/>
 		/// <seealso cref="EQUALS_SIGN"/>
 		/// <seealso cref="HASH_TAG"/>

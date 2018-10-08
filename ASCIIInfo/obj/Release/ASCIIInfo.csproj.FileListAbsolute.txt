@@ -1,0 +1,17 @@
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\ASCIIInfo\bin\Release\WizardWrx.ASCIIInfo.XML
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\ASCIIInfo\bin\Release\WizardWrx.ASCIIInfo.dll
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\ASCIIInfo\bin\Release\WizardWrx.ASCIIInfo.pdb
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\ASCIIInfo\obj\Release\ASCIIInfo.csprojResolveAssemblyReference.cache
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\ASCIIInfo\obj\Release\WizardWrx.Properties.Resources.resources
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\ASCIIInfo\obj\Release\ASCIIInfo.csproj.GenerateResource.Cache
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\ASCIIInfo\obj\Release\WizardWrx.ASCIIInfo.dll
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\ASCIIInfo\obj\Release\WizardWrx.ASCIIInfo.pdb
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\ASCIIInfo\obj\Release\WizardWrx.ASCIIInfo.dll
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\ASCIIInfo\obj\Release\WizardWrx.ASCIIInfo.pdb
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\ASCIIInfo\obj\Release\WizardWrx.Properties.Resources.resources
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\ASCIIInfo\obj\Release\ASCIIInfo.csproj.GenerateResource.cache
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\ASCIIInfo\obj\Release\ASCIIInfo.csproj.CoreCompileInputs.cache
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\ASCIIInfo\bin\Release\WizardWrx.ASCIIInfo.XML
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\ASCIIInfo\bin\Release\WizardWrx.ASCIIInfo.dll
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\ASCIIInfo\bin\Release\WizardWrx.ASCIIInfo.pdb
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\ASCIIInfo\obj\Release\ASCIIInfo.csprojAssemblyReference.cache

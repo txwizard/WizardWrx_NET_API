@@ -19,13 +19,19 @@ directory.
 
 *	`WizardWrx_NET_API_Binaries_Release.7z` is the release build of the binaries.
 
-Theer is a DLL, PDB, and XML file for each library. To derive maximum benefit,
+There is a DLL, PDB, and XML file for each library. To derive maximum benefit,
 including support for the Visual Studio managed code debugger and IntelliSense
 in the text editor, take all three.
 
 __Important__: All but a couple of the libraries depend on one or more others;
 if in doubt, check the manifest of the DLL(s) you plan to use. You can use
 `ILDASM.exe`, which ships with the Microsoft .NET Framework SDKs.
+
+## Change Log
+
+See `ChangeLog.md` for a cumulative history of changes, listed from newest to
+oldest, beginning with version 7.1. Previous changes are meticulously documented
+in the top of each source file.
 
 ## Road Map
 

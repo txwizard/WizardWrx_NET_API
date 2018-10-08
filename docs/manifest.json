@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DLLServices2TestStand.Properties.Resources.html",
-          "hash": "PLEHiNqI0KgtQWNjLVtI6g=="
+          "hash": "aryivW+NDMMoojKEaWQYSw=="
         }
       },
       "is_incremental": false,
@@ -33,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.ASCIICharacterDisplayInfo.html",
-          "hash": "txu3IA4z7qdjzWEBMP7/gA=="
+          "hash": "97LiytP9XjW0NsG5GXVpNw=="
         }
       },
       "is_incremental": false,
@@ -537,7 +537,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.Core.UnmanagedLibrary.html",
-          "hash": "8H7FIGaYCsrc2QnYA65pJQ=="
+          "hash": "bxyxUyOmeeDYmwz+V3eL9w=="
         }
       },
       "is_incremental": false,
@@ -921,7 +921,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.GenericSingletonBase-1.html",
-          "hash": "kchja+y2eh7DOgzYwZoYmQ=="
+          "hash": "iIcWffE4FCI4c5QI5zZ5hg=="
         }
       },
       "is_incremental": false,
@@ -945,7 +945,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.ListHelpers.html",
-          "hash": "G6qLh2+BsdQmn33Hwp/1sQ=="
+          "hash": "4iVER819xJ5MdT2b67SHjQ=="
         }
       },
       "is_incremental": false,
@@ -1149,7 +1149,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.SpecialCharacters.html",
-          "hash": "RaxxBvQ6WouYUGvM5pqlQQ=="
+          "hash": "yDdnJfB42gHTG6TyulbYGw=="
         }
       },
       "is_incremental": false,
@@ -1161,7 +1161,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.SpecialStrings.html",
-          "hash": "QbN5f7iqyMZjtzAmSmTd1g=="
+          "hash": "RVil9wZ7FMyMEBKd5SVUig=="
         }
       },
       "is_incremental": false,
@@ -1173,7 +1173,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.StringExtensions.html",
-          "hash": "Mo9winoQdkkSgKUwVUo6dA=="
+          "hash": "CIF38pGqOD4fzH7WqHXI1w=="
         }
       },
       "is_incremental": false,
@@ -1248,7 +1248,7 @@
           "hash": "vcB/RdslGawhq0Vfb378Fw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1272,7 +1272,7 @@
           "hash": "JjhZ6J2v42imvfn4qoxuGg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1296,7 +1296,7 @@
           "hash": "HnVW121CQL9dXAVu8amv0A=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {

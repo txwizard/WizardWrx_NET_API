@@ -22,7 +22,7 @@
 
     Author:				David A. Gray
 
-	License:            Copyright (C) 2011-2017, David A. Gray.
+	License:            Copyright (C) 2011-2018, David A. Gray.
 						All rights reserved.
 
                         Redistribution and use in source and binary forms, with
@@ -188,6 +188,11 @@
                               from WizardWrx.SharedUtl4 and elsewhere.
 
 	2017/09/13 7.0     DAG    Add the "s_" prefix to AbsoluteDataDirectoryName.
+
+	2018/10/07 7.1     DAG    Add CapitalizeWordsExercises to test a new string
+	                          class extension method, and add a new method,
+							  SpecialStringExercises, that lists and displays
+							  the SpecializedStrings constants.
     ============================================================================
 */
 
@@ -701,16 +706,34 @@ namespace DLLServices2TestStand
 						if ( ( intRetCode = NewClassTests_20140914.SpecialCharactersExercises ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
 							PauseForPictures ( OMIT_LINEFEED );
 						else
-							throw new Exception ( 
+							throw new Exception (
 								string.Format (
 									Properties.Resources.ERRMSG_NEW_CLASS_TESTS_20140914 ,
 									"SpecialCharacters" ,
 									intRetCode ) );
 
+						if ( ( intRetCode = NewClassTests_20140914.SpecialStringExercises ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
+							PauseForPictures ( OMIT_LINEFEED );
+						else
+							throw new Exception (
+								string.Format (
+									Properties.Resources.ERRMSG_NEW_CLASS_TESTS_20140914 ,
+									"SpecialStrings" ,
+									intRetCode ) );
+
 						if ( ( intRetCode = NewClassTests_20140914.ChopChop ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
 							PauseForPictures ( OMIT_LINEFEED );
 						else
-							throw new Exception ( 
+							throw new Exception (
+								string.Format (
+									Properties.Resources.ERRMSG_NEW_CLASS_TESTS_20140914 ,
+									"Chop" ,
+									intRetCode ) );
+
+						if ( ( intRetCode = NewClassTests_20140914.CapitalizeWordsExercises ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
+							PauseForPictures ( OMIT_LINEFEED );
+						else
+							throw new Exception (
 								string.Format (
 									Properties.Resources.ERRMSG_NEW_CLASS_TESTS_20140914 ,
 									"Chop" ,
@@ -1114,63 +1137,63 @@ FinalReport:
 
 		private static void EvaluateConsoleHandleStates ( )
 		{	// The function nesting is encoded in the stepwise indentations.
-#if USE_STRING_EXTENSION_METHODS
-			Console.WriteLine (
-				string.Format (
-					Properties.Resources.MSG_STANDARD_HANDLE_STATE ,													// Format control string
-					Properties.Resources.MSG_STDIN ,																	// Format Item 0: Textual description of stream
-					ConsoleHandleStateMessage (
-						s_smTheApp.StandardHandleState (
-							StandardHandleInfo.StandardConsoleHandle.StandardInput ) ) ,								// Format Item 1: Standard handle state
-					BeautifyStandardHandleFQFN (
-						StandardHandleInfo.StandardConsoleHandle.StandardInput ) ).AppendFullStopIfMissing ( ) );		// Format Item 2: File name to which redirected, if applicable.
-			Console.WriteLine (
-				string.Format (
-					Properties.Resources.MSG_STANDARD_HANDLE_STATE ,													// Format control string
-					Properties.Resources.MSG_STDOUT ,																	// Format Item 0: Textual description of stream
-					ConsoleHandleStateMessage (
-						s_smTheApp.StandardHandleState (
-							StandardHandleInfo.StandardConsoleHandle.StandardOutput ) ) ,								// Format Item 1: Standard handle state
-					BeautifyStandardHandleFQFN (
-						StandardHandleInfo.StandardConsoleHandle.StandardOutput ) ).AppendFullStopIfMissing ( ) );		// Format Item 2: File name to which redirected, if applicable.
-			Console.WriteLine (
-				string.Format (
-					Properties.Resources.MSG_STANDARD_HANDLE_STATE ,													// Format control string
-					Properties.Resources.MSG_STDERR ,																	// Format Item 0: Textual description of stream
-					ConsoleHandleStateMessage (
-						s_smTheApp.StandardHandleState (
-							StandardHandleInfo.StandardConsoleHandle.StandardError ) ) ,								// Format Item 1: Standard handle state
-					BeautifyStandardHandleFQFN (
-						StandardHandleInfo.StandardConsoleHandle.StandardError ) ).AppendFullStopIfMissing ( ) );		// Format Item 2: File name to which redirected, if applicable.
-#else
-			Console.WriteLine ( StringTricks.AppendFullStopIfMissing (
-				string.Format (
-					Properties.Resources.MSG_STANDARD_HANDLE_STATE ,								// Format control string
-					Properties.Resources.MSG_STDIN ,												// Format Item 0: Textual description of stream
-					ConsoleHandleStateMessage (
-						s_smTheApp.StandardHandleState (
-							StandardHandleInfo.StandardConsoleHandle.StandardInput ) ) ,			// Format Item 1: Standard handle state
-					BeautifyStandardHandleFQFN (
-						StandardHandleInfo.StandardConsoleHandle.StandardInput ) ) ) );				// Format Item 2: File name to which redirected, if applicable.
-			Console.WriteLine ( StringTricks.AppendFullStopIfMissing (
-				string.Format (
-					Properties.Resources.MSG_STANDARD_HANDLE_STATE ,								// Format control string
-					Properties.Resources.MSG_STDOUT ,												// Format Item 0: Textual description of stream
-					ConsoleHandleStateMessage (
-						s_smTheApp.StandardHandleState (
-							StandardHandleInfo.StandardConsoleHandle.StandardOutput ) ) ,			// Format Item 1: Standard handle state
-					BeautifyStandardHandleFQFN (
-						StandardHandleInfo.StandardConsoleHandle.StandardOutput ) ) ) );			// Format Item 2: File name to which redirected, if applicable.
-			Console.WriteLine ( StringTricks.AppendFullStopIfMissing (
-				string.Format (
-					Properties.Resources.MSG_STANDARD_HANDLE_STATE ,								// Format control string
-					Properties.Resources.MSG_STDERR ,												// Format Item 0: Textual description of stream
-					ConsoleHandleStateMessage (
-						s_smTheApp.StandardHandleState (
-							StandardHandleInfo.StandardConsoleHandle.StandardError ) ) ,			// Format Item 1: Standard handle state
-					BeautifyStandardHandleFQFN (
-						StandardHandleInfo.StandardConsoleHandle.StandardError ) ) ) );				// Format Item 2: File name to which redirected, if applicable.
-#endif	// #if USE_STRING_EXTENSION_METHODS
+			#if USE_STRING_EXTENSION_METHODS
+				Console.WriteLine (
+					string.Format (
+						Properties.Resources.MSG_STANDARD_HANDLE_STATE ,													// Format control string
+						Properties.Resources.MSG_STDIN ,																	// Format Item 0: Textual description of stream
+						ConsoleHandleStateMessage (
+							s_smTheApp.StandardHandleState (
+								StandardHandleInfo.StandardConsoleHandle.StandardInput ) ) ,								// Format Item 1: Standard handle state
+						BeautifyStandardHandleFQFN (
+							StandardHandleInfo.StandardConsoleHandle.StandardInput ) ).AppendFullStopIfMissing ( ) );		// Format Item 2: File name to which redirected, if applicable.
+				Console.WriteLine (
+					string.Format (
+						Properties.Resources.MSG_STANDARD_HANDLE_STATE ,													// Format control string
+						Properties.Resources.MSG_STDOUT ,																	// Format Item 0: Textual description of stream
+						ConsoleHandleStateMessage (
+							s_smTheApp.StandardHandleState (
+								StandardHandleInfo.StandardConsoleHandle.StandardOutput ) ) ,								// Format Item 1: Standard handle state
+						BeautifyStandardHandleFQFN (
+							StandardHandleInfo.StandardConsoleHandle.StandardOutput ) ).AppendFullStopIfMissing ( ) );		// Format Item 2: File name to which redirected, if applicable.
+				Console.WriteLine (
+					string.Format (
+						Properties.Resources.MSG_STANDARD_HANDLE_STATE ,													// Format control string
+						Properties.Resources.MSG_STDERR ,																	// Format Item 0: Textual description of stream
+						ConsoleHandleStateMessage (
+							s_smTheApp.StandardHandleState (
+								StandardHandleInfo.StandardConsoleHandle.StandardError ) ) ,								// Format Item 1: Standard handle state
+						BeautifyStandardHandleFQFN (
+							StandardHandleInfo.StandardConsoleHandle.StandardError ) ).AppendFullStopIfMissing ( ) );		// Format Item 2: File name to which redirected, if applicable.
+			#else
+				Console.WriteLine ( StringTricks.AppendFullStopIfMissing (
+					string.Format (
+						Properties.Resources.MSG_STANDARD_HANDLE_STATE ,								// Format control string
+						Properties.Resources.MSG_STDIN ,												// Format Item 0: Textual description of stream
+						ConsoleHandleStateMessage (
+							s_smTheApp.StandardHandleState (
+								StandardHandleInfo.StandardConsoleHandle.StandardInput ) ) ,			// Format Item 1: Standard handle state
+						BeautifyStandardHandleFQFN (
+							StandardHandleInfo.StandardConsoleHandle.StandardInput ) ) ) );				// Format Item 2: File name to which redirected, if applicable.
+				Console.WriteLine ( StringTricks.AppendFullStopIfMissing (
+					string.Format (
+						Properties.Resources.MSG_STANDARD_HANDLE_STATE ,								// Format control string
+						Properties.Resources.MSG_STDOUT ,												// Format Item 0: Textual description of stream
+						ConsoleHandleStateMessage (
+							s_smTheApp.StandardHandleState (
+								StandardHandleInfo.StandardConsoleHandle.StandardOutput ) ) ,			// Format Item 1: Standard handle state
+						BeautifyStandardHandleFQFN (
+							StandardHandleInfo.StandardConsoleHandle.StandardOutput ) ) ) );			// Format Item 2: File name to which redirected, if applicable.
+				Console.WriteLine ( StringTricks.AppendFullStopIfMissing (
+					string.Format (
+						Properties.Resources.MSG_STANDARD_HANDLE_STATE ,								// Format control string
+						Properties.Resources.MSG_STDERR ,												// Format Item 0: Textual description of stream
+						ConsoleHandleStateMessage (
+							s_smTheApp.StandardHandleState (
+								StandardHandleInfo.StandardConsoleHandle.StandardError ) ) ,			// Format Item 1: Standard handle state
+						BeautifyStandardHandleFQFN (
+							StandardHandleInfo.StandardConsoleHandle.StandardError ) ) ) );				// Format Item 2: File name to which redirected, if applicable.
+			#endif	// #if USE_STRING_EXTENSION_METHODS
 		}	// EvaluateConsoleHandleStates method
 
 

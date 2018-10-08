@@ -466,12 +466,12 @@
     <value>This literal is made plural if the error count is greater than 1.</value>
   </data>
   <data name="IDS_ASCII_TABLE_ITEM" xml:space="preserve">
-    <value>Character {0} ({1}): Display Value = {2}{3}</value>
+    <value>        Character {0} ({1}): Display Value = {2}{3}</value>
     <comment>ASCII_Table_Gen prints each detail through this template. The third format item is either empty, or a parenthesized comment.</comment>
   </data>
   <data name="IDS_ASCII_TABLE_PREAMBLE" xml:space="preserve">
-    <value>{0}The following table lists key attributes of every ASCII character.{0}</value>
-    <comment>ASCII_Table_Gen prints thismessage above the table.</comment>
+    <value>{0}The following tables list key attributes of every ASCII character.{0}</value>
+    <comment>ASCII_Table_Gen prints this message above the tables that comprise its output.</comment>
   </data>
   <data name="IDS_DATAFILE_FQFN" xml:space="preserve">
     <value>Fully Qualified Name of Input File</value>
@@ -618,5 +618,17 @@
   <data name="CMDARG_EVENT_MSG_CLEANUP_TESTS" xml:space="preserve">
     <value>EventMessageCleanupTests</value>
     <comment>Use this command line argument to engage the event log cleanup option testsrs.</comment>
+  </data>
+  <data name="IDS_ASCII_CHARACTER_INFO" xml:space="preserve">
+    <value>        Character index {0}: {1}</value>
+    <comment>ASCII_Table_Gen prints this message once for each valid ASCII character, including the NULL character.</comment>
+  </data>
+  <data name="IDS_ASCII_TABLE_CHARACTER_PROPERTIES" xml:space="preserve">
+    <value>    This first of two tables lists character codes, rendering the printable, hexadecimal, and decimal value of each.{0}</value>
+    <comment>ASCII_Table_Gen prints this message above the first table.</comment>
+  </data>
+  <data name="IDS_ASCII_TABLE_ENUMERATION" xml:space="preserve">
+    <value>{0}    The ASCII_Table_Gen method will now enumerate the ASCII_Character_Display_Table{0}</value>
+    <comment>ASCII_Table_Gen prints this message between the first table and second tables.</comment>
   </data>
 </root>

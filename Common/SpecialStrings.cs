@@ -63,7 +63,7 @@
 
     Author:             David A. Gray
 
-    License:            Copyright (C) 2014-2017, David A. Gray. 
+    License:            Copyright (C) 2014-2018, David A. Gray. 
 						All rights reserved.
 
                         Redistribution and use in source and binary forms, with
@@ -131,6 +131,10 @@
 	2017/06/24 7.0     DAG    Cross reference the managed string resources that
                               correspond to string constants, which are under
                               consideration for being marked as deprecated.
+
+	2018/10/07 7.1     DAG    Define SPACE_CHAR for use when only a string will
+	                          do, and cross reference the new constant to its
+							  antecedent, SpecialCharacters.SPACE_CHAR.
     ============================================================================
 */
 
@@ -271,10 +275,23 @@ namespace WizardWrx
 		public const string LOCALHOST_IP_ADDR = @"127.0.0.1";
 
 		/// <summary>
-		/// Use this when you need to remove or replace ampersand literals in a string.
+		/// Use this when you need to remove or replace ampersand literals in a
+		/// string.
 		/// </summary>
 		/// <seealso cref="SpecialCharacters.PERCENT_SIGN"/>
 		public const string PERCENT_SIGN = "%";
+
+		/// <summary>
+		/// Use this when you need a space character in a context that requires
+		/// a string representation.
+		/// </summary>
+		/// <remarks>
+		/// Heretofore, I have made do with the ToString method on the 
+		/// like-named character, but it annoyed me whenever I did so because I
+		/// wanted th use a real constant.
+		/// </remarks>
+		/// <seealso cref="SpecialCharacters.SPACE_CHAR"/>
+		public const string SPACE_CHAR = @" ";
 
 		/// <summary>
 		/// Use this template when you need to either precede or follow a line

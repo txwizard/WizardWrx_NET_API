@@ -19,7 +19,7 @@
 
     Author:             David A. Gray
 
-	License:            Copyright (C) 2011-2017, David A. Gray. 
+	License:            Copyright (C) 2011-2018, David A. Gray. 
 						All rights reserved.
 
                         Redistribution and use in source and binary forms, with
@@ -117,12 +117,18 @@
                               assembly.
 
 	2017/09/17 7.0      DAG   Add 3 NumericFormat and MagicNumbers constants.
+
+	2018/10/07 7.1      DAG   1) Test the new CapitalizeWords extension method.
+
+	                          2) Define SpecialStringExercises to list and show
+							     the SpecialStrings constants.
 	============================================================================
 */
 
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 using WizardWrx;
 using WizardWrx.Core;
@@ -145,7 +151,14 @@ namespace DLLServices2TestStand
 			TEST_STRING_2 ,
 			TEST_STRING_3 ,
 			TEST_STRING_4
-		};	// s_astrTestStrings array
+		};  // s_astrTestStrings array
+
+		static readonly string [ ] s_astrStringsToCapitalize =
+		{
+			@"false" ,
+			@"true" ,
+			@"united states of america"
+		};  // s_astrStringsToCapitalize array
 
 		//	--------------------------------------------------------------------
 		//	This list comprises a full set of IntegerToHexStrExercises test 
@@ -200,20 +213,27 @@ namespace DLLServices2TestStand
         }   // ArrayInfoExercises method
 
 
-		internal static int EnumerateStringResourcesInAssembly (
-			ref int pintTestNumber ,
-			System.Reflection.Assembly pasmInWhichEmbedded )
-		{	// Moving the listing operation into a static method on class SortableManagedResourceItem keeps everything together.
+		internal static int CapitalizeWordsExercises ( ref int pintTestNumber )
+		{
 			BeginTest (
 				System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,
 				ref pintTestNumber );
 
-			WizardWrx.AssemblyUtils.SortableManagedResourceItem.ListResourcesInAssemblyByName ( pasmInWhichEmbedded );
+			for ( int intCaseIndex = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+				      intCaseIndex < s_astrStringsToCapitalize.Length ;
+					  intCaseIndex++ )
+			{
+				Console.WriteLine (
+					@"    Test {0}: Input = {1}, Output = {2}" ,
+					ArrayInfo.OrdinalFromIndex ( intCaseIndex ) ,
+					s_astrStringsToCapitalize [ intCaseIndex ].QuoteString ( ) ,
+					s_astrStringsToCapitalize [ intCaseIndex ].CapitalizeWords ( ).QuoteString ( ) );
+			}   // for ( int intCaseIndex = ArrayInfo.ARRAY_FIRST_ELEMENT ; intCaseIndex < s_astrStringsToCapitalize.Length ; intCaseIndex++ )
 
 			return TestDone (
 				WizardWrx.MagicNumbers.ERROR_SUCCESS ,
 				pintTestNumber );
-		}	// EnumerateStringResourcesInAssembly method
+		}   // CapitalizeWordsExercises method
 
 
 		internal static int ChopChop ( ref int pintTestNumber )
@@ -226,11 +246,11 @@ namespace DLLServices2TestStand
 
 			foreach ( string strTestCase in s_astrTestStrings )
 			{
-#if USE_STRING_EXTENSION_METHODS
-				string strChopped = strTestCase.Chop ( );
-#else
-				string strChopped = StringTricks.Chop ( strTestCase );
-#endif	// #if USE_STRING_EXTENSION_METHODS
+				#if USE_STRING_EXTENSION_METHODS
+					string strChopped = strTestCase.Chop ( );
+				#else
+					string strChopped = StringTricks.Chop ( strTestCase );
+				#endif	// #if USE_STRING_EXTENSION_METHODS
 				Console.WriteLine (
 					Properties.Resources.CHOP_TEST_REPORT ,						// Format Control String (message template)
 					new object [ ]
@@ -244,11 +264,12 @@ namespace DLLServices2TestStand
 			}	// foreach ( string strTestCase in s_astrTestStrings )
 
 			{	// Test the empty string degenerate case.
-#if USE_STRING_EXTENSION_METHODS
-				string strChopped = SpecialStrings.EMPTY_STRING.Chop ( );
-#else
-				string strChopped = StringTricks.Chop ( WizardWrx.SpecialStrings.EMPTY_STRING );
-#endif	// #if USE_STRING_EXTENSION_METHODS
+				#if USE_STRING_EXTENSION_METHODS
+					string strChopped = SpecialStrings.EMPTY_STRING.Chop ( );
+				#else
+					string strChopped = StringTricks.Chop ( WizardWrx.SpecialStrings.EMPTY_STRING );
+				#endif	// #if USE_STRING_EXTENSION_METHODS
+
 				Console.WriteLine (
 					Properties.Resources.CHOP_TEST_REPORT ,						// Format Control String (message template)
 					new object [ ]
@@ -264,11 +285,12 @@ namespace DLLServices2TestStand
 			}	// Empty string degenerate case.
 
 			{	// Test the null string degenerate case.
-#if USE_STRING_EXTENSION_METHODS
-				string strChopped = "Since there is no object to extend, the null reference case is meaningless for an extension method.";
-#else
-				string strChopped = StringTricks.Chop ( null );
-#endif	// #if USE_STRING_EXTENSION_METHODS
+				#if USE_STRING_EXTENSION_METHODS
+					string strChopped = "Since there is no object to extend, the null reference case is meaningless for an extension method.";
+				#else
+					string strChopped = StringTricks.Chop ( null );
+				#endif	// #if USE_STRING_EXTENSION_METHODS
+
 				Console.WriteLine (
 					Properties.Resources.CHOP_TEST_REPORT ,						// Format Control String (message template)
 					new object [ ]
@@ -430,7 +452,23 @@ namespace DLLServices2TestStand
             return TestDone (
                 WizardWrx.MagicNumbers.ERROR_SUCCESS ,
                 pintTestNumber );
-        }	// DisplayFormatsExercises method
+        }   // DisplayFormatsExercises method
+
+
+		internal static int EnumerateStringResourcesInAssembly (
+			ref int pintTestNumber ,
+			System.Reflection.Assembly pasmInWhichEmbedded )
+		{   // Moving the listing operation into a static method on class SortableManagedResourceItem keeps everything together.
+			BeginTest (
+				System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,
+				ref pintTestNumber );
+
+			WizardWrx.AssemblyUtils.SortableManagedResourceItem.ListResourcesInAssemblyByName ( pasmInWhichEmbedded );
+
+			return TestDone (
+				WizardWrx.MagicNumbers.ERROR_SUCCESS ,
+				pintTestNumber );
+		}   // EnumerateStringResourcesInAssembly method
 
 
 		private static void MagicNumberExercises ( )
@@ -473,7 +511,32 @@ namespace DLLServices2TestStand
 		}   // DisplayFormatsExercises method
 
 
-        internal static int FileIOFlagsExercises ( ref int pintTestNumber )
+		internal static int SpecialStringExercises ( ref int pintTestNumber )
+		{
+			BeginTest (
+				System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,
+				ref pintTestNumber );
+
+			List<System.Reflection.FieldInfo> fieldInfos = typeof ( SpecialStrings ).GetFields (
+				System.Reflection.BindingFlags.Public
+				| System.Reflection.BindingFlags.Static
+				| System.Reflection.BindingFlags.FlattenHierarchy ).Where (
+				fi => fi.IsLiteral && !fi.IsInitOnly ).ToList ( );
+
+			foreach ( System.Reflection.FieldInfo fieldInfo in fieldInfos )
+			{
+				Console.WriteLine (
+					@"    SpecialStrings.{0} = {1}" ,
+					fieldInfo.Name ,
+					fieldInfo.GetRawConstantValue ( ) );
+			}   // foreach ( System.Reflection.FieldInfo fieldInfo in fieldInfos )
+
+			return TestDone (
+				WizardWrx.MagicNumbers.ERROR_SUCCESS ,
+				pintTestNumber );
+		}   // SpecialStringExercises
+
+		internal static int FileIOFlagsExercises ( ref int pintTestNumber )
         {
             BeginTest (
                 System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,
@@ -1205,16 +1268,17 @@ namespace DLLServices2TestStand
 				pintLoopStart ,
 				pintLoopLimit , Environment.NewLine );
 
-#if STRINGS_TO_CONSOLE
-			string strDummy = string.Format (
-				Properties.Resources.MSG_LOOP_STATE_TABLE_LABELS ,
-				SpecialCharacters.TAB );
-			Console.WriteLine ( strDummy ) ;
-#else
-			Console.WriteLine (
-				Properties.Resources.MSG_LOOP_STATE_TABLE_LABELS ,
-				SpecialCharacters.TAB_CHAR );
-#endif
+			#if STRINGS_TO_CONSOLE
+				string strDummy = string.Format (
+					Properties.Resources.MSG_LOOP_STATE_TABLE_LABELS ,
+					SpecialCharacters.TAB );
+				Console.WriteLine ( strDummy ) ;
+			#else
+				Console.WriteLine (
+					Properties.Resources.MSG_LOOP_STATE_TABLE_LABELS ,
+					SpecialCharacters.TAB_CHAR );
+			#endif // #if STRINGS_TO_CONSOLE
+
 			Console.WriteLine (
 				Properties.Resources.MSG_LOOP_STATE_TABLE_DATA ,										// Format control string
 				new string [ ]																			// Array of format items (>3 items)

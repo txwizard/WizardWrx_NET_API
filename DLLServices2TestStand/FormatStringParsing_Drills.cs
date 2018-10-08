@@ -16,7 +16,7 @@
                         plain vanilla format item with a composite item that is
                         generated at run time.
 
-    License:            Copyright (C) 2014-2017, David A. Gray. 
+    License:            Copyright (C) 2014-2018, David A. Gray. 
 						All rights reserved.
 
                         Redistribution and use in source and binary forms, with
@@ -84,6 +84,10 @@
                               and mark it as internal static.
 
 	2017/09/07 7.0     DAG    Implement ItemDisplayOrder as a signe integer.
+
+	2018/10/07 7.1     DAG    Exercise static method DisplayCharacterInfo on the
+	                          ASCIICharacterDisplayInfo class BEFORE singleton
+							  ASCII_Character_Display_Table is referenced.
     ============================================================================
 */
 
@@ -148,13 +152,36 @@ namespace DLLServices2TestStand
 		internal static void ASCII_Table_Gen ( )
 		{
 			Console.WriteLine (
-				Properties.Resources.IDS_ASCII_TABLE_PREAMBLE ,					// Print this message above the table.
-				Environment.NewLine );											// Format Item 0 = Embedded Newline
-			ASCII_Character_Display_Table asciiShowMan = ASCII_Character_Display_Table.GetTheSingleInstance ( );
-			string strDetailFormatTemplate = Properties.Resources.IDS_ASCII_TABLE_ITEM;
-			foreach ( ASCIICharacterDisplayInfo asciiInfo in asciiShowMan.AllASCIICharacters )
+				Properties.Resources.IDS_ASCII_TABLE_PREAMBLE ,					// Print this message above both tables.
+				Environment.NewLine );                                          // Format Item 0 = Embedded Newline
+
+			Console.WriteLine (
+				Properties.Resources.IDS_ASCII_TABLE_CHARACTER_PROPERTIES ,		// Print this message above the first table.
+				Environment.NewLine );                                          // Format Item 0 = Embedded Newline
+			string strDetailFormatTemplate = Properties.Resources.IDS_ASCII_CHARACTER_INFO;
+
+			for ( int intCharacterIndex = ARRAY_FIRST_ELEMENT ;
+				      intCharacterIndex <= byte.MaxValue ;
+					  intCharacterIndex++ )
+			{
 				Console.WriteLine (
-					strDetailFormatTemplate ,									// Format control string, read above the loop
+					strDetailFormatTemplate ,                                   // Format control string
+					intCharacterIndex ,                                         // Format Item 0: Character index {0}
+					ASCIICharacterDisplayInfo.DisplayCharacterInfo (            // Format Item 1: : {1}
+						( char ) intCharacterIndex ) );                         // Cast the integer to its char equivalent.
+			}   // for ( int intCharacterIndex = ARRAY_FIRST_ELEMENT ; intCharacterIndex <= byte.MaxValue ; intCharacterIndex++ )
+
+			Console.WriteLine (
+				Properties.Resources.IDS_ASCII_TABLE_ENUMERATION ,              // Print this message between the two tables.
+				Environment.NewLine );                                          // Format Item 0 = Embedded Newline
+
+			ASCII_Character_Display_Table asciiShowMan = ASCII_Character_Display_Table.GetTheSingleInstance ( );
+			strDetailFormatTemplate = Properties.Resources.IDS_ASCII_TABLE_ITEM;
+
+			foreach ( ASCIICharacterDisplayInfo asciiInfo in asciiShowMan.AllASCIICharacters )
+			{
+				Console.WriteLine (
+					strDetailFormatTemplate ,                                   // Format control string, read above the loop
 					new object [ ]
 					{
 						asciiInfo.CodeAsDecimal ,								// Format Item 0 = Decimal code of character
@@ -167,6 +194,7 @@ namespace DLLServices2TestStand
 								asciiInfo.Comment ,								//		Comment from XML document
 								")" )											//		Right parenthesis
 					} );
+			}   // foreach ( ASCIICharacterDisplayInfo asciiInfo in asciiShowMan.AllASCIICharacters )
 		}	// ASCII_Table_Gen
 
 

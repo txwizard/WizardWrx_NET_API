@@ -1,0 +1,42 @@
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\bin\Release\WizardWrx.FormatStringEngine.XML
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\bin\Release\WizardWrx.FormatStringEngine.dll
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\bin\Release\WizardWrx.FormatStringEngine.pdb
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\bin\Release\WizardWrx.AnyCSV.dll
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\bin\Release\WizardWrx.ASCIIInfo.dll
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\bin\Release\WizardWrx.Common.dll
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\bin\Release\WizardWrx.BitMath.dll
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\bin\Release\WizardWrx.ASCIIInfo.pdb
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\bin\Release\WizardWrx.ASCIIInfo.xml
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\bin\Release\WizardWrx.Common.pdb
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\bin\Release\WizardWrx.Common.xml
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\bin\Release\WizardWrx.AnyCSV.pdb
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\bin\Release\WizardWrx.AnyCSV.xml
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\bin\Release\WizardWrx.BitMath.pdb
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\bin\Release\WizardWrx.BitMath.xml
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\obj\Release\FormatStringEngine.csprojResolveAssemblyReference.cache
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\obj\Release\WizardWrx.FormatStringEngine.Properties.Resources.resources
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\obj\Release\FormatStringEngine.csproj.GenerateResource.Cache
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\obj\Release\WizardWrx.FormatStringEngine.dll
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\obj\Release\WizardWrx.FormatStringEngine.pdb
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\obj\Release\WizardWrx.FormatStringEngine.dll
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\obj\Release\WizardWrx.FormatStringEngine.pdb
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\obj\Release\FormatStringEngine.csprojAssemblyReference.cache
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\obj\Release\WizardWrx.FormatStringEngine.Properties.Resources.resources
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\obj\Release\FormatStringEngine.csproj.GenerateResource.cache
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\obj\Release\FormatStringEngine.csproj.CoreCompileInputs.cache
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\bin\Release\WizardWrx.FormatStringEngine.XML
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\bin\Release\WizardWrx.FormatStringEngine.dll
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\bin\Release\WizardWrx.FormatStringEngine.pdb
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\bin\Release\WizardWrx.AnyCSV.dll
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\bin\Release\WizardWrx.ASCIIInfo.dll
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\bin\Release\WizardWrx.Common.dll
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\bin\Release\WizardWrx.BitMath.dll
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\bin\Release\WizardWrx.ASCIIInfo.pdb
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\bin\Release\WizardWrx.ASCIIInfo.xml
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\bin\Release\WizardWrx.Common.pdb
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\bin\Release\WizardWrx.Common.xml
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\bin\Release\WizardWrx.AnyCSV.pdb
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\bin\Release\WizardWrx.AnyCSV.xml
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\bin\Release\WizardWrx.BitMath.pdb
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\bin\Release\WizardWrx.BitMath.xml
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\FormatStringEngine\obj\Release\FormatStringEngine.csproj.CopyComplete

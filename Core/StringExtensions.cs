@@ -25,7 +25,8 @@
 
 	Author:             David A. Gray
 
-	License:            Copyright (C) 2017, David A. Gray. All rights reserved.
+	License:            Copyright (C) 2017-2018, David A. Gray. 
+						All rights reserved.
 
                         Redistribution and use in source and binary forms, with
                         or without modification, are permitted provided that the
@@ -78,6 +79,10 @@
 	2017/08/29 7.0     DAG Define two more extension methods, EnsureFirstCharIs
                            and EnsureLastCharIs discovered missing while
                            correcting an oversight in the test program.
+
+	2018/10/07 7.1     DAG Incorporate CapitalizeWords, which I created and
+	                       tested as part of the Great Eastern Energy DataFarmer
+						   application.
     ============================================================================
 */
 
@@ -170,7 +175,60 @@ namespace WizardWrx
 		{
 			return new string [ ] { pstrTheString };
 		}   // ArrayOfOne (2 of 2)
-		#endregion	// ArrayOfOne Methods
+		#endregion // ArrayOfOne Methods
+
+
+		#region CapitalizeWords Methods
+		/// <summary>
+		/// Return the input string with each word capitalized.
+		/// </summary>
+		/// <param name="pstr">
+		/// The string to process is implicitly passed in by this extension method.
+		/// </param>
+		/// <returns>
+		/// The input string is returned with each of its words capitalized. If the
+		/// string is already capitalized, this has no effect. Subsequent letters are
+		/// coerced to lower case.
+		/// </returns>
+		public static string CapitalizeWords ( this string pstr )
+		{
+			if ( string.IsNullOrEmpty ( pstr ) )
+			{
+				return null;
+			}   // TRUE (unanticipated outcome) block, if ( string.IsNullOrEmpty ( pstr ) )
+			else
+			{
+				StringBuilder rsb = new StringBuilder ( pstr.Length );
+
+				foreach ( string strThisWord in pstr.Split ( SpecialCharacters.SPACE_CHAR ) )
+				{
+					if ( rsb.Length > ListInfo.EMPTY_STRING_LENGTH )
+					{
+						rsb.Append ( SpecialCharacters.SPACE_CHAR );
+					}   // if ( rsb.Length > ListInfo.EMPTY_STRING_LENGTH )
+
+					char [ ] achrWordLetters = strThisWord.ToCharArray ( );
+
+					for ( int intWordPosition = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+							  intWordPosition < achrWordLetters.Length ;
+							  intWordPosition++ )
+					{
+						if ( intWordPosition == ArrayInfo.ARRAY_FIRST_ELEMENT )
+						{
+							rsb.Append ( achrWordLetters [ intWordPosition ].ToString ( ).ToUpper ( ) );
+						}   // TRUE (Processing the first character of a word.) block, if ( intWordPosition == ArrayInfo.ARRAY_FIRST_ELEMENT )
+						else
+						{
+							rsb.Append ( achrWordLetters [ intWordPosition ].ToString ( ).ToLower ( ) );
+						}   // FALSE (Processing a subsequent character of a word.) block, if ( intWordPosition == ArrayInfo.ARRAY_FIRST_ELEMENT )
+
+					}   // for ( int intWordPosition = ArrayInfo.ARRAY_FIRST_ELEMENT ; intWordPosition < achrWordLetters.Length ; intWordPosition++ )
+				}   // foreach ( string strThisWord in pstr.Split ( WizardWrx.SpecialCharacters.SPACE_CHAR ) )
+
+				return rsb.ToString ( );
+			}   // FALSE (anticipated outcome) block, if ( string.IsNullOrEmpty ( pstr ) )
+		}   // public static string CapitalizeWords
+		#endregion // CapitalizeWords methods
 
 
 		#region Chop Methods
@@ -1735,7 +1793,6 @@ namespace WizardWrx
 			return sbMessage.ToString ( );
 		}	// ReportUnresolvedEnvironmentStrings (2 of 2)
 		#endregion	// ReportUnresolvedEnvironmentStrings Method
-
 
 
 		#region RightPadNChars Extension Method

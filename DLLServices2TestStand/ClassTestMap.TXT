@@ -10,4 +10,5 @@ PathPositionsExercises	PathPositions
 SpecialCharactersExercises	SpecialCharacters
 UtilsExercises	Util
 EventMessageCleanupTests	PrepareMessageForEventLog
-
+SpecialStringExercises	SpecialStrings
+CapitalizeWordsExercises	CapitalizeWords

@@ -1,0 +1,68 @@
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.DLLConfigurationManager.dll.config
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.DLLConfigurationManager.xml
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.DLLConfigurationManager.dll
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.DLLConfigurationManager.pdb
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.AssemblyUtils.dll
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.Common.dll
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.ConsoleStreams.dll
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.Core.dll
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.BitMath.dll
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.FormatStringEngine.dll
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.AnyCSV.dll
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.ASCIIInfo.dll
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.AssemblyUtils.pdb
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.AssemblyUtils.xml
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.Common.pdb
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.Common.xml
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.ConsoleStreams.pdb
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.ConsoleStreams.xml
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.Core.pdb
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.Core.xml
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.BitMath.pdb
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.BitMath.xml
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.FormatStringEngine.pdb
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.FormatStringEngine.xml
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.AnyCSV.pdb
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.AnyCSV.xml
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.ASCIIInfo.pdb
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.ASCIIInfo.xml
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\obj\Debug\DLLConfigurationManager.csprojResolveAssemblyReference.cache
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\obj\Debug\WizardWrx.DLLConfigurationManager.Properties.Resources.resources
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\obj\Debug\DLLConfigurationManager.csproj.GenerateResource.Cache
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\obj\Debug\WizardWrx.DLLConfigurationManager.dll
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\obj\Debug\WizardWrx.DLLConfigurationManager.pdb
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.DLLConfigurationManager.dll.config
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.DLLConfigurationManager.xml
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.DLLConfigurationManager.dll
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.DLLConfigurationManager.pdb
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.AssemblyUtils.dll
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.Common.dll
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.ConsoleStreams.dll
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.Core.dll
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.BitMath.dll
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.FormatStringEngine.dll
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.ASCIIInfo.dll
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.AnyCSV.dll
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.AssemblyUtils.pdb
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.AssemblyUtils.xml
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.Common.pdb
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.Common.xml
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.ConsoleStreams.pdb
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.ConsoleStreams.xml
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.Core.pdb
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.Core.xml
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.BitMath.pdb
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.BitMath.xml
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.FormatStringEngine.pdb
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.FormatStringEngine.xml
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.ASCIIInfo.pdb
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.ASCIIInfo.xml
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.AnyCSV.pdb
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\bin\Debug\WizardWrx.AnyCSV.xml
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\obj\Debug\DLLConfigurationManager.csprojAssemblyReference.cache
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\obj\Debug\WizardWrx.DLLConfigurationManager.Properties.Resources.resources
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\obj\Debug\DLLConfigurationManager.csproj.GenerateResource.cache
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\obj\Debug\DLLConfigurationManager.csproj.CoreCompileInputs.cache
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\obj\Debug\DLLConfigurationManager.csproj.CopyComplete
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\obj\Debug\WizardWrx.DLLConfigurationManager.dll
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLConfigurationManager\obj\Debug\WizardWrx.DLLConfigurationManager.pdb

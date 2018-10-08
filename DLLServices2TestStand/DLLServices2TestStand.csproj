@@ -161,7 +161,26 @@
     <PreBuildEvent>wwBldNbrMgr.exe "$(ProjectDir) "</PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>wwBldNbrMgr.exe -r "-p$(ProjectDir) " "-t$(TargetPath)"</PostBuildEvent>
+    <PostBuildEvent>wwBldNbrMgr.exe -r "-p$(ProjectDir) " "-t$(TargetPath)"
+if $(ConfigurationName) == Release (
+    echo Regenerate API documentation.
+    docfx.exe $(SolutionDir)docfx_project\docfx.json --metadata
+    echo Mark DLLs in project output directory as Read Only.
+    attrib $(TargetDir)*.dll +r
+    attrib $(TargetDir)*.pdb +r
+    attrib $(TargetDir)*.xml +r
+    echo Install DLLs into local production bin directory.
+    call XCopyD $(TargetDir)*.dll C:\bin /f /k /r /v /y
+    call XCopyD $(TargetDir)*.pdb C:\bin /f /k /r /v /y
+    call XCopyD $(TargetDir)*.xml C:\bin /f /k /r /v /y
+    echo Mark DLLs in project output directory as Read/Write.
+    attrib $(TargetDir)*.dll -r
+    attrib $(TargetDir)*.pdb -r
+    attrib $(TargetDir)*.xml -r
+    echo $(ConfigurationName) Post-Build done
+) else (
+    echo $(ConfigurationName) Post-Build done
+)</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

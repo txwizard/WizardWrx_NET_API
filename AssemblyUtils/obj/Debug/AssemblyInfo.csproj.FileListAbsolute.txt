@@ -1,0 +1,3 @@
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\AssemblyInfo\obj\Debug\AssemblyInfo.csprojResolveAssemblyReference.cache
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\AssemblyInfo\obj\Debug\WizardWrx.AssemblyInfo.Properties.Resources.resources
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\AssemblyInfo\obj\Debug\AssemblyInfo.csproj.GenerateResource.Cache

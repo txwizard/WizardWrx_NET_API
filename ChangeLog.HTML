@@ -1,0 +1,47 @@
+<h1>WizardWrx .NET API Change Log</h1>
+
+<p>Following is a list of changes made in version 7.1, released Sunday, 07 October 2018.</p>
+
+<h2>Class: WizardWrx.StringExtensions (defined in WizardWrx.Core.dll)</h2>
+
+<p>Incorporate CapitalizeWords, which I created and tested as part of the Great
+Eastern Energy DataFarmer application.</p>
+
+<h2>Class: SpecialStrings (defined in WizardWrx.Common)</h2>
+
+<p>Define SPACE<em>CHAR for use when only a string will do, and cross reference the
+new constant to its antecedent, SpecialCharacters.SPACE</em>CHAR.</p>
+
+<h2>Class: ASCIICharacterDisplayInfo (defined in WizardWrx.ASCIIInfo.dll)</h2>
+
+<p>Override ToString to render all three representations (printable string,
+hexadecimal, then decimal, in that order), and define static method
+DisplayCharacterInfo to provide that service for an arbitrary character, without
+instantiating ASCII<em>Character</em>Display_Table.</p>
+
+<h2>Other Changed Files</h2>
+
+<p>Incidental changes included in this commit are as follows.</p>
+
+<ul>
+<li><p><strong>SpecialCharacters.cs</strong> got a cross reference to SpecialStrings.SPACE_CHAR.</p></li>
+<li><p><strong>ProductAssemblyInfo.cs</strong> reflects the new library version number, 7.1.</p></li>
+<li><p><strong>AssemblyInfo.cs</strong> in all individual libraries reflects the new library
+version number and a build number increment.</p></li>
+<li><p><strong>Resources.resx in DLLServicesTestStand</strong> has the following new strings:
+IDS<em>ASCII</em>CHARACTER<em>INFO, IDS</em>ASCII<em>TABLE</em>CHARACTER<em>PROPERTIES, and
+IDS</em>ASCII<em>TABLE</em>ENUMERATION.</p></li>
+<li><p><strong>ClassTestMap.TXT in DLLServicesTestStand</strong> defines two new unit test method
+mappings. Note, too, that the terminal newline is gone. This is by design, to
+eliminate 4 bytes from the embedded resource that contribute nothing to its
+usability.</p></li>
+<li><p><strong>FormatStringParsing_Drills.cs in DLLServicesTestStand</strong>, which also
+exercises WizardWrx.ASCIIInfo.dll, which was developed and deployed
+concurrently, exercises the new static method for displaying a printable version
+of any ASCII character, along with its numerical value, expressed in both
+decimal and hexadecimal notation.</p></li>
+<li><p><strong>NewClassTests_20140914.cs in DLLServicesTestStand</strong> incorporates overlooked
+unit tests of the entire SpecialStrings class.</p></li>
+<li><p><strong>Program.cs in DLLServicesTestStand</strong> calls the new methods that went into
+class NewClassTests_20140914.</p></li>
+</ul>

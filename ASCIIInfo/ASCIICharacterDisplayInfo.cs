@@ -18,7 +18,7 @@
                         the displays are augmented by numerical and hexadecimal
                         displays.
 
-    License:            Copyright (C) 2014-2017, David A. Gray. 
+    License:            Copyright (C) 2014-2018, David A. Gray. 
 						All rights reserved.
 
                         Redistribution and use in source and binary forms, with
@@ -74,8 +74,14 @@
                               as the paragraph that refers to two constructors,
                               when there are now three public constructors.
 
-	2017/08/04 7.0     DAG Relocated to the constellation of core libraries that
+	2017/08/04 7.0     DAG Relocate to the constellation of core libraries that
                            began as WizardWrx.DllServices2.dll.
+
+	2018/10/07 7.1     DAG Override ToString to render all three representations
+	                       (printable string, hexadecimal, then decimal, in that
+						   order), and define static method DisplayCharacterInfo
+						   to provide that service for an arbitrary character
+						   without instantiating ASCII_Character_Display_Table.
     ============================================================================
 */
 
@@ -115,7 +121,9 @@ namespace WizardWrx
     /// <see cref="ASCII_Character_Display_Table"/>
     public class ASCIICharacterDisplayInfo
     {
-        uint _uintCode;
+		const string DISPLAY_TEMPLATE = @"{0} (Hex. = {1}, Dec. = {2}";
+
+		uint _uintCode;
         string _strAlternateText;
 		string _strComment;
 
@@ -263,19 +271,56 @@ namespace WizardWrx
         }   // DisplayText property
 
 
-        /// <summary>
-        /// All three public constructors use this routine to initialize everything.
-        /// </summary>
-        /// <param name="puintCode">
-        /// The code is an unsigned integer between zero and 255.
-        /// </param>
-        /// <param name="pstrAlternateText">
-        /// Specify alternate text to display in place of the actual character.
-        /// </param>
+		/// <summary>
+		/// Override ToString to render all three defined formats.
+		/// </summary>
+		/// <returns>
+		/// The return value is a string containing a printable representation
+		/// of the character, followed by its hexadecimal and decimal values,
+		/// both enclosed in a single pair of parenethese.
+		/// </returns>
+		public override string ToString ( )
+		{
+			return string.Format (
+				DISPLAY_TEMPLATE ,
+				DisplayText ,
+				CodeAsHexadecimal , 
+				CodeAsDecimal );
+		}   // public override string ToString
+
+
+		/// <summary>
+		/// Create a ASCIICharacterDisplayInfo instance to represent a specified
+		/// ASCII character, and call its ToString method to return all three
+		/// representations of it (Printable, Hexadecimal, and Decimal, in that
+		/// order.
+		/// </summary>
+		/// <param name="pchr">
+		/// Specify the character for which to render the three representations.
+		/// </param>
+		/// <returns>
+		/// Return the output of ToString on the ASCIICharacterDisplayInfo.
+		/// </returns>
+		public static string DisplayCharacterInfo ( char pchr )
+		{
+			ASCIICharacterDisplayInfo aSCIICharacterDisplayInfo = new ASCIICharacterDisplayInfo ( ( uint ) pchr );
+			return aSCIICharacterDisplayInfo.ToString ( );
+		}   // public static string DisplayCharacterInfo
+
+
+		/// <summary>
+		/// All three public constructors use this routine to initialize everything.
+		/// </summary>
+		/// <param name="puintCode">
+		/// The code is an unsigned integer between zero and 255.
+		/// </param>
+		/// <param name="pstrAlternateText">
+		/// Specify alternate text to display in place of the actual character.
+		/// </param>
 		/// <param name="pstrComment">
 		/// Specify a comment for optional display on listings.
 		/// </param>
-        private void InitializeInstance (
+		private void InitializeInstance (
             uint puintCode , 
             string pstrAlternateText ,
 			string pstrComment )

@@ -19,7 +19,7 @@ namespace DLLServices2TestStand.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resources {
@@ -268,7 +268,34 @@ namespace DLLServices2TestStand.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Character {0} ({1}): Display Value = {2}{3}.
+        ///   Looks up a localized string similar to         Character index {0}: {1}.
+        /// </summary>
+        public static string IDS_ASCII_CHARACTER_INFO {
+            get {
+                return ResourceManager.GetString("IDS_ASCII_CHARACTER_INFO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to     This first of two tables lists character codes, rendering the printable, hexadecimal, and decimal value of each.{0}.
+        /// </summary>
+        public static string IDS_ASCII_TABLE_CHARACTER_PROPERTIES {
+            get {
+                return ResourceManager.GetString("IDS_ASCII_TABLE_CHARACTER_PROPERTIES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}    The ASCII_Table_Gen method will now enumerate the ASCII_Character_Display_Table{0}.
+        /// </summary>
+        public static string IDS_ASCII_TABLE_ENUMERATION {
+            get {
+                return ResourceManager.GetString("IDS_ASCII_TABLE_ENUMERATION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to         Character {0} ({1}): Display Value = {2}{3}.
         /// </summary>
         public static string IDS_ASCII_TABLE_ITEM {
             get {
@@ -277,7 +304,7 @@ namespace DLLServices2TestStand.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0}The following table lists key attributes of every ASCII character.{0}.
+        ///   Looks up a localized string similar to {0}The following tables list key attributes of every ASCII character.{0}.
         /// </summary>
         public static string IDS_ASCII_TABLE_PREAMBLE {
             get {

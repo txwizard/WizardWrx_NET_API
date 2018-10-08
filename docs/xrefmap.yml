@@ -325,6 +325,45 @@ references:
   isSpec: "True"
   fullName: DLLServices2TestStand.Properties.Resources.EXCEPTION_IS_RECOVERABLE
   nameWithType: Resources.EXCEPTION_IS_RECOVERABLE
+- uid: DLLServices2TestStand.Properties.Resources.IDS_ASCII_CHARACTER_INFO
+  name: IDS_ASCII_CHARACTER_INFO
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_IDS_ASCII_CHARACTER_INFO
+  commentId: P:DLLServices2TestStand.Properties.Resources.IDS_ASCII_CHARACTER_INFO
+  fullName: DLLServices2TestStand.Properties.Resources.IDS_ASCII_CHARACTER_INFO
+  nameWithType: Resources.IDS_ASCII_CHARACTER_INFO
+- uid: DLLServices2TestStand.Properties.Resources.IDS_ASCII_CHARACTER_INFO*
+  name: IDS_ASCII_CHARACTER_INFO
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_IDS_ASCII_CHARACTER_INFO_
+  commentId: Overload:DLLServices2TestStand.Properties.Resources.IDS_ASCII_CHARACTER_INFO
+  isSpec: "True"
+  fullName: DLLServices2TestStand.Properties.Resources.IDS_ASCII_CHARACTER_INFO
+  nameWithType: Resources.IDS_ASCII_CHARACTER_INFO
+- uid: DLLServices2TestStand.Properties.Resources.IDS_ASCII_TABLE_CHARACTER_PROPERTIES
+  name: IDS_ASCII_TABLE_CHARACTER_PROPERTIES
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_IDS_ASCII_TABLE_CHARACTER_PROPERTIES
+  commentId: P:DLLServices2TestStand.Properties.Resources.IDS_ASCII_TABLE_CHARACTER_PROPERTIES
+  fullName: DLLServices2TestStand.Properties.Resources.IDS_ASCII_TABLE_CHARACTER_PROPERTIES
+  nameWithType: Resources.IDS_ASCII_TABLE_CHARACTER_PROPERTIES
+- uid: DLLServices2TestStand.Properties.Resources.IDS_ASCII_TABLE_CHARACTER_PROPERTIES*
+  name: IDS_ASCII_TABLE_CHARACTER_PROPERTIES
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_IDS_ASCII_TABLE_CHARACTER_PROPERTIES_
+  commentId: Overload:DLLServices2TestStand.Properties.Resources.IDS_ASCII_TABLE_CHARACTER_PROPERTIES
+  isSpec: "True"
+  fullName: DLLServices2TestStand.Properties.Resources.IDS_ASCII_TABLE_CHARACTER_PROPERTIES
+  nameWithType: Resources.IDS_ASCII_TABLE_CHARACTER_PROPERTIES
+- uid: DLLServices2TestStand.Properties.Resources.IDS_ASCII_TABLE_ENUMERATION
+  name: IDS_ASCII_TABLE_ENUMERATION
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_IDS_ASCII_TABLE_ENUMERATION
+  commentId: P:DLLServices2TestStand.Properties.Resources.IDS_ASCII_TABLE_ENUMERATION
+  fullName: DLLServices2TestStand.Properties.Resources.IDS_ASCII_TABLE_ENUMERATION
+  nameWithType: Resources.IDS_ASCII_TABLE_ENUMERATION
+- uid: DLLServices2TestStand.Properties.Resources.IDS_ASCII_TABLE_ENUMERATION*
+  name: IDS_ASCII_TABLE_ENUMERATION
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_IDS_ASCII_TABLE_ENUMERATION_
+  commentId: Overload:DLLServices2TestStand.Properties.Resources.IDS_ASCII_TABLE_ENUMERATION
+  isSpec: "True"
+  fullName: DLLServices2TestStand.Properties.Resources.IDS_ASCII_TABLE_ENUMERATION
+  nameWithType: Resources.IDS_ASCII_TABLE_ENUMERATION
 - uid: DLLServices2TestStand.Properties.Resources.IDS_ASCII_TABLE_ITEM
   name: IDS_ASCII_TABLE_ITEM
   href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_IDS_ASCII_TABLE_ITEM
@@ -2029,6 +2068,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.ASCIICharacterDisplayInfo.Comment
   nameWithType: ASCIICharacterDisplayInfo.Comment
+- uid: WizardWrx.ASCIICharacterDisplayInfo.DisplayCharacterInfo(System.Char)
+  name: DisplayCharacterInfo(Char)
+  href: api/WizardWrx.ASCIICharacterDisplayInfo.html#WizardWrx_ASCIICharacterDisplayInfo_DisplayCharacterInfo_System_Char_
+  commentId: M:WizardWrx.ASCIICharacterDisplayInfo.DisplayCharacterInfo(System.Char)
+  fullName: WizardWrx.ASCIICharacterDisplayInfo.DisplayCharacterInfo(System.Char)
+  nameWithType: ASCIICharacterDisplayInfo.DisplayCharacterInfo(Char)
+- uid: WizardWrx.ASCIICharacterDisplayInfo.DisplayCharacterInfo*
+  name: DisplayCharacterInfo
+  href: api/WizardWrx.ASCIICharacterDisplayInfo.html#WizardWrx_ASCIICharacterDisplayInfo_DisplayCharacterInfo_
+  commentId: Overload:WizardWrx.ASCIICharacterDisplayInfo.DisplayCharacterInfo
+  isSpec: "True"
+  fullName: WizardWrx.ASCIICharacterDisplayInfo.DisplayCharacterInfo
+  nameWithType: ASCIICharacterDisplayInfo.DisplayCharacterInfo
 - uid: WizardWrx.ASCIICharacterDisplayInfo.DisplayText
   name: DisplayText
   href: api/WizardWrx.ASCIICharacterDisplayInfo.html#WizardWrx_ASCIICharacterDisplayInfo_DisplayText
@@ -2042,6 +2094,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.ASCIICharacterDisplayInfo.DisplayText
   nameWithType: ASCIICharacterDisplayInfo.DisplayText
+- uid: WizardWrx.ASCIICharacterDisplayInfo.ToString
+  name: ToString()
+  href: api/WizardWrx.ASCIICharacterDisplayInfo.html#WizardWrx_ASCIICharacterDisplayInfo_ToString
+  commentId: M:WizardWrx.ASCIICharacterDisplayInfo.ToString
+  fullName: WizardWrx.ASCIICharacterDisplayInfo.ToString()
+  nameWithType: ASCIICharacterDisplayInfo.ToString()
+- uid: WizardWrx.ASCIICharacterDisplayInfo.ToString*
+  name: ToString
+  href: api/WizardWrx.ASCIICharacterDisplayInfo.html#WizardWrx_ASCIICharacterDisplayInfo_ToString_
+  commentId: Overload:WizardWrx.ASCIICharacterDisplayInfo.ToString
+  isSpec: "True"
+  fullName: WizardWrx.ASCIICharacterDisplayInfo.ToString
+  nameWithType: ASCIICharacterDisplayInfo.ToString
 - uid: WizardWrx.AssemblyUtils
   name: WizardWrx.AssemblyUtils
   href: api/WizardWrx.AssemblyUtils.html
@@ -12914,6 +12979,12 @@ references:
   commentId: F:WizardWrx.SpecialStrings.PERCENT_SIGN
   fullName: WizardWrx.SpecialStrings.PERCENT_SIGN
   nameWithType: SpecialStrings.PERCENT_SIGN
+- uid: WizardWrx.SpecialStrings.SPACE_CHAR
+  name: SPACE_CHAR
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_SPACE_CHAR
+  commentId: F:WizardWrx.SpecialStrings.SPACE_CHAR
+  fullName: WizardWrx.SpecialStrings.SPACE_CHAR
+  nameWithType: SpecialStrings.SPACE_CHAR
 - uid: WizardWrx.SpecialStrings.SPACING_TEMPLATE
   name: SPACING_TEMPLATE
   href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_SPACING_TEMPLATE
@@ -12976,6 +13047,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.StringExtensions.ArrayOfOne
   nameWithType: StringExtensions.ArrayOfOne
+- uid: WizardWrx.StringExtensions.CapitalizeWords(System.String)
+  name: CapitalizeWords(String)
+  href: api/WizardWrx.StringExtensions.html#WizardWrx_StringExtensions_CapitalizeWords_System_String_
+  commentId: M:WizardWrx.StringExtensions.CapitalizeWords(System.String)
+  fullName: WizardWrx.StringExtensions.CapitalizeWords(System.String)
+  nameWithType: StringExtensions.CapitalizeWords(String)
+- uid: WizardWrx.StringExtensions.CapitalizeWords*
+  name: CapitalizeWords
+  href: api/WizardWrx.StringExtensions.html#WizardWrx_StringExtensions_CapitalizeWords_
+  commentId: Overload:WizardWrx.StringExtensions.CapitalizeWords
+  isSpec: "True"
+  fullName: WizardWrx.StringExtensions.CapitalizeWords
+  nameWithType: StringExtensions.CapitalizeWords
 - uid: WizardWrx.StringExtensions.Chop(System.String)
   name: Chop(String)
   href: api/WizardWrx.StringExtensions.html#WizardWrx_StringExtensions_Chop_System_String_

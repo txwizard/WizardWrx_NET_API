@@ -1,0 +1,80 @@
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\DLLServices2TestStand.exe.config
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.DLLConfigurationManager.dll.config
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\DLLServices2TestStand.exe
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\DLLServices2TestStand.pdb
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.ASCIIInfo.dll
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.AssemblyUtils.dll
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.Common.dll
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.ConsoleStreams.dll
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.Core.dll
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.DLLConfigurationManager.dll
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.EmbeddedTextFile.dll
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.FormatStringEngine.dll
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.BitMath.dll
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.AnyCSV.dll
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.ASCIIInfo.pdb
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.ASCIIInfo.xml
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.AssemblyUtils.pdb
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.AssemblyUtils.xml
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.Common.pdb
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.Common.xml
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.DLLConfigurationManager.pdb
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.DLLConfigurationManager.xml
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.ConsoleStreams.pdb
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.ConsoleStreams.xml
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.Core.pdb
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.Core.xml
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.EmbeddedTextFile.pdb
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.EmbeddedTextFile.xml
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.FormatStringEngine.pdb
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.FormatStringEngine.xml
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.BitMath.pdb
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.BitMath.xml
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.AnyCSV.pdb
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.AnyCSV.xml
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\obj\Release\DLLServices2TestStand.csprojResolveAssemblyReference.cache
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\obj\Release\DLLServices2TestStand.Properties.Resources.resources
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\obj\Release\DLLServices2TestStand.csproj.GenerateResource.Cache
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\obj\Release\DLLServices2TestStand.exe
+C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\obj\Release\DLLServices2TestStand.pdb
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\obj\Release\DLLServices2TestStand.exe
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\obj\Release\DLLServices2TestStand.pdb
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\obj\Release\DLLServices2TestStand.csprojAssemblyReference.cache
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\obj\Release\DLLServices2TestStand.Properties.Resources.resources
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\obj\Release\DLLServices2TestStand.csproj.GenerateResource.cache
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\obj\Release\DLLServices2TestStand.csproj.CoreCompileInputs.cache
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.DLLConfigurationManager.dll.config
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\DLLServices2TestStand.exe.config
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\DLLServices2TestStand.exe
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\DLLServices2TestStand.pdb
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.ASCIIInfo.dll
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.AssemblyUtils.dll
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.Common.dll
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.ConsoleStreams.dll
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.Core.dll
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.DLLConfigurationManager.dll
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.EmbeddedTextFile.dll
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.FormatStringEngine.dll
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.BitMath.dll
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.AnyCSV.dll
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.ASCIIInfo.pdb
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.ASCIIInfo.xml
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.AssemblyUtils.pdb
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.AssemblyUtils.xml
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.Common.pdb
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.Common.xml
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.DLLConfigurationManager.pdb
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.DLLConfigurationManager.xml
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.ConsoleStreams.pdb
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.ConsoleStreams.xml
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.Core.pdb
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.Core.xml
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.EmbeddedTextFile.pdb
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.EmbeddedTextFile.xml
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.FormatStringEngine.pdb
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.FormatStringEngine.xml
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.BitMath.pdb
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.BitMath.xml
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.AnyCSV.pdb
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\bin\Release\WizardWrx.AnyCSV.xml
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\DLLServices2TestStand\obj\Release\DLLServices2TestStand.csproj.CopyComplete
