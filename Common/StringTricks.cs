@@ -207,13 +207,25 @@
                               merged into this constellation.
 
 	2018/09/09 7.0     DAG    Add DisplayNullSafely.
+
+	2018/11/17 7.11    DAG    ParseCommentInHTMLComment: Wrap the XML comment in
+                              a code block, about which I learned while 
+                              researching an unrelated issue concerning cross
+                              references to methods exposed by other assemblies.
+                              This enabled me to close "Unexpected, though 
+                              Unsurprising, Rendering of XML Comment Embedded in
+                              Triple-Slash Comment #3493," at
+                              https://github.com/dotnet/docfx/issues/3493.
+
+                              Eliminate the unreferenced using directive for the
+                              System.Text namespace.
     ============================================================================
 */
+
 
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.Text;
 
 
 namespace WizardWrx
@@ -1665,11 +1677,11 @@ namespace WizardWrx
 
 			return strNewMsg;
 		}   // static method ReplaceTokensFromList (6 of 6)
-		#endregion	// ReplaceTokensFromList Methods
+        #endregion // ReplaceTokensFromList Methods
 
 
-		#region ParseCommentInHTMLComment Method
-		/// <summary>
+        #region ParseCommentInHTMLComment Method
+        /// <summary>
         /// Extract parameters, expressed as key-value pairs, from a standard
         /// HTML comment.
         /// </summary>
@@ -1683,25 +1695,25 @@ namespace WizardWrx
         /// A NameValueCollection of parameter names and values, which may be
         /// empty, but is guaranteed to be returned, empty or not.
         /// </returns>
-		/// <example>
-		/// Parse this: <!-- ForPage=default;UseTable=False -->
-		/// 
-		/// Return this:
-		/// 
-		///			=======================
-		///			Name		Value
-		///			-----------	-----------
-		///			ForPage		default
-		///			UseTable	False
-		///			=======================
-		///			
-		/// The returned NameValueCollection contains two members.
-		/// 
-		/// Since this method guarantees to return an initialized
-		/// NameValueCollection, the empty collection is allocated by the first
-		/// statement, and is unconditionally returned by the last statement.
-		/// </example>
-		[Obsolete ( OBSOLETE_MSG , OBSOLETE_USAGE_IS_LEGAL )]
+        /// <example>
+        /// <code>
+        /// Parse this: &lt;!-- ForPage=default;UseTable=False --&gt;
+        ///
+        /// Return this:
+        ///
+        ///			=======================
+        ///			Name		Value
+        ///			-----------	-----------
+        ///			ForPage		default
+        ///			UseTable	False
+        ///			=======================
+        /// </code>
+        /// <para>The returned NameValueCollection contains two members.</para>
+        /// <para>Since this method guarantees to return an initialized
+        /// NameValueCollection, the empty collection is allocated by the first
+        /// statement, and is unconditionally returned by the last statement.</para>
+        /// </example>
+        [Obsolete ( OBSOLETE_MSG , OBSOLETE_USAGE_IS_LEGAL )]
 		public static NameValueCollection ParseCommentInHTMLComment ( string pstrInput )
 		{
 			// Parse this: <!-- ForPage=default;UseTable=False -->

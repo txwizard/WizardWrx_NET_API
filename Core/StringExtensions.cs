@@ -83,29 +83,54 @@
 	2018/10/07 7.1     DAG Incorporate CapitalizeWords, which I created and
 	                       tested as part of the Great Eastern Energy DataFarmer
 						   application.
+
+	2018/11/11 7.11    DAG 1) Add RenderEvenWhenNull, which represents a null
+	                          reference as a localizable string literal,
+						      MSG_OBJECT_REFERENCE_IS_NULL.
+
+	                       2) Add EnumFromString.
+
+                           the example in a code block, about which I learned a
+                           few days ago when I was researching an issue
+
+	2018/11/17 7.11    DAG ParseCommentInHTMLComment: Wrap the XML comment in
+                           a code block, about which I learned while researching
+                           an unrelated issue concerning cross references to
+                           methods exposed by other assemblies. This enabled
+                           me to close "Unexpected, though Unsurprising, 
+                           Rendering of XML Comment Embedded in Triple-Slash
+                           Comment #3493," at
+                           
+                           https://github.com/dotnet/docfx/issues/3493.
     ============================================================================
 */
+
 
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Text;
 
-using WizardWrx.Common;
+using WizardWrx.Common.Properties;
 
 
 namespace WizardWrx
 {
-    /// <summary>
-    /// This is a class of extension methods for performing common tasks not
-    /// provided by the System.String class. All but the four Pad methods are
+	/// <summary>
+	/// This is a class of extension methods for performing common tasks not
+	/// provided by the System.String class. All but the four Pad methods are
 	/// derived from long established routines in companion class StringTricks.
 	/// 
 	/// Just as importing the System.Linq namespace makes its generic extension
 	/// methods visible, importing the root WizardWrx namespace, accompanied by
 	/// a reference to WizardWrx.Core, makes these methods visible on every
 	/// instance of System.string.
-    /// </summary>
+	/// 
+	/// Rather than create ane entirely new class to support one small method, I
+	/// extended this class to cover RenderEvenWhenNull, even though it is a
+	/// generic method.
+	/// </summary>
 	public static class StringExtensions
     {
         #region Public Constants
@@ -680,8 +705,81 @@ namespace WizardWrx
 			{
 				throw new ArgumentNullException ( "pchrMustBeLast" );
 			}	// FALSE (unanticipated outcome) block, if ( pchrMustBeFirst != SpecialCharacters.NULL_CHAR )
-		}	// EnsureLastCharIs
-		#endregion	// EnsureLastCharIs Methods
+		}   // EnsureLastCharIs
+        #endregion // EnsureLastCharIs Methods
+
+
+        /// <summary>
+        /// Convert a string to the equivalent instance of a specified
+        /// enumeration type.
+        /// </summary>
+        /// <typeparam name="T">
+        /// The specified type must be a valid Enum type. The method infers the
+        /// type from the value specified in angle brackets following the method
+        /// name in the invocation.
+        /// </typeparam>
+        /// <param name="pstrEnumAsString">
+        /// Specify the string to convert.
+        /// </param>
+        /// <returns>
+        /// If the function succeeds, the return value is a member of the
+        /// specified enumeration.
+        /// </returns>
+        /// <exception cref="InvalidOperationException">
+        /// An InvalidOperationException exception arises when the input string
+        /// cannot be converted. The message specifies the expected type and the
+        /// failing input value, along with the Message property on the original
+        /// FormatException excetpion, which is preserved as the InnerException
+        /// property on the thrown InvalidOperationException.
+        /// </exception>
+        /// <remarks>
+        /// This method requires version 7.3 or later of the C# compiler, for
+        /// which the project configuration contains a setting.
+        /// </remarks>
+        public static T EnumFromString<T> ( this string pstrEnumAsString ) where T : Enum
+        {
+            EnumConverter enumConverter = new EnumConverter ( typeof ( T ) );
+
+            //	----------------------------------------------------------------
+            //	The ConvertFrom method either parses a test string into a valid
+            //	Enum value of the type that was specified to the constructor, or
+            //	throws a FormatException exception, which is caught and wrapped
+            //	in a new InvalidOperationException exception, which is thrown to
+            //	the calling routine.
+            //	----------------------------------------------------------------
+
+            try
+            {
+                if ( pstrEnumAsString == null )
+                {
+                    throw new ArgumentNullException (                           // Reference: ArgumentNullException(String, String), https://docs.microsoft.com/en-us/dotnet/api/system.argumentnullexception.-ctor?view=netframework-4.7.2#System_ArgumentNullException__ctor_System_String_System_String_
+                        @"pstrEnumAsString" ,                                   // string paramName = The name of the parameter that caused the exception
+                        Resources.ERRMSG_NULLREF_NEVER_VALID );                 // string message   = A message that describes the error
+                }
+                else if ( pstrEnumAsString.Length == ListInfo.EMPTY_STRING_LENGTH )
+                {
+                    throw new ArgumentException (                               // Reference: ArgumentException(String, String), https://docs.microsoft.com/en-us/dotnet/api/system.argumentexception.-ctor?view=netframework-4.7.2#System_ArgumentException__ctor_System_String_System_String_
+                        Resources.ERRMSG_EMPTY_STRING_NEVER_VALID ,             // string message   = The error message that explains the reason for the exception
+                        @"pstrEnumAsString" );                                  // string paramName = The name of the parameter that caused the current exception
+                }
+                else
+                {   // Catching the FormatException exception here permits augmenting the message with contextual details that would otherwise be lost.
+                    return ( T ) enumConverter.ConvertFrom ( pstrEnumAsString );
+                }
+            }
+            catch ( FormatException exFormatException )
+            {   // The catch block bounds the scope of this strMessage.
+                string strDetailedMessage = string.Format (                     // Prepare a detailed diagnostic message.
+                    Core.Properties.Resources.ERRMSG_ENUMERATION_CONVERSION ,   // Format Control String
+                    exFormatException.Message ,                                 // Format Item 0: {0}{3}
+                    pstrEnumAsString ,                                          // Format Item 1:     Input Value   = {1}{3}
+                    typeof ( T ) ,                                              // Format Item 2:     Expected Type = {2}{3}
+                    Environment.NewLine );                                      // Format Item 4: Platform-dependent newline.
+                throw new InvalidOperationException (
+                    strDetailedMessage ,
+                    exFormatException );
+            }   // catch ( FormatException formatException )
+        }   // public static T EnumFromString<T>
 
 
 		#region ExtractBetweenIndexOfs Methods
@@ -1110,43 +1208,43 @@ namespace WizardWrx
 				pstrFieldName ,
 				pstrTokenEnds );
 		}   // public static MakeToken method (2 of 2)
-		#endregion	// MakeToken Methods
+        #endregion // MakeToken Methods
 
 
-		#region ParseCommentInHTMLComment Method
-		/// <summary>
-		/// Extract parameters, expressed as key-value pairs, from a standard
-		/// HTML comment.
-		/// </summary>
-		/// <param name="pstrInput">
-		/// String containing a well formed HTML comment, surrounding the
-		/// key-value pairs. If the string is not a well formed HTML comment,
-		/// with a single space between the comment delimiters and the body,
-		/// or the string is null or empty, the returned collection is empty.
-		/// </param>
-		/// <returns>
-		/// A NameValueCollection of parameter names and values, which may be
-		/// empty, but is guaranteed to be returned, empty or not.
-		/// </returns>
-		/// <example>
-		/// Parse this: <!-- ForPage=default;UseTable=False -->
-		/// 
-		/// Return this:
-		/// 
-		///			=======================
-		///			Name		Value
-		///			-----------	-----------
-		///			ForPage		default
-		///			UseTable	False
-		///			=======================
-		///			
-		/// The returned NameValueCollection contains two members.
-		/// 
-		/// Since this method guarantees to return an initialized
-		/// NameValueCollection, the empty collection is allocated by the first
-		/// statement, and is unconditionally returned by the last statement.
-		/// </example>
-		public static NameValueCollection ParseCommentInHTMLComment ( this string pstrInput )
+        #region ParseCommentInHTMLComment Method
+        /// <summary>
+        /// Extract parameters, expressed as key-value pairs, from a standard
+        /// HTML comment.
+        /// </summary>
+        /// <param name="pstrInput">
+        /// String containing a well formed HTML comment, surrounding the
+        /// key-value pairs. If the string is not a well formed HTML comment,
+        /// with a single space between the comment delimiters and the body,
+        /// or the string is null or empty, the returned collection is empty.
+        /// </param>
+        /// <returns>
+        /// A NameValueCollection of parameter names and values, which may be
+        /// empty, but is guaranteed to be returned, empty or not.
+        /// </returns>
+        /// <example>
+        /// <code>
+        /// Parse this: &lt;!-- ForPage=default;UseTable=False --&gt;
+        /// 
+        /// Return this:
+        ///
+        ///			=======================
+        ///			Name		Value
+        ///			-----------	-----------
+        ///			ForPage		default
+        ///			UseTable	False
+        ///			=======================
+        /// </code>
+        /// <para>The returned NameValueCollection contains two members.</para>
+        /// <para>Since this method guarantees to return an initialized
+        /// NameValueCollection, the empty collection is allocated by the first
+        /// statement, and is unconditionally returned by the last statement.</para>
+        /// </example>
+        public static NameValueCollection ParseCommentInHTMLComment ( this string pstrInput )
 		{
 			// Parse this: <!-- ForPage=default;UseTable=False -->
 
@@ -1300,27 +1398,110 @@ namespace WizardWrx
 				pstrIn ,
 				SpecialCharacters.DOUBLE_QUOTE );
 		}   // method RemoveEndQuotes
-		#endregion	// RemoveEndQuotes Method
+        #endregion // RemoveEndQuotes Method
+
+
+        /// <summary>
+        /// For any object of generic type T, return result from calling the
+        /// ToString method on it, unless the instance is a null reference of
+        /// type T. In that case, return either the supplied string or the
+        /// localizable default defined in the string resources expsed by the
+        /// WizardWrx.Common library.
+        /// </summary>
+        /// <typeparam name="T">
+        /// The specified type T must implement IFormattable.
+        /// </typeparam>
+        /// <param name="pgenericObject">
+        /// Pass in a reference to an object of the specified generic type, or a
+        /// null reference to that type.
+        /// </param>
+        /// <param name="pstrValueIfNull">
+        /// Use this optional string parameter to override the default value,
+        /// Common.Properties.Resources.MSG_OBJECT_REFERENCE_IS_NULL. Pass a
+        /// null referencr or omit the parameter to use the default string.
+        /// </param>
+        /// <param name="pstrFormatString">
+        /// Use this optional string parameter to override the default format of
+        /// the value returned by the instance ToString method.
+        /// 
+        /// Please see the Remarks.
+        /// </param>
+        /// <param name="pformatProvider">
+        /// Use this optional parameter to override the default format provider
+        /// used by the instance ToString method.
+        /// 
+        /// Please see the Remarks.
+        /// </param>
+        /// <returns>
+        /// If <paramref name="pgenericObject"/> is a null reference, return
+        /// Common.Properties.Resources.MSG_OBJECT_REFERENCE_IS_NULL if
+        /// <paramref name="pstrValueIfNull"/> is also a null reference.
+        /// 
+        /// If <paramref name="pgenericObject"/> is a null reference and 
+        /// <paramref name="pstrValueIfNull"/> is not, return
+        /// <paramref name="pstrValueIfNull"/>.
+        /// 
+        /// Finally, if <paramref name="pgenericObject"/> is not null, call its
+        /// ToString method.
+        /// 
+        /// Please see the Remarks.
+        /// </returns>
+        /// <remarks>
+        /// Because this method is generic, it can call the ToString override on
+        /// any object that explicitly implements the IFormattable interface, so
+        /// you derive the benefits of any such override.
+        /// 
+        /// The optional <paramref name="pstrFormatString"/> and 
+        /// <paramref name="pformatProvider"/> arguments work in
+        /// tandem with the override on the instance ToString method. To use it
+        /// and the default null reference representation, pass a null reference
+        /// as the value of <paramref name="pstrValueIfNull"/>.
+        /// </remarks>
+        public static string RenderEvenWhenNull<T> (
+			this T pgenericObject ,
+			string pstrValueIfNull = null ,
+			string pstrFormatString = null ,
+			IFormatProvider pformatProvider = null )
+			where T : IFormattable
+		{
+			if ( pgenericObject == null )
+			{
+				return pstrValueIfNull ?? Common.Properties.Resources.MSG_OBJECT_REFERENCE_IS_NULL;
+			}   // TRUE (degenerate case) block, if ( pgenericObject == null )
+			else
+			{
+				if ( string.IsNullOrEmpty ( pstrFormatString ) )
+				{
+					return pgenericObject.ToString ( );
+				}   // TRUE (Use the plain vanilla instance ToString method.) block, if ( string.IsNullOrEmpty ( pstrFormatString ) )
+				else
+				{
+					return pgenericObject.ToString (
+                        pstrFormatString ,
+                        pformatProvider );
+				}   // FALSE (Override the format string and/or format provider on the instance ToString method.) block, if ( string.IsNullOrEmpty ( pstrFormatString ) )
+			}   // FALSE (standard case) block, if ( pgenericObject == null )
+		}   // RenderEvenWhenNull
 
 
 		#region ReplaceTokensFromList Methods
 		/// <summary>
-        /// Given a string containing tokens of the form "^^ListKeyValue^^"
-        /// where ListKeyValue is the value of a key in the pnvcList collection,
-        /// which may or may not exist in the collection, replace all such
-        /// tokens with the contents of the like named value in the collection.
-        /// </summary>
-        /// <param name="pstrMsg">
-        /// String containing the message containing the substitution tokens.
-        /// </param>
-        /// <param name="pnvcList">
-        /// A NameValueCollection, in which each key represents a token, and its
-        /// value represents the value to be substituted for it.
-        /// </param>
-        /// <returns>
-        /// String with tokens replaced, and tokens that have no corresponding
-        /// object in the pnvcList collection preserved.
-        /// </returns>
+		/// Given a string containing tokens of the form "^^ListKeyValue^^"
+		/// where ListKeyValue is the value of a key in the pnvcList collection,
+		/// which may or may not exist in the collection, replace all such
+		/// tokens with the contents of the like named value in the collection.
+		/// </summary>
+		/// <param name="pstrMsg">
+		/// String containing the message containing the substitution tokens.
+		/// </param>
+		/// <param name="pnvcList">
+		/// A NameValueCollection, in which each key represents a token, and its
+		/// value represents the value to be substituted for it.
+		/// </param>
+		/// <returns>
+		/// String with tokens replaced, and tokens that have no corresponding
+		/// object in the pnvcList collection preserved.
+		/// </returns>
 		public static string ReplaceTokensFromList (
 			this string pstrMsg ,
 			NameValueCollection pnvcList )

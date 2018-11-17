@@ -129,9 +129,16 @@
     <value>The argument is a null reference or the empty string.</value>
     <comment>This is a general purpose error message, intended for reporting null reference exceptions.</comment>
   </data>
+  <data name="ERRMSG_ARG_OUT_OF_RANGE" xml:space="preserve">
+    <value>Value of {0} is out of range; it must be between {1} and {2}.</value>
+  </data>
   <data name="ERRMSG_BADSTRING" xml:space="preserve">
     <value>Unable to process string {0}</value>
     <comment>Use this template to reporty a string that cannot be processed. The string is expected to be appended; to that end, there is a single substitution token. If you want it quoted, wrap it in quotes before you pass it into string.Format or one of its cousins.</comment>
+  </data>
+  <data name="ERRMSG_EMPTY_STRING_NEVER_VALID" xml:space="preserve">
+    <value>The empty string is never valid in this context.</value>
+    <comment>Created for use by string extension method EnumFromString (defined in WizardWrx.Core.dll), this message will probably find other uses sooner or later.</comment>
   </data>
   <data name="ERRMSG_FILE_IS_EMPTY" xml:space="preserve">
     <value>Input file {0} is empty.</value>
@@ -144,11 +151,15 @@
     <comment>The IntegerToHexStr method constructs the message for the ArgumentException exception that it throws when fed a non-integral type.</comment>
   </data>
   <data name="ERRMSG_INVALID_COMMAND_LINE" xml:space="preserve">
-    <value>One or more command line arguments are invalid.</value>
+    <value>At least one command line argument is invalid.</value>
     <comment>Exit code 2 is now reserved for reporting invalid command line arguments.</comment>
   </data>
   <data name="ERRMSG_INVALID_FIELD_IN_INPUT_RECORD" xml:space="preserve">
     <value>Input file {0}, record {1} is invalid.</value>
+  </data>
+  <data name="ERRMSG_NULLREF_NEVER_VALID" xml:space="preserve">
+    <value>A null reference to a string is never valid in this context.</value>
+    <comment>Created for use by string extension method EnumFromString (defined in WizardWrx.Core.dll), this message will probably find other uses sooner or later.</comment>
   </data>
   <data name="ERRMSG_RUNTIME" xml:space="preserve">
     <value>A run-time exception has occurred.</value>

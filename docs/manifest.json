@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DLLServices2TestStand.Properties.Resources.html",
-          "hash": "aryivW+NDMMoojKEaWQYSw=="
+          "hash": "qoEYEGz++eRsE5H/Nwgx0A=="
         }
       },
       "is_incremental": false,
@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DLLServices2TestStand.Properties.html",
-          "hash": "pYQ6xkPNz1YOUi6iVQ+ChQ=="
+          "hash": "snhGBdFiSxwjDPzuX/pyvw=="
         }
       },
       "is_incremental": false,
@@ -33,10 +33,10 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.ASCIICharacterDisplayInfo.html",
-          "hash": "97LiytP9XjW0NsG5GXVpNw=="
+          "hash": "9vVp7MH/gvX4TaBt7v1udA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -45,10 +45,10 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.ASCII_Character_Display_Table.html",
-          "hash": "TCFoEh3K0RfgmPxzGKM3hA=="
+          "hash": "As9+Q7pkQMGorfVdxJRJ8A=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -57,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.ArrayInfo.html",
-          "hash": "fGUBuuhZJ0H12Wqq7oqZ5g=="
+          "hash": "frG56u6x1+X6UVQ59f9d8Q=="
         }
       },
       "is_incremental": false,
@@ -69,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.AssemblyUtils.AssemblyContainer.html",
-          "hash": "zX9VFOFBB+raHR7G4hVvLg=="
+          "hash": "zZeDisYPwHqQLif1Z+YrcQ=="
         }
       },
       "is_incremental": false,
@@ -81,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.AssemblyUtils.DependentAssemblies.html",
-          "hash": "cllvzRdR34LZ/VIRVlaBWQ=="
+          "hash": "nPmkXQdzQ1jxHjkCBadN6w=="
         }
       },
       "is_incremental": false,
@@ -93,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.AssemblyUtils.DependentAssemblyInfo.html",
-          "hash": "0cE1RF12TZ7G7CaUePGrIA=="
+          "hash": "1QF9J66/8+4biehSveos4Q=="
         }
       },
       "is_incremental": false,
@@ -105,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.AssemblyUtils.PESubsystemInfo.PESubsystemID.html",
-          "hash": "vHbvNwU71TLrhtawHbSkBw=="
+          "hash": "ZQCCRdjWme3g+8gWd1r27A=="
         }
       },
       "is_incremental": false,
@@ -117,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.AssemblyUtils.PESubsystemInfo.SubsystemDescription.html",
-          "hash": "bgasVIzL7JeYviiIJsdDxw=="
+          "hash": "PUNytF5b6LRNF5ZXXzXp6w=="
         }
       },
       "is_incremental": false,
@@ -129,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.AssemblyUtils.PESubsystemInfo.html",
-          "hash": "kMwkt3MTC/e6X2ggLnu6vg=="
+          "hash": "/0hgj/lTQVoor2QdGsjR3g=="
         }
       },
       "is_incremental": false,
@@ -141,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.AssemblyUtils.ReportGenerators.html",
-          "hash": "du/KTvIJdbgCSo0S//j2ig=="
+          "hash": "71M6IDwHWxjpYNWEONcvhA=="
         }
       },
       "is_incremental": false,
@@ -153,7 +153,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.AssemblyUtils.SortableManagedResourceItem.html",
-          "hash": "Fn+Nuumw37giUBPRb6YCdw=="
+          "hash": "q+Fgttl9RGblMuJhe56FJA=="
         }
       },
       "is_incremental": false,
@@ -165,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.AssemblyUtils.html",
-          "hash": "2MtwPrtUlVbe8Iz2wyyBgg=="
+          "hash": "9cxymSDxkfRNINCqs1jZWQ=="
         }
       },
       "is_incremental": false,
@@ -177,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.CSVFileInfo.html",
-          "hash": "Vb0SHFzuVEyyXJYGfXoN2g=="
+          "hash": "kddTQepZAlRJkHSY/njJ/Q=="
         }
       },
       "is_incremental": false,
@@ -189,7 +189,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.Common.Properties.Resources.html",
-          "hash": "TdzZCfauHuR30QKaHJWbvg=="
+          "hash": "laDLYeNfKuLXQRBW+0uxiw=="
         }
       },
       "is_incremental": false,
@@ -201,7 +201,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.Common.Properties.html",
-          "hash": "/As932aJBbNbnqLo+AwgYQ=="
+          "hash": "Ub2MaVXACPqAWEQgz1Cs9Q=="
         }
       },
       "is_incremental": false,
@@ -213,7 +213,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.ConsoleStreams.DefaultErrorMessageColors.html",
-          "hash": "B8yDp/B6eIgnQUeaRrCsrQ=="
+          "hash": "qGKKzI56mYSNPks+/rMIRA=="
         }
       },
       "is_incremental": false,
@@ -225,7 +225,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.ConsoleStreams.ErrorMessagesInColor.ErrorSeverity.html",
-          "hash": "DYODCBsYo4b9tijMUQIGxg=="
+          "hash": "A6+0VirsTjsOjQfwtoXLBQ=="
         }
       },
       "is_incremental": false,
@@ -237,7 +237,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.ConsoleStreams.ErrorMessagesInColor.html",
-          "hash": "hDXN5luHl/qrh+i/vS9Z0Q=="
+          "hash": "qwGI6dnzTfYe7yyQllx7AA=="
         }
       },
       "is_incremental": false,
@@ -249,7 +249,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.ConsoleStreams.ErrorMessagesInColorConverter.html",
-          "hash": "IAmqunlIz575OtJFI2KX4Q=="
+          "hash": "0M4zJCjgUCUMU2a/szmR8A=="
         }
       },
       "is_incremental": false,
@@ -261,7 +261,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.ConsoleStreams.MessageInColor.html",
-          "hash": "hq9+2M4klyNa+9XJu1EJsA=="
+          "hash": "fy8CvW0BA5ZcclZJj7eVJQ=="
         }
       },
       "is_incremental": false,
@@ -273,7 +273,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.ConsoleStreams.MessageInColorConverter.html",
-          "hash": "AuDMUtdrpafw4EHA6Wg/kA=="
+          "hash": "3ITL3Gtg98d07Tg1kOOvng=="
         }
       },
       "is_incremental": false,
@@ -285,7 +285,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.ConsoleStreams.StandardHandleInfo.ConsoleModes.html",
-          "hash": "qhgt9xKxn2Nex0S+K5tEwQ=="
+          "hash": "/oqpGV3z/s1YNiFUlM2Cfg=="
         }
       },
       "is_incremental": false,
@@ -297,7 +297,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.ConsoleStreams.StandardHandleInfo.ConsoleOutputModes.html",
-          "hash": "+IfAVbfR4wG5avnnyMV83Q=="
+          "hash": "Ns89wYqQmyaRm0dxfuQ6ew=="
         }
       },
       "is_incremental": false,
@@ -309,7 +309,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.ConsoleStreams.StandardHandleInfo.StandardConsoleHandle.html",
-          "hash": "J+6a/Blc8vTa11UkUI0snQ=="
+          "hash": "yAt493XM3enXXPEXW3tJrw=="
         }
       },
       "is_incremental": false,
@@ -321,7 +321,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.ConsoleStreams.StandardHandleInfo.StandardHandleState.html",
-          "hash": "jwvunxYq9xzrj5Zv7llIYQ=="
+          "hash": "3zVLY/jogR+8kMl9+D9AEA=="
         }
       },
       "is_incremental": false,
@@ -333,7 +333,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.ConsoleStreams.StandardHandleInfo.html",
-          "hash": "q6Ipy7b/iSk8Vx7Z5NqTBg=="
+          "hash": "OsxBTqqHyB88teNFEQ9AOg=="
         }
       },
       "is_incremental": false,
@@ -345,7 +345,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.ConsoleStreams.html",
-          "hash": "ynv28eMsNF45nWr37rDYPQ=="
+          "hash": "Z7BSXBrc89pD0YzzjlnK4w=="
         }
       },
       "is_incremental": false,
@@ -357,7 +357,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.Core.AgedFileInfo.html",
-          "hash": "C4jOhQe8sPBhc3HiHY4ICA=="
+          "hash": "uRML5YIZxR+nS1tj6nplHw=="
         }
       },
       "is_incremental": false,
@@ -369,7 +369,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.Core.AgedFileInfoCollection.html",
-          "hash": "dJK8p8Z04GAVCBGGg/ziog=="
+          "hash": "cNd1UsdQF45NiAb4RcXB7Q=="
         }
       },
       "is_incremental": false,
@@ -381,7 +381,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.Core.AssemblyLocatorBase.html",
-          "hash": "t6nTJeaZIId1FIyPePovHQ=="
+          "hash": "tiAbkN8wPJgQPcEJnkPRiQ=="
         }
       },
       "is_incremental": false,
@@ -393,7 +393,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.Core.BasicSystemInfoDisplayMessages.html",
-          "hash": "XjUKuH1KlWD8isIWvRFOOQ=="
+          "hash": "xiIenXMv2Q+f1bBn0HFlvw=="
         }
       },
       "is_incremental": false,
@@ -405,7 +405,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.Core.ByteArrayFormatters.html",
-          "hash": "r+ynmLEjLJ+X+bs9RP3bJQ=="
+          "hash": "Z68QbPs0EBJDQnfvpXicEA=="
         }
       },
       "is_incremental": false,
@@ -417,7 +417,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.Core.CmdLneArgsBasic.ArgMatching.html",
-          "hash": "00Tkt2CVu2Gcr3x4cl9RnA=="
+          "hash": "oRVs5N5GGb1+7U1vLEru8g=="
         }
       },
       "is_incremental": false,
@@ -429,7 +429,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.Core.CmdLneArgsBasic.ArgType.html",
-          "hash": "WIqHXDputD7R91/CHfXDHg=="
+          "hash": "7rXUe0JsrqdGALU9AX0/Fg=="
         }
       },
       "is_incremental": false,
@@ -441,7 +441,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.Core.CmdLneArgsBasic.html",
-          "hash": "vaISfnyPnmgPSUI3K70nIA=="
+          "hash": "ej9O+RL5DB3Yv+DzTeIeIw=="
         }
       },
       "is_incremental": false,
@@ -453,7 +453,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.Core.PropertyDefaults.html",
-          "hash": "wMvpmnIs5sZna8pMPZBX6A=="
+          "hash": "6LoqB+UngZdQIJ3nJ+pO7A=="
         }
       },
       "is_incremental": false,
@@ -465,7 +465,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.Core.RegistryValues.html",
-          "hash": "WUA3chDQP5juHM7T77IG+A=="
+          "hash": "KVOPMrCfXuNiNoSODOI7jQ=="
         }
       },
       "is_incremental": false,
@@ -477,7 +477,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.Core.TimeDisplayFormatter.DateFieldOrder.html",
-          "hash": "qyJHYPYTeeTsXiymlU4j0g=="
+          "hash": "bheWKmCZw7P7dBfH73fFUQ=="
         }
       },
       "is_incremental": false,
@@ -489,7 +489,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.Core.TimeDisplayFormatter.HoursFormatType.html",
-          "hash": "8cvDsrd8j1CF/ehzSuUKfg=="
+          "hash": "xAu9oBBifBsYm9r+JXMGiA=="
         }
       },
       "is_incremental": false,
@@ -501,7 +501,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.Core.TimeDisplayFormatter.TimePrecisionType.html",
-          "hash": "e7dgbrCZ92anhIIIp+BDrQ=="
+          "hash": "ikycH9EnTYPu3hs35oefhQ=="
         }
       },
       "is_incremental": false,
@@ -513,7 +513,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.Core.TimeDisplayFormatter.html",
-          "hash": "ZcOufr4OBQ0ML4dGXP7bHg=="
+          "hash": "AmfUBzi3T18Y+0xX4SMa6A=="
         }
       },
       "is_incremental": false,
@@ -525,7 +525,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.Core.TraceLogger.html",
-          "hash": "ofgLF7X1iSQSdlpseZx+tg=="
+          "hash": "Bz8bGKRkkTIZO5SemmDF9A=="
         }
       },
       "is_incremental": false,
@@ -537,7 +537,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.Core.UnmanagedLibrary.html",
-          "hash": "bxyxUyOmeeDYmwz+V3eL9w=="
+          "hash": "0yEiAvvY/CMSHXb1bdI0Lg=="
         }
       },
       "is_incremental": false,
@@ -549,7 +549,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.Core.html",
-          "hash": "dSuJW0kMuls0dYbnomq7nA=="
+          "hash": "MqfI4CThr+DNxraX16J43g=="
         }
       },
       "is_incremental": false,
@@ -561,7 +561,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.Cryptography.DigestFile.html",
-          "hash": "6FTIwG80B/ORM2A/DT4jzA=="
+          "hash": "UgNXxWFYq3TDa4HhpykTvQ=="
         }
       },
       "is_incremental": false,
@@ -573,7 +573,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.Cryptography.DigestString.html",
-          "hash": "onuLSJ/u2yEfGUh3pxWpjg=="
+          "hash": "JwLyK6ctDidOnsqYnY9Fsw=="
         }
       },
       "is_incremental": false,
@@ -585,7 +585,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.Cryptography.html",
-          "hash": "TVeTBRkPikoYmvji3nd3mw=="
+          "hash": "YclJV2KDb2InZq1jx6Jh+w=="
         }
       },
       "is_incremental": false,
@@ -597,7 +597,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.DLLConfigurationManager.ExceptionLogger.ErrorExitOptions.html",
-          "hash": "L6YO2NhNajcmBXYYSzrk0Q=="
+          "hash": "6KzM6s7oQdjgBFALbrhSSw=="
         }
       },
       "is_incremental": false,
@@ -609,7 +609,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions.html",
-          "hash": "MqxhDYsYnPmD9E69gEzfzQ=="
+          "hash": "ji7MYMqyAlWqIFzalS5qIg=="
         }
       },
       "is_incremental": false,
@@ -621,7 +621,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.DLLConfigurationManager.ExceptionLogger.ScrollUpResult.html",
-          "hash": "+C0sO8JBjKBVatNv6K/3BQ=="
+          "hash": "w+P8GooP570/nV8s3uhL5g=="
         }
       },
       "is_incremental": false,
@@ -633,7 +633,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.DLLConfigurationManager.ExceptionLogger.html",
-          "hash": "AjmLS34I1XP1kItGZuciVw=="
+          "hash": "zSzSdMS3S6h8lxgzElqNpQ=="
         }
       },
       "is_incremental": false,
@@ -645,7 +645,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.DLLConfigurationManager.IniFileReader.html",
-          "hash": "6pi9BWmaDE5c5g3n+ArmJQ=="
+          "hash": "ENlhTY1vBOBFeah3ooZwLA=="
         }
       },
       "is_incremental": false,
@@ -657,7 +657,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.DLLConfigurationManager.Properties.Resources.html",
-          "hash": "875F6kgfh87z7aWrYf/m3A=="
+          "hash": "4Stman4is2VfbeeXG/zmBw=="
         }
       },
       "is_incremental": false,
@@ -669,7 +669,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.DLLConfigurationManager.Properties.html",
-          "hash": "4aO50BrcvM8QoUykmjwXVA=="
+          "hash": "RxFunlLXw7ZqO/1NDkA6pQ=="
         }
       },
       "is_incremental": false,
@@ -681,7 +681,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.DLLConfigurationManager.StateManager.AssemblyVersionRequest.html",
-          "hash": "14N8EwI6E/FePORoAejd/w=="
+          "hash": "3LH58ZHnr9c2l2d7MrO6Og=="
         }
       },
       "is_incremental": false,
@@ -693,7 +693,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.DLLConfigurationManager.StateManager.html",
-          "hash": "jmOSQzjE3lyft7fvrfZh+A=="
+          "hash": "TXUVXe8Uo3vODG3yjGBbwA=="
         }
       },
       "is_incremental": false,
@@ -705,7 +705,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.DLLConfigurationManager.html",
-          "hash": "fc0THkpOJZGph41jvcpmRQ=="
+          "hash": "j9z3N9qkaoQINIFT3OO6Ww=="
         }
       },
       "is_incremental": false,
@@ -717,7 +717,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.DisplayFormats.html",
-          "hash": "/E2iOdQIWzShwmExysO85A=="
+          "hash": "bsFL/poWhKu4CG8hJ8VUgQ=="
         }
       },
       "is_incremental": false,
@@ -729,7 +729,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.EmbeddedTextFile.ByteOrderMark.BOMType.html",
-          "hash": "QQ7/1DXZB2gM+R2fu4QJtA=="
+          "hash": "FMXnhgO9LX32p686s186BQ=="
         }
       },
       "is_incremental": false,
@@ -741,7 +741,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.EmbeddedTextFile.ByteOrderMark.html",
-          "hash": "dNatlHMjomylRljYjO/j5g=="
+          "hash": "eMgqSfkLXT5YLVGJnP1ekg=="
         }
       },
       "is_incremental": false,
@@ -753,7 +753,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.EmbeddedTextFile.Readers.html",
-          "hash": "g67LNVY6uQi638PqJGFhhg=="
+          "hash": "h17XDRi/rfonu84TYt1lJA=="
         }
       },
       "is_incremental": false,
@@ -765,7 +765,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.EmbeddedTextFile.html",
-          "hash": "yNig534dZHYQwHOdwagmnQ=="
+          "hash": "zsoC730PmMb4groqbKrj7A=="
         }
       },
       "is_incremental": false,
@@ -777,7 +777,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.FileIOFlags.html",
-          "hash": "Ma0ikg9MHt6ChYMpnKXYDw=="
+          "hash": "c3h6+80HUZfTyAVCMwnTWg=="
         }
       },
       "is_incremental": false,
@@ -789,7 +789,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.FileInfoExtension.enmInitialStatus.html",
-          "hash": "2mblCeS1Xf2zU61O5QnnLg=="
+          "hash": "LNe2hLZNc2GasfnR1rIEBg=="
         }
       },
       "is_incremental": false,
@@ -801,7 +801,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.FileInfoExtension.html",
-          "hash": "oH/XAG08dahpQlde5iXN4Q=="
+          "hash": "4zW/ZdGDBACA0OVPALij4g=="
         }
       },
       "is_incremental": false,
@@ -813,7 +813,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.FileInfoExtensionMethods.html",
-          "hash": "EhgkHVLUFu5vFDy0wsn4gQ=="
+          "hash": "KMyyAhV0ckowQMakYqGXOA=="
         }
       },
       "is_incremental": false,
@@ -825,7 +825,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.FileNameTricks.TerminaBackslash.html",
-          "hash": "srqWhGj9Y3BujPnLyNkQAA=="
+          "hash": "Yyd52lB6xGD/6kdBWKjFjw=="
         }
       },
       "is_incremental": false,
@@ -837,7 +837,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.FileNameTricks.html",
-          "hash": "R7SmxmmGNP38QRnmjrsjWg=="
+          "hash": "7GZjm1BoDHbsvmsV3URyiw=="
         }
       },
       "is_incremental": false,
@@ -849,7 +849,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.FormatStringEngine.FormatItem.Alignment.html",
-          "hash": "Nb3V1Qvof27zQX1rIy7ANA=="
+          "hash": "5qa1AguTDTZLTm+DphWYFA=="
         }
       },
       "is_incremental": false,
@@ -861,7 +861,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.FormatStringEngine.FormatItem.html",
-          "hash": "00gIWIpUHJfYT2U1TAi+NA=="
+          "hash": "YkEIX1Hizy1d3zVkAtHqiA=="
         }
       },
       "is_incremental": false,
@@ -873,7 +873,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.FormatStringEngine.FormatItemsCollection.html",
-          "hash": "PfqJKO7+g0WJc7x7rtnIfw=="
+          "hash": "ID1j00/uTtRIIyBlHNCx+g=="
         }
       },
       "is_incremental": false,
@@ -885,7 +885,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.FormatStringEngine.FormatStringError.html",
-          "hash": "acLszq10R7Nh9cVjtWEs2w=="
+          "hash": "w09cAYa+z3fxplrB7qegmg=="
         }
       },
       "is_incremental": false,
@@ -897,7 +897,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.FormatStringEngine.FormatStringParser.html",
-          "hash": "GnCLkjXoU4r6E7nxFtHG8g=="
+          "hash": "4K0ANKiKSBMZJ9t1XydkUQ=="
         }
       },
       "is_incremental": false,
@@ -909,7 +909,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.FormatStringEngine.html",
-          "hash": "VB34+Lw5JKQFimTZMWQuRQ=="
+          "hash": "1P37m0SUtZvuFFdtlm0MPQ=="
         }
       },
       "is_incremental": false,
@@ -921,7 +921,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.GenericSingletonBase-1.html",
-          "hash": "iIcWffE4FCI4c5QI5zZ5hg=="
+          "hash": "7BsFQR6H1H74AWQ/Nem6MA=="
         }
       },
       "is_incremental": false,
@@ -933,7 +933,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.ListHelpers.CompareResult.html",
-          "hash": "syI6zELSleKapv+qOeyX8w=="
+          "hash": "tfP2haiDkGLlP5DViGR7BA=="
         }
       },
       "is_incremental": false,
@@ -945,7 +945,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.ListHelpers.html",
-          "hash": "4iVER819xJ5MdT2b67SHjQ=="
+          "hash": "esPoiaUt5KJiXEXPDJ/f5w=="
         }
       },
       "is_incremental": false,
@@ -957,7 +957,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.ListInfo.html",
-          "hash": "aYA4EagpBf3Gsh6+Rbb7/g=="
+          "hash": "8MxvFjx0YT8iirMYZebRwA=="
         }
       },
       "is_incremental": false,
@@ -969,7 +969,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.Logic.html",
-          "hash": "5dZqCeOLAdIwYOfm8FYKyw=="
+          "hash": "AtCASR//BpPVSA1CYRbRPg=="
         }
       },
       "is_incremental": false,
@@ -981,7 +981,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.MagicBooleans.html",
-          "hash": "RI2HgAohed1u+VuMsKhg4A=="
+          "hash": "RcNspfgGmEVIRxCf+6rcvA=="
         }
       },
       "is_incremental": false,
@@ -993,7 +993,19 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.MagicNumbers.html",
-          "hash": "xYzqvMfJrFUHg+M1xAn42g=="
+          "hash": "SGtlqBukZ+2stybDXZXP+g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.MoreMath.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.MoreMath.html",
+          "hash": "HY9LMYOWqlteqmTzwNkUtA=="
         }
       },
       "is_incremental": false,
@@ -1005,7 +1017,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.NumberFormatters.html",
-          "hash": "IhJ6zaYEBKlFOlyP980UfA=="
+          "hash": "OuzRSJvEudE78VbtlzVjTA=="
         }
       },
       "is_incremental": false,
@@ -1017,7 +1029,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.NumericFormats.HexFormatDecoration.html",
-          "hash": "egrS0OI3t0ot85vPxk+jyA=="
+          "hash": "m1vpglVpcUjpUmsNSWwraQ=="
         }
       },
       "is_incremental": false,
@@ -1029,7 +1041,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.NumericFormats.html",
-          "hash": "rElz29V26PTHz1vubroIHw=="
+          "hash": "06lWR/Ac1ZUM0G6ZI3PTyg=="
         }
       },
       "is_incremental": false,
@@ -1041,7 +1053,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.PathPositions.html",
-          "hash": "YErC8bwSXUXB4LR4FzBBXQ=="
+          "hash": "UqYCEdbAkqVjxgwbZnispw=="
         }
       },
       "is_incremental": false,
@@ -1053,7 +1065,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.RegExpSupport.html",
-          "hash": "Xt7sheqmGg4XZ+fb6BmoDg=="
+          "hash": "3+SkQL6F/d+6aUjXO1O3RA=="
         }
       },
       "is_incremental": false,
@@ -1065,7 +1077,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.ReportDetail.ItemDisplayOrder.html",
-          "hash": "o46ZnInPu5Y4ibIa4YHIhg=="
+          "hash": "fQ3bFHkCWjcMhQ3IcQ/VUg=="
         }
       },
       "is_incremental": false,
@@ -1077,7 +1089,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.ReportDetail.LabelChangedEventArgs.html",
-          "hash": "WY0Gkzn6jNaAct6UsylhwQ=="
+          "hash": "GWXhrED2Z/QRimY42CKe3Q=="
         }
       },
       "is_incremental": false,
@@ -1089,7 +1101,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.ReportDetail.State.html",
-          "hash": "O8hRttb0z7K8KVJGH1OBIw=="
+          "hash": "fZGpY2ERC6es7QHXNRID0Q=="
         }
       },
       "is_incremental": false,
@@ -1101,7 +1113,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.ReportDetail.html",
-          "hash": "+Gqz5N7PpgNMy4zWcV7Nyg=="
+          "hash": "SCQ6Uj2JgbyPZIfd+TKiXg=="
         }
       },
       "is_incremental": false,
@@ -1113,7 +1125,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.ReportDetails.html",
-          "hash": "Mdih9aN8b2IrtHQjXMfvRg=="
+          "hash": "MrVFTVH0AMl9MG6rxuU95A=="
         }
       },
       "is_incremental": false,
@@ -1125,7 +1137,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.ReportHelpers.Alignment.html",
-          "hash": "q1+1CAPnBhcJK4jAZWNLVQ=="
+          "hash": "VBq+SaSZ+I+3xgou3Y4Xkw=="
         }
       },
       "is_incremental": false,
@@ -1137,7 +1149,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.ReportHelpers.html",
-          "hash": "T0ckjKyHO49o9msVc+OOdA=="
+          "hash": "7KJF3O+2zgs0e48l6lddaQ=="
         }
       },
       "is_incremental": false,
@@ -1149,7 +1161,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.SpecialCharacters.html",
-          "hash": "yDdnJfB42gHTG6TyulbYGw=="
+          "hash": "xx1Gag9el2gH6AgnOdUkCQ=="
         }
       },
       "is_incremental": false,
@@ -1161,7 +1173,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.SpecialStrings.html",
-          "hash": "RVil9wZ7FMyMEBKd5SVUig=="
+          "hash": "xzifkTdTHkiS5palELIRkw=="
         }
       },
       "is_incremental": false,
@@ -1173,7 +1185,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.StringExtensions.html",
-          "hash": "CIF38pGqOD4fzH7WqHXI1w=="
+          "hash": "dnWfBPUL6COMiwApzJP4aA=="
         }
       },
       "is_incremental": false,
@@ -1185,7 +1197,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.StringTricks.html",
-          "hash": "byojdxDvpQT/5u4ynGi+Wg=="
+          "hash": "hfB6zKghek8Z+7imONHmTw=="
         }
       },
       "is_incremental": false,
@@ -1197,7 +1209,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.SyncRoot.html",
-          "hash": "htJeIzSwhspLPtqD76a7yQ=="
+          "hash": "c4G8qoGTXl02AqIBzXU88g=="
         }
       },
       "is_incremental": false,
@@ -1209,7 +1221,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.SysDateFormatters.html",
-          "hash": "cm7csAbENHX1MLl0L8KyFA=="
+          "hash": "20wKARG960gxQsWV1q3TIg=="
         }
       },
       "is_incremental": false,
@@ -1221,7 +1233,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.TextBlocks.html",
-          "hash": "ak/OUoSGyROFrT+UV0tSCA=="
+          "hash": "6bZKAh9gj96tM0htiZHzdg=="
         }
       },
       "is_incremental": false,
@@ -1233,7 +1245,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.html",
-          "hash": "SHy1m5Dmo5qlsFfspUeH6w=="
+          "hash": "MKnS2Nl2/7I8PDzXOZ34xQ=="
         }
       },
       "is_incremental": false,
@@ -1245,7 +1257,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "vcB/RdslGawhq0Vfb378Fw=="
+          "hash": "qF0uD7GTReCjunhYy8ilxQ=="
         }
       },
       "is_incremental": true,
@@ -1257,7 +1269,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "dFD7V/m9NjF+R4xGt/sGZg=="
+          "hash": "mDerVvr7CF7xfOEnwXEjfQ=="
         }
       },
       "is_incremental": false,
@@ -1269,7 +1281,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "JjhZ6J2v42imvfn4qoxuGg=="
+          "hash": "7BW/zisUJ/AfexFB5yqh1A=="
         }
       },
       "is_incremental": true,
@@ -1293,7 +1305,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "HnVW121CQL9dXAVu8amv0A=="
+          "hash": "mK7Rv/IUoDVMQX7ZSvCD0w=="
         }
       },
       "is_incremental": true,

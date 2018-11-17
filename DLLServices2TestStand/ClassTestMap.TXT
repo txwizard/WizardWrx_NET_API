@@ -12,3 +12,4 @@ UtilsExercises	Util
 EventMessageCleanupTests	PrepareMessageForEventLog
 SpecialStringExercises	SpecialStrings
 CapitalizeWordsExercises	CapitalizeWords
+EnumFromStringExercises	EnumFromString

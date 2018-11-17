@@ -147,7 +147,7 @@
 									-------------------------- -------------
 									ERROR_INVALID_CMD_LNE_ARGS             2
 
-									EXACTLY_ONE_NUNDRED		             100
+									EXACTLY_ONE_HUNDRED		             100
 									EXACTLY_ONE_THOUSAND   	           1,000
                                     EXACTLY_TEN_THOUSAND   	          10,000
 									EXACTLY_ONE_MILLION		       1,000,000
@@ -164,6 +164,17 @@
 
 	2017/09/17 7.0     DAG    Define NUMBER_BASE_DECIMAL and 
                               NUMBER_BASE_HEXADECIMAL.
+
+    2018/11/10 7.11    DAG    BREAKING CHANGE: Rename EXACTLY_ONE_NUNDRED to
+                                               EXACTLY_ONE_HUNDRED, correcting a
+                                               misspelling that prevented me
+                                               finding it yesterday.
+
+                              Correct the value of EXACTLY_TEN_THOUSAND, which I
+                              discovered was returning one million.
+
+                              Define overlooked constants EXACTLY_TEN and
+                              EVENLY_DIVISIBLE.
 	============================================================================
 */
 
@@ -332,55 +343,103 @@ namespace WizardWrx
 		/// <seealso cref="SpecialStrings.ERRMSG_SUCCESS_PLACEHOLDER"/>
 		public const int ERROR_SUCCESS = ZERO;
 
-		/// <summary>
-		/// Use this constant when you need a literal value of exactly one hundred.
-		/// </summary>
-		///	<seealso cref="EXACTLY_TEN_THOUSAND"/>
-		///	<seealso cref="EXACTLY_ONE_THOUSAND"/>
-		///	<seealso cref="EXACTLY_ONE_MILLION"/>
-		/// <seealso cref="EXACTLY_ONE_BILLION"/>
-		public const int EXACTLY_ONE_NUNDRED = 100;
+        /// <summary>
+        /// Use this constant with the modulus operator to evaluate whether one
+        /// integer is evenly divisible by a smaller integer.
+        /// </summary>
+        /// <example>
+        /// The following example uses the modulus operator to evaluate whether
+        /// a counter is an even multiple of one hundred, updating a frozen line
+        /// on the program's console with the new count.
+        /// <code>
+        /// 
+        ///     if ( intTotalRows % MagicNumbers.EXACTLY_ONE_HUNDRED == MagicNumbers.EVENLY_DIVISIBLE )
+        ///     {
+        ///         fixedConsoleWriter.Write(
+        ///             @"{0} of {1} records processed" ,
+        ///             intTotalRows.ToString(NumericFormats.IntegerPerRegSettings ( ) ) ,
+        ///             intRowsInTable.ToString(NumericFormats.IntegerPerRegSettings ( ) ) );
+        ///     }   // if ( intTotalRows % MagicNumbers.EXACTLY_ONE_NUNDRED == MagicNumbers.ZERO )
+        /// </code>
+        /// </example>
+        /// <seealso cref="EXACTLY_TEN"/>
+        /// <seealso cref="EXACTLY_ONE_HUNDRED"/>
+        ///	<seealso cref="EXACTLY_TEN_THOUSAND"/>
+        ///	<seealso cref="EXACTLY_ONE_THOUSAND"/>
+        ///	<seealso cref="EXACTLY_ONE_MILLION"/>
+        /// <seealso cref="EXACTLY_ONE_BILLION"/>
+        public const int EVENLY_DIVISIBLE = 0;
 
-		/// <summary>
-		/// Use this constant when you need a literal value of exactly one thousand.
-		/// </summary>
-		/// <seealso cref="EXACTLY_ONE_NUNDRED"/>
-		///	<seealso cref="EXACTLY_TEN_THOUSAND"/>
-		///	<seealso cref="EXACTLY_ONE_MILLION"/>
-		///	<seealso cref="EXACTLY_ONE_BILLION"/>
-		///	<seealso cref="MILLISECONDS_PER_SECOND"/>
-		///	<seealso cref="TICKS_PER_SECOND"/>
-		public const int EXACTLY_ONE_THOUSAND = 1000;
+        /// <summary>
+        /// Use this constant when you need a literal value of exactly ten.
+        /// </summary>
+        /// <seealso cref="EVENLY_DIVISIBLE"/>
+        /// <seealso cref="EXACTLY_ONE_HUNDRED"/>
+        ///	<seealso cref="EXACTLY_TEN_THOUSAND"/>
+        ///	<seealso cref="EXACTLY_ONE_THOUSAND"/>
+        ///	<seealso cref="EXACTLY_ONE_MILLION"/>
+        /// <seealso cref="EXACTLY_ONE_BILLION"/>
+        public const int EXACTLY_TEN = 10;
 
-		/// <summary>
-		/// Use this constant when you need a literal value of exactly ten thousand.
-		/// </summary>
-		/// <remarks>
-		/// This internal-use literal may as well be public.
-		/// </remarks>
-		/// <seealso cref="EXACTLY_ONE_NUNDRED"/>
-		///	<seealso cref="EXACTLY_ONE_THOUSAND"/>
-		///	<seealso cref="EXACTLY_ONE_MILLION"/>
-		///	<seealso cref="EXACTLY_ONE_BILLION"/>
-		public const int EXACTLY_TEN_THOUSAND = 10000000;
+        /// <summary>
+        /// Use this constant when you need a literal value of exactly one hundred.
+        /// </summary>
+        /// <seealso cref="EVENLY_DIVISIBLE"/>
+        /// <seealso cref="EXACTLY_TEN"/>
+        ///	<seealso cref="EXACTLY_TEN_THOUSAND"/>
+        ///	<seealso cref="EXACTLY_ONE_THOUSAND"/>
+        ///	<seealso cref="EXACTLY_ONE_MILLION"/>
+        /// <seealso cref="EXACTLY_ONE_BILLION"/>
+        public const int EXACTLY_ONE_HUNDRED = 100;
 
-		/// <summary>
-		/// Use this constant when you need a literal value of exactly one million.
-		/// </summary>
-		/// <seealso cref="EXACTLY_ONE_NUNDRED"/>
-		///	<seealso cref="EXACTLY_ONE_THOUSAND"/>
-		///	<seealso cref="EXACTLY_TEN_THOUSAND"/>
-		///	<seealso cref="EXACTLY_ONE_BILLION"/>
-		public const int EXACTLY_ONE_MILLION = 1000000;
+        /// <summary>
+        /// Use this constant when you need a literal value of exactly one thousand.
+        /// </summary>
+        /// <seealso cref="EVENLY_DIVISIBLE"/>
+        /// <seealso cref="EXACTLY_TEN"/>
+        /// <seealso cref="EXACTLY_ONE_HUNDRED"/>
+        ///	<seealso cref="EXACTLY_TEN_THOUSAND"/>
+        ///	<seealso cref="EXACTLY_ONE_MILLION"/>
+        ///	<seealso cref="EXACTLY_ONE_BILLION"/>
+        ///	<seealso cref="MILLISECONDS_PER_SECOND"/>
+        ///	<seealso cref="TICKS_PER_SECOND"/>
+        public const int EXACTLY_ONE_THOUSAND = 1000;
 
-		/// <summary>
-		/// Use this constant when you need a literal value of exactly one billion.
-		/// </summary>
-		/// <seealso cref="EXACTLY_ONE_NUNDRED"/>
-		///	<seealso cref="EXACTLY_TEN_THOUSAND"/>
-		///	<seealso cref="EXACTLY_ONE_THOUSAND"/>
-		///	<seealso cref="EXACTLY_ONE_MILLION"/>
-		public const int EXACTLY_ONE_BILLION = 1000000000;
+        /// <summary>
+        /// Use this constant when you need a literal value of exactly ten thousand.
+        /// </summary>
+        /// <remarks>
+        /// This internal-use literal may as well be public.
+        /// </remarks>
+        /// <seealso cref="EVENLY_DIVISIBLE"/>
+        /// <seealso cref="EXACTLY_TEN"/>
+        /// <seealso cref="EXACTLY_ONE_HUNDRED"/>
+        ///	<seealso cref="EXACTLY_ONE_THOUSAND"/>
+        ///	<seealso cref="EXACTLY_ONE_MILLION"/>
+        ///	<seealso cref="EXACTLY_ONE_BILLION"/>
+        public const int EXACTLY_TEN_THOUSAND = 10000;
+
+        /// <summary>
+        /// Use this constant when you need a literal value of exactly one million.
+        /// </summary>
+        /// <seealso cref="EVENLY_DIVISIBLE"/>
+        /// <seealso cref="EXACTLY_TEN"/>
+        /// <seealso cref="EXACTLY_ONE_HUNDRED"/>
+        ///	<seealso cref="EXACTLY_ONE_THOUSAND"/>
+        ///	<seealso cref="EXACTLY_TEN_THOUSAND"/>
+        ///	<seealso cref="EXACTLY_ONE_BILLION"/>
+        public const int EXACTLY_ONE_MILLION = 1000000;
+
+        /// <summary>
+        /// Use this constant when you need a literal value of exactly one billion.
+        /// </summary>
+        /// <seealso cref="EVENLY_DIVISIBLE"/>
+        /// <seealso cref="EXACTLY_TEN"/>
+        /// <seealso cref="EXACTLY_ONE_HUNDRED"/>
+        ///	<seealso cref="EXACTLY_TEN_THOUSAND"/>
+        ///	<seealso cref="EXACTLY_ONE_THOUSAND"/>
+        ///	<seealso cref="EXACTLY_ONE_MILLION"/>
+        public const int EXACTLY_ONE_BILLION = 1000000000;
 
 		/// <summary>
 		/// Use this constant when you need a literal value of exactly one second worth of milliseconds..

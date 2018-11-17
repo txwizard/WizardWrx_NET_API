@@ -948,10 +948,50 @@
             <seealso cref="F:WizardWrx.MagicNumbers.ZERO"/>
             <seealso cref="F:WizardWrx.SpecialStrings.ERRMSG_SUCCESS_PLACEHOLDER"/>
         </member>
-        <member name="F:WizardWrx.MagicNumbers.EXACTLY_ONE_NUNDRED">
+        <member name="F:WizardWrx.MagicNumbers.EVENLY_DIVISIBLE">
+            <summary>
+            Use this constant with the modulus operator to evaluate whether one
+            integer is evenly divisible by a smaller integer.
+            </summary>
+            <example>
+            The following example uses the modulus operator to evaluate whether
+            a counter is an even multiple of one hundred, updating a frozen line
+            on the program's console with the new count.
+            <code>
+            
+                if ( intTotalRows % MagicNumbers.EXACTLY_ONE_HUNDRED == MagicNumbers.EVENLY_DIVISIBLE )
+                {
+                    fixedConsoleWriter.Write(
+                        @"{0} of {1} records processed" ,
+                        intTotalRows.ToString(NumericFormats.IntegerPerRegSettings ( ) ) ,
+                        intRowsInTable.ToString(NumericFormats.IntegerPerRegSettings ( ) ) );
+                }   // if ( intTotalRows % MagicNumbers.EXACTLY_ONE_NUNDRED == MagicNumbers.ZERO )
+            </code>
+            </example>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_TEN"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_TEN_THOUSAND"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_THOUSAND"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_MILLION"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_BILLION"/>
+        </member>
+        <member name="F:WizardWrx.MagicNumbers.EXACTLY_TEN">
+            <summary>
+            Use this constant when you need a literal value of exactly ten.
+            </summary>
+            <seealso cref="F:WizardWrx.MagicNumbers.EVENLY_DIVISIBLE"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_TEN_THOUSAND"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_THOUSAND"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_MILLION"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_BILLION"/>
+        </member>
+        <member name="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED">
             <summary>
             Use this constant when you need a literal value of exactly one hundred.
             </summary>
+            <seealso cref="F:WizardWrx.MagicNumbers.EVENLY_DIVISIBLE"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_TEN"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_TEN_THOUSAND"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_THOUSAND"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_MILLION"/>
@@ -961,7 +1001,9 @@
             <summary>
             Use this constant when you need a literal value of exactly one thousand.
             </summary>
-            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_NUNDRED"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EVENLY_DIVISIBLE"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_TEN"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_TEN_THOUSAND"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_MILLION"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_BILLION"/>
@@ -975,7 +1017,9 @@
             <remarks>
             This internal-use literal may as well be public.
             </remarks>
-            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_NUNDRED"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EVENLY_DIVISIBLE"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_TEN"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_THOUSAND"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_MILLION"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_BILLION"/>
@@ -984,7 +1028,9 @@
             <summary>
             Use this constant when you need a literal value of exactly one million.
             </summary>
-            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_NUNDRED"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EVENLY_DIVISIBLE"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_TEN"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_THOUSAND"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_TEN_THOUSAND"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_BILLION"/>
@@ -993,7 +1039,9 @@
             <summary>
             Use this constant when you need a literal value of exactly one billion.
             </summary>
-            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_NUNDRED"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EVENLY_DIVISIBLE"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_TEN"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_TEN_THOUSAND"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_THOUSAND"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_MILLION"/>
@@ -1177,7 +1225,9 @@
         </member>
         <member name="T:WizardWrx.NumericFormats.HexFormatDecoration">
             <summary>
-            Use this enumeration with the third argument to IntegerToHexStr.
+            Use this enumeration with the third argument to the fourth
+            (coprehensive) overload of IntegerToHexStr or the second argument to
+            its second overload.
             </summary>
         </member>
         <member name="F:WizardWrx.NumericFormats.HexFormatDecoration.None">
@@ -1330,10 +1380,11 @@
             When the specified number of places after the decimal point is zero,
             the decimal point is omitted.
             
-            To specify the number of places to print after the decimal point,
-            use the static GeneralXPrecision ( int pintFractionDigits ) 
-            method, which supports any number between zero and ninety-nine, the
-            limits imposed by the framework.
+            To easily specify the desired minimum number of hexadecimal glyphs,
+            along with any of the prefixes and suffixes defined in this set of
+            HEXADECIMAL_* constants, call static method IntegerToHexStr
+            ( [T] , int pintTotalDigits , HexFormatDecoration penmDecoration ),
+            in lieu of calling ToString on the integer.
             </summary>
             <see cref="F:WizardWrx.NumericFormats.GENERAL_UC"/>
             <see cref="M:WizardWrx.NumericFormats.GeneralXPrecision(System.Int32)"/>
@@ -1357,10 +1408,11 @@
             When the specified number of places after the decimal point is zero,
             the decimal point is omitted.
             
-            To specify the number of places to print after the decimal point,
-            use the static GeneralXPrecision ( int pintFractionDigits ) 
-            method, which supports any number between zero and ninety-nine, the
-            limits imposed by the framework.
+            To easily specify the desired minimum number of hexadecimal glyphs,
+            along with any of the prefixes and suffixes defined in this set of
+            HEXADECIMAL_* constants, call static method IntegerToHexStr
+            ( [T] , int pintTotalDigits , HexFormatDecoration penmDecoration ),
+            in lieu of calling ToString on the integer.
             </summary>
             <see cref="F:WizardWrx.NumericFormats.GENERAL_LC"/>
             <see cref="M:WizardWrx.NumericFormats.GeneralXPrecision(System.Int32)"/>
@@ -1382,10 +1434,10 @@
             glyphs.
             
             To easily specify the desired minimum number of hexadecimal glyphs,
-            you can feed HexadecimalInteger ( int pintTotalDigits ) method
-            into the ToString method, which uses the returned format string,
-            which is built using this string as its starting point, as if you
-            had hard coded it.
+            along with any of the prefixes and suffixes defined in this set of
+            HEXADECIMAL_* constants, call static method IntegerToHexStr
+            ( [T] , int pintTotalDigits , HexFormatDecoration penmDecoration ),
+            in lieu of calling ToString on the integer.
             </summary>
             <see href="https://msdn.microsoft.com/en-us/library/dwhawy9k(v=vs.110).aspx#XFormatString"/>
             <see cref="M:WizardWrx.NumericFormats.HexadecimalInteger"/>
@@ -1415,10 +1467,10 @@
             glyphs.
             
             To easily specify the desired minimum number of hexadecimal glyphs,
-            you can feed the HexadecimalInteger ( int pintTotalDigits ) method
-            into the ToString method, which uses the returned format string,
-            which is built using this string as its starting point, as if you
-            had hard coded it.
+            along with any of the prefixes and suffixes defined in this set of
+            HEXADECIMAL_* constants, call static method IntegerToHexStr
+            ( [T] , int pintTotalDigits , HexFormatDecoration penmDecoration ),
+            in lieu of calling ToString on the integer.
             </summary>
             <see href="https://msdn.microsoft.com/en-us/library/dwhawy9k(v=vs.110).aspx#XFormatString"/>
             <see cref="M:WizardWrx.NumericFormats.HexadecimalInteger"/>
@@ -1448,10 +1500,10 @@
             to represent the integer.
             
             To easily specify the desired minimum number of hexadecimal glyphs,
-            you can feed the HexadecimalInteger ( int pintTotalDigits ) method
-            into the ToString method, which uses the returned format string,
-            which is built using this string as its starting point, as if you
-            had hard coded it.
+            along with any of the prefixes and suffixes defined in this set of
+            HEXADECIMAL_* constants, call static method IntegerToHexStr
+            ( [T] , int pintTotalDigits , HexFormatDecoration penmDecoration ),
+            in lieu of calling ToString on the integer.
             </summary>
             <see cref="M:WizardWrx.NumericFormats.HexadecimalInteger"/>
             <see cref="M:WizardWrx.NumericFormats.HexadecimalInteger(System.Int32)"/>
@@ -1477,10 +1529,10 @@
             to represent the integer.
             
             To easily specify the desired minimum number of hexadecimal glyphs,
-            you can feed the HexadecimalInteger ( int pintTotalDigits ) method
-            into the ToString method, which uses the returned format string,
-            which is built using this string as its starting point, as if you
-            had hard coded it.
+            along with any of the prefixes and suffixes defined in this set of
+            HEXADECIMAL_* constants, call static method IntegerToHexStr
+            ( [T] , int pintTotalDigits , HexFormatDecoration penmDecoration ),
+            in lieu of calling ToString on the integer.
             </summary>
             <see cref="M:WizardWrx.NumericFormats.HexadecimalInteger"/>
             <see cref="M:WizardWrx.NumericFormats.HexadecimalInteger(System.Int32)"/>
@@ -1509,10 +1561,10 @@
             and other such functions that return things such as HRESULTs.
             
             To easily specify the desired minimum number of hexadecimal glyphs,
-            you can feed the HexadecimalInteger ( int pintTotalDigits ) method
-            into the ToString method, which uses the returned format string,
-            which is built using this string as its starting point, as if you
-            had hard coded it.
+            along with any of the prefixes and suffixes defined in this set of
+            HEXADECIMAL_* constants, call static method IntegerToHexStr
+            ( [T] , int pintTotalDigits , HexFormatDecoration penmDecoration ),
+            in lieu of calling ToString on the integer.
             </summary>
             <see cref="M:WizardWrx.NumericFormats.HexadecimalInteger"/>
             <see cref="M:WizardWrx.NumericFormats.HexadecimalInteger(System.Int32)"/>
@@ -1541,10 +1593,10 @@
             and 64 bit masks.
             
             To easily specify the desired minimum number of hexadecimal glyphs,
-            you can feed the HexadecimalInteger ( int pintTotalDigits ) method
-            into the ToString method, which uses the returned format string,
-            which is built using this string as its starting point, as if you
-            had hard coded it.
+            along with any of the prefixes and suffixes defined in this set of
+            HEXADECIMAL_* constants, call static method IntegerToHexStr
+            ( [T] , int pintTotalDigits , HexFormatDecoration penmDecoration ),
+            in lieu of calling ToString on the integer.
             </summary>
         </member>
         <member name="F:WizardWrx.NumericFormats.HEXADECIMAL_PREFIX_0H_LC">
@@ -1554,10 +1606,10 @@
             the HEXADECIMAL format strings.
             
             To easily specify the desired minimum number of hexadecimal glyphs,
-            you can feed the HexadecimalInteger ( int pintTotalDigits ) method
-            into the ToString method, which uses the returned format string,
-            which is built using this string as its starting point, as if you
-            had hard coded it.
+            along with any of the prefixes and suffixes defined in this set of
+            HEXADECIMAL_* constants, call static method IntegerToHexStr
+            ( [T] , int pintTotalDigits , HexFormatDecoration penmDecoration ),
+            in lieu of calling ToString on the integer.
             </summary>
             <see cref="M:WizardWrx.NumericFormats.HexadecimalInteger"/>
             <see cref="M:WizardWrx.NumericFormats.HexadecimalInteger(System.Int32)"/>
@@ -1569,10 +1621,10 @@
             the HEXADECIMAL format strings.
             
             To easily specify the desired minimum number of hexadecimal glyphs,
-            you can feed the HexadecimalInteger ( int pintTotalDigits ) method
-            into the ToString method, which uses the returned format string,
-            which is built using this string as its starting point, as if you
-            had hard coded it.
+            along with any of the prefixes and suffixes defined in this set of
+            HEXADECIMAL_* constants, call static method IntegerToHexStr
+            ( [T] , int pintTotalDigits , HexFormatDecoration penmDecoration ),
+            in lieu of calling ToString on the integer.
             </summary>
             <see cref="M:WizardWrx.NumericFormats.HexadecimalInteger"/>
             <see cref="M:WizardWrx.NumericFormats.HexadecimalInteger(System.Int32)"/>
@@ -1584,10 +1636,10 @@
             of the HEXADECIMAL format strings.
             
             To easily specify the desired minimum number of hexadecimal glyphs,
-            you can feed the HexadecimalInteger ( int pintTotalDigits ) method
-            into the ToString method, which uses the returned format string,
-            which is built using this string as its starting point, as if you
-            had hard coded it.
+            along with any of the prefixes and suffixes defined in this set of
+            HEXADECIMAL_* constants, call static method IntegerToHexStr
+            ( [T] , int pintTotalDigits , HexFormatDecoration penmDecoration ),
+            in lieu of calling ToString on the integer.
             </summary>
             <see cref="M:WizardWrx.NumericFormats.HexadecimalInteger"/>
             <see cref="M:WizardWrx.NumericFormats.HexadecimalInteger(System.Int32)"/>
@@ -1599,10 +1651,10 @@
             of the HEXADECIMAL format strings.
             
             To easily specify the desired minimum number of hexadecimal glyphs,
-            you can feed the HexadecimalInteger ( int pintTotalDigits ) method
-            into the ToString method, which uses the returned format string,
-            which is built using this string as its starting point, as if you
-            had hard coded it.
+            along with any of the prefixes and suffixes defined in this set of
+            HEXADECIMAL_* constants, call static method IntegerToHexStr
+            ( [T] , int pintTotalDigits , HexFormatDecoration penmDecoration ),
+            in lieu of calling ToString on the integer.
             </summary>
             <see cref="M:WizardWrx.NumericFormats.HexadecimalInteger"/>
             <see cref="M:WizardWrx.NumericFormats.HexadecimalInteger(System.Int32)"/>
@@ -1614,10 +1666,10 @@
             the HEXADECIMAL format strings.
             
             To easily specify the desired minimum number of hexadecimal glyphs,
-            you can substitute the output of static method IntegerToHexStr
+            along with any of the prefixes and suffixes defined in this set of
+            HEXADECIMAL_* constants, call static method IntegerToHexStr
             ( [T] , int pintTotalDigits , HexFormatDecoration penmDecoration ),
-            which appends this string, to the ToString method on any integral
-            type.
+            in lieu of calling ToString on the integer.
             </summary>
         </member>
         <member name="F:WizardWrx.NumericFormats.HEXADECIMAL_SUFFIX_H_UC">
@@ -1627,9 +1679,10 @@
             the HEXADECIMAL format strings.
             
             To easily specify the desired minimum number of hexadecimal glyphs,
-            you can feed the output of HexadecimalInteger ( int pintTotalDigits ,
-            HexFormatDecoration penmHexFormatDecoration ) method, which appends
-            this string, to the ToString method on any integral type.
+            along with any of the prefixes and suffixes defined in this set of
+            HEXADECIMAL_* constants, call static method IntegerToHexStr
+            ( [T] , int pintTotalDigits , HexFormatDecoration penmDecoration ),
+            in lieu of calling ToString on the integer.
             </summary>
         </member>
         <member name="F:WizardWrx.NumericFormats.INTEGER_PER_REG_SETTINGS">
@@ -1639,10 +1692,6 @@
             Integer, it overrides the default regional settings value for Number
             of Digits After Decimal. Please see the Remarks for additional
             details.
-            
-            by the NumDigits member of the NUMBERFMT
-            structure that governs the behavior of the GetNumberFormat and
-            GetNumberFormatEx Windows API functions
             </summary>
             <remarks>
             Since this string is intended exclusively for formatting an
@@ -2076,6 +2125,118 @@
             <seealso cref="F:WizardWrx.NumericFormats.HEXADECIMAL_PREFIX_0H_UC"/>
             <seealso cref="F:WizardWrx.NumericFormats.HEXADECIMAL_PREFIX_0X_LC"/>
             <seealso cref="F:WizardWrx.NumericFormats.HEXADECIMAL_PREFIX_0X_UC"/>
+        </member>
+        <member name="M:WizardWrx.NumericFormats.IntegerToHexStr``1(``0)">
+            <summary>
+            Properly formatting an integral type as a hexadecimal string,
+            including the decorations commonly applied to them as prefix or
+            suffix, is a bit beyond the reach of a simple ToString format
+            string.
+            </summary>
+            <typeparam name="T">
+            There are no compiler enforced constraints on this type, because the
+            Base Class Library provides no mechanism to differentiate integral
+            types in constraints for generics. See the remarks for a comment about
+            how we get around this.
+            </typeparam>
+            <param name="pintegralValue">
+            Specify the value to be formatted as hexadecimal. Integral types
+            only, because that's the only type that may be formatted in this
+            way.
+            </param>
+            <returns>
+            The returned string consists of the prefix, immediately followed by
+            the hexadecimal number, itself, and, finally, the suffix. 
+            
+            Theoretically, you can have both a prefix and a suffix, but the idea
+            is to have one or the other, but not both. You can mix and match
+            upper and lower case glyphs in the main number string and the
+            decorations.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.NumericFormats.IntegerToHexStr``1(``0,WizardWrx.NumericFormats.HexFormatDecoration)">
+            <summary>
+            Properly formatting an integral type as a hexadecimal string,
+            including the decorations commonly applied to them as prefix or
+            suffix, is a bit beyond the reach of a simple ToString format
+            string.
+            </summary>
+            <typeparam name="T">
+            There are no compiler enforced constraints on this type, because the
+            Base Class Library provides no mechanism to differentiate integral
+            types in constraints for generics. See the remarks for a comment about
+            how we get around this.
+            </typeparam>
+            <param name="pintegralValue">
+            Specify the value to be formatted as hexadecimal. Integral types
+            only, because that's the only type that may be formatted in this
+            way.
+            </param>
+            <param name="penmHexDecoration">
+            The HexFormatDecoration has the Flags attribute set on it, so that
+            it can be processed as a bit mask, enabling it to specify multiple
+            items.
+            </param>
+            <returns>
+            The returned string consists of the prefix, immediately followed by
+            the hexadecimal number, itself, and, finally, the suffix. 
+            
+            Theoretically, you can have both a prefix and a suffix, but the idea
+            is to have one or the other, but not both. You can mix and match
+            upper and lower case glyphs in the main number string and the
+            decorations.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.NumericFormats.IntegerToHexStr``1(``0,System.Int32)">
+            <summary>
+            Properly formatting an integral type as a hexadecimal string,
+            including the decorations commonly applied to them as prefix or
+            suffix, is a bit beyond the reach of a simple ToString format
+            string.
+            </summary>
+            <typeparam name="T">
+            There are no compiler enforced constraints on this type, because the
+            Base Class Library provides no mechanism to differentiate integral
+            types in constraints for generics. See the remarks for a comment about
+            how we get around this.
+            </typeparam>
+            <param name="pintegralValue">
+            Specify the value to be formatted as hexadecimal. Integral types
+            only, because that's the only type that may be formatted in this
+            way.
+            </param>
+            <param name="pintTotalDigits">
+            Specify the minimum number of hexadecimal "digits" (glyphs, really)
+            to render. If the number needs more than the specified number, the
+            method uses as many as it needs, causing the returned string to be
+            longer than you expected. If the string needs fewer characters, it
+            is left padded with zeros.
+            </param>
+            <returns>
+            The returned string consists of the prefix, immediately followed by
+            the hexadecimal number, itself, and, finally, the suffix. 
+            
+            Theoretically, you can have both a prefix and a suffix, but the idea
+            is to have one or the other, but not both. You can mix and match
+            upper and lower case glyphs in the main number string and the
+            decorations.
+            </returns>
+            <remarks>
+            The available options are overloading the single-argument ToString
+            method on all fourteen integer types, or crafting one generic method
+            that takes the integer to format as its first argument. Since it's a
+            lot less work, I went that route.
+            
+            Although this method uses generics, there is no type constraint,
+            because the Base Class Library offers no such constraint to filter
+            integral types, of which there are at least fourteen, not counting
+            BigInteger. Since the compiler won't enforce a type constraint, I
+            wrote my own routine that enforces it at run time, by searching a
+            table of known integral types, identified by their GUID properties.
+            If the type of pintegralValue matches an entry in the list, the
+            input is accepted. Otherwise, you get an ArgumentException exception
+            that clearly explains what happened and why.
+            </remarks>
         </member>
         <member name="M:WizardWrx.NumericFormats.IntegerToHexStr``1(``0,System.Int32,WizardWrx.NumericFormats.HexFormatDecoration)">
             <summary>
@@ -4059,9 +4220,19 @@
               Looks up a localized string similar to The argument is a null reference or the empty string..
             </summary>
         </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.ERRMSG_ARG_OUT_OF_RANGE">
+            <summary>
+              Looks up a localized string similar to Value of {0} is out of range; it must be between {1} and {2}..
+            </summary>
+        </member>
         <member name="P:WizardWrx.Common.Properties.Resources.ERRMSG_BADSTRING">
             <summary>
               Looks up a localized string similar to Unable to process string {0}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.ERRMSG_EMPTY_STRING_NEVER_VALID">
+            <summary>
+              Looks up a localized string similar to The empty string is never valid in this context..
             </summary>
         </member>
         <member name="P:WizardWrx.Common.Properties.Resources.ERRMSG_FILE_IS_EMPTY">
@@ -4081,12 +4252,17 @@
         </member>
         <member name="P:WizardWrx.Common.Properties.Resources.ERRMSG_INVALID_COMMAND_LINE">
             <summary>
-              Looks up a localized string similar to One or more command line arguments are invalid..
+              Looks up a localized string similar to At least one command line argument is invalid..
             </summary>
         </member>
         <member name="P:WizardWrx.Common.Properties.Resources.ERRMSG_INVALID_FIELD_IN_INPUT_RECORD">
             <summary>
               Looks up a localized string similar to Input file {0}, record {1} is invalid..
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.ERRMSG_NULLREF_NEVER_VALID">
+            <summary>
+              Looks up a localized string similar to A null reference to a string is never valid in this context..
             </summary>
         </member>
         <member name="P:WizardWrx.Common.Properties.Resources.ERRMSG_RUNTIME">

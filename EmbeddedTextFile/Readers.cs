@@ -18,7 +18,7 @@
 
     Author:             David A. Gray
 
-	License:            Copyright (C) 2014-2017, David A. Gray.
+	License:            Copyright (C) 2014-2018, David A. Gray.
 						All rights reserved.
 
                         Redistribution and use in source and binary forms, with
@@ -69,16 +69,19 @@
                               AssemblyUtils.SortableManagedResourceItem, and
                               promote it from private to public, so that both
 							  classes can share it.
+
+	2018/11/11 7.11    DAG    Re-cast the text of the embedded help topics in an
+                              active voice whereever it made sense to do so, and
+                              make technical corrections in the help text,
+                              including coverage of exceptions that I discovered
+                              was missing.
     ============================================================================
 */
 
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
-using System.Text;
 
-using WizardWrx;
 
 namespace WizardWrx.EmbeddedTextFile
 {
@@ -93,8 +96,8 @@ namespace WizardWrx.EmbeddedTextFile
 		/// the assembly as a embedded resource into an array of native strings.
 		/// </summary>
 		/// <param name="pstrResourceName">
-		/// Specify the fully qualified resource name, which is its source file
-		/// name appended to the default application namespace.
+		/// Specify the absolute (fully qualified) resource name, which is its
+        /// source file name appended to the default assembly namespace.
 		/// </param>
 		/// <returns>
 		/// The return value is an array of Unicode strings, each of which is
@@ -140,8 +143,8 @@ namespace WizardWrx.EmbeddedTextFile
 		/// strings.
 		/// </summary>
 		/// <param name="pstrResourceName">
-		/// Specify the fully qualified resource name, which is its source file
-		/// name appended to the default application namespace.
+		/// Specify the absolute (fully qualified) resource name, which is its
+        /// source file name appended to the default assembly namespace name.
 		/// </param>
 		/// <param name="pasmSource">
 		/// Pass in a reference to the Assembly from which you expect to load
@@ -186,34 +189,42 @@ namespace WizardWrx.EmbeddedTextFile
 		}   // LoadTextFileFromAnyAssembly
 
 
-		/// <summary>
-		/// Load the named embedded binary resource into a byte array.
-		/// </summary>
-		/// <param name="pstrResourceName">
-		/// Specify the external name of the file as it appears in the source
-		/// file tree and the Solution Explorer.
-		/// </param>
-		/// <param name="pasmSource">
-		/// Supply a System.Reflection.Assembly reference to the assembly that
-		/// contains the embedded resource.
-		/// </param>
-		/// <returns>
-		/// If the function succeeds, it returns a byte array containing the raw
-		/// bytes that comprise the embedded resource. Hence, this method can
-		/// load ANY embedded resource.
-		/// </returns>
-		/// <remarks>
-		/// Since all other resource types ultimately come out as byte arrays,
-		/// the text file loaders call upon this routine to extract their data.
-		///
-		/// The notes in the cited reference refreshed my memory of observations
-		/// that I made and documented a couple of weeks ago. However, it was a
-		/// lot easier to let Google find a reference document, which was
-		/// probably intended for students in the Computer Science department at
-		/// Columbia University, at http://www1.cs.columbia.edu/~lok/csharp/refdocs/System.IO/types/Stream.html"/>,
-		/// than find my own source.
-		/// </remarks>
-		public static byte [ ] LoadBinaryResourceFromAnyAssembly (
+        /// <summary>
+        /// Load the named embedded binary resource into a byte array.
+        /// </summary>
+        /// <param name="pstrResourceName">
+        /// Specify the external name of the file as it appears in the source
+        /// file tree and the Solution Explorer.
+        /// </param>
+        /// <param name="pasmSource">
+        /// Supply a System.Reflection.Assembly reference to the assembly that
+        /// contains the embedded resource.
+        /// </param>
+        /// <returns>
+        /// If the function succeeds, it returns a byte array containing the raw
+        /// bytes that comprise the embedded resource. Hence, this method can
+        /// load ANY embedded resource.
+        /// </returns>
+        /// <remarks>
+        /// Since all other resource types ultimately come out as byte arrays,
+        /// the text file loaders call upon this routine to extract their data.
+        ///
+        /// The notes in the cited reference refreshed my memory of observations
+        /// that I made and documented a couple of weeks ago. However, it was a
+        /// lot easier to let Google find a reference document, which was
+        /// intended for students in the Computer Science department at Columbia
+        /// University, at http://www1.cs.columbia.edu/~lok/csharp/refdocs/System.IO/types/Stream.html"/>,
+        /// than find my own source.
+        /// </remarks>
+        /// <exception cref="Exception">
+        /// An Exception (the base Exception type) arises when the method is
+        /// called with a <paramref name="pstrResourceName"/> value that cannot
+        /// be found in the <paramref name="pasmSource"/> assembly. When the
+        /// exception arises during the read operation, the generic Exception
+        /// wraps an InvalidDataException exception, which is returned as its
+        /// InnnerException property.
+        /// </exception>
+        public static byte [ ] LoadBinaryResourceFromAnyAssembly (
 			string pstrResourceName ,
 			Assembly pasmSource )
 		{
@@ -340,6 +351,7 @@ namespace WizardWrx.EmbeddedTextFile
 			}   // Try/Catch/Finally block
 		}   // LoadBinaryResourceFromAnyAssembly
 
+
 		/// <summary>
 		/// Transform an array of bytes, each representing one ANSI character, into a string.
 		/// </summary>
@@ -347,7 +359,7 @@ namespace WizardWrx.EmbeddedTextFile
 		/// Specify the array to transform.
 		/// </param>
 		/// <returns>
-		/// The specified array is returned as a string.
+		/// The <paramref name="pabytWholeFile"/> array is returned as a string.
 		/// </returns>
 		/// <remarks>
 		/// I did this refactoring, thinking that I had a new use for the code,

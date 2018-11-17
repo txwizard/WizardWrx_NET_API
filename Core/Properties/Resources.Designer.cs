@@ -19,7 +19,7 @@ namespace WizardWrx.Core.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -147,6 +147,15 @@ namespace WizardWrx.Core.Properties {
         internal static string ERRMSG_DUPLICATE_SWITCH {
             get {
                 return ResourceManager.GetString("ERRMSG_DUPLICATE_SWITCH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}{3}    Input Value   = {1}{3}    Expected Type = {2}{3}.
+        /// </summary>
+        internal static string ERRMSG_ENUMERATION_CONVERSION {
+            get {
+                return ResourceManager.GetString("ERRMSG_ENUMERATION_CONVERSION", resourceCulture);
             }
         }
         

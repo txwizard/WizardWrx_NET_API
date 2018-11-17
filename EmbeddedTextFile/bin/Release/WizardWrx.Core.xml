@@ -3540,6 +3540,11 @@
               Looks up a localized string similar to Switch {0} with a default value of {1} is a duplicate..
             </summary>
         </member>
+        <member name="P:WizardWrx.Core.Properties.Resources.ERRMSG_ENUMERATION_CONVERSION">
+            <summary>
+              Looks up a localized string similar to {0}{3}    Input Value   = {1}{3}    Expected Type = {2}{3}.
+            </summary>
+        </member>
         <member name="P:WizardWrx.Core.Properties.Resources.ERRMSG_EXCEPTION_IN_DEFINE_NEW_SWITCH">
             <summary>
               Looks up a localized string similar to An {0} Exception was caught while attempting to define a switch named {1} with a default value of {2}..
@@ -5442,6 +5447,149 @@
             The C# implementation is not quite as neat as the C/C++ macro.
             </remarks>
         </member>
+        <member name="T:WizardWrx.MoreMath">
+            <summary>
+            This static class exposes methods that perform a variety of infrequently
+            used, but technically obscure or deceptively tricky mathematical
+            computations.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.MoreMath.EXCEPTION_ON_INVALID_INPUT">
+            <summary>
+            Use with IsGregorianLeapYear and IsValidGregorianYear to cause them
+            to throw an exception when either is fed an invalid Gregorian year,
+            rather than return FALSE.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.MoreMath.FALSE_ON_INVALID_INPUT">
+            <summary>
+            Use with IsGregorianLeapYear and IsValidGregorianYear to cause them
+            to suppress the ArgumentOutOfRange exception when either is fed an
+            invalid Gregorian year; instead, both return FALSE.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.MoreMath.GRGORIAN_CALENDAR_ADOPTION_YEAR">
+            <summary>
+            Year values must be greater than this value. Callers may use this
+            constant to perform their own validations, or for other
+            purposes.
+            
+            The Gregorian calendar was adopted in 1582. To be on the safe side,
+            this class rejects years prior to the following year, since, in its
+            present form, it cannot correctly process dates on the Julian
+            calendar that was in use before 1583.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int32,System.Int32)">
+            <summary>
+            Evaluate whether integer <paramref name="pintDividend"/> is evenly
+            divisible by integer <paramref name="pintDivisor"/>.
+            </summary>
+            <param name="pintDividend">
+            Specify the integer to evaluate for even divisibility against
+            <paramref name="pintDivisor"/>.
+            </param>
+            <param name="pintDivisor">
+            Specify the integer to determine whether integer
+            <paramref name="pintDividend"/> is evenly divisible.
+            </param>
+            <returns>
+            Return TRUE if integer <paramref name="pintDividend"/> is evenly
+            divisible by <paramref name="pintDivisor"/>.
+            
+            Otherwise, return FALSE.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int64,System.Int64)">
+            <summary>
+            Evaluate whether long integer <paramref name="plngDividend"/> is
+            evenly divisible by long integer <paramref name="plngDivisor"/>.
+            </summary>
+            <param name="plngDividend">
+            Specify the long integer to evaluate for even divisibility against
+            <paramref name="plngDivisor"/>.
+            </param>
+            <param name="plngDivisor">
+            Specify the long integer to determine whether long integer
+            <paramref name="plngDividend"/> is evenly divisible.
+            </param>
+            <returns>
+            Return TRUE if long integer <paramref name="plngDividend"/> is
+            evenly divisible by <paramref name="plngDivisor"/>. therwise, return
+            FALSE.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.MoreMath.IsGregorianLeapYear(System.Int32,System.Boolean)">
+            <summary>
+            Given a valid year, return True if the year is a leap year, else
+            return False.
+            
+            If the input year is invalid, an ArgumentOutOfRange exception is
+            thrown.
+            
+            According to the first reference cited below, the Grgorian
+            calendar was adopted in 1582. Hence, this formula is invalid for
+            years before 1583. Consequently, any year before 1583 is treated
+            as invalid, and an ArgumentOutOfRange exception is thrown, which is
+            enforced by the IsValidGregorianYear method.
+            </summary>
+            <param name="pintYear">
+            Gregorian year number, greater than 1582, to evaluate
+            </param>
+            <param name="pfThrowError">
+            Specify FALSE_ON_INVALID_INPUT to suppress the default behavior,
+            which is for IsValidGregorianYear, when called upon to validate
+            <paramref name="pintYear"/>, to throw an ArgumentOutOfRangeException
+            exception. The default value is EXCEPTION_ON_INVALID_INPUT (true).
+            </param>
+            <returns>
+            TRUE if <paramref name="pintYear"/> is a leap year, else FALSE.
+            </returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            An ArgumentOutOfRangeException exception arises when 
+            <paramref name="pintYear"/> is an invalid Gregorian year, unless
+            <paramref name="pfThrowError"/> is EXCEPTION_ON_INVALID_INPUT
+            (false), in which case, the method return FALSE.
+            </exception>
+            <see href="https://www.tondering.dk/claus/cal/christian.php"/>
+            <see href="https://support.microsoft.com/en-us/help/214019/method-to-determine-whether-a-year-is-a-leap-year"/>
+        </member>
+        <member name="M:WizardWrx.MoreMath.IsValidGregorianYear(System.Int32,System.Boolean)">
+            <summary>
+            This method returns True if the year is valid for the Gregorian
+            calendar.
+            
+            The lower limit is exposed as a public constant,
+            GRGORIAN_CALENDAR_ADOPTION_YEAR.
+            </summary>
+            /// <param name="pintYear">
+            Gregorian year number, greater than 1582, to evaluate
+            </param>
+            <param name="pfThrowError">
+            TRUE if caller wants an invalid input to provoke an exception.
+            
+            To inprove the quality of your internal documentation, You may use
+            public constant EXCEPTION_ON_INVALID_INPUT in lieu of TRUE, and
+            RETURN_ON_INVALID_INPUT in lieu of FALSE.
+            </param>
+            <returns>
+            TRUE if the input is a valid Gregorian year.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.MoreMath.CreateYearOutOfRangeMsg(System.Int32)">
+            <summary>
+            This method returns a string that contains the value, and the
+            upper and lower limits that it must meet, according to the rules
+            against which it was evaluated.
+            </summary>
+            <param name="pintBadYear">
+            Invalid Gregorian year that provoked the error.
+            </param>
+            <returns>
+            The returned string is a message, suitable for use as the Message
+            argument to an ArgumentOutOfRange exception constructor.
+            </returns>
+        </member>
         <member name="T:WizardWrx.NumberFormatters">
             <summary>
             This static class exposes methods to further simplify formatting of
@@ -6753,6 +6901,10 @@
             methods visible, importing the root WizardWrx namespace, accompanied by
             a reference to WizardWrx.Core, makes these methods visible on every
             instance of System.string.
+            
+            Rather than create ane entirely new class to support one small method, I
+            extended this class to cover RenderEvenWhenNull, even though it is a
+            generic method.
             </summary>
         </member>
         <member name="F:WizardWrx.StringExtensions.DEFAULT_TOKEN_DELM">
@@ -7028,6 +7180,35 @@
             The returned string is guaranteed to end with the specified character.
             </returns>
         </member>
+        <member name="M:WizardWrx.StringExtensions.EnumFromString``1(System.String)">
+            <summary>
+            Convert a string to the equivalent instance of a specified
+            enumeration type.
+            </summary>
+            <typeparam name="T">
+            The specified type must be a valid Enum type. The method infers the
+            type from the value specified in angle brackets following the method
+            name in the invocation.
+            </typeparam>
+            <param name="pstrEnumAsString">
+            Specify the string to convert.
+            </param>
+            <returns>
+            If the function succeeds, the return value is a member of the
+            specified enumeration.
+            </returns>
+            <exception cref="T:System.InvalidOperationException">
+            An InvalidOperationException exception arises when the input string
+            cannot be converted. The message specifies the expected type and the
+            failing input value, along with the Message property on the original
+            FormatException excetpion, which is preserved as the InnerException
+            property on the thrown InvalidOperationException.
+            </exception>
+            <remarks>
+            This method requires version 7.3 or later of the C# compiler, for
+            which the project configuration contains a setting.
+            </remarks>
+        </member>
         <member name="M:WizardWrx.StringExtensions.ExtractBetweenIndexOfs(System.String,System.Int32,System.Int32)">
             <summary>
             Extract the substring bounded by the characters at either end of it.
@@ -7272,38 +7453,38 @@
             </returns>
         </member>
         <member name="M:WizardWrx.StringExtensions.ParseCommentInHTMLComment(System.String)">
-            <summary>
-            Extract parameters, expressed as key-value pairs, from a standard
-            HTML comment.
-            </summary>
-            <param name="pstrInput">
-            String containing a well formed HTML comment, surrounding the
-            key-value pairs. If the string is not a well formed HTML comment,
-            with a single space between the comment delimiters and the body,
-            or the string is null or empty, the returned collection is empty.
-            </param>
-            <returns>
-            A NameValueCollection of parameter names and values, which may be
-            empty, but is guaranteed to be returned, empty or not.
-            </returns>
-            <example>
-            Parse this: <!-- ForPage=default;UseTable=False -->
+             <summary>
+             Extract parameters, expressed as key-value pairs, from a standard
+             HTML comment.
+             </summary>
+             <param name="pstrInput">
+             String containing a well formed HTML comment, surrounding the
+             key-value pairs. If the string is not a well formed HTML comment,
+             with a single space between the comment delimiters and the body,
+             or the string is null or empty, the returned collection is empty.
+             </param>
+             <returns>
+             A NameValueCollection of parameter names and values, which may be
+             empty, but is guaranteed to be returned, empty or not.
+             </returns>
+             <example>
+             <code>
+             Parse this: &lt;!-- ForPage=default;UseTable=False --&gt;
+             
+             Return this:
             
-            Return this:
-            
-            		=======================
-            		Name		Value
-            		-----------	-----------
-            		ForPage		default
-            		UseTable	False
-            		=======================
-            		
-            The returned NameValueCollection contains two members.
-            
-            Since this method guarantees to return an initialized
-            NameValueCollection, the empty collection is allocated by the first
-            statement, and is unconditionally returned by the last statement.
-            </example>
+            			=======================
+            			Name		Value
+            			-----------	-----------
+            			ForPage		default
+            			UseTable	False
+            			=======================
+             </code>
+             <para>The returned NameValueCollection contains two members.</para>
+             <para>Since this method guarantees to return an initialized
+             NameValueCollection, the empty collection is allocated by the first
+             statement, and is unconditionally returned by the last statement.</para>
+             </example>
         </member>
         <member name="M:WizardWrx.StringExtensions.QuoteString(System.String)">
             <summary>
@@ -7345,6 +7526,64 @@
             The return value is a new string with ending quotes, if present,
             removed. Otherwise, a copy of the original string is returned.
             </returns>
+        </member>
+        <member name="M:WizardWrx.StringExtensions.RenderEvenWhenNull``1(``0,System.String,System.String,System.IFormatProvider)">
+            <summary>
+            For any object of generic type T, return result from calling the
+            ToString method on it, unless the instance is a null reference of
+            type T. In that case, return either the supplied string or the
+            localizable default defined in the string resources expsed by the
+            WizardWrx.Common library.
+            </summary>
+            <typeparam name="T">
+            The specified type T must implement IFormattable.
+            </typeparam>
+            <param name="pgenericObject">
+            Pass in a reference to an object of the specified generic type, or a
+            null reference to that type.
+            </param>
+            <param name="pstrValueIfNull">
+            Use this optional string parameter to override the default value,
+            Common.Properties.Resources.MSG_OBJECT_REFERENCE_IS_NULL. Pass a
+            null referencr or omit the parameter to use the default string.
+            </param>
+            <param name="pstrFormatString">
+            Use this optional string parameter to override the default format of
+            the value returned by the instance ToString method.
+            
+            Please see the Remarks.
+            </param>
+            <param name="pformatProvider">
+            Use this optional parameter to override the default format provider
+            used by the instance ToString method.
+            
+            Please see the Remarks.
+            </param>
+            <returns>
+            If <paramref name="pgenericObject"/> is a null reference, return
+            Common.Properties.Resources.MSG_OBJECT_REFERENCE_IS_NULL if
+            <paramref name="pstrValueIfNull"/> is also a null reference.
+            
+            If <paramref name="pgenericObject"/> is a null reference and 
+            <paramref name="pstrValueIfNull"/> is not, return
+            <paramref name="pstrValueIfNull"/>.
+            
+            Finally, if <paramref name="pgenericObject"/> is not null, call its
+            ToString method.
+            
+            Please see the Remarks.
+            </returns>
+            <remarks>
+            Because this method is generic, it can call the ToString override on
+            any object that explicitly implements the IFormattable interface, so
+            you derive the benefits of any such override.
+            
+            The optional <paramref name="pstrFormatString"/> and 
+            <paramref name="pformatProvider"/> arguments work in
+            tandem with the override on the instance ToString method. To use it
+            and the default null reference representation, pass a null reference
+            as the value of <paramref name="pstrValueIfNull"/>.
+            </remarks>
         </member>
         <member name="M:WizardWrx.StringExtensions.ReplaceTokensFromList(System.String,System.Collections.Specialized.NameValueCollection)">
             <summary>

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class StringExtensions
    ">
-    <meta name="generator" content="docfx 2.39.1.0">
+    <meta name="generator" content="docfx 2.40.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -80,6 +80,9 @@ derived from long established routines in companion class StringTricks.</p>
 methods visible, importing the root WizardWrx namespace, accompanied by
 a reference to WizardWrx.Core, makes these methods visible on every
 instance of System.string.</p>
+<p>Rather than create ane entirely new class to support one small method, I
+extended this class to cover RenderEvenWhenNull, even though it is a
+generic method.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -119,8 +122,13 @@ instance of System.string.</p>
   </div>
   <h3 id="fields">Fields
   </h3>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_DEFAULT_TOKEN_DELM.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.DEFAULT_TOKEN_DELM%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L141">View Source</a>
+  </span>
   <h4 id="WizardWrx_StringExtensions_DEFAULT_TOKEN_DELM" data-uid="WizardWrx.StringExtensions.DEFAULT_TOKEN_DELM">DEFAULT_TOKEN_DELM</h4>
   <div class="markdown level1 summary"><p>Default token terminator string used by the version of public static
 method, MakeToken, which takes one argument.</p>
@@ -147,8 +155,13 @@ method, MakeToken, which takes one argument.</p>
   </table>
   <h3 id="methods">Methods
   </h3>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_AppendFullStopIfMissing_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.AppendFullStopIfMissing(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L157">View Source</a>
+  </span>
   <a id="WizardWrx_StringExtensions_AppendFullStopIfMissing_" data-uid="WizardWrx.StringExtensions.AppendFullStopIfMissing*"></a>
   <h4 id="WizardWrx_StringExtensions_AppendFullStopIfMissing_System_String_" data-uid="WizardWrx.StringExtensions.AppendFullStopIfMissing(System.String)">AppendFullStopIfMissing(String)</h4>
   <div class="markdown level1 summary"><p>Unless the last character of the input string is a period (full
@@ -194,8 +207,13 @@ has one, the input string is returned unchanged.</p>
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_ArrayOfOne_System_Char_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.ArrayOfOne(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L182">View Source</a>
+  </span>
   <a id="WizardWrx_StringExtensions_ArrayOfOne_" data-uid="WizardWrx.StringExtensions.ArrayOfOne*"></a>
   <h4 id="WizardWrx_StringExtensions_ArrayOfOne_System_Char_" data-uid="WizardWrx.StringExtensions.ArrayOfOne(System.Char)">ArrayOfOne(Char)</h4>
   <div class="markdown level1 summary"><p>Return a one-element array containing the input character, for use
@@ -242,8 +260,13 @@ character.</p>
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_ArrayOfOne_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.ArrayOfOne(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L199">View Source</a>
+  </span>
   <a id="WizardWrx_StringExtensions_ArrayOfOne_" data-uid="WizardWrx.StringExtensions.ArrayOfOne*"></a>
   <h4 id="WizardWrx_StringExtensions_ArrayOfOne_System_String_" data-uid="WizardWrx.StringExtensions.ArrayOfOne(System.String)">ArrayOfOne(String)</h4>
   <div class="markdown level1 summary"><p>Return a one-element array containing the input string, for use
@@ -290,8 +313,13 @@ string.</p>
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_CapitalizeWords_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.CapitalizeWords(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L218">View Source</a>
+  </span>
   <a id="WizardWrx_StringExtensions_CapitalizeWords_" data-uid="WizardWrx.StringExtensions.CapitalizeWords*"></a>
   <h4 id="WizardWrx_StringExtensions_CapitalizeWords_System_String_" data-uid="WizardWrx.StringExtensions.CapitalizeWords(System.String)">CapitalizeWords(String)</h4>
   <div class="markdown level1 summary"><p>Return the input string with each word capitalized.</p>
@@ -337,8 +365,13 @@ coerced to lower case.</p>
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_Chop_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.Chop(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L278">View Source</a>
+  </span>
   <a id="WizardWrx_StringExtensions_Chop_" data-uid="WizardWrx.StringExtensions.Chop*"></a>
   <h4 id="WizardWrx_StringExtensions_Chop_System_String_" data-uid="WizardWrx.StringExtensions.Chop(System.String)">Chop(String)</h4>
   <div class="markdown level1 summary"><p>Return a new string with the terminal newline, if present, removed.</p>
@@ -389,8 +422,13 @@ the following items is treated as a newline.</p>
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_CountCharacterOccurrences_System_String_System_Char_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.CountCharacterOccurrences(System.String%2CSystem.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L347">View Source</a>
+  </span>
   <a id="WizardWrx_StringExtensions_CountCharacterOccurrences_" data-uid="WizardWrx.StringExtensions.CountCharacterOccurrences*"></a>
   <h4 id="WizardWrx_StringExtensions_CountCharacterOccurrences_System_String_System_Char_" data-uid="WizardWrx.StringExtensions.CountCharacterOccurrences(System.String,System.Char)">CountCharacterOccurrences(String, Char)</h4>
   <div class="markdown level1 summary"><p>Strangely, the String class is missing an important static method to
@@ -461,8 +499,13 @@ I have immediate plans to implement one, though it wouldn't be hard.</p>
 its second argument is a single character, which CANNOT be the NULL
 character.</p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_CountSubstrings_System_String_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.CountSubstrings(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L425">View Source</a>
+  </span>
   <a id="WizardWrx_StringExtensions_CountSubstrings_" data-uid="WizardWrx.StringExtensions.CountSubstrings*"></a>
   <h4 id="WizardWrx_StringExtensions_CountSubstrings_System_String_System_String_" data-uid="WizardWrx.StringExtensions.CountSubstrings(System.String,System.String)">CountSubstrings(String, String)</h4>
   <div class="markdown level1 summary"><p>Strangely, the String class is missing an important static method to
@@ -533,8 +576,13 @@ an additional argument through which to specify a string comparison
 algorithm, since the algorithms required to implement both are
 otherwise identical.</p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_CountSubstrings_System_String_System_String_System_StringComparison_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.CountSubstrings(System.String%2CSystem.String%2CSystem.StringComparison)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L472">View Source</a>
+  </span>
   <a id="WizardWrx_StringExtensions_CountSubstrings_" data-uid="WizardWrx.StringExtensions.CountSubstrings*"></a>
   <h4 id="WizardWrx_StringExtensions_CountSubstrings_System_String_System_String_System_StringComparison_" data-uid="WizardWrx.StringExtensions.CountSubstrings(System.String,System.String,System.StringComparison)">CountSubstrings(String, String, StringComparison)</h4>
   <div class="markdown level1 summary"><p>Strangely, the String class is missing an important static method to
@@ -609,8 +657,13 @@ have yet to make use. There is currently no implementation of the
 overloads that stops looking after scanning count characters, nor do
 I have immediate plans to implement one, though it wouldn't be hard.</p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_CountUnresolvedEnvironmentStrings_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.CountUnresolvedEnvironmentStrings(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L590">View Source</a>
+  </span>
   <a id="WizardWrx_StringExtensions_CountUnresolvedEnvironmentStrings_" data-uid="WizardWrx.StringExtensions.CountUnresolvedEnvironmentStrings*"></a>
   <h4 id="WizardWrx_StringExtensions_CountUnresolvedEnvironmentStrings_System_String_" data-uid="WizardWrx.StringExtensions.CountUnresolvedEnvironmentStrings(System.String)">CountUnresolvedEnvironmentStrings(String)</h4>
   <div class="markdown level1 summary"><p>Scan a string for environment string delimiter characters left
@@ -675,8 +728,13 @@ this routine is syntactic sugar.</p>
   <div class="seealso">
       <div><a class="xref" href="WizardWrx.StringExtensions.html#WizardWrx_StringExtensions_ReportUnresolvedEnvironmentStrings_System_String_System_UInt32_System_UInt32_">ReportUnresolvedEnvironmentStrings(String, UInt32, UInt32)</a></div>
   </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_EncloseInChar_System_String_System_Char_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.EncloseInChar(System.String%2CSystem.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L615">View Source</a>
+  </span>
   <a id="WizardWrx_StringExtensions_EncloseInChar_" data-uid="WizardWrx.StringExtensions.EncloseInChar*"></a>
   <h4 id="WizardWrx_StringExtensions_EncloseInChar_System_String_System_Char_" data-uid="WizardWrx.StringExtensions.EncloseInChar(System.String,System.Char)">EncloseInChar(String, Char)</h4>
   <div class="markdown level1 summary"><p>Append a specified character to both ends of a string, unless it is
@@ -731,8 +789,13 @@ one of the character specified in pchrEnd at each end.</p>
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_EnsureFirstCharIs_System_String_System_Char_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.EnsureFirstCharIs(System.String%2CSystem.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L652">View Source</a>
+  </span>
   <a id="WizardWrx_StringExtensions_EnsureFirstCharIs_" data-uid="WizardWrx.StringExtensions.EnsureFirstCharIs*"></a>
   <h4 id="WizardWrx_StringExtensions_EnsureFirstCharIs_System_String_System_Char_" data-uid="WizardWrx.StringExtensions.EnsureFirstCharIs(System.String,System.Char)">EnsureFirstCharIs(String, Char)</h4>
   <div class="markdown level1 summary"><p>Return a string that is guaranteed to start with a specified character.</p>
@@ -781,8 +844,13 @@ one of the character specified in pchrEnd at each end.</p>
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_EnsureLastCharIs_System_String_System_Char_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.EnsureLastCharIs(System.String%2CSystem.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L687">View Source</a>
+  </span>
   <a id="WizardWrx_StringExtensions_EnsureLastCharIs_" data-uid="WizardWrx.StringExtensions.EnsureLastCharIs*"></a>
   <h4 id="WizardWrx_StringExtensions_EnsureLastCharIs_System_String_System_Char_" data-uid="WizardWrx.StringExtensions.EnsureLastCharIs(System.String,System.Char)">EnsureLastCharIs(String, Char)</h4>
   <div class="markdown level1 summary"><p>Return a string that is guaranteed to end with a specified character.</p>
@@ -831,8 +899,108 @@ one of the character specified in pchrEnd at each end.</p>
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_EnumFromString__1_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.EnumFromString%60%601(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L739">View Source</a>
+  </span>
+  <a id="WizardWrx_StringExtensions_EnumFromString_" data-uid="WizardWrx.StringExtensions.EnumFromString*"></a>
+  <h4 id="WizardWrx_StringExtensions_EnumFromString__1_System_String_" data-uid="WizardWrx.StringExtensions.EnumFromString``1(System.String)">EnumFromString&lt;T&gt;(String)</h4>
+  <div class="markdown level1 summary"><p>Convert a string to the equivalent instance of a specified
+enumeration type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static T EnumFromString&lt;T&gt;(this string pstrEnumAsString)
+    where T : Enum</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrEnumAsString</span></td>
+        <td><p>Specify the string to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>If the function succeeds, the return value is a member of the
+specified enumeration.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The specified type must be a valid Enum type. The method infers the
+type from the value specified in angle brackets following the method
+name in the invocation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_StringExtensions_EnumFromString__1_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method requires version 7.3 or later of the C# compiler, for
+which the project configuration contains a setting.</p>
+</div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.InvalidOperationException</span></td>
+        <td><p>An InvalidOperationException exception arises when the input string
+cannot be converted. The message specifies the expected type and the
+failing input value, along with the Message property on the original
+FormatException excetpion, which is preserved as the InnerException
+property on the thrown InvalidOperationException.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_ExtractBetweenIndexOfs_System_String_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.ExtractBetweenIndexOfs(System.String%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L808">View Source</a>
+  </span>
   <a id="WizardWrx_StringExtensions_ExtractBetweenIndexOfs_" data-uid="WizardWrx.StringExtensions.ExtractBetweenIndexOfs*"></a>
   <h4 id="WizardWrx_StringExtensions_ExtractBetweenIndexOfs_System_String_System_Int32_System_Int32_" data-uid="WizardWrx.StringExtensions.ExtractBetweenIndexOfs(System.String,System.Int32,System.Int32)">ExtractBetweenIndexOfs(String, Int32, Int32)</h4>
   <div class="markdown level1 summary"><p>Extract the substring bounded by the characters at either end of it.</p>
@@ -894,8 +1062,13 @@ character before the right hand bounding character.</p>
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_ExtractBetweenIndexOfs_System_String_System_String_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.ExtractBetweenIndexOfs(System.String%2CSystem.String%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L861">View Source</a>
+  </span>
   <a id="WizardWrx_StringExtensions_ExtractBetweenIndexOfs_" data-uid="WizardWrx.StringExtensions.ExtractBetweenIndexOfs*"></a>
   <h4 id="WizardWrx_StringExtensions_ExtractBetweenIndexOfs_System_String_System_String_System_Int32_System_Int32_" data-uid="WizardWrx.StringExtensions.ExtractBetweenIndexOfs(System.String,System.String,System.Int32,System.Int32)">ExtractBetweenIndexOfs(String, String, Int32, Int32)</h4>
   <div class="markdown level1 summary"><p>Extract the substring bounded by the characters at either end of it.</p>
@@ -969,8 +1142,13 @@ returned.</p>
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_ExtractBoundedSubstrings_System_String_System_Char_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.ExtractBoundedSubstrings(System.String%2CSystem.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L910">View Source</a>
+  </span>
   <a id="WizardWrx_StringExtensions_ExtractBoundedSubstrings_" data-uid="WizardWrx.StringExtensions.ExtractBoundedSubstrings*"></a>
   <h4 id="WizardWrx_StringExtensions_ExtractBoundedSubstrings_System_String_System_Char_" data-uid="WizardWrx.StringExtensions.ExtractBoundedSubstrings(System.String,System.Char)">ExtractBoundedSubstrings(String, Char)</h4>
   <div class="markdown level1 summary"><p>Extract a substring that is bounded by a character. See Remarks.</p>
@@ -1029,8 +1207,13 @@ the next overload.</p>
 run-time exceptions. If anything is out of order, an empty string is
 returned.</p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_ExtractBoundedSubstrings_System_String_System_Char_System_Char_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.ExtractBoundedSubstrings(System.String%2CSystem.Char%2CSystem.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L966">View Source</a>
+  </span>
   <a id="WizardWrx_StringExtensions_ExtractBoundedSubstrings_" data-uid="WizardWrx.StringExtensions.ExtractBoundedSubstrings*"></a>
   <h4 id="WizardWrx_StringExtensions_ExtractBoundedSubstrings_System_String_System_Char_System_Char_" data-uid="WizardWrx.StringExtensions.ExtractBoundedSubstrings(System.String,System.Char,System.Char)">ExtractBoundedSubstrings(String, Char, Char)</h4>
   <div class="markdown level1 summary"><p>Extract a substring that is bounded by a character. See Remarks.</p>
@@ -1098,8 +1281,13 @@ character, use the previous overload.</p>
 run-time exceptions. If anything is out of order, the empty string
 is returned.</p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_ExtractBoundedSubstrings_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.ExtractBoundedSubstrings(System.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L1027">View Source</a>
+  </span>
   <a id="WizardWrx_StringExtensions_ExtractBoundedSubstrings_" data-uid="WizardWrx.StringExtensions.ExtractBoundedSubstrings*"></a>
   <h4 id="WizardWrx_StringExtensions_ExtractBoundedSubstrings_System_String_System_String_System_String_" data-uid="WizardWrx.StringExtensions.ExtractBoundedSubstrings(System.String,System.String,System.String)">ExtractBoundedSubstrings(String, String, String)</h4>
   <div class="markdown level1 summary"><p>Extract a substring that is bounded by a pair of substrings. See
@@ -1168,8 +1356,13 @@ substring, use the same value for the second and third arguments.</p>
 run-time exceptions. If anything is out of order, an empty string is
 returned.</p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_LeftPadNChars_System_String_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.LeftPadNChars(System.String%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L1093">View Source</a>
+  </span>
   <a id="WizardWrx_StringExtensions_LeftPadNChars_" data-uid="WizardWrx.StringExtensions.LeftPadNChars*"></a>
   <h4 id="WizardWrx_StringExtensions_LeftPadNChars_System_String_System_Int32_" data-uid="WizardWrx.StringExtensions.LeftPadNChars(System.String,System.Int32)">LeftPadNChars(String, Int32)</h4>
   <div class="markdown level1 summary"><p>Left pad the string with a specified number of spaces.</p>
@@ -1232,8 +1425,13 @@ string is truly padded with a specific number of characters.</p>
 naming convention so that they conform to the naming convention of
 the Base Class Library methods that they wrap.</p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_LeftPadNChars_System_String_System_Int32_System_Char_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.LeftPadNChars(System.String%2CSystem.Int32%2CSystem.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L1135">View Source</a>
+  </span>
   <a id="WizardWrx_StringExtensions_LeftPadNChars_" data-uid="WizardWrx.StringExtensions.LeftPadNChars*"></a>
   <h4 id="WizardWrx_StringExtensions_LeftPadNChars_System_String_System_Int32_System_Char_" data-uid="WizardWrx.StringExtensions.LeftPadNChars(System.String,System.Int32,System.Char)">LeftPadNChars(String, Int32, Char)</h4>
   <div class="markdown level1 summary"><p>Left pad the string with a specified number of some arbitrary
@@ -1303,8 +1501,13 @@ string is truly padded with a specific number of characters.</p>
 naming convention so that they conform to the naming convention of
 the Base Class Library methods that they wrap.</p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_MakeToken_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.MakeToken(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L1167">View Source</a>
+  </span>
   <a id="WizardWrx_StringExtensions_MakeToken_" data-uid="WizardWrx.StringExtensions.MakeToken*"></a>
   <h4 id="WizardWrx_StringExtensions_MakeToken_System_String_" data-uid="WizardWrx.StringExtensions.MakeToken(System.String)">MakeToken(String)</h4>
   <div class="markdown level1 summary"><p>Given a string containing the name of a form control (field) or
@@ -1355,8 +1558,13 @@ holder. See Remarks.</p>
 which is a pair of dollar signs, to each end of the string.</p>
 <p>The token is exposed as a static property, DEFAULT_TOKEN_DELM.</p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_MakeToken_System_String_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.MakeToken(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L1196">View Source</a>
+  </span>
   <a id="WizardWrx_StringExtensions_MakeToken_" data-uid="WizardWrx.StringExtensions.MakeToken*"></a>
   <h4 id="WizardWrx_StringExtensions_MakeToken_System_String_System_String_" data-uid="WizardWrx.StringExtensions.MakeToken(System.String,System.String)">MakeToken(String, String)</h4>
   <div class="markdown level1 summary"><p>Given a string containing the name of a form control (field) or
@@ -1411,8 +1619,13 @@ argument pstrFieldName.</p>
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_ParseCommentInHTMLComment_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.ParseCommentInHTMLComment(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L1247">View Source</a>
+  </span>
   <a id="WizardWrx_StringExtensions_ParseCommentInHTMLComment_" data-uid="WizardWrx.StringExtensions.ParseCommentInHTMLComment*"></a>
   <h4 id="WizardWrx_StringExtensions_ParseCommentInHTMLComment_System_String_" data-uid="WizardWrx.StringExtensions.ParseCommentInHTMLComment(System.String)">ParseCommentInHTMLComment(String)</h4>
   <div class="markdown level1 summary"><p>Extract parameters, expressed as key-value pairs, from a standard
@@ -1462,20 +1675,28 @@ empty, but is guaranteed to be returned, empty or not.</p>
     </tbody>
   </table>
   <h5 id="WizardWrx_StringExtensions_ParseCommentInHTMLComment_System_String__examples">Examples</h5>
-  <p>Parse this: <!-- ForPage=default;UseTable=False --></p>
-<p>Return this:</p>
-<p>=======================
-Name		Value</p>
-<hr>
-<h1 id="forpagedefaultusetablefalse">ForPage		default
-UseTable	False</h1>
+  <pre><code>Parse this: &lt;!-- ForPage=default;UseTable=False -->
+
+Return this:
+
+		=======================
+		Name		Value
+		-----------	-----------
+		ForPage		default
+		UseTable	False
+		=======================</code></pre>
 <p>The returned NameValueCollection contains two members.</p>
 <p>Since this method guarantees to return an initialized
 NameValueCollection, the empty collection is allocated by the first
 statement, and is unconditionally returned by the last statement.</p>
 
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_QuoteString_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.QuoteString(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L1304">View Source</a>
+  </span>
   <a id="WizardWrx_StringExtensions_QuoteString_" data-uid="WizardWrx.StringExtensions.QuoteString*"></a>
   <h4 id="WizardWrx_StringExtensions_QuoteString_System_String_" data-uid="WizardWrx.StringExtensions.QuoteString(System.String)">QuoteString(String)</h4>
   <div class="markdown level1 summary"><p>Append a quote character to both ends of a string, unless it is
@@ -1521,8 +1742,13 @@ specified in pchrEnd.</p>
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_RemoveEndChars_System_String_System_Char_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.RemoveEndChars(System.String%2CSystem.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L1327">View Source</a>
+  </span>
   <a id="WizardWrx_StringExtensions_RemoveEndChars_" data-uid="WizardWrx.StringExtensions.RemoveEndChars*"></a>
   <h4 id="WizardWrx_StringExtensions_RemoveEndChars_System_String_System_Char_" data-uid="WizardWrx.StringExtensions.RemoveEndChars(System.String,System.Char)">RemoveEndChars(String, Char)</h4>
   <div class="markdown level1 summary"><p>Remove ending character, such as brackets, from a string, if present.</p>
@@ -1573,8 +1799,13 @@ specified in pchrEnd.</p>
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_RemoveEndQuotes_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.RemoveEndQuotes(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L1395">View Source</a>
+  </span>
   <a id="WizardWrx_StringExtensions_RemoveEndQuotes_" data-uid="WizardWrx.StringExtensions.RemoveEndQuotes*"></a>
   <h4 id="WizardWrx_StringExtensions_RemoveEndQuotes_System_String_" data-uid="WizardWrx.StringExtensions.RemoveEndQuotes(System.String)">RemoveEndQuotes(String)</h4>
   <div class="markdown level1 summary"><p>Remove ending quotation marks from a string, if present.</p>
@@ -1620,8 +1851,127 @@ removed. Otherwise, a copy of the original string is returned.</p>
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_RenderEvenWhenNull__1___0_System_String_System_String_System_IFormatProvider_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.RenderEvenWhenNull%60%601(%60%600%2CSystem.String%2CSystem.String%2CSystem.IFormatProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L1460">View Source</a>
+  </span>
+  <a id="WizardWrx_StringExtensions_RenderEvenWhenNull_" data-uid="WizardWrx.StringExtensions.RenderEvenWhenNull*"></a>
+  <h4 id="WizardWrx_StringExtensions_RenderEvenWhenNull__1___0_System_String_System_String_System_IFormatProvider_" data-uid="WizardWrx.StringExtensions.RenderEvenWhenNull``1(``0,System.String,System.String,System.IFormatProvider)">RenderEvenWhenNull&lt;T&gt;(T, String, String, IFormatProvider)</h4>
+  <div class="markdown level1 summary"><p>For any object of generic type T, return result from calling the
+ToString method on it, unless the instance is a null reference of
+type T. In that case, return either the supplied string or the
+localizable default defined in the string resources expsed by the
+WizardWrx.Common library.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string RenderEvenWhenNull&lt;T&gt;(this T pgenericObject, string pstrValueIfNull = null, string pstrFormatString = null, IFormatProvider pformatProvider = null)
+    where T : IFormattable</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">pgenericObject</span></td>
+        <td><p>Pass in a reference to an object of the specified generic type, or a
+null reference to that type.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrValueIfNull</span></td>
+        <td><p>Use this optional string parameter to override the default value,
+Common.Properties.Resources.MSG_OBJECT_REFERENCE_IS_NULL. Pass a
+null referencr or omit the parameter to use the default string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrFormatString</span></td>
+        <td><p>Use this optional string parameter to override the default format of
+the value returned by the instance ToString method.</p>
+<p>Please see the Remarks.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IFormatProvider</span></td>
+        <td><span class="parametername">pformatProvider</span></td>
+        <td><p>Use this optional parameter to override the default format provider
+used by the instance ToString method.</p>
+<p>Please see the Remarks.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>If <code data-dev-comment-type="paramref" class="paramref">pgenericObject</code> is a null reference, return
+Common.Properties.Resources.MSG_OBJECT_REFERENCE_IS_NULL if
+<code data-dev-comment-type="paramref" class="paramref">pstrValueIfNull</code> is also a null reference.</p>
+<p>If <code data-dev-comment-type="paramref" class="paramref">pgenericObject</code> is a null reference and
+<code data-dev-comment-type="paramref" class="paramref">pstrValueIfNull</code> is not, return
+<code data-dev-comment-type="paramref" class="paramref">pstrValueIfNull</code>.</p>
+<p>Finally, if <code data-dev-comment-type="paramref" class="paramref">pgenericObject</code> is not null, call its
+ToString method.</p>
+<p>Please see the Remarks.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The specified type T must implement IFormattable.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_StringExtensions_RenderEvenWhenNull__1___0_System_String_System_String_System_IFormatProvider__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Because this method is generic, it can call the ToString override on
+any object that explicitly implements the IFormattable interface, so
+you derive the benefits of any such override.</p>
+<p>The optional <code data-dev-comment-type="paramref" class="paramref">pstrFormatString</code> and
+<code data-dev-comment-type="paramref" class="paramref">pformatProvider</code> arguments work in
+tandem with the override on the instance ToString method. To use it
+and the default null reference representation, pass a null reference
+as the value of <code data-dev-comment-type="paramref" class="paramref">pstrValueIfNull</code>.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_ReplaceTokensFromList_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.ReplaceTokensFromList(System.String%2CSystem.Collections.Generic.Dictionary%7BSystem.String%2CSystem.Object%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L1627">View Source</a>
+  </span>
   <a id="WizardWrx_StringExtensions_ReplaceTokensFromList_" data-uid="WizardWrx.StringExtensions.ReplaceTokensFromList*"></a>
   <h4 id="WizardWrx_StringExtensions_ReplaceTokensFromList_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="WizardWrx.StringExtensions.ReplaceTokensFromList(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">ReplaceTokensFromList(String, Dictionary&lt;String, Object&gt;)</h4>
   <div class="markdown level1 summary"><p>Given a string containing tokens of the form &quot;^^ListKeyValue^^&quot;
@@ -1680,8 +2030,13 @@ object in the pnvcList collection preserved.</p>
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_ReplaceTokensFromList_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__System_Collections_Generic_Dictionary_System_String_System_Object__.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.ReplaceTokensFromList(System.String%2CSystem.Collections.Generic.Dictionary%7BSystem.String%2CSystem.Object%7D%2CSystem.Collections.Generic.Dictionary%7BSystem.String%2CSystem.Object%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L1683">View Source</a>
+  </span>
   <a id="WizardWrx_StringExtensions_ReplaceTokensFromList_" data-uid="WizardWrx.StringExtensions.ReplaceTokensFromList*"></a>
   <h4 id="WizardWrx_StringExtensions_ReplaceTokensFromList_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="WizardWrx.StringExtensions.ReplaceTokensFromList(System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object})">ReplaceTokensFromList(String, Dictionary&lt;String, Object&gt;, Dictionary&lt;String, Object&gt;)</h4>
   <div class="markdown level1 summary"><p>Given a string containing tokens of the form &quot;^^ListKeyValue^^&quot;
@@ -1752,8 +2107,13 @@ object in the pnvcList OR the pdctDefaults collection preserved.</p>
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_ReplaceTokensFromList_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__System_Collections_Generic_Dictionary_System_String_System_Object__System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.ReplaceTokensFromList(System.String%2CSystem.Collections.Generic.Dictionary%7BSystem.String%2CSystem.Object%7D%2CSystem.Collections.Generic.Dictionary%7BSystem.String%2CSystem.Object%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L1820">View Source</a>
+  </span>
   <a id="WizardWrx_StringExtensions_ReplaceTokensFromList_" data-uid="WizardWrx.StringExtensions.ReplaceTokensFromList*"></a>
   <h4 id="WizardWrx_StringExtensions_ReplaceTokensFromList_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__System_Collections_Generic_Dictionary_System_String_System_Object__System_String_" data-uid="WizardWrx.StringExtensions.ReplaceTokensFromList(System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object},System.String)">ReplaceTokensFromList(String, Dictionary&lt;String, Object&gt;, Dictionary&lt;String, Object&gt;, String)</h4>
   <div class="markdown level1 summary"><p>Given a string containing tokens of the form &quot;^^ListKeyValue^^&quot;
@@ -1834,8 +2194,13 @@ object in the pnvcList OR the pdctDefaults collection preserved.</p>
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_ReplaceTokensFromList_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.ReplaceTokensFromList(System.String%2CSystem.Collections.Generic.Dictionary%7BSystem.String%2CSystem.Object%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L1750">View Source</a>
+  </span>
   <a id="WizardWrx_StringExtensions_ReplaceTokensFromList_" data-uid="WizardWrx.StringExtensions.ReplaceTokensFromList*"></a>
   <h4 id="WizardWrx_StringExtensions_ReplaceTokensFromList_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__System_String_" data-uid="WizardWrx.StringExtensions.ReplaceTokensFromList(System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.String)">ReplaceTokensFromList(String, Dictionary&lt;String, Object&gt;, String)</h4>
   <div class="markdown level1 summary"><p>Given a string containing tokens of the form &quot;^^ListKeyValue^^&quot;
@@ -1904,8 +2269,13 @@ object in the pnvcList collection preserved.</p>
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_ReplaceTokensFromList_System_String_System_Collections_Specialized_NameValueCollection_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.ReplaceTokensFromList(System.String%2CSystem.Collections.Specialized.NameValueCollection)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L1505">View Source</a>
+  </span>
   <a id="WizardWrx_StringExtensions_ReplaceTokensFromList_" data-uid="WizardWrx.StringExtensions.ReplaceTokensFromList*"></a>
   <h4 id="WizardWrx_StringExtensions_ReplaceTokensFromList_System_String_System_Collections_Specialized_NameValueCollection_" data-uid="WizardWrx.StringExtensions.ReplaceTokensFromList(System.String,System.Collections.Specialized.NameValueCollection)">ReplaceTokensFromList(String, NameValueCollection)</h4>
   <div class="markdown level1 summary"><p>Given a string containing tokens of the form &quot;^^ListKeyValue^^&quot;
@@ -1960,8 +2330,13 @@ object in the pnvcList collection preserved.</p>
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_ReplaceTokensFromList_System_String_System_Collections_Specialized_NameValueCollection_System_Collections_Specialized_NameValueCollection_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.ReplaceTokensFromList(System.String%2CSystem.Collections.Specialized.NameValueCollection%2CSystem.Collections.Specialized.NameValueCollection)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L1555">View Source</a>
+  </span>
   <a id="WizardWrx_StringExtensions_ReplaceTokensFromList_" data-uid="WizardWrx.StringExtensions.ReplaceTokensFromList*"></a>
   <h4 id="WizardWrx_StringExtensions_ReplaceTokensFromList_System_String_System_Collections_Specialized_NameValueCollection_System_Collections_Specialized_NameValueCollection_" data-uid="WizardWrx.StringExtensions.ReplaceTokensFromList(System.String,System.Collections.Specialized.NameValueCollection,System.Collections.Specialized.NameValueCollection)">ReplaceTokensFromList(String, NameValueCollection, NameValueCollection)</h4>
   <div class="markdown level1 summary"><p>Replace place holders (markers) with the value of the corresponding
@@ -2026,8 +2401,13 @@ variables collection. The same defaults collection is used for both.</p>
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_ReportUnresolvedEnvironmentStrings_System_String_System_UInt32_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.ReportUnresolvedEnvironmentStrings(System.String%2CSystem.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L1926">View Source</a>
+  </span>
   <a id="WizardWrx_StringExtensions_ReportUnresolvedEnvironmentStrings_" data-uid="WizardWrx.StringExtensions.ReportUnresolvedEnvironmentStrings*"></a>
   <h4 id="WizardWrx_StringExtensions_ReportUnresolvedEnvironmentStrings_System_String_System_UInt32_" data-uid="WizardWrx.StringExtensions.ReportUnresolvedEnvironmentStrings(System.String,System.UInt32)">ReportUnresolvedEnvironmentStrings(String, UInt32)</h4>
   <div class="markdown level1 summary"><p>Display a string that contains unmatched environment strings or
@@ -2082,8 +2462,13 @@ string.</p>
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_ReportUnresolvedEnvironmentStrings_System_String_System_UInt32_System_UInt32_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.ReportUnresolvedEnvironmentStrings(System.String%2CSystem.UInt32%2CSystem.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L1897">View Source</a>
+  </span>
   <a id="WizardWrx_StringExtensions_ReportUnresolvedEnvironmentStrings_" data-uid="WizardWrx.StringExtensions.ReportUnresolvedEnvironmentStrings*"></a>
   <h4 id="WizardWrx_StringExtensions_ReportUnresolvedEnvironmentStrings_System_String_System_UInt32_System_UInt32_" data-uid="WizardWrx.StringExtensions.ReportUnresolvedEnvironmentStrings(System.String,System.UInt32,System.UInt32)">ReportUnresolvedEnvironmentStrings(String, UInt32, UInt32)</h4>
   <div class="markdown level1 summary"><p>Display a string that contains unmatched environment strings or
@@ -2152,8 +2537,13 @@ returns to its caller, which may take subsequent actions based upon
 the return value.</p>
 <p>Most of the</p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_RightPadNChars_System_String_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.RightPadNChars(System.String%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L2009">View Source</a>
+  </span>
   <a id="WizardWrx_StringExtensions_RightPadNChars_" data-uid="WizardWrx.StringExtensions.RightPadNChars*"></a>
   <h4 id="WizardWrx_StringExtensions_RightPadNChars_System_String_System_Int32_" data-uid="WizardWrx.StringExtensions.RightPadNChars(System.String,System.Int32)">RightPadNChars(String, Int32)</h4>
   <div class="markdown level1 summary"><p>Right pad the string with a specified number of spaces.</p>
@@ -2217,8 +2607,13 @@ string is truly padded with a specific number of characters.</p>
 naming convention so that they conform to the naming convention of
 the Base Class Library methods that they wrap.</p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_RightPadNChars_System_String_System_Int32_System_Char_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.RightPadNChars(System.String%2CSystem.Int32%2CSystem.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L2050">View Source</a>
+  </span>
   <a id="WizardWrx_StringExtensions_RightPadNChars_" data-uid="WizardWrx.StringExtensions.RightPadNChars*"></a>
   <h4 id="WizardWrx_StringExtensions_RightPadNChars_System_String_System_Int32_System_Char_" data-uid="WizardWrx.StringExtensions.RightPadNChars(System.String,System.Int32,System.Char)">RightPadNChars(String, Int32, Char)</h4>
   <div class="markdown level1 summary"><p>Left pad the string with a specified number of some arbitrary
@@ -2288,8 +2683,13 @@ string is truly padded with a specific number of characters.</p>
 naming convention so that they conform to the naming convention of
 the Base Class Library methods that they wrap.</p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_Truncate_System_String_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.Truncate(System.String%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L2090">View Source</a>
+  </span>
   <a id="WizardWrx_StringExtensions_Truncate_" data-uid="WizardWrx.StringExtensions.Truncate*"></a>
   <h4 id="WizardWrx_StringExtensions_Truncate_System_String_System_Int32_" data-uid="WizardWrx.StringExtensions.Truncate(System.String,System.Int32)">Truncate(String, Int32)</h4>
   <div class="markdown level1 summary"><p>Supply the missing Truncate function to members of the String class.</p>
@@ -2355,6 +2755,12 @@ length, the whole string is returned.</p>
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
+                  <li>
+                    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L134" class="contribution-link">View Source</a>
+                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">

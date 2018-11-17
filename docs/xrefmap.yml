@@ -2910,6 +2910,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.Common.Properties.Resources.ERRMSG_ARG_IS_NULL_OR_EMPTY
   nameWithType: Resources.ERRMSG_ARG_IS_NULL_OR_EMPTY
+- uid: WizardWrx.Common.Properties.Resources.ERRMSG_ARG_OUT_OF_RANGE
+  name: ERRMSG_ARG_OUT_OF_RANGE
+  href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_ERRMSG_ARG_OUT_OF_RANGE
+  commentId: P:WizardWrx.Common.Properties.Resources.ERRMSG_ARG_OUT_OF_RANGE
+  fullName: WizardWrx.Common.Properties.Resources.ERRMSG_ARG_OUT_OF_RANGE
+  nameWithType: Resources.ERRMSG_ARG_OUT_OF_RANGE
+- uid: WizardWrx.Common.Properties.Resources.ERRMSG_ARG_OUT_OF_RANGE*
+  name: ERRMSG_ARG_OUT_OF_RANGE
+  href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_ERRMSG_ARG_OUT_OF_RANGE_
+  commentId: Overload:WizardWrx.Common.Properties.Resources.ERRMSG_ARG_OUT_OF_RANGE
+  isSpec: "True"
+  fullName: WizardWrx.Common.Properties.Resources.ERRMSG_ARG_OUT_OF_RANGE
+  nameWithType: Resources.ERRMSG_ARG_OUT_OF_RANGE
 - uid: WizardWrx.Common.Properties.Resources.ERRMSG_BADSTRING
   name: ERRMSG_BADSTRING
   href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_ERRMSG_BADSTRING
@@ -2923,6 +2936,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.Common.Properties.Resources.ERRMSG_BADSTRING
   nameWithType: Resources.ERRMSG_BADSTRING
+- uid: WizardWrx.Common.Properties.Resources.ERRMSG_EMPTY_STRING_NEVER_VALID
+  name: ERRMSG_EMPTY_STRING_NEVER_VALID
+  href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_ERRMSG_EMPTY_STRING_NEVER_VALID
+  commentId: P:WizardWrx.Common.Properties.Resources.ERRMSG_EMPTY_STRING_NEVER_VALID
+  fullName: WizardWrx.Common.Properties.Resources.ERRMSG_EMPTY_STRING_NEVER_VALID
+  nameWithType: Resources.ERRMSG_EMPTY_STRING_NEVER_VALID
+- uid: WizardWrx.Common.Properties.Resources.ERRMSG_EMPTY_STRING_NEVER_VALID*
+  name: ERRMSG_EMPTY_STRING_NEVER_VALID
+  href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_ERRMSG_EMPTY_STRING_NEVER_VALID_
+  commentId: Overload:WizardWrx.Common.Properties.Resources.ERRMSG_EMPTY_STRING_NEVER_VALID
+  isSpec: "True"
+  fullName: WizardWrx.Common.Properties.Resources.ERRMSG_EMPTY_STRING_NEVER_VALID
+  nameWithType: Resources.ERRMSG_EMPTY_STRING_NEVER_VALID
 - uid: WizardWrx.Common.Properties.Resources.ERRMSG_FILE_IS_EMPTY
   name: ERRMSG_FILE_IS_EMPTY
   href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_ERRMSG_FILE_IS_EMPTY
@@ -2988,6 +3014,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.Common.Properties.Resources.ERRMSG_INVALID_FIELD_IN_INPUT_RECORD
   nameWithType: Resources.ERRMSG_INVALID_FIELD_IN_INPUT_RECORD
+- uid: WizardWrx.Common.Properties.Resources.ERRMSG_NULLREF_NEVER_VALID
+  name: ERRMSG_NULLREF_NEVER_VALID
+  href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_ERRMSG_NULLREF_NEVER_VALID
+  commentId: P:WizardWrx.Common.Properties.Resources.ERRMSG_NULLREF_NEVER_VALID
+  fullName: WizardWrx.Common.Properties.Resources.ERRMSG_NULLREF_NEVER_VALID
+  nameWithType: Resources.ERRMSG_NULLREF_NEVER_VALID
+- uid: WizardWrx.Common.Properties.Resources.ERRMSG_NULLREF_NEVER_VALID*
+  name: ERRMSG_NULLREF_NEVER_VALID
+  href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_ERRMSG_NULLREF_NEVER_VALID_
+  commentId: Overload:WizardWrx.Common.Properties.Resources.ERRMSG_NULLREF_NEVER_VALID
+  isSpec: "True"
+  fullName: WizardWrx.Common.Properties.Resources.ERRMSG_NULLREF_NEVER_VALID
+  nameWithType: Resources.ERRMSG_NULLREF_NEVER_VALID
 - uid: WizardWrx.Common.Properties.Resources.ERRMSG_RUNTIME
   name: ERRMSG_RUNTIME
   href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_ERRMSG_RUNTIME
@@ -10787,30 +10826,42 @@ references:
   commentId: F:WizardWrx.MagicNumbers.ERROR_SUCCESS
   fullName: WizardWrx.MagicNumbers.ERROR_SUCCESS
   nameWithType: MagicNumbers.ERROR_SUCCESS
+- uid: WizardWrx.MagicNumbers.EVENLY_DIVISIBLE
+  name: EVENLY_DIVISIBLE
+  href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_EVENLY_DIVISIBLE
+  commentId: F:WizardWrx.MagicNumbers.EVENLY_DIVISIBLE
+  fullName: WizardWrx.MagicNumbers.EVENLY_DIVISIBLE
+  nameWithType: MagicNumbers.EVENLY_DIVISIBLE
 - uid: WizardWrx.MagicNumbers.EXACTLY_ONE_BILLION
   name: EXACTLY_ONE_BILLION
   href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_EXACTLY_ONE_BILLION
   commentId: F:WizardWrx.MagicNumbers.EXACTLY_ONE_BILLION
   fullName: WizardWrx.MagicNumbers.EXACTLY_ONE_BILLION
   nameWithType: MagicNumbers.EXACTLY_ONE_BILLION
+- uid: WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED
+  name: EXACTLY_ONE_HUNDRED
+  href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_EXACTLY_ONE_HUNDRED
+  commentId: F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED
+  fullName: WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED
+  nameWithType: MagicNumbers.EXACTLY_ONE_HUNDRED
 - uid: WizardWrx.MagicNumbers.EXACTLY_ONE_MILLION
   name: EXACTLY_ONE_MILLION
   href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_EXACTLY_ONE_MILLION
   commentId: F:WizardWrx.MagicNumbers.EXACTLY_ONE_MILLION
   fullName: WizardWrx.MagicNumbers.EXACTLY_ONE_MILLION
   nameWithType: MagicNumbers.EXACTLY_ONE_MILLION
-- uid: WizardWrx.MagicNumbers.EXACTLY_ONE_NUNDRED
-  name: EXACTLY_ONE_NUNDRED
-  href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_EXACTLY_ONE_NUNDRED
-  commentId: F:WizardWrx.MagicNumbers.EXACTLY_ONE_NUNDRED
-  fullName: WizardWrx.MagicNumbers.EXACTLY_ONE_NUNDRED
-  nameWithType: MagicNumbers.EXACTLY_ONE_NUNDRED
 - uid: WizardWrx.MagicNumbers.EXACTLY_ONE_THOUSAND
   name: EXACTLY_ONE_THOUSAND
   href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_EXACTLY_ONE_THOUSAND
   commentId: F:WizardWrx.MagicNumbers.EXACTLY_ONE_THOUSAND
   fullName: WizardWrx.MagicNumbers.EXACTLY_ONE_THOUSAND
   nameWithType: MagicNumbers.EXACTLY_ONE_THOUSAND
+- uid: WizardWrx.MagicNumbers.EXACTLY_TEN
+  name: EXACTLY_TEN
+  href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_EXACTLY_TEN
+  commentId: F:WizardWrx.MagicNumbers.EXACTLY_TEN
+  fullName: WizardWrx.MagicNumbers.EXACTLY_TEN
+  nameWithType: MagicNumbers.EXACTLY_TEN
 - uid: WizardWrx.MagicNumbers.EXACTLY_TEN_THOUSAND
   name: EXACTLY_TEN_THOUSAND
   href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_EXACTLY_TEN_THOUSAND
@@ -10895,6 +10946,75 @@ references:
   commentId: F:WizardWrx.MagicNumbers.ZERO
   fullName: WizardWrx.MagicNumbers.ZERO
   nameWithType: MagicNumbers.ZERO
+- uid: WizardWrx.MoreMath
+  name: MoreMath
+  href: api/WizardWrx.MoreMath.html
+  commentId: T:WizardWrx.MoreMath
+  fullName: WizardWrx.MoreMath
+  nameWithType: MoreMath
+- uid: WizardWrx.MoreMath.EXCEPTION_ON_INVALID_INPUT
+  name: EXCEPTION_ON_INVALID_INPUT
+  href: api/WizardWrx.MoreMath.html#WizardWrx_MoreMath_EXCEPTION_ON_INVALID_INPUT
+  commentId: F:WizardWrx.MoreMath.EXCEPTION_ON_INVALID_INPUT
+  fullName: WizardWrx.MoreMath.EXCEPTION_ON_INVALID_INPUT
+  nameWithType: MoreMath.EXCEPTION_ON_INVALID_INPUT
+- uid: WizardWrx.MoreMath.FALSE_ON_INVALID_INPUT
+  name: FALSE_ON_INVALID_INPUT
+  href: api/WizardWrx.MoreMath.html#WizardWrx_MoreMath_FALSE_ON_INVALID_INPUT
+  commentId: F:WizardWrx.MoreMath.FALSE_ON_INVALID_INPUT
+  fullName: WizardWrx.MoreMath.FALSE_ON_INVALID_INPUT
+  nameWithType: MoreMath.FALSE_ON_INVALID_INPUT
+- uid: WizardWrx.MoreMath.GRGORIAN_CALENDAR_ADOPTION_YEAR
+  name: GRGORIAN_CALENDAR_ADOPTION_YEAR
+  href: api/WizardWrx.MoreMath.html#WizardWrx_MoreMath_GRGORIAN_CALENDAR_ADOPTION_YEAR
+  commentId: F:WizardWrx.MoreMath.GRGORIAN_CALENDAR_ADOPTION_YEAR
+  fullName: WizardWrx.MoreMath.GRGORIAN_CALENDAR_ADOPTION_YEAR
+  nameWithType: MoreMath.GRGORIAN_CALENDAR_ADOPTION_YEAR
+- uid: WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int32,System.Int32)
+  name: IsEvenlyDivisibleByAnyInteger(Int32, Int32)
+  href: api/WizardWrx.MoreMath.html#WizardWrx_MoreMath_IsEvenlyDivisibleByAnyInteger_System_Int32_System_Int32_
+  commentId: M:WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int32,System.Int32)
+  fullName: WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int32, System.Int32)
+  nameWithType: MoreMath.IsEvenlyDivisibleByAnyInteger(Int32, Int32)
+- uid: WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int64,System.Int64)
+  name: IsEvenlyDivisibleByAnyInteger(Int64, Int64)
+  href: api/WizardWrx.MoreMath.html#WizardWrx_MoreMath_IsEvenlyDivisibleByAnyInteger_System_Int64_System_Int64_
+  commentId: M:WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int64,System.Int64)
+  fullName: WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int64, System.Int64)
+  nameWithType: MoreMath.IsEvenlyDivisibleByAnyInteger(Int64, Int64)
+- uid: WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger*
+  name: IsEvenlyDivisibleByAnyInteger
+  href: api/WizardWrx.MoreMath.html#WizardWrx_MoreMath_IsEvenlyDivisibleByAnyInteger_
+  commentId: Overload:WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger
+  isSpec: "True"
+  fullName: WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger
+  nameWithType: MoreMath.IsEvenlyDivisibleByAnyInteger
+- uid: WizardWrx.MoreMath.IsGregorianLeapYear(System.Int32,System.Boolean)
+  name: IsGregorianLeapYear(Int32, Boolean)
+  href: api/WizardWrx.MoreMath.html#WizardWrx_MoreMath_IsGregorianLeapYear_System_Int32_System_Boolean_
+  commentId: M:WizardWrx.MoreMath.IsGregorianLeapYear(System.Int32,System.Boolean)
+  fullName: WizardWrx.MoreMath.IsGregorianLeapYear(System.Int32, System.Boolean)
+  nameWithType: MoreMath.IsGregorianLeapYear(Int32, Boolean)
+- uid: WizardWrx.MoreMath.IsGregorianLeapYear*
+  name: IsGregorianLeapYear
+  href: api/WizardWrx.MoreMath.html#WizardWrx_MoreMath_IsGregorianLeapYear_
+  commentId: Overload:WizardWrx.MoreMath.IsGregorianLeapYear
+  isSpec: "True"
+  fullName: WizardWrx.MoreMath.IsGregorianLeapYear
+  nameWithType: MoreMath.IsGregorianLeapYear
+- uid: WizardWrx.MoreMath.IsValidGregorianYear(System.Int32,System.Boolean)
+  name: IsValidGregorianYear(Int32, Boolean)
+  href: api/WizardWrx.MoreMath.html#WizardWrx_MoreMath_IsValidGregorianYear_System_Int32_System_Boolean_
+  commentId: M:WizardWrx.MoreMath.IsValidGregorianYear(System.Int32,System.Boolean)
+  fullName: WizardWrx.MoreMath.IsValidGregorianYear(System.Int32, System.Boolean)
+  nameWithType: MoreMath.IsValidGregorianYear(Int32, Boolean)
+- uid: WizardWrx.MoreMath.IsValidGregorianYear*
+  name: IsValidGregorianYear
+  href: api/WizardWrx.MoreMath.html#WizardWrx_MoreMath_IsValidGregorianYear_
+  commentId: Overload:WizardWrx.MoreMath.IsValidGregorianYear
+  isSpec: "True"
+  fullName: WizardWrx.MoreMath.IsValidGregorianYear
+  nameWithType: MoreMath.IsValidGregorianYear
 - uid: WizardWrx.NumberFormatters
   name: NumberFormatters
   href: api/WizardWrx.NumberFormatters.html
@@ -11347,6 +11467,24 @@ references:
   isSpec: "True"
   fullName: WizardWrx.NumericFormats.IntegerToHexStr
   nameWithType: NumericFormats.IntegerToHexStr
+- uid: WizardWrx.NumericFormats.IntegerToHexStr``1(``0)
+  name: IntegerToHexStr<T>(T)
+  href: api/WizardWrx.NumericFormats.html#WizardWrx_NumericFormats_IntegerToHexStr__1___0_
+  commentId: M:WizardWrx.NumericFormats.IntegerToHexStr``1(``0)
+  name.vb: IntegerToHexStr(Of T)(T)
+  fullName: WizardWrx.NumericFormats.IntegerToHexStr<T>(T)
+  fullName.vb: WizardWrx.NumericFormats.IntegerToHexStr(Of T)(T)
+  nameWithType: NumericFormats.IntegerToHexStr<T>(T)
+  nameWithType.vb: NumericFormats.IntegerToHexStr(Of T)(T)
+- uid: WizardWrx.NumericFormats.IntegerToHexStr``1(``0,System.Int32)
+  name: IntegerToHexStr<T>(T, Int32)
+  href: api/WizardWrx.NumericFormats.html#WizardWrx_NumericFormats_IntegerToHexStr__1___0_System_Int32_
+  commentId: M:WizardWrx.NumericFormats.IntegerToHexStr``1(``0,System.Int32)
+  name.vb: IntegerToHexStr(Of T)(T, Int32)
+  fullName: WizardWrx.NumericFormats.IntegerToHexStr<T>(T, System.Int32)
+  fullName.vb: WizardWrx.NumericFormats.IntegerToHexStr(Of T)(T, System.Int32)
+  nameWithType: NumericFormats.IntegerToHexStr<T>(T, Int32)
+  nameWithType.vb: NumericFormats.IntegerToHexStr(Of T)(T, Int32)
 - uid: WizardWrx.NumericFormats.IntegerToHexStr``1(``0,System.Int32,WizardWrx.NumericFormats.HexFormatDecoration)
   name: IntegerToHexStr<T>(T, Int32, NumericFormats.HexFormatDecoration)
   href: api/WizardWrx.NumericFormats.html#WizardWrx_NumericFormats_IntegerToHexStr__1___0_System_Int32_WizardWrx_NumericFormats_HexFormatDecoration_
@@ -11356,6 +11494,15 @@ references:
   fullName.vb: WizardWrx.NumericFormats.IntegerToHexStr(Of T)(T, System.Int32, WizardWrx.NumericFormats.HexFormatDecoration)
   nameWithType: NumericFormats.IntegerToHexStr<T>(T, Int32, NumericFormats.HexFormatDecoration)
   nameWithType.vb: NumericFormats.IntegerToHexStr(Of T)(T, Int32, NumericFormats.HexFormatDecoration)
+- uid: WizardWrx.NumericFormats.IntegerToHexStr``1(``0,WizardWrx.NumericFormats.HexFormatDecoration)
+  name: IntegerToHexStr<T>(T, NumericFormats.HexFormatDecoration)
+  href: api/WizardWrx.NumericFormats.html#WizardWrx_NumericFormats_IntegerToHexStr__1___0_WizardWrx_NumericFormats_HexFormatDecoration_
+  commentId: M:WizardWrx.NumericFormats.IntegerToHexStr``1(``0,WizardWrx.NumericFormats.HexFormatDecoration)
+  name.vb: IntegerToHexStr(Of T)(T, NumericFormats.HexFormatDecoration)
+  fullName: WizardWrx.NumericFormats.IntegerToHexStr<T>(T, WizardWrx.NumericFormats.HexFormatDecoration)
+  fullName.vb: WizardWrx.NumericFormats.IntegerToHexStr(Of T)(T, WizardWrx.NumericFormats.HexFormatDecoration)
+  nameWithType: NumericFormats.IntegerToHexStr<T>(T, NumericFormats.HexFormatDecoration)
+  nameWithType.vb: NumericFormats.IntegerToHexStr(Of T)(T, NumericFormats.HexFormatDecoration)
 - uid: WizardWrx.NumericFormats.NUMBER_PER_REG_SETTINGS
   name: NUMBER_PER_REG_SETTINGS
   href: api/WizardWrx.NumericFormats.html#WizardWrx_NumericFormats_NUMBER_PER_REG_SETTINGS
@@ -13163,6 +13310,22 @@ references:
   isSpec: "True"
   fullName: WizardWrx.StringExtensions.EnsureLastCharIs
   nameWithType: StringExtensions.EnsureLastCharIs
+- uid: WizardWrx.StringExtensions.EnumFromString*
+  name: EnumFromString
+  href: api/WizardWrx.StringExtensions.html#WizardWrx_StringExtensions_EnumFromString_
+  commentId: Overload:WizardWrx.StringExtensions.EnumFromString
+  isSpec: "True"
+  fullName: WizardWrx.StringExtensions.EnumFromString
+  nameWithType: StringExtensions.EnumFromString
+- uid: WizardWrx.StringExtensions.EnumFromString``1(System.String)
+  name: EnumFromString<T>(String)
+  href: api/WizardWrx.StringExtensions.html#WizardWrx_StringExtensions_EnumFromString__1_System_String_
+  commentId: M:WizardWrx.StringExtensions.EnumFromString``1(System.String)
+  name.vb: EnumFromString(Of T)(String)
+  fullName: WizardWrx.StringExtensions.EnumFromString<T>(System.String)
+  fullName.vb: WizardWrx.StringExtensions.EnumFromString(Of T)(System.String)
+  nameWithType: StringExtensions.EnumFromString<T>(String)
+  nameWithType.vb: StringExtensions.EnumFromString(Of T)(String)
 - uid: WizardWrx.StringExtensions.ExtractBetweenIndexOfs(System.String,System.Int32,System.Int32)
   name: ExtractBetweenIndexOfs(String, Int32, Int32)
   href: api/WizardWrx.StringExtensions.html#WizardWrx_StringExtensions_ExtractBetweenIndexOfs_System_String_System_Int32_System_Int32_
@@ -13297,6 +13460,22 @@ references:
   isSpec: "True"
   fullName: WizardWrx.StringExtensions.RemoveEndQuotes
   nameWithType: StringExtensions.RemoveEndQuotes
+- uid: WizardWrx.StringExtensions.RenderEvenWhenNull*
+  name: RenderEvenWhenNull
+  href: api/WizardWrx.StringExtensions.html#WizardWrx_StringExtensions_RenderEvenWhenNull_
+  commentId: Overload:WizardWrx.StringExtensions.RenderEvenWhenNull
+  isSpec: "True"
+  fullName: WizardWrx.StringExtensions.RenderEvenWhenNull
+  nameWithType: StringExtensions.RenderEvenWhenNull
+- uid: WizardWrx.StringExtensions.RenderEvenWhenNull``1(``0,System.String,System.String,System.IFormatProvider)
+  name: RenderEvenWhenNull<T>(T, String, String, IFormatProvider)
+  href: api/WizardWrx.StringExtensions.html#WizardWrx_StringExtensions_RenderEvenWhenNull__1___0_System_String_System_String_System_IFormatProvider_
+  commentId: M:WizardWrx.StringExtensions.RenderEvenWhenNull``1(``0,System.String,System.String,System.IFormatProvider)
+  name.vb: RenderEvenWhenNull(Of T)(T, String, String, IFormatProvider)
+  fullName: WizardWrx.StringExtensions.RenderEvenWhenNull<T>(T, System.String, System.String, System.IFormatProvider)
+  fullName.vb: WizardWrx.StringExtensions.RenderEvenWhenNull(Of T)(T, System.String, System.String, System.IFormatProvider)
+  nameWithType: StringExtensions.RenderEvenWhenNull<T>(T, String, String, IFormatProvider)
+  nameWithType.vb: StringExtensions.RenderEvenWhenNull(Of T)(T, String, String, IFormatProvider)
 - uid: WizardWrx.StringExtensions.ReplaceTokensFromList(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})
   name: ReplaceTokensFromList(String, Dictionary<String, Object>)
   href: api/WizardWrx.StringExtensions.html#WizardWrx_StringExtensions_ReplaceTokensFromList_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__

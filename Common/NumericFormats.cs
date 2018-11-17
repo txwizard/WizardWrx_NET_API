@@ -173,6 +173,14 @@
 
 	2017/09/17 7.0     DAG    Define INTEGER_PER_REG_SETTINGS as an alias for
                               NUMBER_PER_REG_SETTINGS_0D.
+
+	2018/11/10 7.11    DAG    1) Define IntegerToHexStr overloads that omit the
+                                 second and third arguments, substituting common
+                                 defaults for the missing arguments.
+
+                              2) Change FormatStatusCode to use the simplified
+                                 first overload, shortening its stack frame and
+                                 call setup requirments.
     ============================================================================
 */
 
@@ -190,7 +198,9 @@ namespace WizardWrx
 	{
 		#region Public Enumerations
 		/// <summary>
-		/// Use this enumeration with the third argument to IntegerToHexStr.
+		/// Use this enumeration with the third argument to the fourth
+        /// (coprehensive) overload of IntegerToHexStr or the second argument to
+        /// its second overload.
 		/// </summary>
 		[Flags]
 		public enum HexFormatDecoration : byte
@@ -339,88 +349,90 @@ namespace WizardWrx
 		public const string FIXED_3 = @"F3";
 
 
-		/// <summary>
-		/// This is the default, and it's pretty minimal. The documentation
-		/// states that the number is converted to the most compact format.
-		/// 
-		/// When the size of the number and the specified precision dictate use
-		/// of scientific notation, the exponential symbol is lower case; this
-		/// is the only difference between this format and GENERAL_UC.
-		/// 
-		/// When the specified number of places after the decimal point is zero,
-		/// the decimal point is omitted.
-		/// 
-		/// To specify the number of places to print after the decimal point,
-		/// use the static GeneralXPrecision ( int pintFractionDigits ) 
-		/// method, which supports any number between zero and ninety-nine, the
-		/// limits imposed by the framework.
-		/// </summary>
-		/// <see cref="GENERAL_UC"/>
-		/// <see cref="GeneralXPrecision(int)"/>
-		/// <see href="https://msdn.microsoft.com/en-us/library/dwhawy9k(v=vs.100).aspx#GFormatString"/>
-		/// <seealso href="https://msdn.microsoft.com/en-us/library/dwhawy9k(v=vs.100).aspx"/>
-		public const string GENERAL_LC = @"g";
+        /// <summary>
+        /// This is the default, and it's pretty minimal. The documentation
+        /// states that the number is converted to the most compact format.
+        /// 
+        /// When the size of the number and the specified precision dictate use
+        /// of scientific notation, the exponential symbol is lower case; this
+        /// is the only difference between this format and GENERAL_UC.
+        /// 
+        /// When the specified number of places after the decimal point is zero,
+        /// the decimal point is omitted.
+        /// 
+        /// To easily specify the desired minimum number of hexadecimal glyphs,
+        /// along with any of the prefixes and suffixes defined in this set of
+        /// HEXADECIMAL_* constants, call static method IntegerToHexStr
+        /// ( [T] , int pintTotalDigits , HexFormatDecoration penmDecoration ),
+        /// in lieu of calling ToString on the integer.
+        /// </summary>
+        /// <see cref="GENERAL_UC"/>
+        /// <see cref="GeneralXPrecision(int)"/>
+        /// <see href="https://msdn.microsoft.com/en-us/library/dwhawy9k(v=vs.100).aspx#GFormatString"/>
+        /// <seealso href="https://msdn.microsoft.com/en-us/library/dwhawy9k(v=vs.100).aspx"/>
+        public const string GENERAL_LC = @"g";
 
-		/// <summary>
-		/// This is the default, and it's pretty minimal, as it must be, since
-		/// its status as the default means that it is the only format that
-		/// supports all data types (numbers, dates, times, time spans, and all
-		/// the rest. It is also among the few that render output left aligned.
-		/// 
-		/// The documentation states that the number is converted to the most
-		/// compact format.
-		/// 
-		/// When the size of the number and the specified precision dictate use
-		/// of scientific notation, the exponential symbol is UPPER case; this
-		/// is the only difference between this format and GENERAL_LC.
-		/// 
-		/// When the specified number of places after the decimal point is zero,
-		/// the decimal point is omitted.
-		/// 
-		/// To specify the number of places to print after the decimal point,
-		/// use the static GeneralXPrecision ( int pintFractionDigits ) 
-		/// method, which supports any number between zero and ninety-nine, the
-		/// limits imposed by the framework.
-		/// </summary>
-		/// <see cref="GENERAL_LC"/>
-		/// <see cref="GeneralXPrecision(int)"/>
-		/// <see href="https://msdn.microsoft.com/en-us/library/dwhawy9k(v=vs.100).aspx#GFormatString"/>
-		/// <seealso href="https://msdn.microsoft.com/en-us/library/dwhawy9k(v=vs.100).aspx"/>
-		public const string GENERAL_UC = @"G";
+        /// <summary>
+        /// This is the default, and it's pretty minimal, as it must be, since
+        /// its status as the default means that it is the only format that
+        /// supports all data types (numbers, dates, times, time spans, and all
+        /// the rest. It is also among the few that render output left aligned.
+        /// 
+        /// The documentation states that the number is converted to the most
+        /// compact format.
+        /// 
+        /// When the size of the number and the specified precision dictate use
+        /// of scientific notation, the exponential symbol is UPPER case; this
+        /// is the only difference between this format and GENERAL_LC.
+        /// 
+        /// When the specified number of places after the decimal point is zero,
+        /// the decimal point is omitted.
+        /// 
+        /// To easily specify the desired minimum number of hexadecimal glyphs,
+        /// along with any of the prefixes and suffixes defined in this set of
+        /// HEXADECIMAL_* constants, call static method IntegerToHexStr
+        /// ( [T] , int pintTotalDigits , HexFormatDecoration penmDecoration ),
+        /// in lieu of calling ToString on the integer.
+        /// </summary>
+        /// <see cref="GENERAL_LC"/>
+        /// <see cref="GeneralXPrecision(int)"/>
+        /// <see href="https://msdn.microsoft.com/en-us/library/dwhawy9k(v=vs.100).aspx#GFormatString"/>
+        /// <seealso href="https://msdn.microsoft.com/en-us/library/dwhawy9k(v=vs.100).aspx"/>
+        public const string GENERAL_UC = @"G";
 
 
-		/// <summary>
-		/// Use this string as your argument to the ToString method of any
-		/// integral data type to format it in hexadecimal notation, which 
-		/// the documentation says is supported only for integral types.
-		/// They mean business; if you try to use this type with a decimal or
-		/// floating point number, you get an FormatException exception.
-		/// 
-		/// This format yields a result containing the fewest hexadecimal glyphs
-		/// required to represent the number. The difference between this token
-		/// and HEXADECIMAL_LC is that this token causes the returned string to
-		/// contain UPPER case glyphs, while HEXADECIMAL_LC yields lower case
-		/// glyphs.
-		/// 
-		/// To easily specify the desired minimum number of hexadecimal glyphs,
-		/// you can feed HexadecimalInteger ( int pintTotalDigits ) method
-		/// into the ToString method, which uses the returned format string,
-		/// which is built using this string as its starting point, as if you
-		/// had hard coded it.
-		/// </summary>
-		/// <see href="https://msdn.microsoft.com/en-us/library/dwhawy9k(v=vs.110).aspx#XFormatString"/>
-		/// <see cref="HexadecimalInteger()"/>
-		/// <see cref="HexadecimalInteger(int)"/>
-		/// <seealso cref="HEXADECIMAL_UC"/>
-		/// <seealso cref="HEXADECIMAL_2"/>
-		/// <seealso cref="HEXADECIMAL_4"/>
-		/// <seealso cref="HEXADECIMAL_8"/>
-		/// <seealso cref="HEXADECIMAL_PREFIX_0H_LC"/>
-		/// <seealso cref="HEXADECIMAL_PREFIX_0H_UC"/>
-		/// <seealso cref="HEXADECIMAL_PREFIX_0X_LC"/>
-		/// <seealso cref="HEXADECIMAL_PREFIX_0X_UC"/>
-		/// <seealso href="https://msdn.microsoft.com/en-us/library/dwhawy9k(v=vs.100).aspx"/>
-		public const string HEXADECIMAL_LC = @"x";
+        /// <summary>
+        /// Use this string as your argument to the ToString method of any
+        /// integral data type to format it in hexadecimal notation, which 
+        /// the documentation says is supported only for integral types.
+        /// They mean business; if you try to use this type with a decimal or
+        /// floating point number, you get an FormatException exception.
+        /// 
+        /// This format yields a result containing the fewest hexadecimal glyphs
+        /// required to represent the number. The difference between this token
+        /// and HEXADECIMAL_LC is that this token causes the returned string to
+        /// contain UPPER case glyphs, while HEXADECIMAL_LC yields lower case
+        /// glyphs.
+        /// 
+        /// To easily specify the desired minimum number of hexadecimal glyphs,
+        /// along with any of the prefixes and suffixes defined in this set of
+        /// HEXADECIMAL_* constants, call static method IntegerToHexStr
+        /// ( [T] , int pintTotalDigits , HexFormatDecoration penmDecoration ),
+        /// in lieu of calling ToString on the integer.
+        /// </summary>
+        /// <see href="https://msdn.microsoft.com/en-us/library/dwhawy9k(v=vs.110).aspx#XFormatString"/>
+        /// <see cref="HexadecimalInteger()"/>
+        /// <see cref="HexadecimalInteger(int)"/>
+        /// <seealso cref="HEXADECIMAL_UC"/>
+        /// <seealso cref="HEXADECIMAL_2"/>
+        /// <seealso cref="HEXADECIMAL_4"/>
+        /// <seealso cref="HEXADECIMAL_8"/>
+        /// <seealso cref="HEXADECIMAL_PREFIX_0H_LC"/>
+        /// <seealso cref="HEXADECIMAL_PREFIX_0H_UC"/>
+        /// <seealso cref="HEXADECIMAL_PREFIX_0X_LC"/>
+        /// <seealso cref="HEXADECIMAL_PREFIX_0X_UC"/>
+        /// <seealso href="https://msdn.microsoft.com/en-us/library/dwhawy9k(v=vs.100).aspx"/>
+        public const string HEXADECIMAL_LC = @"x";
 
         /// <summary>
 		/// Use this string as your argument to the ToString method of any
@@ -435,11 +447,11 @@ namespace WizardWrx
 		/// contain UPPER case glyphs, while HEXADECIMAL_LC yields lower case
 		/// glyphs.
 		/// 
-		/// To easily specify the desired minimum number of hexadecimal glyphs,
-		/// you can feed the HexadecimalInteger ( int pintTotalDigits ) method
-		/// into the ToString method, which uses the returned format string,
-		/// which is built using this string as its starting point, as if you
-		/// had hard coded it.
+        /// To easily specify the desired minimum number of hexadecimal glyphs,
+        /// along with any of the prefixes and suffixes defined in this set of
+        /// HEXADECIMAL_* constants, call static method IntegerToHexStr
+        /// ( [T] , int pintTotalDigits , HexFormatDecoration penmDecoration ),
+        /// in lieu of calling ToString on the integer.
 		/// </summary>
 		/// <see href="https://msdn.microsoft.com/en-us/library/dwhawy9k(v=vs.110).aspx#XFormatString"/>
 		/// <see cref="HexadecimalInteger()"/>
@@ -456,36 +468,36 @@ namespace WizardWrx
 		/// <seealso href="https://msdn.microsoft.com/en-us/library/dwhawy9k(v=vs.100).aspx"/>
 		public const string HEXADECIMAL_UC = @"X";
 
-		/// <summary>
-		/// Use this string as your argument to the ToString method of any
-		/// integral data type to format it in hexadecimal notation, which 
-		/// the documentation says is supported only for integral types.
-		/// They mean business; if you try to use this type with a decimal or
-		/// floating point number, you get an FormatException exception.
+        /// <summary>
+        /// Use this string as your argument to the ToString method of any
+        /// integral data type to format it in hexadecimal notation, which 
+        /// the documentation says is supported only for integral types.
+        /// They mean business; if you try to use this type with a decimal or
+        /// floating point number, you get an FormatException exception.
         /// 
         /// This format yields a result containing a minimum of two hexadecimal
         /// numerals. If the number needs more than two numerals, the returned
         /// string contains the minimum number of hexadecimal numerals required
         /// to represent the integer.
-		/// 
-		/// To easily specify the desired minimum number of hexadecimal glyphs,
-		/// you can feed the HexadecimalInteger ( int pintTotalDigits ) method
-		/// into the ToString method, which uses the returned format string,
-		/// which is built using this string as its starting point, as if you
-		/// had hard coded it.
-		/// </summary>
-		/// <see cref="HexadecimalInteger()"/>
-		/// <see cref="HexadecimalInteger(int)"/>
-		/// <seealso href="https://msdn.microsoft.com/en-us/library/dwhawy9k(v=vs.100).aspx"/>
-		/// <seealso cref="HEXADECIMAL_UC"/>
-		/// <seealso cref="HEXADECIMAL_4"/>
-		/// <seealso cref="HEXADECIMAL_8"/>
-		/// <seealso cref="HEXADECIMAL_16"/>
-		/// <seealso cref="HEXADECIMAL_PREFIX_0H_LC"/>
-		/// <seealso cref="HEXADECIMAL_PREFIX_0H_UC"/>
-		/// <seealso cref="HEXADECIMAL_PREFIX_0X_LC"/>
-		/// <seealso cref="HEXADECIMAL_PREFIX_0X_UC"/>
-		public const string HEXADECIMAL_2 = @"X2";
+        /// 
+        /// To easily specify the desired minimum number of hexadecimal glyphs,
+        /// along with any of the prefixes and suffixes defined in this set of
+        /// HEXADECIMAL_* constants, call static method IntegerToHexStr
+        /// ( [T] , int pintTotalDigits , HexFormatDecoration penmDecoration ),
+        /// in lieu of calling ToString on the integer.
+        /// </summary>
+        /// <see cref="HexadecimalInteger()"/>
+        /// <see cref="HexadecimalInteger(int)"/>
+        /// <seealso href="https://msdn.microsoft.com/en-us/library/dwhawy9k(v=vs.100).aspx"/>
+        /// <seealso cref="HEXADECIMAL_UC"/>
+        /// <seealso cref="HEXADECIMAL_4"/>
+        /// <seealso cref="HEXADECIMAL_8"/>
+        /// <seealso cref="HEXADECIMAL_16"/>
+        /// <seealso cref="HEXADECIMAL_PREFIX_0H_LC"/>
+        /// <seealso cref="HEXADECIMAL_PREFIX_0H_UC"/>
+        /// <seealso cref="HEXADECIMAL_PREFIX_0X_LC"/>
+        /// <seealso cref="HEXADECIMAL_PREFIX_0X_UC"/>
+        public const string HEXADECIMAL_2 = @"X2";
 
         /// <summary>
         /// Hexadecimal, which the documentation says is supported only for
@@ -497,11 +509,11 @@ namespace WizardWrx
         /// string contains the minimum number of hexadecimal numerals required
         /// to represent the integer.
 		/// 
-		/// To easily specify the desired minimum number of hexadecimal glyphs,
-		/// you can feed the HexadecimalInteger ( int pintTotalDigits ) method
-		/// into the ToString method, which uses the returned format string,
-		/// which is built using this string as its starting point, as if you
-		/// had hard coded it.
+        /// To easily specify the desired minimum number of hexadecimal glyphs,
+        /// along with any of the prefixes and suffixes defined in this set of
+        /// HEXADECIMAL_* constants, call static method IntegerToHexStr
+        /// ( [T] , int pintTotalDigits , HexFormatDecoration penmDecoration ),
+        /// in lieu of calling ToString on the integer.
 		/// </summary>
 		/// <see cref="HexadecimalInteger()"/>
 		/// <see cref="HexadecimalInteger(int)"/>
@@ -529,11 +541,11 @@ namespace WizardWrx
         /// Use this format to represent result codes returned by Windows DLLs
         /// and other such functions that return things such as HRESULTs.
 		/// 
-		/// To easily specify the desired minimum number of hexadecimal glyphs,
-		/// you can feed the HexadecimalInteger ( int pintTotalDigits ) method
-		/// into the ToString method, which uses the returned format string,
-		/// which is built using this string as its starting point, as if you
-		/// had hard coded it.
+        /// To easily specify the desired minimum number of hexadecimal glyphs,
+        /// along with any of the prefixes and suffixes defined in this set of
+        /// HEXADECIMAL_* constants, call static method IntegerToHexStr
+        /// ( [T] , int pintTotalDigits , HexFormatDecoration penmDecoration ),
+        /// in lieu of calling ToString on the integer.
 		/// </summary>
 		/// <see cref="HexadecimalInteger()"/>
 		/// <see cref="HexadecimalInteger(int)"/>
@@ -548,37 +560,37 @@ namespace WizardWrx
 		/// <seealso cref="HEXADECIMAL_PREFIX_0X_UC"/>
 		public const string HEXADECIMAL_8 = @"X8";
 
-		/// <summary>
-		/// Hexadecimal, which the documentation says is supported only for
-		/// integral types. They mean business; if you try to use this type with
-		/// a decimal or floating point number, you get an exception.
-		/// 
-		/// This format yields a result containing a minimum of 16 hexadecimal
-		/// numerals. If the number needs more than 16 numerals, the returned
-		/// string contains the minimum number of hexadecimal numerals required
-		/// to represent the integer.
-		/// 
-		/// Use this format to represent long integer values, such as file sizes
-		/// and 64 bit masks.
-		/// 
-		/// To easily specify the desired minimum number of hexadecimal glyphs,
-		/// you can feed the HexadecimalInteger ( int pintTotalDigits ) method
-		/// into the ToString method, which uses the returned format string,
-		/// which is built using this string as its starting point, as if you
-		/// had hard coded it.
-		/// </summary>
-		public const string HEXADECIMAL_16 = @"X16";
+        /// <summary>
+        /// Hexadecimal, which the documentation says is supported only for
+        /// integral types. They mean business; if you try to use this type with
+        /// a decimal or floating point number, you get an exception.
+        /// 
+        /// This format yields a result containing a minimum of 16 hexadecimal
+        /// numerals. If the number needs more than 16 numerals, the returned
+        /// string contains the minimum number of hexadecimal numerals required
+        /// to represent the integer.
+        /// 
+        /// Use this format to represent long integer values, such as file sizes
+        /// and 64 bit masks.
+        /// 
+        /// To easily specify the desired minimum number of hexadecimal glyphs,
+        /// along with any of the prefixes and suffixes defined in this set of
+        /// HEXADECIMAL_* constants, call static method IntegerToHexStr
+        /// ( [T] , int pintTotalDigits , HexFormatDecoration penmDecoration ),
+        /// in lieu of calling ToString on the integer.
+        /// </summary>
+        public const string HEXADECIMAL_16 = @"X16";
 
         /// <summary>
         /// Not strictly a format string, this string is intended for use as a
 		/// prefix for the string returned from a call to ToString with any of
         /// the HEXADECIMAL format strings.
 		/// 
-		/// To easily specify the desired minimum number of hexadecimal glyphs,
-		/// you can feed the HexadecimalInteger ( int pintTotalDigits ) method
-		/// into the ToString method, which uses the returned format string,
-		/// which is built using this string as its starting point, as if you
-		/// had hard coded it.
+        /// To easily specify the desired minimum number of hexadecimal glyphs,
+        /// along with any of the prefixes and suffixes defined in this set of
+        /// HEXADECIMAL_* constants, call static method IntegerToHexStr
+        /// ( [T] , int pintTotalDigits , HexFormatDecoration penmDecoration ),
+        /// in lieu of calling ToString on the integer.
 		/// </summary>
 		/// <see cref="HexadecimalInteger()"/>
 		/// <see cref="HexadecimalInteger(int)"/>
@@ -589,11 +601,11 @@ namespace WizardWrx
 		/// prefix for the string returned from a call to ToString with any of
         /// the HEXADECIMAL format strings.
 		/// 
-		/// To easily specify the desired minimum number of hexadecimal glyphs,
-		/// you can feed the HexadecimalInteger ( int pintTotalDigits ) method
-		/// into the ToString method, which uses the returned format string,
-		/// which is built using this string as its starting point, as if you
-		/// had hard coded it.
+        /// To easily specify the desired minimum number of hexadecimal glyphs,
+        /// along with any of the prefixes and suffixes defined in this set of
+        /// HEXADECIMAL_* constants, call static method IntegerToHexStr
+        /// ( [T] , int pintTotalDigits , HexFormatDecoration penmDecoration ),
+        /// in lieu of calling ToString on the integer.
 		/// </summary>
 		/// <see cref="HexadecimalInteger()"/>
 		/// <see cref="HexadecimalInteger(int)"/>
@@ -604,11 +616,11 @@ namespace WizardWrx
 		/// prefix for the string returned from a call to ToString with any
         /// of the HEXADECIMAL format strings.
 		/// 
-		/// To easily specify the desired minimum number of hexadecimal glyphs,
-		/// you can feed the HexadecimalInteger ( int pintTotalDigits ) method
-		/// into the ToString method, which uses the returned format string,
-		/// which is built using this string as its starting point, as if you
-		/// had hard coded it.
+        /// To easily specify the desired minimum number of hexadecimal glyphs,
+        /// along with any of the prefixes and suffixes defined in this set of
+        /// HEXADECIMAL_* constants, call static method IntegerToHexStr
+        /// ( [T] , int pintTotalDigits , HexFormatDecoration penmDecoration ),
+        /// in lieu of calling ToString on the integer.
 		/// </summary>
 		/// <see cref="HexadecimalInteger()"/>
 		/// <see cref="HexadecimalInteger(int)"/>
@@ -619,40 +631,41 @@ namespace WizardWrx
         /// prefix for the string returned from a call to ToString with any
         /// of the HEXADECIMAL format strings.
 		/// 
-		/// To easily specify the desired minimum number of hexadecimal glyphs,
-		/// you can feed the HexadecimalInteger ( int pintTotalDigits ) method
-		/// into the ToString method, which uses the returned format string,
-		/// which is built using this string as its starting point, as if you
-		/// had hard coded it.
+        /// To easily specify the desired minimum number of hexadecimal glyphs,
+        /// along with any of the prefixes and suffixes defined in this set of
+        /// HEXADECIMAL_* constants, call static method IntegerToHexStr
+        /// ( [T] , int pintTotalDigits , HexFormatDecoration penmDecoration ),
+        /// in lieu of calling ToString on the integer.
 		/// </summary>
 		/// <see cref="HexadecimalInteger()"/>
 		/// <see cref="HexadecimalInteger(int)"/>
 		public const string HEXADECIMAL_PREFIX_0X_UC = @"0X";
 
-		/// <summary>
-		/// Not strictly a format string, this string is intended for use as a
-		/// suffix for the string returned from a call to ToString with any of
-		/// the HEXADECIMAL format strings.
-		/// 
-		/// To easily specify the desired minimum number of hexadecimal glyphs,
-		/// you can substitute the output of static method IntegerToHexStr
-		/// ( [T] , int pintTotalDigits , HexFormatDecoration penmDecoration ),
-		/// which appends this string, to the ToString method on any integral
-		/// type.
-		/// </summary>
-		public const string HEXADECIMAL_SUFFIX_H_LC = @"h";
+        /// <summary>
+        /// Not strictly a format string, this string is intended for use as a
+        /// suffix for the string returned from a call to ToString with any of
+        /// the HEXADECIMAL format strings.
+        /// 
+        /// To easily specify the desired minimum number of hexadecimal glyphs,
+        /// along with any of the prefixes and suffixes defined in this set of
+        /// HEXADECIMAL_* constants, call static method IntegerToHexStr
+        /// ( [T] , int pintTotalDigits , HexFormatDecoration penmDecoration ),
+        /// in lieu of calling ToString on the integer.
+        /// </summary>
+        public const string HEXADECIMAL_SUFFIX_H_LC = @"h";
 
-		/// <summary>
-		/// Not strictly a format string, this string is intended for use as a
-		/// suffix for the string returned from a call to ToString with any of
-		/// the HEXADECIMAL format strings.
-		/// 
-		/// To easily specify the desired minimum number of hexadecimal glyphs,
-		/// you can feed the output of HexadecimalInteger ( int pintTotalDigits ,
-		/// HexFormatDecoration penmHexFormatDecoration ) method, which appends
-		/// this string, to the ToString method on any integral type.
-		/// </summary>
-		public const string HEXADECIMAL_SUFFIX_H_UC = @"H";
+        /// <summary>
+        /// Not strictly a format string, this string is intended for use as a
+        /// suffix for the string returned from a call to ToString with any of
+        /// the HEXADECIMAL format strings.
+        /// 
+        /// To easily specify the desired minimum number of hexadecimal glyphs,
+        /// along with any of the prefixes and suffixes defined in this set of
+        /// HEXADECIMAL_* constants, call static method IntegerToHexStr
+        /// ( [T] , int pintTotalDigits , HexFormatDecoration penmDecoration ),
+        /// in lieu of calling ToString on the integer.
+        /// </summary>
+        public const string HEXADECIMAL_SUFFIX_H_UC = @"H";
 
 		/// <summary>
 		/// Format an integer per the Regional Settings in the Windows Control
@@ -660,10 +673,6 @@ namespace WizardWrx
 		/// Integer, it overrides the default regional settings value for Number
 		/// of Digits After Decimal. Please see the Remarks for additional
 		/// details.
-		/// 
-		/// by the NumDigits member of the NUMBERFMT
-		/// structure that governs the behavior of the GetNumberFormat and
-		/// GetNumberFormatEx Windows API functions
 		/// </summary>
 		/// <remarks>
 		/// Since this string is intended exclusively for formatting an
@@ -1086,30 +1095,27 @@ namespace WizardWrx
 					DECIMAL ,
 					DECIMAL_DIGITS_DEFAULT );
 		}   // public static FixedWidthInteger method (2 of 2)
-		#endregion // Static FixedWidthInteger Methods
+        #endregion // Static FixedWidthInteger Methods
 
 
-		#region Static FormatStatusCode Methods
-		/// <summary>
-		/// Return a string representation of a status code, formatted as
-		/// hexadecimal, followed by the decimal format in parentheses.
-		/// </summary>
-		/// <param name="pintStatusCode">
-		/// Though intended for use with status codes, any integer will do.
-		/// </param>
-		/// <returns>
-		/// Return a string something like 0x000000ff (255 decimal).
-		/// </returns>
-		public static string FormatStatusCode ( int pintStatusCode )
-		{
-			return string.Format (
-				Common.Properties.Resources.MSG_STATUS_CODE ,
-				IntegerToHexStr (
-					pintStatusCode ,
-					HEX_GLYPHS_DEFAULT_MINIMUM ,
-					HexFormatDecoration.Prefix_Ox_LC ) ,
-				pintStatusCode );
-		}   // FormatStatusCode
+        #region Static FormatStatusCode Methods
+        /// <summary>
+        /// Return a string representation of a status code, formatted as
+        /// hexadecimal, followed by the decimal format in parentheses.
+        /// </summary>
+        /// <param name="pintStatusCode">
+        /// Though intended for use with status codes, any integer will do.
+        /// </param>
+        /// <returns>
+        /// Return a string something like 0x000000ff (255 decimal).
+        /// </returns>
+        public static string FormatStatusCode ( int pintStatusCode )
+        {
+            return string.Format (
+                Common.Properties.Resources.MSG_STATUS_CODE ,
+                IntegerToHexStr ( pintStatusCode ) ,
+                pintStatusCode );
+        }   // FormatStatusCode
 		#endregion // Static FormatStatusCode Methods
 
 
@@ -1203,61 +1209,198 @@ namespace WizardWrx
 		}   // public static HexadecimalInteger method (2 of 2)
 
 
-		/// <summary>
-		/// Properly formatting an integral type as a hexadecimal string,
-		/// including the decorations commonly applied to them as prefix or
-		/// suffix, is a bit beyond the reach of a simple ToString format
-		/// string.
-		/// </summary>
-		/// <typeparam name="T">
-		/// There are no compiler enforced constraints on this type, because the
-		/// Base Class Library provides no mechanism to differentiate integral
-		/// types in constraints for generics. See the remarks for a comment about
-		/// how we get around this.
-		/// </typeparam>
-		/// <param name="pintegralValue">
-		/// Specify the value to be formatted as hexadecimal. Integral types
-		/// only, because that's the only type that may be formatted in this
-		/// way.
-		/// </param>
-		/// <param name="pintTotalDigits">
-		/// Specify the minimum number of hexadecimal "digits" (glyphs, really)
-		/// to render. If the number needs more than the specified number, the
-		/// method uses as many as it needs, causing the returned string to be
-		/// longer than you expected. If the string needs fewer characters, it
-		/// is left padded with zeros.
-		/// </param>
-		/// <param name="penmHexDecoration">
-		/// The HexFormatDecoration has the Flags attribute set on it, so that
-		/// it can be processed as a bit mask, enabling it to specify multiple
-		/// items.
-		/// </param>
-		/// <returns>
-		/// The returned string consists of the prefix, immediately followed by
-		/// the hexadecimal number, itself, and, finally, the suffix. 
-		/// 
-		/// Theoretically, you can have both a prefix and a suffix, but the idea
-		/// is to have one or the other, but not both. You can mix and match
-		/// upper and lower case glyphs in the main number string and the
-		/// decorations.
-		/// </returns>
-		/// <remarks>
-		/// The available options are overloading the single-argument ToString
-		/// method on all fourteen integer types, or crafting one generic method
-		/// that takes the integer to format as its first argument. Since it's a
-		/// lot less work, I went that route.
-		/// 
-		/// Although this method uses generics, there is no type constraint,
-		/// because the Base Class Library offers no such constraint to filter
-		/// integral types, of which there are at least fourteen, not counting
-		/// BigInteger. Since the compiler won't enforce a type constraint, I
-		/// wrote my own routine that enforces it at run time, by searching a
-		/// table of known integral types, identified by their GUID properties.
-		/// If the type of pintegralValue matches an entry in the list, the
-		/// input is accepted. Otherwise, you get an ArgumentException exception
-		/// that clearly explains what happened and why.
-		/// </remarks>
-		public static string IntegerToHexStr<T> (
+        /// <summary>
+        /// Properly formatting an integral type as a hexadecimal string,
+        /// including the decorations commonly applied to them as prefix or
+        /// suffix, is a bit beyond the reach of a simple ToString format
+        /// string.
+        /// </summary>
+        /// <typeparam name="T">
+        /// There are no compiler enforced constraints on this type, because the
+        /// Base Class Library provides no mechanism to differentiate integral
+        /// types in constraints for generics. See the remarks for a comment about
+        /// how we get around this.
+        /// </typeparam>
+        /// <param name="pintegralValue">
+        /// Specify the value to be formatted as hexadecimal. Integral types
+        /// only, because that's the only type that may be formatted in this
+        /// way.
+        /// </param>
+        /// <returns>
+        /// The returned string consists of the prefix, immediately followed by
+        /// the hexadecimal number, itself, and, finally, the suffix. 
+        /// 
+        /// Theoretically, you can have both a prefix and a suffix, but the idea
+        /// is to have one or the other, but not both. You can mix and match
+        /// upper and lower case glyphs in the main number string and the
+        /// decorations.
+        /// </returns>
+        public static string IntegerToHexStr<T> ( T pintegralValue )
+        {
+            return IntegerToHexStr (
+                pintegralValue ,
+                HEX_GLYPHS_DEFAULT_MINIMUM ,
+                HexFormatDecoration.Prefix_Ox_LC );
+        }   // IntegerToHexStr (1 of 4)
+
+
+        /// <summary>
+        /// Properly formatting an integral type as a hexadecimal string,
+        /// including the decorations commonly applied to them as prefix or
+        /// suffix, is a bit beyond the reach of a simple ToString format
+        /// string.
+        /// </summary>
+        /// <typeparam name="T">
+        /// There are no compiler enforced constraints on this type, because the
+        /// Base Class Library provides no mechanism to differentiate integral
+        /// types in constraints for generics. See the remarks for a comment about
+        /// how we get around this.
+        /// </typeparam>
+        /// <param name="pintegralValue">
+        /// Specify the value to be formatted as hexadecimal. Integral types
+        /// only, because that's the only type that may be formatted in this
+        /// way.
+        /// </param>
+        /// <param name="penmHexDecoration">
+        /// The HexFormatDecoration has the Flags attribute set on it, so that
+        /// it can be processed as a bit mask, enabling it to specify multiple
+        /// items.
+        /// </param>
+        /// <returns>
+        /// The returned string consists of the prefix, immediately followed by
+        /// the hexadecimal number, itself, and, finally, the suffix. 
+        /// 
+        /// Theoretically, you can have both a prefix and a suffix, but the idea
+        /// is to have one or the other, but not both. You can mix and match
+        /// upper and lower case glyphs in the main number string and the
+        /// decorations.
+        /// </returns>
+        public static string IntegerToHexStr<T> (
+            T pintegralValue ,
+            HexFormatDecoration penmHexDecoration )
+        {
+            return IntegerToHexStr (
+                pintegralValue ,
+                HEX_GLYPHS_DEFAULT_MINIMUM ,
+                penmHexDecoration );
+        }   // IntegerToHexStr (2 of 4)
+
+
+        /// <summary>
+        /// Properly formatting an integral type as a hexadecimal string,
+        /// including the decorations commonly applied to them as prefix or
+        /// suffix, is a bit beyond the reach of a simple ToString format
+        /// string.
+        /// </summary>
+        /// <typeparam name="T">
+        /// There are no compiler enforced constraints on this type, because the
+        /// Base Class Library provides no mechanism to differentiate integral
+        /// types in constraints for generics. See the remarks for a comment about
+        /// how we get around this.
+        /// </typeparam>
+        /// <param name="pintegralValue">
+        /// Specify the value to be formatted as hexadecimal. Integral types
+        /// only, because that's the only type that may be formatted in this
+        /// way.
+        /// </param>
+        /// <param name="pintTotalDigits">
+        /// Specify the minimum number of hexadecimal "digits" (glyphs, really)
+        /// to render. If the number needs more than the specified number, the
+        /// method uses as many as it needs, causing the returned string to be
+        /// longer than you expected. If the string needs fewer characters, it
+        /// is left padded with zeros.
+        /// </param>
+        /// <returns>
+        /// The returned string consists of the prefix, immediately followed by
+        /// the hexadecimal number, itself, and, finally, the suffix. 
+        /// 
+        /// Theoretically, you can have both a prefix and a suffix, but the idea
+        /// is to have one or the other, but not both. You can mix and match
+        /// upper and lower case glyphs in the main number string and the
+        /// decorations.
+        /// </returns>
+        /// <remarks>
+        /// The available options are overloading the single-argument ToString
+        /// method on all fourteen integer types, or crafting one generic method
+        /// that takes the integer to format as its first argument. Since it's a
+        /// lot less work, I went that route.
+        /// 
+        /// Although this method uses generics, there is no type constraint,
+        /// because the Base Class Library offers no such constraint to filter
+        /// integral types, of which there are at least fourteen, not counting
+        /// BigInteger. Since the compiler won't enforce a type constraint, I
+        /// wrote my own routine that enforces it at run time, by searching a
+        /// table of known integral types, identified by their GUID properties.
+        /// If the type of pintegralValue matches an entry in the list, the
+        /// input is accepted. Otherwise, you get an ArgumentException exception
+        /// that clearly explains what happened and why.
+        /// </remarks>
+        public static string IntegerToHexStr<T> (
+            T pintegralValue ,
+            int pintTotalDigits )
+        {
+            return IntegerToHexStr (
+                pintegralValue ,
+                pintTotalDigits ,
+                HexFormatDecoration.Prefix_Ox_LC );
+        }   // IntegerToHexStr (3 of 4)
+
+
+        /// <summary>
+        /// Properly formatting an integral type as a hexadecimal string,
+        /// including the decorations commonly applied to them as prefix or
+        /// suffix, is a bit beyond the reach of a simple ToString format
+        /// string.
+        /// </summary>
+        /// <typeparam name="T">
+        /// There are no compiler enforced constraints on this type, because the
+        /// Base Class Library provides no mechanism to differentiate integral
+        /// types in constraints for generics. See the remarks for a comment about
+        /// how we get around this.
+        /// </typeparam>
+        /// <param name="pintegralValue">
+        /// Specify the value to be formatted as hexadecimal. Integral types
+        /// only, because that's the only type that may be formatted in this
+        /// way.
+        /// </param>
+        /// <param name="pintTotalDigits">
+        /// Specify the minimum number of hexadecimal "digits" (glyphs, really)
+        /// to render. If the number needs more than the specified number, the
+        /// method uses as many as it needs, causing the returned string to be
+        /// longer than you expected. If the string needs fewer characters, it
+        /// is left padded with zeros.
+        /// </param>
+        /// <param name="penmHexDecoration">
+        /// The HexFormatDecoration has the Flags attribute set on it, so that
+        /// it can be processed as a bit mask, enabling it to specify multiple
+        /// items.
+        /// </param>
+        /// <returns>
+        /// The returned string consists of the prefix, immediately followed by
+        /// the hexadecimal number, itself, and, finally, the suffix. 
+        /// 
+        /// Theoretically, you can have both a prefix and a suffix, but the idea
+        /// is to have one or the other, but not both. You can mix and match
+        /// upper and lower case glyphs in the main number string and the
+        /// decorations.
+        /// </returns>
+        /// <remarks>
+        /// The available options are overloading the single-argument ToString
+        /// method on all fourteen integer types, or crafting one generic method
+        /// that takes the integer to format as its first argument. Since it's a
+        /// lot less work, I went that route.
+        /// 
+        /// Although this method uses generics, there is no type constraint,
+        /// because the Base Class Library offers no such constraint to filter
+        /// integral types, of which there are at least fourteen, not counting
+        /// BigInteger. Since the compiler won't enforce a type constraint, I
+        /// wrote my own routine that enforces it at run time, by searching a
+        /// table of known integral types, identified by their GUID properties.
+        /// If the type of pintegralValue matches an entry in the list, the
+        /// input is accepted. Otherwise, you get an ArgumentException exception
+        /// that clearly explains what happened and why.
+        /// </remarks>
+        public static string IntegerToHexStr<T> (
 			T pintegralValue ,
 			int pintTotalDigits ,
 			HexFormatDecoration penmHexDecoration )
@@ -1330,7 +1473,7 @@ namespace WizardWrx
 						strIntegerFormatString ) ,			//		with the numeric format string that we just constructed
 					pintegralValue ) ,						//		There is a single format item; it gets the integral value.
 				strSuffix ?? SpecialStrings.EMPTY_STRING );	// Append strSuffix unless it is null, in which case, substitute the empty string.
-		}   // IntegerToHexStr
+		}   // IntegerToHexStr (4 of 4)
 		#endregion // Static HexadecimalInteger Methods
 
 

@@ -1,3 +1,20 @@
+/* Copyright (c) David A. Gray. All Rights Reserved. Licensed under a 3-chause BSD License. See License.txt in the project root for license information. */
+/*
+	----------------------------------------------------------------------------
+	Revision History
+	----------------------------------------------------------------------------
+
+	Date       By  Synopsis
+	---------- --- -------------------------------------------------------------
+	2018/09/13 DAG Custom style created by extracting and extending the default
+	               CSS that ships with DocFX.
+
+	2018/10/14 DAG Increase the font size on the article h2 selector from 16pt
+	               to 20pt, and define h3, h4, and h5 selectors so that they are
+	               more visible.
+	============================================================================
+*/
+
 article h1 {
 	font-size        : 24pt;
 	font-weight      : 300;
@@ -7,11 +24,36 @@ article h1 {
 	background-color : #ffffff;
 }
 article h2 {
+	font-size        : 20pt;
+	font-weight      : 300;
+	margin-top       : 1em;
+	margin-bottom    : 0.5em;
+	color            : #000080;
+	background-color : #ffffff;
+}
+article h3 {
+	font-size        : 18pt;
+	font-weight      : 300;
+	margin-top       : 1em;
+	margin-bottom    : 0.5em;
+	color            : #000080;
+	background-color : #ffffff;
+}
+article h4 {
 	font-size        : 16pt;
 	font-weight      : 300;
 	margin-top       : 1em;
 	margin-bottom    : 0.5em;
 	color            : #000080;
+	background-color : #ffffff;
+}
+}
+article h5 {
+	font-size        : 14pt;
+	font-weight      : 300;
+	margin-top       : 1em;
+	margin-bottom    : 0.5em;
+	color            : #000000;
 	background-color : #ffffff;
 }
 

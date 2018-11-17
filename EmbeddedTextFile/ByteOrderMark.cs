@@ -18,7 +18,7 @@
 
     Author:             David A. Gray
 
-	License:            Copyright (C) 2014-2017, David A. Gray.
+	License:            Copyright (C) 2014-2018, David A. Gray.
 						All rights reserved.
 
                         Redistribution and use in source and binary forms, with
@@ -65,12 +65,11 @@
 	2017/03/20 7.0     DAG    This class arose from the discovery that a text
                               file created by the Visual Studio text editor gets
                               a Byte Order Mark.
+
+	2018/11/11 7.11    DAG    Re-cast the text of the embedded help topics in an
+                              active voice whereever it made sense to do so.
     ============================================================================
 */
-
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 
 namespace WizardWrx.EmbeddedTextFile
@@ -317,10 +316,10 @@ namespace WizardWrx.EmbeddedTextFile
 
 
 		/// <summary>
-		/// The only public constructor demands a reference to the byte array to be evaluated.
+		/// The only public constructor demands a reference to the byte array to evaluate.
 		/// </summary>
 		/// <param name="bytes">
-		/// Supply a reference to the byte array to be tested for a Byte Order Mark.
+		/// Supply a reference to the byte array to test for a Byte Order Mark.
 		/// </param>
 		public ByteOrderMark ( byte [ ] bytes )
 		{
@@ -370,7 +369,8 @@ namespace WizardWrx.EmbeddedTextFile
 		/// <summary>
 		/// If it hasn't been directly called, the first call to either property
 		/// getter calls this method, so that the work required to evaluate the
-		/// array for a byte order mark is deferred until it is needed.
+		/// array for a byte order mark is deferred until it is needed, and it
+        /// is never subsequently repeated for the lifetime of the instance.
 		/// </summary>
 		public void TestForBOM ( )
 		{

@@ -193,6 +193,11 @@
 	                          class extension method, and add a new method,
 							  SpecialStringExercises, that lists and displays
 							  the SpecializedStrings constants.
+
+	2018/11/15 7.11    DAG    Add EnumFromStringExercises to test a new string
+                              extension method that converts a string to an
+                              enumeration, and MoreMathTests.Run to test the new
+                              MoreMath class.
     ============================================================================
 */
 
@@ -736,17 +741,28 @@ namespace DLLServices2TestStand
 							throw new Exception (
 								string.Format (
 									Properties.Resources.ERRMSG_NEW_CLASS_TESTS_20140914 ,
-									"Chop" ,
+                                    "CapitalizeWordsExercises" ,
 									intRetCode ) );
 
-						//	----------------------------------------------------
-						//	The last stop doesn't merit a photo op, because the
-						//	program is ending, and there is ample room
-						//	remaining on the screen to display the end of job
-						//	message.
-						//	----------------------------------------------------
+                        if ( ( intRetCode = NewClassTests_20140914.EnumFromStringExercises ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
+                            PauseForPictures ( OMIT_LINEFEED );
+                        else
+                            throw new Exception (
+                                string.Format (
+                                    Properties.Resources.ERRMSG_NEW_CLASS_TESTS_20140914 ,
+                                    "EnumFromStringExercises" ,
+                                    intRetCode ) );
 
-						if ( ( intRetCode = NewClassTests_20140914.UtilsExercises ( ref intTestNumber ) ) != MagicNumbers.ERROR_SUCCESS )
+                        MoreMathTests.Run ( );
+
+                        //	----------------------------------------------------
+                        //	The last stop doesn't merit a photo op, because the
+                        //	program is ending, and there is ample room
+                        //	remaining on the screen to display the end of job
+                        //	message.
+                        //	----------------------------------------------------
+
+                        if ( ( intRetCode = NewClassTests_20140914.UtilsExercises ( ref intTestNumber ) ) != MagicNumbers.ERROR_SUCCESS )
 							throw new Exception ( 
 								string.Format (
 									Properties.Resources.ERRMSG_NEW_CLASS_TESTS_20140914 ,

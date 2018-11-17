@@ -88,11 +88,29 @@ namespace WizardWrx.Common.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Value of {0} is out of range; it must be between {1} and {2}..
+        /// </summary>
+        public static string ERRMSG_ARG_OUT_OF_RANGE {
+            get {
+                return ResourceManager.GetString("ERRMSG_ARG_OUT_OF_RANGE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unable to process string {0}.
         /// </summary>
         public static string ERRMSG_BADSTRING {
             get {
                 return ResourceManager.GetString("ERRMSG_BADSTRING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The empty string is never valid in this context..
+        /// </summary>
+        public static string ERRMSG_EMPTY_STRING_NEVER_VALID {
+            get {
+                return ResourceManager.GetString("ERRMSG_EMPTY_STRING_NEVER_VALID", resourceCulture);
             }
         }
         
@@ -124,7 +142,7 @@ namespace WizardWrx.Common.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to One or more command line arguments are invalid..
+        ///   Looks up a localized string similar to At least one command line argument is invalid..
         /// </summary>
         public static string ERRMSG_INVALID_COMMAND_LINE {
             get {
@@ -138,6 +156,15 @@ namespace WizardWrx.Common.Properties {
         public static string ERRMSG_INVALID_FIELD_IN_INPUT_RECORD {
             get {
                 return ResourceManager.GetString("ERRMSG_INVALID_FIELD_IN_INPUT_RECORD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A null reference to a string is never valid in this context..
+        /// </summary>
+        public static string ERRMSG_NULLREF_NEVER_VALID {
+            get {
+                return ResourceManager.GetString("ERRMSG_NULLREF_NEVER_VALID", resourceCulture);
             }
         }
         

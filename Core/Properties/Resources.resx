@@ -156,6 +156,9 @@
     <value>Switch {0} with a default value of {1} is a duplicate.</value>
     <comment>rivate CmdLneArgsBasic instance method DefineNewSwitch constructs an exception report from this template.</comment>
   </data>
+  <data name="ERRMSG_ENUMERATION_CONVERSION" xml:space="preserve">
+    <value>{0}{3}    Input Value   = {1}{3}    Expected Type = {2}{3}</value>
+  </data>
   <data name="ERRMSG_EXCEPTION_IN_DEFINE_NEW_SWITCH" xml:space="preserve">
     <value>An {0} Exception was caught while attempting to define a switch named {1} with a default value of {2}.</value>
     <comment>Private CmdLneArgsBasic instance method DefineNewSwitch constructs an exception report from this template.</comment>

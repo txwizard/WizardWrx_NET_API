@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Namespace WizardWrx
    ">
-    <meta name="generator" content="docfx 2.39.1.0">
+    <meta name="generator" content="docfx 2.40.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -162,6 +162,11 @@ character representations of the visually ambiguous numbers and letters,
 for use in place of literals.</p>
 <p>Since static classes are implicitly sealed, this class cannot be inherited.</p>
 </section>
+      <h4><a class="xref" href="WizardWrx.MoreMath.html">MoreMath</a></h4>
+      <section><p>This static class exposes methods that perform a variety of infrequently
+used, but technically obscure or deceptively tricky mathematical
+computations.</p>
+</section>
       <h4><a class="xref" href="WizardWrx.NumberFormatters.html">NumberFormatters</a></h4>
       <section><p>This static class exposes methods to further simplify formatting of
 integers, floating point (single precision real numbers) and double
@@ -215,6 +220,9 @@ derived from long established routines in companion class StringTricks.</p>
 methods visible, importing the root WizardWrx namespace, accompanied by
 a reference to WizardWrx.Core, makes these methods visible on every
 instance of System.string.</p>
+<p>Rather than create ane entirely new class to support one small method, I
+extended this class to cover RenderEvenWhenNull, even though it is a
+generic method.</p>
 </section>
       <h4><a class="xref" href="WizardWrx.StringTricks.html">StringTricks</a></h4>
       <section><p>This is a class of static methods (functions) for performing common
@@ -261,7 +269,9 @@ providing for the CompareTo method of the IComparable interface that
 it encapsulates with a tad of syntactic sugar.</p>
 </section>
       <h4><a class="xref" href="WizardWrx.NumericFormats.HexFormatDecoration.html">NumericFormats.HexFormatDecoration</a></h4>
-      <section><p>Use this enumeration with the third argument to IntegerToHexStr.</p>
+      <section><p>Use this enumeration with the third argument to the fourth
+(coprehensive) overload of IntegerToHexStr or the second argument to
+its second overload.</p>
 </section>
       <h4><a class="xref" href="WizardWrx.ReportDetail.State.html">ReportDetail.State</a></h4>
       <section><p>This enumeration keeps track of the state of the instance.</p>

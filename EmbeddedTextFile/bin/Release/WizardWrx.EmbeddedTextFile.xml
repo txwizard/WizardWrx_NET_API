@@ -81,10 +81,10 @@
         </member>
         <member name="M:WizardWrx.EmbeddedTextFile.ByteOrderMark.#ctor(System.Byte[])">
             <summary>
-            The only public constructor demands a reference to the byte array to be evaluated.
+            The only public constructor demands a reference to the byte array to evaluate.
             </summary>
             <param name="bytes">
-            Supply a reference to the byte array to be tested for a Byte Order Mark.
+            Supply a reference to the byte array to test for a Byte Order Mark.
             </param>
         </member>
         <member name="P:WizardWrx.EmbeddedTextFile.ByteOrderMark.Kind">
@@ -106,7 +106,8 @@
             <summary>
             If it hasn't been directly called, the first call to either property
             getter calls this method, so that the work required to evaluate the
-            array for a byte order mark is deferred until it is needed.
+            array for a byte order mark is deferred until it is needed, and it
+            is never subsequently repeated for the lifetime of the instance.
             </summary>
         </member>
         <member name="T:WizardWrx.EmbeddedTextFile.Readers">
@@ -121,8 +122,8 @@
             the assembly as a embedded resource into an array of native strings.
             </summary>
             <param name="pstrResourceName">
-            Specify the fully qualified resource name, which is its source file
-            name appended to the default application namespace.
+            Specify the absolute (fully qualified) resource name, which is its
+            source file name appended to the default assembly namespace.
             </param>
             <returns>
             The return value is an array of Unicode strings, each of which is
@@ -154,8 +155,8 @@
             strings.
             </summary>
             <param name="pstrResourceName">
-            Specify the fully qualified resource name, which is its source file
-            name appended to the default application namespace.
+            Specify the absolute (fully qualified) resource name, which is its
+            source file name appended to the default assembly namespace name.
             </param>
             <param name="pasmSource">
             Pass in a reference to the Assembly from which you expect to load
@@ -190,10 +191,18 @@
              The notes in the cited reference refreshed my memory of observations
              that I made and documented a couple of weeks ago. However, it was a
              lot easier to let Google find a reference document, which was
-             probably intended for students in the Computer Science department at
-             Columbia University, at http://www1.cs.columbia.edu/~lok/csharp/refdocs/System.IO/types/Stream.html"/>,
+             intended for students in the Computer Science department at Columbia
+             University, at http://www1.cs.columbia.edu/~lok/csharp/refdocs/System.IO/types/Stream.html"/>,
              than find my own source.
              </remarks>
+             <exception cref="T:System.Exception">
+             An Exception (the base Exception type) arises when the method is
+             called with a <paramref name="pstrResourceName"/> value that cannot
+             be found in the <paramref name="pasmSource"/> assembly. When the
+             exception arises during the read operation, the generic Exception
+             wraps an InvalidDataException exception, which is returned as its
+             InnnerException property.
+             </exception>
         </member>
         <member name="M:WizardWrx.EmbeddedTextFile.Readers.StringFromANSICharacterArray(System.Byte[])">
             <summary>
@@ -203,7 +212,7 @@
             Specify the array to transform.
             </param>
             <returns>
-            The specified array is returned as a string.
+            The <paramref name="pabytWholeFile"/> array is returned as a string.
             </returns>
             <remarks>
             I did this refactoring, thinking that I had a new use for the code,

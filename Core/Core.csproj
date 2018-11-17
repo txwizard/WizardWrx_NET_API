@@ -22,6 +22,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\WizardWrx.Core.XML</DocumentationFile>
+    <LangVersion>7.3</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -31,6 +32,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\WizardWrx.Core.XML</DocumentationFile>
+    <LangVersion>7.3</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -58,6 +60,7 @@
     <Compile Include="GenericSingletonBase.cs" />
     <Compile Include="ListHelpers.cs" />
     <Compile Include="Logic.cs" />
+    <Compile Include="MoreMath.cs" />
     <Compile Include="NumberFormatters.cs" />
     <Compile Include="PropertyDefaults.cs" />
     <Compile Include="RegistryValues.cs" />

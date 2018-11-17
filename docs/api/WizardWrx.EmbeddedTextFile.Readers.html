@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class Readers
    ">
-    <meta name="generator" content="docfx 2.39.1.0">
+    <meta name="generator" content="docfx 2.40.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -114,8 +114,13 @@ that are embedded in an assembly.</p>
   </div>
   <h3 id="methods">Methods
   </h3>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_EmbeddedTextFile_Readers_LoadBinaryResourceFromAnyAssembly_System_String_System_Reflection_Assembly_.md&amp;value=---%0Auid%3A%20WizardWrx.EmbeddedTextFile.Readers.LoadBinaryResourceFromAnyAssembly(System.String%2CSystem.Reflection.Assembly)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/EmbeddedTextFile/Readers.cs/#L227">View Source</a>
+  </span>
   <a id="WizardWrx_EmbeddedTextFile_Readers_LoadBinaryResourceFromAnyAssembly_" data-uid="WizardWrx.EmbeddedTextFile.Readers.LoadBinaryResourceFromAnyAssembly*"></a>
   <h4 id="WizardWrx_EmbeddedTextFile_Readers_LoadBinaryResourceFromAnyAssembly_System_String_System_Reflection_Assembly_" data-uid="WizardWrx.EmbeddedTextFile.Readers.LoadBinaryResourceFromAnyAssembly(System.String,System.Reflection.Assembly)">LoadBinaryResourceFromAnyAssembly(String, Assembly)</h4>
   <div class="markdown level1 summary"><p>Load the named embedded binary resource into a byte array.</p>
@@ -175,12 +180,38 @@ the text file loaders call upon this routine to extract their data.</p>
 <p>The notes in the cited reference refreshed my memory of observations
 that I made and documented a couple of weeks ago. However, it was a
 lot easier to let Google find a reference document, which was
-probably intended for students in the Computer Science department at
-Columbia University, at <a href="http://www1.cs.columbia.edu/%7Elok/csharp/refdocs/System.IO/types/Stream.html">http://www1.cs.columbia.edu/~lok/csharp/refdocs/System.IO/types/Stream.html</a>&quot;/&gt;,
+intended for students in the Computer Science department at Columbia
+University, at <a href="http://www1.cs.columbia.edu/%7Elok/csharp/refdocs/System.IO/types/Stream.html">http://www1.cs.columbia.edu/~lok/csharp/refdocs/System.IO/types/Stream.html</a>&quot;/&gt;,
 than find my own source.</p>
 </div>
-  
-  
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Exception</span></td>
+        <td><p>An Exception (the base Exception type) arises when the method is
+called with a <code data-dev-comment-type="paramref" class="paramref">pstrResourceName</code> value that cannot
+be found in the <code data-dev-comment-type="paramref" class="paramref">pasmSource</code> assembly. When the
+exception arises during the read operation, the generic Exception
+wraps an InvalidDataException exception, which is returned as its
+InnnerException property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_EmbeddedTextFile_Readers_LoadTextFileFromAnyAssembly_System_String_System_Reflection_Assembly_.md&amp;value=---%0Auid%3A%20WizardWrx.EmbeddedTextFile.Readers.LoadTextFileFromAnyAssembly(System.String%2CSystem.Reflection.Assembly)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/EmbeddedTextFile/Readers.cs/#L157">View Source</a>
+  </span>
   <a id="WizardWrx_EmbeddedTextFile_Readers_LoadTextFileFromAnyAssembly_" data-uid="WizardWrx.EmbeddedTextFile.Readers.LoadTextFileFromAnyAssembly*"></a>
   <h4 id="WizardWrx_EmbeddedTextFile_Readers_LoadTextFileFromAnyAssembly_System_String_System_Reflection_Assembly_" data-uid="WizardWrx.EmbeddedTextFile.Readers.LoadTextFileFromAnyAssembly(System.String,System.Reflection.Assembly)">LoadTextFileFromAnyAssembly(String, Assembly)</h4>
   <div class="markdown level1 summary"><p>Load the lines of a plain ASCII text file that has been stored with
@@ -205,8 +236,8 @@ strings.</p>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">pstrResourceName</span></td>
-        <td><p>Specify the fully qualified resource name, which is its source file
-name appended to the default application namespace.</p>
+        <td><p>Specify the absolute (fully qualified) resource name, which is its
+source file name appended to the default assembly namespace name.</p>
 </td>
       </tr>
       <tr>
@@ -239,8 +270,13 @@ from the System.Reflection namespace.</p>
       <div><a class="xref" href="WizardWrx.EmbeddedTextFile.Readers.html#WizardWrx_EmbeddedTextFile_Readers_LoadTextFileFromCallingAssembly_System_String_">LoadTextFileFromCallingAssembly(String)</a></div>
       <div><a class="xref" href="WizardWrx.EmbeddedTextFile.Readers.html#WizardWrx_EmbeddedTextFile_Readers_LoadTextFileFromEntryAssembly_System_String_">LoadTextFileFromEntryAssembly(String)</a></div>
   </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_EmbeddedTextFile_Readers_LoadTextFileFromCallingAssembly_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.EmbeddedTextFile.Readers.LoadTextFileFromCallingAssembly(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/EmbeddedTextFile/Readers.cs/#L108">View Source</a>
+  </span>
   <a id="WizardWrx_EmbeddedTextFile_Readers_LoadTextFileFromCallingAssembly_" data-uid="WizardWrx.EmbeddedTextFile.Readers.LoadTextFileFromCallingAssembly*"></a>
   <h4 id="WizardWrx_EmbeddedTextFile_Readers_LoadTextFileFromCallingAssembly_System_String_" data-uid="WizardWrx.EmbeddedTextFile.Readers.LoadTextFileFromCallingAssembly(System.String)">LoadTextFileFromCallingAssembly(String)</h4>
   <div class="markdown level1 summary"><p>Load the lines of a plain ASCII text file that has been stored with
@@ -264,8 +300,8 @@ the assembly as a embedded resource into an array of native strings.</p>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">pstrResourceName</span></td>
-        <td><p>Specify the fully qualified resource name, which is its source file
-name appended to the default application namespace.</p>
+        <td><p>Specify the absolute (fully qualified) resource name, which is its
+source file name appended to the default assembly namespace.</p>
 </td>
       </tr>
     </tbody>
@@ -291,8 +327,13 @@ the text of a line from the original text file, sans terminator.</p>
   <div class="seealso">
       <div><a class="xref" href="WizardWrx.EmbeddedTextFile.Readers.html#WizardWrx_EmbeddedTextFile_Readers_LoadTextFileFromEntryAssembly_System_String_">LoadTextFileFromEntryAssembly(String)</a></div>
   </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_EmbeddedTextFile_Readers_LoadTextFileFromEntryAssembly_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.EmbeddedTextFile.Readers.LoadTextFileFromEntryAssembly(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/EmbeddedTextFile/Readers.cs/#L131">View Source</a>
+  </span>
   <a id="WizardWrx_EmbeddedTextFile_Readers_LoadTextFileFromEntryAssembly_" data-uid="WizardWrx.EmbeddedTextFile.Readers.LoadTextFileFromEntryAssembly*"></a>
   <h4 id="WizardWrx_EmbeddedTextFile_Readers_LoadTextFileFromEntryAssembly_System_String_" data-uid="WizardWrx.EmbeddedTextFile.Readers.LoadTextFileFromEntryAssembly(System.String)">LoadTextFileFromEntryAssembly(String)</h4>
   <div class="markdown level1 summary"><p>Load the lines of a plain ASCII text file that has been stored with
@@ -343,8 +384,13 @@ the text of a line from the original text file, sans terminator.</p>
   <div class="seealso">
       <div><a class="xref" href="WizardWrx.EmbeddedTextFile.Readers.html#WizardWrx_EmbeddedTextFile_Readers_LoadTextFileFromCallingAssembly_System_String_">LoadTextFileFromCallingAssembly(String)</a></div>
   </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_EmbeddedTextFile_Readers_StringFromANSICharacterArray_System_Byte___.md&amp;value=---%0Auid%3A%20WizardWrx.EmbeddedTextFile.Readers.StringFromANSICharacterArray(System.Byte%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/EmbeddedTextFile/Readers.cs/#L372">View Source</a>
+  </span>
   <a id="WizardWrx_EmbeddedTextFile_Readers_StringFromANSICharacterArray_" data-uid="WizardWrx.EmbeddedTextFile.Readers.StringFromANSICharacterArray*"></a>
   <h4 id="WizardWrx_EmbeddedTextFile_Readers_StringFromANSICharacterArray_System_Byte___" data-uid="WizardWrx.EmbeddedTextFile.Readers.StringFromANSICharacterArray(System.Byte[])">StringFromANSICharacterArray(Byte[])</h4>
   <div class="markdown level1 summary"><p>Transform an array of bytes, each representing one ANSI character, into a string.</p>
@@ -383,7 +429,7 @@ the text of a line from the original text file, sans terminator.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><p>The specified array is returned as a string.</p>
+        <td><p>The <code data-dev-comment-type="paramref" class="paramref">pabytWholeFile</code> array is returned as a string.</p>
 </td>
       </tr>
     </tbody>
@@ -396,8 +442,13 @@ Unicode characters. Nevertheless, the exercise is not a total loss,
 because it reminded me of the trick that I needed to transform the
 array of Unicode characters into a string.</p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_EmbeddedTextFile_Readers_StringOfLinesToArray_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.EmbeddedTextFile.Readers.StringOfLinesToArray(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/EmbeddedTextFile/Readers.cs/#L405">View Source</a>
+  </span>
   <a id="WizardWrx_EmbeddedTextFile_Readers_StringOfLinesToArray_" data-uid="WizardWrx.EmbeddedTextFile.Readers.StringOfLinesToArray*"></a>
   <h4 id="WizardWrx_EmbeddedTextFile_Readers_StringOfLinesToArray_System_String_" data-uid="WizardWrx.EmbeddedTextFile.Readers.StringOfLinesToArray(System.String)">StringOfLinesToArray(String)</h4>
   <div class="markdown level1 summary"><p>Split a string containing lines of text into an array of strings.</p>
@@ -442,8 +493,13 @@ empty strings.</p>
       </tr>
     </tbody>
   </table>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_EmbeddedTextFile_Readers_StringOfLinesToArray_System_String_System_StringSplitOptions_.md&amp;value=---%0Auid%3A%20WizardWrx.EmbeddedTextFile.Readers.StringOfLinesToArray(System.String%2CSystem.StringSplitOptions)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/EmbeddedTextFile/Readers.cs/#L440">View Source</a>
+  </span>
   <a id="WizardWrx_EmbeddedTextFile_Readers_StringOfLinesToArray_" data-uid="WizardWrx.EmbeddedTextFile.Readers.StringOfLinesToArray*"></a>
   <h4 id="WizardWrx_EmbeddedTextFile_Readers_StringOfLinesToArray_System_String_System_StringSplitOptions_" data-uid="WizardWrx.EmbeddedTextFile.Readers.StringOfLinesToArray(System.String,System.StringSplitOptions)">StringOfLinesToArray(String, StringSplitOptions)</h4>
   <div class="markdown level1 summary"><p>Split a string containing lines of text into an array of strings,
@@ -502,8 +558,13 @@ as is most likely to be the case.</p>
   <h5 id="WizardWrx_EmbeddedTextFile_Readers_StringOfLinesToArray_System_String_System_StringSplitOptions__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>Use this overload to convert a string, discarding blank lines.</p>
 </div>
-  
-  
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_EmbeddedTextFile_Readers_StringToArray_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.EmbeddedTextFile.Readers.StringToArray(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/EmbeddedTextFile/Readers.cs/#L463">View Source</a>
+  </span>
   <a id="WizardWrx_EmbeddedTextFile_Readers_StringToArray_" data-uid="WizardWrx.EmbeddedTextFile.Readers.StringToArray*"></a>
   <h4 id="WizardWrx_EmbeddedTextFile_Readers_StringToArray_System_String_" data-uid="WizardWrx.EmbeddedTextFile.Readers.StringToArray(System.String)">StringToArray(String)</h4>
   <div class="markdown level1 summary"><p>Return a one-element array containing the input string.</p>
@@ -555,6 +616,12 @@ the single input string.</p>
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
+                  <li>
+                    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_EmbeddedTextFile_Readers.md&amp;value=---%0Auid%3A%20WizardWrx.EmbeddedTextFile.Readers%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/EmbeddedTextFile/Readers.cs/#L92" class="contribution-link">View Source</a>
+                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
