@@ -6,7 +6,7 @@ To use them, add a reference to the indicated library, and add a using directive
 that specifies the corresponding namespace to any module that references it.
 
 Use the links in the table of contents along the left side of this page to view
-the documentation a namespace.
+the documentation of a namespace.
 
 ## WizardWrx: The Root Namespace
 
