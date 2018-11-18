@@ -1,10 +1,32 @@
 <h1>WizardWrx .NET API ReadMe</h1>
 
+<h2>Release<em>Notes</em>7.11.TXT</h2>
+
+<p>Fixes and improvements (mostly the latter) are listed in the cumulative history,
+<code>ChangeLog.md</code> and <code>Release_Notes_7.11.TXT</code>. Since the release notes were copied
+from the revision histories of the source files, I put them into a text file
+instead of a Markdown file. Nevertheless, you can read it directly in the GitHub
+repository without explictly downloading it.</p>
+
+<p>The most significant improvement is the addition of <code>EnumFromString</code> and
+<code>RenderEvenWhenNull</code> to the <code>WizardWrx.StringExtensions</code> classs, which defines
+extension methods on the <code>System.string</code> class.</p>
+
+<p>Another significant improvement is the addition of <code>IsGregorianLeapYear</code> defined
+in the new <code>WizardWrx.MoreMath</code> class, defined in <code>WizardWrx.Core.dll</code>, which
+faithfully implements the Gregorian year algorithm. This addition came about due
+to an anticipated need for it in my current paying project, and is a port of code
+that I wrote in ANSI C, and thoroughly tested about a decade ago.</p>
+
+<h2>Purpose of These Libraries</h2>
+
 <p>The purpose of these class libraries is to expedite development of applications
 that target any version of the Microsoft .NET Framework, from version 2.0 up.
 The classes in these libraries define numerous constants, most assigned to the
 base WizardWrx namespace, and utility classes, organized into subsidiary
 namespaces.</p>
+
+<h2>Using These Libraries</h2>
 
 <p>Since there are no name collisions, you may safely set references to all 6
 namespaces in the same source module.</p>
@@ -20,13 +42,19 @@ directory.</p>
 <li><p><code>WizardWrx_NET_API_Binaries_Release.7z</code> is the release build of the binaries.</p></li>
 </ul>
 
-<p>Theer is a DLL, PDB, and XML file for each library. To derive maximum benefit,
+<p>There is a DLL, PDB, and XML file for each library. To derive maximum benefit,
 including support for the Visual Studio managed code debugger and IntelliSense
 in the text editor, take all three.</p>
 
 <p><strong>Important</strong>: All but a couple of the libraries depend on one or more others;
 if in doubt, check the manifest of the DLL(s) you plan to use. You can use
 <code>ILDASM.exe</code>, which ships with the Microsoft .NET Framework SDKs.</p>
+
+<h2>Change Log</h2>
+
+<p>See <code>ChangeLog.md</code> for a cumulative history of changes, listed from newest to
+oldest, beginning with version 7.1. Previous changes are meticulously documented
+in the top of each source file.</p>
 
 <h2>Road Map</h2>
 

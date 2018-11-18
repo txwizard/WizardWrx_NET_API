@@ -1,10 +1,32 @@
 # WizardWrx .NET API ReadMe
 
+## Release_Notes_7.11.TXT
+
+Fixes and improvements (mostly the latter) are listed in the cumulative history,
+`ChangeLog.md` and `Release_Notes_7.11.TXT`. Since the release notes were copied
+from the revision histories of the source files, I put them into a text file
+instead of a Markdown file. Nevertheless, you can read it directly in the GitHub
+repository without explictly downloading it.
+
+The most significant improvement is the addition of `EnumFromString` and
+`RenderEvenWhenNull` to the `WizardWrx.StringExtensions` classs, which defines
+extension methods on the `System.string` class.
+
+Another significant improvement is the addition of `IsGregorianLeapYear` defined
+in the new `WizardWrx.MoreMath` class, defined in `WizardWrx.Core.dll`, which
+faithfully implements the Gregorian year algorithm. This addition came about due
+to an anticipated need for it in my current paying project, and is a port of code
+that I wrote in ANSI C, and thoroughly tested about a decade ago.
+
+## Purpose of These Libraries
+
 The purpose of these class libraries is to expedite development of applications
 that target any version of the Microsoft .NET Framework, from version 2.0 up.
 The classes in these libraries define numerous constants, most assigned to the
 base WizardWrx namespace, and utility classes, organized into subsidiary
 namespaces.
+
+## Using These Libraries
 
 Since there are no name collisions, you may safely set references to all 6
 namespaces in the same source module.

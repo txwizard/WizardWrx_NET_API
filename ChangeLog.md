@@ -1,5 +1,60 @@
 # WizardWrx .NET API Change Log
 
+This file is a running history of fixes and improvements from version 7.0
+onwards. Changes are documented for the newest version first. Within each
+version, classes are listed alphabetically.
+
+# Version 7.11
+
+Following is a summary of changes made in version 7.11, released Saturday, 17 November 2018.
+
+##Class: WizardWrx.MagicNumbers (defined in WizardWrx.Common)
+
+- BREAKING CHANGE: Rename `EXACTLY_ONE_NUNDRED` to `EXACTLY_ONE_HUNDRED` to correct a
+misspelling that prevented me finding it.
+
+- Correct the value of `EXACTLY_TEN_THOUSAND`, which I discovered was returning
+_one million_.
+
+- Define overlooked constants `EXACTLY_TEN` (10) and `EVENLY_DIVISIBLE` (0), the
+latter handy for use with the modulus operator.
+
+##Class: WizardWrx.NumericFormats (defined in WizardWrx.Common)
+
+- Define `IntegerToHexStr` overloads that omit the second and third arguments,
+substituting common defaults for the missing arguments.
+
+- Change `FormatStatusCode` to use the simplified first overload, shortening its
+stack frame and call setup requirments.
+
+##Class: WizardWrx.MoreMath (defined in WizardWrx.Core.dll)
+
+This class makes its debut, with the following static methods:
+
+- `IsEvenlyDivisibleByAnyInteger`, defined twice, to accept integer and long
+inputs.
+
+- `IsGregorianLeapYear` implements the Gregorian leap year algorithm correctly.
+
+- `IsValidGregorianYear` returns TRUE when given a number is a valid year in the
+Gregorian calendar.
+
+##Class: WizardWrx.tringExtensions (defined in WizardWrx.Core.dll)
+
+- `RenderEvenWhenNull` represents a null reference as a localizable string literal,
+`MSG_OBJECT_REFERENCE_IS_NULL`, defined in `Wizardwrx.Common.Properties.Resources`.
+
+- `EnumFromString` is a generic method that attempts to convert a string to a
+member of any enumeration. The enumeration type is inferred from the return
+type specified in the method call.
+
+##Namespace: WizardWrx.EmbeddedTextFile (defined in WizardWrx.EmbeddedTextFile.dll)
+
+The documentation of this library is re-phrased so that everything is in active
+voice. The code is unchanged.
+
+# Version 7.1
+
 Following is a list of changes made in version 7.1, released Sunday, 07 October 2018.
 
 ##Class: WizardWrx.StringExtensions (defined in WizardWrx.Core.dll)
