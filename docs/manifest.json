@@ -33,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.ASCIICharacterDisplayInfo.html",
-          "hash": "9vVp7MH/gvX4TaBt7v1udA=="
+          "hash": "aKDejmB3ToUYNoWhE+UkZA=="
         }
       },
       "is_incremental": false,
@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.ASCII_Character_Display_Table.html",
-          "hash": "As9+Q7pkQMGorfVdxJRJ8A=="
+          "hash": "Y/EDDav3aWfSCGRy73AHPQ=="
         }
       },
       "is_incremental": false,
@@ -1005,7 +1005,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.MoreMath.html",
-          "hash": "HY9LMYOWqlteqmTzwNkUtA=="
+          "hash": "WNpdgjYG7Y41xB1rgOGt4w=="
         }
       },
       "is_incremental": false,
@@ -1332,17 +1332,17 @@
         "incrementalPhase": "build"
       },
       "processors": {
-        "TocDocumentProcessor": {
+        "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build"
         },
-        "ManagedReferenceDocumentProcessor": {
+        "TocDocumentProcessor": {
           "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         }
       }

@@ -4,6 +4,30 @@ This file is a running history of fixes and improvements from version 7.0
 onwards. Changes are documented for the newest version first. Within each
 version, classes are listed alphabetically.
 
+# Version 7.12
+
+Following is a summary of changes made in version 7.12, released Friday, 23 November 2018.
+
+##Class: WizardWrx.MoreMath (defined in WizardWrx.Core.dll)
+
+This class gets a refinement of one of its initial methods, plus two new ones
+that are closely related to it.
+
+- `IsEvenlyDivisibleByAnyInteger` prevents the DivideByZeroException that would
+otherwise arise when a divisor of zero is fed to the second operand of the
+modulus operator. To preent it, the divisor is tested, and an `ArugmentException`
+exception takes its place. Since the `ArugmentException` arises in user code, the
+exception message displays the dividend that was fed into the failed method, to
+aid consumers in identifying the source of the exception when the calling code
+discards the stack trace.
+
+- `Mod` is the logical companion to `IsEvenlyDivisibleByAnyInteger`, offered as
+syntactic sugar, and `Remainder`, analogous to the `IEEERemainder` Math method,
+are synonymns.
+
+All three methods share a common message template, which went into the embedded
+string resources in the library to facilitate localization.
+
 # Version 7.11
 
 Following is a summary of changes made in version 7.11, released Saturday, 17 November 2018.

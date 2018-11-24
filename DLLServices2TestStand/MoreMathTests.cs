@@ -59,6 +59,8 @@
     Date       Version Author Description
     ---------- ------- ------ --------------------------------------------------
     2018/11/12 7.11    DAG    Initial implementation.
+
+    2018/11/23 7.12    DAG    Extend to cover the new Mod and Remainder methods.
 	============================================================================
 */
 
@@ -68,8 +70,10 @@ using WizardWrx;
 
 namespace DLLServices2TestStand
 {
-    class MoreMathTests
+    static class MoreMathTests
     {
+        static readonly WizardWrx.DLLConfigurationManager.ExceptionLogger s_exceptionLogger = WizardWrx.DLLConfigurationManager.ExceptionLogger.GetTheSingleInstance ( );
+
         static readonly IntegerModulusTestCase [ ] s_aintegerModulusTestCases = new IntegerModulusTestCase [ ]
         {
             new IntegerModulusTestCase(0,10),
@@ -112,6 +116,8 @@ namespace DLLServices2TestStand
             new IntegerModulusTestCase(-199,100),
             new IntegerModulusTestCase(-200,100),
             new IntegerModulusTestCase(-201,100),
+
+            new IntegerModulusTestCase(25,0),
         };   //  static readonly IntegerModulusTestCase [ ] s_aintegerModulusTestCases
 
 
@@ -156,6 +162,8 @@ namespace DLLServices2TestStand
             new LongModulusTestCase(9999999999,10000000000),
             new LongModulusTestCase(10000000000,10000000000),
             new LongModulusTestCase(10000000001,10000000000),
+
+            new LongModulusTestCase(25,0),
         };   //  static readonly IntegerModulusTestCase [ ] s_alongModulusTestCases
 
         static readonly int [ ] s_aintGregorianYearTests = new int [ ]
@@ -229,20 +237,35 @@ namespace DLLServices2TestStand
 
         public static void Run ( )
         {
-            Console.WriteLine ( @"Begin tests of class WizardWrx.MoreMath (defined in WizardWrx.Core.dll):{0}" , Environment.NewLine );
-            Console.WriteLine ( @"    Display public constants:{0}" , Environment.NewLine );
-            Console.WriteLine ( @"        EXCEPTION_ON_INVALID_INPUT      = {0}" , MoreMath.EXCEPTION_ON_INVALID_INPUT );
-            Console.WriteLine ( @"        GRGORIAN_CALENDAR_ADOPTION_YEAR = {0}" , Util.FormatIntegerValue ( MoreMath.GRGORIAN_CALENDAR_ADOPTION_YEAR ) );
+            Console.WriteLine (
+                @"Begin tests of class WizardWrx.MoreMath (defined in WizardWrx.Core.dll):{0}" ,
+                Environment.NewLine );
+            Console.WriteLine (
+                @"    Display public constants:{0}" ,
+                Environment.NewLine );
+            Console.WriteLine (
+                @"        EXCEPTION_ON_INVALID_INPUT      = {0}" ,
+                MoreMath.EXCEPTION_ON_INVALID_INPUT );
+            Console.WriteLine (
+                @"        GRGORIAN_CALENDAR_ADOPTION_YEAR = {0}" ,
+                Util.FormatIntegerValue (
+                    MoreMath.GRGORIAN_CALENDAR_ADOPTION_YEAR ) );
 
-            Console.WriteLine ( @"{0}    Test and demonstrate the IsEvenlyDivisibleByAnyInteger method.{0}" , Environment.NewLine );
+            Console.WriteLine (
+                @"{0}    Test and demonstrate the IsEvenlyDivisibleByAnyInteger method.{0}" ,
+                Environment.NewLine );
 
             TestIntegerModulus ( );
 
             TestLongIntegerModulus ( );
 
-            Console.WriteLine ( @"{0}    Test and demonstrate the IsGregorianLeapYear method.{0}" , Environment.NewLine );
+            Console.WriteLine (
+                @"{0}    Test and demonstrate the IsGregorianLeapYear method.{0}" ,
+                Environment.NewLine );
 
-            Console.WriteLine( @"        Test the default implementation, which throws an ArgumentOutOfRange exception when the input year is invalid.{0}" , Environment.NewLine );
+            Console.WriteLine
+                ( @"        Test the default implementation, which throws an ArgumentOutOfRange exception when the input year is invalid.{0}" ,
+                Environment.NewLine );
 
             for ( int intIndex = ArrayInfo.ARRAY_FIRST_ELEMENT ;
                       intIndex < s_aintGregorianYearTests.Length ;
@@ -266,7 +289,6 @@ namespace DLLServices2TestStand
                 }
             }   // for ( int intIndex = ArrayInfo.ARRAY_FIRST_ELEMENT ; intIndex < s_aintGregorianYearTests.Length ; intIndex++ )
 
-
             Console.WriteLine ( @"{0}        Test the implementation that returns FALSE when the input year is invalid.{0}" , Environment.NewLine );
 
             for ( int intIndex = ArrayInfo.ARRAY_FIRST_ELEMENT ;
@@ -279,7 +301,7 @@ namespace DLLServices2TestStand
                         "            Case {0,2} of {1,2}: {2,4} {3} a leap year." ,
                         ArrayInfo.OrdinalFromIndex ( intIndex ) ,               // Format Item 0: Case {0,2}
                         s_aintGregorianYearTests.Length ,                       // Format Item 1: of {1,2}:
-                        s_aintGregorianYearTests [ intIndex ] ,                    // Format Item 2: : {2,4}
+                        s_aintGregorianYearTests [ intIndex ] ,                 // Format Item 2: : {2,4}
                         MoreMath.IsGregorianLeapYear (
                             s_aintGregorianYearTests [ intIndex ] ,
                             MoreMath.FALSE_ON_INVALID_INPUT )
@@ -292,12 +314,16 @@ namespace DLLServices2TestStand
                 }
             }   // for ( int intIndex = ArrayInfo.ARRAY_FIRST_ELEMENT ; intIndex < s_aintGregorianYearTests.Length ; intIndex++ )
 
-            Console.WriteLine ( @"{0}Tests of class WizardWrx.MoreMath done{0}" , Environment.NewLine );
+            Console.WriteLine (
+                @"{0}Tests of class WizardWrx.MoreMath done{0}" ,
+                Environment.NewLine );
         }   // public static void Run
 
         private static void TestIntegerModulus ( )
         {
-            Console.WriteLine ( @"        Standard (32 bit) integers:{0}" , Environment.NewLine );
+            Console.WriteLine (
+                @"        Standard (32 bit) integers:{0}" ,
+                Environment.NewLine );
 
             for ( int intIndex = ArrayInfo.ARRAY_FIRST_ELEMENT ;
                       intIndex < s_aintegerModulusTestCases.Length ;
@@ -323,36 +349,116 @@ namespace DLLServices2TestStand
             }   // for ( int intIndex=ArrayInfo.ARRAY_FIRST_ELEMENT ; intIndex < s_longModulusTestCases.Length ; intIndex++ )
         }   // private static void TestLongIntegerModulu
 
+
         private static void ShowAndTell (
             int pintIndex ,
             IntegerModulusTestCase pintegerModulusTestCase )
         {
             Console.WriteLine (
-                @"            Case {0,2}: Dividend         = {1}{3}                     Divisor          = {2}" ,
+                @"            Case {0,2}: Dividend            = {1}{3}                     Divisor             = {2}" ,
                 ArrayInfo.OrdinalFromIndex ( pintIndex ) ,                              // Format Item 0: Case {0}:
                 Util.FormatIntegerValue ( pintegerModulusTestCase.Dividend ) ,          // Format Item 1: Dividend = {1}
                 Util.FormatIntegerValue ( pintegerModulusTestCase.Divisor ) ,           // Format Item 2: Divisor  = {2}
                 Environment.NewLine );                                                  // Format Item 3: Platform-dependent newline
+
+            try
+            {
+                Console.WriteLine (
+                    @"                     Evenly Divisible    = {0}" ,
+                    MoreMath.IsEvenlyDivisibleByAnyInteger (
+                        pintegerModulusTestCase.Dividend ,
+                        pintegerModulusTestCase.Divisor ) );
+            }
+            catch ( ArgumentException exBadArg )
+            {
+                s_exceptionLogger.ReportException ( exBadArg );
+            }
+
+            try
+            {
+                Console.WriteLine (
+                    @"                     Mod (Modulus)       = {0}" ,
+                    MoreMath.Mod (
+                        pintegerModulusTestCase.Dividend ,
+                        pintegerModulusTestCase.Divisor ) );
+            }
+            catch ( ArgumentException exBadArg )
+            {
+                s_exceptionLogger.ReportException ( exBadArg );
+            }
+
+            try
+            {
+                Console.WriteLine (
+                    @"                     Remainder (Modulus) = {0}" ,
+                    MoreMath.Remainder (
+                        pintegerModulusTestCase.Dividend ,
+                        pintegerModulusTestCase.Divisor ) );
+            }
+            catch ( ArgumentException exBadArg )
+            {
+                s_exceptionLogger.ReportException ( exBadArg );
+            }
+
             Console.WriteLine (
-                @"                     Evenly Divisible = {0}" ,
-                MoreMath.IsEvenlyDivisibleByAnyInteger (
-                    pintegerModulusTestCase.Dividend ,
-                    pintegerModulusTestCase.Divisor ) );
+                @"            Case {0,2} Done{1}" ,
+                ArrayInfo.OrdinalFromIndex ( pintIndex ) ,  // Format Item 0: Case {0}:
+                Environment.NewLine );                      // Format Item 1: Platform-dependent newline
         }   // private static void ShowAndTell (1 of 2)
+
 
         private static void ShowAndTell ( int pintIndex , LongModulusTestCase plongIntegerModulusTestCase )
         {
             Console.WriteLine (
-                @"            Case {0,2}: Dividend         = {1}{3}                     Divisor          = {2}" ,
+                @"            Case {0,2}: Dividend            = {1}{3}                     Divisor             = {2}" ,
                 ArrayInfo.OrdinalFromIndex ( pintIndex ) ,                              // Format Item 0: Case {0}:
                 Util.FormatIntegerValue ( plongIntegerModulusTestCase.Dividend ) ,      // Format Item 1: Dividend = {1}
                 Util.FormatIntegerValue ( plongIntegerModulusTestCase.Divisor ) ,       // Format Item 2: Divisor  = {2}
                 Environment.NewLine );                                                  // Format Item 3: Platform-dependent newline
+
+            try
+            {
+                Console.WriteLine (
+                    @"                     Evenly Divisible    = {0}" ,
+                    MoreMath.IsEvenlyDivisibleByAnyInteger (
+                        plongIntegerModulusTestCase.Dividend ,
+                        plongIntegerModulusTestCase.Divisor ) );
+            }
+            catch ( ArgumentException exBadArg )
+            {
+                s_exceptionLogger.ReportException ( exBadArg );
+            }
+
+            try
+            {
+                Console.WriteLine (
+                    @"                     Mod (Modulus)       = {0}" ,
+                    MoreMath.Mod (
+                        plongIntegerModulusTestCase.Dividend ,
+                        plongIntegerModulusTestCase.Divisor ) );
+            }
+            catch ( ArgumentException exBadArg )
+            {
+                s_exceptionLogger.ReportException ( exBadArg );
+            }
+
+            try
+            {
+                Console.WriteLine (
+                    @"                     Remainder (Modulus) = {0}" ,
+                    MoreMath.Remainder (
+                        plongIntegerModulusTestCase.Dividend ,
+                        plongIntegerModulusTestCase.Divisor ) );
+            }
+            catch ( ArgumentException exBadArg )
+            {
+                s_exceptionLogger.ReportException ( exBadArg );
+            }
+
             Console.WriteLine (
-                @"                     Evenly Divisible = {0}" ,
-                MoreMath.IsEvenlyDivisibleByAnyInteger (
-                    plongIntegerModulusTestCase.Dividend ,
-                    plongIntegerModulusTestCase.Divisor ) );
+                @"            Case {0,2} Done{1}" ,
+                ArrayInfo.OrdinalFromIndex ( pintIndex ) ,  // Format Item 0: Case {0}:
+                Environment.NewLine );                      // Format Item 1: Platform-dependent newline
         }   // private static void ShowAndTell (2 of 2)
 
 

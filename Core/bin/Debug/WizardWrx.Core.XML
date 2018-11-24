@@ -3535,6 +3535,11 @@
               Looks up a localized string similar to ERROR: The DisplayOrder property cannot be set to zero..
             </summary>
         </member>
+        <member name="P:WizardWrx.Core.Properties.Resources.ERRMSG_DIVISOR_CANNOT_BE_ZERO">
+            <summary>
+              Looks up a localized string similar to Since this method requires dividing by the value of argument {0}, its value canot be zero. The {1} value was {2}, which MAY be zero..
+            </summary>
+        </member>
         <member name="P:WizardWrx.Core.Properties.Resources.ERRMSG_DUPLICATE_SWITCH">
             <summary>
               Looks up a localized string similar to Switch {0} with a default value of {1} is a duplicate..
@@ -5499,6 +5504,18 @@
             
             Otherwise, return FALSE.
             </returns>
+            <exception cref="T:System.ArgumentException">
+            An ArgumentException exception arises when
+            <paramref name="pintDivisor"/> is equal to zero, an illegal value,
+            since the modulus operator is implemented as an integer division,
+            and division by zero is an illegal operation, which raises an
+            DivideByZeroException exception. Rather than report the unhelpful
+            DivideByZeroException exception, <paramref name="pintDivisor"/> is
+            evaluated, and the ArgumentException is raised in its place, so that
+            the dividend passed into the method can be reported.
+            </exception>
+            <seealso cref="M:WizardWrx.MoreMath.Mod(System.Int32,System.Int32)"/>
+            <seealso cref="M:WizardWrx.MoreMath.Remainder(System.Int32,System.Int32)"/>
         </member>
         <member name="M:WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int64,System.Int64)">
             <summary>
@@ -5518,6 +5535,18 @@
             evenly divisible by <paramref name="plngDivisor"/>. therwise, return
             FALSE.
             </returns>
+            <exception cref="T:System.ArgumentException">
+            An ArgumentException exception arises when
+            <paramref name="plngDivisor"/> is equal to zero, an illegal value,
+            since the modulus operator is implemented as an integer division,
+            and division by zero is an illegal operation, which raises an
+            DivideByZeroException exception. Rather than report the unhelpful
+            DivideByZeroException exception, <paramref name="plngDivisor"/> is
+            evaluated, and the ArgumentException is raised in its place, so that
+            the dividend passed into the method can be reported.
+            </exception>
+            <seealso cref="M:WizardWrx.MoreMath.Mod(System.Int64,System.Int64)"/>
+            <seealso cref="M:WizardWrx.MoreMath.Remainder(System.Int64,System.Int64)"/>
         </member>
         <member name="M:WizardWrx.MoreMath.IsGregorianLeapYear(System.Int32,System.Boolean)">
             <summary>
@@ -5575,6 +5604,142 @@
             <returns>
             TRUE if the input is a valid Gregorian year.
             </returns>
+        </member>
+        <member name="M:WizardWrx.MoreMath.Mod(System.Int32,System.Int32)">
+            <summary>
+            Return the modulus, which is the remainder from dividing one integer
+            by another.
+            </summary>
+            <param name="pintDividend">
+            Specify the number into which <paramref name="pintDivisor"/> should
+            be divided to obtain a remainder.
+            </param>
+            <param name="pintDivisor">
+            Specify the number by which <paramref name="pintDividend"/> should
+            be divided to obtain a remainder.
+            </param>
+            <returns>
+            The return value is the integer result of dividing
+            <paramref name="pintDividend"/> by <paramref name="pintDivisor"/>.
+            </returns>
+            <remarks>
+            The Mod and Remainder methods are synonymns. Their simplicity lends
+            them to inline implementation.
+            </remarks>
+            <exception cref="T:System.ArgumentException">
+            An ArgumentException exception arises when
+            <paramref name="pintDivisor"/> is equal to zero, an illegal value,
+            since the modulus operator is implemented as an integer division,
+            and division by zero is an illegal operation, which raises an
+            DivideByZeroException exception. Rather than report the unhelpful
+            DivideByZeroException exception, <paramref name="pintDivisor"/> is
+            evaluated, and the ArgumentException is raised in its place, so that
+            the dividend passed into the method can be reported.
+            </exception>
+            <seealso cref="M:WizardWrx.MoreMath.Remainder(System.Int32,System.Int32)"/>
+            <seealso cref="M:WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int32,System.Int32)"/>
+        </member>
+        <member name="M:WizardWrx.MoreMath.Mod(System.Int64,System.Int64)">
+            <summary>
+            Return the modulus, which is the remainder from dividing one integer
+            by another.
+            </summary>
+            <param name="plngDividend">
+            Specify the number into which <paramref name="plngDivisor"/> should
+            be divided to obtain a remainder.
+            </param>
+            <param name="plngDivisor">
+            Specify the number by which <paramref name="plngDividend"/> should
+            be divided to obtain a remainder.
+            </param>
+            <returns>
+            The return value is the long integer result of dividing
+            <paramref name="plngDividend"/> by <paramref name="plngDivisor"/>.
+            </returns>
+            <remarks>
+            The Mod and Remainder methods are synonymns. Their simplicity lends
+            them to inline implementation.
+            </remarks>
+            <exception cref="T:System.ArgumentException">
+            An ArgumentException exception arises when
+            <paramref name="plngDivisor"/> is equal to zero, an illegal value,
+            since the modulus operator is implemented as an integer division,
+            and division by zero is an illegal operation, which raises an
+            DivideByZeroException exception. Rather than report the unhelpful
+            DivideByZeroException exception, <paramref name="plngDivisor"/> is
+            evaluated, and the ArgumentException is raised in its place, so that
+            the dividend passed into the method can be reported.
+            </exception>
+            <seealso cref="M:WizardWrx.MoreMath.Remainder(System.Int64,System.Int64)"/>
+            <seealso cref="M:WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int32,System.Int32)"/>
+        </member>
+        <member name="M:WizardWrx.MoreMath.Remainder(System.Int32,System.Int32)">
+            <summary>
+            Return the modulus, which is the remainder from dividing one integer
+            by another.
+            </summary>
+            <param name="pintDividend">
+            Specify the number into which <paramref name="pintDivisor"/> should
+            be divided to obtain a remainder.
+            </param>
+            <param name="pintDivisor">
+            Specify the number by which <paramref name="pintDividend"/> should
+            be divided to obtain a remainder.
+            </param>
+            <returns>
+            The return value is the integer result of dividing
+            <paramref name="pintDividend"/> by <paramref name="pintDivisor"/>.
+            </returns>
+            <remarks>
+            The Mod and Remainder methods are synonymns. Their simplicity lends
+            them to inline implementation.
+            </remarks>
+            <exception cref="T:System.ArgumentException">
+            An ArgumentException exception arises when
+            <paramref name="pintDivisor"/> is equal to zero, an illegal value,
+            since the modulus operator is implemented as an integer division,
+            and division by zero is an illegal operation, which raises an
+            DivideByZeroException exception. Rather than report the unhelpful
+            DivideByZeroException exception, <paramref name="pintDivisor"/> is
+            evaluated, and the ArgumentException is raised in its place, so that
+            the dividend passed into the method can be reported.
+            </exception>
+            <seealso cref="M:WizardWrx.MoreMath.Mod(System.Int32,System.Int32)"/>
+            <seealso cref="M:WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int32,System.Int32)"/>
+        </member>
+        <member name="M:WizardWrx.MoreMath.Remainder(System.Int64,System.Int64)">
+            <summary>
+            Return the modulus, which is the remainder from dividing one integer
+            by another.
+            </summary>
+            <param name="plngDividend">
+            Specify the number into which <paramref name="plngDivisor"/> should
+            be divided to obtain a remainder.
+            </param>
+            <param name="plngDivisor">
+            Specify the number by which <paramref name="plngDividend"/> should
+            be divided to obtain a remainder.
+            </param>
+            <returns>
+            The return value is the integer result of dividing
+            <paramref name="plngDividend"/> by <paramref name="plngDivisor"/>.
+            </returns>
+            <remarks>
+            The Mod and Remainder methods are synonymns. Their simplicity lends
+            them to inline implementation.
+            </remarks>
+            <exception cref="T:System.ArgumentException">
+            An ArgumentException exception arises when
+            <paramref name="plngDivisor"/> is equal to zero, an illegal value,
+            since the modulus operator is implemented as an integer division,
+            and division by zero is an illegal operation, which raises an
+            DivideByZeroException exception. Rather than report the unhelpful
+            DivideByZeroException exception, <paramref name="plngDivisor"/> is
+            evaluated, and the ArgumentException is raised in its place, so that
+            the dividend passed into the method can be reported.
+            </exception>
+            <seealso cref="M:WizardWrx.MoreMath.Mod(System.Int64,System.Int64)"/>
+            <seealso cref="M:WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int64,System.Int64)"/>
         </member>
         <member name="M:WizardWrx.MoreMath.CreateYearOutOfRangeMsg(System.Int32)">
             <summary>
@@ -7453,38 +7618,38 @@
             </returns>
         </member>
         <member name="M:WizardWrx.StringExtensions.ParseCommentInHTMLComment(System.String)">
-            <summary>
-            Extract parameters, expressed as key-value pairs, from a standard
-            HTML comment.
-            </summary>
-            <param name="pstrInput">
-            String containing a well formed HTML comment, surrounding the
-            key-value pairs. If the string is not a well formed HTML comment,
-            with a single space between the comment delimiters and the body,
-            or the string is null or empty, the returned collection is empty.
-            </param>
-            <returns>
-            A NameValueCollection of parameter names and values, which may be
-            empty, but is guaranteed to be returned, empty or not.
-            </returns>
-            <example>
-            Parse this: <!-- ForPage=default;UseTable=False -->
+             <summary>
+             Extract parameters, expressed as key-value pairs, from a standard
+             HTML comment.
+             </summary>
+             <param name="pstrInput">
+             String containing a well formed HTML comment, surrounding the
+             key-value pairs. If the string is not a well formed HTML comment,
+             with a single space between the comment delimiters and the body,
+             or the string is null or empty, the returned collection is empty.
+             </param>
+             <returns>
+             A NameValueCollection of parameter names and values, which may be
+             empty, but is guaranteed to be returned, empty or not.
+             </returns>
+             <example>
+             <code>
+             Parse this: &lt;!-- ForPage=default;UseTable=False --&gt;
+             
+             Return this:
             
-            Return this:
-            
-            		=======================
-            		Name		Value
-            		-----------	-----------
-            		ForPage		default
-            		UseTable	False
-            		=======================
-            		
-            The returned NameValueCollection contains two members.
-            
-            Since this method guarantees to return an initialized
-            NameValueCollection, the empty collection is allocated by the first
-            statement, and is unconditionally returned by the last statement.
-            </example>
+            			=======================
+            			Name		Value
+            			-----------	-----------
+            			ForPage		default
+            			UseTable	False
+            			=======================
+             </code>
+             <para>The returned NameValueCollection contains two members.</para>
+             <para>Since this method guarantees to return an initialized
+             NameValueCollection, the empty collection is allocated by the first
+             statement, and is unconditionally returned by the last statement.</para>
+             </example>
         </member>
         <member name="M:WizardWrx.StringExtensions.QuoteString(System.String)">
             <summary>

@@ -142,6 +142,15 @@ namespace WizardWrx.Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Since this method requires dividing by the value of argument {0}, its value canot be zero. The {1} value was {2}, which MAY be zero..
+        /// </summary>
+        internal static string ERRMSG_DIVISOR_CANNOT_BE_ZERO {
+            get {
+                return ResourceManager.GetString("ERRMSG_DIVISOR_CANNOT_BE_ZERO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Switch {0} with a default value of {1} is a duplicate..
         /// </summary>
         internal static string ERRMSG_DUPLICATE_SWITCH {

@@ -1,16 +1,23 @@
 # WizardWrx .NET API ReadMe
 
-## Release_Notes_7.11.TXT
+## Release Notes 7.12
 
-Fixes and improvements (mostly the latter) are listed in the cumulative history,
-`ChangeLog.md` and `Release_Notes_7.11.TXT`. Since the release notes were copied
-from the revision histories of the source files, I put them into a text file
-instead of a Markdown file. Nevertheless, you can read it directly in the GitHub
-repository without explictly downloading it.
+New since version 7.11, out less than a week, are `Mod` and `Remainder` methods
+in the `MoreMath` class, logical companions to `IsEvenlyDivisibleByAnyInteger`,
+which first appeared in version 7.11. All three sport mechanisms to prevent the
+dreaded `DivideByZeroException` exception. Though they still throw exceptions, an
+`ArgumentException` exception takes its place, giving a few more clues about what
+went amiss.
 
-The most significant improvement is the addition of `EnumFromString` and
-`RenderEvenWhenNull` to the `WizardWrx.StringExtensions` classs, which defines
-extension methods on the `System.string` class.
+Fixes and improvements (mostly the latter) in version 7.11 are listed in the
+cumulative history, `ChangeLog.md` and `Release_Notes_7.11.TXT`. Since the
+release notes were copied from the revision histories of the source files, they
+went into a plain text file  instead of a Markdown file. Nevertheless, you can
+read it directly in the GitHub repository without explictly downloading it.
+
+The most significant improvement in version 7.11 is the addition of
+`EnumFromString` and `RenderEvenWhenNull` to the `WizardWrx.StringExtensions`
+class, which defines extension methods on the `System.string` class.
 
 Another significant improvement is the addition of `IsGregorianLeapYear` defined
 in the new `WizardWrx.MoreMath` class, defined in `WizardWrx.Core.dll`, which
@@ -25,6 +32,22 @@ that target any version of the Microsoft .NET Framework, from version 2.0 up.
 The classes in these libraries define numerous constants, most assigned to the
 base WizardWrx namespace, and utility classes, organized into subsidiary
 namespaces.
+
+## Versioning
+
+Up to version 7.12, my approach to versioning has been as follows.
+
+__AssemblyVersion__ tracks the build numbers as we go, and changes with every
+release, regardless of whether the release contains breaking changes. By
+design, breaking changes in my code are _exteremely_ rare.
+
+__AssemblyFileVersion__ ties together all the assemblies in this API. This is
+achived by way of a spilt AssemblyInfo.cs class.
+
+__AssemblyInformationalVersion__ went unused.
+
+Though this numbering scheme shall remain unchanged for the present, evaluating
+whether to continue or alter it is going onto the road map.
 
 ## Using These Libraries
 
@@ -89,7 +112,10 @@ the lifeblood of systems software.
 7.	Devise a simple, automated mechanism to have the configuration file
 associated with a DLL that defines a class that derives from`PropertyDefaults`
 follow it, as do the associated XML documentation and program data base (`.pdb`)
-files.
+files. _Recent experience with Visual Studio 2017 suggests that this may now be moot_.
+
+8.	Evaluate the current versioning protocol in light of lessons learned from
+recent studies of the matter.
 
 ## Contributing
 

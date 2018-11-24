@@ -120,7 +120,7 @@ computations.</p>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_MoreMath_EXCEPTION_ON_INVALID_INPUT.md&amp;value=---%0Auid%3A%20WizardWrx.MoreMath.EXCEPTION_ON_INVALID_INPUT%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/MoreMath.cs/#L104">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/MoreMath.cs/#L116">View Source</a>
   </span>
   <h4 id="WizardWrx_MoreMath_EXCEPTION_ON_INVALID_INPUT" data-uid="WizardWrx.MoreMath.EXCEPTION_ON_INVALID_INPUT">EXCEPTION_ON_INVALID_INPUT</h4>
   <div class="markdown level1 summary"><p>Use with IsGregorianLeapYear and IsValidGregorianYear to cause them
@@ -152,7 +152,7 @@ rather than return FALSE.</p>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_MoreMath_FALSE_ON_INVALID_INPUT.md&amp;value=---%0Auid%3A%20WizardWrx.MoreMath.FALSE_ON_INVALID_INPUT%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/MoreMath.cs/#L111">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/MoreMath.cs/#L123">View Source</a>
   </span>
   <h4 id="WizardWrx_MoreMath_FALSE_ON_INVALID_INPUT" data-uid="WizardWrx.MoreMath.FALSE_ON_INVALID_INPUT">FALSE_ON_INVALID_INPUT</h4>
   <div class="markdown level1 summary"><p>Use with IsGregorianLeapYear and IsValidGregorianYear to cause them
@@ -184,7 +184,7 @@ invalid Gregorian year; instead, both return FALSE.</p>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_MoreMath_GRGORIAN_CALENDAR_ADOPTION_YEAR.md&amp;value=---%0Auid%3A%20WizardWrx.MoreMath.GRGORIAN_CALENDAR_ADOPTION_YEAR%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/MoreMath.cs/#L124">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/MoreMath.cs/#L136">View Source</a>
   </span>
   <h4 id="WizardWrx_MoreMath_GRGORIAN_CALENDAR_ADOPTION_YEAR" data-uid="WizardWrx.MoreMath.GRGORIAN_CALENDAR_ADOPTION_YEAR">GRGORIAN_CALENDAR_ADOPTION_YEAR</h4>
   <div class="markdown level1 summary"><p>Year values must be greater than this value. Callers may use this
@@ -222,7 +222,7 @@ calendar that was in use before 1583.</p>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_MoreMath_IsEvenlyDivisibleByAnyInteger_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/MoreMath.cs/#L147">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/MoreMath.cs/#L182">View Source</a>
   </span>
   <a id="WizardWrx_MoreMath_IsEvenlyDivisibleByAnyInteger_" data-uid="WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger*"></a>
   <h4 id="WizardWrx_MoreMath_IsEvenlyDivisibleByAnyInteger_System_Int32_System_Int32_" data-uid="WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int32,System.Int32)">IsEvenlyDivisibleByAnyInteger(Int32, Int32)</h4>
@@ -278,12 +278,40 @@ divisible by <code data-dev-comment-type="paramref" class="paramref">pintDivisor
       </tr>
     </tbody>
   </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td><p>An ArgumentException exception arises when
+<code data-dev-comment-type="paramref" class="paramref">pintDivisor</code> is equal to zero, an illegal value,
+since the modulus operator is implemented as an integer division,
+and division by zero is an illegal operation, which raises an
+DivideByZeroException exception. Rather than report the unhelpful
+DivideByZeroException exception, <code data-dev-comment-type="paramref" class="paramref">pintDivisor</code> is
+evaluated, and the ArgumentException is raised in its place, so that
+the dividend passed into the method can be reported.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_MoreMath_IsEvenlyDivisibleByAnyInteger_System_Int32_System_Int32__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="WizardWrx.MoreMath.html#WizardWrx_MoreMath_Mod_System_Int32_System_Int32_">Mod(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.MoreMath.html#WizardWrx_MoreMath_Remainder_System_Int32_System_Int32_">Remainder(Int32, Int32)</a></div>
+  </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_MoreMath_IsEvenlyDivisibleByAnyInteger_System_Int64_System_Int64_.md&amp;value=---%0Auid%3A%20WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int64%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/MoreMath.cs/#L171">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/MoreMath.cs/#L228">View Source</a>
   </span>
   <a id="WizardWrx_MoreMath_IsEvenlyDivisibleByAnyInteger_" data-uid="WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger*"></a>
   <h4 id="WizardWrx_MoreMath_IsEvenlyDivisibleByAnyInteger_System_Int64_System_Int64_" data-uid="WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int64,System.Int64)">IsEvenlyDivisibleByAnyInteger(Int64, Int64)</h4>
@@ -339,12 +367,40 @@ FALSE.</p>
       </tr>
     </tbody>
   </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td><p>An ArgumentException exception arises when
+<code data-dev-comment-type="paramref" class="paramref">plngDivisor</code> is equal to zero, an illegal value,
+since the modulus operator is implemented as an integer division,
+and division by zero is an illegal operation, which raises an
+DivideByZeroException exception. Rather than report the unhelpful
+DivideByZeroException exception, <code data-dev-comment-type="paramref" class="paramref">plngDivisor</code> is
+evaluated, and the ArgumentException is raised in its place, so that
+the dividend passed into the method can be reported.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_MoreMath_IsEvenlyDivisibleByAnyInteger_System_Int64_System_Int64__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="WizardWrx.MoreMath.html#WizardWrx_MoreMath_Mod_System_Int64_System_Int64_">Mod(Int64, Int64)</a></div>
+      <div><a class="xref" href="WizardWrx.MoreMath.html#WizardWrx_MoreMath_Remainder_System_Int64_System_Int64_">Remainder(Int64, Int64)</a></div>
+  </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_MoreMath_IsGregorianLeapYear_System_Int32_System_Boolean_.md&amp;value=---%0Auid%3A%20WizardWrx.MoreMath.IsGregorianLeapYear(System.Int32%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/MoreMath.cs/#L212">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/MoreMath.cs/#L280">View Source</a>
   </span>
   <a id="WizardWrx_MoreMath_IsGregorianLeapYear_" data-uid="WizardWrx.MoreMath.IsGregorianLeapYear*"></a>
   <h4 id="WizardWrx_MoreMath_IsGregorianLeapYear_System_Int32_System_Boolean_" data-uid="WizardWrx.MoreMath.IsGregorianLeapYear(System.Int32,System.Boolean)">IsGregorianLeapYear(Int32, Boolean)</h4>
@@ -430,7 +486,7 @@ exception. The default value is EXCEPTION_ON_INVALID_INPUT (true).</p>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_MoreMath_IsValidGregorianYear_System_Int32_System_Boolean_.md&amp;value=---%0Auid%3A%20WizardWrx.MoreMath.IsValidGregorianYear(System.Int32%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/MoreMath.cs/#L295">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/MoreMath.cs/#L363">View Source</a>
   </span>
   <a id="WizardWrx_MoreMath_IsValidGregorianYear_" data-uid="WizardWrx.MoreMath.IsValidGregorianYear*"></a>
   <h4 id="WizardWrx_MoreMath_IsValidGregorianYear_System_Int32_System_Boolean_" data-uid="WizardWrx.MoreMath.IsValidGregorianYear(System.Int32,System.Boolean)">IsValidGregorianYear(Int32, Boolean)</h4>
@@ -487,6 +543,374 @@ RETURN_ON_INVALID_INPUT in lieu of FALSE.</p>
       </tr>
     </tbody>
   </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_MoreMath_Mod_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.MoreMath.Mod(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/MoreMath.cs/#L413">View Source</a>
+  </span>
+  <a id="WizardWrx_MoreMath_Mod_" data-uid="WizardWrx.MoreMath.Mod*"></a>
+  <h4 id="WizardWrx_MoreMath_Mod_System_Int32_System_Int32_" data-uid="WizardWrx.MoreMath.Mod(System.Int32,System.Int32)">Mod(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Return the modulus, which is the remainder from dividing one integer
+by another.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int Mod(int pintDividend, int pintDivisor)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintDividend</span></td>
+        <td><p>Specify the number into which <code data-dev-comment-type="paramref" class="paramref">pintDivisor</code> should
+be divided to obtain a remainder.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintDivisor</span></td>
+        <td><p>Specify the number by which <code data-dev-comment-type="paramref" class="paramref">pintDividend</code> should
+be divided to obtain a remainder.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The return value is the integer result of dividing
+<code data-dev-comment-type="paramref" class="paramref">pintDividend</code> by <code data-dev-comment-type="paramref" class="paramref">pintDivisor</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_MoreMath_Mod_System_Int32_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The Mod and Remainder methods are synonymns. Their simplicity lends
+them to inline implementation.</p>
+</div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td><p>An ArgumentException exception arises when
+<code data-dev-comment-type="paramref" class="paramref">pintDivisor</code> is equal to zero, an illegal value,
+since the modulus operator is implemented as an integer division,
+and division by zero is an illegal operation, which raises an
+DivideByZeroException exception. Rather than report the unhelpful
+DivideByZeroException exception, <code data-dev-comment-type="paramref" class="paramref">pintDivisor</code> is
+evaluated, and the ArgumentException is raised in its place, so that
+the dividend passed into the method can be reported.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_MoreMath_Mod_System_Int32_System_Int32__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="WizardWrx.MoreMath.html#WizardWrx_MoreMath_Remainder_System_Int32_System_Int32_">Remainder(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.MoreMath.html#WizardWrx_MoreMath_IsEvenlyDivisibleByAnyInteger_System_Int32_System_Int32_">IsEvenlyDivisibleByAnyInteger(Int32, Int32)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_MoreMath_Mod_System_Int64_System_Int64_.md&amp;value=---%0Auid%3A%20WizardWrx.MoreMath.Mod(System.Int64%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/MoreMath.cs/#L462">View Source</a>
+  </span>
+  <a id="WizardWrx_MoreMath_Mod_" data-uid="WizardWrx.MoreMath.Mod*"></a>
+  <h4 id="WizardWrx_MoreMath_Mod_System_Int64_System_Int64_" data-uid="WizardWrx.MoreMath.Mod(System.Int64,System.Int64)">Mod(Int64, Int64)</h4>
+  <div class="markdown level1 summary"><p>Return the modulus, which is the remainder from dividing one integer
+by another.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static long Mod(long plngDividend, long plngDivisor)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">plngDividend</span></td>
+        <td><p>Specify the number into which <code data-dev-comment-type="paramref" class="paramref">plngDivisor</code> should
+be divided to obtain a remainder.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">plngDivisor</span></td>
+        <td><p>Specify the number by which <code data-dev-comment-type="paramref" class="paramref">plngDividend</code> should
+be divided to obtain a remainder.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><p>The return value is the long integer result of dividing
+<code data-dev-comment-type="paramref" class="paramref">plngDividend</code> by <code data-dev-comment-type="paramref" class="paramref">plngDivisor</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_MoreMath_Mod_System_Int64_System_Int64__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The Mod and Remainder methods are synonymns. Their simplicity lends
+them to inline implementation.</p>
+</div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td><p>An ArgumentException exception arises when
+<code data-dev-comment-type="paramref" class="paramref">plngDivisor</code> is equal to zero, an illegal value,
+since the modulus operator is implemented as an integer division,
+and division by zero is an illegal operation, which raises an
+DivideByZeroException exception. Rather than report the unhelpful
+DivideByZeroException exception, <code data-dev-comment-type="paramref" class="paramref">plngDivisor</code> is
+evaluated, and the ArgumentException is raised in its place, so that
+the dividend passed into the method can be reported.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_MoreMath_Mod_System_Int64_System_Int64__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="WizardWrx.MoreMath.html#WizardWrx_MoreMath_Remainder_System_Int64_System_Int64_">Remainder(Int64, Int64)</a></div>
+      <div><a class="xref" href="WizardWrx.MoreMath.html#WizardWrx_MoreMath_IsEvenlyDivisibleByAnyInteger_System_Int32_System_Int32_">IsEvenlyDivisibleByAnyInteger(Int32, Int32)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_MoreMath_Remainder_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.MoreMath.Remainder(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/MoreMath.cs/#L511">View Source</a>
+  </span>
+  <a id="WizardWrx_MoreMath_Remainder_" data-uid="WizardWrx.MoreMath.Remainder*"></a>
+  <h4 id="WizardWrx_MoreMath_Remainder_System_Int32_System_Int32_" data-uid="WizardWrx.MoreMath.Remainder(System.Int32,System.Int32)">Remainder(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Return the modulus, which is the remainder from dividing one integer
+by another.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int Remainder(int pintDividend, int pintDivisor)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintDividend</span></td>
+        <td><p>Specify the number into which <code data-dev-comment-type="paramref" class="paramref">pintDivisor</code> should
+be divided to obtain a remainder.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintDivisor</span></td>
+        <td><p>Specify the number by which <code data-dev-comment-type="paramref" class="paramref">pintDividend</code> should
+be divided to obtain a remainder.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The return value is the integer result of dividing
+<code data-dev-comment-type="paramref" class="paramref">pintDividend</code> by <code data-dev-comment-type="paramref" class="paramref">pintDivisor</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_MoreMath_Remainder_System_Int32_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The Mod and Remainder methods are synonymns. Their simplicity lends
+them to inline implementation.</p>
+</div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td><p>An ArgumentException exception arises when
+<code data-dev-comment-type="paramref" class="paramref">pintDivisor</code> is equal to zero, an illegal value,
+since the modulus operator is implemented as an integer division,
+and division by zero is an illegal operation, which raises an
+DivideByZeroException exception. Rather than report the unhelpful
+DivideByZeroException exception, <code data-dev-comment-type="paramref" class="paramref">pintDivisor</code> is
+evaluated, and the ArgumentException is raised in its place, so that
+the dividend passed into the method can be reported.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_MoreMath_Remainder_System_Int32_System_Int32__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="WizardWrx.MoreMath.html#WizardWrx_MoreMath_Mod_System_Int32_System_Int32_">Mod(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.MoreMath.html#WizardWrx_MoreMath_IsEvenlyDivisibleByAnyInteger_System_Int32_System_Int32_">IsEvenlyDivisibleByAnyInteger(Int32, Int32)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_MoreMath_Remainder_System_Int64_System_Int64_.md&amp;value=---%0Auid%3A%20WizardWrx.MoreMath.Remainder(System.Int64%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/MoreMath.cs/#L560">View Source</a>
+  </span>
+  <a id="WizardWrx_MoreMath_Remainder_" data-uid="WizardWrx.MoreMath.Remainder*"></a>
+  <h4 id="WizardWrx_MoreMath_Remainder_System_Int64_System_Int64_" data-uid="WizardWrx.MoreMath.Remainder(System.Int64,System.Int64)">Remainder(Int64, Int64)</h4>
+  <div class="markdown level1 summary"><p>Return the modulus, which is the remainder from dividing one integer
+by another.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static long Remainder(long plngDividend, long plngDivisor)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">plngDividend</span></td>
+        <td><p>Specify the number into which <code data-dev-comment-type="paramref" class="paramref">plngDivisor</code> should
+be divided to obtain a remainder.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">plngDivisor</span></td>
+        <td><p>Specify the number by which <code data-dev-comment-type="paramref" class="paramref">plngDividend</code> should
+be divided to obtain a remainder.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><p>The return value is the integer result of dividing
+<code data-dev-comment-type="paramref" class="paramref">plngDividend</code> by <code data-dev-comment-type="paramref" class="paramref">plngDivisor</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_MoreMath_Remainder_System_Int64_System_Int64__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The Mod and Remainder methods are synonymns. Their simplicity lends
+them to inline implementation.</p>
+</div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td><p>An ArgumentException exception arises when
+<code data-dev-comment-type="paramref" class="paramref">plngDivisor</code> is equal to zero, an illegal value,
+since the modulus operator is implemented as an integer division,
+and division by zero is an illegal operation, which raises an
+DivideByZeroException exception. Rather than report the unhelpful
+DivideByZeroException exception, <code data-dev-comment-type="paramref" class="paramref">plngDivisor</code> is
+evaluated, and the ArgumentException is raised in its place, so that
+the dividend passed into the method can be reported.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_MoreMath_Remainder_System_Int64_System_Int64__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="WizardWrx.MoreMath.html#WizardWrx_MoreMath_Mod_System_Int64_System_Int64_">Mod(Int64, Int64)</a></div>
+      <div><a class="xref" href="WizardWrx.MoreMath.html#WizardWrx_MoreMath_IsEvenlyDivisibleByAnyInteger_System_Int64_System_Int64_">IsEvenlyDivisibleByAnyInteger(Int64, Int64)</a></div>
+  </div>
 </article>
           </div>
           
@@ -498,7 +922,7 @@ RETURN_ON_INVALID_INPUT in lieu of FALSE.</p>
                     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_MoreMath.md&amp;value=---%0Auid%3A%20WizardWrx.MoreMath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/MoreMath.cs/#L97" class="contribution-link">View Source</a>
+                    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/MoreMath.cs/#L108" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

@@ -11015,6 +11015,44 @@ references:
   isSpec: "True"
   fullName: WizardWrx.MoreMath.IsValidGregorianYear
   nameWithType: MoreMath.IsValidGregorianYear
+- uid: WizardWrx.MoreMath.Mod(System.Int32,System.Int32)
+  name: Mod(Int32, Int32)
+  href: api/WizardWrx.MoreMath.html#WizardWrx_MoreMath_Mod_System_Int32_System_Int32_
+  commentId: M:WizardWrx.MoreMath.Mod(System.Int32,System.Int32)
+  fullName: WizardWrx.MoreMath.Mod(System.Int32, System.Int32)
+  nameWithType: MoreMath.Mod(Int32, Int32)
+- uid: WizardWrx.MoreMath.Mod(System.Int64,System.Int64)
+  name: Mod(Int64, Int64)
+  href: api/WizardWrx.MoreMath.html#WizardWrx_MoreMath_Mod_System_Int64_System_Int64_
+  commentId: M:WizardWrx.MoreMath.Mod(System.Int64,System.Int64)
+  fullName: WizardWrx.MoreMath.Mod(System.Int64, System.Int64)
+  nameWithType: MoreMath.Mod(Int64, Int64)
+- uid: WizardWrx.MoreMath.Mod*
+  name: Mod
+  href: api/WizardWrx.MoreMath.html#WizardWrx_MoreMath_Mod_
+  commentId: Overload:WizardWrx.MoreMath.Mod
+  isSpec: "True"
+  fullName: WizardWrx.MoreMath.Mod
+  nameWithType: MoreMath.Mod
+- uid: WizardWrx.MoreMath.Remainder(System.Int32,System.Int32)
+  name: Remainder(Int32, Int32)
+  href: api/WizardWrx.MoreMath.html#WizardWrx_MoreMath_Remainder_System_Int32_System_Int32_
+  commentId: M:WizardWrx.MoreMath.Remainder(System.Int32,System.Int32)
+  fullName: WizardWrx.MoreMath.Remainder(System.Int32, System.Int32)
+  nameWithType: MoreMath.Remainder(Int32, Int32)
+- uid: WizardWrx.MoreMath.Remainder(System.Int64,System.Int64)
+  name: Remainder(Int64, Int64)
+  href: api/WizardWrx.MoreMath.html#WizardWrx_MoreMath_Remainder_System_Int64_System_Int64_
+  commentId: M:WizardWrx.MoreMath.Remainder(System.Int64,System.Int64)
+  fullName: WizardWrx.MoreMath.Remainder(System.Int64, System.Int64)
+  nameWithType: MoreMath.Remainder(Int64, Int64)
+- uid: WizardWrx.MoreMath.Remainder*
+  name: Remainder
+  href: api/WizardWrx.MoreMath.html#WizardWrx_MoreMath_Remainder_
+  commentId: Overload:WizardWrx.MoreMath.Remainder
+  isSpec: "True"
+  fullName: WizardWrx.MoreMath.Remainder
+  nameWithType: MoreMath.Remainder
 - uid: WizardWrx.NumberFormatters
   name: NumberFormatters
   href: api/WizardWrx.NumberFormatters.html

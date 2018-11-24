@@ -82,10 +82,21 @@
                               3) IsValidGregorianYear returns TRUE if given a
                                  number that is a valid year in the Gregorian
                                  calendar.
+
+	2018/11/23 7.12    DAG    Define the Mod function, the logical companion to
+                              IsEvenlyDivisibleByAnyInteger, as syntactic sugar,
+                              and Remainder, analogous to the IEEERemainder Math
+                              method, and change IsEvenlyDivisibleByAnyInteger
+                              to raise an ArgumentException when called with its
+                              divisor set to zero. The Remainder synonymn covers
+                              for users who recognize IEEERemainder in the Math
+                              class in the BCL.
     ============================================================================
 */
 
 using System;
+
+using WizardWrx.Core.Properties;
 
 namespace WizardWrx
 {
@@ -96,6 +107,7 @@ namespace WizardWrx
     /// </summary>
     public static class MoreMath
     {
+        #region Public Constants for use with IsGregorianLeapYear method
         /// <summary>
         /// Use with IsGregorianLeapYear and IsValidGregorianYear to cause them
         /// to throw an exception when either is fed an invalid Gregorian year,
@@ -122,10 +134,21 @@ namespace WizardWrx
         /// calendar that was in use before 1583.
         /// </summary>
         public const int GRGORIAN_CALENDAR_ADOPTION_YEAR = 1582;
+        #endregion  // Public Constants for use with IsGregorianLeapYear method
 
 
-        private const string ARG_NAME_YEAR = "pintYear";
+        #region Private Constants for use in exception reports
+        private const string ARG_NAME_YEAR = @"pintYear";
 
+        private const string INT_ARG_NAME_DIVIDEND = @"pintDividend";
+        private const string INT_ARG_NAME_DIVISOR = @"pintDivisor";
+
+        private const string LONG_ARG_NAME_DIVIDEND = @"plngDividend";
+        private const string LONG_ARG_NAME_DIVISOR = @"pintDivisor";
+        #endregion  // Private Constants for use in exception reports
+
+
+        #region IsEvenlyDivisibleByAnyInteger Methods
         /// <summary>
         /// Evaluate whether integer <paramref name="pintDividend"/> is evenly
         /// divisible by integer <paramref name="pintDivisor"/>.
@@ -144,12 +167,34 @@ namespace WizardWrx
         /// 
         /// Otherwise, return FALSE.
         /// </returns>
+        /// <exception cref="ArgumentException">
+        /// An ArgumentException exception arises when
+        /// <paramref name="pintDivisor"/> is equal to zero, an illegal value,
+        /// since the modulus operator is implemented as an integer division,
+        /// and division by zero is an illegal operation, which raises an
+        /// DivideByZeroException exception. Rather than report the unhelpful
+        /// DivideByZeroException exception, <paramref name="pintDivisor"/> is
+        /// evaluated, and the ArgumentException is raised in its place, so that
+        /// the dividend passed into the method can be reported.
+        /// </exception>
+        /// <seealso cref="Mod(int,int)"/>
+        /// <seealso cref="Remainder(int, int)"/>
         public static bool IsEvenlyDivisibleByAnyInteger (
             int pintDividend ,
             int pintDivisor )
         {
-            return pintDividend % pintDivisor == MagicNumbers.EVENLY_DIVISIBLE;
+            if ( pintDivisor != MagicNumbers.ZERO )
+                return pintDividend % pintDivisor == MagicNumbers.EVENLY_DIVISIBLE;
+            else
+                throw new ArgumentException (
+                    string.Format (                                             // string message
+                        Resources.ERRMSG_DIVISOR_CANNOT_BE_ZERO ,               // Format control string
+                        INT_ARG_NAME_DIVISOR ,                                  // Format Item 0: the value of argument {0}
+                        INT_ARG_NAME_DIVIDEND ,                                 // Format Item 1: its value canot be zero. The {1} value
+                        pintDividend ) ,                                        // Format Item 2: was {2}, which MAY be zero.
+                    INT_ARG_NAME_DIVISOR );                                     // string paramname
         }   // IsEvenlyDivisibleByAnyInteger (1 of 2)
+
 
         /// <summary>
         /// Evaluate whether long integer <paramref name="plngDividend"/> is
@@ -168,14 +213,37 @@ namespace WizardWrx
         /// evenly divisible by <paramref name="plngDivisor"/>. therwise, return
         /// FALSE.
         /// </returns>
+        /// <exception cref="ArgumentException">
+        /// An ArgumentException exception arises when
+        /// <paramref name="plngDivisor"/> is equal to zero, an illegal value,
+        /// since the modulus operator is implemented as an integer division,
+        /// and division by zero is an illegal operation, which raises an
+        /// DivideByZeroException exception. Rather than report the unhelpful
+        /// DivideByZeroException exception, <paramref name="plngDivisor"/> is
+        /// evaluated, and the ArgumentException is raised in its place, so that
+        /// the dividend passed into the method can be reported.
+        /// </exception>
+        /// <seealso cref="Mod(long,long)"/>
+        /// <seealso cref="Remainder(long, long)"/>
         public static bool IsEvenlyDivisibleByAnyInteger (
             long plngDividend ,
             long plngDivisor )
         {
-            return plngDividend % plngDivisor == MagicNumbers.EVENLY_DIVISIBLE;
+            if ( plngDivisor != MagicNumbers.ZERO )
+                return plngDividend % plngDivisor == MagicNumbers.EVENLY_DIVISIBLE;
+            else
+                throw new ArgumentException (
+                    string.Format (                                             // string message
+                        Resources.ERRMSG_DIVISOR_CANNOT_BE_ZERO ,               // Format control string
+                        LONG_ARG_NAME_DIVISOR ,                                 // Format Item 0: the value of argument {0}
+                        LONG_ARG_NAME_DIVIDEND ,                                // Format Item 1: its value canot be zero. The {1} value
+                        plngDividend ) ,                                        // Format Item 2: was {2}, which MAY be zero.
+                    LONG_ARG_NAME_DIVISOR );                                    // string paramname
         }   // IsEvenlyDivisibleByAnyInteger (2 of 2)
+        #endregion  // IsEvenlyDivisibleByAnyInteger Methods
 
 
+        #region IsGregorianLeapYear Methods
         /// <summary>
         /// Given a valid year, return True if the year is a leap year, else
         /// return False.
@@ -190,8 +258,8 @@ namespace WizardWrx
         /// enforced by the IsValidGregorianYear method.
         /// </summary>
         /// <param name="pintYear">
-		/// Gregorian year number, greater than 1582, to evaluate
-		/// </param>
+        /// Gregorian year number, greater than 1582, to evaluate
+        /// </param>
         /// <param name="pfThrowError">
         /// Specify FALSE_ON_INVALID_INPUT to suppress the default behavior,
         /// which is for IsValidGregorianYear, when called upon to validate
@@ -199,8 +267,8 @@ namespace WizardWrx
         /// exception. The default value is EXCEPTION_ON_INVALID_INPUT (true).
         /// </param>
         /// <returns>
-		/// TRUE if <paramref name="pintYear"/> is a leap year, else FALSE.
-		/// </returns>
+        /// TRUE if <paramref name="pintYear"/> is a leap year, else FALSE.
+        /// </returns>
         /// <exception cref="ArgumentOutOfRangeException">
         /// An ArgumentOutOfRangeException exception arises when 
         /// <paramref name="pintYear"/> is an invalid Gregorian year, unless
@@ -306,21 +374,221 @@ namespace WizardWrx
 
             return false;
         }   // public static bool IsValidGregorianYear
+        #endregion  // IsGregorianLeapYear Methods
 
 
+        #region Mod and Remainder methods, which are interchangeable
+        /// <summary>
+        /// Return the modulus, which is the remainder from dividing one integer
+        /// by another.
+        /// </summary>
+        /// <param name="pintDividend">
+        /// Specify the number into which <paramref name="pintDivisor"/> should
+        /// be divided to obtain a remainder.
+        /// </param>
+        /// <param name="pintDivisor">
+        /// Specify the number by which <paramref name="pintDividend"/> should
+        /// be divided to obtain a remainder.
+        /// </param>
+        /// <returns>
+        /// The return value is the integer result of dividing
+        /// <paramref name="pintDividend"/> by <paramref name="pintDivisor"/>.
+        /// </returns>
+        /// <remarks>
+        /// The Mod and Remainder methods are synonymns. Their simplicity lends
+        /// them to inline implementation.
+        /// </remarks>
+        /// <exception cref="ArgumentException">
+        /// An ArgumentException exception arises when
+        /// <paramref name="pintDivisor"/> is equal to zero, an illegal value,
+        /// since the modulus operator is implemented as an integer division,
+        /// and division by zero is an illegal operation, which raises an
+        /// DivideByZeroException exception. Rather than report the unhelpful
+        /// DivideByZeroException exception, <paramref name="pintDivisor"/> is
+        /// evaluated, and the ArgumentException is raised in its place, so that
+        /// the dividend passed into the method can be reported.
+        /// </exception>
+        /// <seealso cref="Remainder(int,int)"/>
+        /// <seealso cref="IsEvenlyDivisibleByAnyInteger(int,int)"/>
+        public static int Mod (
+            int pintDividend ,
+            int pintDivisor )
+        {
+            if ( pintDivisor != MagicNumbers.ZERO )
+                return pintDividend % pintDivisor;
+            else
+                throw new ArgumentException (
+                    string.Format (                                             // string message
+                        Resources.ERRMSG_DIVISOR_CANNOT_BE_ZERO ,               // Format control string
+                        INT_ARG_NAME_DIVISOR ,                                  // Format Item 0: the value of argument {0}
+                        INT_ARG_NAME_DIVIDEND ,                                 // Format Item 1: its value canot be zero. The {1} value
+                        pintDividend ) ,                                        // Format Item 2: was {2}, which MAY be zero.
+                    INT_ARG_NAME_DIVISOR );                                     // string paramname
+        }   // public static int Mod (1 of 2)
+
+
+        /// <summary>
+        /// Return the modulus, which is the remainder from dividing one integer
+        /// by another.
+        /// </summary>
+        /// <param name="plngDividend">
+        /// Specify the number into which <paramref name="plngDivisor"/> should
+        /// be divided to obtain a remainder.
+        /// </param>
+        /// <param name="plngDivisor">
+        /// Specify the number by which <paramref name="plngDividend"/> should
+        /// be divided to obtain a remainder.
+        /// </param>
+        /// <returns>
+        /// The return value is the long integer result of dividing
+        /// <paramref name="plngDividend"/> by <paramref name="plngDivisor"/>.
+        /// </returns>
+        /// <remarks>
+        /// The Mod and Remainder methods are synonymns. Their simplicity lends
+        /// them to inline implementation.
+        /// </remarks>
+        /// <exception cref="ArgumentException">
+        /// An ArgumentException exception arises when
+        /// <paramref name="plngDivisor"/> is equal to zero, an illegal value,
+        /// since the modulus operator is implemented as an integer division,
+        /// and division by zero is an illegal operation, which raises an
+        /// DivideByZeroException exception. Rather than report the unhelpful
+        /// DivideByZeroException exception, <paramref name="plngDivisor"/> is
+        /// evaluated, and the ArgumentException is raised in its place, so that
+        /// the dividend passed into the method can be reported.
+        /// </exception>
+        /// <seealso cref="Remainder(long,long)"/>
+        /// <seealso cref="IsEvenlyDivisibleByAnyInteger(int,int)"/>
+        public static long Mod (
+            long plngDividend ,
+            long plngDivisor )
+        {
+            if ( plngDivisor != MagicNumbers.ZERO )
+                return plngDividend % plngDivisor;
+            else
+                throw new ArgumentException (
+                    string.Format (                                             // string message
+                        Resources.ERRMSG_DIVISOR_CANNOT_BE_ZERO ,               // Format control string
+                        LONG_ARG_NAME_DIVISOR ,                                 // Format Item 0: the value of argument {0}
+                        LONG_ARG_NAME_DIVIDEND ,                                // Format Item 1: its value canot be zero. The {1} value
+                        plngDividend ) ,                                        // Format Item 2: was {2}, which MAY be zero.
+                    LONG_ARG_NAME_DIVISOR );                                    // string paramname
+        }   // public static long Mod (1 of 2)
+
+
+        /// <summary>
+        /// Return the modulus, which is the remainder from dividing one integer
+        /// by another.
+        /// </summary>
+        /// <param name="pintDividend">
+        /// Specify the number into which <paramref name="pintDivisor"/> should
+        /// be divided to obtain a remainder.
+        /// </param>
+        /// <param name="pintDivisor">
+        /// Specify the number by which <paramref name="pintDividend"/> should
+        /// be divided to obtain a remainder.
+        /// </param>
+        /// <returns>
+        /// The return value is the integer result of dividing
+        /// <paramref name="pintDividend"/> by <paramref name="pintDivisor"/>.
+        /// </returns>
+        /// <remarks>
+        /// The Mod and Remainder methods are synonymns. Their simplicity lends
+        /// them to inline implementation.
+        /// </remarks>
+        /// <exception cref="ArgumentException">
+        /// An ArgumentException exception arises when
+        /// <paramref name="pintDivisor"/> is equal to zero, an illegal value,
+        /// since the modulus operator is implemented as an integer division,
+        /// and division by zero is an illegal operation, which raises an
+        /// DivideByZeroException exception. Rather than report the unhelpful
+        /// DivideByZeroException exception, <paramref name="pintDivisor"/> is
+        /// evaluated, and the ArgumentException is raised in its place, so that
+        /// the dividend passed into the method can be reported.
+        /// </exception>
+        /// <seealso cref="Mod(int,int)"/>
+        /// <seealso cref="IsEvenlyDivisibleByAnyInteger(int,int)"/>
+        public static int Remainder (
+            int pintDividend ,
+            int pintDivisor )
+        {
+            if ( pintDivisor != MagicNumbers.ZERO )
+                return pintDividend % pintDivisor;
+            else
+                throw new ArgumentException (
+                    string.Format (                                             // string message
+                        Resources.ERRMSG_DIVISOR_CANNOT_BE_ZERO ,               // Format control string
+                        INT_ARG_NAME_DIVISOR ,                                  // Format Item 0: the value of argument {0}
+                        INT_ARG_NAME_DIVIDEND ,                                 // Format Item 1: its value canot be zero. The {1} value
+                        pintDividend ) ,                                        // Format Item 2: was {2}, which MAY be zero.
+                    INT_ARG_NAME_DIVISOR );                                     // string paramname
+        }   // public static int Remainder (1 of 2)
+
+
+        /// <summary>
+        /// Return the modulus, which is the remainder from dividing one integer
+        /// by another.
+        /// </summary>
+        /// <param name="plngDividend">
+        /// Specify the number into which <paramref name="plngDivisor"/> should
+        /// be divided to obtain a remainder.
+        /// </param>
+        /// <param name="plngDivisor">
+        /// Specify the number by which <paramref name="plngDividend"/> should
+        /// be divided to obtain a remainder.
+        /// </param>
+        /// <returns>
+        /// The return value is the integer result of dividing
+        /// <paramref name="plngDividend"/> by <paramref name="plngDivisor"/>.
+        /// </returns>
+        /// <remarks>
+        /// The Mod and Remainder methods are synonymns. Their simplicity lends
+        /// them to inline implementation.
+        /// </remarks>
+        /// <exception cref="ArgumentException">
+        /// An ArgumentException exception arises when
+        /// <paramref name="plngDivisor"/> is equal to zero, an illegal value,
+        /// since the modulus operator is implemented as an integer division,
+        /// and division by zero is an illegal operation, which raises an
+        /// DivideByZeroException exception. Rather than report the unhelpful
+        /// DivideByZeroException exception, <paramref name="plngDivisor"/> is
+        /// evaluated, and the ArgumentException is raised in its place, so that
+        /// the dividend passed into the method can be reported.
+        /// </exception>
+        /// <seealso cref="Mod(long,long)"/>
+        /// <seealso cref="IsEvenlyDivisibleByAnyInteger(long,long)"/>
+        public static long Remainder (
+            long plngDividend ,
+            long plngDivisor )
+        {
+            if ( plngDivisor != MagicNumbers.ZERO )
+                return plngDividend % plngDivisor;
+            else
+                throw new ArgumentException (
+                    string.Format (                                             // string message
+                        Resources.ERRMSG_DIVISOR_CANNOT_BE_ZERO ,               // Format control string
+                        LONG_ARG_NAME_DIVISOR ,                                 // Format Item 0: the value of argument {0}
+                        LONG_ARG_NAME_DIVIDEND ,                                // Format Item 1: its value canot be zero. The {1} value
+                        plngDividend ) ,                                        // Format Item 2: was {2}, which MAY be zero.
+                    LONG_ARG_NAME_DIVISOR );                                    // string paramname
+        }   // public static long Remainder 2 of 2
+        #endregion  // Mod and Remainder methods, which are interchangeable
+
+
+        #region Private Helper Methods
         /// <summary>
         /// This method returns a string that contains the value, and the
         /// upper and lower limits that it must meet, according to the rules
         /// against which it was evaluated.
         /// </summary>
         /// <param name="pintBadYear">
-		/// Invalid Gregorian year that provoked the error.
-		/// </param>
-		/// <returns>
-		/// The returned string is a message, suitable for use as the Message
-		/// argument to an ArgumentOutOfRange exception constructor.
-		/// </returns>
-		private static string CreateYearOutOfRangeMsg ( int pintBadYear )
+        /// Invalid Gregorian year that provoked the error.
+        /// </param>
+        /// <returns>
+        /// The returned string is a message, suitable for use as the Message
+        /// argument to an ArgumentOutOfRange exception constructor.
+        /// </returns>
+        private static string CreateYearOutOfRangeMsg ( int pintBadYear )
         {
             return string.Format (
                 Common.Properties.Resources.ERRMSG_ARG_OUT_OF_RANGE ,
@@ -328,5 +596,6 @@ namespace WizardWrx
                 GRGORIAN_CALENDAR_ADOPTION_YEAR ,
                 DateTime.MaxValue.Year );
         }   // CreateYearOutOfRangeMsg
+        #endregion  // Private Helper Methods
     }   // public static class MoreMath
 }   // namespace WizardWrx
