@@ -970,6 +970,9 @@
             </example>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_TEN"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED_THOUSAND"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION_LONG"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_TEN_THOUSAND"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_THOUSAND"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_MILLION"/>
@@ -981,6 +984,9 @@
             </summary>
             <seealso cref="F:WizardWrx.MagicNumbers.EVENLY_DIVISIBLE"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED_THOUSAND"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION_LONG"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_TEN_THOUSAND"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_THOUSAND"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_MILLION"/>
@@ -994,6 +1000,51 @@
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_TEN"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_TEN_THOUSAND"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_THOUSAND"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED_THOUSAND"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION_LONG"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_MILLION"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_BILLION"/>
+        </member>
+        <member name="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION">
+            <summary>
+            Use this constant when you need a literal value of exactly one hundred million.
+            </summary>
+            <seealso cref="F:WizardWrx.MagicNumbers.EVENLY_DIVISIBLE"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_TEN"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED_THOUSAND"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION_LONG"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_TEN_THOUSAND"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_THOUSAND"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_MILLION"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_BILLION"/>
+        </member>
+        <member name="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION_LONG">
+            <summary>
+            Use this constant when you need a long integer literal value of exactly one hundred million.
+            </summary>
+            <seealso cref="F:WizardWrx.MagicNumbers.EVENLY_DIVISIBLE"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_TEN"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_TEN_THOUSAND"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_THOUSAND"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_MILLION"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_BILLION"/>
+        </member>
+        <member name="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED_THOUSAND">
+            <summary>
+            Use this constant when you need a literal value of exactly one hundred thousand.
+            </summary>
+            <seealso cref="F:WizardWrx.MagicNumbers.EVENLY_DIVISIBLE"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_TEN"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION_LONG"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_TEN_THOUSAND"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_THOUSAND"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_MILLION"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_BILLION"/>
         </member>
@@ -1004,6 +1055,9 @@
             <seealso cref="F:WizardWrx.MagicNumbers.EVENLY_DIVISIBLE"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_TEN"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED_THOUSAND"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION_LONG"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_TEN_THOUSAND"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_MILLION"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_BILLION"/>
@@ -1020,6 +1074,9 @@
             <seealso cref="F:WizardWrx.MagicNumbers.EVENLY_DIVISIBLE"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_TEN"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED_THOUSAND"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION_LONG"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_THOUSAND"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_MILLION"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_BILLION"/>
@@ -1031,6 +1088,9 @@
             <seealso cref="F:WizardWrx.MagicNumbers.EVENLY_DIVISIBLE"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_TEN"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED_THOUSAND"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION_LONG"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_THOUSAND"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_TEN_THOUSAND"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_BILLION"/>
@@ -1042,6 +1102,9 @@
             <seealso cref="F:WizardWrx.MagicNumbers.EVENLY_DIVISIBLE"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_TEN"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED_THOUSAND"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION_LONG"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_TEN_THOUSAND"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_THOUSAND"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_MILLION"/>

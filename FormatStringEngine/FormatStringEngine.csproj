@@ -22,7 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\WizardWrx.FormatStringEngine.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\Wizardwrx.FormatStringEngine.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -31,13 +31,13 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\WizardWrx.FormatStringEngine.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\Wizardwrx.FormatStringEngine.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="WizardWrx.AnyCSV, Version=3.0.41.30609, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\AnyCSV\AnyCSV\bin\Release\WizardWrx.AnyCSV.dll</HintPath>
+      <HintPath>..\..\AnyCSV\AnyCSV\bin\Release\Wizardwrx.AnyCSV.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

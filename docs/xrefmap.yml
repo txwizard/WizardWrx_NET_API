@@ -10844,6 +10844,24 @@ references:
   commentId: F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED
   fullName: WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED
   nameWithType: MagicNumbers.EXACTLY_ONE_HUNDRED
+- uid: WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION
+  name: EXACTLY_ONE_HUNDRED_MILLION
+  href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_EXACTLY_ONE_HUNDRED_MILLION
+  commentId: F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION
+  fullName: WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION
+  nameWithType: MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION
+- uid: WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION_LONG
+  name: EXACTLY_ONE_HUNDRED_MILLION_LONG
+  href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_EXACTLY_ONE_HUNDRED_MILLION_LONG
+  commentId: F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION_LONG
+  fullName: WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION_LONG
+  nameWithType: MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION_LONG
+- uid: WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED_THOUSAND
+  name: EXACTLY_ONE_HUNDRED_THOUSAND
+  href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_EXACTLY_ONE_HUNDRED_THOUSAND
+  commentId: F:WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED_THOUSAND
+  fullName: WizardWrx.MagicNumbers.EXACTLY_ONE_HUNDRED_THOUSAND
+  nameWithType: MagicNumbers.EXACTLY_ONE_HUNDRED_THOUSAND
 - uid: WizardWrx.MagicNumbers.EXACTLY_ONE_MILLION
   name: EXACTLY_ONE_MILLION
   href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_EXACTLY_ONE_MILLION

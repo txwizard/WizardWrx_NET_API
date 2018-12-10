@@ -21,7 +21,7 @@
     <DefineConstants>TRACE;DEBUG;DBG_PE_SUBSYSTEM_INFO</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\WizardWrx.AssemblyUtils.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\Wizardwrx.AssemblyUtils.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,7 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\WizardWrx.AssemblyUtils.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\Wizardwrx.AssemblyUtils.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

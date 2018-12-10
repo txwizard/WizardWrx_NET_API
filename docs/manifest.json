@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "F:/Source_Code/Visual_Studio/Projects/WizardWrx_Libs/Wizardwrx/docfx_project",
+  "source_base_path": "F:/Source_Code/Visual_Studio/Projects/WizardWrx_Libs/WizardWrx_NET_API/docfx_project",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -537,7 +537,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.Core.UnmanagedLibrary.html",
-          "hash": "7pjV0Xkdio3uAc7DFT0egA=="
+          "hash": "0yEiAvvY/CMSHXb1bdI0Lg=="
         }
       },
       "is_incremental": false,
@@ -921,7 +921,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.GenericSingletonBase-1.html",
-          "hash": "nm3tilh6pHt6IbVLu4SHow=="
+          "hash": "7BsFQR6H1H74AWQ/Nem6MA=="
         }
       },
       "is_incremental": false,
@@ -945,7 +945,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.ListHelpers.html",
-          "hash": "QCM4nqazEwrInPwtRkDCbg=="
+          "hash": "esPoiaUt5KJiXEXPDJ/f5w=="
         }
       },
       "is_incremental": false,
@@ -993,7 +993,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.MagicNumbers.html",
-          "hash": "SGtlqBukZ+2stybDXZXP+g=="
+          "hash": "I0BajsC3fnIn4YmXz8djZg=="
         }
       },
       "is_incremental": false,
@@ -1185,7 +1185,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.StringExtensions.html",
-          "hash": "Ft7gNqmISuAv1Xt5hzw0vg=="
+          "hash": "dnWfBPUL6COMiwApzJP4aA=="
         }
       },
       "is_incremental": false,
@@ -1332,17 +1332,17 @@
         "incrementalPhase": "build"
       },
       "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build"
         },
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
-          "incrementalPhase": "build"
-        },
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         }
       }

@@ -175,6 +175,12 @@
 
                               Define overlooked constants EXACTLY_TEN and
                               EVENLY_DIVISIBLE.
+
+	2017/09/17 7.13    DAG    Define EXACTLY_ONE_HUNDRED_MILLION_LONG, to meet an
+                              immediate requirement, along with
+                              EXACTLY_ONE_HUNDRED_MILLION and 
+                              EXACTLY_ONE_HUNDRED_THOUSAND to more or less
+                              complete the set of powers of ten from two to 9.
 	============================================================================
 */
 
@@ -364,6 +370,9 @@ namespace WizardWrx
         /// </example>
         /// <seealso cref="EXACTLY_TEN"/>
         /// <seealso cref="EXACTLY_ONE_HUNDRED"/>
+        /// <seealso cref="EXACTLY_ONE_HUNDRED_THOUSAND"/>
+        /// <seealso cref="EXACTLY_ONE_HUNDRED_MILLION"/>
+        /// <seealso cref="EXACTLY_ONE_HUNDRED_MILLION_LONG"/>
         ///	<seealso cref="EXACTLY_TEN_THOUSAND"/>
         ///	<seealso cref="EXACTLY_ONE_THOUSAND"/>
         ///	<seealso cref="EXACTLY_ONE_MILLION"/>
@@ -375,6 +384,9 @@ namespace WizardWrx
         /// </summary>
         /// <seealso cref="EVENLY_DIVISIBLE"/>
         /// <seealso cref="EXACTLY_ONE_HUNDRED"/>
+        /// <seealso cref="EXACTLY_ONE_HUNDRED_THOUSAND"/>
+        /// <seealso cref="EXACTLY_ONE_HUNDRED_MILLION"/>
+        /// <seealso cref="EXACTLY_ONE_HUNDRED_MILLION_LONG"/>
         ///	<seealso cref="EXACTLY_TEN_THOUSAND"/>
         ///	<seealso cref="EXACTLY_ONE_THOUSAND"/>
         ///	<seealso cref="EXACTLY_ONE_MILLION"/>
@@ -388,9 +400,54 @@ namespace WizardWrx
         /// <seealso cref="EXACTLY_TEN"/>
         ///	<seealso cref="EXACTLY_TEN_THOUSAND"/>
         ///	<seealso cref="EXACTLY_ONE_THOUSAND"/>
+        /// <seealso cref="EXACTLY_ONE_HUNDRED"/>
+        /// <seealso cref="EXACTLY_ONE_HUNDRED_THOUSAND"/>
+        /// <seealso cref="EXACTLY_ONE_HUNDRED_MILLION"/>
+        /// <seealso cref="EXACTLY_ONE_HUNDRED_MILLION_LONG"/>
         ///	<seealso cref="EXACTLY_ONE_MILLION"/>
         /// <seealso cref="EXACTLY_ONE_BILLION"/>
         public const int EXACTLY_ONE_HUNDRED = 100;
+
+        /// <summary>
+        /// Use this constant when you need a literal value of exactly one hundred million.
+        /// </summary>
+        /// <seealso cref="EVENLY_DIVISIBLE"/>
+        /// <seealso cref="EXACTLY_TEN"/>
+        /// <seealso cref="EXACTLY_ONE_HUNDRED"/>
+        /// <seealso cref="EXACTLY_ONE_HUNDRED_THOUSAND"/>
+        /// <seealso cref="EXACTLY_ONE_HUNDRED_MILLION_LONG"/>
+        ///	<seealso cref="EXACTLY_TEN_THOUSAND"/>
+        ///	<seealso cref="EXACTLY_ONE_THOUSAND"/>
+        ///	<seealso cref="EXACTLY_ONE_MILLION"/>
+        /// <seealso cref="EXACTLY_ONE_BILLION"/>
+        public const int EXACTLY_ONE_HUNDRED_MILLION = 100000000;
+
+        /// <summary>
+        /// Use this constant when you need a long integer literal value of exactly one hundred million.
+        /// </summary>
+        /// <seealso cref="EVENLY_DIVISIBLE"/>
+        /// <seealso cref="EXACTLY_TEN"/>
+        /// <seealso cref="EXACTLY_ONE_HUNDRED"/>
+        /// <seealso cref="EXACTLY_ONE_HUNDRED_MILLION"/>
+        ///	<seealso cref="EXACTLY_TEN_THOUSAND"/>
+        ///	<seealso cref="EXACTLY_ONE_THOUSAND"/>
+        ///	<seealso cref="EXACTLY_ONE_MILLION"/>
+        /// <seealso cref="EXACTLY_ONE_BILLION"/>
+        public const long EXACTLY_ONE_HUNDRED_MILLION_LONG = 100000000;
+
+        /// <summary>
+        /// Use this constant when you need a literal value of exactly one hundred thousand.
+        /// </summary>
+        /// <seealso cref="EVENLY_DIVISIBLE"/>
+        /// <seealso cref="EXACTLY_TEN"/>
+        /// <seealso cref="EXACTLY_ONE_HUNDRED"/>
+        /// <seealso cref="EXACTLY_ONE_HUNDRED_MILLION"/>
+        /// <seealso cref="EXACTLY_ONE_HUNDRED_MILLION_LONG"/>
+        ///	<seealso cref="EXACTLY_TEN_THOUSAND"/>
+        ///	<seealso cref="EXACTLY_ONE_THOUSAND"/>
+        ///	<seealso cref="EXACTLY_ONE_MILLION"/>
+        /// <seealso cref="EXACTLY_ONE_BILLION"/>
+        public const int EXACTLY_ONE_HUNDRED_THOUSAND = 1000000;
 
         /// <summary>
         /// Use this constant when you need a literal value of exactly one thousand.
@@ -398,6 +455,9 @@ namespace WizardWrx
         /// <seealso cref="EVENLY_DIVISIBLE"/>
         /// <seealso cref="EXACTLY_TEN"/>
         /// <seealso cref="EXACTLY_ONE_HUNDRED"/>
+        /// <seealso cref="EXACTLY_ONE_HUNDRED_THOUSAND"/>
+        /// <seealso cref="EXACTLY_ONE_HUNDRED_MILLION"/>
+        /// <seealso cref="EXACTLY_ONE_HUNDRED_MILLION_LONG"/>
         ///	<seealso cref="EXACTLY_TEN_THOUSAND"/>
         ///	<seealso cref="EXACTLY_ONE_MILLION"/>
         ///	<seealso cref="EXACTLY_ONE_BILLION"/>
@@ -414,6 +474,9 @@ namespace WizardWrx
         /// <seealso cref="EVENLY_DIVISIBLE"/>
         /// <seealso cref="EXACTLY_TEN"/>
         /// <seealso cref="EXACTLY_ONE_HUNDRED"/>
+        /// <seealso cref="EXACTLY_ONE_HUNDRED_THOUSAND"/>
+        /// <seealso cref="EXACTLY_ONE_HUNDRED_MILLION"/>
+        /// <seealso cref="EXACTLY_ONE_HUNDRED_MILLION_LONG"/>
         ///	<seealso cref="EXACTLY_ONE_THOUSAND"/>
         ///	<seealso cref="EXACTLY_ONE_MILLION"/>
         ///	<seealso cref="EXACTLY_ONE_BILLION"/>
@@ -425,6 +488,9 @@ namespace WizardWrx
         /// <seealso cref="EVENLY_DIVISIBLE"/>
         /// <seealso cref="EXACTLY_TEN"/>
         /// <seealso cref="EXACTLY_ONE_HUNDRED"/>
+        /// <seealso cref="EXACTLY_ONE_HUNDRED_THOUSAND"/>
+        /// <seealso cref="EXACTLY_ONE_HUNDRED_MILLION"/>
+        /// <seealso cref="EXACTLY_ONE_HUNDRED_MILLION_LONG"/>
         ///	<seealso cref="EXACTLY_ONE_THOUSAND"/>
         ///	<seealso cref="EXACTLY_TEN_THOUSAND"/>
         ///	<seealso cref="EXACTLY_ONE_BILLION"/>
@@ -436,6 +502,9 @@ namespace WizardWrx
         /// <seealso cref="EVENLY_DIVISIBLE"/>
         /// <seealso cref="EXACTLY_TEN"/>
         /// <seealso cref="EXACTLY_ONE_HUNDRED"/>
+        /// <seealso cref="EXACTLY_ONE_HUNDRED_THOUSAND"/>
+        /// <seealso cref="EXACTLY_ONE_HUNDRED_MILLION"/>
+        /// <seealso cref="EXACTLY_ONE_HUNDRED_MILLION_LONG"/>
         ///	<seealso cref="EXACTLY_TEN_THOUSAND"/>
         ///	<seealso cref="EXACTLY_ONE_THOUSAND"/>
         ///	<seealso cref="EXACTLY_ONE_MILLION"/>

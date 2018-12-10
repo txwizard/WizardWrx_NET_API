@@ -10,7 +10,7 @@
     <EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <StartWorkingDirectory>F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx</StartWorkingDirectory>
+    <StartWorkingDirectory>F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API</StartWorkingDirectory>
     <StartArguments>
     </StartArguments>
   </PropertyGroup>

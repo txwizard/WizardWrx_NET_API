@@ -21,7 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\WizardWrx.DLLConfigurationManager.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\Wizardwrx.DLLConfigurationManager.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,7 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\WizardWrx.DLLConfigurationManager.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\Wizardwrx.DLLConfigurationManager.XML</DocumentationFile>
   </PropertyGroup>
   <!--
     2015/06/09 DAG Add the following, per thread message that begins, "An

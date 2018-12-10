@@ -22,7 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\WizardWrx.Common.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\Wizardwrx.Common.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -31,7 +31,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\WizardWrx.Common.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\Wizardwrx.Common.XML</DocumentationFile>
   </PropertyGroup>
   <!--
     2015/06/09 DAG Add the following, per thread message that begins, "An
@@ -48,7 +48,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="WizardWrx.BitMath">
-      <HintPath>..\..\BitMath\BitMath\bin\Release\WizardWrx.BitMath.dll</HintPath>
+      <HintPath>..\..\BitMath\BitMath\bin\Release\Wizardwrx.BitMath.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -15,3 +15,12 @@ F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\ASCIIInfo\bin\Rel
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\ASCIIInfo\bin\Release\WizardWrx.ASCIIInfo.dll
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\ASCIIInfo\bin\Release\WizardWrx.ASCIIInfo.pdb
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\ASCIIInfo\obj\Release\ASCIIInfo.csprojAssemblyReference.cache
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ASCIIInfo\bin\Release\Wizardwrx.ASCIIInfo.XML
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ASCIIInfo\bin\Release\WizardWrx.ASCIIInfo.dll
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ASCIIInfo\bin\Release\WizardWrx.ASCIIInfo.pdb
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ASCIIInfo\obj\Release\ASCIIInfo.csprojAssemblyReference.cache
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ASCIIInfo\obj\Release\WizardWrx.Properties.Resources.resources
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ASCIIInfo\obj\Release\ASCIIInfo.csproj.GenerateResource.cache
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ASCIIInfo\obj\Release\ASCIIInfo.csproj.CoreCompileInputs.cache
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ASCIIInfo\obj\Release\WizardWrx.ASCIIInfo.dll
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ASCIIInfo\obj\Release\WizardWrx.ASCIIInfo.pdb

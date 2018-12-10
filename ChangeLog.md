@@ -4,6 +4,37 @@ This file is a running history of fixes and improvements from version 7.0
 onwards. Changes are documented for the newest version first. Within each
 version, classes are listed alphabetically.
 
+# Version 7.13
+
+Following is a summary of changes made in version 7.13, released Monday, 10 November 2018.
+
+Define `EXACTLY_ONE_HUNDRED_MILLION_LONG`, to meet an immediate requirement, along
+with `EXACTLY_ONE_HUNDRED_THOUSAND` and `EXACTLY_ONE_HUNDRED_MILLION`, to more or
+less complete the set of powers of ten from two to 9. All powers of ten in that
+range sove one (ten million), for which there is no immediate need, are now
+covered.
+
+__Change Under Conideration__: Earlier today, I discovered that multiplying a
+pair of regular integers (type `System.Int32`) that you expect to yield a long
+that is too big to fit in a `System.Int32` yields a large negative number, rather
+than throwing an exception. While enabling arithmetic overflow checking in the
+advanced compiler settings might elicit exceptions, such an exception would be
+an unaacceptable outcome. However, if one of the operands is a long integer (a
+`System.Int64`), the compiler generates code that causes the operation to be
+performed with long integer operands, yielding the desired outcome. Since
+neither outcome of using 32-bit integers in multiplications that yield a 64-bit
+product is optimal, it may be worthwhile to define these constants as
+long integers, although doing so would almost certainly force arithmatic
+operations that would not otherwise be implemented as 64-bit math operations to
+be implemented as long integer operations. While this makes little difference in
+a 64-bit execution environment, it adds unnecessary complexity to operations
+that take place in a 32-bit context. Regardless, scratch storage requirments,
+most likely occupying space on the stack, would essentially double for all math
+operations that used these constants.
+
+For the time being, there are two constants, `EXACTLY_ONE_HUNDRED_MILLION_LONG`
+and `EXACTLY_ONE_HUNDRED_MILLION`, which differ only with respect to their types.
+
 # Version 7.12
 
 Following is a summary of changes made in version 7.12, released Friday, 23 November 2018.
