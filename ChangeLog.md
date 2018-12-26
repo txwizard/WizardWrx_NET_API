@@ -8,33 +8,33 @@ version, classes are listed alphabetically.
 
 Following is a summary of changes made in version 7.14, released Monday, 24 November 2018.
 
-##Class: WizardWrx.MagicNumbers (defined in WizardWrx.Common.dll)
+##Class  WizardWrx.MagicNumbers (defined in WizardWrx.Common.dll)
 
 Define the constants listed in the following table.
 
-| Name                    |             Value:|
-|-------------------------|-------------------|
-| TICKS_PER_1_WEEK        | 6,048,000,000,000:|
-| TICKS_PER_1_DAY         |   864,000,000,000:|
-| TICKS_PER_23_59_59      |   863,990,000,000:|
-| TICKS_PER_23_59_00      |   863,400,000,000:|
-| TICKS_PER_1_HOUR        |    36,000,000,000:|
-| TICKS_PER_1_MINUTE      |       600,000,000:|
-| TICKS_PER_1_SECOND      |        10,000,000:|
-| TICKS_PER_1_MILLISECOND |            10,000:|
+| Name                    |             Value |
+|-------------------------|------------------:|
+| TICKS_PER_1_WEEK        | 6,048,000,000,000 |
+| TICKS_PER_1_DAY         |   864,000,000,000 |
+| TICKS_PER_23_59_59      |   863,990,000,000 |
+| TICKS_PER_23_59_00      |   863,400,000,000 |
+| TICKS_PER_1_HOUR        |    36,000,000,000 |
+| TICKS_PER_1_MINUTE      |       600,000,000 |
+| TICKS_PER_1_SECOND      |        10,000,000 |
+| TICKS_PER_1_MILLISECOND |            10,000 |
 
-__BREAKING CHANGE:__ TICKS_PER_SECOND is correctly described in the XML comment,
+__BREAKING CHANGE __ TICKS_PER_SECOND is correctly described in the XML comment,
 but its numerical value was off by a factor of one thousand. This is corrected
 by making its value equal to TICKS_PER_1_SECOND.
 
 These tick values were computed by a custom class, and the constants were
 derived therefrom by Excel worksheet formulas.
 
-##Class: WizardWrx.DLLConfigurationManager  (defined in WizardWrx.DLLConfigurationManager.dll)
+##Class  WizardWrx.DLLConfigurationManager  (defined in WizardWrx.DLLConfigurationManager.dll)
 
 Add a new GetTheSingleInstance overload that takes only the OptionFlags parameter.
 
-##Class: WizardWrx.ClassAndMethodDiagnosticInfo (defined in WizardWrx.ClassAndMethodDiagnosticInfo.dll)
+##Class  WizardWrx.ClassAndMethodDiagnosticInfo (defined in WizardWrx.ClassAndMethodDiagnosticInfo.dll)
 
 This is a new class and a new library that leverages new features in the version
 of `System.Runtime.CompilerServices` that ships with version 4.5 of the Microsoft
@@ -46,7 +46,7 @@ the `WizardWrx` namespace. Since it requires a higher version of the framework
 than most everything else, it went into a dedicated library, so that the others
 can retain their original target, version __3.5 Client Profile__.
 
-##Class: WizardWrx.MoreMath (defined in WizardWrx.MoreMath.dll)
+##Class  WizardWrx.MoreMath (defined in WizardWrx.MoreMath.dll)
 
 This class is relocated from WizardWrx.Core.dll to a dedicated library for two reasons.
 
@@ -73,7 +73,7 @@ less complete the set of powers of ten from two to 9. All powers of ten in that
 range sove one (ten million), for which there is no immediate need, are now
 covered.
 
-__Change Under Conideration__: Earlier today, I discovered that multiplying a
+__Change Under Conideration__  Earlier today, I discovered that multiplying a
 pair of regular integers (type `System.Int32`) that you expect to yield a long
 that is too big to fit in a `System.Int32` yields a large negative number, rather
 than throwing an exception. While enabling arithmetic overflow checking in the
@@ -98,7 +98,7 @@ and `EXACTLY_ONE_HUNDRED_MILLION`, which differ only with respect to their types
 
 Following is a summary of changes made in version 7.12, released Friday, 23 November 2018.
 
-##Class: WizardWrx.MoreMath (defined in WizardWrx.Core.dll)
+##Class  WizardWrx.MoreMath (defined in WizardWrx.Core.dll)
 
 This class gets a refinement of one of its initial methods, plus two new ones
 that are closely related to it.
@@ -122,9 +122,9 @@ string resources in the library to facilitate localization.
 
 Following is a summary of changes made in version 7.11, released Saturday, 17 November 2018.
 
-##Class: WizardWrx.MagicNumbers (defined in WizardWrx.Common)
+##Class  WizardWrx.MagicNumbers (defined in WizardWrx.Common)
 
-- BREAKING CHANGE: Rename `EXACTLY_ONE_NUNDRED` to `EXACTLY_ONE_HUNDRED` to correct a
+- BREAKING CHANGE  Rename `EXACTLY_ONE_NUNDRED` to `EXACTLY_ONE_HUNDRED` to correct a
 misspelling that prevented me finding it.
 
 - Correct the value of `EXACTLY_TEN_THOUSAND`, which I discovered was returning
@@ -133,7 +133,7 @@ _one million_.
 - Define overlooked constants `EXACTLY_TEN` (10) and `EVENLY_DIVISIBLE` (0), the
 latter handy for use with the modulus operator.
 
-##Class: WizardWrx.NumericFormats (defined in WizardWrx.Common)
+##Class  WizardWrx.NumericFormats (defined in WizardWrx.Common)
 
 - Define `IntegerToHexStr` overloads that omit the second and third arguments,
 substituting common defaults for the missing arguments.
@@ -141,9 +141,9 @@ substituting common defaults for the missing arguments.
 - Change `FormatStatusCode` to use the simplified first overload, shortening its
 stack frame and call setup requirments.
 
-##Class: WizardWrx.MoreMath (defined in WizardWrx.Core.dll)
+##Class  WizardWrx.MoreMath (defined in WizardWrx.Core.dll)
 
-This class makes its debut, with the following static methods:
+This class makes its debut, with the following static methods
 
 - `IsEvenlyDivisibleByAnyInteger`, defined twice, to accept integer and long
 inputs.
@@ -153,7 +153,7 @@ inputs.
 - `IsValidGregorianYear` returns TRUE when given a number is a valid year in the
 Gregorian calendar.
 
-##Class: WizardWrx.tringExtensions (defined in WizardWrx.Core.dll)
+##Class  WizardWrx.tringExtensions (defined in WizardWrx.Core.dll)
 
 - `RenderEvenWhenNull` represents a null reference as a localizable string literal,
 `MSG_OBJECT_REFERENCE_IS_NULL`, defined in `Wizardwrx.Common.Properties.Resources`.
@@ -162,7 +162,7 @@ Gregorian calendar.
 member of any enumeration. The enumeration type is inferred from the return
 type specified in the method call.
 
-##Namespace: WizardWrx.EmbeddedTextFile (defined in WizardWrx.EmbeddedTextFile.dll)
+##Namespace  WizardWrx.EmbeddedTextFile (defined in WizardWrx.EmbeddedTextFile.dll)
 
 The documentation of this library is re-phrased so that everything is in active
 voice. The code is unchanged.
@@ -171,17 +171,17 @@ voice. The code is unchanged.
 
 Following is a list of changes made in version 7.1, released Sunday, 07 October 2018.
 
-##Class: WizardWrx.StringExtensions (defined in WizardWrx.Core.dll)
+##Class  WizardWrx.StringExtensions (defined in WizardWrx.Core.dll)
 
 Incorporate CapitalizeWords, which I created and tested as part of the Great
 Eastern Energy DataFarmer application.
 
-##Class: SpecialStrings (defined in WizardWrx.Common)
+##Class  SpecialStrings (defined in WizardWrx.Common)
 
 Define SPACE_CHAR for use when only a string will do, and cross reference the
 new constant to its antecedent, SpecialCharacters.SPACE_CHAR.
 
-##Class: ASCIICharacterDisplayInfo (defined in WizardWrx.ASCIIInfo.dll)
+##Class  ASCIICharacterDisplayInfo (defined in WizardWrx.ASCIIInfo.dll)
 
 Override ToString to render all three representations (printable string,
 hexadecimal, then decimal, in that order), and define static method
@@ -199,7 +199,7 @@ Incidental changes included in this commit are as follows.
 - __AssemblyInfo.cs__ in all individual libraries reflects the new library
 version number and a build number increment.
 
-- __Resources.resx in DLLServicesTestStand__ has the following new strings:
+- __Resources.resx in DLLServicesTestStand__ has the following new strings
 IDS_ASCII_CHARACTER_INFO, IDS_ASCII_TABLE_CHARACTER_PROPERTIES, and
 IDS_ASCII_TABLE_ENUMERATION.
 
