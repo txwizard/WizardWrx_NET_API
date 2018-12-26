@@ -55,9 +55,9 @@ in place of literals.
 *   __MoreMath__ (defined in `WizardWrx.MoreMath.dll`) defines mathematical
 operations that are mechanically simple, but tricky to get right.
 
-1	DecimalShiftLeft and DecimalShiftRight are defined for all numeric types.
+   1	`DecimalShiftLeft` and `DecimalShiftRight` are defined for all numeric types.
 
-2	`IsEvenlyDivisibleByAnyInteger` prevents the `DivideByZeroException` that
+   2	`IsEvenlyDivisibleByAnyInteger` prevents the `DivideByZeroException` that
 would otherwise arise when a divisor of zero is fed to the second operand of the
 modulus operator. To preent it, the divisor is tested, and an `ArugmentException`
 exception takes its place. Since the `ArugmentException` arises in user code, the
@@ -65,7 +65,7 @@ exception message displays the dividend that was fed into the failed method, to
 aid consumers in identifying the source of the exception when the calling code
 discards the stack trace.
 
-3	`Mod` is the logical companion to `IsEvenlyDivisibleByAnyInteger`, offered as
+   3	`Mod` is the logical companion to `IsEvenlyDivisibleByAnyInteger`, offered as
 syntactic sugar, and `Remainder`, analogous to the `IEEERemainder` method in the
 system math library, are synonymns.
 
