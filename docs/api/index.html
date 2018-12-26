@@ -81,6 +81,19 @@ the documentation of a namespace.</p>
 <li><p><strong>ArrayInfo</strong> defines constants and static utility methods for working with
 arrays.</p>
 </li>
+<li><p><strong>ClassAndMethodDiagnosticInfo</strong>, defined in a new class library,
+<code>WizardWrx.ClassAndMethodDiagnosticInfo.dll</code>, that requires version 4.5 or
+higher of the Microsoft .NET Framework, offers a drop-in replacement for
+<code>System.Reflection.MethodBase.GetCurrentMethod ( ).Name</code> that leverages new
+features in the version of <code>System.Runtime.CompilerServices</code> that ships with
+version <strong>4.5</strong> of the Microsoft .NET Framework to return the name of the
+calling method without resorting to Reflection. Other methods report the source
+file name and line number where the call originated. All three methods leverage
+data that is emitted by the compiler, and becomes the value of an optional
+parameter that compiler essentially supplies, <em>at compile time</em>. This is a huge
+improvement, as it supports a pattern similar to one that I implemented, in
+COBOL, in 1980.</p>
+</li>
 <li><p><strong>CSVFileInfo</strong> defines constants for working with CSV style files.</p>
 </li>
 <li><p><strong>DisplayFormats</strong>  defines conostants that express standard format string for
@@ -105,6 +118,22 @@ are defined in companion class <code>ArrayInfo</code>, while <code>SpecialCharac
 character representations of the visually ambiguous numbers and letters, for use
 in place of literals.</p>
 </li>
+<li><p><strong>MoreMath</strong> (defined in <code>WizardWrx.MoreMath.dll</code>) defines mathematical
+operations that are mechanically simple, but tricky to get right.</p>
+</li>
+</ul>
+<p>1	DecimalShiftLeft and DecimalShiftRight are defined for all numeric types.</p>
+<p>2	<code>IsEvenlyDivisibleByAnyInteger</code> prevents the <code>DivideByZeroException</code> that
+would otherwise arise when a divisor of zero is fed to the second operand of the
+modulus operator. To preent it, the divisor is tested, and an <code>ArugmentException</code>
+exception takes its place. Since the <code>ArugmentException</code> arises in user code, the
+exception message displays the dividend that was fed into the failed method, to
+aid consumers in identifying the source of the exception when the calling code
+discards the stack trace.</p>
+<p>3	<code>Mod</code> is the logical companion to <code>IsEvenlyDivisibleByAnyInteger</code>, offered as
+syntactic sugar, and <code>Remainder</code>, analogous to the <code>IEEERemainder</code> method in the
+system math library, are synonymns.</p>
+<ul>
 <li><p><strong>NumericFormats</strong> defines standard numeric format strings, for use with the
 <code>string.Format</code> method and its derivatives and relatives.</p>
 </li>

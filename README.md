@@ -1,5 +1,25 @@
 # WizardWrx .NET API ReadMe
 
+## Release Notes 7.14
+
+The `WizardWrx.MoreMath` class moved to a dedicated assembly, so that its
+target framework can change to support its use of another new class,
+`WizardWrx.ClassAndMethodDiagnosticInfo`, which also gets its own assembly,
+to report the name of a calling method without resorting to Reflection.
+That library, `WizardWrx.ClassAndMethodDiagnosticInfo.dll`, goes into a new
+assembly because it requires the version of `System.Runtime.CompilerServices`
+that ships with version __4.5__ of the Microsoft .NET Framework. All of the
+above preserves the targeting of everything else to version __3.5 Client Profile__
+of the framework.
+
+# Version 7.13
+
+Define `EXACTLY_ONE_HUNDRED_MILLION_LONG`, to meet an immediate requirement, along
+with `EXACTLY_ONE_HUNDRED_THOUSAND` and `EXACTLY_ONE_HUNDRED_MILLION`, to more or
+less complete the set of powers of ten from two to 9. All powers of ten in that
+range sove one (ten million), for which there is no immediate need, are now
+covered.
+
 ## Release Notes 7.12
 
 New since version 7.11, out less than a week, are `Mod` and `Remainder` methods
