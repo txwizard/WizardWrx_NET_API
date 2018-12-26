@@ -15,6 +15,19 @@ These classes are defined in `WizardWrx.Common.dll`.
 *	__ArrayInfo__ defines constants and static utility methods for working with
 arrays.
 
+*	__ClassAndMethodDiagnosticInfo__, defined in a new class library,
+`WizardWrx.ClassAndMethodDiagnosticInfo.dll`, that requires version 4.5 or
+higher of the Microsoft .NET Framework, offers a drop-in replacement for
+`System.Reflection.MethodBase.GetCurrentMethod ( ).Name` that leverages new
+features in the version of `System.Runtime.CompilerServices` that ships with
+version __4.5__ of the Microsoft .NET Framework to return the name of the
+calling method without resorting to Reflection. Other methods report the source
+file name and line number where the call originated. All three methods leverage
+data that is emitted by the compiler, and becomes the value of an optional
+parameter that compiler essentially supplies, *at compile time*. This is a huge
+improvement, as it supports a pattern similar to one that I implemented, in
+COBOL, in 1980.
+
 *	__CSVFileInfo__ defines constants for working with CSV style files.
 
 *	__DisplayFormats__  defines conostants that express standard format string for
@@ -38,6 +51,23 @@ value.
 are defined in companion class `ArrayInfo`, while `SpecialCharacters` defines
 character representations of the visually ambiguous numbers and letters, for use
 in place of literals.
+
+*   __MoreMath__ (defined in `WizardWrx.MoreMath.dll`) defines mathematical
+operations that are mechanically simple, but tricky to get right.
+
+1	DecimalShiftLeft and DecimalShiftRight are defined for all numeric types.
+
+2	`IsEvenlyDivisibleByAnyInteger` prevents the `DivideByZeroException` that
+would otherwise arise when a divisor of zero is fed to the second operand of the
+modulus operator. To preent it, the divisor is tested, and an `ArugmentException`
+exception takes its place. Since the `ArugmentException` arises in user code, the
+exception message displays the dividend that was fed into the failed method, to
+aid consumers in identifying the source of the exception when the calling code
+discards the stack trace.
+
+3	`Mod` is the logical companion to `IsEvenlyDivisibleByAnyInteger`, offered as
+syntactic sugar, and `Remainder`, analogous to the `IEEERemainder` method in the
+system math library, are synonymns.
 
 *	__NumericFormats__ defines standard numeric format strings, for use with the
 `string.Format` method and its derivatives and relatives.
