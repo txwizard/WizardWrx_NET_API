@@ -91,12 +91,16 @@
                               divisor set to zero. The Remainder synonymn covers
                               for users who recognize IEEERemainder in the Math
                               class in the BCL.
+
+	2018/12/24 7.14    DAG    Define the DecimalShift function, syntactic sugar
+                              that performs decimal shift operations, and move
+                              this class into a dedicated library.
     ============================================================================
 */
 
 using System;
 
-using WizardWrx.Core.Properties;
+using WizardWrx.Properties;
 
 namespace WizardWrx
 {
@@ -138,6 +142,7 @@ namespace WizardWrx
 
 
         #region Private Constants for use in exception reports
+        private const string ARG_NAME_SHIFT_THIS = @"ShiftThis";
         private const string ARG_NAME_YEAR = @"pintYear";
 
         private const string INT_ARG_NAME_DIVIDEND = @"pintDividend";
@@ -146,6 +151,412 @@ namespace WizardWrx
         private const string LONG_ARG_NAME_DIVIDEND = @"plngDividend";
         private const string LONG_ARG_NAME_DIVISOR = @"pintDivisor";
         #endregion  // Private Constants for use in exception reports
+
+
+        #region DecimalShiftLeft Methods
+        /// <summary>
+        /// Shift the decimal point of an integer value left by a poisitive
+        /// number of digits.
+        /// </summary>
+        /// <param name="ShiftThis">
+        /// Specify the integer value to be shifted left by the number of digits
+        /// specified by <paramref name="NDigits"/>.
+        /// </param>
+        /// <param name="NDigits">
+        /// Specify the number of digits to the left by which to shift the
+        /// value specified by <paramref name="ShiftThis"/>.
+        /// </param>
+        /// <returns>
+        /// Return the value of <paramref name="ShiftThis"/> multiplied by
+        /// a power of ten that is one less than the value specified by
+        /// <paramref name="NDigits"/>.
+        /// </returns>
+        public static int DecimalShiftLeft (
+            int ShiftThis ,
+            int NDigits )
+        {
+            if ( NDigits > MagicNumbers.ZERO )
+            {
+                int intShiftFactor = MagicNumbers.PLUS_ONE;
+
+                try
+                {
+                    for ( int intShiftDigits = MagicNumbers.ZERO ;
+                              intShiftDigits < NDigits ;
+                              intShiftDigits++ )
+                    {
+                        intShiftFactor = intShiftFactor * MagicNumbers.EXACTLY_TEN;
+                    }   // for ( int intShiftDigits = MagicNumbers.ZERO ; intShiftDigits < pintNDigits ; intShiftDigits++ )
+
+                    return ShiftThis * intShiftFactor;
+                }
+                catch ( Exception exAll )
+                {   // ClassAndMethodDiagnosticInfo  @"An {0} exception arose while computing the value of {1}.{5}Input parameters were as follows:{5}{5}    ShiftThis = {2}{5}    NDigits   = {3}{5}{5}Details are in the inner exception: {4}{5}"
+                    throw new InvalidOperationException (
+                        GenerateDecimalShiftExceptionMessage (
+                            ShiftThis ,
+                            NDigits ,
+                            ClassAndMethodDiagnosticInfo.GetMyMethodName ( ) ,
+                            exAll ) ,
+                        exAll );
+                }
+            }   // TRUE (anticipated outcome) block, if ( pintNDigits > MagicNumbers.ZERO )
+            else
+            {
+                throw new ArgumentOutOfRangeException (
+                    ARG_NAME_SHIFT_THIS ,
+                    NDigits ,
+                    Resources.ERRMSG_DECIMAL_SHIFT_DIGITS_VALUE );
+            }   // FALSE (unanticipated outcome) block, if ( pintNDigits > MagicNumbers.ZERO )
+        }   // public static int DecimalShiftLeft
+
+
+        /// <summary>
+        /// Shift the decimal point of an integer value left by a poisitive
+        /// number of digits.
+        /// </summary>
+        /// <param name="ShiftThis">
+        /// Specify the integer value to be shifted left by the number of digits
+        /// specified by <paramref name="NDigits"/>.
+        /// </param>
+        /// <param name="NDigits">
+        /// Specify the number of digits to the left by which to shift the
+        /// value specified by <paramref name="ShiftThis"/>.
+        /// </param>
+        /// <returns>
+        /// Return the value of <paramref name="ShiftThis"/> multiplied by
+        /// a power of ten that is one less than the value specified by
+        /// <paramref name="NDigits"/>.
+        /// </returns>
+        public static long DecimalShiftLeft (
+            long ShiftThis ,
+            int NDigits )
+        {
+            if ( NDigits > MagicNumbers.ZERO )
+            {
+                int intShiftFactor = MagicNumbers.PLUS_ONE;
+
+                try
+                {
+                    for ( int intShiftDigits = MagicNumbers.ZERO ;
+                              intShiftDigits < NDigits ;
+                              intShiftDigits++ )
+                    {
+                        intShiftFactor = intShiftFactor * MagicNumbers.EXACTLY_TEN;
+                    }   // for ( int intShiftDigits = MagicNumbers.ZERO ; intShiftDigits < pintNDigits ; intShiftDigits++ )
+
+                    return ShiftThis * intShiftFactor;
+                }
+                catch ( Exception exAll )
+                {   // ClassAndMethodDiagnosticInfo  @"An {0} exception arose while computing the value of {1}.{5}Input parameters were as follows:{5}{5}    ShiftThis = {2}{5}    NDigits   = {3}{5}{5}Details are in the inner exception: {4}{5}"
+                    throw new InvalidOperationException (
+                        GenerateDecimalShiftExceptionMessage (
+                            ShiftThis ,
+                            NDigits ,
+                            ClassAndMethodDiagnosticInfo.GetMyMethodName ( ) ,
+                            exAll ) ,
+                        exAll );
+                }
+            }   // TRUE (anticipated outcome) block, if ( pintNDigits > MagicNumbers.ZERO )
+            else
+            {
+                throw new ArgumentOutOfRangeException (
+                    ARG_NAME_SHIFT_THIS ,
+                    NDigits ,
+                    Resources.ERRMSG_DECIMAL_SHIFT_DIGITS_VALUE );
+            }   // FALSE (unanticipated outcome) block, if ( pintNDigits > MagicNumbers.ZERO )
+        }   // public static long DecimalShiftLeft
+
+
+        /// <summary>
+        /// Shift the decimal point of an integer value left by a poisitive
+        /// number of digits.
+        /// </summary>
+        /// <param name="ShiftThis">
+        /// Specify the integer value to be shifted left by the number of digits
+        /// specified by <paramref name="NDigits"/>.
+        /// </param>
+        /// <param name="NDigits">
+        /// Specify the number of digits to the left by which to shift the
+        /// value specified by <paramref name="ShiftThis"/>.
+        /// </param>
+        /// <returns>
+        /// Return the value of <paramref name="ShiftThis"/> multiplied by
+        /// a power of ten that is one less than the value specified by
+        /// <paramref name="NDigits"/>.
+        /// </returns>
+        public static uint DecimalShiftLeft (
+            uint ShiftThis ,
+            int NDigits )
+        {
+            if ( NDigits > MagicNumbers.ZERO )
+            {
+                //return pintShiftThis * ( int ) Math.Pow ( MagicNumbers.EXACTLY_TEN , pintNDigits );
+
+                uint intShiftFactor = MagicNumbers.PLUS_ONE;
+
+                try
+                {
+                    for ( int intShiftDigits = MagicNumbers.ZERO ;
+                              intShiftDigits < NDigits ;
+                              intShiftDigits++ )
+                    {
+                        intShiftFactor = intShiftFactor * MagicNumbers.EXACTLY_TEN;
+                    }   // for ( int intShiftDigits = MagicNumbers.ZERO ; intShiftDigits < pintNDigits ; intShiftDigits++ )
+
+                    return ShiftThis * intShiftFactor;
+                }
+                catch ( Exception exAll )
+                {   // ClassAndMethodDiagnosticInfo  @"An {0} exception arose while computing the value of {1}.{5}Input parameters were as follows:{5}{5}    ShiftThis = {2}{5}    NDigits   = {3}{5}{5}Details are in the inner exception: {4}{5}"
+                    throw new InvalidOperationException (
+                        GenerateDecimalShiftExceptionMessage (
+                            ShiftThis ,
+                            NDigits ,
+                            ClassAndMethodDiagnosticInfo.GetMyMethodName ( ) ,
+                            exAll ) ,
+                        exAll );
+                }
+            }   // TRUE (anticipated outcome) block, if ( pintNDigits > MagicNumbers.ZERO )
+            else
+            {
+                throw new ArgumentOutOfRangeException (
+                    ARG_NAME_SHIFT_THIS ,
+                    NDigits ,
+                    Resources.ERRMSG_DECIMAL_SHIFT_DIGITS_VALUE );
+            }   // FALSE (unanticipated outcome) block, if ( pintNDigits > MagicNumbers.ZERO )
+        }   // public static int DecimalShiftLeft
+
+
+        /// <summary>
+        /// Shift the decimal point of an integer value left by a poisitive
+        /// number of digits.
+        /// </summary>
+        /// <param name="ShiftThis">
+        /// Specify the integer value to be shifted left by the number of digits
+        /// specified by <paramref name="NDigits"/>.
+        /// </param>
+        /// <param name="NDigits">
+        /// Specify the number of digits to the left by which to shift the
+        /// value specified by <paramref name="ShiftThis"/>.
+        /// </param>
+        /// <returns>
+        /// Return the value of <paramref name="ShiftThis"/> multiplied by
+        /// a power of ten that is one less than the value specified by
+        /// <paramref name="NDigits"/>.
+        /// </returns>
+        public static ulong DecimalShiftLeft (
+            ulong ShiftThis ,
+            int NDigits )
+        {
+            if ( NDigits > MagicNumbers.ZERO )
+            {
+                ulong intShiftFactor = MagicNumbers.PLUS_ONE;
+
+                try
+                {
+                    for ( int intShiftDigits = MagicNumbers.ZERO ;
+                              intShiftDigits < NDigits ;
+                              intShiftDigits++ )
+                    {
+                        intShiftFactor = intShiftFactor * MagicNumbers.EXACTLY_TEN;
+                    }   // for ( int intShiftDigits = MagicNumbers.ZERO ; intShiftDigits < pintNDigits ; intShiftDigits++ )
+
+                    return ShiftThis * intShiftFactor;
+                }
+                catch ( Exception exAll )
+                {   // ClassAndMethodDiagnosticInfo  @"An {0} exception arose while computing the value of {1}.{5}Input parameters were as follows:{5}{5}    ShiftThis = {2}{5}    NDigits   = {3}{5}{5}Details are in the inner exception: {4}{5}"
+                    throw new InvalidOperationException (
+                        GenerateDecimalShiftExceptionMessage (
+                            ShiftThis ,
+                            NDigits ,
+                            ClassAndMethodDiagnosticInfo.GetMyMethodName ( ) ,
+                            exAll ) ,
+                        exAll );
+                }
+            }   // TRUE (anticipated outcome) block, if ( pintNDigits > MagicNumbers.ZERO )
+            else
+            {
+                throw new ArgumentOutOfRangeException (
+                    ARG_NAME_SHIFT_THIS ,
+                    NDigits ,
+                    Resources.ERRMSG_DECIMAL_SHIFT_DIGITS_VALUE );
+            }   // FALSE (unanticipated outcome) block, if ( pintNDigits > MagicNumbers.ZERO )
+        }   // public static long DecimalShiftLeft
+        #endregion  // DecimalShiftLeft Methods
+
+
+        #region DecimalShiftRight Methods
+        /// <summary>
+        /// Shift the decimal point of an integer value right by a poisitive
+        /// number of digits.
+        /// </summary>
+        /// <param name="ShiftThis">
+        /// Specify the integer value to be shifted left by the number of digits
+        /// specified by <paramref name="NDigits"/>.
+        /// </param>
+        /// <param name="NDigits"></param>
+        /// Specify the number of digits to the left by which to shift the
+        /// value specified by <paramref name="ShiftThis"/>.
+        /// <returns>
+        /// Return the value of <paramref name="ShiftThis"/> multiplied by
+        /// a power of ten that is one less than the value specified by
+        /// <paramref name="NDigits"/>.
+        /// </returns>
+        public static int DecimalShiftRight (
+            int ShiftThis ,
+            int NDigits )
+        {
+            if ( NDigits > MagicNumbers.ZERO )
+            {
+                int intShiftFactor = MagicNumbers.PLUS_ONE;
+
+                for ( int intShiftDigits = MagicNumbers.ZERO ;
+                          intShiftDigits < NDigits ;
+                          intShiftDigits++ )
+                {
+                    intShiftFactor = intShiftFactor * MagicNumbers.EXACTLY_TEN;
+                }   // for ( int intShiftDigits = MagicNumbers.ZERO ; intShiftDigits < pintNDigits ; intShiftDigits++ )
+
+                return ShiftThis / intShiftFactor;
+            }   // TRUE (anticipated outcome) block, if ( pintNDigits > MagicNumbers.ZERO )
+            else
+            {
+                throw new ArgumentOutOfRangeException (
+                    ARG_NAME_SHIFT_THIS ,
+                    NDigits ,
+                    Resources.ERRMSG_DECIMAL_SHIFT_DIGITS_VALUE );
+            }   // FALSE (unanticipated outcome) block, if ( pintNDigits > MagicNumbers.ZERO )
+        }   // public static int DecimalShiftRight
+
+
+        /// <summary>
+        /// Shift the decimal point of a float value right by a poisitive
+        /// number of digits.
+        /// </summary>
+        /// <param name="ShiftThis">
+        /// Specify the integer value to be shifted left by the number of digits
+        /// specified by <paramref name="NDigits"/>.
+        /// </param>
+        /// <param name="NDigits"></param>
+        /// Specify the number of digits to the left by which to shift the
+        /// value specified by <paramref name="ShiftThis"/>.
+        /// <returns>
+        /// Return the value of <paramref name="ShiftThis"/> multiplied by
+        /// a power of ten that is one less than the value specified by
+        /// <paramref name="NDigits"/>.
+        /// </returns>
+        public static float DecimalShiftRight (
+            float ShiftThis ,
+            int NDigits )
+        {
+            if ( NDigits > MagicNumbers.ZERO )
+            {
+                int intShiftFactor = MagicNumbers.PLUS_ONE;
+
+                for ( int intShiftDigits = MagicNumbers.ZERO ;
+                          intShiftDigits < NDigits ;
+                          intShiftDigits++ )
+                {
+                    intShiftFactor = intShiftFactor * MagicNumbers.EXACTLY_TEN;
+                }   // for ( int intShiftDigits = MagicNumbers.ZERO ; intShiftDigits < pintNDigits ; intShiftDigits++ )
+
+                return ShiftThis / intShiftFactor;
+            }   // TRUE (anticipated outcome) block, if ( pintNDigits > MagicNumbers.ZERO )
+            else
+            {
+                throw new ArgumentOutOfRangeException (
+                    ARG_NAME_SHIFT_THIS ,
+                    NDigits ,
+                    Resources.ERRMSG_DECIMAL_SHIFT_DIGITS_VALUE );
+            }   // FALSE (unanticipated outcome) block, if ( pintNDigits > MagicNumbers.ZERO )
+        }   // public static float DecimalShiftRight
+
+
+        /// <summary>
+        /// Shift the decimal point of a decimal value right by a poisitive
+        /// number of digits.
+        /// </summary>
+        /// <param name="ShiftThis">
+        /// Specify the integer value to be shifted left by the number of digits
+        /// specified by <paramref name="NDigits"/>.
+        /// </param>
+        /// <param name="NDigits"></param>
+        /// Specify the number of digits to the left by which to shift the
+        /// value specified by <paramref name="ShiftThis"/>.
+        /// <returns>
+        /// Return the value of <paramref name="ShiftThis"/> multiplied by
+        /// a power of ten that is one less than the value specified by
+        /// <paramref name="NDigits"/>.
+        /// </returns>
+        public static decimal DecimalShiftRight (
+            decimal ShiftThis ,
+            int NDigits )
+        {
+            if ( NDigits > MagicNumbers.ZERO )
+            {
+                int intShiftFactor = MagicNumbers.PLUS_ONE;
+
+                for ( int intShiftDigits = MagicNumbers.ZERO ;
+                          intShiftDigits < NDigits ;
+                          intShiftDigits++ )
+                {
+                    intShiftFactor = intShiftFactor * MagicNumbers.EXACTLY_TEN;
+                }   // for ( int intShiftDigits = MagicNumbers.ZERO ; intShiftDigits < pintNDigits ; intShiftDigits++ )
+
+                return ShiftThis / intShiftFactor;
+            }   // TRUE (anticipated outcome) block, if ( pintNDigits > MagicNumbers.ZERO )
+            else
+            {
+                throw new ArgumentOutOfRangeException (
+                    ARG_NAME_SHIFT_THIS ,
+                    NDigits ,
+                    Resources.ERRMSG_DECIMAL_SHIFT_DIGITS_VALUE );
+            }   // FALSE (unanticipated outcome) block, if ( pintNDigits > MagicNumbers.ZERO )
+        }   // public static decimal DecimalShiftRight
+
+
+        /// <summary>
+        /// Shift the decimal point of a double value right by a poisitive
+        /// number of digits.
+        /// </summary>
+        /// <param name="ShiftThis">
+        /// Specify the integer value to be shifted left by the number of digits
+        /// specified by <paramref name="NDigits"/>.
+        /// </param>
+        /// <param name="NDigits"></param>
+        /// Specify the number of digits to the left by which to shift the
+        /// value specified by <paramref name="ShiftThis"/>.
+        /// <returns>
+        /// Return the value of <paramref name="ShiftThis"/> multiplied by
+        /// a power of ten that is one less than the value specified by
+        /// <paramref name="NDigits"/>.
+        /// </returns>
+        public static double DecimalShiftRight (
+            double ShiftThis ,
+            int NDigits )
+        {
+            if ( NDigits > MagicNumbers.ZERO )
+            {
+                int intShiftFactor = MagicNumbers.PLUS_ONE;
+
+                for ( int intShiftDigits = MagicNumbers.ZERO ;
+                          intShiftDigits < NDigits ;
+                          intShiftDigits++ )
+                {
+                    intShiftFactor = intShiftFactor * MagicNumbers.EXACTLY_TEN;
+                }   // for ( int intShiftDigits = MagicNumbers.ZERO ; intShiftDigits < pintNDigits ; intShiftDigits++ )
+
+                return ShiftThis / intShiftFactor;
+            }   // TRUE (anticipated outcome) block, if ( pintNDigits > MagicNumbers.ZERO )
+            else
+            {
+                throw new ArgumentOutOfRangeException (
+                    ARG_NAME_SHIFT_THIS ,
+                    NDigits ,
+                    Resources.ERRMSG_DECIMAL_SHIFT_DIGITS_VALUE );
+            }   // FALSE (unanticipated outcome) block, if ( pintNDigits > MagicNumbers.ZERO )
+        }   // public static double DecimalShiftRight
+        #endregion  // DecimalShiftRight Methods
 
 
         #region IsEvenlyDivisibleByAnyInteger Methods
@@ -180,8 +591,8 @@ namespace WizardWrx
         /// <seealso cref="Mod(int,int)"/>
         /// <seealso cref="Remainder(int, int)"/>
         public static bool IsEvenlyDivisibleByAnyInteger (
-            int pintDividend ,
-            int pintDivisor )
+        int pintDividend ,
+        int pintDivisor )
         {
             if ( pintDivisor != MagicNumbers.ZERO )
                 return pintDividend % pintDivisor == MagicNumbers.EVENLY_DIVISIBLE;
@@ -575,7 +986,7 @@ namespace WizardWrx
         #endregion  // Mod and Remainder methods, which are interchangeable
 
 
-        #region Private Helper Methods
+        #region Private Static Helper Methods
         /// <summary>
         /// This method returns a string that contains the value, and the
         /// upper and lower limits that it must meet, according to the rules
@@ -596,6 +1007,60 @@ namespace WizardWrx
                 GRGORIAN_CALENDAR_ADOPTION_YEAR ,
                 DateTime.MaxValue.Year );
         }   // CreateYearOutOfRangeMsg
-        #endregion  // Private Helper Methods
+
+
+        /// <summary>
+        /// Construct a detailed exception report.
+        /// </summary>
+        /// <typeparam name="T">
+        /// Although generic parameter type T is unconstrained, it is expected
+        /// to be numeric, either integral or floating point of some precision.
+        /// Implementing this method as a generic allows one method to construct
+        /// messages for all DecimalShiftLeft and DecimalShiftRight methods.
+        /// </typeparam>
+        /// <param name="pnbrShiftThis">
+        /// Specify the integer value to be shifted left by the number of digits
+        /// specified by <paramref name="pintNDigits"/>.
+        /// </param>
+        /// <param name="pintNDigits">
+        /// Specify the number of digits to the left by which to shift the
+        /// value specified by <paramref name="pnbrShiftThis"/>.
+        /// </param>
+        /// <param name="pstrFailingMethodName">
+        /// Pass in a reference to a string that contains the name of the method
+        /// that failed. The most reliable way to get this value is by calling
+        /// ClassAndMethodDiagnosticInfo.GetMyMethodName, which obtains the info
+        /// from the compiler through one of three optional arguments that the
+        /// C# compiler supplies at run time.
+        /// </param>
+        /// <param name="pexAll">
+        /// Pass in a reference to the exception being handled, from which the
+        /// Message property is appended to the returned string.
+        /// </param>
+        /// <returns>
+        /// The return value is a string that summarizes the parameter values
+        /// that gave rise to the exception reported herein, concluding with a
+        /// copy of the message from the exception being handled by the calling
+        /// code block.
+        /// </returns>
+        private static string GenerateDecimalShiftExceptionMessage<T> (
+            T pnbrShiftThis ,
+            int pintNDigits ,
+            string pstrFailingMethodName ,
+            Exception pexAll )
+        {
+            return string.Format (
+                Resources.ERRMSG_MATH_EXCEPTION ,
+                new object [ ]
+                {
+                            pexAll.GetType ( ).FullName ,                        // Format Item 0: An {0} exception arose
+                            pstrFailingMethodName ,  // Format item 1: while computing the value of {1}.
+                            pnbrShiftThis ,                                         // Format Item 2: ShiftThis = {2}
+                            pintNDigits ,                                           // Format Item 3: NDigits   = {3}
+                            pexAll.Message ,                                     // Format Item 4: Details are in the inner exception: {4}
+                            Environment.NewLine                                 // Format Item 5: Platform-dependent newline
+                } );
+        }   // private static string GenerateDecimalShiftExceptionMessage<T>
+        #endregion  // Private Static Helper Methods
     }   // public static class MoreMath
 }   // namespace WizardWrx

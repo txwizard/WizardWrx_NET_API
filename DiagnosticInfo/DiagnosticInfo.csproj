@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+	============================================================================
+	Project Name:		DiagnosticInfo.csproj
+
+	Project Abstract:	Segregate runtime diagnostic information helper classes,
+	                    which require System.Runtime.CompilerServices from .NET
+	                    Framework version 4.5 or higher.
+
+	Remarks:			As it applies to Roslyn compiler, the Deterministic
+						switch implements determinism in a very narrow context,
+						which affects only the versioning of the generated PE
+						file in which the assembly is stored.
+
+						This switch is relatively new, and its inclusion in the
+						default generated project skeleton appears to be quite
+						recent.
+
+						For further details, please see the first article cited
+						in the References section that follows.
+
+	References:			1)	Deterministic builds in Roslyn
+							http://blog.paranoidcoding.com/2016/04/05/deterministic-builds-in-roslyn.html
+
+						2)	/deterministic switch for msbuild does not work
+							https://stackoverflow.com/questions/39657709/deterministic-switch-for-msbuild-does-not-work
+
+	============================================================================
+	Revision History
+	============================================================================
+
+	Date       By  Description
+	========== === =============================================================
+	2018/12/23 DAG Disable deterministic versioning.
+	============================================================================
+-->
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A248E5A4-B42B-4B10-8F52-E58B06A0BC18}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WizardWrx</RootNamespace>
+    <AssemblyName>WizardWrx.DiagnosticInfo</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <!--    <Deterministic>true</Deterministic> -->
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\WizardWrx.DiagnosticInfo.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\WizardWrx.DiagnosticInfo.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClassAndMethodDiagnosticInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{c1fb48d6-4a54-4424-bca1-4777f3aae2df}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

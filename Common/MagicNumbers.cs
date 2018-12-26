@@ -181,6 +181,32 @@
                               EXACTLY_ONE_HUNDRED_MILLION and 
                               EXACTLY_ONE_HUNDRED_THOUSAND to more or less
                               complete the set of powers of ten from two to 9.
+
+	2018/12/22 7.14    DAG    Define the constants listed in the following table.
+
+									--------------------------------------------
+									Name                                   Value
+									-------------------------- -----------------
+                                    TICKS_PER_1_WEEK           6,048,000,000,000
+                                    TICKS_PER_1_DAY              864,000,000,000
+                                    TICKS_PER_23_59_59           863,990,000,000
+                                    TICKS_PER_23_59_00           863,400,000,000
+                                    TICKS_PER_1_HOUR              36,000,000,000
+                                    TICKS_PER_1_MINUTE               600,000,000
+                                    TICKS_PER_1_SECOND                10,000,000
+                                    TICKS_PER_1_MILLISECOND               10,000
+									--------------------------------------------
+
+                              BREAKING CHANGE: TICKS_PER_SECOND is correctly
+                                               described in the XML comment, but
+                                               its numerical value was off by a
+                                               factor of one thousand. This is
+                                               corrected by making its value
+                                               equal to TICKS_PER_1_SECOND.
+
+                              These tick values were computed by a custom class,
+                              and the constants were derived therefrom by Excel
+                              worksheet formulas.
 	============================================================================
 */
 
@@ -462,6 +488,7 @@ namespace WizardWrx
         ///	<seealso cref="EXACTLY_ONE_MILLION"/>
         ///	<seealso cref="EXACTLY_ONE_BILLION"/>
         ///	<seealso cref="MILLISECONDS_PER_SECOND"/>
+        ///	<seealso cref="TICKS_PER_1_SECOND"/>
         ///	<seealso cref="TICKS_PER_SECOND"/>
         public const int EXACTLY_ONE_THOUSAND = 1000;
 
@@ -510,12 +537,13 @@ namespace WizardWrx
         ///	<seealso cref="EXACTLY_ONE_MILLION"/>
         public const int EXACTLY_ONE_BILLION = 1000000000;
 
-		/// <summary>
-		/// Use this constant when you need a literal value of exactly one second worth of milliseconds..
-		/// </summary>
-		/// <see cref="EXACTLY_ONE_THOUSAND"/>
-		///	<seealso cref="TICKS_PER_SECOND"/>
-		public const int MILLISECONDS_PER_SECOND = EXACTLY_ONE_THOUSAND;
+        /// <summary>
+        /// Use this constant when you need a literal value of exactly one second worth of milliseconds..
+        /// </summary>
+        /// <see cref="EXACTLY_ONE_THOUSAND"/>
+        ///	<seealso cref="TICKS_PER_1_SECOND"/>
+        ///	<seealso cref="TICKS_PER_SECOND"/>
+        public const int MILLISECONDS_PER_SECOND = EXACTLY_ONE_THOUSAND;
 
 		/// <summary>
 		/// Use this constant to disambiguate a negative 1 from a positive 1
@@ -639,21 +667,169 @@ namespace WizardWrx
 		/// <seealso cref="ZERO"/>
 		public const int STRING_SUBSTR_BEGINNING = ZERO;
 
-		/// <summary>
-		/// There are ten million ticks of one hundred nanoseconds each in one second.
-		/// </summary>
-		///	<see cref="EXACTLY_TEN_THOUSAND"/>
-		/// <seealso cref="MILLISECONDS_PER_SECOND"/>
-		public const int TICKS_PER_SECOND = EXACTLY_TEN_THOUSAND;
+        /// <summary>
+        /// There are ten million ticks of one hundred nanoseconds each in one second.
+        /// 
+        /// BREAKING CHANGE: Prior to version 7.14, this value was understated
+        /// by a factor of one thousand.
+        /// 
+        /// Use this constant to construct a TimeSpan of the corresponding
+        /// length (value) by way of its one-argument constructor, or to
+        /// increase or decrease the value of a time span by the corresponding
+        /// amount by way of its one-argument method.
+        /// </summary>
+        ///	<see cref="EXACTLY_TEN_THOUSAND"/>
+        ///	<see cref="TICKS_PER_1_SECOND"/>
+        /// <seealso cref="MILLISECONDS_PER_SECOND"/>
+        public const int TICKS_PER_SECOND = ( int ) TICKS_PER_1_SECOND;
+
+        /// <summary>
+        /// There are 6,048,000,000,000 ticks in one calendar week.
+        /// 
+        /// Use this constant to construct a TimeSpan of the corresponding
+        /// length (value) by way of its one-argument constructor, or to
+        /// increase or decrease the value of a time span by the corresponding
+        /// amount by way of its one-argument method.
+        /// </summary>
+        ///	<seealso cref="TICKS_PER_1_DAY"/>
+        ///	<seealso cref="TICKS_PER_23_59_59"/>
+        ///	<seealso cref="TICKS_PER_23_59_00"/>
+        ///	<seealso cref="TICKS_PER_1_HOUR"/>
+        ///	<seealso cref="TICKS_PER_1_MINUTE"/>
+        ///	<seealso cref="TICKS_PER_1_SECOND"/>
+        ///	<seealso cref="TICKS_PER_1_MILLISECOND"/>
+        public const long TICKS_PER_1_WEEK = 6048000000000;
+
+        /// <summary>
+        /// There are 864,000,000,000 ticks in one calendar day.
+        /// 
+        /// Use this constant to construct a TimeSpan of the corresponding
+        /// length (value) by way of its one-argument constructor, or to
+        /// increase or decrease the value of a time span by the corresponding
+        /// amount by way of its one-argument method.
+        /// </summary>
+        ///	<seealso cref="TICKS_PER_1_WEEK"/>
+        ///	<seealso cref="TICKS_PER_23_59_59"/>
+        ///	<seealso cref="TICKS_PER_23_59_00"/>
+        ///	<seealso cref="TICKS_PER_1_HOUR"/>
+        ///	<seealso cref="TICKS_PER_1_MINUTE"/>
+        ///	<seealso cref="TICKS_PER_1_SECOND"/>
+        ///	<seealso cref="TICKS_PER_1_MILLISECOND"/>
+        public const long TICKS_PER_1_DAY = 864000000000;
+
+        /// <summary>
+        /// There are 863,990,000,000 ticks in one calendar day less one second.
+        /// 
+        /// Use this constant to construct a TimeSpan of the corresponding
+        /// length (value) by way of its one-argument constructor, or to
+        /// increase or decrease the value of a time span by the corresponding
+        /// amount by way of its one-argument method.
+        /// </summary>
+        ///	<seealso cref="TICKS_PER_1_WEEK"/>
+        ///	<seealso cref="TICKS_PER_1_DAY"/>
+        ///	<seealso cref="TICKS_PER_23_59_00"/>
+        ///	<seealso cref="TICKS_PER_1_HOUR"/>
+        ///	<seealso cref="TICKS_PER_1_MINUTE"/>
+        ///	<seealso cref="TICKS_PER_1_SECOND"/>
+        ///	<seealso cref="TICKS_PER_1_MILLISECOND"/>
+        public const long TICKS_PER_23_59_59 = 863990000000;
+
+        /// <summary>
+        /// There are 863,400,000,000 ticks in one calendar day less one minute. 
+        /// 
+        /// Use this constant to construct a TimeSpan of the corresponding
+        /// length (value) by way of its one-argument constructor, or to
+        /// increase or decrease the value of a time span by the corresponding
+        /// amount by way of its one-argument method.
+        /// </summary>
+        ///	<seealso cref="TICKS_PER_1_WEEK"/>
+        ///	<seealso cref="TICKS_PER_1_DAY"/>
+        ///	<seealso cref="TICKS_PER_23_59_59"/>
+        ///	<seealso cref="TICKS_PER_1_HOUR"/>
+        ///	<seealso cref="TICKS_PER_1_MINUTE"/>
+        ///	<seealso cref="TICKS_PER_1_SECOND"/>
+        ///	<seealso cref="TICKS_PER_1_MILLISECOND"/>
+        public const long TICKS_PER_23_59_00 = 863400000000;
+
+        /// <summary>
+        /// There are 36,000,000,000 ticks in one hour.
+        /// 
+        /// Use this constant to construct a TimeSpan of the corresponding
+        /// length (value) by way of its one-argument constructor, or to
+        /// increase or decrease the value of a time span by the corresponding
+        /// amount by way of its one-argument method.
+        /// </summary>
+        ///	<seealso cref="TICKS_PER_1_WEEK"/>
+        ///	<seealso cref="TICKS_PER_1_DAY"/>
+        ///	<seealso cref="TICKS_PER_23_59_59"/>
+        ///	<seealso cref="TICKS_PER_23_59_00"/>
+        ///	<seealso cref="TICKS_PER_1_MINUTE"/>
+        ///	<seealso cref="TICKS_PER_1_SECOND"/>
+        ///	<seealso cref="TICKS_PER_1_MILLISECOND"/>
+        public const long TICKS_PER_1_HOUR = 36000000000;
+
+        /// <summary>
+        /// There are 600,000,000 ticks in one minute.
+        /// 
+        /// Use this constant to construct a TimeSpan of the corresponding
+        /// length (value) by way of its one-argument constructor, or to
+        /// increase or decrease the value of a time span by the corresponding
+        /// amount by way of its one-argument method.
+        /// </summary>
+        ///	<seealso cref="TICKS_PER_1_WEEK"/>
+        ///	<seealso cref="TICKS_PER_1_DAY"/>
+        ///	<seealso cref="TICKS_PER_23_59_59"/>
+        ///	<seealso cref="TICKS_PER_23_59_00"/>
+        ///	<seealso cref="TICKS_PER_1_HOUR"/>
+        ///	<seealso cref="TICKS_PER_1_SECOND"/>
+        ///	<seealso cref="TICKS_PER_1_MILLISECOND"/>
+        public const long TICKS_PER_1_MINUTE = 600000000;
+
+        /// <summary>
+        /// There are 10,000,000 ticks in one second.
+        /// 
+        /// Use this constant to construct a TimeSpan of the corresponding
+        /// length (value) by way of its one-argument constructor, or to
+        /// increase or decrease the value of a time span by the corresponding
+        /// amount by way of its one-argument method.
+        /// </summary>
+        ///	<seealso cref="TICKS_PER_1_WEEK"/>
+        ///	<seealso cref="TICKS_PER_1_DAY"/>
+        ///	<seealso cref="TICKS_PER_23_59_59"/>
+        ///	<seealso cref="TICKS_PER_23_59_00"/>
+        ///	<seealso cref="TICKS_PER_1_HOUR"/>
+        ///	<seealso cref="TICKS_PER_1_MINUTE"/>
+        ///	<seealso cref="TICKS_PER_1_MILLISECOND"/>
+        ///	<seealso cref="TICKS_PER_SECOND"/>
+        ///	<seealso cref="MILLISECONDS_PER_SECOND"/>
+        public const long TICKS_PER_1_SECOND = 10000000;
+
+        /// <summary>
+        /// There are 10,000 ticks in one millisecond.
+        /// 
+        /// Use this constant to construct a TimeSpan of the corresponding
+        /// length (value) by way of its one-argument constructor, or to
+        /// increase or decrease the value of a time span by the corresponding
+        /// amount by way of its one-argument method.
+        /// </summary>
+        ///	<seealso cref="TICKS_PER_1_WEEK"/>
+        ///	<seealso cref="TICKS_PER_1_DAY"/>
+        ///	<seealso cref="TICKS_PER_23_59_59"/>
+        ///	<seealso cref="TICKS_PER_23_59_00"/>
+        ///	<seealso cref="TICKS_PER_1_HOUR"/>
+        ///	<seealso cref="TICKS_PER_1_MINUTE"/>
+        ///	<seealso cref="TICKS_PER_1_SECOND"/>
+        public const long TICKS_PER_1_MILLISECOND = 10000;
+
+
+        /// <summary>
+        /// A UNC prefix starts here at this character position.
+        /// </summary>
+        /// <seealso cref="MINUS_ONE"/>
+        public const int UNC_PREFIX_START_POS = PLUS_ONE;
 
 		/// <summary>
-		/// A UNC prefix starts here.
-		/// </summary>
-		/// <seealso cref="MINUS_ONE"/>
-		public const int UNC_PREFIX_START_POS = PLUS_ONE;
-
-		/// <summary>
-		/// A UNC prefix is this long.
+		/// A UNC prefix has this many characters.
 		/// </summary>
 		/// <seealso cref="PLUS_TWO"/>
 		public const int UNC_PREFIX_START_LEN = PLUS_TWO;

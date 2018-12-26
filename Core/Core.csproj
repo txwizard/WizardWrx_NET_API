@@ -23,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\Wizardwrx.Core.XML</DocumentationFile>
     <LangVersion>7.3</LangVersion>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -33,6 +34,7 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\Wizardwrx.Core.XML</DocumentationFile>
     <LangVersion>7.3</LangVersion>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -60,7 +62,6 @@
     <Compile Include="GenericSingletonBase.cs" />
     <Compile Include="ListHelpers.cs" />
     <Compile Include="Logic.cs" />
-    <Compile Include="MoreMath.cs" />
     <Compile Include="NumberFormatters.cs" />
     <Compile Include="PropertyDefaults.cs" />
     <Compile Include="RegistryValues.cs" />

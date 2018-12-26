@@ -4,6 +4,65 @@ This file is a running history of fixes and improvements from version 7.0
 onwards. Changes are documented for the newest version first. Within each
 version, classes are listed alphabetically.
 
+# Version 7.14
+
+Following is a summary of changes made in version 7.14, released Monday, 24 November 2018.
+
+##Class: WizardWrx.MagicNumbers (defined in WizardWrx.Common.dll)
+
+Define the constants listed in the following table.
+
+|-Name-|-Value-|
+|-------------------------|-------------------|
+|-TICKS_PER_1_WEEK-|-6,048,000,000,000-|
+|-TICKS_PER_1_DAY-|-864,000,000,000-|
+|-TICKS_PER_23_59_59-|-863,990,000,000-|
+|-TICKS_PER_23_59_00-|-863,400,000,000-|
+|-TICKS_PER_1_HOUR-|-36,000,000,000-|
+|-TICKS_PER_1_MINUTE-|-600,000,000-|
+|-TICKS_PER_1_SECOND-|-10,000,000-|
+|-TICKS_PER_1_MILLISECOND-|-10,000-|
+
+__BREAKING CHANGE:__ TICKS_PER_SECOND is correctly described in the XML comment,
+but its numerical value was off by a factor of one thousand. This is corrected
+by making its value equal to TICKS_PER_1_SECOND.
+
+These tick values were computed by a custom class, and the constants were
+derived therefrom by Excel worksheet formulas.
+
+##Class: WizardWrx.DLLConfigurationManager  (defined in WizardWrx.DLLConfigurationManager.dll)
+
+Add a new GetTheSingleInstance overload that takes only the OptionFlags parameter.
+
+##Class: WizardWrx.ClassAndMethodDiagnosticInfo (defined in WizardWrx.ClassAndMethodDiagnosticInfo.dll)
+
+This is a new class and a new library that leverages new features in the version
+of `System.Runtime.CompilerServices` that ships with version 4.5 of the Microsoft
+.NET Framework to return the name of the executing method without resorting to
+Reflection.
+
+For ease of access, I put the single class, `ClassAndMethodDiagnosticInfo`, in
+the `WizardWrx` namespace. Since it requires a higher version of the framework
+than most everything else, it went into a dedicated library, so that the others
+can retain their original target, version __3.5 Client Profile__.
+
+##Class: WizardWrx.MoreMath (defined in WizardWrx.MoreMath.dll)
+
+This class is relocated from WizardWrx.Core.dll to a dedicated library for two reasons.
+
+1	Since it uses `ClassAndMethodDiagnosticInfo` methods in its exception reports,
+its target framework must be at least 4.5.
+
+2	Since its method perform mathematical operations that can cause arithmetic
+overflows that should be caught and reported, it must be compiled with arithmetic
+checking enabled.
+
+New functions in this version are a set of `DecimalShift` routines that perform
+left and right decimal shift operations. While the required math is technically
+trivial, it's easy to get wrong. Hence, in the same spirit that motivated the
+`WizardWrx.BitMath` classes, a recent need for a decimal shift motivated creation
+of these decimal shift routines.
+
 # Version 7.13
 
 Following is a summary of changes made in version 7.13, released Monday, 10 November 2018.

@@ -2846,6 +2846,51 @@ references:
   isSpec: "True"
   fullName: WizardWrx.AssemblyUtils.SortableManagedResourceItem.Value
   nameWithType: SortableManagedResourceItem.Value
+- uid: WizardWrx.ClassAndMethodDiagnosticInfo
+  name: ClassAndMethodDiagnosticInfo
+  href: api/WizardWrx.ClassAndMethodDiagnosticInfo.html
+  commentId: T:WizardWrx.ClassAndMethodDiagnosticInfo
+  fullName: WizardWrx.ClassAndMethodDiagnosticInfo
+  nameWithType: ClassAndMethodDiagnosticInfo
+- uid: WizardWrx.ClassAndMethodDiagnosticInfo.GetMyMethodName(System.String)
+  name: GetMyMethodName(String)
+  href: api/WizardWrx.ClassAndMethodDiagnosticInfo.html#WizardWrx_ClassAndMethodDiagnosticInfo_GetMyMethodName_System_String_
+  commentId: M:WizardWrx.ClassAndMethodDiagnosticInfo.GetMyMethodName(System.String)
+  fullName: WizardWrx.ClassAndMethodDiagnosticInfo.GetMyMethodName(System.String)
+  nameWithType: ClassAndMethodDiagnosticInfo.GetMyMethodName(String)
+- uid: WizardWrx.ClassAndMethodDiagnosticInfo.GetMyMethodName*
+  name: GetMyMethodName
+  href: api/WizardWrx.ClassAndMethodDiagnosticInfo.html#WizardWrx_ClassAndMethodDiagnosticInfo_GetMyMethodName_
+  commentId: Overload:WizardWrx.ClassAndMethodDiagnosticInfo.GetMyMethodName
+  isSpec: "True"
+  fullName: WizardWrx.ClassAndMethodDiagnosticInfo.GetMyMethodName
+  nameWithType: ClassAndMethodDiagnosticInfo.GetMyMethodName
+- uid: WizardWrx.ClassAndMethodDiagnosticInfo.GetMySourceFileName(System.String)
+  name: GetMySourceFileName(String)
+  href: api/WizardWrx.ClassAndMethodDiagnosticInfo.html#WizardWrx_ClassAndMethodDiagnosticInfo_GetMySourceFileName_System_String_
+  commentId: M:WizardWrx.ClassAndMethodDiagnosticInfo.GetMySourceFileName(System.String)
+  fullName: WizardWrx.ClassAndMethodDiagnosticInfo.GetMySourceFileName(System.String)
+  nameWithType: ClassAndMethodDiagnosticInfo.GetMySourceFileName(String)
+- uid: WizardWrx.ClassAndMethodDiagnosticInfo.GetMySourceFileName*
+  name: GetMySourceFileName
+  href: api/WizardWrx.ClassAndMethodDiagnosticInfo.html#WizardWrx_ClassAndMethodDiagnosticInfo_GetMySourceFileName_
+  commentId: Overload:WizardWrx.ClassAndMethodDiagnosticInfo.GetMySourceFileName
+  isSpec: "True"
+  fullName: WizardWrx.ClassAndMethodDiagnosticInfo.GetMySourceFileName
+  nameWithType: ClassAndMethodDiagnosticInfo.GetMySourceFileName
+- uid: WizardWrx.ClassAndMethodDiagnosticInfo.GetMySourceLineNumber(System.Int32)
+  name: GetMySourceLineNumber(Int32)
+  href: api/WizardWrx.ClassAndMethodDiagnosticInfo.html#WizardWrx_ClassAndMethodDiagnosticInfo_GetMySourceLineNumber_System_Int32_
+  commentId: M:WizardWrx.ClassAndMethodDiagnosticInfo.GetMySourceLineNumber(System.Int32)
+  fullName: WizardWrx.ClassAndMethodDiagnosticInfo.GetMySourceLineNumber(System.Int32)
+  nameWithType: ClassAndMethodDiagnosticInfo.GetMySourceLineNumber(Int32)
+- uid: WizardWrx.ClassAndMethodDiagnosticInfo.GetMySourceLineNumber*
+  name: GetMySourceLineNumber
+  href: api/WizardWrx.ClassAndMethodDiagnosticInfo.html#WizardWrx_ClassAndMethodDiagnosticInfo_GetMySourceLineNumber_
+  commentId: Overload:WizardWrx.ClassAndMethodDiagnosticInfo.GetMySourceLineNumber
+  isSpec: "True"
+  fullName: WizardWrx.ClassAndMethodDiagnosticInfo.GetMySourceLineNumber
+  nameWithType: ClassAndMethodDiagnosticInfo.GetMySourceLineNumber
 - uid: WizardWrx.Common.Properties
   name: WizardWrx.Common.Properties
   href: api/WizardWrx.Common.Properties.html
@@ -7186,6 +7231,12 @@ references:
   commentId: M:WizardWrx.DLLConfigurationManager.ExceptionLogger.GetTheSingleInstance(WizardWrx.AssemblyUtils.PESubsystemInfo.PESubsystemID,WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions,System.String)
   fullName: WizardWrx.DLLConfigurationManager.ExceptionLogger.GetTheSingleInstance(WizardWrx.AssemblyUtils.PESubsystemInfo.PESubsystemID, WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions, System.String)
   nameWithType: ExceptionLogger.GetTheSingleInstance(PESubsystemInfo.PESubsystemID, ExceptionLogger.OutputOptions, String)
+- uid: WizardWrx.DLLConfigurationManager.ExceptionLogger.GetTheSingleInstance(WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions)
+  name: GetTheSingleInstance(ExceptionLogger.OutputOptions)
+  href: api/WizardWrx.DLLConfigurationManager.ExceptionLogger.html#WizardWrx_DLLConfigurationManager_ExceptionLogger_GetTheSingleInstance_WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptions_
+  commentId: M:WizardWrx.DLLConfigurationManager.ExceptionLogger.GetTheSingleInstance(WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions)
+  fullName: WizardWrx.DLLConfigurationManager.ExceptionLogger.GetTheSingleInstance(WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions)
+  nameWithType: ExceptionLogger.GetTheSingleInstance(ExceptionLogger.OutputOptions)
 - uid: WizardWrx.DLLConfigurationManager.ExceptionLogger.GetTheSingleInstance(WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions,System.String)
   name: GetTheSingleInstance(ExceptionLogger.OutputOptions, String)
   href: api/WizardWrx.DLLConfigurationManager.ExceptionLogger.html#WizardWrx_DLLConfigurationManager_ExceptionLogger_GetTheSingleInstance_WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptions_System_String_
@@ -10940,6 +10991,54 @@ references:
   commentId: F:WizardWrx.MagicNumbers.STRING_SUBSTR_BEGINNING
   fullName: WizardWrx.MagicNumbers.STRING_SUBSTR_BEGINNING
   nameWithType: MagicNumbers.STRING_SUBSTR_BEGINNING
+- uid: WizardWrx.MagicNumbers.TICKS_PER_1_DAY
+  name: TICKS_PER_1_DAY
+  href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_TICKS_PER_1_DAY
+  commentId: F:WizardWrx.MagicNumbers.TICKS_PER_1_DAY
+  fullName: WizardWrx.MagicNumbers.TICKS_PER_1_DAY
+  nameWithType: MagicNumbers.TICKS_PER_1_DAY
+- uid: WizardWrx.MagicNumbers.TICKS_PER_1_HOUR
+  name: TICKS_PER_1_HOUR
+  href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_TICKS_PER_1_HOUR
+  commentId: F:WizardWrx.MagicNumbers.TICKS_PER_1_HOUR
+  fullName: WizardWrx.MagicNumbers.TICKS_PER_1_HOUR
+  nameWithType: MagicNumbers.TICKS_PER_1_HOUR
+- uid: WizardWrx.MagicNumbers.TICKS_PER_1_MILLISECOND
+  name: TICKS_PER_1_MILLISECOND
+  href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_TICKS_PER_1_MILLISECOND
+  commentId: F:WizardWrx.MagicNumbers.TICKS_PER_1_MILLISECOND
+  fullName: WizardWrx.MagicNumbers.TICKS_PER_1_MILLISECOND
+  nameWithType: MagicNumbers.TICKS_PER_1_MILLISECOND
+- uid: WizardWrx.MagicNumbers.TICKS_PER_1_MINUTE
+  name: TICKS_PER_1_MINUTE
+  href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_TICKS_PER_1_MINUTE
+  commentId: F:WizardWrx.MagicNumbers.TICKS_PER_1_MINUTE
+  fullName: WizardWrx.MagicNumbers.TICKS_PER_1_MINUTE
+  nameWithType: MagicNumbers.TICKS_PER_1_MINUTE
+- uid: WizardWrx.MagicNumbers.TICKS_PER_1_SECOND
+  name: TICKS_PER_1_SECOND
+  href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_TICKS_PER_1_SECOND
+  commentId: F:WizardWrx.MagicNumbers.TICKS_PER_1_SECOND
+  fullName: WizardWrx.MagicNumbers.TICKS_PER_1_SECOND
+  nameWithType: MagicNumbers.TICKS_PER_1_SECOND
+- uid: WizardWrx.MagicNumbers.TICKS_PER_1_WEEK
+  name: TICKS_PER_1_WEEK
+  href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_TICKS_PER_1_WEEK
+  commentId: F:WizardWrx.MagicNumbers.TICKS_PER_1_WEEK
+  fullName: WizardWrx.MagicNumbers.TICKS_PER_1_WEEK
+  nameWithType: MagicNumbers.TICKS_PER_1_WEEK
+- uid: WizardWrx.MagicNumbers.TICKS_PER_23_59_00
+  name: TICKS_PER_23_59_00
+  href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_TICKS_PER_23_59_00
+  commentId: F:WizardWrx.MagicNumbers.TICKS_PER_23_59_00
+  fullName: WizardWrx.MagicNumbers.TICKS_PER_23_59_00
+  nameWithType: MagicNumbers.TICKS_PER_23_59_00
+- uid: WizardWrx.MagicNumbers.TICKS_PER_23_59_59
+  name: TICKS_PER_23_59_59
+  href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_TICKS_PER_23_59_59
+  commentId: F:WizardWrx.MagicNumbers.TICKS_PER_23_59_59
+  fullName: WizardWrx.MagicNumbers.TICKS_PER_23_59_59
+  nameWithType: MagicNumbers.TICKS_PER_23_59_59
 - uid: WizardWrx.MagicNumbers.TICKS_PER_SECOND
   name: TICKS_PER_SECOND
   href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_TICKS_PER_SECOND
@@ -10970,6 +11069,68 @@ references:
   commentId: T:WizardWrx.MoreMath
   fullName: WizardWrx.MoreMath
   nameWithType: MoreMath
+- uid: WizardWrx.MoreMath.DecimalShiftLeft(System.Int32,System.Int32)
+  name: DecimalShiftLeft(Int32, Int32)
+  href: api/WizardWrx.MoreMath.html#WizardWrx_MoreMath_DecimalShiftLeft_System_Int32_System_Int32_
+  commentId: M:WizardWrx.MoreMath.DecimalShiftLeft(System.Int32,System.Int32)
+  fullName: WizardWrx.MoreMath.DecimalShiftLeft(System.Int32, System.Int32)
+  nameWithType: MoreMath.DecimalShiftLeft(Int32, Int32)
+- uid: WizardWrx.MoreMath.DecimalShiftLeft(System.Int64,System.Int32)
+  name: DecimalShiftLeft(Int64, Int32)
+  href: api/WizardWrx.MoreMath.html#WizardWrx_MoreMath_DecimalShiftLeft_System_Int64_System_Int32_
+  commentId: M:WizardWrx.MoreMath.DecimalShiftLeft(System.Int64,System.Int32)
+  fullName: WizardWrx.MoreMath.DecimalShiftLeft(System.Int64, System.Int32)
+  nameWithType: MoreMath.DecimalShiftLeft(Int64, Int32)
+- uid: WizardWrx.MoreMath.DecimalShiftLeft(System.UInt32,System.Int32)
+  name: DecimalShiftLeft(UInt32, Int32)
+  href: api/WizardWrx.MoreMath.html#WizardWrx_MoreMath_DecimalShiftLeft_System_UInt32_System_Int32_
+  commentId: M:WizardWrx.MoreMath.DecimalShiftLeft(System.UInt32,System.Int32)
+  fullName: WizardWrx.MoreMath.DecimalShiftLeft(System.UInt32, System.Int32)
+  nameWithType: MoreMath.DecimalShiftLeft(UInt32, Int32)
+- uid: WizardWrx.MoreMath.DecimalShiftLeft(System.UInt64,System.Int32)
+  name: DecimalShiftLeft(UInt64, Int32)
+  href: api/WizardWrx.MoreMath.html#WizardWrx_MoreMath_DecimalShiftLeft_System_UInt64_System_Int32_
+  commentId: M:WizardWrx.MoreMath.DecimalShiftLeft(System.UInt64,System.Int32)
+  fullName: WizardWrx.MoreMath.DecimalShiftLeft(System.UInt64, System.Int32)
+  nameWithType: MoreMath.DecimalShiftLeft(UInt64, Int32)
+- uid: WizardWrx.MoreMath.DecimalShiftLeft*
+  name: DecimalShiftLeft
+  href: api/WizardWrx.MoreMath.html#WizardWrx_MoreMath_DecimalShiftLeft_
+  commentId: Overload:WizardWrx.MoreMath.DecimalShiftLeft
+  isSpec: "True"
+  fullName: WizardWrx.MoreMath.DecimalShiftLeft
+  nameWithType: MoreMath.DecimalShiftLeft
+- uid: WizardWrx.MoreMath.DecimalShiftRight(System.Decimal,System.Int32)
+  name: DecimalShiftRight(Decimal, Int32)
+  href: api/WizardWrx.MoreMath.html#WizardWrx_MoreMath_DecimalShiftRight_System_Decimal_System_Int32_
+  commentId: M:WizardWrx.MoreMath.DecimalShiftRight(System.Decimal,System.Int32)
+  fullName: WizardWrx.MoreMath.DecimalShiftRight(System.Decimal, System.Int32)
+  nameWithType: MoreMath.DecimalShiftRight(Decimal, Int32)
+- uid: WizardWrx.MoreMath.DecimalShiftRight(System.Double,System.Int32)
+  name: DecimalShiftRight(Double, Int32)
+  href: api/WizardWrx.MoreMath.html#WizardWrx_MoreMath_DecimalShiftRight_System_Double_System_Int32_
+  commentId: M:WizardWrx.MoreMath.DecimalShiftRight(System.Double,System.Int32)
+  fullName: WizardWrx.MoreMath.DecimalShiftRight(System.Double, System.Int32)
+  nameWithType: MoreMath.DecimalShiftRight(Double, Int32)
+- uid: WizardWrx.MoreMath.DecimalShiftRight(System.Int32,System.Int32)
+  name: DecimalShiftRight(Int32, Int32)
+  href: api/WizardWrx.MoreMath.html#WizardWrx_MoreMath_DecimalShiftRight_System_Int32_System_Int32_
+  commentId: M:WizardWrx.MoreMath.DecimalShiftRight(System.Int32,System.Int32)
+  fullName: WizardWrx.MoreMath.DecimalShiftRight(System.Int32, System.Int32)
+  nameWithType: MoreMath.DecimalShiftRight(Int32, Int32)
+- uid: WizardWrx.MoreMath.DecimalShiftRight(System.Single,System.Int32)
+  name: DecimalShiftRight(Single, Int32)
+  href: api/WizardWrx.MoreMath.html#WizardWrx_MoreMath_DecimalShiftRight_System_Single_System_Int32_
+  commentId: M:WizardWrx.MoreMath.DecimalShiftRight(System.Single,System.Int32)
+  fullName: WizardWrx.MoreMath.DecimalShiftRight(System.Single, System.Int32)
+  nameWithType: MoreMath.DecimalShiftRight(Single, Int32)
+- uid: WizardWrx.MoreMath.DecimalShiftRight*
+  name: DecimalShiftRight
+  href: api/WizardWrx.MoreMath.html#WizardWrx_MoreMath_DecimalShiftRight_
+  commentId: Overload:WizardWrx.MoreMath.DecimalShiftRight
+  isSpec: "True"
+  fullName: WizardWrx.MoreMath.DecimalShiftRight
+  nameWithType: MoreMath.DecimalShiftRight
 - uid: WizardWrx.MoreMath.EXCEPTION_ON_INVALID_INPUT
   name: EXCEPTION_ON_INVALID_INPUT
   href: api/WizardWrx.MoreMath.html#WizardWrx_MoreMath_EXCEPTION_ON_INVALID_INPUT

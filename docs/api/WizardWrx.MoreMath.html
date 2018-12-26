@@ -108,7 +108,7 @@ computations.</p>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="WizardWrx.html">WizardWrx</a></h6>
-  <h6><strong>Assembly</strong>: WizardWrx.Core.dll</h6>
+  <h6><strong>Assembly</strong>: WizardWrx.MoreMath.dll</h6>
   <h5 id="WizardWrx_MoreMath_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static class MoreMath</code></pre>
@@ -120,7 +120,7 @@ computations.</p>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_MoreMath_EXCEPTION_ON_INVALID_INPUT.md&amp;value=---%0Auid%3A%20WizardWrx.MoreMath.EXCEPTION_ON_INVALID_INPUT%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/MoreMath.cs/#L116">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/MoreMath/MoreMath.cs/#L120">View Source</a>
   </span>
   <h4 id="WizardWrx_MoreMath_EXCEPTION_ON_INVALID_INPUT" data-uid="WizardWrx.MoreMath.EXCEPTION_ON_INVALID_INPUT">EXCEPTION_ON_INVALID_INPUT</h4>
   <div class="markdown level1 summary"><p>Use with IsGregorianLeapYear and IsValidGregorianYear to cause them
@@ -152,7 +152,7 @@ rather than return FALSE.</p>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_MoreMath_FALSE_ON_INVALID_INPUT.md&amp;value=---%0Auid%3A%20WizardWrx.MoreMath.FALSE_ON_INVALID_INPUT%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/MoreMath.cs/#L123">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/MoreMath/MoreMath.cs/#L127">View Source</a>
   </span>
   <h4 id="WizardWrx_MoreMath_FALSE_ON_INVALID_INPUT" data-uid="WizardWrx.MoreMath.FALSE_ON_INVALID_INPUT">FALSE_ON_INVALID_INPUT</h4>
   <div class="markdown level1 summary"><p>Use with IsGregorianLeapYear and IsValidGregorianYear to cause them
@@ -184,7 +184,7 @@ invalid Gregorian year; instead, both return FALSE.</p>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_MoreMath_GRGORIAN_CALENDAR_ADOPTION_YEAR.md&amp;value=---%0Auid%3A%20WizardWrx.MoreMath.GRGORIAN_CALENDAR_ADOPTION_YEAR%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/MoreMath.cs/#L136">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/MoreMath/MoreMath.cs/#L140">View Source</a>
   </span>
   <h4 id="WizardWrx_MoreMath_GRGORIAN_CALENDAR_ADOPTION_YEAR" data-uid="WizardWrx.MoreMath.GRGORIAN_CALENDAR_ADOPTION_YEAR">GRGORIAN_CALENDAR_ADOPTION_YEAR</h4>
   <div class="markdown level1 summary"><p>Year values must be greater than this value. Callers may use this
@@ -219,10 +219,490 @@ calendar that was in use before 1583.</p>
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_MoreMath_DecimalShiftLeft_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.MoreMath.DecimalShiftLeft(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/MoreMath/MoreMath.cs/#L174">View Source</a>
+  </span>
+  <a id="WizardWrx_MoreMath_DecimalShiftLeft_" data-uid="WizardWrx.MoreMath.DecimalShiftLeft*"></a>
+  <h4 id="WizardWrx_MoreMath_DecimalShiftLeft_System_Int32_System_Int32_" data-uid="WizardWrx.MoreMath.DecimalShiftLeft(System.Int32,System.Int32)">DecimalShiftLeft(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Shift the decimal point of an integer value left by a poisitive
+number of digits.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int DecimalShiftLeft(int ShiftThis, int NDigits)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">ShiftThis</span></td>
+        <td><p>Specify the integer value to be shifted left by the number of digits
+specified by <code data-dev-comment-type="paramref" class="paramref">NDigits</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">NDigits</span></td>
+        <td><p>Specify the number of digits to the left by which to shift the
+value specified by <code data-dev-comment-type="paramref" class="paramref">ShiftThis</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>Return the value of <code data-dev-comment-type="paramref" class="paramref">ShiftThis</code> multiplied by
+a power of ten that is one less than the value specified by
+<code data-dev-comment-type="paramref" class="paramref">NDigits</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_MoreMath_DecimalShiftLeft_System_Int64_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.MoreMath.DecimalShiftLeft(System.Int64%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/MoreMath/MoreMath.cs/#L231">View Source</a>
+  </span>
+  <a id="WizardWrx_MoreMath_DecimalShiftLeft_" data-uid="WizardWrx.MoreMath.DecimalShiftLeft*"></a>
+  <h4 id="WizardWrx_MoreMath_DecimalShiftLeft_System_Int64_System_Int32_" data-uid="WizardWrx.MoreMath.DecimalShiftLeft(System.Int64,System.Int32)">DecimalShiftLeft(Int64, Int32)</h4>
+  <div class="markdown level1 summary"><p>Shift the decimal point of an integer value left by a poisitive
+number of digits.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static long DecimalShiftLeft(long ShiftThis, int NDigits)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">ShiftThis</span></td>
+        <td><p>Specify the integer value to be shifted left by the number of digits
+specified by <code data-dev-comment-type="paramref" class="paramref">NDigits</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">NDigits</span></td>
+        <td><p>Specify the number of digits to the left by which to shift the
+value specified by <code data-dev-comment-type="paramref" class="paramref">ShiftThis</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><p>Return the value of <code data-dev-comment-type="paramref" class="paramref">ShiftThis</code> multiplied by
+a power of ten that is one less than the value specified by
+<code data-dev-comment-type="paramref" class="paramref">NDigits</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_MoreMath_DecimalShiftLeft_System_UInt32_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.MoreMath.DecimalShiftLeft(System.UInt32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/MoreMath/MoreMath.cs/#L288">View Source</a>
+  </span>
+  <a id="WizardWrx_MoreMath_DecimalShiftLeft_" data-uid="WizardWrx.MoreMath.DecimalShiftLeft*"></a>
+  <h4 id="WizardWrx_MoreMath_DecimalShiftLeft_System_UInt32_System_Int32_" data-uid="WizardWrx.MoreMath.DecimalShiftLeft(System.UInt32,System.Int32)">DecimalShiftLeft(UInt32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Shift the decimal point of an integer value left by a poisitive
+number of digits.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static uint DecimalShiftLeft(uint ShiftThis, int NDigits)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td><span class="parametername">ShiftThis</span></td>
+        <td><p>Specify the integer value to be shifted left by the number of digits
+specified by <code data-dev-comment-type="paramref" class="paramref">NDigits</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">NDigits</span></td>
+        <td><p>Specify the number of digits to the left by which to shift the
+value specified by <code data-dev-comment-type="paramref" class="paramref">ShiftThis</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td><p>Return the value of <code data-dev-comment-type="paramref" class="paramref">ShiftThis</code> multiplied by
+a power of ten that is one less than the value specified by
+<code data-dev-comment-type="paramref" class="paramref">NDigits</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_MoreMath_DecimalShiftLeft_System_UInt64_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.MoreMath.DecimalShiftLeft(System.UInt64%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/MoreMath/MoreMath.cs/#L347">View Source</a>
+  </span>
+  <a id="WizardWrx_MoreMath_DecimalShiftLeft_" data-uid="WizardWrx.MoreMath.DecimalShiftLeft*"></a>
+  <h4 id="WizardWrx_MoreMath_DecimalShiftLeft_System_UInt64_System_Int32_" data-uid="WizardWrx.MoreMath.DecimalShiftLeft(System.UInt64,System.Int32)">DecimalShiftLeft(UInt64, Int32)</h4>
+  <div class="markdown level1 summary"><p>Shift the decimal point of an integer value left by a poisitive
+number of digits.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ulong DecimalShiftLeft(ulong ShiftThis, int NDigits)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><span class="parametername">ShiftThis</span></td>
+        <td><p>Specify the integer value to be shifted left by the number of digits
+specified by <code data-dev-comment-type="paramref" class="paramref">NDigits</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">NDigits</span></td>
+        <td><p>Specify the number of digits to the left by which to shift the
+value specified by <code data-dev-comment-type="paramref" class="paramref">ShiftThis</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><p>Return the value of <code data-dev-comment-type="paramref" class="paramref">ShiftThis</code> multiplied by
+a power of ten that is one less than the value specified by
+<code data-dev-comment-type="paramref" class="paramref">NDigits</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_MoreMath_DecimalShiftRight_System_Decimal_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.MoreMath.DecimalShiftRight(System.Decimal%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/MoreMath/MoreMath.cs/#L491">View Source</a>
+  </span>
+  <a id="WizardWrx_MoreMath_DecimalShiftRight_" data-uid="WizardWrx.MoreMath.DecimalShiftRight*"></a>
+  <h4 id="WizardWrx_MoreMath_DecimalShiftRight_System_Decimal_System_Int32_" data-uid="WizardWrx.MoreMath.DecimalShiftRight(System.Decimal,System.Int32)">DecimalShiftRight(Decimal, Int32)</h4>
+  <div class="markdown level1 summary"><p>Shift the decimal point of a decimal value right by a poisitive
+number of digits.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static decimal DecimalShiftRight(decimal ShiftThis, int NDigits)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Decimal</span></td>
+        <td><span class="parametername">ShiftThis</span></td>
+        <td><p>Specify the integer value to be shifted left by the number of digits
+specified by <code data-dev-comment-type="paramref" class="paramref">NDigits</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">NDigits</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Decimal</span></td>
+        <td><p>Return the value of <code data-dev-comment-type="paramref" class="paramref">ShiftThis</code> multiplied by
+a power of ten that is one less than the value specified by
+<code data-dev-comment-type="paramref" class="paramref">NDigits</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_MoreMath_DecimalShiftRight_System_Double_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.MoreMath.DecimalShiftRight(System.Double%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/MoreMath/MoreMath.cs/#L534">View Source</a>
+  </span>
+  <a id="WizardWrx_MoreMath_DecimalShiftRight_" data-uid="WizardWrx.MoreMath.DecimalShiftRight*"></a>
+  <h4 id="WizardWrx_MoreMath_DecimalShiftRight_System_Double_System_Int32_" data-uid="WizardWrx.MoreMath.DecimalShiftRight(System.Double,System.Int32)">DecimalShiftRight(Double, Int32)</h4>
+  <div class="markdown level1 summary"><p>Shift the decimal point of a double value right by a poisitive
+number of digits.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double DecimalShiftRight(double ShiftThis, int NDigits)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">ShiftThis</span></td>
+        <td><p>Specify the integer value to be shifted left by the number of digits
+specified by <code data-dev-comment-type="paramref" class="paramref">NDigits</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">NDigits</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><p>Return the value of <code data-dev-comment-type="paramref" class="paramref">ShiftThis</code> multiplied by
+a power of ten that is one less than the value specified by
+<code data-dev-comment-type="paramref" class="paramref">NDigits</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_MoreMath_DecimalShiftRight_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.MoreMath.DecimalShiftRight(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/MoreMath/MoreMath.cs/#L405">View Source</a>
+  </span>
+  <a id="WizardWrx_MoreMath_DecimalShiftRight_" data-uid="WizardWrx.MoreMath.DecimalShiftRight*"></a>
+  <h4 id="WizardWrx_MoreMath_DecimalShiftRight_System_Int32_System_Int32_" data-uid="WizardWrx.MoreMath.DecimalShiftRight(System.Int32,System.Int32)">DecimalShiftRight(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Shift the decimal point of an integer value right by a poisitive
+number of digits.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int DecimalShiftRight(int ShiftThis, int NDigits)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">ShiftThis</span></td>
+        <td><p>Specify the integer value to be shifted left by the number of digits
+specified by <code data-dev-comment-type="paramref" class="paramref">NDigits</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">NDigits</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>Return the value of <code data-dev-comment-type="paramref" class="paramref">ShiftThis</code> multiplied by
+a power of ten that is one less than the value specified by
+<code data-dev-comment-type="paramref" class="paramref">NDigits</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_MoreMath_DecimalShiftRight_System_Single_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.MoreMath.DecimalShiftRight(System.Single%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/MoreMath/MoreMath.cs/#L448">View Source</a>
+  </span>
+  <a id="WizardWrx_MoreMath_DecimalShiftRight_" data-uid="WizardWrx.MoreMath.DecimalShiftRight*"></a>
+  <h4 id="WizardWrx_MoreMath_DecimalShiftRight_System_Single_System_Int32_" data-uid="WizardWrx.MoreMath.DecimalShiftRight(System.Single,System.Int32)">DecimalShiftRight(Single, Int32)</h4>
+  <div class="markdown level1 summary"><p>Shift the decimal point of a float value right by a poisitive
+number of digits.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float DecimalShiftRight(float ShiftThis, int NDigits)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">ShiftThis</span></td>
+        <td><p>Specify the integer value to be shifted left by the number of digits
+specified by <code data-dev-comment-type="paramref" class="paramref">NDigits</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">NDigits</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><p>Return the value of <code data-dev-comment-type="paramref" class="paramref">ShiftThis</code> multiplied by
+a power of ten that is one less than the value specified by
+<code data-dev-comment-type="paramref" class="paramref">NDigits</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_MoreMath_IsEvenlyDivisibleByAnyInteger_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/MoreMath.cs/#L182">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/MoreMath/MoreMath.cs/#L593">View Source</a>
   </span>
   <a id="WizardWrx_MoreMath_IsEvenlyDivisibleByAnyInteger_" data-uid="WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger*"></a>
   <h4 id="WizardWrx_MoreMath_IsEvenlyDivisibleByAnyInteger_System_Int32_System_Int32_" data-uid="WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int32,System.Int32)">IsEvenlyDivisibleByAnyInteger(Int32, Int32)</h4>
@@ -311,7 +791,7 @@ the dividend passed into the method can be reported.</p>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_MoreMath_IsEvenlyDivisibleByAnyInteger_System_Int64_System_Int64_.md&amp;value=---%0Auid%3A%20WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int64%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/MoreMath.cs/#L228">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/MoreMath/MoreMath.cs/#L639">View Source</a>
   </span>
   <a id="WizardWrx_MoreMath_IsEvenlyDivisibleByAnyInteger_" data-uid="WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger*"></a>
   <h4 id="WizardWrx_MoreMath_IsEvenlyDivisibleByAnyInteger_System_Int64_System_Int64_" data-uid="WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int64,System.Int64)">IsEvenlyDivisibleByAnyInteger(Int64, Int64)</h4>
@@ -400,7 +880,7 @@ the dividend passed into the method can be reported.</p>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_MoreMath_IsGregorianLeapYear_System_Int32_System_Boolean_.md&amp;value=---%0Auid%3A%20WizardWrx.MoreMath.IsGregorianLeapYear(System.Int32%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/MoreMath.cs/#L280">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/MoreMath/MoreMath.cs/#L691">View Source</a>
   </span>
   <a id="WizardWrx_MoreMath_IsGregorianLeapYear_" data-uid="WizardWrx.MoreMath.IsGregorianLeapYear*"></a>
   <h4 id="WizardWrx_MoreMath_IsGregorianLeapYear_System_Int32_System_Boolean_" data-uid="WizardWrx.MoreMath.IsGregorianLeapYear(System.Int32,System.Boolean)">IsGregorianLeapYear(Int32, Boolean)</h4>
@@ -486,7 +966,7 @@ exception. The default value is EXCEPTION_ON_INVALID_INPUT (true).</p>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_MoreMath_IsValidGregorianYear_System_Int32_System_Boolean_.md&amp;value=---%0Auid%3A%20WizardWrx.MoreMath.IsValidGregorianYear(System.Int32%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/MoreMath.cs/#L363">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/MoreMath/MoreMath.cs/#L774">View Source</a>
   </span>
   <a id="WizardWrx_MoreMath_IsValidGregorianYear_" data-uid="WizardWrx.MoreMath.IsValidGregorianYear*"></a>
   <h4 id="WizardWrx_MoreMath_IsValidGregorianYear_System_Int32_System_Boolean_" data-uid="WizardWrx.MoreMath.IsValidGregorianYear(System.Int32,System.Boolean)">IsValidGregorianYear(Int32, Boolean)</h4>
@@ -548,7 +1028,7 @@ RETURN_ON_INVALID_INPUT in lieu of FALSE.</p>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_MoreMath_Mod_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.MoreMath.Mod(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/MoreMath.cs/#L413">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/MoreMath/MoreMath.cs/#L824">View Source</a>
   </span>
   <a id="WizardWrx_MoreMath_Mod_" data-uid="WizardWrx.MoreMath.Mod*"></a>
   <h4 id="WizardWrx_MoreMath_Mod_System_Int32_System_Int32_" data-uid="WizardWrx.MoreMath.Mod(System.Int32,System.Int32)">Mod(Int32, Int32)</h4>
@@ -640,7 +1120,7 @@ the dividend passed into the method can be reported.</p>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_MoreMath_Mod_System_Int64_System_Int64_.md&amp;value=---%0Auid%3A%20WizardWrx.MoreMath.Mod(System.Int64%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/MoreMath.cs/#L462">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/MoreMath/MoreMath.cs/#L873">View Source</a>
   </span>
   <a id="WizardWrx_MoreMath_Mod_" data-uid="WizardWrx.MoreMath.Mod*"></a>
   <h4 id="WizardWrx_MoreMath_Mod_System_Int64_System_Int64_" data-uid="WizardWrx.MoreMath.Mod(System.Int64,System.Int64)">Mod(Int64, Int64)</h4>
@@ -732,7 +1212,7 @@ the dividend passed into the method can be reported.</p>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_MoreMath_Remainder_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.MoreMath.Remainder(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/MoreMath.cs/#L511">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/MoreMath/MoreMath.cs/#L922">View Source</a>
   </span>
   <a id="WizardWrx_MoreMath_Remainder_" data-uid="WizardWrx.MoreMath.Remainder*"></a>
   <h4 id="WizardWrx_MoreMath_Remainder_System_Int32_System_Int32_" data-uid="WizardWrx.MoreMath.Remainder(System.Int32,System.Int32)">Remainder(Int32, Int32)</h4>
@@ -824,7 +1304,7 @@ the dividend passed into the method can be reported.</p>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_MoreMath_Remainder_System_Int64_System_Int64_.md&amp;value=---%0Auid%3A%20WizardWrx.MoreMath.Remainder(System.Int64%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/MoreMath.cs/#L560">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/MoreMath/MoreMath.cs/#L971">View Source</a>
   </span>
   <a id="WizardWrx_MoreMath_Remainder_" data-uid="WizardWrx.MoreMath.Remainder*"></a>
   <h4 id="WizardWrx_MoreMath_Remainder_System_Int64_System_Int64_" data-uid="WizardWrx.MoreMath.Remainder(System.Int64,System.Int64)">Remainder(Int64, Int64)</h4>
@@ -922,7 +1402,7 @@ the dividend passed into the method can be reported.</p>
                     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_MoreMath.md&amp;value=---%0Auid%3A%20WizardWrx.MoreMath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/MoreMath.cs/#L108" class="contribution-link">View Source</a>
+                    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/MoreMath/MoreMath.cs/#L112" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

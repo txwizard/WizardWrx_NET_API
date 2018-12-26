@@ -152,10 +152,6 @@
     <value>ERROR: The DisplayOrder property cannot be set to zero.</value>
     <comment>The ReportDetail class uses this error message in its exception reports.</comment>
   </data>
-  <data name="ERRMSG_DIVISOR_CANNOT_BE_ZERO" xml:space="preserve">
-    <value>Since this method requires dividing by the value of argument {0}, its value canot be zero. The {1} value was {2}, which MAY be zero.</value>
-    <comment>The MoreMath.Mod and MoreMath.Remainter methods format an exception report from this template.</comment>
-  </data>
   <data name="ERRMSG_DUPLICATE_SWITCH" xml:space="preserve">
     <value>Switch {0} with a default value of {1} is a duplicate.</value>
     <comment>rivate CmdLneArgsBasic instance method DefineNewSwitch constructs an exception report from this template.</comment>

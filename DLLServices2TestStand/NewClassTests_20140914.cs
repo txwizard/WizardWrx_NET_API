@@ -135,6 +135,11 @@
                               new integer constants EXACTLY_ONE_HUNDRED_MILLION,
                               EXACTLY_ONE_HUNDRED_MILLION_LONG, and
                               EXACTLY_ONE_HUNDRED_THOUSAND.
+
+	2018/12/24 7.14    DAG    Add the TICKS_PER_* constants incorporated into
+                              the MagicNumbers class to the listing in method
+                              DisplayFormatsExercises. The breaking change is
+                              self-correcting.
 	============================================================================
 */
 
@@ -546,6 +551,16 @@ namespace DLLServices2TestStand
             Console.WriteLine ( "    MagicNumbers.STRING_INDEXOF_NOT_FOUND          = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.STRING_INDEXOF_NOT_FOUND , MagicNumbers.STRING_INDEXOF_NOT_FOUND.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.STRING_INDEXOF_NOT_FOUND.ToString ( NumericFormats.HEXADECIMAL_8 ) );
             Console.WriteLine ( "    MagicNumbers.STRING_SUBSTR_BEGINNING           = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.STRING_SUBSTR_BEGINNING , MagicNumbers.STRING_SUBSTR_BEGINNING.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.STRING_SUBSTR_BEGINNING.ToString ( NumericFormats.HEXADECIMAL_8 ) );
             Console.WriteLine ( "    MagicNumbers.TICKS_PER_SECOND                  = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.TICKS_PER_SECOND , MagicNumbers.TICKS_PER_SECOND.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.TICKS_PER_SECOND.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+
+            Console.WriteLine ( "    MagicNumbers.TICKS_PER_1_WEEK                  = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.TICKS_PER_1_WEEK , MagicNumbers.TICKS_PER_1_WEEK.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.TICKS_PER_1_WEEK.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( "    MagicNumbers.TICKS_PER_1_DAY                   = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.TICKS_PER_1_DAY , MagicNumbers.TICKS_PER_1_DAY.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.TICKS_PER_1_DAY.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( "    MagicNumbers.TICKS_PER_23_59_59                = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.TICKS_PER_23_59_59 , MagicNumbers.TICKS_PER_23_59_59.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.TICKS_PER_23_59_59.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( "    MagicNumbers.TICKS_PER_23_59_00                = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.TICKS_PER_23_59_00 , MagicNumbers.TICKS_PER_23_59_00.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.TICKS_PER_23_59_00.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( "    MagicNumbers.TICKS_PER_1_HOUR                  = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.TICKS_PER_1_HOUR , MagicNumbers.TICKS_PER_1_HOUR.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.TICKS_PER_1_HOUR.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( "    MagicNumbers.TICKS_PER_1_MINUTE                = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.TICKS_PER_1_MINUTE , MagicNumbers.TICKS_PER_1_MINUTE.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.TICKS_PER_1_MINUTE.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( "    MagicNumbers.TICKS_PER_1_SECOND                = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.TICKS_PER_1_SECOND , MagicNumbers.TICKS_PER_1_SECOND.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.TICKS_PER_1_SECOND.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( "    MagicNumbers.TICKS_PER_1_MILLISECOND           = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.TICKS_PER_1_MILLISECOND , MagicNumbers.TICKS_PER_1_MILLISECOND.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.TICKS_PER_1_MILLISECOND.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+
             Console.WriteLine ( "    MagicNumbers.UNC_PREFIX_START_POS              = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.UNC_PREFIX_START_POS , MagicNumbers.UNC_PREFIX_START_POS.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.UNC_PREFIX_START_POS.ToString ( NumericFormats.HEXADECIMAL_8 ) );
             Console.WriteLine ( "    MagicNumbers.UNC_PREFIX_START_LEN              = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.UNC_PREFIX_START_LEN , MagicNumbers.UNC_PREFIX_START_LEN.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.UNC_PREFIX_START_LEN.ToString ( NumericFormats.HEXADECIMAL_8 ) );
             Console.WriteLine ( "    MagicNumbers.ZERO                              = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.ZERO , MagicNumbers.ZERO.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.ZERO.ToString ( NumericFormats.HEXADECIMAL_8 ) );
@@ -671,14 +686,14 @@ namespace DLLServices2TestStand
 			{
 				int intScenarioOrdinal = ArrayInfo.OrdinalFromIndex ( intCurrentCase );
 				Console.WriteLine (
-					"    Scenario {0} of {1}: HexFormatDecoration = {2} (as integer = {3}):{4}" ,	// Format control string
+                    "    Scenario {0,2} of {1,2}: HexFormatDecoration = {2} (as integer = {3}):{4}" ,   // Format control string
 					new object [ ]
 					{
-						intScenarioOrdinal ,														// Format Item 0 = Scenario number
-						intTotalCases ,																// Format Item 1 = Total number of scenarios
-						s_enmFormatFlags [ intCurrentCase ] ,										// Format Item 2 = Enumeration value, as member name
-						( int ) s_enmFormatFlags [ intCurrentCase ] ,								// Format Item 3 = Enumeration value, as integer
-						Environment.NewLine															// Format Item 4 = Embedded Newline
+						intScenarioOrdinal ,														    // Format Item 0 = Scenario number
+						intTotalCases ,											    					// Format Item 1 = Total number of scenarios
+						s_enmFormatFlags [ intCurrentCase ] ,						    				// Format Item 2 = Enumeration value, as member name
+						( int ) s_enmFormatFlags [ intCurrentCase ] ,					    			// Format Item 3 = Enumeration value, as integer
+						Environment.NewLine													    		// Format Item 4 = Embedded Newline
 					} );
 
 				for ( int intMinDigits = MagicNumbers.PLUS_ONE ;

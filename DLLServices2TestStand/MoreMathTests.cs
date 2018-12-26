@@ -61,6 +61,10 @@
     2018/11/12 7.11    DAG    Initial implementation.
 
     2018/11/23 7.12    DAG    Extend to cover the new Mod and Remainder methods.
+
+	2018/12/24 7.14    DAG    Define the DecimalShift function, syntactic sugar
+                              that performs decimal shift operations on integers
+                              and floating point numbers of various sizes.
 	============================================================================
 */
 
@@ -72,8 +76,76 @@ namespace DLLServices2TestStand
 {
     static class MoreMathTests
     {
-        static readonly WizardWrx.DLLConfigurationManager.ExceptionLogger s_exceptionLogger = WizardWrx.DLLConfigurationManager.ExceptionLogger.GetTheSingleInstance ( );
+        static readonly WizardWrx.DLLConfigurationManager.ExceptionLogger s_exceptionLogger = WizardWrx.DLLConfigurationManager.ExceptionLogger.GetTheSingleInstance (
+            WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions.AllFlags );
 
+
+        #region DecimalShiftLeft Test Case Arrays
+        static readonly IntegerDecimalShiftLeftTestCase [ ] s_aintegerDecimalShifttLeftTestCases = new IntegerDecimalShiftLeftTestCase [ ]
+        {
+            new IntegerDecimalShiftLeftTestCase(123,2,12300),
+            new IntegerDecimalShiftLeftTestCase(123,1,1230),
+            new IntegerDecimalShiftLeftTestCase(123,4,1230000),
+            new IntegerDecimalShiftLeftTestCase(123,6,123000000),
+        };  // static readonly IntegerDecimalShifttLeftTestCase [ ] s_aintegerDecimalShifttLeftTestCases
+
+        static readonly UnsignedIntegerDecimalShiftLeftTestCase [ ] s_auintegerDecimalShifttLeftTestCases = new UnsignedIntegerDecimalShiftLeftTestCase [ ]
+        {
+            new UnsignedIntegerDecimalShiftLeftTestCase(123,1,1230),
+            new UnsignedIntegerDecimalShiftLeftTestCase(123,2,12300),
+            new UnsignedIntegerDecimalShiftLeftTestCase(123,3,123000),
+            new UnsignedIntegerDecimalShiftLeftTestCase(123,4,1230000),
+            new UnsignedIntegerDecimalShiftLeftTestCase(123,5,12300000),
+            new UnsignedIntegerDecimalShiftLeftTestCase(123,6,123000000),
+            new UnsignedIntegerDecimalShiftLeftTestCase(123,7,1230000000),
+        };  // static readonly UnsignedIntegerDecimalShifttLeftTestCase [ ] s_auintegerDecimalShifttLeftTestCases
+
+        static readonly LongIntegerDecimalShiftLeftTestCase [ ] s_alongDecimalShifttLeftTestCases = new LongIntegerDecimalShiftLeftTestCase [ ]
+        {
+            new LongIntegerDecimalShiftLeftTestCase(123,1,1230),
+            new LongIntegerDecimalShiftLeftTestCase(123,2,12300),
+            new LongIntegerDecimalShiftLeftTestCase(123,3,123000),
+            new LongIntegerDecimalShiftLeftTestCase(123,4,1230000),
+            new LongIntegerDecimalShiftLeftTestCase(123,5,12300000),
+            new LongIntegerDecimalShiftLeftTestCase(123,6,123000000),
+            new LongIntegerDecimalShiftLeftTestCase(123,7,1230000000),
+            new LongIntegerDecimalShiftLeftTestCase(123,12,123000000000000),
+            new LongIntegerDecimalShiftLeftTestCase(123,14,12300000000000000),
+        };  // static readonly LongIntegerDecimalShifttLeftTestCase [ ] s_alongDecimalShifttLeftTestCases
+
+        static readonly UnsignedLongIntegerDecimalShiftLeftTestCase [ ] s_aulongDecimalShifttLeftTestCases = new UnsignedLongIntegerDecimalShiftLeftTestCase [ ]
+        {
+            new UnsignedLongIntegerDecimalShiftLeftTestCase(123,1,1230),
+            new UnsignedLongIntegerDecimalShiftLeftTestCase(123,2,12300),
+            new UnsignedLongIntegerDecimalShiftLeftTestCase(123,3,123000),
+            new UnsignedLongIntegerDecimalShiftLeftTestCase(123,4,1230000),
+            new UnsignedLongIntegerDecimalShiftLeftTestCase(123,5,12300000),
+            new UnsignedLongIntegerDecimalShiftLeftTestCase(123,6,123000000),
+            new UnsignedLongIntegerDecimalShiftLeftTestCase(123,7,1230000000),
+            new UnsignedLongIntegerDecimalShiftLeftTestCase(123,8,12300000000),
+            new UnsignedLongIntegerDecimalShiftLeftTestCase(123,9,123000000000),
+            new UnsignedLongIntegerDecimalShiftLeftTestCase(123,10,1230000000000),
+            new UnsignedLongIntegerDecimalShiftLeftTestCase(123,11,12300000000000),
+            new UnsignedLongIntegerDecimalShiftLeftTestCase(123,12,123000000000000),
+            new UnsignedLongIntegerDecimalShiftLeftTestCase(123,13,1230000000000000),
+            new UnsignedLongIntegerDecimalShiftLeftTestCase(123,14,12300000000000000),
+            new UnsignedLongIntegerDecimalShiftLeftTestCase(123,15,123000000000000000),
+        };  // static readonly UnsignedLongIntegerDecimalShifttLeftTestCase [ ] s_aulongDecimalShifttLeftTestCases
+        #endregion  // DecimalShiftLeft Test Case Arrays
+
+
+        #region DecimalShiftRight Test Case Arrays
+        static readonly IntegerDecimalShiftRightTestCase [ ] s_aintDecimalShiftRightTestCases = new IntegerDecimalShiftRightTestCase [ ]
+        {
+           new IntegerDecimalShiftRightTestCase(12345000,2,123450),
+           new IntegerDecimalShiftRightTestCase(12345000,3,12345),
+           new IntegerDecimalShiftRightTestCase(12345000,4,1234),
+        };  // static readonly IntegerDecimalShiftRightTestCase [ ] s_aintDecimalShiftRightTestCases
+        #endregion  // DecimalShiftRight Test Case Arrays
+
+
+
+        #region IntegerModulus Test Case Arrays
         static readonly IntegerModulusTestCase [ ] s_aintegerModulusTestCases = new IntegerModulusTestCase [ ]
         {
             new IntegerModulusTestCase(0,10),
@@ -165,7 +237,10 @@ namespace DLLServices2TestStand
 
             new LongModulusTestCase(25,0),
         };   //  static readonly IntegerModulusTestCase [ ] s_alongModulusTestCases
+        #endregion  // IntegerModulus Test Case Arrays
 
+
+        #region Gregorian Year Test Case Arrays
         static readonly int [ ] s_aintGregorianYearTests = new int [ ]
         {
             1492 ,
@@ -233,8 +308,10 @@ namespace DLLServices2TestStand
             2100 ,
             2101
         };  // static readonly int [ ] s_aintGregorianYearTests
+        #endregion  // Gregorian Year Test Case Arrays
 
 
+        #region Public Static Test Runner
         public static void Run ( )
         {
             Console.WriteLine (
@@ -251,9 +328,7 @@ namespace DLLServices2TestStand
                 Util.FormatIntegerValue (
                     MoreMath.GRGORIAN_CALENDAR_ADOPTION_YEAR ) );
 
-            Console.WriteLine (
-                @"{0}    Test and demonstrate the IsEvenlyDivisibleByAnyInteger method.{0}" ,
-                Environment.NewLine );
+            TestDecimalShift ( );
 
             TestIntegerModulus ( );
 
@@ -318,7 +393,49 @@ namespace DLLServices2TestStand
                 @"{0}Tests of class WizardWrx.MoreMath done{0}" ,
                 Environment.NewLine );
         }   // public static void Run
+        #endregion  // Public Static Test Runner
 
+
+        #region DecimalShift Test Routines
+        private static void TestDecimalShift ( )
+        {
+            Console.WriteLine (
+                @"{0}    Test and demonstrate the DecimalShiftLeft method.{0}" ,
+                Environment.NewLine );
+
+            {   // Constrain the scope of IntegerDecimalShifttLeftTestCase variable dummy.
+                IntegerDecimalShiftLeftTestCase dummy = IntegerDecimalShiftLeftTestCase.GetDummyInstance ( );
+                dummy.UnitTests ( s_aintegerDecimalShifttLeftTestCases );
+            }   // Let dummy go out of scope.
+
+            {   // Constrain the scope of UnsignedIntegerDecimalShifttLeftTestCase variable dummy.
+                UnsignedIntegerDecimalShiftLeftTestCase dummy = UnsignedIntegerDecimalShiftLeftTestCase.GetDummyInstance ( );
+                dummy.UnitTests ( s_auintegerDecimalShifttLeftTestCases );
+            }   // Let dummy go out of scope.
+
+            {   // Constrain the scope of LongIntegerDecimalShifttLeftTestCase variable dummy.
+                LongIntegerDecimalShiftLeftTestCase dummy = LongIntegerDecimalShiftLeftTestCase.GetDummyInstance ( );
+                dummy.UnitTests ( s_alongDecimalShifttLeftTestCases );
+            }   // Let dummy go out of scope.
+
+            {   // Constrain the scope of UnsignedLongIntegerDecimalShifttLeftTestCase variable dummy.
+                UnsignedLongIntegerDecimalShiftLeftTestCase dummy = UnsignedLongIntegerDecimalShiftLeftTestCase.GetDummyInstance ( );
+                dummy.UnitTests ( s_aulongDecimalShifttLeftTestCases );
+            }   // Let dummy go out of scope.
+
+            {   // Constrain the scope of UnsignedLongIntegerDecimalShifttLeftTestCase variable dummy.
+                IntegerDecimalShiftRightTestCase dummy = IntegerDecimalShiftRightTestCase.GetDummyInstance ( );
+                dummy.UnitTests ( s_aintDecimalShiftRightTestCases );
+            }   // Let dummy go out of scope.
+
+            Console.WriteLine (
+                @"    DecimalShiftLeft method testing completed.{0}" ,
+                Environment.NewLine );
+        }   // private static void TestDecimalShift
+        #endregion  // DecimalShift Test Routines
+
+
+        #region IntegerModulus Test Routines
         private static void TestIntegerModulus ( )
         {
             Console.WriteLine (
@@ -335,6 +452,7 @@ namespace DLLServices2TestStand
             }   // for ( int intIndex=ArrayInfo.ARRAY_FIRST_ELEMENT ; intIndex < s_integerModulusTestCases.Length ; intIndex++ )
         }   // private static void TestIntegerModulus
 
+
         private static void TestLongIntegerModulus ( )
         {
             Console.WriteLine ( @"{0}        Long (64 bit) integers:{0}" , Environment.NewLine );
@@ -347,7 +465,7 @@ namespace DLLServices2TestStand
                     intIndex ,
                     s_alongModulusTestCases [ intIndex ] );
             }   // for ( int intIndex=ArrayInfo.ARRAY_FIRST_ELEMENT ; intIndex < s_longModulusTestCases.Length ; intIndex++ )
-        }   // private static void TestLongIntegerModulu
+        }   // private static void TestLongIntegerModulus
 
 
         private static void ShowAndTell (
@@ -407,7 +525,9 @@ namespace DLLServices2TestStand
         }   // private static void ShowAndTell (1 of 2)
 
 
-        private static void ShowAndTell ( int pintIndex , LongModulusTestCase plongIntegerModulusTestCase )
+        private static void ShowAndTell (
+            int pintIndex ,
+            LongModulusTestCase plongIntegerModulusTestCase )
         {
             Console.WriteLine (
                 @"            Case {0,2}: Dividend            = {1}{3}                     Divisor             = {2}" ,
@@ -460,8 +580,508 @@ namespace DLLServices2TestStand
                 ArrayInfo.OrdinalFromIndex ( pintIndex ) ,  // Format Item 0: Case {0}:
                 Environment.NewLine );                      // Format Item 1: Platform-dependent newline
         }   // private static void ShowAndTell (2 of 2)
+        #endregion  // IntegerModulus Test Routines
 
 
+        #region DecimalShiftTestCase Abstraction (Template) Class
+        private abstract class DecimalShiftTestCase<T>
+        {
+            protected DecimalShiftTestCase ( )
+            {
+            }   // private DecimalShiftLeftTestCase constructor (The default constructor is private to force callers to initialize all instances.)
+
+            public DecimalShiftTestCase ( T inputValue , int shiftValue , T expectedOutcome )
+            {
+                InputValue = inputValue;
+                ShiftValue = shiftValue;
+                ExpectedOutcome = expectedOutcome;
+            }   // // public DecimalShiftLeftTestCase constructor (The public constructor takes two required arguments to initialize its properties.)
+
+            public T InputValue { get; private set; }
+            public int ShiftValue { get; private set; }
+
+            public T ExpectedOutcome { get; private set; }
+
+
+            /// <summary>
+            /// Exercise one of the DecimalShiftLeft methods.
+            /// </summary>
+            /// <param name="pautpDecimalShifttLeftTestCases">
+            /// Pass in a reference to an array of DecimalShiftTestCase 
+            /// instances of type T, each of which is a pair of input parameters
+            /// and an expected outcome.
+            /// </param>
+            /// <typeparam name="T">
+            /// Strictly speaking, the type is unconstrained, although I could
+            /// construct something along the lines of the runtime sanity tests
+            /// that I did for the hexadecimal integer formatter.
+            /// </typeparam>
+            public abstract void UnitTests ( DecimalShiftTestCase<T> [ ] pautpDecimalShiftTestCases );
+        }   // private class DecimalShiftLeftTestCase
+        #endregion  // DecimalShiftTestCase Abstraction (Template) Class
+
+
+        #region DecimalShifttLeftTestCase Classes
+        private class IntegerDecimalShiftLeftTestCase : DecimalShiftTestCase<int>
+        {
+            private IntegerDecimalShiftLeftTestCase ( )
+            { }   // private IntegerDecimalShiftLeftTestCase constructor (The default constructor is private to force callers to initialize all instances.)
+
+            public IntegerDecimalShiftLeftTestCase (
+                int inputValue ,
+                int shiftValue ,
+                int expectedOutcome )
+               : base (
+                     inputValue ,
+                     shiftValue ,
+                     expectedOutcome )
+            { } // Classes don't inherit overloaded constructors.
+
+            /// <summary>
+            /// Exercise one of the DecimalShiftLeft methods.
+            /// </summary>
+            /// <param name="pautpDecimalShiftLeftTestCases">
+            /// Pass in a reference to an array of DecimalShifttLeftTestCase
+            /// instances of type int, each of which is a pair of input
+            /// parameters and an expected outcome.
+            /// </param>
+            public override void UnitTests ( DecimalShiftTestCase<int> [ ] pautpDecimalShiftLeftTestCases )
+            {
+                Console.WriteLine (
+                    @"    Exercise MoreMath.DecimalShiftLeft method for inputs of type {0}.{1}" ,
+                    this.InputValue.GetType().FullName ,
+                    Environment.NewLine );
+
+                for ( int intCaseIndex = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+                          intCaseIndex < pautpDecimalShiftLeftTestCases.Length ;
+                          intCaseIndex++ )
+                {
+                    Console.WriteLine ( @"        Case {0,2}: Input Value      = {1}" , ArrayInfo.OrdinalFromIndex ( intCaseIndex ) , Util.FormatIntegerValue ( pautpDecimalShiftLeftTestCases [ intCaseIndex ].InputValue ) );
+                    Console.WriteLine ( @"                 Shift Value      = {0}" , Util.FormatIntegerValue ( pautpDecimalShiftLeftTestCases [ intCaseIndex ].ShiftValue ) );
+                    Console.WriteLine ( @"                 Expected Outcome = {0}" , Util.FormatIntegerValue ( pautpDecimalShiftLeftTestCases [ intCaseIndex ].ExpectedOutcome ) );
+
+                    int intShifted = MagicNumbers.ZERO;
+
+                    try
+                    {
+                        intShifted = MoreMath.DecimalShiftLeft (
+                            pautpDecimalShiftLeftTestCases [ intCaseIndex ].InputValue ,
+                            pautpDecimalShiftLeftTestCases [ intCaseIndex ].ShiftValue );
+                    }
+                    catch ( Exception exAll )
+                    {
+                        s_exceptionLogger.ReportException ( exAll );
+                    }
+                    finally
+                    {
+                        Console.WriteLine (
+                            @"                 Case {0,2} done" ,
+                            ArrayInfo.OrdinalFromIndex ( intCaseIndex ) );
+                    }
+
+                    string strOutcomeMessage =
+                        intShifted.Equals ( pautpDecimalShiftLeftTestCases [ intCaseIndex ].ExpectedOutcome )
+                        ? @"Passed"
+                        : @"Failed";
+
+                    Console.WriteLine (
+                        @"                 Actual Outcome   = {0}{1}{2}" ,
+                        strOutcomeMessage ,                 // Format Item 0
+                        intShifted.Equals (                 // Format Item 1
+                            pautpDecimalShiftLeftTestCases [ intCaseIndex ].ExpectedOutcome )
+                            ? SpecialStrings.EMPTY_STRING
+                            : string.Format (
+                                @" [actual outcome = {0}]" ,
+                                Util.FormatIntegerValue (
+                                    intShifted ) ) ,
+                        Environment.NewLine );              // Format Item 2
+                }   // for ( int intCaseIndex = ArrayInfo.ARRAY_FIRST_ELEMENT ; intCaseIndex < pautpDecimalShiftLeftTestCases.Length ; intCaseIndex++ )
+            }   // public override void UnitTests
+
+            /// <summary>
+            /// Grant controlled access to a dummy instance, not to be used for
+            /// testing, but to provide access to overridden abstract methods.
+            /// </summary>
+            /// <returns>
+            /// The return value is an uninitialized DecimalShifttLeftTestCase of
+            /// type int, suitable only for gaining access to its methods.
+            /// </returns>
+            public static IntegerDecimalShiftLeftTestCase GetDummyInstance ( )
+            {
+                return new IntegerDecimalShiftLeftTestCase ( );
+            }   // public override DecimalShifttLeftTestCase<int> GetDummyInstance
+        }   // private class IntegerDecimalShiftLeftTestCase
+
+
+        private class UnsignedIntegerDecimalShiftLeftTestCase : DecimalShiftTestCase<uint>
+        {
+            private UnsignedIntegerDecimalShiftLeftTestCase ( )
+            { }   // private UnsignedIntegerDecimalShifttLeftTestCase constructor (The default constructor is private to force callers to initialize all instances.)
+
+            public UnsignedIntegerDecimalShiftLeftTestCase (
+                uint inputValue ,
+                int shiftValue ,
+                uint expectedOutcome )
+               : base (
+                     inputValue ,
+                     shiftValue ,
+                     expectedOutcome )
+            { }   // public UnsignedIntegerDecimalShifttLeftTestCase constructor (The public constructor takes two required arguments to initialize its properties.)
+
+            /// <summary>
+            /// Exercise one of the DecimalShiftLeft methods.
+            /// </summary>
+            /// <param name="pautpDecimalShiftLeftTestCases">
+            /// Pass in a reference to an array of DecimalShifttLeftTestCase instances
+            /// of type uint, each of which is a pair of input parameters and an
+            /// expected outcome.
+            /// </param>
+            public override void UnitTests ( DecimalShiftTestCase<uint> [ ] pautpDecimalShiftLeftTestCases )
+            {
+                Console.WriteLine (
+                    @"    Exercise MoreMath.DecimalShiftLeft method for inputs of type {0}.{1}" ,
+                    this.InputValue.GetType ( ).FullName ,
+                    Environment.NewLine );
+
+                for ( int intCaseIndex = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+                          intCaseIndex < pautpDecimalShiftLeftTestCases.Length ;
+                          intCaseIndex++ )
+                {
+                    Console.WriteLine ( @"        Case {0,2}: Input Value      = {1}" , ArrayInfo.OrdinalFromIndex ( intCaseIndex ) , Util.FormatIntegerValue ( pautpDecimalShiftLeftTestCases [ intCaseIndex ].InputValue ) );
+                    Console.WriteLine ( @"                 Shift Value      = {0}" , Util.FormatIntegerValue ( pautpDecimalShiftLeftTestCases [ intCaseIndex ].ShiftValue ) );
+                    Console.WriteLine ( @"                 Expected Outcome = {0}" , Util.FormatIntegerValue ( pautpDecimalShiftLeftTestCases [ intCaseIndex ].ExpectedOutcome ) );
+
+                    uint intShifted = MagicNumbers.ZERO;
+
+                    try
+                    {
+                        intShifted = MoreMath.DecimalShiftLeft (
+                            pautpDecimalShiftLeftTestCases [ intCaseIndex ].InputValue ,
+                            pautpDecimalShiftLeftTestCases [ intCaseIndex ].ShiftValue );
+                    }
+                    catch ( Exception exAll )
+                    {
+                        s_exceptionLogger.ReportException ( exAll );
+                    }
+                    finally
+                    {
+                        Console.WriteLine (
+                            @"                 Case {0,2} done" ,
+                            ArrayInfo.OrdinalFromIndex ( intCaseIndex ) );
+                    }
+
+                    string strOutcomeMessage =
+                        intShifted.Equals ( pautpDecimalShiftLeftTestCases [ intCaseIndex ].ExpectedOutcome )
+                        ? @"Passed"
+                        : @"Failed";
+
+                    Console.WriteLine (
+                        @"                 Actual Outcome   = {0}{1}{2}" ,
+                        strOutcomeMessage ,                 // Format Item 0
+                        intShifted.Equals (                 // Format Item 1
+                            pautpDecimalShiftLeftTestCases [ intCaseIndex ].ExpectedOutcome )
+                            ? SpecialStrings.EMPTY_STRING
+                            : string.Format (
+                                @" [actual outcome = {0}]" ,
+                                Util.FormatIntegerValue (
+                                    intShifted ) ) ,
+                        Environment.NewLine );              // Format Item 2
+                }   // for ( int intCaseIndex = ArrayInfo.ARRAY_FIRST_ELEMENT ; intCaseIndex < pautpDecimalShiftLeftTestCases.Length ; intCaseIndex++ )
+            }   // public override void UnitTests
+
+            /// <summary>
+            /// Grant controlled access to a dummy instance, not to be used for
+            /// testing, but to provide access to overridden abstract methods.
+            /// </summary>
+            /// <returns>
+            /// The return value is an uninitialized DecimalShifttLeftTestCase of
+            /// type uint, suitable only for gaining access to its methods.
+            /// </returns>
+            public static UnsignedIntegerDecimalShiftLeftTestCase GetDummyInstance ( )
+            {
+                return new UnsignedIntegerDecimalShiftLeftTestCase ( );
+            }   // public override DecimalShifttLeftTestCase<int> GetDummyInstance
+        }   // private class UnsignedIntegerDecimalShiftLeftTestCase
+
+
+        private class LongIntegerDecimalShiftLeftTestCase : DecimalShiftTestCase<long>
+        {
+            private LongIntegerDecimalShiftLeftTestCase ( )
+            { } // private LongIntegerDecimalShiftLeftTestCase constructor (The default constructor is private to force callers to initialize all instances.)
+
+            public LongIntegerDecimalShiftLeftTestCase (
+                long inputValue ,
+                int shiftValue ,
+                long expectedOutcome )
+               : base (
+                     inputValue ,
+                     shiftValue ,
+                     expectedOutcome )
+            { }   // public LongIntegerDecimalShiftLeftTestCase constructor (The public constructor takes two required arguments to initialize its properties.)
+
+            /// <summary>
+            /// Exercise one of the DecimalShiftLeft methods.
+            /// </summary>
+            /// <param name="pautpDecimalShiftLeftTestCases">
+            /// Pass in a reference to an array of DecimalShifttLeftTestCase instances
+            /// of type long, each of which is a pair of input parameters and an
+            /// expected outcome.
+            /// </param>
+            public override void UnitTests ( DecimalShiftTestCase<long> [ ] pautpDecimalShiftLeftTestCases )
+            {
+                Console.WriteLine (
+                    @"    Exercise MoreMath.DecimalShiftLeft method for inputs of type {0}.{1}" ,
+                    this.InputValue.GetType ( ).FullName ,
+                    Environment.NewLine );
+
+                for ( int intCaseIndex = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+                          intCaseIndex < pautpDecimalShiftLeftTestCases.Length ;
+                          intCaseIndex++ )
+                {
+                    Console.WriteLine ( @"        Case {0,2}: Input Value      = {1}" , ArrayInfo.OrdinalFromIndex ( intCaseIndex ) , Util.FormatIntegerValue ( pautpDecimalShiftLeftTestCases [ intCaseIndex ].InputValue ) );
+                    Console.WriteLine ( @"                 Shift Value      = {0}" , Util.FormatIntegerValue ( pautpDecimalShiftLeftTestCases [ intCaseIndex ].ShiftValue ) );
+                    Console.WriteLine ( @"                 Expected Outcome = {0}" , Util.FormatIntegerValue ( pautpDecimalShiftLeftTestCases [ intCaseIndex ].ExpectedOutcome ) );
+
+                    long intShifted = MagicNumbers.ZERO;
+
+                    try
+                    {
+                        intShifted = MoreMath.DecimalShiftLeft (
+                            pautpDecimalShiftLeftTestCases [ intCaseIndex ].InputValue ,
+                            pautpDecimalShiftLeftTestCases [ intCaseIndex ].ShiftValue );
+                    }
+                    catch ( Exception exAll )
+                    {
+                        s_exceptionLogger.ReportException ( exAll );
+                    }
+                    finally
+                    {
+                        Console.WriteLine (
+                            @"                 Case {0,2} done" ,
+                            ArrayInfo.OrdinalFromIndex ( intCaseIndex ) );
+                    }
+
+                    string strOutcomeMessage =
+                        intShifted.Equals ( pautpDecimalShiftLeftTestCases [ intCaseIndex ].ExpectedOutcome )
+                        ? @"Passed"
+                        : @"Failed";
+
+                    Console.WriteLine (
+                        @"                 Actual Outcome   = {0}{1}{2}" ,
+                        strOutcomeMessage ,                 // Format Item 0
+                        intShifted.Equals (                 // Format Item 1
+                            pautpDecimalShiftLeftTestCases [ intCaseIndex ].ExpectedOutcome )
+                            ? SpecialStrings.EMPTY_STRING
+                            : string.Format (
+                                @" [actual outcome = {0}]" ,
+                                Util.FormatIntegerValue (
+                                    intShifted ) ) ,
+                        Environment.NewLine );              // Format Item 2
+                }   // for ( int intCaseIndex = ArrayInfo.ARRAY_FIRST_ELEMENT ; intCaseIndex < pautpDecimalShiftLeftTestCases.Length ; intCaseIndex++ )
+            }   // public override void UnitTests
+
+            /// <summary>
+            /// Grant controlled access to a dummy instance, not to be used for
+            /// testing, but to provide access to overridden abstract methods.
+            /// </summary>
+            /// <returns>
+            /// The return value is an uninitialized DecimalShifttLeftTestCase of
+            /// type long, suitable only for gaining access to its methods.
+            /// </returns>
+            public static LongIntegerDecimalShiftLeftTestCase GetDummyInstance ( )
+            {
+                return new LongIntegerDecimalShiftLeftTestCase ( );
+            }   // public override DecimalShiftLeftTestCase<int> GetDummyInstance
+        }   // private class LongIntegerDecimalShiftLeftTestCase
+
+
+        private class UnsignedLongIntegerDecimalShiftLeftTestCase : DecimalShiftTestCase<ulong>
+        {
+            private UnsignedLongIntegerDecimalShiftLeftTestCase ( )
+            { } // private LongIntegerDecimalShifttLeftTestCase constructor (The default constructor is private to force callers to initialize all instances.)
+
+            public UnsignedLongIntegerDecimalShiftLeftTestCase (
+                ulong inputValue ,
+                int shiftValue ,
+                ulong expectedOutcome )
+               : base (
+                     inputValue ,
+                     shiftValue ,
+                     expectedOutcome )
+            { }   // public UnsignedLongIntegerDecimalShifttLeftTestCase constructor (The public constructor takes two required arguments to initialize its properties.)
+
+            /// <summary>
+            /// Exercise one of the DecimalShiftLeft methods.
+            /// </summary>
+            /// <param name="pautpDecimalShiftLeftTestCases">
+            /// Pass in a reference to an array of DecimalShifttLeftTestCase instances
+            /// of type ulong, each of which is a pair of input parameters and an
+            /// expected outcome.
+            /// </param>
+            public override void UnitTests ( DecimalShiftTestCase<ulong> [ ] pautpDecimalShiftLeftTestCases )
+            {
+                Console.WriteLine (
+                    @"    Exercise MoreMath.DecimalShiftLeft method for inputs of type {0}.{1}" ,
+                    this.InputValue.GetType ( ).FullName ,
+                    Environment.NewLine );
+
+                for ( int intCaseIndex = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+                          intCaseIndex < pautpDecimalShiftLeftTestCases.Length ;
+                          intCaseIndex++ )
+                {
+                    Console.WriteLine ( @"        Case {0,2}: Input Value      = {1}" , ArrayInfo.OrdinalFromIndex ( intCaseIndex ) , Util.FormatIntegerValue ( pautpDecimalShiftLeftTestCases [ intCaseIndex ].InputValue ) );
+                    Console.WriteLine ( @"                 Shift Value      = {0}" , Util.FormatIntegerValue ( pautpDecimalShiftLeftTestCases [ intCaseIndex ].ShiftValue ) );
+                    Console.WriteLine ( @"                 Expected Outcome = {0}" , Util.FormatIntegerValue ( pautpDecimalShiftLeftTestCases [ intCaseIndex ].ExpectedOutcome ) );
+
+                    ulong intShifted = MagicNumbers.ZERO;
+
+                    try
+                    {
+                        intShifted = MoreMath.DecimalShiftLeft (
+                            pautpDecimalShiftLeftTestCases [ intCaseIndex ].InputValue ,
+                            pautpDecimalShiftLeftTestCases [ intCaseIndex ].ShiftValue );
+                    }
+                    catch ( Exception exAll )
+                    {
+                        s_exceptionLogger.ReportException ( exAll );
+                    }
+                    finally
+                    {
+                        Console.WriteLine (
+                            @"                 Case {0,2} done" ,
+                            ArrayInfo.OrdinalFromIndex ( intCaseIndex ) );
+                    }
+
+                    string strOutcomeMessage =
+                        intShifted.Equals ( pautpDecimalShiftLeftTestCases [ intCaseIndex ].ExpectedOutcome )
+                        ? @"Passed"
+                        : @"Failed";
+
+                    Console.WriteLine (
+                        @"                 Actual Outcome   = {0}{1}{2}" ,
+                        strOutcomeMessage ,                 // Format Item 0
+                        intShifted.Equals (                 // Format Item 1
+                            pautpDecimalShiftLeftTestCases [ intCaseIndex ].ExpectedOutcome )
+                            ? SpecialStrings.EMPTY_STRING
+                            : string.Format (
+                                @" [actual outcome = {0}]" ,
+                                Util.FormatIntegerValue (
+                                    intShifted ) ) ,
+                        Environment.NewLine );              // Format Item 2
+                }   // for ( int intCaseIndex = ArrayInfo.ARRAY_FIRST_ELEMENT ; intCaseIndex < pautpDecimalShiftLeftTestCases.Length ; intCaseIndex++ )
+            }   // public override void UnitTests
+
+            /// <summary>
+            /// Grant controlled access to a dummy instance, not to be used for
+            /// testing, but to provide access to overridden abstract methods.
+            /// </summary>
+            /// <returns>
+            /// The return value is an uninitialized DecimalShifttLeftTestCase of
+            /// type ulong, suitable only for gaining access to its methods.
+            /// </returns>
+            public static UnsignedLongIntegerDecimalShiftLeftTestCase GetDummyInstance ( )
+            {
+                return new UnsignedLongIntegerDecimalShiftLeftTestCase ( );
+            }   // public override DecimalShifttLeftTestCase<int> GetDummyInstance
+        }   // private class UnsignedLongIntegerDecimalShifttLeftTestCase
+        #endregion  // DecimalShiftLeftTestCase Classes
+
+
+        #region DecimalShiftRightTestCase Classes
+        // ToDo: Duplicate these for uint, long, ulong, float, double, and decimal.
+        private class IntegerDecimalShiftRightTestCase : DecimalShiftTestCase<int>
+        {
+            private IntegerDecimalShiftRightTestCase ( )
+            { }   // private IntegerDecimalShifttLeftTestCase constructor (The default constructor is private to force callers to initialize all instances.)
+
+            public IntegerDecimalShiftRightTestCase (
+                int inputValue ,
+                int shiftValue ,
+                int expectedOutcome )
+               : base (
+                     inputValue ,
+                     shiftValue ,
+                     expectedOutcome )
+            { } // Classes don't inherit overloaded constructors.
+
+            /// <summary>
+            /// Exercise one of the DecimalShiftRight methods.
+            /// </summary>
+            /// <param name="pautpDecimalShiftLeftTestCases">
+            /// Pass in a reference to an array of DecimalShiftTestCase instances
+            /// of type int, each of which is a pair of input parameters and an
+            /// expected outcome.
+            /// </param>
+            public override void UnitTests ( DecimalShiftTestCase<int> [ ] pautpDecimalShifRightTestCases )
+            {
+                Console.WriteLine (
+                    @"    Exercise MoreMath.DecimalShiftRight method for inputs of type {0}.{1}" ,
+                    this.InputValue.GetType ( ).FullName ,
+                    Environment.NewLine );
+
+                for ( int intCaseIndex = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+                          intCaseIndex < pautpDecimalShifRightTestCases.Length ;
+                          intCaseIndex++ )
+                {
+                    Console.WriteLine ( @"        Case {0,2}: Input Value      = {1}" , ArrayInfo.OrdinalFromIndex ( intCaseIndex ) , Util.FormatIntegerValue ( pautpDecimalShifRightTestCases [ intCaseIndex ].InputValue ) );
+                    Console.WriteLine ( @"                 Shift Value      = {0}" , Util.FormatIntegerValue ( pautpDecimalShifRightTestCases [ intCaseIndex ].ShiftValue ) );
+                    Console.WriteLine ( @"                 Expected Outcome = {0}" , Util.FormatIntegerValue ( pautpDecimalShifRightTestCases [ intCaseIndex ].ExpectedOutcome ) );
+
+                    int intShifted = MagicNumbers.ZERO;
+
+                    try
+                    {
+                        intShifted = MoreMath.DecimalShiftRight (
+                            pautpDecimalShifRightTestCases [ intCaseIndex ].InputValue ,
+                            pautpDecimalShifRightTestCases [ intCaseIndex ].ShiftValue );
+                    }
+                    catch ( Exception exAll )
+                    {
+                        s_exceptionLogger.ReportException ( exAll );
+                    }
+                    finally
+                    {
+                        Console.WriteLine (
+                            @"                 Case {0,2} done" ,
+                            ArrayInfo.OrdinalFromIndex ( intCaseIndex ) );
+                    }
+
+                    string strOutcomeMessage =
+                        intShifted.Equals ( pautpDecimalShifRightTestCases [ intCaseIndex ].ExpectedOutcome )
+                        ? @"Passed"
+                        : @"Failed";
+
+                    Console.WriteLine (
+                        @"                 Actual Outcome   = {0}{1}{2}" ,
+                        strOutcomeMessage ,                 // Format Item 0
+                        intShifted.Equals (                 // Format Item 1
+                            pautpDecimalShifRightTestCases [ intCaseIndex ].ExpectedOutcome )
+                            ? SpecialStrings.EMPTY_STRING
+                            : string.Format (
+                                @" [actual outcome = {0}]" ,
+                                Util.FormatIntegerValue (
+                                    intShifted ) ) ,
+                        Environment.NewLine );              // Format Item 2
+                }   // for ( int intCaseIndex = ArrayInfo.ARRAY_FIRST_ELEMENT ; intCaseIndex < pautpDecimalShiftLeftTestCases.Length ; intCaseIndex++ )
+            }   // public override void UnitTests
+
+            /// <summary>
+            /// Grant controlled access to a dummy instance, not to be used for
+            /// testing, but to provide access to overridden abstract methods.
+            /// </summary>
+            /// <returns>
+            /// The return value is an uninitialized DecimalShiftTestCase of
+            /// type int, suitable only for gaining access to its methods.
+            /// </returns>
+            public static IntegerDecimalShiftRightTestCase GetDummyInstance ( )
+            {
+                return new IntegerDecimalShiftRightTestCase ( );
+            }   // public override IntegerDecimalShiftRightTestCase<int> GetDummyInstance
+        }   // private class IntegerDecimalShiftRightTestCase
+        #endregion  // DecimalShiftRightTestCase Classes
+
+
+        #region IntegerModulusTestCase Classes
         private class IntegerModulusTestCase
         {
             private IntegerModulusTestCase ( )
@@ -477,6 +1097,7 @@ namespace DLLServices2TestStand
             public int Divisor { get; private set; }
         }   // private class IntegerModulusTestCase
 
+
         private class LongModulusTestCase
         {
             private LongModulusTestCase ( )
@@ -491,5 +1112,6 @@ namespace DLLServices2TestStand
             public long Dividend { get; private set; }
             public long Divisor { get; private set; }
         }   // private class LongModulusTestCase
+        #endregion  // IntegerModulusTestCase Classes
     }   // class MathTests
 }   // partial amespace DLLServices2TestStand

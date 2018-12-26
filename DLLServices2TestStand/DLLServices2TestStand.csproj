@@ -10,8 +10,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DLLServices2TestStand</RootNamespace>
     <AssemblyName>DLLServices2TestStand</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -59,6 +60,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <OutputPath>bin\Release\</OutputPath>
@@ -68,6 +70,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -150,6 +153,10 @@
       <Project>{4d82458f-864f-494e-a537-1e89d6c8073c}</Project>
       <Name>FormatStringEngine</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MoreMath\MoreMath.csproj">
+      <Project>{a9512fcd-3f59-4ce9-8923-367aed4511a8}</Project>
+      <Name>MoreMath</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -164,6 +171,10 @@
   </PropertyGroup>
   <PropertyGroup>
     <PostBuildEvent>wwBldNbrMgr.exe -r "-p$(ProjectDir) " "-t$(TargetPath)"
+if exist       "$(SolutionDir)$(SolutionName)_Binaries_$(ConfigurationName).7z" sdelete -r "$(SolutionDir)$(SolutionName)_Binaries_$(ConfigurationName).7z"
+7z a -bb3 -stl "$(SolutionDir)$(SolutionName)_Binaries_$(ConfigurationName).7z" "$(SolutionDir)$(ProjectName)\bin\$(ConfigurationName)\*"
+7z l           "$(SolutionDir)$(SolutionName)_Binaries_$(ConfigurationName).7z"
+attrib         "$(SolutionDir)$(SolutionName)_Binaries_$(ConfigurationName).7z" +r
 if $(ConfigurationName) == Release (
     echo Regenerate API documentation.
     docfx.exe $(SolutionDir)docfx_project\docfx.json --metadata

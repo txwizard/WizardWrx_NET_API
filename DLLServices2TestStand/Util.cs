@@ -59,6 +59,8 @@
     Date       Version Author Description
     ---------- ------- ------ --------------------------------------------------
     2018/11/12 7.11    DAG    Initial implementation.
+
+    2018/12/23 7.14    DAG    Add coverage for unsigned 32 and 64 bit integers.
 	============================================================================
 */
 
@@ -76,7 +78,16 @@ namespace DLLServices2TestStand
                 pintToShow ,                                                            // Format Item 0: Default rendering
                 pintToShow.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) ,       // Format Item 1: Formatted with thousands separator
                 pintToShow.ToString ( NumericFormats.HEXADECIMAL_8 ) );                 // Formatted as hexadecimal.
-        }   // internal static string DisplayIntegerValue (1 of 2)
+        }   // internal static string DisplayIntegerValue (1 of 4)
+
+        internal static string FormatIntegerValue ( uint pintToShow )
+        {
+            return string.Format (
+                @"{0} (Formatted: {1}, Hexadecimal: 0x{2})" ,                           // Format Control String
+                pintToShow ,                                                            // Format Item 0: Default rendering
+                pintToShow.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) ,       // Format Item 1: Formatted with thousands separator
+                pintToShow.ToString ( NumericFormats.HEXADECIMAL_8 ) );                 // Formatted as hexadecimal.
+        }   // internal static string DisplayIntegerValue (3 of 4)
 
         internal static string FormatIntegerValue ( long plngToShow )
         {
@@ -84,7 +95,16 @@ namespace DLLServices2TestStand
                 @"{0} (Formatted: {1}, Hexadecimal: 0x{2})" ,                           // Format Control String
                 plngToShow ,                                                            // Format Item 0: Default rendering
                 plngToShow.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) ,       // Format Item 1: Formatted with thousands separator
-                plngToShow.ToString ( NumericFormats.HEXADECIMAL_8 ) );                 // Formatted as hexadecimal.
-        }   // internal static string DisplayIntegerValue (2 of 2)
+                plngToShow.ToString ( NumericFormats.HEXADECIMAL_16 ) );                // Formatted as hexadecimal.
+        }   // internal static string DisplayIntegerValue (2 of 4)
+
+        internal static string FormatIntegerValue ( ulong plngToShow )
+        {
+            return string.Format (
+                @"{0} (Formatted: {1}, Hexadecimal: 0x{2})" ,                           // Format Control String
+                plngToShow ,                                                            // Format Item 0: Default rendering
+                plngToShow.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) ,       // Format Item 1: Formatted with thousands separator
+                plngToShow.ToString ( NumericFormats.HEXADECIMAL_16 ) );                // Formatted as hexadecimal.
+        }   // internal static string DisplayIntegerValue (4 of 4)
     }   // internal class Util
 }   // partial namespace DLLServices2TestStand

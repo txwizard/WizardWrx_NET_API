@@ -1,0 +1,526 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WizardWrx.MoreMath</name>
+    </assembly>
+    <members>
+        <member name="T:WizardWrx.MoreMath">
+            <summary>
+            This static class exposes methods that perform a variety of infrequently
+            used, but technically obscure or deceptively tricky mathematical
+            computations.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.MoreMath.EXCEPTION_ON_INVALID_INPUT">
+            <summary>
+            Use with IsGregorianLeapYear and IsValidGregorianYear to cause them
+            to throw an exception when either is fed an invalid Gregorian year,
+            rather than return FALSE.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.MoreMath.FALSE_ON_INVALID_INPUT">
+            <summary>
+            Use with IsGregorianLeapYear and IsValidGregorianYear to cause them
+            to suppress the ArgumentOutOfRange exception when either is fed an
+            invalid Gregorian year; instead, both return FALSE.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.MoreMath.GRGORIAN_CALENDAR_ADOPTION_YEAR">
+            <summary>
+            Year values must be greater than this value. Callers may use this
+            constant to perform their own validations, or for other
+            purposes.
+            
+            The Gregorian calendar was adopted in 1582. To be on the safe side,
+            this class rejects years prior to the following year, since, in its
+            present form, it cannot correctly process dates on the Julian
+            calendar that was in use before 1583.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.MoreMath.DecimalShiftLeft(System.Int32,System.Int32)">
+            <summary>
+            Shift the decimal point of an integer value left by a poisitive
+            number of digits.
+            </summary>
+            <param name="ShiftThis">
+            Specify the integer value to be shifted left by the number of digits
+            specified by <paramref name="NDigits"/>.
+            </param>
+            <param name="NDigits">
+            Specify the number of digits to the left by which to shift the
+            value specified by <paramref name="ShiftThis"/>.
+            </param>
+            <returns>
+            Return the value of <paramref name="ShiftThis"/> multiplied by
+            a power of ten that is one less than the value specified by
+            <paramref name="NDigits"/>.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.MoreMath.DecimalShiftLeft(System.Int64,System.Int32)">
+            <summary>
+            Shift the decimal point of an integer value left by a poisitive
+            number of digits.
+            </summary>
+            <param name="ShiftThis">
+            Specify the integer value to be shifted left by the number of digits
+            specified by <paramref name="NDigits"/>.
+            </param>
+            <param name="NDigits">
+            Specify the number of digits to the left by which to shift the
+            value specified by <paramref name="ShiftThis"/>.
+            </param>
+            <returns>
+            Return the value of <paramref name="ShiftThis"/> multiplied by
+            a power of ten that is one less than the value specified by
+            <paramref name="NDigits"/>.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.MoreMath.DecimalShiftLeft(System.UInt32,System.Int32)">
+            <summary>
+            Shift the decimal point of an integer value left by a poisitive
+            number of digits.
+            </summary>
+            <param name="ShiftThis">
+            Specify the integer value to be shifted left by the number of digits
+            specified by <paramref name="NDigits"/>.
+            </param>
+            <param name="NDigits">
+            Specify the number of digits to the left by which to shift the
+            value specified by <paramref name="ShiftThis"/>.
+            </param>
+            <returns>
+            Return the value of <paramref name="ShiftThis"/> multiplied by
+            a power of ten that is one less than the value specified by
+            <paramref name="NDigits"/>.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.MoreMath.DecimalShiftLeft(System.UInt64,System.Int32)">
+            <summary>
+            Shift the decimal point of an integer value left by a poisitive
+            number of digits.
+            </summary>
+            <param name="ShiftThis">
+            Specify the integer value to be shifted left by the number of digits
+            specified by <paramref name="NDigits"/>.
+            </param>
+            <param name="NDigits">
+            Specify the number of digits to the left by which to shift the
+            value specified by <paramref name="ShiftThis"/>.
+            </param>
+            <returns>
+            Return the value of <paramref name="ShiftThis"/> multiplied by
+            a power of ten that is one less than the value specified by
+            <paramref name="NDigits"/>.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.MoreMath.DecimalShiftRight(System.Int32,System.Int32)">
+            <summary>
+            Shift the decimal point of an integer value right by a poisitive
+            number of digits.
+            </summary>
+            <param name="ShiftThis">
+            Specify the integer value to be shifted left by the number of digits
+            specified by <paramref name="NDigits"/>.
+            </param>
+            <param name="NDigits"></param>
+            Specify the number of digits to the left by which to shift the
+            value specified by <paramref name="ShiftThis"/>.
+            <returns>
+            Return the value of <paramref name="ShiftThis"/> multiplied by
+            a power of ten that is one less than the value specified by
+            <paramref name="NDigits"/>.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.MoreMath.DecimalShiftRight(System.Single,System.Int32)">
+            <summary>
+            Shift the decimal point of a float value right by a poisitive
+            number of digits.
+            </summary>
+            <param name="ShiftThis">
+            Specify the integer value to be shifted left by the number of digits
+            specified by <paramref name="NDigits"/>.
+            </param>
+            <param name="NDigits"></param>
+            Specify the number of digits to the left by which to shift the
+            value specified by <paramref name="ShiftThis"/>.
+            <returns>
+            Return the value of <paramref name="ShiftThis"/> multiplied by
+            a power of ten that is one less than the value specified by
+            <paramref name="NDigits"/>.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.MoreMath.DecimalShiftRight(System.Decimal,System.Int32)">
+            <summary>
+            Shift the decimal point of a decimal value right by a poisitive
+            number of digits.
+            </summary>
+            <param name="ShiftThis">
+            Specify the integer value to be shifted left by the number of digits
+            specified by <paramref name="NDigits"/>.
+            </param>
+            <param name="NDigits"></param>
+            Specify the number of digits to the left by which to shift the
+            value specified by <paramref name="ShiftThis"/>.
+            <returns>
+            Return the value of <paramref name="ShiftThis"/> multiplied by
+            a power of ten that is one less than the value specified by
+            <paramref name="NDigits"/>.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.MoreMath.DecimalShiftRight(System.Double,System.Int32)">
+            <summary>
+            Shift the decimal point of a double value right by a poisitive
+            number of digits.
+            </summary>
+            <param name="ShiftThis">
+            Specify the integer value to be shifted left by the number of digits
+            specified by <paramref name="NDigits"/>.
+            </param>
+            <param name="NDigits"></param>
+            Specify the number of digits to the left by which to shift the
+            value specified by <paramref name="ShiftThis"/>.
+            <returns>
+            Return the value of <paramref name="ShiftThis"/> multiplied by
+            a power of ten that is one less than the value specified by
+            <paramref name="NDigits"/>.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int32,System.Int32)">
+            <summary>
+            Evaluate whether integer <paramref name="pintDividend"/> is evenly
+            divisible by integer <paramref name="pintDivisor"/>.
+            </summary>
+            <param name="pintDividend">
+            Specify the integer to evaluate for even divisibility against
+            <paramref name="pintDivisor"/>.
+            </param>
+            <param name="pintDivisor">
+            Specify the integer to determine whether integer
+            <paramref name="pintDividend"/> is evenly divisible.
+            </param>
+            <returns>
+            Return TRUE if integer <paramref name="pintDividend"/> is evenly
+            divisible by <paramref name="pintDivisor"/>.
+            
+            Otherwise, return FALSE.
+            </returns>
+            <exception cref="T:System.ArgumentException">
+            An ArgumentException exception arises when
+            <paramref name="pintDivisor"/> is equal to zero, an illegal value,
+            since the modulus operator is implemented as an integer division,
+            and division by zero is an illegal operation, which raises an
+            DivideByZeroException exception. Rather than report the unhelpful
+            DivideByZeroException exception, <paramref name="pintDivisor"/> is
+            evaluated, and the ArgumentException is raised in its place, so that
+            the dividend passed into the method can be reported.
+            </exception>
+            <seealso cref="M:WizardWrx.MoreMath.Mod(System.Int32,System.Int32)"/>
+            <seealso cref="M:WizardWrx.MoreMath.Remainder(System.Int32,System.Int32)"/>
+        </member>
+        <member name="M:WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int64,System.Int64)">
+            <summary>
+            Evaluate whether long integer <paramref name="plngDividend"/> is
+            evenly divisible by long integer <paramref name="plngDivisor"/>.
+            </summary>
+            <param name="plngDividend">
+            Specify the long integer to evaluate for even divisibility against
+            <paramref name="plngDivisor"/>.
+            </param>
+            <param name="plngDivisor">
+            Specify the long integer to determine whether long integer
+            <paramref name="plngDividend"/> is evenly divisible.
+            </param>
+            <returns>
+            Return TRUE if long integer <paramref name="plngDividend"/> is
+            evenly divisible by <paramref name="plngDivisor"/>. therwise, return
+            FALSE.
+            </returns>
+            <exception cref="T:System.ArgumentException">
+            An ArgumentException exception arises when
+            <paramref name="plngDivisor"/> is equal to zero, an illegal value,
+            since the modulus operator is implemented as an integer division,
+            and division by zero is an illegal operation, which raises an
+            DivideByZeroException exception. Rather than report the unhelpful
+            DivideByZeroException exception, <paramref name="plngDivisor"/> is
+            evaluated, and the ArgumentException is raised in its place, so that
+            the dividend passed into the method can be reported.
+            </exception>
+            <seealso cref="M:WizardWrx.MoreMath.Mod(System.Int64,System.Int64)"/>
+            <seealso cref="M:WizardWrx.MoreMath.Remainder(System.Int64,System.Int64)"/>
+        </member>
+        <member name="M:WizardWrx.MoreMath.IsGregorianLeapYear(System.Int32,System.Boolean)">
+            <summary>
+            Given a valid year, return True if the year is a leap year, else
+            return False.
+            
+            If the input year is invalid, an ArgumentOutOfRange exception is
+            thrown.
+            
+            According to the first reference cited below, the Grgorian
+            calendar was adopted in 1582. Hence, this formula is invalid for
+            years before 1583. Consequently, any year before 1583 is treated
+            as invalid, and an ArgumentOutOfRange exception is thrown, which is
+            enforced by the IsValidGregorianYear method.
+            </summary>
+            <param name="pintYear">
+            Gregorian year number, greater than 1582, to evaluate
+            </param>
+            <param name="pfThrowError">
+            Specify FALSE_ON_INVALID_INPUT to suppress the default behavior,
+            which is for IsValidGregorianYear, when called upon to validate
+            <paramref name="pintYear"/>, to throw an ArgumentOutOfRangeException
+            exception. The default value is EXCEPTION_ON_INVALID_INPUT (true).
+            </param>
+            <returns>
+            TRUE if <paramref name="pintYear"/> is a leap year, else FALSE.
+            </returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            An ArgumentOutOfRangeException exception arises when 
+            <paramref name="pintYear"/> is an invalid Gregorian year, unless
+            <paramref name="pfThrowError"/> is EXCEPTION_ON_INVALID_INPUT
+            (false), in which case, the method return FALSE.
+            </exception>
+            <see href="https://www.tondering.dk/claus/cal/christian.php"/>
+            <see href="https://support.microsoft.com/en-us/help/214019/method-to-determine-whether-a-year-is-a-leap-year"/>
+        </member>
+        <member name="M:WizardWrx.MoreMath.IsValidGregorianYear(System.Int32,System.Boolean)">
+            <summary>
+            This method returns True if the year is valid for the Gregorian
+            calendar.
+            
+            The lower limit is exposed as a public constant,
+            GRGORIAN_CALENDAR_ADOPTION_YEAR.
+            </summary>
+            /// <param name="pintYear">
+            Gregorian year number, greater than 1582, to evaluate
+            </param>
+            <param name="pfThrowError">
+            TRUE if caller wants an invalid input to provoke an exception.
+            
+            To inprove the quality of your internal documentation, You may use
+            public constant EXCEPTION_ON_INVALID_INPUT in lieu of TRUE, and
+            RETURN_ON_INVALID_INPUT in lieu of FALSE.
+            </param>
+            <returns>
+            TRUE if the input is a valid Gregorian year.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.MoreMath.Mod(System.Int32,System.Int32)">
+            <summary>
+            Return the modulus, which is the remainder from dividing one integer
+            by another.
+            </summary>
+            <param name="pintDividend">
+            Specify the number into which <paramref name="pintDivisor"/> should
+            be divided to obtain a remainder.
+            </param>
+            <param name="pintDivisor">
+            Specify the number by which <paramref name="pintDividend"/> should
+            be divided to obtain a remainder.
+            </param>
+            <returns>
+            The return value is the integer result of dividing
+            <paramref name="pintDividend"/> by <paramref name="pintDivisor"/>.
+            </returns>
+            <remarks>
+            The Mod and Remainder methods are synonymns. Their simplicity lends
+            them to inline implementation.
+            </remarks>
+            <exception cref="T:System.ArgumentException">
+            An ArgumentException exception arises when
+            <paramref name="pintDivisor"/> is equal to zero, an illegal value,
+            since the modulus operator is implemented as an integer division,
+            and division by zero is an illegal operation, which raises an
+            DivideByZeroException exception. Rather than report the unhelpful
+            DivideByZeroException exception, <paramref name="pintDivisor"/> is
+            evaluated, and the ArgumentException is raised in its place, so that
+            the dividend passed into the method can be reported.
+            </exception>
+            <seealso cref="M:WizardWrx.MoreMath.Remainder(System.Int32,System.Int32)"/>
+            <seealso cref="M:WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int32,System.Int32)"/>
+        </member>
+        <member name="M:WizardWrx.MoreMath.Mod(System.Int64,System.Int64)">
+            <summary>
+            Return the modulus, which is the remainder from dividing one integer
+            by another.
+            </summary>
+            <param name="plngDividend">
+            Specify the number into which <paramref name="plngDivisor"/> should
+            be divided to obtain a remainder.
+            </param>
+            <param name="plngDivisor">
+            Specify the number by which <paramref name="plngDividend"/> should
+            be divided to obtain a remainder.
+            </param>
+            <returns>
+            The return value is the long integer result of dividing
+            <paramref name="plngDividend"/> by <paramref name="plngDivisor"/>.
+            </returns>
+            <remarks>
+            The Mod and Remainder methods are synonymns. Their simplicity lends
+            them to inline implementation.
+            </remarks>
+            <exception cref="T:System.ArgumentException">
+            An ArgumentException exception arises when
+            <paramref name="plngDivisor"/> is equal to zero, an illegal value,
+            since the modulus operator is implemented as an integer division,
+            and division by zero is an illegal operation, which raises an
+            DivideByZeroException exception. Rather than report the unhelpful
+            DivideByZeroException exception, <paramref name="plngDivisor"/> is
+            evaluated, and the ArgumentException is raised in its place, so that
+            the dividend passed into the method can be reported.
+            </exception>
+            <seealso cref="M:WizardWrx.MoreMath.Remainder(System.Int64,System.Int64)"/>
+            <seealso cref="M:WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int32,System.Int32)"/>
+        </member>
+        <member name="M:WizardWrx.MoreMath.Remainder(System.Int32,System.Int32)">
+            <summary>
+            Return the modulus, which is the remainder from dividing one integer
+            by another.
+            </summary>
+            <param name="pintDividend">
+            Specify the number into which <paramref name="pintDivisor"/> should
+            be divided to obtain a remainder.
+            </param>
+            <param name="pintDivisor">
+            Specify the number by which <paramref name="pintDividend"/> should
+            be divided to obtain a remainder.
+            </param>
+            <returns>
+            The return value is the integer result of dividing
+            <paramref name="pintDividend"/> by <paramref name="pintDivisor"/>.
+            </returns>
+            <remarks>
+            The Mod and Remainder methods are synonymns. Their simplicity lends
+            them to inline implementation.
+            </remarks>
+            <exception cref="T:System.ArgumentException">
+            An ArgumentException exception arises when
+            <paramref name="pintDivisor"/> is equal to zero, an illegal value,
+            since the modulus operator is implemented as an integer division,
+            and division by zero is an illegal operation, which raises an
+            DivideByZeroException exception. Rather than report the unhelpful
+            DivideByZeroException exception, <paramref name="pintDivisor"/> is
+            evaluated, and the ArgumentException is raised in its place, so that
+            the dividend passed into the method can be reported.
+            </exception>
+            <seealso cref="M:WizardWrx.MoreMath.Mod(System.Int32,System.Int32)"/>
+            <seealso cref="M:WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int32,System.Int32)"/>
+        </member>
+        <member name="M:WizardWrx.MoreMath.Remainder(System.Int64,System.Int64)">
+            <summary>
+            Return the modulus, which is the remainder from dividing one integer
+            by another.
+            </summary>
+            <param name="plngDividend">
+            Specify the number into which <paramref name="plngDivisor"/> should
+            be divided to obtain a remainder.
+            </param>
+            <param name="plngDivisor">
+            Specify the number by which <paramref name="plngDividend"/> should
+            be divided to obtain a remainder.
+            </param>
+            <returns>
+            The return value is the integer result of dividing
+            <paramref name="plngDividend"/> by <paramref name="plngDivisor"/>.
+            </returns>
+            <remarks>
+            The Mod and Remainder methods are synonymns. Their simplicity lends
+            them to inline implementation.
+            </remarks>
+            <exception cref="T:System.ArgumentException">
+            An ArgumentException exception arises when
+            <paramref name="plngDivisor"/> is equal to zero, an illegal value,
+            since the modulus operator is implemented as an integer division,
+            and division by zero is an illegal operation, which raises an
+            DivideByZeroException exception. Rather than report the unhelpful
+            DivideByZeroException exception, <paramref name="plngDivisor"/> is
+            evaluated, and the ArgumentException is raised in its place, so that
+            the dividend passed into the method can be reported.
+            </exception>
+            <seealso cref="M:WizardWrx.MoreMath.Mod(System.Int64,System.Int64)"/>
+            <seealso cref="M:WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int64,System.Int64)"/>
+        </member>
+        <member name="M:WizardWrx.MoreMath.CreateYearOutOfRangeMsg(System.Int32)">
+            <summary>
+            This method returns a string that contains the value, and the
+            upper and lower limits that it must meet, according to the rules
+            against which it was evaluated.
+            </summary>
+            <param name="pintBadYear">
+            Invalid Gregorian year that provoked the error.
+            </param>
+            <returns>
+            The returned string is a message, suitable for use as the Message
+            argument to an ArgumentOutOfRange exception constructor.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.MoreMath.GenerateDecimalShiftExceptionMessage``1(``0,System.Int32,System.String,System.Exception)">
+            <summary>
+            Construct a detailed exception report.
+            </summary>
+            <typeparam name="T">
+            Although generic parameter type T is unconstrained, it is expected
+            to be numeric, either integral or floating point of some precision.
+            Implementing this method as a generic allows one method to construct
+            messages for all DecimalShiftLeft and DecimalShiftRight methods.
+            </typeparam>
+            <param name="pnbrShiftThis">
+            Specify the integer value to be shifted left by the number of digits
+            specified by <paramref name="pintNDigits"/>.
+            </param>
+            <param name="pintNDigits">
+            Specify the number of digits to the left by which to shift the
+            value specified by <paramref name="pnbrShiftThis"/>.
+            </param>
+            <param name="pstrFailingMethodName">
+            Pass in a reference to a string that contains the name of the method
+            that failed. The most reliable way to get this value is by calling
+            ClassAndMethodDiagnosticInfo.GetMyMethodName, which obtains the info
+            from the compiler through one of three optional arguments that the
+            C# compiler supplies at run time.
+            </param>
+            <param name="pexAll">
+            Pass in a reference to the exception being handled, from which the
+            Message property is appended to the returned string.
+            </param>
+            <returns>
+            The return value is a string that summarizes the parameter values
+            that gave rise to the exception reported herein, concluding with a
+            copy of the message from the exception being handled by the calling
+            code block.
+            </returns>
+        </member>
+        <member name="T:WizardWrx.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Properties.Resources.ERRMSG_DECIMAL_SHIFT_DIGITS_VALUE">
+            <summary>
+              Looks up a localized string similar to Value must be greater than zero..
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Properties.Resources.ERRMSG_DIVISOR_CANNOT_BE_ZERO">
+            <summary>
+              Looks up a localized string similar to Since this method requires dividing by the value of argument {0}, its value canot be zero. The {1} value was {2}, which MAY be zero..
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Properties.Resources.ERRMSG_MATH_EXCEPTION">
+            <summary>
+              Looks up a localized string similar to An {0} exception arose while computing the value of {1}.{5}Input parameters were as follows:{5}{5}    ShiftThis = {2}{5}    NDigits   = {3}{5}{5}Details are in the inner exception: {4}{5}.
+            </summary>
+        </member>
+    </members>
+</doc>

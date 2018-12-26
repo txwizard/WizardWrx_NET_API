@@ -185,6 +185,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.ClassAndMethodDiagnosticInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.ClassAndMethodDiagnosticInfo.html",
+          "hash": "s4T08Hi1/VmASrUzrWTsGQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/WizardWrx.Common.Properties.Resources.yml",
       "output": {
         ".html": {
@@ -597,7 +609,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.DLLConfigurationManager.ExceptionLogger.ErrorExitOptions.html",
-          "hash": "6KzM6s7oQdjgBFALbrhSSw=="
+          "hash": "dhOdEKs+qjqQ+I77p+dHiA=="
         }
       },
       "is_incremental": false,
@@ -609,7 +621,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions.html",
-          "hash": "ji7MYMqyAlWqIFzalS5qIg=="
+          "hash": "7X4bceS1B/914litM/Qw9Q=="
         }
       },
       "is_incremental": false,
@@ -621,7 +633,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.DLLConfigurationManager.ExceptionLogger.ScrollUpResult.html",
-          "hash": "w+P8GooP570/nV8s3uhL5g=="
+          "hash": "q7Mbc2GdkA63GvgfDfDk0Q=="
         }
       },
       "is_incremental": false,
@@ -633,7 +645,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.DLLConfigurationManager.ExceptionLogger.html",
-          "hash": "zSzSdMS3S6h8lxgzElqNpQ=="
+          "hash": "PykToauS4V2MvUMcYVqfjA=="
         }
       },
       "is_incremental": false,
@@ -993,7 +1005,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.MagicNumbers.html",
-          "hash": "I0BajsC3fnIn4YmXz8djZg=="
+          "hash": "CgElr7eb+qPebo/LL8xadQ=="
         }
       },
       "is_incremental": false,
@@ -1005,7 +1017,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.MoreMath.html",
-          "hash": "WNpdgjYG7Y41xB1rgOGt4w=="
+          "hash": "3dA7SgWepkQa13e3AFUdaA=="
         }
       },
       "is_incremental": false,
@@ -1245,7 +1257,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.html",
-          "hash": "MKnS2Nl2/7I8PDzXOZ34xQ=="
+          "hash": "aQZNkfIxcLru9lDfxEwm+A=="
         }
       },
       "is_incremental": false,
@@ -1269,7 +1281,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "mDerVvr7CF7xfOEnwXEjfQ=="
+          "hash": "nHxeSG1bK9VJMMnJm9WWZA=="
         }
       },
       "is_incremental": false,
@@ -1284,7 +1296,7 @@
           "hash": "3s4i9xIMqHdEdqLhNBVbCA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1308,7 +1320,7 @@
           "hash": "2wP0ePDtaGeBNx8s27l/JQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1327,8 +1339,7 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": false,
-        "details": "Cannot build incrementally because last build info is missing.",
+        "can_incremental": true,
         "incrementalPhase": "build"
       },
       "processors": {
@@ -1338,19 +1349,19 @@
           "incrementalPhase": "build"
         },
         "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
+          "can_incremental": true,
           "incrementalPhase": "build"
         },
         "ConceptualDocumentProcessor": {
-          "can_incremental": false,
+          "can_incremental": true,
           "incrementalPhase": "build"
         }
       }
     },
     {
       "status": {
-        "can_incremental": false,
-        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
         "incrementalPhase": "postProcessing"
       },
       "processors": {}

@@ -1062,6 +1062,7 @@
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_MILLION"/>
             <seealso cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_BILLION"/>
             <seealso cref="F:WizardWrx.MagicNumbers.MILLISECONDS_PER_SECOND"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_SECOND"/>
             <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_SECOND"/>
         </member>
         <member name="F:WizardWrx.MagicNumbers.EXACTLY_TEN_THOUSAND">
@@ -1114,6 +1115,7 @@
             Use this constant when you need a literal value of exactly one second worth of milliseconds..
             </summary>
             <see cref="F:WizardWrx.MagicNumbers.EXACTLY_ONE_THOUSAND"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_SECOND"/>
             <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_SECOND"/>
         </member>
         <member name="F:WizardWrx.MagicNumbers.MINUS_ONE">
@@ -1241,19 +1243,166 @@
         <member name="F:WizardWrx.MagicNumbers.TICKS_PER_SECOND">
             <summary>
             There are ten million ticks of one hundred nanoseconds each in one second.
+            
+            BREAKING CHANGE: Prior to version 7.14, this value was understated
+            by a factor of one thousand.
+            
+            Use this constant to construct a TimeSpan of the corresponding
+            length (value) by way of its one-argument constructor, or to
+            increase or decrease the value of a time span by the corresponding
+            amount by way of its one-argument method.
             </summary>
             <see cref="F:WizardWrx.MagicNumbers.EXACTLY_TEN_THOUSAND"/>
+            <see cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_SECOND"/>
             <seealso cref="F:WizardWrx.MagicNumbers.MILLISECONDS_PER_SECOND"/>
+        </member>
+        <member name="F:WizardWrx.MagicNumbers.TICKS_PER_1_WEEK">
+            <summary>
+            There are 6,048,000,000,000 ticks in one calendar week.
+            
+            Use this constant to construct a TimeSpan of the corresponding
+            length (value) by way of its one-argument constructor, or to
+            increase or decrease the value of a time span by the corresponding
+            amount by way of its one-argument method.
+            </summary>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_DAY"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_23_59_59"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_23_59_00"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_HOUR"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_MINUTE"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_SECOND"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_MILLISECOND"/>
+        </member>
+        <member name="F:WizardWrx.MagicNumbers.TICKS_PER_1_DAY">
+            <summary>
+            There are 864,000,000,000 ticks in one calendar day.
+            
+            Use this constant to construct a TimeSpan of the corresponding
+            length (value) by way of its one-argument constructor, or to
+            increase or decrease the value of a time span by the corresponding
+            amount by way of its one-argument method.
+            </summary>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_WEEK"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_23_59_59"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_23_59_00"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_HOUR"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_MINUTE"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_SECOND"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_MILLISECOND"/>
+        </member>
+        <member name="F:WizardWrx.MagicNumbers.TICKS_PER_23_59_59">
+            <summary>
+            There are 863,990,000,000 ticks in one calendar day less one second.
+            
+            Use this constant to construct a TimeSpan of the corresponding
+            length (value) by way of its one-argument constructor, or to
+            increase or decrease the value of a time span by the corresponding
+            amount by way of its one-argument method.
+            </summary>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_WEEK"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_DAY"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_23_59_00"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_HOUR"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_MINUTE"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_SECOND"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_MILLISECOND"/>
+        </member>
+        <member name="F:WizardWrx.MagicNumbers.TICKS_PER_23_59_00">
+            <summary>
+            There are 863,400,000,000 ticks in one calendar day less one minute. 
+            
+            Use this constant to construct a TimeSpan of the corresponding
+            length (value) by way of its one-argument constructor, or to
+            increase or decrease the value of a time span by the corresponding
+            amount by way of its one-argument method.
+            </summary>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_WEEK"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_DAY"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_23_59_59"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_HOUR"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_MINUTE"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_SECOND"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_MILLISECOND"/>
+        </member>
+        <member name="F:WizardWrx.MagicNumbers.TICKS_PER_1_HOUR">
+            <summary>
+            There are 36,000,000,000 ticks in one hour.
+            
+            Use this constant to construct a TimeSpan of the corresponding
+            length (value) by way of its one-argument constructor, or to
+            increase or decrease the value of a time span by the corresponding
+            amount by way of its one-argument method.
+            </summary>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_WEEK"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_DAY"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_23_59_59"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_23_59_00"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_MINUTE"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_SECOND"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_MILLISECOND"/>
+        </member>
+        <member name="F:WizardWrx.MagicNumbers.TICKS_PER_1_MINUTE">
+            <summary>
+            There are 600,000,000 ticks in one minute.
+            
+            Use this constant to construct a TimeSpan of the corresponding
+            length (value) by way of its one-argument constructor, or to
+            increase or decrease the value of a time span by the corresponding
+            amount by way of its one-argument method.
+            </summary>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_WEEK"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_DAY"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_23_59_59"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_23_59_00"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_HOUR"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_SECOND"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_MILLISECOND"/>
+        </member>
+        <member name="F:WizardWrx.MagicNumbers.TICKS_PER_1_SECOND">
+            <summary>
+            There are 10,000,000 ticks in one second.
+            
+            Use this constant to construct a TimeSpan of the corresponding
+            length (value) by way of its one-argument constructor, or to
+            increase or decrease the value of a time span by the corresponding
+            amount by way of its one-argument method.
+            </summary>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_WEEK"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_DAY"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_23_59_59"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_23_59_00"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_HOUR"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_MINUTE"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_MILLISECOND"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_SECOND"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.MILLISECONDS_PER_SECOND"/>
+        </member>
+        <member name="F:WizardWrx.MagicNumbers.TICKS_PER_1_MILLISECOND">
+            <summary>
+            There are 10,000 ticks in one millisecond.
+            
+            Use this constant to construct a TimeSpan of the corresponding
+            length (value) by way of its one-argument constructor, or to
+            increase or decrease the value of a time span by the corresponding
+            amount by way of its one-argument method.
+            </summary>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_WEEK"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_DAY"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_23_59_59"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_23_59_00"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_HOUR"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_MINUTE"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.TICKS_PER_1_SECOND"/>
         </member>
         <member name="F:WizardWrx.MagicNumbers.UNC_PREFIX_START_POS">
             <summary>
-            A UNC prefix starts here.
+            A UNC prefix starts here at this character position.
             </summary>
             <seealso cref="F:WizardWrx.MagicNumbers.MINUS_ONE"/>
         </member>
         <member name="F:WizardWrx.MagicNumbers.UNC_PREFIX_START_LEN">
             <summary>
-            A UNC prefix is this long.
+            A UNC prefix has this many characters.
             </summary>
             <seealso cref="F:WizardWrx.MagicNumbers.PLUS_TWO"/>
         </member>
