@@ -10,9 +10,10 @@ That library, `WizardWrx.ClassAndMethodDiagnosticInfo.dll`, goes into a new
 assembly because it requires the version of `System.Runtime.CompilerServices`
 that ships with version __4.5__ of the Microsoft .NET Framework. All of the
 above preserves the targeting of everything else to version __3.5 Client Profile__
-of the framework.
+of the framework, because backwards compatibility matters a great deal,
+especially when it is so easy to achieve without cost.
 
-# Version 7.13
+## Version 7.13
 
 Define `EXACTLY_ONE_HUNDRED_MILLION_LONG`, to meet an immediate requirement, along
 with `EXACTLY_ONE_HUNDRED_THOUSAND` and `EXACTLY_ONE_HUNDRED_MILLION`, to more or
