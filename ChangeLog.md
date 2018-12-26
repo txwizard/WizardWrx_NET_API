@@ -12,16 +12,16 @@ Following is a summary of changes made in version 7.14, released Monday, 24 Nove
 
 Define the constants listed in the following table.
 
-|-Name-|-Value-|
+| Name                    |             Value:|
 |-------------------------|-------------------|
-|-TICKS_PER_1_WEEK-|-6,048,000,000,000-|
-|-TICKS_PER_1_DAY-|-864,000,000,000-|
-|-TICKS_PER_23_59_59-|-863,990,000,000-|
-|-TICKS_PER_23_59_00-|-863,400,000,000-|
-|-TICKS_PER_1_HOUR-|-36,000,000,000-|
-|-TICKS_PER_1_MINUTE-|-600,000,000-|
-|-TICKS_PER_1_SECOND-|-10,000,000-|
-|-TICKS_PER_1_MILLISECOND-|-10,000-|
+| TICKS_PER_1_WEEK        | 6,048,000,000,000:|
+| TICKS_PER_1_DAY         |   864,000,000,000:|
+| TICKS_PER_23_59_59      |   863,990,000,000:|
+| TICKS_PER_23_59_00      |   863,400,000,000:|
+| TICKS_PER_1_HOUR        |    36,000,000,000:|
+| TICKS_PER_1_MINUTE      |       600,000,000:|
+| TICKS_PER_1_SECOND      |        10,000,000:|
+| TICKS_PER_1_MILLISECOND |            10,000:|
 
 __BREAKING CHANGE:__ TICKS_PER_SECOND is correctly described in the XML comment,
 but its numerical value was off by a factor of one thousand. This is corrected
