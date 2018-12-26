@@ -52,6 +52,27 @@ are defined in companion class `ArrayInfo`, while `SpecialCharacters` defines
 character representations of the visually ambiguous numbers and letters, for use
 in place of literals.
 
+  Version 7.14 defines the constants listed in the following table.
+
+  | Name                    |             Value |
+  |-------------------------|------------------:|
+  | TICKS_PER_1_WEEK        | 6,048,000,000,000 |
+  | TICKS_PER_1_DAY         |   864,000,000,000 |
+  | TICKS_PER_23_59_59      |   863,990,000,000 |
+  | TICKS_PER_23_59_00      |   863,400,000,000 |
+  | TICKS_PER_1_HOUR        |    36,000,000,000 |
+  | TICKS_PER_1_MINUTE      |       600,000,000 |
+  | TICKS_PER_1_SECOND      |        10,000,000 |
+  | TICKS_PER_1_MILLISECOND |            10,000 |
+
+  __BREAKING CHANGE__ `TICKS_PER_SECOND` is correctly described in the XML
+comment, but its numerical value was off by a factor of one thousand. This is
+corrected by making its value equal to `TICKS_PER_1_SECOND`.
+
+  These tick values were computed by a custom class in a lab project that I use to
+test ideas and algorithms, and the constants were derived therefrom by Excel
+worksheet formulas.
+
 *   __MoreMath__ (defined in `WizardWrx.MoreMath.dll`) defines mathematical
 operations that are mechanically simple, but tricky to get right.
 
