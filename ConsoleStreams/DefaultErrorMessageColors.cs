@@ -31,7 +31,7 @@
 
     Author:             David A. Gray
 
-    License:            Copyright (C) 2017, David A. Gray. All rights reserved.
+    License:            Copyright (C) 2017-2019, David A. Gray. All rights reserved.
 
                         Redistribution and use in source and binary forms, with
                         or without modification, are permitted provided that the
@@ -77,6 +77,9 @@
 	2017/02/26 7.0     DAG    This class makes its debut.
 
 	2017/07/12 7.0     DAG    Override the ToString on the base (object) class.
+
+    2019/04/28 7.15    DAG    Supplement the PropsSetFromConfig property with a
+                              PropsLeftAtDefault property.
     ============================================================================
 */
 
@@ -172,11 +175,25 @@ namespace WizardWrx.ConsoleStreams
 		}	// RecoverableExceptionBackgroundColor property
 
 
-		/// <summary>
-		/// Get the count of properties that were set from the linked
-		/// configuration file.
-		/// </summary>
-		public int PropsSetFromConfig
+        /// <summary>
+        /// Get the count of properties that were omitted from the linked 
+        /// configuration file. When this value is greater than zero, generic
+        /// dictionary MissingConfigSettings, inherited from the
+        /// AssemblyLocatorBase base class, contains one string for each such
+        /// property.
+        /// </summary>
+        /// <seealso cref="AssemblyLocatorBase.MissingConfigSettings"/>
+        public int PropsLeftAtDefault
+        {
+            get { return _intPropsLeftAtDefault; }
+        }   // Read only PropsLeftAtDefault property
+
+
+        /// <summary>
+        /// Get the count of properties that were set from the linked
+        /// configuration file.
+        /// </summary>
+        public int PropsSetFromConfig
 		{
 			get { return _intPropsSetFromConfig; }
 		}	// Read only PropsSetFromConfig property
@@ -218,9 +235,11 @@ namespace WizardWrx.ConsoleStreams
 		/// maintenance burden.
 		/// </summary>
 		private void InitializeInstance ( )
-		{	// This one-statement initializer is future-proofing. In its present form, the optimizer should inline it.
-			_intPropsSetFromConfig = base.SetPropertiesFromDLLConfiguration ( typeof ( DefaultErrorMessageColors ) );
-		}	// InitializeInstance
+		{   // This one-statement initializer is future-proofing. In its present form, the optimizer should inline it.
+            AssemblyLocatorBase.PropertySourceCounts sourceCounts = base.SetPropertiesFromDLLConfiguration ( typeof ( DefaultErrorMessageColors ) );
+            _intPropsSetFromConfig = sourceCounts.SpecifiedInConfiguration;
+            _intPropsLeftAtDefault = sourceCounts.Defaulted;
+        }	// InitializeInstance
 
 		private ConsoleColor _clrFatalExceptionTextColor;
 		private ConsoleColor _clrFatalExceptionBackgroundColor;
@@ -229,5 +248,7 @@ namespace WizardWrx.ConsoleStreams
 		private ConsoleColor _clrRecoverableExceptionBackgroundColor;
 
 		private int _intPropsSetFromConfig = MagicNumbers.ZERO;
-	}	// public class DefaultErrorMessageColors
+
+        private int _intPropsLeftAtDefault = MagicNumbers.ZERO;
+    }	// public class DefaultErrorMessageColors
 }	// partial namespace WizardWrx.ConsoleStreams

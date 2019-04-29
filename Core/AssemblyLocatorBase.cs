@@ -180,14 +180,18 @@
 	2017/07/16 7.0     DAG    Replace references to string.empty, which is not a
                               true constant, with SpecialStrings.EMPTY_STRING,
                               which is one.
+
+    2019/04/28 7.15    DAG    1) Replace the ConfigMessage string property with
+                                 the RecoveredConfigurationExceptions list.
+
+                              2) Replace the properties collection enumeration
+                                 with the much more efficient dictionary lookup.
     ============================================================================
 */
 
 
 using System;
 using System.Configuration;
-
-/* Added by DAG */
 
 using System.IO;
 using System.Reflection;
@@ -203,8 +207,9 @@ namespace WizardWrx.Core
     /// <remarks>
     /// Given the location from which an assembly was loaded, you can learn
     /// almost anything else you need to know about that file, such as its size,
-    /// age, and directory. Given the directory, you can locate satellite files,
-    /// such as custom configuration files.
+    /// age, version, and directory. Given the directory, you can locate
+    /// satellite files, such as configuration files that contain settings that
+    /// it uses.
     /// </remarks>
 	/// <seealso cref="PropertyDefaults"/>
     public abstract class AssemblyLocatorBase
@@ -260,12 +265,34 @@ namespace WizardWrx.Core
         #endregion  // Public Constants
 
 
+        #region Publicly Visible Data Structures
+        /// <summary>
+        /// SetPropertiesFromDLLConfiguration fills and returns this structure,
+        /// to account for all defined properties, whether or not their values
+        /// are configured.
+        /// </summary>
+        public struct PropertySourceCounts
+        {
+            /// <summary>
+            /// Count of properties read from the configuration file.
+            /// </summary>
+            public int SpecifiedInConfiguration;
+
+            /// <summary>
+            /// Count of properties omitted from the configuration file, and
+            /// left at their default values.
+            /// </summary>
+            public int Defaulted;
+        }   // public struct PropertySourceCounts
+        #endregion  // Publicly Visible Data Structures
+
+
         #region Private Constants and Instance Storage
         const int ALL_VERSION_PARTS = 4;
 
-#if DEBUG_MESSAGES_WW
-        const string DEBUG_MESSAGES_WW_TPL = @"DEBUG_MESSAGES_WW, in class {0} (derived from AssemblyLocatorBase): {1} = {2}";
-#endif	// #if DEBUG_MESSAGES_WW
+        #if DEBUG_MESSAGES_WW
+            const string DEBUG_MESSAGES_WW_TPL = @"DEBUG_MESSAGES_WW, in class {0} (derived from AssemblyLocatorBase): {1} = {2}";
+        #endif	// #if DEBUG_MESSAGES_WW
 
 		const string APPSETTINGS = @"appSettings";
 
@@ -281,7 +308,7 @@ namespace WizardWrx.Core
         /// Once the energy required to gather the location has been expended,
         /// save it for future use.
         /// </summary>
-        string _strAssemblyLocation = null;
+        protected string _strAssemblyLocation = null;
 
         /// <summary>
         /// Likewise, hang onto the AssemblyDataPath.
@@ -295,7 +322,6 @@ namespace WizardWrx.Core
 		/// application directory.
         /// </summary>
         string _strAssemblyConfigPath = null;
-        string _strConfigMessage = SpecialStrings.EMPTY_STRING;
         string _strStartupAssemblyLocation = null;
         bool _fLoadedFromGAC = false;
         #endregion  // Private Constants and Instance Storage
@@ -385,12 +411,24 @@ namespace WizardWrx.Core
 
 
         /// <summary>
-        /// This property returns a message when the configuration file is
-        /// missing or empty. Under normal conditions, it returns the empty
-        /// string.
+        /// This read only property returns a generic List of Exceptions that
+        /// arose during the initialization phase of an instance, and were
+        /// silently recovered, so that they can be reported for investigation.
         /// </summary>
-        public string ConfigMessage
-        { get { return _strConfigMessage; } }
+        /// <remarks>
+        /// This property supersedes ConfigMessage, which returned the list of
+        /// exceptions as one long string, discarding their all-important stack
+        /// traces.
+        /// </remarks>
+        public System.Collections.Generic.List<RecoveredException> RecoveredConfigurationExceptions { get; private set; }
+
+
+        /// <summary>
+        /// This read-only property returns a generic List of string, each of
+        /// which is a message that names a property that was omitted from the
+        /// configuration file, along with its default value.
+        /// </summary>
+        public UnconfiguredDLLSettings MissingConfigSettings { get; protected set; }
 
 
         /// <summary>
@@ -403,13 +441,13 @@ namespace WizardWrx.Core
             {
                 string strAssemblyConfigFleFQFN = FullyQualifiedDLLConfigFileName ( FOR_USE );
 
-#if DEBUG_MESSAGES_WW
-                Console.WriteLine (
-                    DEBUG_MESSAGES_WW_TPL ,
-                    System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,
-                    "strAssemblyConfigFleFQFN" ,
-                    strAssemblyConfigFleFQFN );
-#endif	// #if DEBUG_MESSAGES_WW
+                #if DEBUG_MESSAGES_WW
+                    Console.WriteLine (
+                        DEBUG_MESSAGES_WW_TPL ,
+                        System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,
+                        "strAssemblyConfigFleFQFN" ,
+                        strAssemblyConfigFleFQFN );
+                #endif	// #if DEBUG_MESSAGES_WW
 
 				if ( File.Exists ( strAssemblyConfigFleFQFN ) )
                 {   // Configuration file found. Load it.
@@ -417,9 +455,19 @@ namespace WizardWrx.Core
                 }   // TRUE (normal) block, if ( File.Exists ( strAssemblyConfigFleFQFN ) )
                 else
 				{   // The configuration file is missing. Report by way of the ConfigMessage property, and return a null reference.
-                    _strConfigMessage = string.Format (
-                        Properties.Resources.ERRMSG_MISSING_CONFIG_FILE ,
-                        strAssemblyConfigFleFQFN );
+                    if ( RecoveredConfigurationExceptions == null)
+                    {   // Creat as and when needed.
+                        RecoveredConfigurationExceptions = new System.Collections.Generic.List<RecoveredException> ( );
+                    }   // if ( RecoveredConfigurationExceptions == null)
+
+                    RecoveredConfigurationExceptions.Add (
+                        new RecoveredException (
+                            string.Format (
+                                Properties.Resources.ERRMSG_MISSING_CONFIG_FILE ,
+                                strAssemblyConfigFleFQFN ) ,
+                            MethodBase.GetCurrentMethod ( ).Module.Name ,
+                            Environment.StackTrace ,
+                            MethodBase.GetCurrentMethod ( ).Name ) );
                     return null;
                 }   // FALSE (missing configuration file) block, if ( File.Exists ( strAssemblyConfigFleFQFN ) )
             }   // protected Configuration DLLConfiguration Get method
@@ -435,7 +483,7 @@ namespace WizardWrx.Core
         /// returned by its DLLConfiguration sibling, it requires only a single
         /// statement, with a little help from an explicit cast.
         /// </remarks>
-        protected AppSettingsSection DLLettingsSection
+        protected AppSettingsSection DLLSettingsSection
         {
             get
             {
@@ -447,18 +495,31 @@ namespace WizardWrx.Core
 
                     if ( rcfgAppSettings.Settings.Count == EMPTY_CONFIG )
                     {
-                        _strConfigMessage = string.Format (
-							Properties.Resources.ERRMSG_CONFIG_FILE_IS_EMPTY ,
-                            FullyQualifiedDLLConfigFileName ( FOR_SHOW ) );
+                        if ( RecoveredConfigurationExceptions == null )
+                        {   // Create as and when needed.
+                            RecoveredConfigurationExceptions = new System.Collections.Generic.List<RecoveredException> ( );
+                        }   // if ( RecoveredConfigurationExceptions == null)
 
-#if DEBUG_MESSAGES_WW
-                        Console.WriteLine (
-                            DEBUG_MESSAGES_WW_TPL ,
-                            System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,
-                            "_strConfigMessage" ,
-                            _strConfigMessage );
-#endif	// #if DEBUG_MESSAGES_WW
-					}   // Notify the caller if the file is empty.
+                        string strMessage = string.Format (
+                            Properties.Resources.ERRMSG_CONFIG_FILE_IS_EMPTY ,
+                            FullyQualifiedDLLConfigFileName ( FOR_SHOW ) );
+                        TraceLogger.WriteWithBothTimesLabeledLocalFirst ( strMessage );
+                        RecoveredConfigurationExceptions.Add ( new RecoveredException (
+                            string.Format (
+                                Properties.Resources.ERRMSG_FROM_THROWN_EXCEPTION ,
+                                strMessage ) ,
+                            MethodBase.GetCurrentMethod ( ).Module.Name ,
+                            Environment.StackTrace ,
+                            MethodBase.GetCurrentMethod ( ).Name ) );
+
+                        #if DEBUG_MESSAGES_WW
+                            Console.WriteLine (
+                                DEBUG_MESSAGES_WW_TPL ,
+                                System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,
+                                "_strConfigMessage" ,
+                                _strConfigMessage );
+                        #endif   // #if DEBUG_MESSAGES_WW
+                    }   // Notify the caller if the file is empty.
 
                     return rcfgAppSettings;
                 }   // TRUE (normal case) block, if ( cfgSection != null )
@@ -477,8 +538,8 @@ namespace WizardWrx.Core
         {
             get
             {
-                if ( this.DLLettingsSection != null )
-                    return this.DLLettingsSection.Settings;
+                if ( this.DLLSettingsSection != null )
+                    return this.DLLSettingsSection.Settings;
                 else
                     return null;
             }   // // protected KeyValueConfigurationCollection DLLSettings Get method
@@ -504,16 +565,30 @@ namespace WizardWrx.Core
 		/// The return value is a string, ready to be appended to the
 		/// ConfigMessage string.
 		/// </returns>
-		private string SaveErrorReport (
+		private Exception SaveErrorReport (
 			Type pderivedType ,
 			string pstrPropertyName ,
 			Exception pexAllKinds )
 		{
-			return string.Format (
-				Properties.Resources.ERRMSG_CONFIG_PROP_NOT_FOUND ,				// Format Control String
-				pstrPropertyName ,												// Format Item 0 = while processing the {0} property
-				pderivedType.FullName ,											// Format Item 1 = on a {1} object
-				 pexAllKinds.Message );											// Format Item 2 = Details are as follows: {2}
+            TraceLogger.WriteWithBothTimesLabeledLocalFirst (
+                string.Format (
+                    @"At the top of method {0}, {1}.{2} = {3}" ,
+                    new string [ ]
+                    {
+                        MethodBase.GetCurrentMethod().Name ,                    // Format Item 0: At the top of method {0}
+                        nameof ( Environment ) ,                                // Format Item 0: , {1}
+                        nameof ( Environment.StackTrace ) ,                     // Format Item 0: .{2}
+                        Environment.StackTrace                                  // Format Item 0: = {3}
+                    } ) );
+            string strMessage = string.Format (
+                Properties.Resources.ERRMSG_CONFIG_PROP_NOT_FOUND ,             // Format Control String
+                pstrPropertyName ,                                              // Format Item 0 = while processing the {0} property
+                pderivedType.FullName ,                                         // Format Item 1 = on a {1} object
+                pexAllKinds.Message );				    						// Format Item 2 = Details are as follows: {2}
+            TraceLogger.WriteWithBothTimesLabeledLocalFirst ( strMessage );
+            return new Exception (
+                strMessage ,
+                pexAllKinds );
 		}	// SaveErrorReport
         #endregion  // Protected and Public ReadOnly Properties
 
@@ -616,65 +691,144 @@ namespace WizardWrx.Core
 		/// This method uses some fairly tricky Reflection gymnastics to map the
 		/// key names in a configuration file to property names on an object.
 		/// </remarks>
-		protected int SetPropertiesFromDLLConfiguration ( Type pderivedType )
+		protected PropertySourceCounts SetPropertiesFromDLLConfiguration ( Type pderivedType )
 		{
 			const BindingFlags BASELINE_BINDING_FLAGS = BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public;
 
-			int rintFieldCount = MagicNumbers.ZERO;
+            PropertySourceCounts rutpCounts = new PropertySourceCounts ( );
 
-			MemberInfo [ ] collMyProperties = pderivedType.GetMembers ( BASELINE_BINDING_FLAGS );
+            rutpCounts.Defaulted = MagicNumbers.ZERO;
+            rutpCounts.SpecifiedInConfiguration = MagicNumbers.ZERO;
+
+            string [ ] astrDefaultErrorMessageColors = DLLSettings.AllKeys;
 
 			for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ;
-					  intJ < collMyProperties.Length ;
+					  intJ < astrDefaultErrorMessageColors.Length ;
 					  intJ++ )
 			{
-				string strPropertyName = null;									// This must be visible to the catch block.
+				string strPropertyName = null;                                  // This must be visible to the catch block.
 
-				try
-				{
-					if ( collMyProperties [ intJ ].MemberType == MemberTypes.Property
-						 && collMyProperties [ intJ ].DeclaringType == pderivedType )
-					{	// Found an instance property. Try to set it.
-						strPropertyName = collMyProperties [ intJ ].Name;
-						string strConfigValueString = DLLSettings [ strPropertyName ].Value;
-						PropertyInfo piThisProperty = this.GetType ( ).GetProperty (
-							strPropertyName ,
-							BASELINE_BINDING_FLAGS );
-						piThisProperty.SetValue (
-							this ,												// Object to which to apply setting
-							FromString (
-								piThisProperty ,
-								strConfigValueString ) ,						// Value to assign to the property to which piThisProperty refers
-							BASELINE_BINDING_FLAGS | BindingFlags.SetProperty ,	// invokeAtt	- BindingFlags bit mask
-							null ,												// binder		- use the default binder
-							null ,												// index		- null for this non-indexed property
-							null );												// culture		- use the default
-						rintFieldCount++;
-					}	// if ( collMyProperties [ intJ ].MemberType == MemberTypes.Property && collMyProperties [ intJ ].DeclaringType == pderivedType )
-				}
-				catch ( Exception exAllKinds )
-				{	// Since the catch block is within the body of the For loop, processing advances to the next item.
-					if ( string.IsNullOrEmpty ( _strConfigMessage ) )
-					{
-						_strConfigMessage = SaveErrorReport (
-							pderivedType , strPropertyName ,
-							exAllKinds );
-					}	// TRUE (probable outcome) block, if ( string.IsNullOrEmpty ( _strConfigMessage ) )
-					else
-					{
-						_strConfigMessage = string.Concat (
-							_strConfigMessage ,
-							Environment.NewLine ,
-							Environment.NewLine ,
-							SaveErrorReport (
-								pderivedType ,
-								strPropertyName ,
-								exAllKinds ) );
-					}	// FALSE (less likely outcome) block, if ( string.IsNullOrEmpty ( _strConfigMessage ) )
-				}
-			}	// for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ; intJ < collMyProperties.Length ; intJ++ )
+                try
+                {
+                    strPropertyName = astrDefaultErrorMessageColors [ intJ ];
+                    string strConfigValueString = DLLSettings [ strPropertyName ].Value;
+                    TraceLogger.WriteWithBothTimesLabeledLocalFirst (
+                        string.Format (
+                            @"At iteration {0} in {1}: {2} = {3}" ,             // Format control string
+                            new object [ ]                                      // Array of values to substitute for tokens in format control string
+                            {
+                                ArrayInfo.OrdinalFromIndex ( intJ ) ,           // Format Item 0: At iteration {0}
+                                MethodBase.GetCurrentMethod ( ).Name ,          // Format Item 1: in {1}
+                                strPropertyName ,                               // Format Item 2: : {2}
+                                strConfigValueString                            // Format Item 3: = {3}
+                            } ) );
+                    PropertyInfo piThisProperty = this.GetType ( ).GetProperty (
+                        strPropertyName ,                                       // string      name         = The string containing the name of the property to get
+                        BASELINE_BINDING_FLAGS );                               // bindingAttr BindingFlags = A bitmask comprised of one or more BindingFlags that specify how the search is conducted
 
-			return rintFieldCount;
+                    if ( piThisProperty != null )
+                    {
+                        piThisProperty.SetValue (
+                            this ,                                                  // Object      obj          = Object to which to apply setting
+                            FromString (
+                                piThisProperty ,
+                                strConfigValueString ) ,                            // Object      value        = Value to assign to the property to which piThisProperty refers
+                            BASELINE_BINDING_FLAGS | BindingFlags.SetProperty ,     // invokeAttr  invokeAtt	= A bitwise combination of the following enumeration members that specify the invocation attribute: InvokeMethod, reateInstance, Static, GetField, SetField, GetProperty, or SetProperty. You must specify a suitable invocation attribute.
+                            null ,                                                  // Binder      binder		= An object that enables the binding, coercion of argument types, invocation of members, and retrieval of MemberInfo objects through reflection. If binder is null, the default binder is used.
+                            null ,                                                  // Object[]    index		= Optional index values for indexed properties. This value should be null for non-indexed properties.
+                            null );                                                 // CultureInfo culture		= The culture for which the resource is to be localized. If the resource is not localized for this culture, the Parent property will be called successively in search of a match. If this value is null, the culture-specific information is obtained from the CurrentUICulture property.
+                        rutpCounts.SpecifiedInConfiguration++;                      // Count properties successfully set; the final value is returned as the function value.
+                    }   // TRUE (The configuration file has a value for this property.) block, if ( piThisProperty != null )
+                    else
+                    {
+                        MissingConfigSettings = MissingConfigSettings ?? UnconfiguredDLLSettings.TheOnlyInstance;
+
+                        MissingConfigSettings.Add (
+                            Path.GetFileName ( _strAssemblyLocation ) ,
+                                strPropertyName ,                               // Format Item 0: property {1} default value
+                                strConfigValueString );                         // Format Item 1: default value of {2} accepted
+                        rutpCounts.Defaulted++;                                 // Count properties that retained their hard coded default values.
+                    }   // FALSE (A value for this property is absent from the configuration file.) block, if ( piThisProperty != null )
+                }
+                catch ( Exception exAllKinds )
+                {	// Since the catch block is within the body of the For loop, processing advances to the next item.
+                    TraceLogger.WriteWithBothTimesLabeledLocalFirst (
+                        string.Format (
+                            @"{0}.{1} = {2}" ,
+                            nameof ( Environment ) ,
+                            nameof ( Environment.StackTrace ) ,
+                            Environment.StackTrace ) );
+                    if ( RecoveredConfigurationExceptions == null )
+                    {   // Create as and when needed.
+                        RecoveredConfigurationExceptions = new System.Collections.Generic.List<RecoveredException> ( );
+                    }   // if ( RecoveredConfigurationExceptions == null )
+
+                    RecoveredConfigurationExceptions.Add (
+                       new RecoveredException (
+                           string.Format (
+                               Properties.Resources.ERRMSG_EXCEPTION_NOT_THROWN ,
+                               SaveErrorReport (
+                                   this.GetType ( ) ,
+                                   strPropertyName ,
+                                   exAllKinds ).Message ) ,
+                           exAllKinds.Source ,
+                           exAllKinds.StackTrace ,
+                           exAllKinds.TargetSite.Name ) );
+                    Exception exWrapped = RecoveredConfigurationExceptions [ ArrayInfo.IndexFromOrdinal ( RecoveredConfigurationExceptions.Count ) ];
+                    TraceLogger.WriteWithBothTimesLabeledLocalFirst (
+                        string.Format (
+                            Properties.Resources.TRACEMSG_EXCEPTION_NOT_THROWN_1 ,
+                            exWrapped.Message ) );
+                    TraceLogger.WriteWithBothTimesLabeledLocalFirst (
+                        string.Format (
+                            Properties.Resources.TRACEMSG_EXCEPTION_NOT_THROWN_2 ,
+                            exWrapped.Source ?? Common.Properties.Resources.MSG_OBJECT_REFERENCE_IS_NULL ) );
+                    TraceLogger.WriteWithBothTimesLabeledLocalFirst (
+                        string.Format (
+                            Properties.Resources.TRACEMSG_EXCEPTION_NOT_THROWN_3 ,
+                            exWrapped.TargetSite != null
+                                ? exWrapped.TargetSite.Name
+                                : Common.Properties.Resources.MSG_OBJECT_REFERENCE_IS_NULL ) );
+                    TraceLogger.WriteWithBothTimesLabeledLocalFirst (
+                        string.Format (
+                            Properties.Resources.TRACEMSG_EXCEPTION_NOT_THROWN_4 ,
+                            exWrapped.StackTrace ?? Common.Properties.Resources.MSG_OBJECT_REFERENCE_IS_NULL ) );
+
+                    //  --------------------------------------------------------
+                    //  Since SaveErrorReport appends the inner exception, this
+                    //  test is technically redundant, but I chose to leave it,
+                    //  as a reminder that new exceptions are not necessarily
+                    //  so decordated. Hence, with the test, this code is a bit
+                    //  more portable.
+                    //  --------------------------------------------------------
+
+                    if ( exWrapped.InnerException != null )
+                    {
+                        TraceLogger.WriteWithBothTimesLabeledLocalFirst (
+                        string.Format (
+                            Properties.Resources.TRACEMSG_EXCEPTION_NOT_THROWN_5 ,
+                            exWrapped.InnerException.Message ?? Common.Properties.Resources.MSG_OBJECT_REFERENCE_IS_NULL ) );
+                        TraceLogger.WriteWithBothTimesLabeledLocalFirst (
+                            string.Format (
+                                Properties.Resources.TRACEMSG_EXCEPTION_NOT_THROWN_6 ,
+                                exWrapped.InnerException.Source ?? Common.Properties.Resources.MSG_OBJECT_REFERENCE_IS_NULL ) );
+                        TraceLogger.WriteWithBothTimesLabeledLocalFirst (
+                            string.Format (
+                                Properties.Resources.TRACEMSG_EXCEPTION_NOT_THROWN_7 ,
+                                exWrapped.InnerException.TargetSite.Name ?? Common.Properties.Resources.MSG_OBJECT_REFERENCE_IS_NULL ) );
+                        TraceLogger.WriteWithBothTimesLabeledLocalFirst (
+                            string.Format (
+                                Properties.Resources.TRACEMSG_EXCEPTION_NOT_THROWN_8 ,
+                                exWrapped.InnerException.StackTrace ?? Common.Properties.Resources.MSG_OBJECT_REFERENCE_IS_NULL ) );
+                    }   // TRUE (anticipated outcome) block, if ( exWrapped.InnerException != null )
+                    else
+                    {
+                        TraceLogger.WriteWithBothTimesLabeledLocalFirst ( Properties.Resources.TRACEMSG_EXCEPTION_NOT_THROWN_9 );
+                    }   // FALSE (unanticipated outcome) block, if ( exWrapped.InnerException != null )
+                }   // catch ( Exception exAllKinds )
+            }   // for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ; intJ < astrDefaultErrorMessageColors.Length ; intJ++ )
+
+            return rutpCounts;
 		}	// SetPropertiesFromDLLConfiguration
 		#endregion  // Public Methods
 
@@ -772,13 +926,13 @@ namespace WizardWrx.Core
 		private void InitializeInstance ( )
 		{
 
-#if DEBUG_MESSAGES_WW
-            Console.WriteLine (
-                DEBUG_MESSAGES_WW_TPL ,
-                System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,
-                "_strAssemblyLocation" ,
-                _strAssemblyLocation );
-#endif	// #if DEBUG_MESSAGES_WW
+            #if DEBUG_MESSAGES_WW
+                Console.WriteLine (
+                    DEBUG_MESSAGES_WW_TPL ,
+                    System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,
+                    "_strAssemblyLocation" ,
+                    _strAssemblyLocation );
+            #endif	// #if DEBUG_MESSAGES_WW
 
 			if ( this.GetType ( ).Module.Assembly.GlobalAssemblyCache )
 			{   // Assembly loaded from GAC. Use application path.
@@ -790,51 +944,52 @@ namespace WizardWrx.Core
 					Path.GetFileName ( _strAssemblyLocation ) );
 				_fLoadedFromGAC = true;      // Remember the answer.
 
-#if DEBUG_MESSAGES_WW
-                Console.WriteLine (
-                    DEBUG_MESSAGES_WW_TPL ,
-                    System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,
-                    "_strStartupAssemblyLocation" ,
-                    _strStartupAssemblyLocation );
-                Console.WriteLine (
-                    DEBUG_MESSAGES_WW_TPL ,
-                    System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,
-                    "_strAssemblyDataPath" ,
-                    _strAssemblyDataPath );
-                Console.WriteLine (
-                    DEBUG_MESSAGES_WW_TPL ,
-                    System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,
-                    "_strAssemblyConfigPath" ,
-                    _strAssemblyConfigPath );
-                Console.WriteLine (
-                    DEBUG_MESSAGES_WW_TPL ,
-                    System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,
-                    "_fLoadedFromGAC" ,
-                    _fLoadedFromGAC );
-#endif	// #if DEBUG_MESSAGES_WW
+                #if DEBUG_MESSAGES_WW
+                    Console.WriteLine (
+                        DEBUG_MESSAGES_WW_TPL ,
+                        System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,
+                        "_strStartupAssemblyLocation" ,
+                        _strStartupAssemblyLocation );
+                    Console.WriteLine (
+                        DEBUG_MESSAGES_WW_TPL ,
+                        System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,
+                        "_strAssemblyDataPath" ,
+                        _strAssemblyDataPath );
+                    Console.WriteLine (
+                        DEBUG_MESSAGES_WW_TPL ,
+                        System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,
+                        "_strAssemblyConfigPath" ,
+                        _strAssemblyConfigPath );
+                    Console.WriteLine (
+                        DEBUG_MESSAGES_WW_TPL ,
+                        System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,
+                        "_fLoadedFromGAC" ,
+                        _fLoadedFromGAC );
+                #endif	// #if DEBUG_MESSAGES_WW
 			}   // TRUE block, if ( this.GetType ( ).Module.Assembly.GlobalAssemblyCache )
 			else
 			{   // Assembly loaded from application directory. Use its path.
 				_strAssemblyDataPath = Path.GetDirectoryName ( _strAssemblyLocation );
 				_strAssemblyConfigPath = _strAssemblyLocation;
 				_fLoadedFromGAC = false;     // Set it anyway, to be clear.
-#if DEBUG_MESSAGES_WW
-                Console.WriteLine (
-                    DEBUG_MESSAGES_WW_TPL ,
-                    System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,
-                    "_strAssemblyDataPath" ,
-                    _strAssemblyDataPath );
-                Console.WriteLine (
-                    DEBUG_MESSAGES_WW_TPL ,
-                    System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,
-                    "_strAssemblyConfigPath" ,
-                    _strAssemblyConfigPath );
-                Console.WriteLine (
-                    DEBUG_MESSAGES_WW_TPL ,
-                    System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,
-                    "_fLoadedFromGAC" ,
-                    _fLoadedFromGAC );
-#endif	// #if DEBUG_MESSAGES_WW
+
+                #if DEBUG_MESSAGES_WW
+                    Console.WriteLine (
+                        DEBUG_MESSAGES_WW_TPL ,
+                        System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,
+                        "_strAssemblyDataPath" ,
+                        _strAssemblyDataPath );
+                    Console.WriteLine (
+                        DEBUG_MESSAGES_WW_TPL ,
+                        System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,
+                        "_strAssemblyConfigPath" ,
+                        _strAssemblyConfigPath );
+                    Console.WriteLine (
+                        DEBUG_MESSAGES_WW_TPL ,
+                        System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,
+                        "_fLoadedFromGAC" ,
+                        _fLoadedFromGAC );
+                #endif	// #if DEBUG_MESSAGES_WW
 			}   // FALSE block, if ( this.GetType ( ).Module.Assembly.GlobalAssemblyCache )
 		}	// InitializeInstance
 		#endregion  // Private Instance Methods

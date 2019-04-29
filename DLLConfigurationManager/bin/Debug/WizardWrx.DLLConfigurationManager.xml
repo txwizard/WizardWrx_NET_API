@@ -903,6 +903,13 @@
             is the name of the method in which the exception was thrown.
             </remarks>
         </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.ExceptionLogger.s_strSettingsOmittedFromConfigFile">
+            <summary>
+            Once an instance has spring into being, this static property returns
+            the configuration values that are missing a setting in the
+            configuration file.
+            </summary>
+        </member>
         <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.GetStandardHandleStates(WizardWrx.DLLConfigurationManager.StateManager)">
             <summary>
             The StateManager calls this method once, immediately after both it

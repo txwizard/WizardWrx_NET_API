@@ -152,6 +152,9 @@
     <value>ERROR: The DisplayOrder property cannot be set to zero.</value>
     <comment>The ReportDetail class uses this error message in its exception reports.</comment>
   </data>
+  <data name="ERRMSG_DUPLICATE_CONFIG_PROP_NAME" xml:space="preserve">
+    <value>Property name {0} in configuration file {1} is a duplicate name.</value>
+  </data>
   <data name="ERRMSG_DUPLICATE_SWITCH" xml:space="preserve">
     <value>Switch {0} with a default value of {1} is a duplicate.</value>
     <comment>rivate CmdLneArgsBasic instance method DefineNewSwitch constructs an exception report from this template.</comment>
@@ -162,6 +165,14 @@
   <data name="ERRMSG_EXCEPTION_IN_DEFINE_NEW_SWITCH" xml:space="preserve">
     <value>An {0} Exception was caught while attempting to define a switch named {1} with a default value of {2}.</value>
     <comment>Private CmdLneArgsBasic instance method DefineNewSwitch constructs an exception report from this template.</comment>
+  </data>
+  <data name="ERRMSG_EXCEPTION_NOT_THROWN" xml:space="preserve">
+    <value>Message from Exception Logged without throwing: {0}</value>
+    <comment>Protected methods DLLettingsSection and SetPropertiesFromDLLConfiguration use this message to report when an exception is actually thrown.</comment>
+  </data>
+  <data name="ERRMSG_FROM_THROWN_EXCEPTION" xml:space="preserve">
+    <value>Message from Exception Thrown and Logged: {0}</value>
+    <comment>Protected methods DLLettingsSection and SetPropertiesFromDLLConfiguration use this message to report when an exception is actually thrown.</comment>
   </data>
   <data name="ERRMSG_INTERNAL_ERROR_UNSUPP_ALG" xml:space="preserve">
     <value>An internal error has been detected in routine ReformatSysDate.{2}An unexpected FormattingAlgorithm of {0} has been encountered while processing the following input string:{2}{1}</value>
@@ -290,6 +301,30 @@
     <value>{0} ({1} UTC)</value>
     <comment>Public static TimeDisplayFormatter.PrepareLocalAndUTCTimes constructs its output from this template and a pair of DateTime structures, the first of which is expected to represent local time, while the second represents UTC time.</comment>
   </data>
+  <data name="MSG_ACCEPTED_DEFAULT_VALUE" xml:space="preserve">
+    <value>    {0} of {1}: {2} = {3}{4}</value>
+    <comment>Used by EnumerateMissingConfigurationValues method on PropertyDefaults class</comment>
+  </data>
+  <data name="MSG_ACCEPTED_LIST_END" xml:space="preserve">
+    <value>{0}End of list{0}</value>
+    <comment>Used by EnumerateMissingConfigurationValues method on PropertyDefaults class</comment>
+  </data>
+  <data name="MSG_ALL_CONFIG_SETTINGS_COVERED" xml:space="preserve">
+    <value>All {0} configuration settings defined for {1} are covered by its configuration file.</value>
+    <comment>Used by EnumerateMissingConfigurationValues method on PropertyDefaults class</comment>
+  </data>
+  <data name="MSG_DEFAULT_ACCEPTED" xml:space="preserve">
+    <value>{0} property default value of {1} accepted in lieu of value in configuration file, which is absent.</value>
+    <comment>Used by EnumerateMissingConfigurationValues method on PropertyDefaults class</comment>
+  </data>
+  <data name="MSG_SOME_CONFIG_SETTINGS_OMITTED" xml:space="preserve">
+    <value>{0} of {1} configuration settings defined for {2} are missing from its configuration file.{3}{3} Details follow.{3}{3}</value>
+    <comment>Used by EnumerateMissingConfigurationValues method on PropertyDefaults class</comment>
+  </data>
+  <data name="MSG_STACK_TRACE_IS_FROM_ENVIRONMENT" xml:space="preserve">
+    <value>at System.Environment.get_StackTrace()</value>
+    <comment>The RecoveredException object initializer uses this string to discard the irrelevant detail that the stack trace was retrieved from the application environment.</comment>
+  </data>
   <data name="PROCESSOR_AND_PROCESS_ARCHITECTURES" xml:space="preserve">
     <value>{2}Processor Architecture = {0}{2}Process Machine Word   = {1} bits{2}</value>
     <comment>Method BasicSystemInfoDisplayMessages.ShowArchitectureBits formats its message from this template.</comment>
@@ -322,5 +357,41 @@
   </data>
   <data name="TIME_LABEL_UTC" xml:space="preserve">
     <value>UTC</value>
+  </data>
+  <data name="TRACEMSG_EXCEPTION_NOT_THROWN_1" xml:space="preserve">
+    <value>Properties of the Exception object returned by TraceLogger.WriteWithBothTimesLabeledLocalFirst: Message                        = {0}</value>
+    <comment>Protected method SetPropertiesFromDLLConfiguration uses this template to generate a trace log entry for an exception that was handled without throwing an exception.</comment>
+  </data>
+  <data name="TRACEMSG_EXCEPTION_NOT_THROWN_2" xml:space="preserve">
+    <value>Source                         = {0}</value>
+    <comment>Protected method SetPropertiesFromDLLConfiguration uses this template to generate a trace log entry for an exception that was handled without throwing an exception.</comment>
+  </data>
+  <data name="TRACEMSG_EXCEPTION_NOT_THROWN_3" xml:space="preserve">
+    <value>TargetSite.Name                = {0}</value>
+    <comment>Protected method SetPropertiesFromDLLConfiguration uses this template to generate a trace log entry for an exception that was handled without throwing an exception.</comment>
+  </data>
+  <data name="TRACEMSG_EXCEPTION_NOT_THROWN_4" xml:space="preserve">
+    <value>StackTrace                     = {0}</value>
+    <comment>Protected method SetPropertiesFromDLLConfiguration uses this template to generate a trace log entry for an exception that was handled without throwing an exception.</comment>
+  </data>
+  <data name="TRACEMSG_EXCEPTION_NOT_THROWN_5" xml:space="preserve">
+    <value>InnerException.Message         = {0}</value>
+    <comment>Protected method SetPropertiesFromDLLConfiguration uses this template to generate a trace log entry for an exception that was handled without throwing an exception.</comment>
+  </data>
+  <data name="TRACEMSG_EXCEPTION_NOT_THROWN_6" xml:space="preserve">
+    <value>InnerException.Source          = {0}</value>
+    <comment>Protected method SetPropertiesFromDLLConfiguration uses this template to generate a trace log entry for an exception that was handled without throwing an exception.</comment>
+  </data>
+  <data name="TRACEMSG_EXCEPTION_NOT_THROWN_7" xml:space="preserve">
+    <value>InnerException.TargetSite.Name = {0}</value>
+    <comment>Protected method SetPropertiesFromDLLConfiguration uses this template to generate a trace log entry for an exception that was handled without throwing an exception.</comment>
+  </data>
+  <data name="TRACEMSG_EXCEPTION_NOT_THROWN_8" xml:space="preserve">
+    <value>InnerException.StackTrace      = {0}</value>
+    <comment>Protected method SetPropertiesFromDLLConfiguration uses this template to generate a trace log entry for an exception that was handled without throwing an exception.</comment>
+  </data>
+  <data name="TRACEMSG_EXCEPTION_NOT_THROWN_9" xml:space="preserve">
+    <value>"                                                                                                InnerException                 = [null]</value>
+    <comment>Protected method SetPropertiesFromDLLConfiguration uses this template to generate a trace log entry for an exception that was handled without throwing an exception.</comment>
   </data>
 </root>

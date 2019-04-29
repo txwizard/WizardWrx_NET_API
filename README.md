@@ -1,6 +1,35 @@
 # WizardWrx .NET API ReadMe
 
-## Release Notes 7.14
+## Release Notes, Version 7.15
+
+This release introduces two new classes, both of which came into being to solve
+the harmless null reference exception mentioned below.
+
+1) __WizardWrx.RecoveredException__ is derived from System.Exception; its goal
+is to provide a convenient mechanism to report substantially everything that
+would be reported if an exception were thrown without incurring the overhead of
+throwing it. Such exceptions can be logged, as if they were real exceptions, and
+the log entry includes everything typically reported: message, method and
+assembly names, and a stack trace.
+
+2) __WizardWrx.Core.UnconfiguredDLLSettings__ is a mechaanism for gathering all
+DLL configuration settings that retained their hard coded default values because
+they were omitted from the DLL configuration file. Since the settings may be
+queried by methods that belong to different classes, which may even reside in
+different assemblies and namespaces, gathering them in one place requires the
+responsible class to be a singleton. This class organizes the data in a way that
+permits reporting on settings stored in two or more configuration files.
+
+Other changes include a handful of new string constants for use as building
+blocks for other string constants, and elimination of a null reference exception
+that was silently caught and handled deep in the plumbing that manages DLL
+configuration settings. This exception was so subtle that the only evidence that
+it existed was in the output window of a Visual Studio debugger session. Since
+it was handled essentially at the point where it arose, its effect on processing
+went unnoticed. Since it never bubbled up, it was never reported in the event
+log.
+
+## Release Notes, Version 7.14
 
 The `WizardWrx.MoreMath` class moved to a dedicated assembly, so that its
 target framework can change to support its use of another new class,
@@ -13,7 +42,7 @@ above preserves the targeting of everything else to version __3.5 Client Profile
 of the framework, because backwards compatibility matters a great deal,
 especially when it is so easy to achieve without cost.
 
-## Version 7.13
+## Release Notes, Version 7.13
 
 Define `EXACTLY_ONE_HUNDRED_MILLION_LONG`, to meet an immediate requirement, along
 with `EXACTLY_ONE_HUNDRED_THOUSAND` and `EXACTLY_ONE_HUNDRED_MILLION`, to more or
@@ -21,7 +50,7 @@ less complete the set of powers of ten from two to 9. All powers of ten in that
 range sove one (ten million), for which there is no immediate need, are now
 covered.
 
-## Release Notes 7.12
+## Release Notes, Version 7.12
 
 New since version 7.11, out less than a week, are `Mod` and `Remainder` methods
 in the `MoreMath` class, logical companions to `IsEvenlyDivisibleByAnyInteger`,

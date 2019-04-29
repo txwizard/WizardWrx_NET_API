@@ -142,6 +142,15 @@ namespace WizardWrx.Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Property name {0} in configuration file {1} is a duplicate name..
+        /// </summary>
+        internal static string ERRMSG_DUPLICATE_CONFIG_PROP_NAME {
+            get {
+                return ResourceManager.GetString("ERRMSG_DUPLICATE_CONFIG_PROP_NAME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Switch {0} with a default value of {1} is a duplicate..
         /// </summary>
         internal static string ERRMSG_DUPLICATE_SWITCH {
@@ -165,6 +174,24 @@ namespace WizardWrx.Core.Properties {
         internal static string ERRMSG_EXCEPTION_IN_DEFINE_NEW_SWITCH {
             get {
                 return ResourceManager.GetString("ERRMSG_EXCEPTION_IN_DEFINE_NEW_SWITCH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Message from Exception Logged without throwing: {0}.
+        /// </summary>
+        internal static string ERRMSG_EXCEPTION_NOT_THROWN {
+            get {
+                return ResourceManager.GetString("ERRMSG_EXCEPTION_NOT_THROWN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Message from Exception Thrown and Logged: {0}.
+        /// </summary>
+        internal static string ERRMSG_FROM_THROWN_EXCEPTION {
+            get {
+                return ResourceManager.GetString("ERRMSG_FROM_THROWN_EXCEPTION", resourceCulture);
             }
         }
         
@@ -457,6 +484,60 @@ namespace WizardWrx.Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to     {0} of {1}: {2} = {3}{4}.
+        /// </summary>
+        internal static string MSG_ACCEPTED_DEFAULT_VALUE {
+            get {
+                return ResourceManager.GetString("MSG_ACCEPTED_DEFAULT_VALUE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}End of list{0}.
+        /// </summary>
+        internal static string MSG_ACCEPTED_LIST_END {
+            get {
+                return ResourceManager.GetString("MSG_ACCEPTED_LIST_END", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All {0} configuration settings defined for {1} are covered by its configuration file..
+        /// </summary>
+        internal static string MSG_ALL_CONFIG_SETTINGS_COVERED {
+            get {
+                return ResourceManager.GetString("MSG_ALL_CONFIG_SETTINGS_COVERED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} property default value of {1} accepted in lieu of value in configuration file, which is absent..
+        /// </summary>
+        internal static string MSG_DEFAULT_ACCEPTED {
+            get {
+                return ResourceManager.GetString("MSG_DEFAULT_ACCEPTED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} of {1} configuration settings defined for {2} are missing from its configuration file.{3}{3} Details follow.{3}{3}.
+        /// </summary>
+        internal static string MSG_SOME_CONFIG_SETTINGS_OMITTED {
+            get {
+                return ResourceManager.GetString("MSG_SOME_CONFIG_SETTINGS_OMITTED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to at System.Environment.get_StackTrace().
+        /// </summary>
+        internal static string MSG_STACK_TRACE_IS_FROM_ENVIRONMENT {
+            get {
+                return ResourceManager.GetString("MSG_STACK_TRACE_IS_FROM_ENVIRONMENT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {2}Processor Architecture = {0}{2}Process Machine Word   = {1} bits{2}.
         /// </summary>
         internal static string PROCESSOR_AND_PROCESS_ARCHITECTURES {
@@ -534,6 +615,87 @@ namespace WizardWrx.Core.Properties {
         internal static string TIME_LABEL_UTC {
             get {
                 return ResourceManager.GetString("TIME_LABEL_UTC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Properties of the Exception object returned by TraceLogger.WriteWithBothTimesLabeledLocalFirst: Message                        = {0}.
+        /// </summary>
+        internal static string TRACEMSG_EXCEPTION_NOT_THROWN_1 {
+            get {
+                return ResourceManager.GetString("TRACEMSG_EXCEPTION_NOT_THROWN_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Source                         = {0}.
+        /// </summary>
+        internal static string TRACEMSG_EXCEPTION_NOT_THROWN_2 {
+            get {
+                return ResourceManager.GetString("TRACEMSG_EXCEPTION_NOT_THROWN_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TargetSite.Name                = {0}.
+        /// </summary>
+        internal static string TRACEMSG_EXCEPTION_NOT_THROWN_3 {
+            get {
+                return ResourceManager.GetString("TRACEMSG_EXCEPTION_NOT_THROWN_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to StackTrace                     = {0}.
+        /// </summary>
+        internal static string TRACEMSG_EXCEPTION_NOT_THROWN_4 {
+            get {
+                return ResourceManager.GetString("TRACEMSG_EXCEPTION_NOT_THROWN_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to InnerException.Message         = {0}.
+        /// </summary>
+        internal static string TRACEMSG_EXCEPTION_NOT_THROWN_5 {
+            get {
+                return ResourceManager.GetString("TRACEMSG_EXCEPTION_NOT_THROWN_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to InnerException.Source          = {0}.
+        /// </summary>
+        internal static string TRACEMSG_EXCEPTION_NOT_THROWN_6 {
+            get {
+                return ResourceManager.GetString("TRACEMSG_EXCEPTION_NOT_THROWN_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to InnerException.TargetSite.Name = {0}.
+        /// </summary>
+        internal static string TRACEMSG_EXCEPTION_NOT_THROWN_7 {
+            get {
+                return ResourceManager.GetString("TRACEMSG_EXCEPTION_NOT_THROWN_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to InnerException.StackTrace      = {0}.
+        /// </summary>
+        internal static string TRACEMSG_EXCEPTION_NOT_THROWN_8 {
+            get {
+                return ResourceManager.GetString("TRACEMSG_EXCEPTION_NOT_THROWN_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot;                                                                                                InnerException                 = [null].
+        /// </summary>
+        internal static string TRACEMSG_EXCEPTION_NOT_THROWN_9 {
+            get {
+                return ResourceManager.GetString("TRACEMSG_EXCEPTION_NOT_THROWN_9", resourceCulture);
             }
         }
     }

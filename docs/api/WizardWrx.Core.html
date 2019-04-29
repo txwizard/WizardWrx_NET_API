@@ -150,8 +150,24 @@ formatted by rules set by way of its properties.</p>
       <section><p>This static class exposes methods that support every conceivable
 combination of local and UTC time stamps for trace logging.</p>
 </section>
+      <h4><a class="xref" href="WizardWrx.Core.UnconfiguredDLLSettings.html">UnconfiguredDLLSettings</a></h4>
+      <section><p>Organize the DLL configuration values that were omitted from the
+associated configuration file. Since multiple classes can and do share a
+DLL configuration file, this class must be a Singleton.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.html">UnconfiguredDLLSettings.UnconfiguredSetting</a></h4>
+      <section><p>Settings are organized into a private collection that belongs to the
+singleton.</p>
+</section>
       <h4><a class="xref" href="WizardWrx.Core.UnmanagedLibrary.html">UnmanagedLibrary</a></h4>
       <section><p>Utility class to wrap an unmanaged DLL and be responsible for freeing it</p>
+</section>
+    <h3 id="structs">Structs
+  </h3>
+      <h4><a class="xref" href="WizardWrx.Core.AssemblyLocatorBase.PropertySourceCounts.html">AssemblyLocatorBase.PropertySourceCounts</a></h4>
+      <section><p>SetPropertiesFromDLLConfiguration fills and returns this structure,
+to account for all defined properties, whether or not their values
+are configured.</p>
 </section>
     <h3 id="enums">Enums
   </h3>

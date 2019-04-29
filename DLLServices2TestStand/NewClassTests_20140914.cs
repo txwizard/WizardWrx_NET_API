@@ -1304,30 +1304,70 @@ namespace DLLServices2TestStand
 						penmLimitCondition ,
 						Properties.Resources.ERRMSG_LIMIT_CONDITON );
 			}	// switch ( penmLimitCondition )
-		}	// AreeWeDoneYet method
+		}   // AreeWeDoneYet method
 
 
-		internal static void BeginTest (
+        /// <summary>
+        /// Increment <paramref name="pintTestNumber"/>, then log a console
+        /// message that uses <paramref name="pstrMethodName"/> to identify the
+        /// test.
+        /// </summary>
+        /// <param name="pstrMethodName">
+        /// The newer tests use this parameter directly, while the older ones
+        /// look it up in a static dictionary that allows it to avoid using
+        /// Reflection to get it.
+        /// <para>
+        /// To invoke the newer method, set <paramref name="pfIgnoreClassTestMap"/>
+        /// to TRUE.
+        /// </para>
+        /// </param>
+        /// <param name="pintTestNumber">
+        /// The test number is passed in by reference, so that the routine can
+        /// be put in charge of incrementing it. Before the first call, this
+        /// parameter must be initialized to zero; since this is the default
+        /// initial value for an integer, explicit initialization is recommended
+        /// but optional.
+        /// </param>
+        /// <param name="pfIgnoreClassTestMap">
+        /// Set this parameter to TRUE to cause <paramref name="pstrMethodName"/>
+        /// to be taken at face value. Omitting this parameter or setting it
+        /// explicitly to FALSE causes the <paramref name="pstrMethodName"/> to
+        /// be treated as the index into a static array of method names that is
+        /// hard coded into the program.
+        /// </param>
+        internal static void BeginTest (
             string pstrMethodName ,
-            ref int pintTestNumber )
+            ref int pintTestNumber ,
+            bool pfIgnoreClassTestMap = false )
         {
             const string ERRMSG_UNDEFINED_METHOD = @"Method {0} is undefined.";
             const string MSG_BEGIN = @"{2}Test # {0} - Exercising class {1}:{2}";
 
-            if ( s_dctClassTestMap.ContainsKey ( pstrMethodName ) )
+            if ( pfIgnoreClassTestMap )
             {
                 Console.WriteLine (
                     MSG_BEGIN ,                             // Message Template
                     ++pintTestNumber ,                      // Format Item 0 = Test Number - Increment, then print
-                    s_dctClassTestMap [ pstrMethodName ] ,  // Format Item 1 = Method Name per System.Reflection
+                    pstrMethodName ,                        // Format Item 1 = Method Name per WizardWrx.DiagnosticInfo, which gathers the information at compile time
                     Environment.NewLine );                  // Format Item 2 = Newline
-            }   // TRUE (expected outcome) block, if ( s_dctClassTestMap.ContainsKey ( pstrMethodName ) )
+            }   // TRUE (Since the method name is available by more reliable means, ignore the ClassTestMap dictionary.) block, if ( pfIgnoreClassTestMap )
             else
             {
-                throw new Exception ( string.Format (
-                    ERRMSG_UNDEFINED_METHOD ,
-                    pstrMethodName ) );
-            }   // FALSE (UNexpected outcome) block, if ( s_dctClassTestMap.ContainsKey ( pstrMethodName ) )
+                if ( s_dctClassTestMap.ContainsKey ( pstrMethodName ) )
+                {
+                    Console.WriteLine (
+                        MSG_BEGIN ,                             // Message Template
+                        ++pintTestNumber ,                      // Format Item 0 = Test Number - Increment, then print
+                        s_dctClassTestMap [ pstrMethodName ] ,  // Format Item 1 = Method Name per System.Reflection
+                        Environment.NewLine );                  // Format Item 2 = Newline
+                }   // TRUE (expected outcome) block, if ( s_dctClassTestMap.ContainsKey ( pstrMethodName ) )
+                else
+                {
+                    throw new Exception ( string.Format (
+                        ERRMSG_UNDEFINED_METHOD ,
+                        pstrMethodName ) );
+                }   // FALSE (UNexpected outcome) block, if ( s_dctClassTestMap.ContainsKey ( pstrMethodName ) )
+            }   // FALSE (The legacy tests rely on the ClassTestMap dictionary.) block, if ( pfIgnoreClassTestMap )
         }   // BeginTest
 
 

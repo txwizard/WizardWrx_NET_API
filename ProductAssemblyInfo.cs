@@ -15,7 +15,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration ( "" )]
 [assembly: AssemblyCompany ( "David A. Gray" )]
 [assembly: AssemblyProduct ( "Common Classes for the Microsoft .NET Framework 3.5 and Above" )]
-[assembly: AssemblyCopyright ( "Copyright © 2014-2018, David A. Gray" )]
+[assembly: AssemblyCopyright ( "Copyright © 2014-2019, David A. Gray" )]
 [assembly: AssemblyTrademark ( "This library is distributed under a three-clause BSD license." )]
 
 // Setting ComVisible to false makes the types in this assembly not visible
@@ -33,4 +33,4 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyFileVersion ( "7.14.210.0" )]
+[assembly: AssemblyFileVersion ( "7.15.210.0" )]

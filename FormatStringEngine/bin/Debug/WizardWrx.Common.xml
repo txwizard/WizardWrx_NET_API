@@ -3316,6 +3316,7 @@
             <seealso cref="F:WizardWrx.SpecialCharacters.SEMICOLON"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.TAB_CHAR"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.UNDERSCORE_CHAR"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.COLON"/>
         </member>
         <member name="F:WizardWrx.SpecialCharacters.COMMA">
             <summary>
@@ -3330,6 +3331,7 @@
             <seealso cref="F:WizardWrx.SpecialCharacters.SEMICOLON"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.TAB_CHAR"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.UNDERSCORE_CHAR"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.COMMA"/>
         </member>
         <member name="F:WizardWrx.SpecialCharacters.DLM_FORMAT_ITEM_BEGIN">
             <summary>
@@ -3356,6 +3358,7 @@
             </summary>
             <seealso cref="F:WizardWrx.SpecialCharacters.SINGLE_QUOTE"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.SPACE_CHAR"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.DOUBLE_QUOTE"/>
         </member>
         <member name="F:WizardWrx.SpecialCharacters.ENV_STR_DLM">
             <summary>
@@ -3384,6 +3387,7 @@
             example, when specifying a delimiter character or appending a full
             stop character to a string.
             </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.FULL_STOP"/>
         </member>
         <member name="F:WizardWrx.SpecialCharacters.HASH_TAG">
             <summary>
@@ -3398,6 +3402,7 @@
             <seealso cref="F:WizardWrx.SpecialCharacters.EQUALS_SIGN"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.HASH_TAG"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.UNDERSCORE_CHAR"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.HYPHEN"/>
         </member>
         <member name="F:WizardWrx.SpecialCharacters.LAST_ASCII_CHAR">
             <summary>
@@ -3493,6 +3498,7 @@
             <seealso cref="F:WizardWrx.SpecialCharacters.PIPE_CHAR"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.TAB_CHAR"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.UNDERSCORE_CHAR"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.SEMICOLON"/>
         </member>
         <member name="F:WizardWrx.SpecialCharacters.SINGLE_QUOTE">
             <summary>
@@ -3501,6 +3507,7 @@
             </summary>
             <seealso cref="F:WizardWrx.SpecialCharacters.DOUBLE_QUOTE"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.SPACE_CHAR"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.SINGLE_QUOTE"/>
         </member>
         <member name="F:WizardWrx.SpecialCharacters.SPACE_CHAR">
             <summary>
@@ -3529,6 +3536,7 @@
             <seealso cref="F:WizardWrx.SpecialCharacters.PIPE_CHAR"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.SEMICOLON"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.UNDERSCORE_CHAR"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.TAB_CHAR"/>
         </member>
         <member name="F:WizardWrx.SpecialCharacters.UNDERSCORE_CHAR">
             <summary>
@@ -3541,6 +3549,7 @@
             <seealso cref="F:WizardWrx.SpecialCharacters.EQUALS_SIGN"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.HYPHEN"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.TAB_CHAR"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.UNDERSCORE_CHAR"/>
         </member>
         <member name="T:WizardWrx.SpecialStrings">
             <summary>
@@ -3608,6 +3617,27 @@
             <seealso cref="F:WizardWrx.SpecialStrings.ASP_APP_START_PAGE_KEY"/>
             <seealso cref="F:WizardWrx.SpecialStrings.ASP_RELATIVE_PATH_BEGIN"/>
         </member>
+        <member name="F:WizardWrx.SpecialStrings.COLON">
+            <summary>
+            This is one of many single characters that are frequently needed as
+            single-character string constants.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialCharacters.COLON"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.COMMA">
+            <summary>
+            This is one of many single characters that are frequently needed as
+            single-character string constants.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialCharacters.COMMA"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.DOUBLE_QUOTE">
+            <summary>
+            This is one of many single characters that are frequently needed as
+            single-character string constants.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialCharacters.DOUBLE_QUOTE"/>
+        </member>
         <member name="F:WizardWrx.SpecialStrings.EMPTY_STRING">
             <summary>
             I like having a way to initialize a constant to the empty string.
@@ -3639,6 +3669,20 @@
             </remarks>
             <see cref="F:WizardWrx.MagicNumbers.ERROR_SUCCESS"/>
             <seealso cref="F:WizardWrx.MagicNumbers.ERROR_RUNTIME"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.FULL_STOP">
+            <summary>
+            This is one of many single characters that are frequently needed as
+            single-character string constants.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialCharacters.FULL_STOP"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.HYPHEN">
+            <summary>
+            This is one of many single characters that are frequently needed as
+            single-character string constants.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialCharacters.HYPHEN"/>
         </member>
         <member name="F:WizardWrx.SpecialStrings.HTML_COMMENT_PREFIX">
             <summary>
@@ -3682,6 +3726,20 @@
             string.
             </summary>
             <seealso cref="F:WizardWrx.SpecialCharacters.PERCENT_SIGN"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.SEMICOLON">
+            <summary>
+            This is one of many single characters that are frequently needed as
+            single-character string constants.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialCharacters.SEMICOLON"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.SINGLE_QUOTE">
+            <summary>
+            This is one of many single characters that are frequently needed as
+            single-character string constants.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialCharacters.SINGLE_QUOTE"/>
         </member>
         <member name="F:WizardWrx.SpecialStrings.SPACE_CHAR">
             <summary>
@@ -3735,6 +3793,20 @@
             <seealso cref="F:WizardWrx.SpecialCharacters.CARRIAGE_RETURN"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.LINEFEED"/>
             <seealso cref="F:WizardWrx.SpecialStrings.STRING_SPLIT_CARRIAGE_RETURN"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.TAB_CHAR">
+            <summary>
+            This is one of many single characters that are frequently needed as
+            single-character string constants.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialCharacters.TAB_CHAR"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.UNDERSCORE_CHAR">
+            <summary>
+            This is one of many single characters that are frequently needed as
+            single-character string constants.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialCharacters.UNDERSCORE_CHAR"/>
         </member>
         <member name="T:WizardWrx.StringTricks">
             <summary>

@@ -56,6 +56,16 @@
             recoverable exceptions.
             </summary>
         </member>
+        <member name="P:WizardWrx.ConsoleStreams.DefaultErrorMessageColors.PropsLeftAtDefault">
+            <summary>
+            Get the count of properties that were omitted from the linked 
+            configuration file. When this value is greater than zero, generic
+            dictionary MissingConfigSettings, inherited from the
+            AssemblyLocatorBase base class, contains one string for each such
+            property.
+            </summary>
+            <seealso cref="P:WizardWrx.Core.AssemblyLocatorBase.MissingConfigSettings"/>
+        </member>
         <member name="P:WizardWrx.ConsoleStreams.DefaultErrorMessageColors.PropsSetFromConfig">
             <summary>
             Get the count of properties that were set from the linked

@@ -55,7 +55,7 @@ in place of literals.
    Version 7.14 defines the constants listed in the following table.
 
    | Name                    |             Value |
-   |-------------------------|------------------:|
+   |-------------------------|-------------------|
    | TICKS_PER_1_WEEK        | 6,048,000,000,000 |
    | TICKS_PER_1_DAY         |   864,000,000,000 |
    | TICKS_PER_23_59_59      |   863,990,000,000 |

@@ -3220,6 +3220,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.ConsoleStreams.DefaultErrorMessageColors.FatalExceptionTextColor
   nameWithType: DefaultErrorMessageColors.FatalExceptionTextColor
+- uid: WizardWrx.ConsoleStreams.DefaultErrorMessageColors.PropsLeftAtDefault
+  name: PropsLeftAtDefault
+  href: api/WizardWrx.ConsoleStreams.DefaultErrorMessageColors.html#WizardWrx_ConsoleStreams_DefaultErrorMessageColors_PropsLeftAtDefault
+  commentId: P:WizardWrx.ConsoleStreams.DefaultErrorMessageColors.PropsLeftAtDefault
+  fullName: WizardWrx.ConsoleStreams.DefaultErrorMessageColors.PropsLeftAtDefault
+  nameWithType: DefaultErrorMessageColors.PropsLeftAtDefault
+- uid: WizardWrx.ConsoleStreams.DefaultErrorMessageColors.PropsLeftAtDefault*
+  name: PropsLeftAtDefault
+  href: api/WizardWrx.ConsoleStreams.DefaultErrorMessageColors.html#WizardWrx_ConsoleStreams_DefaultErrorMessageColors_PropsLeftAtDefault_
+  commentId: Overload:WizardWrx.ConsoleStreams.DefaultErrorMessageColors.PropsLeftAtDefault
+  isSpec: "True"
+  fullName: WizardWrx.ConsoleStreams.DefaultErrorMessageColors.PropsLeftAtDefault
+  nameWithType: DefaultErrorMessageColors.PropsLeftAtDefault
 - uid: WizardWrx.ConsoleStreams.DefaultErrorMessageColors.PropsSetFromConfig
   name: PropsSetFromConfig
   href: api/WizardWrx.ConsoleStreams.DefaultErrorMessageColors.html#WizardWrx_ConsoleStreams_DefaultErrorMessageColors_PropsSetFromConfig
@@ -5065,6 +5078,12 @@ references:
   isSpec: "True"
   fullName: WizardWrx.Core.AssemblyLocatorBase.AssemblyLocatorBase
   nameWithType: AssemblyLocatorBase.AssemblyLocatorBase
+- uid: WizardWrx.Core.AssemblyLocatorBase._strAssemblyLocation
+  name: _strAssemblyLocation
+  href: api/WizardWrx.Core.AssemblyLocatorBase.html#WizardWrx_Core_AssemblyLocatorBase__strAssemblyLocation
+  commentId: F:WizardWrx.Core.AssemblyLocatorBase._strAssemblyLocation
+  fullName: WizardWrx.Core.AssemblyLocatorBase._strAssemblyLocation
+  nameWithType: AssemblyLocatorBase._strAssemblyLocation
 - uid: WizardWrx.Core.AssemblyLocatorBase.AssemblyDataPath
   name: AssemblyDataPath
   href: api/WizardWrx.Core.AssemblyLocatorBase.html#WizardWrx_Core_AssemblyLocatorBase_AssemblyDataPath
@@ -5097,19 +5116,6 @@ references:
   isSpec: "True"
   fullName: WizardWrx.Core.AssemblyLocatorBase.AssemblyLocation
   nameWithType: AssemblyLocatorBase.AssemblyLocation
-- uid: WizardWrx.Core.AssemblyLocatorBase.ConfigMessage
-  name: ConfigMessage
-  href: api/WizardWrx.Core.AssemblyLocatorBase.html#WizardWrx_Core_AssemblyLocatorBase_ConfigMessage
-  commentId: P:WizardWrx.Core.AssemblyLocatorBase.ConfigMessage
-  fullName: WizardWrx.Core.AssemblyLocatorBase.ConfigMessage
-  nameWithType: AssemblyLocatorBase.ConfigMessage
-- uid: WizardWrx.Core.AssemblyLocatorBase.ConfigMessage*
-  name: ConfigMessage
-  href: api/WizardWrx.Core.AssemblyLocatorBase.html#WizardWrx_Core_AssemblyLocatorBase_ConfigMessage_
-  commentId: Overload:WizardWrx.Core.AssemblyLocatorBase.ConfigMessage
-  isSpec: "True"
-  fullName: WizardWrx.Core.AssemblyLocatorBase.ConfigMessage
-  nameWithType: AssemblyLocatorBase.ConfigMessage
 - uid: WizardWrx.Core.AssemblyLocatorBase.DLLConfiguration
   name: DLLConfiguration
   href: api/WizardWrx.Core.AssemblyLocatorBase.html#WizardWrx_Core_AssemblyLocatorBase_DLLConfiguration
@@ -5123,19 +5129,6 @@ references:
   isSpec: "True"
   fullName: WizardWrx.Core.AssemblyLocatorBase.DLLConfiguration
   nameWithType: AssemblyLocatorBase.DLLConfiguration
-- uid: WizardWrx.Core.AssemblyLocatorBase.DLLettingsSection
-  name: DLLettingsSection
-  href: api/WizardWrx.Core.AssemblyLocatorBase.html#WizardWrx_Core_AssemblyLocatorBase_DLLettingsSection
-  commentId: P:WizardWrx.Core.AssemblyLocatorBase.DLLettingsSection
-  fullName: WizardWrx.Core.AssemblyLocatorBase.DLLettingsSection
-  nameWithType: AssemblyLocatorBase.DLLettingsSection
-- uid: WizardWrx.Core.AssemblyLocatorBase.DLLettingsSection*
-  name: DLLettingsSection
-  href: api/WizardWrx.Core.AssemblyLocatorBase.html#WizardWrx_Core_AssemblyLocatorBase_DLLettingsSection_
-  commentId: Overload:WizardWrx.Core.AssemblyLocatorBase.DLLettingsSection
-  isSpec: "True"
-  fullName: WizardWrx.Core.AssemblyLocatorBase.DLLettingsSection
-  nameWithType: AssemblyLocatorBase.DLLettingsSection
 - uid: WizardWrx.Core.AssemblyLocatorBase.DLLSettings
   name: DLLSettings
   href: api/WizardWrx.Core.AssemblyLocatorBase.html#WizardWrx_Core_AssemblyLocatorBase_DLLSettings
@@ -5149,6 +5142,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.Core.AssemblyLocatorBase.DLLSettings
   nameWithType: AssemblyLocatorBase.DLLSettings
+- uid: WizardWrx.Core.AssemblyLocatorBase.DLLSettingsSection
+  name: DLLSettingsSection
+  href: api/WizardWrx.Core.AssemblyLocatorBase.html#WizardWrx_Core_AssemblyLocatorBase_DLLSettingsSection
+  commentId: P:WizardWrx.Core.AssemblyLocatorBase.DLLSettingsSection
+  fullName: WizardWrx.Core.AssemblyLocatorBase.DLLSettingsSection
+  nameWithType: AssemblyLocatorBase.DLLSettingsSection
+- uid: WizardWrx.Core.AssemblyLocatorBase.DLLSettingsSection*
+  name: DLLSettingsSection
+  href: api/WizardWrx.Core.AssemblyLocatorBase.html#WizardWrx_Core_AssemblyLocatorBase_DLLSettingsSection_
+  commentId: Overload:WizardWrx.Core.AssemblyLocatorBase.DLLSettingsSection
+  isSpec: "True"
+  fullName: WizardWrx.Core.AssemblyLocatorBase.DLLSettingsSection
+  nameWithType: AssemblyLocatorBase.DLLSettingsSection
 - uid: WizardWrx.Core.AssemblyLocatorBase.GetAssemblyBuildDate(System.DateTimeKind)
   name: GetAssemblyBuildDate(DateTimeKind)
   href: api/WizardWrx.Core.AssemblyLocatorBase.html#WizardWrx_Core_AssemblyLocatorBase_GetAssemblyBuildDate_System_DateTimeKind_
@@ -5201,6 +5207,50 @@ references:
   isSpec: "True"
   fullName: WizardWrx.Core.AssemblyLocatorBase.GetDLLSetting
   nameWithType: AssemblyLocatorBase.GetDLLSetting
+- uid: WizardWrx.Core.AssemblyLocatorBase.MissingConfigSettings
+  name: MissingConfigSettings
+  href: api/WizardWrx.Core.AssemblyLocatorBase.html#WizardWrx_Core_AssemblyLocatorBase_MissingConfigSettings
+  commentId: P:WizardWrx.Core.AssemblyLocatorBase.MissingConfigSettings
+  fullName: WizardWrx.Core.AssemblyLocatorBase.MissingConfigSettings
+  nameWithType: AssemblyLocatorBase.MissingConfigSettings
+- uid: WizardWrx.Core.AssemblyLocatorBase.MissingConfigSettings*
+  name: MissingConfigSettings
+  href: api/WizardWrx.Core.AssemblyLocatorBase.html#WizardWrx_Core_AssemblyLocatorBase_MissingConfigSettings_
+  commentId: Overload:WizardWrx.Core.AssemblyLocatorBase.MissingConfigSettings
+  isSpec: "True"
+  fullName: WizardWrx.Core.AssemblyLocatorBase.MissingConfigSettings
+  nameWithType: AssemblyLocatorBase.MissingConfigSettings
+- uid: WizardWrx.Core.AssemblyLocatorBase.PropertySourceCounts
+  name: AssemblyLocatorBase.PropertySourceCounts
+  href: api/WizardWrx.Core.AssemblyLocatorBase.PropertySourceCounts.html
+  commentId: T:WizardWrx.Core.AssemblyLocatorBase.PropertySourceCounts
+  fullName: WizardWrx.Core.AssemblyLocatorBase.PropertySourceCounts
+  nameWithType: AssemblyLocatorBase.PropertySourceCounts
+- uid: WizardWrx.Core.AssemblyLocatorBase.PropertySourceCounts.Defaulted
+  name: Defaulted
+  href: api/WizardWrx.Core.AssemblyLocatorBase.PropertySourceCounts.html#WizardWrx_Core_AssemblyLocatorBase_PropertySourceCounts_Defaulted
+  commentId: F:WizardWrx.Core.AssemblyLocatorBase.PropertySourceCounts.Defaulted
+  fullName: WizardWrx.Core.AssemblyLocatorBase.PropertySourceCounts.Defaulted
+  nameWithType: AssemblyLocatorBase.PropertySourceCounts.Defaulted
+- uid: WizardWrx.Core.AssemblyLocatorBase.PropertySourceCounts.SpecifiedInConfiguration
+  name: SpecifiedInConfiguration
+  href: api/WizardWrx.Core.AssemblyLocatorBase.PropertySourceCounts.html#WizardWrx_Core_AssemblyLocatorBase_PropertySourceCounts_SpecifiedInConfiguration
+  commentId: F:WizardWrx.Core.AssemblyLocatorBase.PropertySourceCounts.SpecifiedInConfiguration
+  fullName: WizardWrx.Core.AssemblyLocatorBase.PropertySourceCounts.SpecifiedInConfiguration
+  nameWithType: AssemblyLocatorBase.PropertySourceCounts.SpecifiedInConfiguration
+- uid: WizardWrx.Core.AssemblyLocatorBase.RecoveredConfigurationExceptions
+  name: RecoveredConfigurationExceptions
+  href: api/WizardWrx.Core.AssemblyLocatorBase.html#WizardWrx_Core_AssemblyLocatorBase_RecoveredConfigurationExceptions
+  commentId: P:WizardWrx.Core.AssemblyLocatorBase.RecoveredConfigurationExceptions
+  fullName: WizardWrx.Core.AssemblyLocatorBase.RecoveredConfigurationExceptions
+  nameWithType: AssemblyLocatorBase.RecoveredConfigurationExceptions
+- uid: WizardWrx.Core.AssemblyLocatorBase.RecoveredConfigurationExceptions*
+  name: RecoveredConfigurationExceptions
+  href: api/WizardWrx.Core.AssemblyLocatorBase.html#WizardWrx_Core_AssemblyLocatorBase_RecoveredConfigurationExceptions_
+  commentId: Overload:WizardWrx.Core.AssemblyLocatorBase.RecoveredConfigurationExceptions
+  isSpec: "True"
+  fullName: WizardWrx.Core.AssemblyLocatorBase.RecoveredConfigurationExceptions
+  nameWithType: AssemblyLocatorBase.RecoveredConfigurationExceptions
 - uid: WizardWrx.Core.AssemblyLocatorBase.SetPropertiesFromDLLConfiguration(System.Type)
   name: SetPropertiesFromDLLConfiguration(Type)
   href: api/WizardWrx.Core.AssemblyLocatorBase.html#WizardWrx_Core_AssemblyLocatorBase_SetPropertiesFromDLLConfiguration_System_Type_
@@ -6258,6 +6308,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.Core.PropertyDefaults.PropertyDefaults
   nameWithType: PropertyDefaults.PropertyDefaults
+- uid: WizardWrx.Core.PropertyDefaults.EnumerateMissingConfigurationValues
+  name: EnumerateMissingConfigurationValues()
+  href: api/WizardWrx.Core.PropertyDefaults.html#WizardWrx_Core_PropertyDefaults_EnumerateMissingConfigurationValues
+  commentId: M:WizardWrx.Core.PropertyDefaults.EnumerateMissingConfigurationValues
+  fullName: WizardWrx.Core.PropertyDefaults.EnumerateMissingConfigurationValues()
+  nameWithType: PropertyDefaults.EnumerateMissingConfigurationValues()
+- uid: WizardWrx.Core.PropertyDefaults.EnumerateMissingConfigurationValues*
+  name: EnumerateMissingConfigurationValues
+  href: api/WizardWrx.Core.PropertyDefaults.html#WizardWrx_Core_PropertyDefaults_EnumerateMissingConfigurationValues_
+  commentId: Overload:WizardWrx.Core.PropertyDefaults.EnumerateMissingConfigurationValues
+  isSpec: "True"
+  fullName: WizardWrx.Core.PropertyDefaults.EnumerateMissingConfigurationValues
+  nameWithType: PropertyDefaults.EnumerateMissingConfigurationValues
 - uid: WizardWrx.Core.PropertyDefaults.GetAssemblyBuildDate(System.DateTimeKind)
   name: GetAssemblyBuildDate(DateTimeKind)
   href: api/WizardWrx.Core.PropertyDefaults.html#WizardWrx_Core_PropertyDefaults_GetAssemblyBuildDate_System_DateTimeKind_
@@ -6739,6 +6802,165 @@ references:
   isSpec: "True"
   fullName: WizardWrx.Core.TraceLogger.WriteWithUnlabeledUTCTime
   nameWithType: TraceLogger.WriteWithUnlabeledUTCTime
+- uid: WizardWrx.Core.UnconfiguredDLLSettings
+  name: UnconfiguredDLLSettings
+  href: api/WizardWrx.Core.UnconfiguredDLLSettings.html
+  commentId: T:WizardWrx.Core.UnconfiguredDLLSettings
+  fullName: WizardWrx.Core.UnconfiguredDLLSettings
+  nameWithType: UnconfiguredDLLSettings
+- uid: WizardWrx.Core.UnconfiguredDLLSettings.Add(System.String,System.String,System.String)
+  name: Add(String, String, String)
+  href: api/WizardWrx.Core.UnconfiguredDLLSettings.html#WizardWrx_Core_UnconfiguredDLLSettings_Add_System_String_System_String_System_String_
+  commentId: M:WizardWrx.Core.UnconfiguredDLLSettings.Add(System.String,System.String,System.String)
+  fullName: WizardWrx.Core.UnconfiguredDLLSettings.Add(System.String, System.String, System.String)
+  nameWithType: UnconfiguredDLLSettings.Add(String, String, String)
+- uid: WizardWrx.Core.UnconfiguredDLLSettings.Add*
+  name: Add
+  href: api/WizardWrx.Core.UnconfiguredDLLSettings.html#WizardWrx_Core_UnconfiguredDLLSettings_Add_
+  commentId: Overload:WizardWrx.Core.UnconfiguredDLLSettings.Add
+  isSpec: "True"
+  fullName: WizardWrx.Core.UnconfiguredDLLSettings.Add
+  nameWithType: UnconfiguredDLLSettings.Add
+- uid: WizardWrx.Core.UnconfiguredDLLSettings.Count
+  name: Count
+  href: api/WizardWrx.Core.UnconfiguredDLLSettings.html#WizardWrx_Core_UnconfiguredDLLSettings_Count
+  commentId: P:WizardWrx.Core.UnconfiguredDLLSettings.Count
+  fullName: WizardWrx.Core.UnconfiguredDLLSettings.Count
+  nameWithType: UnconfiguredDLLSettings.Count
+- uid: WizardWrx.Core.UnconfiguredDLLSettings.Count*
+  name: Count
+  href: api/WizardWrx.Core.UnconfiguredDLLSettings.html#WizardWrx_Core_UnconfiguredDLLSettings_Count_
+  commentId: Overload:WizardWrx.Core.UnconfiguredDLLSettings.Count
+  isSpec: "True"
+  fullName: WizardWrx.Core.UnconfiguredDLLSettings.Count
+  nameWithType: UnconfiguredDLLSettings.Count
+- uid: WizardWrx.Core.UnconfiguredDLLSettings.GetMissingPropsForFile(System.String)
+  name: GetMissingPropsForFile(String)
+  href: api/WizardWrx.Core.UnconfiguredDLLSettings.html#WizardWrx_Core_UnconfiguredDLLSettings_GetMissingPropsForFile_System_String_
+  commentId: M:WizardWrx.Core.UnconfiguredDLLSettings.GetMissingPropsForFile(System.String)
+  fullName: WizardWrx.Core.UnconfiguredDLLSettings.GetMissingPropsForFile(System.String)
+  nameWithType: UnconfiguredDLLSettings.GetMissingPropsForFile(String)
+- uid: WizardWrx.Core.UnconfiguredDLLSettings.GetMissingPropsForFile*
+  name: GetMissingPropsForFile
+  href: api/WizardWrx.Core.UnconfiguredDLLSettings.html#WizardWrx_Core_UnconfiguredDLLSettings_GetMissingPropsForFile_
+  commentId: Overload:WizardWrx.Core.UnconfiguredDLLSettings.GetMissingPropsForFile
+  isSpec: "True"
+  fullName: WizardWrx.Core.UnconfiguredDLLSettings.GetMissingPropsForFile
+  nameWithType: UnconfiguredDLLSettings.GetMissingPropsForFile
+- uid: WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting
+  name: UnconfiguredDLLSettings.UnconfiguredSetting
+  href: api/WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.html
+  commentId: T:WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting
+  fullName: WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting
+  nameWithType: UnconfiguredDLLSettings.UnconfiguredSetting
+- uid: WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.#ctor(System.String,System.String,System.String)
+  name: UnconfiguredSetting(String, String, String)
+  href: api/WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.html#WizardWrx_Core_UnconfiguredDLLSettings_UnconfiguredSetting__ctor_System_String_System_String_System_String_
+  commentId: M:WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.#ctor(System.String,System.String,System.String)
+  fullName: WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.UnconfiguredSetting(System.String, System.String, System.String)
+  nameWithType: UnconfiguredDLLSettings.UnconfiguredSetting.UnconfiguredSetting(String, String, String)
+- uid: WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.#ctor*
+  name: UnconfiguredSetting
+  href: api/WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.html#WizardWrx_Core_UnconfiguredDLLSettings_UnconfiguredSetting__ctor_
+  commentId: Overload:WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.#ctor
+  isSpec: "True"
+  fullName: WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.UnconfiguredSetting
+  nameWithType: UnconfiguredDLLSettings.UnconfiguredSetting.UnconfiguredSetting
+- uid: WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.ConfigFileName
+  name: ConfigFileName
+  href: api/WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.html#WizardWrx_Core_UnconfiguredDLLSettings_UnconfiguredSetting_ConfigFileName
+  commentId: P:WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.ConfigFileName
+  fullName: WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.ConfigFileName
+  nameWithType: UnconfiguredDLLSettings.UnconfiguredSetting.ConfigFileName
+- uid: WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.ConfigFileName*
+  name: ConfigFileName
+  href: api/WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.html#WizardWrx_Core_UnconfiguredDLLSettings_UnconfiguredSetting_ConfigFileName_
+  commentId: Overload:WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.ConfigFileName
+  isSpec: "True"
+  fullName: WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.ConfigFileName
+  nameWithType: UnconfiguredDLLSettings.UnconfiguredSetting.ConfigFileName
+- uid: WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.Equals(System.Object)
+  name: Equals(Object)
+  href: api/WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.html#WizardWrx_Core_UnconfiguredDLLSettings_UnconfiguredSetting_Equals_System_Object_
+  commentId: M:WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.Equals(System.Object)
+  fullName: WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.Equals(System.Object)
+  nameWithType: UnconfiguredDLLSettings.UnconfiguredSetting.Equals(Object)
+- uid: WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.Equals*
+  name: Equals
+  href: api/WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.html#WizardWrx_Core_UnconfiguredDLLSettings_UnconfiguredSetting_Equals_
+  commentId: Overload:WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.Equals
+  isSpec: "True"
+  fullName: WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.Equals
+  nameWithType: UnconfiguredDLLSettings.UnconfiguredSetting.Equals
+- uid: WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.GetHashCode
+  name: GetHashCode()
+  href: api/WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.html#WizardWrx_Core_UnconfiguredDLLSettings_UnconfiguredSetting_GetHashCode
+  commentId: M:WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.GetHashCode
+  fullName: WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.GetHashCode()
+  nameWithType: UnconfiguredDLLSettings.UnconfiguredSetting.GetHashCode()
+- uid: WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.GetHashCode*
+  name: GetHashCode
+  href: api/WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.html#WizardWrx_Core_UnconfiguredDLLSettings_UnconfiguredSetting_GetHashCode_
+  commentId: Overload:WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.GetHashCode
+  isSpec: "True"
+  fullName: WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.GetHashCode
+  nameWithType: UnconfiguredDLLSettings.UnconfiguredSetting.GetHashCode
+- uid: WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.PropName
+  name: PropName
+  href: api/WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.html#WizardWrx_Core_UnconfiguredDLLSettings_UnconfiguredSetting_PropName
+  commentId: P:WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.PropName
+  fullName: WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.PropName
+  nameWithType: UnconfiguredDLLSettings.UnconfiguredSetting.PropName
+- uid: WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.PropName*
+  name: PropName
+  href: api/WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.html#WizardWrx_Core_UnconfiguredDLLSettings_UnconfiguredSetting_PropName_
+  commentId: Overload:WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.PropName
+  isSpec: "True"
+  fullName: WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.PropName
+  nameWithType: UnconfiguredDLLSettings.UnconfiguredSetting.PropName
+- uid: WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.PropValue
+  name: PropValue
+  href: api/WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.html#WizardWrx_Core_UnconfiguredDLLSettings_UnconfiguredSetting_PropValue
+  commentId: P:WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.PropValue
+  fullName: WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.PropValue
+  nameWithType: UnconfiguredDLLSettings.UnconfiguredSetting.PropValue
+- uid: WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.PropValue*
+  name: PropValue
+  href: api/WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.html#WizardWrx_Core_UnconfiguredDLLSettings_UnconfiguredSetting_PropValue_
+  commentId: Overload:WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.PropValue
+  isSpec: "True"
+  fullName: WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.PropValue
+  nameWithType: UnconfiguredDLLSettings.UnconfiguredSetting.PropValue
+- uid: WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.System#IComparable{WizardWrx#Core#UnconfiguredDLLSettings#UnconfiguredSetting}#CompareTo(WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting)
+  name: IComparable<UnconfiguredDLLSettings.UnconfiguredSetting>.CompareTo(UnconfiguredDLLSettings.UnconfiguredSetting)
+  href: api/WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.html#WizardWrx_Core_UnconfiguredDLLSettings_UnconfiguredSetting_System_IComparable_WizardWrx_Core_UnconfiguredDLLSettings_UnconfiguredSetting__CompareTo_WizardWrx_Core_UnconfiguredDLLSettings_UnconfiguredSetting_
+  commentId: M:WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.System#IComparable{WizardWrx#Core#UnconfiguredDLLSettings#UnconfiguredSetting}#CompareTo(WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting)
+  name.vb: System.IComparable<WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting>.CompareTo(UnconfiguredDLLSettings.UnconfiguredSetting)
+  fullName: WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.System.IComparable<WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting>.CompareTo(WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting)
+  nameWithType: UnconfiguredDLLSettings.UnconfiguredSetting.IComparable<UnconfiguredDLLSettings.UnconfiguredSetting>.CompareTo(UnconfiguredDLLSettings.UnconfiguredSetting)
+  nameWithType.vb: UnconfiguredDLLSettings.UnconfiguredSetting.System.IComparable<WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting>.CompareTo(UnconfiguredDLLSettings.UnconfiguredSetting)
+- uid: WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.System#IComparable{WizardWrx#Core#UnconfiguredDLLSettings#UnconfiguredSetting}#CompareTo*
+  name: IComparable<UnconfiguredDLLSettings.UnconfiguredSetting>.CompareTo
+  href: api/WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.html#WizardWrx_Core_UnconfiguredDLLSettings_UnconfiguredSetting_System_IComparable_WizardWrx_Core_UnconfiguredDLLSettings_UnconfiguredSetting__CompareTo_
+  commentId: Overload:WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.System#IComparable{WizardWrx#Core#UnconfiguredDLLSettings#UnconfiguredSetting}#CompareTo
+  isSpec: "True"
+  name.vb: System.IComparable<WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting>.CompareTo
+  fullName: WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.System.IComparable<WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting>.CompareTo
+  nameWithType: UnconfiguredDLLSettings.UnconfiguredSetting.IComparable<UnconfiguredDLLSettings.UnconfiguredSetting>.CompareTo
+  nameWithType.vb: UnconfiguredDLLSettings.UnconfiguredSetting.System.IComparable<WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting>.CompareTo
+- uid: WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.ToString
+  name: ToString()
+  href: api/WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.html#WizardWrx_Core_UnconfiguredDLLSettings_UnconfiguredSetting_ToString
+  commentId: M:WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.ToString
+  fullName: WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.ToString()
+  nameWithType: UnconfiguredDLLSettings.UnconfiguredSetting.ToString()
+- uid: WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.ToString*
+  name: ToString
+  href: api/WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.html#WizardWrx_Core_UnconfiguredDLLSettings_UnconfiguredSetting_ToString_
+  commentId: Overload:WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.ToString
+  isSpec: "True"
+  fullName: WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.ToString
+  nameWithType: UnconfiguredDLLSettings.UnconfiguredSetting.ToString
 - uid: WizardWrx.Core.UnmanagedLibrary
   name: UnmanagedLibrary
   href: api/WizardWrx.Core.UnmanagedLibrary.html
@@ -7517,6 +7739,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.DLLConfigurationManager.ExceptionLogger.RestoreSavedOptions
   nameWithType: ExceptionLogger.RestoreSavedOptions
+- uid: WizardWrx.DLLConfigurationManager.ExceptionLogger.s_strSettingsOmittedFromConfigFile
+  name: s_strSettingsOmittedFromConfigFile
+  href: api/WizardWrx.DLLConfigurationManager.ExceptionLogger.html#WizardWrx_DLLConfigurationManager_ExceptionLogger_s_strSettingsOmittedFromConfigFile
+  commentId: P:WizardWrx.DLLConfigurationManager.ExceptionLogger.s_strSettingsOmittedFromConfigFile
+  fullName: WizardWrx.DLLConfigurationManager.ExceptionLogger.s_strSettingsOmittedFromConfigFile
+  nameWithType: ExceptionLogger.s_strSettingsOmittedFromConfigFile
+- uid: WizardWrx.DLLConfigurationManager.ExceptionLogger.s_strSettingsOmittedFromConfigFile*
+  name: s_strSettingsOmittedFromConfigFile
+  href: api/WizardWrx.DLLConfigurationManager.ExceptionLogger.html#WizardWrx_DLLConfigurationManager_ExceptionLogger_s_strSettingsOmittedFromConfigFile_
+  commentId: Overload:WizardWrx.DLLConfigurationManager.ExceptionLogger.s_strSettingsOmittedFromConfigFile
+  isSpec: "True"
+  fullName: WizardWrx.DLLConfigurationManager.ExceptionLogger.s_strSettingsOmittedFromConfigFile
+  nameWithType: ExceptionLogger.s_strSettingsOmittedFromConfigFile
 - uid: WizardWrx.DLLConfigurationManager.ExceptionLogger.SaveCurrentColors
   name: SaveCurrentColors()
   href: api/WizardWrx.DLLConfigurationManager.ExceptionLogger.html#WizardWrx_DLLConfigurationManager_ExceptionLogger_SaveCurrentColors
@@ -11874,6 +12109,76 @@ references:
   commentId: F:WizardWrx.PathPositions.UNC_HOSTNAME_START_POS
   fullName: WizardWrx.PathPositions.UNC_HOSTNAME_START_POS
   nameWithType: PathPositions.UNC_HOSTNAME_START_POS
+- uid: WizardWrx.RecoveredException
+  name: RecoveredException
+  href: api/WizardWrx.RecoveredException.html
+  commentId: T:WizardWrx.RecoveredException
+  fullName: WizardWrx.RecoveredException
+  nameWithType: RecoveredException
+- uid: WizardWrx.RecoveredException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  name: RecoveredException(SerializationInfo, StreamingContext)
+  href: api/WizardWrx.RecoveredException.html#WizardWrx_RecoveredException__ctor_System_Runtime_Serialization_SerializationInfo_System_Runtime_Serialization_StreamingContext_
+  commentId: M:WizardWrx.RecoveredException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  fullName: WizardWrx.RecoveredException.RecoveredException(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
+  nameWithType: RecoveredException.RecoveredException(SerializationInfo, StreamingContext)
+- uid: WizardWrx.RecoveredException.#ctor(System.String,System.Exception,System.String,System.String,System.String)
+  name: RecoveredException(String, Exception, String, String, String)
+  href: api/WizardWrx.RecoveredException.html#WizardWrx_RecoveredException__ctor_System_String_System_Exception_System_String_System_String_System_String_
+  commentId: M:WizardWrx.RecoveredException.#ctor(System.String,System.Exception,System.String,System.String,System.String)
+  fullName: WizardWrx.RecoveredException.RecoveredException(System.String, System.Exception, System.String, System.String, System.String)
+  nameWithType: RecoveredException.RecoveredException(String, Exception, String, String, String)
+- uid: WizardWrx.RecoveredException.#ctor(System.String,System.String,System.String,System.String)
+  name: RecoveredException(String, String, String, String)
+  href: api/WizardWrx.RecoveredException.html#WizardWrx_RecoveredException__ctor_System_String_System_String_System_String_System_String_
+  commentId: M:WizardWrx.RecoveredException.#ctor(System.String,System.String,System.String,System.String)
+  fullName: WizardWrx.RecoveredException.RecoveredException(System.String, System.String, System.String, System.String)
+  nameWithType: RecoveredException.RecoveredException(String, String, String, String)
+- uid: WizardWrx.RecoveredException.#ctor*
+  name: RecoveredException
+  href: api/WizardWrx.RecoveredException.html#WizardWrx_RecoveredException__ctor_
+  commentId: Overload:WizardWrx.RecoveredException.#ctor
+  isSpec: "True"
+  fullName: WizardWrx.RecoveredException.RecoveredException
+  nameWithType: RecoveredException.RecoveredException
+- uid: WizardWrx.RecoveredException.Source
+  name: Source
+  href: api/WizardWrx.RecoveredException.html#WizardWrx_RecoveredException_Source
+  commentId: P:WizardWrx.RecoveredException.Source
+  fullName: WizardWrx.RecoveredException.Source
+  nameWithType: RecoveredException.Source
+- uid: WizardWrx.RecoveredException.Source*
+  name: Source
+  href: api/WizardWrx.RecoveredException.html#WizardWrx_RecoveredException_Source_
+  commentId: Overload:WizardWrx.RecoveredException.Source
+  isSpec: "True"
+  fullName: WizardWrx.RecoveredException.Source
+  nameWithType: RecoveredException.Source
+- uid: WizardWrx.RecoveredException.StackTrace
+  name: StackTrace
+  href: api/WizardWrx.RecoveredException.html#WizardWrx_RecoveredException_StackTrace
+  commentId: P:WizardWrx.RecoveredException.StackTrace
+  fullName: WizardWrx.RecoveredException.StackTrace
+  nameWithType: RecoveredException.StackTrace
+- uid: WizardWrx.RecoveredException.StackTrace*
+  name: StackTrace
+  href: api/WizardWrx.RecoveredException.html#WizardWrx_RecoveredException_StackTrace_
+  commentId: Overload:WizardWrx.RecoveredException.StackTrace
+  isSpec: "True"
+  fullName: WizardWrx.RecoveredException.StackTrace
+  nameWithType: RecoveredException.StackTrace
+- uid: WizardWrx.RecoveredException.TargetSite
+  name: TargetSite
+  href: api/WizardWrx.RecoveredException.html#WizardWrx_RecoveredException_TargetSite
+  commentId: P:WizardWrx.RecoveredException.TargetSite
+  fullName: WizardWrx.RecoveredException.TargetSite
+  nameWithType: RecoveredException.TargetSite
+- uid: WizardWrx.RecoveredException.TargetSite*
+  name: TargetSite
+  href: api/WizardWrx.RecoveredException.html#WizardWrx_RecoveredException_TargetSite_
+  commentId: Overload:WizardWrx.RecoveredException.TargetSite
+  isSpec: "True"
+  fullName: WizardWrx.RecoveredException.TargetSite
+  nameWithType: RecoveredException.TargetSite
 - uid: WizardWrx.RegExpSupport
   name: RegExpSupport
   href: api/WizardWrx.RegExpSupport.html
@@ -13283,6 +13588,24 @@ references:
   commentId: F:WizardWrx.SpecialStrings.AT_CHAR
   fullName: WizardWrx.SpecialStrings.AT_CHAR
   nameWithType: SpecialStrings.AT_CHAR
+- uid: WizardWrx.SpecialStrings.COLON
+  name: COLON
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_COLON
+  commentId: F:WizardWrx.SpecialStrings.COLON
+  fullName: WizardWrx.SpecialStrings.COLON
+  nameWithType: SpecialStrings.COLON
+- uid: WizardWrx.SpecialStrings.COMMA
+  name: COMMA
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_COMMA
+  commentId: F:WizardWrx.SpecialStrings.COMMA
+  fullName: WizardWrx.SpecialStrings.COMMA
+  nameWithType: SpecialStrings.COMMA
+- uid: WizardWrx.SpecialStrings.DOUBLE_QUOTE
+  name: DOUBLE_QUOTE
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_DOUBLE_QUOTE
+  commentId: F:WizardWrx.SpecialStrings.DOUBLE_QUOTE
+  fullName: WizardWrx.SpecialStrings.DOUBLE_QUOTE
+  nameWithType: SpecialStrings.DOUBLE_QUOTE
 - uid: WizardWrx.SpecialStrings.EMPTY_STRING
   name: EMPTY_STRING
   href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_EMPTY_STRING
@@ -13295,6 +13618,12 @@ references:
   commentId: F:WizardWrx.SpecialStrings.ERRMSG_SUCCESS_PLACEHOLDER
   fullName: WizardWrx.SpecialStrings.ERRMSG_SUCCESS_PLACEHOLDER
   nameWithType: SpecialStrings.ERRMSG_SUCCESS_PLACEHOLDER
+- uid: WizardWrx.SpecialStrings.FULL_STOP
+  name: FULL_STOP
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_FULL_STOP
+  commentId: F:WizardWrx.SpecialStrings.FULL_STOP
+  fullName: WizardWrx.SpecialStrings.FULL_STOP
+  nameWithType: SpecialStrings.FULL_STOP
 - uid: WizardWrx.SpecialStrings.HTML_COMMENT_PREFIX
   name: HTML_COMMENT_PREFIX
   href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_HTML_COMMENT_PREFIX
@@ -13325,6 +13654,12 @@ references:
   commentId: F:WizardWrx.SpecialStrings.HTML_NONBREAKING_SPACE
   fullName: WizardWrx.SpecialStrings.HTML_NONBREAKING_SPACE
   nameWithType: SpecialStrings.HTML_NONBREAKING_SPACE
+- uid: WizardWrx.SpecialStrings.HYPHEN
+  name: HYPHEN
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_HYPHEN
+  commentId: F:WizardWrx.SpecialStrings.HYPHEN
+  fullName: WizardWrx.SpecialStrings.HYPHEN
+  nameWithType: SpecialStrings.HYPHEN
 - uid: WizardWrx.SpecialStrings.LOCALHOST
   name: LOCALHOST
   href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_LOCALHOST
@@ -13343,6 +13678,18 @@ references:
   commentId: F:WizardWrx.SpecialStrings.PERCENT_SIGN
   fullName: WizardWrx.SpecialStrings.PERCENT_SIGN
   nameWithType: SpecialStrings.PERCENT_SIGN
+- uid: WizardWrx.SpecialStrings.SEMICOLON
+  name: SEMICOLON
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_SEMICOLON
+  commentId: F:WizardWrx.SpecialStrings.SEMICOLON
+  fullName: WizardWrx.SpecialStrings.SEMICOLON
+  nameWithType: SpecialStrings.SEMICOLON
+- uid: WizardWrx.SpecialStrings.SINGLE_QUOTE
+  name: SINGLE_QUOTE
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_SINGLE_QUOTE
+  commentId: F:WizardWrx.SpecialStrings.SINGLE_QUOTE
+  fullName: WizardWrx.SpecialStrings.SINGLE_QUOTE
+  nameWithType: SpecialStrings.SINGLE_QUOTE
 - uid: WizardWrx.SpecialStrings.SPACE_CHAR
   name: SPACE_CHAR
   href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_SPACE_CHAR
@@ -13373,6 +13720,18 @@ references:
   commentId: F:WizardWrx.SpecialStrings.STRING_SPLIT_NEWLINE
   fullName: WizardWrx.SpecialStrings.STRING_SPLIT_NEWLINE
   nameWithType: SpecialStrings.STRING_SPLIT_NEWLINE
+- uid: WizardWrx.SpecialStrings.TAB_CHAR
+  name: TAB_CHAR
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_TAB_CHAR
+  commentId: F:WizardWrx.SpecialStrings.TAB_CHAR
+  fullName: WizardWrx.SpecialStrings.TAB_CHAR
+  nameWithType: SpecialStrings.TAB_CHAR
+- uid: WizardWrx.SpecialStrings.UNDERSCORE_CHAR
+  name: UNDERSCORE_CHAR
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_UNDERSCORE_CHAR
+  commentId: F:WizardWrx.SpecialStrings.UNDERSCORE_CHAR
+  fullName: WizardWrx.SpecialStrings.UNDERSCORE_CHAR
+  nameWithType: SpecialStrings.UNDERSCORE_CHAR
 - uid: WizardWrx.StringExtensions
   name: StringExtensions
   href: api/WizardWrx.StringExtensions.html

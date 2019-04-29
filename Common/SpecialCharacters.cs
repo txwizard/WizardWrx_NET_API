@@ -114,6 +114,20 @@
 	2018/10/07 7.1     DAG    Cross reference the new SpecialStrings.SPACE_CHAR,
 	                          and put the out-of-order constants into alphabetic
 							  order by name.
+
+	2019/04/27 7.15    DAG    Cross reference the following single-character
+                              strings that I just added to the SpecialStrings
+                              class.
+
+                                   COLON
+                                   COMMA
+                                   DOUBLE_QUOTE
+                                   FULL_STOP
+                                   HYPHEN
+                                   SEMICOLON
+                                   SINGLE_QUOTE
+                                   TAB_CHAR
+                                   UNDERSCORE_CHAR
     ============================================================================
 */
 
@@ -373,6 +387,7 @@ namespace WizardWrx
 		/// <seealso cref="SEMICOLON"/>
 		/// <seealso cref="TAB_CHAR"/>
 		/// <seealso cref="UNDERSCORE_CHAR"/>
+        /// <seealso cref="SpecialStrings.COLON"/>
 		public const char COLON = ':';
 
 		/// <summary>
@@ -387,6 +402,7 @@ namespace WizardWrx
 		/// <seealso cref="SEMICOLON"/>
 		/// <seealso cref="TAB_CHAR"/>
 		/// <seealso cref="UNDERSCORE_CHAR"/>
+        /// <seealso cref="SpecialStrings.COMMA"/>
 		public const char COMMA = ',';
 
 		/// <summary>
@@ -413,6 +429,7 @@ namespace WizardWrx
         /// </summary>
 		/// <seealso cref="SINGLE_QUOTE"/>
 		/// <seealso cref="SPACE_CHAR"/>
+        /// <seealso cref="SpecialStrings.DOUBLE_QUOTE"/>
 		public const char DOUBLE_QUOTE = '"';
 
 		/// <summary>
@@ -441,6 +458,7 @@ namespace WizardWrx
 		/// example, when specifying a delimiter character or appending a full
 		/// stop character to a string.
 		/// </summary>
+        /// <seealso cref="SpecialStrings.FULL_STOP"/>
 		public const char FULL_STOP = '.';
 
 		/// <summary>
@@ -455,6 +473,7 @@ namespace WizardWrx
 		/// <seealso cref="EQUALS_SIGN"/>
 		/// <seealso cref="HASH_TAG"/>
 		/// <seealso cref="UNDERSCORE_CHAR"/>
+        /// <seealso cref="SpecialStrings.HYPHEN"/>
 		public const char HYPHEN = '-';
 
 		/// <summary>
@@ -550,6 +569,7 @@ namespace WizardWrx
 		/// <seealso cref="PIPE_CHAR"/>
 		/// <seealso cref="TAB_CHAR"/>
 		/// <seealso cref="UNDERSCORE_CHAR"/>
+        /// <seealso cref="SpecialStrings.SEMICOLON"/>
 		public const char SEMICOLON = ';';
 
         /// <summary>
@@ -558,6 +578,7 @@ namespace WizardWrx
         /// </summary>
 		/// <seealso cref="DOUBLE_QUOTE"/>
 		/// <seealso cref="SPACE_CHAR"/>
+        /// <seealso cref="SpecialStrings.SINGLE_QUOTE"/>
         public const char SINGLE_QUOTE = '\x0027';
 
 		/// <summary>
@@ -586,6 +607,7 @@ namespace WizardWrx
 		/// <seealso cref="PIPE_CHAR"/>
 		/// <seealso cref="SEMICOLON"/>
 		/// <seealso cref="UNDERSCORE_CHAR"/>
+        /// <seealso cref="SpecialStrings.TAB_CHAR"/>
 		public const char TAB_CHAR = '\t';
 
 		/// <summary>
@@ -598,6 +620,7 @@ namespace WizardWrx
 		/// <seealso cref="EQUALS_SIGN"/>
 		/// <seealso cref="HYPHEN"/>
 		/// <seealso cref="TAB_CHAR"/>
+        /// <seealso cref="SpecialStrings.UNDERSCORE_CHAR"/>
 		public const char UNDERSCORE_CHAR = '_';
 	}   // public static class SpecialCharacters
 }   // partial namespace WizardWrx

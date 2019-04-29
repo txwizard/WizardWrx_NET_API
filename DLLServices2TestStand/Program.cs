@@ -198,6 +198,14 @@
                               extension method that converts a string to an
                               enumeration, and MoreMathTests.Run to test the new
                               MoreMath class.
+
+	2019/02/17 7.15    DAG    Replace Reflection.MethodBase.GetCurrentMethod
+                              with ClassAndMethodDiagnosticInfo.GetMyMethodName,
+                              which shifts most of the work to the compile phase
+                              of the build cycle, and report the contents of the
+                              ExceptionLogger.s_strSettingsOmittedFromConfigFile
+                              property, a static string that returns a message
+                              to be displayed to the program operator.
     ============================================================================
 */
 
@@ -209,9 +217,7 @@ using System.IO;
 using WizardWrx;
 using WizardWrx.AssemblyUtils;
 using WizardWrx.Core;
-using WizardWrx.Common;
 using WizardWrx.ConsoleStreams;
-using WizardWrx.Cryptography;
 using WizardWrx.DLLConfigurationManager;
 
 
@@ -351,6 +357,8 @@ namespace DLLServices2TestStand
 		const string OUTPUT_OPTIONS_NL_AUGMENT = @"NewLine Augment";
 		const string OUTPUT_OPTIONS_FINAL = @"Final Settings ";
 
+        const bool BEGIN_TEST_TAKE_METHOD_NAME_AT_FACE_VALUE = true;
+
 		static readonly OutputOptionTestData [ ] s_utpOutputOptionTestData =
 		{
 			new OutputOptionTestData (
@@ -389,12 +397,10 @@ namespace DLLServices2TestStand
                         dtmfApp.FormatThisTime ( s_smTheApp.AppStartupTimeUtc ) ,
                         Environment.NewLine
                     } );
-
 				ExceptionLogger.TimeStampedTraceWrite (
 					string.Format (
 						"BOJ {0}" ,
 						s_smTheApp.AppRootAssemblyFileBaseName ) );
-
 				s_smTheApp.LoadErrorMessageTable ( s_astrErrorMessagres );
 
 				//	------------------------------------------------------------
@@ -410,7 +416,6 @@ namespace DLLServices2TestStand
 					"OS Version                             = {0}{1}" ,			// Format Control String
 					Environment.OSVersion.ToString ( ) ,						// OS Version
 					Environment.NewLine );										// Embedded Newline to add white space
-
 				Console.WriteLine (
 					s_smTheApp.AppExceptionLogger.OutputOptionsDisplay (
 						"Initial                 " ) );
@@ -473,7 +478,10 @@ namespace DLLServices2TestStand
 				}
 				else
 				{	// Run the whole set, starting with this test, which leaves the flags set so that the original message can be reconstructed from a psLogList export.
-					EventMessageCleanupTests ( ref intTestNumber );
+                    RecoveredExceptionTests ( ref intTestNumber );
+                    PauseForPictures ( APPEND_LINEFEED );
+
+                    EventMessageCleanupTests ( ref intTestNumber );
 					PauseForPictures ( APPEND_LINEFEED );
 
 					//	------------------------------------------------------------
@@ -561,6 +569,11 @@ namespace DLLServices2TestStand
 					ShowCurrentDefaultErrorMessageColors ( Properties.Resources.MSG_SHOWING_CONFIGURED_COLORS );
 
 					PauseForPictures ( APPEND_LINEFEED );
+
+                    Console.WriteLine (
+                        @"{1}The following message is the value of the static ExceptionLogger.s_strSettingsOmittedFromConfigFile property:{1}{1}{0}" ,
+                        ExceptionLogger.s_strSettingsOmittedFromConfigFile ,
+                        Environment.NewLine );
 
 					ErrorMessagesInColor emcOld = s_smTheApp.AppExceptionLogger.SaveCurrentColors ( );
 
@@ -816,40 +829,9 @@ FinalReport:
 			Environment.Exit ( MagicNumbers.ERROR_SUCCESS );
         }   // Main method
 
-		private static void ExerciseDynamicExceptionReporting ( )
-		{
-			const string ASM_METHOD_NAME = @"GetTheSingleInstance";
-			const string ASM_REPORT_NAME = @"ReportException";
 
-			System.IO.IOException exIO = new IOException ( "This is a dummy Syatem.IOException Exception." );
-			Type typeOfExceptionLogger = typeof ( WizardWrx.DLLConfigurationManager.ExceptionLogger );
-			System.Reflection.AssemblyName assemblyNameOfExceptionLogger = new System.Reflection.AssemblyName (
-				System.Reflection.Assembly.GetAssembly (
-					typeOfExceptionLogger ).FullName );
-			WizardWrx.AssemblyUtils.DependentAssemblies daOfEntryAsm = new WizardWrx.AssemblyUtils.DependentAssemblies ( );
-			System.Reflection.Assembly asmDllCfgMgr = daOfEntryAsm.GetDependentAssemblyByName ( assemblyNameOfExceptionLogger );
-
-			if ( !asmDllCfgMgr.ReflectionOnly )
-			{   // This is a sanity check. The dependent assembly cannot be loaded into the Reflection-only context.
-				System.Reflection.MethodInfo miLoggerrInstance = typeOfExceptionLogger.GetMethod (
-					ASM_METHOD_NAME ,
-					Type.EmptyTypes );
-				object objLogger = miLoggerrInstance.Invoke ( null , null );
-				System.Reflection.MethodInfo miReporter = typeOfExceptionLogger.GetMethod (
-					ASM_REPORT_NAME ,
-					new Type [ ] { typeof ( IOException ) } );
-				object objDummy = miReporter.Invoke (
-					objLogger ,
-					new object [ ] { exIO } );
-			}   // if ( !asmDllCfgMgr.ReflectionOnly )
-
-			asmDllCfgMgr = null;
-			daOfEntryAsm.DestroyDependents ( );
-		}
-
-
-		#region Local Test Implementations
-		private static void DeduplicateExceptionLogs ( )
+        #region Local Test Implementations
+        private static void DeduplicateExceptionLogs ( )
 		{
 			Console.WriteLine (
 				"{1}ExceptionLogger flags before changes for test: {0}" ,
@@ -875,7 +857,6 @@ FinalReport:
 				s_smTheApp.AppExceptionLogger.ReportException ( exDoubleTrouble );
 			}
 		}	// DeduplicateExceptionLogs method
-
 
 
 		private static void EnumExcpetionGUIDs ( )
@@ -943,9 +924,9 @@ FinalReport:
 			const string DEMO_EXCEPTION_REPORT = @"Exception condition: {0}";
 			const string RESTORE_ERROR = @"The RestoreSavedOptions yielded an unexpected outcome.{2}    Options expected to be restored = {0}.{2}    Options actually restored       = {1}.";
 
-			NewClassTests_20140914.BeginTest (
-				System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,
-				ref pintTestNumber );
+            NewClassTests_20140914.BeginTest (
+                ClassAndMethodDiagnosticInfo.GetMyMethodName ( ) ,
+                ref pintTestNumber );
 
 			ExceptionLogger logger = s_smTheApp.AppExceptionLogger;
 
@@ -1018,7 +999,39 @@ FinalReport:
 		}   // ExerciseClearScreen method
 
 
-		private static void ExerciseSpecialMessageGenerators ( )
+        private static void ExerciseDynamicExceptionReporting ( )
+        {
+            const string ASM_METHOD_NAME = @"GetTheSingleInstance";
+            const string ASM_REPORT_NAME = @"ReportException";
+
+            System.IO.IOException exIO = new IOException ( "This is a dummy Syatem.IOException Exception." );
+            Type typeOfExceptionLogger = typeof ( WizardWrx.DLLConfigurationManager.ExceptionLogger );
+            System.Reflection.AssemblyName assemblyNameOfExceptionLogger = new System.Reflection.AssemblyName (
+                System.Reflection.Assembly.GetAssembly (
+                    typeOfExceptionLogger ).FullName );
+            WizardWrx.AssemblyUtils.DependentAssemblies daOfEntryAsm = new WizardWrx.AssemblyUtils.DependentAssemblies ( );
+            System.Reflection.Assembly asmDllCfgMgr = daOfEntryAsm.GetDependentAssemblyByName ( assemblyNameOfExceptionLogger );
+
+            if ( !asmDllCfgMgr.ReflectionOnly )
+            {   // This is a sanity check. The dependent assembly cannot be loaded into the Reflection-only context.
+                System.Reflection.MethodInfo miLoggerrInstance = typeOfExceptionLogger.GetMethod (
+                    ASM_METHOD_NAME ,
+                    Type.EmptyTypes );
+                object objLogger = miLoggerrInstance.Invoke ( null , null );
+                System.Reflection.MethodInfo miReporter = typeOfExceptionLogger.GetMethod (
+                    ASM_REPORT_NAME ,
+                    new Type [ ] { typeof ( IOException ) } );
+                object objDummy = miReporter.Invoke (
+                    objLogger ,
+                    new object [ ] { exIO } );
+            }   // if ( !asmDllCfgMgr.ReflectionOnly )
+
+            asmDllCfgMgr = null;
+            daOfEntryAsm.DestroyDependents ( );
+        }   // ExerciseDynamicExceptionReporting
+
+
+        private static void ExerciseSpecialMessageGenerators ( )
 		{
 			Console.WriteLine ( "{0}Exercising the new special message generators.{0}" , Environment.NewLine );
 			Console.WriteLine ( "    Test 1: Get the ERROR_SUCCESS placeholder from ExceptionLogger.GetSpecifiedReservedErrorMessage         : {0}" , ExceptionLogger.GetSpecifiedReservedErrorMessage ( ExceptionLogger.ErrorExitOptions.Succeeded ) );
@@ -1046,32 +1059,72 @@ FinalReport:
 				Console.WriteLine ( "{0}The GUID reconstituted correctly from the byte array.{0}" , Environment.NewLine );
 			else
 				Console.WriteLine ( "{0}The GUID reconstituted INcorrectly from the byte array.{0}" , Environment.NewLine );
-		}	// GenerateExceptionMessageFormatTable method
-		#endregion	// Local Test Implementations
+		}   // GenerateExceptionMessageFormatTable method
 
 
-		#region Subroutines, Some Scoped to the Application
-		//	====================================================================
-		//	Subroutines, one of which is marked Internal, so that routines in
-		//	related classes can call it.
-		//	====================================================================
+        private static void RecoveredExceptionTests ( ref int pintTestNumber )
+        {
+            const int TEST_COUNTER_1 = 1;
+            const int TEST_COUNTER_2 = 2;
+            NewClassTests_20140914.BeginTest (
+                ClassAndMethodDiagnosticInfo.GetMyMethodName ( ) ,
+                ref pintTestNumber ,
+                BEGIN_TEST_TAKE_METHOD_NAME_AT_FACE_VALUE );
+
+            try
+            {
+                throw new Exception ( @"Get a real stack trace." );
+            }
+            catch ( Exception ex )
+            {
+                RecoveredException recoveredException1 = new RecoveredException (
+                    ex.Message ,
+                    ex.Source ,
+                    ex.StackTrace ,
+                    ex.TargetSite.Name );
+                ShowRecoveredExceptionProperties (
+                    recoveredException1 ,
+                    TEST_COUNTER_1 );
+            }
+
+            RecoveredException recoveredException2 = new RecoveredException (
+                @"Simulate a recovered exception." ,
+                s_smTheApp.AppRootAssemblyName.ToString ( ) ,
+                Environment.StackTrace ,
+                ClassAndMethodDiagnosticInfo.GetMyMethodName ( ) );
+            ShowRecoveredExceptionProperties (
+                recoveredException2 ,
+                TEST_COUNTER_2 );
+
+            NewClassTests_20140914.TestDone (
+                MagicNumbers.ERROR_SUCCESS ,
+                pintTestNumber );
+        }   // RecoveredExceptionTests method
+        #endregion // Local Test Implementations
 
 
-		/// <summary>
-		/// Convert a file name string read from a setting into an absolute file
-		/// name by replacing a substitution token with the string stored in
-		/// AbsoluteDataDirectoryName, a read-only string defined with internal
-		/// scope in this class.
-		/// </summary>
-		/// <param name="pstrRawSettingValue">
-		/// To preserve the linkage with the settings, the caller must pass in the
-		/// value read from the application settings.
-		/// </param>
-		/// <returns>
-		/// The returned string is anticipated to be an absolute (fully qualified)
-		/// file name.
-		/// </returns>
-		internal static string AbsolutePathStringFromSettings ( string pstrRawSettingValue )
+        #region Subroutines, Some Scoped to the Application
+        //	====================================================================
+        //	Subroutines, one of which is marked Internal, so that routines in
+        //	related classes can call it.
+        //	====================================================================
+
+
+        /// <summary>
+        /// Convert a file name string read from a setting into an absolute file
+        /// name by replacing a substitution token with the string stored in
+        /// AbsoluteDataDirectoryName, a read-only string defined with internal
+        /// scope in this class.
+        /// </summary>
+        /// <param name="pstrRawSettingValue">
+        /// To preserve the linkage with the settings, the caller must pass in the
+        /// value read from the application settings.
+        /// </param>
+        /// <returns>
+        /// The returned string is anticipated to be an absolute (fully qualified)
+        /// file name.
+        /// </returns>
+        internal static string AbsolutePathStringFromSettings ( string pstrRawSettingValue )
 		{
 			const string DATA_DIRECTORY_NAME_TOKEN = @"$$DATADIRNAME$$\";
 
@@ -1403,7 +1456,18 @@ FinalReport:
         }   // ShowDefaulErrorMessageColors method
 
 
-		private static void UnaryMinusExercises ( )
+        private static void ShowRecoveredExceptionProperties (
+            RecoveredException pexRecoveredException ,
+            int pintOrdinal )
+        {
+            Console.WriteLine ( @"RecoveredException test {0}: Message    = {1}" , pintOrdinal , pexRecoveredException.Message );
+            Console.WriteLine ( @"                           TargetSite = {0}" , pexRecoveredException.TargetSite );
+            Console.WriteLine ( @"                           Source     = {0}" , pexRecoveredException.Source );
+            Console.WriteLine ( @"                           StackTrace = {0}{1}" , pexRecoveredException.StackTrace , Environment.NewLine );
+        }   // ShowRecoveredExceptionProperties method
+
+
+        private static void UnaryMinusExercises ( )
 		{
 			Console.WriteLine (
 				"{0}UnaryMinusExercises Begin:{0}" ,

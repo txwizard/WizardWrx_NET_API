@@ -135,6 +135,18 @@
 	2018/10/07 7.1     DAG    Define SPACE_CHAR for use when only a string will
 	                          do, and cross reference the new constant to its
 							  antecedent, SpecialCharacters.SPACE_CHAR.
+
+	2019/04/27 7.15    DAG    Define the following single-character strings:
+
+                                   COLON
+                                   COMMA
+                                   DOUBLE_QUOTE
+                                   FULL_STOP
+                                   HYPHEN
+                                   SEMICOLON
+                                   SINGLE_QUOTE
+                                   TAB_CHAR
+                                   UNDERSCORE_CHAR
     ============================================================================
 */
 
@@ -206,18 +218,39 @@ namespace WizardWrx
 		/// <seealso cref="ASP_RELATIVE_PATH_BEGIN"/>
 		public const string ASP_REL_EXEC_PATH_PREFIX = @"~/";
 
-		/// <summary>
-		/// I like having a way to initialize a constant to the empty string.
-		/// </summary>
-		/// <seealso cref="ArrayInfo.ARRAY_FIRST_ELEMENT"/>
-		/// <seealso cref="ArrayInfo.ARRAY_IS_EMPTY"/>
-		/// <seealso cref="ArrayInfo.ARRAY_INVALID_INDEX"/>
-		/// <seealso cref="ArrayInfo.ARRAY_SECOND_ELEMENT"/>
-		/// <seealso cref="ArrayInfo.INDEX_FROM_ORDINAL"/>
-		/// <seealso cref="ArrayInfo.NEXT_INDEX"/>
-		/// <seealso cref="ArrayInfo.ORDINAL_FROM_INDEX"/>
-		/// <seealso cref="MagicNumbers.EMPTY_STRING_LENGTH"/>
-		public const string EMPTY_STRING = @"";
+        /// <summary>
+        /// This is one of many single characters that are frequently needed as
+        /// single-character string constants.
+        /// </summary>
+        /// <seealso cref="SpecialCharacters.COLON"/>
+        public const string COLON = ":";
+
+        /// <summary>
+        /// This is one of many single characters that are frequently needed as
+        /// single-character string constants.
+        /// </summary>
+        /// <seealso cref="SpecialCharacters.COMMA"/>
+        public const string COMMA = ",";
+        
+        /// <summary>
+        /// This is one of many single characters that are frequently needed as
+        /// single-character string constants.
+        /// </summary>
+        /// <seealso cref="SpecialCharacters.DOUBLE_QUOTE"/>
+        public const string DOUBLE_QUOTE = "\"";
+
+        /// <summary>
+        /// I like having a way to initialize a constant to the empty string.
+        /// </summary>
+        /// <seealso cref="ArrayInfo.ARRAY_FIRST_ELEMENT"/>
+        /// <seealso cref="ArrayInfo.ARRAY_IS_EMPTY"/>
+        /// <seealso cref="ArrayInfo.ARRAY_INVALID_INDEX"/>
+        /// <seealso cref="ArrayInfo.ARRAY_SECOND_ELEMENT"/>
+        /// <seealso cref="ArrayInfo.INDEX_FROM_ORDINAL"/>
+        /// <seealso cref="ArrayInfo.NEXT_INDEX"/>
+        /// <seealso cref="ArrayInfo.ORDINAL_FROM_INDEX"/>
+        /// <seealso cref="MagicNumbers.EMPTY_STRING_LENGTH"/>
+        public const string EMPTY_STRING = @"";
 
 		/// <summary>
 		/// Since ErrorExit is never invoked for ERROR_SUCCESS, and the table of
@@ -238,10 +271,24 @@ namespace WizardWrx
 		/// <seealso cref="MagicNumbers.ERROR_RUNTIME"/>
 		public const string ERRMSG_SUCCESS_PLACEHOLDER = @"ERROR_SUCCESS Placeholder";
 
-		/// <summary>
-		/// Minimal HTML (and XML) comment prefix string.
-		/// </summary>
-		public const string HTML_COMMENT_PREFIX = @"<!--";
+        /// <summary>
+        /// This is one of many single characters that are frequently needed as
+        /// single-character string constants.
+        /// </summary>
+        /// <seealso cref="SpecialCharacters.FULL_STOP"/>
+        public const string FULL_STOP = ".";
+
+        /// <summary>
+        /// This is one of many single characters that are frequently needed as
+        /// single-character string constants.
+        /// </summary>
+        /// <seealso cref="SpecialCharacters.HYPHEN"/>
+        public const string HYPHEN = @"-";
+
+        /// <summary>
+        /// Minimal HTML (and XML) comment prefix string.
+        /// </summary>
+        public const string HTML_COMMENT_PREFIX = @"<!--";
 
 		/// <summary>
 		/// HTML (and XML) comment prefix string, followed by a single space.
@@ -281,6 +328,20 @@ namespace WizardWrx
 		/// <seealso cref="SpecialCharacters.PERCENT_SIGN"/>
 		public const string PERCENT_SIGN = "%";
 
+        /// <summary>
+        /// This is one of many single characters that are frequently needed as
+        /// single-character string constants.
+        /// </summary>
+        /// <seealso cref="SpecialCharacters.SEMICOLON"/>
+        public const string SEMICOLON = @";";
+
+        /// <summary>
+        /// This is one of many single characters that are frequently needed as
+        /// single-character string constants.
+        /// </summary>
+        /// <seealso cref="SpecialCharacters.SINGLE_QUOTE"/>
+        public const string SINGLE_QUOTE = "'";
+ 
 		/// <summary>
 		/// Use this when you need a space character in a context that requires
 		/// a string representation.
@@ -333,5 +394,19 @@ namespace WizardWrx
 		/// <seealso cref="SpecialCharacters.LINEFEED"/>
 		/// <seealso cref="STRING_SPLIT_CARRIAGE_RETURN"/>
 		public const string STRING_SPLIT_NEWLINE = "\r\n";
-	}	// public sealed class SpecialStrings
+
+        /// <summary>
+        /// This is one of many single characters that are frequently needed as
+        /// single-character string constants.
+        /// </summary>
+        /// <seealso cref="SpecialCharacters.TAB_CHAR"/>
+        public const string TAB_CHAR = "\t";
+
+        /// <summary>
+        /// This is one of many single characters that are frequently needed as
+        /// single-character string constants.
+        /// </summary>
+        /// <seealso cref="SpecialCharacters.UNDERSCORE_CHAR"/>
+        public const string UNDERSCORE_CHAR = @"_";
+    }	// public sealed class SpecialStrings
 }	// partial namespace WizardWrx

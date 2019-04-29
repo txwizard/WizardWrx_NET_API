@@ -117,8 +117,9 @@ was loaded. See Remarks.</p>
   <h5 id="WizardWrx_Core_AssemblyLocatorBase_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>Given the location from which an assembly was loaded, you can learn
 almost anything else you need to know about that file, such as its size,
-age, and directory. Given the directory, you can locate satellite files,
-such as custom configuration files.</p>
+age, version, and directory. Given the directory, you can locate
+satellite files, such as configuration files that contain settings that
+it uses.</p>
 </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -127,7 +128,7 @@ such as custom configuration files.</p>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_AssemblyLocatorBase__ctor.md&amp;value=---%0Auid%3A%20WizardWrx.Core.AssemblyLocatorBase.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AssemblyLocatorBase.cs/#L319">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AssemblyLocatorBase.cs/#L345">View Source</a>
   </span>
   <a id="WizardWrx_Core_AssemblyLocatorBase__ctor_" data-uid="WizardWrx.Core.AssemblyLocatorBase.#ctor*"></a>
   <h4 id="WizardWrx_Core_AssemblyLocatorBase__ctor" data-uid="WizardWrx.Core.AssemblyLocatorBase.#ctor">AssemblyLocatorBase()</h4>
@@ -153,7 +154,7 @@ directory.</p>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_AssemblyLocatorBase__ctor_System_Reflection_Assembly_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.AssemblyLocatorBase.%23ctor(System.Reflection.Assembly)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AssemblyLocatorBase.cs/#L352">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AssemblyLocatorBase.cs/#L378">View Source</a>
   </span>
   <a id="WizardWrx_Core_AssemblyLocatorBase__ctor_" data-uid="WizardWrx.Core.AssemblyLocatorBase.#ctor*"></a>
   <h4 id="WizardWrx_Core_AssemblyLocatorBase__ctor_System_Reflection_Assembly_" data-uid="WizardWrx.Core.AssemblyLocatorBase.#ctor(System.Reflection.Assembly)">AssemblyLocatorBase(Assembly)</h4>
@@ -198,10 +199,41 @@ directory.</p>
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_AssemblyLocatorBase__strAssemblyLocation.md&amp;value=---%0Auid%3A%20WizardWrx.Core.AssemblyLocatorBase._strAssemblyLocation%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AssemblyLocatorBase.cs/#L311">View Source</a>
+  </span>
+  <h4 id="WizardWrx_Core_AssemblyLocatorBase__strAssemblyLocation" data-uid="WizardWrx.Core.AssemblyLocatorBase._strAssemblyLocation">_strAssemblyLocation</h4>
+  <div class="markdown level1 summary"><p>Once the energy required to gather the location has been expended,
+save it for future use.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected string _strAssemblyLocation</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_AssemblyLocatorBase_ASSEMBLYDATAPATH_TOKEN.md&amp;value=---%0Auid%3A%20WizardWrx.Core.AssemblyLocatorBase.ASSEMBLYDATAPATH_TOKEN%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AssemblyLocatorBase.cs/#L259">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AssemblyLocatorBase.cs/#L264">View Source</a>
   </span>
   <h4 id="WizardWrx_Core_AssemblyLocatorBase_ASSEMBLYDATAPATH_TOKEN" data-uid="WizardWrx.Core.AssemblyLocatorBase.ASSEMBLYDATAPATH_TOKEN">ASSEMBLYDATAPATH_TOKEN</h4>
   <div class="markdown level1 summary"><p>Use this token in file names stored in DLL configuration files to
@@ -237,7 +269,7 @@ application directory.</p>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_AssemblyLocatorBase_AssemblyDataPath.md&amp;value=---%0Auid%3A%20WizardWrx.Core.AssemblyLocatorBase.AssemblyDataPath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AssemblyLocatorBase.cs/#L376">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AssemblyLocatorBase.cs/#L402">View Source</a>
   </span>
   <a id="WizardWrx_Core_AssemblyLocatorBase_AssemblyDataPath_" data-uid="WizardWrx.Core.AssemblyLocatorBase.AssemblyDataPath*"></a>
   <h4 id="WizardWrx_Core_AssemblyLocatorBase_AssemblyDataPath" data-uid="WizardWrx.Core.AssemblyLocatorBase.AssemblyDataPath">AssemblyDataPath</h4>
@@ -280,7 +312,7 @@ a copy in the application directory.</p>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_AssemblyLocatorBase_AssemblyLocation.md&amp;value=---%0Auid%3A%20WizardWrx.Core.AssemblyLocatorBase.AssemblyLocation%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AssemblyLocatorBase.cs/#L383">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AssemblyLocatorBase.cs/#L409">View Source</a>
   </span>
   <a id="WizardWrx_Core_AssemblyLocatorBase_AssemblyLocation_" data-uid="WizardWrx.Core.AssemblyLocatorBase.AssemblyLocation*"></a>
   <h4 id="WizardWrx_Core_AssemblyLocatorBase_AssemblyLocation" data-uid="WizardWrx.Core.AssemblyLocatorBase.AssemblyLocation">AssemblyLocation</h4>
@@ -309,43 +341,10 @@ the assembly in which the derived class is defined was loaded.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_AssemblyLocatorBase_ConfigMessage.md&amp;value=---%0Auid%3A%20WizardWrx.Core.AssemblyLocatorBase.ConfigMessage%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AssemblyLocatorBase.cs/#L392">View Source</a>
-  </span>
-  <a id="WizardWrx_Core_AssemblyLocatorBase_ConfigMessage_" data-uid="WizardWrx.Core.AssemblyLocatorBase.ConfigMessage*"></a>
-  <h4 id="WizardWrx_Core_AssemblyLocatorBase_ConfigMessage" data-uid="WizardWrx.Core.AssemblyLocatorBase.ConfigMessage">ConfigMessage</h4>
-  <div class="markdown level1 summary"><p>This property returns a message when the configuration file is
-missing or empty. Under normal conditions, it returns the empty
-string.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string ConfigMessage { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_AssemblyLocatorBase_DLLConfiguration.md&amp;value=---%0Auid%3A%20WizardWrx.Core.AssemblyLocatorBase.DLLConfiguration%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AssemblyLocatorBase.cs/#L400">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AssemblyLocatorBase.cs/#L438">View Source</a>
   </span>
   <a id="WizardWrx_Core_AssemblyLocatorBase_DLLConfiguration_" data-uid="WizardWrx.Core.AssemblyLocatorBase.DLLConfiguration*"></a>
   <h4 id="WizardWrx_Core_AssemblyLocatorBase_DLLConfiguration" data-uid="WizardWrx.Core.AssemblyLocatorBase.DLLConfiguration">DLLConfiguration</h4>
@@ -374,47 +373,10 @@ assembly in which the derived class is defined.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_AssemblyLocatorBase_DLLettingsSection.md&amp;value=---%0Auid%3A%20WizardWrx.Core.AssemblyLocatorBase.DLLettingsSection%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AssemblyLocatorBase.cs/#L438">View Source</a>
-  </span>
-  <a id="WizardWrx_Core_AssemblyLocatorBase_DLLettingsSection_" data-uid="WizardWrx.Core.AssemblyLocatorBase.DLLettingsSection*"></a>
-  <h4 id="WizardWrx_Core_AssemblyLocatorBase_DLLettingsSection" data-uid="WizardWrx.Core.AssemblyLocatorBase.DLLettingsSection">DLLettingsSection</h4>
-  <div class="markdown level1 summary"><p>Gets a reference to the entire AppSettingsSection object tied to
-the assembly in which the derived class is defined.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected AppSettingsSection DLLettingsSection { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Configuration.AppSettingsSection</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="WizardWrx_Core_AssemblyLocatorBase_DLLettingsSection_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>Since this property starts from the ConfigurationManager object
-returned by its DLLConfiguration sibling, it requires only a single
-statement, with a little help from an explicit cast.</p>
-</div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_AssemblyLocatorBase_DLLSettings.md&amp;value=---%0Auid%3A%20WizardWrx.Core.AssemblyLocatorBase.DLLSettings%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AssemblyLocatorBase.cs/#L476">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AssemblyLocatorBase.cs/#L537">View Source</a>
   </span>
   <a id="WizardWrx_Core_AssemblyLocatorBase_DLLSettings_" data-uid="WizardWrx.Core.AssemblyLocatorBase.DLLSettings*"></a>
   <h4 id="WizardWrx_Core_AssemblyLocatorBase_DLLSettings" data-uid="WizardWrx.Core.AssemblyLocatorBase.DLLSettings">DLLSettings</h4>
@@ -440,6 +402,114 @@ statement, with a little help from an explicit cast.</p>
       </tr>
     </tbody>
   </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_AssemblyLocatorBase_DLLSettingsSection.md&amp;value=---%0Auid%3A%20WizardWrx.Core.AssemblyLocatorBase.DLLSettingsSection%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AssemblyLocatorBase.cs/#L486">View Source</a>
+  </span>
+  <a id="WizardWrx_Core_AssemblyLocatorBase_DLLSettingsSection_" data-uid="WizardWrx.Core.AssemblyLocatorBase.DLLSettingsSection*"></a>
+  <h4 id="WizardWrx_Core_AssemblyLocatorBase_DLLSettingsSection" data-uid="WizardWrx.Core.AssemblyLocatorBase.DLLSettingsSection">DLLSettingsSection</h4>
+  <div class="markdown level1 summary"><p>Gets a reference to the entire AppSettingsSection object tied to
+the assembly in which the derived class is defined.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected AppSettingsSection DLLSettingsSection { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Configuration.AppSettingsSection</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_AssemblyLocatorBase_DLLSettingsSection_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Since this property starts from the ConfigurationManager object
+returned by its DLLConfiguration sibling, it requires only a single
+statement, with a little help from an explicit cast.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_AssemblyLocatorBase_MissingConfigSettings.md&amp;value=---%0Auid%3A%20WizardWrx.Core.AssemblyLocatorBase.MissingConfigSettings%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AssemblyLocatorBase.cs/#L431">View Source</a>
+  </span>
+  <a id="WizardWrx_Core_AssemblyLocatorBase_MissingConfigSettings_" data-uid="WizardWrx.Core.AssemblyLocatorBase.MissingConfigSettings*"></a>
+  <h4 id="WizardWrx_Core_AssemblyLocatorBase_MissingConfigSettings" data-uid="WizardWrx.Core.AssemblyLocatorBase.MissingConfigSettings">MissingConfigSettings</h4>
+  <div class="markdown level1 summary"><p>This read-only property returns a generic List of string, each of
+which is a message that names a property that was omitted from the
+configuration file, along with its default value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UnconfiguredDLLSettings MissingConfigSettings { get; protected set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.Core.UnconfiguredDLLSettings.html">UnconfiguredDLLSettings</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_AssemblyLocatorBase_RecoveredConfigurationExceptions.md&amp;value=---%0Auid%3A%20WizardWrx.Core.AssemblyLocatorBase.RecoveredConfigurationExceptions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AssemblyLocatorBase.cs/#L423">View Source</a>
+  </span>
+  <a id="WizardWrx_Core_AssemblyLocatorBase_RecoveredConfigurationExceptions_" data-uid="WizardWrx.Core.AssemblyLocatorBase.RecoveredConfigurationExceptions*"></a>
+  <h4 id="WizardWrx_Core_AssemblyLocatorBase_RecoveredConfigurationExceptions" data-uid="WizardWrx.Core.AssemblyLocatorBase.RecoveredConfigurationExceptions">RecoveredConfigurationExceptions</h4>
+  <div class="markdown level1 summary"><p>This read only property returns a generic List of Exceptions that
+arose during the initialization phase of an instance, and were
+silently recovered, so that they can be reported for investigation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;RecoveredException&gt; RecoveredConfigurationExceptions { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="WizardWrx.RecoveredException.html">RecoveredException</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_AssemblyLocatorBase_RecoveredConfigurationExceptions_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This property supersedes ConfigMessage, which returned the list of
+exceptions as one long string, discarding their all-important stack
+traces.</p>
+</div>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
@@ -447,7 +517,7 @@ statement, with a little help from an explicit cast.</p>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_AssemblyLocatorBase_GetAssemblyBuildDate_System_DateTimeKind_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.AssemblyLocatorBase.GetAssemblyBuildDate(System.DateTimeKind)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AssemblyLocatorBase.cs/#L536">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AssemblyLocatorBase.cs/#L611">View Source</a>
   </span>
   <a id="WizardWrx_Core_AssemblyLocatorBase_GetAssemblyBuildDate_" data-uid="WizardWrx.Core.AssemblyLocatorBase.GetAssemblyBuildDate*"></a>
   <h4 id="WizardWrx_Core_AssemblyLocatorBase_GetAssemblyBuildDate_System_DateTimeKind_" data-uid="WizardWrx.Core.AssemblyLocatorBase.GetAssemblyBuildDate(System.DateTimeKind)">GetAssemblyBuildDate(DateTimeKind)</h4>
@@ -502,7 +572,7 @@ contains the code of the executing assembly.</p>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_AssemblyLocatorBase_GetAssemblyVersion.md&amp;value=---%0Auid%3A%20WizardWrx.Core.AssemblyLocatorBase.GetAssemblyVersion%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AssemblyLocatorBase.cs/#L560">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AssemblyLocatorBase.cs/#L635">View Source</a>
   </span>
   <a id="WizardWrx_Core_AssemblyLocatorBase_GetAssemblyVersion_" data-uid="WizardWrx.Core.AssemblyLocatorBase.GetAssemblyVersion*"></a>
   <h4 id="WizardWrx_Core_AssemblyLocatorBase_GetAssemblyVersion" data-uid="WizardWrx.Core.AssemblyLocatorBase.GetAssemblyVersion">GetAssemblyVersion()</h4>
@@ -535,7 +605,7 @@ assembly name.</p>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_AssemblyLocatorBase_GetAssemblyVersionString.md&amp;value=---%0Auid%3A%20WizardWrx.Core.AssemblyLocatorBase.GetAssemblyVersionString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AssemblyLocatorBase.cs/#L573">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AssemblyLocatorBase.cs/#L648">View Source</a>
   </span>
   <a id="WizardWrx_Core_AssemblyLocatorBase_GetAssemblyVersionString_" data-uid="WizardWrx.Core.AssemblyLocatorBase.GetAssemblyVersionString*"></a>
   <h4 id="WizardWrx_Core_AssemblyLocatorBase_GetAssemblyVersionString" data-uid="WizardWrx.Core.AssemblyLocatorBase.GetAssemblyVersionString">GetAssemblyVersionString()</h4>
@@ -568,7 +638,7 @@ assembly name.</p>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_AssemblyLocatorBase_GetDLLSetting_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.AssemblyLocatorBase.GetDLLSetting(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AssemblyLocatorBase.cs/#L591">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AssemblyLocatorBase.cs/#L666">View Source</a>
   </span>
   <a id="WizardWrx_Core_AssemblyLocatorBase_GetDLLSetting_" data-uid="WizardWrx.Core.AssemblyLocatorBase.GetDLLSetting*"></a>
   <h4 id="WizardWrx_Core_AssemblyLocatorBase_GetDLLSetting_System_String_" data-uid="WizardWrx.Core.AssemblyLocatorBase.GetDLLSetting(System.String)">GetDLLSetting(String)</h4>
@@ -619,7 +689,7 @@ the named key.</p>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_AssemblyLocatorBase_SetPropertiesFromDLLConfiguration_System_Type_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.AssemblyLocatorBase.SetPropertiesFromDLLConfiguration(System.Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AssemblyLocatorBase.cs/#L619">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AssemblyLocatorBase.cs/#L694">View Source</a>
   </span>
   <a id="WizardWrx_Core_AssemblyLocatorBase_SetPropertiesFromDLLConfiguration_" data-uid="WizardWrx.Core.AssemblyLocatorBase.SetPropertiesFromDLLConfiguration*"></a>
   <h4 id="WizardWrx_Core_AssemblyLocatorBase_SetPropertiesFromDLLConfiguration_System_Type_" data-uid="WizardWrx.Core.AssemblyLocatorBase.SetPropertiesFromDLLConfiguration(System.Type)">SetPropertiesFromDLLConfiguration(Type)</h4>
@@ -628,7 +698,7 @@ the named key.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected int SetPropertiesFromDLLConfiguration(Type pderivedType)</code></pre>
+    <pre><code class="lang-csharp hljs">protected AssemblyLocatorBase.PropertySourceCounts SetPropertiesFromDLLConfiguration(Type pderivedType)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -659,7 +729,7 @@ reference to its own Type property.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Int32</span></td>
+        <td><a class="xref" href="WizardWrx.Core.AssemblyLocatorBase.PropertySourceCounts.html">AssemblyLocatorBase.PropertySourceCounts</a></td>
         <td><p>The return value is the count of properties that were set.</p>
 </td>
       </tr>
@@ -686,7 +756,7 @@ key names in a configuration file to property names on an object.</p>
                     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_AssemblyLocatorBase.md&amp;value=---%0Auid%3A%20WizardWrx.Core.AssemblyLocatorBase%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AssemblyLocatorBase.cs/#L210" class="contribution-link">View Source</a>
+                    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AssemblyLocatorBase.cs/#L215" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

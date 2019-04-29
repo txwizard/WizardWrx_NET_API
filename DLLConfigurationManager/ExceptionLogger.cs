@@ -42,7 +42,7 @@
 
 	Author:             David A. Gray
 
-	License:            Copyright (C) 2010-2017, David A. Gray. All rights reserved.
+	License:            Copyright (C) 2010-2019, David A. Gray. All rights reserved.
 
 						Redistribution and use in source and binary forms, with
 						or without modification, are permitted provided that the
@@ -321,6 +321,12 @@
 
 	2018/12/24 7.14    DAG    Add a new GetTheSingleInstance overload that takes
                               only the OptionFlags parameter.
+
+    2019/02/18 7.15    DAG    Define s_strSettingsOmittedFromConfigFile as a
+                              static string property that returns a message that
+                              lists the properties that are absent from the DLL
+                              configuration file, along with their hard coded
+                              default values.
 	============================================================================
 */
 
@@ -903,33 +909,33 @@ namespace WizardWrx.DLLConfigurationManager
 		public bool StdOutIsRedirected
 		{
 			get { return _fStdOutIsRedirected; }
-		}	// StdOutIsRedirected (Read only)
-		#endregion  // Public Properties
+		}   // StdOutIsRedirected (Read only)
+        #endregion  // Public Properties
 
 
-		#region Singleton Access Methods
-		/// <summary>
-		/// Call this static method from anywhere to get a reference to the
-		/// ExceptionLogger singleton.
-		/// </summary>
-		/// <returns>
-		/// The return value is a reference to the singleton, which is created
-		/// the first time the method is called. Subsequent calls return a
-		/// reference to the singleton.
-		/// </returns>
-		/// <remarks>
-		/// All overloads call this method, caching the returned reference in a
+        #region Singleton Access Methods
+        /// <summary>
+        /// Call this static method from anywhere to get a reference to the
+        /// ExceptionLogger singleton.
+        /// </summary>
+        /// <returns>
+        /// The return value is a reference to the singleton, which is created
+        /// the first time the method is called. Subsequent calls return a
+        /// reference to the singleton.
+        /// </returns>
+        /// <remarks>
+        /// All overloads call this method, caching the returned reference in a
         /// local variable, before they override one or more of its default
-		/// property values. When all overrides have been processed, the cached
-		/// reference is returned through the overload that took the call.
-		///
-		/// This roundabout procedure is necessary because the properties cannot
-		/// be set until the object has been created. The most straightforward
-		/// way to do this is to call the default method, which performs a task
-		/// usually performed by a default constructor in this implementation of
-		/// the singleton design pattern.
-		/// </remarks>
-		public static new ExceptionLogger GetTheSingleInstance ( )
+        /// property values. When all overrides have been processed, the cached
+        /// reference is returned through the overload that took the call.
+        ///
+        /// This roundabout procedure is necessary because the properties cannot
+        /// be set until the object has been created. The most straightforward
+        /// way to do this is to call the default method, which performs a task
+        /// usually performed by a default constructor in this implementation of
+        /// the singleton design pattern.
+        /// </remarks>
+        public static new ExceptionLogger GetTheSingleInstance ( )
 		{
 			if ( s_fSynchronizeFlagsNow )
 				InitializeInstance ( s_genTheOnlyInstance ,
@@ -1092,7 +1098,7 @@ namespace WizardWrx.DLLConfigurationManager
 				Console.WriteLine ( "    TypeHandle = {0}" , typThisException.TypeHandle.Value.ToString ( NumericFormats.HEXADECIMAL_8 ) );
 			}	// foreach ( Type typThisException in s_atypKnowExceptionTypes )
 		}	// static ExceptionLogger
-#endif // SHOW_TYPE_HANDLES
+        #endif // SHOW_TYPE_HANDLES
         #endregion  // Singleton Access Methods
 
 
@@ -1836,18 +1842,28 @@ namespace WizardWrx.DLLConfigurationManager
 				sbMsg ,
 				sbLogMsg );
 		}   // ReportException method (7 of 7 - FormatException)
-		#endregion	// Public ReportException Methods
+        #endregion // Public ReportException Methods
 
 
-		/// <summary>
-		/// The StateManager calls this method once, immediately after both it
-		/// and the ExceptionLogger exist.
-		/// </summary>
-		/// <param name="psmOfThisApp">
-		/// To simplify matters a bit, the state manager passes a reference to
-		/// itself.
-		/// </param>
-		internal void GetStandardHandleStates ( StateManager psmOfThisApp )
+        #region Public Static Properties
+        /// <summary>
+        /// Once an instance has spring into being, this static property returns
+        /// the configuration values that are missing a setting in the
+        /// configuration file.
+        /// </summary>
+        public static string s_strSettingsOmittedFromConfigFile { get; private set; }
+        #endregion  // Public Static Properties
+
+
+        /// <summary>
+        /// The StateManager calls this method once, immediately after both it
+        /// and the ExceptionLogger exist.
+        /// </summary>
+        /// <param name="psmOfThisApp">
+        /// To simplify matters a bit, the state manager passes a reference to
+        /// itself.
+        /// </param>
+        internal void GetStandardHandleStates ( StateManager psmOfThisApp )
 		{
 			_fStdOutIsRedirected = ( psmOfThisApp.StandardHandleState ( StandardHandleInfo.StandardConsoleHandle.StandardOutput ) == StandardHandleInfo.StandardHandleState.Redirected );
 			_fStdErrIsRedirected = ( psmOfThisApp.StandardHandleState ( StandardHandleInfo.StandardConsoleHandle.StandardError ) == StandardHandleInfo.StandardHandleState.Redirected );
@@ -2382,7 +2398,18 @@ namespace WizardWrx.DLLConfigurationManager
 					try
 					{
 						PropertyDefaults DLLProperties = new PropertyDefaults ( System.Reflection.Assembly.GetExecutingAssembly ( ) );
-						System.Configuration.KeyValueConfigurationCollection DLLConfigurationSettings = DLLProperties.ValuesCollection;
+                        s_strSettingsOmittedFromConfigFile = DLLProperties.EnumerateMissingConfigurationValues ( );
+
+                        if ( string.IsNullOrEmpty ( s_strSettingsOmittedFromConfigFile ) )
+                        {
+                            Console.WriteLine ( @"All DLL configuration settings have explicit values." );
+                        }   // TRUE (All settings have explicit values.) block, if ( string.IsNullOrEmpty ( s_strSettingsOmittedFromConfigFile ) )
+                        else
+                        {
+                            Console.WriteLine ( s_strSettingsOmittedFromConfigFile );
+                        }   // FALSE (One or more settings took its default value.) block, if ( string.IsNullOrEmpty ( s_strSettingsOmittedFromConfigFile ) )
+
+                        System.Configuration.KeyValueConfigurationCollection DLLConfigurationSettings = DLLProperties.ValuesCollection;
 						s_strDefaultEventSource = DLLConfigurationSettings [ Properties.Resources.DEFAULT_EVENT_SOURCE_ID ].Value;
 					}
 					catch ( Exception exAll )
@@ -2487,14 +2514,14 @@ namespace WizardWrx.DLLConfigurationManager
 		{
 			const string MESSAGE_PADDING = @"{0}               ";
 
-#if SHOW_TYPE_HANDLES
+            #if SHOW_TYPE_HANDLES
 				Type typThisException = pexAnyKind.GetType ( );
 				Console.WriteLine ( "{0}Exception type, as seen by ReformatExceptionMessage:{0}" , Environment.NewLine);
 				Console.WriteLine ( "    Type FullName   = {0}" , typThisException.FullName );
 				Console.WriteLine ( "    Type Name       = {0}" , typThisException.Name );
 				Console.WriteLine ( "    Type GUID       = {0}" , typThisException.GUID );
 				Console.WriteLine ( "    TypeHandle      = {0}" , typThisException.TypeHandle.Value.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-#endif	// SHOW_TYPE_HANDLES
+            #endif	// SHOW_TYPE_HANDLES
 
 			string strRawMsg = pexAnyKind.Message;
 

@@ -224,8 +224,9 @@
             <remarks>
             Given the location from which an assembly was loaded, you can learn
             almost anything else you need to know about that file, such as its size,
-            age, and directory. Given the directory, you can locate satellite files,
-            such as custom configuration files.
+            age, version, and directory. Given the directory, you can locate
+            satellite files, such as configuration files that contain settings that
+            it uses.
             </remarks>
             <seealso cref="T:WizardWrx.Core.PropertyDefaults"/>
         </member>
@@ -236,6 +237,24 @@
             from which the assembly is loaded, unless the assembly was loaded
             from the Global Assembly Cache (GAC). In that case, substitute the
             application directory.
+            </summary>
+        </member>
+        <member name="T:WizardWrx.Core.AssemblyLocatorBase.PropertySourceCounts">
+            <summary>
+            SetPropertiesFromDLLConfiguration fills and returns this structure,
+            to account for all defined properties, whether or not their values
+            are configured.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.Core.AssemblyLocatorBase.PropertySourceCounts.SpecifiedInConfiguration">
+            <summary>
+            Count of properties read from the configuration file.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.Core.AssemblyLocatorBase.PropertySourceCounts.Defaulted">
+            <summary>
+            Count of properties omitted from the configuration file, and
+            left at their default values.
             </summary>
         </member>
         <member name="F:WizardWrx.Core.AssemblyLocatorBase._strAssemblyLocation">
@@ -317,11 +336,23 @@
             the assembly in which the derived class is defined was loaded.
             </summary>
         </member>
-        <member name="P:WizardWrx.Core.AssemblyLocatorBase.ConfigMessage">
+        <member name="P:WizardWrx.Core.AssemblyLocatorBase.RecoveredConfigurationExceptions">
             <summary>
-            This property returns a message when the configuration file is
-            missing or empty. Under normal conditions, it returns the empty
-            string.
+            This read only property returns a generic List of Exceptions that
+            arose during the initialization phase of an instance, and were
+            silently recovered, so that they can be reported for investigation.
+            </summary>
+            <remarks>
+            This property supersedes ConfigMessage, which returned the list of
+            exceptions as one long string, discarding their all-important stack
+            traces.
+            </remarks>
+        </member>
+        <member name="P:WizardWrx.Core.AssemblyLocatorBase.MissingConfigSettings">
+            <summary>
+            This read-only property returns a generic List of string, each of
+            which is a message that names a property that was omitted from the
+            configuration file, along with its default value.
             </summary>
         </member>
         <member name="P:WizardWrx.Core.AssemblyLocatorBase.DLLConfiguration">
@@ -330,7 +361,7 @@
             assembly in which the derived class is defined.
             </summary>
         </member>
-        <member name="P:WizardWrx.Core.AssemblyLocatorBase.DLLettingsSection">
+        <member name="P:WizardWrx.Core.AssemblyLocatorBase.DLLSettingsSection">
             <summary>
             Gets a reference to the entire AppSettingsSection object tied to
             the assembly in which the derived class is defined.
@@ -2816,6 +2847,17 @@
             Both constructors call this method to initialize their properties.
             </summary>
         </member>
+        <member name="M:WizardWrx.Core.PropertyDefaults.EnumerateMissingConfigurationValues">
+            <summary>
+            Enumeate missing configuration values, if any.
+            </summary>
+            <returns>
+            This method returns a message suitable for display on a console or a
+            Windows message box. The returned message summarises the state of
+            affairs, even when all defined values are represented in the
+            configuration file.
+            </returns>
+        </member>
         <member name="T:WizardWrx.Core.RegistryValues">
             <summary>
             This sealed class exposes static methods for efficiently testing for the
@@ -3386,6 +3428,120 @@
             constant.
             </returns>
         </member>
+        <member name="T:WizardWrx.Core.UnconfiguredDLLSettings">
+            <summary>
+            Organize the DLL configuration values that were omitted from the
+            associated configuration file. Since multiple classes can and do share a
+            DLL configuration file, this class must be a Singleton.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.Core.UnconfiguredDLLSettings.Add(System.String,System.String,System.String)">
+            <summary>
+            Add a new unconfigured setting.
+            </summary>
+            <param name="configFileName">
+            Identify the affected configuration file.
+            </param>
+            <param name="propName">
+            Identify the name of the missing property.
+            </param>
+            <param name="propValue">
+            Recird its default value.
+            </param>
+        </member>
+        <member name="M:WizardWrx.Core.UnconfiguredDLLSettings.GetMissingPropsForFile(System.String)">
+            <summary>
+            Return the list of parameters that are missing from the specified
+            configuration file.
+            </summary>
+            <param name="pstrConfigFileName">
+            Specify the name of the file for which the list is wanted.
+            </param>
+            <returns>
+            The return value is a list of UnconfiguredSetting objects, which may
+            be empty.
+            </returns>
+        </member>
+        <member name="P:WizardWrx.Core.UnconfiguredDLLSettings.Count">
+            <summary>
+            Expose the Count property of the dictionary.
+            </summary>
+        </member>
+        <member name="T:WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting">
+            <summary>
+            Settings are organized into a private collection that belongs to the
+            singleton.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.#ctor">
+            <summary>
+            The default constructor is intended to remain unused.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.#ctor(System.String,System.String,System.String)">
+            <summary>
+            All interaction is expected to be with this constructor.
+            </summary>
+            <param name="configFileName">
+            Settings are associated with a named configuration file. Only
+            its base name matters, however.
+            </param>
+            <param name="propertyName">
+            Each property name must be unique within the scope of its
+            configuration file.
+            </param>
+            <param name="propertyValue">
+            The default property value is recorded herein for reference.
+            </param>
+        </member>
+        <member name="P:WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.ConfigFileName">
+            <summary>
+            Gets or sets the configuration file name
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.PropName">
+            <summary>
+            Gets or sets the property name
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.PropValue">
+            <summary>
+            Gets or sets the default value assigned to the property
+            </summary>
+        </member>
+        <member name="M:WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.Equals(System.Object)">
+            <summary>
+            Override the Equals method on the base class to give a value
+            that contains the absolute (fully qualified) configuration value
+            name, composed of the configuration file name and the key name.
+            </summary>
+            <param name="obj">
+            Comparand
+            </param>
+            <returns>
+            True if this instance and the other refer to the same
+            configuration file key.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.GetHashCode">
+            <summary>
+            Return a hash code based on the equality value.
+            </summary>
+            <returns>
+            The return value is the hash code that corresponds to the
+            equality value.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.ToString">
+            <summary>
+            Return a concatenated string composed of the name of the
+            configuration file followed by the configuration value name.
+            </summary>
+            <returns>
+            The return value is the configuration file name and key name,
+            separated by an underscore character.
+            </returns>
+        </member>
         <member name="T:WizardWrx.Core.UnmanagedLibrary">
             <summary>
             Utility class to wrap an unmanaged DLL and be responsible for freeing it
@@ -3535,6 +3691,11 @@
               Looks up a localized string similar to ERROR: The DisplayOrder property cannot be set to zero..
             </summary>
         </member>
+        <member name="P:WizardWrx.Core.Properties.Resources.ERRMSG_DUPLICATE_CONFIG_PROP_NAME">
+            <summary>
+              Looks up a localized string similar to Property name {0} in configuration file {1} is a duplicate name..
+            </summary>
+        </member>
         <member name="P:WizardWrx.Core.Properties.Resources.ERRMSG_DUPLICATE_SWITCH">
             <summary>
               Looks up a localized string similar to Switch {0} with a default value of {1} is a duplicate..
@@ -3548,6 +3709,16 @@
         <member name="P:WizardWrx.Core.Properties.Resources.ERRMSG_EXCEPTION_IN_DEFINE_NEW_SWITCH">
             <summary>
               Looks up a localized string similar to An {0} Exception was caught while attempting to define a switch named {1} with a default value of {2}..
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Core.Properties.Resources.ERRMSG_EXCEPTION_NOT_THROWN">
+            <summary>
+              Looks up a localized string similar to Message from Exception Logged without throwing: {0}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Core.Properties.Resources.ERRMSG_FROM_THROWN_EXCEPTION">
+            <summary>
+              Looks up a localized string similar to Message from Exception Thrown and Logged: {0}.
             </summary>
         </member>
         <member name="P:WizardWrx.Core.Properties.Resources.ERRMSG_INTERNAL_ERROR_UNSUPP_ALG">
@@ -3710,6 +3881,36 @@
               Looks up a localized string similar to {0} ({1} UTC).
             </summary>
         </member>
+        <member name="P:WizardWrx.Core.Properties.Resources.MSG_ACCEPTED_DEFAULT_VALUE">
+            <summary>
+              Looks up a localized string similar to     {0} of {1}: {2} = {3}{4}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Core.Properties.Resources.MSG_ACCEPTED_LIST_END">
+            <summary>
+              Looks up a localized string similar to {0}End of list{0}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Core.Properties.Resources.MSG_ALL_CONFIG_SETTINGS_COVERED">
+            <summary>
+              Looks up a localized string similar to All {0} configuration settings defined for {1} are covered by its configuration file..
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Core.Properties.Resources.MSG_DEFAULT_ACCEPTED">
+            <summary>
+              Looks up a localized string similar to {0} property default value of {1} accepted in lieu of value in configuration file, which is absent..
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Core.Properties.Resources.MSG_SOME_CONFIG_SETTINGS_OMITTED">
+            <summary>
+              Looks up a localized string similar to {0} of {1} configuration settings defined for {2} are missing from its configuration file.{3}{3} Details follow.{3}{3}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Core.Properties.Resources.MSG_STACK_TRACE_IS_FROM_ENVIRONMENT">
+            <summary>
+              Looks up a localized string similar to at System.Environment.get_StackTrace().
+            </summary>
+        </member>
         <member name="P:WizardWrx.Core.Properties.Resources.PROCESSOR_AND_PROCESS_ARCHITECTURES">
             <summary>
               Looks up a localized string similar to {2}Processor Architecture = {0}{2}Process Machine Word   = {1} bits{2}.
@@ -3753,6 +3954,51 @@
         <member name="P:WizardWrx.Core.Properties.Resources.TIME_LABEL_UTC">
             <summary>
               Looks up a localized string similar to UTC.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Core.Properties.Resources.TRACEMSG_EXCEPTION_NOT_THROWN_1">
+            <summary>
+              Looks up a localized string similar to Properties of the Exception object returned by TraceLogger.WriteWithBothTimesLabeledLocalFirst: Message                        = {0}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Core.Properties.Resources.TRACEMSG_EXCEPTION_NOT_THROWN_2">
+            <summary>
+              Looks up a localized string similar to Source                         = {0}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Core.Properties.Resources.TRACEMSG_EXCEPTION_NOT_THROWN_3">
+            <summary>
+              Looks up a localized string similar to TargetSite.Name                = {0}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Core.Properties.Resources.TRACEMSG_EXCEPTION_NOT_THROWN_4">
+            <summary>
+              Looks up a localized string similar to StackTrace                     = {0}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Core.Properties.Resources.TRACEMSG_EXCEPTION_NOT_THROWN_5">
+            <summary>
+              Looks up a localized string similar to InnerException.Message         = {0}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Core.Properties.Resources.TRACEMSG_EXCEPTION_NOT_THROWN_6">
+            <summary>
+              Looks up a localized string similar to InnerException.Source          = {0}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Core.Properties.Resources.TRACEMSG_EXCEPTION_NOT_THROWN_7">
+            <summary>
+              Looks up a localized string similar to InnerException.TargetSite.Name = {0}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Core.Properties.Resources.TRACEMSG_EXCEPTION_NOT_THROWN_8">
+            <summary>
+              Looks up a localized string similar to InnerException.StackTrace      = {0}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Core.Properties.Resources.TRACEMSG_EXCEPTION_NOT_THROWN_9">
+            <summary>
+              Looks up a localized string similar to &quot;                                                                                                InnerException                 = [null].
             </summary>
         </member>
         <member name="T:WizardWrx.Cryptography.DigestFile">
@@ -5590,6 +5836,136 @@
             <returns>
             Formatted integer, ready to display
             </returns>
+        </member>
+        <member name="T:WizardWrx.RecoveredException">
+            <summary>
+            Override the Exception class, so that the Source, StackTrace, and
+            TargetSite properties can be directly initialized.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.RecoveredException.#ctor">
+            <summary>
+            The default constructor must be marked as private, so that it cannot
+            be called.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.RecoveredException.#ctor(System.String)">
+            <summary>
+            The usual constructor that takes a Message must also be marked as
+            private, so that it cannot be called, either.
+            </summary>
+            <param name="message">
+            The usual message property, available to all Exception consumers
+            </param>
+        </member>
+        <member name="M:WizardWrx.RecoveredException.#ctor(System.String,System.Exception)">
+            <summary>
+            The usual constructor that takes a <paramref name="message"/> and an
+            <paramref name="innerException"/> must also be hidden from view.
+            </summary>
+            <param name="message">
+            The usual message property, available to all Exception consumers
+            </param>
+            <param name="innerException">
+            The usual InnerException property, available to all Exception consumers
+            </param>
+        </member>
+        <member name="M:WizardWrx.RecoveredException.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Call this method when you have only a message to record.
+            </summary>
+            <param name="message">
+            The usual message property, available to all Exception consumers
+            </param>
+            <param name="Source"></param>
+            Gets or sets the name of the application or the object that causes the error
+            <param name="StackTrace">
+            Gets a string representation of the immediate frames on the call stack
+            </param>
+            <param name="TargetSite">
+            Gets the method that throws the current exception
+            </param>
+        </member>
+        <member name="M:WizardWrx.RecoveredException.#ctor(System.String,System.Exception,System.String,System.String,System.String)">
+            <summary>
+            Call this method when you have an InnerException Exception to preserve.
+            </summary>
+            <param name="message">
+            The usual message property, available to all Exception consumers
+            </param>
+            <param name="innerException">
+            The usual InnerException property, available to all Exception consumers
+            </param>
+            <param name="Source"></param>
+            Gets or sets the name of the application or the object that causes the error
+            <param name="StackTrace">
+            Gets a string representation of the immediate frames on the call stack
+            </param>
+            <param name="TargetSite">
+            Gets the method that throws the current exception
+            </param>
+        </member>
+        <member name="M:WizardWrx.RecoveredException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Enable serialization by implementing the protected constructor that
+            can recreate an exception from serialization data.
+            </summary>
+            <param name="info">
+            Specify the SerializationInfo object from which to reconstruct the
+            RecoveredException.
+            </param>
+            <param name="context">
+            Specify the StreamingContext object from which to reconstruct the
+            RecoveredException.
+            </param>
+        </member>
+        <member name="M:WizardWrx.RecoveredException.InitializeInstance(System.String,System.String,System.String)">
+            <summary>
+            Both public constructors call this little routine to initialize the
+            three properties that are usually initalized by the runtime system.
+            </summary>
+            <param name="source">
+            Gets or sets the name of the application or the object that causes the error
+            </param>
+            <param name="stackTrace">
+            Gets a string representation of the immediate frames on the call stack
+            </param>
+            <param name="targetSite">
+            Gets the method that throws the current exception
+            </param>
+        </member>
+        <member name="M:WizardWrx.RecoveredException.PruneStackTrace(System.String)">
+            <summary>
+            If the stack trace originated from the System.Environment property,
+            its first two entries are irrelevant, and should be discarded. This
+            routine makes that happen.
+            </summary>
+            <param name="pstrStackTrace"></param>
+            This method receives the stack trace that was passed into the
+            sonctructor.
+            <returns>
+            If the stack trace came from the System.Environment.StackTrace
+            property, its first two entries are discarded. Otherwise, the whole
+            string is returned.
+            </returns>
+        </member>
+        <member name="P:WizardWrx.RecoveredException.Source">
+            <summary>
+            This is a stand-in for the Source property that is usually set
+            by the runtime environment when an exception is thrown.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.RecoveredException.StackTrace">
+            <summary>
+            This is a stand-in for the StackTrace property that is usually set
+            by the runtime environment when an exception is thrown.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.RecoveredException.TargetSite">
+            <summary>
+            This is a stand-in for the TargetSite property that is usually set
+            by the runtime environment when an exception is thrown.
+            </summary>
         </member>
         <member name="T:WizardWrx.ReportDetail">
             <summary>

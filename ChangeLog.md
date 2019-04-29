@@ -4,16 +4,116 @@ This file is a running history of fixes and improvements from version 7.0
 onwards. Changes are documented for the newest version first. Within each
 version, classes are covered in alphabetical order.
 
+# Version 7.15
+
+Following is a summary of changes made in version __7.15__, released Sunday, __28 April 2019__.
+
+## Class WizardWrx.SpecialStrings (defined in WizardWrx.Common.dll)
+
+Define the following single-character strings:
+
+| Name           | Value |
+|----------------|-------|
+|COLON           | ":"   |
+|COMMA           | ","   |
+|DOUBLE_QUOTE    | "\""  |
+|FULL_STOP       | "."   |
+|HYPHEN          | "-"   |
+|SEMICOLON       | ";"   |
+|SINGLE_QUOTE    | "'"   |
+|TAB_CHAR        | "\t"  |
+|UNDERSCORE_CHAR | "\_"  |
+
+These are for constructing string constants. Though equivalent character
+constants were defined in `WizardWrx.SpecialCharacters` long ago, they are useless
+for constructing a string constant, which must be composed entirely of other
+string constants. Constants cannot derive their values by calling the `ToString`
+method on a character constant.
+
+## Class WizardWrx.SpecialCharacters (defined in WizardWrx.Common.dll)
+
+XML comments attached to the character constants that correspond to the new
+string constants listed above get new cross references to the corresponding
+string constant. There are no new constants.
+
+## Class WizardWrx.ConsoleStreams.DefaultErrorMessageColors (defined in WizardWrx.ConsoleStreams.dll)
+
+Supplement the `PropsSetFromConfig` property with a `PropsLeftAtDefault` property.
+
+This class also benefits from changes made in its base class,
+`WizardWrx.AssemblyLocatorBase`, defined in `WizardWrx.Core.dll`.
+
+## Class WizardWrx.Core.AssemblyLocatorBase (defined in WizardWrx.Core.dll)
+
+1) Replace the `ConfigMessage` string property with the
+`RecoveredConfigurationExceptions` list.
+
+2) Replace the properties collection enumeration with the much more efficient
+dictionary lookup.
+
+Though it is omitted from the change log, a significant benefit is that these
+changes, along with others deeper in the code, eliminated a harmless null
+reference exception that was being silently thrown, caught, and handled. That
+exception is addressed by adding an overlooked null reference test that prevents
+the code that would have executed from doing so.
+
+## Class WizardWrx.Core.PropertyDefaults (defined in WizardWrx.Core.dll)
+
+`EnumerateMissingConfigurationValues` is an instance method that reports
+configuration values that are defined, but are missing from the configuration
+file. All such properties have hard coded default values. The report is returned
+as a formatted string that can be logged to the system console or the event log,
+or displayed on a message box.
+
+This class also benefits from changes made in its base class,
+`WizardWrx.AssemblyLocatorBase`, defined in `WizardWrx.Core.dll`.
+
+## Class WizardWrx.RecoveredException (defined in WizardWrx.Core.dll)
+
+This new class, derived from `System.Exception`, provides a mechanism for
+recording an exception without actually throwing it. The recorded exception is a
+reasonbly faithful reproduction of the System.Exception that you would get if
+you reported it by throwing.
+
+## WizardWrx.Core.UnconfiguredDLLSettings (defined in WizardWrx.Core.dll)
+
+The UnconfiguredDLLSettings class implements the Singleton pattern, because its
+operation relies on there being exactly one instance. It uses a generic
+Dictionary keyed by a concatenation of the configuration file name and
+configuration key name to store a complete list of configuration settings that
+have their hard coded default values, because there are no explicit settings in
+the configuration file.
+
+Each `UnconfiguredSetting` object stores the name of the configuration file, the
+name of the configuration setting, and its value in three string properties, of
+which the first two comprise the index.
+
+The design is not quite ideal, since the key relies on the `ToString` method
+override, since there is no separately named computer property to expose it. I
+anticipate resolving this inefficiency soon. Meanwhile, it functions correctly,
+and correcting this deficiency can be accomplished without breaking anything.
+
+## WizardWrx.DLLConfigurationManager.ExceptionLogger (defined in WizardWrx.DLLConfigurationManager.dll)
+
+Define `s_strSettingsOmittedFromConfigFile` as a static string property that
+returns a message that lists the properties that are absent from the DLL
+configuration file, along with their hard coded default values.
+
+## Unit Test/Usage Demonstration Program DLLServices2TestStand.exe
+
+As always, the test program has been amended to demonstrate the new features,
+including the new string constants and the improved plumbing.
+
 # Version 7.14
 
-Following is a summary of changes made in version 7.14, released Monday, 24 November 2018.
+Following is a summary of changes made in version __7.14__, released Monday, __24 December 2018__.
 
 ## Class WizardWrx.MagicNumbers (defined in WizardWrx.Common.dll)
 
 Define the constants listed in the following table.
 
 | Name                    |             Value |
-|-------------------------|------------------:|
+|-------------------------|-------------------|
 | TICKS_PER_1_WEEK        | 6,048,000,000,000 |
 | TICKS_PER_1_DAY         |   864,000,000,000 |
 | TICKS_PER_23_59_59      |   863,990,000,000 |
@@ -55,19 +155,19 @@ This class is relocated from `WizardWrx.Core.dll` to a dedicated library for two
 1	Since it uses `ClassAndMethodDiagnosticInfo` methods in its exception reports,
 its target framework must be at least 4.5.
 
-2	Since its method perform mathematical operations that can cause arithmetic
+2	Since its methods perform mathematical operations that can cause arithmetic
 overflows that should be caught and reported, it must be compiled with arithmetic
 checking enabled.
 
 New functions in this version are a set of `DecimalShift` routines that perform
 left and right decimal shift operations. While the required math is technically
-trivial, it's easy to get wrong. Hence, in the same spirit that motivated the
+trivial, it is easy to get wrong. Hence, in the same spirit that motivated the
 `WizardWrx.BitMath` classes, a recent need for a decimal shift motivated creation
 of these decimal shift routines.
 
 # Version 7.13
 
-Following is a summary of changes made in version 7.13, released Monday, 10 November 2018.
+Following is a summary of changes made in version __7.13__, released Monday, __10 December 2018__.
 
 Define `EXACTLY_ONE_HUNDRED_MILLION_LONG`, to meet an immediate requirement, along
 with `EXACTLY_ONE_HUNDRED_THOUSAND` and `EXACTLY_ONE_HUNDRED_MILLION`, to more or
@@ -91,14 +191,16 @@ be implemented as long integer operations. While this makes little difference in
 a 64-bit execution environment, it adds unnecessary complexity to operations
 that take place in a 32-bit context. Regardless, scratch storage requirments,
 most likely occupying space on the stack, would essentially double for all math
-operations that used these constants.
+operations that used these constants, and all 64-bit math operations that run in
+a 32-bit logical machine require many extra machine instructions, even for the
+simplest operations.
 
 For the time being, there are two constants, `EXACTLY_ONE_HUNDRED_MILLION_LONG`
 and `EXACTLY_ONE_HUNDRED_MILLION`, which differ only with respect to their types.
 
 # Version 7.12
 
-Following is a summary of changes made in version 7.12, released Friday, 23 November 2018.
+Following is a summary of changes made in version __7.12__, released Friday, __23 November 2018__.
 
 ## Class WizardWrx.MoreMath (defined in WizardWrx.Core.dll)
 
@@ -122,7 +224,7 @@ string resources in the library to facilitate localization.
 
 # Version 7.11
 
-Following is a summary of changes made in version 7.11, released Saturday, 17 November 2018.
+Following is a summary of changes made in version __7.11__, released Saturday, __17 November 2018__.
 
 ## Class WizardWrx.MagicNumbers (defined in WizardWrx.Common)
 
@@ -145,7 +247,7 @@ stack frame and call setup requirments.
 
 ## Class WizardWrx.MoreMath (defined in WizardWrx.Core.dll)
 
-This class makes its debut, with the following static methods
+This class makes its debut, with the following static methods.
 
 - `IsEvenlyDivisibleByAnyInteger`, defined twice, to accept integer and long
 inputs.
@@ -171,30 +273,30 @@ voice. The code is unchanged.
 
 # Version 7.1
 
-Following is a list of changes made in version 7.1, released Sunday, 07 October 2018.
+Following is a list of changes made in version __7.1__, released Sunday, __07 October 2018__.
 
 ## Class WizardWrx.StringExtensions (defined in WizardWrx.Core.dll)
 
-Incorporate CapitalizeWords, which I created and tested as part of the Great
+Incorporate `CapitalizeWords`, which I created and tested as part of the Great
 Eastern Energy DataFarmer application.
 
 ## Class SpecialStrings (defined in WizardWrx.Common)
 
-Define SPACE_CHAR for use when only a string will do, and cross reference the
-new constant to its antecedent, SpecialCharacters.SPACE_CHAR.
+Define `SPACE_CHAR` for use when only a string will do, and cross reference the
+new constant to its antecedent, `SpecialCharacters.SPACE_CHAR`.
 
 ## Class ASCIICharacterDisplayInfo (defined in WizardWrx.ASCIIInfo.dll)
 
-Override ToString to render all three representations (printable string,
+Override `ToString` to render all three representations (printable string,
 hexadecimal, then decimal, in that order), and define static method
-DisplayCharacterInfo to provide that service for an arbitrary character, without
-instantiating ASCII_Character_Display_Table.
+`DisplayCharacterInfo` to provide that service for an arbitrary character
+without instantiating `ASCII_Character_Display_Table`.
 
 ## Other Changed Files
 
 Incidental changes included in this commit are as follows.
 
-- __SpecialCharacters.cs__ got a cross reference to SpecialStrings.SPACE_CHAR.
+- __SpecialCharacters.cs__ got a cross reference to `SpecialStrings.SPACE_CHAR`.
 
 - __ProductAssemblyInfo.cs__ reflects the new library version number, 7.1.
 
@@ -202,8 +304,8 @@ Incidental changes included in this commit are as follows.
 version number and a build number increment.
 
 - __Resources.resx in DLLServicesTestStand__ has the following new strings
-IDS_ASCII_CHARACTER_INFO, IDS_ASCII_TABLE_CHARACTER_PROPERTIES, and
-IDS_ASCII_TABLE_ENUMERATION.
+`IDS_ASCII_CHARACTER_INFO`, `IDS_ASCII_TABLE_CHARACTER_PROPERTIES`, and
+`IDS_ASCII_TABLE_ENUMERATION`.
 
 - __ClassTestMap.TXT in DLLServicesTestStand__ defines two new unit test method
 mappings. Note, too, that the terminal newline is gone. This is by design, to
@@ -211,13 +313,13 @@ eliminate 4 bytes from the embedded resource that contribute nothing to its
 usability.
 
 - __FormatStringParsing_Drills.cs in DLLServicesTestStand__, which also
-exercises WizardWrx.ASCIIInfo.dll, which was developed and deployed
+exercises `WizardWrx.ASCIIInfo.dll`, which was developed and deployed
 concurrently, exercises the new static method for displaying a printable version
 of any ASCII character, along with its numerical value, expressed in both
 decimal and hexadecimal notation.
 
 - __NewClassTests_20140914.cs in DLLServicesTestStand__ incorporates overlooked
-unit tests of the entire SpecialStrings class.
+unit tests of the entire `SpecialStrings` class.
 
 - __Program.cs in DLLServicesTestStand__ calls the new methods that went into
-class NewClassTests_20140914.
+class `NewClassTests_20140914`.

@@ -7,7 +7,7 @@
 	                    which require System.Runtime.CompilerServices from .NET
 	                    Framework version 4.5 or higher.
 
-	Remarks:			As it applies to Roslyn compiler, the Deterministic
+	Remarks:			As it applies to the Roslyn compiler, the Deterministic
 						switch implements determinism in a very narrow context,
 						which affects only the versioning of the generated PE
 						file in which the assembly is stored.
@@ -31,9 +31,11 @@
 
 	Date       By  Description
 	========== === =============================================================
-	2018/12/23 DAG Disable deterministic versioning.
+	2018/12/23 DAG Disable deterministic versioning by commenting it out.
+	2019/04/28 DAG Add ProductAssemblyInfo.cs the right way, as a link.
 	============================================================================
 -->
+
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -74,6 +76,9 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\ProductAssemblyInfo.cs">
+      <Link>Properties\ProductAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="ClassAndMethodDiagnosticInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -64,6 +64,7 @@
     <Compile Include="Logic.cs" />
     <Compile Include="NumberFormatters.cs" />
     <Compile Include="PropertyDefaults.cs" />
+    <Compile Include="RecoveredException.cs" />
     <Compile Include="RegistryValues.cs" />
     <Compile Include="ReportDetail.cs" />
     <Compile Include="ReportDetails.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="TextBlocks.cs" />
     <Compile Include="TimeDisplayFormatter.cs" />
     <Compile Include="TraceLogger.cs" />
+    <Compile Include="UnconfiguredDLLSettings.cs" />
     <Compile Include="UnmanagedLibrary.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">

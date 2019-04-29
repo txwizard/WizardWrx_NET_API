@@ -90,7 +90,7 @@
 							  updated, but is installed side by side, rather
 							  than in the Global Assembly Cache.
 
-	2015/06/20 5.5    DAG     1) Promote access from internal to public.
+	2015/06/20 5.5     DAG    1) Promote access from internal to public.
 
                               2) Incorporate my three-clause BSD license.
 
@@ -105,11 +105,17 @@
                               The only effect of this change on this module is
                               it moves into a new namespace, and the new library
                               has a dependency upon WizardWrx.Common.
+
+	2019/04/28 7.15    DAG    EnumerateMissingConfigurationValues is an instance
+                              method that reports configuration values that are
+                              defined, but are missing from the configuration
+                              file.
     ============================================================================
 */
 
 
 using System;
+using System.Collections.Generic;
 using System.Configuration;
 
 
@@ -208,10 +214,76 @@ namespace WizardWrx.Core
 		{
 			const string SECT_APPSETTINGS = @"appSettings";
 
-			Configuration cfgForDLLClasses = ConfigurationManager.OpenExeConfiguration ( base.AssemblyLocation );
+            Configuration cfgForDLLClasses = ConfigurationManager.OpenExeConfiguration ( AssemblyLocation );
 			AppSettingsSection SettingsSection = ( AppSettingsSection ) cfgForDLLClasses.GetSection ( SECT_APPSETTINGS );
-
 			_DllConfigSettings = SettingsSection.Settings;
 		}	// InitializeInstance
+
+        /// <summary>
+        /// Enumeate missing configuration values, if any.
+        /// </summary>
+        /// <returns>
+        /// This method returns a message suitable for display on a console or a
+        /// Windows message box. The returned message summarises the state of
+        /// affairs, even when all defined values are represented in the
+        /// configuration file.
+        /// </returns>
+        public string EnumerateMissingConfigurationValues ( )
+        {
+            MissingConfigSettings = MissingConfigSettings ?? UnconfiguredDLLSettings.TheOnlyInstance;
+            List<UnconfiguredDLLSettings.UnconfiguredSetting> missing = MissingConfigSettings.GetMissingPropsForFile (
+                System.IO.Path.GetFileName (
+                    _strAssemblyLocation ) );
+
+            if ( missing.Count > ListInfo.LIST_IS_EMPTY )
+            {
+                System.Text.StringBuilder sbMessages = new System.Text.StringBuilder ( MagicNumbers.CAPACITY_04KB );
+
+                //  ------------------------------------------------------------
+                //  Start with a heading.
+                //  ------------------------------------------------------------
+
+                sbMessages.AppendFormat (
+                    Properties.Resources.MSG_SOME_CONFIG_SETTINGS_OMITTED ,
+                    MissingConfigSettings.Count ,
+                    _DllConfigSettings.Count ,
+                    AssemblyLocation ,
+                    Environment.NewLine );
+
+                //  ------------------------------------------------------------
+                //  List each item in turn.
+                //  ------------------------------------------------------------
+
+                for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+                          intJ < MissingConfigSettings.Count ;
+                          intJ++ )
+                {
+                    sbMessages.AppendFormat (
+                        Properties.Resources.MSG_ACCEPTED_DEFAULT_VALUE ,       // Format Control String: {0} of {1}: {2} = {3}{4}
+                        ArrayInfo.OrdinalFromIndex ( intJ ) ,                   // Format Item 0: {0} of
+                        MissingConfigSettings.Count ,                           // Format Item 1: of {1}
+                        missing [ intJ ].PropName ,                             // Format Item 2: : {2}
+                        missing [ intJ ].PropValue ,                            // Format Item 3: = {3}
+                        Environment.NewLine );                                  // Format Item 4: newline
+                }   // for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ; intJ < MissingConfigSettings.Count ; intJ++ )
+
+                //  ------------------------------------------------------------
+                //  End with a footing.
+                //  ------------------------------------------------------------
+
+                sbMessages.AppendFormat (
+                    Properties.Resources.MSG_ACCEPTED_LIST_END ,
+                    Environment.NewLine );
+
+                return sbMessages.ToString ( );
+            }   // TRUE (One or more settings is missing from the configuration file.) block, if ( base.MissingConfigSettings.Count > ListInfo.LIST_IS_EMPTY )
+            else
+            {
+                return string.Format (
+                    Properties.Resources.MSG_ALL_CONFIG_SETTINGS_COVERED ,
+                    _DllConfigSettings.Count ,
+                    AssemblyLocation );
+            }   // FALSE (All configuration settings are covered by the configuration file.) block, if ( base.MissingConfigSettings.Count > ListInfo.LIST_IS_EMPTY )
+        }   // public string EnumerateMissingConfigurationValues
     }   // public class PropertyDefaults
 }   // partial namespace WizardWrx.Core

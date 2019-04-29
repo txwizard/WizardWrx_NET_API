@@ -225,7 +225,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.ConsoleStreams.DefaultErrorMessageColors.html",
-          "hash": "qGKKzI56mYSNPks+/rMIRA=="
+          "hash": "qEh9RLU4ZyM7+u1Vn8h1oQ=="
         }
       },
       "is_incremental": false,
@@ -389,11 +389,23 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Core.AssemblyLocatorBase.PropertySourceCounts.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Core.AssemblyLocatorBase.PropertySourceCounts.html",
+          "hash": "0d40drdxe6q56zSs8c09Rg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/WizardWrx.Core.AssemblyLocatorBase.yml",
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.Core.AssemblyLocatorBase.html",
-          "hash": "tiAbkN8wPJgQPcEJnkPRiQ=="
+          "hash": "ysXuxT6BvFA3FaEk69aHJw=="
         }
       },
       "is_incremental": false,
@@ -465,7 +477,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.Core.PropertyDefaults.html",
-          "hash": "6LoqB+UngZdQIJ3nJ+pO7A=="
+          "hash": "Ls/4644KcY0/ajh79klmdQ=="
         }
       },
       "is_incremental": false,
@@ -545,11 +557,35 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.html",
+          "hash": "lYD3B8Gbw6xLU/xnLMbnZw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Core.UnconfiguredDLLSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Core.UnconfiguredDLLSettings.html",
+          "hash": "pXu6hmVHnzzxUCYY0+ssmA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/WizardWrx.Core.UnmanagedLibrary.yml",
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.Core.UnmanagedLibrary.html",
-          "hash": "7pjV0Xkdio3uAc7DFT0egA=="
+          "hash": "0yEiAvvY/CMSHXb1bdI0Lg=="
         }
       },
       "is_incremental": false,
@@ -561,7 +597,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.Core.html",
-          "hash": "MqfI4CThr+DNxraX16J43g=="
+          "hash": "Zk/MjeBokrNlS95oOvC6PA=="
         }
       },
       "is_incremental": false,
@@ -609,7 +645,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.DLLConfigurationManager.ExceptionLogger.ErrorExitOptions.html",
-          "hash": "dhOdEKs+qjqQ+I77p+dHiA=="
+          "hash": "2kAizyMs5Cz/pRJxbD1pkw=="
         }
       },
       "is_incremental": false,
@@ -621,7 +657,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions.html",
-          "hash": "7X4bceS1B/914litM/Qw9Q=="
+          "hash": "Jm8bl1OYya1oequUax77Ug=="
         }
       },
       "is_incremental": false,
@@ -633,7 +669,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.DLLConfigurationManager.ExceptionLogger.ScrollUpResult.html",
-          "hash": "q7Mbc2GdkA63GvgfDfDk0Q=="
+          "hash": "5Mty+8lSob7Powp2RCdZyg=="
         }
       },
       "is_incremental": false,
@@ -645,7 +681,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.DLLConfigurationManager.ExceptionLogger.html",
-          "hash": "PykToauS4V2MvUMcYVqfjA=="
+          "hash": "bFL9KfbQ7QtoYTaxt37jng=="
         }
       },
       "is_incremental": false,
@@ -933,7 +969,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.GenericSingletonBase-1.html",
-          "hash": "nm3tilh6pHt6IbVLu4SHow=="
+          "hash": "7HHTzNiW0dQkpE+wFdglkg=="
         }
       },
       "is_incremental": false,
@@ -957,7 +993,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.ListHelpers.html",
-          "hash": "QCM4nqazEwrInPwtRkDCbg=="
+          "hash": "esPoiaUt5KJiXEXPDJ/f5w=="
         }
       },
       "is_incremental": false,
@@ -1073,6 +1109,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.RecoveredException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.RecoveredException.html",
+          "hash": "FmurU41lZzrvw8TO81zTiA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/WizardWrx.RegExpSupport.yml",
       "output": {
         ".html": {
@@ -1173,7 +1221,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.SpecialCharacters.html",
-          "hash": "xx1Gag9el2gH6AgnOdUkCQ=="
+          "hash": "T7ddfRDob/UFuO5V2+6QuQ=="
         }
       },
       "is_incremental": false,
@@ -1185,7 +1233,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.SpecialStrings.html",
-          "hash": "xzifkTdTHkiS5palELIRkw=="
+          "hash": "edIYRmCylC0XR1hQT/Nmdg=="
         }
       },
       "is_incremental": false,
@@ -1197,7 +1245,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.StringExtensions.html",
-          "hash": "Ft7gNqmISuAv1Xt5hzw0vg=="
+          "hash": "dnWfBPUL6COMiwApzJP4aA=="
         }
       },
       "is_incremental": false,
@@ -1257,7 +1305,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.html",
-          "hash": "aQZNkfIxcLru9lDfxEwm+A=="
+          "hash": "XmZDdezyIXSeE413lLvALQ=="
         }
       },
       "is_incremental": false,
@@ -1269,7 +1317,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "7wr0aMq7d67UWAILxS+wxA=="
+          "hash": "NqsmE1Vo1xvr1e3AsMoptg=="
         }
       },
       "is_incremental": false,
@@ -1281,7 +1329,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "nHxeSG1bK9VJMMnJm9WWZA=="
+          "hash": "RFfjfKoP4+mh/QZWe1PWNg=="
         }
       },
       "is_incremental": false,
@@ -1349,11 +1397,11 @@
           "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
-        "ConceptualDocumentProcessor": {
+        "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build"
         },
-        "ManagedReferenceDocumentProcessor": {
+        "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build"
         }
