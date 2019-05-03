@@ -47,13 +47,9 @@ F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStr
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\bin\Release\WizardWrx.ASCIIInfo.dll
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\bin\Release\WizardWrx.Common.dll
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\bin\Release\WizardWrx.BitMath.dll
-F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\bin\Release\WizardWrx.ASCIIInfo.pdb
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\bin\Release\WizardWrx.ASCIIInfo.xml
-F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\bin\Release\WizardWrx.Common.pdb
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\bin\Release\WizardWrx.Common.xml
-F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\bin\Release\Wizardwrx.AnyCSV.pdb
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\bin\Release\Wizardwrx.AnyCSV.xml
-F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\bin\Release\WizardWrx.BitMath.pdb
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\bin\Release\WizardWrx.BitMath.xml
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\obj\Release\FormatStringEngine.csprojAssemblyReference.cache
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\obj\Release\WizardWrx.FormatStringEngine.Properties.Resources.resources

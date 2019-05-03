@@ -70,17 +70,11 @@ F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedT
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\bin\Release\WizardWrx.AnyCSV.dll
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\bin\Release\WizardWrx.AssemblyUtils.pdb
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\bin\Release\WizardWrx.AssemblyUtils.xml
-F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\bin\Release\WizardWrx.Common.pdb
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\bin\Release\WizardWrx.Common.xml
-F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\bin\Release\WizardWrx.Core.pdb
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\bin\Release\WizardWrx.Core.xml
-F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\bin\Release\WizardWrx.BitMath.pdb
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\bin\Release\WizardWrx.BitMath.xml
-F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\bin\Release\WizardWrx.FormatStringEngine.pdb
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\bin\Release\WizardWrx.FormatStringEngine.xml
-F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\bin\Release\WizardWrx.ASCIIInfo.pdb
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\bin\Release\WizardWrx.ASCIIInfo.xml
-F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\bin\Release\WizardWrx.AnyCSV.pdb
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\bin\Release\WizardWrx.AnyCSV.xml
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\obj\Release\EmbeddedTextFile.csprojAssemblyReference.cache
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\obj\Release\WizardWrx.EmbeddedTextFile.Properties.Resources.resources

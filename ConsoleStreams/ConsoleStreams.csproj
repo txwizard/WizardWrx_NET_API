@@ -34,6 +34,27 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="WizardWrx.AnyCSV, Version=7.0.120.30587, Culture=neutral, PublicKeyToken=39f6551a21db420a, processorArchitecture=MSIL">
+      <HintPath>..\packages\WizardWrx.AnyCSV.7.0.120.30587\lib\net20\WizardWrx.AnyCSV.dll</HintPath>
+    </Reference>
+    <Reference Include="WizardWrx.ASCIIInfo, Version=7.1.83.29298, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WizardWrx.ASCIIInfo.7.1.83.29298\lib\net20\WizardWrx.ASCIIInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="WizardWrx.AssemblyUtils, Version=7.15.114.34743, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WizardWrx.AssemblyUtils.7.15.114.34743\lib\net35-client\WizardWrx.AssemblyUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="WizardWrx.BitMath, Version=4.3.125.29248, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WizardWrx.BitMath.4.3.125.29248\lib\net20\WizardWrx.BitMath.dll</HintPath>
+    </Reference>
+    <Reference Include="WizardWrx.Common, Version=7.15.102.41891, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WizardWrx.Common.7.15.102.41891\lib\net20\WizardWrx.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="WizardWrx.Core, Version=7.15.153.2428, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WizardWrx.Core.7.15.153.2428\lib\net35-client\WizardWrx.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="WizardWrx.FormatStringEngine, Version=7.15.162.826, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WizardWrx.FormatStringEngine.7.15.162.826\lib\net20\WizardWrx.FormatStringEngine.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\ProductAssemblyInfo.cs">
@@ -52,24 +73,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AssemblyUtils\AssemblyUtils.csproj">
-      <Project>{147d0ab7-a13a-4374-9011-a5584ae3a533}</Project>
-      <Name>AssemblyUtils</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Common\Common.csproj">
-      <Project>{c1fb48d6-4a54-4424-bca1-4777f3aae2df}</Project>
-      <Name>Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Core\Core.csproj">
-      <Project>{b5282e82-d211-4bea-bebd-b2cc6e45bf5c}</Project>
-      <Name>Core</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package >
+	<metadata>
+    	<id>$id$</id>
+	    <version>$version$</version>
+    	<title>$title$</title>
+	    <authors>$author$</authors>
+    	<owners>$author$</owners>
+	    <licenseUrl>https://github.com/txwizard/WizardWrx_NET_API/blob/master/License.TXT</licenseUrl>
+    	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
+	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    	<description>$description$</description>
+	    <releaseNotes>This is the first release of this established library as a NuGet package.</releaseNotes>
+    	<copyright>$copyright$</copyright>
+    	<tags>Embbedded Resource Reader</tags>
+	</metadata>
+	<files>
+   		<file src="readme.md" target="" />
+   		<file src="readme.txt" target="" />
+	</files>
+</package>

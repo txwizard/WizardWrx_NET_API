@@ -78,17 +78,11 @@ F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyU
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyUtils\bin\Release\WizardWrx.FormatStringEngine.dll
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyUtils\bin\Release\WizardWrx.ASCIIInfo.dll
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyUtils\bin\Release\WizardWrx.AnyCSV.dll
-F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyUtils\bin\Release\WizardWrx.Common.pdb
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyUtils\bin\Release\WizardWrx.Common.xml
-F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyUtils\bin\Release\WizardWrx.Core.pdb
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyUtils\bin\Release\WizardWrx.Core.xml
-F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyUtils\bin\Release\WizardWrx.BitMath.pdb
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyUtils\bin\Release\WizardWrx.BitMath.xml
-F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyUtils\bin\Release\WizardWrx.FormatStringEngine.pdb
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyUtils\bin\Release\WizardWrx.FormatStringEngine.xml
-F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyUtils\bin\Release\WizardWrx.ASCIIInfo.pdb
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyUtils\bin\Release\WizardWrx.ASCIIInfo.xml
-F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyUtils\bin\Release\WizardWrx.AnyCSV.pdb
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyUtils\bin\Release\WizardWrx.AnyCSV.xml
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyUtils\obj\Release\AssemblyUtils.csprojAssemblyReference.cache
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyUtils\obj\Release\WizardWrx.AssemblyUtils.Properties.Resources.resources

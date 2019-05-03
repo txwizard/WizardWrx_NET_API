@@ -4,6 +4,32 @@ This file is a running history of fixes and improvements from version 7.0
 onwards. Changes are documented for the newest version first. Within each
 version, classes are covered in alphabetical order.
 
+# 2019/05/03
+
+Only the __product__ build number changed, from 210 to 211, to account for the
+migration of all subsidiary projects to NuGet packages.
+
+Each of the 10 libraries is in its own like-named NuGet package. For example,
+the Nuget package that contains `WizardWrx.Core.dll` is `WizardWrx.Core`. The
+following table lists the packages, along with their version numbers.
+
+|Library                               |Package Name                       |Version        |
+|--------------------------------------|-----------------------------------|---------------|
+|WizardWrx.ASCIIInfo.dll               |WizardWrx.ASCIIInfo                |7.1.83.29298   |
+|WizardWrx.Common.dll                  |WizardWrx.Common                   |7.15.102.41891 |
+|WizardWrx.FormatStringEngine.dll      |WizardWrx.FormatStringEngine       |7.15.162.826   |
+|WizardWrx.Core.dll                    |WizardWrx.Core                     |7.15.153.2428  |
+|WizardWrx.AssemblyUtils.dll           |WizardWrx.AssemblyUtils            |7.15.114.34743 |
+|WizardWrx.DiagnosticInfo.dll          |WizardWrx.DiagnosticInfo           |7.15.1         |
+|WizardWrx.MoreMath.dll                |WizardWrx.MoreMath                 |7.15.1.36803   |
+|WizardWrx.ConsoleStreams.dll          |WizardWrx.ConsoleStreams           |7.15.191.37663 |
+|WizardWrx.EmbeddedTextFile.dll        |WizardWrx.EmbeddedTextFile         |7.15.90.42197  |
+|WizardWrx.DLLConfigurationManager.dll |WizardWrx.DLLConfigurationManager  |7.15.211       |
+
+In addition to substituting NuGet packages throughout, a handful of errata in
+the XML documentation got fixed. Otherwise, the code is unchanged from the code
+that was first marked as version 7.15.
+
 # Version 7.15
 
 Following is a summary of changes made in version __7.15__, released Sunday, __28 April 2019__.

@@ -70,17 +70,11 @@ F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ConsoleSt
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ConsoleStreams\bin\Debug\WizardWrx.AnyCSV.dll
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ConsoleStreams\bin\Debug\WizardWrx.AssemblyUtils.pdb
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ConsoleStreams\bin\Debug\WizardWrx.AssemblyUtils.xml
-F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ConsoleStreams\bin\Debug\WizardWrx.Common.pdb
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ConsoleStreams\bin\Debug\WizardWrx.Common.xml
-F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ConsoleStreams\bin\Debug\WizardWrx.Core.pdb
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ConsoleStreams\bin\Debug\WizardWrx.Core.xml
-F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ConsoleStreams\bin\Debug\WizardWrx.BitMath.pdb
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ConsoleStreams\bin\Debug\WizardWrx.BitMath.xml
-F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ConsoleStreams\bin\Debug\WizardWrx.FormatStringEngine.pdb
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ConsoleStreams\bin\Debug\WizardWrx.FormatStringEngine.xml
-F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ConsoleStreams\bin\Debug\WizardWrx.ASCIIInfo.pdb
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ConsoleStreams\bin\Debug\WizardWrx.ASCIIInfo.xml
-F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ConsoleStreams\bin\Debug\WizardWrx.AnyCSV.pdb
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ConsoleStreams\bin\Debug\WizardWrx.AnyCSV.xml
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ConsoleStreams\obj\Debug\ConsoleStreams.csprojAssemblyReference.cache
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ConsoleStreams\obj\Debug\WizardWrx.ConsoleStreams.Properties.Resources.resources

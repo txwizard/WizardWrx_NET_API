@@ -26,7 +26,6 @@ F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Common\bi
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Common\bin\Release\WizardWrx.Common.dll
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Common\bin\Release\WizardWrx.Common.pdb
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Common\bin\Release\Wizardwrx.BitMath.dll
-F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Common\bin\Release\Wizardwrx.BitMath.pdb
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Common\bin\Release\Wizardwrx.BitMath.xml
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Common\obj\Release\Common.csprojAssemblyReference.cache
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Common\obj\Release\WizardWrx.Common.Properties.Resources.resources

@@ -1,5 +1,40 @@
 # WizardWrx .NET API ReadMe
 
+## Release Notes, 2019/05/03
+
+Only the __product__ build number changed, from 210 to 211, to account for the
+migration of all subsidiary projects to NuGet packages.
+
+Each of the 10 libraries is in its own like-named NuGet package. For example,
+the Nuget package that contains `WizardWrx.Core.dll` is `WizardWrx.Core`. The
+following table lists the packages, along with their version numbers.
+
+|Library                               |Package Name                       |Version        |
+|--------------------------------------|-----------------------------------|---------------|
+|WizardWrx.ASCIIInfo.dll               |WizardWrx.ASCIIInfo                |7.1.83.29298   |
+|WizardWrx.Common.dll                  |WizardWrx.Common                   |7.15.102.41891 |
+|WizardWrx.FormatStringEngine.dll      |WizardWrx.FormatStringEngine       |7.15.162.826   |
+|WizardWrx.Core.dll                    |WizardWrx.Core                     |7.15.153.2428  |
+|WizardWrx.AssemblyUtils.dll           |WizardWrx.AssemblyUtils            |7.15.114.34743 |
+|WizardWrx.DiagnosticInfo.dll          |WizardWrx.DiagnosticInfo           |7.15.1         |
+|WizardWrx.MoreMath.dll                |WizardWrx.MoreMath                 |7.15.1.36803   |
+|WizardWrx.ConsoleStreams.dll          |WizardWrx.ConsoleStreams           |7.15.191.37663 |
+|WizardWrx.EmbeddedTextFile.dll        |WizardWrx.EmbeddedTextFile         |7.15.90.42197  |
+|WizardWrx.DLLConfigurationManager.dll |WizardWrx.DLLConfigurationManager  |7.15.211       |
+
+In addition to substituting NuGet packages throughout, a handful of errata in
+the XML documentation got fixed. Otherwise, the code is unchanged from the code
+that was first marked as version 7.15.
+
+You can get everything with just three requests, made in the order listed next.
+
+1) WizardWrx.DLLConfigurationManager
+2) WizardWrx.MoreMath
+3) WizardWrx.EmbeddedTextFile
+
+As proof that it works, unit test program DLLServices2TestStand.exe consumes all
+ten packages.
+
 ## Release Notes, Version 7.15
 
 This release introduces two new classes, both of which came into being to solve
@@ -132,40 +167,41 @@ in the top of each source file.
 
 For the most part, this constellation of class libraries evolves to acommodate
 needs as they arise in my development work. Nevertheless, I have a road map, and
-it has a few well-marked stops.
+it has a few well-marked stops. As of Friday, 03 May 2019, a couple of the big
+ones, NuGet packaging, and configuration files that travel with their DLLs, are
+finally resolved.
 
-1.	__NuGet Packages__ are a certainty, once I decide whether there should be
-one package or seven (1 for each library, plus a rollup that contains all six),
-and find time to create them.
+1)  Every library has a NuGet package, each of which has a working dependency
+chain. These dependencies mean that the whole API can be imported with just
+three requests to the NuGet Gallery.
 
-2.	The classes that process `FormatItems` and `FormatStrings` could stand
+2)  Traveling DLL configuration files got fixed in MSBuild.
+
+I've rearranged the remaining milestones to reflect new priorities.
+
+1)	Evaluate the current versioning protocol in light of lessons learned from
+recent studies of the matter.
+
+2)	`AgedFileInfo` and its companion `AgedFileInfoCollection` could stand a
+companions that support other orderings of file lists, such as by size, type, or
+name.
+
+3)	The classes that process `FormatItems` and `FormatStrings` could stand
 to be made more usable.
 
-3.	`DigestString` and `DigestFile` support only MD5 and the SHAx message
+4)	`DigestString` and `DigestFile` support only MD5 and the SHAx message
 digest algorithms. While that covers the two most commonly used algorithms, I
 would like to cover others, and add HMAC digest authentication support. I have a
 native library, implemented in ANSI C, that supports HMAC, but I have yet to
 investigate what it would take to convert it.
 
-4.	`AgedFileInfo` and its companion `AgedFileInfoCollection` could stand a
-companions that support other orderings of file lists, such as by size, type, or
-name.
-
-5.	`ExceptionLogger` should define an interface to simplify replacing its
+5)	`ExceptionLogger` should define an interface to simplify replacing its
 `ReportException` methods. Formatting of `ReportException` output could also
 stand to be a bit more flexible.
 
-6.	`ReportDetail` and `ReportHelpers` were intended to be the foundation of
+6)	`ReportDetail` and `ReportHelpers` were intended to be the foundation of
 an ambitious report generator for character-mode programs of the sort that are
 the lifeblood of systems software.
-
-7.	Devise a simple, automated mechanism to have the configuration file
-associated with a DLL that defines a class that derives from`PropertyDefaults`
-follow it, as do the associated XML documentation and program data base (`.pdb`)
-files. _Recent experience with Visual Studio 2017 suggests that this may now be moot_.
-
-8.	Evaluate the current versioning protocol in light of lessons learned from
-recent studies of the matter.
 
 ## Contributing
 

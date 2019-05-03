@@ -95,7 +95,7 @@
 
 	2015/06/20 5.5     DAG    Relocate to WizardWrx.DLLServices2 namespace and
                               class library.
- 
+
     2016/04/10 6.0     DAG    Scan for typographical errors flagged by the
 							  spelling checker add-in, and correct what I find,
                               Update the formatting and marking of blocks, and
@@ -121,7 +121,7 @@ using System.Text.RegularExpressions;
 namespace WizardWrx
 {
     /// <summary>
-    /// Methods for creating and manipulating test blocks.
+    /// This class defines methods for creating and manipulating bounded text blocks.
     /// </summary>
     public class TextBlocks
     {
@@ -212,7 +212,7 @@ namespace WizardWrx
 
 
         /// <summary>
-        /// This is the text that forms the middle (and variable) part of the 
+        /// This is the text that forms the middle (and variable) part of the
         /// TextBlocks marker strings.
         /// </summary>
         public string MarkerText

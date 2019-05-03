@@ -8722,7 +8722,7 @@
         </member>
         <member name="T:WizardWrx.TextBlocks">
             <summary>
-            Methods for creating and manipulating test blocks.
+            This class defines methods for creating and manipulating bounded text blocks.
             </summary>
         </member>
         <member name="F:WizardWrx.TextBlocks.BLOCK_BEGIN_TEXT">
@@ -8772,7 +8772,7 @@
         </member>
         <member name="P:WizardWrx.TextBlocks.MarkerText">
             <summary>
-            This is the text that forms the middle (and variable) part of the 
+            This is the text that forms the middle (and variable) part of the
             TextBlocks marker strings.
             </summary>
         </member>

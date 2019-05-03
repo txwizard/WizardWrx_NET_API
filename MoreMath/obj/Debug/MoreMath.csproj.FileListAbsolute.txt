@@ -5,9 +5,7 @@ F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\bin\Debug\WizardWrx.MoreMath.pdb
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\bin\Debug\WizardWrx.Common.dll
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\bin\Debug\WizardWrx.BitMath.dll
-F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\bin\Debug\WizardWrx.Common.pdb
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\bin\Debug\WizardWrx.Common.xml
-F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\bin\Debug\WizardWrx.BitMath.pdb
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\bin\Debug\WizardWrx.BitMath.xml
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\obj\Debug\WizardWrx.Properties.Resources.resources
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\obj\Debug\MoreMath.csproj.GenerateResource.cache
@@ -15,5 +13,4 @@ F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\obj\Debug\WizardWrx.MoreMath.dll
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\obj\Debug\WizardWrx.MoreMath.pdb
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\bin\Debug\WizardWrx.DiagnosticInfo.dll
-F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\bin\Debug\WizardWrx.DiagnosticInfo.pdb
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\bin\Debug\WizardWrx.DiagnosticInfo.xml
