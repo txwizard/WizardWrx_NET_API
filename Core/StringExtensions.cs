@@ -25,7 +25,7 @@
 
 	Author:             David A. Gray
 
-	License:            Copyright (C) 2017-2018, David A. Gray. 
+	License:            Copyright (C) 2017-2019, David A. Gray. 
 						All rights reserved.
 
                         Redistribution and use in source and binary forms, with
@@ -102,6 +102,10 @@
                            Comment #3493," at
                            
                            https://github.com/dotnet/docfx/issues/3493.
+
+	2019/05/05 7.16    DAG ApplyFixups is a new method that performs global
+                           replacements from an array of search and replacement
+                           pairs.
     ============================================================================
 */
 
@@ -113,7 +117,6 @@ using System.ComponentModel;
 using System.Text;
 
 using WizardWrx.Common.Properties;
-
 
 namespace WizardWrx
 {
@@ -139,22 +142,66 @@ namespace WizardWrx
         /// method, MakeToken, which takes one argument.
         /// </summary>
         public const string DEFAULT_TOKEN_DELM = @"$$";
-		#endregion	// Public Constants
+        #endregion   // Public Constants
 
 
-		#region AppendFullStopIfMissing Method
-		/// <summary>
-		/// Unless the last character of the input string is a period (full
-		/// stop), append one to the returned string.
-		/// </summary>
-		/// <param name="pstrInput">
-		/// Specify the input string to evaluate and edit as needed.
-		/// </param>
-		/// <returns>
-		/// The input string is returned with a period appended to it. If it already
-		/// has one, the input string is returned unchanged.
-		/// </returns>
-		public static string AppendFullStopIfMissing ( this string pstrInput )
+        #region ApplyFixups Methods
+        /// <summary>
+        /// Call this extension method to perform a one-off string
+        /// transformation.
+        /// </summary>
+        /// <param name="pstrIn">
+        /// Input string to transform by applying <paramref name="pafixupPairs"/>
+        /// </param>
+        /// <param name="pafixupPairs">
+        /// Array of StringFixup objects to apply to <paramref name="pstrIn"/>
+        /// </param>
+        /// <returns>
+        /// The <paramref name="pstrIn"/>, transformed by applying each
+        /// <paramref name="pafixupPairs"/> StringFixup to it in turn
+        /// </returns>
+        public static string ApplyFixups (
+            this string pstrIn ,
+            WizardWrx.Core.StringFixups.StringFixup [ ] pafixupPairs )
+        {
+            string rstrFixedUp = null;
+
+            for ( int intFixupIndex = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+                      intFixupIndex < pafixupPairs.Length ;
+                      intFixupIndex++ )
+            {
+                if ( intFixupIndex == ArrayInfo.ARRAY_FIRST_ELEMENT )
+                {
+                    rstrFixedUp = pstrIn.Replace (
+                        pafixupPairs [ intFixupIndex ].InputValue ,
+                        pafixupPairs [ intFixupIndex ].OutputValue );
+                }   // TRUE (On the first pass, the output string is uninitialized.) block, if ( intFixupIndex == ArrayInfo.ARRAY_FIRST_ELEMENT )
+                else
+                {
+                    rstrFixedUp = rstrFixedUp.Replace (
+                        pafixupPairs [ intFixupIndex ].InputValue ,
+                        pafixupPairs [ intFixupIndex ].OutputValue );
+                }   // FALSE (Subsequent passes must feed the output string through its Replace method with the next StringFixup pair.) block, if ( intFixupIndex == ArrayInfo.ARRAY_FIRST_ELEMENT )
+            }   // for ( int intFixupIndex = ArrayInfo.ARRAY_FIRST_ELEMENT ; intFixupIndex < _afixupPairs.Length ; intFixupIndex++ )
+
+            return rstrFixedUp;
+        }   // ApplyFixups method
+        #endregion  // ApplyFixups Methods
+
+
+        #region AppendFullStopIfMissing Method
+        /// <summary>
+        /// Unless the last character of the input string is a period (full
+        /// stop), append one to the returned string.
+        /// </summary>
+        /// <param name="pstrInput">
+        /// Specify the input string to evaluate and edit as needed.
+        /// </param>
+        /// <returns>
+        /// The input string is returned with a period appended to it. If it already
+        /// has one, the input string is returned unchanged.
+        /// </returns>
+        public static string AppendFullStopIfMissing ( this string pstrInput )
 		{
 			const string FULL_STOP_AS_STRING = @".";
 

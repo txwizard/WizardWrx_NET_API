@@ -48,8 +48,8 @@
     <Reference Include="WizardWrx.BitMath, Version=4.3.125.29248, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\WizardWrx.BitMath.4.3.125.29248\lib\net20\WizardWrx.BitMath.dll</HintPath>
     </Reference>
-    <Reference Include="WizardWrx.Common, Version=7.15.102.41891, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\WizardWrx.Common.7.15.102.41891\lib\net20\WizardWrx.Common.dll</HintPath>
+    <Reference Include="WizardWrx.Common, Version=7.16.104.1840, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WizardWrx.Common.7.16.104.1840\lib\net20\WizardWrx.Common.dll</HintPath>
     </Reference>
     <Reference Include="WizardWrx.FormatStringEngine, Version=7.15.162.826, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\WizardWrx.FormatStringEngine.7.15.162.826\lib\net20\WizardWrx.FormatStringEngine.dll</HintPath>
@@ -81,6 +81,7 @@
     <Compile Include="ReportDetails.cs" />
     <Compile Include="ReportHelpers.cs" />
     <Compile Include="StringExtensions.cs" />
+    <Compile Include="StringFixups.cs" />
     <Compile Include="SyncRoot.cs" />
     <Compile Include="SysDateFormatters.cs" />
     <Compile Include="TextBlocks.cs" />

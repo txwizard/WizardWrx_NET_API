@@ -184,4 +184,12 @@
     <value>[empty string]</value>
     <comment>Use this string to represent the empty string in output messages.</comment>
   </data>
+  <data name="MSG_VALUE_IS_INVALID" xml:space="preserve">
+    <value>invalid</value>
+    <comment>Use this string to report that the value of a variable is invalid.</comment>
+  </data>
+  <data name="MSG_VALUE_IS_VALID" xml:space="preserve">
+    <value>valid</value>
+    <comment>Use this string to report that the value of a variable is valid.</comment>
+  </data>
 </root>

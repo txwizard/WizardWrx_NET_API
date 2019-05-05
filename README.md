@@ -1,5 +1,16 @@
 # WizardWrx .NET API ReadMe
 
+## Release Notes, 2019/05/05
+
+The updates in this release revolve around a new method to apply pairs of
+strings, each composed of an original and a replacement value, to a string.
+Two versions exist, one which provides a place to stash the array, while the
+other is an extension method on the System.String class. The two new resource
+strings are incidental, though both are employed in the unlikely event that you
+feed an invalid array to the new methods.
+
+Please see the change log for additional details.
+
 ## Release Notes, 2019/05/03
 
 Only the __product__ build number changed, from 210 to 211, to account for the

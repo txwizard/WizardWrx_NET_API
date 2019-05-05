@@ -79,6 +79,15 @@ namespace WizardWrx.Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Array cannot be empty..
+        /// </summary>
+        internal static string ERRMSG_ARRAY_IS_EMPTY {
+            get {
+                return ResourceManager.GetString("ERRMSG_ARRAY_IS_EMPTY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ERROR: The CreateFormatString method cannot process the specified format string.{1}    Specified format string = {0.
         /// </summary>
         internal static string ERRMSG_CANNOT_PARSE {
@@ -282,6 +291,15 @@ namespace WizardWrx.Core.Properties {
         internal static string ERRMSG_START_CHARACTER {
             get {
                 return ResourceManager.GetString("ERRMSG_START_CHARACTER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The InputValue of the fixup pair at ordinal position {0} (subscript = {1}) is a null reference or the empty string.{4}    The OutputValue at that position is {2}, which is {3}..
+        /// </summary>
+        internal static string ERRMSG_STRING_FIXUP_PAIR_IS_INVALID {
+            get {
+                return ResourceManager.GetString("ERRMSG_STRING_FIXUP_PAIR_IS_INVALID", resourceCulture);
             }
         }
         

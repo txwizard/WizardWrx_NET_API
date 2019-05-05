@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>This is the first release of this established, very stable, regularly updated library as a NuGet package.</releaseNotes>
+	    <releaseNotes>This minor update adds two new resource strings, MSG_VALUE_IS_INVALID and MSG_VALUE_IS_VALID.</releaseNotes>
     	<copyright>$copyright$</copyright>
     	<tags>Constants Arrays RegExp</tags>
 	</metadata>

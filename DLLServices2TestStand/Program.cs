@@ -206,6 +206,10 @@
                               ExceptionLogger.s_strSettingsOmittedFromConfigFile
                               property, a static string that returns a message
                               to be displayed to the program operator.
+
+	2019/05/03 7.15    DAG    Implement and deploy RecoveredExceptionTests.
+
+	2019/05/05 7.16    DAG    Implement and deploy ExerciseStringFixups.
     ============================================================================
 */
 
@@ -357,6 +361,22 @@ namespace DLLServices2TestStand
 		const string OUTPUT_OPTIONS_NL_AUGMENT = @"NewLine Augment";
 		const string OUTPUT_OPTIONS_FINAL = @"Final Settings ";
 
+        const string STRING_FIXUP_INPUT_STRING_1 = "{\n     \"Error Message\": \"Invalid API call. Please retry or visit the documentation (https://www.alphavantage.co/documentation/) for SYMBOL_SEARCH.\"\r}";
+        const string STRING_FIXUP_INPUT_STRING_2 = "{\n     \"ErrorMessage\": \"Invalid API call. Please retry or visit the documentation (https://www.alphavantage.co/documentation/) for SYMBOL_SEARCH.\"\r}";
+        const string STRING_FIXUP_INPUT_STRING_3 = "{\n     \"Foo Bar\": \"It's a Foo Bar, Sir!}";
+
+        static readonly string [ ] s_astrFixupInputs = {
+            STRING_FIXUP_INPUT_STRING_1 ,
+            STRING_FIXUP_INPUT_STRING_2 ,
+            STRING_FIXUP_INPUT_STRING_3
+        };  // static readonly string [ ] s_astrFixupInputs
+
+        static readonly StringFixups.StringFixup [ ] s_astrStringFixups =
+        {
+            new StringFixups.StringFixup(@"Error Message","ErrorMessage") ,
+            new StringFixups.StringFixup(@"Foo Bar","FooBar") ,
+        };  // static readonly StringFixups.StringFixup [ ] s_astrStringFixups
+
         const bool BEGIN_TEST_TAKE_METHOD_NAME_AT_FACE_VALUE = true;
 
 		static readonly OutputOptionTestData [ ] s_utpOutputOptionTestData =
@@ -479,6 +499,9 @@ namespace DLLServices2TestStand
 				else
 				{	// Run the whole set, starting with this test, which leaves the flags set so that the original message can be reconstructed from a psLogList export.
                     RecoveredExceptionTests ( ref intTestNumber );
+                    PauseForPictures ( APPEND_LINEFEED );
+
+                    ExerciseStringFixups ( ref intTestNumber );
                     PauseForPictures ( APPEND_LINEFEED );
 
                     EventMessageCleanupTests ( ref intTestNumber );
@@ -1043,7 +1066,78 @@ FinalReport:
 		}	// ExerciseSpecialMessageGenerators method
 
 
-		private static void GenerateExceptionMessageFormatTable ( )
+        private static void ExerciseStringFixups ( ref int pintTestNumber )
+        {
+            NewClassTests_20140914.BeginTest (
+                ClassAndMethodDiagnosticInfo.GetMyMethodName ( ) ,
+                ref pintTestNumber ,
+                BEGIN_TEST_TAKE_METHOD_NAME_AT_FACE_VALUE );
+
+            Console.WriteLine ( @"All tests use the following input array:{0}" , Environment.NewLine );
+
+            for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+                      intJ < s_astrStringFixups.Length ;
+                      intJ++ )
+            {
+                Console.WriteLine (
+                    @"    Element {0}: Input String  = {1}{3}                 Output String = {2}" ,
+                    new object [ ]
+                    {
+                        intJ ,                                                  // Format Item 0: Element {0}:
+                        s_astrStringFixups [ intJ ].InputValue ,                // Format Item 1: Input String  = {1}
+                        s_astrStringFixups [ intJ ].OutputValue ,               // Format Item 2: Output String = {2}
+                        Environment.NewLine                                     // Format Item 3: Platform-dependent newline
+                    } );
+            }   // for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ; intJ < s_astrStringFixups.Length ; intJ++ )
+
+            Console.WriteLine (
+                @"{0}The following tests use a StringFixups instance.{0}" ,
+                Environment.NewLine );
+
+            StringFixups fixups = new StringFixups ( s_astrStringFixups );
+
+            for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+                      intJ < s_astrFixupInputs.Length ;
+                      intJ++ )
+            {
+                Console.WriteLine (
+                    @"    Element {0}: Input String  = {1}{3}                 Output String = {2}" ,
+                    new object [ ]
+                    {
+                        intJ ,                                                  // Format Item 0: Element {0}:
+                        s_astrFixupInputs [ intJ ] ,                            // Format Item 1: Input String  = {1}
+                        fixups.ApplyFixups ( s_astrFixupInputs [ intJ ] ) ,     // Format Item 2: Output String = {2}
+                        Environment.NewLine                                     // Format Item 3: Platform-dependent newline
+                    } );
+            }   // for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ; intJ < s_astrFixupInputs.Length ; intJ++ )
+
+            Console.WriteLine (
+                @"{0}The following tests use the ApplyFixups extension method on the System.String class.{0}" ,
+                Environment.NewLine );
+
+            for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+                      intJ < s_astrFixupInputs.Length ;
+                      intJ++ )
+            {
+                Console.WriteLine (
+                    @"    Element {0}: Input String  = {1}{3}                 Output String = {2}" ,
+                    new object [ ]
+                    {
+                        intJ ,                                                  // Format Item 0: Element {0}:
+                        s_astrFixupInputs [ intJ ] ,                            // Format Item 1: Input String  = {1}
+                        s_astrFixupInputs [ intJ ].ApplyFixups (
+                            s_astrStringFixups ) ,                              // Format Item 2: Output String = {2}
+                        Environment.NewLine                                     // Format Item 3: Platform-dependent newline
+                    } );
+            }   // for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ; intJ < s_astrFixupInputs.Length ; intJ++ )
+
+            NewClassTests_20140914.TestDone (
+                MagicNumbers.ERROR_SUCCESS ,
+                pintTestNumber );
+        }   // ExerciseStringFixups method
+
+
+        private static void GenerateExceptionMessageFormatTable ( )
 		{
 			const string RESERVED_GUID = @"{733C6022-332D-4D3A-B9AE-41600AAE349F}";
 			Guid gidReserved = new Guid ( RESERVED_GUID );
@@ -1066,6 +1160,7 @@ FinalReport:
         {
             const int TEST_COUNTER_1 = 1;
             const int TEST_COUNTER_2 = 2;
+
             NewClassTests_20140914.BeginTest (
                 ClassAndMethodDiagnosticInfo.GetMyMethodName ( ) ,
                 ref pintTestNumber ,

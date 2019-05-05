@@ -125,6 +125,9 @@
     <value>The list of aliases is empty.</value>
     <comment>The CmdLneArgsBasic class uses this string to report an internal error.</comment>
   </data>
+  <data name="ERRMSG_ARRAY_IS_EMPTY" xml:space="preserve">
+    <value>Array cannot be empty.</value>
+  </data>
   <data name="ERRMSG_CANNOT_PARSE" xml:space="preserve">
     <value>ERROR: The CreateFormatString method cannot process the specified format string.{1}    Specified format string = {0</value>
   </data>
@@ -213,6 +216,10 @@
   <data name="ERRMSG_START_CHARACTER" xml:space="preserve">
     <value>starting at character position {0}{1}{2}</value>
     <comment>This substring was created for use with ERRMSG_UNRESLOVED_ENVIRONEMT_STRINGS, and it will probably see lots more use, provided that I remember that it's here.</comment>
+  </data>
+  <data name="ERRMSG_STRING_FIXUP_PAIR_IS_INVALID" xml:space="preserve">
+    <value>The InputValue of the fixup pair at ordinal position {0} (subscript = {1}) is a null reference or the empty string.{4}    The OutputValue at that position is {2}, which is {3}.</value>
+    <comment>The public constructor and the sole method of this class construct a message from this template to report when the input value of a fixup pair is invalid.</comment>
   </data>
   <data name="ERRMSG_THIS_REPORTITEM_IS_NULL" xml:space="preserve">
     <value>ERROR: The value of the report item labeled {0} has not been set.</value>

@@ -221,5 +221,23 @@ namespace WizardWrx.Common.Properties {
                 return ResourceManager.GetString("MSG_THE_EMPTY_STRING", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to invalid.
+        /// </summary>
+        public static string MSG_VALUE_IS_INVALID {
+            get {
+                return ResourceManager.GetString("MSG_VALUE_IS_INVALID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to valid.
+        /// </summary>
+        public static string MSG_VALUE_IS_VALID {
+            get {
+                return ResourceManager.GetString("MSG_VALUE_IS_VALID", resourceCulture);
+            }
+        }
     }
 }

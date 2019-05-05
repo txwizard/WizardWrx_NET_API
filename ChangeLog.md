@@ -4,6 +4,39 @@ This file is a running history of fixes and improvements from version 7.0
 onwards. Changes are documented for the newest version first. Within each
 version, classes are covered in alphabetical order.
 
+# Version 7.16
+
+The additions revolve around a new method to apply pairs of strings, each
+composed of an original and a replacement value, to a string. Two versions
+exist, one which provides a place to stash the array, while the other is an
+extension method on the System.String class. The two new resource strings are
+incidental, though both are employed in the unlikely event that you feed an
+invalid array to the new methods.
+
+## Class WizardWrx.Common.Properties.Resources (defined in WizardWrx.Common.dll)
+
+Since they are intended to be used everywhere, the string resources are marked
+as Public. This release demonstrates the value of that, with additions as
+follows.
+
+|Name                   |Value   |Comment                                                            |
+|-----------------------|--------|-------------------------------------------------------------------|
+|MSG_VALUE_IS_INVALID	|invalid |Use this string to report that the value of a variable is invalid. |
+|MSG_VALUE_IS_VALID		|valid	 |Use this string to report that the value of a variable is valid.   |
+
+## Class WizardWrx.Core.StringFixups (defined in WizardWrx.Core.dll)
+
+This new class exposes one method, `ApplyFixups`, which applies pairs of strings
+comprised of an original and its replacement to a string. The array of string
+pairs is stored in the instance for reuse.
+
+## Class WizardWrx.StringExtensions.cs (defined in WizardWrx.Core.dll)
+
+This established string extension class gets a new method, `ApplyFixups`, which
+applies pairs of strings comprised of an original and its replacement to a
+string. Unlike the StringFixups class, which has a place to store them, this
+method takes the array as its argument.
+
 # 2019/05/03
 
 Only the __product__ build number changed, from 210 to 211, to account for the

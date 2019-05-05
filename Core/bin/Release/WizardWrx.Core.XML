@@ -3080,6 +3080,100 @@
             almost certain to find use on its own, I marked it public.
             </remarks>
         </member>
+        <member name="T:WizardWrx.Core.StringFixups">
+            <summary>
+            Instances of this class represent pairs of fixup strings to apply as
+            replacement pairs to amend a string, such as the JSON response from a
+            REST endpoint that motivated its creation.
+            </summary>
+        </member>
+        <member name="T:WizardWrx.Core.StringFixups.StringFixup">
+            <summary>
+            A fixup pair is a pair of strings.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.Core.StringFixups.StringFixup.InputValue">
+            <summary>
+            Specify the string to be replaced with OutputValue when found in
+            an input string.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.Core.StringFixups.StringFixup.OutputValue">
+            <summary>
+            Specify the string to substitute for InputValue when found in an
+            input string.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.Core.StringFixups.StringFixup.#ctor(System.String,System.String)">
+            <summary>
+            This constructor permits initializing static read-only arrays of
+            these structures.
+            </summary>
+            <param name="pstrInputValue">
+            String to assign to the InputValue property
+            </param>
+            <param name="pstroutputValue">
+            String to assign to the OutpuValue property
+            </param>
+        </member>
+        <member name="M:WizardWrx.Core.StringFixups.#ctor">
+            <summary>
+            The default constructor is marked as private to force all instances
+            to be initialized.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.Core.StringFixups.#ctor(WizardWrx.Core.StringFixups.StringFixup[])">
+            <summary>
+            The public constructor is overloaded, to guarantee that instances
+            are properly initialized.
+            </summary>
+            <param name="pafixupPair">
+            The array of StringFixup string pairs to apply to string fed into
+            the ApplyFixups method
+            </param>
+        </member>
+        <member name="M:WizardWrx.Core.StringFixups.ApplyFixups(System.String)">
+            <summary>
+            Call this method to apply the StringFixup array that was passed into
+            the constructor.
+            </summary>
+            <param name="pstrInputString">
+            String to transform by applying the StringFixup array that was passed into
+            the constructor
+            </param>
+            <returns>
+            The <paramref name="pstrInputString"/>, transformed by applying each
+            StringFixup to it in turn
+            </returns>
+        </member>
+        <member name="F:WizardWrx.Core.StringFixups._afixupPairs">
+            <summary>
+            The input array is sequestered here.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.Core.StringFixups.ValidateFixupPairArray(WizardWrx.Core.StringFixups.StringFixup[])">
+            <summary>
+            Unless sumething is wrong with it, return the input <paramref name="pafixupPairs"/>
+            to the calling routine.
+            </summary>
+            <param name="pafixupPairs">
+            Array of StringFixup structures to validate
+            </param>
+            <returns>
+            If the method succeeds, the return value is a reference to the input <paramref name="pafixupPairs"/>.
+            Otherwise, the method throws an ArgumentNullException exception or
+            an ArgumentException exception, depending on the circumstances.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            An ArgumentNullException exception arises when the entire <paramref name="pafixupPairs"/>
+            array is a null reference.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            An ArgumentException exception arises when the entire array is empty
+            or one of its InputValue members is a null reference or the empty
+            string.
+            </exception>
+        </member>
         <member name="T:WizardWrx.Core.TimeDisplayFormatter">
             <summary>
             Use instances of this class to return dates and times, uniformly
@@ -3656,6 +3750,11 @@
               Looks up a localized string similar to The list of aliases is empty..
             </summary>
         </member>
+        <member name="P:WizardWrx.Core.Properties.Resources.ERRMSG_ARRAY_IS_EMPTY">
+            <summary>
+              Looks up a localized string similar to Array cannot be empty..
+            </summary>
+        </member>
         <member name="P:WizardWrx.Core.Properties.Resources.ERRMSG_CANNOT_PARSE">
             <summary>
               Looks up a localized string similar to ERROR: The CreateFormatString method cannot process the specified format string.{1}    Specified format string = {0.
@@ -3769,6 +3868,11 @@
         <member name="P:WizardWrx.Core.Properties.Resources.ERRMSG_START_CHARACTER">
             <summary>
               Looks up a localized string similar to starting at character position {0}{1}{2}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Core.Properties.Resources.ERRMSG_STRING_FIXUP_PAIR_IS_INVALID">
+            <summary>
+              Looks up a localized string similar to The InputValue of the fixup pair at ordinal position {0} (subscript = {1}) is a null reference or the empty string.{4}    The OutputValue at that position is {2}, which is {3}..
             </summary>
         </member>
         <member name="P:WizardWrx.Core.Properties.Resources.ERRMSG_THIS_REPORTITEM_IS_NULL">
@@ -7145,6 +7249,22 @@
             Default token terminator string used by the version of public static
             method, MakeToken, which takes one argument.
             </summary>
+        </member>
+        <member name="M:WizardWrx.StringExtensions.ApplyFixups(System.String,WizardWrx.Core.StringFixups.StringFixup[])">
+            <summary>
+            Call this extension method to perform a one-off string
+            transformation.
+            </summary>
+            <param name="pstrIn">
+            Input string to transform by applying <paramref name="pafixupPairs"/>
+            </param>
+            <param name="pafixupPairs">
+            Array of StringFixup objects to apply to <paramref name="pstrIn"/>
+            </param>
+            <returns>
+            The <paramref name="pstrIn"/>, transformed by applying each
+            <paramref name="pafixupPairs"/> StringFixup to it in turn
+            </returns>
         </member>
         <member name="M:WizardWrx.StringExtensions.AppendFullStopIfMissing(System.String)">
             <summary>

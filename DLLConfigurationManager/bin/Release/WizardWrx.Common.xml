@@ -4579,5 +4579,15 @@
               Looks up a localized string similar to [empty string].
             </summary>
         </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.MSG_VALUE_IS_INVALID">
+            <summary>
+              Looks up a localized string similar to invalid.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.MSG_VALUE_IS_VALID">
+            <summary>
+              Looks up a localized string similar to valid.
+            </summary>
+        </member>
     </members>
 </doc>

@@ -3150,6 +3150,32 @@ references:
   isSpec: "True"
   fullName: WizardWrx.Common.Properties.Resources.MSG_THE_EMPTY_STRING
   nameWithType: Resources.MSG_THE_EMPTY_STRING
+- uid: WizardWrx.Common.Properties.Resources.MSG_VALUE_IS_INVALID
+  name: MSG_VALUE_IS_INVALID
+  href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_MSG_VALUE_IS_INVALID
+  commentId: P:WizardWrx.Common.Properties.Resources.MSG_VALUE_IS_INVALID
+  fullName: WizardWrx.Common.Properties.Resources.MSG_VALUE_IS_INVALID
+  nameWithType: Resources.MSG_VALUE_IS_INVALID
+- uid: WizardWrx.Common.Properties.Resources.MSG_VALUE_IS_INVALID*
+  name: MSG_VALUE_IS_INVALID
+  href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_MSG_VALUE_IS_INVALID_
+  commentId: Overload:WizardWrx.Common.Properties.Resources.MSG_VALUE_IS_INVALID
+  isSpec: "True"
+  fullName: WizardWrx.Common.Properties.Resources.MSG_VALUE_IS_INVALID
+  nameWithType: Resources.MSG_VALUE_IS_INVALID
+- uid: WizardWrx.Common.Properties.Resources.MSG_VALUE_IS_VALID
+  name: MSG_VALUE_IS_VALID
+  href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_MSG_VALUE_IS_VALID
+  commentId: P:WizardWrx.Common.Properties.Resources.MSG_VALUE_IS_VALID
+  fullName: WizardWrx.Common.Properties.Resources.MSG_VALUE_IS_VALID
+  nameWithType: Resources.MSG_VALUE_IS_VALID
+- uid: WizardWrx.Common.Properties.Resources.MSG_VALUE_IS_VALID*
+  name: MSG_VALUE_IS_VALID
+  href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_MSG_VALUE_IS_VALID_
+  commentId: Overload:WizardWrx.Common.Properties.Resources.MSG_VALUE_IS_VALID
+  isSpec: "True"
+  fullName: WizardWrx.Common.Properties.Resources.MSG_VALUE_IS_VALID
+  nameWithType: Resources.MSG_VALUE_IS_VALID
 - uid: WizardWrx.Common.Properties.Resources.ResourceManager
   name: ResourceManager
   href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_ResourceManager
@@ -6428,6 +6454,72 @@ references:
   isSpec: "True"
   fullName: WizardWrx.Core.RegistryValues.ValueExists
   nameWithType: RegistryValues.ValueExists
+- uid: WizardWrx.Core.StringFixups
+  name: StringFixups
+  href: api/WizardWrx.Core.StringFixups.html
+  commentId: T:WizardWrx.Core.StringFixups
+  fullName: WizardWrx.Core.StringFixups
+  nameWithType: StringFixups
+- uid: WizardWrx.Core.StringFixups.#ctor(WizardWrx.Core.StringFixups.StringFixup[])
+  name: StringFixups(StringFixups.StringFixup[])
+  href: api/WizardWrx.Core.StringFixups.html#WizardWrx_Core_StringFixups__ctor_WizardWrx_Core_StringFixups_StringFixup___
+  commentId: M:WizardWrx.Core.StringFixups.#ctor(WizardWrx.Core.StringFixups.StringFixup[])
+  name.vb: StringFixups(StringFixups.StringFixup())
+  fullName: WizardWrx.Core.StringFixups.StringFixups(WizardWrx.Core.StringFixups.StringFixup[])
+  fullName.vb: WizardWrx.Core.StringFixups.StringFixups(WizardWrx.Core.StringFixups.StringFixup())
+  nameWithType: StringFixups.StringFixups(StringFixups.StringFixup[])
+  nameWithType.vb: StringFixups.StringFixups(StringFixups.StringFixup())
+- uid: WizardWrx.Core.StringFixups.#ctor*
+  name: StringFixups
+  href: api/WizardWrx.Core.StringFixups.html#WizardWrx_Core_StringFixups__ctor_
+  commentId: Overload:WizardWrx.Core.StringFixups.#ctor
+  isSpec: "True"
+  fullName: WizardWrx.Core.StringFixups.StringFixups
+  nameWithType: StringFixups.StringFixups
+- uid: WizardWrx.Core.StringFixups.ApplyFixups(System.String)
+  name: ApplyFixups(String)
+  href: api/WizardWrx.Core.StringFixups.html#WizardWrx_Core_StringFixups_ApplyFixups_System_String_
+  commentId: M:WizardWrx.Core.StringFixups.ApplyFixups(System.String)
+  fullName: WizardWrx.Core.StringFixups.ApplyFixups(System.String)
+  nameWithType: StringFixups.ApplyFixups(String)
+- uid: WizardWrx.Core.StringFixups.ApplyFixups*
+  name: ApplyFixups
+  href: api/WizardWrx.Core.StringFixups.html#WizardWrx_Core_StringFixups_ApplyFixups_
+  commentId: Overload:WizardWrx.Core.StringFixups.ApplyFixups
+  isSpec: "True"
+  fullName: WizardWrx.Core.StringFixups.ApplyFixups
+  nameWithType: StringFixups.ApplyFixups
+- uid: WizardWrx.Core.StringFixups.StringFixup
+  name: StringFixups.StringFixup
+  href: api/WizardWrx.Core.StringFixups.StringFixup.html
+  commentId: T:WizardWrx.Core.StringFixups.StringFixup
+  fullName: WizardWrx.Core.StringFixups.StringFixup
+  nameWithType: StringFixups.StringFixup
+- uid: WizardWrx.Core.StringFixups.StringFixup.#ctor(System.String,System.String)
+  name: StringFixup(String, String)
+  href: api/WizardWrx.Core.StringFixups.StringFixup.html#WizardWrx_Core_StringFixups_StringFixup__ctor_System_String_System_String_
+  commentId: M:WizardWrx.Core.StringFixups.StringFixup.#ctor(System.String,System.String)
+  fullName: WizardWrx.Core.StringFixups.StringFixup.StringFixup(System.String, System.String)
+  nameWithType: StringFixups.StringFixup.StringFixup(String, String)
+- uid: WizardWrx.Core.StringFixups.StringFixup.#ctor*
+  name: StringFixup
+  href: api/WizardWrx.Core.StringFixups.StringFixup.html#WizardWrx_Core_StringFixups_StringFixup__ctor_
+  commentId: Overload:WizardWrx.Core.StringFixups.StringFixup.#ctor
+  isSpec: "True"
+  fullName: WizardWrx.Core.StringFixups.StringFixup.StringFixup
+  nameWithType: StringFixups.StringFixup.StringFixup
+- uid: WizardWrx.Core.StringFixups.StringFixup.InputValue
+  name: InputValue
+  href: api/WizardWrx.Core.StringFixups.StringFixup.html#WizardWrx_Core_StringFixups_StringFixup_InputValue
+  commentId: F:WizardWrx.Core.StringFixups.StringFixup.InputValue
+  fullName: WizardWrx.Core.StringFixups.StringFixup.InputValue
+  nameWithType: StringFixups.StringFixup.InputValue
+- uid: WizardWrx.Core.StringFixups.StringFixup.OutputValue
+  name: OutputValue
+  href: api/WizardWrx.Core.StringFixups.StringFixup.html#WizardWrx_Core_StringFixups_StringFixup_OutputValue
+  commentId: F:WizardWrx.Core.StringFixups.StringFixup.OutputValue
+  fullName: WizardWrx.Core.StringFixups.StringFixup.OutputValue
+  nameWithType: StringFixups.StringFixup.OutputValue
 - uid: WizardWrx.Core.TimeDisplayFormatter
   name: TimeDisplayFormatter
   href: api/WizardWrx.Core.TimeDisplayFormatter.html
@@ -13751,6 +13843,22 @@ references:
   isSpec: "True"
   fullName: WizardWrx.StringExtensions.AppendFullStopIfMissing
   nameWithType: StringExtensions.AppendFullStopIfMissing
+- uid: WizardWrx.StringExtensions.ApplyFixups(System.String,WizardWrx.Core.StringFixups.StringFixup[])
+  name: ApplyFixups(String, StringFixups.StringFixup[])
+  href: api/WizardWrx.StringExtensions.html#WizardWrx_StringExtensions_ApplyFixups_System_String_WizardWrx_Core_StringFixups_StringFixup___
+  commentId: M:WizardWrx.StringExtensions.ApplyFixups(System.String,WizardWrx.Core.StringFixups.StringFixup[])
+  name.vb: ApplyFixups(String, StringFixups.StringFixup())
+  fullName: WizardWrx.StringExtensions.ApplyFixups(System.String, WizardWrx.Core.StringFixups.StringFixup[])
+  fullName.vb: WizardWrx.StringExtensions.ApplyFixups(System.String, WizardWrx.Core.StringFixups.StringFixup())
+  nameWithType: StringExtensions.ApplyFixups(String, StringFixups.StringFixup[])
+  nameWithType.vb: StringExtensions.ApplyFixups(String, StringFixups.StringFixup())
+- uid: WizardWrx.StringExtensions.ApplyFixups*
+  name: ApplyFixups
+  href: api/WizardWrx.StringExtensions.html#WizardWrx_StringExtensions_ApplyFixups_
+  commentId: Overload:WizardWrx.StringExtensions.ApplyFixups
+  isSpec: "True"
+  fullName: WizardWrx.StringExtensions.ApplyFixups
+  nameWithType: StringExtensions.ApplyFixups
 - uid: WizardWrx.StringExtensions.ArrayOfOne(System.Char)
   name: ArrayOfOne(Char)
   href: api/WizardWrx.StringExtensions.html#WizardWrx_StringExtensions_ArrayOfOne_System_Char_
