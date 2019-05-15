@@ -55,7 +55,7 @@
 									DLLServices2.ExceptionLogger.GetReservedErrorMessage(DLLServices2.ExceptionLogger.ErrorExitOptions)
 
 							Notwithstanding assertions in the documentation that
-							these cross references respect using irectiv4es when
+							these cross references respect using directives when
 							resolving, it appears that this courtesy may exclude
 							references to the current assembly (the one being
 							built), which makes sense, upon reflection, since it
@@ -64,10 +64,7 @@
 						3)	See and SeeAlso XML tags can refer to Web pages, but
 							the correct keyword is not CREF, but HREF.
 
-	Copyright:			2008-2017, WizardWrx. All rights reserved world wide.
-						WizardWrx is a trade mark of Simple Soft Services, Inc.
-
-    License:            Copyright (C) 2014-2017, David A. Gray. 
+    License:            Copyright (C) 2009-2019, David A. Gray. 
 						All rights reserved.
 
                         Redistribution and use in source and binary forms, with
@@ -181,6 +178,9 @@
                               2) Change FormatStatusCode to use the simplified
                                  first overload, shortening its stack frame and
                                  call setup requirments.
+
+	2019/05/15 7.17    DAG    Replace the ASCII table in the XML comments with a
+                              well-formed XML table.
     ============================================================================
 */
 
@@ -891,19 +891,48 @@ namespace WizardWrx
         /// set our own default number of decimal places, rather than relying on
         /// the Regional Settings (Locale), which can be changed, at any time,
         /// by any user, even with restricted permissions.
-		/// 
-		/// ========================================================================
-		/// Format string            Generator Routine       Width Override
-		/// -----------------------  ----------------------  -----------------------
-		/// DECIMAL					 FixedWidthInteger		 int pintTotalDigits
-		/// FIXED					 FixedPointDecimal		 int pintFractionDigits
-		/// GENERAL                  GeneralXPrecision       int pintPrecisionDigits [1]
-		/// HEXADECIMAL				 HexadecimalInteger		 int pintTotalDigits
-		/// NUMBER_PER_REG_SETTINGS  IntegerPerRegSettings
-		/// NUMBER_PER_REG_SETTINGS	 NumberPerRegSettings	 int pintFractionDigits
-		/// PERCENT					 PercentToDecimalPlaces	 int pintFractionDigits
-		/// ========================================================================
-		///
+        /// <list type="table">
+        /// <listheader>
+        /// <term>Format String</term>
+        /// <term>Generator Routine</term>
+        /// <term>Width Override</term>
+        /// </listheader>
+        /// <item>
+        /// <term>DECIMAL</term>
+        /// <term>FixedWidthInteger</term>
+        /// <term>int pintTotalDigits</term>
+        /// </item>
+        /// <item>
+        /// <term>FIXED</term>
+        /// <term>FixedPointDecimal</term>
+        /// <term>int pintFractionDigits</term>
+        /// </item>
+        /// <item>
+        /// <term>GENERAL</term>
+        /// <term>GeneralXPrecision</term>
+        /// <term>int pintPrecisionDigits [1]</term>
+        /// </item>
+        /// <item>
+        /// <term>HEXADECIMAL</term>
+        /// <term>HexadecimalInteger</term>
+        /// <term>int pintTotalDigits</term>
+        /// </item>
+        /// <item>
+        /// <term>NUMBER_PER_REG_SETTINGS</term>
+        /// <term>IntegerPerRegSettings</term>
+        /// <term>N /A</term>
+        /// </item>
+        /// <item>
+        /// <term>NUMBER_PER_REG_SETTINGS</term>
+        /// <term>NumberPerRegSettings</term>
+        /// <term>int pintFractionDigits</term>
+        /// </item>
+        /// <item>
+        /// <term>PERCENT</term>
+        /// <term>PercentToDecimalPlaces</term>
+        /// <term>int pintFractionDigits</term>
+        /// </item>
+        /// </list>
 		/// Note 1: There is only one of these methods, and it accepts the
 		/// pintTotalDigits argument.
 		/// </summary>

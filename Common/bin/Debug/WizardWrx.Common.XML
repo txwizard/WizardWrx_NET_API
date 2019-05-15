@@ -2113,44 +2113,73 @@
             <seealso href="https://msdn.microsoft.com/en-us/library/dwhawy9k(v=vs.100).aspx"/>
         </member>
         <member name="F:WizardWrx.NumericFormats.DECIMAL_DIGITS_DEFAULT">
-             <summary>
-             For some applications, such as the static methods of this class, we
-             set our own default number of decimal places, rather than relying on
-             the Regional Settings (Locale), which can be changed, at any time,
-             by any user, even with restricted permissions.
-             
-             ========================================================================
-             Format string            Generator Routine       Width Override
-             -----------------------  ----------------------  -----------------------
-             DECIMAL					 FixedWidthInteger		 int pintTotalDigits
-             FIXED					 FixedPointDecimal		 int pintFractionDigits
-             GENERAL                  GeneralXPrecision       int pintPrecisionDigits [1]
-             HEXADECIMAL				 HexadecimalInteger		 int pintTotalDigits
-             NUMBER_PER_REG_SETTINGS  IntegerPerRegSettings
-             NUMBER_PER_REG_SETTINGS	 NumberPerRegSettings	 int pintFractionDigits
-             PERCENT					 PercentToDecimalPlaces	 int pintFractionDigits
-             ========================================================================
-            
-             Note 1: There is only one of these methods, and it accepts the
-             pintTotalDigits argument.
-             </summary>
-             <see cref="M:WizardWrx.NumericFormats.FixedWidthInteger"/>
-             <see cref="M:WizardWrx.NumericFormats.FixedWidthInteger(System.Int32)"/>
-             <see cref="M:WizardWrx.NumericFormats.FixedPointDecimal"/>
-             <see cref="M:WizardWrx.NumericFormats.FixedPointDecimal(System.Int32)"/>
-             <see cref="M:WizardWrx.NumericFormats.GeneralXPrecision(System.Int32)"/>
-             <see cref="M:WizardWrx.NumericFormats.HexadecimalInteger"/>
-             <see cref="M:WizardWrx.NumericFormats.HexadecimalInteger(System.Int32)"/>
-             <see cref="M:WizardWrx.NumericFormats.NumberPerRegSettings"/>
-             <see cref="M:WizardWrx.NumericFormats.NumberPerRegSettings(System.Int32)"/>
-             <see cref="M:WizardWrx.NumericFormats.PercentToDecimalPlaces"/>
-             <see cref="M:WizardWrx.NumericFormats.PercentToDecimalPlaces(System.Int32)"/>
-             <see cref="M:WizardWrx.NumericFormats.ScientificXPrecisionLC(System.Int32)"/>
-             <see cref="M:WizardWrx.NumericFormats.ScientificXPrecisionLC(System.Int32)"/>
-             <see cref="M:WizardWrx.NumericFormats.ScientificXPrecisionUC(System.Int32)"/>
-             <seealso cref="F:WizardWrx.NumericFormats.DECIMAL_DIGITS_MIN"/>
-             <seealso cref="F:WizardWrx.NumericFormats.DECIMAL_DIGITS_MAX"/>
-             <seealso cref="F:WizardWrx.NumericFormats.DECIMAL_DIGITS_NONE"/>
+            <summary>
+            For some applications, such as the static methods of this class, we
+            set our own default number of decimal places, rather than relying on
+            the Regional Settings (Locale), which can be changed, at any time,
+            by any user, even with restricted permissions.
+            <list type="table">
+            <listheader>
+            <term>Format String</term>
+            <term>Generator Routine</term>
+            <term>Width Override</term>
+            </listheader>
+            <item>
+            <term>DECIMAL</term>
+            <term>FixedWidthInteger</term>
+            <term>int pintTotalDigits</term>
+            </item>
+            <item>
+            <term>FIXED</term>
+            <term>FixedPointDecimal</term>
+            <term>int pintFractionDigits</term>
+            </item>
+            <item>
+            <term>GENERAL</term>
+            <term>GeneralXPrecision</term>
+            <term>int pintPrecisionDigits [1]</term>
+            </item>
+            <item>
+            <term>HEXADECIMAL</term>
+            <term>HexadecimalInteger</term>
+            <term>int pintTotalDigits</term>
+            </item>
+            <item>
+            <term>NUMBER_PER_REG_SETTINGS</term>
+            <term>IntegerPerRegSettings</term>
+            <term>N /A</term>
+            </item>
+            <item>
+            <term>NUMBER_PER_REG_SETTINGS</term>
+            <term>NumberPerRegSettings</term>
+            <term>int pintFractionDigits</term>
+            </item>
+            <item>
+            <term>PERCENT</term>
+            <term>PercentToDecimalPlaces</term>
+            <term>int pintFractionDigits</term>
+            </item>
+            </list>
+            Note 1: There is only one of these methods, and it accepts the
+            pintTotalDigits argument.
+            </summary>
+            <see cref="M:WizardWrx.NumericFormats.FixedWidthInteger"/>
+            <see cref="M:WizardWrx.NumericFormats.FixedWidthInteger(System.Int32)"/>
+            <see cref="M:WizardWrx.NumericFormats.FixedPointDecimal"/>
+            <see cref="M:WizardWrx.NumericFormats.FixedPointDecimal(System.Int32)"/>
+            <see cref="M:WizardWrx.NumericFormats.GeneralXPrecision(System.Int32)"/>
+            <see cref="M:WizardWrx.NumericFormats.HexadecimalInteger"/>
+            <see cref="M:WizardWrx.NumericFormats.HexadecimalInteger(System.Int32)"/>
+            <see cref="M:WizardWrx.NumericFormats.NumberPerRegSettings"/>
+            <see cref="M:WizardWrx.NumericFormats.NumberPerRegSettings(System.Int32)"/>
+            <see cref="M:WizardWrx.NumericFormats.PercentToDecimalPlaces"/>
+            <see cref="M:WizardWrx.NumericFormats.PercentToDecimalPlaces(System.Int32)"/>
+            <see cref="M:WizardWrx.NumericFormats.ScientificXPrecisionLC(System.Int32)"/>
+            <see cref="M:WizardWrx.NumericFormats.ScientificXPrecisionLC(System.Int32)"/>
+            <see cref="M:WizardWrx.NumericFormats.ScientificXPrecisionUC(System.Int32)"/>
+            <seealso cref="F:WizardWrx.NumericFormats.DECIMAL_DIGITS_MIN"/>
+            <seealso cref="F:WizardWrx.NumericFormats.DECIMAL_DIGITS_MAX"/>
+            <seealso cref="F:WizardWrx.NumericFormats.DECIMAL_DIGITS_NONE"/>
         </member>
         <member name="F:WizardWrx.NumericFormats.DECIMAL_DIGITS_MIN">
             <summary>
