@@ -832,6 +832,19 @@ references:
   isSpec: "True"
   fullName: DLLServices2TestStand.Properties.Resources.IDS_UNSUPPORTED_DATASOURCE
   nameWithType: Resources.IDS_UNSUPPORTED_DATASOURCE
+- uid: DLLServices2TestStand.Properties.Resources.MESSAGE_CONTAINS_ESCAPED_TABS
+  name: MESSAGE_CONTAINS_ESCAPED_TABS
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_MESSAGE_CONTAINS_ESCAPED_TABS
+  commentId: P:DLLServices2TestStand.Properties.Resources.MESSAGE_CONTAINS_ESCAPED_TABS
+  fullName: DLLServices2TestStand.Properties.Resources.MESSAGE_CONTAINS_ESCAPED_TABS
+  nameWithType: Resources.MESSAGE_CONTAINS_ESCAPED_TABS
+- uid: DLLServices2TestStand.Properties.Resources.MESSAGE_CONTAINS_ESCAPED_TABS*
+  name: MESSAGE_CONTAINS_ESCAPED_TABS
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_MESSAGE_CONTAINS_ESCAPED_TABS_
+  commentId: Overload:DLLServices2TestStand.Properties.Resources.MESSAGE_CONTAINS_ESCAPED_TABS
+  isSpec: "True"
+  fullName: DLLServices2TestStand.Properties.Resources.MESSAGE_CONTAINS_ESCAPED_TABS
+  nameWithType: Resources.MESSAGE_CONTAINS_ESCAPED_TABS
 - uid: DLLServices2TestStand.Properties.Resources.MESSAGE_EMPTY_STRING
   name: MESSAGE_EMPTY_STRING
   href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_MESSAGE_EMPTY_STRING
@@ -6520,6 +6533,19 @@ references:
   commentId: F:WizardWrx.Core.StringFixups.StringFixup.OutputValue
   fullName: WizardWrx.Core.StringFixups.StringFixup.OutputValue
   nameWithType: StringFixups.StringFixup.OutputValue
+- uid: WizardWrx.Core.StringFixups.StringFixup.ToString
+  name: ToString()
+  href: api/WizardWrx.Core.StringFixups.StringFixup.html#WizardWrx_Core_StringFixups_StringFixup_ToString
+  commentId: M:WizardWrx.Core.StringFixups.StringFixup.ToString
+  fullName: WizardWrx.Core.StringFixups.StringFixup.ToString()
+  nameWithType: StringFixups.StringFixup.ToString()
+- uid: WizardWrx.Core.StringFixups.StringFixup.ToString*
+  name: ToString
+  href: api/WizardWrx.Core.StringFixups.StringFixup.html#WizardWrx_Core_StringFixups_StringFixup_ToString_
+  commentId: Overload:WizardWrx.Core.StringFixups.StringFixup.ToString
+  isSpec: "True"
+  fullName: WizardWrx.Core.StringFixups.StringFixup.ToString
+  nameWithType: StringFixups.StringFixup.ToString
 - uid: WizardWrx.Core.TimeDisplayFormatter
   name: TimeDisplayFormatter
   href: api/WizardWrx.Core.TimeDisplayFormatter.html
@@ -9853,6 +9879,91 @@ references:
   isSpec: "True"
   fullName: WizardWrx.FileInfoExtensionMethods.FileAttributeSystemSet
   nameWithType: FileInfoExtensionMethods.FileAttributeSystemSet
+- uid: WizardWrx.FileInfoExtensionMethods.FileDetailsToShow
+  name: FileInfoExtensionMethods.FileDetailsToShow
+  href: api/WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.html
+  commentId: T:WizardWrx.FileInfoExtensionMethods.FileDetailsToShow
+  fullName: WizardWrx.FileInfoExtensionMethods.FileDetailsToShow
+  nameWithType: FileInfoExtensionMethods.FileDetailsToShow
+- uid: WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.AccessedTime
+  name: AccessedTime
+  href: api/WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.html#WizardWrx_FileInfoExtensionMethods_FileDetailsToShow_AccessedTime
+  commentId: F:WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.AccessedTime
+  fullName: WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.AccessedTime
+  nameWithType: FileInfoExtensionMethods.FileDetailsToShow.AccessedTime
+- uid: WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.AllTimes
+  name: AllTimes
+  href: api/WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.html#WizardWrx_FileInfoExtensionMethods_FileDetailsToShow_AllTimes
+  commentId: F:WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.AllTimes
+  fullName: WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.AllTimes
+  nameWithType: FileInfoExtensionMethods.FileDetailsToShow.AllTimes
+- uid: WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.AllTimesWithUtc
+  name: AllTimesWithUtc
+  href: api/WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.html#WizardWrx_FileInfoExtensionMethods_FileDetailsToShow_AllTimesWithUtc
+  commentId: F:WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.AllTimesWithUtc
+  fullName: WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.AllTimesWithUtc
+  nameWithType: FileInfoExtensionMethods.FileDetailsToShow.AllTimesWithUtc
+- uid: WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.Attributes
+  name: Attributes
+  href: api/WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.html#WizardWrx_FileInfoExtensionMethods_FileDetailsToShow_Attributes
+  commentId: F:WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.Attributes
+  fullName: WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.Attributes
+  nameWithType: FileInfoExtensionMethods.FileDetailsToShow.Attributes
+- uid: WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.CreatedTime
+  name: CreatedTime
+  href: api/WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.html#WizardWrx_FileInfoExtensionMethods_FileDetailsToShow_CreatedTime
+  commentId: F:WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.CreatedTime
+  fullName: WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.CreatedTime
+  nameWithType: FileInfoExtensionMethods.FileDetailsToShow.CreatedTime
+- uid: WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.Everything
+  name: Everything
+  href: api/WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.html#WizardWrx_FileInfoExtensionMethods_FileDetailsToShow_Everything
+  commentId: F:WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.Everything
+  fullName: WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.Everything
+  nameWithType: FileInfoExtensionMethods.FileDetailsToShow.Everything
+- uid: WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.LocalAndUtc
+  name: LocalAndUtc
+  href: api/WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.html#WizardWrx_FileInfoExtensionMethods_FileDetailsToShow_LocalAndUtc
+  commentId: F:WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.LocalAndUtc
+  fullName: WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.LocalAndUtc
+  nameWithType: FileInfoExtensionMethods.FileDetailsToShow.LocalAndUtc
+- uid: WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.LocalTime
+  name: LocalTime
+  href: api/WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.html#WizardWrx_FileInfoExtensionMethods_FileDetailsToShow_LocalTime
+  commentId: F:WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.LocalTime
+  fullName: WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.LocalTime
+  nameWithType: FileInfoExtensionMethods.FileDetailsToShow.LocalTime
+- uid: WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.None
+  name: None
+  href: api/WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.html#WizardWrx_FileInfoExtensionMethods_FileDetailsToShow_None
+  commentId: F:WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.None
+  fullName: WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.None
+  nameWithType: FileInfoExtensionMethods.FileDetailsToShow.None
+- uid: WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.Size
+  name: Size
+  href: api/WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.html#WizardWrx_FileInfoExtensionMethods_FileDetailsToShow_Size
+  commentId: F:WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.Size
+  fullName: WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.Size
+  nameWithType: FileInfoExtensionMethods.FileDetailsToShow.Size
+- uid: WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.UtcTime
+  name: UtcTime
+  href: api/WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.html#WizardWrx_FileInfoExtensionMethods_FileDetailsToShow_UtcTime
+  commentId: F:WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.UtcTime
+  fullName: WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.UtcTime
+  nameWithType: FileInfoExtensionMethods.FileDetailsToShow.UtcTime
+- uid: WizardWrx.FileInfoExtensionMethods.ShowFileDetails(System.IO.FileInfo,WizardWrx.FileInfoExtensionMethods.FileDetailsToShow,System.String,System.Boolean,System.Boolean)
+  name: ShowFileDetails(FileInfo, FileInfoExtensionMethods.FileDetailsToShow, String, Boolean, Boolean)
+  href: api/WizardWrx.FileInfoExtensionMethods.html#WizardWrx_FileInfoExtensionMethods_ShowFileDetails_System_IO_FileInfo_WizardWrx_FileInfoExtensionMethods_FileDetailsToShow_System_String_System_Boolean_System_Boolean_
+  commentId: M:WizardWrx.FileInfoExtensionMethods.ShowFileDetails(System.IO.FileInfo,WizardWrx.FileInfoExtensionMethods.FileDetailsToShow,System.String,System.Boolean,System.Boolean)
+  fullName: WizardWrx.FileInfoExtensionMethods.ShowFileDetails(System.IO.FileInfo, WizardWrx.FileInfoExtensionMethods.FileDetailsToShow, System.String, System.Boolean, System.Boolean)
+  nameWithType: FileInfoExtensionMethods.ShowFileDetails(FileInfo, FileInfoExtensionMethods.FileDetailsToShow, String, Boolean, Boolean)
+- uid: WizardWrx.FileInfoExtensionMethods.ShowFileDetails*
+  name: ShowFileDetails
+  href: api/WizardWrx.FileInfoExtensionMethods.html#WizardWrx_FileInfoExtensionMethods_ShowFileDetails_
+  commentId: Overload:WizardWrx.FileInfoExtensionMethods.ShowFileDetails
+  isSpec: "True"
+  fullName: WizardWrx.FileInfoExtensionMethods.ShowFileDetails
+  nameWithType: FileInfoExtensionMethods.ShowFileDetails
 - uid: WizardWrx.FileIOFlags
   name: FileIOFlags
   href: api/WizardWrx.FileIOFlags.html
@@ -13994,6 +14105,25 @@ references:
   isSpec: "True"
   fullName: WizardWrx.StringExtensions.EnsureLastCharIs
   nameWithType: StringExtensions.EnsureLastCharIs
+- uid: WizardWrx.StringExtensions.EnumerateSubstringPositions(System.String,System.String)
+  name: EnumerateSubstringPositions(String, String)
+  href: api/WizardWrx.StringExtensions.html#WizardWrx_StringExtensions_EnumerateSubstringPositions_System_String_System_String_
+  commentId: M:WizardWrx.StringExtensions.EnumerateSubstringPositions(System.String,System.String)
+  fullName: WizardWrx.StringExtensions.EnumerateSubstringPositions(System.String, System.String)
+  nameWithType: StringExtensions.EnumerateSubstringPositions(String, String)
+- uid: WizardWrx.StringExtensions.EnumerateSubstringPositions(System.String,System.String,System.StringComparison)
+  name: EnumerateSubstringPositions(String, String, StringComparison)
+  href: api/WizardWrx.StringExtensions.html#WizardWrx_StringExtensions_EnumerateSubstringPositions_System_String_System_String_System_StringComparison_
+  commentId: M:WizardWrx.StringExtensions.EnumerateSubstringPositions(System.String,System.String,System.StringComparison)
+  fullName: WizardWrx.StringExtensions.EnumerateSubstringPositions(System.String, System.String, System.StringComparison)
+  nameWithType: StringExtensions.EnumerateSubstringPositions(String, String, StringComparison)
+- uid: WizardWrx.StringExtensions.EnumerateSubstringPositions*
+  name: EnumerateSubstringPositions
+  href: api/WizardWrx.StringExtensions.html#WizardWrx_StringExtensions_EnumerateSubstringPositions_
+  commentId: Overload:WizardWrx.StringExtensions.EnumerateSubstringPositions
+  isSpec: "True"
+  fullName: WizardWrx.StringExtensions.EnumerateSubstringPositions
+  nameWithType: StringExtensions.EnumerateSubstringPositions
 - uid: WizardWrx.StringExtensions.EnumFromString*
   name: EnumFromString
   href: api/WizardWrx.StringExtensions.html#WizardWrx_StringExtensions_EnumFromString_
@@ -14160,6 +14290,19 @@ references:
   fullName.vb: WizardWrx.StringExtensions.RenderEvenWhenNull(Of T)(T, System.String, System.String, System.IFormatProvider)
   nameWithType: StringExtensions.RenderEvenWhenNull<T>(T, String, String, IFormatProvider)
   nameWithType.vb: StringExtensions.RenderEvenWhenNull(Of T)(T, String, String, IFormatProvider)
+- uid: WizardWrx.StringExtensions.ReplaceEscapedTabsInStringFromResX(System.String)
+  name: ReplaceEscapedTabsInStringFromResX(String)
+  href: api/WizardWrx.StringExtensions.html#WizardWrx_StringExtensions_ReplaceEscapedTabsInStringFromResX_System_String_
+  commentId: M:WizardWrx.StringExtensions.ReplaceEscapedTabsInStringFromResX(System.String)
+  fullName: WizardWrx.StringExtensions.ReplaceEscapedTabsInStringFromResX(System.String)
+  nameWithType: StringExtensions.ReplaceEscapedTabsInStringFromResX(String)
+- uid: WizardWrx.StringExtensions.ReplaceEscapedTabsInStringFromResX*
+  name: ReplaceEscapedTabsInStringFromResX
+  href: api/WizardWrx.StringExtensions.html#WizardWrx_StringExtensions_ReplaceEscapedTabsInStringFromResX_
+  commentId: Overload:WizardWrx.StringExtensions.ReplaceEscapedTabsInStringFromResX
+  isSpec: "True"
+  fullName: WizardWrx.StringExtensions.ReplaceEscapedTabsInStringFromResX
+  nameWithType: StringExtensions.ReplaceEscapedTabsInStringFromResX
 - uid: WizardWrx.StringExtensions.ReplaceTokensFromList(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})
   name: ReplaceTokensFromList(String, Dictionary<String, Object>)
   href: api/WizardWrx.StringExtensions.html#WizardWrx_StringExtensions_ReplaceTokensFromList_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__

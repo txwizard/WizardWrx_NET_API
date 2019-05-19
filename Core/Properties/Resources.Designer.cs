@@ -88,7 +88,7 @@ namespace WizardWrx.Core.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ERROR: The CreateFormatString method cannot process the specified format string.{1}    Specified format string = {0.
+        ///   Looks up a localized string similar to ERROR: The CreateFormatString method cannot process the specified format string.{1}    Specified format string = {0}.
         /// </summary>
         internal static string ERRMSG_CANNOT_PARSE {
             get {
@@ -349,6 +349,24 @@ namespace WizardWrx.Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {9}{0} Absolute Name = {1}{8}{7} Modified Date = {2}{8}{7} Date Created  = {3}{8}{7} Date Accessed = {4}{8}{7} Size in bytes = {5}{8}{7} Attributes    = {6}{10}.
+        /// </summary>
+        internal static string FILE_DETAILS {
+            get {
+                return ResourceManager.GetString("FILE_DETAILS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SubstringStart = {0}, SubstringLength = {1}.
+        /// </summary>
+        internal static string FORMAT_SUBSTRINGSTARTANDLENGTH_TOSSTRING {
+            get {
+                return ResourceManager.GetString("FORMAT_SUBSTRINGSTARTANDLENGTH_TOSSTRING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Image is an EFI Application..
         /// </summary>
         internal static string IMAGE_SUBSYSTEM_EFI_APPLICATION {
@@ -552,6 +570,15 @@ namespace WizardWrx.Core.Properties {
         internal static string MSG_STACK_TRACE_IS_FROM_ENVIRONMENT {
             get {
                 return ResourceManager.GetString("MSG_STACK_TRACE_IS_FROM_ENVIRONMENT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to InputValue = {0}, OutputValue = {1}.
+        /// </summary>
+        internal static string MSG_STRING_FIXUPS_TOSTRING {
+            get {
+                return ResourceManager.GetString("MSG_STRING_FIXUPS_TOSTRING", resourceCulture);
             }
         }
         

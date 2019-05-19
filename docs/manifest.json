@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/DLLServices2TestStand.Properties.Resources.html",
-          "hash": "qoEYEGz++eRsE5H/Nwgx0A=="
+          "hash": "oGDuwmsdh6YW7tEbZ3E7cw=="
         }
       },
       "is_incremental": true,
@@ -72,7 +72,7 @@
           "hash": "zZeDisYPwHqQLif1Z+YrcQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -96,7 +96,7 @@
           "hash": "1QF9J66/8+4biehSveos4Q=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -108,7 +108,7 @@
           "hash": "ZQCCRdjWme3g+8gWd1r27A=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -132,7 +132,7 @@
           "hash": "1m9R9+iT/O5wYngRBkqMrA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -156,7 +156,7 @@
           "hash": "q+Fgttl9RGblMuJhe56FJA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -168,7 +168,7 @@
           "hash": "9cxymSDxkfRNINCqs1jZWQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -228,7 +228,7 @@
           "hash": "AtbdiPRywyZhdCSSV8nvSA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -264,7 +264,7 @@
           "hash": "0M4zJCjgUCUMU2a/szmR8A=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -288,7 +288,7 @@
           "hash": "3ITL3Gtg98d07Tg1kOOvng=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -360,7 +360,7 @@
           "hash": "Z7BSXBrc89pD0YzzjlnK4w=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -480,7 +480,7 @@
           "hash": "Ls/4644KcY0/ajh79klmdQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -501,7 +501,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.Core.StringFixups.StringFixup.html",
-          "hash": "bO9Rm2bOB3V4lHYDm0Z6QA=="
+          "hash": "xGp+JGL8FOtH3mYY5tnWmw=="
         }
       },
       "is_incremental": true,
@@ -513,7 +513,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.Core.StringFixups.html",
-          "hash": "dIE8lOKoos4wLj0/ZYnznQ=="
+          "hash": "VywcFcwSdI6wTa5ivI/jXg=="
         }
       },
       "is_incremental": true,
@@ -624,7 +624,7 @@
           "hash": "d4qbWbZsZUPDU18h7Wa+PQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -672,7 +672,7 @@
           "hash": "2kAizyMs5Cz/pRJxbD1pkw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -708,7 +708,7 @@
           "hash": "bFL9KfbQ7QtoYTaxt37jng=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -768,7 +768,7 @@
           "hash": "aKsfY9ylijp1CBrXPXiCiQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -780,7 +780,7 @@
           "hash": "j9z3N9qkaoQINIFT3OO6Ww=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -881,11 +881,23 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.html",
+          "hash": "bdy6Nix2e8XiEIQx85UPng=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/WizardWrx.FileInfoExtensionMethods.yml",
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.FileInfoExtensionMethods.html",
-          "hash": "KMyyAhV0ckowQMakYqGXOA=="
+          "hash": "if6ASOyzmMUsJ7x6LIdmpw=="
         }
       },
       "is_incremental": true,
@@ -936,7 +948,7 @@
           "hash": "YkEIX1Hizy1d3zVkAtHqiA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -948,7 +960,7 @@
           "hash": "ID1j00/uTtRIIyBlHNCx+g=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -972,7 +984,7 @@
           "hash": "4K0ANKiKSBMZJ9t1XydkUQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -996,7 +1008,7 @@
           "hash": "7HHTzNiW0dQkpE+wFdglkg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -1116,7 +1128,7 @@
           "hash": "604G6MFo1UCptkKVsi64gQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1221,7 +1233,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.ReportHelpers.Alignment.html",
-          "hash": "VBq+SaSZ+I+3xgou3Y4Xkw=="
+          "hash": "ITFdlEo/KFgeO8AVlU8iDQ=="
         }
       },
       "is_incremental": true,
@@ -1233,7 +1245,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.ReportHelpers.html",
-          "hash": "7KJF3O+2zgs0e48l6lddaQ=="
+          "hash": "KraL+1E6bU/m6oDw9+Ymjw=="
         }
       },
       "is_incremental": true,
@@ -1269,7 +1281,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.StringExtensions.html",
-          "hash": "MDSNwObNvv0/VVgcop3Y6w=="
+          "hash": "whB2vo6CpvD86MYqgdyagQ=="
         }
       },
       "is_incremental": true,
@@ -1329,7 +1341,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.html",
-          "hash": "/nNCWwkd4GrZ/BjyI5PiFw=="
+          "hash": "7InrzXzkO44wFQrnUOskRg=="
         }
       },
       "is_incremental": false,
@@ -1353,7 +1365,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "OWUkYXNFUaz1JDwnNcwpww=="
+          "hash": "ngKGEbFsAFKyv+7Nh4z4GQ=="
         }
       },
       "is_incremental": false,
@@ -1420,11 +1432,11 @@
           "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
-        "ManagedReferenceDocumentProcessor": {
+        "ConceptualDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build"
         },
-        "ConceptualDocumentProcessor": {
+        "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build"
         }

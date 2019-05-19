@@ -1,0 +1,10 @@
+id: WizardWrx.Common
+language: CSharp
+name:
+  Default: WizardWrx.Common
+qualifiedName:
+  Default: WizardWrx.Common
+type: Assembly
+modifiers: {}
+items: []
+references: {}

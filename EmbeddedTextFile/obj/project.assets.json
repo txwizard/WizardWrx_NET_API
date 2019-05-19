@@ -1,0 +1,500 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v3.5,Profile=Client": {
+      "WizardWrx.AnyCSV/7.0.120.30587": {
+        "type": "package",
+        "compile": {
+          "lib/net20/WizardWrx.AnyCSV.dll": {}
+        },
+        "runtime": {
+          "lib/net20/WizardWrx.AnyCSV.dll": {}
+        }
+      },
+      "WizardWrx.ASCIIInfo/7.1.83.29298": {
+        "type": "package",
+        "compile": {
+          "lib/net20/WizardWrx.ASCIIInfo.dll": {}
+        },
+        "runtime": {
+          "lib/net20/WizardWrx.ASCIIInfo.dll": {}
+        }
+      },
+      "WizardWrx.AssemblyUtils/7.15.114.34743": {
+        "type": "package",
+        "dependencies": {
+          "WizardWrx.Core": "7.15.153.2428"
+        },
+        "compile": {
+          "lib/net35-client/WizardWrx.AssemblyUtils.dll": {}
+        },
+        "runtime": {
+          "lib/net35-client/WizardWrx.AssemblyUtils.dll": {}
+        }
+      },
+      "WizardWrx.BitMath/4.3.125.29248": {
+        "type": "package",
+        "compile": {
+          "lib/net20/WizardWrx.BitMath.dll": {}
+        },
+        "runtime": {
+          "lib/net20/WizardWrx.BitMath.dll": {}
+        }
+      },
+      "WizardWrx.Common/7.16.104.1840": {
+        "type": "package",
+        "dependencies": {
+          "WizardWrx.BitMath": "4.3.125.29248"
+        },
+        "compile": {
+          "lib/net20/WizardWrx.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net20/WizardWrx.Common.dll": {}
+        }
+      },
+      "WizardWrx.Core/7.16.156.6214": {
+        "type": "package",
+        "dependencies": {
+          "WizardWrx.Common": "7.16.104.1840",
+          "WizardWrx.FormatStringEngine": "7.15.162.826"
+        },
+        "compile": {
+          "lib/net35-client/WizardWrx.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net35-client/WizardWrx.Core.dll": {}
+        }
+      },
+      "WizardWrx.FormatStringEngine/7.15.162.826": {
+        "type": "package",
+        "dependencies": {
+          "WizardWrx.ASCIIInfo": "7.1.83.29298",
+          "WizardWrx.AnyCSV": "7.0.120.30587",
+          "WizardWrx.Common": "7.15.102.41891"
+        },
+        "compile": {
+          "lib/net20/WizardWrx.FormatStringEngine.dll": {}
+        },
+        "runtime": {
+          "lib/net20/WizardWrx.FormatStringEngine.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v3.5,Profile=Client/win": {
+      "WizardWrx.AnyCSV/7.0.120.30587": {
+        "type": "package",
+        "compile": {
+          "lib/net20/WizardWrx.AnyCSV.dll": {}
+        },
+        "runtime": {
+          "lib/net20/WizardWrx.AnyCSV.dll": {}
+        }
+      },
+      "WizardWrx.ASCIIInfo/7.1.83.29298": {
+        "type": "package",
+        "compile": {
+          "lib/net20/WizardWrx.ASCIIInfo.dll": {}
+        },
+        "runtime": {
+          "lib/net20/WizardWrx.ASCIIInfo.dll": {}
+        }
+      },
+      "WizardWrx.AssemblyUtils/7.15.114.34743": {
+        "type": "package",
+        "dependencies": {
+          "WizardWrx.Core": "7.15.153.2428"
+        },
+        "compile": {
+          "lib/net35-client/WizardWrx.AssemblyUtils.dll": {}
+        },
+        "runtime": {
+          "lib/net35-client/WizardWrx.AssemblyUtils.dll": {}
+        }
+      },
+      "WizardWrx.BitMath/4.3.125.29248": {
+        "type": "package",
+        "compile": {
+          "lib/net20/WizardWrx.BitMath.dll": {}
+        },
+        "runtime": {
+          "lib/net20/WizardWrx.BitMath.dll": {}
+        }
+      },
+      "WizardWrx.Common/7.16.104.1840": {
+        "type": "package",
+        "dependencies": {
+          "WizardWrx.BitMath": "4.3.125.29248"
+        },
+        "compile": {
+          "lib/net20/WizardWrx.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net20/WizardWrx.Common.dll": {}
+        }
+      },
+      "WizardWrx.Core/7.16.156.6214": {
+        "type": "package",
+        "dependencies": {
+          "WizardWrx.Common": "7.16.104.1840",
+          "WizardWrx.FormatStringEngine": "7.15.162.826"
+        },
+        "compile": {
+          "lib/net35-client/WizardWrx.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net35-client/WizardWrx.Core.dll": {}
+        }
+      },
+      "WizardWrx.FormatStringEngine/7.15.162.826": {
+        "type": "package",
+        "dependencies": {
+          "WizardWrx.ASCIIInfo": "7.1.83.29298",
+          "WizardWrx.AnyCSV": "7.0.120.30587",
+          "WizardWrx.Common": "7.15.102.41891"
+        },
+        "compile": {
+          "lib/net20/WizardWrx.FormatStringEngine.dll": {}
+        },
+        "runtime": {
+          "lib/net20/WizardWrx.FormatStringEngine.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v3.5,Profile=Client/win-x64": {
+      "WizardWrx.AnyCSV/7.0.120.30587": {
+        "type": "package",
+        "compile": {
+          "lib/net20/WizardWrx.AnyCSV.dll": {}
+        },
+        "runtime": {
+          "lib/net20/WizardWrx.AnyCSV.dll": {}
+        }
+      },
+      "WizardWrx.ASCIIInfo/7.1.83.29298": {
+        "type": "package",
+        "compile": {
+          "lib/net20/WizardWrx.ASCIIInfo.dll": {}
+        },
+        "runtime": {
+          "lib/net20/WizardWrx.ASCIIInfo.dll": {}
+        }
+      },
+      "WizardWrx.AssemblyUtils/7.15.114.34743": {
+        "type": "package",
+        "dependencies": {
+          "WizardWrx.Core": "7.15.153.2428"
+        },
+        "compile": {
+          "lib/net35-client/WizardWrx.AssemblyUtils.dll": {}
+        },
+        "runtime": {
+          "lib/net35-client/WizardWrx.AssemblyUtils.dll": {}
+        }
+      },
+      "WizardWrx.BitMath/4.3.125.29248": {
+        "type": "package",
+        "compile": {
+          "lib/net20/WizardWrx.BitMath.dll": {}
+        },
+        "runtime": {
+          "lib/net20/WizardWrx.BitMath.dll": {}
+        }
+      },
+      "WizardWrx.Common/7.16.104.1840": {
+        "type": "package",
+        "dependencies": {
+          "WizardWrx.BitMath": "4.3.125.29248"
+        },
+        "compile": {
+          "lib/net20/WizardWrx.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net20/WizardWrx.Common.dll": {}
+        }
+      },
+      "WizardWrx.Core/7.16.156.6214": {
+        "type": "package",
+        "dependencies": {
+          "WizardWrx.Common": "7.16.104.1840",
+          "WizardWrx.FormatStringEngine": "7.15.162.826"
+        },
+        "compile": {
+          "lib/net35-client/WizardWrx.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net35-client/WizardWrx.Core.dll": {}
+        }
+      },
+      "WizardWrx.FormatStringEngine/7.15.162.826": {
+        "type": "package",
+        "dependencies": {
+          "WizardWrx.ASCIIInfo": "7.1.83.29298",
+          "WizardWrx.AnyCSV": "7.0.120.30587",
+          "WizardWrx.Common": "7.15.102.41891"
+        },
+        "compile": {
+          "lib/net20/WizardWrx.FormatStringEngine.dll": {}
+        },
+        "runtime": {
+          "lib/net20/WizardWrx.FormatStringEngine.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v3.5,Profile=Client/win-x86": {
+      "WizardWrx.AnyCSV/7.0.120.30587": {
+        "type": "package",
+        "compile": {
+          "lib/net20/WizardWrx.AnyCSV.dll": {}
+        },
+        "runtime": {
+          "lib/net20/WizardWrx.AnyCSV.dll": {}
+        }
+      },
+      "WizardWrx.ASCIIInfo/7.1.83.29298": {
+        "type": "package",
+        "compile": {
+          "lib/net20/WizardWrx.ASCIIInfo.dll": {}
+        },
+        "runtime": {
+          "lib/net20/WizardWrx.ASCIIInfo.dll": {}
+        }
+      },
+      "WizardWrx.AssemblyUtils/7.15.114.34743": {
+        "type": "package",
+        "dependencies": {
+          "WizardWrx.Core": "7.15.153.2428"
+        },
+        "compile": {
+          "lib/net35-client/WizardWrx.AssemblyUtils.dll": {}
+        },
+        "runtime": {
+          "lib/net35-client/WizardWrx.AssemblyUtils.dll": {}
+        }
+      },
+      "WizardWrx.BitMath/4.3.125.29248": {
+        "type": "package",
+        "compile": {
+          "lib/net20/WizardWrx.BitMath.dll": {}
+        },
+        "runtime": {
+          "lib/net20/WizardWrx.BitMath.dll": {}
+        }
+      },
+      "WizardWrx.Common/7.16.104.1840": {
+        "type": "package",
+        "dependencies": {
+          "WizardWrx.BitMath": "4.3.125.29248"
+        },
+        "compile": {
+          "lib/net20/WizardWrx.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net20/WizardWrx.Common.dll": {}
+        }
+      },
+      "WizardWrx.Core/7.16.156.6214": {
+        "type": "package",
+        "dependencies": {
+          "WizardWrx.Common": "7.16.104.1840",
+          "WizardWrx.FormatStringEngine": "7.15.162.826"
+        },
+        "compile": {
+          "lib/net35-client/WizardWrx.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net35-client/WizardWrx.Core.dll": {}
+        }
+      },
+      "WizardWrx.FormatStringEngine/7.15.162.826": {
+        "type": "package",
+        "dependencies": {
+          "WizardWrx.ASCIIInfo": "7.1.83.29298",
+          "WizardWrx.AnyCSV": "7.0.120.30587",
+          "WizardWrx.Common": "7.15.102.41891"
+        },
+        "compile": {
+          "lib/net20/WizardWrx.FormatStringEngine.dll": {}
+        },
+        "runtime": {
+          "lib/net20/WizardWrx.FormatStringEngine.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "WizardWrx.AnyCSV/7.0.120.30587": {
+      "sha512": "42CEjyMVj+RSy05VHLltzDCM3j9umGlEP1s8LfBjsrgy+9++jncYrfuYtvpPGyh5gIoKe2deaKH9GQOrw8iCjg==",
+      "type": "package",
+      "path": "wizardwrx.anycsv/7.0.120.30587",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net20/WizardWrx.AnyCSV.XML",
+        "lib/net20/WizardWrx.AnyCSV.dll",
+        "wizardwrx.anycsv.7.0.120.30587.nupkg.sha512",
+        "wizardwrx.anycsv.nuspec"
+      ]
+    },
+    "WizardWrx.ASCIIInfo/7.1.83.29298": {
+      "sha512": "q8b2oy48B5nE+XyCzl6DMkAsREFOR8ZAi/7ptYbZrNFgKlL3YGsKyLNNlt/9eSq3+rFpfPwthvdAnDnRyBHObg==",
+      "type": "package",
+      "path": "wizardwrx.asciiinfo/7.1.83.29298",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "README.txt",
+        "lib/net20/WizardWrx.ASCIIInfo.dll",
+        "lib/net20/Wizardwrx.ASCIIInfo.XML",
+        "wizardwrx.asciiinfo.7.1.83.29298.nupkg.sha512",
+        "wizardwrx.asciiinfo.nuspec"
+      ]
+    },
+    "WizardWrx.AssemblyUtils/7.15.114.34743": {
+      "sha512": "z+bTb8Fevn65XO05z5bvMJVVSq+dctuOWq7aUlVtkNXbhSDGEgS+ANrWTNwHiV41NyVDTcSXt0lqNMHVsFd99w==",
+      "type": "package",
+      "path": "wizardwrx.assemblyutils/7.15.114.34743",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "README.txt",
+        "lib/net35-client/WizardWrx.AssemblyUtils.dll",
+        "lib/net35-client/WizardWrx.AssemblyUtils.pdb",
+        "lib/net35-client/Wizardwrx.AssemblyUtils.XML",
+        "src/AssemblyContainer.cs",
+        "src/DependentAssemblies.cs",
+        "src/DependentAssemblyInfo.cs",
+        "src/PESubsystemInfo.cs",
+        "src/Properties/AssemblyInfo.cs",
+        "src/Properties/ProductAssemblyInfo.cs",
+        "src/Properties/Resources.Designer.cs",
+        "src/ReportGenerators.cs",
+        "src/SortableManagedResourceItem.cs",
+        "wizardwrx.assemblyutils.7.15.114.34743.nupkg.sha512",
+        "wizardwrx.assemblyutils.nuspec"
+      ]
+    },
+    "WizardWrx.BitMath/4.3.125.29248": {
+      "sha512": "P1iTbj4GIpKTqDazi14fNj5gICOpOFhGaknCOk8wL0JEv5dEjm+5zWwTGvYucBZ8HtOWOnXxEH/ijs8fb82KyQ==",
+      "type": "package",
+      "path": "wizardwrx.bitmath/4.3.125.29248",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net20/WizardWrx.BitMath.XML",
+        "lib/net20/WizardWrx.BitMath.dll",
+        "wizardwrx.bitmath.4.3.125.29248.nupkg.sha512",
+        "wizardwrx.bitmath.nuspec"
+      ]
+    },
+    "WizardWrx.Common/7.16.104.1840": {
+      "sha512": "BINm7KFBNk6QtChmFLBWoX66Y8jSRdxRXLeQw8odH+vYEI51EXeKGVJ/tq4WZ9nJDscT6FbFyAzN3Go4ATWxNw==",
+      "type": "package",
+      "path": "wizardwrx.common/7.16.104.1840",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "README.txt",
+        "lib/net20/WizardWrx.Common.dll",
+        "lib/net20/Wizardwrx.Common.XML",
+        "wizardwrx.common.7.16.104.1840.nupkg.sha512",
+        "wizardwrx.common.nuspec"
+      ]
+    },
+    "WizardWrx.Core/7.16.156.6214": {
+      "sha512": "PPnTfCJEpBl8tOaaEwVXWYOblaZIyMrnZqehBSmfo2lxGB56DsNbzut5zfhsK6vZy/unCUFtQDbIMdlYMrEnyA==",
+      "type": "package",
+      "path": "wizardwrx.core/7.16.156.6214",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "README.txt",
+        "lib/net35-client/WizardWrx.Core.dll",
+        "lib/net35-client/Wizardwrx.Core.XML",
+        "wizardwrx.core.7.16.156.6214.nupkg.sha512",
+        "wizardwrx.core.nuspec"
+      ]
+    },
+    "WizardWrx.FormatStringEngine/7.15.162.826": {
+      "sha512": "zXz5sZgu7DXfu2Cviq1+2zFawPHRqd/DYFSPvYGNqyZTpxl9F4UBtmIXWdLC8rNGg/lLRgAsFCD0Hy52M0ZoTQ==",
+      "type": "package",
+      "path": "wizardwrx.formatstringengine/7.15.162.826",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "README.txt",
+        "lib/net20/WizardWrx.FormatStringEngine.dll",
+        "lib/net20/Wizardwrx.FormatStringEngine.XML",
+        "wizardwrx.formatstringengine.7.15.162.826.nupkg.sha512",
+        "wizardwrx.formatstringengine.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v3.5,Profile=Client": [
+      "WizardWrx.AssemblyUtils >= 7.15.114.34743",
+      "WizardWrx.Core >= 7.16.156.6214"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\DAG\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "F:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\EmbeddedTextFile\\EmbeddedTextFile.csproj",
+      "projectName": "EmbeddedTextFile",
+      "projectPath": "F:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\EmbeddedTextFile\\EmbeddedTextFile.csproj",
+      "packagesPath": "C:\\Users\\DAG\\.nuget\\packages\\",
+      "outputPath": "F:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\EmbeddedTextFile\\obj\\",
+      "projectStyle": "PackageReference",
+      "skipContentFileWrite": true,
+      "configFilePaths": [
+        "C:\\Users\\DAG\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net35-client"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net35-client": {
+          "projectReferences": {}
+        }
+      }
+    },
+    "frameworks": {
+      "net35-client": {
+        "dependencies": {
+          "WizardWrx.AssemblyUtils": {
+            "target": "Package",
+            "version": "[7.15.114.34743, )"
+          },
+          "WizardWrx.Core": {
+            "target": "Package",
+            "version": "[7.16.156.6214, )"
+          }
+        }
+      }
+    },
+    "runtimes": {
+      "win": {
+        "#import": []
+      },
+      "win-x64": {
+        "#import": []
+      },
+      "win-x86": {
+        "#import": []
+      }
+    }
+  }
+}

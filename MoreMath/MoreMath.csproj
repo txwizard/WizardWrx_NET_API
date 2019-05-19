@@ -76,15 +76,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="WizardWrx.BitMath, Version=4.3.125.29248, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\WizardWrx.BitMath.4.3.125.29248\lib\net20\WizardWrx.BitMath.dll</HintPath>
-    </Reference>
-    <Reference Include="WizardWrx.Common, Version=7.16.104.1840, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\WizardWrx.Common.7.16.104.1840\lib\net20\WizardWrx.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="WizardWrx.DiagnosticInfo, Version=7.15.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\WizardWrx.DiagnosticInfo.7.15.1\lib\net45\WizardWrx.DiagnosticInfo.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\ProductAssemblyInfo.cs">
@@ -105,7 +96,12 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <PackageReference Include="WizardWrx.Common">
+      <Version>7.16.104.1840</Version>
+    </PackageReference>
+    <PackageReference Include="WizardWrx.DiagnosticInfo">
+      <Version>7.15.1</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

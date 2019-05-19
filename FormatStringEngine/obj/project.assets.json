@@ -1,0 +1,294 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v2.0": {
+      "WizardWrx.AnyCSV/7.0.120.30587": {
+        "type": "package",
+        "compile": {
+          "lib/net20/WizardWrx.AnyCSV.dll": {}
+        },
+        "runtime": {
+          "lib/net20/WizardWrx.AnyCSV.dll": {}
+        }
+      },
+      "WizardWrx.ASCIIInfo/7.1.83.29298": {
+        "type": "package",
+        "compile": {
+          "lib/net20/WizardWrx.ASCIIInfo.dll": {}
+        },
+        "runtime": {
+          "lib/net20/WizardWrx.ASCIIInfo.dll": {}
+        }
+      },
+      "WizardWrx.BitMath/4.3.125.29248": {
+        "type": "package",
+        "compile": {
+          "lib/net20/WizardWrx.BitMath.dll": {}
+        },
+        "runtime": {
+          "lib/net20/WizardWrx.BitMath.dll": {}
+        }
+      },
+      "WizardWrx.Common/7.16.104.1840": {
+        "type": "package",
+        "dependencies": {
+          "WizardWrx.BitMath": "4.3.125.29248"
+        },
+        "compile": {
+          "lib/net20/WizardWrx.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net20/WizardWrx.Common.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v2.0/win": {
+      "WizardWrx.AnyCSV/7.0.120.30587": {
+        "type": "package",
+        "compile": {
+          "lib/net20/WizardWrx.AnyCSV.dll": {}
+        },
+        "runtime": {
+          "lib/net20/WizardWrx.AnyCSV.dll": {}
+        }
+      },
+      "WizardWrx.ASCIIInfo/7.1.83.29298": {
+        "type": "package",
+        "compile": {
+          "lib/net20/WizardWrx.ASCIIInfo.dll": {}
+        },
+        "runtime": {
+          "lib/net20/WizardWrx.ASCIIInfo.dll": {}
+        }
+      },
+      "WizardWrx.BitMath/4.3.125.29248": {
+        "type": "package",
+        "compile": {
+          "lib/net20/WizardWrx.BitMath.dll": {}
+        },
+        "runtime": {
+          "lib/net20/WizardWrx.BitMath.dll": {}
+        }
+      },
+      "WizardWrx.Common/7.16.104.1840": {
+        "type": "package",
+        "dependencies": {
+          "WizardWrx.BitMath": "4.3.125.29248"
+        },
+        "compile": {
+          "lib/net20/WizardWrx.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net20/WizardWrx.Common.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v2.0/win-x64": {
+      "WizardWrx.AnyCSV/7.0.120.30587": {
+        "type": "package",
+        "compile": {
+          "lib/net20/WizardWrx.AnyCSV.dll": {}
+        },
+        "runtime": {
+          "lib/net20/WizardWrx.AnyCSV.dll": {}
+        }
+      },
+      "WizardWrx.ASCIIInfo/7.1.83.29298": {
+        "type": "package",
+        "compile": {
+          "lib/net20/WizardWrx.ASCIIInfo.dll": {}
+        },
+        "runtime": {
+          "lib/net20/WizardWrx.ASCIIInfo.dll": {}
+        }
+      },
+      "WizardWrx.BitMath/4.3.125.29248": {
+        "type": "package",
+        "compile": {
+          "lib/net20/WizardWrx.BitMath.dll": {}
+        },
+        "runtime": {
+          "lib/net20/WizardWrx.BitMath.dll": {}
+        }
+      },
+      "WizardWrx.Common/7.16.104.1840": {
+        "type": "package",
+        "dependencies": {
+          "WizardWrx.BitMath": "4.3.125.29248"
+        },
+        "compile": {
+          "lib/net20/WizardWrx.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net20/WizardWrx.Common.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v2.0/win-x86": {
+      "WizardWrx.AnyCSV/7.0.120.30587": {
+        "type": "package",
+        "compile": {
+          "lib/net20/WizardWrx.AnyCSV.dll": {}
+        },
+        "runtime": {
+          "lib/net20/WizardWrx.AnyCSV.dll": {}
+        }
+      },
+      "WizardWrx.ASCIIInfo/7.1.83.29298": {
+        "type": "package",
+        "compile": {
+          "lib/net20/WizardWrx.ASCIIInfo.dll": {}
+        },
+        "runtime": {
+          "lib/net20/WizardWrx.ASCIIInfo.dll": {}
+        }
+      },
+      "WizardWrx.BitMath/4.3.125.29248": {
+        "type": "package",
+        "compile": {
+          "lib/net20/WizardWrx.BitMath.dll": {}
+        },
+        "runtime": {
+          "lib/net20/WizardWrx.BitMath.dll": {}
+        }
+      },
+      "WizardWrx.Common/7.16.104.1840": {
+        "type": "package",
+        "dependencies": {
+          "WizardWrx.BitMath": "4.3.125.29248"
+        },
+        "compile": {
+          "lib/net20/WizardWrx.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net20/WizardWrx.Common.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "WizardWrx.AnyCSV/7.0.120.30587": {
+      "sha512": "42CEjyMVj+RSy05VHLltzDCM3j9umGlEP1s8LfBjsrgy+9++jncYrfuYtvpPGyh5gIoKe2deaKH9GQOrw8iCjg==",
+      "type": "package",
+      "path": "wizardwrx.anycsv/7.0.120.30587",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net20/WizardWrx.AnyCSV.XML",
+        "lib/net20/WizardWrx.AnyCSV.dll",
+        "wizardwrx.anycsv.7.0.120.30587.nupkg.sha512",
+        "wizardwrx.anycsv.nuspec"
+      ]
+    },
+    "WizardWrx.ASCIIInfo/7.1.83.29298": {
+      "sha512": "q8b2oy48B5nE+XyCzl6DMkAsREFOR8ZAi/7ptYbZrNFgKlL3YGsKyLNNlt/9eSq3+rFpfPwthvdAnDnRyBHObg==",
+      "type": "package",
+      "path": "wizardwrx.asciiinfo/7.1.83.29298",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "README.txt",
+        "lib/net20/WizardWrx.ASCIIInfo.dll",
+        "lib/net20/Wizardwrx.ASCIIInfo.XML",
+        "wizardwrx.asciiinfo.7.1.83.29298.nupkg.sha512",
+        "wizardwrx.asciiinfo.nuspec"
+      ]
+    },
+    "WizardWrx.BitMath/4.3.125.29248": {
+      "sha512": "P1iTbj4GIpKTqDazi14fNj5gICOpOFhGaknCOk8wL0JEv5dEjm+5zWwTGvYucBZ8HtOWOnXxEH/ijs8fb82KyQ==",
+      "type": "package",
+      "path": "wizardwrx.bitmath/4.3.125.29248",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net20/WizardWrx.BitMath.XML",
+        "lib/net20/WizardWrx.BitMath.dll",
+        "wizardwrx.bitmath.4.3.125.29248.nupkg.sha512",
+        "wizardwrx.bitmath.nuspec"
+      ]
+    },
+    "WizardWrx.Common/7.16.104.1840": {
+      "sha512": "BINm7KFBNk6QtChmFLBWoX66Y8jSRdxRXLeQw8odH+vYEI51EXeKGVJ/tq4WZ9nJDscT6FbFyAzN3Go4ATWxNw==",
+      "type": "package",
+      "path": "wizardwrx.common/7.16.104.1840",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "README.txt",
+        "lib/net20/WizardWrx.Common.dll",
+        "lib/net20/Wizardwrx.Common.XML",
+        "wizardwrx.common.7.16.104.1840.nupkg.sha512",
+        "wizardwrx.common.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v2.0": [
+      "WizardWrx.ASCIIInfo >= 7.1.83.29298",
+      "WizardWrx.AnyCSV >= 7.0.120.30587",
+      "WizardWrx.Common >= 7.16.104.1840"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\DAG\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "F:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\FormatStringEngine\\FormatStringEngine.csproj",
+      "projectName": "FormatStringEngine",
+      "projectPath": "F:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\FormatStringEngine\\FormatStringEngine.csproj",
+      "packagesPath": "C:\\Users\\DAG\\.nuget\\packages\\",
+      "outputPath": "F:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\FormatStringEngine\\obj\\",
+      "projectStyle": "PackageReference",
+      "skipContentFileWrite": true,
+      "configFilePaths": [
+        "C:\\Users\\DAG\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net20"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net20": {
+          "projectReferences": {}
+        }
+      }
+    },
+    "frameworks": {
+      "net20": {
+        "dependencies": {
+          "WizardWrx.ASCIIInfo": {
+            "target": "Package",
+            "version": "[7.1.83.29298, )"
+          },
+          "WizardWrx.AnyCSV": {
+            "target": "Package",
+            "version": "[7.0.120.30587, )"
+          },
+          "WizardWrx.Common": {
+            "target": "Package",
+            "version": "[7.16.104.1840, )"
+          }
+        }
+      }
+    },
+    "runtimes": {
+      "win": {
+        "#import": []
+      },
+      "win-x64": {
+        "#import": []
+      },
+      "win-x86": {
+        "#import": []
+      }
+    }
+  }
+}

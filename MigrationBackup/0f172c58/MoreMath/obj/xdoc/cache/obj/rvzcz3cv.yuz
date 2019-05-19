@@ -1,0 +1,10 @@
+id: WizardWrx.MoreMath
+language: CSharp
+name:
+  Default: WizardWrx.MoreMath
+qualifiedName:
+  Default: WizardWrx.MoreMath
+type: Assembly
+modifiers: {}
+items: []
+references: {}

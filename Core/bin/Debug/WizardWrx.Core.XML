@@ -3116,6 +3116,17 @@
             String to assign to the OutpuValue property
             </param>
         </member>
+        <member name="M:WizardWrx.Core.StringFixups.StringFixup.ToString">
+            <summary>
+            Override the ToString method on the base class to render the two
+            structure members' values when the framework invokes the default
+            ToString method, such as when it populates a watch window.
+            </summary>
+            <returns>
+            The return value is a formatted string that displays the name
+            and value of each of the two members of the structure.
+            </returns>
+        </member>
         <member name="M:WizardWrx.Core.StringFixups.#ctor">
             <summary>
             The default constructor is marked as private to force all instances
@@ -3757,7 +3768,7 @@
         </member>
         <member name="P:WizardWrx.Core.Properties.Resources.ERRMSG_CANNOT_PARSE">
             <summary>
-              Looks up a localized string similar to ERROR: The CreateFormatString method cannot process the specified format string.{1}    Specified format string = {0.
+              Looks up a localized string similar to ERROR: The CreateFormatString method cannot process the specified format string.{1}    Specified format string = {0}.
             </summary>
         </member>
         <member name="P:WizardWrx.Core.Properties.Resources.ERRMSG_COMMA_AND_LITERAL">
@@ -3900,6 +3911,16 @@
               Looks up a localized string similar to variable.
             </summary>
         </member>
+        <member name="P:WizardWrx.Core.Properties.Resources.FILE_DETAILS">
+            <summary>
+              Looks up a localized string similar to {9}{0} Absolute Name = {1}{8}{7} Modified Date = {2}{8}{7} Date Created  = {3}{8}{7} Date Accessed = {4}{8}{7} Size in bytes = {5}{8}{7} Attributes    = {6}{10}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Core.Properties.Resources.FORMAT_SUBSTRINGSTARTANDLENGTH_TOSSTRING">
+            <summary>
+              Looks up a localized string similar to SubstringStart = {0}, SubstringLength = {1}.
+            </summary>
+        </member>
         <member name="P:WizardWrx.Core.Properties.Resources.IMAGE_SUBSYSTEM_EFI_APPLICATION">
             <summary>
               Looks up a localized string similar to Image is an EFI Application..
@@ -4013,6 +4034,11 @@
         <member name="P:WizardWrx.Core.Properties.Resources.MSG_STACK_TRACE_IS_FROM_ENVIRONMENT">
             <summary>
               Looks up a localized string similar to at System.Environment.get_StackTrace().
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Core.Properties.Resources.MSG_STRING_FIXUPS_TOSTRING">
+            <summary>
+              Looks up a localized string similar to InputValue = {0}, OutputValue = {1}.
             </summary>
         </member>
         <member name="P:WizardWrx.Core.Properties.Resources.PROCESSOR_AND_PROCESS_ARCHITECTURES">
@@ -4623,6 +4649,98 @@
             static class must expose them.
             </summary>
         </member>
+        <member name="T:WizardWrx.FileInfoExtensionMethods.FileDetailsToShow">
+            <summary>
+            Use with ShowFileDetails parameter penmFileDetailsToShow.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.None">
+            <summary>
+            Show only basic information: no UTC times, only LastWriteTime,
+            and no Attributes.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.LocalTime">
+            <summary>
+            Render all times as Local.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.UtcTime">
+            <summary>
+            Render all times as UTC.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.CreatedTime">
+            <summary>
+            Include the Created time.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.AccessedTime">
+            <summary>
+            Include the Accessed time.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.Size">
+            <summary>
+            Include the file size in bytes.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.Attributes">
+            <summary>
+            Include the file attributes, both as a mask and as
+            human-readable values.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.LocalAndUtc">
+            <summary>
+            Render time stamps as both Local and UTC.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.AllTimes">
+            <summary>
+            Report all three time stamps.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.AllTimesWithUtc">
+            <summary>
+            Report all times, showing both Local and UTC time stamps.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.Everything">
+            <summary>
+            Show everything.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.FileInfoExtensionMethods.ComputeTokenEnd(System.Int32,System.Int32,System.String)">
+            <summary>
+            Given <paramref name="pintPosTokenBegin"/>, the position of the
+            beginning of a substring, <paramref name="pintPosTokenEnd"/>, the
+            position of the token that marks the end of the substring, and the
+            token, itself, represented by <paramref name="pstrToken"/>, from
+            which to determine its length, return the length of the substring,
+            inclusive of its terminal token.
+            </summary>
+            <param name="pintPosTokenBegin">
+            Integer containing the position at which the substring of interest
+            begins
+            </param>
+            <param name="pintPosTokenEnd">
+            Integer containing the position at which the token that marks the
+            end of the substring of interest begins
+            </param>
+            <param name="pstrToken">
+            String containing the token that marks the end of the substring of
+            interest
+            </param>
+            <returns>
+            The return value is the length of the substring of interest,
+            inclusive of its terminal token.
+            </returns>
+            <remarks>
+            Though intended for use by the static constructor, this method may
+            warrant being exposed as a public static method for wider use.
+            </remarks>
+        </member>
         <member name="M:WizardWrx.FileInfoExtensionMethods.FileAttributeArchiveClear(System.IO.FileInfo)">
             <summary>
             Clear the Archive FileAttributes on a file.
@@ -4631,7 +4749,7 @@
             As an extension method, the first argument must be a reference to
             the instance that invoked it, which is used in much the same way as
             the implicit this parameter that leads the list of parameters for a
-            call to any C=+ instance method.
+            call to any C# instance method.
             </param>
             <returns>
             If the Archive attribute is set on entry, the return value is
@@ -4646,7 +4764,7 @@
             As an extension method, the first argument must be a reference to
             the instance that invoked it, which is used in much the same way as
             the implicit this parameter that leads the list of parameters for a
-            call to any C=+ instance method.
+            call to any C# instance method.
             </param>
             <param name="penmInitialStatus">
             Specify the FileInfoExtension.enmInitialStatus value returned by the last call to 
@@ -4665,7 +4783,7 @@
             As an extension method, the first argument must be a reference to
             the instance that invoked it, which is used in much the same way as
             the implicit this parameter that leads the list of parameters for a
-            call to any C=+ instance method.
+            call to any C# instance method.
             </param>
             <returns>
             If the Archive attribute is set on entry, the return value is
@@ -4680,7 +4798,7 @@
             As an extension method, the first argument must be a reference to
             the instance that invoked it, which is used in much the same way as
             the implicit this parameter that leads the list of parameters for a
-            call to any C=+ instance method.
+            call to any C# instance method.
             </param>
             <returns>
             If the Hidden attribute is set on entry, the return value is
@@ -4695,7 +4813,7 @@
             As an extension method, the first argument must be a reference to
             the instance that invoked it, which is used in much the same way as
             the implicit this parameter that leads the list of parameters for a
-            call to any C=+ instance method.
+            call to any C# instance method.
             </param>
             <param name="penmInitialStatus">
             Specify the FileInfoExtension.enmInitialStatus value returned by the last call to 
@@ -4714,7 +4832,7 @@
             As an extension method, the first argument must be a reference to
             the instance that invoked it, which is used in much the same way as
             the implicit this parameter that leads the list of parameters for a
-            call to any C=+ instance method.
+            call to any C# instance method.
             </param>
             <returns>
             If the Hidden attribute is set on entry, the return value is
@@ -4729,7 +4847,7 @@
             As an extension method, the first argument must be a reference to
             the instance that invoked it, which is used in much the same way as
             the implicit this parameter that leads the list of parameters for a
-            call to any C=+ instance method.
+            call to any C# instance method.
             </param>
             <returns>
             If the ReadOnly attribute is set on entry, the return value is
@@ -4744,7 +4862,7 @@
             As an extension method, the first argument must be a reference to
             the instance that invoked it, which is used in much the same way as
             the implicit this parameter that leads the list of parameters for a
-            call to any C=+ instance method.
+            call to any C# instance method.
             </param>
             <param name="penmInitialStatus">
             Specify the FileInfoExtension.enmInitialStatus value returned by the last call to 
@@ -4763,7 +4881,7 @@
             As an extension method, the first argument must be a reference to
             the instance that invoked it, which is used in much the same way as
             the implicit this parameter that leads the list of parameters for a
-            call to any C=+ instance method.
+            call to any C# instance method.
             </param>
             <returns>
             If the ReadOnly attribute is set on entry, the return value is
@@ -4778,7 +4896,7 @@
             As an extension method, the first argument must be a reference to
             the instance that invoked it, which is used in much the same way as
             the implicit this parameter that leads the list of parameters for a
-            call to any C=+ instance method.
+            call to any C# instance method.
             </param>
             <returns>
             If the specified bit (It's usually just one.) is set on entry, the
@@ -4793,7 +4911,7 @@
             As an extension method, the first argument must be a reference to
             the instance that invoked it, which is used in much the same way as
             the implicit this parameter that leads the list of parameters for a
-            call to any C=+ instance method.
+            call to any C# instance method.
             </param>
             <param name="penmInitialStatus">
             Specify the FileInfoExtension.enmInitialStatus value returned by the last call to 
@@ -4812,7 +4930,7 @@
             As an extension method, the first argument must be a reference to
             the instance that invoked it, which is used in much the same way as
             the implicit this parameter that leads the list of parameters for a
-            call to any C=+ instance method.
+            call to any C# instance method.
             </param>
             <returns>
             If the specified bit (It's usually just one.) is set on entry, the
@@ -4827,7 +4945,7 @@
             As an extension method, the first argument must be a reference to
             the instance that invoked it, which is used in much the same way as
             the implicit this parameter that leads the list of parameters for a
-            call to any C=+ instance method.
+            call to any C# instance method.
             </param>
             <param name="penmFileAttributes">
             This argument specifies the member(s) of the FileAttributes bitwise
@@ -4846,7 +4964,7 @@
             As an extension method, the first argument must be a reference to
             the instance that invoked it, which is used in much the same way as
             the implicit this parameter that leads the list of parameters for a
-            call to any C=+ instance method.
+            call to any C# instance method.
             </param>
             <param name="penmFileAttributes">
             This argument specifies the member(s) of the FileAttributes bitwise
@@ -4855,6 +4973,50 @@
             <returns>
             If the specified bit (It's usually just one.) is set on entry, the
             return value is WasSet; otherwise, it is WasCleared.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.FileInfoExtensionMethods.ShowFileDetails(System.IO.FileInfo,WizardWrx.FileInfoExtensionMethods.FileDetailsToShow,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            This is a general-purpose method for reporting details about a file.
+            </summary>
+            <param name="pfi">
+            The framework supplies a reference to the FileInfo instance with
+            which the call is associated.
+            </param>
+            <param name="penmFileDetailsToShow">
+            Use one or more members of the FileDetailsToShow enumeration to
+            specify the details to display. The FileDetailsToShow enumeration is
+            a bit mask, and the enumeration defines the combinations that are
+            most likely to be useful as additional members.
+            
+            The default value is FileDetailsToShow.Everything.
+            </param>
+            <param name="pstrLabel">
+            The label string is optional and, if specified, appears at the start
+            of the returned string. String magic is thereafter employed to keep
+            subsequent lines of text aligned vertically.
+            
+            The default value is NULL, which resolves internally to the empty
+            string.
+            </param>
+            <param name="pfPrefixWithNewline">
+            If TRUE, the whole string begins with a platform-dependent newline.
+            Otherwise, the string begins with the label specified by parameter
+            <paramref name="pstrLabel"/>, if any, followed by the absolute file
+            name.
+            
+            The default value is FALSE.
+            </param>
+            <param name="pfSuffixWithNewline">
+            If TRUE, the string is terminated with a platform-dependent newline.
+            Otherwise, the string ends with the last value specified by the
+            <paramref name="penmFileDetailsToShow"/> bit mask.
+            
+            The default value is FALSE.
+            </param>
+            <returns>
+            The return value is a human-readable multi-line report suitable for
+            display on a console log, event log, print file, or message box.
             </returns>
         </member>
         <member name="T:WizardWrx.FileNameTricks">
@@ -7455,6 +7617,78 @@
              I have immediate plans to implement one, though it wouldn't be hard.
              </remarks>
         </member>
+        <member name="M:WizardWrx.StringExtensions.EnumerateSubstringPositions(System.String,System.String)">
+             <summary>
+             Return an array of integers, each a position of substring
+             <paramref name="pstrToCount"/> in string <paramref name="pstrSource"/>.
+             </summary>
+             <param name="pstrSource">
+             Specify the string in which to count occurrences of substring
+             pstrToCount.
+            
+             If pstrSource is null or empty, the method returns zero.
+             
+             Since this is an extension method, pstrIn is supplied by the BCL
+             when it binds this method to an instance of System.string.
+             </param>
+             <param name="pstrToCount">
+             Specify the substring to count in string pstrSource.
+             
+             The empty string causes the method to return 
+             MagicNumbers.STRING_INDEXOF_NOT_FOUND, or -1.
+             </param>
+             <returns>
+             When the method succeeds, its return value is an array of integers,
+             each of which is the position of an occurrence of <paramref name="pstrToCount"/>
+             in <paramref name="pstrToCount"/>, following the search algorithm
+             dictated by StringComparison.CurrentCulture. When either of the two
+             string parameters is a null reference or the empty string, the
+             return value is NULL, for which callers must test. Since either
+             string could be empty or a null reference, in normal operations, it
+             seemed appropriate to treat such a case as routine, rather than
+             throwing an exception. Conversely, when both strings are valid, but
+             <paramref name="pstrToCount"/> never occurs in <paramref name="pstrSource"/>,
+             the return value is an empty array.
+             </returns>
+        </member>
+        <member name="M:WizardWrx.StringExtensions.EnumerateSubstringPositions(System.String,System.String,System.StringComparison)">
+             <summary>
+             Return an array of integers, each a position of substring
+             <paramref name="pstrToCount"/> in string <paramref name="pstrSource"/>.
+             </summary>
+             <param name="pstrSource">
+             Specify the string in which to count occurrences of substring
+             pstrToCount.
+            
+             If pstrSource is null or empty, the method returns zero.
+             
+             Since this is an extension method, pstrIn is supplied by the BCL
+             when it binds this method to an instance of System.string.
+             </param>
+             <param name="pstrToCount">
+             Specify the substring to count in string pstrSource.
+             
+             The empty string causes the method to return 
+             MagicNumbers.STRING_INDEXOF_NOT_FOUND, or -1.
+             </param>
+             <param name="penmComparisonType">
+             Specify a member of the System.StringComparison enumeration, which
+             defines the rules for performing the comparison.
+             </param>
+             <returns>
+             When the method succeeds, its return value is an array of integers,
+             each of which is the position of an occurrence of <paramref name="pstrToCount"/>
+             in <paramref name="pstrToCount"/>, following the search algorithm
+             dictated by <paramref name="penmComparisonType"/>. When either of
+             the two string parameters is a null reference or the empty string,
+             the return value is NULL, for which callers must test. Since either
+             string could be empty or a null reference, in normal operations, it
+             seemed appropriate to treat such a case as routine, rather than
+             throwing an exception. Conversely, when both strings are valid, but
+             <paramref name="pstrToCount"/> never occurs in <paramref name="pstrSource"/>,
+             the return value is an empty array.
+             </returns>
+        </member>
         <member name="M:WizardWrx.StringExtensions.CountUnresolvedEnvironmentStrings(System.String)">
             <summary>
             Scan a string for environment string delimiter characters left
@@ -7937,6 +8171,13 @@
             and the default null reference representation, pass a null reference
             as the value of <paramref name="pstrValueIfNull"/>.
             </remarks>
+        </member>
+        <member name="M:WizardWrx.StringExtensions.ReplaceEscapedTabsInStringFromResX(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="pstrStringFromResX"></param>
+            <returns></returns>
         </member>
         <member name="M:WizardWrx.StringExtensions.ReplaceTokensFromList(System.String,System.Collections.Specialized.NameValueCollection)">
             <summary>

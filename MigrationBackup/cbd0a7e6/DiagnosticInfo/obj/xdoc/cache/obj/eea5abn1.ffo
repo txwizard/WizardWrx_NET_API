@@ -1,0 +1,10 @@
+id: WizardWrx.DiagnosticInfo
+language: CSharp
+name:
+  Default: WizardWrx.DiagnosticInfo
+qualifiedName:
+  Default: WizardWrx.DiagnosticInfo
+type: Assembly
+modifiers: {}
+items: []
+references: {}

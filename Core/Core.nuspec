@@ -6,16 +6,18 @@
     	<title>$title$</title>
 	    <authors>$author$</authors>
     	<owners>$author$</owners>
-	    <licenseUrl>https://github.com/txwizard/WizardWrx_NET_API/blob/master/License.TXT</licenseUrl>
+	    <license type="expression">BSD-3-Clause</license>
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>This release adds a new StringFixups class, along with ApplyFixups, a new string extension method.</releaseNotes>
+	    <releaseNotes>This release adds a NewFileInfo extension method, ShowFileDetails, that returns a string containing selected file properties, and a custom ToString method to the StringFixups class, which causes its properties to display in a watch window.</releaseNotes>
     	<copyright>$copyright$</copyright>
-    	<tags>Constants Arrays RegExp</tags>
+    	<tags>Constants Arrays RegExp FileInfo and String extensions Optimized Singleton</tags>
 	</metadata>
 	<files>
    		<file src="readme.md" target="" />
    		<file src="readme.txt" target="" />
+   		<file src="bin\$configuration$\$id$.pdb" target="lib" />
+   		<file src="bin\$configuration$\$id$.xml" target="lib" />
 	</files>
 </package>

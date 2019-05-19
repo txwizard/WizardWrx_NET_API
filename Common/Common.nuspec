@@ -6,16 +6,18 @@
     	<title>$title$</title>
 	    <authors>$author$</authors>
     	<owners>$author$</owners>
-	    <licenseUrl>https://github.com/txwizard/WizardWrx_NET_API/blob/master/License.TXT</licenseUrl>
+	    <license type="expression">BSD-3-Clause</license>
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>This minor update adds two new resource strings, MSG_VALUE_IS_INVALID and MSG_VALUE_IS_VALID.</releaseNotes>
+	    <releaseNotes>The XML comments attached to integer constant DECIMAL_DIGITS_DEFAULT contained a plain ASCII table that caused it to display incorrectly in the DocFX page that was generated from it. Though this change affected the source code, forcing a new build, the generated assembly is otherwise identical to its predecessor.</releaseNotes>
     	<copyright>$copyright$</copyright>
     	<tags>Constants Arrays RegExp</tags>
 	</metadata>
 	<files>
    		<file src="readme.md" target="" />
    		<file src="readme.txt" target="" />
+   		<file src="bin\$configuration$\$id$.pdb" target="lib" />
+   		<file src="bin\$configuration$\$id$.xml" target="lib" />
 	</files>
 </package>

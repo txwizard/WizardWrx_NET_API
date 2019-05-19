@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="BOJ_MSG_TPL" xml:space="preserve">
     <value>{0}, version {1} BOJ{4}{2} ({3} UTC){4}</value>
@@ -630,5 +630,9 @@
   <data name="IDS_ASCII_TABLE_ENUMERATION" xml:space="preserve">
     <value>{0}    The ASCII_Table_Gen method will now enumerate the ASCII_Character_Display_Table{0}</value>
     <comment>ASCII_Table_Gen prints this message between the first table and second tables.</comment>
+  </data>
+  <data name="MESSAGE_CONTAINS_ESCAPED_TABS" xml:space="preserve">
+    <value>Item\tActivity_Date\tOpen\tHigh\tLow\tClose\tAdjustedClose\tVolume\tDividendAmount\tSplitCoefficient</value>
+    <comment>Use this string to demonstrate the ReplaceEscapedTabsInStringFromResX extension method.</comment>
   </data>
 </root>

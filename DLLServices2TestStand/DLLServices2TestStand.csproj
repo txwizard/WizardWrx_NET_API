@@ -75,42 +75,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.XML" />
-    <Reference Include="WizardWrx.AnyCSV, Version=7.0.120.30587, Culture=neutral, PublicKeyToken=39f6551a21db420a, processorArchitecture=MSIL">
-      <HintPath>..\packages\WizardWrx.AnyCSV.7.0.120.30587\lib\net20\WizardWrx.AnyCSV.dll</HintPath>
-    </Reference>
-    <Reference Include="WizardWrx.ASCIIInfo, Version=7.1.83.29298, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\WizardWrx.ASCIIInfo.7.1.83.29298\lib\net20\WizardWrx.ASCIIInfo.dll</HintPath>
-    </Reference>
-    <Reference Include="WizardWrx.AssemblyUtils, Version=7.15.114.34743, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\WizardWrx.AssemblyUtils.7.15.114.34743\lib\net35-client\WizardWrx.AssemblyUtils.dll</HintPath>
-    </Reference>
-    <Reference Include="WizardWrx.BitMath, Version=4.3.125.29248, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\WizardWrx.BitMath.4.3.125.29248\lib\net20\WizardWrx.BitMath.dll</HintPath>
-    </Reference>
-    <Reference Include="WizardWrx.Common, Version=7.16.104.1840, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\WizardWrx.Common.7.16.104.1840\lib\net20\WizardWrx.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="WizardWrx.ConsoleStreams, Version=7.15.191.37663, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\WizardWrx.ConsoleStreams.7.15.191.37663\lib\net35-client\WizardWrx.ConsoleStreams.dll</HintPath>
-    </Reference>
-    <Reference Include="WizardWrx.Core, Version=7.16.156.6214, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\WizardWrx.Core.7.16.156.6214\lib\net35-client\WizardWrx.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="WizardWrx.DiagnosticInfo, Version=7.15.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\WizardWrx.DiagnosticInfo.7.15.1\lib\net45\WizardWrx.DiagnosticInfo.dll</HintPath>
-    </Reference>
-    <Reference Include="WizardWrx.DLLConfigurationManager, Version=7.15.211.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\WizardWrx.DLLConfigurationManager.7.15.211\lib\net35-client\WizardWrx.DLLConfigurationManager.dll</HintPath>
-    </Reference>
-    <Reference Include="WizardWrx.EmbeddedTextFile, Version=7.15.90.42197, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\WizardWrx.EmbeddedTextFile.7.15.90.42197\lib\net35-client\WizardWrx.EmbeddedTextFile.dll</HintPath>
-    </Reference>
-    <Reference Include="WizardWrx.FormatStringEngine, Version=7.15.162.826, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\WizardWrx.FormatStringEngine.7.15.162.826\lib\net20\WizardWrx.FormatStringEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="WizardWrx.MoreMath, Version=7.15.1.36803, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\WizardWrx.MoreMath.7.15.1.36803\lib\net45\WizardWrx.MoreMath.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\ProductAssemblyInfo.cs">
@@ -127,6 +91,7 @@
     <Compile Include="MergeNewItemsIntoArray_Tester.cs" />
     <Compile Include="MoreMathTests.cs" />
     <Compile Include="NewClassTests_20140914.cs" />
+    <Compile Include="ShowFileDetailsTests.cs" />
     <Compile Include="TestItemSortByString.cs" />
     <Compile Include="Util.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -145,7 +110,6 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -163,6 +127,44 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="WizardWrx.AnyCSV">
+      <Version>7.0.120.30587</Version>
+    </PackageReference>
+    <PackageReference Include="WizardWrx.ASCIIInfo">
+      <Version>7.1.83.29298</Version>
+    </PackageReference>
+    <PackageReference Include="WizardWrx.AssemblyUtils">
+      <Version>7.15.114.34743</Version>
+    </PackageReference>
+    <PackageReference Include="WizardWrx.BitMath">
+      <Version>4.3.125.29248</Version>
+    </PackageReference>
+    <PackageReference Include="WizardWrx.Common">
+      <Version>7.16.104.1840</Version>
+    </PackageReference>
+    <PackageReference Include="WizardWrx.ConsoleStreams">
+      <Version>7.15.191.37663</Version>
+    </PackageReference>
+    <PackageReference Include="WizardWrx.Core">
+      <Version>7.16.156.6214</Version>
+    </PackageReference>
+    <PackageReference Include="WizardWrx.DiagnosticInfo">
+      <Version>7.15.1</Version>
+    </PackageReference>
+    <PackageReference Include="WizardWrx.DLLConfigurationManager">
+      <Version>7.15.211</Version>
+    </PackageReference>
+    <PackageReference Include="WizardWrx.EmbeddedTextFile">
+      <Version>7.15.90.42197</Version>
+    </PackageReference>
+    <PackageReference Include="WizardWrx.FormatStringEngine">
+      <Version>7.15.162.826</Version>
+    </PackageReference>
+    <PackageReference Include="WizardWrx.MoreMath">
+      <Version>7.15.1.36803</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

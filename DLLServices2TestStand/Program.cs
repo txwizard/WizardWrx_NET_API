@@ -22,7 +22,7 @@
 
     Author:				David A. Gray
 
-	License:            Copyright (C) 2011-2018, David A. Gray.
+	License:            Copyright (C) 2011-2019, David A. Gray.
 						All rights reserved.
 
                         Redistribution and use in source and binary forms, with
@@ -209,7 +209,17 @@
 
 	2019/05/03 7.15    DAG    Implement and deploy RecoveredExceptionTests.
 
-	2019/05/05 7.16    DAG    Implement and deploy ExerciseStringFixups.
+	2019/05/19 7.17    DAG    Implement tests for the following improvements:
+
+                              1) StringFixups: Demonstrate its ToString method.
+
+                              2) ReplaceEscapedTabsInResourceString: Demonstrate
+                                 this string extension method.
+
+                              3) ShowFileDetails: Demonstrate this FileInfo
+                                 extension method, and put it through its paces,
+                                 and demonstrate the ToString method on the
+                                 array of StringFixups structures.
     ============================================================================
 */
 
@@ -373,11 +383,11 @@ namespace DLLServices2TestStand
 
         static readonly StringFixups.StringFixup [ ] s_astrStringFixups =
         {
-            new StringFixups.StringFixup(@"Error Message","ErrorMessage") ,
-            new StringFixups.StringFixup(@"Foo Bar","FooBar") ,
+            new StringFixups.StringFixup ( @"Error Message" , "ErrorMessage" ) ,
+            new StringFixups.StringFixup ( @"Foo Bar" , "FooBar" ) ,
         };  // static readonly StringFixups.StringFixup [ ] s_astrStringFixups
 
-        const bool BEGIN_TEST_TAKE_METHOD_NAME_AT_FACE_VALUE = true;
+        internal const bool BEGIN_TEST_TAKE_METHOD_NAME_AT_FACE_VALUE = true;
 
 		static readonly OutputOptionTestData [ ] s_utpOutputOptionTestData =
 		{
@@ -490,7 +500,7 @@ namespace DLLServices2TestStand
 					NewClassTests_20140914.EnumerateStringResourcesInAssembly (
 						ref intTestNumber ,
 						System.Reflection.Assembly.GetAssembly (
-							typeof ( WizardWrx.ArrayInfo ) ) );
+							typeof ( ArrayInfo ) ) );
 				}	// TRUE block, else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_LIST_COMMON_STRINGS )
 				else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_EVENT_MSG_CLEANUP_TESTS )
 				{
@@ -503,6 +513,16 @@ namespace DLLServices2TestStand
 
                     ExerciseStringFixups ( ref intTestNumber );
                     PauseForPictures ( APPEND_LINEFEED );
+
+                    {   // Constrain the scope of strings strMsgWithEscapedTabs and strDetailRowFormatString.
+                        string strMsgWithEscapedTabs = Properties.Resources.MESSAGE_CONTAINS_ESCAPED_TABS;
+                        Console.WriteLine ( @"MESSAGE_CONTAINS_ESCAPED_TABS = {0}",strMsgWithEscapedTabs );
+                        string strDetailRowFormatString = strMsgWithEscapedTabs.ReplaceEscapedTabsInStringFromResX ( );
+                        Console.WriteLine ( @"strDetailRowFormatString      = {0}" , strDetailRowFormatString );
+                    }   // Let strings strMsgWithEscapedTabs and strDetailRowFormatString go out of scope.
+
+                    intTestNumber = ShowFileDetailsTests.Exercise ( ref intTestNumber );
+                    PauseForPictures ( OMIT_LINEFEED );
 
                     EventMessageCleanupTests ( ref intTestNumber );
 					PauseForPictures ( APPEND_LINEFEED );
@@ -594,7 +614,8 @@ namespace DLLServices2TestStand
 					PauseForPictures ( APPEND_LINEFEED );
 
                     Console.WriteLine (
-                        @"{1}The following message is the value of the static ExceptionLogger.s_strSettingsOmittedFromConfigFile property:{1}{1}{0}" ,
+                        @"{
+                            1}The following message is the value of the static ExceptionLogger.s_strSettingsOmittedFromConfigFile property:{1}{1}{0}" ,
                         ExceptionLogger.s_strSettingsOmittedFromConfigFile ,
                         Environment.NewLine );
 
@@ -1080,13 +1101,14 @@ FinalReport:
                       intJ++ )
             {
                 Console.WriteLine (
-                    @"    Element {0}: Input String  = {1}{3}                 Output String = {2}" ,
+                    @"    Element {0}: Input String  = {1}{4}                 Output String = {2}{4}                 ToString      = {3}" ,
                     new object [ ]
                     {
                         intJ ,                                                  // Format Item 0: Element {0}:
                         s_astrStringFixups [ intJ ].InputValue ,                // Format Item 1: Input String  = {1}
                         s_astrStringFixups [ intJ ].OutputValue ,               // Format Item 2: Output String = {2}
-                        Environment.NewLine                                     // Format Item 3: Platform-dependent newline
+                        s_astrStringFixups[intJ].ToString ( ) ,                 // Format Item 3: ToString      = {3}
+                        Environment.NewLine                                     // Format Item 4: Platform-dependent newline
                     } );
             }   // for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ; intJ < s_astrStringFixups.Length ; intJ++ )
 

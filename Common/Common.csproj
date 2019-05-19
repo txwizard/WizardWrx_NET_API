@@ -13,6 +13,8 @@
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
+    <!-- 2019/05/18 16:54:22 - DAG - Added for NuGet package builder -->
+    <PackageDir>Package\$(Configuration)</PackageDir>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -47,9 +49,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="WizardWrx.BitMath, Version=4.3.125.29248, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\WizardWrx.BitMath.4.3.125.29248\lib\net20\WizardWrx.BitMath.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\ProductAssemblyInfo.cs">
@@ -82,7 +81,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <PackageReference Include="WizardWrx.BitMath">
+      <Version>4.3.125.29248</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
@@ -99,5 +100,37 @@
   <PropertyGroup>
     <PostBuildEvent>
     </PostBuildEvent>
+  </PropertyGroup>
+  <!-- 2019/05/18 23:13:48 - DAG Everything from this point to the end is new, and was added to support NuGet package generation. -->
+  <Target Name="AfterBuild">
+    <!-- Load up the information from the assembly -->
+    <GetAssemblyIdentity AssemblyFiles="$(OutputPath)$(AssemblyName).dll">
+      <Output TaskParameter="Assemblies" ItemName="OutputAssemblyInfo" />
+    </GetAssemblyIdentity>
+    <Message Text="Info: Assembly $(AssemblyName).dll version =  %(OutputAssemblyInfo.Version)" />
+  </Target>
+  <Target Name="Package"
+  	      AfterTargets="AfterBuild"
+  	      Condition=" '$(Configuration)' == 'Release'">
+  	<!-- Ensure the Package directory exists for this project. -->
+    <MakeDir Directories="$(PackageDir)" />
+    <!-- Package the project. -->
+    <Exec WorkingDirectory="$(BuildDir)" Command="NuGet.exe pack $(ProjectName).csproj -Properties Configuration=$(Configuration) -OutputDir $(PackageDir)" />
+  </Target>
+  <!-- Publish the project. -->
+  <Target Name="Publish"
+  	      AfterTargets="Package"
+  	      Condition=" '$(Configuration)' == 'Release'">
+    <Exec WorkingDirectory="$(PackageDir)" Command="NuGet.exe push $(AssemblyName).%(OutputAssemblyInfo.Version).nupkg" />
+  </Target>
+
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  -->
+  <PropertyGroup>
+    <PreBuildEvent>wwBldNbrMgr.exe "$(ProjectDir) "</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>wwBldNbrMgr.exe -r "-p$(ProjectDir) " "-t$(TargetPath)"</PostBuildEvent>
   </PropertyGroup>
 </Project>

@@ -19,7 +19,7 @@
                         Since this is tested code, I started the version number
                         at 2.0.
 
-    License:            Copyright (C) 2012-2017, David A. Gray. 
+    License:            Copyright (C) 2012-2019, David A. Gray. 
 						All rights reserved.
 
                         Redistribution and use in source and binary forms, with
@@ -94,6 +94,11 @@
 	2017/08/12 7.0     DAG    Move this class into WizardWrx.Core.dll, alongside
                               its siblings, so that WizardWrx.SharedUtl4.dll can
                               be retired.
+
+    2019/05/15 7.17    DAG    Significantly simplify CreateFormatString and 
+                              CreateLastToken by way of a much more efficient
+                              algorithm that consumes much less memory and CPU
+                              time.
     ============================================================================
 */
 
@@ -285,31 +290,27 @@ namespace WizardWrx
             string pstrReportLabels ,
             char pchrFieldSeparator )
         {
-            string strFieldSeparatorAsString = pchrFieldSeparator.ToString ( );
+            int intDelimiterCount = pstrReportLabels.CountCharacterOccurrences ( pchrFieldSeparator );
 
-            if ( pstrReportLabels.Contains ( strFieldSeparatorAsString ) )
+            if ( intDelimiterCount > ListInfo.LIST_IS_EMPTY )
             {
-                StringBuilder sbFormat = new StringBuilder ( pstrReportLabels.Length );
-                string [ ] astrColumnLabels = pstrReportLabels.Split ( new char [ ] { pchrFieldSeparator } );
-
-                int intTokenIndex = ArrayInfo.ARRAY_INVALID_INDEX;
-                int intLastIndex = astrColumnLabels.Length - ArrayInfo.INDEX_FROM_ORDINAL;			// This is correct; it needs the index of the last character.
-
                 string strTokenTemplate = TOKEN_TEMPLATE.Replace (
                     DELIMITER_TOKEN ,
-                    strFieldSeparatorAsString );
+                    pchrFieldSeparator.ToString ( ) );
 
-                foreach ( string strLabel in astrColumnLabels )
+                StringBuilder sbFormat = new StringBuilder ( pstrReportLabels.Length );
+
+                for ( int intTokenIndex = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+                          intTokenIndex <= intDelimiterCount ;
+                          intTokenIndex++ )
                 {
-                    ++intTokenIndex;
-
-                    if ( intTokenIndex < intLastIndex )
-                    {   //  The format of this function call is experimental.
+                    if ( intTokenIndex < intDelimiterCount )
+                    {
                         sbFormat.Append (
                             strTokenTemplate.Replace (
                               INDEX_TOKEN ,
-                              intTokenIndex.ToString ( NumericFormats.GENERAL_UC ) ) );
-                    }   // TRUE block, if ( intTokenIndex < intLastIndex )
+                              intTokenIndex.ToString ( ) ) );
+                    }   // TRUE (There is at least one more iteration to go.) block, if ( intTokenIndex < intDelimiterCount )
                     else
                     {
                         string strNewTemplate = CreateLastToken (
@@ -317,9 +318,9 @@ namespace WizardWrx
                             pchrFieldSeparator );
                         sbFormat.Append ( strNewTemplate.Replace (
                             INDEX_TOKEN ,
-                            intTokenIndex.ToString ( NumericFormats.GENERAL_UC ) ) );
-                    }   // FALSE block, if ( intTokenIndex < intLastIndex )
-                }   // foreach ( string strLabel in pstrReportLabels.Split ( new char [ ] { pchrFieldSeparator } ) )
+                            intTokenIndex.ToString ( ) ) );
+                    }   // FALSE (This is the last iteration.) block, if ( intTokenIndex < intDelimiterCount )
+                }   // for ( int intTokenIndex = ArrayInfo.ARRAY_FIRST_ELEMENT ; intTokenIndex <= intDelimiterCount ; intTokenIndex++ )
 
                 //  ------------------------------------------------------------
                 //  Unless the field separator is a TAB, it is ready to go.
@@ -338,7 +339,7 @@ namespace WizardWrx
                 {
                     return sbFormat.ToString ( );
                 }   // if ( pchrFieldSeparator == SpecialCharacters.TAB_CHAR )
-            }   // TRUE (normal) block, if ( pstrReportLabels.Contains ( strFieldSeparatorAsString ) )
+            }   // TRUE (anticipated outcome) block, if ( intDelimiterCount > ListInfo.LIST_IS_EMPTY )
             else if ( pstrReportLabels.Contains ( DOUBLE_SPACE ) )
             {
                 throw new NotImplementedException ( @"Word parsing is not yet implemented." );
@@ -350,7 +351,7 @@ namespace WizardWrx
 	                    Core.Properties.Resources.ERRMSG_CANNOT_PARSE ,
 						pstrReportLabels ,
 						Environment.NewLine ) );
-            }   // FALSE block of if ( pstrReportLabels.Contains ( strFieldSeparatorAsString ) ) and else if ( pstrReportLabels.Contains ( DOUBLE_SPACE ) )
+            }   // FALSE block of anticipated outcome) block, if ( intDelimiterCount > ListInfo.LIST_IS_EMPTY ) AND else if ( pstrReportLabels.Contains ( DOUBLE_SPACE ) )
         }   // private static string CreateFormatString
 
 
@@ -392,7 +393,7 @@ namespace WizardWrx
                 return pstrTokenTemplate.Replace (
                     EMBEDDED_TAB ,
                     SpecialStrings.EMPTY_STRING ).Replace (
-                        SpecialCharacters.TAB_CHAR.ToString ( ) ,
+                        SpecialStrings.TAB_CHAR ,
                         SpecialStrings.EMPTY_STRING );
             else
                 return pstrTokenTemplate.Replace (

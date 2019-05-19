@@ -4,6 +4,45 @@ This file is a running history of fixes and improvements from version 7.0
 onwards. Changes are documented for the newest version first. Within each
 version, classes are covered in alphabetical order.
 
+# Version 7.17
+
+With this release, the two most actively updated libraries, `WizardWrx.Core.dll`
+and `WizardWrx.Common.dll`, automatically update their respective NuGet packages
+when a new release build is created. Other libraries will eventually get the
+same treatment, but these two went first, because I needed to update them and
+immediately pull both into another project, and they receive by far the most
+frequent updates. At present, these are the only two projects that have NuGet
+package generation and publication built into their `.csproj` files.
+
+## Class WizardWrx.StringFixups (defined in WizardWrx.Core.dll)
+
+Override the default `ToString` method, so that it returns a formatted string
+containing the values of its two members (properties), so that they appear in a
+watch window without requring the object to be expanded.
+
+## Class WizardWrx.StringExtensions (defined in WizardWrx.Core.dll)
+
+A new `ReplaceEscapedTabsInResourceString` extension method undoes the escaped TAB
+characters that go into a string that contains TAB characters when it is pasted
+into the string resource editor to become part of a .resx file.
+
+## Class WizardWrx.FileInfoExtensionMethods (defined in WizardWrx.Core.dll)
+
+`ShowFileDetails` is a new FileInfo extension method that returns a formatted
+string containing user-selected properties of a file.
+
+## Class WizardWrx.ReportHelpers (defined in WizardWrx.Core.dll)
+
+Significantly simplify `CreateFormatString` and `CreateLastToken` by way of a much
+more efficient algorithm that consumes much less memory and CPU time.
+
+## Class WizardWrx.NumericFormats (defined in WizardWrx.Common.dll)
+
+The XML comments attached to integer constant `DECIMAL_DIGITS_DEFAULT` contained
+a plain ASCII table that caused it to display incorrectly in the DocFX page that
+was generated from it. Though this change affected the source code, forcing a
+new build, the generated assembly is otherwise identical to its predecessor.
+
 # Version 7.16
 
 The additions revolve around a new method to apply pairs of strings, each

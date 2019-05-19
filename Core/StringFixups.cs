@@ -20,11 +20,41 @@
 
     Author:				David A. Gray
 
-	License:            Copyright (C) 2018, Great Eastern Energy.
+	License:            Copyright (C) 2019, David A. Gray
 						All rights reserved.
 
-                        This source code is proprietary to the copyright holder.
-						It must be treated as a trade secret.
+                        Redistribution and use in source and binary forms, with
+                        or without modification, are permitted provided that the
+                        following conditions are met:
+
+                        *   Redistributions of source code must retain the above
+                            copyright notice, this list of conditions and the
+                            following disclaimer.
+
+                        *   Redistributions in binary form must reproduce the
+                            above copyright notice, this list of conditions and
+                            the following disclaimer in the documentation and/or
+                            other materials provided with the distribution.
+
+                        *   Neither the name of David A. Gray, nor the names of
+                            his contributors may be used to endorse or promote
+                            products derived from this software without specific
+                            prior written permission.
+
+                        THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+                        CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
+                        WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+                        WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+                        PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
+                        David A. Gray BE LIABLE FOR ANY DIRECT, INDIRECT,
+                        INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+                        (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+                        SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+                        PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+                        ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+                        LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+                        ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+                        IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
     ----------------------------------------------------------------------------
     Revision History
@@ -36,6 +66,8 @@
 
 	2019/05/04 DG Adapt for use with the RestClient class that I incorporated
                   from the same project from whence came this class.
+
+    2019/05/15 DG Override ToString to display the string pairs.
 	============================================================================
 */
 
@@ -83,7 +115,25 @@ namespace WizardWrx.Core
             {
                 this.InputValue = pstrInputValue;
                 this.OutputValue = pstroutputValue;
-            }   // public StringFixup structure
+            }   // public StringFixup structure initializer
+
+
+            /// <summary>
+            /// Override the ToString method on the base class to render the two
+            /// structure members' values when the framework invokes the default
+            /// ToString method, such as when it populates a watch window.
+            /// </summary>
+            /// <returns>
+            /// The return value is a formatted string that displays the name
+            /// and value of each of the two members of the structure.
+            /// </returns>
+            public override string ToString ( )
+            {
+                return string.Format (
+                    Properties.Resources.MSG_STRING_FIXUPS_TOSTRING ,           // Format control string
+                    this.InputValue ,                                           // Format Item 0: InputValue = {0}
+                    this.OutputValue );                                         // Format Item 1: OutputValue = {1}
+            }   // public override string ToString
         };  // public struct StringFixup
 
 
@@ -126,8 +176,6 @@ namespace WizardWrx.Core
         {   // Our ApplyFixups method delegates the work to the extension method.
             return pstrInputString.ApplyFixups ( _afixupPairs );
         }   // public string ApplyFixups
-
-
 
 
         /// <summary>

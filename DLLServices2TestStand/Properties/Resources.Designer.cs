@@ -619,6 +619,15 @@ namespace DLLServices2TestStand.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Item\tActivity_Date\tOpen\tHigh\tLow\tClose\tAdjustedClose\tVolume\tDividendAmount\tSplitCoefficient.
+        /// </summary>
+        public static string MESSAGE_CONTAINS_ESCAPED_TABS {
+            get {
+                return ResourceManager.GetString("MESSAGE_CONTAINS_ESCAPED_TABS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to [Empty String}.
         /// </summary>
         public static string MESSAGE_EMPTY_STRING {

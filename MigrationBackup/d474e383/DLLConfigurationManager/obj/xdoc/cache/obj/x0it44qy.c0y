@@ -1,0 +1,10 @@
+id: WizardWrx.DLLConfigurationManager
+language: CSharp
+name:
+  Default: WizardWrx.DLLConfigurationManager
+qualifiedName:
+  Default: WizardWrx.DLLConfigurationManager
+type: Assembly
+modifiers: {}
+items: []
+references: {}

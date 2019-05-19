@@ -106,6 +106,11 @@
 	2019/05/05 7.16    DAG ApplyFixups is a new method that performs global
                            replacements from an array of search and replacement
                            pairs.
+
+	2019/05/15 7.17    DAG ReplaceEscapedTabsInStringFromResX is a new method 
+                           that does exactly what its name implies, while
+                           EnumerateSubstringPositions does what its name 
+                           implies.
     ============================================================================
 */
 
@@ -120,21 +125,21 @@ using WizardWrx.Common.Properties;
 
 namespace WizardWrx
 {
-	/// <summary>
-	/// This is a class of extension methods for performing common tasks not
-	/// provided by the System.String class. All but the four Pad methods are
-	/// derived from long established routines in companion class StringTricks.
-	/// 
-	/// Just as importing the System.Linq namespace makes its generic extension
-	/// methods visible, importing the root WizardWrx namespace, accompanied by
-	/// a reference to WizardWrx.Core, makes these methods visible on every
-	/// instance of System.string.
-	/// 
-	/// Rather than create ane entirely new class to support one small method, I
-	/// extended this class to cover RenderEvenWhenNull, even though it is a
-	/// generic method.
-	/// </summary>
-	public static class StringExtensions
+    /// <summary>
+    /// This is a class of extension methods for performing common tasks not
+    /// provided by the System.String class. All but the four Pad methods are
+    /// derived from long established routines in companion class StringTricks.
+    /// 
+    /// Just as importing the System.Linq namespace makes its generic extension
+    /// methods visible, importing the root WizardWrx namespace, accompanied by
+    /// a reference to WizardWrx.Core, makes these methods visible on every
+    /// instance of System.string.
+    /// 
+    /// Rather than create ane entirely new class to support one small method, I
+    /// extended this class to cover RenderEvenWhenNull, even though it is a
+    /// generic method.
+    /// </summary>
+    public static class StringExtensions
     {
         #region Public Constants
         /// <summary>
@@ -202,280 +207,280 @@ namespace WizardWrx
         /// has one, the input string is returned unchanged.
         /// </returns>
         public static string AppendFullStopIfMissing ( this string pstrInput )
-		{
-			const string FULL_STOP_AS_STRING = @".";
+        {
+            const string FULL_STOP_AS_STRING = @".";
 
-			if ( pstrInput.EndsWith ( FULL_STOP_AS_STRING ) )
-				return pstrInput;
-			else
-				return string.Concat ( pstrInput , FULL_STOP_AS_STRING );
-		}	// AppendFullStopIfMissing
-		#endregion	// AppendFullStopIfMissing Method
-
-
-		#region ArrayOfOne Methods
-		/// <summary>
-		/// Return a one-element array containing the input character, for use
-		/// as input to the Split method of the System.string class.
-		/// </summary>
-		/// <param name="pchrTheCharacter">
-		/// Specify the character to be copied into an array of one.
-		/// </param>
-		/// <returns>
-		/// The return value is an array of one element, ready to feed to the
-		/// string.split method, or anything else that needs an array of one
-		/// character.
-		/// </returns>
-		public static char [ ] ArrayOfOne ( this char pchrTheCharacter )
-		{
-			return new char [ ] { pchrTheCharacter };
-		}   // ArrayOfOne (1 of 2)
-
-		/// <summary>
-		/// Return a one-element array containing the input string, for use
-		/// as input to the Split method of the System.string class.
-		/// </summary>
-		/// <param name="pstrTheString">
-		/// Specify the string to be copied into an array of one.
-		/// </param>
-		/// <returns>
-		/// The return value is an array of one element, ready to feed to the
-		/// string.split method, or anything else that needs an array of one
-		/// string.
-		/// </returns>
-		public static string [ ] ArrayOfOne ( this string pstrTheString )
-		{
-			return new string [ ] { pstrTheString };
-		}   // ArrayOfOne (2 of 2)
-		#endregion // ArrayOfOne Methods
+            if ( pstrInput.EndsWith ( FULL_STOP_AS_STRING ) )
+                return pstrInput;
+            else
+                return string.Concat ( pstrInput , FULL_STOP_AS_STRING );
+        }   // AppendFullStopIfMissing
+        #endregion // AppendFullStopIfMissing Method
 
 
-		#region CapitalizeWords Methods
-		/// <summary>
-		/// Return the input string with each word capitalized.
-		/// </summary>
-		/// <param name="pstr">
-		/// The string to process is implicitly passed in by this extension method.
-		/// </param>
-		/// <returns>
-		/// The input string is returned with each of its words capitalized. If the
-		/// string is already capitalized, this has no effect. Subsequent letters are
-		/// coerced to lower case.
-		/// </returns>
-		public static string CapitalizeWords ( this string pstr )
-		{
-			if ( string.IsNullOrEmpty ( pstr ) )
-			{
-				return null;
-			}   // TRUE (unanticipated outcome) block, if ( string.IsNullOrEmpty ( pstr ) )
-			else
-			{
-				StringBuilder rsb = new StringBuilder ( pstr.Length );
+        #region ArrayOfOne Methods
+        /// <summary>
+        /// Return a one-element array containing the input character, for use
+        /// as input to the Split method of the System.string class.
+        /// </summary>
+        /// <param name="pchrTheCharacter">
+        /// Specify the character to be copied into an array of one.
+        /// </param>
+        /// <returns>
+        /// The return value is an array of one element, ready to feed to the
+        /// string.split method, or anything else that needs an array of one
+        /// character.
+        /// </returns>
+        public static char [ ] ArrayOfOne ( this char pchrTheCharacter )
+        {
+            return new char [ ] { pchrTheCharacter };
+        }   // ArrayOfOne (1 of 2)
 
-				foreach ( string strThisWord in pstr.Split ( SpecialCharacters.SPACE_CHAR ) )
-				{
-					if ( rsb.Length > ListInfo.EMPTY_STRING_LENGTH )
-					{
-						rsb.Append ( SpecialCharacters.SPACE_CHAR );
-					}   // if ( rsb.Length > ListInfo.EMPTY_STRING_LENGTH )
-
-					char [ ] achrWordLetters = strThisWord.ToCharArray ( );
-
-					for ( int intWordPosition = ArrayInfo.ARRAY_FIRST_ELEMENT ;
-							  intWordPosition < achrWordLetters.Length ;
-							  intWordPosition++ )
-					{
-						if ( intWordPosition == ArrayInfo.ARRAY_FIRST_ELEMENT )
-						{
-							rsb.Append ( achrWordLetters [ intWordPosition ].ToString ( ).ToUpper ( ) );
-						}   // TRUE (Processing the first character of a word.) block, if ( intWordPosition == ArrayInfo.ARRAY_FIRST_ELEMENT )
-						else
-						{
-							rsb.Append ( achrWordLetters [ intWordPosition ].ToString ( ).ToLower ( ) );
-						}   // FALSE (Processing a subsequent character of a word.) block, if ( intWordPosition == ArrayInfo.ARRAY_FIRST_ELEMENT )
-
-					}   // for ( int intWordPosition = ArrayInfo.ARRAY_FIRST_ELEMENT ; intWordPosition < achrWordLetters.Length ; intWordPosition++ )
-				}   // foreach ( string strThisWord in pstr.Split ( WizardWrx.SpecialCharacters.SPACE_CHAR ) )
-
-				return rsb.ToString ( );
-			}   // FALSE (anticipated outcome) block, if ( string.IsNullOrEmpty ( pstr ) )
-		}   // public static string CapitalizeWords
-		#endregion // CapitalizeWords methods
+        /// <summary>
+        /// Return a one-element array containing the input string, for use
+        /// as input to the Split method of the System.string class.
+        /// </summary>
+        /// <param name="pstrTheString">
+        /// Specify the string to be copied into an array of one.
+        /// </param>
+        /// <returns>
+        /// The return value is an array of one element, ready to feed to the
+        /// string.split method, or anything else that needs an array of one
+        /// string.
+        /// </returns>
+        public static string [ ] ArrayOfOne ( this string pstrTheString )
+        {
+            return new string [ ] { pstrTheString };
+        }   // ArrayOfOne (2 of 2)
+        #endregion // ArrayOfOne Methods
 
 
-		#region Chop Methods
-		/// <summary>
-		/// Return a new string with the terminal newline, if present, removed.
-		/// </summary>
-		/// <param name="pstrIn">
-		/// Specify the string to be chopped.
-		/// </param>
-		/// <returns>
-		/// The chopped string is returned, minus its newline if it contained
-		/// one. This method treats all newlines equally, meaning that any of
-		/// the following items is treated as a newline.
-		/// 
-		/// 1) Environment.Newline
-		/// 2) SpecialStrings.STRING_SPLIT_CARRIAGE_RETURN, a bare carriage return (0x0D)
-		/// 3) SpecialStrings.STRING_SPLIT_LINEFEED, a bare line feed (0x0A)
-		/// </returns>
-		/// <see cref="SpecialStrings.STRING_SPLIT_CARRIAGE_RETURN"/>
-		/// <see cref="SpecialStrings.STRING_SPLIT_LINEFEED "/>
-		/// <see cref="System.Environment.NewLine"/>
-		public static string Chop ( this string pstrIn )
-		{
-			if ( string.IsNullOrEmpty ( pstrIn ) )
-			{	// Since they get identical treatment, a null reference and the empty string collapse into a single degenerate case 1, of 2,
-				return pstrIn;
-			}
-			else if ( pstrIn.EndsWith ( Environment.NewLine ) )
-			{	// The string ends with a Windows Newline pair (CR/LF), case 1 of 3.
-				return pstrIn.Substring ( 
-					WizardWrx.ArrayInfo.ARRAY_FIRST_ELEMENT ,
-					pstrIn.Length - Environment.NewLine.Length );
-			}
-			else if ( pstrIn.EndsWith ( SpecialStrings.STRING_SPLIT_CARRIAGE_RETURN ) )
-			{	// The string ends with a Macintosh newline character (0x0d), case 2 of 3.
-				return pstrIn.Substring (
-					WizardWrx.ArrayInfo.ARRAY_FIRST_ELEMENT ,
-					pstrIn.Length - SpecialStrings.STRING_SPLIT_CARRIAGE_RETURN.Length );
-			}
-			else if ( pstrIn.EndsWith ( SpecialStrings.STRING_SPLIT_LINEFEED ) )
-			{	// The string ends with a Unix newline character (0x0a), case 3 of 3.
-				return pstrIn.Substring (
-					WizardWrx.ArrayInfo.ARRAY_FIRST_ELEMENT ,
-					pstrIn.Length - SpecialStrings.STRING_SPLIT_LINEFEED.Length );
-			}
-			else
-			{	// The last character is something else; return the string as is, degenerate case 2 of 2.
-				return pstrIn;
-			}
-		}	// Chop
-		#endregion	// Chop Methods
+        #region CapitalizeWords Methods
+        /// <summary>
+        /// Return the input string with each word capitalized.
+        /// </summary>
+        /// <param name="pstr">
+        /// The string to process is implicitly passed in by this extension method.
+        /// </param>
+        /// <returns>
+        /// The input string is returned with each of its words capitalized. If the
+        /// string is already capitalized, this has no effect. Subsequent letters are
+        /// coerced to lower case.
+        /// </returns>
+        public static string CapitalizeWords ( this string pstr )
+        {
+            if ( string.IsNullOrEmpty ( pstr ) )
+            {
+                return null;
+            }   // TRUE (unanticipated outcome) block, if ( string.IsNullOrEmpty ( pstr ) )
+            else
+            {
+                StringBuilder rsb = new StringBuilder ( pstr.Length );
+
+                foreach ( string strThisWord in pstr.Split ( SpecialCharacters.SPACE_CHAR ) )
+                {
+                    if ( rsb.Length > ListInfo.EMPTY_STRING_LENGTH )
+                    {
+                        rsb.Append ( SpecialCharacters.SPACE_CHAR );
+                    }   // if ( rsb.Length > ListInfo.EMPTY_STRING_LENGTH )
+
+                    char [ ] achrWordLetters = strThisWord.ToCharArray ( );
+
+                    for ( int intWordPosition = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+                              intWordPosition < achrWordLetters.Length ;
+                              intWordPosition++ )
+                    {
+                        if ( intWordPosition == ArrayInfo.ARRAY_FIRST_ELEMENT )
+                        {
+                            rsb.Append ( achrWordLetters [ intWordPosition ].ToString ( ).ToUpper ( ) );
+                        }   // TRUE (Processing the first character of a word.) block, if ( intWordPosition == ArrayInfo.ARRAY_FIRST_ELEMENT )
+                        else
+                        {
+                            rsb.Append ( achrWordLetters [ intWordPosition ].ToString ( ).ToLower ( ) );
+                        }   // FALSE (Processing a subsequent character of a word.) block, if ( intWordPosition == ArrayInfo.ARRAY_FIRST_ELEMENT )
+
+                    }   // for ( int intWordPosition = ArrayInfo.ARRAY_FIRST_ELEMENT ; intWordPosition < achrWordLetters.Length ; intWordPosition++ )
+                }   // foreach ( string strThisWord in pstr.Split ( WizardWrx.SpecialCharacters.SPACE_CHAR ) )
+
+                return rsb.ToString ( );
+            }   // FALSE (anticipated outcome) block, if ( string.IsNullOrEmpty ( pstr ) )
+        }   // public static string CapitalizeWords
+        #endregion // CapitalizeWords methods
 
 
-		#region CountCharacterOccurrences Method
-		/// <summary>
-		/// Strangely, the String class is missing an important static method to
-		/// count occurrences of a specified character within a string. This is
-		/// that missing method.
-		/// </summary>
-		/// <param name="pstrSource">
-		/// Specify the string in which to count occurrences of substring 
-		/// pstrToCount.
-		///
-		/// If pstrSource is null or empty, the method returns zero.
-		/// 
-		/// Since this is an extension method, pstrIn is supplied by the BCL
-		/// when it binds this method to an instance of System.string.
-		/// </param>
-		/// <param name="pchrToCount">
-		/// Specify the substring to count in string pstrSource. An empty string
-		/// causes the method to return MagicNumbers.STRING_INDEXOF_NOT_FOUND,
-		/// or -1.
-		/// </param>
-		/// <returns>
-		/// The return value is the number of times, if any, that string
-		/// pstrToCount occurs in string pstrSource, or
-		/// MagicNumbers.STRING_INDEXOF_NOT_FOUND (-1) if pstrToCount is either
-		/// null reference or empty the empty string.
-		/// </returns>
-		/// <remarks>
-		/// This method implements the only overload of the string.IndexOf
-		/// method that takes a character as its second argument for which I
-		/// have yet to make use. There is currently no implementation of the
-		/// overload that stops looking after scanning count characters, nor do
-		/// I have immediate plans to implement one, though it wouldn't be hard.
-		/// 
-		/// This method uses the same algorithm as CountSubstrings, except that
-		/// its second argument is a single character, which CANNOT be the NULL
-		/// character.
-		/// </remarks>
-		public static int CountCharacterOccurrences (
-			this string pstrSource ,
-			char pchrToCount )
-		{
-			if ( string.IsNullOrEmpty ( pstrSource ) )
-			{   // Treat null strings as empty, and treat both as a valid, but degenerate, case.
-				return MagicNumbers.ZERO;
-			}	// if ( string.IsNullOrEmpty ( pstrSource ) )
-
-			if ( pchrToCount == SpecialCharacters.NULL_CHAR )
-			{   // This is an error. String pstrToCount should never be null or empty.
-				return MagicNumbers.STRING_INDEXOF_NOT_FOUND;
-			}	// if ( string.IsNullOrEmpty ( pstrToCount ) )
-
-			int rintCount = MagicNumbers.ZERO;
-
-			//	----------------------------------------------------------------
-			//	Unless pstrSource contains at least one instance of pstrToCount,
-			//	this first IndexOf is the only one that executes.
-			//
-			//	If there are no matches, intPos is STRING_INDEXOF_NOT_FOUND (-1)
-			//	and the WHILE loop is skipped. Hence, if control falls into the
-			//	loop, at least one item was found, and must be counted, and the
-			//	loop continues until intPos becomes STRING_INDEXOF_NOT_FOUND.
-			//	----------------------------------------------------------------
-
-			int intPos = pstrSource.IndexOf ( pchrToCount );					// Look for first instance.
-
-			while ( intPos != MagicNumbers.STRING_INDEXOF_NOT_FOUND )
-			{																	// Found at least one.
-				rintCount++;													// Count it.
-				intPos = pstrSource.IndexOf (
-					pchrToCount ,
-					( intPos + ArrayInfo.NEXT_INDEX ) );						// Search for more.
-			}	// while ( intPos != MagicNumbers.STRING_INDEXOF_NOT_FOUND )
-
-			return rintCount;													// Report.
-		}   // CountCharacterOccurrences
-		#endregion	// CountCharacterOccurrences Method
+        #region Chop Methods
+        /// <summary>
+        /// Return a new string with the terminal newline, if present, removed.
+        /// </summary>
+        /// <param name="pstrIn">
+        /// Specify the string to be chopped.
+        /// </param>
+        /// <returns>
+        /// The chopped string is returned, minus its newline if it contained
+        /// one. This method treats all newlines equally, meaning that any of
+        /// the following items is treated as a newline.
+        /// 
+        /// 1) Environment.Newline
+        /// 2) SpecialStrings.STRING_SPLIT_CARRIAGE_RETURN, a bare carriage return (0x0D)
+        /// 3) SpecialStrings.STRING_SPLIT_LINEFEED, a bare line feed (0x0A)
+        /// </returns>
+        /// <see cref="SpecialStrings.STRING_SPLIT_CARRIAGE_RETURN"/>
+        /// <see cref="SpecialStrings.STRING_SPLIT_LINEFEED "/>
+        /// <see cref="System.Environment.NewLine"/>
+        public static string Chop ( this string pstrIn )
+        {
+            if ( string.IsNullOrEmpty ( pstrIn ) )
+            {   // Since they get identical treatment, a null reference and the empty string collapse into a single degenerate case 1, of 2,
+                return pstrIn;
+            }
+            else if ( pstrIn.EndsWith ( Environment.NewLine ) )
+            {   // The string ends with a Windows Newline pair (CR/LF), case 1 of 3.
+                return pstrIn.Substring (
+                    WizardWrx.ArrayInfo.ARRAY_FIRST_ELEMENT ,
+                    pstrIn.Length - Environment.NewLine.Length );
+            }
+            else if ( pstrIn.EndsWith ( SpecialStrings.STRING_SPLIT_CARRIAGE_RETURN ) )
+            {   // The string ends with a Macintosh newline character (0x0d), case 2 of 3.
+                return pstrIn.Substring (
+                    WizardWrx.ArrayInfo.ARRAY_FIRST_ELEMENT ,
+                    pstrIn.Length - SpecialStrings.STRING_SPLIT_CARRIAGE_RETURN.Length );
+            }
+            else if ( pstrIn.EndsWith ( SpecialStrings.STRING_SPLIT_LINEFEED ) )
+            {   // The string ends with a Unix newline character (0x0a), case 3 of 3.
+                return pstrIn.Substring (
+                    WizardWrx.ArrayInfo.ARRAY_FIRST_ELEMENT ,
+                    pstrIn.Length - SpecialStrings.STRING_SPLIT_LINEFEED.Length );
+            }
+            else
+            {   // The last character is something else; return the string as is, degenerate case 2 of 2.
+                return pstrIn;
+            }
+        }   // Chop
+        #endregion // Chop Methods
 
 
-		#region CountSubstrings Methods
-		/// <summary>
+        #region CountCharacterOccurrences Method
+        /// <summary>
         /// Strangely, the String class is missing an important static method to
-		/// count substrings within a string. This is that missing method.
+        /// count occurrences of a specified character within a string. This is
+        /// that missing method.
         /// </summary>
         /// <param name="pstrSource">
         /// Specify the string in which to count occurrences of substring 
-		/// pstrToCount.
+        /// pstrToCount.
         ///
         /// If pstrSource is null or empty, the method returns zero.
-		/// 
-		/// Since this is an extension method, pstrIn is supplied by the BCL
-		/// when it binds this method to an instance of System.string.
-		/// </param>
-        /// <param name="pstrToCount">
+        /// 
+        /// Since this is an extension method, pstrIn is supplied by the BCL
+        /// when it binds this method to an instance of System.string.
+        /// </param>
+        /// <param name="pchrToCount">
         /// Specify the substring to count in string pstrSource. An empty string
-		/// causes the method to return MagicNumbers.STRING_INDEXOF_NOT_FOUND,
-		/// or -1.
+        /// causes the method to return MagicNumbers.STRING_INDEXOF_NOT_FOUND,
+        /// or -1.
         /// </param>
         /// <returns>
         /// The return value is the number of times, if any, that string
-		/// pstrToCount occurs in string pstrSource, or
-		/// MagicNumbers.STRING_INDEXOF_NOT_FOUND (-1) if pstrToCount is either
-		/// null reference or empty the empty string.
+        /// pstrToCount occurs in string pstrSource, or
+        /// MagicNumbers.STRING_INDEXOF_NOT_FOUND (-1) if pstrToCount is either
+        /// null reference or empty the empty string.
         /// </returns>
-		/// <remarks>
-		/// This method implements the only overloads of the string.IndexOf
-		/// method that takes a string as its second argument for which I
-		/// have yet to make use. There is currently no implementation of the
-		/// overloads that stops looking after scanning count characters, nor do
-		/// I have immediate plans to implement one, though it wouldn't be hard.
-		/// 
-		/// This method is implemented by calling the second overload, which has
-		/// an additional argument through which to specify a string comparison
-		/// algorithm, since the algorithms required to implement both are
-		/// otherwise identical.
-		/// </remarks>
-		public static int CountSubstrings (
+        /// <remarks>
+        /// This method implements the only overload of the string.IndexOf
+        /// method that takes a character as its second argument for which I
+        /// have yet to make use. There is currently no implementation of the
+        /// overload that stops looking after scanning count characters, nor do
+        /// I have immediate plans to implement one, though it wouldn't be hard.
+        /// 
+        /// This method uses the same algorithm as CountSubstrings, except that
+        /// its second argument is a single character, which CANNOT be the NULL
+        /// character.
+        /// </remarks>
+        public static int CountCharacterOccurrences (
+            this string pstrSource ,
+            char pchrToCount )
+        {
+            if ( string.IsNullOrEmpty ( pstrSource ) )
+            {   // Treat null strings as empty, and treat both as a valid, but degenerate, case.
+                return MagicNumbers.ZERO;
+            }   // if ( string.IsNullOrEmpty ( pstrSource ) )
+
+            if ( pchrToCount == SpecialCharacters.NULL_CHAR )
+            {   // This is an error. String pstrToCount should never be null or empty.
+                return MagicNumbers.STRING_INDEXOF_NOT_FOUND;
+            }   // if ( string.IsNullOrEmpty ( pstrToCount ) )
+
+            int rintCount = MagicNumbers.ZERO;
+
+            //	----------------------------------------------------------------
+            //	Unless pstrSource contains at least one instance of pstrToCount,
+            //	this first IndexOf is the only one that executes.
+            //
+            //	If there are no matches, intPos is STRING_INDEXOF_NOT_FOUND (-1)
+            //	and the WHILE loop is skipped. Hence, if control falls into the
+            //	loop, at least one item was found, and must be counted, and the
+            //	loop continues until intPos becomes STRING_INDEXOF_NOT_FOUND.
+            //	----------------------------------------------------------------
+
+            int intPos = pstrSource.IndexOf ( pchrToCount );                    // Look for first instance.
+
+            while ( intPos != MagicNumbers.STRING_INDEXOF_NOT_FOUND )
+            {                                                                   // Found at least one.
+                rintCount++;                                                    // Count it.
+                intPos = pstrSource.IndexOf (
+                    pchrToCount ,
+                    ( intPos + ArrayInfo.NEXT_INDEX ) );                        // Search for more.
+            }   // while ( intPos != MagicNumbers.STRING_INDEXOF_NOT_FOUND )
+
+            return rintCount;                                                   // Report.
+        }   // CountCharacterOccurrences
+        #endregion // CountCharacterOccurrences Method
+
+
+        #region CountSubstrings Methods
+        /// <summary>
+        /// Strangely, the String class is missing an important static method to
+        /// count substrings within a string. This is that missing method.
+        /// </summary>
+        /// <param name="pstrSource">
+        /// Specify the string in which to count occurrences of substring 
+        /// pstrToCount.
+        ///
+        /// If pstrSource is null or empty, the method returns zero.
+        /// 
+        /// Since this is an extension method, pstrIn is supplied by the BCL
+        /// when it binds this method to an instance of System.string.
+        /// </param>
+        /// <param name="pstrToCount">
+        /// Specify the substring to count in string pstrSource. An empty string
+        /// causes the method to return MagicNumbers.STRING_INDEXOF_NOT_FOUND,
+        /// or -1.
+        /// </param>
+        /// <returns>
+        /// The return value is the number of times, if any, that string
+        /// pstrToCount occurs in string pstrSource, or
+        /// MagicNumbers.STRING_INDEXOF_NOT_FOUND (-1) if pstrToCount is either
+        /// null reference or empty the empty string.
+        /// </returns>
+        /// <remarks>
+        /// This method implements the only overloads of the string.IndexOf
+        /// method that takes a string as its second argument for which I
+        /// have yet to make use. There is currently no implementation of the
+        /// overloads that stops looking after scanning count characters, nor do
+        /// I have immediate plans to implement one, though it wouldn't be hard.
+        /// 
+        /// This method is implemented by calling the second overload, which has
+        /// an additional argument through which to specify a string comparison
+        /// algorithm, since the algorithms required to implement both are
+        /// otherwise identical.
+        /// </remarks>
+        public static int CountSubstrings (
             this string pstrSource ,
             string pstrToCount )
         {
-			return pstrSource.CountSubstrings (
-				pstrToCount ,
-				StringComparison.CurrentCulture );
+            return pstrSource.CountSubstrings (
+                pstrToCount ,
+                StringComparison.CurrentCulture );
         }   // CountSubstrings (1 of 2)
 
 
@@ -521,145 +526,268 @@ namespace WizardWrx
             string pstrToCount ,
             StringComparison penmComparisonType )
         {
-			//  ----------------------------------------------------------------
-			//  Function to count no. of occurrences of Substring in Main string
-			//
-			//  Remarks:        This isn't anything I couldn't have easily
-			//  				written myself, but why, when it's both trivial
-			//  				and freely available?
-			//
-			//  				The code posted at the below reference called
-			//  				this function CharCount, and all the variables
-			//  				had different names.
-			//
-			//  				The example posted on the Web recycles input
-			//  				string pstrSource, which is bad form, for two
-			//  				reasons.
-			//
-			//  				1)  Inputs to functions should never be altered
-			//  					by the function code.
-			//
-			//  				2)  The input string could be very long, causing
-			//  					the code to consume gobs of extra memory to
-			//  					make a new copy of part of the string with
-			//  					each iteration. These unnecessary copies put
-			//  					an unnecessarily heavy load on the garbage
-			//  					collector.
-			//
-			//  				I rewrote it to use the fourth overload of the
-			//  				String.IndexOf method, which takes a reference
-			//  				to the original String and an Int32, which is
-			//  				the index of a point just past where the last
-			//  				substring was found.
-			//
-			//  				After testing, this function became a
-			//  				public static method of a core library.
-			//
-			//  References:     "String Jargon in CSharp," at
-			//  				http://www.csharphelp.com/archives/archive12.html
-			//
-			//  				"String.IndexOf Method (String, Int32)," at
-			//  				http://msdn.microsoft.com/en-us/library/7cct0x33(VS.80).aspx
-			//
-			//	References:     "String.IndexOf Method (String, Int32, StringComparison)," at
-			//					http://msdn.microsoft.com/en-us/library/ms224424(VS.80).aspx
-			//
-			//					"StringComparison Enumeration," at
-			//					http://msdn.microsoft.com/en-us/library/system.stringcomparison(VS.80).aspx
-			//	----------------------------------------------------------------
+            //  ----------------------------------------------------------------
+            //  Function to count no. of occurrences of Substring in Main string
+            //
+            //  Remarks:        This isn't anything I couldn't have easily
+            //  				written myself, but why, when it's both trivial
+            //  				and freely available?
+            //
+            //  				The code posted at the below reference called
+            //  				this function CharCount, and all the variables
+            //  				had different names.
+            //
+            //  				The example posted on the Web recycles input
+            //  				string pstrSource, which is bad form, for two
+            //  				reasons.
+            //
+            //  				1)  Inputs to functions should never be altered
+            //  					by the function code.
+            //
+            //  				2)  The input string could be very long, causing
+            //  					the code to consume gobs of extra memory to
+            //  					make a new copy of part of the string with
+            //  					each iteration. These unnecessary copies put
+            //  					an unnecessarily heavy load on the garbage
+            //  					collector.
+            //
+            //  				I rewrote it to use the fourth overload of the
+            //  				String.IndexOf method, which takes a reference
+            //  				to the original String and an Int32, which is
+            //  				the index of a point just past where the last
+            //  				substring was found.
+            //
+            //  				After testing, this function became a
+            //  				public static method of a core library.
+            //
+            //  References:     "String Jargon in CSharp," at
+            //  				http://www.csharphelp.com/archives/archive12.html
+            //
+            //  				"String.IndexOf Method (String, Int32)," at
+            //  				http://msdn.microsoft.com/en-us/library/7cct0x33(VS.80).aspx
+            //
+            //	References:     "String.IndexOf Method (String, Int32, StringComparison)," at
+            //					http://msdn.microsoft.com/en-us/library/ms224424(VS.80).aspx
+            //
+            //					"StringComparison Enumeration," at
+            //					http://msdn.microsoft.com/en-us/library/system.stringcomparison(VS.80).aspx
+            //	----------------------------------------------------------------
 
-			if ( string.IsNullOrEmpty ( pstrSource ) )
-			{   // Treat null strings as empty, and treat both as a valid, but degenerate, case.
-				return MagicNumbers.ZERO;
-			}	// if ( string.IsNullOrEmpty ( pstrSource ) )
+            if ( string.IsNullOrEmpty ( pstrSource ) )
+            {   // Treat null strings as empty, and treat both as a valid, but degenerate, case.
+                return MagicNumbers.ZERO;
+            }   // if ( string.IsNullOrEmpty ( pstrSource ) )
 
-			if ( string.IsNullOrEmpty ( pstrToCount ) )
-			{   // This is an error. String pstrToCount should never be null or empty.
-				return MagicNumbers.STRING_INDEXOF_NOT_FOUND;
-			}	// if ( string.IsNullOrEmpty ( pstrToCount ) )
+            if ( string.IsNullOrEmpty ( pstrToCount ) )
+            {   // This is an error. String pstrToCount should never be null or empty.
+                return MagicNumbers.STRING_INDEXOF_NOT_FOUND;
+            }   // if ( string.IsNullOrEmpty ( pstrToCount ) )
 
-			int rintCount = MagicNumbers.ZERO;
+            int rintCount = MagicNumbers.ZERO;
 
-			//	----------------------------------------------------------------
-			//	Unless pstrSource contains at least one instance of pstrToCount,
-			//	this first IndexOf is the only one that executes.
-			//
-			//	If there are no matches, intPos is STRING_INDEXOF_NOT_FOUND (-1)
-			//	and the WHILE loop is skipped. Hence, if control falls into the
-			//	loop, at least one item was found, and must be counted, and the
-			//	loop continues until intPos becomes STRING_INDEXOF_NOT_FOUND.
-			//	----------------------------------------------------------------
+            //	----------------------------------------------------------------
+            //	Unless pstrSource contains at least one instance of pstrToCount,
+            //	this first IndexOf is the only one that executes.
+            //
+            //	If there are no matches, intPos is STRING_INDEXOF_NOT_FOUND (-1)
+            //	and the WHILE loop is skipped. Hence, if control falls into the
+            //	loop, at least one item was found, and must be counted, and the
+            //	loop continues until intPos becomes STRING_INDEXOF_NOT_FOUND.
+            //	----------------------------------------------------------------
 
-			int intPos = pstrSource.IndexOf (
-				pstrToCount ,
-				penmComparisonType );											// Look for first instance.
+            int intPos = pstrSource.IndexOf (
+                pstrToCount ,
+                penmComparisonType );                                           // Look for first instance.
 
-			while ( intPos != MagicNumbers.STRING_INDEXOF_NOT_FOUND )
-            {																	// Found at least one.
-				rintCount++;													// Count it.
-				intPos = pstrSource.IndexOf (
-					pstrToCount ,
-					( intPos + ArrayInfo.NEXT_INDEX ) ,
-					penmComparisonType );										// Search for more.
-			}	// while ( intPos != MagicNumbers.STRING_INDEXOF_NOT_FOUND )
+            while ( intPos != MagicNumbers.STRING_INDEXOF_NOT_FOUND )
+            {                                                                   // Found at least one.
+                rintCount++;                                                    // Count it.
+                intPos = pstrSource.IndexOf (
+                    pstrToCount ,
+                    ( intPos + ArrayInfo.NEXT_INDEX ) ,
+                    penmComparisonType );                                       // Search for more.
+            }	// while ( intPos != MagicNumbers.STRING_INDEXOF_NOT_FOUND )
 
             return rintCount;													// Report.
         }   // CountSubstrings (2 of 2)
-		#endregion	// CountSubstrings Methods
+        #endregion // CountSubstrings Methods
 
 
-		/// <summary>
-		/// Scan a string for environment string delimiter characters left
-		/// behind by an environment string expansion.
-		/// </summary>
-		/// <param name="pstrInput">
-		/// Specify a string that has had its environment strings expanded.
-		/// </param>
-		/// <returns>
-		/// The return value is the count of remaining environment string
-		/// delimiters. Please see the remarks for additional information.
-		/// </returns>
-		/// <remarks>
-		/// There are two reasons that such delimiters might be left behind.
-		/// 
-		/// 1) The input string contains environment strings that have no like
-		/// named strings in the environment block that belongs to the process.
-		/// 
-		/// 2) The input string contains a malformed string that is missing one
-		/// of its delimiting tokens.
-		/// 
-		/// This routine wraps CountSubstrings, supplying the required token,
-		/// which is defined as public character constant in SpecialCharacters,
-		/// a sibling class. Since you could as well call that routine directly,
-		/// this routine is syntactic sugar.
-		/// </remarks>
-		/// <seealso cref="ReportUnresolvedEnvironmentStrings(string,uint,uint)"/>
-		public static int CountUnresolvedEnvironmentStrings ( this string pstrInput )
-		{
-			return pstrInput.CountCharacterOccurrences ( SpecialCharacters.ENV_STR_DLM );
-		}   // CountUnresolvedEnvironmentStrings
-
-
-		#region EncloseInChar Methods
-		/// <summary>
-		/// Append a specified character to both ends of a string, unless it is
-		/// already present.
-		/// </summary>
-		/// <param name="pstrIn">
-		/// Specify the string to evaluate, which may, or may not, end with the
-		/// character specified in pchrEnd.
+        #region EnumerateSubstringPositions Methods
+        /// <summary>
+        /// Return an array of integers, each a position of substring
+        /// <paramref name="pstrToCount"/> in string <paramref name="pstrSource"/>.
+        /// </summary>
+        /// <param name="pstrSource">
+        /// Specify the string in which to count occurrences of substring
+		/// pstrToCount.
+        ///
+        /// If pstrSource is null or empty, the method returns zero.
 		/// 
 		/// Since this is an extension method, pstrIn is supplied by the BCL
 		/// when it binds this method to an instance of System.string.
 		/// </param>
-		/// <param name="pchrEnd">
-		/// Specify the character to append, if absent.
+        /// <param name="pstrToCount">
+        /// Specify the substring to count in string pstrSource.
+		/// 
+		/// The empty string causes the method to return 
+		/// MagicNumbers.STRING_INDEXOF_NOT_FOUND, or -1.
+        /// </param>
+        /// <returns>
+        /// When the method succeeds, its return value is an array of integers,
+        /// each of which is the position of an occurrence of <paramref name="pstrToCount"/>
+        /// in <paramref name="pstrToCount"/>, following the search algorithm
+        /// dictated by StringComparison.CurrentCulture. When either of the two
+        /// string parameters is a null reference or the empty string, the
+        /// return value is NULL, for which callers must test. Since either
+        /// string could be empty or a null reference, in normal operations, it
+        /// seemed appropriate to treat such a case as routine, rather than
+        /// throwing an exception. Conversely, when both strings are valid, but
+        /// <paramref name="pstrToCount"/> never occurs in <paramref name="pstrSource"/>,
+        /// the return value is an empty array.
+        /// </returns>
+        public static int [ ] EnumerateSubstringPositions (
+            this string pstrSource ,
+            string pstrToCount )
+        {
+            return pstrSource.EnumerateSubstringPositions (
+                pstrToCount ,
+                StringComparison.CurrentCulture );
+        }   // public static int [ ] EnumerateSubstringPosition (1 of 2)
+
+
+        /// <summary>
+        /// Return an array of integers, each a position of substring
+        /// <paramref name="pstrToCount"/> in string <paramref name="pstrSource"/>.
+        /// </summary>
+        /// <param name="pstrSource">
+        /// Specify the string in which to count occurrences of substring
+		/// pstrToCount.
+        ///
+        /// If pstrSource is null or empty, the method returns zero.
+		/// 
+		/// Since this is an extension method, pstrIn is supplied by the BCL
+		/// when it binds this method to an instance of System.string.
 		/// </param>
-		/// <returns>
-		/// The return value is a new string that is guaranteed to have exactly
-		/// one of the character specified in pchrEnd at each end.
-		/// </returns>
-		public static string EncloseInChar (
+        /// <param name="pstrToCount">
+        /// Specify the substring to count in string pstrSource.
+		/// 
+		/// The empty string causes the method to return 
+		/// MagicNumbers.STRING_INDEXOF_NOT_FOUND, or -1.
+        /// </param>
+        /// <param name="penmComparisonType">
+        /// Specify a member of the System.StringComparison enumeration, which
+		/// defines the rules for performing the comparison.
+        /// </param>
+        /// <returns>
+        /// When the method succeeds, its return value is an array of integers,
+        /// each of which is the position of an occurrence of <paramref name="pstrToCount"/>
+        /// in <paramref name="pstrToCount"/>, following the search algorithm
+        /// dictated by <paramref name="penmComparisonType"/>. When either of
+        /// the two string parameters is a null reference or the empty string,
+        /// the return value is NULL, for which callers must test. Since either
+        /// string could be empty or a null reference, in normal operations, it
+        /// seemed appropriate to treat such a case as routine, rather than
+        /// throwing an exception. Conversely, when both strings are valid, but
+        /// <paramref name="pstrToCount"/> never occurs in <paramref name="pstrSource"/>,
+        /// the return value is an empty array.
+        /// </returns>
+        public static int [ ] EnumerateSubstringPositions ( 
+            this string pstrSource , 
+            string pstrToCount , 
+            StringComparison penmComparisonType )
+        {
+            if ( string.IsNullOrEmpty ( pstrSource ) )
+            {   // Treat null strings as empty, and treat both as a valid, but degenerate, case.
+                return null;
+            }   // if ( string.IsNullOrEmpty ( pstrSource ) )
+
+            if ( string.IsNullOrEmpty ( pstrToCount ) )
+            {   // This is an error. String pstrToCount should never be null or empty.
+                return null;
+            }   // if ( string.IsNullOrEmpty ( pstrToCount ) )
+
+            int intPos = pstrSource.IndexOf (
+                pstrToCount ,
+                penmComparisonType );                                           // Look for first instance.
+
+            if ( intPos > MagicNumbers.STRING_INDEXOF_NOT_FOUND )
+            {
+                List<int> lstSubstringPositions = new List<int> ( );
+
+                while ( intPos != MagicNumbers.STRING_INDEXOF_NOT_FOUND )
+                {                                                               // Found at least one.
+                    lstSubstringPositions.Add ( intPos );                       // Add the one just found to the list.
+                    intPos = pstrSource.IndexOf (
+                        pstrToCount ,
+                        ( intPos + ArrayInfo.NEXT_INDEX ) ,
+                        penmComparisonType );                                   // Search for more.
+                }	// while ( intPos != MagicNumbers.STRING_INDEXOF_NOT_FOUND )
+
+                return lstSubstringPositions.ToArray ( );
+            }   // TRUE (anticipated outcome) block, if ( intPos > MagicNumbers.STRING_INDEXOF_NOT_FOUND )
+            else
+            {
+                return new int [ MagicNumbers.ZERO ];
+            }   // FALSE (unanticipated outcome) block, if ( intPos > MagicNumbers.STRING_INDEXOF_NOT_FOUND )
+        }   // public static int [ ] EnumerateSubstringPosition (2 of 2)
+        #endregion  // EnumerateSubstringPositions Methods
+
+
+        #region CountUnresolvedEnvironmentStrings Methods
+        /// <summary>
+        /// Scan a string for environment string delimiter characters left
+        /// behind by an environment string expansion.
+        /// </summary>
+        /// <param name="pstrInput">
+        /// Specify a string that has had its environment strings expanded.
+        /// </param>
+        /// <returns>
+        /// The return value is the count of remaining environment string
+        /// delimiters. Please see the remarks for additional information.
+        /// </returns>
+        /// <remarks>
+        /// There are two reasons that such delimiters might be left behind.
+        /// 
+        /// 1) The input string contains environment strings that have no like
+        /// named strings in the environment block that belongs to the process.
+        /// 
+        /// 2) The input string contains a malformed string that is missing one
+        /// of its delimiting tokens.
+        /// 
+        /// This routine wraps CountSubstrings, supplying the required token,
+        /// which is defined as public character constant in SpecialCharacters,
+        /// a sibling class. Since you could as well call that routine directly,
+        /// this routine is syntactic sugar.
+        /// </remarks>
+        /// <seealso cref="ReportUnresolvedEnvironmentStrings(string,uint,uint)"/>
+        public static int CountUnresolvedEnvironmentStrings ( this string pstrInput )
+		{
+			return pstrInput.CountCharacterOccurrences ( SpecialCharacters.ENV_STR_DLM );
+		}   // CountUnresolvedEnvironmentStrings
+        #endregion  // CountUnresolvedEnvironmentStrings Methods
+
+
+        #region EncloseInChar Methods
+        /// <summary>
+        /// Append a specified character to both ends of a string, unless it is
+        /// already present.
+        /// </summary>
+        /// <param name="pstrIn">
+        /// Specify the string to evaluate, which may, or may not, end with the
+        /// character specified in pchrEnd.
+        /// 
+        /// Since this is an extension method, pstrIn is supplied by the BCL
+        /// when it binds this method to an instance of System.string.
+        /// </param>
+        /// <param name="pchrEnd">
+        /// Specify the character to append, if absent.
+        /// </param>
+        /// <returns>
+        /// The return value is a new string that is guaranteed to have exactly
+        /// one of the character specified in pchrEnd at each end.
+        /// </returns>
+        public static string EncloseInChar (
 			this string pstrIn ,
 			char pchrEnd )
 		{
@@ -1513,7 +1641,7 @@ namespace WizardWrx
 		{
 			if ( pgenericObject == null )
 			{
-				return pstrValueIfNull ?? Common.Properties.Resources.MSG_OBJECT_REFERENCE_IS_NULL;
+				return pstrValueIfNull ?? Resources.MSG_OBJECT_REFERENCE_IS_NULL;
 			}   // TRUE (degenerate case) block, if ( pgenericObject == null )
 			else
 			{
@@ -1531,25 +1659,40 @@ namespace WizardWrx
 		}   // RenderEvenWhenNull
 
 
-		#region ReplaceTokensFromList Methods
-		/// <summary>
-		/// Given a string containing tokens of the form "^^ListKeyValue^^"
-		/// where ListKeyValue is the value of a key in the pnvcList collection,
-		/// which may or may not exist in the collection, replace all such
-		/// tokens with the contents of the like named value in the collection.
-		/// </summary>
-		/// <param name="pstrMsg">
-		/// String containing the message containing the substitution tokens.
-		/// </param>
-		/// <param name="pnvcList">
-		/// A NameValueCollection, in which each key represents a token, and its
-		/// value represents the value to be substituted for it.
-		/// </param>
-		/// <returns>
-		/// String with tokens replaced, and tokens that have no corresponding
-		/// object in the pnvcList collection preserved.
-		/// </returns>
-		public static string ReplaceTokensFromList (
+        #region ReplaceEscapedTabsInStringFromResX Method
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pstrStringFromResX"></param>
+        /// <returns></returns>
+        public static string ReplaceEscapedTabsInStringFromResX ( this string pstrStringFromResX )
+        {
+            return pstrStringFromResX.Replace (
+                ReportHelpers.EMBEDDED_TAB ,
+                SpecialStrings.TAB_CHAR );
+        }   // public static string ReplaceEscapedTabsInStringFromResX
+        #endregion  // ReplaceEscapedTabsInStringFromResX method
+
+
+        #region ReplaceTokensFromList Methods
+        /// <summary>
+        /// Given a string containing tokens of the form "^^ListKeyValue^^"
+        /// where ListKeyValue is the value of a key in the pnvcList collection,
+        /// which may or may not exist in the collection, replace all such
+        /// tokens with the contents of the like named value in the collection.
+        /// </summary>
+        /// <param name="pstrMsg">
+        /// String containing the message containing the substitution tokens.
+        /// </param>
+        /// <param name="pnvcList">
+        /// A NameValueCollection, in which each key represents a token, and its
+        /// value represents the value to be substituted for it.
+        /// </param>
+        /// <returns>
+        /// String with tokens replaced, and tokens that have no corresponding
+        /// object in the pnvcList collection preserved.
+        /// </returns>
+        public static string ReplaceTokensFromList (
 			this string pstrMsg ,
 			NameValueCollection pnvcList )
 		{

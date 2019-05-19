@@ -1,0 +1,10 @@
+id: WizardWrx.ConsoleStreams
+language: CSharp
+name:
+  Default: WizardWrx.ConsoleStreams
+qualifiedName:
+  Default: WizardWrx.ConsoleStreams
+type: Assembly
+modifiers: {}
+items: []
+references: {}

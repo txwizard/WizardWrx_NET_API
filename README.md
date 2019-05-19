@@ -1,5 +1,38 @@
 # WizardWrx .NET API ReadMe
 
+The notes in this file are a continuously updated story of major changes in the
+libraries that comprise the __WizardWrx .NET API__. A companion document,
+`ChangeLog.md`, gives a much more thorough accounting of the improvements and
+bug fixes incorporated in each release.
+
+## Release Notes, 2019/05/19
+
+The updates in this release revolve around two features in the core library,
+`WizardWrx.Core.dll`, the only library that has any code changes.  The main
+improvement is a new extension method for `FileInfo` objects, `ShowFileDetails`,
+which returns a formatted string containing selected details about the file
+associated with the `System.IO.FileInfo` object to which it is applied. The
+method affords significant leeway to add or omit properties, and the single
+format string upon which it is based is stored in the library string resources.
+
+Although `WizardWrx.Common.dll` is updated, the code is unchanged, since the
+only change to the source code is a correction in one of the XML comments from
+which the DocFX documentation pages are generated.
+
+Beginning with this update, the accompanying NuGet packages include companion
+symbol (program data base, or `.pdb`) files, so that you can effortlessly step
+into them in a debugger. As of this release, only the two most regularly
+updated libraries include the symbol files. Others will get them as occasions
+arise to perform other updates that merit generating new NuGet packages.
+
+With this release, the two most actively updated libraries, `WizardWrx.Core.dll`
+and `WizardWrx.Common.dll`, automatically update their respective NuGet packages
+when a new release build is created. Other libraries will eventually get the
+same treatment, but these two went first, because I needed to update them and
+immediately pull both into another project, and they receive by far the most
+frequent updates. At present, these are the only two projects that have NuGet
+package generation and publication built into their `.csproj` files.
+
 ## Release Notes, 2019/05/05
 
 The updates in this release revolve around a new method to apply pairs of
