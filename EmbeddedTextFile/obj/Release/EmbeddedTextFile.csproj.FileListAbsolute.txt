@@ -8,12 +8,11 @@ F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedT
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\bin\Release\WizardWrx.BitMath.dll
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\bin\Release\WizardWrx.Common.dll
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\bin\Release\WizardWrx.Core.dll
-F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\bin\Release\WizardWrx.Core.pdb
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\bin\Release\WizardWrx.FormatStringEngine.dll
-F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\obj\Release\EmbeddedTextFile.csprojAssemblyReference.cache
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\obj\Release\WizardWrx.EmbeddedTextFile.Properties.Resources.resources
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\obj\Release\EmbeddedTextFile.csproj.GenerateResource.cache
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\obj\Release\EmbeddedTextFile.csproj.CoreCompileInputs.cache
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\obj\Release\EmbeddedTextFile.csproj.CopyComplete
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\obj\Release\WizardWrx.EmbeddedTextFile.dll
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\obj\Release\WizardWrx.EmbeddedTextFile.pdb
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\obj\Release\EmbeddedTextFile.csprojAssemblyReference.cache

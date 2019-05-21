@@ -10,12 +10,14 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>This is the first release of this established, very stable, library as a NuGet package.</releaseNotes>
+	    <releaseNotes>This minor update of an established, very stable, library adds the assembly version reported by Reflection, and documents both version strings.</releaseNotes>
     	<copyright>$copyright$</copyright>
     	<tags>Assemblies Dependenciess Resources Enumerators</tags>
 	</metadata>
 	<files>
    		<file src="readme.md" target="" />
    		<file src="readme.txt" target="" />
+   		<file src="bin\$configuration$\$id$.pdb" target="lib" />
+   		<file src="bin\$configuration$\$id$.xml" target="lib" />
 	</files>
 </package>

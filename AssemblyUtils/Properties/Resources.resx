@@ -190,7 +190,7 @@
     <comment>Used by ReportGenerators.ShowKeyAssemblyProperties Method</comment>
   </data>
   <data name="MSG_ASM_PROPS_VERSIONSTRING" xml:space="preserve">
-    <value>    VersionString        = {0}</value>
+    <value>    VersionString        = {0} (per System.Diagnostics.FileVersionInfo.GetVersionInfo)</value>
     <comment>Used by ReportGenerators.ShowKeyAssemblyProperties Method</comment>
   </data>
   <data name="MSG_ASM_DEPENDENTS_DETAILS_HEAD" xml:space="preserve">
@@ -362,5 +362,9 @@
   </data>
   <data name="MSG_RESOURCE_LIST_NO_STRINGS" xml:space="preserve">
     <value>The speicifed assembly contains no embedded strings resources.</value>
+  </data>
+  <data name="MSG_ASM_PROPS_ASSEMBLYVERSION" xml:space="preserve">
+    <value>    AssemblyVersion      = {0} (per AssemblyName.GetAssemblyName)</value>
+    <comment>Used by ReportGenerators.ShowKeyAssemblyProperties Method</comment>
   </data>
 </root>

@@ -19,7 +19,7 @@ namespace WizardWrx.AssemblyUtils.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -129,6 +129,15 @@ namespace WizardWrx.AssemblyUtils.Properties {
         internal static string MSG_ASM_PROPS_ASSEMBLYGUIDSTRING {
             get {
                 return ResourceManager.GetString("MSG_ASM_PROPS_ASSEMBLYGUIDSTRING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to     AssemblyVersion      = {0} (per AssemblyName.GetAssemblyName).
+        /// </summary>
+        internal static string MSG_ASM_PROPS_ASSEMBLYVERSION {
+            get {
+                return ResourceManager.GetString("MSG_ASM_PROPS_ASSEMBLYVERSION", resourceCulture);
             }
         }
         
@@ -259,7 +268,7 @@ namespace WizardWrx.AssemblyUtils.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to     VersionString        = {0}.
+        ///   Looks up a localized string similar to     VersionString        = {0} (per System.Diagnostics.FileVersionInfo.GetVersionInfo).
         /// </summary>
         internal static string MSG_ASM_PROPS_VERSIONSTRING {
             get {

@@ -32,7 +32,7 @@ The easiest way to incorporate the library into your own code is by installing t
 
 ## Revision History
 
-This file is being released a few days after version 7.15 of the WizardWrx .NET
+This file is being released with version 7.17 of the WizardWrx .NET
 API, of which it is a component. To track changes, please see
 [https://github.com/txwizard/WizardWrx_NET_API/blob/master/ChangeLog.md](https://github.com/txwizard/WizardWrx_NET_API/blob/master/ChangeLog.md),
 which reports changes by namespace and class for each release.

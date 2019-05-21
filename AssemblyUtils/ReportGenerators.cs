@@ -14,7 +14,7 @@
 						to a single assembly. It was moved into this library, to
 						simplify processing an assembly and its dependents.
 
-	License:            Copyright (C) 2017, David A. Gray.
+	License:            Copyright (C) 2017-2019, David A. Gray.
 						All rights reserved.
 
                         Redistribution and use in source and binary forms, with
@@ -57,9 +57,14 @@
     Date       Version Author Synopsis
     ---------- ------- ------ --------------------------------------------------
     2017/03/28 7.0     DAG    This class makes its first appearance.
+
 	2017/07/16 7.0     DAG    Replace references to string.empty, which is not a
                               true constant, with SpecialStrings.EMPTY_STRING,
                               which is one.
+
+	2017/07/16 7.17    DAG    Add the AssemblyVersion, and document the
+                              provenance of both reported version strings, which
+                              may, and usually do, differ.
     ============================================================================
 */
 
@@ -248,6 +253,7 @@ namespace WizardWrx.AssemblyUtils
 
 			Console.WriteLine ( Properties.Resources.MSG_ASM_PROPS_ASSEMBLYFILEBASENAME , Path.GetFileNameWithoutExtension ( pasmSubject.Location ) );
 			Console.WriteLine ( Properties.Resources.MSG_ASM_PROPS_VERSIONSTRING , myVersionInfo.FileVersion );
+            Console.WriteLine ( Properties.Resources.MSG_ASM_PROPS_ASSEMBLYVERSION , MyNameIs.Version );
 			Console.WriteLine ( Properties.Resources.MSG_ASM_PROPS_CULTURE , MyNameIs.CultureInfo.DisplayName );
 			Console.WriteLine ( Properties.Resources.MSG_ASM_PROPS_PUBLICKEYTOKEN , ByteArrayFormatters.ByteArrayToHexDigitString ( MyNameIs.GetPublicKeyToken ( ) ) );
 

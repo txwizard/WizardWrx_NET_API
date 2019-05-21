@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>This release adds a NewFileInfo extension method, ShowFileDetails, that returns a string containing selected file properties, and a custom ToString method to the StringFixups class, which causes its properties to display in a watch window.</releaseNotes>
+	    <releaseNotes>This release adds a new FileInfo extension method, ShowFileDetails, that returns a string containing selected file properties, and a custom ToString method to the StringFixups class, which causes its properties to display in a watch window. Finally, build 160 corrects an error that caused the dependency chain to be dropped.</releaseNotes>
     	<copyright>$copyright$</copyright>
     	<tags>Constants Arrays RegExp FileInfo and String extensions Optimized Singleton</tags>
 	</metadata>

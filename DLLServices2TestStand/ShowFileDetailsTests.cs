@@ -64,8 +64,10 @@
 */
 
 using System;
+
+using System.IO;
+
 using WizardWrx;
-using WizardWrx.Core;
 
 namespace DLLServices2TestStand
 {
@@ -87,6 +89,10 @@ namespace DLLServices2TestStand
 
         internal static int Exercise ( ref int pintTestNumber )
         {
+            const string TEST_REPORT_PREAMBLE = @"{2}Testing ShowFileDetails extension method with FileDetailsToShow = {0} ({1}):";
+            const string TEST_REPORT_TEMPLATE_ABS = @"    Case {0}: Information gathered based on absolute file name:    ";
+            const string TEST_REPORT_TEMPLATE_REL = @"    Case {0}: Information gathered based on relative file name:    ";
+
             NewClassTests_20140914.BeginTest (
                 System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,
                 ref pintTestNumber ,
@@ -94,7 +100,7 @@ namespace DLLServices2TestStand
 
             string strRootAssemblyDirectory = Program.s_smTheApp.AppRootAssemblyFileDirName;
             string strRelativeFileName = @"..\..\..\Test_Data\MD5_File_Digests.DOCX";
-            string strAbsoluteFileName = System.IO.Path.Combine ( strRootAssemblyDirectory , strRelativeFileName );
+            string strAbsoluteFileName = Path.Combine ( strRootAssemblyDirectory , strRelativeFileName );
 
             Console.WriteLine ( @"strRootAssemblyDirectory = {0}" , strRootAssemblyDirectory );
             Console.WriteLine ( @"strRelativeFileName      = {0}" , strRelativeFileName );
@@ -104,21 +110,32 @@ namespace DLLServices2TestStand
                       intJ < s_aenmDetailsToShow.Length ;
                       intJ++ )
             {
-                System.IO.FileInfo infoAbsolute = new System.IO.FileInfo ( strAbsoluteFileName );
+                FileInfo infoAbsolute1 = new FileInfo ( strAbsoluteFileName );
+                FileInfo infoAbsolute2 = new FileInfo ( infoAbsolute1.FullName );
 
                 Console.WriteLine (
-                    @"{2}Testing ShowFileDetails extension method with FileDetailsToShow = {0} ({1}):{2}" ,
-                    ( int ) s_aenmDetailsToShow [ intJ ] ,
-                    s_aenmDetailsToShow [ intJ ] ,
-                    Environment.NewLine );
+                    TEST_REPORT_PREAMBLE ,                                      // Format Control String with 4 tokens
+                    ( int ) s_aenmDetailsToShow [ intJ ] ,                      // Format Item 0: FileDetailsToShow = {0} (
+                    s_aenmDetailsToShow [ intJ ] ,                              // Format Item 1: ({1}):
+                    intJ == ArrayInfo.ARRAY_FIRST_ELEMENT                       // Format Item 2: {2}Testing ShowFileDetails
+                        ? Environment.NewLine                                       // First iteration
+                        : SpecialStrings.EMPTY_STRING );                            // Subsequent iterations
                 Console.WriteLine (
-                    infoAbsolute.ShowFileDetails (
-                        s_aenmDetailsToShow [ intJ ] ,
-                        string.Format (
-                            @"    Case {0}: Information gathered based on absolute file name:    " ,
-                            ArrayInfo.OrdinalFromIndex ( intJ ) ) ,
-                        true ,
-                        true ) );
+                    infoAbsolute1.ShowFileDetails (
+                        s_aenmDetailsToShow [ intJ ] ,                          // FileDetailsToShow penmFileDetailsToShow = FileDetailsToShow.Everything
+                        string.Format (                                         // string pstrLabel = null
+                            TEST_REPORT_TEMPLATE_REL ,                              // Format Control String with 1 token
+                            ArrayInfo.OrdinalFromIndex ( intJ ) ) ,                 // Format Item 0: Case {0}: Information
+                        true ,                                                  // bool pfPrefixWithNewline = false
+                        true ) );                                               // bool pfSuffixWithNewline = false
+                Console.WriteLine (
+                    infoAbsolute1.ShowFileDetails (
+                        s_aenmDetailsToShow [ intJ ] ,                          // FileDetailsToShow penmFileDetailsToShow = FileDetailsToShow.Everything
+                        string.Format (                                         // string pstrLabel = null
+                            TEST_REPORT_TEMPLATE_ABS ,                              // Format Control String with 1 token
+                            ArrayInfo.OrdinalFromIndex ( intJ ) ) ,                 // Format Item 0: Case {0}: Information
+                        false ,                                                 // bool pfPrefixWithNewline = false
+                        true ) );                                               // bool pfSuffixWithNewline = false
             }   // for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ; intJ < s_aenmDetailsToShow.Length ; intJ++ )
 
             return NewClassTests_20140914.TestDone (

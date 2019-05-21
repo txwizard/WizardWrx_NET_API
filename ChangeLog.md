@@ -14,6 +14,13 @@ immediately pull both into another project, and they receive by far the most
 frequent updates. At present, these are the only two projects that have NuGet
 package generation and publication built into their `.csproj` files.
 
+## Class WizardWrx.AssemblyUtils.ReportGenerators (defined in WizardWrx.AssemblyUtils.dll)
+
+Since its inception, this class has always listed the file version reported by
+the FileVersion object in the System.Diagnostics namespace. Beginning with this
+version, the assembly version reported by the Assembly class in the
+System.Reflection namespace is also given, and each is labeled with its source.
+
 ## Class WizardWrx.StringFixups (defined in WizardWrx.Core.dll)
 
 Override the default `ToString` method, so that it returns a formatted string

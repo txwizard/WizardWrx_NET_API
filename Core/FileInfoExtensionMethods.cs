@@ -77,7 +77,7 @@
 	2018/09/06 7.0     DAG    Add this headnote, which I discovered was missing
 	                          when I rewrote the ReadMe file.
 
-    2019/05/17 7.17    DAG    ShowFileDetails is a new method that returns a
+    2019/05/20 7.17    DAG    ShowFileDetails is a new method that returns a
                               string containing a formatted report of properties
                               suitable for display on a report.
     ============================================================================

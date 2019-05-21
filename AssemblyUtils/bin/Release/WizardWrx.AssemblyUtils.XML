@@ -822,6 +822,11 @@
               Looks up a localized string similar to     AssemblyGuidString   = {0}.
             </summary>
         </member>
+        <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.MSG_ASM_PROPS_ASSEMBLYVERSION">
+            <summary>
+              Looks up a localized string similar to     AssemblyVersion      = {0} (per AssemblyName.GetAssemblyName).
+            </summary>
+        </member>
         <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.MSG_ASM_PROPS_ASSEMBYDIRNAME">
             <summary>
               Looks up a localized string similar to     AssembyDirName       = {0}.
@@ -894,7 +899,7 @@
         </member>
         <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.MSG_ASM_PROPS_VERSIONSTRING">
             <summary>
-              Looks up a localized string similar to     VersionString        = {0}.
+              Looks up a localized string similar to     VersionString        = {0} (per System.Diagnostics.FileVersionInfo.GetVersionInfo).
             </summary>
         </member>
         <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.MSG_GETSUBSYST_FILE_NOT_FOUND">

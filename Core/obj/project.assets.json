@@ -20,7 +20,16 @@
           "lib/net20/WizardWrx.ASCIIInfo.dll": {}
         }
       },
-      "WizardWrx.Common/7.17.106.42367": {
+      "WizardWrx.BitMath/4.3.125.29248": {
+        "type": "package",
+        "compile": {
+          "lib/net20/WizardWrx.BitMath.dll": {}
+        },
+        "runtime": {
+          "lib/net20/WizardWrx.BitMath.dll": {}
+        }
+      },
+      "WizardWrx.Common/7.17.112.23443": {
         "type": "package",
         "compile": {
           "lib/net20/WizardWrx.Common.dll": {}
@@ -63,7 +72,16 @@
           "lib/net20/WizardWrx.ASCIIInfo.dll": {}
         }
       },
-      "WizardWrx.Common/7.17.106.42367": {
+      "WizardWrx.BitMath/4.3.125.29248": {
+        "type": "package",
+        "compile": {
+          "lib/net20/WizardWrx.BitMath.dll": {}
+        },
+        "runtime": {
+          "lib/net20/WizardWrx.BitMath.dll": {}
+        }
+      },
+      "WizardWrx.Common/7.17.112.23443": {
         "type": "package",
         "compile": {
           "lib/net20/WizardWrx.Common.dll": {}
@@ -106,7 +124,16 @@
           "lib/net20/WizardWrx.ASCIIInfo.dll": {}
         }
       },
-      "WizardWrx.Common/7.17.106.42367": {
+      "WizardWrx.BitMath/4.3.125.29248": {
+        "type": "package",
+        "compile": {
+          "lib/net20/WizardWrx.BitMath.dll": {}
+        },
+        "runtime": {
+          "lib/net20/WizardWrx.BitMath.dll": {}
+        }
+      },
+      "WizardWrx.Common/7.17.112.23443": {
         "type": "package",
         "compile": {
           "lib/net20/WizardWrx.Common.dll": {}
@@ -149,7 +176,16 @@
           "lib/net20/WizardWrx.ASCIIInfo.dll": {}
         }
       },
-      "WizardWrx.Common/7.17.106.42367": {
+      "WizardWrx.BitMath/4.3.125.29248": {
+        "type": "package",
+        "compile": {
+          "lib/net20/WizardWrx.BitMath.dll": {}
+        },
+        "runtime": {
+          "lib/net20/WizardWrx.BitMath.dll": {}
+        }
+      },
+      "WizardWrx.Common/7.17.112.23443": {
         "type": "package",
         "compile": {
           "lib/net20/WizardWrx.Common.dll": {}
@@ -203,10 +239,23 @@
         "wizardwrx.asciiinfo.nuspec"
       ]
     },
-    "WizardWrx.Common/7.17.106.42367": {
-      "sha512": "EclGPZdGEk1fdLzSdfdEgB/Q2DiY3WYL+ViXsn+jR1ySsy5IBVDtwvypwrZW6gCDULMu2ZwNf2CND3XEQ0zpcw==",
+    "WizardWrx.BitMath/4.3.125.29248": {
+      "sha512": "P1iTbj4GIpKTqDazi14fNj5gICOpOFhGaknCOk8wL0JEv5dEjm+5zWwTGvYucBZ8HtOWOnXxEH/ijs8fb82KyQ==",
       "type": "package",
-      "path": "wizardwrx.common/7.17.106.42367",
+      "path": "wizardwrx.bitmath/4.3.125.29248",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net20/WizardWrx.BitMath.XML",
+        "lib/net20/WizardWrx.BitMath.dll",
+        "wizardwrx.bitmath.4.3.125.29248.nupkg.sha512",
+        "wizardwrx.bitmath.nuspec"
+      ]
+    },
+    "WizardWrx.Common/7.17.112.23443": {
+      "sha512": "AMFsnBnacuDmLvUodPP/oPooknjJJDUZw00KxibUGVoRFS4160HwtstUhkwAKhVgBhCKN3rvYxndDwRt1yW98g==",
+      "type": "package",
+      "path": "wizardwrx.common/7.17.112.23443",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -216,7 +265,7 @@
         "lib/Wizardwrx.Common.XML",
         "lib/net20/WizardWrx.Common.dll",
         "lib/net20/Wizardwrx.Common.XML",
-        "wizardwrx.common.7.17.106.42367.nupkg.sha512",
+        "wizardwrx.common.7.17.112.23443.nupkg.sha512",
         "wizardwrx.common.nuspec"
       ]
     },
@@ -238,7 +287,8 @@
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v3.5,Profile=Client": [
-      "WizardWrx.Common >= 7.17.106.42367",
+      "WizardWrx.BitMath >= 4.3.125.29248",
+      "WizardWrx.Common >= 7.17.112.23443",
       "WizardWrx.FormatStringEngine >= 7.15.162.826"
     ]
   },
@@ -275,9 +325,13 @@
     "frameworks": {
       "net35-client": {
         "dependencies": {
+          "WizardWrx.BitMath": {
+            "target": "Package",
+            "version": "[4.3.125.29248, )"
+          },
           "WizardWrx.Common": {
             "target": "Package",
-            "version": "[7.17.106.42367, )"
+            "version": "[7.17.112.23443, )"
           },
           "WizardWrx.FormatStringEngine": {
             "target": "Package",
