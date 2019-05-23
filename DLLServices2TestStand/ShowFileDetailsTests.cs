@@ -60,6 +60,15 @@
     Date       Version Author Description
     ---------- ------- ------ --------------------------------------------------
     2019/05/16 7.17    DAG    Initial implementation.
+
+    2019/05/22 7.18    DAG    The first real application of ShowFileDetails
+                              exposed a couple of cases that got overlooked
+                              during preliminary testing, which was rushed into
+                              production to meet the very pressing need that
+                              eventually exposed the bugs, along with a minor
+                              performance optimization for applications that
+                              call it more than once. In addition, it exposed a
+                              small performance optimization in this class.
 	============================================================================
 */
 
@@ -82,6 +91,7 @@ namespace DLLServices2TestStand
             FileInfoExtensionMethods.FileDetailsToShow.UtcTime ,
             FileInfoExtensionMethods.FileDetailsToShow.AllTimes ,
             FileInfoExtensionMethods.FileDetailsToShow.AllTimesWithUtc ,
+            FileInfoExtensionMethods.FileDetailsToShow.Size ,
             FileInfoExtensionMethods.FileDetailsToShow.Attributes ,
             FileInfoExtensionMethods.FileDetailsToShow.Everything
         };  // static readonly FileInfoExtensionMethods.FileDetailsToShow [ ] s_aenmDetailsToShow
@@ -106,13 +116,18 @@ namespace DLLServices2TestStand
             Console.WriteLine ( @"strRelativeFileName      = {0}" , strRelativeFileName );
             Console.WriteLine ( @"strAbsoluteFileName      = {0}" , strAbsoluteFileName );
 
+            //  ----------------------------------------------------------------
+            //  Since everything uses the same two FileInfo objects, they may as
+            //  well be hoisted above the For loop.
+            //  ----------------------------------------------------------------
+
+            FileInfo infoAbsolute1 = new FileInfo ( strAbsoluteFileName );
+            FileInfo infoAbsolute2 = new FileInfo ( infoAbsolute1.FullName );
+
             for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ; 
                       intJ < s_aenmDetailsToShow.Length ;
                       intJ++ )
             {
-                FileInfo infoAbsolute1 = new FileInfo ( strAbsoluteFileName );
-                FileInfo infoAbsolute2 = new FileInfo ( infoAbsolute1.FullName );
-
                 Console.WriteLine (
                     TEST_REPORT_PREAMBLE ,                                      // Format Control String with 4 tokens
                     ( int ) s_aenmDetailsToShow [ intJ ] ,                      // Format Item 0: FileDetailsToShow = {0} (

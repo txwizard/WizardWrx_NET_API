@@ -4,6 +4,14 @@ This file is a running history of fixes and improvements from version 7.0
 onwards. Changes are documented for the newest version first. Within each
 version, classes are covered in alphabetical order.
 
+# Version 7.18
+
+Version 7.18 is a maintenance release, which affects only one library,
+`WizardWrx.Core.dll`, which got rushed into production without sufficient
+testing. This release got the substantially more careful testing that I prefer
+to give to everything. The companion NuGet package went out when I built the
+release configuration of the whole library set.
+
 # Version 7.17
 
 With this release, the two most actively updated libraries, `WizardWrx.Core.dll`

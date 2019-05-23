@@ -80,6 +80,14 @@
     2019/05/20 7.17    DAG    ShowFileDetails is a new method that returns a
                               string containing a formatted report of properties
                               suitable for display on a report.
+
+    2019/05/22 7.18    DAG    The first real application of ShowFileDetails
+                              exposed a couple of cases that got overlooked
+                              during preliminary testing, which was rushed into
+                              production to meet the very pressing need that
+                              eventually exposed the bugs, along with a minor
+                              performance optimization for applications that
+                              call it more than once.
     ============================================================================
 */
 
@@ -157,7 +165,7 @@ namespace WizardWrx
             /// <summary>
             /// Show everything.
             /// </summary>
-            Everything = AllTimesWithUtc | Attributes
+            Everything = AllTimesWithUtc | Attributes | Size
         }   // public enum FileDetailsToShow
 
 
@@ -192,6 +200,7 @@ namespace WizardWrx
         static SubstringStartAndLength s_sslSize;
         static SubstringStartAndLength s_sslAttributes;
 
+        static string s_strCompleteFormatString = null;
 
         static FileInfoExtensionMethods ( )
         {
@@ -265,7 +274,7 @@ namespace WizardWrx
                     intPosCreatedTokenEnd ,                                     // int pintPosTokenEnd
                     FILE_DETAILS_CREATED_TOKEN ) );                             // string pstrToken
             s_sslSize = new SubstringStartAndLength (
-                intPosAttributesTokenBegin ,                                    // int pintSubstringStart
+                intPosSizeTokenBegin ,                                          // int pintSubstringStart
                 ComputeTokenEnd (                                               // int pintSubstringLength
                     intPosSizeTokenBegin ,                                      // int pintPosTokenBegin
                     intPosSizeTokenEnd ,                                        // int pintPosTokenEnd
@@ -723,15 +732,15 @@ namespace WizardWrx
             bool pfPrefixWithNewline = false ,
             bool pfSuffixWithNewline = false )
         {
-            string strCompleteFormatString = Core.Properties.Resources.FILE_DETAILS;
+            s_strCompleteFormatString = s_strCompleteFormatString ?? Core.Properties.Resources.FILE_DETAILS;
             StringBuilder builder = new StringBuilder (
-                strCompleteFormatString.Substring (
+                s_strCompleteFormatString.Substring (
                     s_sslName.SubstringStart ,
                     s_sslName.SubstringLength ) ,
-                strCompleteFormatString.Length );
+                s_strCompleteFormatString.Length );
 
             builder.Append (
-                strCompleteFormatString.Substring (
+                s_strCompleteFormatString.Substring (
                     s_sslWritten.SubstringStart ,
                     s_sslWritten.SubstringLength ) );
 
@@ -759,7 +768,7 @@ namespace WizardWrx
             if ( ( penmFileDetailsToShow & FileDetailsToShow.CreatedTime ) == FileDetailsToShow.CreatedTime )
             {
                 builder.Append (
-                    strCompleteFormatString.Substring (
+                    s_strCompleteFormatString.Substring (
                         s_sslCreated.SubstringStart ,
                         s_sslCreated.SubstringLength ) );
             }   // if ( ( penmFileDetailsToShow & FileDetailsToShow.CreatedTime ) == FileDetailsToShow.CreatedTime )
@@ -767,7 +776,7 @@ namespace WizardWrx
             if ( ( penmFileDetailsToShow & FileDetailsToShow.AccessedTime ) == FileDetailsToShow.AccessedTime )
             {
                 builder.Append (
-                    strCompleteFormatString.Substring (
+                    s_strCompleteFormatString.Substring (
                         s_sslAccessed.SubstringStart ,
                         s_sslAccessed.SubstringLength ) );
             }   // if ( ( penmFileDetailsToShow & FileDetailsToShow.AccessedTime ) == FileDetailsToShow.AccessedTime )
@@ -775,7 +784,7 @@ namespace WizardWrx
             if ( ( penmFileDetailsToShow & FileDetailsToShow.Size ) == FileDetailsToShow.Size )
             {
                 builder.Append (
-                    strCompleteFormatString.Substring (
+                    s_strCompleteFormatString.Substring (
                         s_sslSize.SubstringStart ,
                         s_sslSize.SubstringLength ) );
                 strFileSize = pfi.Length.ToString ( NumericFormats.NUMBER_PER_REG_SETTINGS_0D );
@@ -784,7 +793,7 @@ namespace WizardWrx
             if ( ( penmFileDetailsToShow & FileDetailsToShow.Attributes ) == FileDetailsToShow.Attributes )
             {
                 builder.Append (
-                    strCompleteFormatString.Substring (
+                    s_strCompleteFormatString.Substring (
                         s_sslAttributes.SubstringStart ,
                         s_sslAttributes.SubstringLength ) );
                 strAttributes = string.Format (
@@ -793,7 +802,7 @@ namespace WizardWrx
                     pfi.Attributes.ToString ( ) );
             }   // if ( ( penmFileDetailsToShow & FileDetailsToShow.Attributes ) == FileDetailsToShow.Attributes )
 
-            if ( ( penmFileDetailsToShow & FileDetailsToShow.AllTimes ) == FileDetailsToShow.AllTimes )
+            if ( ( penmFileDetailsToShow & FileDetailsToShow.LocalAndUtc ) == FileDetailsToShow.LocalAndUtc )
             {
                 strWriteTime = Core.TimeDisplayFormatter.PrepareLocalAndUTCTimes (
                     pfi.LastWriteTime ,
@@ -812,7 +821,7 @@ namespace WizardWrx
                     pfi.CreationTime ,
                     pfi.CreationTimeUtc );
                 }   // if ( ( penmFileDetailsToShow & FileDetailsToShow.CreatedTime ) == FileDetailsToShow.CreatedTime )
-            }   // TRUE block, if ( ( penmFileDetailsToShow & FileDetailsToShow.AllTimes ) == FileDetailsToShow.AllTimes )
+            }   // TRUE block, if ( ( penmFileDetailsToShow & FileDetailsToShow.LocalAndUtc ) == FileDetailsToShow.LocalAndUtc )
             else
             {
                 if ( ( penmFileDetailsToShow & FileDetailsToShow.LocalTime ) == FileDetailsToShow.LocalTime )
@@ -882,7 +891,7 @@ namespace WizardWrx
                             SysDateFormatters.RFD_YYYY_MM_DD_HH_MM_SS );
                     }   // if ( ( penmFileDetailsToShow & FileDetailsToShow.CreatedTime ) == FileDetailsToShow.CreatedTime )
                 }   // TRUE block, if ( ( penmFileDetailsToShow & FileDetailsToShow.AllTimes ) == FileDetailsToShow.AllTimes )
-            }   // FALSE block, if ( ( penmFileDetailsToShow & FileDetailsToShow.AllTimes ) == FileDetailsToShow.AllTimes )
+            }   // FALSE block, if ( ( penmFileDetailsToShow & FileDetailsToShow.LocalAndUtc ) == FileDetailsToShow.LocalAndUtc )
 
             return string.Format (
                 builder.ToString ( ) ,                                          // Extract the format control string from the StringBuilder.

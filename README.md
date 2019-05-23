@@ -7,12 +7,20 @@ bug fixes incorporated in each release.
 
 ## Release Notes, 2019/05/21
 
+Version 7.18 is a maintenance release, which affects only one library,
+`WizardWrx.Core.dll`, which got rushed into production without sufficient
+testing. This release got the substantially more careful testing that I prefer
+to give to everything. The companion NuGet package went out when I built the
+release configuration of the whole library set.
+
+## Release Notes, 2019/05/21
+
 The updates in this release revolve around two features in the core library,
 `WizardWrx.Core.dll`, and `WizardWrx.AssemblyUtils`, a specialized library that
 generates reports about assemblies. These are the only two libraries that have
 code changes.
 
-The main improvement is a new extension method for `FileInfo` objects, 
+The main improvement is a new extension method for `FileInfo` objects,
 `ShowFileDetails`, which returns a formatted string containing selected
 details about the file associated with the `System.IO.FileInfo` object to
 which it is applied. The method affords significant leeway to add or omit
