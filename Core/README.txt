@@ -1,5 +1,18 @@
 WizardWrx Core ReadMe
 
+Version 7.19
+
+For the benefit of NuGet package subscribers, following is a summary of the
+changes in this library, which are confined to the `StringExtensions` class.
+
+|Method Name        |Method Goal                                     |
+|-------------------|------------------------------------------------|
+|UnixLineEndings    |Replace CR/LF pairs and bare CRs with bare LFs. |
+|WindowsLineEndings |Replace bare LFs with CR/LF pairs.              |
+|OldMacLineEndings  |Replace CR/LF pairs and bare LFs with bare CRs. |
+
+Overview
+
 The purpose of this class library is to provide other libraries and assemblies
 with easy access to classes that implement core capabilities, such as a robust,
 yet efficient implementation of the Singleton design pattern, efficient

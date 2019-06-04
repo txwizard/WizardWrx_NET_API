@@ -12,7 +12,7 @@ namespace DLLServices2TestStand.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "12.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -67,28 +67,10 @@ namespace DLLServices2TestStand.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("MaxStringLength.TXT")]
-        public string MaxStringLength_Input {
-            get {
-                return ((string)(this["MaxStringLength_Input"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("$$DATADIRNAME$$\\MergeNewItemsIntoArray_Master.TXT")]
         public string MergeNewItemsIntoArray_Master {
             get {
                 return ((string)(this["MergeNewItemsIntoArray_Master"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("$$DATADIRNAME$$\\MergeNewItemsIntoArray_Case_??.TXT")]
-        public string MergeNewItemsIntoArray_Cases {
-            get {
-                return ((string)(this["MergeNewItemsIntoArray_Cases"]));
             }
         }
         
@@ -107,6 +89,42 @@ namespace DLLServices2TestStand.Properties {
         public string MergeNewItemsIntoArray_Summary {
             get {
                 return ((string)(this["MergeNewItemsIntoArray_Summary"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("$$DATADIRNAME$$\\MaxStringLength.TXT")]
+        public string MaxStringLength_Input {
+            get {
+                return ((string)(this["MaxStringLength_Input"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("MergeNewItemsIntoArray_Case_??.TXT")]
+        public string MergeNewItemsIntoArray_Cases {
+            get {
+                return ((string)(this["MergeNewItemsIntoArray_Cases"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("White")]
+        public string SuccessfulOutcomeMessageColor {
+            get {
+                return ((string)(this["SuccessfulOutcomeMessageColor"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Green")]
+        public string SuccessfulOutcomeMessageBackgroundColor {
+            get {
+                return ((string)(this["SuccessfulOutcomeMessageBackgroundColor"]));
             }
         }
     }

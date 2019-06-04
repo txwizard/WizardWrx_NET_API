@@ -220,6 +220,18 @@
                                  extension method, and put it through its paces,
                                  and demonstrate the ToString method on the
                                  array of StringFixups structures.
+
+	2019/05/30 7.19    DAG Implement tests for the following string extension
+                           methods via class LinEndingFixupTests:
+
+                           UnixLineEndings      Replace CR/LF pairs and bare CRs
+                                                with bare LFs.
+
+                           WindowsLineEndings   Replace bare LFs with CR/LF
+                                                pairs.
+
+                           OldMacLineEndings    Replace CR/LF pairs and bare LFs
+                                                with bare CRs.
     ============================================================================
 */
 
@@ -522,6 +534,9 @@ namespace DLLServices2TestStand
                     }   // Let strings strMsgWithEscapedTabs and strDetailRowFormatString go out of scope.
 
                     intTestNumber = ShowFileDetailsTests.Exercise ( ref intTestNumber );
+                    PauseForPictures ( OMIT_LINEFEED );
+
+                    intTestNumber = LineEndingFixupTests.Exercise ( ref intTestNumber );
                     PauseForPictures ( OMIT_LINEFEED );
 
                     EventMessageCleanupTests ( ref intTestNumber );

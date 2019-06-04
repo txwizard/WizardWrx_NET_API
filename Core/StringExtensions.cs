@@ -111,6 +111,19 @@
                            that does exactly what its name implies, while
                            EnumerateSubstringPositions does what its name 
                            implies.
+
+	2019/06/01 7.19    DAG UnixLineEndings, WindowsLineEndings, and
+                           OldMacLineEndings is a set of new methods that do what
+                           their names imply:
+
+                           UnixLineEndings      Replace CR/LF pairs and bare CRs
+                                                with bare LFs.
+
+                           WindowsLineEndings   Replace bare LFs with CR/LF
+                                                pairs.
+
+                           OldMacLineEndings    Replace CR/LF pairs and bare LFs
+                                                with bare CRs.
     ============================================================================
 */
 
@@ -692,9 +705,9 @@ namespace WizardWrx
         /// <paramref name="pstrToCount"/> never occurs in <paramref name="pstrSource"/>,
         /// the return value is an empty array.
         /// </returns>
-        public static int [ ] EnumerateSubstringPositions ( 
-            this string pstrSource , 
-            string pstrToCount , 
+        public static int [ ] EnumerateSubstringPositions (
+            this string pstrSource ,
+            string pstrToCount ,
             StringComparison penmComparisonType )
         {
             if ( string.IsNullOrEmpty ( pstrSource ) )
@@ -762,9 +775,9 @@ namespace WizardWrx
         /// </remarks>
         /// <seealso cref="ReportUnresolvedEnvironmentStrings(string,uint,uint)"/>
         public static int CountUnresolvedEnvironmentStrings ( this string pstrInput )
-		{
-			return pstrInput.CountCharacterOccurrences ( SpecialCharacters.ENV_STR_DLM );
-		}   // CountUnresolvedEnvironmentStrings
+        {
+            return pstrInput.CountCharacterOccurrences ( SpecialCharacters.ENV_STR_DLM );
+        }   // CountUnresolvedEnvironmentStrings
         #endregion  // CountUnresolvedEnvironmentStrings Methods
 
 
@@ -788,102 +801,103 @@ namespace WizardWrx
         /// one of the character specified in pchrEnd at each end.
         /// </returns>
         public static string EncloseInChar (
-			this string pstrIn ,
-			char pchrEnd )
-		{
-			string strEndChar = pchrEnd.ToString ( );
+            this string pstrIn ,
+            char pchrEnd )
+        {
+            string strEndChar = pchrEnd.ToString ( );
 
-			if ( string.IsNullOrEmpty ( pstrIn ) )
-				return strEndChar + strEndChar;
+            if ( string.IsNullOrEmpty ( pstrIn ) )
+                return strEndChar + strEndChar;
 
-			if ( pstrIn.StartsWith ( strEndChar ) && pstrIn.EndsWith ( strEndChar ) )
-				return pstrIn;
-			else
-				if ( pstrIn.StartsWith ( strEndChar ) )
-					return pstrIn + strEndChar;
-				else
-					if ( pstrIn.EndsWith ( strEndChar ) )
-						return strEndChar + pstrIn;
-					else
-						return strEndChar + pstrIn + strEndChar;
-		}   // EncloseInChar
-		#endregion	// EncloseInChar Methods
-
-
-		#region EnsureFirstCharIs Methods
-		/// <summary>
-		/// Return a string that is guaranteed to start with a specified character.
-		/// </summary>
-		/// <param name="pstrInput"></param>
-		/// Evaluate this string, and return it as is if it already starts with
-		/// the specified character. Otherwise, return the specified character,
-		/// followed by the input string.
-		/// <param name="pchrMustBeFirst">
-		/// Ensure that the first character in the string is this one.
-		/// </param>
-		/// <returns>
-		/// The returned string is guaranteed to start with the specified character.
-		/// </returns>
-		public static string EnsureFirstCharIs ( this string pstrInput , char pchrMustBeFirst )
-		{
-			if ( pchrMustBeFirst != SpecialCharacters.NULL_CHAR )
-			{
-				if ( pstrInput.StartsWith ( pchrMustBeFirst.ToString ( ) ) )
-				{
-					return pstrInput;
-				}	// TRUE (degenerate case) block, if ( pstrInput.EndsWith ( pchrMustBeFirst.ToString ( ) ) )
-				else
-				{
-					return string.Concat ( pchrMustBeFirst , pstrInput );
-				}	// FALSE (standard case) block, if ( pstrInput.EndsWith ( pchrMustBeFirst.ToString ( ) ) )
-			}	// TRUE (anticipated outcome) block, if ( pchrMustBeFirst != SpecialCharacters.NULL_CHAR )
-			else
-			{
-				throw new ArgumentNullException ( "pchrMustBeFirst" );
-			}	// FALSE (unanticipated outcome) block, if ( pchrMustBeFirst != SpecialCharacters.NULL_CHAR )
-		}	// EnsureFirstCharIs
-		#endregion	// EnsureFirstCharIs Methods
+            if ( pstrIn.StartsWith ( strEndChar ) && pstrIn.EndsWith ( strEndChar ) )
+                return pstrIn;
+            else
+                if ( pstrIn.StartsWith ( strEndChar ) )
+                return pstrIn + strEndChar;
+            else
+                    if ( pstrIn.EndsWith ( strEndChar ) )
+                return strEndChar + pstrIn;
+            else
+                return strEndChar + pstrIn + strEndChar;
+        }   // EncloseInChar
+        #endregion // EncloseInChar Methods
 
 
-		#region EnsureLastCharIs Methods
-		/// <summary>
-		/// Return a string that is guaranteed to end with a specified character.
-		/// </summary>
-		/// <param name="pstrInput"></param>
-		/// Evaluate this string, and return it as is if it already ends with
-		/// the specified character. Otherwise, return a copy with the specified
-		/// character appended.
-		/// <param name="pchrMustBeLast">
-		/// Ensure that the last character in the string is this one.
-		/// </param>
-		/// <returns>
-		/// The returned string is guaranteed to end with the specified character.
-		/// </returns>
-		public static string EnsureLastCharIs (
-			this string pstrInput ,
-			char pchrMustBeLast )
-		{
-			if ( pchrMustBeLast != SpecialCharacters.NULL_CHAR )
-			{
-				if ( pstrInput.EndsWith ( pchrMustBeLast.ToString ( ) ) )
-				{
-					return pstrInput;
-				}	// TRUE (degenerate case) block, if ( pstrInput.EndsWith ( pchrMustBeFirst.ToString ( ) ) )
-				else
-				{
-					return string.Concat (
-						pstrInput ,
-						pchrMustBeLast );
-				}	// FALSE (standard case) block, if ( pstrInput.EndsWith ( pchrMustBeFirst.ToString ( ) ) )
-			}	// TRUE (anticipated outcome) block, if ( pchrMustBeFirst != SpecialCharacters.NULL_CHAR )
-			else
-			{
-				throw new ArgumentNullException ( "pchrMustBeLast" );
-			}	// FALSE (unanticipated outcome) block, if ( pchrMustBeFirst != SpecialCharacters.NULL_CHAR )
-		}   // EnsureLastCharIs
+        #region EnsureFirstCharIs Methods
+        /// <summary>
+        /// Return a string that is guaranteed to start with a specified character.
+        /// </summary>
+        /// <param name="pstrInput"></param>
+        /// Evaluate this string, and return it as is if it already starts with
+        /// the specified character. Otherwise, return the specified character,
+        /// followed by the input string.
+        /// <param name="pchrMustBeFirst">
+        /// Ensure that the first character in the string is this one.
+        /// </param>
+        /// <returns>
+        /// The returned string is guaranteed to start with the specified character.
+        /// </returns>
+        public static string EnsureFirstCharIs ( this string pstrInput , char pchrMustBeFirst )
+        {
+            if ( pchrMustBeFirst != SpecialCharacters.NULL_CHAR )
+            {
+                if ( pstrInput.StartsWith ( pchrMustBeFirst.ToString ( ) ) )
+                {
+                    return pstrInput;
+                }   // TRUE (degenerate case) block, if ( pstrInput.EndsWith ( pchrMustBeFirst.ToString ( ) ) )
+                else
+                {
+                    return string.Concat ( pchrMustBeFirst , pstrInput );
+                }   // FALSE (standard case) block, if ( pstrInput.EndsWith ( pchrMustBeFirst.ToString ( ) ) )
+            }   // TRUE (anticipated outcome) block, if ( pchrMustBeFirst != SpecialCharacters.NULL_CHAR )
+            else
+            {
+                throw new ArgumentNullException ( "pchrMustBeFirst" );
+            }   // FALSE (unanticipated outcome) block, if ( pchrMustBeFirst != SpecialCharacters.NULL_CHAR )
+        }   // EnsureFirstCharIs
+        #endregion // EnsureFirstCharIs Methods
+
+
+        #region EnsureLastCharIs Methods
+        /// <summary>
+        /// Return a string that is guaranteed to end with a specified character.
+        /// </summary>
+        /// <param name="pstrInput"></param>
+        /// Evaluate this string, and return it as is if it already ends with
+        /// the specified character. Otherwise, return a copy with the specified
+        /// character appended.
+        /// <param name="pchrMustBeLast">
+        /// Ensure that the last character in the string is this one.
+        /// </param>
+        /// <returns>
+        /// The returned string is guaranteed to end with the specified character.
+        /// </returns>
+        public static string EnsureLastCharIs (
+            this string pstrInput ,
+            char pchrMustBeLast )
+        {
+            if ( pchrMustBeLast != SpecialCharacters.NULL_CHAR )
+            {
+                if ( pstrInput.EndsWith ( pchrMustBeLast.ToString ( ) ) )
+                {
+                    return pstrInput;
+                }   // TRUE (degenerate case) block, if ( pstrInput.EndsWith ( pchrMustBeFirst.ToString ( ) ) )
+                else
+                {
+                    return string.Concat (
+                        pstrInput ,
+                        pchrMustBeLast );
+                }   // FALSE (standard case) block, if ( pstrInput.EndsWith ( pchrMustBeFirst.ToString ( ) ) )
+            }   // TRUE (anticipated outcome) block, if ( pchrMustBeFirst != SpecialCharacters.NULL_CHAR )
+            else
+            {
+                throw new ArgumentNullException ( "pchrMustBeLast" );
+            }   // FALSE (unanticipated outcome) block, if ( pchrMustBeFirst != SpecialCharacters.NULL_CHAR )
+        }   // EnsureLastCharIs
         #endregion // EnsureLastCharIs Methods
 
 
+        #region EnumFromString Methods
         /// <summary>
         /// Convert a string to the equivalent instance of a specified
         /// enumeration type.
@@ -955,42 +969,43 @@ namespace WizardWrx
                     exFormatException );
             }   // catch ( FormatException formatException )
         }   // public static T EnumFromString<T>
+        #endregion  // EnumFromString Methods
 
 
-		#region ExtractBetweenIndexOfs Methods
-		/// <summary>
-		/// Extract the substring bounded by the characters at either end of it.
-		/// </summary>
-		/// <param name="pstrWholeString">
-		/// Specify the string from which to extract the substring.
-		/// 
-		/// Since this is an extension method, the CLR supplies this argument
-		/// when it binds the method to an instance of the System.string class.
-		/// </param>
-		/// <param name="pintPosBegin">
-		/// Specify the position, as it would be reported by IndexOf, of the 
-		/// character that bounds the left end of the desired substring.
-		/// </param>
-		/// <param name="pintPosEnd">
-		/// Specify the position, as it would be reported by IndexOf, of the 
-		/// character that bounds the right end of the desired substring.
-		/// </param>
-		/// <returns>
-		/// The returned substring begins with the character immediately to the
-		/// right of the left hand bounding character, and ending with the last
-		/// character before the right hand bounding character.
-		/// </returns>
-		public static string ExtractBetweenIndexOfs (
-		    this string pstrWholeString ,
+        #region ExtractBetweenIndexOfs Methods
+        /// <summary>
+        /// Extract the substring bounded by the characters at either end of it.
+        /// </summary>
+        /// <param name="pstrWholeString">
+        /// Specify the string from which to extract the substring.
+        /// 
+        /// Since this is an extension method, the CLR supplies this argument
+        /// when it binds the method to an instance of the System.string class.
+        /// </param>
+        /// <param name="pintPosBegin">
+        /// Specify the position, as it would be reported by IndexOf, of the 
+        /// character that bounds the left end of the desired substring.
+        /// </param>
+        /// <param name="pintPosEnd">
+        /// Specify the position, as it would be reported by IndexOf, of the 
+        /// character that bounds the right end of the desired substring.
+        /// </param>
+        /// <returns>
+        /// The returned substring begins with the character immediately to the
+        /// right of the left hand bounding character, and ending with the last
+        /// character before the right hand bounding character.
+        /// </returns>
+        public static string ExtractBetweenIndexOfs (
+            this string pstrWholeString ,
             int pintPosBegin ,
             int pintPosEnd )
         {
-			const int DISCARD = MagicNumbers.PLUS_ONE;
+            const int DISCARD = MagicNumbers.PLUS_ONE;
 
             if ( string.IsNullOrEmpty ( pstrWholeString ) )
-				return SpecialStrings.EMPTY_STRING;
+                return SpecialStrings.EMPTY_STRING;
 
-			if ( pintPosBegin > MagicNumbers.STRING_INDEXOF_NOT_FOUND )
+            if ( pintPosBegin > MagicNumbers.STRING_INDEXOF_NOT_FOUND )
                 if ( pintPosEnd > pintPosBegin )
                     if ( pintPosEnd < pstrWholeString.Length )
                         return pstrWholeString.Substring (
@@ -1001,40 +1016,40 @@ namespace WizardWrx
         }   // static string ExtractBetweenIndexOfs (1 of 2)
 
 
-		/// <summary>
-		/// Extract the substring bounded by the characters at either end of it.
-		/// </summary>
-		/// <param name="pstrWholeString">
-		/// Specify the string from which to extract the substring.
-		/// 
-		/// Since this is an extension method, the CLR supplies this argument
-		/// when it binds the method to an instance of the System.string class.
-		/// </param>
-		/// <param name="pstrLeftMarker">
-		/// This overload handles the case where the left boundary is bounded by
-		/// a string. The method needs a copy of the string in order to find the
-		/// true beginning of the substring to extract, and to compute its
-		/// length.
-		/// </param>
-		/// <param name="pintPosBegin">
-		/// This integer is the position, given by IndexOf, of the character
-		/// that bounds the left end of the desired substring.
-		/// </param>
-		/// <param name="pintPosEnd">
-		/// This integer is the position, given by IndexOf, of the character
-		/// that bounds the right end of the desired substring.
-		/// </param>
-		/// <returns>
-		/// The returned substring begins with the character immediately to the
-		/// right of the left hand bounding character, and ending with the last
-		/// character before the right hand bounding character.
-		///
-		/// Inputs and computed values are thoroughly sanity checked to prevent
-		/// run-time exceptions. If anything is out of order, an empty string is
-		/// returned.
-		/// </returns>
-		public static string ExtractBetweenIndexOfs (
-			this string pstrWholeString ,
+        /// <summary>
+        /// Extract the substring bounded by the characters at either end of it.
+        /// </summary>
+        /// <param name="pstrWholeString">
+        /// Specify the string from which to extract the substring.
+        /// 
+        /// Since this is an extension method, the CLR supplies this argument
+        /// when it binds the method to an instance of the System.string class.
+        /// </param>
+        /// <param name="pstrLeftMarker">
+        /// This overload handles the case where the left boundary is bounded by
+        /// a string. The method needs a copy of the string in order to find the
+        /// true beginning of the substring to extract, and to compute its
+        /// length.
+        /// </param>
+        /// <param name="pintPosBegin">
+        /// This integer is the position, given by IndexOf, of the character
+        /// that bounds the left end of the desired substring.
+        /// </param>
+        /// <param name="pintPosEnd">
+        /// This integer is the position, given by IndexOf, of the character
+        /// that bounds the right end of the desired substring.
+        /// </param>
+        /// <returns>
+        /// The returned substring begins with the character immediately to the
+        /// right of the left hand bounding character, and ending with the last
+        /// character before the right hand bounding character.
+        ///
+        /// Inputs and computed values are thoroughly sanity checked to prevent
+        /// run-time exceptions. If anything is out of order, an empty string is
+        /// returned.
+        /// </returns>
+        public static string ExtractBetweenIndexOfs (
+            this string pstrWholeString ,
             string pstrLeftMarker ,
             int pintPosBegin ,
             int pintPosEnd )
@@ -1056,11 +1071,11 @@ namespace WizardWrx
 
             return SpecialStrings.EMPTY_STRING;
         }   // static string ExtractBetweenIndexOfs (2 of 2)
-		#endregion	// ExtractBetweenIndexOfs Methods
+        #endregion // ExtractBetweenIndexOfs Methods
 
 
-		#region ExtractBoundedSubstrings Methods
-		/// <summary>
+        #region ExtractBoundedSubstrings Methods
+        /// <summary>
         /// Extract a substring that is bounded by a character. See Remarks.
         /// </summary>
         /// <param name="pstrWholeString">
@@ -1071,7 +1086,7 @@ namespace WizardWrx
         /// </param>
         /// <returns>
         /// The return value is the desired substring, without its bounding 
-		/// characters. See Remarks.
+        /// characters. See Remarks.
         /// </returns>
         /// <remarks>
         /// The left and right ends must be bounded by the same character. To
@@ -1083,7 +1098,7 @@ namespace WizardWrx
         /// returned.
         /// </remarks>
         public static string ExtractBoundedSubstrings (
-			this string pstrWholeString ,
+            this string pstrWholeString ,
             char pchrBoundingCharacter )
         {
             if ( string.IsNullOrEmpty ( pstrWholeString ) )
@@ -1104,7 +1119,7 @@ namespace WizardWrx
             if ( intPosRightEnd == MagicNumbers.STRING_INDEXOF_NOT_FOUND )
                 return SpecialStrings.EMPTY_STRING;
 
-			return pstrWholeString.ExtractBetweenIndexOfs (
+            return pstrWholeString.ExtractBetweenIndexOfs (
                 intPosLeftEnd ,
                 intPosRightEnd );
         }   // ExtractBoundedSubstrings (1 of 3)
@@ -1139,7 +1154,7 @@ namespace WizardWrx
 		/// is returned.
         /// </remarks>
         public static string ExtractBoundedSubstrings (
-			this string pstrWholeString ,
+            this string pstrWholeString ,
             char pchrLeftBound ,
             char pchrRightBound )
         {
@@ -1164,7 +1179,7 @@ namespace WizardWrx
             if ( intPosRightEnd == MagicNumbers.STRING_INDEXOF_NOT_FOUND )
                 return SpecialStrings.EMPTY_STRING;
 
-			return pstrWholeString.ExtractBetweenIndexOfs (
+            return pstrWholeString.ExtractBetweenIndexOfs (
                 intPosLeftEnd ,
                 intPosRightEnd );
         }   // ExtractBoundedSubstrings (2 of 3)
@@ -1200,7 +1215,7 @@ namespace WizardWrx
         /// returned.
         /// </remarks>
         public static string ExtractBoundedSubstrings (
-			this string pstrWholeString ,
+            this string pstrWholeString ,
             string pstrLeftBound ,
             string pstrRightBound )
         {
@@ -1225,104 +1240,104 @@ namespace WizardWrx
             if ( intPosRightEnd == MagicNumbers.STRING_INDEXOF_NOT_FOUND )
                 return SpecialStrings.EMPTY_STRING;
 
-			//	----------------------------------------------------------------
-			//	Eat your own dog food!
-			//	----------------------------------------------------------------
+            //	----------------------------------------------------------------
+            //	Eat your own dog food!
+            //	----------------------------------------------------------------
 
-			return pstrWholeString.ExtractBetweenIndexOfs (
+            return pstrWholeString.ExtractBetweenIndexOfs (
                 pstrLeftBound ,
                 intPosLeftEnd ,
                 intPosRightEnd );
         }   // ExtractBoundedSubstrings (3 of 3)
-		#endregion	// ExtractBoundedSubstrings Methods
+        #endregion // ExtractBoundedSubstrings Methods
 
 
-		#region LeftPadNChars Extension Methods
-		/// <summary>
-		/// Left pad the string with a specified number of spaces.
-		/// </summary>
-		/// <param name="pstrPadThisString">
-		/// This argument is supplied by the framework when it binds the method
-		/// to an instance of the System.String class.
-		/// </param>
-		/// <param name="paddingCharacterCount">
-		/// Specify the number of space characters to add on the left end of the
-		/// string. Please see the Remarks for important details.
-		/// </param>
-		/// <returns>
-		/// The input string is padded on the left with the specified number of
-		/// space characters.
-		/// 
-		/// Please see the Remarks for important details.
-		/// </returns>
-		/// <remarks>
-		/// These methods compensate for the completely logical, if unexpected,
-		/// behavior of the native PadLeft and PadRight methods on the
-		/// System.string class. Their objective is to guarantee that the new
-		/// string is truly padded with a specific number of characters.
-		/// 
-		/// The names of the visible arguments differ from my usual Hungarian
-		/// naming convention so that they conform to the naming convention of
-		/// the Base Class Library methods that they wrap.
-		/// </remarks>
-		public static string LeftPadNChars (
-			this string pstrPadThisString ,
-			int paddingCharacterCount )
-		{
-			return pstrPadThisString.PadLeft (
-				PaddedStringLength (
-					pstrPadThisString ,
-					paddingCharacterCount ) );
-		}	// public static string LeftPadNChars (1 of 2)
+        #region LeftPadNChars Extension Methods
+        /// <summary>
+        /// Left pad the string with a specified number of spaces.
+        /// </summary>
+        /// <param name="pstrPadThisString">
+        /// This argument is supplied by the framework when it binds the method
+        /// to an instance of the System.String class.
+        /// </param>
+        /// <param name="paddingCharacterCount">
+        /// Specify the number of space characters to add on the left end of the
+        /// string. Please see the Remarks for important details.
+        /// </param>
+        /// <returns>
+        /// The input string is padded on the left with the specified number of
+        /// space characters.
+        /// 
+        /// Please see the Remarks for important details.
+        /// </returns>
+        /// <remarks>
+        /// These methods compensate for the completely logical, if unexpected,
+        /// behavior of the native PadLeft and PadRight methods on the
+        /// System.string class. Their objective is to guarantee that the new
+        /// string is truly padded with a specific number of characters.
+        /// 
+        /// The names of the visible arguments differ from my usual Hungarian
+        /// naming convention so that they conform to the naming convention of
+        /// the Base Class Library methods that they wrap.
+        /// </remarks>
+        public static string LeftPadNChars (
+            this string pstrPadThisString ,
+            int paddingCharacterCount )
+        {
+            return pstrPadThisString.PadLeft (
+                PaddedStringLength (
+                    pstrPadThisString ,
+                    paddingCharacterCount ) );
+        }   // public static string LeftPadNChars (1 of 2)
 
 
-		/// <summary>
-		/// Left pad the string with a specified number of some arbitrary
-		/// character.
-		/// </summary>
-		/// <param name="pstrPadThisString">
-		/// This argument is supplied by the framework when it binds the method
-		/// to an instance of the System.String class.
-		/// </param>
-		/// <param name="paddingCharacterCount">
-		/// Specify the number of arbitrary characters to add on the left end of
-		/// the string. Please see the Remarks for important details.
-		/// </param>
-		/// <param name="paddingChar">
-		/// Specify the arbitrary character with which the string is to be padded.
-		/// </param>
-		/// <returns>
-		/// The input string is padded on the left with the specified number of
-		/// the specified arbitrary character.
-		/// 
-		/// Please see the Remarks for important details.
-		/// </returns>
-		/// <remarks>
-		/// These methods compensate for the completely logical, if unexpected,
-		/// behavior of the native PadLeft and PadRight methods on the
-		/// System.string class. Their objective is to guarantee that the new
-		/// string is truly padded with a specific number of characters.
-		/// 
-		/// The names of the visible arguments differ from my usual Hungarian
-		/// naming convention so that they conform to the naming convention of
-		/// the Base Class Library methods that they wrap.
-		/// </remarks>
-		public static string LeftPadNChars (
-			this string pstrPadThisString ,
-			int paddingCharacterCount ,
-			char paddingChar )
-		{
-			return pstrPadThisString.PadLeft (
-				PaddedStringLength (
-					pstrPadThisString ,
-					paddingCharacterCount ) ,
-				paddingChar );
-		}	// public static string LeftPadNChars (2 of 2)
-		#endregion // LeftPadNChars
+        /// <summary>
+        /// Left pad the string with a specified number of some arbitrary
+        /// character.
+        /// </summary>
+        /// <param name="pstrPadThisString">
+        /// This argument is supplied by the framework when it binds the method
+        /// to an instance of the System.String class.
+        /// </param>
+        /// <param name="paddingCharacterCount">
+        /// Specify the number of arbitrary characters to add on the left end of
+        /// the string. Please see the Remarks for important details.
+        /// </param>
+        /// <param name="paddingChar">
+        /// Specify the arbitrary character with which the string is to be padded.
+        /// </param>
+        /// <returns>
+        /// The input string is padded on the left with the specified number of
+        /// the specified arbitrary character.
+        /// 
+        /// Please see the Remarks for important details.
+        /// </returns>
+        /// <remarks>
+        /// These methods compensate for the completely logical, if unexpected,
+        /// behavior of the native PadLeft and PadRight methods on the
+        /// System.string class. Their objective is to guarantee that the new
+        /// string is truly padded with a specific number of characters.
+        /// 
+        /// The names of the visible arguments differ from my usual Hungarian
+        /// naming convention so that they conform to the naming convention of
+        /// the Base Class Library methods that they wrap.
+        /// </remarks>
+        public static string LeftPadNChars (
+            this string pstrPadThisString ,
+            int paddingCharacterCount ,
+            char paddingChar )
+        {
+            return pstrPadThisString.PadLeft (
+                PaddedStringLength (
+                    pstrPadThisString ,
+                    paddingCharacterCount ) ,
+                paddingChar );
+        }   // public static string LeftPadNChars (2 of 2)
+        #endregion // LeftPadNChars
 
 
-		#region MakeToken Methods
-		/// <summary>
+        #region MakeToken Methods
+        /// <summary>
         /// Given a string containing the name of a form control (field) or
         /// other token, create its place holder token.
         /// </summary>
@@ -1339,16 +1354,16 @@ namespace WizardWrx
         ///
         /// The token is exposed as a static property, DEFAULT_TOKEN_DELM.
         /// </remarks>
-		public static string MakeToken ( this string pstrFieldName )
-		{
-			if ( string.IsNullOrEmpty ( pstrFieldName ) )
-				return SpecialStrings.EMPTY_STRING;
+        public static string MakeToken ( this string pstrFieldName )
+        {
+            if ( string.IsNullOrEmpty ( pstrFieldName ) )
+                return SpecialStrings.EMPTY_STRING;
 
-			return string.Concat (
-				DEFAULT_TOKEN_DELM ,
-				pstrFieldName ,
-				DEFAULT_TOKEN_DELM );
-		}   // public static MakeToken method (1 of 2)
+            return string.Concat (
+                DEFAULT_TOKEN_DELM ,
+                pstrFieldName ,
+                DEFAULT_TOKEN_DELM );
+        }   // public static MakeToken method (1 of 2)
 
 
         /// <summary>
@@ -1369,21 +1384,43 @@ namespace WizardWrx
         /// argument pstrFieldName.
         /// </returns>
 		public static string MakeToken (
-			this string pstrFieldName ,
-			string pstrTokenEnds )
-		{
-			if ( string.IsNullOrEmpty ( pstrFieldName ) )
-				return SpecialStrings.EMPTY_STRING;
+            this string pstrFieldName ,
+            string pstrTokenEnds )
+        {
+            if ( string.IsNullOrEmpty ( pstrFieldName ) )
+                return SpecialStrings.EMPTY_STRING;
 
-			if ( string.IsNullOrEmpty ( pstrTokenEnds ) )
-				return SpecialStrings.EMPTY_STRING;
+            if ( string.IsNullOrEmpty ( pstrTokenEnds ) )
+                return SpecialStrings.EMPTY_STRING;
 
-			return string.Concat (
-				pstrTokenEnds ,
-				pstrFieldName ,
-				pstrTokenEnds );
-		}   // public static MakeToken method (2 of 2)
+            return string.Concat (
+                pstrTokenEnds ,
+                pstrFieldName ,
+                pstrTokenEnds );
+        }   // public static MakeToken method (2 of 2)
         #endregion // MakeToken Methods
+
+
+        #region OldMacLineEndings Method
+        /// <summary>
+        /// Replace a string that may contain mixed or unwanted line endings
+        /// with a string that contains only the expected line ending type.
+        /// </summary>
+        /// <param name="pstrSource">
+        /// String in which to replace line endings
+        /// </param>
+        /// <returns>
+        /// A copy of <paramref name="pstrSource"/>, with non-coformant line
+        /// endings replaced. A line ending is treated as non-conformant when it
+        /// is an otherwise valid line ending, but isn't a bare CR character.
+        /// </returns>
+        public static string OldMacLineEndings ( this string pstrSource )
+        {
+            return LineEndingFixup (
+                pstrSource ,                                // string                  pstrSource
+                RequiredLineEndings.OldMacintosh );         // RequiredLineEndings     penmRequiredLineEndings
+        }   // OldMacLineEndings method
+        #endregion  // OldMacLineEndings Method
 
 
         #region ParseCommentInHTMLComment Method
@@ -1420,52 +1457,52 @@ namespace WizardWrx
         /// statement, and is unconditionally returned by the last statement.</para>
         /// </example>
         public static NameValueCollection ParseCommentInHTMLComment ( this string pstrInput )
-		{
-			// Parse this: <!-- ForPage=default;UseTable=False -->
+        {
+            // Parse this: <!-- ForPage=default;UseTable=False -->
 
-			const string LEFT_DELIMITER = @"<!-- ";
-			const string RIGHT_DELIMITER = @" -->";
+            const string LEFT_DELIMITER = @"<!-- ";
+            const string RIGHT_DELIMITER = @" -->";
 
-			const char ARG_DELIM = ';';
-			const char VALUE_DELIM = '=';
+            const char ARG_DELIM = ';';
+            const char VALUE_DELIM = '=';
 
-			const int VALUE_FROM_NAME = 2;
-			const int NAME_INDEX = 0;
-			const int VALUE_INDEX = 1;
+            const int VALUE_FROM_NAME = 2;
+            const int NAME_INDEX = 0;
+            const int VALUE_INDEX = 1;
 
-			NameValueCollection rnvcArgs = new NameValueCollection ( );
+            NameValueCollection rnvcArgs = new NameValueCollection ( );
 
-			if ( !string.IsNullOrEmpty ( pstrInput ) )
-			{
-				if ( pstrInput.StartsWith ( LEFT_DELIMITER ) && pstrInput.EndsWith ( RIGHT_DELIMITER ) )
-				{
-					int intTotalLen = pstrInput.Length;
-					int intLeftLen = LEFT_DELIMITER.Length;
-					int intRightLen = RIGHT_DELIMITER.Length;
-					int intMiddleLen = intTotalLen - ( intLeftLen + intRightLen );
+            if ( !string.IsNullOrEmpty ( pstrInput ) )
+            {
+                if ( pstrInput.StartsWith ( LEFT_DELIMITER ) && pstrInput.EndsWith ( RIGHT_DELIMITER ) )
+                {
+                    int intTotalLen = pstrInput.Length;
+                    int intLeftLen = LEFT_DELIMITER.Length;
+                    int intRightLen = RIGHT_DELIMITER.Length;
+                    int intMiddleLen = intTotalLen - ( intLeftLen + intRightLen );
 
-					string strMeat = pstrInput.Substring ( intLeftLen , intMiddleLen );
-					string [ ] astrParams = strMeat.Split ( ARG_DELIM );
+                    string strMeat = pstrInput.Substring ( intLeftLen , intMiddleLen );
+                    string [ ] astrParams = strMeat.Split ( ARG_DELIM );
 
-					foreach ( string strParam in astrParams )
-					{
-						string [ ] astrPVPair = strParam.Split (
-							VALUE_DELIM.ArrayOfOne ( ) ,
-							VALUE_FROM_NAME );
-						rnvcArgs.Add (
-							astrPVPair [ NAME_INDEX ] ,
-							astrPVPair [ VALUE_INDEX ] );
-					}   // foreach ( string strParam in astrParams )
-				}   // if ( pstrInput.StartsWith ( LEFT_DELIMITER ) && pstrInput.EndsWith ( RIGHT_DELIMITER ) )
-			}   // if ( !string.IsNullOrEmpty ( pstrInput ) )
+                    foreach ( string strParam in astrParams )
+                    {
+                        string [ ] astrPVPair = strParam.Split (
+                            VALUE_DELIM.ArrayOfOne ( ) ,
+                            VALUE_FROM_NAME );
+                        rnvcArgs.Add (
+                            astrPVPair [ NAME_INDEX ] ,
+                            astrPVPair [ VALUE_INDEX ] );
+                    }   // foreach ( string strParam in astrParams )
+                }   // if ( pstrInput.StartsWith ( LEFT_DELIMITER ) && pstrInput.EndsWith ( RIGHT_DELIMITER ) )
+            }   // if ( !string.IsNullOrEmpty ( pstrInput ) )
 
-			return rnvcArgs;
-		}   // ParseCommentInHTMLComment
-		#endregion	// ParseCommentInHTMLComment Methods
+            return rnvcArgs;
+        }   // ParseCommentInHTMLComment
+        #endregion // ParseCommentInHTMLComment Methods
 
 
-		#region QuoteString Method
-		/// <summary>
+        #region QuoteString Method
+        /// <summary>
         /// Append a quote character to both ends of a string, unless it is
         /// already present.
         /// </summary>
@@ -1476,17 +1513,17 @@ namespace WizardWrx
         /// <returns>
         /// String with quote character at both ends.
         /// </returns>
-		public static string QuoteString ( this string pstrIn )
-		{
-			return EncloseInChar (
-				pstrIn ,
-				SpecialCharacters.DOUBLE_QUOTE );
-		}   // function QuoteString
-		#endregion	// QuoteString Method
+        public static string QuoteString ( this string pstrIn )
+        {
+            return EncloseInChar (
+                pstrIn ,
+                SpecialCharacters.DOUBLE_QUOTE );
+        }   // function QuoteString
+        #endregion // QuoteString Method
 
 
-		#region RemoveEndChars Method
-		/// <summary>
+        #region RemoveEndChars Method
+        /// <summary>
         /// Remove ending character, such as brackets, from a string, if present.
         /// </summary>
         /// <param name="pstrIn">
@@ -1499,83 +1536,84 @@ namespace WizardWrx
         /// <returns>
         /// String with character pchrEnd removed from both ends.
         /// </returns>
-		public static string RemoveEndChars (
-			this string pstrIn ,
-			char pchrEnd )
-		{
-			if ( pstrIn == null )
-				return null;
+        public static string RemoveEndChars (
+            this string pstrIn ,
+            char pchrEnd )
+        {
+            if ( pstrIn == null )
+                return null;
 
-			string strEndChar = pchrEnd.ToString ( );
+            string strEndChar = pchrEnd.ToString ( );
 
-			switch ( pstrIn.Length )
-			{
-				case MagicNumbers.ZERO:
-					return SpecialStrings.EMPTY_STRING;
-				case MagicNumbers.PLUS_ONE:
-					if ( pstrIn == strEndChar )
-						return SpecialStrings.EMPTY_STRING;
-					else
-						return pstrIn;
-			}   // switch (pstrIn.Length)
+            switch ( pstrIn.Length )
+            {
+                case MagicNumbers.ZERO:
+                    return SpecialStrings.EMPTY_STRING;
+                case MagicNumbers.PLUS_ONE:
+                    if ( pstrIn == strEndChar )
+                        return SpecialStrings.EMPTY_STRING;
+                    else
+                        return pstrIn;
+            }   // switch (pstrIn.Length)
 
-			int intCharsToKeep = MagicNumbers.ZERO;
-			int intKeepFromPos = MagicNumbers.ZERO;
+            int intCharsToKeep = MagicNumbers.ZERO;
+            int intKeepFromPos = MagicNumbers.ZERO;
 
-			if ( pstrIn.StartsWith ( strEndChar ) && pstrIn.EndsWith ( strEndChar ) )
-			{   // Trim both ends.
-				intKeepFromPos = MagicNumbers.PLUS_ONE;
-				intCharsToKeep = pstrIn.Length - MagicNumbers.PLUS_TWO;
-				return pstrIn.Substring ( intKeepFromPos , intCharsToKeep );
-			}	// True block, if ( pstrIn.StartsWith ( strEndChar ) && pstrIn.EndsWith ( strEndChar ) )
-			else
-			{   // At most, one end needs trimming.
-				if ( pstrIn.StartsWith ( strEndChar ) )
-				{   // Trim the left end.
-					intKeepFromPos = MagicNumbers.PLUS_ONE;
-					intCharsToKeep = pstrIn.Length - MagicNumbers.PLUS_ONE;
-					return pstrIn.Substring ( intKeepFromPos , intCharsToKeep );
-				}	// True block, if ( pstrIn.StartsWith ( strEndChar ) )
-				else
-				{   // Check the right end.
-					intKeepFromPos = ArrayInfo.ARRAY_FIRST_ELEMENT;
+            if ( pstrIn.StartsWith ( strEndChar ) && pstrIn.EndsWith ( strEndChar ) )
+            {   // Trim both ends.
+                intKeepFromPos = MagicNumbers.PLUS_ONE;
+                intCharsToKeep = pstrIn.Length - MagicNumbers.PLUS_TWO;
+                return pstrIn.Substring ( intKeepFromPos , intCharsToKeep );
+            }   // True block, if ( pstrIn.StartsWith ( strEndChar ) && pstrIn.EndsWith ( strEndChar ) )
+            else
+            {   // At most, one end needs trimming.
+                if ( pstrIn.StartsWith ( strEndChar ) )
+                {   // Trim the left end.
+                    intKeepFromPos = MagicNumbers.PLUS_ONE;
+                    intCharsToKeep = pstrIn.Length - MagicNumbers.PLUS_ONE;
+                    return pstrIn.Substring ( intKeepFromPos , intCharsToKeep );
+                }   // True block, if ( pstrIn.StartsWith ( strEndChar ) )
+                else
+                {   // Check the right end.
+                    intKeepFromPos = ArrayInfo.ARRAY_FIRST_ELEMENT;
 
-					if ( pstrIn.EndsWith ( strEndChar ) )
-					{
-						intCharsToKeep = pstrIn.Length - MagicNumbers.PLUS_ONE;
-						return pstrIn.Substring ( intKeepFromPos , intCharsToKeep );
-					}	// True block, if ( pstrIn.EndsWith ( strEndChar ) )
-					else
-					{   // The string is already fit for use.
-						return pstrIn;
-					}	// False block, if ( pstrIn.EndsWith ( strEndChar ) )
-				}   // False block, if ( pstrIn.StartsWith ( strEndChar ) )
-			}	// False block, if ( pstrIn.StartsWith ( strEndChar ) && pstrIn.EndsWith ( strEndChar ) )
-		}   // RemoveEndChars
-		#endregion	// RemoveEndChars Methods
+                    if ( pstrIn.EndsWith ( strEndChar ) )
+                    {
+                        intCharsToKeep = pstrIn.Length - MagicNumbers.PLUS_ONE;
+                        return pstrIn.Substring ( intKeepFromPos , intCharsToKeep );
+                    }   // True block, if ( pstrIn.EndsWith ( strEndChar ) )
+                    else
+                    {   // The string is already fit for use.
+                        return pstrIn;
+                    }   // False block, if ( pstrIn.EndsWith ( strEndChar ) )
+                }   // False block, if ( pstrIn.StartsWith ( strEndChar ) )
+            }   // False block, if ( pstrIn.StartsWith ( strEndChar ) && pstrIn.EndsWith ( strEndChar ) )
+        }   // RemoveEndChars
+        #endregion // RemoveEndChars Methods
 
 
-		#region RemoveEndQuotes Method
-		/// <summary>
-		/// Remove ending quotation marks from a string, if present.
-		/// </summary>
-		/// <param name="pstrIn">
-		/// Specify the string to evaluate, which may, or may not, end with
-		/// quotes.
-		/// </param>
-		/// <returns>
-		/// The return value is a new string with ending quotes, if present,
-		/// removed. Otherwise, a copy of the original string is returned.
-		/// </returns>
-		public static string RemoveEndQuotes ( this string pstrIn )
-		{
-			return RemoveEndChars (
-				pstrIn ,
-				SpecialCharacters.DOUBLE_QUOTE );
-		}   // method RemoveEndQuotes
+        #region RemoveEndQuotes Method
+        /// <summary>
+        /// Remove ending quotation marks from a string, if present.
+        /// </summary>
+        /// <param name="pstrIn">
+        /// Specify the string to evaluate, which may, or may not, end with
+        /// quotes.
+        /// </param>
+        /// <returns>
+        /// The return value is a new string with ending quotes, if present,
+        /// removed. Otherwise, a copy of the original string is returned.
+        /// </returns>
+        public static string RemoveEndQuotes ( this string pstrIn )
+        {
+            return RemoveEndChars (
+                pstrIn ,
+                SpecialCharacters.DOUBLE_QUOTE );
+        }   // method RemoveEndQuotes
         #endregion // RemoveEndQuotes Method
 
 
+        #region RenderEvenWhenNull Method
         /// <summary>
         /// For any object of generic type T, return result from calling the
         /// ToString method on it, unless the instance is a null reference of
@@ -1633,30 +1671,31 @@ namespace WizardWrx
         /// as the value of <paramref name="pstrValueIfNull"/>.
         /// </remarks>
         public static string RenderEvenWhenNull<T> (
-			this T pgenericObject ,
-			string pstrValueIfNull = null ,
-			string pstrFormatString = null ,
-			IFormatProvider pformatProvider = null )
-			where T : IFormattable
-		{
-			if ( pgenericObject == null )
-			{
-				return pstrValueIfNull ?? Resources.MSG_OBJECT_REFERENCE_IS_NULL;
-			}   // TRUE (degenerate case) block, if ( pgenericObject == null )
-			else
-			{
-				if ( string.IsNullOrEmpty ( pstrFormatString ) )
-				{
-					return pgenericObject.ToString ( );
-				}   // TRUE (Use the plain vanilla instance ToString method.) block, if ( string.IsNullOrEmpty ( pstrFormatString ) )
-				else
-				{
-					return pgenericObject.ToString (
+            this T pgenericObject ,
+            string pstrValueIfNull = null ,
+            string pstrFormatString = null ,
+            IFormatProvider pformatProvider = null )
+            where T : IFormattable
+        {
+            if ( pgenericObject == null )
+            {
+                return pstrValueIfNull ?? Resources.MSG_OBJECT_REFERENCE_IS_NULL;
+            }   // TRUE (degenerate case) block, if ( pgenericObject == null )
+            else
+            {
+                if ( string.IsNullOrEmpty ( pstrFormatString ) )
+                {
+                    return pgenericObject.ToString ( );
+                }   // TRUE (Use the plain vanilla instance ToString method.) block, if ( string.IsNullOrEmpty ( pstrFormatString ) )
+                else
+                {
+                    return pgenericObject.ToString (
                         pstrFormatString ,
                         pformatProvider );
-				}   // FALSE (Override the format string and/or format provider on the instance ToString method.) block, if ( string.IsNullOrEmpty ( pstrFormatString ) )
-			}   // FALSE (standard case) block, if ( pgenericObject == null )
-		}   // RenderEvenWhenNull
+                }   // FALSE (Override the format string and/or format provider on the instance ToString method.) block, if ( string.IsNullOrEmpty ( pstrFormatString ) )
+            }   // FALSE (standard case) block, if ( pgenericObject == null )
+        }   // RenderEvenWhenNull
+        #endregion  // RenderEvenWhenNull Method
 
 
         #region ReplaceEscapedTabsInStringFromResX Method
@@ -1693,27 +1732,27 @@ namespace WizardWrx
         /// object in the pnvcList collection preserved.
         /// </returns>
         public static string ReplaceTokensFromList (
-			this string pstrMsg ,
-			NameValueCollection pnvcList )
-		{
-			if ( string.IsNullOrEmpty ( pstrMsg ) )
-				return SpecialStrings.EMPTY_STRING;
+            this string pstrMsg ,
+            NameValueCollection pnvcList )
+        {
+            if ( string.IsNullOrEmpty ( pstrMsg ) )
+                return SpecialStrings.EMPTY_STRING;
 
-			if ( pnvcList == null )
-				return pstrMsg;
+            if ( pnvcList == null )
+                return pstrMsg;
 
-			if ( pnvcList.Count == WizardWrx.MagicNumbers.ZERO )
-				return pstrMsg;
+            if ( pnvcList.Count == WizardWrx.MagicNumbers.ZERO )
+                return pstrMsg;
 
-			string strNewMsg = pstrMsg;
+            string strNewMsg = pstrMsg;
 
-			foreach ( string strVarName in pnvcList.Keys )
-				strNewMsg = strNewMsg.Replace (
-					strVarName.MakeToken ( DEFAULT_TOKEN_DELM ) ,
-					pnvcList [ strVarName ] );
+            foreach ( string strVarName in pnvcList.Keys )
+                strNewMsg = strNewMsg.Replace (
+                    strVarName.MakeToken ( DEFAULT_TOKEN_DELM ) ,
+                    pnvcList [ strVarName ] );
 
-			return strNewMsg;
-		}   // static method ReplaceTokensFromList (1 of 6)
+            return strNewMsg;
+        }   // static method ReplaceTokensFromList (1 of 6)
 
 
         /// <summary>
@@ -1743,53 +1782,53 @@ namespace WizardWrx
         /// variables collection. The same defaults collection is used for both.
         /// </returns>
 		public static string ReplaceTokensFromList (
-			this string pstrTemplate ,
-			NameValueCollection pnvcFields ,
-			NameValueCollection pnvcDefaults )
-		{
-			if ( string.IsNullOrEmpty ( pstrTemplate ) )
-				return SpecialStrings.EMPTY_STRING;
+            this string pstrTemplate ,
+            NameValueCollection pnvcFields ,
+            NameValueCollection pnvcDefaults )
+        {
+            if ( string.IsNullOrEmpty ( pstrTemplate ) )
+                return SpecialStrings.EMPTY_STRING;
 
-			if ( pnvcFields == null )
-				return SpecialStrings.EMPTY_STRING;
+            if ( pnvcFields == null )
+                return SpecialStrings.EMPTY_STRING;
 
-			if ( pnvcFields.Count == MagicNumbers.ZERO )
-				return pstrTemplate;        // Since there are no tokens, return the template as is.
+            if ( pnvcFields.Count == MagicNumbers.ZERO )
+                return pstrTemplate;        // Since there are no tokens, return the template as is.
 
-			string rstrMsg = pstrTemplate;  // Make a copy of the template.
+            string rstrMsg = pstrTemplate;  // Make a copy of the template.
 
-			try
-			{
-				//	------------------------------------------------------------
-				//	Replace tokens with default ($$) endings with data from the
-				//	form fields collection.
-				//	-------------------------------------------------------------
+            try
+            {
+                //	------------------------------------------------------------
+                //	Replace tokens with default ($$) endings with data from the
+                //	form fields collection.
+                //	-------------------------------------------------------------
 
-				foreach ( string strName in pnvcFields )
-				{	// Since they are used more than once, both of these strings earn their keep.
-					string strToken = strName.MakeToken ( );
-					string strValue = pnvcFields [ strName ];
+                foreach ( string strName in pnvcFields )
+                {   // Since they are used more than once, both of these strings earn their keep.
+                    string strToken = strName.MakeToken ( );
+                    string strValue = pnvcFields [ strName ];
 
-					if ( strValue.Length == MagicNumbers.ZERO )
-						if ( pnvcDefaults [ strName ] != null )
-							if ( pnvcDefaults [ strName ].Length > MagicNumbers.ZERO )
-								strValue = pnvcDefaults [ strName ];
+                    if ( strValue.Length == MagicNumbers.ZERO )
+                        if ( pnvcDefaults [ strName ] != null )
+                            if ( pnvcDefaults [ strName ].Length > MagicNumbers.ZERO )
+                                strValue = pnvcDefaults [ strName ];
 
-					if ( strToken.Length > MagicNumbers.ZERO )
-					{
-						rstrMsg = rstrMsg.Replace (
-							strToken ,
-							strValue );
-					}   // if (strToken.Length > MagicNumbers.ZERO)
-				}   // foreach (string strName in pnvcFields)
-			}
-			catch
-			{
-				throw;
-			}
+                    if ( strToken.Length > MagicNumbers.ZERO )
+                    {
+                        rstrMsg = rstrMsg.Replace (
+                            strToken ,
+                            strValue );
+                    }   // if (strToken.Length > MagicNumbers.ZERO)
+                }   // foreach (string strName in pnvcFields)
+            }
+            catch
+            {
+                throw;
+            }
 
-			return rstrMsg;
-		}  // private static function ReplaceTokensFromList (2 of 6)
+            return rstrMsg;
+        }  // private static function ReplaceTokensFromList (2 of 6)
 
 
         /// <summary>
@@ -1815,27 +1854,27 @@ namespace WizardWrx
         /// object in the pnvcList collection preserved.
         /// </returns>
 		public static string ReplaceTokensFromList (
-			this string pstrMsg ,
-			Dictionary<string , object> pdctList )
-		{
-			if ( string.IsNullOrEmpty ( pstrMsg ) )
-				return SpecialStrings.EMPTY_STRING;
+            this string pstrMsg ,
+            Dictionary<string , object> pdctList )
+        {
+            if ( string.IsNullOrEmpty ( pstrMsg ) )
+                return SpecialStrings.EMPTY_STRING;
 
-			if ( pdctList == null )
-				return pstrMsg;
+            if ( pdctList == null )
+                return pstrMsg;
 
-			if ( pdctList.Count == WizardWrx.MagicNumbers.ZERO )
-				return pstrMsg;
+            if ( pdctList.Count == WizardWrx.MagicNumbers.ZERO )
+                return pstrMsg;
 
-			string strNewMsg = pstrMsg;
+            string strNewMsg = pstrMsg;
 
-			foreach ( string strVarName in pdctList.Keys )
-				strNewMsg = strNewMsg.Replace (
-					strVarName.MakeToken ( DEFAULT_TOKEN_DELM ) ,
-					pdctList [ strVarName ].ToString ( ) );
+            foreach ( string strVarName in pdctList.Keys )
+                strNewMsg = strNewMsg.Replace (
+                    strVarName.MakeToken ( DEFAULT_TOKEN_DELM ) ,
+                    pdctList [ strVarName ].ToString ( ) );
 
-			return strNewMsg;
-		}   // static method ReplaceTokensFromList (3 of 6)
+            return strNewMsg;
+        }   // static method ReplaceTokensFromList (3 of 6)
 
 
         /// <summary>
@@ -1871,40 +1910,40 @@ namespace WizardWrx
         /// object in the pnvcList OR the pdctDefaults collection preserved.
         /// </returns>
 		public static string ReplaceTokensFromList (
-			this string pstrMsg ,
-			Dictionary<string , object> pdctList ,
-			Dictionary<string , object> pdctDefaults )
-		{
-			if ( string.IsNullOrEmpty ( pstrMsg ) )
-				return SpecialStrings.EMPTY_STRING;
+            this string pstrMsg ,
+            Dictionary<string , object> pdctList ,
+            Dictionary<string , object> pdctDefaults )
+        {
+            if ( string.IsNullOrEmpty ( pstrMsg ) )
+                return SpecialStrings.EMPTY_STRING;
 
-			if ( pdctList == null )
-				return pstrMsg;
+            if ( pdctList == null )
+                return pstrMsg;
 
-			if ( pdctDefaults == null )
-				return pstrMsg;
+            if ( pdctDefaults == null )
+                return pstrMsg;
 
-			if ( pdctList.Count == WizardWrx.MagicNumbers.ZERO )
-				return pstrMsg;
+            if ( pdctList.Count == WizardWrx.MagicNumbers.ZERO )
+                return pstrMsg;
 
-			string strNewMsg = pstrMsg;
+            string strNewMsg = pstrMsg;
 
-			foreach ( string strVarName in pdctList.Keys )
-				strNewMsg = strNewMsg.Replace (
-					strVarName.MakeToken ( DEFAULT_TOKEN_DELM ) ,
-					pdctList [ strVarName ].ToString ( ) );
+            foreach ( string strVarName in pdctList.Keys )
+                strNewMsg = strNewMsg.Replace (
+                    strVarName.MakeToken ( DEFAULT_TOKEN_DELM ) ,
+                    pdctList [ strVarName ].ToString ( ) );
 
-			//  ----------------------------------------------------------------
-			//  Repeat for defaults, which should cover all remaining tokens.
-			//  ----------------------------------------------------------------
+            //  ----------------------------------------------------------------
+            //  Repeat for defaults, which should cover all remaining tokens.
+            //  ----------------------------------------------------------------
 
-			foreach ( string strVarName in pdctDefaults.Keys )
-				strNewMsg = strNewMsg.Replace (
-					strVarName.MakeToken ( DEFAULT_TOKEN_DELM ) ,
-					pdctDefaults [ strVarName ].ToString ( ) );
+            foreach ( string strVarName in pdctDefaults.Keys )
+                strNewMsg = strNewMsg.Replace (
+                    strVarName.MakeToken ( DEFAULT_TOKEN_DELM ) ,
+                    pdctDefaults [ strVarName ].ToString ( ) );
 
-			return strNewMsg;
-		}   // static method ReplaceTokensFromList (4 of 6)
+            return strNewMsg;
+        }   // static method ReplaceTokensFromList (4 of 6)
 
 
         /// <summary>
@@ -1938,33 +1977,33 @@ namespace WizardWrx
         /// object in the pnvcList collection preserved.
         /// </returns>
 		public static string ReplaceTokensFromList (
-			this string pstrMsg ,
-			Dictionary<string , object> pdctList ,
-			string pstrFormat )
-		{
-			if ( string.IsNullOrEmpty ( pstrMsg ) )
-				return SpecialStrings.EMPTY_STRING;
+            this string pstrMsg ,
+            Dictionary<string , object> pdctList ,
+            string pstrFormat )
+        {
+            if ( string.IsNullOrEmpty ( pstrMsg ) )
+                return SpecialStrings.EMPTY_STRING;
 
-			if ( string.IsNullOrEmpty ( pstrFormat ) )
-				return SpecialStrings.EMPTY_STRING;
+            if ( string.IsNullOrEmpty ( pstrFormat ) )
+                return SpecialStrings.EMPTY_STRING;
 
-			if ( pdctList == null )
-				return pstrMsg;
+            if ( pdctList == null )
+                return pstrMsg;
 
-			if ( pdctList.Count == WizardWrx.MagicNumbers.ZERO )
-				return pstrMsg;
+            if ( pdctList.Count == WizardWrx.MagicNumbers.ZERO )
+                return pstrMsg;
 
-			string strNewMsg = pstrMsg;
+            string strNewMsg = pstrMsg;
 
-			foreach ( string strVarName in pdctList.Keys )
-				strNewMsg = strNewMsg.Replace (
-					strVarName.MakeToken ( DEFAULT_TOKEN_DELM ) ,
-					string.Format (
-						pstrFormat ,
-						pdctList [ strVarName ].ToString ( ) ) );
+            foreach ( string strVarName in pdctList.Keys )
+                strNewMsg = strNewMsg.Replace (
+                    strVarName.MakeToken ( DEFAULT_TOKEN_DELM ) ,
+                    string.Format (
+                        pstrFormat ,
+                        pdctList [ strVarName ].ToString ( ) ) );
 
-			return strNewMsg;
-		}   // static method ReplaceTokensFromList (5 of 6)
+            return strNewMsg;
+        }   // static method ReplaceTokensFromList (5 of 6)
 
 
         /// <summary>
@@ -2008,251 +2047,251 @@ namespace WizardWrx
         /// object in the pnvcList OR the pdctDefaults collection preserved.
         /// </returns>
 		public static string ReplaceTokensFromList (
-			this string pstrMsg ,
-			Dictionary<string , object> pdctList ,
-			Dictionary<string , object> pdctDefaults ,
-			string pstrFormat )
-		{
-			if ( string.IsNullOrEmpty ( pstrMsg ) )
-				return SpecialStrings.EMPTY_STRING;
+            this string pstrMsg ,
+            Dictionary<string , object> pdctList ,
+            Dictionary<string , object> pdctDefaults ,
+            string pstrFormat )
+        {
+            if ( string.IsNullOrEmpty ( pstrMsg ) )
+                return SpecialStrings.EMPTY_STRING;
 
-			if ( string.IsNullOrEmpty ( pstrFormat ) )
-				return SpecialStrings.EMPTY_STRING;
+            if ( string.IsNullOrEmpty ( pstrFormat ) )
+                return SpecialStrings.EMPTY_STRING;
 
-			if ( pdctList == null )
-				return pstrMsg;
+            if ( pdctList == null )
+                return pstrMsg;
 
-			if ( pdctDefaults == null )
-				return pstrMsg;
+            if ( pdctDefaults == null )
+                return pstrMsg;
 
-			if ( pdctList.Count == WizardWrx.MagicNumbers.ZERO )
-				return pstrMsg;
+            if ( pdctList.Count == WizardWrx.MagicNumbers.ZERO )
+                return pstrMsg;
 
-			string strNewMsg = pstrMsg;
+            string strNewMsg = pstrMsg;
 
-			foreach ( string strVarName in pdctList.Keys )
-				strNewMsg = strNewMsg.Replace (
-					strVarName.MakeToken ( DEFAULT_TOKEN_DELM ) ,
-					string.Format (
-						pstrFormat ,
-						pdctList [ strVarName ].ToString ( ) ) );
+            foreach ( string strVarName in pdctList.Keys )
+                strNewMsg = strNewMsg.Replace (
+                    strVarName.MakeToken ( DEFAULT_TOKEN_DELM ) ,
+                    string.Format (
+                        pstrFormat ,
+                        pdctList [ strVarName ].ToString ( ) ) );
 
-			//	----------------------------------------------------------------
-			//	Repeat for defaults, which should cover all remaining tokens.
-			//	----------------------------------------------------------------
+            //	----------------------------------------------------------------
+            //	Repeat for defaults, which should cover all remaining tokens.
+            //	----------------------------------------------------------------
 
-			foreach ( string strVarName in pdctDefaults.Keys )
-				strNewMsg = strNewMsg.Replace (
-					strVarName.MakeToken ( DEFAULT_TOKEN_DELM ) ,
-					string.Format (
-						pstrFormat ,
-						pdctDefaults [ strVarName ].ToString ( ) ) );
+            foreach ( string strVarName in pdctDefaults.Keys )
+                strNewMsg = strNewMsg.Replace (
+                    strVarName.MakeToken ( DEFAULT_TOKEN_DELM ) ,
+                    string.Format (
+                        pstrFormat ,
+                        pdctDefaults [ strVarName ].ToString ( ) ) );
 
-			return strNewMsg;
-		}   // static method ReplaceTokensFromList (6 of 6)
-		#endregion	// ReplaceTokensFromList Methods
-
-
-		#region ReportUnresolvedEnvironmentStrings Method
-		/// <summary>
-		/// Display a string that contains unmatched environment strings or
-		/// unmatched environment string delimiters, followed by details about
-		/// the locations of the errors.
-		/// </summary>
-		/// <param name="pstrInput">
-		/// Specify a string that has had its environment strings expanded.
-		/// </param>
-		/// <param name="puintNEnvStrDlms">
-		/// Specify the count of unmatched delimiters. A companion routine,
-		/// UnresolvedEnvironmentStrings, can deliver the count, although the
-		/// call cannot be nested. Please see the remarks.
-		/// </param>
-		/// <param name="puintExitCode">
-		/// This routine is intended to report the error and exit the calling
-		/// console application, returning the specified value as its exit code.
-		/// </param>
-		/// <returns>
-		/// The exit code is passed through, so that the control need not return
-		/// to the caller, but may exit directly or indirectly through 
-		/// Environment.Exit.
-		/// </returns>
-		/// <remarks>
-		/// After the count is written onto the standard error stream, control
-		/// returns to its caller, which may take subsequent actions based upon
-		/// the return value.
-		/// 
-		/// Most of the 
-		/// </remarks>
-		/// <see cref="CountUnresolvedEnvironmentStrings"/>
-		public static uint ReportUnresolvedEnvironmentStrings (
-			this string pstrInput ,
-			uint puintNEnvStrDlms ,
-			uint puintExitCode )
-		{
-			Console.Error.WriteLine ( ReportUnresolvedEnvironmentStrings (
-				pstrInput ,
-				puintNEnvStrDlms ) );
-			return puintExitCode;
-		}   // ReportUnresolvedEnvironmentStrings (1 of 2)
+            return strNewMsg;
+        }   // static method ReplaceTokensFromList (6 of 6)
+        #endregion // ReplaceTokensFromList Methods
 
 
-		/// <summary>
-		/// Display a string that contains unmatched environment strings or
-		/// unmatched environment string delimiters, followed by details about
-		/// the locations of the errors.
-		/// </summary>
-		/// <param name="pstrInput">
-		/// Specify a string that has had its environment strings expanded.
-		/// </param>
-		/// <param name="puintNEnvStrDlms">
-		/// Specify the count of unmatched delimiters. A companion routine,
-		/// UnresolvedEnvironmentStrings, can deliver the count, although the
-		/// call cannot be nested. Please see the remarks.
-		/// </param>
-		/// <returns>
-		/// The return value is a detailed message that shows each unresolved
-		/// string.
-		/// </returns>
-		public static string ReportUnresolvedEnvironmentStrings ( 
-			this string pstrInput ,
-			uint puintNEnvStrDlms )
-		{
-			const uint FIRST_ERROR = 1;
-			const int POS_TO_ORD = 1;
-			const int POS_START = 0;
-
-			StringBuilder sbMessage = new StringBuilder ( MagicNumbers.CAPACITY_01KB );
-
-			sbMessage.AppendFormat (
-				StringTricks.AdjustNumberOfNoun (                                       // Format string (message template)
-					puintNEnvStrDlms ,                                                  // uint puintNumber         = number of items
-					Core.Properties.Resources.ERRMSG_VARIABLE_LITERAL ,                 // string pstrSingularForm  = singular form of noun
-					null ,                                                              // string pstrPluralForm    = plural form of noun, or suffix
-					Core.Properties.Resources.ERRMSG_UNRESLOVED_ENVIRONEMT_STRINGS ) ,  // string pstrPhrase        = phrase in which the noun appears
-				pstrInput.QuoteString ( ) ,												// Format Item 0            = Input string
-				puintNEnvStrDlms ,														// Format Item 1            = Count of unmatched environment strings
-				Environment.NewLine );													// Format Item 2            = Embedded implementation-dependent newline.
-
-			int intLastPos = POS_START;
-
-			for ( uint uintOccurrence = FIRST_ERROR ;
-					   uintOccurrence == puintNEnvStrDlms ;
-					   uintOccurrence++ )
-			{
-				intLastPos = pstrInput.IndexOf (
-					SpecialCharacters.ENV_STR_DLM ,
-					intLastPos );
-
-				if ( uintOccurrence < puintNEnvStrDlms )
-				{   // All but the last error get a message that says that more are coming.
-					sbMessage.AppendFormat (
-						Core.Properties.Resources.ERRMSG_START_CHARACTER ,              // Format string (message template)
-						intLastPos + POS_TO_ORD ,										// Format Item 0 = position of error
-						Core.Properties.Resources.ERRMSG_COMMA_AND_LITERAL ,            // Format Item 1 = more to follow
-						Environment.NewLine );											// Format Item 2 = newline
-				}   // TRUE (all but last error) block, if ( uintOccurrence < puintNEnvStrDlms )
-				else
-				{   // This is the last (or only) error.
-					sbMessage.AppendFormat (
-						Core.Properties.Resources.ERRMSG_START_CHARACTER ,				// Format string (message template)
-						intLastPos + POS_TO_ORD ,										// Format Item 0 = position of error
-						string.Empty ,													// Format Item 1 = nothing (omit)
-						Environment.NewLine );											// Format Item 2 = newline
-				}   // FALSE (last error) block, if ( uintOccurrence < puintNEnvStrDlms )
-			}   // for ( uint uintOccurrence = FIRST_ERROR ; uintOccurrence == puintNEnvStrDlms ; uintOccurrence++ )
-
-			return sbMessage.ToString ( );
-		}	// ReportUnresolvedEnvironmentStrings (2 of 2)
-		#endregion	// ReportUnresolvedEnvironmentStrings Method
+        #region ReportUnresolvedEnvironmentStrings Method
+        /// <summary>
+        /// Display a string that contains unmatched environment strings or
+        /// unmatched environment string delimiters, followed by details about
+        /// the locations of the errors.
+        /// </summary>
+        /// <param name="pstrInput">
+        /// Specify a string that has had its environment strings expanded.
+        /// </param>
+        /// <param name="puintNEnvStrDlms">
+        /// Specify the count of unmatched delimiters. A companion routine,
+        /// UnresolvedEnvironmentStrings, can deliver the count, although the
+        /// call cannot be nested. Please see the remarks.
+        /// </param>
+        /// <param name="puintExitCode">
+        /// This routine is intended to report the error and exit the calling
+        /// console application, returning the specified value as its exit code.
+        /// </param>
+        /// <returns>
+        /// The exit code is passed through, so that the control need not return
+        /// to the caller, but may exit directly or indirectly through 
+        /// Environment.Exit.
+        /// </returns>
+        /// <remarks>
+        /// After the count is written onto the standard error stream, control
+        /// returns to its caller, which may take subsequent actions based upon
+        /// the return value.
+        /// 
+        /// Most of the 
+        /// </remarks>
+        /// <see cref="CountUnresolvedEnvironmentStrings"/>
+        public static uint ReportUnresolvedEnvironmentStrings (
+            this string pstrInput ,
+            uint puintNEnvStrDlms ,
+            uint puintExitCode )
+        {
+            Console.Error.WriteLine ( ReportUnresolvedEnvironmentStrings (
+                pstrInput ,
+                puintNEnvStrDlms ) );
+            return puintExitCode;
+        }   // ReportUnresolvedEnvironmentStrings (1 of 2)
 
 
-		#region RightPadNChars Extension Method
-		/// <summary>
-		/// Right pad the string with a specified number of spaces.
-		/// </summary>
-		/// <param name="pstrPadThisString">
-		/// This argument is supplied by the framework when it binds the method
-		/// to an instance of the System.String class.
-		/// </param>
-		/// <param name="paddingCharacterCount">
-		/// Specify the number of space characters to add on the right end of
-		/// the string.
-		/// 
-		/// Please see the Remarks for important details.
-		/// </param>
-		/// <returns>
-		/// The input string is padded on the right with the specified number of
-		/// space characters.
-		/// 
-		/// Please see the Remarks for important details.
-		/// </returns>
-		/// <remarks>
-		/// These methods compensate for the completely logical, if unexpected,
-		/// behavior of the native PadLeft and PadRight methods on the
-		/// System.string class. Their objective is to guarantee that the new
-		/// string is truly padded with a specific number of characters.
-		/// 
-		/// The names of the visible arguments differ from my usual Hungarian
-		/// naming convention so that they conform to the naming convention of
-		/// the Base Class Library methods that they wrap.
-		/// </remarks>
-		public static string RightPadNChars (
-			this string pstrPadThisString ,
-			int paddingCharacterCount )
-		{
-			return pstrPadThisString.PadRight (
-				PaddedStringLength (
-					pstrPadThisString ,
-					paddingCharacterCount ) );
-		}	// public static string RightPadNChars (1 of 2)
+        /// <summary>
+        /// Display a string that contains unmatched environment strings or
+        /// unmatched environment string delimiters, followed by details about
+        /// the locations of the errors.
+        /// </summary>
+        /// <param name="pstrInput">
+        /// Specify a string that has had its environment strings expanded.
+        /// </param>
+        /// <param name="puintNEnvStrDlms">
+        /// Specify the count of unmatched delimiters. A companion routine,
+        /// UnresolvedEnvironmentStrings, can deliver the count, although the
+        /// call cannot be nested. Please see the remarks.
+        /// </param>
+        /// <returns>
+        /// The return value is a detailed message that shows each unresolved
+        /// string.
+        /// </returns>
+        public static string ReportUnresolvedEnvironmentStrings (
+            this string pstrInput ,
+            uint puintNEnvStrDlms )
+        {
+            const uint FIRST_ERROR = 1;
+            const int POS_TO_ORD = 1;
+            const int POS_START = 0;
 
-		/// <summary>
-		/// Left pad the string with a specified number of some arbitrary
-		/// character.
-		/// </summary>
-		/// <param name="pstrPadThisString">
-		/// This argument is supplied by the framework when it binds the method
-		/// to an instance of the System.String class.
-		/// </param>
-		/// <param name="paddingCharacterCount">
-		/// Specify the number of arbitrary characters to add on the right end 
-		/// of the string. Please see the Remarks for important details.
-		/// </param>
-		/// <param name="paddingChar">
-		/// Specify the arbitrary character with which the string is to be padded.
-		/// </param>
-		/// <returns>
-		/// The input string is padded on the right with the specified number of
-		/// the specified arbitrary character.
-		/// 
-		/// Please see the Remarks for important details.
-		/// </returns>
-		/// <remarks>
-		/// These methods compensate for the completely logical, if unexpected,
-		/// behavior of the native PadLeft and PadRight methods on the
-		/// System.string class. Their objective is to guarantee that the new
-		/// string is truly padded with a specific number of characters.
-		/// 
-		/// The names of the visible arguments differ from my usual Hungarian
-		/// naming convention so that they conform to the naming convention of
-		/// the Base Class Library methods that they wrap.
-		/// </remarks>
-		public static string RightPadNChars (
-			this string pstrPadThisString ,
-			int paddingCharacterCount ,
-			char paddingChar )
-		{
-			return pstrPadThisString.PadRight (
-				PaddedStringLength (
-					pstrPadThisString ,
-					paddingCharacterCount ) ,
-				paddingChar );
-		}	// public static string RightPadNChars (2 of 2)
-		#endregion	// RightPadNChars Extension Method
+            StringBuilder sbMessage = new StringBuilder ( MagicNumbers.CAPACITY_01KB );
+
+            sbMessage.AppendFormat (
+                StringTricks.AdjustNumberOfNoun (                                       // Format string (message template)
+                    puintNEnvStrDlms ,                                                  // uint puintNumber         = number of items
+                    Core.Properties.Resources.ERRMSG_VARIABLE_LITERAL ,                 // string pstrSingularForm  = singular form of noun
+                    null ,                                                              // string pstrPluralForm    = plural form of noun, or suffix
+                    Core.Properties.Resources.ERRMSG_UNRESLOVED_ENVIRONEMT_STRINGS ) ,  // string pstrPhrase        = phrase in which the noun appears
+                pstrInput.QuoteString ( ) ,                                             // Format Item 0            = Input string
+                puintNEnvStrDlms ,                                                      // Format Item 1            = Count of unmatched environment strings
+                Environment.NewLine );                                                  // Format Item 2            = Embedded implementation-dependent newline.
+
+            int intLastPos = POS_START;
+
+            for ( uint uintOccurrence = FIRST_ERROR ;
+                       uintOccurrence == puintNEnvStrDlms ;
+                       uintOccurrence++ )
+            {
+                intLastPos = pstrInput.IndexOf (
+                    SpecialCharacters.ENV_STR_DLM ,
+                    intLastPos );
+
+                if ( uintOccurrence < puintNEnvStrDlms )
+                {   // All but the last error get a message that says that more are coming.
+                    sbMessage.AppendFormat (
+                        Core.Properties.Resources.ERRMSG_START_CHARACTER ,              // Format string (message template)
+                        intLastPos + POS_TO_ORD ,                                       // Format Item 0 = position of error
+                        Core.Properties.Resources.ERRMSG_COMMA_AND_LITERAL ,            // Format Item 1 = more to follow
+                        Environment.NewLine );                                          // Format Item 2 = newline
+                }   // TRUE (all but last error) block, if ( uintOccurrence < puintNEnvStrDlms )
+                else
+                {   // This is the last (or only) error.
+                    sbMessage.AppendFormat (
+                        Core.Properties.Resources.ERRMSG_START_CHARACTER ,              // Format string (message template)
+                        intLastPos + POS_TO_ORD ,                                       // Format Item 0 = position of error
+                        string.Empty ,                                                  // Format Item 1 = nothing (omit)
+                        Environment.NewLine );                                          // Format Item 2 = newline
+                }   // FALSE (last error) block, if ( uintOccurrence < puintNEnvStrDlms )
+            }   // for ( uint uintOccurrence = FIRST_ERROR ; uintOccurrence == puintNEnvStrDlms ; uintOccurrence++ )
+
+            return sbMessage.ToString ( );
+        }   // ReportUnresolvedEnvironmentStrings (2 of 2)
+        #endregion // ReportUnresolvedEnvironmentStrings Method
 
 
-		#region Truncate Method
-		/// <summary>
+        #region RightPadNChars Extension Method
+        /// <summary>
+        /// Right pad the string with a specified number of spaces.
+        /// </summary>
+        /// <param name="pstrPadThisString">
+        /// This argument is supplied by the framework when it binds the method
+        /// to an instance of the System.String class.
+        /// </param>
+        /// <param name="paddingCharacterCount">
+        /// Specify the number of space characters to add on the right end of
+        /// the string.
+        /// 
+        /// Please see the Remarks for important details.
+        /// </param>
+        /// <returns>
+        /// The input string is padded on the right with the specified number of
+        /// space characters.
+        /// 
+        /// Please see the Remarks for important details.
+        /// </returns>
+        /// <remarks>
+        /// These methods compensate for the completely logical, if unexpected,
+        /// behavior of the native PadLeft and PadRight methods on the
+        /// System.string class. Their objective is to guarantee that the new
+        /// string is truly padded with a specific number of characters.
+        /// 
+        /// The names of the visible arguments differ from my usual Hungarian
+        /// naming convention so that they conform to the naming convention of
+        /// the Base Class Library methods that they wrap.
+        /// </remarks>
+        public static string RightPadNChars (
+            this string pstrPadThisString ,
+            int paddingCharacterCount )
+        {
+            return pstrPadThisString.PadRight (
+                PaddedStringLength (
+                    pstrPadThisString ,
+                    paddingCharacterCount ) );
+        }   // public static string RightPadNChars (1 of 2)
+
+        /// <summary>
+        /// Left pad the string with a specified number of some arbitrary
+        /// character.
+        /// </summary>
+        /// <param name="pstrPadThisString">
+        /// This argument is supplied by the framework when it binds the method
+        /// to an instance of the System.String class.
+        /// </param>
+        /// <param name="paddingCharacterCount">
+        /// Specify the number of arbitrary characters to add on the right end 
+        /// of the string. Please see the Remarks for important details.
+        /// </param>
+        /// <param name="paddingChar">
+        /// Specify the arbitrary character with which the string is to be padded.
+        /// </param>
+        /// <returns>
+        /// The input string is padded on the right with the specified number of
+        /// the specified arbitrary character.
+        /// 
+        /// Please see the Remarks for important details.
+        /// </returns>
+        /// <remarks>
+        /// These methods compensate for the completely logical, if unexpected,
+        /// behavior of the native PadLeft and PadRight methods on the
+        /// System.string class. Their objective is to guarantee that the new
+        /// string is truly padded with a specific number of characters.
+        /// 
+        /// The names of the visible arguments differ from my usual Hungarian
+        /// naming convention so that they conform to the naming convention of
+        /// the Base Class Library methods that they wrap.
+        /// </remarks>
+        public static string RightPadNChars (
+            this string pstrPadThisString ,
+            int paddingCharacterCount ,
+            char paddingChar )
+        {
+            return pstrPadThisString.PadRight (
+                PaddedStringLength (
+                    pstrPadThisString ,
+                    paddingCharacterCount ) ,
+                paddingChar );
+        }   // public static string RightPadNChars (2 of 2)
+        #endregion // RightPadNChars Extension Method
+
+
+        #region Truncate Method
+        /// <summary>
         /// Supply the missing Truncate function to members of the String class.
         /// </summary>
         /// <param name="pstrSource">
@@ -2278,57 +2317,559 @@ namespace WizardWrx
         /// Regardless, the return value is a new System.String object.
         /// </returns>
         public static string Truncate (
-			this string pstrSource ,
+            this string pstrSource ,
             int pintMaxLength )
         {
             if ( string.IsNullOrEmpty ( pstrSource ) )
                 return SpecialStrings.EMPTY_STRING;
             else
                 if ( pintMaxLength <= MagicNumbers.EMPTY_STRING_LENGTH )
-                    return SpecialStrings.EMPTY_STRING;
-                else
+                return SpecialStrings.EMPTY_STRING;
+            else
                     if ( pstrSource.Length > pintMaxLength )
-                        return pstrSource.Substring (
-                            MagicNumbers.STRING_SUBSTR_BEGINNING ,
-                            pintMaxLength );
-                    else
-                        return pstrSource;
+                return pstrSource.Substring (
+                    MagicNumbers.STRING_SUBSTR_BEGINNING ,
+                    pintMaxLength );
+            else
+                return pstrSource;
         }   // Truncate method
-		#endregion	// Truncate Methods
+        #endregion // Truncate Methods
 
 
-		#region Private Static Helper Methods
-		/// <summary>
-		/// All four LeftPadNChars and RightPadNChars extension methods use the
-		/// same algorithm to compute the overall length of the new string,
-		/// which is fed to the analogous PadLeft or PadRight method, which
-		/// expects the overall string length.
-		/// </summary>
-		/// <param name="pstrPadThisString">
-		/// Since these methods are used internally, a reference to the string
-		/// must be explicitly passed into it.
-		/// </param>
-		/// <param name="paddingCharacterCount">
-		/// The character count is passed through from the extension method 
-		/// argument list.
-		/// </param>
-		/// <returns>
-		/// The returned integer is the overall length that must be passed along
-		/// to the native PadLeft or PadRight method to guarantee that the
-		/// desired number of padding characters are appended to the new string;
-		/// </returns>
-		/// <remarks>
-		/// This method is syntactic sugar that documents the algorithm by which
-		/// the overall length of the new string must be computed, in order to
-		/// coerce the underlying Pad methods to deliver the desired effect. Any
-		/// decent optimizing compiler should render this inline, in registers.
-		/// </remarks>
-		private static int PaddedStringLength (
-			string pstrPadThisString ,
-			int paddingCharacterCount )
-		{
-			return pstrPadThisString.Length + paddingCharacterCount;
-		}	// Private Static Helper Methods
-		#endregion	// Private Static Helper Methods
-	}   // class StringExtensions
+        #region UnixLineEndings Method
+        /// <summary>
+        /// Replace a string that may contain mixed or unwanted line endings
+        /// with a string that contains only the expected line ending type.
+        /// </summary>
+        /// <param name="pstrSource">
+        /// String in which to replace line endings
+        /// </param>
+        /// <returns>
+        /// A copy of <paramref name="pstrSource"/>, with non-coformant line
+        /// endings replaced. A line ending is treated as non-conformant when it
+        /// is an otherwise valid line ending, but isn't a bare LF character.
+        /// </returns>
+        public static string UnixLineEndings ( this string pstrSource )
+        {
+            return LineEndingFixup (
+                pstrSource ,                                // string                  pstrSource
+                RequiredLineEndings.Unix );                 // RequiredLineEndings     penmRequiredLineEndings
+        }   // UnixLineEndings method
+        #endregion  // UnixLineEndings Method
+
+
+        #region WindowsLineEndings Method
+        /// <summary>
+        /// Replace a string that may contain mixed or unwanted line endings
+        /// with a string that contains only the expected line ending type.
+        /// </summary>
+        /// <param name="pstrSource">
+        /// String in which to replace line endings
+        /// </param>
+        /// <returns>
+        /// A copy of <paramref name="pstrSource"/>, with non-coformant line
+        /// endings replaced. A line ending is treated as non-conformant when it
+        /// is an otherwise valid line ending, but doesn't belong to a CR/LF
+        /// character pair.
+        /// </returns>
+        public static string WindowsLineEndings ( this string pstrSource )
+        {
+            return LineEndingFixup (
+                pstrSource ,                                // string                  pstrSource
+                RequiredLineEndings.Windows );              // RequiredLineEndings     penmRequiredLineEndings
+        }   // WindowsLineEndings method
+        #endregion  // WindowsLineEndings Method
+
+
+        #region Private Constants and Enumerations
+        /// <summary>
+        /// When private method LineEndingFixup calls SetDesiredLineEnding (also
+        /// private), the latter returns a single-character string that contains
+        /// one of these characters, which becomes the new line ending in the
+        /// string that LineEndingFixup eventually returns when old Macintosh
+        /// line endings are requested.
+        /// </summary>
+        const char CHAR_SPLIT_OLD_MACINTOSH = SpecialCharacters.CARRIAGE_RETURN;
+
+
+        /// <summary>
+        /// When private method LineEndingFixup calls SetDesiredLineEnding (also
+        /// private), the latter returns a single-character string that contains
+        /// one of these characters, which becomes the new line ending in the
+        /// string that LineEndingFixup eventually returns when Unix line
+        /// endings are requested.
+        /// </summary>
+        const char CHAR_SPLIT_UNIX = SpecialCharacters.LINEFEED;
+
+
+        /// <summary>
+        /// This enumeration is used internally to specify the line ending type
+        /// that private method LineEndingFixup should return when called by
+        /// UnixLineEndings, WindowsLineEndings, or OldMacLineEndings. The 
+        /// fourth line break combination, LFCR, is unsupported as a return
+        /// type.
+        /// </summary>
+        enum RequiredLineEndings
+        {
+            /// <summary>
+            /// Identified line breaks are guaranteed to be bare CR characters.
+            /// </summary>
+            OldMacintosh,
+
+            /// <summary>
+            /// Identified line breaks are guaranteed to be bare LF characters.
+            /// </summary>
+            Unix,
+
+            /// <summary>
+            /// Identified line breaks are guaranteed to be CR/LF character pairs.
+            /// </summary>
+            Windows
+        }   // RequiredLineEndings
+        #endregion  // Private Constants and Enumerations
+
+
+        #region Private Static Helper Methods
+        /// <summary>
+        /// Methods OldMacLineEndings, UnixLineEndings, and WindowsLineEndings
+        /// call this routine to do their work.
+        /// </summary>
+        /// <param name="pstrSource">
+        /// String in which to replace line endings
+        /// </param>
+        /// <param name="penmRequiredLineEndings">
+        /// Use the RequiredLineEndings enumeration to specify the desired type
+        /// of line endings.
+        /// </param>
+        /// <returns>
+        /// A copy of <paramref name="pstrSource"/>, with non-coformant line
+        /// endings replaced. A line ending is treated as non-conformant when it
+        /// differs from the type indicated by <paramref name="penmRequiredLineEndings"/>.
+        /// </returns>
+        private static string LineEndingFixup (
+            string pstrSource ,
+            RequiredLineEndings penmRequiredLineEndings )
+        {
+            //  ----------------------------------------------------------------
+            //  Construct a StringBuilder with sufficient memory allocated to
+            //  support a final string twice as long as the input string, which
+            //  covers the worst-case scenario of an input string composed
+            //  entirely of single-character newlines, expecting the returned
+            //  string to have Windows line endings.
+            //
+            //  Copy the input string into an array of characters and initialize
+            //  the state machine. Since both are easier to maintain as part of
+            //  the state machine, LineEndingFixupState, the input string is fed
+            //  into its constructor, since it can construct both from it.
+            //  ----------------------------------------------------------------
+
+            LineEndingFixupState state = new LineEndingFixupState (
+                penmRequiredLineEndings ,
+                pstrSource );
+
+            //  ----------------------------------------------------------------
+            //  Using the state machine, a single pass over the character array
+            //  is sufficient.
+            //  ----------------------------------------------------------------
+
+            int intCharsInLine = state.InputCharacterCount;
+
+            for ( int intCurrCharPos = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+                      intCurrCharPos < intCharsInLine ;
+                      intCurrCharPos++ )
+            {
+                state.UpdateState ( intCurrCharPos );
+            }   // for ( int intCurrCharPos = ArrayInfo.ARRAY_FIRST_ELEMENT ; intCurrCharPos < intCharsInLine ; intCurrCharPos++ )
+
+            return state.GetTransformedString ( );
+        }   // private static string LineEndingFixup
+
+
+        /// <summary>
+        /// All four LeftPadNChars and RightPadNChars extension methods use the
+        /// same algorithm to compute the overall length of the new string,
+        /// which is fed to the analogous PadLeft or PadRight method, which
+        /// expects the overall string length.
+        /// </summary>
+        /// <param name="pstrPadThisString">
+        /// Since these methods are used internally, a reference to the string
+        /// must be explicitly passed into it.
+        /// </param>
+        /// <param name="paddingCharacterCount">
+        /// The character count is passed through from the extension method 
+        /// argument list.
+        /// </param>
+        /// <returns>
+        /// The returned integer is the overall length that must be passed along
+        /// to the native PadLeft or PadRight method to guarantee that the
+        /// desired number of padding characters are appended to the new string;
+        /// </returns>
+        /// <remarks>
+        /// This method is syntactic sugar that documents the algorithm by which
+        /// the overall length of the new string must be computed, in order to
+        /// coerce the underlying Pad methods to deliver the desired effect. Any
+        /// decent optimizing compiler should render this inline, in registers.
+        /// </remarks>
+        private static int PaddedStringLength (
+            string pstrPadThisString ,
+            int paddingCharacterCount )
+        {
+            return pstrPadThisString.Length + paddingCharacterCount;
+        }   // private static PaddedStringLength method
+        #endregion // Private Static Helper Methods
+
+
+        #region Private nested class LineEndingFixupState
+        /// <summary>
+        /// On behalf of public static methods OldMacLineEndings, 
+        /// UnixLineEndings, and WindowsLineEndings, private static method
+        /// LineEndingFixup uses an instance of this class to manage the
+        /// resources required to perform its work. Public method UpdateState
+        /// does most of the work required by LineEndingFixup.
+        /// </summary>
+        private class LineEndingFixupState
+        {
+            #region Public Interface of nested LineEndingFixupState class
+            /// <summary>
+            /// This enumeration is used internally to indicate the state of the
+            /// LineEndingFixup state machine.
+            /// </summary>
+            public enum CharacterType
+            {
+                /// <summary>
+                /// The initial state of the machine is that the last character seen
+                /// is unknown.
+                /// </summary>
+                Indeterminate ,
+
+                /// <summary>
+                /// The last character seen isn't a newline character.
+                /// </summary>
+                Other ,
+
+                /// <summary>
+                /// The last character seen was a bare CR character, which is either
+                /// the old Macintosh line break character, or belongs to a
+                /// two-character line break.
+                /// </summary>
+                OldMacintosh ,
+
+                /// <summary>
+                /// The last character seen was a bare LF character, which is either
+                /// a Unix line break character, or belongs to a two-character line
+                /// break.
+                /// </summary>
+                Unix
+            };  // public enum CharacterType
+
+
+            /// <summary>
+            /// The constructor is kept private to guarantee that all instances
+            /// are fully initialized.
+            /// </summary>
+            private LineEndingFixupState ( )
+            {
+            }   // private LineEndingFixupState constructor prohibits uninitialized instances.
+
+
+            /// <summary>
+            /// The only public constructor initializes an instance for use by
+            /// LineEndingFixup.
+            /// </summary>
+            /// <param name="penmRequiredLineEndings">
+            /// LineEndingFixup uses a member of the RequiredLineEndings
+            /// enumeration to specify the type of line endings to be included
+            /// in the new string that it generates from input string
+            /// <paramref name="pstrInput"/>.
+            /// </param>
+            /// <param name="pstrInput">
+            /// Existing line endings in this string are replaced as needed by
+            /// the type of line endings specified by <paramref name="penmRequiredLineEndings"/>.
+            /// </param>
+            public LineEndingFixupState (
+                RequiredLineEndings penmRequiredLineEndings ,
+                string pstrInput )
+            {
+                NewLineEndings = penmRequiredLineEndings;
+                DesiredLineEnding = SetDesiredLineEnding ( );
+                _sbWork = new StringBuilder ( pstrInput.Length * MagicNumbers.PLUS_TWO );
+                _achrInputCharacters = pstrInput.ToCharArray ( );
+                InputCharacterCount = _achrInputCharacters.Length;
+            }   // public NewLineEndings constructor guarantees initialized instances.
+
+
+            /// <summary>
+            /// Since the StringBuilder is a reference type, exposing it makes
+            /// it vulnerable to attack. Therefore, it is kept private, and this
+            /// instance method must be explicitly called to get its value as an
+            /// immutable entity, a new string.
+            /// </summary>
+            /// <returns>
+            /// The contents of the StringBuilder in which the transformed
+            /// string is assembled are returned as a new string.
+            /// </returns>
+            public string GetTransformedString ( )
+            {
+                return _sbWork.ToString ( );
+            }   // public string GetTransformedString
+
+
+            /// <summary>
+            /// LineEndingFixup calls this method once for each character in the
+            /// string that was fed into the instance constructor, and once more
+            /// to handle the final character. The algorithm that it implements
+            /// completes all conversions in one pass.
+            /// </summary>
+            /// <param name="pintCurrCharPos">
+            /// The index of the FOR loop within which this routine is called
+            /// identifies the zero-based position within the internal array of
+            /// characters that is constructed from the input string to process.
+            /// </param>
+            public void UpdateState ( int pintCurrCharPos )
+            {
+                //  ------------------------------------------------------------
+                //  Processing a scalar is slightly more efficient than
+                //  processing an array element.
+                //  ------------------------------------------------------------
+
+                char chrCurrent = GetCharacterAtOffset ( pintCurrCharPos );
+
+                //  ------------------------------------------------------------
+                //  Defer updating the instance property, which would otherwise
+                //  break the test performed by IsRunOfNelines.
+                //  ------------------------------------------------------------
+
+                CharacterType enmCharacterType = ClassifyThisCharacter ( chrCurrent );
+
+                if ( IsThisCharANewline ( chrCurrent ) )
+                {
+                    if ( IsRunOfNelines ( ) )
+                    {   // Some newlines are pairs, of which the second is ignored.
+                        if ( AppendNewline ( pintCurrCharPos , enmCharacterType ) )
+                        {
+                            _sbWork.Append ( DesiredLineEnding );
+                        }   // if ( AppendNewline ( pintCurrCharPos , enmCharacterType ) )
+                    }   // TRUE block, if ( IsRunOfNelines ( ) )
+                    else
+                    {   // Regardless, the first character elicits a newline, and set the run counter.
+                        _intPosNewlineRunStart = _intPosNewlineRunStart == ArrayInfo.ARRAY_INVALID_INDEX
+                            ? pintCurrCharPos
+                            : _intPosNewlineRunStart;
+                        _sbWork.Append ( DesiredLineEnding );
+                    }   // FALSE block, if ( IsRunOfNelines ( ) )
+                }   // if ( IsThisCharANewline ( chrCurrent ) )
+                else
+                {   // It isn't a newline; append it, and reset the run counter.
+                    _sbWork.Append ( chrCurrent );
+                    _intPosNewlineRunStart = ArrayInfo.ARRAY_INVALID_INDEX;
+                }   // if ( IsThisCharANewline ( chrCurrent ) )
+
+                LastCharacter = enmCharacterType;
+            }   // public void UpdateState
+
+
+            /// <summary>
+            /// Strictly speaking this string could be left private. Making it
+            /// public as a read-only member is a debugging aid that preserves
+            /// the integrity of the instance.
+            /// </summary>
+            public string DesiredLineEnding { get; private set; } = null;
+
+
+            /// <summary>
+            /// The FOR loop at the heart of LineEndingFixup initializes its
+            /// limit value from this read-only property.
+            /// </summary>
+            public int InputCharacterCount { get; }
+
+
+            /// <summary>
+            /// Like DesiredLineEnding, this could be kept private, but is made
+            /// public as a debugging aid.
+            /// </summary>
+            public CharacterType LastCharacter { get; private set; } = CharacterType.Indeterminate;
+
+
+            /// <summary>
+            /// Like DesiredLineEnding, this could be kept private, but is made
+            /// public as a debugging aid.
+            /// </summary>
+            public RequiredLineEndings NewLineEndings { get; private set; }
+            #endregion  // Public Interface of nested LineEndingFixupState class
+
+
+            #region Private nested class LineEndingFixupState code and data
+            /// <summary>
+            /// Use the current character position relative to the beginning of
+            /// the run of newline characters and the type of the current and
+            /// immediately previous character in the run to determine whether a
+            /// newline should be emitted.
+            /// </summary>
+            /// <param name="pintCurrCharPos">
+            /// The position (offset) of the current character is compared with
+            /// the position of the first character in the current run of
+            /// newline characters to determine whether to append a newline.
+            /// </param>
+            /// <param name="penmCurrentCharacterType"></param>
+            /// <returns></returns>
+            private bool AppendNewline (
+                int pintCurrCharPos ,
+                CharacterType penmCurrentCharacterType )
+            {
+                const int LONGEST_VALID_NEWLINE_SEQUENCE = MagicNumbers.PLUS_TWO;
+
+                switch ( ( pintCurrCharPos - _intPosNewlineRunStart ) % LONGEST_VALID_NEWLINE_SEQUENCE )
+                {
+                    case MagicNumbers.EVENLY_DIVISIBLE:
+                        return true;
+                    default:
+                        return penmCurrentCharacterType == LastCharacter;
+                }   // switch ( ( pintCurrCharPos - _intPosNewlineRunStart ) % LONGEST_VALID_NEWLINE_SEQUENCE )
+            }   // private bool AppendNewline
+
+            
+            /// <summary>
+            /// Update the LastCharacter property (CharacterType enum).
+            /// </summary>
+            /// <param name="pchrCurrent">
+            /// Pass in the current character, which is about to become the last
+            /// character processed.
+            /// </param>
+            private CharacterType ClassifyThisCharacter ( char pchrCurrent )
+            {
+                switch ( pchrCurrent )
+                {
+                    case CHAR_SPLIT_OLD_MACINTOSH:
+                        return CharacterType.OldMacintosh;
+                    case CHAR_SPLIT_UNIX:
+                        return CharacterType.Unix;
+                    default:
+                        return CharacterType.Other;
+                }   // switch ( pchrCurrent )
+            }   // private void ClassifyThisCharacter
+
+
+            /// <summary>
+            /// Evaluate the character at a specified position in the input
+            /// string, returning TRUE if it is a newline character (CR or LF).
+            /// </summary>
+            /// <param name="pchrThis">
+            /// Specify the character to evaluate.
+            /// </param>
+            /// <returns>
+            /// Return TRUE if the character at the position specified by
+            /// <paramref name="pchrThis"/> is a newline (CR or LF)
+            /// character. Otherwise, return FALSE.
+            /// </returns>
+            private bool IsThisCharANewline ( char pchrThis )
+            {
+                switch ( pchrThis )
+                {
+                    case CHAR_SPLIT_OLD_MACINTOSH:
+                    case CHAR_SPLIT_UNIX:
+                        return true;
+                    default:
+                        return false;
+                }   // switch ( pchrThis )
+            }   // private bool IsThisCharANewline
+
+
+            /// <summary>
+            /// Determine whether the current newline character belongs to a run of them.
+            /// </summary>
+            /// <returns>
+            /// Return TRUE unless _intPosLastNewlineChar is equal to
+            /// ArrayInfo.ARRAY_INVALID_INDEX; otherwise, return FALSE. Though
+            /// this method could go ahead and update _intPosLastNewlineChar, it
+            /// leaves it unchanges, so that its execution is devoid of side
+            /// effects.
+            /// </returns>
+            private bool IsRunOfNelines ( )
+            {
+                return ( _intPosNewlineRunStart != ArrayInfo.ARRAY_INVALID_INDEX );
+            }   // private bool IsRunOfNelines
+
+
+            /// <summary>
+            /// Switch blocks in public instance method UpdateState use this
+            /// routine to return the character at the position (offset)
+            /// specified by <paramref name="pintCurrCharPos"/>.
+            /// </summary>
+            /// <param name="pintCurrCharPos">
+            /// The zero-based offset that was fed into instance method
+            /// UpdateState by its controler, LineEndingFixup
+            /// </param>
+            /// <returns>
+            /// The return value is the character at the specified position
+            /// (offset) in the input string, a copy of which is maintained in
+            /// private character array _achrInputCharacters. Returning this in
+            /// a method exposes the actual character that determines which
+            /// branch of the switch block executes. Otherwise, the debugger
+            /// reports only the return value returned by the property getter.
+            /// It is anticipated that this routine will be optimized away in a
+            /// release build.
+            /// </returns>
+            private char GetCharacterAtOffset ( int pintCurrCharPos )
+            {
+                return _achrInputCharacters [ pintCurrCharPos ];
+            }   // private char GetCharacterAtOffset
+
+
+            /// <summary>
+            /// The public constructor invokes this method once, during the
+            /// initialization phase, to establish the value of the desired line
+            /// ending, which may be a single character or a pair of them.
+            /// </summary>
+            /// <returns>
+            /// The return value is always a string that contains one character or a
+            /// pair of them.
+            /// </returns>
+            private string SetDesiredLineEnding ( )
+            {
+                const string WINDOWS_LINE_BREAK = SpecialStrings.STRING_SPLIT_NEWLINE;
+
+                switch ( NewLineEndings )
+                {
+                    case RequiredLineEndings.OldMacintosh:
+                        return CHAR_SPLIT_OLD_MACINTOSH.ToString ( );
+                    case RequiredLineEndings.Unix:
+                        return CHAR_SPLIT_UNIX.ToString ( );
+                    case RequiredLineEndings.Windows:
+                        return WINDOWS_LINE_BREAK;
+                    default:
+                        throw new InvalidEnumArgumentException (
+                            nameof ( NewLineEndings ) ,
+                            ( int ) NewLineEndings ,
+                            NewLineEndings.GetType ( ) );
+                }   // switch ( NewLineEndings )
+            }   // private string SetDesiredLineEnding
+
+
+            /// <summary>
+            /// The constructor initializes this character array from the input
+            /// string. Thereafter, public method UpdateState processes it one
+            /// character at a time.
+            /// </summary>
+            private readonly char [ ] _achrInputCharacters = null;
+
+
+            /// <summary>
+            /// When two or more newline characters appear in a sequence, it is
+            /// essential to determine whether they are a pair and, if so, treat
+            /// them as such.
+            /// </summary>
+            private int _intPosNewlineRunStart = ArrayInfo.ARRAY_INVALID_INDEX;
+
+
+            /// <summary>
+            /// Since the StringBuilder is a reference type, exposing it makes
+            /// it vulnerable to attack. Therefore, it is kept private, and a
+            /// public instance method, GetTransformedString, must be explicitly
+            /// called to get its value as a new string, an immutable entity.
+            /// </summary>
+            private StringBuilder _sbWork { get; }
+            #endregion  // Private nested class LineEndingFixupState code and data
+        }   // private class LineEndingFixupState
+        #endregion  // Private nested class LineEndingFixupState
+    }   // class StringExtensions
 }   // partial namespace WizardWrx

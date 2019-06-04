@@ -8039,6 +8039,20 @@
             argument pstrFieldName.
             </returns>
         </member>
+        <member name="M:WizardWrx.StringExtensions.OldMacLineEndings(System.String)">
+            <summary>
+            Replace a string that may contain mixed or unwanted line endings
+            with a string that contains only the expected line ending type.
+            </summary>
+            <param name="pstrSource">
+            String in which to replace line endings
+            </param>
+            <returns>
+            A copy of <paramref name="pstrSource"/>, with non-coformant line
+            endings replaced. A line ending is treated as non-conformant when it
+            is an otherwise valid line ending, but isn't a bare CR character.
+            </returns>
+        </member>
         <member name="M:WizardWrx.StringExtensions.ParseCommentInHTMLComment(System.String)">
              <summary>
              Extract parameters, expressed as key-value pairs, from a standard
@@ -8500,6 +8514,95 @@
              Regardless, the return value is a new System.String object.
              </returns>
         </member>
+        <member name="M:WizardWrx.StringExtensions.UnixLineEndings(System.String)">
+            <summary>
+            Replace a string that may contain mixed or unwanted line endings
+            with a string that contains only the expected line ending type.
+            </summary>
+            <param name="pstrSource">
+            String in which to replace line endings
+            </param>
+            <returns>
+            A copy of <paramref name="pstrSource"/>, with non-coformant line
+            endings replaced. A line ending is treated as non-conformant when it
+            is an otherwise valid line ending, but isn't a bare LF character.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.StringExtensions.WindowsLineEndings(System.String)">
+            <summary>
+            Replace a string that may contain mixed or unwanted line endings
+            with a string that contains only the expected line ending type.
+            </summary>
+            <param name="pstrSource">
+            String in which to replace line endings
+            </param>
+            <returns>
+            A copy of <paramref name="pstrSource"/>, with non-coformant line
+            endings replaced. A line ending is treated as non-conformant when it
+            is an otherwise valid line ending, but doesn't belong to a CR/LF
+            character pair.
+            </returns>
+        </member>
+        <member name="F:WizardWrx.StringExtensions.CHAR_SPLIT_OLD_MACINTOSH">
+            <summary>
+            When private method LineEndingFixup calls SetDesiredLineEnding (also
+            private), the latter returns a single-character string that contains
+            one of these characters, which becomes the new line ending in the
+            string that LineEndingFixup eventually returns when old Macintosh
+            line endings are requested.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.StringExtensions.CHAR_SPLIT_UNIX">
+            <summary>
+            When private method LineEndingFixup calls SetDesiredLineEnding (also
+            private), the latter returns a single-character string that contains
+            one of these characters, which becomes the new line ending in the
+            string that LineEndingFixup eventually returns when Unix line
+            endings are requested.
+            </summary>
+        </member>
+        <member name="T:WizardWrx.StringExtensions.RequiredLineEndings">
+            <summary>
+            This enumeration is used internally to specify the line ending type
+            that private method LineEndingFixup should return when called by
+            UnixLineEndings, WindowsLineEndings, or OldMacLineEndings. The 
+            fourth line break combination, LFCR, is unsupported as a return
+            type.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.StringExtensions.RequiredLineEndings.OldMacintosh">
+            <summary>
+            Identified line breaks are guaranteed to be bare CR characters.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.StringExtensions.RequiredLineEndings.Unix">
+            <summary>
+            Identified line breaks are guaranteed to be bare LF characters.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.StringExtensions.RequiredLineEndings.Windows">
+            <summary>
+            Identified line breaks are guaranteed to be CR/LF character pairs.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.StringExtensions.LineEndingFixup(System.String,WizardWrx.StringExtensions.RequiredLineEndings)">
+            <summary>
+            Methods OldMacLineEndings, UnixLineEndings, and WindowsLineEndings
+            call this routine to do their work.
+            </summary>
+            <param name="pstrSource">
+            String in which to replace line endings
+            </param>
+            <param name="penmRequiredLineEndings">
+            Use the RequiredLineEndings enumeration to specify the desired type
+            of line endings.
+            </param>
+            <returns>
+            A copy of <paramref name="pstrSource"/>, with non-coformant line
+            endings replaced. A line ending is treated as non-conformant when it
+            differs from the type indicated by <paramref name="penmRequiredLineEndings"/>.
+            </returns>
+        </member>
         <member name="M:WizardWrx.StringExtensions.PaddedStringLength(System.String,System.Int32)">
             <summary>
             All four LeftPadNChars and RightPadNChars extension methods use the
@@ -8526,6 +8629,222 @@
             coerce the underlying Pad methods to deliver the desired effect. Any
             decent optimizing compiler should render this inline, in registers.
             </remarks>
+        </member>
+        <member name="T:WizardWrx.StringExtensions.LineEndingFixupState">
+            <summary>
+            On behalf of public static methods OldMacLineEndings, 
+            UnixLineEndings, and WindowsLineEndings, private static method
+            LineEndingFixup uses an instance of this class to manage the
+            resources required to perform its work. Public method UpdateState
+            does most of the work required by LineEndingFixup.
+            </summary>
+        </member>
+        <member name="T:WizardWrx.StringExtensions.LineEndingFixupState.CharacterType">
+            <summary>
+            This enumeration is used internally to indicate the state of the
+            LineEndingFixup state machine.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.StringExtensions.LineEndingFixupState.CharacterType.Indeterminate">
+            <summary>
+            The initial state of the machine is that the last character seen
+            is unknown.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.StringExtensions.LineEndingFixupState.CharacterType.Other">
+            <summary>
+            The last character seen isn't a newline character.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.StringExtensions.LineEndingFixupState.CharacterType.OldMacintosh">
+            <summary>
+            The last character seen was a bare CR character, which is either
+            the old Macintosh line break character, or belongs to a
+            two-character line break.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.StringExtensions.LineEndingFixupState.CharacterType.Unix">
+            <summary>
+            The last character seen was a bare LF character, which is either
+            a Unix line break character, or belongs to a two-character line
+            break.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.StringExtensions.LineEndingFixupState.#ctor">
+            <summary>
+            The constructor is kept private to guarantee that all instances
+            are fully initialized.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.StringExtensions.LineEndingFixupState.#ctor(WizardWrx.StringExtensions.RequiredLineEndings,System.String)">
+            <summary>
+            The only public constructor initializes an instance for use by
+            LineEndingFixup.
+            </summary>
+            <param name="penmRequiredLineEndings">
+            LineEndingFixup uses a member of the RequiredLineEndings
+            enumeration to specify the type of line endings to be included
+            in the new string that it generates from input string
+            <paramref name="pstrInput"/>.
+            </param>
+            <param name="pstrInput">
+            Existing line endings in this string are replaced as needed by
+            the type of line endings specified by <paramref name="penmRequiredLineEndings"/>.
+            </param>
+        </member>
+        <member name="M:WizardWrx.StringExtensions.LineEndingFixupState.GetTransformedString">
+            <summary>
+            Since the StringBuilder is a reference type, exposing it makes
+            it vulnerable to attack. Therefore, it is kept private, and this
+            instance method must be explicitly called to get its value as an
+            immutable entity, a new string.
+            </summary>
+            <returns>
+            The contents of the StringBuilder in which the transformed
+            string is assembled are returned as a new string.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.StringExtensions.LineEndingFixupState.UpdateState(System.Int32)">
+            <summary>
+            LineEndingFixup calls this method once for each character in the
+            string that was fed into the instance constructor, and once more
+            to handle the final character. The algorithm that it implements
+            completes all conversions in one pass.
+            </summary>
+            <param name="pintCurrCharPos">
+            The index of the FOR loop within which this routine is called
+            identifies the zero-based position within the internal array of
+            characters that is constructed from the input string to process.
+            </param>
+        </member>
+        <member name="P:WizardWrx.StringExtensions.LineEndingFixupState.DesiredLineEnding">
+            <summary>
+            Strictly speaking this string could be left private. Making it
+            public as a read-only member is a debugging aid that preserves
+            the integrity of the instance.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.StringExtensions.LineEndingFixupState.InputCharacterCount">
+            <summary>
+            The FOR loop at the heart of LineEndingFixup initializes its
+            limit value from this read-only property.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.StringExtensions.LineEndingFixupState.LastCharacter">
+            <summary>
+            Like DesiredLineEnding, this could be kept private, but is made
+            public as a debugging aid.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.StringExtensions.LineEndingFixupState.NewLineEndings">
+            <summary>
+            Like DesiredLineEnding, this could be kept private, but is made
+            public as a debugging aid.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.StringExtensions.LineEndingFixupState.AppendNewline(System.Int32,WizardWrx.StringExtensions.LineEndingFixupState.CharacterType)">
+            <summary>
+            Use the current character position relative to the beginning of
+            the run of newline characters and the type of the current and
+            immediately previous character in the run to determine whether a
+            newline should be emitted.
+            </summary>
+            <param name="pintCurrCharPos">
+            The position (offset) of the current character is compared with
+            the position of the first character in the current run of
+            newline characters to determine whether to append a newline.
+            </param>
+            <param name="penmCurrentCharacterType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WizardWrx.StringExtensions.LineEndingFixupState.ClassifyThisCharacter(System.Char)">
+            <summary>
+            Update the LastCharacter property (CharacterType enum).
+            </summary>
+            <param name="pchrCurrent">
+            Pass in the current character, which is about to become the last
+            character processed.
+            </param>
+        </member>
+        <member name="M:WizardWrx.StringExtensions.LineEndingFixupState.IsThisCharANewline(System.Char)">
+            <summary>
+            Evaluate the character at a specified position in the input
+            string, returning TRUE if it is a newline character (CR or LF).
+            </summary>
+            <param name="pchrThis">
+            Specify the character to evaluate.
+            </param>
+            <returns>
+            Return TRUE if the character at the position specified by
+            <paramref name="pchrThis"/> is a newline (CR or LF)
+            character. Otherwise, return FALSE.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.StringExtensions.LineEndingFixupState.IsRunOfNelines">
+            <summary>
+            Determine whether the current newline character belongs to a run of them.
+            </summary>
+            <returns>
+            Return TRUE unless _intPosLastNewlineChar is equal to
+            ArrayInfo.ARRAY_INVALID_INDEX; otherwise, return FALSE. Though
+            this method could go ahead and update _intPosLastNewlineChar, it
+            leaves it unchanges, so that its execution is devoid of side
+            effects.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.StringExtensions.LineEndingFixupState.GetCharacterAtOffset(System.Int32)">
+            <summary>
+            Switch blocks in public instance method UpdateState use this
+            routine to return the character at the position (offset)
+            specified by <paramref name="pintCurrCharPos"/>.
+            </summary>
+            <param name="pintCurrCharPos">
+            The zero-based offset that was fed into instance method
+            UpdateState by its controler, LineEndingFixup
+            </param>
+            <returns>
+            The return value is the character at the specified position
+            (offset) in the input string, a copy of which is maintained in
+            private character array _achrInputCharacters. Returning this in
+            a method exposes the actual character that determines which
+            branch of the switch block executes. Otherwise, the debugger
+            reports only the return value returned by the property getter.
+            It is anticipated that this routine will be optimized away in a
+            release build.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.StringExtensions.LineEndingFixupState.SetDesiredLineEnding">
+            <summary>
+            The public constructor invokes this method once, during the
+            initialization phase, to establish the value of the desired line
+            ending, which may be a single character or a pair of them.
+            </summary>
+            <returns>
+            The return value is always a string that contains one character or a
+            pair of them.
+            </returns>
+        </member>
+        <member name="F:WizardWrx.StringExtensions.LineEndingFixupState._achrInputCharacters">
+            <summary>
+            The constructor initializes this character array from the input
+            string. Thereafter, public method UpdateState processes it one
+            character at a time.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.StringExtensions.LineEndingFixupState._intPosNewlineRunStart">
+            <summary>
+            When two or more newline characters appear in a sequence, it is
+            essential to determine whether they are a pair and, if so, treat
+            them as such.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.StringExtensions.LineEndingFixupState._sbWork">
+            <summary>
+            Since the StringBuilder is a reference type, exposing it makes
+            it vulnerable to attack. Therefore, it is kept private, and a
+            public instance method, GetTransformedString, must be explicitly
+            called to get its value as a new string, an immutable entity.
+            </summary>
         </member>
         <member name="T:WizardWrx.SyncRoot">
             <summary>

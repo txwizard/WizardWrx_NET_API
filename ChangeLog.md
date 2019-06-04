@@ -4,7 +4,22 @@ This file is a running history of fixes and improvements from version 7.0
 onwards. Changes are documented for the newest version first. Within each
 version, classes are covered in alphabetical order.
 
-# Version 7.18
+## Version 7.19
+
+This upgrade affects only one library, `WizardWrx.Core.dll`; although others
+are updated with the new product version number, they remain otherwise
+unchanged. The changes in this library are confined to the `StringExtensions`
+class, and consist of the following three new methods.
+
+|Method Name        |Method Goal                                     |
+|-------------------|------------------------------------------------|
+|UnixLineEndings    |Replace CR/LF pairs and bare CRs with bare LFs. |
+|WindowsLineEndings |Replace bare LFs with CR/LF pairs.              |
+|OldMacLineEndings  |Replace CR/LF pairs and bare LFs with bare CRs. |
+
+There are literally no other changes in this update.
+
+## Version 7.18
 
 Version 7.18 is a maintenance release, which affects only one library,
 `WizardWrx.Core.dll`, which got rushed into production without sufficient
@@ -12,7 +27,7 @@ testing. This release got the substantially more careful testing that I prefer
 to give to everything. The companion NuGet package went out when I built the
 release configuration of the whole library set.
 
-# Version 7.17
+## Version 7.17
 
 With this release, the two most actively updated libraries, `WizardWrx.Core.dll`
 and `WizardWrx.Common.dll`, automatically update their respective NuGet packages
@@ -22,43 +37,43 @@ immediately pull both into another project, and they receive by far the most
 frequent updates. At present, these are the only two projects that have NuGet
 package generation and publication built into their `.csproj` files.
 
-## Class WizardWrx.AssemblyUtils.ReportGenerators (defined in WizardWrx.AssemblyUtils.dll)
+### Class WizardWrx.AssemblyUtils.ReportGenerators (defined in WizardWrx.AssemblyUtils.dll)
 
 Since its inception, this class has always listed the file version reported by
 the FileVersion object in the System.Diagnostics namespace. Beginning with this
 version, the assembly version reported by the Assembly class in the
 System.Reflection namespace is also given, and each is labeled with its source.
 
-## Class WizardWrx.StringFixups (defined in WizardWrx.Core.dll)
+### Class WizardWrx.StringFixups (defined in WizardWrx.Core.dll)
 
 Override the default `ToString` method, so that it returns a formatted string
 containing the values of its two members (properties), so that they appear in a
 watch window without requring the object to be expanded.
 
-## Class WizardWrx.StringExtensions (defined in WizardWrx.Core.dll)
+### Class WizardWrx.StringExtensions (defined in WizardWrx.Core.dll)
 
 A new `ReplaceEscapedTabsInResourceString` extension method undoes the escaped TAB
 characters that go into a string that contains TAB characters when it is pasted
 into the string resource editor to become part of a .resx file.
 
-## Class WizardWrx.FileInfoExtensionMethods (defined in WizardWrx.Core.dll)
+### Class WizardWrx.FileInfoExtensionMethods (defined in WizardWrx.Core.dll)
 
 `ShowFileDetails` is a new FileInfo extension method that returns a formatted
 string containing user-selected properties of a file.
 
-## Class WizardWrx.ReportHelpers (defined in WizardWrx.Core.dll)
+### Class WizardWrx.ReportHelpers (defined in WizardWrx.Core.dll)
 
 Significantly simplify `CreateFormatString` and `CreateLastToken` by way of a much
 more efficient algorithm that consumes much less memory and CPU time.
 
-## Class WizardWrx.NumericFormats (defined in WizardWrx.Common.dll)
+### Class WizardWrx.NumericFormats (defined in WizardWrx.Common.dll)
 
 The XML comments attached to integer constant `DECIMAL_DIGITS_DEFAULT` contained
 a plain ASCII table that caused it to display incorrectly in the DocFX page that
 was generated from it. Though this change affected the source code, forcing a
 new build, the generated assembly is otherwise identical to its predecessor.
 
-# Version 7.16
+## Version 7.16
 
 The additions revolve around a new method to apply pairs of strings, each
 composed of an original and a replacement value, to a string. Two versions
@@ -67,7 +82,7 @@ extension method on the System.String class. The two new resource strings are
 incidental, though both are employed in the unlikely event that you feed an
 invalid array to the new methods.
 
-## Class WizardWrx.Common.Properties.Resources (defined in WizardWrx.Common.dll)
+### Class WizardWrx.Common.Properties.Resources (defined in WizardWrx.Common.dll)
 
 Since they are intended to be used everywhere, the string resources are marked
 as Public. This release demonstrates the value of that, with additions as
@@ -78,20 +93,20 @@ follows.
 |MSG_VALUE_IS_INVALID	|invalid |Use this string to report that the value of a variable is invalid. |
 |MSG_VALUE_IS_VALID		|valid	 |Use this string to report that the value of a variable is valid.   |
 
-## Class WizardWrx.Core.StringFixups (defined in WizardWrx.Core.dll)
+### Class WizardWrx.Core.StringFixups (defined in WizardWrx.Core.dll)
 
 This new class exposes one method, `ApplyFixups`, which applies pairs of strings
 comprised of an original and its replacement to a string. The array of string
 pairs is stored in the instance for reuse.
 
-## Class WizardWrx.StringExtensions.cs (defined in WizardWrx.Core.dll)
+### Class WizardWrx.StringExtensions.cs (defined in WizardWrx.Core.dll)
 
 This established string extension class gets a new method, `ApplyFixups`, which
 applies pairs of strings comprised of an original and its replacement to a
 string. Unlike the StringFixups class, which has a place to store them, this
 method takes the array as its argument.
 
-# 2019/05/03
+## 2019/05/03
 
 Only the __product__ build number changed, from 210 to 211, to account for the
 migration of all subsidiary projects to NuGet packages.
@@ -117,11 +132,11 @@ In addition to substituting NuGet packages throughout, a handful of errata in
 the XML documentation got fixed. Otherwise, the code is unchanged from the code
 that was first marked as version 7.15.
 
-# Version 7.15
+## Version 7.15
 
 Following is a summary of changes made in version __7.15__, released Sunday, __28 April 2019__.
 
-## Class WizardWrx.SpecialStrings (defined in WizardWrx.Common.dll)
+### Class WizardWrx.SpecialStrings (defined in WizardWrx.Common.dll)
 
 Define the following single-character strings:
 
@@ -143,20 +158,20 @@ for constructing a string constant, which must be composed entirely of other
 string constants. Constants cannot derive their values by calling the `ToString`
 method on a character constant.
 
-## Class WizardWrx.SpecialCharacters (defined in WizardWrx.Common.dll)
+### Class WizardWrx.SpecialCharacters (defined in WizardWrx.Common.dll)
 
 XML comments attached to the character constants that correspond to the new
 string constants listed above get new cross references to the corresponding
 string constant. There are no new constants.
 
-## Class WizardWrx.ConsoleStreams.DefaultErrorMessageColors (defined in WizardWrx.ConsoleStreams.dll)
+### Class WizardWrx.ConsoleStreams.DefaultErrorMessageColors (defined in WizardWrx.ConsoleStreams.dll)
 
 Supplement the `PropsSetFromConfig` property with a `PropsLeftAtDefault` property.
 
 This class also benefits from changes made in its base class,
 `WizardWrx.AssemblyLocatorBase`, defined in `WizardWrx.Core.dll`.
 
-## Class WizardWrx.Core.AssemblyLocatorBase (defined in WizardWrx.Core.dll)
+### Class WizardWrx.Core.AssemblyLocatorBase (defined in WizardWrx.Core.dll)
 
 1) Replace the `ConfigMessage` string property with the
 `RecoveredConfigurationExceptions` list.
@@ -170,7 +185,7 @@ reference exception that was being silently thrown, caught, and handled. That
 exception is addressed by adding an overlooked null reference test that prevents
 the code that would have executed from doing so.
 
-## Class WizardWrx.Core.PropertyDefaults (defined in WizardWrx.Core.dll)
+### Class WizardWrx.Core.PropertyDefaults (defined in WizardWrx.Core.dll)
 
 `EnumerateMissingConfigurationValues` is an instance method that reports
 configuration values that are defined, but are missing from the configuration
@@ -181,7 +196,7 @@ or displayed on a message box.
 This class also benefits from changes made in its base class,
 `WizardWrx.AssemblyLocatorBase`, defined in `WizardWrx.Core.dll`.
 
-## Class WizardWrx.RecoveredException (defined in WizardWrx.Core.dll)
+### Class WizardWrx.RecoveredException (defined in WizardWrx.Core.dll)
 
 This new class, derived from `System.Exception`, provides a mechanism for
 recording an exception without actually throwing it. The recorded exception is a
@@ -217,11 +232,11 @@ configuration file, along with their hard coded default values.
 As always, the test program has been amended to demonstrate the new features,
 including the new string constants and the improved plumbing.
 
-# Version 7.14
+## Version 7.14
 
 Following is a summary of changes made in version __7.14__, released Monday, __24 December 2018__.
 
-## Class WizardWrx.MagicNumbers (defined in WizardWrx.Common.dll)
+### Class WizardWrx.MagicNumbers (defined in WizardWrx.Common.dll)
 
 Define the constants listed in the following table.
 
@@ -244,12 +259,12 @@ These tick values were computed by a custom class in a lab project that I use to
 test ideas and algorithms, and the constants were derived therefrom by Excel
 worksheet formulas.
 
-## Class WizardWrx.DLLConfigurationManager (defined in WizardWrx.DLLConfigurationManager.dll)
+### Class WizardWrx.DLLConfigurationManager (defined in WizardWrx.DLLConfigurationManager.dll)
 
 Add a new `GetTheSingleInstance` overload that takes only the `OptionFlags`
 parameter.
 
-## Class WizardWrx.ClassAndMethodDiagnosticInfo (defined in WizardWrx.ClassAndMethodDiagnosticInfo.dll)
+### Class WizardWrx.ClassAndMethodDiagnosticInfo (defined in WizardWrx.ClassAndMethodDiagnosticInfo.dll)
 
 This is a new class and a new library that leverages new features in the version
 of `System.Runtime.CompilerServices` that ships with version __4.5__ of the Microsoft
@@ -261,7 +276,7 @@ For ease of access, the single class, `ClassAndMethodDiagnosticInfo`, is in the
 than almost everything else, it went into a dedicated library, so that the others
 can retain their original target, version __3.5 Client Profile__.
 
-## Class WizardWrx.MoreMath (defined in WizardWrx.MoreMath.dll)
+### Class WizardWrx.MoreMath (defined in WizardWrx.MoreMath.dll)
 
 This class is relocated from `WizardWrx.Core.dll` to a dedicated library for two reasons.
 
@@ -278,7 +293,7 @@ trivial, it is easy to get wrong. Hence, in the same spirit that motivated the
 `WizardWrx.BitMath` classes, a recent need for a decimal shift motivated creation
 of these decimal shift routines.
 
-# Version 7.13
+## Version 7.13
 
 Following is a summary of changes made in version __7.13__, released Monday, __10 December 2018__.
 
@@ -311,11 +326,11 @@ simplest operations.
 For the time being, there are two constants, `EXACTLY_ONE_HUNDRED_MILLION_LONG`
 and `EXACTLY_ONE_HUNDRED_MILLION`, which differ only with respect to their types.
 
-# Version 7.12
+## Version 7.12
 
 Following is a summary of changes made in version __7.12__, released Friday, __23 November 2018__.
 
-## Class WizardWrx.MoreMath (defined in WizardWrx.Core.dll)
+### Class WizardWrx.MoreMath (defined in WizardWrx.Core.dll)
 
 This class gets a refinement of one of its initial methods, plus two new ones
 that are closely related to it.
@@ -335,11 +350,11 @@ are synonymns.
 All three methods share a common message template, which went into the embedded
 string resources in the library to facilitate localization.
 
-# Version 7.11
+## Version 7.11
 
 Following is a summary of changes made in version __7.11__, released Saturday, __17 November 2018__.
 
-## Class WizardWrx.MagicNumbers (defined in WizardWrx.Common)
+### Class WizardWrx.MagicNumbers (defined in WizardWrx.Common)
 
 - BREAKING CHANGE  Rename `EXACTLY_ONE_NUNDRED` to `EXACTLY_ONE_HUNDRED` to correct a
 misspelling that prevented me finding it.
@@ -350,7 +365,7 @@ _one million_.
 - Define overlooked constants `EXACTLY_TEN` (10) and `EVENLY_DIVISIBLE` (0), the
 latter handy for use with the modulus operator.
 
-## Class WizardWrx.NumericFormats (defined in WizardWrx.Common)
+### Class WizardWrx.NumericFormats (defined in WizardWrx.Common)
 
 - Define `IntegerToHexStr` overloads that omit the second and third arguments,
 substituting common defaults for the missing arguments.
@@ -358,7 +373,7 @@ substituting common defaults for the missing arguments.
 - Change `FormatStatusCode` to use the simplified first overload, shortening its
 stack frame and call setup requirments.
 
-## Class WizardWrx.MoreMath (defined in WizardWrx.Core.dll)
+### Class WizardWrx.MoreMath (defined in WizardWrx.Core.dll)
 
 This class makes its debut, with the following static methods.
 
@@ -370,7 +385,7 @@ inputs.
 - `IsValidGregorianYear` returns TRUE when given a number is a valid year in the
 Gregorian calendar.
 
-## Class WizardWrx.tringExtensions (defined in WizardWrx.Core.dll)
+### Class WizardWrx.tringExtensions (defined in WizardWrx.Core.dll)
 
 - `RenderEvenWhenNull` represents a null reference as a localizable string literal,
 `MSG_OBJECT_REFERENCE_IS_NULL`, defined in `Wizardwrx.Common.Properties.Resources`.
@@ -384,21 +399,21 @@ type specified in the method call.
 The documentation of this library is re-phrased so that everything is in active
 voice. The code is unchanged.
 
-# Version 7.1
+## Version 7.1
 
 Following is a list of changes made in version __7.1__, released Sunday, __07 October 2018__.
 
-## Class WizardWrx.StringExtensions (defined in WizardWrx.Core.dll)
+### Class WizardWrx.StringExtensions (defined in WizardWrx.Core.dll)
 
 Incorporate `CapitalizeWords`, which I created and tested as part of the Great
 Eastern Energy DataFarmer application.
 
-## Class SpecialStrings (defined in WizardWrx.Common)
+### Class SpecialStrings (defined in WizardWrx.Common)
 
 Define `SPACE_CHAR` for use when only a string will do, and cross reference the
 new constant to its antecedent, `SpecialCharacters.SPACE_CHAR`.
 
-## Class ASCIICharacterDisplayInfo (defined in WizardWrx.ASCIIInfo.dll)
+### Class ASCIICharacterDisplayInfo (defined in WizardWrx.ASCIIInfo.dll)
 
 Override `ToString` to render all three representations (printable string,
 hexadecimal, then decimal, in that order), and define static method

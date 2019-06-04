@@ -5,6 +5,21 @@ libraries that comprise the __WizardWrx .NET API__. A companion document,
 `ChangeLog.md`, gives a much more thorough accounting of the improvements and
 bug fixes incorporated in each release.
 
+## Release Notes, 2019/06/04
+
+This upgrade affects only one library, `WizardWrx.Core.dll`; although others
+are updated with the new product version number, they remain otherwise
+unchanged. The changes in this library are confined to the `StringExtensions`
+class, and consist of the following three new methods.
+
+|Method Name        |Method Goal                                     |
+|-------------------|------------------------------------------------|
+|UnixLineEndings    |Replace CR/LF pairs and bare CRs with bare LFs. |
+|WindowsLineEndings |Replace bare LFs with CR/LF pairs.              |
+|OldMacLineEndings  |Replace CR/LF pairs and bare LFs with bare CRs. |
+
+There are literally no other changes in this update.
+
 ## Release Notes, 2019/05/21
 
 Version 7.18 is a maintenance release, which affects only one library,
