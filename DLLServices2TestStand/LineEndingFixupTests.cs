@@ -64,6 +64,10 @@
 
                            OldMacLineEndings    Replace CR/LF pairs and bare LFs
                                                 with bare CRs.
+
+	2019/06/04 7.19    DAG Add two extra sets of test cases to cover empty lines
+                           and unterminated lines, along with a better label for
+                           the test report.
     ============================================================================
 */
 
@@ -75,7 +79,7 @@ namespace DLLServices2TestStand
 {
     internal class LineEndingFixupTests
     {
-        const string OUTCOME_REPORT_TEMPLATE = @"            Test Case {0} of {1}: Output String Name = {2}, Input Length = {3}, Output Length = {4}, Output Line Count = {5}, Outcome = {6}";
+        const string OUTCOME_REPORT_TEMPLATE = @"            Test Case {0} of {1}: Output String Name = {2}, Input Length = {3}, Output Length = {4}, Output Line Count = {5}, Outcome = {6}{7}";
 
         struct TestCase
         {
@@ -90,12 +94,16 @@ namespace DLLServices2TestStand
         };  // struct TestCases
 
         static readonly TestCase [ ] s_astrTestStrings = new TestCase [ ]
-        {
-            new TestCase ( "Test line 1 is followed by a Unix newline.\nTest line 2 is also followed by a Unix newline.\nTest line 3 is followed by a Windows line break.\r\nTest line 4 is followed by the unusual line LF/CR line break.\n\rTest line 5 is followed by the old Macintosh line break, CR.\rTest line 6 is followed by a Unix newline.\nTest line 7 is followed by one last Unix newline.\n", 7 ) ,
-            new TestCase ( "Test line 1 is followed by Windows newline.\r\nTest line 2 is also followed by a Windows newline.\r\nTest line 3 is followed by a Windows line break.\r\nTest line 4 is followed by the unusual line LF/CR line break.\n\rTest line 5 is followed by the old Macintosh line break, CR.\rTest line 6 is followed by a Unix newline.\nTest line 7 is followed by one last Windows newline.\r\n" , 7 ) ,
-            new TestCase ( "Test line 1 is followed by a Windows newline.\r\nTest line 2 is also followed by a Windows newline.\r\nTest line 3 is followed by yet another Windows neline.\r\n" , 3 ) ,
-            new TestCase ( "Test line 1 is followed by a Unix newline.\nTest line 2 is also followed by a Unix newline.\nTest line 3 is followed by yet another Unix neline.\n" ,3 )
-        };
+        {   //             InputString                                                                                                                                                                                                                                                                                                                                                                                      LineCount
+            //             ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------   ---------
+            new TestCase ( "Test line 1 is followed by a Unix newline.\nTest line 2 is also followed by a Unix newline.\nTest line 3 is followed by a Windows line break.\r\nTest line 4 is followed by the unusual line LF/CR line break.\n\rTest line 5 is followed by the old Macintosh line break, CR.\rTest line 6 is followed by a Unix newline.\nTest line 7 is followed by one last Unix newline.\n"              , 7         ) ,
+            new TestCase ( "Test line 1 is followed by Windows newline.\r\nTest line 2 is also followed by a Windows newline.\r\nTest line 3 is followed by a Windows line break.\r\nTest line 4 is followed by the unusual line LF/CR line break.\n\rTest line 5 is followed by the old Macintosh line break, CR.\rTest line 6 is followed by a Unix newline.\nTest line 7 is followed by one last Windows newline.\r\n" , 7         ) ,
+            new TestCase ( "Test line 1 is followed by a Windows newline.\r\nTest line 2 is also followed by a Windows newline.\r\nTest line 3 is followed by yet another Windows neline.\r\n"                                                                                                                                                                                                                            , 3         ) ,
+            new TestCase ( "Test line 1 is followed by a Unix newline.\nTest line 2 is also followed by a Unix newline.\nTest line 3 is followed by yet another Unix neline.\n"                                                                                                                                                                                                                                           , 3         ) ,
+            new TestCase ( "Test line 1 is followed by a Unix newline.\nTest line 2 is followed by 2 Unix newlines.\n\nTest line 4 is followed by one Unix newline.\nTest line 5 is unterminated."                                                                                                                                                                                                                        , 4         ) ,
+            new TestCase ( "Test line 1 is followed by a Old Macintosh newline.\rTest line 2 is followed by 2 Old Macintosh newlines.\r\rTest line 4 is followed by one Old Macintosh newline.\rTest line 5 is unterminated."                                                                                                                                                                                             , 4         ) ,
+            new TestCase ( "Test line 1 is followed by a Windows newline.\r\nTest line 2 is followed by 2 Windows newlines.\r\n\r\nTest line 4 is followed by one Windows newline.\r\nTest line 5 is unterminated."                                                                                                                                                                                                       , 4         ) ,
+        };  // static readonly TestCase [ ] s_astrTestStrings
 
         static int s_intBadOutcomes = ListInfo.LIST_IS_EMPTY;
         static int s_intGoodOutcomes = ListInfo.LIST_IS_EMPTY;
@@ -105,7 +113,7 @@ namespace DLLServices2TestStand
             const int SCENARIO_COUNT = 3;
 
             NewClassTests_20140914.BeginTest (
-                System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,
+                nameof ( StringExtensions ) ,
                 ref pintTestNumber ,
                 Program.BEGIN_TEST_TAKE_METHOD_NAME_AT_FACE_VALUE );
 
@@ -220,7 +228,8 @@ namespace DLLServices2TestStand
                     intActualLineCount ,                                        // Format Item 5: Output Line Count = {5}
                     EvaluateOutcomeForDisplay (                                 // Format Item 6: Outcome = {6}
                         s_astrTestStrings [ pintK ].LineCount ,                     // int pintExpectedLineCount
-                        intActualLineCount )                                        // int pintActualLineCount
+                        intActualLineCount ) ,                                      // int pintActualLineCount
+                    Environment.NewLine                                         // Format Item 7: Platform-dependent newline.
                 } );
             return pintOverallCase;
         }   // private static int ReportTestOutcome (1 of 2)
@@ -259,7 +268,8 @@ namespace DLLServices2TestStand
                     intActualLineCount ,                                        // Format Item 5: Output Line Count = {5}
                     EvaluateOutcomeForDisplay (                                 // Format Item 6: Outcome = {6}
                         s_astrTestStrings [ pintK ].LineCount ,                     // int pintExpectedLineCount
-                        intActualLineCount )                                        // int pintActualLineCount
+                        intActualLineCount ) ,                                      // int pintActualLineCount
+                    Environment.NewLine                                         // Format Item 7: Platform-dependent newline.
                 } );
             return pintOverallCase;
         }   // private static int ReportTestOutcome (2 of 2)
