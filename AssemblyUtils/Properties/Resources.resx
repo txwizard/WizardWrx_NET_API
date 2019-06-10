@@ -367,4 +367,8 @@
     <value>    AssemblyVersion      = {0} (per AssemblyName.GetAssemblyName)</value>
     <comment>Used by ReportGenerators.ShowKeyAssemblyProperties Method</comment>
   </data>
+  <data name="RESOURCE_REPORT_LABELS" xml:space="preserve">
+    <value>ItemNbr\tName\tValue</value>
+    <comment>Static method ListResourcesInAssemblyByName generates the label row for a tab delimited report file from this template.</comment>
+  </data>
 </root>

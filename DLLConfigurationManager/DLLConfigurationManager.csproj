@@ -56,8 +56,16 @@
     <Reference Include="WizardWrx.BitMath, Version=4.3.125.29248, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\WizardWrx.BitMath.4.3.125.29248\lib\net20\WizardWrx.BitMath.dll</HintPath>
     </Reference>
+    <Reference Include="WizardWrx.Common, Version=7.17.114.35192, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>C:\Users\DAG\.nuget\packages\WizardWrx.Common.7.17.114.35192\lib\net20\WizardWrx.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="WizardWrx.ConsoleStreams, Version=7.15.191.37663, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\WizardWrx.ConsoleStreams.7.15.191.37663\lib\net35-client\WizardWrx.ConsoleStreams.dll</HintPath>
+    </Reference>
+    <Reference Include="WizardWrx.Core, Version=7.20.179.21778, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>C:\Users\DAG\.nuget\packages\WizardWrx.Core.7.20.179.21778\lib\net35-client\WizardWrx.Core.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="WizardWrx.FormatStringEngine, Version=7.15.162.826, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\WizardWrx.FormatStringEngine.7.15.162.826\lib\net20\WizardWrx.FormatStringEngine.dll</HintPath>

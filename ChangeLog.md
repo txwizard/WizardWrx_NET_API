@@ -4,6 +4,38 @@ This file is a running history of fixes and improvements from version 7.0
 onwards. Changes are documented for the newest version first. Within each
 version, classes are covered in alphabetical order.
 
+## Version 7.20
+
+Only two of the ten libraries in this constellation have changes in this minor
+update that was driven primarily by the need to fix a bug.
+
+### WizardWrx.Core
+
+The static class that defines the `FileInfo` extension methods is the beneficiary
+of the bug fix.
+
+`ShowFileDetails`: Previous testing overlooked the case when the specified
+file does not exist. This is an issue because I overlooked the fact that the
+`Length` property on the `FileInfo` object throws a `FileNotFoundException`
+Exception when the associated file does not exist, although other properties
+return values of some kind, regardless of whether the file is present or
+absent. Size zero is a legitimate, and fairly commonplace, length (size) of a
+file, this method reports -1, which is not. This is consistent with the behavior
+of the time stamp properties, which report 1600/01/01 00:00:00 when the file is
+absent.
+
+Everything else in the library is unchanged, since no other issues have
+surfaced in daily development use.
+
+### WizardWrx AssemblyUtils
+
+* `SortableManagedResourceItem.ListResourcesInAssemblyByName` gets an optional
+`StreamWriter` argument that causes it to create a tab delimited list of the
+managed string resources in an assembly.
+
+* `ReportGenerators.ListKeyAssemblyPropertiess` had lost the summary paragraph
+of its XML documentation, which is restored.
+
 ## Version 7.19
 
 This upgrade affects only one library, `WizardWrx.Core.dll`; although others

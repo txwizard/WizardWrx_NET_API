@@ -62,9 +62,12 @@
                               true constant, with SpecialStrings.EMPTY_STRING,
                               which is one.
 
-	2017/07/16 7.17    DAG    Add the AssemblyVersion, and document the
+	2019/05/20 7.17    DAG    Add the AssemblyVersion, and document the
                               provenance of both reported version strings, which
                               may, and usually do, differ.
+
+	2019/06/07 7.20    DAG    ListKeyAssemblyProperties was missing the summary
+                              from its XML documentation.
     ============================================================================
 */
 
@@ -114,14 +117,20 @@ namespace WizardWrx.AssemblyUtils
 		}   // public static string GetAssemblyGuidString
 
 
-		/// <param name="pswOut">
+
+        /// <summary>
+        /// Generate the label row on the <paramref name="pswOut"/> StreamWriter
+        /// that is delimited by <paramref name="pchrDlm"/> characters.
+        /// </summary>
+        /// <param name="pswOut">
 		/// Specify the open StreamWriter upon which to write.
 		/// </param>
 		/// <param name="pchrDlm">
 		/// Specify the delimiter character.
 		/// </param>
 		/// <remarks>
-		/// The label template is a managed resource string, REPORT_FIELD_NAMES, which governs the field order.
+		/// The label template is a managed resource string, REPORT_FIELD_NAMES,
+        /// which governs the field order.
 		/// </remarks>
 		public static void LabelKeyAssemblyProperties (
 			StreamWriter pswOut ,
@@ -141,7 +150,8 @@ namespace WizardWrx.AssemblyUtils
 
 
 		/// <summary>
-		/// Create a record and append it to the flat file behind a StreamWriter.
+		/// Create a record and append it to the flat file behind a
+        /// StreamWriter.
 		/// </summary>
 		/// <param name="pasmSubject">
 		/// Specify the assembly to be evaluated.
@@ -153,7 +163,8 @@ namespace WizardWrx.AssemblyUtils
 		/// Specify the delimiter character.
 		/// </param>
 		/// <remarks>
-		/// The label template is a managed resource string, REPORT_FIELD_NAMES, which governs the field order.
+		/// The label template is a managed resource string, REPORT_FIELD_NAMES,
+        /// which governs the field order.
 		/// </remarks>
 		public static void ListKeyAssemblyProperties (
 			Assembly pasmSubject ,

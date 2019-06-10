@@ -69,6 +69,11 @@
                               performance optimization for applications that
                               call it more than once. In addition, it exposed a
                               small performance optimization in this class.
+
+    2019/06/06 7.20    DAG    Correct the clipboard copy error that caused the
+                              alternative absolute file name to go unused, and
+                              add a test for a missing file, which was the real
+                              motivation for this update.
 	============================================================================
 */
 
@@ -109,12 +114,30 @@ namespace DLLServices2TestStand
                 Program.BEGIN_TEST_TAKE_METHOD_NAME_AT_FACE_VALUE );
 
             string strRootAssemblyDirectory = Program.s_smTheApp.AppRootAssemblyFileDirName;
-            string strRelativeFileName = @"..\..\..\Test_Data\MD5_File_Digests.DOCX";
-            string strAbsoluteFileName = Path.Combine ( strRootAssemblyDirectory , strRelativeFileName );
 
-            Console.WriteLine ( @"strRootAssemblyDirectory = {0}" , strRootAssemblyDirectory );
-            Console.WriteLine ( @"strRelativeFileName      = {0}" , strRelativeFileName );
-            Console.WriteLine ( @"strAbsoluteFileName      = {0}" , strAbsoluteFileName );
+            string strRelativeFileName = @"..\..\..\Test_Data\MD5_File_Digests.DOCX";
+            string strRelativeFileNotFound = @"..\..\..\Test_Data\MD5_File_Digests.DOC";
+
+            string strAbsoluteFileName = Path.Combine (
+                strRootAssemblyDirectory ,
+                strRelativeFileName );
+            string strAbsoluteFileNotFound = Path.Combine (
+                strRootAssemblyDirectory ,
+                strRelativeFileNotFound );
+
+            Console.WriteLine (
+                @"strRootAssemblyDirectory = {0}{1}" ,
+                strRootAssemblyDirectory ,
+                Environment.NewLine );
+            Console.WriteLine (
+                @"strRelativeFileName      = {0}" ,
+                strRelativeFileName );
+            Console.WriteLine (
+                @"strAbsoluteFileName      = {0}" ,
+                strAbsoluteFileName );
+            Console.WriteLine (
+                @"strRelativeFileNotFound  = {0}" ,
+                strRelativeFileNotFound );
 
             //  ----------------------------------------------------------------
             //  Since everything uses the same two FileInfo objects, they may as
@@ -123,6 +146,7 @@ namespace DLLServices2TestStand
 
             FileInfo infoAbsolute1 = new FileInfo ( strAbsoluteFileName );
             FileInfo infoAbsolute2 = new FileInfo ( infoAbsolute1.FullName );
+            FileInfo infoAbsolute3 = new FileInfo ( strAbsoluteFileNotFound );
 
             for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ; 
                       intJ < s_aenmDetailsToShow.Length ;
@@ -144,7 +168,15 @@ namespace DLLServices2TestStand
                         true ,                                                  // bool pfPrefixWithNewline = false
                         true ) );                                               // bool pfSuffixWithNewline = false
                 Console.WriteLine (
-                    infoAbsolute1.ShowFileDetails (
+                    infoAbsolute2.ShowFileDetails (
+                        s_aenmDetailsToShow [ intJ ] ,                          // FileDetailsToShow penmFileDetailsToShow = FileDetailsToShow.Everything
+                        string.Format (                                         // string pstrLabel = null
+                            TEST_REPORT_TEMPLATE_ABS ,                              // Format Control String with 1 token
+                            ArrayInfo.OrdinalFromIndex ( intJ ) ) ,                 // Format Item 0: Case {0}: Information
+                        true ,                                                  // bool pfPrefixWithNewline = false
+                        true ) );                                               // bool pfSuffixWithNewline = false
+                Console.WriteLine (
+                    infoAbsolute3.ShowFileDetails (
                         s_aenmDetailsToShow [ intJ ] ,                          // FileDetailsToShow penmFileDetailsToShow = FileDetailsToShow.Everything
                         string.Format (                                         // string pstrLabel = null
                             TEST_REPORT_TEMPLATE_ABS ,                              // Format Control String with 1 token

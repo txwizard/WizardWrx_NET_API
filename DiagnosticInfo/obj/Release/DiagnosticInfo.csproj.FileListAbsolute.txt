@@ -8,3 +8,4 @@ F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Diagnosti
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DiagnosticInfo\obj\Release\DiagnosticInfo.csproj.CopyComplete
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DiagnosticInfo\obj\Release\WizardWrx.DiagnosticInfo.dll
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DiagnosticInfo\obj\Release\WizardWrx.DiagnosticInfo.pdb
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DiagnosticInfo\bin\Release\WizardWrx.Common.xml

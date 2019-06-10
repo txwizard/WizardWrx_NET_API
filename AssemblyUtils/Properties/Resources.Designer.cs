@@ -626,5 +626,14 @@ namespace WizardWrx.AssemblyUtils.Properties {
                 return ResourceManager.GetString("REPORT_FIELD_NAMES", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ItemNbr\tName\tValue.
+        /// </summary>
+        internal static string RESOURCE_REPORT_LABELS {
+            get {
+                return ResourceManager.GetString("RESOURCE_REPORT_LABELS", resourceCulture);
+            }
+        }
     }
 }

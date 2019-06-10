@@ -18,6 +18,15 @@ console, the Windows desktop, or the ASP.NET Web server. To date, I have used
 classes and methods in these libraries in all three environments and against
 virtually every version of the framework and Base Class Library.
 
+## New in Version 7.20
+
+* `SortableManagedResourceItem.ListResourcesInAssemblyByName` gets an optional
+`StreamWriter` argument that causes it to create a tab delimited list of the
+managed string resources in an assembly.
+
+* `ReportGenerators.ListKeyAssemblyPropertiess` had lost the summary paragraph
+of its XML documentation, which is restored.
+
 ## Using the Library
 
 Since there are no name collisions, you may safely set references to any library

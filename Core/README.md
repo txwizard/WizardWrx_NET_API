@@ -1,5 +1,24 @@
 # WizardWrx Core ReadMe
 
+## Version 7.20
+
+For the benefit of NuGet package subscribers, following is a summary of the
+changes in this library, which are confined to the `FileInfoExtensionMethods`
+class.
+
+* `ShowFileDetails`: Previous testing overlooked the case when the specified
+file does not exist. This is an issue because I overlooked the fact that the
+`Length` property on the `FileInfo` object throws a `FileNotFoundException`
+Exception when the associated file does not exist, although other properties
+return values of some kind, regardless of whether the file is present or
+absent. Size zero is a legitimate, and fairly commonplace, length (size) of a
+file, this method reports -1, which is not. This is consistent with the behavior
+of the time stamp properties, which report 1600/01/01 00:00:00 when the file is
+absent.
+
+* Everything else in the library is unchanged, since no other issues have
+surfaced in daily development use.
+
 ## Version 7.19
 
 For the benefit of NuGet package subscribers, following is a summary of the

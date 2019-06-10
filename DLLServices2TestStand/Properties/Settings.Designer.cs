@@ -127,5 +127,23 @@ namespace DLLServices2TestStand.Properties {
                 return ((string)(this["SuccessfulOutcomeMessageBackgroundColor"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("$$DATADIRNAME$$\\Common_Strings.TSV")]
+        public string Common_Strings_Report_FileName {
+            get {
+                return ((string)(this["Common_Strings_Report_FileName"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("$$DATADIRNAME$$\\DllServicesTestStand_Strings.TSV")]
+        public string Startup_Assembly_Strings_Report_FileName {
+            get {
+                return ((string)(this["Startup_Assembly_Strings_Report_FileName"]));
+            }
+        }
     }
 }

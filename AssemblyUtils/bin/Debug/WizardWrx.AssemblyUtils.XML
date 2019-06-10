@@ -618,6 +618,10 @@
             </returns>
         </member>
         <member name="M:WizardWrx.AssemblyUtils.ReportGenerators.LabelKeyAssemblyProperties(System.IO.StreamWriter,System.Char)">
+            <summary>
+            Generate the label row on the <paramref name="pswOut"/> StreamWriter
+            that is delimited by <paramref name="pchrDlm"/> characters.
+            </summary>
             <param name="pswOut">
             Specify the open StreamWriter upon which to write.
             </param>
@@ -625,12 +629,14 @@
             Specify the delimiter character.
             </param>
             <remarks>
-            The label template is a managed resource string, REPORT_FIELD_NAMES, which governs the field order.
+            The label template is a managed resource string, REPORT_FIELD_NAMES,
+            which governs the field order.
             </remarks>
         </member>
         <member name="M:WizardWrx.AssemblyUtils.ReportGenerators.ListKeyAssemblyProperties(System.Reflection.Assembly,System.IO.StreamWriter,System.Char)">
             <summary>
-            Create a record and append it to the flat file behind a StreamWriter.
+            Create a record and append it to the flat file behind a
+            StreamWriter.
             </summary>
             <param name="pasmSubject">
             Specify the assembly to be evaluated.
@@ -642,7 +648,8 @@
             Specify the delimiter character.
             </param>
             <remarks>
-            The label template is a managed resource string, REPORT_FIELD_NAMES, which governs the field order.
+            The label template is a managed resource string, REPORT_FIELD_NAMES,
+            which governs the field order.
             </remarks>
         </member>
         <member name="M:WizardWrx.AssemblyUtils.ReportGenerators.ShowKeyAssemblyProperties(System.Reflection.Assembly)">
@@ -752,7 +759,7 @@
             infrastructure role in this class, I marked it private.
             </remarks>
         </member>
-        <member name="M:WizardWrx.AssemblyUtils.SortableManagedResourceItem.ListResourcesInAssemblyByName(System.Reflection.Assembly)">
+        <member name="M:WizardWrx.AssemblyUtils.SortableManagedResourceItem.ListResourcesInAssemblyByName(System.Reflection.Assembly,System.IO.StreamWriter)">
             <summary>
             Call this static method from a console program to list the resources
             defined in an assembly alphabetically by name.
@@ -760,8 +767,13 @@
             <param name="pasmInWhichEmbedded">
             Specify the assembly that contains the resources to be enumerated.
             </param>
+            <param name="pswReportFile">
+            Pass in a reference to an open StreamWriter to generate a
+            tab-delimited report in addition to the console output. File output
+            is suppressed when this parameter is null.
+            </param>
             <remarks>
-            This class creates and consumes a generic List of instances of the
+            This method creates and consumes a generic List of instances of the
             class that hosts it, and uses string padding to vertically align the
             list without resorting to composite format items.
             </remarks>
@@ -1095,6 +1107,11 @@
         <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.REPORT_FIELD_NAMES">
             <summary>
               Looks up a localized string similar to FullName,AssemblyFileBaseName,AssemblyFileName,AssemblyGuidString,AssembyDirName,Comments,CompanyName,Culture,Description,FileCreationDate,FileModifiedDate,LegalCopyright,LegalTrademarks,ProductName,PublicKeyToken,RuntimeVersion,VersionString.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.RESOURCE_REPORT_LABELS">
+            <summary>
+              Looks up a localized string similar to ItemNbr\tName\tValue.
             </summary>
         </member>
     </members>

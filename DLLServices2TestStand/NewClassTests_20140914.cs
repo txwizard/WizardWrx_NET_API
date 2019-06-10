@@ -19,7 +19,7 @@
 
     Author:             David A. Gray
 
-	License:            Copyright (C) 2011-2018, David A. Gray. 
+	License:            Copyright (C) 2011-2019, David A. Gray. 
 						All rights reserved.
 
                         Redistribution and use in source and binary forms, with
@@ -140,6 +140,12 @@
                               the MagicNumbers class to the listing in method
                               DisplayFormatsExercises. The breaking change is
                               self-correcting.
+
+    2019/06/09 7.20    DAG    Amend EnumerateStringResourcesInAssembly to test
+                              the ListResourcesInAssemblyByName overload that
+                              takes a StreamWriter into which it is expected to
+                              write a tab-delimited list of the string resources
+                              stored in the specified assembly.
 	============================================================================
 */
 
@@ -498,20 +504,33 @@ namespace DLLServices2TestStand
         }   // DisplayFormatsExercises method
 
 
-		internal static int EnumerateStringResourcesInAssembly (
-			ref int pintTestNumber ,
-			System.Reflection.Assembly pasmInWhichEmbedded )
-		{   // Moving the listing operation into a static method on class SortableManagedResourceItem keeps everything together.
-			BeginTest (
-				System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,
-				ref pintTestNumber );
+        internal static int EnumerateStringResourcesInAssembly (
+            ref int pintTestNumber ,
+            System.Reflection.Assembly pasmInWhichEmbedded ,
+            System.IO.StreamWriter pswCommonStringsReportFileName = null )
+        {
+            BeginTest (
+                System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,
+                ref pintTestNumber );
 
-			WizardWrx.AssemblyUtils.SortableManagedResourceItem.ListResourcesInAssemblyByName ( pasmInWhichEmbedded );
+            //  ----------------------------------------------------------------
+            //  Run the test in such a way that the optional argument is omitted
+            //  when it would be a null reference, thus demonstrating that it is
+            //  truly optional.
+            //  ----------------------------------------------------------------
 
-			return TestDone (
-				WizardWrx.MagicNumbers.ERROR_SUCCESS ,
-				pintTestNumber );
-		}   // EnumerateStringResourcesInAssembly method
+            if ( pswCommonStringsReportFileName == null )
+                WizardWrx.AssemblyUtils.SortableManagedResourceItem.ListResourcesInAssemblyByName (
+                    pasmInWhichEmbedded );
+            else
+                WizardWrx.AssemblyUtils.SortableManagedResourceItem.ListResourcesInAssemblyByName (
+                    pasmInWhichEmbedded ,
+                    pswCommonStringsReportFileName );
+
+            return TestDone (
+                MagicNumbers.ERROR_SUCCESS ,
+                pintTestNumber );
+        }   // EnumerateStringResourcesInAssembly method
 
 
 		private static void MagicNumberExercises ( )

@@ -88,6 +88,11 @@
                               eventually exposed the bugs, along with a minor
                               performance optimization for applications that
                               call it more than once.
+
+    2019/06/07 7.20    DAG    Handle the case when the file is absent from the
+                              file system, which causes a FileNotFoundException
+                              Exception, which is documented in the MSDN library
+                              topic for the Length property.
     ============================================================================
 */
 
@@ -104,6 +109,14 @@ namespace WizardWrx
     /// </summary>
     public static class FileInfoExtensionMethods
     {
+        /// <summary>
+        /// Unless the specified file exists and is accessible via the current
+        /// user's security token, Windows throws a FileNotFoundException
+        /// Exception. Rather than allow that to happen, this method reports its
+        /// length as -1, a patently invalid value for a file length.
+        /// </summary>
+        public const int LENGTH_REPORTED_WHEN_FILE_NOT_FOUND = MagicNumbers.MINUS_ONE;
+
         /// <summary>
         /// Use with ShowFileDetails parameter penmFileDetailsToShow.
         /// </summary>
@@ -724,7 +737,9 @@ namespace WizardWrx
         /// <returns>
         /// The return value is a human-readable multi-line report suitable for
         /// display on a console log, event log, print file, or message box.
+        /// When the file is absent, its length is reported as -1.
         /// </returns>
+        /// <see href="https://docs.microsoft.com/en-us/dotnet/api/system.io.fileinfo.length?view=netframework-4.8#System_IO_FileInfo_Length"/>
         public static string ShowFileDetails (
             this FileInfo pfi ,
             FileDetailsToShow penmFileDetailsToShow = FileDetailsToShow.Everything ,
@@ -787,7 +802,7 @@ namespace WizardWrx
                     s_strCompleteFormatString.Substring (
                         s_sslSize.SubstringStart ,
                         s_sslSize.SubstringLength ) );
-                strFileSize = pfi.Length.ToString ( NumericFormats.NUMBER_PER_REG_SETTINGS_0D );
+                strFileSize = ComputeLengthToReport ( pfi );
             }   // if ( ( penmFileDetailsToShow & FileDetailsToShow.Size ) == FileDetailsToShow.Size )
 
             if ( ( penmFileDetailsToShow & FileDetailsToShow.Attributes ) == FileDetailsToShow.Attributes )
@@ -910,6 +925,30 @@ namespace WizardWrx
                     pfSuffixWithNewline ? Environment.NewLine : string.Empty    // Format Item 10: Suffix is either a newline or the empty string
                 } );
         }   // public static string ShowFileDetails
+
+
+        /// <summary>
+        /// The cleanest way to handle this special case is by way of a private
+        /// method that takes the whole FileInfo reference, since the outcome is
+        /// dependent upon the value of its Exists property, along with the more
+        /// obvious dependency upon the Length property.
+        /// </summary>
+        /// <param name="pfi">
+        /// This method receives a reference to the FileInfo object that was fed
+        /// into the calling method, ShowFileDetails.
+        /// </param>
+        /// <returns>
+        /// The NumericFormats.NUMBER_PER_REG_SETTINGS_0D custom format string
+        /// is applied to the Length property to return a string representation
+        /// of its Length property.
+        /// </returns>
+        private static string ComputeLengthToReport ( FileInfo pfi )
+        {
+            if ( pfi.Exists )
+                return pfi.Length.ToString ( NumericFormats.NUMBER_PER_REG_SETTINGS_0D );
+            else
+                return LENGTH_REPORTED_WHEN_FILE_NOT_FOUND.ToString ( NumericFormats.NUMBER_PER_REG_SETTINGS_0D );
+        }   // private static string ComputeLengthToReport
         #endregion  // ShowFileDetails Extension Methods
     }   // public static class FileInfoExtensionMethods
 }   // partial namespace WizardWrx

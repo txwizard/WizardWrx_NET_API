@@ -232,6 +232,13 @@
 
                            OldMacLineEndings    Replace CR/LF pairs and bare LFs
                                                 with bare CRs.
+
+    2019/06/09 7.20    DAG Add a section to invoke the amended test method
+                           EnumerateStringResourcesInAssembly to test the
+                           ListResourcesInAssemblyByName overload that takes a
+                           StreamWriter into which it is expected to write a tab
+                           delimited list of the string resources stored in the
+                           specified assembly.
     ============================================================================
 */
 
@@ -742,7 +749,16 @@ namespace DLLServices2TestStand
 									Properties.Resources.CMDARG_LIST_COMMON_STRINGS ,
 									intRetCode ) );
 
-						if ( ( intRetCode = NewClassTests_20140914.DisplayFormatsExercises ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
+                        intRetCode = ListEmbeddedResources (
+                            ref intTestNumber ,
+                            typeof ( ArrayInfo ) ,
+                            Properties.Settings.Default.Common_Strings_Report_FileName );
+                        intRetCode = ListEmbeddedResources (
+                            ref intTestNumber ,
+                            typeof ( Program ) ,
+                            Properties.Settings.Default.Startup_Assembly_Strings_Report_FileName );
+
+                        if ( ( intRetCode = NewClassTests_20140914.DisplayFormatsExercises ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
 							PauseForPictures ( OMIT_LINEFEED );
 						else
 							throw new Exception (
@@ -965,15 +981,15 @@ FinalReport:
 			}	// TRUE (degenerate case block, if ( string.IsNullOrEmpty ( strDependentAssemblyInfoReportFileName ) )
 			else
 			{
-				using ( System.IO.StreamWriter swOut = new System.IO.StreamWriter ( strDependentAssemblyInfoReportFileName ,
-					                                                                FileIOFlags.FILE_OUT_CREATE ,
-																					System.Text.Encoding.UTF8 ,
-																					MagicNumbers.CAPACITY_08KB ) )
+				using ( StreamWriter swOut = new StreamWriter ( strDependentAssemblyInfoReportFileName ,
+					                                            FileIOFlags.FILE_OUT_CREATE ,
+																System.Text.Encoding.UTF8 ,
+																MagicNumbers.CAPACITY_08KB ) )
 				{
 					appDependents.DisplayProperties (
 						swOut ,
 						SpecialCharacters.TAB_CHAR );
-				}	// using ( System.IO.StreamWriter swOut = new System.IO.StreamWriter ( strDependentAssemblyInfoReportFileName , FileIOFlags.FILE_OUT_CREATE , System.Text.Encoding.UTF8 , MagicNumbers.CAPACITY_08KB ) )
+				}	// using ( StreamWriter swOut = new StreamWriter ( strDependentAssemblyInfoReportFileName , FileIOFlags.FILE_OUT_CREATE , System.Text.Encoding.UTF8 , MagicNumbers.CAPACITY_08KB ) )
 			}	// FALSE (standard case block, if ( string.IsNullOrEmpty ( strDependentAssemblyInfoReportFileName ) )
 		}	// EnumerateDependentAssemblies method
 
@@ -1191,6 +1207,48 @@ FinalReport:
 			else
 				Console.WriteLine ( "{0}The GUID reconstituted INcorrectly from the byte array.{0}" , Environment.NewLine );
 		}   // GenerateExceptionMessageFormatTable method
+
+
+        private static int ListEmbeddedResources (
+            ref int pintTestNumber ,
+            Type ptype ,
+            string pstrReportFileName )
+        {
+            int rintRetCode;
+
+            string strCommonStringsReportFileName = AbsolutePathStringFromSettings ( pstrReportFileName );
+            System.Reflection.Assembly assembly = System.Reflection.Assembly.GetAssembly ( ptype );
+
+            using ( StreamWriter swCommonStringsReportFileName = new StreamWriter ( strCommonStringsReportFileName ,
+                                                                                    FileIOFlags.FILE_OUT_CREATE ,
+                                                                                    System.Text.Encoding.Unicode ,
+                                                                                    MagicNumbers.CAPACITY_08KB ) )
+            {
+                if ( ( rintRetCode = NewClassTests_20140914.EnumerateStringResourcesInAssembly (
+                    ref pintTestNumber ,
+                    assembly ,
+                    swCommonStringsReportFileName ) ) == MagicNumbers.ERROR_SUCCESS )
+                {
+                    PauseForPictures ( OMIT_LINEFEED );
+                }   // TRUE (anticipated outcome) block, if ( ( rintRetCode = NewClassTests_20140914.EnumerateStringResourcesInAssembly ( ref intTestNumber , System.Reflection.Assembly.GetAssembly ( typeof ( ArrayInfo ) ) , strCommonStringsReportFileName ) ) == MagicNumbers.ERROR_SUCCESS )
+                else
+                {
+                    throw new Exception (
+                        string.Format (
+                            Properties.Resources.ERRMSG_NEW_CLASS_TESTS_20140914 ,
+                            Properties.Resources.CMDARG_LIST_COMMON_STRINGS ,
+                            rintRetCode ) );
+                }   // FALSE (unanticipated outcome) block, if ( ( rintRetCode = NewClassTests_20140914.EnumerateStringResourcesInAssembly ( ref intTestNumber , System.Reflection.Assembly.GetAssembly ( typeof ( ArrayInfo ) ) , strCommonStringsReportFileName ) ) == MagicNumbers.ERROR_SUCCESS )
+            }   // using ( StreamWriter swCommonStringsReportFileName = new StreamWriter ( strCommonStringsReportFileName , FileIOFlags.FILE_OUT_CREATE , System.Text.Encoding.Unicode , MagicNumbers.CAPACITY_08KB ) )
+
+            FileInfo info = new FileInfo ( strCommonStringsReportFileName );
+            Console.WriteLine ( info.ShowFileDetails (
+                FileInfoExtensionMethods.FileDetailsToShow.Everything ,
+                string.Format (
+                    @"Tab-delimited list of string resources stored in " ,
+                    assembly.FullName ) ) );
+            return rintRetCode;
+        }   // private static int ListEmbeddedResources
 
 
         private static void RecoveredExceptionTests ( ref int pintTestNumber )

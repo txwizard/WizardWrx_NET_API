@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>This minor update of an established, very stable, library adds the assembly version reported by Reflection, and documents both version strings.</releaseNotes>
+	    <releaseNotes>This minor update of an established, very stable, library, adds an optional StreamWriter argument to SortableManagedResourceItem.ListResourcesInAssemblyByName that causes it to create a tab delimited list of the managed string resources in an assembly, and restores the summary paragraph of the XML documentation of ReportGenerators.ListKeyAssemblyPropertiess.</releaseNotes>
     	<copyright>$copyright$</copyright>
     	<tags>Assemblies Dependenciess Resources Enumerators</tags>
 	</metadata>

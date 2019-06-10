@@ -4649,6 +4649,14 @@
             static class must expose them.
             </summary>
         </member>
+        <member name="F:WizardWrx.FileInfoExtensionMethods.LENGTH_REPORTED_WHEN_FILE_NOT_FOUND">
+            <summary>
+            Unless the specified file exists and is accessible via the current
+            user's security token, Windows throws a FileNotFoundException
+            Exception. Rather than allow that to happen, this method reports its
+            length as -1, a patently invalid value for a file length.
+            </summary>
+        </member>
         <member name="T:WizardWrx.FileInfoExtensionMethods.FileDetailsToShow">
             <summary>
             Use with ShowFileDetails parameter penmFileDetailsToShow.
@@ -5017,6 +5025,25 @@
             <returns>
             The return value is a human-readable multi-line report suitable for
             display on a console log, event log, print file, or message box.
+            When the file is absent, its length is reported as -1.
+            </returns>
+            <see href="https://docs.microsoft.com/en-us/dotnet/api/system.io.fileinfo.length?view=netframework-4.8#System_IO_FileInfo_Length"/>
+        </member>
+        <member name="M:WizardWrx.FileInfoExtensionMethods.ComputeLengthToReport(System.IO.FileInfo)">
+            <summary>
+            The cleanest way to handle this special case is by way of a private
+            method that takes the whole FileInfo reference, since the outcome is
+            dependent upon the value of its Exists property, along with the more
+            obvious dependency upon the Length property.
+            </summary>
+            <param name="pfi">
+            This method receives a reference to the FileInfo object that was fed
+            into the calling method, ShowFileDetails.
+            </param>
+            <returns>
+            The NumericFormats.NUMBER_PER_REG_SETTINGS_0D custom format string
+            is applied to the Length property to return a string representation
+            of its Length property.
             </returns>
         </member>
         <member name="T:WizardWrx.FileNameTricks">

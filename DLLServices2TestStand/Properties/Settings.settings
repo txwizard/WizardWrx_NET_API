@@ -35,5 +35,11 @@
     <Setting Name="SuccessfulOutcomeMessageBackgroundColor" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Green</Value>
     </Setting>
+    <Setting Name="Common_Strings_Report_FileName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">$$DATADIRNAME$$\Common_Strings.TSV</Value>
+    </Setting>
+    <Setting Name="Startup_Assembly_Strings_Report_FileName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">$$DATADIRNAME$$\DllServicesTestStand_Strings.TSV</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
