@@ -1,0 +1,904 @@
+DLLServices2TestStand, version 7.20.211.0 BOJ
+2019/06/12 00:27:12.013 (2019/06/12 05:27:12.013 UTC)
+
+
+Processor Architecture                 = Amd64
+Process Machine Word                   = 64 bits
+
+OS Version                             = Microsoft Windows NT 6.2.9200.0
+
+OutputOptions Initial                  = 23 (35 decimal = Method, Source, StandardError)
+OutputOptions Event Logging Enabled    = 2B (43 decimal = Method, Source, EventLog, StandardError)
+2 of 5 configuration settings defined for F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServices2TestStand\bin\Debug\WizardWrx.DLLConfigurationManager.dll are missing from its configuration file.
+
+ Details follow.
+
+    1 of 2: RecoverablelExceptionTextColor = Black
+    2 of 2: DefaultWindowsEventSourceID = WizardWrx
+
+End of list
+
+Default Windows Event Source ID String = WizardWrx
+
+Real Entry Assembly Name               = DLLServices2TestStand
+
+
+The default application domain exhibits the following properties.
+
+    ActivationContext                                  = NULL
+    ApplicationIdentity                                = NULL
+    BaseDirectory                                      = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServices2TestStand\bin\Debug\
+    DomainManager                                      = NULL
+    DomainManager.FriendlyName                         = DLLServices2TestStand.exe
+    DomainManager.Id                                   = 1
+    DomainManager.SetupInformation.ApplicationName     = DLLServices2TestStand.exe
+    DomainManager.SetupInformation.ApplicationBase     = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServices2TestStand\bin\Debug\
+
+    Name of Entry Assembly                             = DLLServices2TestStand, Version=7.18.1215.162, Culture=neutral, PublicKeyToken=null
+    Absolute Location of Entry Assembly                = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServices2TestStand\bin\Debug\DLLServices2TestStand.exe
+
+    Entry Assembly Subsystem                           = 3 (IMAGE_SUBSYSTEM_WINDOWS_CUI): Image runs in the Windows character subsystem.
+
+
+End of property listing for default application domain
+
+
+The current process has the following properties.
+
+    Name of Entry Assembly   = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServices2TestStand\bin\Debug\DLLServices2TestStand.exe
+    Entry Assembly Subsystem = 3 (IMAGE_SUBSYSTEM_WINDOWS_CUI): Image runs in the Windows character subsystem.
+
+    Process ID               = 0x00002C44 (11332 decimal)
+
+    Process Startup Time     = 2019/06/12 00:27:11 (2019/06/12 05:27:11 UTC)
+    Current Machine Time     = 2019/06/12 00:27:12 (2019/06/12 05:27:12 UTC)
+
+End of property listing for current process
+
+
+Test # 1 - Exercising class RecoveredExceptionTests:
+
+RecoveredException test 1: Message    = Get a real stack trace.
+                           TargetSite = RecoveredExceptionTests
+                           Source     = DLLServices2TestStand
+                           StackTrace =    at DLLServices2TestStand.Program.RecoveredExceptionTests(Int32& pintTestNumber) in F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServices2TestStand\Program.cs:line 1268
+
+RecoveredException test 2: Message    = Simulate a recovered exception.
+                           TargetSite = RecoveredExceptionTests
+                           Source     = DLLServices2TestStand, Version=7.18.1215.162, Culture=neutral, PublicKeyToken=null
+                           StackTrace =    at DLLServices2TestStand.Program.RecoveredExceptionTests(Int32& pintTestNumber) in F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServices2TestStand\Program.cs:line 1282
+   at DLLServices2TestStand.Program.Main(String[] pastrArgs) in F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServices2TestStand\Program.cs:line 533
+
+
+Test # 1 Done - Final Status Code = 0
+
+
+Test # 2 - Exercising class ExerciseStringFixups:
+
+All tests use the following input array:
+
+    Element 0: Input String  = Error Message
+                 Output String = ErrorMessage
+                 ToString      = InputValue = Error Message, OutputValue = ErrorMessage
+    Element 1: Input String  = Foo Bar
+                 Output String = FooBar
+                 ToString      = InputValue = Foo Bar, OutputValue = FooBar
+
+The following tests use a StringFixups instance.
+
+    Element 0: Input String  = {
+     "Error Message": "Invalid API call. Please retry or visit the documentation (https://www.alphavantage.co/documentation/) for SYMBOL_SEARCH."}
+                 Output String = {
+     "ErrorMessage": "Invalid API call. Please retry or visit the documentation (https://www.alphavantage.co/documentation/) for SYMBOL_SEARCH."}
+    Element 1: Input String  = {
+     "ErrorMessage": "Invalid API call. Please retry or visit the documentation (https://www.alphavantage.co/documentation/) for SYMBOL_SEARCH."}
+                 Output String = {
+     "ErrorMessage": "Invalid API call. Please retry or visit the documentation (https://www.alphavantage.co/documentation/) for SYMBOL_SEARCH."}
+    Element 2: Input String  = {
+     "Foo Bar": "It's a Foo Bar, Sir!}
+                 Output String = {
+     "FooBar": "It's a FooBar, Sir!}
+
+The following tests use the ApplyFixups extension method on the System.String class.
+
+    Element 0: Input String  = {
+     "Error Message": "Invalid API call. Please retry or visit the documentation (https://www.alphavantage.co/documentation/) for SYMBOL_SEARCH."}
+                 Output String = {
+     "ErrorMessage": "Invalid API call. Please retry or visit the documentation (https://www.alphavantage.co/documentation/) for SYMBOL_SEARCH."}
+    Element 1: Input String  = {
+     "ErrorMessage": "Invalid API call. Please retry or visit the documentation (https://www.alphavantage.co/documentation/) for SYMBOL_SEARCH."}
+                 Output String = {
+     "ErrorMessage": "Invalid API call. Please retry or visit the documentation (https://www.alphavantage.co/documentation/) for SYMBOL_SEARCH."}
+    Element 2: Input String  = {
+     "Foo Bar": "It's a Foo Bar, Sir!}
+                 Output String = {
+     "FooBar": "It's a FooBar, Sir!}
+
+Test # 2 Done - Final Status Code = 0
+
+MESSAGE_CONTAINS_ESCAPED_TABS = Item\tActivity_Date\tOpen\tHigh\tLow\tClose\tAdjustedClose\tVolume\tDividendAmount\tSplitCoefficient
+strDetailRowFormatString      = Item	Activity_Date	Open	High	Low	Close	AdjustedClose	Volume	DividendAmount	SplitCoefficient
+
+Test # 3 - Exercising class Exercise:
+
+strRootAssemblyDirectory = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServices2TestStand\bin\Debug
+
+strRelativeFileName      = ..\..\..\Test_Data\MD5_File_Digests.DOCX
+strAbsoluteFileName      = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServices2TestStand\bin\Debug\..\..\..\Test_Data\MD5_File_Digests.DOCX
+strRelativeFileNotFound  = ..\..\..\Test_Data\MD5_File_Digests.DOC
+
+Testing ShowFileDetails extension method with FileDetailsToShow = 0 (None):
+
+    Case 1: Information gathered based on relative file name:     Absolute Name = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MD5_File_Digests.DOCX
+                                                                  Modified Date = 2014/02/18 01:37:40
+
+
+    Case 1: Information gathered based on absolute file name:     Absolute Name = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MD5_File_Digests.DOCX
+                                                                  Modified Date = 2014/02/18 01:37:40
+
+    Case 1: Information gathered based on absolute file name:     Absolute Name = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MD5_File_Digests.DOC
+                                                                  Modified Date = 1600/12/31 18:00:00
+
+Testing ShowFileDetails extension method with FileDetailsToShow = 8 (AccessedTime):
+
+    Case 2: Information gathered based on relative file name:     Absolute Name = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MD5_File_Digests.DOCX
+                                                                  Modified Date = 2014/02/18 01:37:40
+                                                                  Date Accessed = 2018/01/01 21:13:46
+
+
+    Case 2: Information gathered based on absolute file name:     Absolute Name = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MD5_File_Digests.DOCX
+                                                                  Modified Date = 2014/02/18 01:37:40
+                                                                  Date Accessed = 2018/01/01 21:13:46
+
+    Case 2: Information gathered based on absolute file name:     Absolute Name = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MD5_File_Digests.DOC
+                                                                  Modified Date = 1600/12/31 18:00:00
+                                                                  Date Accessed = 1600/12/31 18:00:00
+
+Testing ShowFileDetails extension method with FileDetailsToShow = 4 (CreatedTime):
+
+    Case 3: Information gathered based on relative file name:     Absolute Name = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MD5_File_Digests.DOCX
+                                                                  Modified Date = 2014/02/18 01:37:40
+                                                                  Date Created  = 2018/01/01 21:13:46
+
+
+    Case 3: Information gathered based on absolute file name:     Absolute Name = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MD5_File_Digests.DOCX
+                                                                  Modified Date = 2014/02/18 01:37:40
+                                                                  Date Created  = 2018/01/01 21:13:46
+
+    Case 3: Information gathered based on absolute file name:     Absolute Name = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MD5_File_Digests.DOC
+                                                                  Modified Date = 1600/12/31 18:00:00
+                                                                  Date Created  = 1600/12/31 18:00:00
+
+Testing ShowFileDetails extension method with FileDetailsToShow = 1 (LocalTime):
+
+    Case 4: Information gathered based on relative file name:     Absolute Name = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MD5_File_Digests.DOCX
+                                                                  Modified Date = 2014/02/18 01:37:40
+
+
+    Case 4: Information gathered based on absolute file name:     Absolute Name = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MD5_File_Digests.DOCX
+                                                                  Modified Date = 2014/02/18 01:37:40
+
+    Case 4: Information gathered based on absolute file name:     Absolute Name = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MD5_File_Digests.DOC
+                                                                  Modified Date = 1600/12/31 18:00:00
+
+Testing ShowFileDetails extension method with FileDetailsToShow = 2 (UtcTime):
+
+    Case 5: Information gathered based on relative file name:     Absolute Name = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MD5_File_Digests.DOCX
+                                                                  Modified Date = 2014/02/18 07:37:40
+
+
+    Case 5: Information gathered based on absolute file name:     Absolute Name = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MD5_File_Digests.DOCX
+                                                                  Modified Date = 2014/02/18 07:37:40
+
+    Case 5: Information gathered based on absolute file name:     Absolute Name = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MD5_File_Digests.DOC
+                                                                  Modified Date = 1601/01/01 00:00:00
+
+Testing ShowFileDetails extension method with FileDetailsToShow = 12 (AllTimes):
+
+    Case 6: Information gathered based on relative file name:     Absolute Name = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MD5_File_Digests.DOCX
+                                                                  Modified Date = 2014/02/18 01:37:40
+                                                                  Date Created  = 2018/01/01 21:13:46
+                                                                  Date Accessed = 2018/01/01 21:13:46
+
+
+    Case 6: Information gathered based on absolute file name:     Absolute Name = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MD5_File_Digests.DOCX
+                                                                  Modified Date = 2014/02/18 01:37:40
+                                                                  Date Created  = 2018/01/01 21:13:46
+                                                                  Date Accessed = 2018/01/01 21:13:46
+
+    Case 6: Information gathered based on absolute file name:     Absolute Name = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MD5_File_Digests.DOC
+                                                                  Modified Date = 1600/12/31 18:00:00
+                                                                  Date Created  = 1600/12/31 18:00:00
+                                                                  Date Accessed = 1600/12/31 18:00:00
+
+Testing ShowFileDetails extension method with FileDetailsToShow = 15 (AllTimesWithUtc):
+
+    Case 7: Information gathered based on relative file name:     Absolute Name = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MD5_File_Digests.DOCX
+                                                                  Modified Date = 2014/02/18 01:37:40 (2014/02/18 07:37:40 UTC)
+                                                                  Date Created  = 2018/01/01 21:13:46 (2018/01/02 03:13:46 UTC)
+                                                                  Date Accessed = 2018/01/01 21:13:46 (2018/01/02 03:13:46 UTC)
+
+
+    Case 7: Information gathered based on absolute file name:     Absolute Name = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MD5_File_Digests.DOCX
+                                                                  Modified Date = 2014/02/18 01:37:40 (2014/02/18 07:37:40 UTC)
+                                                                  Date Created  = 2018/01/01 21:13:46 (2018/01/02 03:13:46 UTC)
+                                                                  Date Accessed = 2018/01/01 21:13:46 (2018/01/02 03:13:46 UTC)
+
+    Case 7: Information gathered based on absolute file name:     Absolute Name = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MD5_File_Digests.DOC
+                                                                  Modified Date = 1600/12/31 18:00:00 (1601/01/01 00:00:00 UTC)
+                                                                  Date Created  = 1600/12/31 18:00:00 (1601/01/01 00:00:00 UTC)
+                                                                  Date Accessed = 1600/12/31 18:00:00 (1601/01/01 00:00:00 UTC)
+
+Testing ShowFileDetails extension method with FileDetailsToShow = 16 (Size):
+
+    Case 8: Information gathered based on relative file name:     Absolute Name = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MD5_File_Digests.DOCX
+                                                                  Modified Date = 2014/02/18 01:37:40
+                                                                  Size in bytes = 161,356
+
+
+    Case 8: Information gathered based on absolute file name:     Absolute Name = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MD5_File_Digests.DOCX
+                                                                  Modified Date = 2014/02/18 01:37:40
+                                                                  Size in bytes = 161,356
+
+    Case 8: Information gathered based on absolute file name:     Absolute Name = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MD5_File_Digests.DOC
+                                                                  Modified Date = 1600/12/31 18:00:00
+                                                                  Size in bytes = -1
+
+Testing ShowFileDetails extension method with FileDetailsToShow = 32 (Attributes):
+
+    Case 9: Information gathered based on relative file name:     Absolute Name = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MD5_File_Digests.DOCX
+                                                                  Modified Date = 2014/02/18 01:37:40
+                                                                  Attributes    = 1 (ReadOnly)
+
+
+    Case 9: Information gathered based on absolute file name:     Absolute Name = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MD5_File_Digests.DOCX
+                                                                  Modified Date = 2014/02/18 01:37:40
+                                                                  Attributes    = 1 (ReadOnly)
+
+    Case 9: Information gathered based on absolute file name:     Absolute Name = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MD5_File_Digests.DOC
+                                                                  Modified Date = 1600/12/31 18:00:00
+                                                                  Attributes    = -1 (-1)
+
+Testing ShowFileDetails extension method with FileDetailsToShow = 63 (Everything):
+
+    Case 10: Information gathered based on relative file name:     Absolute Name = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MD5_File_Digests.DOCX
+                                                                   Modified Date = 2014/02/18 01:37:40 (2014/02/18 07:37:40 UTC)
+                                                                   Date Created  = 2018/01/01 21:13:46 (2018/01/02 03:13:46 UTC)
+                                                                   Date Accessed = 2018/01/01 21:13:46 (2018/01/02 03:13:46 UTC)
+                                                                   Size in bytes = 161,356
+                                                                   Attributes    = 1 (ReadOnly)
+
+
+    Case 10: Information gathered based on absolute file name:     Absolute Name = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MD5_File_Digests.DOCX
+                                                                   Modified Date = 2014/02/18 01:37:40 (2014/02/18 07:37:40 UTC)
+                                                                   Date Created  = 2018/01/01 21:13:46 (2018/01/02 03:13:46 UTC)
+                                                                   Date Accessed = 2018/01/01 21:13:46 (2018/01/02 03:13:46 UTC)
+                                                                   Size in bytes = 161,356
+                                                                   Attributes    = 1 (ReadOnly)
+
+    Case 10: Information gathered based on absolute file name:     Absolute Name = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MD5_File_Digests.DOC
+                                                                   Modified Date = 1600/12/31 18:00:00 (1601/01/01 00:00:00 UTC)
+                                                                   Date Created  = 1600/12/31 18:00:00 (1601/01/01 00:00:00 UTC)
+                                                                   Date Accessed = 1600/12/31 18:00:00 (1601/01/01 00:00:00 UTC)
+                                                                   Size in bytes = -1
+                                                                   Attributes    = -1 (-1)
+
+
+Test # 3 Done - Final Status Code = 0
+
+
+Test # 1 - Exercising class StringExtensions:
+
+        Input string test 1 of 7: Input String Length = 358, Input String:
+Test line 1 is followed by a Unix newline.
+Test line 2 is also followed by a Unix newline.
+Test line 3 is followed by a Windows line break.
+Test line 4 is followed by the unusual line LF/CR line break.
+Test line 5 is followed by the old Macintosh line break, CR.Test line 6 is followed by a Unix newline.
+Test line 7 is followed by one last Unix newline.
+
+
+            Test Case 1 of 21: Output String Name = strFormattedForMac, Input Length = 358, Output Length = 356, Output Line Count = 7, Outcome = OK
+
+            Test Case 2 of 21: Output String Name = strFormattedForUnix, Input Length = 358, Output Length = 356, Output Line Count = 7, Outcome = OK
+
+            Test Case 3 of 21: Output String Name = strFormattedForWindows, Input Length = 358, Output Length = 363, Output Line Count = 7, Outcome = OK
+
+        Input string test 2 of 7: Input String Length = 368, Input String:
+Test line 1 is followed by Windows newline.
+Test line 2 is also followed by a Windows newline.
+Test line 3 is followed by a Windows line break.
+Test line 4 is followed by the unusual line LF/CR line break.
+Test line 5 is followed by the old Macintosh line break, CR.Test line 6 is followed by a Unix newline.
+Test line 7 is followed by one last Windows newline.
+
+
+            Test Case 4 of 21: Output String Name = strFormattedForMac, Input Length = 368, Output Length = 363, Output Line Count = 7, Outcome = OK
+
+            Test Case 5 of 21: Output String Name = strFormattedForUnix, Input Length = 368, Output Length = 363, Output Line Count = 7, Outcome = OK
+
+            Test Case 6 of 21: Output String Name = strFormattedForWindows, Input Length = 368, Output Length = 370, Output Line Count = 7, Outcome = OK
+
+        Input string test 3 of 7: Input String Length = 155, Input String:
+Test line 1 is followed by a Windows newline.
+Test line 2 is also followed by a Windows newline.
+Test line 3 is followed by yet another Windows neline.
+
+
+            Test Case 7 of 21: Output String Name = strFormattedForMac, Input Length = 155, Output Length = 152, Output Line Count = 3, Outcome = OK
+
+            Test Case 8 of 21: Output String Name = strFormattedForUnix, Input Length = 155, Output Length = 152, Output Line Count = 3, Outcome = OK
+
+            Test Case 9 of 21: Output String Name = strFormattedForWindows, Input Length = 155, Output Length = 155, Output Line Count = 3, Outcome = OK
+
+        Input string test 4 of 7: Input String Length = 143, Input String:
+Test line 1 is followed by a Unix newline.
+Test line 2 is also followed by a Unix newline.
+Test line 3 is followed by yet another Unix neline.
+
+
+            Test Case 10 of 21: Output String Name = strFormattedForMac, Input Length = 143, Output Length = 143, Output Line Count = 3, Outcome = OK
+
+            Test Case 11 of 21: Output String Name = strFormattedForUnix, Input Length = 143, Output Length = 143, Output Line Count = 3, Outcome = OK
+
+            Test Case 12 of 21: Output String Name = strFormattedForWindows, Input Length = 143, Output Length = 146, Output Line Count = 3, Outcome = OK
+
+        Input string test 5 of 7: Input String Length = 161, Input String:
+Test line 1 is followed by a Unix newline.
+Test line 2 is followed by 2 Unix newlines.
+
+Test line 4 is followed by one Unix newline.
+Test line 5 is unterminated.
+
+            Test Case 13 of 21: Output String Name = strFormattedForMac, Input Length = 161, Output Length = 161, Output Line Count = 4, Outcome = OK
+
+            Test Case 14 of 21: Output String Name = strFormattedForUnix, Input Length = 161, Output Length = 161, Output Line Count = 4, Outcome = OK
+
+            Test Case 15 of 21: Output String Name = strFormattedForWindows, Input Length = 161, Output Length = 165, Output Line Count = 4, Outcome = OK
+
+        Input string test 6 of 7: Input String Length = 188, Input String:
+Test line 1 is followed by a Old Macintosh newline.Test line 2 is followed by 2 Old Macintosh newlines.Test line 4 is followed by one Old Macintosh newline.Test line 5 is unterminated.
+
+            Test Case 16 of 21: Output String Name = strFormattedForMac, Input Length = 188, Output Length = 188, Output Line Count = 4, Outcome = OK
+
+            Test Case 17 of 21: Output String Name = strFormattedForUnix, Input Length = 188, Output Length = 188, Output Line Count = 4, Outcome = OK
+
+            Test Case 18 of 21: Output String Name = strFormattedForWindows, Input Length = 188, Output Length = 192, Output Line Count = 4, Outcome = OK
+
+        Input string test 7 of 7: Input String Length = 174, Input String:
+Test line 1 is followed by a Windows newline.
+Test line 2 is followed by 2 Windows newlines.
+
+Test line 4 is followed by one Windows newline.
+Test line 5 is unterminated.
+
+            Test Case 19 of 21: Output String Name = strFormattedForMac, Input Length = 174, Output Length = 170, Output Line Count = 4, Outcome = OK
+
+            Test Case 20 of 21: Output String Name = strFormattedForUnix, Input Length = 174, Output Length = 170, Output Line Count = 4, Outcome = OK
+
+            Test Case 21 of 21: Output String Name = strFormattedForWindows, Input Length = 174, Output Length = 174, Output Line Count = 4, Outcome = OK
+
+
+    Test summary: Successful Outcome Count   = 21
+                  Unsuccessful Outcome Count = 0
+
+    A-OK!
+
+Test # 1 Done - Final Status Code = 0
+
+
+Test # 1 - Exercising class PrepareMessageForEventLog:
+
+OutputOptions Baseline        = 2B (43 decimal = Method, Source, EventLog, StandardError)
+OutputOptions NewLine Strip   = 6B (107 decimal = Method, Source, EventLog, StandardError, DiscardNewlines)
+OutputOptions NewLine Replace = EB (235 decimal = Method, Source, EventLog, StandardError, ReplaceNewlines)
+OutputOptions NewLine Augment = AB (171 decimal = Method, Source, EventLog, StandardError, NBSpaceForNewlines)
+
+Test # 1 Done - Final Status Code = 0
+
+
+Begin Tests of MaxStringLength Method:
+
+    Test # 1:
+
+
+Testing StateManager.GetAssemblyProductAndVersion:
+
+    Entry Assembly product version (MajorOnly, 1 parts) = DLLServices2TestStand, version 7
+    Entry Assembly product version (MajorAndMinor, 2 parts) = DLLServices2TestStand, version 7.20
+    Entry Assembly product version (MajroMinorBuild, 3 parts) = DLLServices2TestStand, version 7.20.211
+    Entry Assembly product version (MajroMinorBuild, 3 parts) = DLLServices2TestStand, version 7.20.211
+    Entry Assembly product version (MajorMinroBuildRevision, 4 parts) = DLLServices2TestStand, version 7.20.211.0
+    Entry Assembly product version (MajorMinroBuildRevision, 4 parts) = DLLServices2TestStand, version 7.20.211.0
+
+    Entry Assembly default product version = DLLServices2TestStand, version 7.20.211.0
+
+StateManager.GetAssemblyProductAndVersion Tests Completed
+
+
+
+Fully qualified program name, per StateManager GetAssemblyFQFN method = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServices2TestStand\bin\Debug\DLLServices2TestStand.exe
+
+Executable Subsystem = 3: Windows character
+
+Console handle Standard Input (STDIN, a. k. a., Console.In) is attached to a console, NOT redirected.
+Console handle Standard Output (STDOUT, a. k. a., Console.Out) is redirected to a file or pipe \\?\F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Reports\DLLServices2TestStand_Output_Debug.LOG.
+Console handle Standard Error (STDERR, a. k. a., Console.Error) is attached to a console, NOT redirected.
+
+This text should appear as White letters on a DarkGray background.
+
+
+The next screen displays selected properties of the library that is about to be exercised.
+
+
+
+Assembly DLLServices2TestStand, Version=7.18.1215.162, Culture=neutral, PublicKeyToken=null depends upon the following 14 assemblies:
+
+     1: mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+     2: System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+     3: System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+     4: System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+     5: WizardWrx.ASCIIInfo, Version=7.1.83.4797, Culture=neutral, PublicKeyToken=null
+     6: WizardWrx.AssemblyUtils, Version=7.20.117.23794, Culture=neutral, PublicKeyToken=null
+     7: WizardWrx.Common, Version=7.17.114.4797, Culture=neutral, PublicKeyToken=null
+     8: WizardWrx.ConsoleStreams, Version=7.15.191.6023, Culture=neutral, PublicKeyToken=null
+     9: WizardWrx.Core, Version=7.20.179.6023, Culture=neutral, PublicKeyToken=null
+    10: WizardWrx.DiagnosticInfo, Version=7.15.1.0, Culture=neutral, PublicKeyToken=null
+    11: WizardWrx.DLLConfigurationManager, Version=7.15.211.0, Culture=neutral, PublicKeyToken=null
+    12: WizardWrx.EmbeddedTextFile, Version=7.15.90.6024, Culture=neutral, PublicKeyToken=null
+    13: WizardWrx.FormatStringEngine, Version=7.15.162.6023, Culture=neutral, PublicKeyToken=null
+    14: WizardWrx.MoreMath, Version=7.15.1.6024, Culture=neutral, PublicKeyToken=null
+
+End of list for Assembly DLLServices2TestStand, Version=7.18.1215.162, Culture=neutral, PublicKeyToken=null:
+
+
+UnaryMinusExercises Begin:
+
+    Case 1: Input = 1, Output = -1
+    Case 2: Input = 2, Output = -2
+    Case 3: Input = 7, Output = -7
+    Case 4: Input = 0, Output = 0
+    Case 5: Input = -1, Output = 1
+    Case 6: Input = -2, Output = 2
+    Case 7: Input = -7, Output = 7
+
+UnaryMinusExercises Done!
+
+
+
+Test # 2 - Exercising class ArrayInfo:
+
+    Public  Constant ArrayInfo.ARRAY_FIRST_ELEMENT  = 0
+    Public  Constant ArrayInfo.ARRAY_IS_EMPTY       = 0
+    Public  Constant ArrayInfo.ARRAY_INVALID_INDEX  = -1
+    Public  Constant ArrayInfo.INDEX_FROM_ORDINAL   = -1
+    Public  Constant ArrayInfo.ARRAY_SECOND_ELEMENT = 1
+    Public  Constant ArrayInfo.NEXT_INDEX           = 1
+    Public  Constant ArrayInfo.ORDINAL_FROM_INDEX   = 1
+
+    Public method ArrayInfo.IndexFromOrdinal       =  9 , for pintOrdinal = 10
+    Public method ArrayInfo.OrdinalFromIndex       = 11 , for pintIndex   = 10
+
+Test # 2 Done - Final Status Code = 0
+
+Test # 3 - Exercising class CSVFileInfo:
+
+    Public  Constant CSVFileInfo.EMPTY_FILE     = 0
+    Public  Constant CSVFileInfo.LABEL_ROW      = 0
+    Public  Constant CSVFileInfo.FIRST_RECORD   = 1
+
+    Public method CSVFileInfo.IndexFromOrdinal = 5 , for pastrWholeFile = 6
+
+Test # 3 Done - Final Status Code = 0
+
+
+Test # 4 - Exercising class WizardWrx.Common.Properties.Resources:
+
+Assembly Name  = WizardWrx.Common, Version=7.17.114.4797, Culture=neutral, PublicKeyToken=null
+
+    Location   = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServices2TestStand\bin\Debug\WizardWrx.Common.dll
+    # of Items = 1
+
+        Embedded Resource # 1: WizardWrx.Common.Properties.Resources.resources
+
+    End of list
+
+    String #  1: Name = DEFAULT_EVENT_SOURCE_ID_STRING      , Value = WizardWrx
+    String #  2: Name = ERRMSG_ARG_IS_NULL                  , Value = The specified argument is a null reference.
+    String #  3: Name = ERRMSG_ARG_IS_NULL_OR_EMPTY         , Value = The argument is a null reference or the empty string.
+    String #  4: Name = ERRMSG_ARG_OUT_OF_RANGE             , Value = Value of {0} is out of range; it must be between {1} and {2}.
+    String #  5: Name = ERRMSG_BADSTRING                    , Value = Unable to process string {0}
+    String #  6: Name = ERRMSG_EMPTY_STRING_NEVER_VALID     , Value = The empty string is never valid in this context.
+    String #  7: Name = ERRMSG_FILE_IS_EMPTY                , Value = Input file {0} is empty.
+    String #  8: Name = ERRMSG_FILE_NOT_FOUND               , Value = Input file {0} cannot be found.
+    String #  9: Name = ERRMSG_INTEGER2HEXSTR_INVALID_INPUT , Value = The type of the first argument, pintegralValue, is invalid.{2}Argument value = {0}{2}Argument type  = {1}{2}{2}Limitations of the underlying formatting engine{2}restrict this method to integral types.{2}
+    String # 10: Name = ERRMSG_INVALID_COMMAND_LINE         , Value = At least one command line argument is invalid.
+    String # 11: Name = ERRMSG_INVALID_FIELD_IN_INPUT_RECORD, Value = Input file {0}, record {1} is invalid.
+    String # 12: Name = ERRMSG_NULLREF_NEVER_VALID          , Value = A null reference to a string is never valid in this context.
+    String # 13: Name = ERRMSG_RUNTIME                      , Value = A run-time exception has occurred.
+    String # 14: Name = ERRMSG_SUCCESS                      , Value = The task completed successfully.
+    String # 15: Name = MSG_OBJECT_REFERENCE_IS_NULL        , Value = [null]
+    String # 16: Name = MSG_STATUS_CODE                     , Value = {0} ({1:D} decimal)
+    String # 17: Name = MSG_STRING_IS_NULL_OR_EMPTY         , Value = [null or empty string]
+    String # 18: Name = MSG_THE_EMPTY_STRING                , Value = [empty string]
+    String # 19: Name = MSG_VALUE_IS_INVALID                , Value = invalid
+    String # 20: Name = MSG_VALUE_IS_VALID                  , Value = valid
+
+Test # 4 Done - Final Status Code = 0
+
+
+Begin exercising the WizardWrx.FileNameTricks class
+
+    Test 1 - Exercising enumerations and constants:
+
+        Enumeration TerminaBackslash.Include     = Include
+        Enumeration TerminaBackslash.Omit        = Omit
+
+        Character Constant OS_EXTENSION_DELIM    = .
+        Character Constant OS_WILD_CARD_MULTIPLE = *
+        Character Constant OS_WILD_CARD_SINGLE   = ?
+
+        String Constant OS_DRIVE_PATH_DELIMITER  = :\
+        String Constant UNC_SERVER_DELIM         = \\
+
+    Finished exercising enumerations and constants
+
+    Test 2 - Testing method EnsureHasTerminalBackslash:
+
+        Input String  = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\
+        Output String   = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\
+
+        Input String  = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness
+        Output String   = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\
+
+        Input String  = SharedUtl2\SharedUtl2_Test_Harness
+        Output String   = SharedUtl2\SharedUtl2_Test_Harness\
+
+        Input String  = \SharedUtl2\SharedUtl2_Test_Harness
+        Output String   = \SharedUtl2\SharedUtl2_Test_Harness\
+
+    Finished testing method EnsureHasTerminalBackslash
+
+    Test 3 - Testing method EnsureNoTerminalBackslash:
+
+        Input String  = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\
+        Output String   = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness
+
+        Input String  = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness
+        Output String   = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness
+
+        Input String  = SharedUtl2\SharedUtl2_Test_Harness
+        Output String   = SharedUtl2\SharedUtl2_Test_Harness
+
+        Input String  = \SharedUtl2\SharedUtl2_Test_Harness
+        Output String   = \SharedUtl2\SharedUtl2_Test_Harness
+
+    Finished testing method EnsureNoTerminalBackslash
+
+    Test 4 - Testing method FileDirName:
+
+        Input String  = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\Directions_to_My_Place_Massage_DATA.htm
+        Include/Exclude = Include
+        Output String = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\
+
+        Input String  = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\Directions_to_My_Place_Massage_DATA.htm
+        Include/Exclude = Omit
+        Output String = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness
+
+        Input String  = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\SharedUtl2_Test_Harness.CMD
+        Include/Exclude = Include
+        Output String = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\
+
+        Input String  = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\SharedUtl2_Test_Harness.CMD
+        Include/Exclude = Omit
+        Output String = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness
+
+        Input String  = Directions_to_My_Place_Massage_DATA.htm
+        Include/Exclude = Include
+        Output String = 
+
+        Input String  = Directions_to_My_Place_Massage_DATA.htm
+        Include/Exclude = Omit
+        Output String = 
+
+        Input String  = SharedUtl2_Test_Harness.CMD
+        Include/Exclude = Include
+        Output String = 
+
+        Input String  = SharedUtl2_Test_Harness.CMD
+        Include/Exclude = Omit
+        Output String = 
+
+        Input String  = Directions_to_My_Place_Massage_DATA.
+        Include/Exclude = Include
+        Output String = 
+
+        Input String  = Directions_to_My_Place_Massage_DATA.
+        Include/Exclude = Omit
+        Output String = 
+
+        Input String  = SharedUtl2_Test_Harness
+        Include/Exclude = Include
+        Output String = 
+
+        Input String  = SharedUtl2_Test_Harness
+        Include/Exclude = Omit
+        Output String = 
+
+    Finished testing method FileDirName
+
+    Test 5 - Testing method FileExtn:
+
+        Input String  = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\Directions_to_My_Place_Massage_DATA.htm
+        Output String   = htm
+
+        Input String  = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\SharedUtl2_Test_Harness.CMD
+        Output String   = CMD
+
+        Input String  = Directions_to_My_Place_Massage_DATA.htm
+        Output String   = htm
+
+        Input String  = SharedUtl2_Test_Harness.CMD
+        Output String   = CMD
+
+        Input String  = Directions_to_My_Place_Massage_DATA.
+        Output String   = 
+
+        Input String  = SharedUtl2_Test_Harness
+        Output String   = 
+
+    Finished testing method FileExtn
+
+    Test 6 - Testing method FQFBasename:
+
+        Input String  = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\Directions_to_My_Place_Massage_DATA.htm
+        Output String   = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\Directions_to_My_Place_Massage_DATA
+
+        Input String  = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\SharedUtl2_Test_Harness.CMD
+        Output String   = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\SharedUtl2_Test_Harness
+
+        Input String  = Directions_to_My_Place_Massage_DATA.htm
+        Output String   = Directions_to_My_Place_Massage_DATA
+
+        Input String  = SharedUtl2_Test_Harness.CMD
+        Output String   = SharedUtl2_Test_Harness
+
+        Input String  = Directions_to_My_Place_Massage_DATA.
+        Output String   = Directions_to_My_Place_Massage_DATA
+
+        Input String  = SharedUtl2_Test_Harness
+        Output String   = SharedUtl2_Test_Harness
+
+    Finished testing method FQFBasename
+
+    Test 7 - Testing method MakeFQFN:
+
+        Input String  = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\Directions_to_My_Place_Massage_DATA.htm
+        Default Dir     = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\
+        Output String = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\Directions_to_My_Place_Massage_DATA.htm
+
+        Input String  = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\SharedUtl2_Test_Harness.CMD
+        Default Dir     = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\
+        Output String = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\SharedUtl2_Test_Harness.CMD
+
+        Input String  = Directions_to_My_Place_Massage_DATA.htm
+        Default Dir     = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\
+        Output String = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\Directions_to_My_Place_Massage_DATA.htm
+
+        Input String  = SharedUtl2_Test_Harness.CMD
+        Default Dir     = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\
+        Output String = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\SharedUtl2_Test_Harness.CMD
+
+        Input String  = Directions_to_My_Place_Massage_DATA.
+        Default Dir     = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\
+        Output String = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\Directions_to_My_Place_Massage_DATA.
+
+        Input String  = SharedUtl2_Test_Harness
+        Default Dir     = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\
+        Output String = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\SharedUtl2_Test_Harness
+
+        Input String  = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\Directions_to_My_Place_Massage_DATA.htm
+        Default Dir     = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness
+        Output String = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\Directions_to_My_Place_Massage_DATA.htm
+
+        Input String  = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\SharedUtl2_Test_Harness.CMD
+        Default Dir     = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness
+        Output String = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\SharedUtl2_Test_Harness.CMD
+
+        Input String  = Directions_to_My_Place_Massage_DATA.htm
+        Default Dir     = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness
+        Output String = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\Directions_to_My_Place_Massage_DATA.htm
+
+        Input String  = SharedUtl2_Test_Harness.CMD
+        Default Dir     = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness
+        Output String = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\SharedUtl2_Test_Harness.CMD
+
+        Input String  = Directions_to_My_Place_Massage_DATA.
+        Default Dir     = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness
+        Output String = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\Directions_to_My_Place_Massage_DATA.
+
+        Input String  = SharedUtl2_Test_Harness
+        Default Dir     = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness
+        Output String = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\SharedUtl2_Test_Harness
+
+        Input String  = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\Directions_to_My_Place_Massage_DATA.htm
+        Default Dir     = 
+        Output String = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\Directions_to_My_Place_Massage_DATA.htm
+
+        Input String  = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\SharedUtl2_Test_Harness.CMD
+        Default Dir     = 
+        Output String = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\SharedUtl2_Test_Harness.CMD
+
+        Input String  = Directions_to_My_Place_Massage_DATA.htm
+        Default Dir     = 
+        Output String = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\_NOTES\Directions_to_My_Place_Massage_DATA.htm
+
+        Input String  = SharedUtl2_Test_Harness.CMD
+        Default Dir     = 
+        Output String = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\_NOTES\SharedUtl2_Test_Harness.CMD
+
+        Input String  = Directions_to_My_Place_Massage_DATA.
+        Default Dir     = 
+        Output String = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\_NOTES\Directions_to_My_Place_Massage_DATA.
+
+        Input String  = SharedUtl2_Test_Harness
+        Default Dir     = 
+        Output String = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\_NOTES\SharedUtl2_Test_Harness
+
+        Input String  = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\Directions_to_My_Place_Massage_DATA.htm
+        Default Dir     = 
+        Output String = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\Directions_to_My_Place_Massage_DATA.htm
+
+        Input String  = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\SharedUtl2_Test_Harness.CMD
+        Default Dir     = 
+        Output String = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\SharedUtl2_Test_Harness.CMD
+
+        Input String  = Directions_to_My_Place_Massage_DATA.htm
+        Default Dir     = 
+        Output String = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\_NOTES\Directions_to_My_Place_Massage_DATA.htm
+
+        Input String  = SharedUtl2_Test_Harness.CMD
+        Default Dir     = 
+        Output String = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\_NOTES\SharedUtl2_Test_Harness.CMD
+
+        Input String  = Directions_to_My_Place_Massage_DATA.
+        Default Dir     = 
+        Output String = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\_NOTES\Directions_to_My_Place_Massage_DATA.
+
+        Input String  = SharedUtl2_Test_Harness
+        Default Dir     = 
+        Output String = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\_NOTES\SharedUtl2_Test_Harness
+
+    Finished testing method MakeFQFN
+
+    Test 8 - Testing method PathFixup:
+
+        Input String  = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\
+        Include/Exclude = Include
+        Output String = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\
+
+        Input String  = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\
+        Include/Exclude = Omit
+        Output String = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness
+
+        Input String  = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness
+        Include/Exclude = Include
+        Output String = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\
+
+        Input String  = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness
+        Include/Exclude = Omit
+        Output String = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness
+
+        Input String  = SharedUtl2\SharedUtl2_Test_Harness
+        Include/Exclude = Include
+        Output String = SharedUtl2\SharedUtl2_Test_Harness\
+
+        Input String  = SharedUtl2\SharedUtl2_Test_Harness
+        Include/Exclude = Omit
+        Output String = SharedUtl2\SharedUtl2_Test_Harness
+
+        Input String  = \SharedUtl2\SharedUtl2_Test_Harness
+        Include/Exclude = Include
+        Output String = \SharedUtl2\SharedUtl2_Test_Harness\
+
+        Input String  = \SharedUtl2\SharedUtl2_Test_Harness
+        Include/Exclude = Omit
+        Output String = \SharedUtl2\SharedUtl2_Test_Harness
+
+    Finished testing method PathFixup
+
+    Test 9 - Testing method UQFBasename:
+
+        Input String  = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\Directions_to_My_Place_Massage_DATA.htm
+        Output String   = Directions_to_My_Place_Massage_DATA
+
+        Input String  = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\SharedUtl2_Test_Harness.CMD
+        Output String   = SharedUtl2_Test_Harness
+
+        Input String  = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness\
+        Output String   = 
+
+        Input String  = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2_Test_Harness
+        Output String   = SharedUtl2_Test_Harness
+
+        Input String  = SharedUtl2\SharedUtl2_Test_Harness
+        Output String   = SharedUtl2_Test_Harness
+
+        Input String  = \SharedUtl2\SharedUtl2_Test_Harness
+        Output String   = SharedUtl2_Test_Harness
+
+        Input String  = Directions_to_My_Place_Massage_DATA.htm
+        Output String   = Directions_to_My_Place_Massage_DATA
+
+        Input String  = SharedUtl2_Test_Harness.CMD
+        Output String   = SharedUtl2_Test_Harness
+
+        Input String  = Directions_to_My_Place_Massage_DATA.
+        Output String   = Directions_to_My_Place_Massage_DATA
+
+        Input String  = SharedUtl2_Test_Harness
+        Output String   = SharedUtl2_Test_Harness
+
+    Finished testing method UQFBasename
+
+    Test 10 - Testing method PathMakeRelativeToPath:
+
+        Resource Path = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2\bin\Release\WizardWrx.SharedUtl2.dll
+        Working Dir     = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\Tools_for_Programmers\AssemblyReferenceFixup\_Notes\WebApp.csproj
+        Relative Path = ..\..\..\WizardWrx_Libs\SharedUtl2\SharedUtl2\bin\Release\WizardWrx.SharedUtl2.dll
+
+        Resource Path = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2\bin\Release\WizardWrx.SharedUtl2.dll
+        Working Dir     = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\Tools_for_Programmers\AssemblyReferenceFixup\_Notes\
+        Relative Path = ..\..\..\WizardWrx_Libs\SharedUtl2\SharedUtl2\bin\Release\WizardWrx.SharedUtl2.dll
+
+        Resource Path = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2\bin\Release\WizardWrx.SharedUtl2.dll
+        Working Dir     = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\Tools_for_Programmers\AssemblyReferenceFixup\_Notes
+        Relative Path = ..\..\WizardWrx_Libs\SharedUtl2\SharedUtl2\bin\Release\WizardWrx.SharedUtl2.dll
+
+        Resource Path = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\_TESTING WizardWrx Libs\SharedUtl2\SharedUtl2\bin\Release\WizardWrx.SharedUtl2.dll
+        Working Dir     = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\Tools_for_Programmers\AssemblyReferenceFixup\_Notes\WebApp.csproj
+        Relative Path = ..\..\..\_TESTING WizardWrx Libs\SharedUtl2\SharedUtl2\bin\Release\WizardWrx.SharedUtl2.dll
+
+        Resource Path = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\_TESTING WizardWrx Libs\SharedUtl2\SharedUtl2\bin\Release\WizardWrx.SharedUtl2.dll
+        Working Dir     = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\Tools_for_Programmers\AssemblyReferenceFixup\_Notes\
+        Relative Path = ..\..\..\_TESTING WizardWrx Libs\SharedUtl2\SharedUtl2\bin\Release\WizardWrx.SharedUtl2.dll
+
+        Resource Path = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\_TESTING WizardWrx Libs\SharedUtl2\SharedUtl2\bin\Release\WizardWrx.SharedUtl2.dll
+        Working Dir     = C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\Tools_for_Programmers\AssemblyReferenceFixup\_Notes
+        Relative Path = ..\..\_TESTING WizardWrx Libs\SharedUtl2\SharedUtl2\bin\Release\WizardWrx.SharedUtl2.dll
+
+    Finished testing method PathMakeRelativeToPath.
+
+Finished exercising the WizardWrx.FileNameTricks class
+
+Exercising the new special message generators.
+
+    Test 1: Get the ERROR_SUCCESS placeholder from ExceptionLogger.GetSpecifiedReservedErrorMessage         : ERROR_SUCCESS Placeholder
+    Test 2: Get the runtime error message for EvtLog from ExceptionLogger.GetSpecifiedReservedErrorMessage  : A run-time exception forced the program to end prematurely.{0}Pleasr see he (0) event log for a message with event source = (0).
+    Test 3: Get the runtime error message for STDERR from ExceptionLogger.GetSpecifiedReservedErrorMessage  : A run-time exception forced the program to end prematurely.
+Please see the message just above this line.
+    Test 4: Get the runtime error message for STDOUT from ExceptionLogger.GetSpecifiedReservedErrorMessage  : A run-time exception forced the program to end prematurely.
+Please see the message just above this line.
+    Test 5: Get the runtime error message for Program from ExceptionLogger.GetSpecifiedReservedErrorMessage : An internal error has occurred.
+Internal routine GetReservedErrorMessage was called with an invalid ErrorExitOptions value of 40.
+
+Special message generators have been exercised.
+
+
+ExceptionLogger flags before changes for test: Method, Source, EventLog, StandardError, ReplaceNewlines
+ExceptionLogger flags after changes for test: AllFlags
+
+An System.Exception exception was caught in routine Void DeduplicateExceptionLogs():
+               Message          = Double Trouble: Up to version 6.2, this message would have displayed twice when neither standard stream is redirected.
+Exception Method = Void DeduplicateExceptionLogs()
+Exception Source = DLLServices2TestStand
+
+Stack Trace Begin:
+   at DLLServices2TestStand.Program.DeduplicateExceptionLogs() in F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServices2TestStand\Program.cs:line 931
+End of Stack Trace
+
+There are no further exceptions to report.
+
+DLLServices2TestStand EOJ
+Running time = 00:00:03.4153776
+Press ENTER to exit the program.

@@ -239,6 +239,9 @@
                            StreamWriter into which it is expected to write a tab
                            delimited list of the string resources stored in the
                            specified assembly.
+
+    2019/06/09 7.20    DAG Add the assembly name to the report listing its
+                           string resources.
     ============================================================================
 */
 
@@ -1241,12 +1244,11 @@ FinalReport:
                 }   // FALSE (unanticipated outcome) block, if ( ( rintRetCode = NewClassTests_20140914.EnumerateStringResourcesInAssembly ( ref intTestNumber , System.Reflection.Assembly.GetAssembly ( typeof ( ArrayInfo ) ) , strCommonStringsReportFileName ) ) == MagicNumbers.ERROR_SUCCESS )
             }   // using ( StreamWriter swCommonStringsReportFileName = new StreamWriter ( strCommonStringsReportFileName , FileIOFlags.FILE_OUT_CREATE , System.Text.Encoding.Unicode , MagicNumbers.CAPACITY_08KB ) )
 
-            FileInfo info = new FileInfo ( strCommonStringsReportFileName );
-            Console.WriteLine ( info.ShowFileDetails (
+            Console.WriteLine ( new FileInfo ( strCommonStringsReportFileName ).ShowFileDetails (
                 FileInfoExtensionMethods.FileDetailsToShow.Everything ,
                 string.Format (
-                    @"Tab-delimited list of string resources stored in " ,
-                    assembly.FullName ) ) );
+                    @"Tab-delimited list of string resources stored in assembly {0} " ,
+                    assembly.GetName ( ).Name ) ) );
             return rintRetCode;
         }   // private static int ListEmbeddedResources
 

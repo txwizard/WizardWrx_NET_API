@@ -403,7 +403,7 @@ namespace WizardWrx.AssemblyUtils
                 {
                     pswReportFile.WriteLine (
                         strReportDetailTemplate ,
-                        intItemCount ,
+                        intItemNumber ,
                         resourceItem.Name ,
                         resourceItem.Value );
                 }   // if ( pswReportFile != null )
