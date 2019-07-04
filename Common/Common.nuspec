@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>The XML comments attached to integer constant DECIMAL_DIGITS_DEFAULT contained a plain ASCII table that caused it to display incorrectly in the DocFX page that was generated from it. Though this change affected the source code, forcing a new build, the generated assembly is otherwise identical to its predecessor.</releaseNotes>
+	    <releaseNotes>The public string resources have two sets of new strings, named REGISTRY_VALUE_TYPE_* and VERSION_STRING_PART_*.</releaseNotes>
     	<copyright>$copyright$</copyright>
     	<tags>Constants Arrays RegExp</tags>
 	</metadata>

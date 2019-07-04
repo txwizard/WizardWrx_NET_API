@@ -11,4 +11,3 @@ F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\obj\Debug\MoreMath.csproj.CopyComplete
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\obj\Debug\WizardWrx.MoreMath.dll
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\obj\Debug\WizardWrx.MoreMath.pdb
-F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\bin\Debug\WizardWrx.Common.xml

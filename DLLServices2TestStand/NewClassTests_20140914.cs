@@ -146,6 +146,15 @@
                               takes a StreamWriter into which it is expected to
                               write a tab-delimited list of the string resources
                               stored in the specified assembly.
+
+    2019/07/04 7.21    DAG    1) Amend Registry key and value name constants in
+                                 UtilsExercises, so that all keys exist, and can
+                                 be expected to exist on all Windows
+                                 installations.
+
+                              2) Move the REGISTRY_VALUE_TYPE_* strings into the
+                                 public string resources exposed by the Common
+                                 library.
 	============================================================================
 */
 
@@ -881,7 +890,7 @@ namespace DLLServices2TestStand
             Console.WriteLine ( "    Public Constant PathPositions.UNC_HOSTNAME_START_POS  = {0}" , PathPositions.UNC_HOSTNAME_START_POS );
 
             return TestDone (
-                WizardWrx.MagicNumbers.ERROR_SUCCESS ,
+                MagicNumbers.ERROR_SUCCESS ,
                 pintTestNumber );
         }   // PathPositionsExercises method
 
@@ -945,7 +954,7 @@ namespace DLLServices2TestStand
 			Console.WriteLine ( "    Public Constant SpecialCharacters.UNDERSCORE_CHAR       = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.UNDERSCORE_CHAR , ( int ) SpecialCharacters.UNDERSCORE_CHAR , ( ( int ) SpecialCharacters.UNDERSCORE_CHAR ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
 
 			return TestDone (
-                WizardWrx.MagicNumbers.ERROR_SUCCESS ,
+                MagicNumbers.ERROR_SUCCESS ,
                 pintTestNumber );
         }   // SpecialCharactersExercises method
 
@@ -968,24 +977,18 @@ namespace DLLServices2TestStand
 			const string REGISTRY_KEY_2 = @"Control Panel\International";														// in HKEY_CURRENT_USER
 			const string REGISTRY_KEY_3 = @"SYSTEM\CurrentControlSet\Control\Session Manager";									// in HKEY_LOCAL_MACHINE
 			//	To keep the key and value string names synced, strings REGISTRY_KEY_4 and REGISTRY_5 are reserved, but unused.
-			const string REGISTRY_KEY_6 = @"Software\Microsoft\Office\14.0\Excel\Security\Trusted Locations\Location2";			// HKEY_CURRENT_USER
-			const string REGISTRY_KEY_7 = @"SOFTWARE\Microsoft\Windows\CurrentVersion\StructuredQuery";							// in HKEY_LOCAL_MACHINE
+			const string REGISTRY_KEY_6 = @"SYSTEM\CurrentControlSet\Control\Session Manager\Environment";                      // in HKEY_LOCAL_MACHINE
+            const string REGISTRY_KEY_7 = @"SOFTWARE\Microsoft\Windows\CurrentVersion\StorageSense\StorageHealth";				// in HKEY_LOCAL_MACHINE
 			const string REGISTRY_KEY_8 = @"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Time Zones\Central Standard Time";		// in HKEY_LOCAL_MACHINE
 
 			const string REGISTRY_VALUE_1 = @"AppliedDPI";																		// Value exists, and its type is REG_DWORD.
 			const string REGISTRY_VALUE_2 = @"iDigits";																			// Value exists, but its type is REG_SZ, rather than the expected REG_DWORD.
 			const string REGISTRY_VALUE_3 = @"ObjectDirectories";																// This REG_MULTI_SZ value, which lives in Registry key HKLM\SYSTEM\CurrentControlSet\Control\Session Manager, contains two substrings.
-			const string REGISTRY_VALUE_4 = @"SetupExecute";																	// This REG_MULTI_SZ value, which lives in Registry key HKLM\SYSTEM\CurrentControlSet\Control\Session Manager, contains ZERO substrings.
-			const string REGISTRY_VALUE_5 = @"SetupExecute2";																	// This REG_MULTI_SZ value doesn't exist in Registry key HKLM\SYSTEM\CurrentControlSet\Control\Session Manager.
-			const string REGISTRY_VALUE_6 = @"Path";																			// This REG_EXPAND_SZ value exists, and is of the expected type.
-			const string REGISTRY_VALUE_7 = @"SchemaChangedLast";
+			const string REGISTRY_VALUE_4 = @"SETUPEXECUTE";																	// This REG_MULTI_SZ value, which lives in Registry key HKLM\SYSTEM\CurrentControlSet\Control\Session Manager, contains ZERO substrings.
+			const string REGISTRY_VALUE_5 = @"RunLevelExecute";																	// This REG_MULTI_SZ value doesn't exist in Registry key HKLM\SYSTEM\CurrentControlSet\Control\Session Manager.
+			const string REGISTRY_VALUE_6 = @"ComSpec";																			// This REG_EXPAND_SZ value exists, and is of the expected type.
+			const string REGISTRY_VALUE_7 = @"refreshAfter";
 			const string REGISTRY_VALUE_8 = @"TZI";
-
-			const string REGISTRY_VALUE_TYPE_BINARY = @"REG_BINARY";
-			const string REGISTRY_VALUE_TYPE_DWORD	= @"REG_DWORD";
-			const string REGISTRY_VALUE_TYPE_EXPAND = @"REG_EXPAND_SZ";
-			const string REGISTRY_VALUE_TYPE_MULTI  = @"REG_MULTI_SZ";
-			const string REGISTRY_VALUE_TYPE_QWORD	= @"REG_QWORD";
 
 			BeginTest (
 				System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,
@@ -1051,17 +1054,18 @@ namespace DLLServices2TestStand
 					strTpl ,
 					new string [ ]
 					{
-						hK.Name ,												// Format Item 0 = Key Name
-						REGISTRY_VALUE_1 ,										// Format Item 1 = Value Name
-						REGISTRY_VALUE_TYPE_DWORD ,								// Format Item 2 = Value Type
+						hK.Name ,												                    // Format Item 0 = Key Name
+						REGISTRY_VALUE_1 ,										                    // Format Item 1 = Value Name
+					    WizardWrx.Common.Properties.Resources.REGISTRY_VALUE_TYPE_DWORD ,           // Format Item 2 = Value Type
 						RegistryValues.RegQueryValue (
 							hK ,
 							REGISTRY_VALUE_1 ,
-							REG_DWORD_DEFAULT ).ToString ( ) ,					// Format Item 3 = Value Data
-						Environment.NewLine										// Format Item 4 = Newline my way
+							REG_DWORD_DEFAULT ).ToString ( ) ,					                    // Format Item 3 = Value Data
+						Environment.NewLine										                    // Format Item 4 = Newline my way
 					} );
 
 				hK.Close ( );
+                hK.Dispose ( );
 				hK = null;
 
 				hK = Microsoft.Win32.Registry.CurrentUser.OpenSubKey (
@@ -1072,20 +1076,21 @@ namespace DLLServices2TestStand
 					strTpl ,
 					new string [ ]
 					{
-						hK.Name ,												// Format Item 0 = Key Name
-						REGISTRY_VALUE_2 ,										// Format Item 1 = Value Name
-						REGISTRY_VALUE_TYPE_DWORD ,								// Format Item 2 = Value Type
+						hK.Name ,												                    // Format Item 0 = Key Name
+						REGISTRY_VALUE_2 ,										                    // Format Item 1 = Value Name
+						WizardWrx.Common.Properties.Resources.REGISTRY_VALUE_TYPE_DWORD ,			// Format Item 2 = Value Type
 						RegistryValues.RegQueryValue (
 							hK ,
 							REGISTRY_VALUE_2 ,
-							REG_DWORD_DEFAULT ).ToString ( ) ,					// Format Item 3 = Value Data
-						Environment.NewLine										// Format Item 4 = Newline my way
+							REG_DWORD_DEFAULT ).ToString ( ) ,					                    // Format Item 3 = Value Data
+						Environment.NewLine										                    // Format Item 4 = Newline my way
 					} );
 
 				hK.Close ( );
-				hK = null;
+                hK.Dispose ( );
+                hK = null;
 
-				hK = Microsoft.Win32.Registry.CurrentUser.OpenSubKey (
+				hK = Microsoft.Win32.Registry.LocalMachine.OpenSubKey (
 					REGISTRY_KEY_6 ,
 					REGISTRY_WRITING_OFF );
 
@@ -1093,18 +1098,19 @@ namespace DLLServices2TestStand
 					strTpl ,
 					new object [ ]
 					{
-						hK.Name ,												// Format Item 0 = Key Name
-						REGISTRY_VALUE_6 ,										// Format Item 1 = Value Name
-						REGISTRY_VALUE_TYPE_EXPAND ,							// Format Item 2 = Value Type
+						hK.Name ,												                    // Format Item 0 = Key Name
+						REGISTRY_VALUE_6 ,										                    // Format Item 1 = Value Name
+						WizardWrx.Common.Properties.Resources.REGISTRY_VALUE_TYPE_EXPAND ,			// Format Item 2 = Value Type
 						RegistryValues.RegQueryValue (
 							hK ,
 							REGISTRY_VALUE_6 ,
-							SpecialStrings.EMPTY_STRING ) ,						// Format Item 3 = Value Data
-						Environment.NewLine										// Format Item 4 = Newline my way
+							SpecialStrings.EMPTY_STRING ) ,						                    // Format Item 3 = Value Data
+						Environment.NewLine										                    // Format Item 4 = Newline my way
 					} );
 
 				hK.Close ( );
-				hK = null;
+                hK.Dispose ( );
+                hK = null;
 
 				Program.PauseForPictures ( Program.APPEND_LINEFEED );
 
@@ -1130,16 +1136,16 @@ namespace DLLServices2TestStand
 						strTpl ,
 						new string [ ]
 					{
-						hK.Name ,												// Format Item 0 = Key Name
-						strValue ,												// Format Item 1 = Value Name
-						REGISTRY_VALUE_TYPE_MULTI ,								// Format Item 2 = Value Type
+						hK.Name ,												                    // Format Item 0 = Key Name
+						strValue ,												                    // Format Item 1 = Value Name
+						WizardWrx.Common.Properties.Resources.REGISTRY_VALUE_TYPE_MULTI ,			// Format Item 2 = Value Type
 						string.Concat (
 							intNValues ,
 						    Properties.Resources.MSG_SUBSTRING_SUMMARY_1 ,
 							intNValues > ArrayInfo.ARRAY_IS_EMPTY
 								? Properties.Resources.MSG_SUBSTRING_SUMMARY_2
-								: SpecialStrings.EMPTY_STRING ) ,				// Format Item 3 = Value Data
-						Environment.NewLine										// Format Item 4 = Newline my way, but only if substrings follow.
+								: SpecialStrings.EMPTY_STRING ) ,				                    // Format Item 3 = Value Data
+						Environment.NewLine										                    // Format Item 4 = Newline my way, but only if substrings follow.
 					} );
 
 					//  --------------------------------------------------------
@@ -1166,7 +1172,8 @@ namespace DLLServices2TestStand
 				}   // foreach ( string strValue in astrValueNames )
 
 				hK.Close ( );
-				hK = null;
+                hK.Dispose ( );
+                hK = null;
 
 				Program.PauseForPictures ( Program.APPEND_LINEFEED );
 
@@ -1177,18 +1184,19 @@ namespace DLLServices2TestStand
 					strTpl ,
 					new object [ ]
 					{
-						hK.Name ,												// Format Item 0 = Key Name
-						REGISTRY_VALUE_7 ,										// Format Item 1 = Value Name
-						REGISTRY_VALUE_TYPE_QWORD ,								// Format Item 2 = Value Type
+						hK.Name ,												                    // Format Item 0 = Key Name
+						REGISTRY_VALUE_7 ,										                    // Format Item 1 = Value Name
+						WizardWrx.Common.Properties.Resources.REGISTRY_VALUE_TYPE_QWORD ,			// Format Item 2 = Value Type
 					    ( long ) RegistryValues.RegQueryValue (
 							hK ,
 							REGISTRY_VALUE_7 ,
-							REG_QWORD_DEFAULT ) ,								// Format Item 3 = Value Data
-						Environment.NewLine										// Format Item 4 = Newline my way
+							REG_QWORD_DEFAULT ) ,								                    // Format Item 3 = Value Data
+						Environment.NewLine										                    // Format Item 4 = Newline my way
 					} );
 
 				hK.Close ( );
-				hK = null;
+                hK.Dispose ( );
+                hK = null;
 
 				hK = Microsoft.Win32.Registry.LocalMachine.OpenSubKey (
 					REGISTRY_KEY_8 ,
@@ -1197,20 +1205,21 @@ namespace DLLServices2TestStand
 					strTpl ,
 					new string [ ]
 					{
-						hK.Name ,												// Format Item 0 = Key Name
-						REGISTRY_VALUE_8 ,										// Format Item 1 = Value Name
-						REGISTRY_VALUE_TYPE_BINARY ,							// Format Item 2 = Value Type
+						hK.Name ,												                    // Format Item 0 = Key Name
+						REGISTRY_VALUE_8 ,										                    // Format Item 1 = Value Name
+						WizardWrx.Common.Properties.Resources.REGISTRY_VALUE_TYPE_BINARY ,			// Format Item 2 = Value Type
 						ByteArrayFormatters.ByteArrayToHexDigitString (
 							RegistryValues.RegQueryValue (
 								hK ,
 								REGISTRY_VALUE_8 ,
 								RegistryValues.REG_BINARY_NULL_FOR_ABSENT ) ,
-							ByteArrayFormatters.BYTES_TO_STRING_BLOCK_OF_4 ) ,	// Format Item 3 = Value Data
-						Environment.NewLine										// Format Item 4 = Newline my way
+							ByteArrayFormatters.BYTES_TO_STRING_BLOCK_OF_4 ) ,	                    // Format Item 3 = Value Data
+						Environment.NewLine										                    // Format Item 4 = Newline my way
 					} );
 
 				hK.Close ( );
-				hK = null;
+                hK.Dispose ( );
+                hK = null;
 			}   // Microsoft.Win32.RegistryKey hK and string strTpl go out of scope.
 
 			//	----------------------------------------------------------------

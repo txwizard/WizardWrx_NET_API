@@ -34,22 +34,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="WizardWrx.AnyCSV, Version=7.0.120.30587, Culture=neutral, PublicKeyToken=39f6551a21db420a, processorArchitecture=MSIL">
-      <HintPath>..\packages\WizardWrx.AnyCSV.7.0.120.30587\lib\net20\WizardWrx.AnyCSV.dll</HintPath>
-    </Reference>
     <Reference Include="WizardWrx.ASCIIInfo, Version=7.1.83.29298, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\WizardWrx.ASCIIInfo.7.1.83.29298\lib\net20\WizardWrx.ASCIIInfo.dll</HintPath>
     </Reference>
     <Reference Include="WizardWrx.BitMath, Version=4.3.125.29248, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\WizardWrx.BitMath.4.3.125.29248\lib\net20\WizardWrx.BitMath.dll</HintPath>
-    </Reference>
-    <Reference Include="WizardWrx.Common, Version=7.17.114.35192, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>C:\Users\DAG\.nuget\packages\WizardWrx.Common.7.17.114.35192\lib\net20\WizardWrx.Common.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="WizardWrx.Core, Version=7.20.179.21778, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>C:\Users\DAG\.nuget\packages\WizardWrx.Core.7.20.179.21778\lib\net35-client\WizardWrx.Core.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="WizardWrx.FormatStringEngine, Version=7.15.162.826, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\WizardWrx.FormatStringEngine.7.15.162.826\lib\net20\WizardWrx.FormatStringEngine.dll</HintPath>

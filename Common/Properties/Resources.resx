@@ -192,4 +192,72 @@
     <value>valid</value>
     <comment>Use this string to report that the value of a variable is valid.</comment>
   </data>
+  <data name="REGISTRY_VALUE_TYPE_BINARY" xml:space="preserve">
+    <value>REG_BINARY</value>
+    <comment>Use these strings to describe the type of a Registry value.</comment>
+  </data>
+  <data name="REGISTRY_VALUE_TYPE_DWORD" xml:space="preserve">
+    <value>REG_DWORD</value>
+    <comment>Use these strings to describe the type of a Registry value.</comment>
+  </data>
+  <data name="REGISTRY_VALUE_TYPE_EXPAND" xml:space="preserve">
+    <value>REG_EXPAND_SZ</value>
+    <comment>Use these strings to describe the type of a Registry value.</comment>
+  </data>
+  <data name="REGISTRY_VALUE_TYPE_MULTI" xml:space="preserve">
+    <value>REG_MULTI_SZ</value>
+    <comment>Use these strings to describe the type of a Registry value.</comment>
+  </data>
+  <data name="REGISTRY_VALUE_TYPE_QWORD" xml:space="preserve">
+    <value>REG_QWORD</value>
+    <comment>Use these strings to describe the type of a Registry value.</comment>
+  </data>
+  <data name="VERSION_STRING_PART_BUILD_ABBR" xml:space="preserve">
+    <value>Bld.</value>
+    <comment>Use these strings as abbreviated labels for the four parts of a canonical version number string.</comment>
+  </data>
+  <data name="VERSION_STRING_PART_BUILD_LONG" xml:space="preserve">
+    <value>Build Number</value>
+    <comment>Use these strings as long labels for the four parts of a canonical version number string.</comment>
+  </data>
+  <data name="VERSION_STRING_PART_BUILD_SHORT" xml:space="preserve">
+    <value>Build</value>
+    <comment>Use these strings as short labels for the four parts of a canonical version number string.</comment>
+  </data>
+  <data name="VERSION_STRING_PART_MAJOR_ABBR" xml:space="preserve">
+    <value>Maj.</value>
+    <comment>Use these strings as abbreviated labels for the four parts of a canonical version number string.</comment>
+  </data>
+  <data name="VERSION_STRING_PART_MAJOR_LONG" xml:space="preserve">
+    <value>Major Version</value>
+    <comment>Use these strings as long labels for the four parts of a canonical version number string.</comment>
+  </data>
+  <data name="VERSION_STRING_PART_MAJOR_SHORT" xml:space="preserve">
+    <value>Major</value>
+    <comment>Use these strings as short labels for the four parts of a canonical version number string.</comment>
+  </data>
+  <data name="VERSION_STRING_PART_MINOR_ABBR" xml:space="preserve">
+    <value>Min.</value>
+    <comment>Use these strings as abbreviated labels for the four parts of a canonical version number string.</comment>
+  </data>
+  <data name="VERSION_STRING_PART_MINOR_LONG" xml:space="preserve">
+    <value>Minor Version</value>
+    <comment>Use these strings as long labels for the four parts of a canonical version number string.</comment>
+  </data>
+  <data name="VERSION_STRING_PART_MINOR_SHORT" xml:space="preserve">
+    <value>Minor</value>
+    <comment>Use these strings as short labels for the four parts of a canonical version number string.</comment>
+  </data>
+  <data name="VERSION_STRING_PART_REVNO_ABBR" xml:space="preserve">
+    <value>Rev.</value>
+    <comment>Use these strings as abbreviated labels for the four parts of a canonical version number string.</comment>
+  </data>
+  <data name="VERSION_STRING_PART_REVNO_LONG" xml:space="preserve">
+    <value>Revision</value>
+    <comment>Use these strings as long labels for the four parts of a canonical version number string.</comment>
+  </data>
+  <data name="VERSION_STRING_PART_REVNO_SHORT" xml:space="preserve">
+    <value>Revision</value>
+    <comment>Use these strings as short labels for the four parts of a canonical version number string.</comment>
+  </data>
 </root>

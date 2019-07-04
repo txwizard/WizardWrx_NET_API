@@ -239,5 +239,158 @@ namespace WizardWrx.Common.Properties {
                 return ResourceManager.GetString("MSG_VALUE_IS_VALID", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to REG_BINARY.
+        /// </summary>
+        public static string REGISTRY_VALUE_TYPE_BINARY {
+            get {
+                return ResourceManager.GetString("REGISTRY_VALUE_TYPE_BINARY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to REG_DWORD.
+        /// </summary>
+        public static string REGISTRY_VALUE_TYPE_DWORD {
+            get {
+                return ResourceManager.GetString("REGISTRY_VALUE_TYPE_DWORD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to REG_EXPAND_SZ.
+        /// </summary>
+        public static string REGISTRY_VALUE_TYPE_EXPAND {
+            get {
+                return ResourceManager.GetString("REGISTRY_VALUE_TYPE_EXPAND", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to REG_MULTI_SZ.
+        /// </summary>
+        public static string REGISTRY_VALUE_TYPE_MULTI {
+            get {
+                return ResourceManager.GetString("REGISTRY_VALUE_TYPE_MULTI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to REG_QWORD.
+        /// </summary>
+        public static string REGISTRY_VALUE_TYPE_QWORD {
+            get {
+                return ResourceManager.GetString("REGISTRY_VALUE_TYPE_QWORD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bld..
+        /// </summary>
+        public static string VERSION_STRING_PART_BUILD_ABBR {
+            get {
+                return ResourceManager.GetString("VERSION_STRING_PART_BUILD_ABBR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Build Number.
+        /// </summary>
+        public static string VERSION_STRING_PART_BUILD_LONG {
+            get {
+                return ResourceManager.GetString("VERSION_STRING_PART_BUILD_LONG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Build.
+        /// </summary>
+        public static string VERSION_STRING_PART_BUILD_SHORT {
+            get {
+                return ResourceManager.GetString("VERSION_STRING_PART_BUILD_SHORT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Maj..
+        /// </summary>
+        public static string VERSION_STRING_PART_MAJOR_ABBR {
+            get {
+                return ResourceManager.GetString("VERSION_STRING_PART_MAJOR_ABBR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Major Version.
+        /// </summary>
+        public static string VERSION_STRING_PART_MAJOR_LONG {
+            get {
+                return ResourceManager.GetString("VERSION_STRING_PART_MAJOR_LONG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Major.
+        /// </summary>
+        public static string VERSION_STRING_PART_MAJOR_SHORT {
+            get {
+                return ResourceManager.GetString("VERSION_STRING_PART_MAJOR_SHORT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Min..
+        /// </summary>
+        public static string VERSION_STRING_PART_MINOR_ABBR {
+            get {
+                return ResourceManager.GetString("VERSION_STRING_PART_MINOR_ABBR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Minor Version.
+        /// </summary>
+        public static string VERSION_STRING_PART_MINOR_LONG {
+            get {
+                return ResourceManager.GetString("VERSION_STRING_PART_MINOR_LONG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Minor.
+        /// </summary>
+        public static string VERSION_STRING_PART_MINOR_SHORT {
+            get {
+                return ResourceManager.GetString("VERSION_STRING_PART_MINOR_SHORT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rev..
+        /// </summary>
+        public static string VERSION_STRING_PART_REVNO_ABBR {
+            get {
+                return ResourceManager.GetString("VERSION_STRING_PART_REVNO_ABBR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Revision.
+        /// </summary>
+        public static string VERSION_STRING_PART_REVNO_LONG {
+            get {
+                return ResourceManager.GetString("VERSION_STRING_PART_REVNO_LONG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Revision.
+        /// </summary>
+        public static string VERSION_STRING_PART_REVNO_SHORT {
+            get {
+                return ResourceManager.GetString("VERSION_STRING_PART_REVNO_SHORT", resourceCulture);
+            }
+        }
     }
 }

@@ -95,6 +95,11 @@
 	2018/12/24 7.14    DAG    Define the DecimalShift function, syntactic sugar
                               that performs decimal shift operations, and move
                               this class into a dedicated library.
+
+	2019/07/04 7.21    DAG    Relax the requirement for the absolutely latest
+                              compiler, which got added by mistake to this
+                              project. Otherwise, the code is unchanged, and it
+                              should create an identical binary.
     ============================================================================
 */
 

@@ -4,6 +4,34 @@ This file is a running history of fixes and improvements from version 7.0
 onwards. Changes are documented for the newest version first. Within each
 version, classes are covered in alphabetical order.
 
+## Version 7.20.116, Released 2019/07/04
+
+### WizardWrx Common.dll
+
+The public string resources have two sets of new strings, named
+`REGISTRY\_VALUE\_TYPE\_*` and `VERSION\_STRING\_PART\_*` listed in the following
+table.
+
+|String Name                   |String Value |
+|------------------------------|-------------|
+|REGISTRY_VALUE_TYPE_BINARY    |REG_BINARY   |
+|REGISTRY_VALUE_TYPE_DWORD     |REG_DWORD    |
+|REGISTRY_VALUE_TYPE_EXPAND    |REG_EXPAND_SZ|
+|REGISTRY_VALUE_TYPE_MULTI     |REG_MULTI_SZ |
+|REGISTRY_VALUE_TYPE_QWORD     |REG_QWORD    |
+|VERSION_STRING_PART_BUILD_ABBR|Bld.         |
+|VERSION_STRING_PART_BUILD_LONG|Build Number |
+|VERSION_STRING_PART_BUILD_SHORT|Build       |
+|VERSION_STRING_PART_MAJOR_ABBR|Maj.         |
+|VERSION_STRING_PART_MAJOR_LONG|Major Version|
+|VERSION_STRING_PART_MAJOR_SHORT|Major       |
+|VERSION_STRING_PART_MINOR_ABBR|Min.         |
+|VERSION_STRING_PART_MINOR_LONG|Minor Version|
+|VERSION_STRING_PART_MINOR_SHORT|Minor       |
+|VERSION_STRING_PART_REVNO_ABBR|Rev.         |
+|VERSION_STRING_PART_REVNO_LONG|Revision     |
+|VERSION_STRING_PART_REVNO_SHORT|Revision    |
+
 ## Release Notes, 2019/06/11, WizardWrx AssemblyUtils.dll, Version 7.20.117
 
 This build is a bug fix. I discovered that the iten number written into the
@@ -132,8 +160,8 @@ follows.
 
 |Name                   |Value   |Comment                                                            |
 |-----------------------|--------|-------------------------------------------------------------------|
-|MSG_VALUE_IS_INVALID	|invalid |Use this string to report that the value of a variable is invalid. |
-|MSG_VALUE_IS_VALID		|valid	 |Use this string to report that the value of a variable is valid.   |
+|MSG_VALUE_IS_INVALID   |invalid |Use this string to report that the value of a variable is invalid. |
+|MSG_VALUE_IS_VALID     |valid   |Use this string to report that the value of a variable is valid.   |
 
 ### Class WizardWrx.Core.StringFixups (defined in WizardWrx.Core.dll)
 
@@ -322,10 +350,10 @@ can retain their original target, version __3.5 Client Profile__.
 
 This class is relocated from `WizardWrx.Core.dll` to a dedicated library for two reasons.
 
-1	Since it uses `ClassAndMethodDiagnosticInfo` methods in its exception reports,
+1   Since it uses `ClassAndMethodDiagnosticInfo` methods in its exception reports,
 its target framework must be at least 4.5.
 
-2	Since its methods perform mathematical operations that can cause arithmetic
+2   Since its methods perform mathematical operations that can cause arithmetic
 overflows that should be caught and reported, it must be compiled with arithmetic
 checking enabled.
 
