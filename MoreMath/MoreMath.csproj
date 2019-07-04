@@ -80,9 +80,6 @@
     <Reference Include="WizardWrx.BitMath, Version=4.3.125.29248, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\WizardWrx.BitMath.4.3.125.29248\lib\net20\WizardWrx.BitMath.dll</HintPath>
     </Reference>
-    <Reference Include="WizardWrx.DiagnosticInfo, Version=7.15.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\WizardWrx.DiagnosticInfo.7.15.1\lib\net45\WizardWrx.DiagnosticInfo.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\ProductAssemblyInfo.cs">

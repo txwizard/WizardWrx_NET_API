@@ -1,42 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<!--
-	============================================================================
-	Project Name:		Core.csproj
-
-	Project Abstract:	These are functions upon which virtually everything else
-						in the WizardWrx .NET API relies, along with additional
-						related constants.
-
-	Remarks:			Core functions require Microsoft .NET Framework 3.5,
-						Client Profile, or newer.
-
-						As it applies to the Roslyn compiler, the Deterministic
-						switch implements determinism in a very narrow context,
-						which affects only the versioning of the generated PE
-						file in which the assembly is stored.
-
-						This switch is relatively new, and its inclusion in the
-						default generated project skeleton appears to be quite
-						recent.
-
-						For further details, please see the first article cited
-						in the References section that follows.
-
-	References:			1)	Deterministic builds in Roslyn
-							http://blog.paranoidcoding.com/2016/04/05/deterministic-builds-in-roslyn.html
-
-						2)	/deterministic switch for msbuild does not work
-							https://stackoverflow.com/questions/39657709/deterministic-switch-for-msbuild-does-not-work
-
-	============================================================================
-	Revision History
-	============================================================================
-
-	Date       By  Description
-	========== === =============================================================
-	2019/07/04 DAG Add NuGet package and documentation generation.
-	============================================================================
--->
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -51,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <!-- 2019/05/18 16:54:22 - DAG - Added for NuGet package builder -->
-    <PackageDir>Package</PackageDir>
+    <PackageDir>Package\$(Configuration)</PackageDir>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>.pdb$;(AllowedOutputExtensionsInPackageBuildOutputFolder)</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

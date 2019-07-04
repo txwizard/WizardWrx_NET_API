@@ -34,14 +34,8 @@ table.
 
 ### Other Libraries
 
-New builds of the libraries listed in the following table address diamond
-dependencies on libraries WizardWrx.AnyCSV.dll and WizardWrx.Common.dll. In this
-case, the diamond dependencies are harmless, but their resolution paves the way
-for a forthcoming version numbering rationalization exercise.
-
-|Library Name                |NuGet Package Name      |
-|----------------------------|------------------------|
-|WizardWrx.DiagnosticInfo.dll|WizardWrx.DiagnosticInfo|
+New builds of the following libraries address diamond dependencies on libraries
+WizardWrx.AnyCSV.dll and WizardWrx.Common.dll.
 
 ## Release Notes, 2019/06/11, WizardWrx AssemblyUtils.dll, Version 7.20.117
 

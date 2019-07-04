@@ -10,12 +10,14 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>This is the first release of this established library as a NuGet package.</releaseNotes>
+	    <releaseNotes>The code in this release is identical with the original release. This build incorporates the latest WizardWrx.Common package, to address a likely diamond dependency. This package also explicitly includes the PDB and XML files that document the library.</releaseNotes>
     	<copyright>$copyright$</copyright>
     	<tags>Compile-time Diagnostic Info Reflection</tags>
 	</metadata>
 	<files>
    		<file src="readme.md" target="" />
    		<file src="readme.txt" target="" />
+   		<file src="bin\$configuration$\$id$.pdb" target="lib" />
+   		<file src="bin\$configuration$\$id$.xml" target="lib" />
 	</files>
 </package>

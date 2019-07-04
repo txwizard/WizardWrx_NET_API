@@ -359,9 +359,7 @@ namespace DLLServices2TestStand
 						strChopped == null
 							? ListInfo.EMPTY_STRING_LENGTH
 							: strChopped.Length ,								// Format Item 3 = Output String Length
-						strChopped == null
-							? Properties.Resources.MESSAGE_NULL_STRING
-							: strChopped ,										// Format Item 4 = Output String
+						strChopped ?? Properties.Resources.MESSAGE_NULL_STRING ,// Format Item 4 = Output String
 						Environment.NewLine } );								// Format Item 5 = Newline, My Way
 			}	// Null string degenerate case.
 
