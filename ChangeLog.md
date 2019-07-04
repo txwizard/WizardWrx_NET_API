@@ -39,9 +39,10 @@ dependencies on libraries WizardWrx.AnyCSV.dll and WizardWrx.Common.dll. In this
 case, the diamond dependencies are harmless, but their resolution paves the way
 for a forthcoming version numbering rationalization exercise.
 
-|Library Name                |NuGet Package Name      |
-|----------------------------|------------------------|
-|WizardWrx.DiagnosticInfo.dll|WizardWrx.DiagnosticInfo|
+|Library Name                    |NuGet Package Name          |
+|--------------------------------|----------------------------|
+|WizardWrx.DiagnosticInfo.dll    |WizardWrx.DiagnosticInfo    |
+|WizardWrx.FormatStringEngine.dll|WizardWrx.FormatStringEngine|
 
 ## Release Notes, 2019/06/11, WizardWrx AssemblyUtils.dll, Version 7.20.117
 
