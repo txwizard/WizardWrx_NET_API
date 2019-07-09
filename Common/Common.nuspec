@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>The public string resources have two sets of new strings, named REGISTRY_VALUE_TYPE_* and VERSION_STRING_PART_*.</releaseNotes>
+	    <releaseNotes>The public string resources has a new string, STACK_TRACE_ENTRY_PREFIX, and two new sets of strings, named REGISTRY_VALUE_TYPE_* and VERSION_STRING_PART_*.</releaseNotes>
     	<copyright>$copyright$</copyright>
     	<tags>Constants Arrays RegExp</tags>
 	</metadata>

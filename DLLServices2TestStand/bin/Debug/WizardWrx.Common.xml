@@ -4643,6 +4643,11 @@
               Looks up a localized string similar to REG_QWORD.
             </summary>
         </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.STACK_TRACE_ENTRY_PREFIX">
+            <summary>
+              Looks up a localized string similar to    at .
+            </summary>
+        </member>
         <member name="P:WizardWrx.Common.Properties.Resources.VERSION_STRING_PART_BUILD_ABBR">
             <summary>
               Looks up a localized string similar to Bld..

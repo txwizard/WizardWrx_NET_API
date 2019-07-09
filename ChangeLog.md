@@ -4,6 +4,12 @@ This file is a running history of fixes and improvements from version 7.0
 onwards. Changes are documented for the newest version first. Within each
 version, classes are covered in alphabetical order.
 
+## Version 7.20.117, Released 2019/07/09
+
+### WizardWrx Common.dll
+
+The public string resources has a new string, `STACK_TRACE_ENTRY_PREFIX`.
+
 ## Version 7.20.116, Released 2019/07/04
 
 ### WizardWrx Common.dll

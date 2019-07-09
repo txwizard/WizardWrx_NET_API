@@ -286,6 +286,15 @@ namespace WizardWrx.Common.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to    at .
+        /// </summary>
+        public static string STACK_TRACE_ENTRY_PREFIX {
+            get {
+                return ResourceManager.GetString("STACK_TRACE_ENTRY_PREFIX", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bld..
         /// </summary>
         public static string VERSION_STRING_PART_BUILD_ABBR {

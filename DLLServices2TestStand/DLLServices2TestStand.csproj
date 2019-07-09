@@ -126,7 +126,6 @@
     <EmbeddedResource Include="ClassTestMap.TXT" />
     <EmbeddedResource Include="TextWithUTF_8_BOM.TXT" />
     <EmbeddedResource Include="DigestMD5TestCases.TXT" />
-    <Content Include="README.txt" />
     <Content Include="WW_Icon1.ico" />
   </ItemGroup>
   <ItemGroup>

@@ -2,6 +2,18 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+// -----------------------------------------------------------------------------
+// Project Revision History
+// -----------------------------------------------------------------------------
+// Date       By  Remark
+// ---------- --- --------------------------------------------------------------
+// 2019/07/05 DAG Re-build to resolve diamond dependencies on WizardWrx.Common
+//                and WizardWrx.AnyCSV. This build also falls back to wild card
+//                revision number assignment, which conflicts with the new
+//                Deterministic project build setting, which I already disabled.
+//                See DiagnosticInfo.csproj for the commented-out setting.
+// =============================================================================
+
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
@@ -32,4 +44,4 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion ( "7.21.164.*" )]
+[assembly: AssemblyVersion ( "7.21.166.*" )]

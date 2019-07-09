@@ -4618,5 +4618,90 @@
               Looks up a localized string similar to valid.
             </summary>
         </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.REGISTRY_VALUE_TYPE_BINARY">
+            <summary>
+              Looks up a localized string similar to REG_BINARY.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.REGISTRY_VALUE_TYPE_DWORD">
+            <summary>
+              Looks up a localized string similar to REG_DWORD.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.REGISTRY_VALUE_TYPE_EXPAND">
+            <summary>
+              Looks up a localized string similar to REG_EXPAND_SZ.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.REGISTRY_VALUE_TYPE_MULTI">
+            <summary>
+              Looks up a localized string similar to REG_MULTI_SZ.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.REGISTRY_VALUE_TYPE_QWORD">
+            <summary>
+              Looks up a localized string similar to REG_QWORD.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.VERSION_STRING_PART_BUILD_ABBR">
+            <summary>
+              Looks up a localized string similar to Bld..
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.VERSION_STRING_PART_BUILD_LONG">
+            <summary>
+              Looks up a localized string similar to Build Number.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.VERSION_STRING_PART_BUILD_SHORT">
+            <summary>
+              Looks up a localized string similar to Build.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.VERSION_STRING_PART_MAJOR_ABBR">
+            <summary>
+              Looks up a localized string similar to Maj..
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.VERSION_STRING_PART_MAJOR_LONG">
+            <summary>
+              Looks up a localized string similar to Major Version.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.VERSION_STRING_PART_MAJOR_SHORT">
+            <summary>
+              Looks up a localized string similar to Major.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.VERSION_STRING_PART_MINOR_ABBR">
+            <summary>
+              Looks up a localized string similar to Min..
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.VERSION_STRING_PART_MINOR_LONG">
+            <summary>
+              Looks up a localized string similar to Minor Version.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.VERSION_STRING_PART_MINOR_SHORT">
+            <summary>
+              Looks up a localized string similar to Minor.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.VERSION_STRING_PART_REVNO_ABBR">
+            <summary>
+              Looks up a localized string similar to Rev..
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.VERSION_STRING_PART_REVNO_LONG">
+            <summary>
+              Looks up a localized string similar to Revision.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.VERSION_STRING_PART_REVNO_SHORT">
+            <summary>
+              Looks up a localized string similar to Revision.
+            </summary>
+        </member>
     </members>
 </doc>
