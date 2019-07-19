@@ -155,7 +155,16 @@
                               2) Move the REGISTRY_VALUE_TYPE_* strings into the
                                  public string resources exposed by the Common
                                  library.
-	============================================================================
+
+	2019/07/18 7.21    DAG    1) Add genralization of SpecialStringExercises to
+                                 the task list. This gets a revision history
+                                 item because adding the task list item changes
+                                 the file modified date.
+
+                              2) Add an argument to PauseForPictures that takes
+                                 a string that is displayed on the error console
+                                 when standard output is redirected.
+    ============================================================================
 */
 
 
@@ -420,7 +429,9 @@ namespace DLLServices2TestStand
 			//	of its own.
 			//	----------------------------------------------------------------
 
-			Program.PauseForPictures ( Program.OMIT_LINEFEED );
+			Program.PauseForPictures (
+                Program.OMIT_LINEFEED ,
+                null );
 
 			Console.WriteLine ( "{0}    --------------{0}    DisplayFormats{0}    --------------{0}" , Environment.NewLine );
 
@@ -442,7 +453,9 @@ namespace DLLServices2TestStand
 			//	Each group is enough to fill a screen.
 			//	----------------------------------------------------------------
 
-			Program.PauseForPictures ( Program.OMIT_LINEFEED );
+			Program.PauseForPictures (
+                Program.OMIT_LINEFEED ,
+                @"DisplayFormats.HEXADECIMAL constants" );
 
 			Console.WriteLine ( "{0}    --------------{0}    NumericFormats{0}    --------------{0}" , Environment.NewLine );
 
@@ -460,21 +473,29 @@ namespace DLLServices2TestStand
 			Console.WriteLine ( "    Public Constant NumericFormats.HEXADECIMAL_PREFIX_0X_LC          = {0} (Sample = {0}{1})" , SAMPLE_INTEGER.ToString ( NumericFormats.HEXADECIMAL_UC ) , NumericFormats.HEXADECIMAL_SUFFIX_H_LC );
 			Console.WriteLine ( "    Public Constant NumericFormats.HEXADECIMAL_PREFIX_0X_UC          = {0} (Sample = {0}{1}){2}" , SAMPLE_INTEGER.ToString ( NumericFormats.HEXADECIMAL_UC ) , NumericFormats.HEXADECIMAL_SUFFIX_H_UC , Environment.NewLine );
 
-			Program.PauseForPictures ( Program.OMIT_LINEFEED );
+            Program.PauseForPictures (
+                Program.OMIT_LINEFEED ,
+                @"NumericFormats.HEXADECIMAL constants" );
 
-			IntegerToHexStrExercises ( );			
-			
-			Program.PauseForPictures ( Program.OMIT_LINEFEED );
+            IntegerToHexStrExercises ( );
 
-			MagicNumberExercises ( );
+            Program.PauseForPictures (
+                Program.OMIT_LINEFEED ,
+                @"IntegerToHexStrExercises" );
 
-			Program.PauseForPictures ( Program.OMIT_LINEFEED );
+            MagicNumberExercises ( );
 
-			NumericFormatterExercises ( );
+			Program.PauseForPictures (
+                Program.OMIT_LINEFEED ,
+                @"MagicNumberExercises" );
 
-			Program.PauseForPictures ( Program.OMIT_LINEFEED );
+            NumericFormatterExercises ( );
 
-			Console.WriteLine (
+            Program.PauseForPictures (
+                Program.OMIT_LINEFEED ,
+                @"NumericFormatterExercises" );
+
+            Console.WriteLine (
 				"{1}More Integral format strings - sample = {0}{1}" ,
 				SAMPLE_INTEGER ,
 				Environment.NewLine );
@@ -491,7 +512,9 @@ namespace DLLServices2TestStand
             Console.WriteLine ( "    Public Constant DisplayFormats.PERCENT                           = {0} (Sample = {1})" , DisplayFormats.PERCENT , SAMPLE_FLOATING_POINT.ToString ( DisplayFormats.PERCENT ) );
             Console.WriteLine ( "    Public Constant DisplayFormats.PERCENT_DIGITS_2                  = {0} (Sample = {1})" , DisplayFormats.PERCENT_DIGITS_2 , SAMPLE_FLOATING_POINT.ToString ( DisplayFormats.PERCENT_DIGITS_2 ) );
 
-			Program.PauseForPictures ( Program.APPEND_LINEFEED );
+            Program.PauseForPictures (
+                Program.APPEND_LINEFEED ,
+                @"DisplayFormats Miscellaneous Numerics" );
 
             DateTime dtmSample = DateTime.Now;
 
@@ -506,7 +529,7 @@ namespace DLLServices2TestStand
 			Console.WriteLine ( "    Public Method DisplayFormats.FormatTimeForShow                   = {0}" , SysDateFormatters.FormatTimeForShow ( dtmSample ) );
 
             return TestDone (
-                WizardWrx.MagicNumbers.ERROR_SUCCESS ,
+                MagicNumbers.ERROR_SUCCESS ,
                 pintTestNumber );
         }   // DisplayFormatsExercises method
 
@@ -640,7 +663,7 @@ namespace DLLServices2TestStand
 
 
         internal static int SpecialStringExercises ( ref int pintTestNumber )
-		{
+		{   // ToDo: Move this into the core library as a generic property enumerator.
 			BeginTest (
 				System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,
 				ref pintTestNumber );
@@ -663,6 +686,7 @@ namespace DLLServices2TestStand
 				WizardWrx.MagicNumbers.ERROR_SUCCESS ,
 				pintTestNumber );
 		}   // SpecialStringExercises
+
 
 		internal static int FileIOFlagsExercises ( ref int pintTestNumber )
         {
@@ -740,9 +764,11 @@ namespace DLLServices2TestStand
 							} );
 				}	// for ( int intMinDigits = MagicNumbers.PLUS_ONE ; intMinDigits <= HEX_GLYPHS_DEFAULT_MINIMUM ; intMinDigits++ )
 
-				Console.WriteLine ( );																// PauseForPictures adds its line feed after the message. I want one before.
-				Program.PauseForPictures ( Program.OMIT_LINEFEED );
-			}	// for ( int intCurrentCase = ArrayInfo.ARRAY_FIRST_ELEMENT ; intCurrentCase < intTotalCases ; intCurrentCase++ )
+				Console.WriteLine ( );                                                              // PauseForPictures adds its line feed after the message. I want one before.
+                Program.PauseForPictures (
+                    Program.OMIT_LINEFEED ,
+                    @"IntegerToHexStr" );
+            }	// for ( int intCurrentCase = ArrayInfo.ARRAY_FIRST_ELEMENT ; intCurrentCase < intTotalCases ; intCurrentCase++ )
 
 			try
 			{
@@ -1026,7 +1052,9 @@ namespace DLLServices2TestStand
 					Environment.NewLine											// Format Item 3 = Newline, my way
 				} );
 
-			Program.PauseForPictures ( Program.APPEND_LINEFEED );
+            Program.PauseForPictures (
+                Program.APPEND_LINEFEED ,
+                @"Regular Expression Helpers" );
 
 			//  ----------------------------------------------------------------
 			//  Since GetDisplayTimeZone uses GetSystemTimeZoneInfo, this test
@@ -1110,7 +1138,9 @@ namespace DLLServices2TestStand
                 hK.Dispose ( );
                 hK = null;
 
-				Program.PauseForPictures ( Program.APPEND_LINEFEED );
+                Program.PauseForPictures (
+                    Program.APPEND_LINEFEED ,
+                    @"Registry Key Query and Value Formatters, Group 1 of 3" );
 
 				string [ ] astrValueNames = new string [ ]
 					{
@@ -1173,9 +1203,11 @@ namespace DLLServices2TestStand
                 hK.Dispose ( );
                 hK = null;
 
-				Program.PauseForPictures ( Program.APPEND_LINEFEED );
+                Program.PauseForPictures (
+                    Program.APPEND_LINEFEED ,
+                    @"Registry Key Query and Value Formatters, Group 2 of 3" );
 
-				hK = Microsoft.Win32.Registry.LocalMachine.OpenSubKey (
+                hK = Microsoft.Win32.Registry.LocalMachine.OpenSubKey (
 					REGISTRY_KEY_7 ,
 					REGISTRY_WRITING_OFF );
 				Console.WriteLine (
@@ -1226,13 +1258,15 @@ namespace DLLServices2TestStand
 
 			UnlessWhat ( );
 
-			Program.PauseForPictures ( Program.OMIT_LINEFEED );
+            Program.PauseForPictures (
+                Program.APPEND_LINEFEED ,
+                @"Registry Key Query and Value Formatters, Group 3 of 3" );
 
-			//	----------------------------------------------------------------
-			//	Test the loop state evaluators.
-			//	----------------------------------------------------------------
+            //	----------------------------------------------------------------
+            //	Test the loop state evaluators.
+            //	----------------------------------------------------------------
 
-			EvaluateLoopState ( );
+            EvaluateLoopState ( );
 
 			return TestDone (
 				WizardWrx.MagicNumbers.ERROR_SUCCESS ,
@@ -1477,8 +1511,10 @@ namespace DLLServices2TestStand
 			}	// for ( int intCurrent = pintLoopStart ; AreeWeDoneYet ( penmLimitCondition , intCurrent , pintLoopLimit ) ; NextIteration ( penmLimitCondition , intCurrent , out intCurrent ) )
 
 			if ( pfPauseForPictures )
-			{	// Stop all but the last time through.
-				Program.PauseForPictures ( Program.OMIT_LINEFEED );
+			{   // Stop all but the last time through.
+                Program.PauseForPictures (
+                    Program.OMIT_LINEFEED ,
+                    @"ExerciseLoopStateEvaluators" );
 			}	// if ( pfPauseForPictures )
 		}	// ExerciseLoopStateEvaluators method
 

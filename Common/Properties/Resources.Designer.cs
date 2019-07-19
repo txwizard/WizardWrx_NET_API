@@ -97,6 +97,15 @@ namespace WizardWrx.Common.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Array {0} ie empty; it exists, but contains no elements..
+        /// </summary>
+        public static string ERRMSG_ARRAY_IS_EMPTY {
+            get {
+                return ResourceManager.GetString("ERRMSG_ARRAY_IS_EMPTY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unable to process string {0}.
         /// </summary>
         public static string ERRMSG_BADSTRING {
@@ -169,6 +178,15 @@ namespace WizardWrx.Common.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Object {0} is a null reference..
+        /// </summary>
+        public static string ERRMSG_REFERENCE_IS_NULL {
+            get {
+                return ResourceManager.GetString("ERRMSG_REFERENCE_IS_NULL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A run-time exception has occurred..
         /// </summary>
         public static string ERRMSG_RUNTIME {
@@ -187,6 +205,15 @@ namespace WizardWrx.Common.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to [blank].
+        /// </summary>
+        public static string MSG_BLANK_STRING {
+            get {
+                return ResourceManager.GetString("MSG_BLANK_STRING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to [null].
         /// </summary>
         public static string MSG_OBJECT_REFERENCE_IS_NULL {
@@ -201,6 +228,15 @@ namespace WizardWrx.Common.Properties {
         public static string MSG_STATUS_CODE {
             get {
                 return ResourceManager.GetString("MSG_STATUS_CODE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [empty].
+        /// </summary>
+        public static string MSG_STRING_IS_EMPTY {
+            get {
+                return ResourceManager.GetString("MSG_STRING_IS_EMPTY", resourceCulture);
             }
         }
         

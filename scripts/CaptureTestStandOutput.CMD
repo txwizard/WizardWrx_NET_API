@@ -52,7 +52,7 @@ goto SKIPREM
 ::                      following directory, relative to the directory in which
 ::                      this script is installed.
 ::
-::                          ..\DLLServices2TestStand\bin\%_Confiuration%\DLLServices2TestStand.exe
+::                          .\DLLServices2TestStand\bin\%_Confiuration%\DLLServices2TestStand.exe
 ::
 ::                      All other dependent programs must be installed into a
 ::                      directory that is in the Windows PATH list.
@@ -63,7 +63,9 @@ goto SKIPREM
 ::                          1) CaptureTestStandOutput_DEBUG.CMD
 ::                          2) CaptureTestStandOutput_RETAIL.CMD
 ::
-::                      There being no compelling reason to return, t
+::                      There being no compelling reason to return, this script
+::                      expects to be called by transfer of control, rather than
+::                      the CALL verb.
 ::
 ::  ----------------------------------------------------------------------------
 ::  Revision History
@@ -72,8 +74,13 @@ goto SKIPREM
 ::  Date       By  Synopsis
 ::  ---------- --- -------------------------------------------------------------
 ::  2017/08/28 DAG Create this script from CaptureTestStandOutput_DEBUG.CMD.
+::
 ::  2018/08/28 DAG Amend to send output to the new Test_Reports directory off
 ::                 the solution root directory.
+::
+::  2019/07/18 DAG Amend to set the current working directory to the parent of
+::                 the script directory, rather than its sibling, _NOTES, which
+::                 also requires the relative paths to be reformulated a bit.
 ::  ============================================================================
 
 :SKIPREM
@@ -92,16 +99,16 @@ goto SKIPREM
         WWPause.exe
         echo.
         pushd %_ScriptDir%
-        pushd ..\_NOTES
+        pushd ..\
 
-        ..\DLLServices2TestStand\bin\%_Confiuration%\DLLServices2TestStand.exe > ..\Test_Reports\DLLServices2TestStand_Output_%_Confiuration%.LOG
+        .\DLLServices2TestStand\bin\%_Confiuration%\DLLServices2TestStand.exe > .\Test_Reports\DLLServices2TestStand_Output_%_Confiuration%.LOG
         echo.
         echo -------------------------------------------------------------------
         echo DLLServices2TestStand.exe exit code = %ERRORLEVEL%
         echo -------------------------------------------------------------------
         echo.
 
-        Date2FN.exe -r ..\Test_Reports\DLLServices2TestStand_Output_%_Confiuration%.LOG
+        Date2FN.exe -r .\Test_Reports\DLLServices2TestStand_Output_%_Confiuration%.LOG
 
         if exist DLLServices2TestStand_7_0_%_Confiuration%_Trace.LOG (
             Date2FN.exe -r DLLServices2TestStand_7_0_%_Confiuration%_Trace.LOG
@@ -113,8 +120,8 @@ goto SKIPREM
             echo.
         )
 
-        call ExportFromEventLogNDays.CMD Application ..\Test_Reports\DLLServices2TestStand_%_Confiuration%_ApplicationEvents.TXT
-        Date2fn.exe -r ..\Test_Reports\DLLServices2TestStand_%_Confiuration%_ApplicationEvents.TXT
+        call ExportFromEventLogNDays.CMD Application .\Test_Reports\DLLServices2TestStand_%_Confiuration%_ApplicationEvents.TXT
+        Date2fn.exe -r .\Test_Reports\DLLServices2TestStand_%_Confiuration%_ApplicationEvents.TXT
 
         echo.
         echo EOJ %~nx0 for %_Confiuration% configuration

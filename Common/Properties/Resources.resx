@@ -123,18 +123,23 @@
   </data>
   <data name="ERRMSG_ARG_IS_NULL" xml:space="preserve">
     <value>The specified argument is a null reference.</value>
-    <comment>This is a general purpose error message, intended for reporting null reference exceptions.</comment>
+    <comment>This is a general purpose error message, intended for reporting null reference exceptions. This method works well as the Message argument of an ArgumentNullException exception. Usse ERRMSG_REFERENCE_IS_NULL instead to incorporate the information into the Message property of other Exception types.</comment>
   </data>
   <data name="ERRMSG_ARG_IS_NULL_OR_EMPTY" xml:space="preserve">
     <value>The argument is a null reference or the empty string.</value>
-    <comment>This is a general purpose error message, intended for reporting null reference exceptions.</comment>
+    <comment>This is a general purpose error message, intended for reporting null reference exceptions via ArgumentNullException exceptions. In other contexts, use ERRMSG_REFERENCE_IS_NULL, which includes a format item, to be filled by the string returned by the nameof() pseudo-function.</comment>
   </data>
   <data name="ERRMSG_ARG_OUT_OF_RANGE" xml:space="preserve">
     <value>Value of {0} is out of range; it must be between {1} and {2}.</value>
+    <comment>Use this template to report that an argument or internal variable is out of range, specifying the upper and lower limits. This method works well as the Message of an ArgumentOutOfRange exception.</comment>
+  </data>
+  <data name="ERRMSG_ARRAY_IS_EMPTY" xml:space="preserve">
+    <value>Array {0} ie empty; it exists, but contains no elements.</value>
+    <comment>Use this message to report that an array argument or program variable exists, but is empty. Use ERRMSG_REFERENCE_IS_NULL to report a null reference. Use the nameof() pseudo-function to identify the array by name.</comment>
   </data>
   <data name="ERRMSG_BADSTRING" xml:space="preserve">
     <value>Unable to process string {0}</value>
-    <comment>Use this template to reporty a string that cannot be processed. The string is expected to be appended; to that end, there is a single substitution token. If you want it quoted, wrap it in quotes before you pass it into string.Format or one of its cousins.</comment>
+    <comment>Use this template to report a string that cannot be processed. The string is expected to be appended; to that end, there is a single substitution token. If you want it quoted, wrap it in quotes before you pass it into string.Format or one of its cousins. String extension method QuoteString, defined by WizardWrx.Core.dll, works well for this propose, and the nameof() pseudo-function works provides variable names at runtime.</comment>
   </data>
   <data name="ERRMSG_EMPTY_STRING_NEVER_VALID" xml:space="preserve">
     <value>The empty string is never valid in this context.</value>
@@ -142,9 +147,11 @@
   </data>
   <data name="ERRMSG_FILE_IS_EMPTY" xml:space="preserve">
     <value>Input file {0} is empty.</value>
+    <comment>Use this template to report that an input file is empty, substituting the file name for the token.</comment>
   </data>
   <data name="ERRMSG_FILE_NOT_FOUND" xml:space="preserve">
     <value>Input file {0} cannot be found.</value>
+    <comment>Use this template to report that an input file cannot be found in the current user's security context, substituting the file name for the token.</comment>
   </data>
   <data name="ERRMSG_INTEGER2HEXSTR_INVALID_INPUT" xml:space="preserve">
     <value>The type of the first argument, pintegralValue, is invalid.{2}Argument value = {0}{2}Argument type  = {1}{2}{2}Limitations of the underlying formatting engine{2}restrict this method to integral types.{2}</value>
@@ -156,10 +163,15 @@
   </data>
   <data name="ERRMSG_INVALID_FIELD_IN_INPUT_RECORD" xml:space="preserve">
     <value>Input file {0}, record {1} is invalid.</value>
+    <comment>Use this message to report that a field in an input record is invalid. Substitute the name of the input file for the first token, and the record number or ID for the second.</comment>
   </data>
   <data name="ERRMSG_NULLREF_NEVER_VALID" xml:space="preserve">
     <value>A null reference to a string is never valid in this context.</value>
-    <comment>Created for use by string extension method EnumFromString (defined in WizardWrx.Core.dll), this message will probably find other uses sooner or later.</comment>
+    <comment>Created for use by string extension method EnumFromString (defined in WizardWrx.Core.dll), this message will probably find other uses sooner or later, although, in many contexts, ERRMSG_REFERENCE_IS_NULL is a more useful message, since it has provisions for naming the argument or program variable.</comment>
+  </data>
+  <data name="ERRMSG_REFERENCE_IS_NULL" xml:space="preserve">
+    <value>Object {0} is a null reference.</value>
+    <comment>Use this message to report a null reference. Unlike its predecessor, ERRMSG_ARG_IS_NULL, this string has a substitution token through which to report the object name. Use the nameof() pseudo-function to get the name of the argument or internal variable.</comment>
   </data>
   <data name="ERRMSG_RUNTIME" xml:space="preserve">
     <value>A run-time exception has occurred.</value>
@@ -169,16 +181,25 @@
     <value>The task completed successfully.</value>
     <comment>This message is seldom written; it is a place holder for exit code zero in the table of error messages that is loaded into the state manager singleton.</comment>
   </data>
+  <data name="MSG_BLANK_STRING" xml:space="preserve">
+    <value>[blank]</value>
+    <comment>Use this token to represent the empty string as the word "blank" in brackets. Contrast this with ERRMSG_NULLREF_NEVER_VALID and ERRMSG_ARG_IS_NULL_OR_EMPTY, both intended for use as the Message property of ArgumnetNullException exceptions.</comment>
+  </data>
   <data name="MSG_OBJECT_REFERENCE_IS_NULL" xml:space="preserve">
     <value>[null]</value>
-    <comment>Use this string to represent a null reference in output messages.</comment>
+    <comment>Use this string to represent a null reference in output messages. Contrast this with ERRMSG_REFERENCE_IS_NULL, which has provisions for naming the argument or program variable.  See also MSG_STRING_IS_NULL_OR_EMPTY, for use in ArgumentNullException exception messages.</comment>
   </data>
   <data name="MSG_STATUS_CODE" xml:space="preserve">
     <value>{0} ({1:D} decimal)</value>
+    <comment>Use this method to specify a status code or HRESULT, showing both decimal and hexadecimal representations. A single item number is used twice, with different format strings, so that one argument feeds both. Alas, printf() and its kin cannot do this.</comment>
+  </data>
+  <data name="MSG_STRING_IS_EMPTY" xml:space="preserve">
+    <value>[empty]</value>
+    <comment>Use this token to represent the empty string as the word "empty" in brackets. See also MSG_BLANK_STRING and the more ambiguous MSG_STRING_IS_NULL_OR_EMPTY.</comment>
   </data>
   <data name="MSG_STRING_IS_NULL_OR_EMPTY" xml:space="preserve">
     <value>[null or empty string]</value>
-    <comment>Use this string to represent a null reference or the empty string in output messages.</comment>
+    <comment>Use this string to represent a null reference or the empty string in output messages. Use MSG_OBJECT_REFERENCE_IS_NULL, MSG_STRING_IS_EMPTY, and MSG_BLANK_STRING to convey more specific information.</comment>
   </data>
   <data name="MSG_THE_EMPTY_STRING" xml:space="preserve">
     <value>[empty string]</value>
@@ -258,10 +279,10 @@
   </data>
   <data name="VERSION_STRING_PART_REVNO_LONG" xml:space="preserve">
     <value>Revision</value>
-    <comment>Use these strings as long labels for the four parts of a canonical version number string.</comment>
+    <comment>Use these strings as long labels for the four parts of a canonical version number string. The values of this string and VERSION_STRING_PART_REVNO_SHORT are identical. Both exist by design, so that a numerical argument can select one of three groups, long, short, and abbreviated, for use in rendering the four parts of a version string.</comment>
   </data>
   <data name="VERSION_STRING_PART_REVNO_SHORT" xml:space="preserve">
     <value>Revision</value>
-    <comment>Use these strings as short labels for the four parts of a canonical version number string.</comment>
+    <comment>Use these strings as long labels for the four parts of a canonical version number string. The values of this string and VERSION_STRING_PART_REVNO_LONG are identical. Both exist by design, so that a numerical argument can select one of three groups, long, short, and abbreviated, for use in rendering the four parts of a version string.</comment>
   </data>
 </root>

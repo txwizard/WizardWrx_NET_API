@@ -15,6 +15,7 @@
 	========== === =============================================================
 	2019/04/28 DAG Add ProductAssemblyInfo.cs the right way, as a link.
 	2019/07/05 DAG Add automatic NuGet package publication.
+	2019/07/18 DAG Reformat to vertically align clauses in NuGet package tasks.
 	============================================================================
 -->
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
@@ -105,23 +106,32 @@
   <Target Name="AfterBuild">
     <!-- Load up the information from the assembly -->
     <GetAssemblyIdentity AssemblyFiles="$(OutputPath)$(AssemblyName).dll">
-      <Output TaskParameter="Assemblies" ItemName="OutputAssemblyInfo" />
+      <Output TaskParameter="Assemblies"
+      	      ItemName="OutputAssemblyInfo" />
     </GetAssemblyIdentity>
     <Message Text="Info: Assembly $(AssemblyName).dll version =  %(OutputAssemblyInfo.Version)" />
   </Target>
-  <Target Name="Package" AfterTargets="AfterBuild" Condition=" '$(Configuration)' == 'Release'">
+  <Target Name="Package"
+  	      AfterTargets="AfterBuild"
+  	      Condition=" '$(Configuration)' == 'Release'">
     <!-- Ensure the Package directory exists for this project -->
     <MakeDir Directories="$(PackageDir)" />
     <!-- Package the project -->
-    <Exec WorkingDirectory="$(BuildDir)" Command="NuGet.exe pack $(ProjectName).csproj -Properties Configuration=$(Configuration) -OutputDir $(PackageDir) -IncludeReferencedProjects -Verbosity detailed" />
+    <Exec WorkingDirectory="$(BuildDir)"
+    	  Command="NuGet.exe pack $(ProjectName).csproj -Properties Configuration=$(Configuration) -OutputDir $(PackageDir) -IncludeReferencedProjects -Verbosity detailed" />
   </Target>
   <!-- 2019/07/05 16:43:12 - DAG Switch on the push target. -->
   <!-- Publish the project. -->
-  <Target Name="Publish" AfterTargets="Package" Condition=" '$(Configuration)' == 'Release'">
-    <Exec WorkingDirectory="$(PackageDir)" Command="NuGet.exe push $(AssemblyName).%(OutputAssemblyInfo.Version).nupkg" />
+  <Target Name="Publish"
+  	      AfterTargets="Package"
+  	      Condition=" '$(Configuration)' == 'Release'">
+    <Exec WorkingDirectory="$(PackageDir)"
+    	  Command="NuGet.exe push $(AssemblyName).%(OutputAssemblyInfo.Version).nupkg" />
   </Target>
-  <Target Name="BeforeBuild" Condition=" '$(Configuration)' == 'Debug'">
-    <Exec WorkingDirectory="$(ProjectDir)" Command="nuget install packages.config -OutputDirectory $(SolutionPackageDir)" />
+  <Target Name="BeforeBuild"
+  	      Condition=" '$(Configuration)' == 'Debug'">
+    <Exec WorkingDirectory="$(ProjectDir)"
+    	  Command="nuget install packages.config -OutputDirectory $(SolutionPackageDir)" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

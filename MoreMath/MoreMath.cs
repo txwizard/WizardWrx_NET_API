@@ -100,12 +100,23 @@
                               compiler, which got added by mistake to this
                               project. Otherwise, the code is unchanged, and it
                               should create an identical binary.
+
+	2019/07/18 7.21    DAG    Move the proven IncrementAndReturnNewValue methods 
+                              from the Utils class assembly PSQLviaADOCS, for
+                              which I created and tested them, and extend them
+                              to the unsigned integer types. Only the canonical
+                              integer types, int, uint, long, and ulong, are
+                              covered. The bit-width types can be easly cast if
+                              needed, and byte, although technically an integer,
+                              is unlikely to ever be subjected to this treatment
+                              because of its extremely limited range.
     ============================================================================
 */
 
 using System;
 
 using WizardWrx.Properties;
+
 
 namespace WizardWrx
 {
@@ -989,6 +1000,96 @@ namespace WizardWrx
                     LONG_ARG_NAME_DIVISOR );                                    // string paramname
         }   // public static long Remainder 2 of 2
         #endregion  // Mod and Remainder methods, which are interchangeable
+
+
+        #region IncrementAndReturnNewValue Methods for All Canonical Integral Types
+        /// <summary>
+        /// Increment a static (shared in Visual Basic) value, returning the
+        /// incremented value.
+        /// </summary>
+        /// <param name="IncrementThisValue">
+        /// Pass in a reference to the shared value to increment and return.
+        /// <para>Since the value is incremented, it must be passed explicitly
+        /// by reference.
+        /// </para>
+        /// </param>
+        /// <returns>
+        /// The return value is the initial value of
+        /// <paramref name="IncrementThisValue"/> plus one, which also becomes
+        /// the new value of <paramref name="IncrementThisValue"/>.
+        /// </returns>
+        public static int IncrementAndReturnNewValue ( ref int IncrementThisValue )
+        {
+            IncrementThisValue++;
+            return IncrementThisValue;
+        }   // public static int IncrementAndReturnNewValue
+
+
+        /// <summary>
+        /// Increment a static (shared in Visual Basic) value, returning the
+        /// incremented value.
+        /// </summary>
+        /// <param name="IncrementThisValue">
+        /// Pass in a reference to the shared value to increment and return.
+        /// <para>Since the value is incremented, it must be passed explicitly
+        /// by reference.
+        /// </para>
+        /// </param>
+        /// <returns>
+        /// The return value is the initial value of
+        /// <paramref name="IncrementThisValue"/> plus one, which also becomes
+        /// the new value of <paramref name="IncrementThisValue"/>.
+        /// </returns>
+        public static long IncrementAndReturnNewValue ( ref long IncrementThisValue )
+        {
+            IncrementThisValue++;
+            return IncrementThisValue;
+        }   // public static long IncrementAndReturnNewValue
+
+
+        /// <summary>
+        /// Increment a static (shared in Visual Basic) value, returning the
+        /// incremented value.
+        /// </summary>
+        /// <param name="IncrementThisValue">
+        /// Pass in a reference to the shared value to increment and return.
+        /// <para>Since the value is incremented, it must be passed explicitly
+        /// by reference.
+        /// </para>
+        /// </param>
+        /// <returns>
+        /// The return value is the initial value of
+        /// <paramref name="IncrementThisValue"/> plus one, which also becomes
+        /// the new value of <paramref name="IncrementThisValue"/>.
+        /// </returns>
+        public static uint IncrementAndReturnNewValue ( ref uint IncrementThisValue )
+        {
+            IncrementThisValue++;
+            return IncrementThisValue;
+        }   // public static int IncrementAndReturnNewValue
+
+
+        /// <summary>
+        /// Increment a static (shared in Visual Basic) value, returning the
+        /// incremented value.
+        /// </summary>
+        /// <param name="IncrementThisValue">
+        /// Pass in a reference to the shared value to increment and return.
+        /// <para>Since the value is incremented, it must be passed explicitly
+        /// by reference.
+        /// </para>
+        /// </param>
+        /// <returns>
+        /// The return value is the initial value of
+        /// <paramref name="IncrementThisValue"/> plus one, which also becomes
+        /// the new value of <paramref name="IncrementThisValue"/>.
+        /// </returns>
+        public static ulong IncrementAndReturnNewValue ( ref ulong IncrementThisValue )
+        {
+            IncrementThisValue++;
+            return IncrementThisValue;
+        }   // public static ulong IncrementAndReturnNewValue
+        #endregion  // IncrementAndReturnNewValue Methods for All Canonical Integral Types
 
 
         #region Private Static Helper Methods

@@ -441,6 +441,74 @@
             <seealso cref="M:WizardWrx.MoreMath.Mod(System.Int64,System.Int64)"/>
             <seealso cref="M:WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int64,System.Int64)"/>
         </member>
+        <member name="M:WizardWrx.MoreMath.IncrementAndReturnNewValue(System.Int32@)">
+            <summary>
+            Increment a static (shared in Visual Basic) value, returning the
+            incremented value.
+            </summary>
+            <param name="IncrementThisValue">
+            Pass in a reference to the shared value to increment and return.
+            <para>Since the value is incremented, it must be passed explicitly
+            by reference.
+            </para>
+            </param>
+            <returns>
+            The return value is the initial value of
+            <paramref name="IncrementThisValue"/> plus one, which also becomes
+            the new value of <paramref name="IncrementThisValue"/>.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.MoreMath.IncrementAndReturnNewValue(System.Int64@)">
+            <summary>
+            Increment a static (shared in Visual Basic) value, returning the
+            incremented value.
+            </summary>
+            <param name="IncrementThisValue">
+            Pass in a reference to the shared value to increment and return.
+            <para>Since the value is incremented, it must be passed explicitly
+            by reference.
+            </para>
+            </param>
+            <returns>
+            The return value is the initial value of
+            <paramref name="IncrementThisValue"/> plus one, which also becomes
+            the new value of <paramref name="IncrementThisValue"/>.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.MoreMath.IncrementAndReturnNewValue(System.UInt32@)">
+            <summary>
+            Increment a static (shared in Visual Basic) value, returning the
+            incremented value.
+            </summary>
+            <param name="IncrementThisValue">
+            Pass in a reference to the shared value to increment and return.
+            <para>Since the value is incremented, it must be passed explicitly
+            by reference.
+            </para>
+            </param>
+            <returns>
+            The return value is the initial value of
+            <paramref name="IncrementThisValue"/> plus one, which also becomes
+            the new value of <paramref name="IncrementThisValue"/>.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.MoreMath.IncrementAndReturnNewValue(System.UInt64@)">
+            <summary>
+            Increment a static (shared in Visual Basic) value, returning the
+            incremented value.
+            </summary>
+            <param name="IncrementThisValue">
+            Pass in a reference to the shared value to increment and return.
+            <para>Since the value is incremented, it must be passed explicitly
+            by reference.
+            </para>
+            </param>
+            <returns>
+            The return value is the initial value of
+            <paramref name="IncrementThisValue"/> plus one, which also becomes
+            the new value of <paramref name="IncrementThisValue"/>.
+            </returns>
+        </member>
         <member name="M:WizardWrx.MoreMath.CreateYearOutOfRangeMsg(System.Int32)">
             <summary>
             This method returns a string that contains the value, and the

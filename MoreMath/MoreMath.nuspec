@@ -10,12 +10,14 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>This is the first release of this established library as a NuGet package.</releaseNotes>
+	    <releaseNotes>Define new IncrementAndReturnNewValue methods, with four overloads, covering the four generic integral types (int, uint, long, ulong). All four take a reference to an integer and increment it, returning the new value.</releaseNotes>
     	<copyright>$copyright$</copyright>
     	<tags>Modulus Decimal Shift</tags>
 	</metadata>
 	<files>
    		<file src="readme.md" target="" />
    		<file src="readme.txt" target="" />
+   		<file src="bin\$configuration$\$id$.pdb" target="lib" />
+   		<file src="bin\$configuration$\$id$.xml" target="lib" />
 	</files>
 </package>

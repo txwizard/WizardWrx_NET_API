@@ -4538,6 +4538,11 @@
               Looks up a localized string similar to Value of {0} is out of range; it must be between {1} and {2}..
             </summary>
         </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.ERRMSG_ARRAY_IS_EMPTY">
+            <summary>
+              Looks up a localized string similar to Array {0} ie empty; it exists, but contains no elements..
+            </summary>
+        </member>
         <member name="P:WizardWrx.Common.Properties.Resources.ERRMSG_BADSTRING">
             <summary>
               Looks up a localized string similar to Unable to process string {0}.
@@ -4578,6 +4583,11 @@
               Looks up a localized string similar to A null reference to a string is never valid in this context..
             </summary>
         </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.ERRMSG_REFERENCE_IS_NULL">
+            <summary>
+              Looks up a localized string similar to Object {0} is a null reference..
+            </summary>
+        </member>
         <member name="P:WizardWrx.Common.Properties.Resources.ERRMSG_RUNTIME">
             <summary>
               Looks up a localized string similar to A run-time exception has occurred..
@@ -4588,6 +4598,11 @@
               Looks up a localized string similar to The task completed successfully..
             </summary>
         </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.MSG_BLANK_STRING">
+            <summary>
+              Looks up a localized string similar to [blank].
+            </summary>
+        </member>
         <member name="P:WizardWrx.Common.Properties.Resources.MSG_OBJECT_REFERENCE_IS_NULL">
             <summary>
               Looks up a localized string similar to [null].
@@ -4596,6 +4611,11 @@
         <member name="P:WizardWrx.Common.Properties.Resources.MSG_STATUS_CODE">
             <summary>
               Looks up a localized string similar to {0} ({1:D} decimal).
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.MSG_STRING_IS_EMPTY">
+            <summary>
+              Looks up a localized string similar to [empty].
             </summary>
         </member>
         <member name="P:WizardWrx.Common.Properties.Resources.MSG_STRING_IS_NULL_OR_EMPTY">

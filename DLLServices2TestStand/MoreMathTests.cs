@@ -3,9 +3,9 @@
 
     Namespace:          DLLServices2TestStand
 
-    Class Name:         MathTests
+    Class Name:         MoreMathTests
 
-    File Name:          MathTests.cs
+    File Name:          MoreMathTests.cs
 
     Synopsis:           This static class exercises the static methods on the
                         new static Math class.
@@ -14,7 +14,7 @@
 
     Author:             David A. Gray
 
-	License:            Copyright (C) 2018, David A. Gray. 
+	License:            Copyright (C) 2018-2019, David A. Gray. 
 						All rights reserved.
 
                         Redistribution and use in source and binary forms, with
@@ -65,6 +65,9 @@
 	2018/12/24 7.14    DAG    Define the DecimalShift function, syntactic sugar
                               that performs decimal shift operations on integers
                               and floating point numbers of various sizes.
+
+	2019/07/18 7.21    DAG    Show that all four new IncrementAndReturnNewValue
+                              methods that I just added to MoreMath work.
 	============================================================================
 */
 
@@ -72,13 +75,13 @@ using System;
 
 using WizardWrx;
 
+
 namespace DLLServices2TestStand
 {
     static class MoreMathTests
     {
         static readonly WizardWrx.DLLConfigurationManager.ExceptionLogger s_exceptionLogger = WizardWrx.DLLConfigurationManager.ExceptionLogger.GetTheSingleInstance (
             WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions.AllFlags );
-
 
         #region DecimalShiftLeft Test Case Arrays
         static readonly IntegerDecimalShiftLeftTestCase [ ] s_aintegerDecimalShifttLeftTestCases = new IntegerDecimalShiftLeftTestCase [ ]
@@ -143,6 +146,76 @@ namespace DLLServices2TestStand
         };  // static readonly IntegerDecimalShiftRightTestCase [ ] s_aintDecimalShiftRightTestCases
         #endregion  // DecimalShiftRight Test Case Arrays
 
+
+        #region Gregorian Year Test Case Arrays
+        static readonly int [ ] s_aintGregorianYearTests = new int [ ]
+        {
+            1492 ,
+            1581 ,
+            1582 ,
+            1583 ,
+            1599 ,
+            1600 ,
+            1601 ,
+            1602 ,
+            1603 ,
+            1604 ,
+            1605 ,
+            1606 ,
+            1607 ,
+            1608 ,
+            1609 ,
+            1610 ,
+            1611 ,
+            1699 ,
+            1700 ,
+            1701 ,
+            1702 ,
+            1703 ,
+            1704 ,
+            1705 ,
+            1706 ,
+            1707 ,
+            1708 ,
+            1709 ,
+            1710 ,
+            1711 ,
+            1799 ,
+            1800 ,
+            1801 ,
+            1899 ,
+            1900 ,
+            1901 ,
+            1999 ,
+            2000 ,
+            2001 ,
+            2002 ,
+            2003 ,
+            2004 ,
+            2005 ,
+            2006 ,
+            2007 ,
+            2008 ,
+            2009 ,
+            2010 ,
+            2011 ,
+            2012 ,
+            2013 ,
+            2014 ,
+            2015 ,
+            2016 ,
+            2017 ,
+            2018 ,
+            2019 ,
+            2020 ,
+            2021 ,
+            2022 ,
+            2063 ,
+            2099 ,
+            2100 ,
+            2101
+        };  // static readonly int [ ] s_aintGregorianYearTests
+        #endregion  // Gregorian Year Test Case Arrays
 
 
         #region IntegerModulus Test Case Arrays
@@ -240,77 +313,6 @@ namespace DLLServices2TestStand
         #endregion  // IntegerModulus Test Case Arrays
 
 
-        #region Gregorian Year Test Case Arrays
-        static readonly int [ ] s_aintGregorianYearTests = new int [ ]
-        {
-            1492 ,
-            1581 ,
-            1582 ,
-            1583 ,
-            1599 ,
-            1600 ,
-            1601 ,
-            1602 ,
-            1603 ,
-            1604 ,
-            1605 ,
-            1606 ,
-            1607 ,
-            1608 ,
-            1609 ,
-            1610 ,
-            1611 ,
-            1699 ,
-            1700 ,
-            1701 ,
-            1702 ,
-            1703 ,
-            1704 ,
-            1705 ,
-            1706 ,
-            1707 ,
-            1708 ,
-            1709 ,
-            1710 ,
-            1711 ,
-            1799 ,
-            1800 ,
-            1801 ,
-            1899 ,
-            1900 ,
-            1901 ,
-            1999 ,
-            2000 ,
-            2001 ,
-            2002 ,
-            2003 ,
-            2004 ,
-            2005 ,
-            2006 ,
-            2007 ,
-            2008 ,
-            2009 ,
-            2010 ,
-            2011 ,
-            2012 ,
-            2013 ,
-            2014 ,
-            2015 ,
-            2016 ,
-            2017 ,
-            2018 ,
-            2019 ,
-            2020 ,
-            2021 ,
-            2022 ,
-            2063 ,
-            2099 ,
-            2100 ,
-            2101
-        };  // static readonly int [ ] s_aintGregorianYearTests
-        #endregion  // Gregorian Year Test Case Arrays
-
-
         #region Public Static Test Runner
         public static void Run ( )
         {
@@ -329,6 +331,8 @@ namespace DLLServices2TestStand
                     MoreMath.GRGORIAN_CALENDAR_ADOPTION_YEAR ) );
 
             TestDecimalShift ( );
+
+            TestIncrementAndReturnNewValue ( );
 
             TestIntegerModulus ( );
 
@@ -433,6 +437,84 @@ namespace DLLServices2TestStand
                 Environment.NewLine );
         }   // private static void TestDecimalShift
         #endregion  // DecimalShift Test Routines
+
+
+        #region IncrementAndReturnNewValue Test Routines
+        private static void TestIncrementAndReturnNewValue ( )
+        {
+            int intIncrementThis = MagicNumbers.ZERO;
+            long lngIncrementThis = MagicNumbers.ZERO;
+            uint uintIncrementThis = MagicNumbers.ZERO;
+            ulong ulngIncrementThis = MagicNumbers.ZERO;
+
+            Console.WriteLine (
+                @"    Test and demonstrate the IncrementAndReturnNewValue method.{0}" ,
+                Environment.NewLine );
+
+            Console.WriteLine (
+                @"        Initial value of {0}, a {1} = {2}" ,
+                nameof ( intIncrementThis ) ,
+                intIncrementThis.GetType ( ).FullName ,
+                intIncrementThis );
+            Console.WriteLine (
+                @"        Initial value of {0}, a {1} = {2}" ,
+                nameof ( lngIncrementThis ) ,
+                lngIncrementThis.GetType ( ).FullName ,
+                lngIncrementThis );
+            Console.WriteLine (
+                @"        Initial value of {0}, a {1} = {2}" ,
+                nameof ( uintIncrementThis ) ,
+                uintIncrementThis.GetType ( ).FullName ,
+                uintIncrementThis );
+            Console.WriteLine (
+                @"        Initial value of {0}, a {1} = {2}" ,
+                nameof ( ulngIncrementThis ) ,
+                ulngIncrementThis.GetType ( ).FullName ,
+                ulngIncrementThis );
+
+            Console.WriteLine ( );  // Force a line feed.
+
+            Console.WriteLine (
+                @"        Value returned by IncrementAndReturnNewValue for {0} = {1}" ,
+                nameof ( intIncrementThis ) ,
+                MoreMath.IncrementAndReturnNewValue ( ref intIncrementThis ) );
+            Console.WriteLine (
+                @"        Value returned by IncrementAndReturnNewValue for {0} = {1}" ,
+                nameof ( lngIncrementThis ) ,
+                MoreMath.IncrementAndReturnNewValue ( ref lngIncrementThis ) );
+            Console.WriteLine (
+                @"        Value returned by IncrementAndReturnNewValue for {0} = {1}" ,
+                nameof ( uintIncrementThis ) ,
+                MoreMath.IncrementAndReturnNewValue ( ref uintIncrementThis ) );
+            Console.WriteLine (
+                @"        Value returned by IncrementAndReturnNewValue for {0} = {1}" ,
+                nameof ( ulngIncrementThis ) ,
+                MoreMath.IncrementAndReturnNewValue ( ref ulngIncrementThis ) );
+
+            Console.WriteLine ( );  // Force another line feed.
+
+            Console.WriteLine (
+                @"        Final value of {0} = {1}" ,
+                nameof ( intIncrementThis ) ,
+                intIncrementThis );
+            Console.WriteLine (
+                @"        Final value of {0} = {1}" ,
+                nameof ( lngIncrementThis ) ,
+                lngIncrementThis );
+            Console.WriteLine (
+                @"        Final value of {0} = {1}" ,
+                nameof ( uintIncrementThis ) ,
+                uintIncrementThis );
+            Console.WriteLine (
+                @"        Final value of {0} = {1}" ,
+                nameof ( ulngIncrementThis ) ,
+                ulngIncrementThis );
+
+            Console.WriteLine (
+                @"{0}    IncrementAndReturnNewValue method testing completed.{0}" ,
+                Environment.NewLine );
+        }   // private static void TestIncrementAndReturnNewValue
+        #endregion  // IncrementAndReturnNewValue Test Routines
 
 
         #region IntegerModulus Test Routines

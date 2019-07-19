@@ -4,15 +4,39 @@ This file is a running history of fixes and improvements from version 7.0
 onwards. Changes are documented for the newest version first. Within each
 version, classes are covered in alphabetical order.
 
-## Version 7.20.117, Released 2019/07/09
+## WizardWrx Common.dll, version 7.21.121, Released 2019/07/18
 
-### WizardWrx Common.dll
+The public string resource set has the new strings listed in the following table.
+
+|String Name                   |String Value                                            |Source code comment in the .RESX file                                                                                                                                                                                                                        |
+|------------------------------|--------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|ERRMSG_ARRAY_IS_EMPTY         |Array {0} ie empty; it exists, but contains no elements.|Use this message to report that an array argument or program variable exists, but is empty. Use ERRMSG_REFERENCE_IS_NULL to report a null reference. Use the nameof() pseudo-function to identify the array by name.                                         |
+|ERRMSG_REFERENCE_IS_NULL      |Object {0} is a null reference.                         |Use this message to report a null reference. Unlike its predecessor, ERRMSG_ARG_IS_NULL, this string has a substitution token through which to report the object name. Use the nameof() pseudo-function to get the name of the argument or internal variable.|
+|MSG_STRING_IS_EMPTY           |\[empty\]                                               |Use this token to represent the empty string as the word "empty" in brackets.                                                                                                                                                                                |
+|MSG_BLANK_STRING              |\[blank\]                                               |Use this token to represent the empty string as the word "blank" in brackets.                                                                                                                                                                                |
+
+Many other strings get improved comments, which can presently be seen only by
+viewing the .RESX file in an editor.
+
+## WizardWrx.MoreMath, version 7.21.3, Released 2019/07/18
+
+`IncrementAndReturnNewValue` methods, with four overloads, covering the four
+generic integral types (int, uint, long, ulong), increment the value of the
+integer to which the reference points, returning the incremented value as
+their own return value.. All four take a reference to an integer and increment
+it, returning the new value. The goal is to maintain a static (Shared in Visual
+Basic) integer, while making the new value available for local use with a single
+method call.
+
+__Note:__ Testing the `IncrementAndReturnNewValue` methods exposed a coding
+error caused by moving the report output directory up a level in the directory
+tree that prevented the automated test scripts from covering every unit test.
+
+## WizardWrx Common.dll, version 7.21.117, Released 2019/07/09
 
 The public string resources has a new string, `STACK_TRACE_ENTRY_PREFIX`.
 
-## Version 7.20.116, Released 2019/07/04
-
-### WizardWrx Common.dll
+## WizardWrx Common.dll version 7.20.116, Released 2019/07/04
 
 The public string resources have two sets of new strings, named
 `REGISTRY\_VALUE\_TYPE\_*` and `VERSION\_STRING\_PART\_*` listed in the following

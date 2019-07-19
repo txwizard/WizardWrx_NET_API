@@ -47,11 +47,11 @@
     <Reference Include="WizardWrx.BitMath, Version=4.3.125.29248, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>C:\Users\DAG\.nuget\packages\WizardWrx.BitMath.4.3.125.29248\lib\net20\WizardWrx.BitMath.dll</HintPath>
     </Reference>
-    <Reference Include="WizardWrx.Common, Version=7.21.116.24985, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>C:\Users\DAG\.nuget\packages\WizardWrx.Common.7.21.116.24985\lib\net20\WizardWrx.Common.dll</HintPath>
+    <Reference Include="WizardWrx.Common, Version=7.21.121.4719, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>C:\Users\DAG\.nuget\packages\WizardWrx.Common.7.21.121.4719\lib\net20\WizardWrx.Common.dll</HintPath>
     </Reference>
-    <Reference Include="WizardWrx.FormatStringEngine, Version=7.15.162.826, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>C:\Users\DAG\.nuget\packages\WizardWrx.FormatStringEngine.7.15.162.826\lib\net20\WizardWrx.FormatStringEngine.dll</HintPath>
+    <Reference Include="WizardWrx.FormatStringEngine, Version=7.21.166.43103, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>C:\Users\DAG\.nuget\packages\WizardWrx.FormatStringEngine.7.21.166.43103\lib\net20\WizardWrx.FormatStringEngine.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -80,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- 2019/05/21 00:02:27 - DAG Everything from this point to the end is new, and was added to support NuGet package generation. -->

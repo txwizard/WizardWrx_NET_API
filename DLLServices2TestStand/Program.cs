@@ -242,6 +242,13 @@
 
     2019/06/09 7.20    DAG Add the assembly name to the report listing its
                            string resources.
+
+    2019/07/18 7.21    DAG 1) Move most of the new tests outside the block that
+                              deals with standard stream redirection.
+
+                           2) Add an argument to PauseForPictures that takes a
+                              string that is displayed on the error console when
+                              standard output is redirected.
     ============================================================================
 */
 
@@ -498,109 +505,141 @@ namespace DLLServices2TestStand
 
 				ExerciseDynamicExceptionReporting ( );
 
-				if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_REDIRECTION_DETECTION )
-				{	// Focus on this single test, without any other stuff to interfere.
-					System.Diagnostics.Debugger.Launch ( );
-					EvaluateConsoleHandleStates ( );
-					ExploreProcessModulesCollection ( );
-					ExerciseClearScreen ( );
-				}	// TRUE block, if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_REDIRECTION_DETECTION )
-				else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_REDIRECTION_STATE_TESTS )
-				{
-					Console.WriteLine ( "This method has been retired." );
-				}	// TRUE block, else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_REDIRECTION_STATE_TESTS )
-				else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_ENUMERATE_EXCEPTION_GUIDS )
-				{	// This test gathers research data to go into the table of exception message formats.
-					EnumExcpetionGUIDs ( );
-				}	// TRUE block, else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_ENUMERATE_EXCEPTION_GUIDS )
-				else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_GENERATE_EXCEPTION_MESSAGE_FORMAT_TABLE )
-				{	// This task generates the exception message configuration file.
-					GenerateExceptionMessageFormatTable ( );
-				}	// TRUE block, else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_ENUMERATE_EXCEPTION_GUIDS )
-				else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_LIST_COMMON_STRINGS )
-				{	// This task enumerates the publicly visible string resources in a specified namespace.
-					NewClassTests_20140914.EnumerateStringResourcesInAssembly (
-						ref intTestNumber ,
-						System.Reflection.Assembly.GetAssembly (
-							typeof ( ArrayInfo ) ) );
-				}	// TRUE block, else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_LIST_COMMON_STRINGS )
-				else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_EVENT_MSG_CLEANUP_TESTS )
-				{
-					EventMessageCleanupTests ( ref intTestNumber );
-				}
-				else
-				{	// Run the whole set, starting with this test, which leaves the flags set so that the original message can be reconstructed from a psLogList export.
+                if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_REDIRECTION_DETECTION )
+                {   // Focus on this single test, without any other stuff to interfere.
+                    System.Diagnostics.Debugger.Launch ( );
+                    EvaluateConsoleHandleStates ( );
+                    ExploreProcessModulesCollection ( );
+                    ExerciseClearScreen ( );
+                }   // TRUE block, if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_REDIRECTION_DETECTION )
+                else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_REDIRECTION_STATE_TESTS )
+                {
+                    Console.WriteLine ( "This method has been retired." );
+                }   // TRUE block, else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_REDIRECTION_STATE_TESTS )
+                else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_ENUMERATE_EXCEPTION_GUIDS )
+                {   // This test gathers research data to go into the table of exception message formats.
+                    EnumExcpetionGUIDs ( );
+                }   // TRUE block, else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_ENUMERATE_EXCEPTION_GUIDS )
+                else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_GENERATE_EXCEPTION_MESSAGE_FORMAT_TABLE )
+                {   // This task generates the exception message configuration file.
+                    GenerateExceptionMessageFormatTable ( );
+                }   // TRUE block, else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_ENUMERATE_EXCEPTION_GUIDS )
+                else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_LIST_COMMON_STRINGS )
+                {   // This task enumerates the publicly visible string resources in a specified namespace.
+                    NewClassTests_20140914.EnumerateStringResourcesInAssembly (
+                        ref intTestNumber ,
+                        System.Reflection.Assembly.GetAssembly (
+                            typeof ( ArrayInfo ) ) );
+                }   // TRUE block, else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_LIST_COMMON_STRINGS )
+                else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_EVENT_MSG_CLEANUP_TESTS )
+                {
+                    EventMessageCleanupTests ( ref intTestNumber );
+                }
+                else
+                {	// Run the whole set, starting with this test, which leaves the flags set so that the original message can be reconstructed from a psLogList export.
                     RecoveredExceptionTests ( ref intTestNumber );
-                    PauseForPictures ( APPEND_LINEFEED );
+                    PauseForPictures (
+                        APPEND_LINEFEED ,
+                        @"RecoveredExceptionTests" );
 
                     ExerciseStringFixups ( ref intTestNumber );
-                    PauseForPictures ( APPEND_LINEFEED );
+                    PauseForPictures (
+                        APPEND_LINEFEED ,
+                        @"ExerciseStringFixups" );
 
                     {   // Constrain the scope of strings strMsgWithEscapedTabs and strDetailRowFormatString.
                         string strMsgWithEscapedTabs = Properties.Resources.MESSAGE_CONTAINS_ESCAPED_TABS;
-                        Console.WriteLine ( @"MESSAGE_CONTAINS_ESCAPED_TABS = {0}",strMsgWithEscapedTabs );
+                        Console.WriteLine ( @"MESSAGE_CONTAINS_ESCAPED_TABS = {0}" , strMsgWithEscapedTabs );
                         string strDetailRowFormatString = strMsgWithEscapedTabs.ReplaceEscapedTabsInStringFromResX ( );
                         Console.WriteLine ( @"strDetailRowFormatString      = {0}" , strDetailRowFormatString );
                     }   // Let strings strMsgWithEscapedTabs and strDetailRowFormatString go out of scope.
 
                     intTestNumber = ShowFileDetailsTests.Exercise ( ref intTestNumber );
-                    PauseForPictures ( OMIT_LINEFEED );
+                    PauseForPictures (
+                        OMIT_LINEFEED ,
+                        @"ShowFileDetailsTests" );
 
                     intTestNumber = LineEndingFixupTests.Exercise ( ref intTestNumber );
-                    PauseForPictures ( OMIT_LINEFEED );
+                    PauseForPictures (
+                        OMIT_LINEFEED ,
+                        @"LineEndingFixupTests" );
 
                     EventMessageCleanupTests ( ref intTestNumber );
-					PauseForPictures ( APPEND_LINEFEED );
+                    PauseForPictures (
+                        APPEND_LINEFEED ,
+                        @"EventMessageCleanupTests" );
 
-					//	------------------------------------------------------------
-					//	This method exercises the remaining routines that I moved
-					//	into this constellation of libraries from the SharedUtl set.
-					//	This routine handles its own exceptions, and looks after its
-					//	own test selections based on command line arguments, just as
-					//	do the other routines in this assembly.
-					//	------------------------------------------------------------
+                    //	------------------------------------------------------------
+                    //	This method exercises the remaining routines that I moved
+                    //	into this constellation of libraries from the SharedUtl set.
+                    //	This routine handles its own exceptions, and looks after its
+                    //	own test selections based on command line arguments, just as
+                    //	do the other routines in this assembly.
+                    //	------------------------------------------------------------
 
-					if ( ImportsFromSharedUtl4.DoTheTests ( pastrArgs ) == ImportsFromSharedUtl4.STATUS_SKIP_FURTHER_TESTS )
-					{	// This is one of those very rare instances when I think the goto statement justifies its existence.
-						goto FinalReport;
-					}	// if ( ImportsFromSharedUtl4.DoTheTests ( pastrArgs ) == ImportsFromSharedUtl4.STATUS_SKIP_FURTHER_TESTS )
+                    if ( ImportsFromSharedUtl4.DoTheTests ( pastrArgs ) == ImportsFromSharedUtl4.STATUS_SKIP_FURTHER_TESTS )
+                    {   // This is one of those very rare instances when I think the goto statement justifies its existence.
+                        goto FinalReport;
+                    }   // if ( ImportsFromSharedUtl4.DoTheTests ( pastrArgs ) == ImportsFromSharedUtl4.STATUS_SKIP_FURTHER_TESTS )
 
-					//  --------------------------------------------------------
-					//  Put the new GetAssemblyProductAndVersion method through 
-					//	its paces.
-					//  --------------------------------------------------------
+                    //  --------------------------------------------------------
+                    //  Put the new GetAssemblyProductAndVersion method through 
+                    //	its paces.
+                    //  --------------------------------------------------------
 
-					Console.WriteLine (
-						Properties.Resources.MSG_VERSIONIFNO_TESTS_BEGIN ,
-						Environment.NewLine );
+                    Console.WriteLine (
+                        Properties.Resources.MSG_VERSIONIFNO_TESTS_BEGIN ,
+                        Environment.NewLine );
 
-					try
-					{	// The last iteration is an invalid enumeration value, and it always throws.
-						foreach ( StateManager.AssemblyVersionRequest enmAssemblyVersionRequest in s_aenmAssemblyVersionRequests )
-						{
-							Console.WriteLine (
-								Properties.Resources.MSG_VERSIONINFO ,
-								enmAssemblyVersionRequest ,
-								( int ) enmAssemblyVersionRequest ,
-								s_smTheApp.GetAssemblyProductAndVersion ( enmAssemblyVersionRequest ) );
-						}	// foreach ( StateManager.AssemblyVersionRequest enmAssemblyVersionRequest in s_aenmAssemblyVersionRequests )
-					}
-					catch ( Exception exAll )
-					{
-						s_smTheApp.AppExceptionLogger.ReportException ( exAll );
-					}
+                    try
+                    {   // The last iteration is an invalid enumeration value, and it always throws.
+                        foreach ( StateManager.AssemblyVersionRequest enmAssemblyVersionRequest in s_aenmAssemblyVersionRequests )
+                        {
+                            Console.WriteLine (
+                                Properties.Resources.MSG_VERSIONINFO ,
+                                enmAssemblyVersionRequest ,
+                                ( int ) enmAssemblyVersionRequest ,
+                                s_smTheApp.GetAssemblyProductAndVersion ( enmAssemblyVersionRequest ) );
+                        }   // foreach ( StateManager.AssemblyVersionRequest enmAssemblyVersionRequest in s_aenmAssemblyVersionRequests )
+                    }
+                    catch ( Exception exAll )
+                    {
+                        s_smTheApp.AppExceptionLogger.ReportException ( exAll );
+                    }
 
-					Console.WriteLine (
-						Properties.Resources.MSG_VERSIONINFO_TESTS_DONE ,
-						s_smTheApp.GetAssemblyProductAndVersion ( ) ,
-						Environment.NewLine );
-					PauseForPictures ( OMIT_LINEFEED );
+                    Console.WriteLine (
+                        Properties.Resources.MSG_VERSIONINFO_TESTS_DONE ,
+                        s_smTheApp.GetAssemblyProductAndVersion ( ) ,
+                        Environment.NewLine );
+                    PauseForPictures (
+                        OMIT_LINEFEED ,
+                        @"StateManager.GetAssemblyProductAndVersion" );
 
-					//  --------------------------------------------------------
-					//  Display information about the library under test.
-					//  --------------------------------------------------------
+                    //  --------------------------------------------------------
+                    //  Display information about the library under test.
+                    //  --------------------------------------------------------
 
-					Console.WriteLine (
+#if DEBUGGER_IN_SHELL_SCRIPT
+                    if ( System.Diagnostics.Debugger.IsAttached )
+                    {
+                        Console.Error.WriteLine ( @"***** Assembly is already being debugged ahead of EvaluateConsoleHandleStates." );
+                    }
+                    else
+                    {
+                        Console.Error.Write ( @"***** Assembly launched outside a debugger. Attaching it to one ahead of EvaluateConsoleHandleStates ..." );
+
+                        if ( System.Diagnostics.Debugger.Launch ( ) )
+                        {
+                            Console.Error.WriteLine ( @" succeeded" );
+                        }   // TRUE (anticipated outcome) block, if ( System.Diagnostics.Debugger.Launch ( ) )
+                        else
+                        {
+                            Console.Error.WriteLine ( @" FAILED" );
+                        }   // FALSE (unanticipated outcome) block, if ( System.Diagnostics.Debugger.Launch ( ) )
+                    }   // if ( System.Diagnostics.Debugger.IsAttached )
+#endif  // DEBUGGER_IN_SHELL_SCRIPT
+
+                    Console.WriteLine (
 						Properties.Resources.MSG_ASBSOLUTE_ASSEMBLYNAME ,
 						s_smTheApp.GetAssemblyFQFN ( ) ,
 						Environment.NewLine );
@@ -626,21 +665,26 @@ namespace DLLServices2TestStand
 
 					Console.WriteLine (
 						Properties.Resources.MSG_SHOWING_LIBRARY_INFO ,		// This is the message template.
-						Environment.NewLine );								// This token adds newlines my way.
+						Environment.NewLine );                              // This token adds newlines my way.
 
-					PauseForPictures ( OMIT_LINEFEED );
+                    PauseForPictures (
+                        OMIT_LINEFEED ,
+                        @"EvaluateConsoleHandleStates" );                   // SKIPPED
 
-					EnumerateDependentAssemblies ( );
+                    EnumerateDependentAssemblies ( );
 
-					PauseForPictures ( APPEND_LINEFEED );
+                    PauseForPictures (
+                        APPEND_LINEFEED ,
+                        @"EnumerateDependentAssemblies" );                  // SKIPPED
 
-					ShowCurrentDefaultErrorMessageColors ( Properties.Resources.MSG_SHOWING_CONFIGURED_COLORS );
+                    ShowCurrentDefaultErrorMessageColors ( Properties.Resources.MSG_SHOWING_CONFIGURED_COLORS );
 
-					PauseForPictures ( APPEND_LINEFEED );
+					PauseForPictures (
+                        APPEND_LINEFEED ,
+                        @"ShowCurrentDefaultErrorMessageColors" );          // SKIPPED
 
                     Console.WriteLine (
-                        @"{
-                            1}The following message is the value of the static ExceptionLogger.s_strSettingsOmittedFromConfigFile property:{1}{1}{0}" ,
+                        @"{1}The following message is the value of the static ExceptionLogger.s_strSettingsOmittedFromConfigFile property:{1}{1}{0}" ,
                         ExceptionLogger.s_strSettingsOmittedFromConfigFile ,
                         Environment.NewLine );
 
@@ -668,14 +712,18 @@ namespace DLLServices2TestStand
 						s_smTheApp.AppExceptionLogger.ReportException ( exAll );
 					}
 
-					PauseForPictures ( APPEND_LINEFEED );
+					PauseForPictures (
+                        APPEND_LINEFEED ,
+                        @"Default AppExceptionLogger option flags reinstated" );// SKIPPED
 
-					ChangeDefaultErrorMessageColors ( );
+                    ChangeDefaultErrorMessageColors ( );
 					ShowCurrentDefaultErrorMessageColors ( Properties.Resources.MSG_SHOWING_PROGRAMMATIC_COLORS );
 
-					PauseForPictures ( APPEND_LINEFEED );
+                    PauseForPictures (
+                        APPEND_LINEFEED ,
+                        @"ShowCurrentDefaultErrorMessageColors" );          // SKIPPED
 
-					s_smTheApp.AppExceptionLogger.RestoreSavedColors ( );
+                    s_smTheApp.AppExceptionLogger.RestoreSavedColors ( );
 
 					try
 					{
@@ -711,166 +759,269 @@ namespace DLLServices2TestStand
 
 				if ( Logic.Unless ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_REDIRECTION_DETECTION ) )
 				{
-					PauseForPictures ( APPEND_LINEFEED );
+                    PauseForPictures (
+                        APPEND_LINEFEED ,
+                        @"UnaryMinusExercises" );                               // NOT SKIPPED
+                }   // if ( Logic.Unless ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_REDIRECTION_DETECTION ) )
 
-					try
-					{
-						//	----------------------------------------------------
-						//  Exercise the new utility classes.
-						//
-						//	To simplify the back-port, these tests get a
-						//	dedicated class, NewClassTests_20140914.
-						//	----------------------------------------------------
-	
-						int intRetCode = NewClassTests_20140914.ArrayInfoExercises ( ref intTestNumber );
+                try
+                {
+                    //	----------------------------------------------------
+                    //  Exercise the new utility classes.
+                    //
+                    //	To simplify the back-port, these tests get a
+                    //	dedicated class, NewClassTests_20140914.
+                    //	----------------------------------------------------
 
-						if ( intRetCode != MagicNumbers.ERROR_SUCCESS )
-							throw new Exception (
-								string.Format (
-									Properties.Resources.ERRMSG_NEW_CLASS_TESTS_20140914 ,
-									"ArrayInfoExercises" ,
-									intRetCode ) );
+                    int intRetCode = NewClassTests_20140914.ArrayInfoExercises ( ref intTestNumber );
 
-						if ( ( intRetCode = NewClassTests_20140914.CSVFileInfoExercises ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
-							PauseForPictures ( OMIT_LINEFEED );
-						else
-							throw new Exception (
-								string.Format (
-									Properties.Resources.ERRMSG_NEW_CLASS_TESTS_20140914 ,
-									"CSVFileInfoExercises" ,
-									intRetCode ) );
+                    if ( intRetCode != MagicNumbers.ERROR_SUCCESS )
+                    {
+                        s_smTheApp.AppExceptionLogger.ErrorMessageColors.WriteLine ( @"Exception thrown following ArrayInfoExercises" );
+                        throw new Exception (
+                            string.Format (
+                                Properties.Resources.ERRMSG_NEW_CLASS_TESTS_20140914 ,
+                                @"ArrayInfoExercises" ,
+                                intRetCode ) );
+                    }   // if ( intRetCode != MagicNumbers.ERROR_SUCCESS )
 
-						if ( ( intRetCode = NewClassTests_20140914.EnumerateStringResourcesInAssembly (
-							ref intTestNumber ,
-							System.Reflection.Assembly.GetAssembly (
-								typeof ( WizardWrx.ArrayInfo ) ) ) ) == MagicNumbers.ERROR_SUCCESS )
-							PauseForPictures ( OMIT_LINEFEED );
-						else
-							throw new Exception (
-								string.Format (
-									Properties.Resources.ERRMSG_NEW_CLASS_TESTS_20140914 ,
-									Properties.Resources.CMDARG_LIST_COMMON_STRINGS ,
-									intRetCode ) );
+                    if ( ( intRetCode = NewClassTests_20140914.CSVFileInfoExercises ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
+                    {
+                        PauseForPictures (
+                            OMIT_LINEFEED ,
+                            @"CSVFileInfoExercises" );
+                    }
+                    else
+                    {
+                        s_smTheApp.AppExceptionLogger.ErrorMessageColors.WriteLine ( @"Exception thrown following CSVFileInfoExercises" );
+                        throw new Exception (
+                            string.Format (
+                                Properties.Resources.ERRMSG_NEW_CLASS_TESTS_20140914 ,
+                                @"CSVFileInfoExercises" ,
+                                intRetCode ) );
+                    }   // if ( ( intRetCode = NewClassTests_20140914.CSVFileInfoExercises ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
 
-                        intRetCode = ListEmbeddedResources (
-                            ref intTestNumber ,
-                            typeof ( ArrayInfo ) ,
-                            Properties.Settings.Default.Common_Strings_Report_FileName );
-                        intRetCode = ListEmbeddedResources (
-                            ref intTestNumber ,
-                            typeof ( Program ) ,
-                            Properties.Settings.Default.Startup_Assembly_Strings_Report_FileName );
+                    if ( ( intRetCode = NewClassTests_20140914.EnumerateStringResourcesInAssembly (
+                        ref intTestNumber ,
+                        System.Reflection.Assembly.GetAssembly (
+                            typeof ( ArrayInfo ) ) ) ) == MagicNumbers.ERROR_SUCCESS )
+                    {
+                        PauseForPictures (
+                            OMIT_LINEFEED ,
+                            @"EnumerateStringResourcesInAssembly for WizardWrx.Common.dll" );
+                    }
+                    else
+                    {
+                        s_smTheApp.AppExceptionLogger.ErrorMessageColors.WriteLine (
+                            @"Exception thrown following {0}" ,
+                            Properties.Resources.CMDARG_LIST_COMMON_STRINGS );
+                        throw new Exception (
+                            string.Format (
+                                Properties.Resources.ERRMSG_NEW_CLASS_TESTS_20140914 ,
+                                Properties.Resources.CMDARG_LIST_COMMON_STRINGS ,
+                                intRetCode ) );
+                    }   // if ( ( intRetCode = NewClassTests_20140914.EnumerateStringResourcesInAssembly (
 
-                        if ( ( intRetCode = NewClassTests_20140914.DisplayFormatsExercises ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
-							PauseForPictures ( OMIT_LINEFEED );
-						else
-							throw new Exception (
-								string.Format (
-									Properties.Resources.ERRMSG_NEW_CLASS_TESTS_20140914 ,
-									"DisplayFormats" ,
-									intRetCode ) );
+                    intRetCode = ListEmbeddedResources (
+                        ref intTestNumber ,
+                        typeof ( ArrayInfo ) ,
+                        Properties.Settings.Default.Common_Strings_Report_FileName );
+                    intRetCode = ListEmbeddedResources (
+                        ref intTestNumber ,
+                        typeof ( Program ) ,
+                        Properties.Settings.Default.Startup_Assembly_Strings_Report_FileName );
 
-						if ( ( intRetCode = NewClassTests_20140914.FileIOFlagsExercises ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
-							PauseForPictures ( OMIT_LINEFEED );
-						else
-							throw new Exception (
-								string.Format (
-									Properties.Resources.ERRMSG_NEW_CLASS_TESTS_20140914 ,
-									"FileIOFlags" ,
-									intRetCode ) );
+                    if ( ( intRetCode = NewClassTests_20140914.DisplayFormatsExercises ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
+                    {
+                        PauseForPictures (
+                            OMIT_LINEFEED ,
+                            @"DisplayFormatsExercises" );
+                    }
+                    else
+                    {
+                        s_smTheApp.AppExceptionLogger.ErrorMessageColors.WriteLine ( @"Exception thrown following DisplayFormats" );
+                        throw new Exception (
+                            string.Format (
+                                Properties.Resources.ERRMSG_NEW_CLASS_TESTS_20140914 ,
+                                @"DisplayFormats" ,
+                                intRetCode ) );
+                    }   // if ( ( intRetCode = NewClassTests_20140914.DisplayFormatsExercises ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
 
-						if ( ( intRetCode = NewClassTests_20140914.ListInfoExercises ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
-							PauseForPictures ( OMIT_LINEFEED );
-						else
-							throw new Exception (
-								string.Format (
-									Properties.Resources.ERRMSG_NEW_CLASS_TESTS_20140914 ,
-									"ListInfo" ,
-									intRetCode ) );
+                    if ( ( intRetCode = NewClassTests_20140914.FileIOFlagsExercises ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
+                    {
+                        PauseForPictures (
+                            OMIT_LINEFEED ,
+                            @"FileIOFlagsExercises" );
+                    }
+                    else
+                    {
+                        s_smTheApp.AppExceptionLogger.ErrorMessageColors.WriteLine ( @"Exception thrown following FileIOFlags" );
+                        throw new Exception (
+                            string.Format (
+                                Properties.Resources.ERRMSG_NEW_CLASS_TESTS_20140914 ,
+                                @"FileIOFlags" ,
+                                intRetCode ) );
+                    }   // if ( ( intRetCode = NewClassTests_20140914.FileIOFlagsExercises ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
 
-						//	----------------------------------------------------
-						//	These two tests fit comfortably on one screen.
-						//	----------------------------------------------------
+                    if ( ( intRetCode = NewClassTests_20140914.ListInfoExercises ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
+                    {
+                        PauseForPictures (
+                            OMIT_LINEFEED ,
+                            @"ListInfoExercises" );
+                    }
+                    else
+                    {
+                        s_smTheApp.AppExceptionLogger.ErrorMessageColors.WriteLine ( @"Exception thrown following ListInfo" );
+                        throw new Exception (
+                            string.Format (
+                                Properties.Resources.ERRMSG_NEW_CLASS_TESTS_20140914 ,
+                                @"ListInfo" ,
+                                intRetCode ) );
+                    }   // if ( ( intRetCode = NewClassTests_20140914.ListInfoExercises ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
 
-						if ( ( intRetCode = NewClassTests_20140914.PathPositionsExercises ( ref intTestNumber ) ) != MagicNumbers.ERROR_SUCCESS )
-							throw new Exception (
-								string.Format (
-									Properties.Resources.ERRMSG_NEW_CLASS_TESTS_20140914 ,
-									"PathPositions" ,
-									intRetCode ) );
+                    //	----------------------------------------------------
+                    //	These two tests fit comfortably on one screen.
+                    //	----------------------------------------------------
 
-						if ( ( intRetCode = NewClassTests_20140914.SpecialCharactersExercises ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
-							PauseForPictures ( OMIT_LINEFEED );
-						else
-							throw new Exception (
-								string.Format (
-									Properties.Resources.ERRMSG_NEW_CLASS_TESTS_20140914 ,
-									"SpecialCharacters" ,
-									intRetCode ) );
+                    if ( ( intRetCode = NewClassTests_20140914.PathPositionsExercises ( ref intTestNumber ) ) != MagicNumbers.ERROR_SUCCESS )
+                    {
+                        s_smTheApp.AppExceptionLogger.ErrorMessageColors.WriteLine ( @"Exception thrown following PathPositions" );
+                        throw new Exception (
+                            string.Format (
+                                Properties.Resources.ERRMSG_NEW_CLASS_TESTS_20140914 ,
+                                @"PathPositions" ,
+                                intRetCode ) );
+                    }   // if ( ( intRetCode = NewClassTests_20140914.PathPositionsExercises ( ref intTestNumber ) ) != MagicNumbers.ERROR_SUCCESS )
 
-						if ( ( intRetCode = NewClassTests_20140914.SpecialStringExercises ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
-							PauseForPictures ( OMIT_LINEFEED );
-						else
-							throw new Exception (
-								string.Format (
-									Properties.Resources.ERRMSG_NEW_CLASS_TESTS_20140914 ,
-									"SpecialStrings" ,
-									intRetCode ) );
+                    if ( ( intRetCode = NewClassTests_20140914.SpecialCharactersExercises ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
+                    {
+                        PauseForPictures (
+                            OMIT_LINEFEED ,
+                            @"SpecialCharactersExercises" );
+                    }
+                    else
+                    {
+                        s_smTheApp.AppExceptionLogger.ErrorMessageColors.WriteLine ( @"Exception thrown following SpecialCharacters" );
+                        throw new Exception (
+                            string.Format (
+                                Properties.Resources.ERRMSG_NEW_CLASS_TESTS_20140914 ,
+                                @"SpecialCharacters" ,
+                                intRetCode ) );
+                    }   // if ( ( intRetCode = NewClassTests_20140914.SpecialCharactersExercises ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
 
-						if ( ( intRetCode = NewClassTests_20140914.ChopChop ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
-							PauseForPictures ( OMIT_LINEFEED );
-						else
-							throw new Exception (
-								string.Format (
-									Properties.Resources.ERRMSG_NEW_CLASS_TESTS_20140914 ,
-									"Chop" ,
-									intRetCode ) );
+                    if ( ( intRetCode = NewClassTests_20140914.SpecialStringExercises ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
+                    {
+                        PauseForPictures (
+                            OMIT_LINEFEED ,
+                            @"SpecialStringExercises" );
+                    }
+                    else
+                    {
+                        s_smTheApp.AppExceptionLogger.ErrorMessageColors.WriteLine ( @"Exception thrown following SpecialStrings" );
+                        throw new Exception (
+                            string.Format (
+                                Properties.Resources.ERRMSG_NEW_CLASS_TESTS_20140914 ,
+                                @"SpecialStrings" ,
+                                intRetCode ) );
+                    }   // if ( ( intRetCode = NewClassTests_20140914.SpecialStringExercises ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
 
-						if ( ( intRetCode = NewClassTests_20140914.CapitalizeWordsExercises ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
-							PauseForPictures ( OMIT_LINEFEED );
-						else
-							throw new Exception (
-								string.Format (
-									Properties.Resources.ERRMSG_NEW_CLASS_TESTS_20140914 ,
-                                    "CapitalizeWordsExercises" ,
-									intRetCode ) );
+                    if ( ( intRetCode = NewClassTests_20140914.ChopChop ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
+                    {
+                        PauseForPictures (
+                            OMIT_LINEFEED ,
+                            @"ChopChop" );
+                    }
+                    else
+                    {
+                        s_smTheApp.AppExceptionLogger.ErrorMessageColors.WriteLine ( @"Exception thrown following ChopChop" );
+                        throw new Exception (
+                            string.Format (
+                                Properties.Resources.ERRMSG_NEW_CLASS_TESTS_20140914 ,
+                                @"ChopChop" ,
+                                intRetCode ) );
+                    }   // if ( ( intRetCode = NewClassTests_20140914.ChopChop ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
 
-                        if ( ( intRetCode = NewClassTests_20140914.EnumFromStringExercises ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
-                            PauseForPictures ( OMIT_LINEFEED );
+                    if ( ( intRetCode = NewClassTests_20140914.CapitalizeWordsExercises ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
+                    {
+                        PauseForPictures (
+                            OMIT_LINEFEED ,
+                            @"CapitalizeWordsExercises" );
+                    }
+                    else
+                    {
+                        s_smTheApp.AppExceptionLogger.ErrorMessageColors.WriteLine ( @"Exception thrown following CapitalizeWordsExercises" );
+                        throw new Exception (
+                            string.Format (
+                                Properties.Resources.ERRMSG_NEW_CLASS_TESTS_20140914 ,
+                                @"CapitalizeWordsExercises" ,
+                                intRetCode ) );
+                    }   // if ( ( intRetCode = NewClassTests_20140914.CapitalizeWordsExercises ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
+
+                    if ( ( intRetCode = NewClassTests_20140914.EnumFromStringExercises ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
+                    {
+                        PauseForPictures (
+                            OMIT_LINEFEED ,
+                            @"EnumFromStringExercises" );
+                    }
+                    else
+                    {
+                        s_smTheApp.AppExceptionLogger.ErrorMessageColors.WriteLine ( @"Exception thrown following EnumFromStringExercises" );
+                        throw new Exception (
+                            string.Format (
+                                Properties.Resources.ERRMSG_NEW_CLASS_TESTS_20140914 ,
+                                @"EnumFromStringExercises" ,
+                                intRetCode ) );
+                    }   // if ( ( intRetCode = NewClassTests_20140914.EnumFromStringExercises ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
+
+#if DEBUGGER_IN_SHELL_SCRIPT
+                    if ( System.Diagnostics.Debugger.IsAttached )
+                    {
+                        Console.Error.WriteLine ( @"***** Assembly is already being debugged ahead of MoreMathTests." );
+                    }
+                    else
+                    {
+                        Console.Error.Write ( @"***** Assembly launched outside a debugger. Attaching it to one ahead of MoreMathTests ..." );
+
+                        if ( System.Diagnostics.Debugger.Launch ( ) )
+                        {
+                            Console.Error.WriteLine ( @" succeeded" );
+                        }   // TRUE (anticipated outcome) block, if ( System.Diagnostics.Debugger.Launch ( ) )
                         else
-                            throw new Exception (
-                                string.Format (
-                                    Properties.Resources.ERRMSG_NEW_CLASS_TESTS_20140914 ,
-                                    "EnumFromStringExercises" ,
-                                    intRetCode ) );
+                        {
+                            Console.Error.WriteLine ( @" FAILED" );
+                        }   // FALSE (unanticipated outcome) block, if ( System.Diagnostics.Debugger.Launch ( ) )
+                    }   // if ( System.Diagnostics.Debugger.IsAttached )
+#endif  // DEBUGGER_IN_SHELL_SCRIPT
 
-                        MoreMathTests.Run ( );
+                    MoreMathTests.Run ( );
 
-                        //	----------------------------------------------------
-                        //	The last stop doesn't merit a photo op, because the
-                        //	program is ending, and there is ample room
-                        //	remaining on the screen to display the end of job
-                        //	message.
-                        //	----------------------------------------------------
+                    //	----------------------------------------------------
+                    //	The last stop doesn't merit a photo op, because the
+                    //	program is ending, and there is ample room
+                    //	remaining on the screen to display the end of job
+                    //	message.
+                    //	----------------------------------------------------
 
-                        if ( ( intRetCode = NewClassTests_20140914.UtilsExercises ( ref intTestNumber ) ) != MagicNumbers.ERROR_SUCCESS )
-							throw new Exception ( 
-								string.Format (
-									Properties.Resources.ERRMSG_NEW_CLASS_TESTS_20140914 ,
-									"Util" ,
-									intRetCode ) );
-					}
-					catch ( Exception errAnyKind )
-					{
-						s_smTheApp.AppExceptionLogger.ReportException ( errAnyKind );
-					}
-				}	// if ( Logic.Unless ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_REDIRECTION_DETECTION ) )
+                    if ( ( intRetCode = NewClassTests_20140914.UtilsExercises ( ref intTestNumber ) ) != MagicNumbers.ERROR_SUCCESS )
+                    {
+                        s_smTheApp.AppExceptionLogger.ErrorMessageColors.WriteLine ( @"Exception thrown following UtilsExercises" );
+                        throw new Exception (
+                            string.Format (
+                                Properties.Resources.ERRMSG_NEW_CLASS_TESTS_20140914 ,
+                                @"UtilsExercises" ,
+                                intRetCode ) );
+                    }   // if ( ( intRetCode = NewClassTests_20140914.UtilsExercises ( ref intTestNumber ) ) != MagicNumbers.ERROR_SUCCESS )
+                }
+                catch ( Exception errAnyKind )
+                {
+                    s_smTheApp.AppExceptionLogger.ReportException ( errAnyKind );
+                }
 
-				//	------------------------------------------------------------
-				//	Exercise the FileNameTricks and special messages classes.
-				//	------------------------------------------------------------
+                //	------------------------------------------------------------
+                //	Exercise the FileNameTricks and special messages classes.
+                //	------------------------------------------------------------
 
-				FileNameTricks_Exerciser.Drill ( );
+                FileNameTricks_Exerciser.Drill ( );
 				ExerciseSpecialMessageGenerators ( );
 				Console.Beep ( );		// WaitForCarbonUnit emits a beep.
 				Console.ReadLine ( );
@@ -908,7 +1059,7 @@ FinalReport:
         }   // Main method
 
 
-        #region Local Test Implementations
+#region Local Test Implementations
         private static void DeduplicateExceptionLogs ( )
 		{
 			Console.WriteLine (
@@ -922,9 +1073,9 @@ FinalReport:
 				s_smTheApp.AppExceptionLogger.OptionFlags ,
 				Environment.NewLine );
 
-			#if DOUBLE_TROUBLE_TEST
+#if DOUBLE_TROUBLE_TEST
 				System.Diagnostics.Debugger.Launch ( );
-			#endif	// #if DOUBLE_TROUBLE_TEST
+#endif  // #if DOUBLE_TROUBLE_TEST
 
 			try
 			{
@@ -1232,7 +1383,9 @@ FinalReport:
                     assembly ,
                     swCommonStringsReportFileName ) ) == MagicNumbers.ERROR_SUCCESS )
                 {
-                    PauseForPictures ( OMIT_LINEFEED );
+                    PauseForPictures (
+                        OMIT_LINEFEED ,
+                        @"EnumerateStringResourcesInAssembly" );
                 }   // TRUE (anticipated outcome) block, if ( ( rintRetCode = NewClassTests_20140914.EnumerateStringResourcesInAssembly ( ref intTestNumber , System.Reflection.Assembly.GetAssembly ( typeof ( ArrayInfo ) ) , strCommonStringsReportFileName ) ) == MagicNumbers.ERROR_SUCCESS )
                 else
                 {
@@ -1247,7 +1400,7 @@ FinalReport:
             Console.WriteLine ( new FileInfo ( strCommonStringsReportFileName ).ShowFileDetails (
                 FileInfoExtensionMethods.FileDetailsToShow.Everything ,
                 string.Format (
-                    @"Tab-delimited list of string resources stored in assembly {0} " ,
+                    @"Tab -delimited list of string resources stored in assembly {0} " ,
                     assembly.GetName ( ).Name ) ) );
             return rintRetCode;
         }   // private static int ListEmbeddedResources
@@ -1292,10 +1445,10 @@ FinalReport:
                 MagicNumbers.ERROR_SUCCESS ,
                 pintTestNumber );
         }   // RecoveredExceptionTests method
-        #endregion // Local Test Implementations
+#endregion // Local Test Implementations
 
 
-        #region Subroutines, Some Scoped to the Application
+#region Subroutines, Some Scoped to the Application
         //	====================================================================
         //	Subroutines, one of which is marked Internal, so that routines in
         //	related classes can call it.
@@ -1398,7 +1551,7 @@ FinalReport:
 
 		private static void EvaluateConsoleHandleStates ( )
 		{	// The function nesting is encoded in the stepwise indentations.
-			#if USE_STRING_EXTENSION_METHODS
+#if USE_STRING_EXTENSION_METHODS
 				Console.WriteLine (
 					string.Format (
 						Properties.Resources.MSG_STANDARD_HANDLE_STATE ,													// Format control string
@@ -1426,7 +1579,7 @@ FinalReport:
 								StandardHandleInfo.StandardConsoleHandle.StandardError ) ) ,								// Format Item 1: Standard handle state
 						BeautifyStandardHandleFQFN (
 							StandardHandleInfo.StandardConsoleHandle.StandardError ) ).AppendFullStopIfMissing ( ) );		// Format Item 2: File name to which redirected, if applicable.
-			#else
+#else
 				Console.WriteLine ( StringTricks.AppendFullStopIfMissing (
 					string.Format (
 						Properties.Resources.MSG_STANDARD_HANDLE_STATE ,								// Format control string
@@ -1454,7 +1607,7 @@ FinalReport:
 								StandardHandleInfo.StandardConsoleHandle.StandardError ) ) ,			// Format Item 1: Standard handle state
 						BeautifyStandardHandleFQFN (
 							StandardHandleInfo.StandardConsoleHandle.StandardError ) ) ) );				// Format Item 2: File name to which redirected, if applicable.
-			#endif	// #if USE_STRING_EXTENSION_METHODS
+#endif  // #if USE_STRING_EXTENSION_METHODS
 		}	// EvaluateConsoleHandleStates method
 
 
@@ -1492,24 +1645,37 @@ FinalReport:
 		}	// GetIterationCount method
 
 
-        internal static void PauseForPictures ( bool pfAppendLineFeed )
+        internal static void PauseForPictures (
+            bool pfAppendLineFeed ,
+            string pstrMessageForStandardError )
         {
 			bool fPauseing = true;
 
-			ExceptionLogger.TimeStampedTraceWrite (
-				string.Format (
-					"Entering PauseForPictures method with pfAppendLineFeed = {0}." ,
-					pfAppendLineFeed ) );
+            if ( ( s_smTheApp.StandardHandleState ( StandardHandleInfo.StandardConsoleHandle.StandardOutput ) == StandardHandleInfo.StandardHandleState.Redirected ) && ( !string.IsNullOrEmpty ( pstrMessageForStandardError ) ) )
+            {
+                Console.Error.WriteLine (
+                    @"{0} completed successfully." ,
+                    pstrMessageForStandardError );
+            }   // if ( ( s_smTheApp.StandardHandleState ( StandardHandleInfo.StandardConsoleHandle.StandardOutput ) == StandardHandleInfo.StandardHandleState.Redirected ) && ( !string.IsNullOrEmpty ( pstrMessageForStandardError ) ) )
 
-			if ( ( s_smTheApp.StandardHandleState ( StandardHandleInfo.StandardConsoleHandle.StandardOutput ) == StandardHandleInfo.StandardHandleState.Redirected ) )
+            ExceptionLogger.TimeStampedTraceWrite (
+                string.Format (
+                    @"Entering PauseForPictures method with {0} = {1} and {2} = {3}." ,
+                    nameof ( pfAppendLineFeed ) ,                               // Format Item 0: Entering PauseForPictures method with {0}
+                    pfAppendLineFeed ,                                          // Format Item 1:  = {1} and
+                    nameof ( pstrMessageForStandardError ) ,                    // Format Item 2: and {2}
+                    StringTricks.DisplayNullSafely (
+                        pstrMessageForStandardError ) ) );                      // Format Item 3: = {3}.
+
+            if ( ( s_smTheApp.StandardHandleState ( StandardHandleInfo.StandardConsoleHandle.StandardOutput ) == StandardHandleInfo.StandardHandleState.Redirected ) )
 			{	// Emit a line feed in lieu of the page break.
-				ExceptionLogger.TimeStampedTraceWrite ( "     PauseForPictures: IsStdOutRedirected returned TRUE." );
+				ExceptionLogger.TimeStampedTraceWrite ( @"     PauseForPictures: IsStdOutRedirected returned TRUE." );
 				Console.WriteLine ( );
 				fPauseing = false;
 			}	// TRUE block, if ( MessageInColor.IsStdOutRedirected ( ) )
 			else
 			{	// Display a prompt, wait for input, clear the screen (and the I/O buffer), and emit a line feed if requested.
-				ExceptionLogger.TimeStampedTraceWrite ( "     PauseForPictures: IsStdOutRedirected returned FALSE." );
+				ExceptionLogger.TimeStampedTraceWrite ( @"     PauseForPictures: IsStdOutRedirected returned FALSE." );
 
 				if ( fPauseing )
 				{	// Skip the pauses if standard output is redirected.
@@ -1680,6 +1846,6 @@ FinalReport:
 				"{0}UnaryMinusExercises Done!{0}" ,
 				Environment.NewLine );
 		}	// UnaryMinusExercises method
-		#endregion	// Subroutines, Some Scoped to the Application
+#endregion  // Subroutines, Some Scoped to the Application
 	}   // class Program
 }   // partial namespace DLLServices2TestStand
