@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package >
+	<metadata>
+    	<id>$id$</id>
+	    <version>$version$</version>
+    	<title>$title$</title>
+	    <authors>$author$</authors>
+    	<owners>$author$</owners>
+	    <license type="expression">BSD-3-Clause</license>
+    	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
+	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    	<description>$description$</description>
+	    <releaseNotes>The public string resource set has the following new strings: ANSWER_IS_FALSE, ANSWER_IS_NO, ANSWER_IS_TRUE, ANSWER_IS_YES, MSG_BLANK_CAPS, MSG_INTEGER_EVENLY_DIVISIBLE_BY, MSG_INTEGER_IS_EVEN, MSG_INTEGER_IS_ODD, MSG_OBJECT_DOES_NOT_EXIST, MSG_OBJECT_EXISTS, MSG_OBJECT_IS_ABSENT, MSG_OBJECT_IS_MISSING, MSG_OBJECT_IS_PRESENT, MSG_OBJECT_REFERENCE_IS_NULL_CAPS, MSG_VALUE_IS_FALSE, MSG_VALUE_IS_TRUE</releaseNotes>
+    	<copyright>$copyright$</copyright>
+    	<tags>Constants Arrays RegExp</tags>
+	</metadata>
+	<files>
+   		<file src="readme.md" target="" />
+   		<file src="readme.txt" target="" />
+   		<file src="bin\$configuration$\$id$.pdb" target="lib" />
+   		<file src="bin\$configuration$\$id$.xml" target="lib" />
+	</files>
+</package>

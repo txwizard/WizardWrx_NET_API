@@ -12,3 +12,5 @@ F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStr
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\obj\Debug\FormatStringEngine.csproj.CopyComplete
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\obj\Debug\WizardWrx.FormatStringEngine.dll
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\obj\Debug\WizardWrx.FormatStringEngine.pdb
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\bin\Debug\WizardWrx.AnyCSV.xml
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\bin\Debug\WizardWrx.Common.xml

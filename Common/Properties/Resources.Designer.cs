@@ -19,7 +19,7 @@ namespace WizardWrx.Common.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resources {
@@ -57,6 +57,42 @@ namespace WizardWrx.Common.Properties {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to false.
+        /// </summary>
+        public static string ANSWER_IS_FALSE {
+            get {
+                return ResourceManager.GetString("ANSWER_IS_FALSE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to no.
+        /// </summary>
+        public static string ANSWER_IS_NO {
+            get {
+                return ResourceManager.GetString("ANSWER_IS_NO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to true.
+        /// </summary>
+        public static string ANSWER_IS_TRUE {
+            get {
+                return ResourceManager.GetString("ANSWER_IS_TRUE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to yes.
+        /// </summary>
+        public static string ANSWER_IS_YES {
+            get {
+                return ResourceManager.GetString("ANSWER_IS_YES", resourceCulture);
             }
         }
         
@@ -205,6 +241,15 @@ namespace WizardWrx.Common.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to BLANK.
+        /// </summary>
+        public static string MSG_BLANK_CAPS {
+            get {
+                return ResourceManager.GetString("MSG_BLANK_CAPS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to [blank].
         /// </summary>
         public static string MSG_BLANK_STRING {
@@ -214,11 +259,110 @@ namespace WizardWrx.Common.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to is evenly divisible by.
+        /// </summary>
+        public static string MSG_INTEGER_EVENLY_DIVISIBLE_BY {
+            get {
+                return ResourceManager.GetString("MSG_INTEGER_EVENLY_DIVISIBLE_BY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to is even.
+        /// </summary>
+        public static string MSG_INTEGER_IS_EVEN {
+            get {
+                return ResourceManager.GetString("MSG_INTEGER_IS_EVEN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to is odd.
+        /// </summary>
+        public static string MSG_INTEGER_IS_ODD {
+            get {
+                return ResourceManager.GetString("MSG_INTEGER_IS_ODD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to is.
+        /// </summary>
+        public static string MSG_IS {
+            get {
+                return ResourceManager.GetString("MSG_IS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to is not.
+        /// </summary>
+        public static string MSG_IS_NOT {
+            get {
+                return ResourceManager.GetString("MSG_IS_NOT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to does not exist.
+        /// </summary>
+        public static string MSG_OBJECT_DOES_NOT_EXIST {
+            get {
+                return ResourceManager.GetString("MSG_OBJECT_DOES_NOT_EXIST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to exists.
+        /// </summary>
+        public static string MSG_OBJECT_EXISTS {
+            get {
+                return ResourceManager.GetString("MSG_OBJECT_EXISTS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to is absent.
+        /// </summary>
+        public static string MSG_OBJECT_IS_ABSENT {
+            get {
+                return ResourceManager.GetString("MSG_OBJECT_IS_ABSENT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to is missing.
+        /// </summary>
+        public static string MSG_OBJECT_IS_MISSING {
+            get {
+                return ResourceManager.GetString("MSG_OBJECT_IS_MISSING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to is present.
+        /// </summary>
+        public static string MSG_OBJECT_IS_PRESENT {
+            get {
+                return ResourceManager.GetString("MSG_OBJECT_IS_PRESENT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to [null].
         /// </summary>
         public static string MSG_OBJECT_REFERENCE_IS_NULL {
             get {
                 return ResourceManager.GetString("MSG_OBJECT_REFERENCE_IS_NULL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NULL.
+        /// </summary>
+        public static string MSG_OBJECT_REFERENCE_IS_NULL_CAPS {
+            get {
+                return ResourceManager.GetString("MSG_OBJECT_REFERENCE_IS_NULL_CAPS", resourceCulture);
             }
         }
         
@@ -259,11 +403,29 @@ namespace WizardWrx.Common.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to false.
+        /// </summary>
+        public static string MSG_VALUE_IS_FALSE {
+            get {
+                return ResourceManager.GetString("MSG_VALUE_IS_FALSE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to invalid.
         /// </summary>
         public static string MSG_VALUE_IS_INVALID {
             get {
                 return ResourceManager.GetString("MSG_VALUE_IS_INVALID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to true.
+        /// </summary>
+        public static string MSG_VALUE_IS_TRUE {
+            get {
+                return ResourceManager.GetString("MSG_VALUE_IS_TRUE", resourceCulture);
             }
         }
         

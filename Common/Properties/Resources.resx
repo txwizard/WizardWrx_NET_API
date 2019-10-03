@@ -117,6 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ANSWER_IS_FALSE" xml:space="preserve">
+    <value>false</value>
+    <comment>This is one of 18 strings from which to construct messages that I added to version 7.22.122 of the library.</comment>
+  </data>
+  <data name="ANSWER_IS_NO" xml:space="preserve">
+    <value>no</value>
+    <comment>This is one of 18 strings from which to construct messages that I added to version 7.22.122 of the library.</comment>
+  </data>
+  <data name="ANSWER_IS_TRUE" xml:space="preserve">
+    <value>true</value>
+    <comment>This is one of 18 strings from which to construct messages that I added to version 7.22.122 of the library.</comment>
+  </data>
+  <data name="ANSWER_IS_YES" xml:space="preserve">
+    <value>yes</value>
+    <comment>This is one of 18 strings from which to construct messages that I added to version 7.22.122 of the library.</comment>
+  </data>
   <data name="DEFAULT_EVENT_SOURCE_ID_STRING" xml:space="preserve">
     <value>WizardWrx</value>
     <comment>Stash this for use when the exception logger is out of scope.</comment>
@@ -181,13 +197,61 @@
     <value>The task completed successfully.</value>
     <comment>This message is seldom written; it is a place holder for exit code zero in the table of error messages that is loaded into the state manager singleton.</comment>
   </data>
+  <data name="MSG_BLANK_CAPS" xml:space="preserve">
+    <value>BLANK</value>
+    <comment>This is one of 18 strings from which to construct messages that I added to version 7.22.122 of the library.</comment>
+  </data>
   <data name="MSG_BLANK_STRING" xml:space="preserve">
     <value>[blank]</value>
     <comment>Use this token to represent the empty string as the word "blank" in brackets. Contrast this with ERRMSG_NULLREF_NEVER_VALID and ERRMSG_ARG_IS_NULL_OR_EMPTY, both intended for use as the Message property of ArgumnetNullException exceptions.</comment>
   </data>
+  <data name="MSG_INTEGER_EVENLY_DIVISIBLE_BY" xml:space="preserve">
+    <value>is evenly divisible by</value>
+    <comment>This is one of 18 strings from which to construct messages that I added to version 7.22.122 of the library.</comment>
+  </data>
+  <data name="MSG_INTEGER_IS_EVEN" xml:space="preserve">
+    <value>is even</value>
+    <comment>This is one of 18 strings from which to construct messages that I added to version 7.22.122 of the library.</comment>
+  </data>
+  <data name="MSG_INTEGER_IS_ODD" xml:space="preserve">
+    <value>is odd</value>
+    <comment>This is one of 18 strings from which to construct messages that I added to version 7.22.122 of the library.</comment>
+  </data>
+  <data name="MSG_IS" xml:space="preserve">
+    <value>is</value>
+    <comment>This is one of 18 strings from which to construct messages that I added to version 7.22.122 of the library.</comment>
+  </data>
+  <data name="MSG_IS_NOT" xml:space="preserve">
+    <value>is not</value>
+    <comment>This is one of 18 strings from which to construct messages that I added to version 7.22.122 of the library.</comment>
+  </data>
+  <data name="MSG_OBJECT_DOES_NOT_EXIST" xml:space="preserve">
+    <value>does not exist</value>
+    <comment>This is one of 18 strings from which to construct messages that I added to version 7.22.122 of the library.</comment>
+  </data>
+  <data name="MSG_OBJECT_EXISTS" xml:space="preserve">
+    <value>exists</value>
+    <comment>This is one of 18 strings from which to construct messages that I added to version 7.22.122 of the library.</comment>
+  </data>
+  <data name="MSG_OBJECT_IS_ABSENT" xml:space="preserve">
+    <value>is absent</value>
+    <comment>This is one of 18 strings from which to construct messages that I added to version 7.22.122 of the library.</comment>
+  </data>
+  <data name="MSG_OBJECT_IS_MISSING" xml:space="preserve">
+    <value>is missing</value>
+    <comment>This is one of 18 strings from which to construct messages that I added to version 7.22.122 of the library.</comment>
+  </data>
+  <data name="MSG_OBJECT_IS_PRESENT" xml:space="preserve">
+    <value>is present</value>
+    <comment>This is one of 18 strings from which to construct messages that I added to version 7.22.122 of the library.</comment>
+  </data>
   <data name="MSG_OBJECT_REFERENCE_IS_NULL" xml:space="preserve">
     <value>[null]</value>
     <comment>Use this string to represent a null reference in output messages. Contrast this with ERRMSG_REFERENCE_IS_NULL, which has provisions for naming the argument or program variable.  See also MSG_STRING_IS_NULL_OR_EMPTY, for use in ArgumentNullException exception messages.</comment>
+  </data>
+  <data name="MSG_OBJECT_REFERENCE_IS_NULL_CAPS" xml:space="preserve">
+    <value>NULL</value>
+    <comment>This is one of 18 strings from which to construct messages that I added to version 7.22.122 of the library.</comment>
   </data>
   <data name="MSG_STATUS_CODE" xml:space="preserve">
     <value>{0} ({1:D} decimal)</value>
@@ -205,9 +269,17 @@
     <value>[empty string]</value>
     <comment>Use this string to represent the empty string in output messages.</comment>
   </data>
+  <data name="MSG_VALUE_IS_FALSE" xml:space="preserve">
+    <value>false</value>
+    <comment>This is one of 18 strings from which to construct messages that I added to version 7.22.122 of the library.</comment>
+  </data>
   <data name="MSG_VALUE_IS_INVALID" xml:space="preserve">
     <value>invalid</value>
     <comment>Use this string to report that the value of a variable is invalid.</comment>
+  </data>
+  <data name="MSG_VALUE_IS_TRUE" xml:space="preserve">
+    <value>true</value>
+    <comment>This is one of 18 strings from which to construct messages that I added to version 7.22.122 of the library.</comment>
   </data>
   <data name="MSG_VALUE_IS_VALID" xml:space="preserve">
     <value>valid</value>

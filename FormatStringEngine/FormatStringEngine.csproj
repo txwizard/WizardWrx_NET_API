@@ -77,6 +77,14 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="WizardWrx.AnyCSV, Version=7.2.145.0, Culture=neutral, PublicKeyToken=39f6551a21db420a">
+      <HintPath>C:\Users\DAG\.nuget\packages\WizardWrx.AnyCSV.7.2.145\lib\net20\WizardWrx.AnyCSV.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WizardWrx.Common, Version=7.21.121.36604, Culture=neutral, PublicKeyToken=null">
+      <HintPath>C:\Users\DAG\.nuget\packages\WizardWrx.Common.7.21.121.36604\lib\net20\WizardWrx.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -1,0 +1,10 @@
+id: FormatStringEngine
+language: CSharp
+name:
+  Default: FormatStringEngine
+qualifiedName:
+  Default: FormatStringEngine
+type: Assembly
+modifiers: {}
+items: []
+references: {}

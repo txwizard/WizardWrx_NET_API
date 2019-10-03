@@ -5,6 +5,13 @@ libraries that comprise the __WizardWrx .NET API__. A companion document,
 `ChangeLog.md`, gives a much more thorough accounting of the improvements and
 bug fixes incorporated in each release.
 
+## Release Notes, 2019/10/02, WizardWrx.Common.dll, Version 7.22.122
+
+This upgrade affects only one library, `WizardWrx.Common.dll`; although others
+are updated with the new product version number, they are otherwise unchanged.
+The changes in this library are confined to the public string resources, defined
+in its `.RESX` file. The additions are listed in `ChangeLog.md`.
+
 ## Release Notes, 2019/06/11, WizardWrx AssemblyUtils.dll, Version 7.20.117
 
 This build is a bug fix. I discovered that the iten number written into the
@@ -25,7 +32,7 @@ update that was driven primarily by the need to fix a bug.
 The static class that defines the `FileInfo` extension methods gets a bug fix,
 which brought about the need for the update.
 
-Previous testing overlooked the case when the file name from which the FileInfo
+Previous testing overlooked the case when the file name from which the `FileInfo`
 instance that is fed into extension method `ShowFileDetails` refers to a file
 that does not exist. This is an issue because I overlooked the fact that the
 `Length` property on the `FileInfo` object throws a `FileNotFoundException`

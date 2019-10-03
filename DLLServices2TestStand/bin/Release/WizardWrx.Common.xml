@@ -4518,6 +4518,26 @@
               resource lookups using this strongly typed resource class.
             </summary>
         </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.ANSWER_IS_FALSE">
+            <summary>
+              Looks up a localized string similar to false.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.ANSWER_IS_NO">
+            <summary>
+              Looks up a localized string similar to no.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.ANSWER_IS_TRUE">
+            <summary>
+              Looks up a localized string similar to true.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.ANSWER_IS_YES">
+            <summary>
+              Looks up a localized string similar to yes.
+            </summary>
+        </member>
         <member name="P:WizardWrx.Common.Properties.Resources.DEFAULT_EVENT_SOURCE_ID_STRING">
             <summary>
               Looks up a localized string similar to WizardWrx.
@@ -4598,14 +4618,74 @@
               Looks up a localized string similar to The task completed successfully..
             </summary>
         </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.MSG_BLANK_CAPS">
+            <summary>
+              Looks up a localized string similar to BLANK.
+            </summary>
+        </member>
         <member name="P:WizardWrx.Common.Properties.Resources.MSG_BLANK_STRING">
             <summary>
               Looks up a localized string similar to [blank].
             </summary>
         </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.MSG_INTEGER_EVENLY_DIVISIBLE_BY">
+            <summary>
+              Looks up a localized string similar to is evenly divisible by.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.MSG_INTEGER_IS_EVEN">
+            <summary>
+              Looks up a localized string similar to is even.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.MSG_INTEGER_IS_ODD">
+            <summary>
+              Looks up a localized string similar to is odd.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.MSG_IS">
+            <summary>
+              Looks up a localized string similar to is.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.MSG_IS_NOT">
+            <summary>
+              Looks up a localized string similar to is not.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.MSG_OBJECT_DOES_NOT_EXIST">
+            <summary>
+              Looks up a localized string similar to does not exist.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.MSG_OBJECT_EXISTS">
+            <summary>
+              Looks up a localized string similar to exists.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.MSG_OBJECT_IS_ABSENT">
+            <summary>
+              Looks up a localized string similar to is absent.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.MSG_OBJECT_IS_MISSING">
+            <summary>
+              Looks up a localized string similar to is missing.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.MSG_OBJECT_IS_PRESENT">
+            <summary>
+              Looks up a localized string similar to is present.
+            </summary>
+        </member>
         <member name="P:WizardWrx.Common.Properties.Resources.MSG_OBJECT_REFERENCE_IS_NULL">
             <summary>
               Looks up a localized string similar to [null].
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.MSG_OBJECT_REFERENCE_IS_NULL_CAPS">
+            <summary>
+              Looks up a localized string similar to NULL.
             </summary>
         </member>
         <member name="P:WizardWrx.Common.Properties.Resources.MSG_STATUS_CODE">
@@ -4628,9 +4708,19 @@
               Looks up a localized string similar to [empty string].
             </summary>
         </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.MSG_VALUE_IS_FALSE">
+            <summary>
+              Looks up a localized string similar to false.
+            </summary>
+        </member>
         <member name="P:WizardWrx.Common.Properties.Resources.MSG_VALUE_IS_INVALID">
             <summary>
               Looks up a localized string similar to invalid.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.MSG_VALUE_IS_TRUE">
+            <summary>
+              Looks up a localized string similar to true.
             </summary>
         </member>
         <member name="P:WizardWrx.Common.Properties.Resources.MSG_VALUE_IS_VALID">

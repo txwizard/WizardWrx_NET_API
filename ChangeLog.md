@@ -4,11 +4,42 @@ This file is a running history of fixes and improvements from version 7.0
 onwards. Changes are documented for the newest version first. Within each
 version, classes are covered in alphabetical order.
 
+## WizardWrx Common.dll, version 7.22.122, Released 2019/10/02
+
+The public string resource set has the 18 new strings listed in the following
+table.
+
+|String Name                      |String Value          |
+|---------------------------------|----------------------|
+|ANSWER_IS_FALSE                  |false                 |
+|ANSWER_IS_NO                     |no                    |
+|ANSWER_IS_TRUE                   |true                  |
+|ANSWER_IS_YES                    |yes                   |
+|MSG_BLANK_CAPS                   |BLANK                 |
+|MSG_INTEGER_EVENLY_DIVISIBLE_BY  |is evenly divisible by|
+|MSG_INTEGER_IS_EVEN              |is even               |
+|MSG_INTEGER_IS_ODD               |is odd                |
+|MSG_OBJECT_DOES_NOT_EXIST        |does not exist        |
+|MSG_IS                           |is                    |
+|MSG_IS_NOT                       |is not                |
+|MSG_OBJECT_EXISTS                |exists                |
+|MSG_OBJECT_IS_ABSENT             |is absent             |
+|MSG_OBJECT_IS_MISSING            |is missing            |
+|MSG_OBJECT_IS_PRESENT            |is present            |
+|MSG_OBJECT_REFERENCE_IS_NULL_CAPS|NULL                  |
+|MSG_VALUE_IS_FALSE               |false                 |
+|MSG_VALUE_IS_TRUE                |true                  |
+
+Since the meaning and use of these strings is self-evident, I dispensed with
+comments in the .RESX source file and herein.
+
+All other libraries in this constellation are unchanged.
+
 ## WizardWrx Common.dll, version 7.21.121, Released 2019/07/18
 
 The public string resource set has the new strings listed in the following table.
 
-|String Name                   |String Value                                            |Source code comment in the .RESX file                                                                                                                                                                                                                        |
+|String Name                   |String Value                                            |Source Code Comment in the .RESX File                                                                                                                                                                                                                        |
 |------------------------------|--------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |ERRMSG_ARRAY_IS_EMPTY         |Array {0} ie empty; it exists, but contains no elements.|Use this message to report that an array argument or program variable exists, but is empty. Use ERRMSG_REFERENCE_IS_NULL to report a null reference. Use the nameof() pseudo-function to identify the array by name.                                         |
 |ERRMSG_REFERENCE_IS_NULL      |Object {0} is a null reference.                         |Use this message to report a null reference. Unlike its predecessor, ERRMSG_ARG_IS_NULL, this string has a substitution token through which to report the object name. Use the nameof() pseudo-function to get the name of the argument or internal variable.|

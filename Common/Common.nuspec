@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>The public string resource set has the following new strings: ERRMSG_ARRAY_IS_EMPTY, ERRMSG_REFERENCE_IS_NULL, MSG_STRING_IS_EMPTY, MSG_BLANK_STRING; in addition, many other strings get improved comments, including cross references, which can be viewed in an editor.</releaseNotes>
+	    <releaseNotes>The public string resource set has the following new strings: ANSWER_IS_FALSE, ANSWER_IS_NO, ANSWER_IS_TRUE, ANSWER_IS_YES, MSG_BLANK_CAPS, MSG_INTEGER_EVENLY_DIVISIBLE_BY, MSG_INTEGER_IS_EVEN, MSG_INTEGER_IS_ODD,MSG_IS, MSG_IS_NOT, MSG_OBJECT_DOES_NOT_EXIST, MSG_OBJECT_EXISTS, MSG_OBJECT_IS_ABSENT, MSG_OBJECT_IS_MISSING, MSG_OBJECT_IS_PRESENT, MSG_OBJECT_REFERENCE_IS_NULL_CAPS, MSG_VALUE_IS_FALSE, MSG_VALUE_IS_TRUE</releaseNotes>
     	<copyright>$copyright$</copyright>
     	<tags>Constants Arrays RegExp</tags>
 	</metadata>
