@@ -1,7 +1,7 @@
 WizardWrx DiagnosticInfo ReadMe
 
 The purpose of this class library is to provide other libraries and assemblies
-with information about caling routines that is gathered at compile time,
+with information about calling routines that is gathered at compile time,
 avoiding Reflection overhead at runtime.
 
 To maximize compatibility with client code, the library targets version 4.5 of
@@ -31,6 +31,11 @@ The easiest way to incorporate the library into your own code is by installing t
 https://www.nuget.org/packages/WizardWrx.DiagnosticInfo.
 
 Revision History
+
+This update is being released a few days after version 7.22 of the WizardWrx .NET
+API, of which it is a component, to correct a typographical error seen during a
+dog food installation. While only the ReadMe is affected, releasing it requires
+a new build to satisfy the NuGet Package Builder.
 
 This file is being released a few days after version 7.15 of the WizardWrx .NET
 API, of which it is a component. To track changes, please see

@@ -4,6 +4,13 @@ This file is a running history of fixes and improvements from version 7.0
 onwards. Changes are documented for the newest version first. Within each
 version, classes are covered in alphabetical order.
 
+## WizardWrx.DiagnosticInfo.dll, version 7.22.5, Released 2019/10/06
+
+This release corrects a typographical error found when I skimmed its ReadMe.md
+file following a dogfood run that incorporated it into a package that is under
+active development, initially for internal use. The only reason for the build is
+to satisfy the NuGet package publishing engine.
+
 ## WizardWrx Common.dll, version 7.22.122, Released 2019/10/02
 
 The public string resource set has the 18 new strings listed in the following
