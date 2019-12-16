@@ -1,31 +1,31 @@
 ﻿/*
     ============================================================================
 
-	Namespace Name:		WizardWrx.Core
+    Namespace Name:		WizardWrx.Core
 
     Class Name:			TimeDisplayFormatter
 
     File Name:			TimeDisplayFormatter.cs
 
     Synopsis:			This class is composed entirely of instance members, 
-						which are called as needed, using parameters defined as
-						read/write properties, to format the local time.
+                        which are called as needed, using parameters defined as
+                        read/write properties, to format the local time.
 
     Remarks:			All instance method come in pairs, one of which takes a
-						System.DateTime to be processed, and aonther which is
-						called without arguments, and returns a string derived
-						from the current time.
+                        System.DateTime to be processed, and aonther which is
+                        called without arguments, and returns a string derived
+                        from the current time.
 
-						This class was not designed with thread safety in mind.
-						Nevertheless, if the main thread initializes the
-						properties, and all other threads confine themselves to
-						calling the instance methods, it should behave itself,
-						since the real work is done by private static members.
+                        This class was not designed with thread safety in mind.
+                        Nevertheless, if the main thread initializes the
+                        properties, and all other threads confine themselves to
+                        calling the instance methods, it should behave itself,
+                        since the real work is done by private static members.
 
     Author:				David A. Gray
 
     License:            Copyright (C) 2011-2017, David A. Gray. 
-						All rights reserved.
+                        All rights reserved.
 
                         Redistribution and use in source and binary forms, with
                         or without modification, are permitted provided that the
@@ -64,54 +64,58 @@
     Revision History
     ----------------------------------------------------------------------------
 
-    Date       Version Author Synopsis
-    ---------- ------- ------ --------------------------------------------------
-    2011/07/11 1.2     DAG    This class makes its first appearance.
+    Date       Version By  Synopsis
+    ---------- ------- --- --------------------------------------------------
+    2011/07/11 1.2     DAG This class makes its first appearance.
  
-    2011/07/13 1.4     DAG    Correct a data error in the YYMMDD calendar date
-                              formatting template.
+    2011/07/13 1.4     DAG Correct a data error in the YYMMDD calendar date
+                           formatting template.
 
-    2011/07/16 1.5     DAG    Change namespace name from ConsoleHelpers to
-                              ApplicationHelpers, to reflect its broadened range
-                              of applications (pun intended).
+    2011/07/16 1.5     DAG Change namespace name from ConsoleHelpers to
+                           ApplicationHelpers, to reflect its broadened range of
+                           applications (pun intended).
 
-    2014/06/08 5.1     DAG    Correct an oversight that left this class in the
-                              old WizardWrx.ApplicationHelpers namespace. Since
-                              this change affects only two other DLLs, and, at
-                              most one user program, I took advantage of the
-                              opportunity to hoist the DLLServices2 namespace to
-                              the first rank under the overall WizardWrx 
-                              namespace.
+    2014/06/08 5.1     DAG Correct an oversight that left this class in the old
+                           WizardWrx.ApplicationHelpers namespace. Since this
+                           change affects only two other DLLs, and, at most one
+                           user program, I took advantage of the opportunity to
+                           hoist the DLLServices2 namespace to the first rank
+                           under the overall WizardWrx namespace.
 
-	2015/06/20 5.5     DAG    Incorporate my three-clause BSD license.
+    2015/06/20 5.5     DAG Incorporate my three-clause BSD license.
  
-    2016/04/10 6.0     DAG    Scan for typographical errors flagged by the
-							  spelling checker add-in, and correct what I find,
-                              and update the formatting and marking of blocks.
+    2016/04/10 6.0     DAG Scan for typographical errors flagged by the
+                           spelling checker add-in, and correct what I find, and
+                           update the formatting and marking of blocks.
 
-    2016/05/20 6.1     DAG    Eliminate pointless "end of" from bracket comments
-                              throughout.
+    2016/05/20 6.1     DAG Eliminate pointless "end of" from bracket comments
+                           throughout.
 
-	2016/06/07 6.3     DAG    1) Adjust the internal documentation to correct a 
-                                 few inconsistencies uncovered while preparing 
-                                 this library for publication on GetHub.
+    2016/06/07 6.3     DAG 1) Adjust the internal documentation to correct a few
+                              inconsistencies uncovered while preparing this
+                              library for publication on GetHub.
 
-                              2) Move hard coded message strings into managed
-                                 string resources.
+                           2) Move hard coded message strings into managed
+                              string resources.
 
-	2017/02/21 7.0     DAG    Break this library apart, so that smaller subsets
-	                          of classes can be distributed and consumed
-                              independently.
+    2017/02/21 7.0     DAG Break this library apart, so that smaller subsets of
+                           classes can be distributed independently.
 
-						      This module moved into WizardWrx.Core, a new
-                              namespace, which is exported by a like named
-							  dynamic-link library.
+                           This module moved into WizardWrx.Core, a new
+                           namespace, which is exported by a like named
+                           dynamic-link library.
 
-	2017/03/28 7.0     DAG    Define a new PrepareLocalAndUTCTimes method.
+    2017/03/28 7.0     DAG Define a new PrepareLocalAndUTCTimes method.
 
-	2017/07/16 7.0     DAG    Replace references to string.empty, which is not a
-                              true constant, with SpecialStrings.EMPTY_STRING,
-                              which is one.
+    2017/07/16 7.0     DAG Replace references to string.empty, which is not a
+                           true constant, with SpecialStrings.EMPTY_STRING,
+                           which is one.
+
+    2019/12/16 7.23    DAG Allow the tab consistency add-in to replace tabs with
+                           spaces. The code is otherwise unchanged, although the
+                           new build is required to add a binding redirect, and
+                           the version numbering transitions to the SemVer
+                           scheme.
     ============================================================================
 */
 
@@ -126,12 +130,12 @@ namespace WizardWrx.Core
     /// <summary>
     /// Use instances of this class to return dates and times, uniformly
     /// formatted by rules set by way of its properties.
-	/// 
-	/// This class is sealed, and cannot be inherited.
-	/// </summary>
-	/// <seealso cref="DisplayFormats"/>
-	/// <seealso cref="SysDateFormatters"/>
-	public sealed class TimeDisplayFormatter
+    /// 
+    /// This class is sealed, and cannot be inherited.
+    /// </summary>
+    /// <seealso cref="DisplayFormats"/>
+    /// <seealso cref="SysDateFormatters"/>
+    public sealed class TimeDisplayFormatter
     {
         #region Public Constants and Enumerations
         /// <summary>
@@ -225,11 +229,11 @@ namespace WizardWrx.Core
             /// </summary>
             HMSTN
         }   // TimePrecisionType
-		#endregion	// Public Constants and Enumerations
+        #endregion	// Public Constants and Enumerations
 
 
-		#region Private Constants and Enumerations
-		const string ARG_NAME_HRSFMTTYP = @"penmHoursFormatType";
+        #region Private Constants and Enumerations
+        const string ARG_NAME_HRSFMTTYP = @"penmHoursFormatType";
         const string ARG_NAME_DATETIMEKIND = @"pdtmTheTime.Kind";
 
         const string CIVILIAN_AM_LC = @"am";
@@ -271,11 +275,11 @@ namespace WizardWrx.Core
 
         const string TZ_IS_UTC = @"UTC";
         const string TZ_IS_UNSPECIFIED = @"Unspecified";
-		#endregion	// Private Constants and Enumerations
+        #endregion	// Private Constants and Enumerations
 
 
-		#region Private Static Storage for All Instances
-		//  --------------------------------------------------------------------
+        #region Private Static Storage for All Instances
+        //  --------------------------------------------------------------------
         //  Using the CalendarDateFormat as a subscript into this array, the
         //  FormatCalendarDate method returns the desired string representation
         //  of the date portion of a System.DateTime. Since CalendarDateFormat
@@ -393,22 +397,22 @@ namespace WizardWrx.Core
         //  --------------------------------------------------------------------
 
         static readonly TimeZone _tzMachine = TimeZone.CurrentTimeZone;
-		#endregion	// Private Static Storage for All Instances
+        #endregion	// Private Static Storage for All Instances
 
 
-		#region Private Storage for Class Instance
-		DateFieldOrder _enmDateFieldOrder = DateFieldOrder.CultureInfoShortDate;
+        #region Private Storage for Class Instance
+        DateFieldOrder _enmDateFieldOrder = DateFieldOrder.CultureInfoShortDate;
         HoursFormatType _enmHoursFormatType = HoursFormatType.Military;
         TimePrecisionType _enmTimePrecisionType = TimePrecisionType.HMST;
 
         bool _fShowAmPmAsUC = false;
         bool _fShowTimeZone = false;
         bool _fShowWeekday = false;
-		#endregion	// Private Storage for Class Instance
+        #endregion	// Private Storage for Class Instance
 
 
-		#region Properties
-		/// <summary>
+        #region Properties
+        /// <summary>
         /// Set this property to override the default formatting of calendar
         /// dates, which is governed by the active CultureInfo settings, which
         /// are, themselves, governed by the active Regional Settings of the
@@ -447,7 +451,7 @@ namespace WizardWrx.Core
         /// <summary>
         /// Set the display format for hours. See the HoursFormatType enumeration
         /// for more details.
-		/// 
+        /// 
         /// When the value is DateFieldOrder.CultureInfoShortDate, the
         /// HoursFormat and TimePrecision properties are ignored.
         ///
@@ -459,34 +463,34 @@ namespace WizardWrx.Core
         /// When the value of this property is CultureInfoShortTime, the
         /// TimePrecision property is ignored.
         /// </summary>
-		public HoursFormatType HoursFormat
-		{
-			get
-			{
-				return _enmHoursFormatType;
-			}   // HoursFormatType HoursFormatType Get method
+        public HoursFormatType HoursFormat
+        {
+            get
+            {
+                return _enmHoursFormatType;
+            }   // HoursFormatType HoursFormatType Get method
 
-			set
-			{
-				const string PROPERTY_NAME = @"HoursFormat";
+            set
+            {
+                const string PROPERTY_NAME = @"HoursFormat";
 
-				switch ( value )
-				{
-					case HoursFormatType.Civilian:
-					case HoursFormatType.CultureInfoShortTime:
-					case HoursFormatType.Military:
-						_enmHoursFormatType = value;
-						break;
-					default:
-						throw new ArgumentOutOfRangeException (
-							PROPERTY_NAME ,
-							InvalidEnumValueMessage (
-								PROPERTY_NAME ,
-								( int ) value ,
-								( int ) _enmHoursFormatType ) );
-				}   // switch ( value )
-			}   // HoursFormatType HoursFormatType Set method
-		}   // HoursFormatType HoursFormatType property
+                switch ( value )
+                {
+                    case HoursFormatType.Civilian:
+                    case HoursFormatType.CultureInfoShortTime:
+                    case HoursFormatType.Military:
+                        _enmHoursFormatType = value;
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException (
+                            PROPERTY_NAME ,
+                            InvalidEnumValueMessage (
+                                PROPERTY_NAME ,
+                                ( int ) value ,
+                                ( int ) _enmHoursFormatType ) );
+                }   // switch ( value )
+            }   // HoursFormatType HoursFormatType Set method
+        }   // HoursFormatType HoursFormatType property
 
 
         /// <summary>
@@ -573,11 +577,11 @@ namespace WizardWrx.Core
                 }   // End switch ( value )
             }   // TimePrecisionType Precision Set method
         }   // TimePrecisionType Precision property
-		#endregion	// Properties
+        #endregion	// Properties
 
 
-		#region Constructors
-		/// <summary>
+        #region Constructors
+        /// <summary>
         /// The default constructor initializes an instance that follows the
         /// default preferences built into the class. Hence, methods called on
         /// objects created by it are guaranteed to yield a usable string unless
@@ -593,11 +597,11 @@ namespace WizardWrx.Core
         /// your own class around an instance of this one.
         /// </remarks>
         public TimeDisplayFormatter ( ) { }
-		#endregion	// Constructors
+        #endregion	// Constructors
 
 
-		#region Public Methods
-		/// <summary>
+        #region Public Methods
+        /// <summary>
         /// Format the specified time.
         /// </summary>
         /// <param name="pdtmThisTime">
@@ -652,60 +656,60 @@ namespace WizardWrx.Core
         /// value is a string representation of the spelled out time zone name.
         /// Otherwise, an ArgumentException is thrown.
         /// </returns>
-		public static string GetTimeZoneForTime ( DateTime pdtmTheTime )
-		{
-			switch ( pdtmTheTime.Kind )
-			{
-				case DateTimeKind.Local:
-					if ( _tzMachine.IsDaylightSavingTime ( pdtmTheTime ) )
-						return _tzMachine.DaylightName;
-					else
-						return _tzMachine.StandardName;
+        public static string GetTimeZoneForTime ( DateTime pdtmTheTime )
+        {
+            switch ( pdtmTheTime.Kind )
+            {
+                case DateTimeKind.Local:
+                    if ( _tzMachine.IsDaylightSavingTime ( pdtmTheTime ) )
+                        return _tzMachine.DaylightName;
+                    else
+                        return _tzMachine.StandardName;
 
-				case DateTimeKind.Utc:
-					return TZ_IS_UTC;
+                case DateTimeKind.Utc:
+                    return TZ_IS_UTC;
 
-				case DateTimeKind.Unspecified:
-					return TZ_IS_UNSPECIFIED;
+                case DateTimeKind.Unspecified:
+                    return TZ_IS_UNSPECIFIED;
 
-				default:
-					return SpecialStrings.EMPTY_STRING;
-			}   // switch ( pdtmTheTime.Kind )
-		}   // GetTimeZoneForTime
-		
+                default:
+                    return SpecialStrings.EMPTY_STRING;
+            }   // switch ( pdtmTheTime.Kind )
+        }   // GetTimeZoneForTime
+        
 
-		/// <summary>
-		/// Given a pair of DateTime structures, return them in a standardized
-		/// format.
-		/// </summary>
-		/// <param name="dtmTimeLocal">
-		/// Specify the local time to include in the standardized message.
-		/// </param>
-		/// <param name="dtmTimeUtc">
-		/// Specify the UTC time to include in the standardized message.
-		/// </param>
-		/// <returns>
-		/// The returned string is of the format {0} ({1} UTC), where {0} is
-		/// replaced with the local time, while {1} is replaced with the
-		/// corresponding UTC time.
-		/// </returns>
-		/// <example>
-		/// 2017/03/27 18:18:58 (2017/03/27 23:18:58 UTC)
-		/// </example>
-		public static string PrepareLocalAndUTCTimes (
-			DateTime dtmTimeLocal ,
-			DateTime dtmTimeUtc )
-		{
-			return string.Format (
-				Properties.Resources.LOCAL_AND_UTC_TIME_TEMPLATE ,				// Format control string, e. g., {0} ({1} UTC)
-				dtmTimeLocal ,													// Format Item 0 = Local Time
-				dtmTimeUtc );													// Format Item 1 = Corresponding UTC Time
-		}	// PrepareLocalAndUTCTimes
-		#endregion	// Public Methods
+        /// <summary>
+        /// Given a pair of DateTime structures, return them in a standardized
+        /// format.
+        /// </summary>
+        /// <param name="dtmTimeLocal">
+        /// Specify the local time to include in the standardized message.
+        /// </param>
+        /// <param name="dtmTimeUtc">
+        /// Specify the UTC time to include in the standardized message.
+        /// </param>
+        /// <returns>
+        /// The returned string is of the format {0} ({1} UTC), where {0} is
+        /// replaced with the local time, while {1} is replaced with the
+        /// corresponding UTC time.
+        /// </returns>
+        /// <example>
+        /// 2017/03/27 18:18:58 (2017/03/27 23:18:58 UTC)
+        /// </example>
+        public static string PrepareLocalAndUTCTimes (
+            DateTime dtmTimeLocal ,
+            DateTime dtmTimeUtc )
+        {
+            return string.Format (
+                Properties.Resources.LOCAL_AND_UTC_TIME_TEMPLATE ,				// Format control string, e. g., {0} ({1} UTC)
+                dtmTimeLocal ,													// Format Item 0 = Local Time
+                dtmTimeUtc );													// Format Item 1 = Corresponding UTC Time
+        }	// PrepareLocalAndUTCTimes
+        #endregion	// Public Methods
 
 
-		#region Private Static Methods
-		private static string FormatTheTime (
+        #region Private Static Methods
+        private static string FormatTheTime (
             DateTime pdtmTheTime ,
             DateFieldOrder penmDateFieldOrder ,
             HoursFormatType penmHoursFormatType ,
@@ -924,7 +928,7 @@ namespace WizardWrx.Core
             int pintSpecifiedValue )
         {
             return string.Format (
-				Properties.Resources.TDF_INVALID_ARG_VALUE ,					// Format control string (Message Template)
+                Properties.Resources.TDF_INVALID_ARG_VALUE ,					// Format control string (Message Template)
                 pstrName ,														// Format Item (Token) 0 = Argument Name
                 pintSpecifiedValue );											// Format Item (Token) 1 = Argument Value
         }   // InvalidEnumArgValueMessage
@@ -936,7 +940,7 @@ namespace WizardWrx.Core
             int pintCurrentValue )
         {
             return string.Format (
-				Properties.Resources.TDF_INVALID_ENUM_VALUE ,					// Format control string (Message Template)
+                Properties.Resources.TDF_INVALID_ENUM_VALUE ,					// Format control string (Message Template)
                 new object[]
                 {
                     pstrName,													// Format Item (Token) 0 = Argument Name
@@ -944,6 +948,6 @@ namespace WizardWrx.Core
                     pintCurrentValue ,											// Format Item (Token) 2 = Current Property Value
                     Environment.NewLine} );										// Format Item (Token) 3 = Embedded Newline
         }   // InvalidEnumValueMessage
-		#endregion	//  Private Static Methods
-	}   // public class TimeDisplayFormatter
+        #endregion	//  Private Static Methods
+    }   // public class TimeDisplayFormatter
 }   // partial namespace WizardWrx.Core

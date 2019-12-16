@@ -1,23 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
-	============================================================================
-	Project Name:		FormatStringEngine.csproj
+    ============================================================================
+    Project Name:		FormatStringEngine.csproj
 
-	Project Abstract:	This library supports proactive parsing of format items
-	                    and complete format control strings that are dynamically
-	                    generated.
+    Project Abstract:	This library supports proactive parsing of format items
+                        and complete format control strings that are dynamically
+                        generated.
 
-	============================================================================
-	Revision History
-	============================================================================
+    ============================================================================
+    Revision History
+    ============================================================================
 
-	Date       By  Description
-	========== === =============================================================
-	2019/04/28 DAG Add ProductAssemblyInfo.cs the right way, as a link.
-	2019/07/05 DAG Add automatic NuGet package publication.
-	============================================================================
+    Date       By  Description
+    ========== === =============================================================
+    2019/04/28 DAG Add ProductAssemblyInfo.cs the right way, as a link.
+    2019/07/05 DAG Add automatic NuGet package publication.
+    2019/12/15 DAG Adjust the NuGet publication task to support NuGet three-part
+                   version strings, the SemVer version numbering scheme.
+    ============================================================================
 -->
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- 2019/12/01 - DAG Define custom task NuGetPackageNameFixup by copying its source from F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\AnyCSV\AnyCSV\AnyCSV.csproj.  -->
+  <UsingTask TaskName="NuGetPackageNameFixup"
+  	         TaskFactory="CodeTaskFactory"
+  	         AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll">
+    <ParameterGroup>
+      <RawNugetPackageVersion ParameterType="System.String" Required="true" />
+      <ActualNugetPackageVersion ParameterType="System.String" Output="true" />
+    </ParameterGroup>
+    <Task>
+      <Code Type="Fragment" Language="cs"><![CDATA[
+                  ActualNugetPackageVersion = RawNugetPackageVersion.EndsWith ( ".0" ) ? RawNugetPackageVersion.Substring(0,RawNugetPackageVersion.Length-2) : RawNugetPackageVersion;
+                  Log.LogMessage ( "Custom Task NuGetPackageNameFixup: RawNugetPackageVersion    = "+ RawNugetPackageVersion    );
+                  Log.LogMessage ( "Custom Task NuGetPackageNameFixup: ActualNugetPackageVersion = "+ ActualNugetPackageVersion );
+              ]]></Code>
+    </Task>
+  </UsingTask>
+
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -34,6 +53,7 @@
     <!-- 2019/07/04 13:27:28 - DAG - Added for NuGet package builder -->
     <PackageDir>Package</PackageDir>
   </PropertyGroup>
+
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -44,6 +64,7 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\Wizardwrx.FormatStringEngine.XML</DocumentationFile>
   </PropertyGroup>
+
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
@@ -53,6 +74,7 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\Wizardwrx.FormatStringEngine.XML</DocumentationFile>
   </PropertyGroup>
+
   <ItemGroup>
     <Compile Include="..\ProductAssemblyInfo.cs">
       <Link>Properties\ProductAssemblyInfo.cs</Link>
@@ -68,6 +90,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
   </ItemGroup>
+
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -75,22 +98,37 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
+
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="WizardWrx.AnyCSV, Version=7.2.145.0, Culture=neutral, PublicKeyToken=39f6551a21db420a">
+    <Reference Include="WizardWrx.AnyCSV, Version=7.2.145.0, Culture=neutral, PublicKeyToken=39f6551a21db420a, processorArchitecture=MSIL">
       <HintPath>C:\Users\DAG\.nuget\packages\WizardWrx.AnyCSV.7.2.145\lib\net20\WizardWrx.AnyCSV.dll</HintPath>
-      <Private>True</Private>
     </Reference>
-    <Reference Include="WizardWrx.Common, Version=7.21.121.36604, Culture=neutral, PublicKeyToken=null">
-      <HintPath>C:\Users\DAG\.nuget\packages\WizardWrx.Common.7.21.121.36604\lib\net20\WizardWrx.Common.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="WizardWrx.BitMath, Version=4.3.125.29248, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>C:\Users\DAG\.nuget\packages\WizardWrx.BitMath.4.3.125.29248\lib\net20\WizardWrx.BitMath.dll</HintPath>
     </Reference>
   </ItemGroup>
+
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ASCIIInfo\ASCIIInfo.csproj">
+      <Project>{8c832c38-cf81-4247-baef-581f5c14f11f}</Project>
+      <Name>ASCIIInfo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{c1fb48d6-4a54-4424-bca1-4777f3aae2df}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+
   <!-- 2019/07/04 10:15:50 - DAG Everything from this point to the end is new, and was added to support NuGet package generation. -->
+
   <Target Name="AfterBuild">
     <!-- Load up the information from the assembly -->
     <GetAssemblyIdentity AssemblyFiles="$(OutputPath)$(AssemblyName).dll">
@@ -98,20 +136,34 @@
     </GetAssemblyIdentity>
     <Message Text="Info: Assembly $(AssemblyName).dll version = %(OutputAssemblyInfo.Version)" />
   </Target>
+
   <Target Name="Package" AfterTargets="AfterBuild" Condition=" '$(Configuration)' == 'Release'">
     <!-- Ensure the Package directory exists for this project -->
     <MakeDir Directories="$(PackageDir)" />
     <!-- Package the project -->
-    <Exec WorkingDirectory="$(BuildDir)" Command="NuGet.exe pack $(ProjectName).csproj -Properties Configuration=$(Configuration) -OutputDir $(PackageDir) -IncludeReferencedProjects" />
+    <Exec WorkingDirectory="$(BuildDir)"
+    	  Command="NuGet.exe pack $(ProjectName).csproj -Properties Configuration=$(Configuration) -OutputDir $(PackageDir) -IncludeReferencedProjects -Verbosity detailed" />
   </Target>
+
   <!-- Publish the project. -->
-  <Target Name="Publish" AfterTargets="Package" Condition=" '$(Configuration)' == 'Release'">
-    <Exec WorkingDirectory="$(PackageDir)" Command="NuGet.exe push $(AssemblyName).%(OutputAssemblyInfo.Version).nupkg" />
+  <Target Name="Publish"
+  	      AfterTargets="Package"
+  	      Condition=" '$(Configuration)' == 'Release'">
+    <!-- Account for the fourth part of the version string being zero, so that standardized NuGet compatible version numbers behave predictably. -->
+    <NuGetPackageNameFixup RawNugetPackageVersion="%(OutputAssemblyInfo.Version)">
+        <Output PropertyName="NuGetPackageVersion"
+        	    TaskParameter="ActualNugetPackageVersion" />
+    </NuGetPackageNameFixup>
+    <Exec WorkingDirectory="$(PackageDir)"
+          Command="NuGet.exe push $(AssemblyName).$(NuGetPackageVersion).nupkg" />
   </Target>
   <Target Name="BeforeBuild" Condition=" '$(Configuration)' == 'Debug'">
-    <Exec WorkingDirectory="$(ProjectDir)" Command="nuget update $(ProjectDir)packages.config" />
-    <Exec WorkingDirectory="$(ProjectDir)" Command="nuget restore $(ProjectDir)packages.config" />
+    <Exec WorkingDirectory="$(ProjectDir)"
+    	  Command="nuget update $(ProjectDir)packages.config" />
+    <Exec WorkingDirectory="$(ProjectDir)"
+    	  Command="nuget restore $(ProjectDir)packages.config" />
   </Target>
+
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <PropertyGroup>

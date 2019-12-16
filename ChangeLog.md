@@ -4,6 +4,30 @@ This file is a running history of fixes and improvements from version 7.0
 onwards. Changes are documented for the newest version first. Within each
 version, classes are covered in alphabetical order.
 
+## WizardWrx.Core 7.23.182, Released 2019/12/16
+
+This update adopts the generally accepted SemVer version numbering scheme.
+
+The code is otherwise unchanged from the previous release.
+
+## WizardWrx.Common.dll, Version 7.23.123, Released 2019/12/15
+
+This update adds static method FormatIntegerLeftPadded to the NumericFormats
+class. This update also adopts the generally accepted SemVer version numbering
+scheme.
+
+## WizardWrx.ASCIIInfo 7.23.84, Released 2019/12/15
+
+This update adopts the generally accepted SemVer version numbering scheme.
+
+The code is otherwise unchanged from the previous release.
+
+## WizardWrx.FormatStringEngine 7.23.167, Released 2019/12/15
+
+This update adopts the generally accepted SemVer version numbering scheme.
+
+The code is otherwise unchanged from the previous release.
+
 ## WizardWrx.DiagnosticInfo.dll, version 7.22.5, Released 2019/10/06
 
 This release corrects a typographical error found when I skimmed its ReadMe.md

@@ -101,9 +101,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- 2019/07/18 01:01:04 - DAG Everything from this point to the end is new, and was added to support NuGet package generation. -->
   <Target Name="AfterBuild">

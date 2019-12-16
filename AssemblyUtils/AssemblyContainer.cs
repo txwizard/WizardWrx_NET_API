@@ -5,16 +5,23 @@
 
     Class Name:			AssemblyContainer
 
-	File Name:			AssemblyContainer.cs
+    File Name:			AssemblyContainer.cs
 
-    Synopsis:			The methods
+    Synopsis:			The methods exposed by instances of this class permit
+                        assemblies to be loaded into separate AppDomains from
+                        which they can be unloaded at will, so that they can be
+                        updated, or whatever, while code in the main assembly is
+                        executing.
 
-    Remarks:			
+    Remarks:			This class was created to enable assemblies that may not
+                        be loaded at startup to be evaluated in a Reflection
+                        context, for example, to report on the dependences of an
+                        assembly.
 
     Author:				David A. Gray
 
-	License:            Copyright (C) 2017, David A. Gray.
-						All rights reserved.
+    License:            Copyright (C) 2017-2019, David A. Gray.
+                        All rights reserved.
 
                         Redistribution and use in source and binary forms, with
                         or without modification, are permitted provided that the
@@ -56,6 +63,10 @@
     Date       Version Author Synopsis
     ---------- ------- ------ --------------------------------------------------
     2017/03/27 7.0     DAG    This class makes its first appearance.
+
+    2019/11/17 7.0     DAG    When the tabs to spaces conversion add-in called
+                              attention to this module, I discovered that its
+                              documentation flower box was imcomplete.
     ============================================================================
 */
 
@@ -65,43 +76,43 @@ using System.Reflection;
 
 namespace WizardWrx.AssemblyUtils
 {
-	/// <summary>
-	/// Use this class to hold a reference to an assembly that you want to
-	/// confine to a separate AppDomain, so that the assembly can be unloaded by
-	/// discarding its domain.
-	/// </summary>
-	public class AssemblyContainer : MarshalByRefObject
-	{
-		/// <summary>
-		/// The public constructor creates an empty container.
-		/// </summary>
-		public AssemblyContainer ( ) { }
+    /// <summary>
+    /// Use this class to hold a reference to an assembly that you want to
+    /// confine to a separate AppDomain, so that the assembly can be unloaded by
+    /// discarding its domain.
+    /// </summary>
+    public class AssemblyContainer : MarshalByRefObject
+    {
+        /// <summary>
+        /// The public constructor creates an empty container.
+        /// </summary>
+        public AssemblyContainer ( ) { }
 
-		/// <summary>
-		/// Call this method to load an assembly into the container.
-		/// </summary>
-		/// <param name="panThis">
-		/// Designate the assembly to load by its AssemblyName.
-		/// </param>
-		public void Store ( AssemblyName panThis )
-		{
-			_pvtAsm = Assembly.Load ( panThis );
-		}	// public void Store Method
+        /// <summary>
+        /// Call this method to load an assembly into the container.
+        /// </summary>
+        /// <param name="panThis">
+        /// Designate the assembly to load by its AssemblyName.
+        /// </param>
+        public void Store ( AssemblyName panThis )
+        {
+            _pvtAsm = Assembly.Load ( panThis );
+        }	// public void Store Method
 
-		/// <summary>
-		/// Get a transparent reference to the assembly stored in the container.
-		/// </summary>
-		/// <returns>
-		/// The reference is returned through a transparent proxy, and the main
-		/// AppDomain can treat it as if it were local. Hence, it can be used to
-		/// instantiate objects, query their properties, and call their methods.
-		/// </returns>
-		public Assembly ShowMe ( ) { return _pvtAsm; }
+        /// <summary>
+        /// Get a transparent reference to the assembly stored in the container.
+        /// </summary>
+        /// <returns>
+        /// The reference is returned through a transparent proxy, and the main
+        /// AppDomain can treat it as if it were local. Hence, it can be used to
+        /// instantiate objects, query their properties, and call their methods.
+        /// </returns>
+        public Assembly ShowMe ( ) { return _pvtAsm; }
 
-		/// <summary>
-		/// The real assembly reference is hidden in this property, so that it
-		/// isn't created simultaneously in both AppDomains.
-		/// </summary>
-		private Assembly _pvtAsm;
-	}	// class AssemblyContainer
+        /// <summary>
+        /// The real assembly reference is hidden in this property, so that it
+        /// isn't created simultaneously in both AppDomains.
+        /// </summary>
+        private Assembly _pvtAsm;
+    }	// class AssemblyContainer
 }	// partial namespace WizardWrx.AssemblyUtils

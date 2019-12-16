@@ -19,8 +19,8 @@
                         meant to seriously discourage you from trying in vain to
                         use string.Split() to split it into its components.
 
-    License:            Copyright (C) 2014-2017, David A. Gray. 
-						All rights reserved.
+    License:            Copyright (C) 2014-2019, David A. Gray.
+                        All rights reserved.
 
                         Redistribution and use in source and binary forms, with
                         or without modification, are permitted provided that the
@@ -78,14 +78,19 @@
                            more restrictive build target (x86) than this library
                            (MSIL).
 
-	2017/08/04 7.0     DAG Relocated to the constellation of core libraries that
+    2017/08/04 7.0     DAG Relocated to the constellation of core libraries that
                            began as WizardWrx.DllServices2.dll.
+
+    2019/12/15 7.23    DAG Allow the tab consistency add-in to replace tabs with
+                           spaces. The code is otherwise unchanged, although the
+                           new build is required to add a binding redirect, and
+                           the version numbering transitions to the SemVer
+                           scheme.
     ============================================================================
 */
 
 using System;
 using System.Text;
-
 
 namespace WizardWrx.FormatStringEngine
 {
@@ -97,11 +102,11 @@ namespace WizardWrx.FormatStringEngine
     /// The only property that has any use outside the defining assembly is the
     /// string representation, which returns the properties in a well formed CSV
     /// string.
-    /// 
+    ///
     /// Likewise, only other classes defined in the same assembly are allowed to
     /// create instances of this object, which are immutable.
     /// </remarks>
-	public class FormatStringError
+    public class FormatStringError
     {
         int _intOffset = FormatItem.INVALID_OFFSET;
         char _chrBad = char.MinValue;
@@ -152,12 +157,12 @@ namespace WizardWrx.FormatStringEngine
         /// <summary>
         /// Split the message into an array of parts, each containing a property
         /// value and its label.
-        /// 
+        ///
         /// Please see the remarks.
         /// </summary>
         /// <returns>
         /// The return value is an array of strings.
-        /// 
+        ///
         /// Please see the remarks for essential information about this string.
         /// </returns>
         /// <remarks>
@@ -166,14 +171,14 @@ namespace WizardWrx.FormatStringEngine
         /// which is a name/value pair that can be further subdivided, using the
         /// built-in string.Split method, along with LABEL_VALUE_DELIMITER, the
         /// correct delimiter to use with string.Split.
-        /// 
+        ///
         /// Under the covers, Split passes the string returned by a call to the
         /// instance ToString method to the static WizardWrx.AnyCSV.Parser.Parse
         /// method, which does most of the work.
-		/// 
-		/// IMPORTANT: Since the new version of WizardWrx.AnyCSV.dll has a COM
-		/// interface, it had to target the x86 platform. This can eventually be
-		/// corrected by building a parallel version that isn't exposed to COM.
+        ///
+        /// IMPORTANT: Since the new version of WizardWrx.AnyCSV.dll has a COM
+        /// interface, it had to target the x86 platform. This can eventually be
+        /// corrected by building a parallel version that isn't exposed to COM.
         /// </remarks>
         public string [ ] Split ( )
         {
@@ -186,7 +191,7 @@ namespace WizardWrx.FormatStringEngine
         /// <summary>
         /// Format the properties into a comma-delimited string, which may be
         /// used as is or processed by the Split method on this instance.
-        /// 
+        ///
         /// Please see the remarks for essential information about this string.
         /// </summary>
         /// <returns>
@@ -196,7 +201,7 @@ namespace WizardWrx.FormatStringEngine
         /// The standard string.Split method cannot split this string correctly,
         /// because it treats commas embedded in its strings as delimiters, thus
         /// splitting the string into too many pieces, and at the wrong places.
-        /// 
+        ///
         /// Use the Split method on this instance, which employs a robust CSV
         /// parsing engine that splits it correctly.
         /// </remarks>

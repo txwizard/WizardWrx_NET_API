@@ -2,10 +2,10 @@ F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Common\bi
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Common\bin\Debug\WizardWrx.Common.dll
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Common\bin\Debug\WizardWrx.Common.pdb
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Common\bin\Debug\WizardWrx.BitMath.dll
+F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Common\bin\Debug\WizardWrx.BitMath.xml
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Common\obj\Debug\Common.csprojAssemblyReference.cache
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Common\obj\Debug\WizardWrx.Common.Properties.Resources.resources
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Common\obj\Debug\Common.csproj.GenerateResource.cache
-F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Common\obj\Debug\Common.csproj.CopyComplete
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Common\obj\Debug\WizardWrx.Common.dll
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Common\obj\Debug\WizardWrx.Common.pdb

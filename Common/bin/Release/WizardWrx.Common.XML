@@ -2299,6 +2299,30 @@
             <see href="https://msdn.microsoft.com/en-us/library/dwhawy9k(v=vs.100).aspx#DFormatString"/>
             <seealso href="https://msdn.microsoft.com/en-us/library/dwhawy9k(v=vs.100).aspx"/>
         </member>
+        <member name="M:WizardWrx.NumericFormats.FormatIntegerLeftPadded(System.Int32,System.Int32)">
+            <summary>
+            Format an integer so that it appears left padded so that its total
+            horizontal width is a specified number of characters, which must be
+            greater than or equal to the minimum number of characters required
+            to render it.
+            </summary>
+            <param name="pintValue">
+            Specify the integer to format to occupy the greater of the number of
+            characters required to display it or the width specified by
+            <paramref name="pintDesiredWidth"/>.
+            </param>
+            <param name="pintDesiredWidth">
+            Specify the minimum desired width in characters to be occupied by
+            the returned string, which is expected to be right-aligned and left
+            padded with spaces.
+            </param>
+            <returns>
+            The return value is a string representation of
+            <paramref name="pintValue"/>
+            formatted right-aligned in a horizontal row of at least
+            <paramref name="pintDesiredWidth"/> characters.
+            </returns>
+        </member>
         <member name="M:WizardWrx.NumericFormats.FormatStatusCode(System.Int32)">
             <summary>
             Return a string representation of a status code, formatted as

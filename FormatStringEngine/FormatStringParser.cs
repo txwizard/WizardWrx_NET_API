@@ -15,8 +15,8 @@
                         impractical, maybe impossible, to correctly parse format
                         strings with regular expressions.
 
-    License:            Copyright (C) 2014-2017, David A. Gray. 
-						All rights reserved.
+    License:            Copyright (C) 2014-2019, David A. Gray.
+                        All rights reserved.
 
                         Redistribution and use in source and binary forms, with
                         or without modification, are permitted provided that the
@@ -66,8 +66,14 @@
                            checker add-in, and incorporate my three-clause
                            BSD license.
 
-	2017/08/13 7.0     DAG Relocated to the constellation of core libraries that
+    2017/08/13 7.0     DAG Relocated to the constellation of core libraries that
                            began as WizardWrx.DllServices2.dll.
+
+    2019/12/15 7.23    DAG Allow the tab consistency add-in to replace tabs with
+                           spaces. The code is otherwise unchanged, although the
+                           new build is required to add a binding redirect, and
+                           the version numbering transitions to the SemVer
+                           scheme.
     ============================================================================
 */
 
@@ -77,15 +83,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 
-
 namespace WizardWrx.FormatStringEngine
 {
     /// <summary>
     /// Use this class to parse format control strings that you intend to use
-	/// with string.Format or one of the Write or WriteLine methods of a stream
-	/// object, such as a Console or TextWriter. Properties and methods report
-	/// on its attributes, including its FormaItems, and errors flagged by the
-	/// parser.
+    /// with string.Format or one of the Write or WriteLine methods of a stream
+    /// object, such as a Console or TextWriter. Properties and methods report
+    /// on its attributes, including its FormaItems, and errors flagged by the
+    /// parser.
     /// </summary>
     public class FormatStringParser
     {
@@ -133,9 +138,9 @@ namespace WizardWrx.FormatStringEngine
 
         /// <summary>
         /// When one appears within French braces that are not escaped, a comma
-		/// indicates an alignment and minimum width are specified. The
-		/// documentation of a composite format string refers to this as the
-		/// Alignment component.
+        /// indicates an alignment and minimum width are specified. The
+        /// documentation of a composite format string refers to this as the
+        /// Alignment component.
         /// </summary>
         public const char ITEM_HAS_ALIGNMENT_ATTRIBUTE = ',';
 
@@ -156,15 +161,15 @@ namespace WizardWrx.FormatStringEngine
 
         /// <summary>
         /// When one appears within French braces, a colon indicates a format
-		/// string, to be applied to the item is specified. The documentation
-		/// of a composite format string refers to this as the Format String
-		/// component.
+        /// string, to be applied to the item is specified. The documentation
+        /// of a composite format string refers to this as the Format String
+        /// component.
         /// </summary>
         public const char ITEM_HAS_FORMAT_STRING_ATTRIBUTE = ':';
 
 
         /// <summary>
-        /// The FormatStringErrorCount returns this value when the 
+        /// The FormatStringErrorCount returns this value when the
         /// FormatStringErrors collection is null. The collection remains so
         /// unless at least one error is found in the string.
         /// </summary>
@@ -261,13 +266,13 @@ namespace WizardWrx.FormatStringEngine
 
         /// <summary>
         /// Create the parser and set the initial value of its FormatString
-        /// property. 
+        /// property.
         /// </summary>
         /// <param name="pstrFormatString">
-		/// Pass a reference to the format control string that you want parsed.
-		/// Since the constructor parses the string, the properties are set, and
-		/// all that remains for you to do is evaluate them.
-		/// </param>
+        /// Pass a reference to the format control string that you want parsed.
+        /// Since the constructor parses the string, the properties are set, and
+        /// all that remains for you to do is evaluate them.
+        /// </param>
         public FormatStringParser
             ( string pstrFormatString )
         {
@@ -373,7 +378,7 @@ namespace WizardWrx.FormatStringEngine
                         if ( chrThisCharacter == ITEM_BEGIN )
                         {   // The first character is a left French brace.
                             enmState = State.ItemBegin;
-						}   // TRUE block, if ( chrThisCharacter == ITEM_BEGIN )
+                        }   // TRUE block, if ( chrThisCharacter == ITEM_BEGIN )
                         else
                         {   // The first character is something else.
                             enmState = State.ProcessingLiterals;
@@ -383,7 +388,7 @@ namespace WizardWrx.FormatStringEngine
 
                     case State.ProcessingLiterals:
                         if ( chrThisCharacter == ITEM_BEGIN )
-                        {   // Found a left French brace. 
+                        {   // Found a left French brace.
                             enmState = State.ItemBegin;
                         }   // if ( chrThisCharacter == ITEM_BEGIN )
 
@@ -407,14 +412,14 @@ namespace WizardWrx.FormatStringEngine
                         if ( chrThisCharacter == ITEM_BEGIN )
                         {   // Left brace is escaped. Revert to scanning.
                             enmState = State.ProcessingLiterals;
-						}   // if ( chrThisCharacter == ITEM_BEGIN )
+                        }   // if ( chrThisCharacter == ITEM_BEGIN )
                         else if ( char.IsDigit ( chrThisCharacter ) )
                         {   // Found a digit. This is expected.
                             enmState = State.IndexComponet;
                             fiCurrent = new FormatItem (
                                 ( intCharPos - GO_BACK_ONE_CHARACTER ) ,
                                 ( int ) Char.GetNumericValue ( chrThisCharacter ) );
-						}   // else if ( char.IsDigit ( chrThisCharacter ) )
+                        }   // else if ( char.IsDigit ( chrThisCharacter ) )
                         else
                         {   // Character is not a digit. Report the error and stop processing this format item.
                             ReportNewError (
@@ -434,19 +439,19 @@ namespace WizardWrx.FormatStringEngine
                                 ref enmState ,          // On return, this is always State.ProcessingLiterals.
                                 intCharPos ,            // On return, this is always unchanged.
                                 ref fiCurrent );        // On return, this is always null.
-						}   // TRUE block, if ( chrThisCharacter == ITEM_END )
+                        }   // TRUE block, if ( chrThisCharacter == ITEM_END )
                         else if ( char.IsDigit ( chrThisCharacter ) )
                         {   // Item index has more digits.
                             fiCurrent.UpdateIndex ( chrThisCharacter );
-						}   // else if ( char.IsDigit ( chrThisCharacter ) )
+                        }   // else if ( char.IsDigit ( chrThisCharacter ) )
                         else if ( chrThisCharacter == ITEM_HAS_ALIGNMENT_ATTRIBUTE )
                         {   // This is a flag, whose only effect is to cause a state change.
                             enmState = State.AlignmentBegin;
-						}   // else if ( chrThisCharacter == ITEM_HAS_ALIGNMENT_ATTRIBUTE )
+                        }   // else if ( chrThisCharacter == ITEM_HAS_ALIGNMENT_ATTRIBUTE )
                         else if ( chrThisCharacter == ITEM_HAS_FORMAT_STRING_ATTRIBUTE )
                         {   // This is a flag, whose only effect is to cause a state change.
                             enmState = State.FormatBegin;
-						}   // else if ( chrThisCharacter == ITEM_HAS_FORMAT_STRING_ATTRIBUTE )
+                        }   // else if ( chrThisCharacter == ITEM_HAS_FORMAT_STRING_ATTRIBUTE )
                         else
                         {   // Format item is invalid. Report the error and stop processing this format item.
                             ReportNewError (
@@ -465,17 +470,17 @@ namespace WizardWrx.FormatStringEngine
                             fiCurrent.UpdateMinimumWidth ( chrThisCharacter );
                             fiCurrent.TextAlignment = FormatItem.Alignment.Right;
                             enmState = State.AlignmentComponent;
-						}   // if ( char.IsDigit ( chrThisCharacter ) )
+                        }   // if ( char.IsDigit ( chrThisCharacter ) )
                         else if ( chrThisCharacter == ITEM_IS_LEFT_ALIGNED )
                         {   // Item is left aligned.
                             fiCurrent.TextAlignment = FormatItem.Alignment.Left;
                             enmState = State.AlignmentFlag;
-						}   // else if ( chrThisCharacter == ITEM_IS_LEFT_ALIGNED )
+                        }   // else if ( chrThisCharacter == ITEM_IS_LEFT_ALIGNED )
                         else if ( chrThisCharacter == ITEM_IS_RIGHT_ALIGNED )
                         {   // Item is right aligned.
                             fiCurrent.TextAlignment = FormatItem.Alignment.Right;
                             enmState = State.AlignmentFlag;
-						}   // else if ( chrThisCharacter == ITEM_IS_RIGHT_ALIGNED )
+                        }   // else if ( chrThisCharacter == ITEM_IS_RIGHT_ALIGNED )
                         else
                         {   // Format item is invalid. Report the error and stop processing this format item.
                             ReportNewError (
@@ -493,7 +498,7 @@ namespace WizardWrx.FormatStringEngine
                         {   // The alignment flag (+/-) must be followed by at least one digit.
                             fiCurrent.MinimumWidth = ( int ) char.GetNumericValue ( chrThisCharacter );
                             enmState = State.AlignmentComponent;
-						}   // TRUE (normal outcome) block, if ( char.IsDigit ( chrThisCharacter ) )
+                        }   // TRUE (normal outcome) block, if ( char.IsDigit ( chrThisCharacter ) )
                         else
                         {   // Format item is invalid. Report the error and stop processing this format item.
                             ReportNewError (
@@ -510,18 +515,18 @@ namespace WizardWrx.FormatStringEngine
                         if ( char.IsDigit ( chrThisCharacter ) )
                         {   // Update the MinimumWidth property.
                             fiCurrent.UpdateMinimumWidth ( chrThisCharacter );
-						}   // if ( char.IsDigit ( chrThisCharacter ) )
+                        }   // if ( char.IsDigit ( chrThisCharacter ) )
                         else if ( chrThisCharacter == ITEM_HAS_FORMAT_STRING_ATTRIBUTE )
                         {   // This is a flag, whose only effect is to cause a state change.
                             enmState = State.FormatBegin;
-						}   // else if ( chrThisCharacter == ITEM_HAS_FORMAT_STRING_ATTRIBUTE )
+                        }   // else if ( chrThisCharacter == ITEM_HAS_FORMAT_STRING_ATTRIBUTE )
                         else if ( chrThisCharacter == ITEM_END )
                         {   // Add the fully populated item to the collection, change the State flag, and discard the FormatItem.
                             SaveFormatItem (
                                 ref enmState ,          // On return, this is always State.ProcessingLiterals.
                                 intCharPos ,            // On return, this is always unchanged.
                                 ref fiCurrent );        // On return, this is always null.
-						}   // else if ( chrThisCharacter == ITEM_END )
+                        }   // else if ( chrThisCharacter == ITEM_END )
                         else
                         {   // Format item is invalid. Report the error and stop processing this format item.
                             ReportNewError (
@@ -539,7 +544,7 @@ namespace WizardWrx.FormatStringEngine
                         {   // Unless it's a closing French brace, use the current character to start a new StringBuilder.
                             sbFormatComponent = new StringBuilder ( chrThisCharacter.ToString ( ) );
                             enmState = State.FormatString;
-						}   // TRUE (expected outcome) block, if ( chrThisCharacter != ITEM_END )
+                        }   // TRUE (expected outcome) block, if ( chrThisCharacter != ITEM_END )
                         else
                         {   // Format item is invalid. Report the error and stop processing this format item.
                             ReportNewError (
@@ -561,7 +566,7 @@ namespace WizardWrx.FormatStringEngine
                                 ref enmState ,          // On return, this is always State.ProcessingLiterals.
                                 intCharPos ,            // On return, this is always unchanged.
                                 ref fiCurrent );        // On return, this is always null.
-						}   // TRUE block, if ( chrThisCharacter == ITEM_END )
+                        }   // TRUE block, if ( chrThisCharacter == ITEM_END )
                         else
                         {   // Append to string.
                             sbFormatComponent.Append ( chrThisCharacter );
@@ -569,7 +574,7 @@ namespace WizardWrx.FormatStringEngine
 
                         break;  // case State.FormatString
                 }   // switch ( enmState )
-			}   // foreach ( char chrThisCharacter in _strFormatString )
+            }   // foreach ( char chrThisCharacter in _strFormatString )
 
             if ( enmState != State.ProcessingLiterals )
             {
@@ -632,12 +637,12 @@ namespace WizardWrx.FormatStringEngine
         /// <param name="prenmState">
         /// The State enumeration, which governs the behavior of the parsing
         /// engine, is set to ProcessingLiterals to indicate that processing is
-        /// between format items. 
-        /// 
+        /// between format items.
+        ///
         /// Since this method changes its value, and it is a value type (Any
-        /// enumeration is really an integer in handcuffs.), it is passed by 
-		/// reference, so that the change is reflected in the caller's address
-		/// space.
+        /// enumeration is really an integer in handcuffs.), it is passed by
+        /// reference, so that the change is reflected in the caller's address
+        /// space.
         /// </param>
         /// <param name="pintCharPos">
         /// Since this integer is used, but not changed, it can be safely passed

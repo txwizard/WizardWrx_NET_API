@@ -17,8 +17,8 @@
                         Since this is tested code, I started the version number
                         at 2.0.
 
-    License:            Copyright (C) 2012-2017, David A. Gray. 
-						All rights reserved.
+    License:            Copyright (C) 2012-2019, David A. Gray. 
+                        All rights reserved.
 
                         Redistribution and use in source and binary forms, with
                         or without modification, are permitted provided that the
@@ -57,87 +57,88 @@
     Revision History
     ----------------------------------------------------------------------------
 
-    Date       Version Author Synopsis
-    ---------- ------- ------ --------------------------------------------------
-    2012/11/19 2.0     DAG    This class is new, though the concept isn't.
+    Date       Version By  Synopsis
+    ---------- ------- --- --------------------------------------------------
+    2012/11/19 2.0     DAG This class is new, though the concept isn't.
 
-    2014/06/29 2.3     DAG    1) Add GetPaddedLabel method.
+    2014/06/29 2.3     DAG 1) Add GetPaddedLabel method.
 
-                              2) Allow exceptions to be thrown when FormatDetail
-                                 is called prematurely.
+                           2) Allow exceptions to be thrown when FormatDetail is
+                              called prematurely.
 
-                              3) Move all messages from embedded constants to
-                                 library resource strings.
+                           3) Move all messages from embedded constants to
+                              library resource strings.
 
-    2014/07/19 2.5     DAG    1) Add DisplayFormat as an instance property that
-                                 defaults to the current static DetailFormat.
+    2014/07/19 2.5     DAG 1) Add DisplayFormat as an instance property that
+                              defaults to the current static DetailFormat.
 
-                              2) Add DisplayOrder as an instance property that
-                                 defaults to zero. To make DisplayOrder useful,
-                                 implement the IComparable interface.
+                           2) Add DisplayOrder as an instance property that
+                              defaults to zero. To make DisplayOrder useful,
+                              implement the IComparable interface.
 
-                              3) Add SupplementaryDetails property and a static
-                                 companion, DetailFormatItems, and change the
-                                 FormatDetail method to use it, if set and
-                                 needed, to construct a report item.
+                           3) Add SupplementaryDetails property and a static
+                              companion, DetailFormatItems, and change the
+                              FormatDetail method to use it, if set and
+                              needed, to construct a report item.
 
-                              4) Add a FormatDetail overload that uses an
-                                 unsigned integer, such as the Count property of
-                                 a populated ReportDetails collection, and the
-                                 GetPaddedLabel method to render a neatly
-                                 aligned list when the collection is enumerated.
+                           4) Add a FormatDetail overload that uses an
+                              unsigned integer, such as the Count property of a
+                              populated ReportDetails collection, and the
+                              GetPaddedLabel method to render a neatly
+                              aligned list when the collection is enumerated.
 
-                              5) BREAKING CHANGE ALERT: 1) GetPaddedLabel Method
-                                                        2) GetPaddedValue Method
+                           5) BREAKING CHANGE ALERT: 1) GetPaddedLabel Method
+                                                     2) GetPaddedValue Method
 
-                                 Replace ReportDetails pdtlColl with unsigned
-                                 integer (uint) puintWidthOfWidestValue.
+                              Replace ReportDetails pdtlColl with unsigned
+                              integer (uint) puintWidthOfWidestValue.
 
-                                 This change affects only one assembly outside
-                                 the library source code tree. The ProgramParams
-                                 class of PolyCat.exe is the only application to
-                                 date of either method, which classified as For
-                                 Internal Use Only. Although I used it to solve
-                                 a problem for Kevin Cox, I ran it here, and
-                                 sent him the report.
+                              This change affects only one assembly outside
+                              the library source code tree. The ProgramParams
+                              class of PolyCat.exe is the only application to
+                              date of either method, which was classified as For
+                              Internal Use Only. Although I used it to solve a
+                              problem for Kevin Cox, I ran it here, and sent him
+                              the report.
 
-    2014/07/21 2.6     DAG    1) Reinstate the versions of GetPaddedLabel
-                                 and GetPaddedValue that expect signed integers,
-                                 to eliminate pointless casts back and forth.
+    2014/07/21 2.6     DAG 1) Reinstate the versions of GetPaddedLabel and
+                              GetPaddedValue that expect signed integers, to
+                              eliminate pointless casts back and forth.
 
-                              2) To differentiate it from unsigned integers as
-                                 report item values, create an ItemDisplayOrder
-                                 structure, and cast the DisplayOrder property
-                                 as one of these. The structure has one member,
-                                 an unsigned integer.
+                           2) To differentiate it from unsigned integers as
+                              report item values, create an ItemDisplayOrder
+                              structure, and cast the DisplayOrder property as
+                              one of these. The structure has one member, an
+                              unsigned integer.
 
-                                 Since DisplayOrder was added in version 2.5,
-                                 which I released just a couple of days ago, and
-                                 hasn't been integrated into production code, it
-                                 doesn't qualify as a breaking change.
+                              Since DisplayOrder was added in version 2.5, which
+                              I released just a couple of days ago, and has not
+                              been integrated into production code, it does not
+                              qualify as a breaking change.
  
-	2016/06/05 3.0     DAG    Break the dependency on WizardWrx.SharedUtl2.dll,
-                              correct misspelled words flagged by the spelling
-                              checker add-in, and incorporate my three-clause
-                              BSD license.
+    2016/06/05 3.0     DAG Break the dependency on WizardWrx.SharedUtl2.dll,
+                           correct misspelled words flagged by the spelling
+                           checker add-in, and incorporate my three-clause BSD
+                           license.
 
-	2017/08/12 7.0     DAG    Move this class into WizardWrx.Core.dll, alongside
-                              its siblings, so that WizardWrx.SharedUtl4.dll can
-                              be retired.
+    2017/08/12 7.0     DAG Move this class into WizardWrx.Core.dll, alongside its
+                           siblings, so that WizardWrx.SharedUtl4.dll can be
+                           retired.
 
-	2017/09/07 7.0     DAG    Implement ItemDisplayOrder as a signe integer.
+    2017/09/07 7.0     DAG Implement ItemDisplayOrder as a signe integer.
+
+    2019/12/16 7.23    DAG Allow the tab consistency add-in to replace tabs with
+                           spaces. The code is otherwise unchanged, although the
+                           new build is required to add a binding redirect, and
+                           the version numbering transitions to the SemVer
+                           scheme.
     ============================================================================
 */
 
 
 using System;
-using System.Collections.Generic;
-using System.Text;
 
-using System.ComponentModel;
-using WizardWrx;
 using WizardWrx.FormatStringEngine;
-
 
 namespace WizardWrx
 {
@@ -203,13 +204,13 @@ namespace WizardWrx
             /// ItemDisplayOrder structure.
             /// </param>
             /// <returns>
-			/// The return value is an ItemDisplayOrder structure wrapped around
-			/// the specified integer.
-			/// </returns>
-			/// <remarks>
-			/// This operator must be explicit to coerce use of an explicit cast
-			/// to steer the CLR to bind to the desired ReportDetail constructor.
-			/// </remarks>
+            /// The return value is an ItemDisplayOrder structure wrapped around
+            /// the specified integer.
+            /// </returns>
+            /// <remarks>
+            /// This operator must be explicit to coerce use of an explicit cast
+            /// to steer the CLR to bind to the desired ReportDetail constructor.
+            /// </remarks>
             static public explicit operator ItemDisplayOrder ( int pintItemdisplayorder )
             {
                 return new ItemDisplayOrder ( pintItemdisplayorder );
@@ -409,11 +410,11 @@ namespace WizardWrx
         /// <summary>
         /// The default constructor creates an empty ReportDetail.
         /// </summary>
-		public ReportDetail ( )
-		{
-			if ( s_aobjDefaultSupplementaryDetails != null )
-				_enmState = _enmState | State.HaveFormatItems;
-		} // Default constructor (1 of 17)
+        public ReportDetail ( )
+        {
+            if ( s_aobjDefaultSupplementaryDetails != null )
+                _enmState = _enmState | State.HaveFormatItems;
+        } // Default constructor (1 of 17)
 
 
         /// <summary>
@@ -1536,7 +1537,7 @@ namespace WizardWrx
             const int ITEM_FOR_LABEL = ArrayInfo.ARRAY_FIRST_ELEMENT;
             const int ITEM_FOR_VALUE = MagicNumbers.PLUS_ONE;
             const int ITEM_FOR_ORDINAL = MagicNumbers.PLUS_TWO;
-			const int RESERVE_FOR_STANDARD_FIELDS = ITEM_FOR_ORDINAL + ArrayInfo.ORDINAL_FROM_INDEX;
+            const int RESERVE_FOR_STANDARD_FIELDS = ITEM_FOR_ORDINAL + ArrayInfo.ORDINAL_FROM_INDEX;
                 
             //  ----------------------------------------------------------------
             //  Obscure Syntax Alert:
@@ -1587,10 +1588,10 @@ namespace WizardWrx
         /// </returns>
         private string SelectLabel ( int pintWidthOfWidestLabel )
         {
-			if ( pintWidthOfWidestLabel == ListInfo.EMPTY_STRING_LENGTH )
-				return _strLabel;
-			else
-				return this.GetPaddedLabel ( pintWidthOfWidestLabel );
+            if ( pintWidthOfWidestLabel == ListInfo.EMPTY_STRING_LENGTH )
+                return _strLabel;
+            else
+                return this.GetPaddedLabel ( pintWidthOfWidestLabel );
         }   // private string SelectLabel
         #endregion  // Private Instance Methods
 

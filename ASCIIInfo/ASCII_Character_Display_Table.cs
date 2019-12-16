@@ -14,12 +14,12 @@
     Remarks:            Some characters that would be nice to render in an
                         unambiguous way are simply not amendable to such.
 
-						The table is initialized from data stored in an XML
+                        The table is initialized from data stored in an XML
                         document that is persisted as a custom resource that is
                         embedded in the DLL that exposes this class.
 
     License:            Copyright (C) 2014-2017, David A. Gray. 
-						All rights reserved.
+                        All rights reserved.
 
                         Redistribution and use in source and binary forms, with
                         or without modification, are permitted provided that the
@@ -64,7 +64,7 @@
     ---------- ------- --- -----------------------------------------------------
     2014/07/19 1.0     DAG Initial implementation.
 
-	2016/06/12 3.0     DAG 1) Break the dependency on WizardWrx.SharedUtl2.dll,
+    2016/06/12 3.0     DAG 1) Break the dependency on WizardWrx.SharedUtl2.dll,
                               correct misspelled words flagged by the spelling
                               checker add-in, and incorporate my three-clause
                               BSD license.
@@ -72,7 +72,7 @@
                            2) Add a Comment property, to support a like named
                               node in the XML document tree.
 
-	2017/08/04 7.0     DAG Relocated to the constellation of core libraries that
+    2017/08/04 7.0     DAG Relocated to the constellation of core libraries that
                            began as WizardWrx.DllServices2.dll.
     ============================================================================
 */
@@ -147,14 +147,14 @@ namespace WizardWrx
         /// you really need is a copy of the ASCIICharacterDisplayInfo table,
         /// available through the read only AllASCIICharacters property, which
         /// can be assigned directly to an AllASCIICharacters array.
-		/// 
-		/// To preserve its independence, this class uses the archaic Singleton
-		/// implementation, rather than inherit from the abstract base class in
-		/// WizardWrx.DllServices2.dll, although I could certainly fix that by
-		/// linking the source code into this assembly. Since that creates an
-		/// even more awkward dependency, and I don't want to put an actual copy
-		/// in this source tree, I'll leave it alone. After all, this class is
-		/// not exactly a high traffic property.
+        /// 
+        /// To preserve its independence, this class uses the archaic Singleton
+        /// implementation, rather than inherit from the abstract base class in
+        /// WizardWrx.DllServices2.dll, although I could certainly fix that by
+        /// linking the source code into this assembly. Since that creates an
+        /// even more awkward dependency, and I don't want to put an actual copy
+        /// in this source tree, I'll leave it alone. After all, this class is
+        /// not exactly a high traffic property.
         /// </remarks>
         public static ASCII_Character_Display_Table GetTheSingleInstance ( )
         {
@@ -170,17 +170,17 @@ namespace WizardWrx
         /// <summary>
         /// Gets the populated ASCIICharacterDisplayInfo array that is the sole
         /// public property of this class, which exists to ensure that exactly
-		/// one instance of this table exists.
+        /// one instance of this table exists.
         /// </summary>
         public ASCIICharacterDisplayInfo [ ] AllASCIICharacters
         {
             get { return _asciiTable; }
         }   // AllASCIICharacters
-		#endregion	// Instance Properties
+        #endregion	// Instance Properties
 
 
-		#region Private Instance Methods
-		/// <summary>
+        #region Private Instance Methods
+        /// <summary>
         /// Since the class is a singleton, I separated the initializer from the
         /// constructor, as has been my custom.
         /// </summary>
@@ -199,10 +199,10 @@ namespace WizardWrx
 
             const int NODE_COUNT_CODE_BY_ITSELF = 1;
             const int NODE_COUNT_CODE_WITH_ALTERNATE_OR_COMMENT = 2;
-			const int NODE_COUNT_CODE_WITH_ALTERNATE_AND_COMMENT = 3;
+            const int NODE_COUNT_CODE_WITH_ALTERNATE_AND_COMMENT = 3;
             const int NODE_INDEX_OF_CODE = 0;
             const int NODE_INDEX_OF_DETAIL_ITEM_1 = 1;
-			const int NODE_INDEX_OF_DETAIL_ITEM_2 = 2;
+            const int NODE_INDEX_OF_DETAIL_ITEM_2 = 2;
 
             const int REAL_ROOT_NODE_INDEX = 2;
 
@@ -237,19 +237,19 @@ namespace WizardWrx
                             break;  // case NODE_COUNT_CODE_BY_ITSELF
 
                         case NODE_COUNT_CODE_WITH_ALTERNATE_OR_COMMENT:
-							ParseDetailItem ( intNextSlot , xmlCharacter , uintNodeCode , NODE_INDEX_OF_DETAIL_ITEM_1 );
+                            ParseDetailItem ( intNextSlot , xmlCharacter , uintNodeCode , NODE_INDEX_OF_DETAIL_ITEM_1 );
                             break;  // case NODE_COUNT_CODE_WITH_ALTERNATE
 
-						case NODE_COUNT_CODE_WITH_ALTERNATE_AND_COMMENT:
-							for ( int intNodeIndex = NODE_INDEX_OF_DETAIL_ITEM_1 ;
-								      intNodeIndex < NODE_INDEX_OF_DETAIL_ITEM_2 ;
-									  intNodeIndex++ )
-								ParseDetailItem (
-									intNextSlot ,
-									xmlCharacter ,
-									uintNodeCode ,
-									intNodeIndex );
-							break;	// case NODE_COUNT_CODE_WITH_ALTERNATE_AND_COMMENT
+                        case NODE_COUNT_CODE_WITH_ALTERNATE_AND_COMMENT:
+                            for ( int intNodeIndex = NODE_INDEX_OF_DETAIL_ITEM_1 ;
+                                      intNodeIndex < NODE_INDEX_OF_DETAIL_ITEM_2 ;
+                                      intNodeIndex++ )
+                                ParseDetailItem (
+                                    intNextSlot ,
+                                    xmlCharacter ,
+                                    uintNodeCode ,
+                                    intNodeIndex );
+                            break;	// case NODE_COUNT_CODE_WITH_ALTERNATE_AND_COMMENT
                     }   // switch ( intGrandChildren )
                 }   // TRUE (expected outcome) block, if ( uint.TryParse ( xmlCode.InnerXml , out uintNodeCode ) )
                 else
@@ -262,74 +262,74 @@ namespace WizardWrx
         }   // InitialzeInstance
 
 
-		/// <summary>
-		/// Parse the detail items, of which two are currently defined, into the
-		/// properties of a new ASCIICharacterDisplayInfo instance, which can be
-		/// fully initialized by any of its three public constructors, depending
-		/// on what properties have values.
-		/// </summary>
-		/// <param name="pintNextSlot">
-		/// Argument pintNextSlot is the subscript of the _asciiTable element to
-		/// store the current character.
-		/// 
-		/// The _asciiTable array contains 256 elements, which happens to be the
-		/// number of ASCII characters. Since characters are numbered from zero
-		/// through 255, the ASCII code is the obvious index for the array.
-		/// 
-		/// Instance member _asciiTable is ab array of ASCIICharacterDisplayInfo
-		/// objects that is initialized with the details read from the XML 
-		/// document in which they are stored. The XML document is stored in the
-		/// DLL as n custom resource. 
-		/// </param>
-		/// <param name="pxmlCharacterInfo">
-		/// Each character is represented as a XmlNode; this method processes the
-		/// detail items on one such node.
-		/// </param>
-		/// <param name="puintNodeCode">
-		/// This is the ASCII code, which the calling routine derives by parsing
-		/// its first child node, which is required to store the ASCII code.
-		/// 
-		/// Since this routine processes an embedded XML document, we can afford
-		/// to impose a rigid schema.
-		/// </param>
-		/// <param name="pintChildRank">
-		/// Each invocation of this method processes one child node on the XmlNode
-		/// supplied as its pxmlCharacterInfo argument. The calling routine keeps
-		/// track of the number of children, and calls it once for each child.
-		/// </param>
-		private void ParseDetailItem (
-			int pintNextSlot ,
-			XmlNode pxmlCharacterInfo ,
-			uint puintNodeCode ,
-			int pintChildRank )
-		{
-			const string ASCII_DISPLAY_ALTERNATIVE_NODE_NAME = @"Display";
-			const string ASCII_DISPLAY_COMMENT = @"Comment";
+        /// <summary>
+        /// Parse the detail items, of which two are currently defined, into the
+        /// properties of a new ASCIICharacterDisplayInfo instance, which can be
+        /// fully initialized by any of its three public constructors, depending
+        /// on what properties have values.
+        /// </summary>
+        /// <param name="pintNextSlot">
+        /// Argument pintNextSlot is the subscript of the _asciiTable element to
+        /// store the current character.
+        /// 
+        /// The _asciiTable array contains 256 elements, which happens to be the
+        /// number of ASCII characters. Since characters are numbered from zero
+        /// through 255, the ASCII code is the obvious index for the array.
+        /// 
+        /// Instance member _asciiTable is ab array of ASCIICharacterDisplayInfo
+        /// objects that is initialized with the details read from the XML 
+        /// document in which they are stored. The XML document is stored in the
+        /// DLL as n custom resource. 
+        /// </param>
+        /// <param name="pxmlCharacterInfo">
+        /// Each character is represented as a XmlNode; this method processes the
+        /// detail items on one such node.
+        /// </param>
+        /// <param name="puintNodeCode">
+        /// This is the ASCII code, which the calling routine derives by parsing
+        /// its first child node, which is required to store the ASCII code.
+        /// 
+        /// Since this routine processes an embedded XML document, we can afford
+        /// to impose a rigid schema.
+        /// </param>
+        /// <param name="pintChildRank">
+        /// Each invocation of this method processes one child node on the XmlNode
+        /// supplied as its pxmlCharacterInfo argument. The calling routine keeps
+        /// track of the number of children, and calls it once for each child.
+        /// </param>
+        private void ParseDetailItem (
+            int pintNextSlot ,
+            XmlNode pxmlCharacterInfo ,
+            uint puintNodeCode ,
+            int pintChildRank )
+        {
+            const string ASCII_DISPLAY_ALTERNATIVE_NODE_NAME = @"Display";
+            const string ASCII_DISPLAY_COMMENT = @"Comment";
 
-			XmlNode xmlDetailItem = pxmlCharacterInfo.ChildNodes [ pintChildRank ];
+            XmlNode xmlDetailItem = pxmlCharacterInfo.ChildNodes [ pintChildRank ];
 
-			if ( xmlDetailItem.Name == ASCII_DISPLAY_ALTERNATIVE_NODE_NAME )
-				_asciiTable [ pintNextSlot ] = new ASCIICharacterDisplayInfo (
-					puintNodeCode ,
-					xmlDetailItem.InnerXml );
-			else if ( xmlDetailItem.Name == ASCII_DISPLAY_COMMENT )
-				_asciiTable [ pintNextSlot ] = new ASCIICharacterDisplayInfo (
-					puintNodeCode ,
-					null ,
-					xmlDetailItem.InnerXml );
-			else
-				throw new InvalidOperationException (
-					Properties.Resources.ERRMSG_INVALID_NODE_IN_ASCII_TABLE +
-					pxmlCharacterInfo.InnerXml );
-		}	// ParseDetailItem
-		#endregion	// Private Instance Methods
+            if ( xmlDetailItem.Name == ASCII_DISPLAY_ALTERNATIVE_NODE_NAME )
+                _asciiTable [ pintNextSlot ] = new ASCIICharacterDisplayInfo (
+                    puintNodeCode ,
+                    xmlDetailItem.InnerXml );
+            else if ( xmlDetailItem.Name == ASCII_DISPLAY_COMMENT )
+                _asciiTable [ pintNextSlot ] = new ASCIICharacterDisplayInfo (
+                    puintNodeCode ,
+                    null ,
+                    xmlDetailItem.InnerXml );
+            else
+                throw new InvalidOperationException (
+                    Properties.Resources.ERRMSG_INVALID_NODE_IN_ASCII_TABLE +
+                    pxmlCharacterInfo.InnerXml );
+        }	// ParseDetailItem
+        #endregion	// Private Instance Methods
 
 
-		#region Private Instance Storage
-		/// <summary>
+        #region Private Instance Storage
+        /// <summary>
         /// It all comes down to this little array.
         /// </summary>
         ASCIICharacterDisplayInfo [ ] _asciiTable;
-		#endregion	// Private Instance Storage
-	}   // class ASCII_Character_Display_Table
+        #endregion	// Private Instance Storage
+    }   // class ASCII_Character_Display_Table
 }   // partial namespace WizardWrx

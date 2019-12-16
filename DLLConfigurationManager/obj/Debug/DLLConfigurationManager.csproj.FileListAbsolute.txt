@@ -14,7 +14,6 @@ F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLConfig
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLConfigurationManager\obj\Debug\DLLConfigurationManager.csprojAssemblyReference.cache
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLConfigurationManager\obj\Debug\WizardWrx.DLLConfigurationManager.Properties.Resources.resources
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLConfigurationManager\obj\Debug\DLLConfigurationManager.csproj.GenerateResource.cache
-F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLConfigurationManager\obj\Debug\DLLConfigurationManager.csproj.CoreCompileInputs.cache
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLConfigurationManager\obj\Debug\DLLConfigurationManager.csproj.CopyComplete
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLConfigurationManager\obj\Debug\WizardWrx.DLLConfigurationManager.dll
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLConfigurationManager\obj\Debug\WizardWrx.DLLConfigurationManager.pdb

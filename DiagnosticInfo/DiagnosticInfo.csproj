@@ -39,28 +39,20 @@
 -->
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-
   <!-- 2019/10/06 23:00:09 - DAG Define custom task NuGetPackageNameFixup.  -->
-  <UsingTask TaskName="NuGetPackageNameFixup"
-             TaskFactory="CodeTaskFactory"
-             AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll">
+  <UsingTask TaskName="NuGetPackageNameFixup" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll">
     <ParameterGroup>
-      <RawNugetPackageVersion    ParameterType="System.String"
-                                 Required="true" />
-      <ActualNugetPackageVersion ParameterType="System.String"
-                                 Output="true" />
+      <RawNugetPackageVersion ParameterType="System.String" Required="true" />
+      <ActualNugetPackageVersion ParameterType="System.String" Output="true" />
     </ParameterGroup>
     <Task>
-      <Code Type="Fragment" Language="cs">
-        <![CDATA[
+      <Code Type="Fragment" Language="cs"><![CDATA[
             ActualNugetPackageVersion = RawNugetPackageVersion.EndsWith ( ".0" ) ? RawNugetPackageVersion.Substring(0,RawNugetPackageVersion.Length-2) : RawNugetPackageVersion;
             Log.LogMessage ( "Custom Task NuGetPackageNameFixup: RawNugetPackageVersion    = "+ RawNugetPackageVersion    );
             Log.LogMessage ( "Custom Task NuGetPackageNameFixup: ActualNugetPackageVersion = "+ ActualNugetPackageVersion );
-        ]]>
-      </Code>
+        ]]></Code>
     </Task>
   </UsingTask>
-
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -107,9 +99,6 @@
     <Compile Include="ClassAndMethodDiagnosticInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- 2019/07/04 10:15:50 - DAG Everything from this point to the end is new, and was added to support NuGet package generation. -->
   <Target Name="AfterBuild">
@@ -127,21 +116,14 @@
   </Target>
   <!-- Publish the project. -->
   <!-- 2019/10/06 23:03:09 - DAG Add custom task NuGetPackageNameFixup.  -->
-  <Target Name="Publish"
-          AfterTargets="Package"
-          Condition=" '$(Configuration)' == 'Release' ">
+  <Target Name="Publish" AfterTargets="Package" Condition=" '$(Configuration)' == 'Release' ">
     <NuGetPackageNameFixup RawNugetPackageVersion="%(OutputAssemblyInfo.Version)">
-		<Output PropertyName="NuGetPackageVersion"
-			    TaskParameter="ActualNugetPackageVersion" />
+      <Output PropertyName="NuGetPackageVersion" TaskParameter="ActualNugetPackageVersion" />
     </NuGetPackageNameFixup>
-    <Exec WorkingDirectory="$(PackageDir)"
-          Command="NuGet.exe push $(AssemblyName).$(NuGetPackageVersion).nupkg" />
+    <Exec WorkingDirectory="$(PackageDir)" Command="NuGet.exe push $(AssemblyName).$(NuGetPackageVersion).nupkg" />
   </Target>
-
-  <Target Name="BeforeBuild"
-  	      Condition=" '$(Configuration)' == 'Debug'">
-    <Exec WorkingDirectory="$(ProjectDir)"
-    	  Command="nuget install packages.config" />
+  <Target Name="BeforeBuild" Condition=" '$(Configuration)' == 'Debug'">
+    <Exec WorkingDirectory="$(ProjectDir)" Command="nuget install packages.config" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

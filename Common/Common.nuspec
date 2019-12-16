@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>The public string resource set has the following new strings: ANSWER_IS_FALSE, ANSWER_IS_NO, ANSWER_IS_TRUE, ANSWER_IS_YES, MSG_BLANK_CAPS, MSG_INTEGER_EVENLY_DIVISIBLE_BY, MSG_INTEGER_IS_EVEN, MSG_INTEGER_IS_ODD,MSG_IS, MSG_IS_NOT, MSG_OBJECT_DOES_NOT_EXIST, MSG_OBJECT_EXISTS, MSG_OBJECT_IS_ABSENT, MSG_OBJECT_IS_MISSING, MSG_OBJECT_IS_PRESENT, MSG_OBJECT_REFERENCE_IS_NULL_CAPS, MSG_VALUE_IS_FALSE, MSG_VALUE_IS_TRUE</releaseNotes>
+	    <releaseNotes>This update adds static method FormatIntegerLeftPadded to the NumericFormats class. This update also adopts the generally accepted SemVer version numbering scheme.</releaseNotes>
     	<copyright>$copyright$</copyright>
     	<tags>Constants Arrays RegExp</tags>
 	</metadata>

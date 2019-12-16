@@ -12,7 +12,6 @@ F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ConsoleSt
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ConsoleStreams\obj\Debug\ConsoleStreams.csprojAssemblyReference.cache
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ConsoleStreams\obj\Debug\WizardWrx.ConsoleStreams.Properties.Resources.resources
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ConsoleStreams\obj\Debug\ConsoleStreams.csproj.GenerateResource.cache
-F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ConsoleStreams\obj\Debug\ConsoleStreams.csproj.CoreCompileInputs.cache
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ConsoleStreams\obj\Debug\ConsoleStreams.csproj.CopyComplete
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ConsoleStreams\obj\Debug\WizardWrx.ConsoleStreams.dll
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ConsoleStreams\obj\Debug\WizardWrx.ConsoleStreams.pdb

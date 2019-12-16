@@ -35,7 +35,7 @@
 
                         3)  This class provides its own synchronization.
 
-    License:            Copyright (C) 2014-2017, David A. Gray. 
+    License:            Copyright (C) 2014-2017, David A. Gray.
 						All rights reserved.
 
                         Redistribution and use in source and binary forms, with
@@ -88,6 +88,12 @@
 
 	2017/08/13 7.0     DAG Relocated to the constellation of core libraries that
                            began as WizardWrx.DllServices2.dll.
+
+    2019/12/15 7.23    DAG Allow the tab consistency add-in to replace tabs with
+                           spaces. The code is otherwise unchanged, although the
+                           new build is required to add a binding redirect, and
+                           the version numbering transitions to the SemVer
+                           scheme.
     ============================================================================
 */
 
@@ -95,13 +101,12 @@
 using System;
 using System.Collections.Generic;
 
-
 namespace WizardWrx.FormatStringEngine
 {
     /// <summary>
     /// This generic List derivative holds the collection of FormatItems found
     /// in a FormatString.
-    /// 
+    ///
     /// While the class, itself, is marked Public, everything else about it is
     /// marked as Internal, so that only instances of classes defined in this
     /// assembly can create a collection or add items to it, while instances of

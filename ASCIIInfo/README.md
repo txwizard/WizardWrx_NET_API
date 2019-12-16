@@ -32,16 +32,17 @@ In particular:
 [https://txwizard.github.io/WizardWrx_NET_API/api/WizardWrx.ASCII_Character_Display_Table.html](https://txwizard.github.io/WizardWrx_NET_API/api/WizardWrx.ASCII_Character_Display_Table.html).
 
 2) Class __ASCIICharacterDisplayInfo__ is described at
-[https://txwizard.github.io/WizardWrx_NET_API/api/WizardWrx.ASCIICharacterDisplayInfo.html](https://txwizard.github.io/WizardWrx_NET_API/api/WizardWrx.ASCIICharacterDisplayInfo.html),
+[https://txwizard.github.io/WizardWrx_NET_API/api/WizardWrx.ASCIICharacterDisplayInfo.html](https://txwizard.github.io/WizardWrx_NET_API/api/WizardWrx.ASCIICharacterDisplayInfo.html).
 
 The easiest way to incorporate the library into your own code is by installing the NuGet package at
-[https://www.nuget.org/packages/WizardWrx.ASCIIInfo](https://www.nuget.org/packages/WizardWrx.ASCIIInfo)
+[https://www.nuget.org/packages/WizardWrx.ASCIIInfo](https://www.nuget.org/packages/WizardWrx.ASCIIInfo).
 
 # Revision History
 
 | Date       | Version | Synopsis
 |------------|---------|---------------------------
-| 2018/10/07 | 7.1     | Override ToString to render all three representations (printable string, hexadecimal, then decimal, in that order), and define static method DisplayCharacterInfo to provide that service for an arbitrary character without instantiating ASCII_Character_Display_Table.
+| 2018/10/07 | 7.23.84 | Adopt the 3-part SemVer version numbering scheme that has become the standard for NuGet packages. The code is otherwise unchanged, and the fourth part of the version number goes away.
+| 2018/10/07 | 7.1.83  | Override ToString to render all three representations (printable string, hexadecimal, then decimal, in that order), and define static method DisplayCharacterInfo to provide that service for an arbitrary character without instantiating ASCII_Character_Display_Table.
 | 2017/08/04 | 7.0     | Relocated to the constellation of core libraries that began as WizardWrx.DllServices2.dll.
 | 2016/06/12 | 3.0     | 1) Break the dependency on WizardWrx.SharedUtl2.dll, correct misspelled words flagged by the spelling checker add-in, and incorporate my three-clause BSD license.
 |            |         | 2) Add a Comment property, to support a like named node in the XML document tree.

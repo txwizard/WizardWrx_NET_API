@@ -1,5 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--
+      ==========================================================================
+      Revision History
+      ==========================================================================
+
+      Date       By  Synopsis
+      ========== === ===========================================================
+      2019/12/15 DAG Define custom task NuGetPackageNameFixup, and add tasks to
+                     build a package and push it to the NuGet repository.
+      ==========================================================================
+  -->
+
+  <!-- 2019/12/15 - DAG Copy custom task NuGetPackageNameFixup from AnyCSV.  -->
+  <UsingTask TaskName="NuGetPackageNameFixup"
+               TaskFactory="CodeTaskFactory"
+               AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll">
+    <ParameterGroup>
+        <RawNugetPackageVersion    ParameterType="System.String"
+                                   Required="true" />
+        <ActualNugetPackageVersion ParameterType="System.String"
+                                   Output="true" />
+    </ParameterGroup>
+    <Task>
+      <Code Type="Fragment" Language="cs">
+        <![CDATA[
+            ActualNugetPackageVersion = RawNugetPackageVersion.EndsWith ( ".0" ) ? RawNugetPackageVersion.Substring(0,RawNugetPackageVersion.Length-2) : RawNugetPackageVersion;
+            Log.LogMessage ( "Custom Task NuGetPackageNameFixup: RawNugetPackageVersion    = "+ RawNugetPackageVersion    );
+            Log.LogMessage ( "Custom Task NuGetPackageNameFixup: ActualNugetPackageVersion = "+ ActualNugetPackageVersion );
+        ]]>
+      </Code>
+    </Task>
+  </UsingTask>
+
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -13,7 +46,12 @@
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
+    <!-- 2019/12/15 11:57:09 - DAG - Added for NuGet package builder (copied from WizardWrx.Common project) -->
+    <PackageDir>$(ProjectDir)Package</PackageDir>
+    <SolutionPackageDir>$(ProjectDir)..\packages</SolutionPackageDir>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>.pdb$;(AllowedOutputExtensionsInPackageBuildOutputFolder)</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
+
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -24,6 +62,7 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\Wizardwrx.ASCIIInfo.XML</DocumentationFile>
   </PropertyGroup>
+
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
@@ -33,10 +72,12 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\Wizardwrx.ASCIIInfo.XML</DocumentationFile>
   </PropertyGroup>
+
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.XML" />
   </ItemGroup>
+
   <ItemGroup>
     <Compile Include="..\ProductAssemblyInfo.cs">
       <Link>Properties\ProductAssemblyInfo.cs</Link>
@@ -50,6 +91,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
   </ItemGroup>
+
   <ItemGroup>
     <EmbeddedResource Include="ASCII_Character_Display_Table.xml" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -57,7 +99,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
   <PropertyGroup>
     <PostBuildEvent>wwBldNbrMgr.exe -r "-p$(ProjectDir) " "-t$(TargetPath)"</PostBuildEvent>
@@ -73,4 +117,36 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+
+  <!-- 2019/12/15 12:15:37 - DAG Everything from this point to the end is new, and was added to support NuGet package generation. -->
+
+  <Target Name="AfterBuild">
+    <!-- Load up the information from the assembly -->
+    <GetAssemblyIdentity AssemblyFiles="$(OutputPath)$(AssemblyName).dll">
+        <Output TaskParameter="Assemblies"
+                ItemName="OutputAssemblyInfo" />
+    </GetAssemblyIdentity>
+    <Message Text="Info: Assembly $(AssemblyName).dll version = %(OutputAssemblyInfo.Version)" />
+  </Target>
+
+  <Target Name="Package"
+          AfterTargets="AfterBuild"
+          Condition=" '$(Configuration)' == 'Release'">
+    <!-- Ensure the Package directory exists for this project -->
+    <MakeDir Directories="$(PackageDir)" />
+    <!-- Package the project -->
+    <Exec WorkingDirectory="$(BuildDir)"
+   	      Command="NuGet.exe pack $(ProjectName).csproj -Properties Configuration=$(Configuration) -OutputDir $(PackageDir) -Verbosity detailed" />
+  </Target>
+
+  <!-- Publish the project. -->
+  <Target Name="Publish"
+          AfterTargets="Package"
+          Condition=" '$(Configuration)' == 'Release' ">
+    <NuGetPackageNameFixup RawNugetPackageVersion="%(OutputAssemblyInfo.Version)">
+        <Output PropertyName="NuGetPackageVersion" TaskParameter="ActualNugetPackageVersion" />
+    </NuGetPackageNameFixup>
+    <Exec WorkingDirectory="$(PackageDir)"
+          Command="NuGet.exe push $(AssemblyName).$(NuGetPackageVersion).nupkg" />
+  </Target>
 </Project>

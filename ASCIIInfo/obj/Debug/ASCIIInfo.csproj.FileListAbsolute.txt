@@ -4,6 +4,5 @@ F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ASCIIInfo
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ASCIIInfo\obj\Debug\ASCIIInfo.csprojAssemblyReference.cache
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ASCIIInfo\obj\Debug\WizardWrx.Properties.Resources.resources
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ASCIIInfo\obj\Debug\ASCIIInfo.csproj.GenerateResource.cache
-F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ASCIIInfo\obj\Debug\ASCIIInfo.csproj.CoreCompileInputs.cache
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ASCIIInfo\obj\Debug\WizardWrx.ASCIIInfo.dll
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ASCIIInfo\obj\Debug\WizardWrx.ASCIIInfo.pdb

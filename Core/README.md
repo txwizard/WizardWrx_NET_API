@@ -1,5 +1,23 @@
 # WizardWrx Core ReadMe
 
+## Version 7.23
+
+The code is unchanged.
+
+This update implements two changes in the infrastructure of the __WizardWrx .NET
+API__ libraries.
+
+1. These libraries abandon NuGet packages as their means of consuming updates
+to sibling dependencies `WizardWrx.Common` and `WizardWrx.FormatStringEngine` in
+favor of old-fashioned project references. Though consuming NuGet packages looks
+great on paper, it proved awkward in practice because everything stayed one
+release behind.
+
+2. These libraries trade traditional 4-part version numbers for the industry
+standard 3-part SemVer numbering adopted for the NuGet Repository. This scheme
+improves version control by eliminating the time stamp generated for the fourth
+part by the asterisk, thereby making builds detrministic.
+
 ## Version 7.20
 
 For the benefit of NuGet package subscribers, following is a summary of the

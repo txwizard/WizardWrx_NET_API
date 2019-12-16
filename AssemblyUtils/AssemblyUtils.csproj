@@ -38,9 +38,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="WizardWrx.AnyCSV, Version=7.1.135.32875, Culture=neutral, PublicKeyToken=39f6551a21db420a, processorArchitecture=MSIL">
-      <HintPath>C:\Users\DAG\.nuget\packages\WizardWrx.AnyCSV.7.1.135.32875\lib\net20\WizardWrx.AnyCSV.dll</HintPath>
-    </Reference>
     <Reference Include="WizardWrx.ASCIIInfo, Version=7.1.83.29298, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>C:\Users\DAG\.nuget\packages\WizardWrx.ASCIIInfo.7.1.83.29298\lib\net20\WizardWrx.ASCIIInfo.dll</HintPath>
     </Reference>
@@ -80,7 +77,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- 2019/05/21 00:02:27 - DAG Everything from this point to the end is new, and was added to support NuGet package generation. -->

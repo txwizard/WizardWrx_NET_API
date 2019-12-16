@@ -5,38 +5,38 @@
 
     Class Name:			CmdLneArgsBasic
 
-	File Name:			CmdLneArgsBasic.cs
+    File Name:			CmdLneArgsBasic.cs
 
     Synopsis:			Parse valid commands into a Dictionary, discarding 
-						invalid arguments.
+                        invalid arguments.
 
     Remarks:			Beginning with version 2.0, I added an option to treat
-						the empty string as a valid default value for a switch 
-						or named argument. Since this change has the potential
-						to change the behavior of existing code, of which there
-						is more than I want to review, I added a read/write
-						property (which CANNOT be set by a constructor!) to
-						govern the behavior of the methods affected by this
-						change, which are as follows.
+                        the empty string as a valid default value for a switch 
+                        or named argument. Since this change has the potential
+                        to change the behavior of existing code, of which there
+                        is more than I want to review, I added a read/write
+                        property (which CANNOT be set by a constructor!) to
+                        govern the behavior of the methods affected by this
+                        change, which are as follows.
 
-						1)  GetArgDefaultToUse returns values of named
-							arguments.
+                        1)  GetArgDefaultToUse returns values of named
+                            arguments.
 
-						2)  GetSwitchDefaultToUse returns values of named
-							switches.
+                        2)  GetSwitchDefaultToUse returns values of named
+                            switches.
 
-						The new property, AllowEmptyStringAsDefault, defaults to
-						FALSE, which keeps the library backwards compatible.
+                        The new property, AllowEmptyStringAsDefault, defaults to
+                        FALSE, which keeps the library backwards compatible.
 
-						I chose to inherit from Dictionary <string ,string> so
-						the internal backing store is accessible to callers. In
-						retrospect, this decision was unwise, since it violates
-						the principle of data hiding.
+                        I chose to inherit from Dictionary <string ,string> so
+                        the internal backing store is accessible to callers. In
+                        retrospect, this decision was unwise, since it violates
+                        the principle of data hiding.
 
     Author:				David A. Gray
 
-    License:            Copyright (C) 2011-2017, David A. Gray. 
-						All rights reserved.
+    License:            Copyright (C) 2011-2019, David A. Gray. 
+                        All rights reserved.
 
                         Redistribution and use in source and binary forms, with
                         or without modification, are permitted provided that the
@@ -142,25 +142,25 @@
                               constant strings, EMPTY_ALIAS_LIST, to the string
                               resources bound into this DLL.
 
-	2016/03/29 6.0     DAG    Define methods to return named and positional
+    2016/03/29 6.0     DAG    Define methods to return named and positional
                               arguments as integers.
 
-	2016/05/11 6.0     DAG    This update is confined to correcting spelling
+    2016/05/11 6.0     DAG    This update is confined to correcting spelling
                               errors in the internal documentation that came to
                               my attention during an investigation of why the
-							  class was returning "OFF" for missing switches.
+                              class was returning "OFF" for missing switches.
 
-							  Since the update is confined to spelling errors in
-							  comments, and relocation of two messages from 
-							  hard coded constant strings to managed string
+                              Since the update is confined to spelling errors in
+                              comments, and relocation of two messages from 
+                              hard coded constant strings to managed string
                               resources, the version number stays the same, but
-							  the build number increments by one.
+                              the build number increments by one.
 
-	2017/02/28 7.0     DAG    Break this library apart, so that smaller subsets
-	                          of classes can be distributed and consumed
+    2017/02/28 7.0     DAG    Break this library apart, so that smaller subsets
+                              of classes can be distributed and consumed
                               independently.
 
-							  Upon further consideration, this class is moved to
+                              Upon further consideration, this class is moved to
                               WizardWrx.Core.dll, and moved to namespace
                               WizardWrx.Core
  
@@ -173,18 +173,24 @@
                               most of which remains part of the main WizardWrx
                               namespace.
 
-	2017/07/15 7.0     DAG    Correct GetArgDefaultToUse for the case where
+    2017/07/15 7.0     DAG    Correct GetArgDefaultToUse for the case where
                               pfAllowEmptyStringAsDefault is FALSE so that it
                               takes pstrSuppliedDefault at face value for that
                               use case.
 
-	2017/07/16 7.0     DAG    Replace references to string.empty, which is not a
+    2017/07/16 7.0     DAG    Replace references to string.empty, which is not a
                               true constant, with SpecialStrings.EMPTY_STRING,
                               which is one.
 
-	2017/07/18 7.0     DAG	  Add the breaking change alert remarks to the other
+    2017/07/18 7.0     DAG	  Add the breaking change alert remarks to the other
                               routines that call GetArgDefaultToUse, and to the
                               AllowEmptyStringAsDefault property.
+
+    2019/12/16 7.23    DAG Allow the tab consistency add-in to replace tabs with
+                           spaces. The code is otherwise unchanged, although the
+                           new build is required to add a binding redirect, and
+                           the version numbering transitions to the SemVer
+                           scheme.
     ============================================================================
 */
 
@@ -283,11 +289,11 @@ namespace WizardWrx.Core
             /// </summary>
             Switch
         }   // ArgType
-		#endregion	// Public Enumerations
+        #endregion	// Public Enumerations
 
 
-		#region Public Constants
-		/// <summary>
+        #region Public Constants
+        /// <summary>
         /// When the ArgListIsEmpty property has this value, the command line
         /// contains at least one argument. See Remarks.
         /// </summary>
@@ -330,7 +336,7 @@ namespace WizardWrx.Core
         /// positional argument, or as the initializer of a For loop to get all
         /// positional arguments.
         /// </summary>
-		public const int FIRST_POSITIONAL_ARG = MagicNumbers.PLUS_ONE;
+        public const int FIRST_POSITIONAL_ARG = MagicNumbers.PLUS_ONE;
 
 
         /// <summary>
@@ -360,11 +366,11 @@ namespace WizardWrx.Core
         /// command line.
         /// </summary>
         public const string VALUE_NOT_SET = SpecialStrings.EMPTY_STRING;
-		#endregion	// Public Constants
+        #endregion	// Public Constants
 
 
-		#region Private Constants
-		private const string ARG_KEY_FMT = @"{0}_{1}";
+        #region Private Constants
+        private const string ARG_KEY_FMT = @"{0}_{1}";
         private const string ARGNAME_VALID_NAMES = @"pastrValiddArgNames";
 
         private const int COLLECTION_IS_EMPTY = MagicNumbers.ZERO;
@@ -391,19 +397,19 @@ namespace WizardWrx.Core
         private const char POSITIONAL_ARG_PREFIX = 'P';
 
         private const char SWITCH_ARG_PREFIX = 'S';
-		#endregion	// Private Constants
+        #endregion	// Private Constants
 
 
-		#region Private Static Data Members
-		private static char [ ] s_achrNameValueDelimiter = { NAME_VALUE_DELIMITER };
-		private static readonly string s_strSwitchIsOff = Core.Properties.Resources.SWITCH_IS_OFF;
-		private static readonly string s_strSwitchIsOn = Core.Properties.Resources.SWITCH_IS_ON;
-		#endregion	// Private Static Data Members
+        #region Private Static Data Members
+        private static char [ ] s_achrNameValueDelimiter = { NAME_VALUE_DELIMITER };
+        private static readonly string s_strSwitchIsOff = Core.Properties.Resources.SWITCH_IS_OFF;
+        private static readonly string s_strSwitchIsOn = Core.Properties.Resources.SWITCH_IS_ON;
+        #endregion	// Private Static Data Members
 
 
-		#region Private Storage for Class Instances
-		private Dictionary<string , string> _dctValidArgs = null;
-		private bool _fArgListIsEmpty = ARG_LIST_IS_EMPTY;
+        #region Private Storage for Class Instances
+        private Dictionary<string , string> _dctValidArgs = null;
+        private bool _fArgListIsEmpty = ARG_LIST_IS_EMPTY;
         private bool _fAllowEmptyStringAsDefault = BLANK_AS_DEFAULT_FORBIDDEN;
 
         private int _intDefinedNamedArgs = NONE;
@@ -421,11 +427,11 @@ namespace WizardWrx.Core
         private ArgMatching _enmArgMatching = ArgMatching.CaseSensitive;
 
         private ArgType [ ] _enmArgType;
-		#endregion	// Private Storage for Class Instances
+        #endregion	// Private Storage for Class Instances
 
 
-		#region Constructors
-		/// <summary>
+        #region Constructors
+        /// <summary>
         /// Initialize an instance that supports exclusively positional
         /// arguments.
         /// </summary>
@@ -570,7 +576,7 @@ namespace WizardWrx.Core
         /// default value, also a string.
         /// </param>
         public CmdLneArgsBasic (
-			Dictionary<string , string> pdctValidNamedArgs )
+            Dictionary<string , string> pdctValidNamedArgs )
         {
             InitNamedArgsFromDictionary ( pdctValidNamedArgs );
             ParseArgs ( );
@@ -1975,11 +1981,11 @@ namespace WizardWrx.Core
             InitNamedArgsFromArrayOfStrings ( pastrValidNamedArgs );
             ParseArgs ( );
         }   // CmdLneArgs constructor, taking a list of valid switches, defined by an array of characters, taking the class default value, and  named arguments from a dictionary of strings for default values, indexed by strings (33 of 33)
-		#endregion	// Constructors
+        #endregion	// Constructors
 
 
-		#region Public Instance Methods
-		/// <summary>
+        #region Public Instance Methods
+        /// <summary>
         /// Return the value of an argument that has two or more aliases.
         /// </summary>
         /// <param name="pastrValiddArgNames">
@@ -1995,15 +2001,15 @@ namespace WizardWrx.Core
         /// Synonyms are assumed to return the same default value.
         /// </remarks>
         public string GetArgByMultipleAliases (
-			string [ ] pastrValiddArgNames )
+            string [ ] pastrValiddArgNames )
         {
             if ( pastrValiddArgNames == null )
                 throw new ArgumentNullException ( ARGNAME_VALID_NAMES );
 
             if ( pastrValiddArgNames.Length == MagicNumbers.ZERO )
                 throw new ArgumentException (
-					Core.Properties.Resources.EMPTY_ALIAS_LIST ,
-					ARGNAME_VALID_NAMES );
+                    Core.Properties.Resources.EMPTY_ALIAS_LIST ,
+                    ARGNAME_VALID_NAMES );
 
             foreach ( string strArgName in pastrValiddArgNames )
             {
@@ -2046,7 +2052,7 @@ namespace WizardWrx.Core
         /// VALUE_NOT_SET.
         /// </remarks>
         public string GetArgByName (
-			string pstrArgName )
+            string pstrArgName )
         {
             return GetArgByName (
                 pstrArgName ,
@@ -2075,19 +2081,19 @@ namespace WizardWrx.Core
         /// name is invalid, the value specified in argument pstrDefault is
         /// returned.
         /// </returns>
-		/// <remarks>
-		/// POTENTIAL BREAKING CHANGE:
-		/// 
-		/// When the AllowEmptyStringAsDefault property is FALSE and argument
-		/// pstrDefault is a null reference, this method returns the null
-		/// reference. Previous versions returned the empty string anyway, which
-		/// wasn't the intended behavior, and a missing command line argument
-		/// thereby escaped detection.
-		/// 
-		/// Hence, going forward, when pstrDefault is NULL, you must be prepared
-		/// to handle a null reference as the return value.
-		/// </remarks>
-		public string GetArgByName (
+        /// <remarks>
+        /// POTENTIAL BREAKING CHANGE:
+        /// 
+        /// When the AllowEmptyStringAsDefault property is FALSE and argument
+        /// pstrDefault is a null reference, this method returns the null
+        /// reference. Previous versions returned the empty string anyway, which
+        /// wasn't the intended behavior, and a missing command line argument
+        /// thereby escaped detection.
+        /// 
+        /// Hence, going forward, when pstrDefault is NULL, you must be prepared
+        /// to handle a null reference as the return value.
+        /// </remarks>
+        public string GetArgByName (
             string pstrArgName,
             string pstrDefault )
         {
@@ -2101,7 +2107,7 @@ namespace WizardWrx.Core
                     pstrDefault ,
                     _fAllowEmptyStringAsDefault );
             else
-				if ( _dctValidArgs.TryGetValue ( strArgKey , out strArgValue ) )
+                if ( _dctValidArgs.TryGetValue ( strArgKey , out strArgValue ) )
                     if ( strArgValue == VALUE_NOT_SET )
                         return GetArgDefaultToUse (
                             pstrDefault ,
@@ -2142,19 +2148,19 @@ namespace WizardWrx.Core
         /// name is invalid, the value specified in argument pstrDefault is
         /// returned.
         /// </returns>
-		/// <remarks>
-		/// POTENTIAL BREAKING CHANGE:
-		/// 
-		/// When the AllowEmptyStringAsDefault property is FALSE and argument
-		/// pstrDefault is a null reference, this method returns the null
-		/// reference. Previous versions returned the empty string anyway, which
-		/// wasn't the intended behavior, and a missing command line argument
-		/// thereby escaped detection.
-		/// 
-		/// Hence, going forward, when pstrDefault is NULL, you must be prepared
-		/// to handle a null reference as the return value.
-		/// </remarks>
-		public string GetArgByName (
+        /// <remarks>
+        /// POTENTIAL BREAKING CHANGE:
+        /// 
+        /// When the AllowEmptyStringAsDefault property is FALSE and argument
+        /// pstrDefault is a null reference, this method returns the null
+        /// reference. Previous versions returned the empty string anyway, which
+        /// wasn't the intended behavior, and a missing command line argument
+        /// thereby escaped detection.
+        /// 
+        /// Hence, going forward, when pstrDefault is NULL, you must be prepared
+        /// to handle a null reference as the return value.
+        /// </remarks>
+        public string GetArgByName (
             string pstrArgName ,
             string pstrDefault ,
             bool pfAllowEmptyStringAsDefault )
@@ -2169,7 +2175,7 @@ namespace WizardWrx.Core
                     pstrDefault ,
                     pfAllowEmptyStringAsDefault );
             else
-				if ( _dctValidArgs.TryGetValue ( strArgKey , out strArgValue ) )
+                if ( _dctValidArgs.TryGetValue ( strArgKey , out strArgValue ) )
                     if ( strArgValue == VALUE_NOT_SET )
                         return GetArgDefaultToUse (
                             pstrDefault ,
@@ -2206,7 +2212,7 @@ namespace WizardWrx.Core
         /// them applies as well to this method.
         /// </remarks>
         public char GetArgByNameAsChar (
-			string pstrArgName )
+            string pstrArgName )
         {
             return FirstCharFromString ( GetArgByName ( pstrArgName ) );
         }   // GetArgByNameAsChar (1 of 3)
@@ -2296,94 +2302,94 @@ namespace WizardWrx.Core
         }   // GetArgByNameAsChar (3 of 3)
 
 
-		/// <summary>
-		/// If the value of a switch is an integer, return it. Otherwise, return
-		/// zero.
-		/// </summary>
-		/// <param name="pstrArgName">
-		/// Specify the external name of the argument, as it was identified to
-		/// the constructor.
-		/// </param>
-		/// <returns>
-		/// This method passes the value returned by GetArgByName to the 
-		/// int.TryParse method. Hence, everything that applies to either of
-		/// them applies as well to this method.
-		/// </returns>
-		public int GetArgByNameAsInt (
-			string pstrArgName )
-		{
-			int rintValue = MagicNumbers.ZERO;
+        /// <summary>
+        /// If the value of a switch is an integer, return it. Otherwise, return
+        /// zero.
+        /// </summary>
+        /// <param name="pstrArgName">
+        /// Specify the external name of the argument, as it was identified to
+        /// the constructor.
+        /// </param>
+        /// <returns>
+        /// This method passes the value returned by GetArgByName to the 
+        /// int.TryParse method. Hence, everything that applies to either of
+        /// them applies as well to this method.
+        /// </returns>
+        public int GetArgByNameAsInt (
+            string pstrArgName )
+        {
+            int rintValue = MagicNumbers.ZERO;
 
-			if ( int.TryParse ( GetArgByName ( pstrArgName ) , out rintValue ) )
-				return rintValue;
-			else
-				return MagicNumbers.ZERO;
-		}   // GetArgByNameAsInt (1 of 3)
+            if ( int.TryParse ( GetArgByName ( pstrArgName ) , out rintValue ) )
+                return rintValue;
+            else
+                return MagicNumbers.ZERO;
+        }   // GetArgByNameAsInt (1 of 3)
 
-		/// <summary>
-		/// If the value of a switch is an integer, return it. Otherwise, return
-		/// pintDefault.
-		/// </summary>
-		/// <param name="pstrArgName">
-		/// Specify the external name of the argument, as it was identified to
-		/// the constructor.
-		/// </param>
-		/// <param name="pintDefault">
-		/// Specify a default value to return if the argument was omitted from
-		/// the command line.
-		/// </param>
-		/// <returns>
-		/// This method passes the value returned by GetArgByName to the 
-		/// int.TryParse method. Hence, everything that applies to either of
-		/// them applies as well to this method.
-		/// </returns>
-		public int GetArgByNameAsInt (
-			string pstrArgName ,
-			int pintDefault )
-		{
-			int rintValue = MagicNumbers.ZERO;
+        /// <summary>
+        /// If the value of a switch is an integer, return it. Otherwise, return
+        /// pintDefault.
+        /// </summary>
+        /// <param name="pstrArgName">
+        /// Specify the external name of the argument, as it was identified to
+        /// the constructor.
+        /// </param>
+        /// <param name="pintDefault">
+        /// Specify a default value to return if the argument was omitted from
+        /// the command line.
+        /// </param>
+        /// <returns>
+        /// This method passes the value returned by GetArgByName to the 
+        /// int.TryParse method. Hence, everything that applies to either of
+        /// them applies as well to this method.
+        /// </returns>
+        public int GetArgByNameAsInt (
+            string pstrArgName ,
+            int pintDefault )
+        {
+            int rintValue = MagicNumbers.ZERO;
 
-			if ( int.TryParse ( GetArgByName ( pstrArgName , pintDefault.ToString ( ) ) , out rintValue ) )
-				return rintValue;
-			else
-				return pintDefault;
-		}   // GetArgByNameAsInt (2 of 3)
+            if ( int.TryParse ( GetArgByName ( pstrArgName , pintDefault.ToString ( ) ) , out rintValue ) )
+                return rintValue;
+            else
+                return pintDefault;
+        }   // GetArgByNameAsInt (2 of 3)
 
-		/// <summary>
-		/// If the value of a switch is an integer, return it. Otherwise, return
-		/// pintDefault.
-		/// </summary>
-		/// <param name="pstrArgName">
-		/// Specify the external name of the argument, as it was identified to
-		/// the constructor.
-		/// </param>
-		/// <param name="pintDefault">
-		/// Specify a default value to return if the argument was omitted from
-		/// the command line.
-		/// </param>
-		/// <param name="pfAllowEmptyStringAsDefault">
-		/// Set this to TRUE if you want an empty string for the value of the
-		/// pstrDefault argument treated as a valid default value. Otherwise,
-		/// empty strings are treated as null references (Nothing in Visual
-		/// Basic).
-		/// </param>
-		/// <returns>
-		/// This method passes the value returned by GetArgByName to the 
-		/// int.TryParse method. Hence, everything that applies to either of
-		/// them applies as well to this method.
-		/// </returns>
-		public int GetArgByNameAsInt (
-			string pstrArgName ,
-			int pintDefault ,
-			bool pfAllowEmptyStringAsDefault )
-		{
-			int rintValue = MagicNumbers.ZERO;
+        /// <summary>
+        /// If the value of a switch is an integer, return it. Otherwise, return
+        /// pintDefault.
+        /// </summary>
+        /// <param name="pstrArgName">
+        /// Specify the external name of the argument, as it was identified to
+        /// the constructor.
+        /// </param>
+        /// <param name="pintDefault">
+        /// Specify a default value to return if the argument was omitted from
+        /// the command line.
+        /// </param>
+        /// <param name="pfAllowEmptyStringAsDefault">
+        /// Set this to TRUE if you want an empty string for the value of the
+        /// pstrDefault argument treated as a valid default value. Otherwise,
+        /// empty strings are treated as null references (Nothing in Visual
+        /// Basic).
+        /// </param>
+        /// <returns>
+        /// This method passes the value returned by GetArgByName to the 
+        /// int.TryParse method. Hence, everything that applies to either of
+        /// them applies as well to this method.
+        /// </returns>
+        public int GetArgByNameAsInt (
+            string pstrArgName ,
+            int pintDefault ,
+            bool pfAllowEmptyStringAsDefault )
+        {
+            int rintValue = MagicNumbers.ZERO;
 
-			if ( int.TryParse ( GetArgByName ( pstrArgName , pintDefault.ToString ( ) , pfAllowEmptyStringAsDefault ) , out rintValue ) )
-				return rintValue;
-			else
-				return pintDefault;
-		}   // GetArgByNameAsInt (3 of 3)
+            if ( int.TryParse ( GetArgByName ( pstrArgName , pintDefault.ToString ( ) , pfAllowEmptyStringAsDefault ) , out rintValue ) )
+                return rintValue;
+            else
+                return pintDefault;
+        }   // GetArgByNameAsInt (3 of 3)
 
 
         /// <summary>
@@ -2404,7 +2410,7 @@ namespace WizardWrx.Core
         /// VALUE_NOT_SET.
         /// </remarks>
         public string GetArgByPosition (
-			int pintIndex )
+            int pintIndex )
         {
             return GetArgByPosition (
                 pintIndex ,
@@ -2427,24 +2433,24 @@ namespace WizardWrx.Core
         /// returned, unless pintIndex is out of range, in which case, the
         /// default value specified in pstrDefault is returned.
         /// </returns>
-		/// <remarks>
-		/// POTENTIAL BREAKING CHANGE:
-		/// 
-		/// When the AllowEmptyStringAsDefault property is FALSE and argument
-		/// pstrDefault is a null reference, this method returns the null
-		/// reference. Previous versions returned the empty string anyway, which
-		/// wasn't the intended behavior, and a missing command line argument
-		/// thereby escaped detection.
-		/// 
-		/// Hence, going forward, when pstrDefault is NULL, you must be prepared
-		/// to handle a null reference as the return value.
-		/// </remarks>
-		public string GetArgByPosition (
+        /// <remarks>
+        /// POTENTIAL BREAKING CHANGE:
+        /// 
+        /// When the AllowEmptyStringAsDefault property is FALSE and argument
+        /// pstrDefault is a null reference, this method returns the null
+        /// reference. Previous versions returned the empty string anyway, which
+        /// wasn't the intended behavior, and a missing command line argument
+        /// thereby escaped detection.
+        /// 
+        /// Hence, going forward, when pstrDefault is NULL, you must be prepared
+        /// to handle a null reference as the return value.
+        /// </remarks>
+        public string GetArgByPosition (
             int pintIndex ,
             string pstrDefault )
         {
             if ( pintIndex > PATENTLY_INVALID_ORDINAL && pintIndex <= _intPositionalArgsInCmdLine )
-				return _dctValidArgs [ string.Format (
+                return _dctValidArgs [ string.Format (
                     ARG_KEY_FMT ,
                     POSITIONAL_ARG_PREFIX ,
                     pintIndex ) ];
@@ -2455,58 +2461,58 @@ namespace WizardWrx.Core
         }   // GetArgByPosition (2 of 2)
 
 
-		/// <summary>
-		/// If the value of a switch is an integer, return it. Otherwise, return
-		/// zero.
-		/// </summary>
-		/// <param name="pintIndex">
-		/// Position of argument in list. Arguments are numbered from 1.
-		/// the constructor.
-		/// </param>
-		/// <returns>
-		/// This method passes the value returned by GetArgByPosition to the 
-		/// int.TryParse method. Hence, everything that applies to either of
-		/// them applies as well to this method.
-		/// </returns>
-		public int GetArgByPositionAsInt (
-			int pintIndex )
-		{
-			int rintValue = MagicNumbers.ZERO;
+        /// <summary>
+        /// If the value of a switch is an integer, return it. Otherwise, return
+        /// zero.
+        /// </summary>
+        /// <param name="pintIndex">
+        /// Position of argument in list. Arguments are numbered from 1.
+        /// the constructor.
+        /// </param>
+        /// <returns>
+        /// This method passes the value returned by GetArgByPosition to the 
+        /// int.TryParse method. Hence, everything that applies to either of
+        /// them applies as well to this method.
+        /// </returns>
+        public int GetArgByPositionAsInt (
+            int pintIndex )
+        {
+            int rintValue = MagicNumbers.ZERO;
 
-			if ( int.TryParse ( GetArgByPosition ( pintIndex ) , out rintValue ) )
-				return rintValue;
-			else
-				return MagicNumbers.ZERO;
-		}   // GetArgByPositionAsInt (1 of 2)
+            if ( int.TryParse ( GetArgByPosition ( pintIndex ) , out rintValue ) )
+                return rintValue;
+            else
+                return MagicNumbers.ZERO;
+        }   // GetArgByPositionAsInt (1 of 2)
 
-		/// <summary>
-		/// If the value of a switch is an integer, return it. Otherwise, return
-		/// pintDefault.
-		/// </summary>
-		/// <param name="pintIndex">
-		/// Position of argument in list. Arguments are numbered from 1.
-		/// the constructor.
-		/// </param>
-		/// <param name="pintDefault">
-		/// Specify a default value to return if the argument was omitted from
-		/// the command line.
-		/// </param>
-		/// <returns>
-		/// This method passes the value returned by GetArgByPosition to the 
-		/// int.TryParse method. Hence, everything that applies to either of
-		/// them applies as well to this method.
-		/// </returns>
-		public int GetArgByPositionAsInt (
-			int pintIndex ,
-			int pintDefault )
-		{
-			int rintValue = MagicNumbers.ZERO;
+        /// <summary>
+        /// If the value of a switch is an integer, return it. Otherwise, return
+        /// pintDefault.
+        /// </summary>
+        /// <param name="pintIndex">
+        /// Position of argument in list. Arguments are numbered from 1.
+        /// the constructor.
+        /// </param>
+        /// <param name="pintDefault">
+        /// Specify a default value to return if the argument was omitted from
+        /// the command line.
+        /// </param>
+        /// <returns>
+        /// This method passes the value returned by GetArgByPosition to the 
+        /// int.TryParse method. Hence, everything that applies to either of
+        /// them applies as well to this method.
+        /// </returns>
+        public int GetArgByPositionAsInt (
+            int pintIndex ,
+            int pintDefault )
+        {
+            int rintValue = MagicNumbers.ZERO;
 
-			if ( int.TryParse ( GetArgByPosition ( pintIndex , pintDefault.ToString ( ) ) , out rintValue ) )
-				return rintValue;
-			else
-				return pintDefault;
-		}   // GetArgByPositionAsInt (2 of 2)
+            if ( int.TryParse ( GetArgByPosition ( pintIndex , pintDefault.ToString ( ) ) , out rintValue ) )
+                return rintValue;
+            else
+                return pintDefault;
+        }   // GetArgByPositionAsInt (2 of 2)
 
 
         /// <summary>
@@ -2523,22 +2529,22 @@ namespace WizardWrx.Core
         /// modifier (which is ignored). Otherwise, the return value is FALSE.
         /// </returns>
         public bool GetBooleanSwitchByName (
-			char pchrName )
+            char pchrName )
         {
-			//	----------------------------------------------------------------
-			//	The down side of replacing the embedded constants with resource
-			//	strings is that the super-efficient Switch block must give way
-			//	to a cascading IF block.
-			//	----------------------------------------------------------------
+            //	----------------------------------------------------------------
+            //	The down side of replacing the embedded constants with resource
+            //	strings is that the super-efficient Switch block must give way
+            //	to a cascading IF block.
+            //	----------------------------------------------------------------
 
-			string strSwitchValue = GetSwitchByName ( pchrName );
+            string strSwitchValue = GetSwitchByName ( pchrName );
 
-			if ( strSwitchValue == s_strSwitchIsOff )
-				return false;
-			else if ( strSwitchValue == s_strSwitchIsOn )
-				return true;
-			else
-				return true;
+            if ( strSwitchValue == s_strSwitchIsOff )
+                return false;
+            else if ( strSwitchValue == s_strSwitchIsOn )
+                return true;
+            else
+                return true;
         }   // GetBooleanSwitchByName
 
 
@@ -2556,7 +2562,7 @@ namespace WizardWrx.Core
         /// the command line is returned. Otherwise, the default value, if any,
         /// passed into the constructor is returned. Failing both of those, the
         /// generic default value constant, Properties.Resources.SWITCH_IS_OFF,
-		/// is returned.
+        /// is returned.
         /// </returns>
         /// <remarks>
         /// This overload is a wrapper around the other overload,
@@ -2565,7 +2571,7 @@ namespace WizardWrx.Core
         /// Properties.Resources.SWITCH_IS_OFF.
         /// </remarks>
         public string GetSwitchByName (
-			char pchrName )
+            char pchrName )
         {
             return GetSwitchByName (
                 pchrName ,
@@ -2591,21 +2597,21 @@ namespace WizardWrx.Core
         /// the command line is returned. Otherwise, the default value, if any,
         /// passed into the constructor is returned. Failing both of those, the
         /// generic default value constant, Properties.Resources.SWITCH_IS_OFF,
-		/// is returned.
+        /// is returned.
         /// </returns>
-		/// <remarks>
-		/// POTENTIAL BREAKING CHANGE:
-		/// 
-		/// When the AllowEmptyStringAsDefault property is FALSE and argument
-		/// pstrDefault is a null reference, this method returns the null
-		/// reference. Previous versions returned the empty string anyway, which
-		/// wasn't the intended behavior, and a missing command line argument
-		/// thereby escaped detection.
-		/// 
-		/// Hence, going forward, when pstrDefault is NULL, you must be prepared
-		/// to handle a null reference as the return value.
-		/// </remarks>
-		public string GetSwitchByName (
+        /// <remarks>
+        /// POTENTIAL BREAKING CHANGE:
+        /// 
+        /// When the AllowEmptyStringAsDefault property is FALSE and argument
+        /// pstrDefault is a null reference, this method returns the null
+        /// reference. Previous versions returned the empty string anyway, which
+        /// wasn't the intended behavior, and a missing command line argument
+        /// thereby escaped detection.
+        /// 
+        /// Hence, going forward, when pstrDefault is NULL, you must be prepared
+        /// to handle a null reference as the return value.
+        /// </remarks>
+        public string GetSwitchByName (
             char pchrName ,
             string pstrDefault )
         {
@@ -2622,7 +2628,7 @@ namespace WizardWrx.Core
             //  Return value saved from command line, or default, if none was.
             //  ----------------------------------------------------------------
 
-			if ( _dctValidArgs.TryGetValue ( strInternalName , out strSwitchArg ) )
+            if ( _dctValidArgs.TryGetValue ( strInternalName , out strSwitchArg ) )
                 if ( strSwitchArg == Core.Properties.Resources.SWITCH_IS_OFF )  // Argument is defined. Make a local copy.
                     return GetSwitchDefaultToUse (
                         pstrDefault,
@@ -2660,7 +2666,7 @@ namespace WizardWrx.Core
         /// the command line is returned. Otherwise, the default value, if any,
         /// passed into the constructor is returned. Failing both of those, the
         /// generic default value constant, Properties.Resources.SWITCH_IS_OFF,
-		/// is returned.
+        /// is returned.
         /// </returns>
         public string GetSwitchByName (
             char pchrName ,
@@ -2680,7 +2686,7 @@ namespace WizardWrx.Core
             //  Return value saved from command line, or default, if none was.
             //  ----------------------------------------------------------------
 
-			if ( _dctValidArgs.TryGetValue ( strInternalName , out strSwitchArg ) )
+            if ( _dctValidArgs.TryGetValue ( strInternalName , out strSwitchArg ) )
                 if ( strSwitchArg == Core.Properties.Resources.SWITCH_IS_OFF )       // Argument is defined. Make a local copy.
                     return GetSwitchDefaultToUse (
                         pstrDefault ,
@@ -2694,147 +2700,147 @@ namespace WizardWrx.Core
         }   // GetSwitchByName (3 of 3)
 
 
-		/// <summary>
-		/// If the value of a switch is an integer, return it. Otherwise, return
-		/// zero.
-		/// </summary>
-		/// <param name="pchrArgName">
-		/// Specify the external name of the argument, as it was identified to
-		/// the constructor.
-		/// </param>
-		/// <returns>
-		/// This method passes the value returned by GetSwitchByName to the 
-		/// int.TryParse method. Hence, everything that applies to either of
-		/// them applies as well to this method.
-		/// </returns>
-		public int GetSwitchByNameAsInt (
-			char pchrArgName )
-		{
-			int rintValue = MagicNumbers.ZERO;
+        /// <summary>
+        /// If the value of a switch is an integer, return it. Otherwise, return
+        /// zero.
+        /// </summary>
+        /// <param name="pchrArgName">
+        /// Specify the external name of the argument, as it was identified to
+        /// the constructor.
+        /// </param>
+        /// <returns>
+        /// This method passes the value returned by GetSwitchByName to the 
+        /// int.TryParse method. Hence, everything that applies to either of
+        /// them applies as well to this method.
+        /// </returns>
+        public int GetSwitchByNameAsInt (
+            char pchrArgName )
+        {
+            int rintValue = MagicNumbers.ZERO;
 
-			if ( int.TryParse ( GetSwitchByName ( pchrArgName ) , out rintValue ) )
-				return rintValue;
-			else
-				return MagicNumbers.ZERO;
-		}   // GetSwitchByNameAsInt (1 of 3)
+            if ( int.TryParse ( GetSwitchByName ( pchrArgName ) , out rintValue ) )
+                return rintValue;
+            else
+                return MagicNumbers.ZERO;
+        }   // GetSwitchByNameAsInt (1 of 3)
 
-		/// <summary>
-		/// If the value of a switch is an integer, return it. Otherwise, return
-		/// pintDefault.
-		/// </summary>
-		/// <param name="pchrArgName">
-		/// Specify the external name of the argument, as it was identified to
-		/// the constructor.
-		/// </param>
-		/// <param name="pintDefault">
-		/// Specify a default value to return if the argument was omitted from
-		/// the command line.
-		/// </param>
-		/// <returns>
-		/// This method passes the value returned by GetSwitchByName to the 
-		/// int.TryParse method. Hence, everything that applies to either of
-		/// them applies as well to this method.
-		/// </returns>
-		public int GetSwitchByNameAsInt (
-			char pchrArgName ,
-			int pintDefault )
-		{
-			int rintValue = MagicNumbers.ZERO;
+        /// <summary>
+        /// If the value of a switch is an integer, return it. Otherwise, return
+        /// pintDefault.
+        /// </summary>
+        /// <param name="pchrArgName">
+        /// Specify the external name of the argument, as it was identified to
+        /// the constructor.
+        /// </param>
+        /// <param name="pintDefault">
+        /// Specify a default value to return if the argument was omitted from
+        /// the command line.
+        /// </param>
+        /// <returns>
+        /// This method passes the value returned by GetSwitchByName to the 
+        /// int.TryParse method. Hence, everything that applies to either of
+        /// them applies as well to this method.
+        /// </returns>
+        public int GetSwitchByNameAsInt (
+            char pchrArgName ,
+            int pintDefault )
+        {
+            int rintValue = MagicNumbers.ZERO;
 
-			if ( int.TryParse ( GetSwitchByName ( pchrArgName , pintDefault.ToString ( ) ) , out rintValue ) )
-				return rintValue;
-			else
-				return pintDefault;
-		}   // GetSwitchByNameAsInt (2 of 3)
+            if ( int.TryParse ( GetSwitchByName ( pchrArgName , pintDefault.ToString ( ) ) , out rintValue ) )
+                return rintValue;
+            else
+                return pintDefault;
+        }   // GetSwitchByNameAsInt (2 of 3)
 
-		/// <summary>
-		/// If the value of a switch is an integer, return it. Otherwise, return
-		/// pintDefault.
-		/// </summary>
-		/// <param name="pchrArgName">
-		/// Specify the external name of the argument, as it was identified to
-		/// the constructor.
-		/// </param>
-		/// <param name="pintDefault">
-		/// Specify a default value to return if the argument was omitted from
-		/// the command line.
-		/// </param>
-		/// <param name="pfAllowEmptyStringAsDefault">
-		/// Set this to TRUE if you want an empty string for the value of the
-		/// pstrDefault argument treated as a valid default value. Otherwise,
-		/// empty strings are treated as null references (Nothing in Visual
-		/// Basic).
-		/// </param>
-		/// <returns>
-		/// This method passes the value returned by GetSwitchByName to the 
-		/// int.TryParse method. Hence, everything that applies to either of
-		/// them applies as well to this method.
-		/// </returns>
-		public int GetSwitchByNameAsInt (
-			char pchrArgName ,
-			int pintDefault ,
-			bool pfAllowEmptyStringAsDefault )
-		{
-			int rintValue = MagicNumbers.ZERO;
+        /// <summary>
+        /// If the value of a switch is an integer, return it. Otherwise, return
+        /// pintDefault.
+        /// </summary>
+        /// <param name="pchrArgName">
+        /// Specify the external name of the argument, as it was identified to
+        /// the constructor.
+        /// </param>
+        /// <param name="pintDefault">
+        /// Specify a default value to return if the argument was omitted from
+        /// the command line.
+        /// </param>
+        /// <param name="pfAllowEmptyStringAsDefault">
+        /// Set this to TRUE if you want an empty string for the value of the
+        /// pstrDefault argument treated as a valid default value. Otherwise,
+        /// empty strings are treated as null references (Nothing in Visual
+        /// Basic).
+        /// </param>
+        /// <returns>
+        /// This method passes the value returned by GetSwitchByName to the 
+        /// int.TryParse method. Hence, everything that applies to either of
+        /// them applies as well to this method.
+        /// </returns>
+        public int GetSwitchByNameAsInt (
+            char pchrArgName ,
+            int pintDefault ,
+            bool pfAllowEmptyStringAsDefault )
+        {
+            int rintValue = MagicNumbers.ZERO;
 
-			if ( int.TryParse ( GetSwitchByName ( pchrArgName , pintDefault.ToString ( ) , pfAllowEmptyStringAsDefault ) , out rintValue ) )
-				return rintValue;
-			else
-				return pintDefault;
-		}   // GetSwitchByNameAsInt (3 of 3)
-		#endregion	// Public Instance Methods
+            if ( int.TryParse ( GetSwitchByName ( pchrArgName , pintDefault.ToString ( ) , pfAllowEmptyStringAsDefault ) , out rintValue ) )
+                return rintValue;
+            else
+                return pintDefault;
+        }   // GetSwitchByNameAsInt (3 of 3)
+        #endregion	// Public Instance Methods
 
 
         #region Public Static Methods
-		/// <summary>
-		/// Extract the argument name from a string that consists of the key
-		/// (index) of the collection.
-		/// </summary>
-		/// <param name="pstrArgKey">
-		/// Specify the key to parse and strip, so that it can be fed into an
-		/// instance method to retrieve the value of a named argument or switch.
-		/// </param>
-		/// <returns>
-		/// If the function succeeds, the return value is the name of a named
-		/// argument or of a switch, which can be fed into GetArgByName, 
-		/// GetSwitchByName, or one of their siblings.
-		/// </returns>
-		/// <remarks>
-		/// Since this class derives from a Dictionary whose keys and values are
-		/// strings, given the string that becomes the pstrArgKey argument of
-		/// this method, you could just as easily get the value directly.
-		/// However, if you did so, you would lose the benefit of default value
-		/// assignment, not to mention the accessors that bundle conversions to
-		/// Integer, Boolean, and Character types. Moreover, reaching into the
-		/// base class makes it slightly less obvious that the value retrieved
-		/// is that of a command line argument, let alone its name and intrinsic
-		/// type (switch versus named argument versus positional argument).
-		/// 
-		/// A wiser design would hide the dictionary from view. Notwithstanding
-		/// this one-off use, it is not too late to do so, since this is the
-		/// only case in which I have reached into the base class in this way.
-		/// </remarks>
-		public static string ArgNameFromKeyValue ( 
-			string pstrArgKey )
-		{
-			const int PREFIX_LENGTH = MagicNumbers.PLUS_TWO;
+        /// <summary>
+        /// Extract the argument name from a string that consists of the key
+        /// (index) of the collection.
+        /// </summary>
+        /// <param name="pstrArgKey">
+        /// Specify the key to parse and strip, so that it can be fed into an
+        /// instance method to retrieve the value of a named argument or switch.
+        /// </param>
+        /// <returns>
+        /// If the function succeeds, the return value is the name of a named
+        /// argument or of a switch, which can be fed into GetArgByName, 
+        /// GetSwitchByName, or one of their siblings.
+        /// </returns>
+        /// <remarks>
+        /// Since this class derives from a Dictionary whose keys and values are
+        /// strings, given the string that becomes the pstrArgKey argument of
+        /// this method, you could just as easily get the value directly.
+        /// However, if you did so, you would lose the benefit of default value
+        /// assignment, not to mention the accessors that bundle conversions to
+        /// Integer, Boolean, and Character types. Moreover, reaching into the
+        /// base class makes it slightly less obvious that the value retrieved
+        /// is that of a command line argument, let alone its name and intrinsic
+        /// type (switch versus named argument versus positional argument).
+        /// 
+        /// A wiser design would hide the dictionary from view. Notwithstanding
+        /// this one-off use, it is not too late to do so, since this is the
+        /// only case in which I have reached into the base class in this way.
+        /// </remarks>
+        public static string ArgNameFromKeyValue ( 
+            string pstrArgKey )
+        {
+            const int PREFIX_LENGTH = MagicNumbers.PLUS_TWO;
 
-			if ( string.IsNullOrEmpty ( pstrArgKey ) )
-			{	// A null reference or the empty string get the same treatment; either is a degenerate case.
-				return SpecialStrings.EMPTY_STRING;
-			}	// TRUE (degenerate case) block, if ( string.IsNullOrEmpty ( pstrArgName ) )
-			else
-			{
-				if ( pstrArgKey.Length < PREFIX_LENGTH )
-				{	// The string being too short is the third of three degenerate cases.
-					return SpecialStrings.EMPTY_STRING;
-				}	// TRUE (degenerate case) block, if ( pstrArgName.Length < PREFIX_LENGTH )
-				else
-				{	// The string passed the smell test. Clip the prefix, and return the rest.
-					return pstrArgKey.Substring ( PREFIX_LENGTH );
-				}	// FALSE (desired outcome) block, if ( pstrArgName.Length < PREFIX_LENGTH )
-			}	// FALSE (desired outcome) block, if ( string.IsNullOrEmpty ( pstrArgName ) )
-		}	// public static string ArgNameFromKeyValue
+            if ( string.IsNullOrEmpty ( pstrArgKey ) )
+            {	// A null reference or the empty string get the same treatment; either is a degenerate case.
+                return SpecialStrings.EMPTY_STRING;
+            }	// TRUE (degenerate case) block, if ( string.IsNullOrEmpty ( pstrArgName ) )
+            else
+            {
+                if ( pstrArgKey.Length < PREFIX_LENGTH )
+                {	// The string being too short is the third of three degenerate cases.
+                    return SpecialStrings.EMPTY_STRING;
+                }	// TRUE (degenerate case) block, if ( pstrArgName.Length < PREFIX_LENGTH )
+                else
+                {	// The string passed the smell test. Clip the prefix, and return the rest.
+                    return pstrArgKey.Substring ( PREFIX_LENGTH );
+                }	// FALSE (desired outcome) block, if ( pstrArgName.Length < PREFIX_LENGTH )
+            }	// FALSE (desired outcome) block, if ( string.IsNullOrEmpty ( pstrArgName ) )
+        }	// public static string ArgNameFromKeyValue
 
 
         /// <summary>
@@ -2868,7 +2874,7 @@ namespace WizardWrx.Core
                 char [ ] achrFirst = pstrIn.ToCharArray (
                     ArrayInfo.ARRAY_FIRST_ELEMENT ,
                     MagicNumbers.PLUS_ONE );
-				return achrFirst [ ArrayInfo.ARRAY_FIRST_ELEMENT ];
+                return achrFirst [ ArrayInfo.ARRAY_FIRST_ELEMENT ];
             }   // FALSE (exception) block, if ( string.IsNullOrEmpty ( pstrIn ) )
         }   // public static char FirstCharFromString (1 of 2)
 
@@ -2888,8 +2894,8 @@ namespace WizardWrx.Core
         /// scalar value type.
         /// </returns>
         public static char FirstCharFromString (
-			string pstrIn ,
-			char pchrDefault )
+            string pstrIn ,
+            char pchrDefault )
         {
             if ( string.IsNullOrEmpty ( pstrIn ) )
             {
@@ -2898,16 +2904,16 @@ namespace WizardWrx.Core
             else
             {
                 char [ ] achrFirst = pstrIn.ToCharArray (
-					ArrayInfo.ARRAY_FIRST_ELEMENT ,
+                    ArrayInfo.ARRAY_FIRST_ELEMENT ,
                     MagicNumbers.PLUS_ONE );
-				return achrFirst [ ArrayInfo.ARRAY_FIRST_ELEMENT ];
+                return achrFirst [ ArrayInfo.ARRAY_FIRST_ELEMENT ];
             }   // FALSE (exception) block, if ( string.IsNullOrEmpty ( pstrIn ) )
         }   // public static char FirstCharFromString (2 of 2)
-		#endregion	// Public Static Methods
+        #endregion	// Public Static Methods
 
 
-		#region Public Properties, All but One Read Only
-		/// <summary>
+        #region Public Properties, All but One Read Only
+        /// <summary>
         /// This property returns True (ARG_LIST_IS_EMPTY) when the command line
         /// is devoid of arguments.
         ///
@@ -2955,19 +2961,19 @@ namespace WizardWrx.Core
         /// call, regardless of the current AllowEmptyStringAsDefault setting.
         /// This method leaves the AllowEmptyStringAsDefault property unchanged.
         /// </remarks>
-		/// <remarks>
-		/// POTENTIAL BREAKING CHANGE:
-		/// 
-		/// When the AllowEmptyStringAsDefault property is FALSE and argument
-		/// pstrDefault is a null reference, this method returns the null
-		/// reference. Previous versions returned the empty string anyway, which
-		/// wasn't the intended behavior, and a missing command line argument
-		/// thereby escaped detection.
-		/// 
-		/// Hence, going forward, when pstrDefault is NULL, you must be prepared
-		/// to handle a null reference as the return value.
-		/// </remarks>
-		public bool AllowEmptyStringAsDefault
+        /// <remarks>
+        /// POTENTIAL BREAKING CHANGE:
+        /// 
+        /// When the AllowEmptyStringAsDefault property is FALSE and argument
+        /// pstrDefault is a null reference, this method returns the null
+        /// reference. Previous versions returned the empty string anyway, which
+        /// wasn't the intended behavior, and a missing command line argument
+        /// thereby escaped detection.
+        /// 
+        /// Hence, going forward, when pstrDefault is NULL, you must be prepared
+        /// to handle a null reference as the return value.
+        /// </remarks>
+        public bool AllowEmptyStringAsDefault
         {
             get { return _fAllowEmptyStringAsDefault; }
             set { _fAllowEmptyStringAsDefault = value; }
@@ -2994,17 +3000,17 @@ namespace WizardWrx.Core
                     return _enmArgType;
                 else
                     throw new Exception (
-						string.Format (
-							"Since the ArgListIsEmpty property is True (ARG_LIST_IS_EMPTY), this property is both null and meaningless.{0}To prevent this exception, check the ArgListIsEmpty property before attempting to check this property." ,
-							Environment.NewLine ) );
+                        string.Format (
+                            "Since the ArgListIsEmpty property is True (ARG_LIST_IS_EMPTY), this property is both null and meaningless.{0}To prevent this exception, check the ArgListIsEmpty property before attempting to check this property." ,
+                            Environment.NewLine ) );
             }   // public ArgType [ ] ArgumentTypeArray Get method
         }   // ArgumentTypeArray property definition.
 
 
-		/// <summary>
-		/// Get the total number of valid arguments of all types.
-		/// </summary>
-		public int Count { get { return _dctValidArgs.Count; } }
+        /// <summary>
+        /// Get the total number of valid arguments of all types.
+        /// </summary>
+        public int Count { get { return _dctValidArgs.Count; } }
         /// <summary>
         /// Get the count of named arguments defined by the constructor.
         /// </summary>
@@ -3043,66 +3049,66 @@ namespace WizardWrx.Core
         public int PositionalArgsInCmdLine { get { return _intPositionalArgsInCmdLine; } }
 
 
-		/// <summary>
-		/// Gets the SWITCH_IS_OFF string, which is loaded from the string
-		/// resources of the DLL into a private static read-only string.
-		/// </summary>
-		/// <remarks>
-		/// This static read-only property replaces a like named constant, which
-		/// I moved into the resource strings because that is really where it
-		/// belongs, so that the library can be adapted for another language by
-		/// substituting a localized string resource.
-		/// 
-		/// While the simplest approach would be to assign these names to the
-		/// private strings, and mark them public, doing so would obscure their
-		/// their true nature.
-		/// </remarks>
-		public static string SWITCH_IS_OFF
-		{
-			get
-			{
-				return s_strSwitchIsOff;
-			}	// SWITCH_IS_OFF Property Get method
-		}	// SWITCH_IS_OFF Property
+        /// <summary>
+        /// Gets the SWITCH_IS_OFF string, which is loaded from the string
+        /// resources of the DLL into a private static read-only string.
+        /// </summary>
+        /// <remarks>
+        /// This static read-only property replaces a like named constant, which
+        /// I moved into the resource strings because that is really where it
+        /// belongs, so that the library can be adapted for another language by
+        /// substituting a localized string resource.
+        /// 
+        /// While the simplest approach would be to assign these names to the
+        /// private strings, and mark them public, doing so would obscure their
+        /// their true nature.
+        /// </remarks>
+        public static string SWITCH_IS_OFF
+        {
+            get
+            {
+                return s_strSwitchIsOff;
+            }	// SWITCH_IS_OFF Property Get method
+        }	// SWITCH_IS_OFF Property
 
 
-		/// <summary>
-		/// Gets the SWITCH_IS_ON string, which is loaded from the string
-		/// resources of the DLL into a private static read-only string.
-		/// </summary>
-		/// <remarks>
-		/// This static read-only property replaces a like named constant, which
-		/// I moved into the resource strings because that is really where it
-		/// belongs, so that the library can be adapted for another language by
-		/// substituting a localized string resource.
-		/// 
-		/// While the simplest approach would be to assign these names to the
-		/// private strings, and mark them public, doing so would obscure their
-		/// their true nature.
-		/// </remarks>
-		public static string SWITCH_IS_ON
-		{
-			get
-			{
-				return s_strSwitchIsOn;
-			}	// SWITCH_IS_ON Property Get method
-		}	// SWITCH_IS_ON Property
+        /// <summary>
+        /// Gets the SWITCH_IS_ON string, which is loaded from the string
+        /// resources of the DLL into a private static read-only string.
+        /// </summary>
+        /// <remarks>
+        /// This static read-only property replaces a like named constant, which
+        /// I moved into the resource strings because that is really where it
+        /// belongs, so that the library can be adapted for another language by
+        /// substituting a localized string resource.
+        /// 
+        /// While the simplest approach would be to assign these names to the
+        /// private strings, and mark them public, doing so would obscure their
+        /// their true nature.
+        /// </remarks>
+        public static string SWITCH_IS_ON
+        {
+            get
+            {
+                return s_strSwitchIsOn;
+            }	// SWITCH_IS_ON Property Get method
+        }	// SWITCH_IS_ON Property
 
         /// <summary>
         /// Count of valid named arguments found in the command line.
         /// </summary>
         public int ValidNamedArgsInCmdLine { get { return _intValidNmedArgsInCmd; } }
 
-		/// <summary>
+        /// <summary>
         /// Count of valid switches found in the command line.
         /// </summary>
         public int ValidSwitchesInCmdLine { get { return _intValidSwitchesInCmd; } }
-		#endregion	// Public Properties, All but One Read Only
+        #endregion	// Public Properties, All but One Read Only
 
 
-		#region Private Instance Methods
-		private bool ArgIsNamed (
-			string pstrArg )
+        #region Private Instance Methods
+        private bool ArgIsNamed (
+            string pstrArg )
         {
             if ( _intDefinedNamedArgs > NONE )
                 return ArgHasName ( pstrArg );
@@ -3112,7 +3118,7 @@ namespace WizardWrx.Core
 
 
         private bool ArgIsSwitch (
-			string pstrArg )
+            string pstrArg )
         {
             if ( _intDefinedSwitches > NONE )
                 return ArgHasSwitchPrefix ( pstrArg );
@@ -3127,31 +3133,31 @@ namespace WizardWrx.Core
         {
             try
             {
-				if ( _dctValidArgs == null )
-					_dctValidArgs = new Dictionary<string , string> ( POSITIONAL_ARGS_COUNT_LIMIT );
+                if ( _dctValidArgs == null )
+                    _dctValidArgs = new Dictionary<string , string> ( POSITIONAL_ARGS_COUNT_LIMIT );
 
                 switch ( _enmArgMatching )
                 {
                     case ArgMatching.CaseInsensitive:
-						_dctValidArgs.Add ( string.Format (
+                        _dctValidArgs.Add ( string.Format (
                             ARG_KEY_FMT ,
                             SWITCH_ARG_PREFIX ,
                             char.ToLower ( pchrSwitchName ) ) ,
                             GetSwitchDefaultToUse (
                                 pstrDefault ,
                                 _fAllowEmptyStringAsDefault ) );
-						break;	// case ArgMatching.CaseInsensitive
+                        break;	// case ArgMatching.CaseInsensitive
 
                     case ArgMatching.CaseSensitive:
                     default:
-						_dctValidArgs.Add ( string.Format (
+                        _dctValidArgs.Add ( string.Format (
                             ARG_KEY_FMT ,
                             SWITCH_ARG_PREFIX ,
                             pchrSwitchName ) ,
                             GetSwitchDefaultToUse (
                                 pstrDefault ,
                                 _fAllowEmptyStringAsDefault ) );
-						break;	// case ArgMatching.CaseSensitive: and default case
+                        break;	// case ArgMatching.CaseSensitive: and default case
                 }   // switch ( _enmArgMatching ) block
 
                 _intDefinedSwitches++;
@@ -3159,7 +3165,7 @@ namespace WizardWrx.Core
             catch ( ArgumentException errBadArg )
             {
                 string strMsg = string.Format (
-					Core.Properties.Resources.ERRMSG_DUPLICATE_SWITCH ,
+                    Core.Properties.Resources.ERRMSG_DUPLICATE_SWITCH ,
                     pchrSwitchName ,
                     pstrDefault );
                 throw new Exception (
@@ -3169,7 +3175,7 @@ namespace WizardWrx.Core
             catch ( Exception errOtherKinds )
             {
                 string strMsg = string.Format (
-					Core.Properties.Resources.ERRMSG_EXCEPTION_IN_DEFINE_NEW_SWITCH ,
+                    Core.Properties.Resources.ERRMSG_EXCEPTION_IN_DEFINE_NEW_SWITCH ,
                     errOtherKinds.GetType ( ).FullName ,
                     pchrSwitchName ,
                     pstrDefault );
@@ -3184,27 +3190,27 @@ namespace WizardWrx.Core
             string pstrArgName,
             string pstrArgValue )
         {
-			if ( _dctValidArgs == null )
-				_dctValidArgs = new Dictionary<string , string> ( POSITIONAL_ARGS_COUNT_LIMIT );
+            if ( _dctValidArgs == null )
+                _dctValidArgs = new Dictionary<string , string> ( POSITIONAL_ARGS_COUNT_LIMIT );
 
-			switch ( _enmArgMatching )
+            switch ( _enmArgMatching )
             {
                 case ArgMatching.CaseInsensitive:
-					_dctValidArgs.Add ( string.Format (
+                    _dctValidArgs.Add ( string.Format (
                         ARG_KEY_FMT ,
                         NAMED_ARG_PREFIX ,
                         pstrArgName.ToLower ( ) ) ,
                         pstrArgValue );
-					break;	// case ArgMatching.CaseInsensitive
+                    break;	// case ArgMatching.CaseInsensitive
 
                 case ArgMatching.CaseSensitive:
                 default:
-					_dctValidArgs.Add ( string.Format (
+                    _dctValidArgs.Add ( string.Format (
                         ARG_KEY_FMT ,
                         NAMED_ARG_PREFIX ,
                         pstrArgName ) ,
                         pstrArgValue );
-					break;	// case ArgMatching.CaseSensitive: and default case
+                    break;	// case ArgMatching.CaseSensitive: and default case
             }   // witch ( _enmArgMatching )
 
             _intDefinedNamedArgs++;
@@ -3212,7 +3218,7 @@ namespace WizardWrx.Core
 
 
         private void InitNamedArgsFromArrayOfStrings (
-			string [ ] pastrValidNamedArgs )
+            string [ ] pastrValidNamedArgs )
         {
             if ( pastrValidNamedArgs == null )
                 _intDefinedNamedArgs = NONE;									// Argument is null. Fail gracefully. (degenerate case 1 of 2)
@@ -3228,7 +3234,7 @@ namespace WizardWrx.Core
 
 
         private void InitNamedArgsFromDictionary (
-			Dictionary<string , string> pdctValidNamedArgs )
+            Dictionary<string , string> pdctValidNamedArgs )
         {
             if ( pdctValidNamedArgs == null )
                 _intDefinedNamedArgs = NONE;									// Argument is null. Fail gracefully. (degenerate case 1 of 2)
@@ -3244,7 +3250,7 @@ namespace WizardWrx.Core
 
 
         private void InitSwitchesFromArrayOfChars (
-			char [ ] pachrValidSwitches )
+            char [ ] pachrValidSwitches )
         {
             if ( pachrValidSwitches == null )
                 _intDefinedSwitches = NONE;										// Argument is null. Fail gracefully. (degenerate case 1 of 2)
@@ -3255,12 +3261,12 @@ namespace WizardWrx.Core
                     foreach ( char chrSwitchName in pachrValidSwitches )
                         DefineNewSwitch (										// Add the item to the dictionary, initializing its value to VALUE_NOT_SET.
                             chrSwitchName ,
-							Core.Properties.Resources.SWITCH_IS_OFF );
+                            Core.Properties.Resources.SWITCH_IS_OFF );
         }   // InitSwitchesFromArrayOfChars
 
 
         private void InitSwitchesFromDictionary (
-			Dictionary<char , string> pdctValidSwitches )
+            Dictionary<char , string> pdctValidSwitches )
         {
             if ( pdctValidSwitches == null )
                 _intDefinedSwitches = NONE;										// Argument is null. Fail gracefully. (degenerate case 1 of 2)
@@ -3275,15 +3281,15 @@ namespace WizardWrx.Core
         }   // InitSwitchesFromDictionary
 
 
-		/// <summary>
-		/// Every constructor finishes in this routine, which does as its name
-		/// implies; using the list of valid arguments, it parses the command
-		/// line.
-		/// </summary>
+        /// <summary>
+        /// Every constructor finishes in this routine, which does as its name
+        /// implies; using the list of valid arguments, it parses the command
+        /// line.
+        /// </summary>
         private void ParseArgs ( )
         {
-			if ( _dctValidArgs == null )
-				_dctValidArgs = new Dictionary<string , string> ( );
+            if ( _dctValidArgs == null )
+                _dctValidArgs = new Dictionary<string , string> ( );
 
             string [ ] astrEnvCmdLineArgs = Environment.GetCommandLineArgs ( );
 
@@ -3302,12 +3308,12 @@ namespace WizardWrx.Core
             //  ----------------------------------------------------------------
 
             _fArgListIsEmpty = ARG_LIST_HAS_ARGS;
-			int intArgPosition = ArrayInfo.ARRAY_INVALID_INDEX;
+            int intArgPosition = ArrayInfo.ARRAY_INVALID_INDEX;
             _enmArgType = new ArgType [ astrEnvCmdLineArgs.Length - SKIP_PGM_NAME_ARG ];
 
             foreach ( string strArg in astrEnvCmdLineArgs )
             {   // The first element in the array is the name of the executing program, as read from the shell prompt, shortcut, shell script, or CreateProcess argument list.
-				if ( intArgPosition > ArrayInfo.ARRAY_INVALID_INDEX )
+                if ( intArgPosition > ArrayInfo.ARRAY_INVALID_INDEX )
                 {   // Process remaining arguments.
                     if ( ArgIsSwitch ( strArg ) )
                     {   // The argument has a valid switch prefix.
@@ -3317,9 +3323,9 @@ namespace WizardWrx.Core
 
                         if ( string.IsNullOrEmpty ( strSwitchName ) == false )
                         {   // Switch is followed by a character. Empty strings are ignored.
-							if ( _dctValidArgs.ContainsKey ( strSwitchName ) )
+                            if ( _dctValidArgs.ContainsKey ( strSwitchName ) )
                             {   // Character is in list of valid switches.
-								_dctValidArgs [ strSwitchName ] = GetSwitchArgValue ( strArg );
+                                _dctValidArgs [ strSwitchName ] = GetSwitchArgValue ( strArg );
                                 _enmArgType [ intArgPosition ] = ArgType.Switch;
                                 _intValidSwitchesInCmd++;
                             }   // TRUE block (normal), if (base.ContainsKey(strSwitchName))
@@ -3346,9 +3352,9 @@ namespace WizardWrx.Core
                                 _enmArgMatching ,
                                 out astrNVP );
 
-							if ( _dctValidArgs.ContainsKey ( strArgNameKey ) )
+                            if ( _dctValidArgs.ContainsKey ( strArgNameKey ) )
                             {   // Argument name is valid. Update its value.
-								_dctValidArgs [ strArgNameKey ] = astrNVP [ NVP_VALUE ];
+                                _dctValidArgs [ strArgNameKey ] = astrNVP [ NVP_VALUE ];
                                 _enmArgType [ intArgPosition ] = ArgType.Named;
                                 _intValidNmedArgsInCmd++;
                             }   // TRUE block (normal), if ( base.ContainsKey ( strArgNameKey ) )
@@ -3360,10 +3366,10 @@ namespace WizardWrx.Core
                         }   // TRUE block, if ( ArgIsNamed ( strArg ) )
                         else
                         {   // By default, the argument is defined by its position in the command line.
-							if ( _dctValidArgs == null )
-								_dctValidArgs = new Dictionary<string , string> ( POSITIONAL_ARGS_COUNT_LIMIT );
+                            if ( _dctValidArgs == null )
+                                _dctValidArgs = new Dictionary<string , string> ( POSITIONAL_ARGS_COUNT_LIMIT );
 
-							_dctValidArgs.Add ( string.Format (
+                            _dctValidArgs.Add ( string.Format (
                                     ARG_KEY_FMT ,
                                     POSITIONAL_ARG_PREFIX ,
                                     ++_intPositionalArgsInCmdLine ) ,			// Count it once only.
@@ -3376,11 +3382,11 @@ namespace WizardWrx.Core
                 intArgPosition++;												// This is always incremented.
             }   // foreach (string strArg in Environment.GetCommandLineArgs())
         }   // ParseArgs
-		#endregion	// Private Instance Methods
+        #endregion	// Private Instance Methods
 
 
-		#region Private Static Methods
-		private static bool ArgHasName ( string pstrArg )
+        #region Private Static Methods
+        private static bool ArgHasName ( string pstrArg )
         {
             if ( string.IsNullOrEmpty ( pstrArg ) )
                 return false;
@@ -3427,7 +3433,7 @@ namespace WizardWrx.Core
         {
             if ( pfAllowEmptyStringAsDefault )
                 if ( pstrSuppliedDefault == null )
-					return Core.Properties.Resources.SWITCH_IS_OFF;
+                    return Core.Properties.Resources.SWITCH_IS_OFF;
                 else
                     return pstrSuppliedDefault;
             else
@@ -3494,12 +3500,12 @@ namespace WizardWrx.Core
         private static string GetSwitchArgValue ( string pstrArg )
         {
             if ( string.IsNullOrEmpty ( pstrArg ) )
-				return Core.Properties.Resources.SWITCH_IS_OFF;
+                return Core.Properties.Resources.SWITCH_IS_OFF;
             else
                 if ( pstrArg.Length > SW_MIN_LEN )
                     return pstrArg.Substring ( SW_ARG_POS );
                 else
-					return Core.Properties.Resources.SWITCH_IS_ON;
+                    return Core.Properties.Resources.SWITCH_IS_ON;
         }   // GetSwitchArgValue
 
 
@@ -3556,6 +3562,6 @@ namespace WizardWrx.Core
                 return VALUE_NOT_SET;
             }   // FALSE block (degenerate case), if ( pstrArg.Length >= SW_MIN_LEN )
         }   // GetSwitchInternalName
-		#endregion	// Private Static Methods
-	}   // ParsedCmdArgs class
+        #endregion	// Private Static Methods
+    }   // ParsedCmdArgs class
 }   // partial namespace WizardWrx.Core

@@ -17,6 +17,12 @@ console, the Windows desktop, or the ASP.NET Web server. To date, I have used
 classes and methods in these libraries in all three environments and against
 virtually every version of the framework and Base Class Library.
 
+## Version 7.23.167, released 2019/12/15
+
+The only difference between this version and its immediate predecessor is that
+it adheres to the SemVer version numbering scheme that is generally used for
+NuGet packages.
+
 ## Using the Library
 
 Since there are no name collisions, you may safely set references to any library

@@ -5,6 +5,35 @@ libraries that comprise the __WizardWrx .NET API__. A companion document,
 `ChangeLog.md`, gives a much more thorough accounting of the improvements and
 bug fixes incorporated in each release.
 
+## Release Notes, 2019/12/16, WizardWrx.ASCIIInfo, WizardWrx.Core, WizardWrx.FormatStringEngine
+
+This update implements two changes in the infrastructure of the __WizardWrx .NET
+API__ libraries.
+
+1. These libraries abandon NuGet packages as their means of consuming updates
+to sibling dependencies `WizardWrx.Common` and `WizardWrx.FormatStringEngine` in
+favor of old-fashioned project references. Though consuming NuGet packages looks
+great on paper, it proved awkward in practice because everything stayed one
+release behind.
+
+2. These libraries trade traditional 4-part version numbers for the industry
+standard 3-part SemVer numbering adopted for the NuGet Repository. This scheme
+improves version control by eliminating the time stamp generated for the fourth
+part by the asterisk, thereby making builds detrministic.
+
+To date, these changes are implemented only for the core libraries, essentially
+WizardWrx.Common and WizardWrx.Core; the other two libraries listed above being
+dependencies of the core library. I expect to complete the transition before the
+end of calendar year 2019. The next update involves WizardWrx.AssemblyUtils,
+which is getting a new method that exposes a list that was previously kept
+private.
+
+## Release Notes, 2019/12/15, WizardWrx.Common.dll, Version 7.23.123
+
+This update adds static method FormatIntegerLeftPadded to the NumericFormats
+class. This update also adopts the generally accepted SemVer version numbering
+scheme.
+
 ## Release Notes, 2019/10/02, WizardWrx.Common.dll, Version 7.22.122
 
 This upgrade affects only one library, `WizardWrx.Common.dll`; although others

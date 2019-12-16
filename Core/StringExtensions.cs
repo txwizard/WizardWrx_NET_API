@@ -17,16 +17,16 @@
                         The like named methods in StringTricks remain, marked as
                         legal, though obsolete.
 
-						LengthOfLongestString didn't make the cut, since its
-						input is an array.
+                        LengthOfLongestString didn't make the cut, since its
+                        input is an array.
  
-						ReplaceToken didn't make the cut, because it is 
-						redundant, which I didn't realize when I wrote it.
+                        ReplaceToken didn't make the cut, because it is 
+                        redundant, which I didn't realize when I wrote it.
 
-	Author:             David A. Gray
+    Author:             David A. Gray
 
-	License:            Copyright (C) 2017-2019, David A. Gray. 
-						All rights reserved.
+    License:            Copyright (C) 2017-2019, David A. Gray. 
+                        All rights reserved.
 
                         Redistribution and use in source and binary forms, with
                         or without modification, are permitted provided that the
@@ -76,24 +76,24 @@
                            to create a string from SpecialCharacters.ENV_STR_DLM
                            in CountUnresolvedEnvironmentStrings.
 
-	2017/08/29 7.0     DAG Define two more extension methods, EnsureFirstCharIs
+    2017/08/29 7.0     DAG Define two more extension methods, EnsureFirstCharIs
                            and EnsureLastCharIs discovered missing while
                            correcting an oversight in the test program.
 
-	2018/10/07 7.1     DAG Incorporate CapitalizeWords, which I created and
-	                       tested as part of the Great Eastern Energy DataFarmer
-						   application.
+    2018/10/07 7.1     DAG Incorporate CapitalizeWords, which I created and
+                           tested as part of the Great Eastern Energy DataFarmer
+                           application.
 
-	2018/11/11 7.11    DAG 1) Add RenderEvenWhenNull, which represents a null
-	                          reference as a localizable string literal,
-						      MSG_OBJECT_REFERENCE_IS_NULL.
+    2018/11/11 7.11    DAG 1) Add RenderEvenWhenNull, which represents a null
+                              reference as a localizable string literal,
+                              MSG_OBJECT_REFERENCE_IS_NULL.
 
-	                       2) Add EnumFromString.
+                           2) Add EnumFromString.
 
                            the example in a code block, about which I learned a
                            few days ago when I was researching an issue
 
-	2018/11/17 7.11    DAG ParseCommentInHTMLComment: Wrap the XML comment in
+    2018/11/17 7.11    DAG ParseCommentInHTMLComment: Wrap the XML comment in
                            a code block, about which I learned while researching
                            an unrelated issue concerning cross references to
                            methods exposed by other assemblies. This enabled
@@ -103,16 +103,16 @@
                            
                            https://github.com/dotnet/docfx/issues/3493.
 
-	2019/05/05 7.16    DAG ApplyFixups is a new method that performs global
+    2019/05/05 7.16    DAG ApplyFixups is a new method that performs global
                            replacements from an array of search and replacement
                            pairs.
 
-	2019/05/15 7.17    DAG ReplaceEscapedTabsInStringFromResX is a new method 
+    2019/05/15 7.17    DAG ReplaceEscapedTabsInStringFromResX is a new method 
                            that does exactly what its name implies, while
                            EnumerateSubstringPositions does what its name 
                            implies.
 
-	2019/06/01 7.19    DAG UnixLineEndings, WindowsLineEndings, and
+    2019/06/01 7.19    DAG UnixLineEndings, WindowsLineEndings, and
                            OldMacLineEndings is a set of new methods that do what
                            their names imply:
 
@@ -124,6 +124,12 @@
 
                            OldMacLineEndings    Replace CR/LF pairs and bare LFs
                                                 with bare CRs.
+
+    2019/12/16 7.23    DAG Allow the tab consistency add-in to replace tabs with
+                           spaces. The code is otherwise unchanged, although the
+                           new build is required to add a binding redirect, and
+                           the version numbering transitions to the SemVer
+                           scheme.
     ============================================================================
 */
 
@@ -499,42 +505,42 @@ namespace WizardWrx
 
         /// <summary>
         /// Strangely, the String class is missing an important static method to
-		/// count substrings within a string. This is that missing method.
+        /// count substrings within a string. This is that missing method.
         /// </summary>
         /// <param name="pstrSource">
         /// Specify the string in which to count occurrences of substring
-		/// pstrToCount.
+        /// pstrToCount.
         ///
         /// If pstrSource is null or empty, the method returns zero.
-		/// 
-		/// Since this is an extension method, pstrIn is supplied by the BCL
-		/// when it binds this method to an instance of System.string.
-		/// </param>
+        /// 
+        /// Since this is an extension method, pstrIn is supplied by the BCL
+        /// when it binds this method to an instance of System.string.
+        /// </param>
         /// <param name="pstrToCount">
         /// Specify the substring to count in string pstrSource.
-		/// 
-		/// The empty string causes the method to return 
-		/// MagicNumbers.STRING_INDEXOF_NOT_FOUND, or -1.
+        /// 
+        /// The empty string causes the method to return 
+        /// MagicNumbers.STRING_INDEXOF_NOT_FOUND, or -1.
         /// </param>
         /// <param name="penmComparisonType">
         /// Specify a member of the System.StringComparison enumeration, which
-		/// defines the rules for performing the comparison.
+        /// defines the rules for performing the comparison.
         /// </param>
         /// <returns>
         /// The return value is the number of times, if any, that string
-		/// pstrToCount occurs in string pstrSource, zero if pstrSource is a
-		/// null reference or the empty string, or 
-		/// MagicNumbers.STRING_INDEXOF_NOT_FOUND (-1) if pstrToCount is either
-		/// a null reference or the empty string.
+        /// pstrToCount occurs in string pstrSource, zero if pstrSource is a
+        /// null reference or the empty string, or 
+        /// MagicNumbers.STRING_INDEXOF_NOT_FOUND (-1) if pstrToCount is either
+        /// a null reference or the empty string.
         /// </returns>
-		/// <remarks>
-		/// This method implements the only overloads of the string.IndexOf
-		/// method that takes a string as its second argument for which I
-		/// have yet to make use. There is currently no implementation of the
-		/// overloads that stops looking after scanning count characters, nor do
-		/// I have immediate plans to implement one, though it wouldn't be hard.
-		/// </remarks>
-		public static int CountSubstrings (
+        /// <remarks>
+        /// This method implements the only overloads of the string.IndexOf
+        /// method that takes a string as its second argument for which I
+        /// have yet to make use. There is currently no implementation of the
+        /// overloads that stops looking after scanning count characters, nor do
+        /// I have immediate plans to implement one, though it wouldn't be hard.
+        /// </remarks>
+        public static int CountSubstrings (
             this string pstrSource ,
             string pstrToCount ,
             StringComparison penmComparisonType )
@@ -633,18 +639,18 @@ namespace WizardWrx
         /// </summary>
         /// <param name="pstrSource">
         /// Specify the string in which to count occurrences of substring
-		/// pstrToCount.
+        /// pstrToCount.
         ///
         /// If pstrSource is null or empty, the method returns zero.
-		/// 
-		/// Since this is an extension method, pstrIn is supplied by the BCL
-		/// when it binds this method to an instance of System.string.
-		/// </param>
+        /// 
+        /// Since this is an extension method, pstrIn is supplied by the BCL
+        /// when it binds this method to an instance of System.string.
+        /// </param>
         /// <param name="pstrToCount">
         /// Specify the substring to count in string pstrSource.
-		/// 
-		/// The empty string causes the method to return 
-		/// MagicNumbers.STRING_INDEXOF_NOT_FOUND, or -1.
+        /// 
+        /// The empty string causes the method to return 
+        /// MagicNumbers.STRING_INDEXOF_NOT_FOUND, or -1.
         /// </param>
         /// <returns>
         /// When the method succeeds, its return value is an array of integers,
@@ -675,22 +681,22 @@ namespace WizardWrx
         /// </summary>
         /// <param name="pstrSource">
         /// Specify the string in which to count occurrences of substring
-		/// pstrToCount.
+        /// pstrToCount.
         ///
         /// If pstrSource is null or empty, the method returns zero.
-		/// 
-		/// Since this is an extension method, pstrIn is supplied by the BCL
-		/// when it binds this method to an instance of System.string.
-		/// </param>
+        /// 
+        /// Since this is an extension method, pstrIn is supplied by the BCL
+        /// when it binds this method to an instance of System.string.
+        /// </param>
         /// <param name="pstrToCount">
         /// Specify the substring to count in string pstrSource.
-		/// 
-		/// The empty string causes the method to return 
-		/// MagicNumbers.STRING_INDEXOF_NOT_FOUND, or -1.
+        /// 
+        /// The empty string causes the method to return 
+        /// MagicNumbers.STRING_INDEXOF_NOT_FOUND, or -1.
         /// </param>
         /// <param name="penmComparisonType">
         /// Specify a member of the System.StringComparison enumeration, which
-		/// defines the rules for performing the comparison.
+        /// defines the rules for performing the comparison.
         /// </param>
         /// <returns>
         /// When the method succeeds, its return value is an array of integers,
@@ -1140,10 +1146,10 @@ namespace WizardWrx
         /// Remarks.
         /// </param>
         /// <returns>
-		/// The returned substring begins with the character immediately to the
-		/// right of the left hand bounding substring, and ending with the last
-		/// character before the right hand bounding substring.
-		/// </returns>
+        /// The returned substring begins with the character immediately to the
+        /// right of the left hand bounding substring, and ending with the last
+        /// character before the right hand bounding substring.
+        /// </returns>
         /// <remarks>
         /// The left and right ends are expected to be bounded by different
         /// characters. To  extract a string bounded on each end by the same
@@ -1151,7 +1157,7 @@ namespace WizardWrx
         ///
         /// Inputs and computed values are thoroughly sanity checked to prevent
         /// run-time exceptions. If anything is out of order, the empty string
-		/// is returned.
+        /// is returned.
         /// </remarks>
         public static string ExtractBoundedSubstrings (
             this string pstrWholeString ,
@@ -1197,14 +1203,14 @@ namespace WizardWrx
         /// Remarks.
         /// </param>
         /// <param name="pstrRightBound">
-		/// Specify the substring that marks the right end of the string. See
+        /// Specify the substring that marks the right end of the string. See
         /// Remarks.
         /// </param>
         /// <returns>
-		/// The returned substring begins with the character immediately to the
-		/// right of the left hand bounding substring, and ending with the last
-		/// character before the right hand bounding substring.
-		/// </returns>
+        /// The returned substring begins with the character immediately to the
+        /// right of the left hand bounding substring, and ending with the last
+        /// character before the right hand bounding substring.
+        /// </returns>
         /// <remarks>
         /// The left and right ends are expected to be bounded by different
         /// substrings. To  extract a string bounded on each end by the same
@@ -1375,15 +1381,15 @@ namespace WizardWrx
         /// Specify the string containing the name of the token.
         /// </param>
         /// <param name="pstrTokenEnds">
-		/// Specify the string to attach to both ends of the string specified by
-		/// pstrFieldName to generate the token.
-		/// </param>
+        /// Specify the string to attach to both ends of the string specified by
+        /// pstrFieldName to generate the token.
+        /// </param>
         /// <returns>
         /// The string is constructed by appending the token delimiter specified
         /// in argument pstrTokenEnds to both ends of the string specified in
         /// argument pstrFieldName.
         /// </returns>
-		public static string MakeToken (
+        public static string MakeToken (
             this string pstrFieldName ,
             string pstrTokenEnds )
         {
@@ -1781,7 +1787,7 @@ namespace WizardWrx
         /// Tokens bounded by "##" are replaced by strings from the Session
         /// variables collection. The same defaults collection is used for both.
         /// </returns>
-		public static string ReplaceTokensFromList (
+        public static string ReplaceTokensFromList (
             this string pstrTemplate ,
             NameValueCollection pnvcFields ,
             NameValueCollection pnvcDefaults )
@@ -1853,7 +1859,7 @@ namespace WizardWrx
         /// String with tokens replaced, and tokens that have no corresponding
         /// object in the pnvcList collection preserved.
         /// </returns>
-		public static string ReplaceTokensFromList (
+        public static string ReplaceTokensFromList (
             this string pstrMsg ,
             Dictionary<string , object> pdctList )
         {
@@ -1909,7 +1915,7 @@ namespace WizardWrx
         /// String with tokens replaced, and tokens that have no corresponding
         /// object in the pnvcList OR the pdctDefaults collection preserved.
         /// </returns>
-		public static string ReplaceTokensFromList (
+        public static string ReplaceTokensFromList (
             this string pstrMsg ,
             Dictionary<string , object> pdctList ,
             Dictionary<string , object> pdctDefaults )
@@ -1976,7 +1982,7 @@ namespace WizardWrx
         /// String with tokens replaced, and tokens that have no corresponding
         /// object in the pnvcList collection preserved.
         /// </returns>
-		public static string ReplaceTokensFromList (
+        public static string ReplaceTokensFromList (
             this string pstrMsg ,
             Dictionary<string , object> pdctList ,
             string pstrFormat )
@@ -2046,7 +2052,7 @@ namespace WizardWrx
         /// String with tokens replaced, and tokens that have no corresponding
         /// object in the pnvcList OR the pdctDefaults collection preserved.
         /// </returns>
-		public static string ReplaceTokensFromList (
+        public static string ReplaceTokensFromList (
             this string pstrMsg ,
             Dictionary<string , object> pdctList ,
             Dictionary<string , object> pdctDefaults ,

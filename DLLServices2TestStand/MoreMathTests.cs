@@ -14,8 +14,8 @@
 
     Author:             David A. Gray
 
-	License:            Copyright (C) 2018-2019, David A. Gray. 
-						All rights reserved.
+    License:            Copyright (C) 2018-2019, David A. Gray. 
+                        All rights reserved.
 
                         Redistribution and use in source and binary forms, with
                         or without modification, are permitted provided that the
@@ -62,13 +62,18 @@
 
     2018/11/23 7.12    DAG    Extend to cover the new Mod and Remainder methods.
 
-	2018/12/24 7.14    DAG    Define the DecimalShift function, syntactic sugar
+    2018/12/24 7.14    DAG    Define the DecimalShift function, syntactic sugar
                               that performs decimal shift operations on integers
                               and floating point numbers of various sizes.
 
-	2019/07/18 7.21    DAG    Show that all four new IncrementAndReturnNewValue
+    2019/07/18 7.21    DAG    Show that all four new IncrementAndReturnNewValue
                               methods that I just added to MoreMath work.
-	============================================================================
+
+    2019/10/03 7.22    DAG Since the tab consistency checker add-in flagged this
+                           file as inconsistently tabbed, I let it replace tabs
+                           with spaces. The code is otherwise unchanged, since
+                           the design is such that the 
+    ============================================================================
 */
 
 using System;
