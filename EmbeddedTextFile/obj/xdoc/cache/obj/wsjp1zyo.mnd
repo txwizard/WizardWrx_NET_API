@@ -1,0 +1,10 @@
+id: EmbeddedTextFile
+language: CSharp
+name:
+  Default: EmbeddedTextFile
+qualifiedName:
+  Default: EmbeddedTextFile
+type: Assembly
+modifiers: {}
+items: []
+references: {}

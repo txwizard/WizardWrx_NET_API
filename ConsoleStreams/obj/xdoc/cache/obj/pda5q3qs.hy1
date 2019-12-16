@@ -1,0 +1,10 @@
+id: ConsoleStreams
+language: CSharp
+name:
+  Default: ConsoleStreams
+qualifiedName:
+  Default: ConsoleStreams
+type: Assembly
+modifiers: {}
+items: []
+references: {}

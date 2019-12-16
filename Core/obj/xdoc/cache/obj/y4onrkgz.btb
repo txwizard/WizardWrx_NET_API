@@ -1,0 +1,10 @@
+id: Core
+language: CSharp
+name:
+  Default: Core
+qualifiedName:
+  Default: Core
+type: Assembly
+modifiers: {}
+items: []
+references: {}

@@ -1,0 +1,10 @@
+id: Common
+language: CSharp
+name:
+  Default: Common
+qualifiedName:
+  Default: Common
+type: Assembly
+modifiers: {}
+items: []
+references: {}

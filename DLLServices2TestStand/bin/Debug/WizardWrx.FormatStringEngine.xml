@@ -11,7 +11,7 @@
             
              The static methods of this class are public, and are very handy for
              creating compact summary reports.
-             
+            
              Use them to construct composite format items that have their
              characteristics, especially their widths, established at runtime.
              Setting the width dynamically permits summary totals and their labels,
@@ -941,15 +941,15 @@
             </returns>
         </member>
         <member name="T:WizardWrx.FormatStringEngine.FormatItemsCollection">
-            <summary>
-            This generic List derivative holds the collection of FormatItems found
-            in a FormatString.
+             <summary>
+             This generic List derivative holds the collection of FormatItems found
+             in a FormatString.
             
-            While the class, itself, is marked Public, everything else about it is
-            marked as Internal, so that only instances of classes defined in this
-            assembly can create a collection or add items to it, while instances of
-            the FormatStringParser class expose it as a read only property.
-            </summary>
+             While the class, itself, is marked Public, everything else about it is
+             marked as Internal, so that only instances of classes defined in this
+             assembly can create a collection or add items to it, while instances of
+             the FormatStringParser class expose it as a read only property.
+             </summary>
         </member>
         <member name="M:WizardWrx.FormatStringEngine.FormatItemsCollection.#ctor">
             <summary>
@@ -987,18 +987,18 @@
             </param>
         </member>
         <member name="T:WizardWrx.FormatStringEngine.FormatStringError">
-            <summary>
-            The FormatStringParser exposes a List of these objects if errors exist
-            in its current format string.
-            </summary>
-            <remarks>
-            The only property that has any use outside the defining assembly is the
-            string representation, which returns the properties in a well formed CSV
-            string.
+             <summary>
+             The FormatStringParser exposes a List of these objects if errors exist
+             in its current format string.
+             </summary>
+             <remarks>
+             The only property that has any use outside the defining assembly is the
+             string representation, which returns the properties in a well formed CSV
+             string.
             
-            Likewise, only other classes defined in the same assembly are allowed to
-            create instances of this object, which are immutable.
-            </remarks>
+             Likewise, only other classes defined in the same assembly are allowed to
+             create instances of this object, which are immutable.
+             </remarks>
         </member>
         <member name="F:WizardWrx.FormatStringEngine.FormatStringError.FIELD_DELIMITER">
             <summary>
@@ -1018,51 +1018,51 @@
             </summary>
         </member>
         <member name="M:WizardWrx.FormatStringEngine.FormatStringError.Split">
-            <summary>
-            Split the message into an array of parts, each containing a property
-            value and its label.
+             <summary>
+             Split the message into an array of parts, each containing a property
+             value and its label.
             
-            Please see the remarks.
-            </summary>
-            <returns>
-            The return value is an array of strings.
+             Please see the remarks.
+             </summary>
+             <returns>
+             The return value is an array of strings.
             
-            Please see the remarks for essential information about this string.
-            </returns>
-            <remarks>
-            This function is provided to facilitate correctly splitting a string,
-            returned by the ToString method on an instance, into fields, each of
-            which is a name/value pair that can be further subdivided, using the
-            built-in string.Split method, along with LABEL_VALUE_DELIMITER, the
-            correct delimiter to use with string.Split.
+             Please see the remarks for essential information about this string.
+             </returns>
+             <remarks>
+             This function is provided to facilitate correctly splitting a string,
+             returned by the ToString method on an instance, into fields, each of
+             which is a name/value pair that can be further subdivided, using the
+             built-in string.Split method, along with LABEL_VALUE_DELIMITER, the
+             correct delimiter to use with string.Split.
             
-            Under the covers, Split passes the string returned by a call to the
-            instance ToString method to the static WizardWrx.AnyCSV.Parser.Parse
-            method, which does most of the work.
+             Under the covers, Split passes the string returned by a call to the
+             instance ToString method to the static WizardWrx.AnyCSV.Parser.Parse
+             method, which does most of the work.
             
-            IMPORTANT: Since the new version of WizardWrx.AnyCSV.dll has a COM
-            interface, it had to target the x86 platform. This can eventually be
-            corrected by building a parallel version that isn't exposed to COM.
-            </remarks>
+             IMPORTANT: Since the new version of WizardWrx.AnyCSV.dll has a COM
+             interface, it had to target the x86 platform. This can eventually be
+             corrected by building a parallel version that isn't exposed to COM.
+             </remarks>
         </member>
         <member name="M:WizardWrx.FormatStringEngine.FormatStringError.ToString">
-            <summary>
-            Format the properties into a comma-delimited string, which may be
-            used as is or processed by the Split method on this instance.
+             <summary>
+             Format the properties into a comma-delimited string, which may be
+             used as is or processed by the Split method on this instance.
             
-            Please see the remarks for essential information about this string.
-            </summary>
-            <returns>
-            Please see the remarks for essential information about this string.
-            </returns>
-            <remarks>
-            The standard string.Split method cannot split this string correctly,
-            because it treats commas embedded in its strings as delimiters, thus
-            splitting the string into too many pieces, and at the wrong places.
+             Please see the remarks for essential information about this string.
+             </summary>
+             <returns>
+             Please see the remarks for essential information about this string.
+             </returns>
+             <remarks>
+             The standard string.Split method cannot split this string correctly,
+             because it treats commas embedded in its strings as delimiters, thus
+             splitting the string into too many pieces, and at the wrong places.
             
-            Use the Split method on this instance, which employs a robust CSV
-            parsing engine that splits it correctly.
-            </remarks>
+             Use the Split method on this instance, which employs a robust CSV
+             parsing engine that splits it correctly.
+             </remarks>
         </member>
         <member name="T:WizardWrx.FormatStringEngine.FormatStringParser">
             <summary>
@@ -1140,7 +1140,7 @@
         </member>
         <member name="F:WizardWrx.FormatStringEngine.FormatStringParser.NO_ERRORS">
             <summary>
-            The FormatStringErrorCount returns this value when the 
+            The FormatStringErrorCount returns this value when the
             FormatStringErrors collection is null. The collection remains so
             unless at least one error is found in the string.
             </summary>
@@ -1220,7 +1220,7 @@
         <member name="M:WizardWrx.FormatStringEngine.FormatStringParser.#ctor(System.String)">
             <summary>
             Create the parser and set the initial value of its FormatString
-            property. 
+            property.
             </summary>
             <param name="pstrFormatString">
             Pass a reference to the format control string that you want parsed.
@@ -1285,32 +1285,32 @@
             </param>
         </member>
         <member name="M:WizardWrx.FormatStringEngine.FormatStringParser.SaveFormatItem(WizardWrx.FormatStringEngine.FormatStringParser.State@,System.Int32,WizardWrx.FormatStringEngine.FormatItem@)">
-            <summary>
-            Although its name, SaveFormatItem, suggests that its sole task is to
-            save the populated FormatItem into the collection, it performs some
-            related tasks, each of which is noted in the argument comments.
-            </summary>
-            <param name="prenmState">
-            The State enumeration, which governs the behavior of the parsing
-            engine, is set to ProcessingLiterals to indicate that processing is
-            between format items. 
+             <summary>
+             Although its name, SaveFormatItem, suggests that its sole task is to
+             save the populated FormatItem into the collection, it performs some
+             related tasks, each of which is noted in the argument comments.
+             </summary>
+             <param name="prenmState">
+             The State enumeration, which governs the behavior of the parsing
+             engine, is set to ProcessingLiterals to indicate that processing is
+             between format items.
             
-            Since this method changes its value, and it is a value type (Any
-            enumeration is really an integer in handcuffs.), it is passed by 
-            reference, so that the change is reflected in the caller's address
-            space.
-            </param>
-            <param name="pintCharPos">
-            Since this integer is used, but not changed, it can be safely passed
-            by value.
-            </param>
-            <param name="prfiCurrent">
-            After the FormatItem is copied into a FormatItemsCollection object,
-            the locally scoped copy is discarded. Sooner or later, this would
-            happen on its own, but I like to discard objects as soon as I know
-            that I am finished with them, especially if their lingering presence
-            could cause confusion about the current state of affairs.
-            </param>
+             Since this method changes its value, and it is a value type (Any
+             enumeration is really an integer in handcuffs.), it is passed by
+             reference, so that the change is reflected in the caller's address
+             space.
+             </param>
+             <param name="pintCharPos">
+             Since this integer is used, but not changed, it can be safely passed
+             by value.
+             </param>
+             <param name="prfiCurrent">
+             After the FormatItem is copied into a FormatItemsCollection object,
+             the locally scoped copy is discarded. Sooner or later, this would
+             happen on its own, but I like to discard objects as soon as I know
+             that I am finished with them, especially if their lingering presence
+             could cause confusion about the current state of affairs.
+             </param>
         </member>
         <member name="T:WizardWrx.FormatStringEngine.Properties.Resources">
             <summary>

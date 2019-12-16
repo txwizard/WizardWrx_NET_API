@@ -1,0 +1,10 @@
+id: DLLConfigurationManager
+language: CSharp
+name:
+  Default: DLLConfigurationManager
+qualifiedName:
+  Default: DLLConfigurationManager
+type: Assembly
+modifiers: {}
+items: []
+references: {}

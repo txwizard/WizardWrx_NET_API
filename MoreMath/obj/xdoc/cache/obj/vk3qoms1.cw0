@@ -1,0 +1,10 @@
+id: MoreMath
+language: CSharp
+name:
+  Default: MoreMath
+qualifiedName:
+  Default: MoreMath
+type: Assembly
+modifiers: {}
+items: []
+references: {}
