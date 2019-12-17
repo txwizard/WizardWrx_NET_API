@@ -4,6 +4,8 @@ This file is a running history of fixes and improvements from version 7.0
 onwards. Changes are documented for the newest version first. Within each
 version, classes are covered in alphabetical order.
 
+## WizardWrx.AssemblyUtils 7.23.119, Released 2019/12/17
+
 ## WizardWrx.Core 7.23.182, Released 2019/12/16
 
 This update adopts the generally accepted SemVer version numbering scheme.
