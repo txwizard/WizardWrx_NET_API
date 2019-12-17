@@ -117,7 +117,8 @@
 
     2019/12/14 7.23    DAG    Correct internal documentation errors as I prepare
                               to create a freestanding routine that walks the
-                              dependency tree of an assembly.
+                              dependency tree of an assembly. The new method is
+                              GetDependentAssemblyInfos.
     ============================================================================
 */
 
@@ -126,8 +127,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
-
-using WizardWrx.Core;
 
 
 namespace WizardWrx.AssemblyUtils
@@ -334,6 +333,21 @@ namespace WizardWrx.AssemblyUtils
                 _asmRoot.FullName ,												// Format Item 0 = Assembly Full Name
                 Environment.NewLine );											// Format Item 1 = Embedded Newline
         }	// EnumerateDependents
+
+
+        /// <summary>
+        /// When called on an instance, this method returns a sorted list of the
+        /// dependent assemblies of the assembly that was passed into its
+        /// constructor.
+        /// </summary>
+        /// <returns>
+        /// If the method succeeds, the return value is a generic list of
+        /// DependentAssemblyInfo objects, sorted by name.
+        /// </returns>
+        public List<DependentAssemblyInfo> GetDependentAssemblyInfos ( )
+        {
+            return _lstNamesOfDependentAssemblies;
+        }   // public List<DependentAssemblyInfo> GetDependentAssemblyInfos
 
 
         /// <summary>

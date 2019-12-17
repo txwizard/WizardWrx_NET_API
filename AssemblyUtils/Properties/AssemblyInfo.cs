@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 //
-// The following items are specifieed in ../ProductAssemblyInfo.cs, which is
+// The following items are specified in ../ProductAssemblyInfo.cs, which is
 // linked into every project in the solution of which this project is a part.
 //
 //		AssemblyCompany
@@ -32,4 +32,4 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion ( "1.0.*" )]
-[assembly: AssemblyVersion ( "7.23.119.*" )]
+[assembly: AssemblyVersion ( "7.23.120.0" )]

@@ -112,6 +112,17 @@
             Enumerate the dependent assemblies.
             </summary>
         </member>
+        <member name="M:WizardWrx.AssemblyUtils.DependentAssemblies.GetDependentAssemblyInfos">
+            <summary>
+            When called on an instance, this method returns a sorted list of the
+            dependent assemblies of the assembly that was passed into its
+            constructor.
+            </summary>
+            <returns>
+            If the method succeeds, the return value is a generic list of
+            DependentAssemblyInfo objects, sorted by name.
+            </returns>
+        </member>
         <member name="M:WizardWrx.AssemblyUtils.DependentAssemblies.GetDependentAssemblyByName(System.Reflection.AssemblyName,System.Boolean)">
             <summary>
             Get a reference to the named dependent assembly.
