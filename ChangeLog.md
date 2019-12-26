@@ -4,7 +4,17 @@ This file is a running history of fixes and improvements from version 7.0
 onwards. Changes are documented for the newest version first. Within each
 version, classes are covered in alphabetical order.
 
+## WizardWrx.AssemblyUtils 7.23.121, Released 2019/12/25
+
+This release corrects an omission from the overloaded `DependentAssemblies`
+constructor that rendered it inoperable.
+
 ## WizardWrx.AssemblyUtils 7.23.119, Released 2019/12/17
+
+This release adds a new instance method, `GetDependentAssemblyInfos`, to class
+`DependentAssemblies`, which returns a sorted list of dependent assemblies.
+Though this could be implemted as a read-only property, I chose to implement it
+as a method.
 
 ## WizardWrx.Core 7.23.182, Released 2019/12/16
 

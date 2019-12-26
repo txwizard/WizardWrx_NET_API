@@ -19,7 +19,7 @@ namespace WizardWrx.AssemblyUtils.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -70,7 +70,7 @@ namespace WizardWrx.AssemblyUtils.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0}Properties of dependent assemblies follow.{0}.
+        ///   Looks up a localized string similar to Properties of direct dependent assemblies follow.{0}.
         /// </summary>
         internal static string MSG_ASM_DEPENDENTS_DETAILS_HEAD {
             get {
@@ -106,7 +106,7 @@ namespace WizardWrx.AssemblyUtils.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to     AssemblyFileBaseName = {0}.
+        ///   Looks up a localized string similar to         AssemblyFileBaseName = {0}.
         /// </summary>
         internal static string MSG_ASM_PROPS_ASSEMBLYFILEBASENAME {
             get {
@@ -115,7 +115,7 @@ namespace WizardWrx.AssemblyUtils.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to     AssemblyFileName     = {0}{1}.
+        ///   Looks up a localized string similar to         AssemblyFileName     = {0}{1}.
         /// </summary>
         internal static string MSG_ASM_PROPS_ASSEMBLYFILENAME {
             get {
@@ -124,7 +124,7 @@ namespace WizardWrx.AssemblyUtils.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to     AssemblyGuidString   = {0}.
+        ///   Looks up a localized string similar to         AssemblyGuidString   = {0}.
         /// </summary>
         internal static string MSG_ASM_PROPS_ASSEMBLYGUIDSTRING {
             get {
@@ -133,7 +133,7 @@ namespace WizardWrx.AssemblyUtils.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to     AssemblyVersion      = {0} (per AssemblyName.GetAssemblyName).
+        ///   Looks up a localized string similar to         AssemblyVersion      = {0} (per AssemblyName.GetAssemblyName).
         /// </summary>
         internal static string MSG_ASM_PROPS_ASSEMBLYVERSION {
             get {
@@ -142,7 +142,7 @@ namespace WizardWrx.AssemblyUtils.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to     AssembyDirName       = {0}.
+        ///   Looks up a localized string similar to         AssembyDirName       = {0}.
         /// </summary>
         internal static string MSG_ASM_PROPS_ASSEMBYDIRNAME {
             get {
@@ -151,7 +151,7 @@ namespace WizardWrx.AssemblyUtils.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to     Comments             = {0}{1}.
+        ///   Looks up a localized string similar to         Comments             = {0}{1}.
         /// </summary>
         internal static string MSG_ASM_PROPS_COMMENTS {
             get {
@@ -160,7 +160,7 @@ namespace WizardWrx.AssemblyUtils.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to     CompanyName          = {0}.
+        ///   Looks up a localized string similar to         CompanyName          = {0}.
         /// </summary>
         internal static string MSG_ASM_PROPS_COMPANYNAME {
             get {
@@ -169,7 +169,7 @@ namespace WizardWrx.AssemblyUtils.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to     Culture              = {0}.
+        ///   Looks up a localized string similar to         Culture              = {0}.
         /// </summary>
         internal static string MSG_ASM_PROPS_CULTURE {
             get {
@@ -178,7 +178,7 @@ namespace WizardWrx.AssemblyUtils.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to     Description          = {0}.
+        ///   Looks up a localized string similar to         Description          = {0}.
         /// </summary>
         internal static string MSG_ASM_PROPS_DESCRIPTION {
             get {
@@ -187,7 +187,7 @@ namespace WizardWrx.AssemblyUtils.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to     File Creation Date   = {0} ({1} UTC).
+        ///   Looks up a localized string similar to         File Creation Date   = {0} ({1} UTC).
         /// </summary>
         internal static string MSG_ASM_PROPS_FILE_CREATION_DATE {
             get {
@@ -196,7 +196,7 @@ namespace WizardWrx.AssemblyUtils.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to     File Modified Date   = {0} ({1} UTC).
+        ///   Looks up a localized string similar to         File Modified Date   = {0} ({1} UTC).
         /// </summary>
         internal static string MSG_ASM_PROPS_FILE_MODIFIED_DATE {
             get {
@@ -205,7 +205,7 @@ namespace WizardWrx.AssemblyUtils.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to     LegalCopyright       = {0}.
+        ///   Looks up a localized string similar to         LegalCopyright       = {0}.
         /// </summary>
         internal static string MSG_ASM_PROPS_LEGALCOPYRIGHT {
             get {
@@ -214,7 +214,7 @@ namespace WizardWrx.AssemblyUtils.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to     LegalTrademarks      = {0}.
+        ///   Looks up a localized string similar to         LegalTrademarks      = {0}.
         /// </summary>
         internal static string MSG_ASM_PROPS_LEGALTRADEMARKS {
             get {
@@ -223,7 +223,7 @@ namespace WizardWrx.AssemblyUtils.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to     ProductName          = {0}.
+        ///   Looks up a localized string similar to         ProductName          = {0}.
         /// </summary>
         internal static string MSG_ASM_PROPS_PRODUCTNAME {
             get {
@@ -232,7 +232,7 @@ namespace WizardWrx.AssemblyUtils.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to     PublicKeyToken       = {0}.
+        ///   Looks up a localized string similar to         PublicKeyToken       = {0}.
         /// </summary>
         internal static string MSG_ASM_PROPS_PUBLICKEYTOKEN {
             get {
@@ -241,7 +241,7 @@ namespace WizardWrx.AssemblyUtils.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to     Runtime Version      = {0}.
+        ///   Looks up a localized string similar to         Runtime Version      = {0}.
         /// </summary>
         internal static string MSG_ASM_PROPS_RUNTIME_VERSION {
             get {
@@ -250,7 +250,7 @@ namespace WizardWrx.AssemblyUtils.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Selected properties of assembly {0}:{1}.
+        ///   Looks up a localized string similar to     Selected properties of assembly {0} of {1}, {2}:{3}.
         /// </summary>
         internal static string MSG_ASM_PROPS_SELECTED_DLL_PROPS_BEGIN {
             get {
@@ -259,7 +259,7 @@ namespace WizardWrx.AssemblyUtils.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0}End of selected properties{0}.
+        ///   Looks up a localized string similar to {2}    End of selected properties of assembly {0} of {1}{2}.
         /// </summary>
         internal static string MSG_ASM_PROPS_SELECTED_DLL_PROPS_END {
             get {
@@ -268,7 +268,7 @@ namespace WizardWrx.AssemblyUtils.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to     VersionString        = {0} (per System.Diagnostics.FileVersionInfo.GetVersionInfo).
+        ///   Looks up a localized string similar to         VersionString        = {0} (per System.Diagnostics.FileVersionInfo.GetVersionInfo).
         /// </summary>
         internal static string MSG_ASM_PROPS_VERSIONSTRING {
             get {

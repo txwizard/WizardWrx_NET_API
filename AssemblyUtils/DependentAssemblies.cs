@@ -101,24 +101,29 @@
     Revision History
     ----------------------------------------------------------------------------
 
-    Date       Version Author Synopsis
-    ---------- ------- ------ --------------------------------------------------
-    2017/03/30 7.0     DAG    This class makes its first appearance.
+    Date       Version  Author Synopsis
+    ---------- -------- ------ --------------------------------------------------
+    2017/03/30 7.0      DAG    This class makes its first appearance.
 
-    2017/04/04 7.0     DAG    Account for null DomainManager in the default
-                              AppDomain, which doesn't exist unless the default
-                              application domain is created by the Visual Studio
-                              hosting process, or another mechanism that creates
-                              a domain manager.
+    2017/04/04 7.0      DAG    Account for null DomainManager in the default
+                               AppDomain, which doesn't exist unless the default
+                               application domain is created by the Visual
+                               Studio hosting process, or another mechanism that
+                               creates a domain manager.
 
-    2018/09/09 7.0     DAG    GetDependentAssemblyByName: Correctly account for
-                              the subject assembly being already loaded into the
-                              current domain.
+    2018/09/09 7.0      DAG    GetDependentAssemblyByName: Correctly account for
+                               the subject assembly being already loaded into
+                               the current domain.
 
-    2019/12/14 7.23    DAG    Correct internal documentation errors as I prepare
-                              to create a freestanding routine that walks the
-                              dependency tree of an assembly. The new method is
-                              GetDependentAssemblyInfos.
+    2019/12/14 7.23.120 DAG    Correct internal documentation errors as I
+                               prepare to create a freestanding routine that
+                               walks the dependency tree of an assembly. The
+                               new method is GetDependentAssemblyInfos.
+
+    2019/12/22 7.23.121 DAG    Replace the foreach loops in DisplayProperties,
+                               EnumerateDependents, and InitializeInstance with
+                               more efficient old-school FOR loops, and feed the
+                               loop control variables to the report writers.
     ============================================================================
 */
 
@@ -176,6 +181,7 @@ namespace WizardWrx.AssemblyUtils
         public DependentAssemblies ( Assembly pasmTopLevel )
         {
             _asmRoot = pasmTopLevel;
+            InitializeInstance ( );
         }	// DependentAssemblies Constructor (2 of 2)
         #endregion	// Constructors
 
@@ -236,10 +242,14 @@ namespace WizardWrx.AssemblyUtils
         /// </summary>
         public void DestroyDependents ( )
         {
-            foreach ( DependentAssemblyInfo daiCurrent in _lstNamesOfDependentAssemblies )
+            int intNDependencies = _lstNamesOfDependentAssemblies.Count;
+
+            for ( int intJ = ArrayInfo.ARRAY_IS_EMPTY ;
+                      intJ < intNDependencies ;
+                      intJ++ )
             {
-                daiCurrent.DestroyOwneAppdDomains ( );
-            }	// foreach ( DependentAssemblyInfo daiCurrent in _lstNamesOfDependentAssemblies )
+                _lstNamesOfDependentAssemblies [ intJ ].DestroyOwneAppdDomains ( );
+            }   // for ( int intJ = ArrayInfo.ARRAY_IS_EMPTY ; intJ < intNDependencies ; intJ++ )
         }	// DestroyDependents
 
 
@@ -278,15 +288,23 @@ namespace WizardWrx.AssemblyUtils
                     pchrDelimiter );
             }	// if ( pswOut != null )
 
-            foreach ( DependentAssemblyInfo daiCurrent in _lstNamesOfDependentAssemblies )
+            int intNDependents = _lstNamesOfDependentAssemblies.Count;
+
+            for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+                      intJ < intNDependents ;
+                      intJ++ )
             {	// Load dependents that haven't already been loaded.
+                DependentAssemblyInfo daiCurrent = _lstNamesOfDependentAssemblies [ intJ ];
+
                 if ( !daiCurrent.IsLoaded )
                 {	// Load the assembly into a dedicated AppDomain, so that it can be unloaded.
                     daiCurrent.LoadForInspection ( );
                 }	// FALSE (The application created a custom domain, into which it loaded the assembly.) block, if ( daiCurrent.IsLoaded )
 
                 ReportGenerators.ShowKeyAssemblyProperties (
-                    daiCurrent.AssemblyDetails );
+                    daiCurrent.AssemblyDetails ,
+                    intJ ,
+                    intNDependents );
 
                 if ( pswOut != null )
                 {	// If present, the stream is expected to be open for writing.
@@ -295,7 +313,7 @@ namespace WizardWrx.AssemblyUtils
                         pswOut ,
                         pchrDelimiter );
                 }	// if ( pswOut != null )
-            }	// foreach ( DependentAssemblyInfo daiCurrent in _lstNamesOfDependentAssemblies )
+            }   // for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ; intJ < intNDependents ; intJ++ )
 
             Console.WriteLine (
                 Properties.Resources.MSG_ASM_DEPENDENTS_DETAILS_TAIL ,			// Format Control String
@@ -318,15 +336,18 @@ namespace WizardWrx.AssemblyUtils
                 _asmRoot.FullName ,												// Format Item 0 = Assembly Full Name
                 strDispCount ,													// Format Item 1 = Dependent Count
                 Environment.NewLine );											// Format Item 2 = Embedded Newline
-            int intOrdinal = ListInfo.LIST_IS_EMPTY;
 
-            foreach ( DependentAssemblyInfo dai in _lstNamesOfDependentAssemblies )
+            for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+                      intJ < _lstNamesOfDependentAssemblies.Count ;
+                      intJ++ )
             {
                 Console.WriteLine (
                     strDtlFmt ,													// Format Control String
-                    NumberFormatters.Integer ( ++intOrdinal ) ,					// Format Item 0 = Item number
-                    dai.FullName );												// Format Item 1 = Assembly Full Name
-            }	// foreach ( AssemblyName an in _lstNamesOfDependentAssemblies )
+                    NumberFormatters.Integer (                                  // Format Item 0 = Item number
+                        ArrayInfo.OrdinalFromIndex (                            // int pintAnyInteger
+                            intJ ) ) ,					                        // int pintIndex
+                    _lstNamesOfDependentAssemblies [ intJ ].FullName );			// Format Item 1 = Assembly Full Name
+            }   // for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ; intJ < _lstNamesOfDependentAssemblies.Count ; intJ++ )
 
             Console.WriteLine (
                 Properties.Resources.MSG_ASM_DEPENDENTS_LIST_TAIL ,				// Format Control String
@@ -427,11 +448,16 @@ namespace WizardWrx.AssemblyUtils
             AssemblyName [ ] aasmNames = _asmRoot.GetReferencedAssemblies ( );
             _lstNamesOfDependentAssemblies = new List<DependentAssemblyInfo> ( aasmNames.Length );
 
-            foreach ( AssemblyName asmName in aasmNames )
-            {
-                _lstNamesOfDependentAssemblies.Add (
-                    new DependentAssemblyInfo ( asmName ) );
-            }	// foreach ( AssemblyName asmName in aasmNames )
+            {   // Build a scope fence around loop index intNDependents.
+                int intNDependents = aasmNames.Length;
+
+                for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+                          intJ < intNDependents ;
+                          intJ++ )
+                {
+                    _lstNamesOfDependentAssemblies.Add ( new DependentAssemblyInfo ( aasmNames [ intJ ] ) );
+                }	// for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ; intJ < intNDependents ; intJ++ )
+            }   // Let intNDependents go out of scope.
 
             _lstNamesOfDependentAssemblies.Sort ( );		// Sorting is a prerequisite of the binary search algorithm.
 
@@ -441,16 +467,22 @@ namespace WizardWrx.AssemblyUtils
 
             Assembly [ ] asmAlreadyLoaded = AppDomain.CurrentDomain.GetAssemblies ( );
 
-            foreach ( Assembly asmDependent in asmAlreadyLoaded )
-            {
-                DependentAssemblyInfo daiCurrent = new DependentAssemblyInfo ( asmDependent.GetName ( ) );
-                int intMatch = _lstNamesOfDependentAssemblies.BinarySearch ( daiCurrent );
+            {   // Build a scope fence around loop index intNLoadedDependents.
+                int intNLoadedDependents = asmAlreadyLoaded.Length;
 
-                if ( intMatch > ListInfo.BINARY_SEARCH_NOT_FOUND )
+                for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+                          intJ < intNLoadedDependents ;
+                          intJ++ )
                 {
-                    _lstNamesOfDependentAssemblies [ intMatch ].MarkAsLoaded ( asmDependent );
-                }	// if ( intMatch > ListInfo.BINARY_SEARCH_NOT_FOUND )
-            }	// foreach ( Assembly asmDependent in asmAlreadyLoaded )
+                    DependentAssemblyInfo daiCurrent = new DependentAssemblyInfo ( asmAlreadyLoaded [ intJ ].GetName ( ) );
+                    int intMatch = _lstNamesOfDependentAssemblies.BinarySearch ( daiCurrent );
+
+                    if ( intMatch > ListInfo.BINARY_SEARCH_NOT_FOUND )
+                    {
+                        _lstNamesOfDependentAssemblies [ intMatch ].MarkAsLoaded ( asmAlreadyLoaded [ intJ ] );
+                    }   // if ( intMatch > ListInfo.BINARY_SEARCH_NOT_FOUND )
+                }   // for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ; intJ < intNLoadedDependents ; intJ++ )
+            }   // Let intNLoadedDependents go out of scope. (This is insurance against new code being added below that extends the scope of the method.)
         }	// InitializeInstance
         #endregion	// Private Methods
 

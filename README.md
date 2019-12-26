@@ -5,6 +5,12 @@ libraries that comprise the __WizardWrx .NET API__. A companion document,
 `ChangeLog.md`, gives a much more thorough accounting of the improvements and
 bug fixes incorporated in each release.
 
+## Release Notes, 2019/12/16, WizardWrx.AssemblyUtils
+
+This library gets the SemVer treatment, a new instance method on its
+`DependentAssemblies` class, and the overloaded constructor on that
+class finally works correctly in all respects.
+
 ## Release Notes, 2019/12/16, WizardWrx.ASCIIInfo, WizardWrx.Core, WizardWrx.FormatStringEngine
 
 This update implements two changes in the infrastructure of the __WizardWrx .NET

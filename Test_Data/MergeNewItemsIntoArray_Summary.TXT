@@ -1,31 +1,31 @@
 Description|FileName|ModDate|Size|LineCount
 Master File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Master.TXT|2012/11/21 12:08:54|893|22
 New Items File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Case_01.TXT|2012/11/21 12:16:14|92|3
-Output File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Output_01.TXT|2019/12/17 00:27:56|929|20
-Master File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Output_01.TXT|2019/12/17 00:27:56|929|22
+Output File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Output_01.TXT|2019/12/25 22:29:04|929|20
+Master File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Output_01.TXT|2019/12/25 22:29:04|929|22
 New Items File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Case_02.TXT|2012/11/21 12:18:58|56|3
-Output File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Output_02.TXT|2019/12/17 00:27:56|974|21
-Master File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Output_02.TXT|2019/12/17 00:27:56|974|23
+Output File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Output_02.TXT|2019/12/25 22:29:04|974|21
+Master File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Output_02.TXT|2019/12/25 22:29:04|974|23
 New Items File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Case_03.TXT|2012/11/21 12:24:38|52|3
-Output File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Output_03.TXT|2019/12/17 00:27:56|1,015|22
-Master File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Output_03.TXT|2019/12/17 00:27:56|1,015|24
+Output File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Output_03.TXT|2019/12/25 22:29:04|1,015|22
+Master File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Output_03.TXT|2019/12/25 22:29:04|1,015|24
 New Items File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Case_04.TXT|2012/11/21 12:26:34|54|3
-Output File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Output_04.TXT|2019/12/17 00:27:56|1,058|23
-Master File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Output_04.TXT|2019/12/17 00:27:56|1,058|25
+Output File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Output_04.TXT|2019/12/25 22:29:04|1,058|23
+Master File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Output_04.TXT|2019/12/25 22:29:04|1,058|25
 New Items File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Case_05.TXT|2012/11/21 12:27:42|97|4
-Output File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Output_05.TXT|2019/12/17 00:27:56|1,144|25
-Master File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Output_05.TXT|2019/12/17 00:27:56|1,144|27
+Output File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Output_05.TXT|2019/12/25 22:29:04|1,144|25
+Master File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Output_05.TXT|2019/12/25 22:29:04|1,144|27
 New Items File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Case_06.TXT|2012/11/21 12:31:48|131|4
-Output File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Output_06.TXT|2019/12/17 00:27:56|1,219|26
-Master File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Output_06.TXT|2019/12/17 00:27:56|1,219|28
+Output File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Output_06.TXT|2019/12/25 22:29:04|1,219|26
+Master File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Output_06.TXT|2019/12/25 22:29:04|1,219|28
 New Items File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Case_07.TXT|2012/11/21 12:37:40|142|5
-Output File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Output_07.TXT|2019/12/17 00:27:56|1,350|29
-Master File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Output_07.TXT|2019/12/17 00:27:56|1,350|31
+Output File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Output_07.TXT|2019/12/25 22:29:04|1,350|29
+Master File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Output_07.TXT|2019/12/25 22:29:04|1,350|31
 New Items File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Case_08.TXT|2012/11/21 12:44:20|282|7
-Output File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Output_08.TXT|2019/12/17 00:27:56|1,533|32
-Master File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Output_08.TXT|2019/12/17 00:27:56|1,533|34
+Output File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Output_08.TXT|2019/12/25 22:29:04|1,533|32
+Master File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Output_08.TXT|2019/12/25 22:29:04|1,533|34
 New Items File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Case_09.TXT|2012/11/21 12:48:14|128|5
-Output File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Output_09.TXT|2019/12/17 00:27:56|1,650|35
-Master File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Output_09.TXT|2019/12/17 00:27:56|1,650|37
+Output File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Output_09.TXT|2019/12/25 22:29:04|1,650|35
+Master File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Output_09.TXT|2019/12/25 22:29:04|1,650|37
 New Items File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Case_10.TXT|2012/11/21 12:48:54|146|5
-Output File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Output_10.TXT|2019/12/17 00:27:56|1,785|38
+Output File|F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\MergeNewItemsIntoArray_Output_10.TXT|2019/12/25 22:29:04|1,785|38

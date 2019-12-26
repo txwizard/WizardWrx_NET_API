@@ -18,11 +18,17 @@ console, the Windows desktop, or the ASP.NET Web server. To date, I have used
 classes and methods in these libraries in all three environments and against
 virtually every version of the framework and Base Class Library.
 
+## New in Version 7.23.121
+
+This release corrects an omission from the overloaded DependentAssemblies
+constructor that rendered it inoperable.
+
 ## New in Version 7.23.120
 
-This release adds a new instance method, `GetDependentAssemblyInfos`, which
-returns a sorted list of dependent assemblies. Though this could be implemted as
-a read-only property, I chose to implement it as a method.
+This release adds a new instance method, `GetDependentAssemblyInfos`, to class
+`DependentAssemblies`, which returns a sorted list of dependent assemblies.
+Though this could be implemted as a read-only property, I chose to implement it
+as a method.
 
 ## New in Version 7.20.117
 

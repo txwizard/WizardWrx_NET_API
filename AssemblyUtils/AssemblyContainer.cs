@@ -60,13 +60,18 @@
     Revision History
     ----------------------------------------------------------------------------
 
-    Date       Version Author Synopsis
-    ---------- ------- ------ --------------------------------------------------
-    2017/03/27 7.0     DAG    This class makes its first appearance.
+    Date       Version  By  Synopsis
+    ---------- -------- --- --------------------------------------------------
+    2017/03/27 7.0      DAG This class makes its first appearance.
 
-    2019/11/17 7.0     DAG    When the tabs to spaces conversion add-in called
-                              attention to this module, I discovered that its
-                              documentation flower box was imcomplete.
+    2019/11/17 7.23.120 DAG When the tabs to spaces conversion add-in called
+                            attention to this module, I discovered that its
+                            documentation flower box was incomplete.
+
+    2019/12/22 7.23.121 DAG When a sibling module was called out by the tabs to
+                            spaces conversion add-in, I discovered that the log
+                            entry had the wrong version number (7.0) thanks to a
+                            copy and paste oversight.
     ============================================================================
 */
 

@@ -12,7 +12,7 @@ namespace DLLServices2TestStand.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.3.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -143,6 +143,15 @@ namespace DLLServices2TestStand.Properties {
         public string Startup_Assembly_Strings_Report_FileName {
             get {
                 return ((string)(this["Startup_Assembly_Strings_Report_FileName"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("$$DATADIRNAME$$\\DependentAssemblies_Test_Case_Data.TSV")]
+        public string DependentAssemblies_Test_Case_Data_FileName {
+            get {
+                return ((string)(this["DependentAssemblies_Test_Case_Data_FileName"]));
             }
         }
     }

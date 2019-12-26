@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>This release adds one instance method, GetDependentAssemblyInfos.</releaseNotes>
+	    <releaseNotes>This new build has the same release number, but corrects an omission from the overloaded DependentAssemblies constructor that rendered it inoperable, and was discovered while testing instance method GetDependentAssemblyInfos.</releaseNotes>
     	<copyright>$copyright$</copyright>
     	<tags>Assemblies Dependenciess Resources Enumerators</tags>
 	</metadata>

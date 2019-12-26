@@ -663,7 +663,7 @@
             which governs the field order.
             </remarks>
         </member>
-        <member name="M:WizardWrx.AssemblyUtils.ReportGenerators.ShowKeyAssemblyProperties(System.Reflection.Assembly)">
+        <member name="M:WizardWrx.AssemblyUtils.ReportGenerators.ShowKeyAssemblyProperties(System.Reflection.Assembly,System.Int32,System.Int32)">
             <summary>
             List selected properties of any assembly on a console.
             </summary>
@@ -672,6 +672,12 @@
             assembly that exports a specified type, the executing assembly, the
             calling assembly, the entry assembly, or any other assembly for
             which you can obtain a reference.
+            </param>
+            <param name="pintJ">
+            Pass in the array subscript, a 32 bit signed integer.
+            </param>
+            <param name="pintNDependents">
+            Pass in the array element count, a 32 bit signed integer.
             </param>
         </member>
         <member name="T:WizardWrx.AssemblyUtils.SortableManagedResourceItem">
@@ -812,7 +818,7 @@
         </member>
         <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.MSG_ASM_DEPENDENTS_DETAILS_HEAD">
             <summary>
-              Looks up a localized string similar to {0}Properties of dependent assemblies follow.{0}.
+              Looks up a localized string similar to Properties of direct dependent assemblies follow.{0}.
             </summary>
         </member>
         <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.MSG_ASM_DEPENDENTS_DETAILS_TAIL">
@@ -832,97 +838,97 @@
         </member>
         <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.MSG_ASM_PROPS_ASSEMBLYFILEBASENAME">
             <summary>
-              Looks up a localized string similar to     AssemblyFileBaseName = {0}.
+              Looks up a localized string similar to         AssemblyFileBaseName = {0}.
             </summary>
         </member>
         <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.MSG_ASM_PROPS_ASSEMBLYFILENAME">
             <summary>
-              Looks up a localized string similar to     AssemblyFileName     = {0}{1}.
+              Looks up a localized string similar to         AssemblyFileName     = {0}{1}.
             </summary>
         </member>
         <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.MSG_ASM_PROPS_ASSEMBLYGUIDSTRING">
             <summary>
-              Looks up a localized string similar to     AssemblyGuidString   = {0}.
+              Looks up a localized string similar to         AssemblyGuidString   = {0}.
             </summary>
         </member>
         <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.MSG_ASM_PROPS_ASSEMBLYVERSION">
             <summary>
-              Looks up a localized string similar to     AssemblyVersion      = {0} (per AssemblyName.GetAssemblyName).
+              Looks up a localized string similar to         AssemblyVersion      = {0} (per AssemblyName.GetAssemblyName).
             </summary>
         </member>
         <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.MSG_ASM_PROPS_ASSEMBYDIRNAME">
             <summary>
-              Looks up a localized string similar to     AssembyDirName       = {0}.
+              Looks up a localized string similar to         AssembyDirName       = {0}.
             </summary>
         </member>
         <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.MSG_ASM_PROPS_COMMENTS">
             <summary>
-              Looks up a localized string similar to     Comments             = {0}{1}.
+              Looks up a localized string similar to         Comments             = {0}{1}.
             </summary>
         </member>
         <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.MSG_ASM_PROPS_COMPANYNAME">
             <summary>
-              Looks up a localized string similar to     CompanyName          = {0}.
+              Looks up a localized string similar to         CompanyName          = {0}.
             </summary>
         </member>
         <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.MSG_ASM_PROPS_CULTURE">
             <summary>
-              Looks up a localized string similar to     Culture              = {0}.
+              Looks up a localized string similar to         Culture              = {0}.
             </summary>
         </member>
         <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.MSG_ASM_PROPS_DESCRIPTION">
             <summary>
-              Looks up a localized string similar to     Description          = {0}.
+              Looks up a localized string similar to         Description          = {0}.
             </summary>
         </member>
         <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.MSG_ASM_PROPS_FILE_CREATION_DATE">
             <summary>
-              Looks up a localized string similar to     File Creation Date   = {0} ({1} UTC).
+              Looks up a localized string similar to         File Creation Date   = {0} ({1} UTC).
             </summary>
         </member>
         <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.MSG_ASM_PROPS_FILE_MODIFIED_DATE">
             <summary>
-              Looks up a localized string similar to     File Modified Date   = {0} ({1} UTC).
+              Looks up a localized string similar to         File Modified Date   = {0} ({1} UTC).
             </summary>
         </member>
         <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.MSG_ASM_PROPS_LEGALCOPYRIGHT">
             <summary>
-              Looks up a localized string similar to     LegalCopyright       = {0}.
+              Looks up a localized string similar to         LegalCopyright       = {0}.
             </summary>
         </member>
         <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.MSG_ASM_PROPS_LEGALTRADEMARKS">
             <summary>
-              Looks up a localized string similar to     LegalTrademarks      = {0}.
+              Looks up a localized string similar to         LegalTrademarks      = {0}.
             </summary>
         </member>
         <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.MSG_ASM_PROPS_PRODUCTNAME">
             <summary>
-              Looks up a localized string similar to     ProductName          = {0}.
+              Looks up a localized string similar to         ProductName          = {0}.
             </summary>
         </member>
         <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.MSG_ASM_PROPS_PUBLICKEYTOKEN">
             <summary>
-              Looks up a localized string similar to     PublicKeyToken       = {0}.
+              Looks up a localized string similar to         PublicKeyToken       = {0}.
             </summary>
         </member>
         <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.MSG_ASM_PROPS_RUNTIME_VERSION">
             <summary>
-              Looks up a localized string similar to     Runtime Version      = {0}.
+              Looks up a localized string similar to         Runtime Version      = {0}.
             </summary>
         </member>
         <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.MSG_ASM_PROPS_SELECTED_DLL_PROPS_BEGIN">
             <summary>
-              Looks up a localized string similar to Selected properties of assembly {0}:{1}.
+              Looks up a localized string similar to     Selected properties of assembly {0} of {1}, {2}:{3}.
             </summary>
         </member>
         <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.MSG_ASM_PROPS_SELECTED_DLL_PROPS_END">
             <summary>
-              Looks up a localized string similar to {0}End of selected properties{0}.
+              Looks up a localized string similar to {2}    End of selected properties of assembly {0} of {1}{2}.
             </summary>
         </member>
         <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.MSG_ASM_PROPS_VERSIONSTRING">
             <summary>
-              Looks up a localized string similar to     VersionString        = {0} (per System.Diagnostics.FileVersionInfo.GetVersionInfo).
+              Looks up a localized string similar to         VersionString        = {0} (per System.Diagnostics.FileVersionInfo.GetVersionInfo).
             </summary>
         </member>
         <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.MSG_GETSUBSYST_FILE_NOT_FOUND">

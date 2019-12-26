@@ -122,79 +122,79 @@
     <comment>This long string is the label row of a flat file report.</comment>
   </data>
   <data name="MSG_ASM_PROPS_ASSEMBLYFILEBASENAME" xml:space="preserve">
-    <value>    AssemblyFileBaseName = {0}</value>
+    <value>        AssemblyFileBaseName = {0}</value>
     <comment>Used by Util.ShowKeyAssemblyProperties Method</comment>
   </data>
   <data name="MSG_ASM_PROPS_ASSEMBLYFILENAME" xml:space="preserve">
-    <value>    AssemblyFileName     = {0}{1}</value>
+    <value>        AssemblyFileName     = {0}{1}</value>
     <comment>Used by ReportGenerators.ShowKeyAssemblyProperties Method</comment>
   </data>
   <data name="MSG_ASM_PROPS_ASSEMBLYGUIDSTRING" xml:space="preserve">
-    <value>    AssemblyGuidString   = {0}</value>
+    <value>        AssemblyGuidString   = {0}</value>
     <comment>Used by ReportGenerators.ShowKeyAssemblyProperties Method</comment>
   </data>
   <data name="MSG_ASM_PROPS_ASSEMBYDIRNAME" xml:space="preserve">
-    <value>    AssembyDirName       = {0}</value>
+    <value>        AssembyDirName       = {0}</value>
     <comment>Used by ReportGenerators.ShowKeyAssemblyProperties Method</comment>
   </data>
   <data name="MSG_ASM_PROPS_COMMENTS" xml:space="preserve">
-    <value>    Comments             = {0}{1}</value>
+    <value>        Comments             = {0}{1}</value>
     <comment>Used by ReportGenerators.ShowKeyAssemblyProperties Method</comment>
   </data>
   <data name="MSG_ASM_PROPS_COMPANYNAME" xml:space="preserve">
-    <value>    CompanyName          = {0}</value>
+    <value>        CompanyName          = {0}</value>
     <comment>Used by ReportGenerators.ShowKeyAssemblyProperties Method</comment>
   </data>
   <data name="MSG_ASM_PROPS_CULTURE" xml:space="preserve">
-    <value>    Culture              = {0}</value>
+    <value>        Culture              = {0}</value>
     <comment>Used by ReportGenerators.ShowKeyAssemblyProperties Method</comment>
   </data>
   <data name="MSG_ASM_PROPS_DESCRIPTION" xml:space="preserve">
-    <value>    Description          = {0}</value>
+    <value>        Description          = {0}</value>
     <comment>Used by ReportGenerators.ShowKeyAssemblyProperties Method</comment>
   </data>
   <data name="MSG_ASM_PROPS_FILE_CREATION_DATE" xml:space="preserve">
-    <value>    File Creation Date   = {0} ({1} UTC)</value>
+    <value>        File Creation Date   = {0} ({1} UTC)</value>
     <comment>Used by ReportGenerators.ShowKeyAssemblyProperties Method</comment>
   </data>
   <data name="MSG_ASM_PROPS_FILE_MODIFIED_DATE" xml:space="preserve">
-    <value>    File Modified Date   = {0} ({1} UTC)</value>
+    <value>        File Modified Date   = {0} ({1} UTC)</value>
     <comment>Used by ReportGenerators.ShowKeyAssemblyProperties Method</comment>
   </data>
   <data name="MSG_ASM_PROPS_LEGALCOPYRIGHT" xml:space="preserve">
-    <value>    LegalCopyright       = {0}</value>
+    <value>        LegalCopyright       = {0}</value>
     <comment>Used by ReportGenerators.ShowKeyAssemblyProperties Method</comment>
   </data>
   <data name="MSG_ASM_PROPS_LEGALTRADEMARKS" xml:space="preserve">
-    <value>    LegalTrademarks      = {0}</value>
+    <value>        LegalTrademarks      = {0}</value>
     <comment>Used by ReportGenerators.ShowKeyAssemblyProperties Method</comment>
   </data>
   <data name="MSG_ASM_PROPS_PRODUCTNAME" xml:space="preserve">
-    <value>    ProductName          = {0}</value>
+    <value>        ProductName          = {0}</value>
     <comment>Used by ReportGenerators.ShowKeyAssemblyProperties Method</comment>
   </data>
   <data name="MSG_ASM_PROPS_PUBLICKEYTOKEN" xml:space="preserve">
-    <value>    PublicKeyToken       = {0}</value>
+    <value>        PublicKeyToken       = {0}</value>
     <comment>Used by ReportGenerators.ShowKeyAssemblyProperties Method</comment>
   </data>
   <data name="MSG_ASM_PROPS_RUNTIME_VERSION" xml:space="preserve">
-    <value>    Runtime Version      = {0}</value>
+    <value>        Runtime Version      = {0}</value>
     <comment>Used by ReportGenerators.ShowKeyAssemblyProperties Method</comment>
   </data>
   <data name="MSG_ASM_PROPS_SELECTED_DLL_PROPS_BEGIN" xml:space="preserve">
-    <value>Selected properties of assembly {0}:{1}</value>
+    <value>    Selected properties of assembly {0} of {1}, {2}:{3}</value>
     <comment>Used by ReportGenerators.ShowKeyAssemblyProperties Method</comment>
   </data>
   <data name="MSG_ASM_PROPS_SELECTED_DLL_PROPS_END" xml:space="preserve">
-    <value>{0}End of selected properties{0}</value>
+    <value>{2}    End of selected properties of assembly {0} of {1}{2}</value>
     <comment>Used by ReportGenerators.ShowKeyAssemblyProperties Method</comment>
   </data>
   <data name="MSG_ASM_PROPS_VERSIONSTRING" xml:space="preserve">
-    <value>    VersionString        = {0} (per System.Diagnostics.FileVersionInfo.GetVersionInfo)</value>
+    <value>        VersionString        = {0} (per System.Diagnostics.FileVersionInfo.GetVersionInfo)</value>
     <comment>Used by ReportGenerators.ShowKeyAssemblyProperties Method</comment>
   </data>
   <data name="MSG_ASM_DEPENDENTS_DETAILS_HEAD" xml:space="preserve">
-    <value>{0}Properties of dependent assemblies follow.{0}</value>
+    <value>Properties of direct dependent assemblies follow.{0}</value>
     <comment>The DisplayProperties method uses this template.</comment>
   </data>
   <data name="MSG_ASM_DEPENDENTS_DETAILS_TAIL" xml:space="preserve">
@@ -364,7 +364,7 @@
     <value>The speicifed assembly contains no embedded strings resources.</value>
   </data>
   <data name="MSG_ASM_PROPS_ASSEMBLYVERSION" xml:space="preserve">
-    <value>    AssemblyVersion      = {0} (per AssemblyName.GetAssemblyName)</value>
+    <value>        AssemblyVersion      = {0} (per AssemblyName.GetAssemblyName)</value>
     <comment>Used by ReportGenerators.ShowKeyAssemblyProperties Method</comment>
   </data>
   <data name="RESOURCE_REPORT_LABELS" xml:space="preserve">

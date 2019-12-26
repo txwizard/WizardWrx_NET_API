@@ -5,17 +5,17 @@
 
     Class Name:			ReportGenerators
 
-	File Name:			ReportGenerators.cs
+    File Name:			ReportGenerators.cs
 
     Synopsis:			This class provides static methods for reporting on an
-						assembly and its dependents.
+                        assembly and its dependents.
 
     Remarks:			This class was originally intended to process references
-						to a single assembly. It was moved into this library, to
-						simplify processing an assembly and its dependents.
+                        to a single assembly. It was moved into this library, to
+                        simplify processing an assembly and its dependents.
 
-	License:            Copyright (C) 2017-2019, David A. Gray.
-						All rights reserved.
+    License:            Copyright (C) 2017-2019, David A. Gray.
+                        All rights reserved.
 
                         Redistribution and use in source and binary forms, with
                         or without modification, are permitted provided that the
@@ -54,20 +54,23 @@
     Revision History
     ----------------------------------------------------------------------------
 
-    Date       Version Author Synopsis
-    ---------- ------- ------ --------------------------------------------------
-    2017/03/28 7.0     DAG    This class makes its first appearance.
+    Date       Version  By  Synopsis
+    ---------- -------- --- -----------------------------------------------------
+    2017/03/28 7.0      DAG This class makes its first appearance.
 
-	2017/07/16 7.0     DAG    Replace references to string.empty, which is not a
-                              true constant, with SpecialStrings.EMPTY_STRING,
-                              which is one.
+    2017/07/16 7.0      DAG Replace references to string.empty, which is not a
+                            true constant, with SpecialStrings.EMPTY_STRING,
+                            which is one.
 
-	2019/05/20 7.17    DAG    Add the AssemblyVersion, and document the
-                              provenance of both reported version strings, which
-                              may, and usually do, differ.
+    2019/05/20 7.17    DAG  Add the AssemblyVersion, and document the
+                            provenance of both reported version strings, which
+                            may, and usually do, differ.
 
-	2019/06/07 7.20    DAG    ListKeyAssemblyProperties was missing the summary
-                              from its XML documentation.
+    2019/06/07 7.20    DAG  ListKeyAssemblyProperties was missing the summary
+                            from its XML documentation.
+
+    2019/12/22 7.23.120 DAG The tab to spaces conversion add-in flagged this
+                            module as inconsistent.
     ============================================================================
 */
 
@@ -82,39 +85,39 @@ using WizardWrx.Core;
 
 namespace WizardWrx.AssemblyUtils
 {
-	/// <summary>
-	/// The static members of this class generate reports about assemblies and
-	/// their dependents.
-	/// </summary>
-	public class ReportGenerators
-	{
-		/// <summary>
-		/// Get the GUID string (Registry format) attached to an assembly.
-		/// </summary>
-		/// <param name="pasm">
-		/// Assembly from which to return the GUID string.
-		/// </param>
-		/// <returns>
-		/// If the method succeeds, the return value is the GUID attached to it
-		/// and intended to be associated with its type library if the assembly
-		/// is exposed to COM.
-		/// </returns>
-		public static string GetAssemblyGuidString ( Assembly pasm )
-		{
-			object [ ] objAttribs = pasm.GetCustomAttributes (
-				typeof ( System.Runtime.InteropServices.GuidAttribute ) ,
-				false );
+    /// <summary>
+    /// The static members of this class generate reports about assemblies and
+    /// their dependents.
+    /// </summary>
+    public class ReportGenerators
+    {
+        /// <summary>
+        /// Get the GUID string (Registry format) attached to an assembly.
+        /// </summary>
+        /// <param name="pasm">
+        /// Assembly from which to return the GUID string.
+        /// </param>
+        /// <returns>
+        /// If the method succeeds, the return value is the GUID attached to it
+        /// and intended to be associated with its type library if the assembly
+        /// is exposed to COM.
+        /// </returns>
+        public static string GetAssemblyGuidString ( Assembly pasm )
+        {
+            object [ ] objAttribs = pasm.GetCustomAttributes (
+                typeof ( System.Runtime.InteropServices.GuidAttribute ) ,
+                false );
 
-			if ( objAttribs.Length > ListInfo.EMPTY_STRING_LENGTH )
-			{
-				System.Runtime.InteropServices.GuidAttribute oMyGuid = ( System.Runtime.InteropServices.GuidAttribute ) objAttribs [ ArrayInfo.ARRAY_FIRST_ELEMENT ];
-				return oMyGuid.Value.ToString ( );
-			}   // TRUE (anticipated outcome) block, if ( objAttribs.Length > ListInfo.EMPTY_STRING_LENGTH )
-			else
-			{
-				return SpecialStrings.EMPTY_STRING;
-			}   // FALSE (UNanticipated outcome) block, if ( objAttribs.Length > ListInfo.EMPTY_STRING_LENGTH )
-		}   // public static string GetAssemblyGuidString
+            if ( objAttribs.Length > ListInfo.EMPTY_STRING_LENGTH )
+            {
+                System.Runtime.InteropServices.GuidAttribute oMyGuid = ( System.Runtime.InteropServices.GuidAttribute ) objAttribs [ ArrayInfo.ARRAY_FIRST_ELEMENT ];
+                return oMyGuid.Value.ToString ( );
+            }   // TRUE (anticipated outcome) block, if ( objAttribs.Length > ListInfo.EMPTY_STRING_LENGTH )
+            else
+            {
+                return SpecialStrings.EMPTY_STRING;
+            }   // FALSE (UNanticipated outcome) block, if ( objAttribs.Length > ListInfo.EMPTY_STRING_LENGTH )
+        }   // public static string GetAssemblyGuidString
 
 
 
@@ -123,171 +126,189 @@ namespace WizardWrx.AssemblyUtils
         /// that is delimited by <paramref name="pchrDlm"/> characters.
         /// </summary>
         /// <param name="pswOut">
-		/// Specify the open StreamWriter upon which to write.
-		/// </param>
-		/// <param name="pchrDlm">
-		/// Specify the delimiter character.
-		/// </param>
-		/// <remarks>
-		/// The label template is a managed resource string, REPORT_FIELD_NAMES,
+        /// Specify the open StreamWriter upon which to write.
+        /// </param>
+        /// <param name="pchrDlm">
+        /// Specify the delimiter character.
+        /// </param>
+        /// <remarks>
+        /// The label template is a managed resource string, REPORT_FIELD_NAMES,
         /// which governs the field order.
-		/// </remarks>
-		public static void LabelKeyAssemblyProperties (
-			StreamWriter pswOut ,
-			char pchrDlm )
-		{
-			if ( pswOut == null )
-				throw new ArgumentNullException ( "pswOut" );
+        /// </remarks>
+        public static void LabelKeyAssemblyProperties (
+            StreamWriter pswOut ,
+            char pchrDlm )
+        {
+            if ( pswOut == null )
+                throw new ArgumentNullException ( "pswOut" );
 
-			if ( pchrDlm == SpecialCharacters.NULL_CHAR )
-				throw new ArgumentNullException ( "pchrDlm" );
+            if ( pchrDlm == SpecialCharacters.NULL_CHAR )
+                throw new ArgumentNullException ( "pchrDlm" );
 
-			if ( pchrDlm == SpecialCharacters.COMMA )
-				pswOut.WriteLine ( Properties.Resources.REPORT_FIELD_NAMES );
-			else
-				pswOut.WriteLine ( Properties.Resources.REPORT_FIELD_NAMES.Replace ( SpecialCharacters.COMMA , pchrDlm ) );
-		}	// public static void LabelKeyAssemblyProperties
+            if ( pchrDlm == SpecialCharacters.COMMA )
+                pswOut.WriteLine ( Properties.Resources.REPORT_FIELD_NAMES );
+            else
+                pswOut.WriteLine ( Properties.Resources.REPORT_FIELD_NAMES.Replace ( SpecialCharacters.COMMA , pchrDlm ) );
+        }	// public static void LabelKeyAssemblyProperties
 
 
-		/// <summary>
-		/// Create a record and append it to the flat file behind a
+        /// <summary>
+        /// Create a record and append it to the flat file behind a
         /// StreamWriter.
-		/// </summary>
-		/// <param name="pasmSubject">
-		/// Specify the assembly to be evaluated.
-		/// </param>
-		/// <param name="pswOut">
-		/// Specify the open StreamWriter upon which to write.
-		/// </param>
-		/// <param name="pchrDlm">
-		/// Specify the delimiter character.
-		/// </param>
-		/// <remarks>
-		/// The label template is a managed resource string, REPORT_FIELD_NAMES,
+        /// </summary>
+        /// <param name="pasmSubject">
+        /// Specify the assembly to be evaluated.
+        /// </param>
+        /// <param name="pswOut">
+        /// Specify the open StreamWriter upon which to write.
+        /// </param>
+        /// <param name="pchrDlm">
+        /// Specify the delimiter character.
+        /// </param>
+        /// <remarks>
+        /// The label template is a managed resource string, REPORT_FIELD_NAMES,
         /// which governs the field order.
-		/// </remarks>
-		public static void ListKeyAssemblyProperties (
-			Assembly pasmSubject ,
-			StreamWriter pswOut ,
-			char pchrDlm )
-		{
-			if ( pasmSubject == null )
-				throw new ArgumentNullException ( "pasmSubject" );
+        /// </remarks>
+        public static void ListKeyAssemblyProperties (
+            Assembly pasmSubject ,
+            StreamWriter pswOut ,
+            char pchrDlm )
+        {
+            if ( pasmSubject == null )
+                throw new ArgumentNullException ( "pasmSubject" );
 
-			if ( pswOut == null )
-				throw new ArgumentNullException ( "pswOut" );
+            if ( pswOut == null )
+                throw new ArgumentNullException ( "pswOut" );
 
-			if ( pchrDlm == SpecialCharacters.NULL_CHAR )
-				throw new ArgumentNullException ( "pchrDlm" );
+            if ( pchrDlm == SpecialCharacters.NULL_CHAR )
+                throw new ArgumentNullException ( "pchrDlm" );
 
-			AssemblyName MyNameIs = AssemblyName.GetAssemblyName ( pasmSubject.Location );
-			System.Diagnostics.FileVersionInfo myVersionInfo = System.Diagnostics.FileVersionInfo.GetVersionInfo ( pasmSubject.Location );
-			FileInfo fiLibraryFile = new FileInfo ( pasmSubject.Location );
+            AssemblyName MyNameIs = AssemblyName.GetAssemblyName ( pasmSubject.Location );
+            System.Diagnostics.FileVersionInfo myVersionInfo = System.Diagnostics.FileVersionInfo.GetVersionInfo ( pasmSubject.Location );
+            FileInfo fiLibraryFile = new FileInfo ( pasmSubject.Location );
+            StringBuilder sbDetail = new StringBuilder ( MagicNumbers.CAPACITY_04KB );
 
-			StringBuilder sbDetail = new StringBuilder ( MagicNumbers.CAPACITY_04KB );
+            sbDetail.Append ( pasmSubject.FullName );							// FullName
+            sbDetail.Append ( pchrDlm );										// Field delimiter
 
-			sbDetail.Append ( pasmSubject.FullName );							// FullName
-			sbDetail.Append ( pchrDlm );										// Field delimiter
+            sbDetail.Append ( MyNameIs.Name );									// AssemblyFileBaseName
+            sbDetail.Append ( pchrDlm );
 
-			sbDetail.Append ( MyNameIs.Name );									// AssemblyFileBaseName
-			sbDetail.Append ( pchrDlm );
-	
-			sbDetail.Append ( Path.GetFileName ( pasmSubject.Location ) );		// AssemblyFileName
-			sbDetail.Append ( pchrDlm );										// Field delimiter
+            sbDetail.Append ( Path.GetFileName ( pasmSubject.Location ) );		// AssemblyFileName
+            sbDetail.Append ( pchrDlm );										// Field delimiter
 
-			sbDetail.Append ( GetAssemblyGuidString ( pasmSubject ) );			// AssemblyGuidString
-			sbDetail.Append ( pchrDlm );										// Field delimiter
+            sbDetail.Append ( GetAssemblyGuidString ( pasmSubject ) );			// AssemblyGuidString
+            sbDetail.Append ( pchrDlm );										// Field delimiter
 
-			sbDetail.Append ( Path.GetDirectoryName ( pasmSubject.Location ) );	// AssembyDirName
-			sbDetail.Append ( pchrDlm );										// Field delimiter
+            sbDetail.Append ( Path.GetDirectoryName ( pasmSubject.Location ) );	// AssembyDirName
+            sbDetail.Append ( pchrDlm );										// Field delimiter
 
-			sbDetail.Append ( myVersionInfo.Comments );							// Comments
-			sbDetail.Append ( pchrDlm );										// Field delimiter
+            sbDetail.Append ( myVersionInfo.Comments );							// Comments
+            sbDetail.Append ( pchrDlm );										// Field delimiter
 
-			sbDetail.Append ( myVersionInfo.CompanyName );						// CompanyName
-			sbDetail.Append ( pchrDlm );										// Field delimiter
-			
-			sbDetail.Append ( MyNameIs.CultureInfo.DisplayName );				// Culture
-			sbDetail.Append ( pchrDlm );										// Field delimiter
+            sbDetail.Append ( myVersionInfo.CompanyName );						// CompanyName
+            sbDetail.Append ( pchrDlm );                                        // Field delimiter
 
-			sbDetail.Append ( myVersionInfo.FileDescription );					// Description
-			sbDetail.Append ( pchrDlm );										// Field delimiter
-			
-			sbDetail.Append ( TimeDisplayFormatter.PrepareLocalAndUTCTimes (
-				fiLibraryFile.CreationTime ,
-				fiLibraryFile.CreationTimeUtc ) );								// FileCreationDate
-			sbDetail.Append ( pchrDlm );										// Field delimiter
-			
-			sbDetail.Append ( TimeDisplayFormatter.PrepareLocalAndUTCTimes (
-				fiLibraryFile.LastWriteTime ,
-				fiLibraryFile.LastWriteTimeUtc ) );								// FileModifiedDate
-			sbDetail.Append ( pchrDlm );										// Field delimiter
+            sbDetail.Append ( MyNameIs.CultureInfo.DisplayName );				// Culture
+            sbDetail.Append ( pchrDlm );										// Field delimiter
 
-			sbDetail.Append ( myVersionInfo.LegalCopyright );					// LegalCopyright
-			sbDetail.Append ( pchrDlm );										// Field delimiter
-			
-			sbDetail.Append ( myVersionInfo.LegalTrademarks );					// LegalTrademarks
-			sbDetail.Append ( pchrDlm );										// Field delimiter
+            sbDetail.Append ( myVersionInfo.FileDescription );					// Description
+            sbDetail.Append ( pchrDlm );                                        // Field delimiter
 
-			sbDetail.Append ( myVersionInfo.ProductName );						// ProductName
-			sbDetail.Append ( pchrDlm );										// Field delimiter
-			
-			sbDetail.Append ( ByteArrayFormatters.ByteArrayToHexDigitString (
-				MyNameIs.GetPublicKeyToken ( ) ) );								// PublicKeyToken
-			sbDetail.Append ( pchrDlm );										// Field delimiter
+            sbDetail.Append ( TimeDisplayFormatter.PrepareLocalAndUTCTimes (
+                fiLibraryFile.CreationTime ,
+                fiLibraryFile.CreationTimeUtc ) );								// FileCreationDate
+            sbDetail.Append ( pchrDlm );                                        // Field delimiter
 
-			sbDetail.Append ( pasmSubject.ImageRuntimeVersion );				// RuntimeVersion
-			sbDetail.Append ( pchrDlm );										// Field delimiter
+            sbDetail.Append ( TimeDisplayFormatter.PrepareLocalAndUTCTimes (
+                fiLibraryFile.LastWriteTime ,
+                fiLibraryFile.LastWriteTimeUtc ) );								// FileModifiedDate
+            sbDetail.Append ( pchrDlm );										// Field delimiter
 
-			sbDetail.Append ( myVersionInfo.FileVersion );						// VersionString
-			sbDetail.Append ( Environment.NewLine );							// Record delimiter
+            sbDetail.Append ( myVersionInfo.LegalCopyright );					// LegalCopyright
+            sbDetail.Append ( pchrDlm );                                        // Field delimiter
 
-			pswOut.Write ( sbDetail.ToString ( ) );								// Append to stream.
-		}	// public static void ListKeyAssemblyProperties
+            sbDetail.Append ( myVersionInfo.LegalTrademarks );					// LegalTrademarks
+            sbDetail.Append ( pchrDlm );										// Field delimiter
+
+            sbDetail.Append ( myVersionInfo.ProductName );						// ProductName
+            sbDetail.Append ( pchrDlm );                                        // Field delimiter
+
+            sbDetail.Append ( ByteArrayFormatters.ByteArrayToHexDigitString (
+                MyNameIs.GetPublicKeyToken ( ) ) );								// PublicKeyToken
+            sbDetail.Append ( pchrDlm );										// Field delimiter
+
+            sbDetail.Append ( pasmSubject.ImageRuntimeVersion );				// RuntimeVersion
+            sbDetail.Append ( pchrDlm );										// Field delimiter
+
+            sbDetail.Append ( myVersionInfo.FileVersion );						// VersionString
+            sbDetail.Append ( Environment.NewLine );							// Record delimiter
+
+            pswOut.Write ( sbDetail.ToString ( ) );								// Append to stream.
+        }	// public static void ListKeyAssemblyProperties
 
 
-		/// <summary>
-		/// List selected properties of any assembly on a console.
-		/// </summary>
-		/// <param name="pasmSubject">
-		/// Pass in a reference to the desired assembly, which may be the
-		/// assembly that exports a specified type, the executing assembly, the
-		/// calling assembly, the entry assembly, or any other assembly for
-		/// which you can obtain a reference.
-		/// </param>
-		public static void ShowKeyAssemblyProperties ( Assembly pasmSubject )
-		{
-			AssemblyName MyNameIs = AssemblyName.GetAssemblyName ( pasmSubject.Location );
-			System.Diagnostics.FileVersionInfo myVersionInfo = System.Diagnostics.FileVersionInfo.GetVersionInfo ( pasmSubject.Location );
+        /// <summary>
+        /// List selected properties of any assembly on a console.
+        /// </summary>
+        /// <param name="pasmSubject">
+        /// Pass in a reference to the desired assembly, which may be the
+        /// assembly that exports a specified type, the executing assembly, the
+        /// calling assembly, the entry assembly, or any other assembly for
+        /// which you can obtain a reference.
+        /// </param>
+        /// <param name="pintJ">
+        /// Pass in the array subscript, a 32 bit signed integer.
+        /// </param>
+        /// <param name="pintNDependents">
+        /// Pass in the array element count, a 32 bit signed integer.
+        /// </param>
+        public static void ShowKeyAssemblyProperties (
+            Assembly pasmSubject ,
+            int pintJ ,
+            int pintNDependents )
+        {
+            AssemblyName MyNameIs = AssemblyName.GetAssemblyName ( pasmSubject.Location );
+            System.Diagnostics.FileVersionInfo myVersionInfo = System.Diagnostics.FileVersionInfo.GetVersionInfo ( pasmSubject.Location );
+            int intItemOrdinal = ArrayInfo.OrdinalFromIndex ( pintJ );
 
-			Console.WriteLine ( Properties.Resources.MSG_ASM_PROPS_SELECTED_DLL_PROPS_BEGIN , pasmSubject.FullName, Environment.NewLine );
+            Console.WriteLine (
+                Properties.Resources.MSG_ASM_PROPS_SELECTED_DLL_PROPS_BEGIN ,   // Format Control String
+                intItemOrdinal ,                                                // Format Item 0: Selected properties of assembly {0}
+                pintNDependents ,                                               // Format Item 1: of {1}
+                pasmSubject.FullName ,                                          // Format Item 2: , {2}
+                Environment.NewLine );                                          // Format Item 3: {3}
 
-			Console.WriteLine ( Properties.Resources.MSG_ASM_PROPS_ASSEMBLYFILEBASENAME , Path.GetFileNameWithoutExtension ( pasmSubject.Location ) );
-			Console.WriteLine ( Properties.Resources.MSG_ASM_PROPS_VERSIONSTRING , myVersionInfo.FileVersion );
+            Console.WriteLine ( Properties.Resources.MSG_ASM_PROPS_ASSEMBLYFILEBASENAME , Path.GetFileNameWithoutExtension ( pasmSubject.Location ) );
+            Console.WriteLine ( Properties.Resources.MSG_ASM_PROPS_VERSIONSTRING , myVersionInfo.FileVersion );
             Console.WriteLine ( Properties.Resources.MSG_ASM_PROPS_ASSEMBLYVERSION , MyNameIs.Version );
-			Console.WriteLine ( Properties.Resources.MSG_ASM_PROPS_CULTURE , MyNameIs.CultureInfo.DisplayName );
-			Console.WriteLine ( Properties.Resources.MSG_ASM_PROPS_PUBLICKEYTOKEN , ByteArrayFormatters.ByteArrayToHexDigitString ( MyNameIs.GetPublicKeyToken ( ) ) );
+            Console.WriteLine ( Properties.Resources.MSG_ASM_PROPS_CULTURE , MyNameIs.CultureInfo.DisplayName );
+            Console.WriteLine ( Properties.Resources.MSG_ASM_PROPS_PUBLICKEYTOKEN , ByteArrayFormatters.ByteArrayToHexDigitString ( MyNameIs.GetPublicKeyToken ( ) ) );
 
-			Console.WriteLine ( Properties.Resources.MSG_ASM_PROPS_RUNTIME_VERSION , pasmSubject.ImageRuntimeVersion );
-			Console.WriteLine ( Properties.Resources.MSG_ASM_PROPS_ASSEMBLYGUIDSTRING , GetAssemblyGuidString ( pasmSubject ) );
+            Console.WriteLine ( Properties.Resources.MSG_ASM_PROPS_RUNTIME_VERSION , pasmSubject.ImageRuntimeVersion );
+            Console.WriteLine ( Properties.Resources.MSG_ASM_PROPS_ASSEMBLYGUIDSTRING , GetAssemblyGuidString ( pasmSubject ) );
 
-			Console.WriteLine ( Properties.Resources.MSG_ASM_PROPS_PRODUCTNAME , myVersionInfo.ProductName );
-			Console.WriteLine ( Properties.Resources.MSG_ASM_PROPS_LEGALCOPYRIGHT , myVersionInfo.LegalCopyright );
-			Console.WriteLine ( Properties.Resources.MSG_ASM_PROPS_LEGALTRADEMARKS , myVersionInfo.LegalTrademarks );
-			Console.WriteLine ( Properties.Resources.MSG_ASM_PROPS_COMPANYNAME , myVersionInfo.CompanyName );
+            Console.WriteLine ( Properties.Resources.MSG_ASM_PROPS_PRODUCTNAME , myVersionInfo.ProductName );
+            Console.WriteLine ( Properties.Resources.MSG_ASM_PROPS_LEGALCOPYRIGHT , myVersionInfo.LegalCopyright );
+            Console.WriteLine ( Properties.Resources.MSG_ASM_PROPS_LEGALTRADEMARKS , myVersionInfo.LegalTrademarks );
+            Console.WriteLine ( Properties.Resources.MSG_ASM_PROPS_COMPANYNAME , myVersionInfo.CompanyName );
 
-			Console.WriteLine ( Properties.Resources.MSG_ASM_PROPS_DESCRIPTION , myVersionInfo.FileDescription );
-			Console.WriteLine ( Properties.Resources.MSG_ASM_PROPS_COMMENTS , myVersionInfo.Comments , Environment.NewLine );
+            Console.WriteLine ( Properties.Resources.MSG_ASM_PROPS_DESCRIPTION , myVersionInfo.FileDescription );
+            Console.WriteLine ( Properties.Resources.MSG_ASM_PROPS_COMMENTS , myVersionInfo.Comments , Environment.NewLine );
 
-			Console.WriteLine ( Properties.Resources.MSG_ASM_PROPS_ASSEMBYDIRNAME , Path.GetDirectoryName ( pasmSubject.Location ) );
-			Console.WriteLine ( Properties.Resources.MSG_ASM_PROPS_ASSEMBLYFILENAME , Path.GetFileName ( pasmSubject.Location ) , Environment.NewLine );
+            Console.WriteLine ( Properties.Resources.MSG_ASM_PROPS_ASSEMBYDIRNAME , Path.GetDirectoryName ( pasmSubject.Location ) );
+            Console.WriteLine ( Properties.Resources.MSG_ASM_PROPS_ASSEMBLYFILENAME , Path.GetFileName ( pasmSubject.Location ) , Environment.NewLine );
 
-			FileInfo fiLibraryFile = new FileInfo ( pasmSubject.Location );
+            FileInfo fiLibraryFile = new FileInfo ( pasmSubject.Location );
 
-			Console.WriteLine ( Properties.Resources.MSG_ASM_PROPS_FILE_CREATION_DATE , fiLibraryFile.CreationTime , fiLibraryFile.CreationTimeUtc );
-			Console.WriteLine ( Properties.Resources.MSG_ASM_PROPS_FILE_MODIFIED_DATE , fiLibraryFile.LastWriteTime , fiLibraryFile.LastWriteTimeUtc );
+            Console.WriteLine ( Properties.Resources.MSG_ASM_PROPS_FILE_CREATION_DATE , fiLibraryFile.CreationTime , fiLibraryFile.CreationTimeUtc );
+            Console.WriteLine ( Properties.Resources.MSG_ASM_PROPS_FILE_MODIFIED_DATE , fiLibraryFile.LastWriteTime , fiLibraryFile.LastWriteTimeUtc );
 
-			Console.WriteLine ( Properties.Resources.MSG_ASM_PROPS_SELECTED_DLL_PROPS_END , Environment.NewLine );
-		}   // public static void ShowKeAssemblyProperties method
-	}	// public class ReportGenerators
+            Console.WriteLine (
+                Properties.Resources.MSG_ASM_PROPS_SELECTED_DLL_PROPS_END ,     // Format Control String
+                intItemOrdinal ,                                                // Format Item 0: End of selected properties of assembly {0}
+                pintNDependents ,                                               // Format Item 1: of {1}
+                Environment.NewLine );                                          // Format Item 2: Bookend the string with platform-dependent newlines.
+        }   // public static void ShowKeAssemblyProperties method
+    }	// public class ReportGenerators
 }	// partial namespace WizardWrx.AssemblyUtils

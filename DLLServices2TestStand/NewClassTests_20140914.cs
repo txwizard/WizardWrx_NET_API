@@ -485,6 +485,7 @@ namespace DLLServices2TestStand
                 Program.OMIT_LINEFEED ,
                 @"NumericFormats.HEXADECIMAL constants" );
 
+            
             Console.WriteLine ( @"{0}    -----------------------------{0}    NumericFormats Static Methods{0}    -----------------------------{0}" , Environment.NewLine );
 
             {   // Constrain the scope of strings strFormatString and strSampleOutput.
