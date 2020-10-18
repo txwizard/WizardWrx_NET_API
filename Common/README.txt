@@ -33,8 +33,13 @@ https://www.nuget.org/packages/WizardWrx.Common.
 
 Revision History
 
+| Date       | Version | Synopsis
+|------------|---------|---------------------------
+| 2020/09/20 | 7.23.85 | This build reflects updating of the project-wide copyright year from 2019  |
+|            |         | to 2020. The code is otherwise unchanged.                                  |
+
 This file is being released a few days after version 7.15 of the WizardWrx .NET
-API, of which it is a component. To track changes, please see
+API, of which it is a component. To track library-wide changes, please see
 https://github.com/txwizard/WizardWrx_NET_API/blob/master/ChangeLog.md,
 which reports changes by namespace and class for each release. At present, the
 GitHub repository is not updated between releases.

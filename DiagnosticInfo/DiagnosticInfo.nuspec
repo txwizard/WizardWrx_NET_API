@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>The code in this release is identical with the original release. This build incorporates the latest WizardWrx.Common package, to address a harmless diamond dependency. This update is being released a few days after version 7.22 of the WizardWrx .NET API, of which it is a component, to correct a typographical error seen during a dog food installation. While only the ReadMe is affected, releasing it requires a new build to satisfy the NuGet Package Builder.</releaseNotes>
+	    <releaseNotes>The code in this release is identical with the original release, except that it complements the industry standard SemVer version numbering by implementing the Deterministic compiler switch.</releaseNotes>
     	<copyright>$copyright$</copyright>
     	<tags>Compile-time Diagnostic Info Reflection</tags>
 	</metadata>

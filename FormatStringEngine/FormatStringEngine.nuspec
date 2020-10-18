@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>The code in this release is identical with the original release. The principal change herein is adoption of semver versioning. Though this package explicitly includes the PDB and XML files that document the library, the PDB is so far a no-show.</releaseNotes>
+	    <releaseNotes>The code in this release is identical with the original release, except that it complements the industry standard SemVer version numbering by implementing the Deterministic compiler switch.</releaseNotes>
     	<copyright>$copyright$</copyright>
     	<tags>Format Control String Formatting Printing</tags>
 	</metadata>

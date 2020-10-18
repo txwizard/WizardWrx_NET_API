@@ -31,11 +31,50 @@
 	Date       By  Description
 	========== === =============================================================
 	2018/12/23 DAG Disable deterministic versioning.
+
 	2019/07/18 DAG Add automatic NuGet package publication.
+
+    2020/10/17 DAG Define custom task NuGetPackageNameFixup, and add tasks to
+                   build a package that uses SemVer version numbering and push
+                   it to the NuGet repository, and add the new targets required
+                   to publish NuGet packages.
+
+                   Define he following MSBuild macros:
+
+                   		PackageDir
+                   		AllowedOutputExtensionsInPackageBuildOutputFolder
+                   		SolutionPackageDir
+
+    2020/10/18 DAG Add -Source nuget.org to NuGet Puse command line.
 	============================================================================
 -->
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+<Project ToolsVersion="15.0"
+	     xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!-- 2020-10-17 01:26:36 - DAG Copy custom task NuGetPackageNameFixup from AssemblyUtils.  -->
+
+  <UsingTask TaskName="NuGetPackageNameFixup"
+  	         TaskFactory="CodeTaskFactory"
+  	         AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll">
+    <ParameterGroup>
+      <RawNugetPackageVersion    ParameterType="System.String"
+      	                         Required="true" />
+      <ActualNugetPackageVersion ParameterType="System.String"
+      	                         Output="true" />
+    </ParameterGroup>
+    <Task>
+      <Code Type="Fragment"
+      	    Language="cs"><![CDATA[
+            ActualNugetPackageVersion = RawNugetPackageVersion.EndsWith ( ".0" ) ? RawNugetPackageVersion.Substring(0,RawNugetPackageVersion.Length-2) : RawNugetPackageVersion;
+            Log.LogMessage ( "Custom Task NuGetPackageNameFixup: RawNugetPackageVersion    = "+ RawNugetPackageVersion    );
+            Log.LogMessage ( "Custom Task NuGetPackageNameFixup: ActualNugetPackageVersion = "+ ActualNugetPackageVersion );
+      ]]></Code>
+    </Task>
+  </UsingTask>
+
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -46,14 +85,18 @@
     <AssemblyName>WizardWrx.MoreMath</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <!--    <Deterministic>true</Deterministic>	-->
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <!-- 2019/07/18 01:49:47 - DAG - Added for NuGet package builder -->
     <PackageDir>$(ProjectDir)Package</PackageDir>
     <SolutionPackageDir>$(ProjectDir)..\packages</SolutionPackageDir>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>.pdb$;(AllowedOutputExtensionsInPackageBuildOutputFolder)</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <!-- 2020-10-17 01:27:48 - DAG - Add the Deterministic compiler switch, which goes well with SemVer version numbering. -->
+    <Deterministic>true</Deterministic>
+    <!-- 2020-10-17 01:27:48 - DAG - Define SolutionPackageDir, which points to the local NuGet package directory shared by the entire solution. -->
+    <SolutionPackageDir>$(ProjectDir)..\packages</SolutionPackageDir>
   </PropertyGroup>
+
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -67,6 +110,7 @@
     <LangVersion>default</LangVersion>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
@@ -79,10 +123,12 @@
     <Prefer32Bit>false</Prefer32Bit>
     <LangVersion>default</LangVersion>
   </PropertyGroup>
+
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
   </ItemGroup>
+
   <ItemGroup>
     <Compile Include="..\ProductAssemblyInfo.cs">
       <Link>Properties\ProductAssemblyInfo.cs</Link>
@@ -95,32 +141,66 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
   </ItemGroup>
+
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{c1fb48d6-4a54-4424-bca1-4777f3aae2df}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+
+    <ProjectReference Include="..\DiagnosticInfo\DiagnosticInfo.csproj">
+      <Project>{a248e5a4-b42b-4b10-8f52-e58b06a0bc18}</Project>
+      <Name>DiagnosticInfo</Name>
+    </ProjectReference>
+  </ItemGroup>
+
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- 2019/07/18 01:01:04 - DAG Everything from this point to the end is new, and was added to support NuGet package generation. -->
+
+  <!-- 2020-10-16 23:28:54 - DAG - Everything from this point to the end was added to support NuGet package generation. -->
+
   <Target Name="AfterBuild">
     <!-- Load up the information from the assembly -->
     <GetAssemblyIdentity AssemblyFiles="$(OutputPath)$(AssemblyName).dll">
-      <Output TaskParameter="Assemblies" ItemName="OutputAssemblyInfo" />
+      <Output TaskParameter="Assemblies"
+      	      ItemName="OutputAssemblyInfo" />
     </GetAssemblyIdentity>
-    <Message Text="Info: Assembly $(AssemblyName).dll version =  %(OutputAssemblyInfo.Version)" />
+
+    <Message Text="Info: Assembly $(AssemblyName).dll version = %(OutputAssemblyInfo.Version)" />
+    <Message Text="Info: Relative project package directory name = $(PackageDir)" />
   </Target>
-  <Target Name="Package" AfterTargets="AfterBuild" Condition=" '$(Configuration)' == 'Release'">
+
+  <Target Name="Package"
+  	      AfterTargets="AfterBuild"
+  	      Condition=" '$(Configuration)' == 'Release'">
     <!-- Ensure the Package directory exists for this project -->
     <MakeDir Directories="$(PackageDir)" />
     <!-- Package the project -->
-    <Exec WorkingDirectory="$(BuildDir)" Command="NuGet.exe pack $(ProjectName).csproj -Properties Configuration=$(Configuration) -OutputDir $(PackageDir) -IncludeReferencedProjects -Verbosity detailed" />
+    <Exec WorkingDirectory="$(BuildDir)"
+    	  Command="NuGet.exe pack $(ProjectName).csproj -Properties Configuration=$(Configuration) -OutputDir $(PackageDir) -IncludeReferencedProjects -Verbosity detailed" />
   </Target>
+
   <!-- Publish the project. -->
-  <Target Name="Publish" AfterTargets="Package" Condition=" '$(Configuration)' == 'Release'">
-    <Exec WorkingDirectory="$(PackageDir)" Command="NuGet.exe push $(AssemblyName).%(OutputAssemblyInfo.Version).nupkg" />
+  <Target Name="Publish"
+  	      AfterTargets="Package"
+  	      Condition=" '$(Configuration)' == 'Release'">
+    <NuGetPackageNameFixup RawNugetPackageVersion="%(OutputAssemblyInfo.Version)">
+      <Output PropertyName="NuGetPackageVersion"
+      	      TaskParameter="ActualNugetPackageVersion" />
+    </NuGetPackageNameFixup>
+    <Exec WorkingDirectory="$(PackageDir)"
+    	  Command="NuGet.exe push $(AssemblyName).$(NuGetPackageVersion).nupkg -Source nuget.org" />
   </Target>
-  <Target Name="BeforeBuild" Condition=" '$(Configuration)' == 'Debug'">
-    <Exec WorkingDirectory="$(ProjectDir)" Command="nuget install packages.config -OutputDirectory $(SolutionPackageDir)" />
+
+  <Target Name="BeforeBuild"
+  	      Condition=" '$(Configuration)' == 'Debug'">
+    <Exec WorkingDirectory="$(ProjectDir)"
+    	  Command="nuget install packages.config -OutputDirectory $(SolutionDir)\packages" />
   </Target>
 </Project>

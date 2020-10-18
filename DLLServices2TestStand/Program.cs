@@ -22,7 +22,7 @@
 
     Author:				David A. Gray
 
-    License:            Copyright (C) 2011-2019, David A. Gray.
+    License:            Copyright (C) 2011-2020, David A. Gray.
                         All rights reserved.
 
                         Redistribution and use in source and binary forms, with
@@ -62,204 +62,210 @@
     Revision History
     ----------------------------------------------------------------------------
 
-    Date       Version  By  Synopsis
-    ---------- -------- --- -----------------------------------------------------
-    2013/02/22 1.0      DAG This class, and its project, make their first 
-                            appearance.
+    Date       Version   By  Synopsis
+    ---------- --------- --- -----------------------------------------------------
+    2013/02/22 1.0       DAG This class, and its project, make their first 
+                             appearance.
 
-    2014/05/31 4.1      DAG Bind against upgraded WizardWrx.DLLServices,
-                            WizardWrx.ApplicationHelpers, and
-                            WizardWrx.ConsoleAppAids2 libraries, and eliminate
-                            references to unused system name spaces and
-                            libraries, to clarify what is actually required, and
-                            to slightly streamline the build process.
+    2014/05/31 4.1       DAG Bind against upgraded WizardWrx.DLLServices,
+                             WizardWrx.ApplicationHelpers, and
+                             WizardWrx.ConsoleAppAids2 libraries, and eliminate
+                             references to unused system name spaces and
+                             libraries, to clarify what is actually required,
+                             and to slightly streamline the build process.
 
-    2014/06/07 5.0      DAG Major namespace reorganization. This test program
-                            confines itself to classes exposed by the class
-                            library under test.
+    2014/06/07 5.0       DAG Major namespace reorganization. This test program
+                             confines itself to classes exposed by the class
+                             library under test.
 
-    2014/07/20 5.1      DAG 1) Correct an oversight that left this class in the
-                               old WizardWrx.ApplicationHelpers namespace. Since
-                               this change affects only two other DLLs, and, at
-                               most one user program, I took advantage of the
-                               opportunity to promote the DLLServices2 namespace
-                               to the first rank under the overall WizardWrx
-                               namespace.
+    2014/07/20 5.1       DAG 1) Correct an oversight that left this class in the
+                                old WizardWrx.ApplicationHelpers namespace.
+                                Since this change affects only two other DLLs,
+                                and, at most one user program, I took advantage
+                                of the opportunity to promote the DLLServices2
+                                namespace to the first rank under the overall
+                                WizardWrx namespace.
 
-                            2) Swap the method names, so that the instance
-                               methods whose signatures exactly mirror those of
-                               the Console.Write* methods have the same base
-                               method names, while the static methods, which
-                               require two additional arguments to name the
-                               foreground and background colors have names that
-                               remind you that you must specify colors in any
-                               call.
+                             2) Swap the method names, so that the instance
+                                methods whose signatures exactly mirror those of
+                                the Console.Write* methods have the same base
+                                method names, while the static methods, which
+                                require two additional arguments to name the
+                                foreground and background colors have names that
+                                remind you that you must specify colors in any
+                                call.
 
-                               The following table lists the substitutions.
+                                The following table lists the substitutions.
 
-                               ------------------------------------------------------
-                               FindStr                    ReplStr
-                               ------------------------   ---------------------------
-                               public static void Write   public static void RGBWrite
-                               public void ColorWrite     public void Write
-                               ------------------------------------------------------
+                                ------------------------------------------------------
+                                FindStr                    ReplStr
+                                ------------------------   ---------------------------
+                                public static void Write   public static void RGBWrite
+                                public void ColorWrite     public void Write
+                                ------------------------------------------------------
 
-                               This change means that any method that requires
-                               additional arguments has a name that differs
-                               slightly from that of the corresponding Console
-                               method, and the difference is a prefix, to hint
-                               that the colors go in front of the arguments to
-                               the analogous console method. Likewise, methods
-                               that have identical signatures have identical
-                               base names to the corresponding Console method.
+                                This change means that any method that requires
+                                additional arguments has a name that differs
+                                slightly from that of the corresponding Console
+                                method, and the difference is a prefix, to hint
+                                that the colors go in front of the arguments to
+                                the analogous console method. Likewise, methods
+                                that have identical signatures have identical
+                                base names to the corresponding Console method.
 
-    2014/10/14 5.3      DAG As was true of the last point upgrade, the test 
-                            stand is unchanged.
+    2014/10/14 5.3       DAG As was true of the last point upgrade, the test 
+                             stand is unchanged.
  
-    2015/07/10 5.5      DAG Incorporate tests for the classes that just moved
-                            into WizardWrx.DLLServices2.dll, along with the new
-                            native routine that reports the state of any
-                            standard console handle for assemblies running in
-                            ANY version of the Microsoft .NET Framework.
+    2015/07/10 5.5       DAG Incorporate tests for the classes that just moved
+                             into WizardWrx.DLLServices2.dll, along with the new
+                             native routine that reports the state of any
+                             standard console handle for assemblies running in
+                             ANY version of the Microsoft .NET Framework.
 
-    2015/09/01 5.6      DAG Add a couple of overlooked special characters and
-                            strings, along with a new method, ChopChop, to test
-                            the new Chop method.
+    2015/09/01 5.6       DAG Add a couple of overlooked special characters and
+                             strings, along with a new method, ChopChop, to test
+                             the new Chop method.
 
-    2015/09/01 5.7      DAG Add a very simple product name and version format.
+    2015/09/01 5.7       DAG Add a very simple product name and version format.
 
-    2015/10/28 5.8      DAG Add the console redirection file displays, which I
-                            decided to keep in this library, so that the calls
-                            into WWConAid.dll are all together.
+    2015/10/28 5.8       DAG Add the console redirection file displays, which I
+                             decided to keep in this library, so that the calls
+                             into WWConAid.dll are all together.
 
-    2016/04/12 6.0      DAG Exercise the redirection state testers, including
-                            timed tests of both approaches.
+    2016/04/12 6.0       DAG Exercise the redirection state testers, including
+                             timed tests of both approaches.
 
-                            Investigate a remedy that would permit me to allow
-                            the Visual Studio Hosting Process to execute
-                            without interfering with my execution subsystem
-                            tests.
+                             Investigate a remedy that would permit me to allow
+                             the Visual Studio Hosting Process to execute
+                             without interfering with my execution subsystem
+                             tests.
 
-    2016/05/11 6.0      DAG Eliminate an unused constant.
+    2016/05/11 6.0       DAG Eliminate an unused constant.
 
-    2016/05/12 6.1      DAG Exercise the new routines to retrieve the special
-                            error message strings.
+    2016/05/12 6.1       DAG Exercise the new routines to retrieve the special
+                             error message strings.
 
-    2016/05/20 6.1      DAG Incorporate FileNameTricks_Exerciser.Drill to test
-                            its namesake class.
+    2016/05/20 6.1       DAG Incorporate FileNameTricks_Exerciser.Drill to test
+                             its namesake class.
 
-    2016/06/04 6.2      DAG  Move the last two tests above the EOJ message.
+    2016/06/04 6.2       DAG  Move the last two tests above the EOJ message.
 
-    2016/06/06 6.3      DAG Add a small routine to test the improved exception
-                            reporting logic that suppresses printing a message
-                            twice when reporting to both standard output 
-                            streams is enabled, and neither is redirected.
+    2016/06/06 6.3       DAG Add a small routine to test the improved exception
+                             reporting logic that suppresses printing a message
+                             twice when reporting to both standard output 
+                             streams is enabled, and neither is redirected.
 
-    2017/03/28 7.0      DAG Adjust for the breakup of WizardWrx.DllServices2.
+    2017/03/28 7.0       DAG Adjust for the breakup of WizardWrx.DllServices2.
 
-    2017/06/27 7.0      DAG Evaluate the AppEventSourceID property before any
-                            exceptions are reported, which is the only way to
-                            perform a valid test of its lazy initializer.
+    2017/06/27 7.0       DAG Evaluate the AppEventSourceID property before any
+                             exceptions are reported, which is the only way to
+                             perform a valid test of its lazy initializer.
 
-    2017/07/11 7.0      DAG Adjust to support the improved 100% managed code
-                            that processes standard console handles.
+    2017/07/11 7.0       DAG Adjust to support the improved 100% managed code
+                             that processes standard console handles.
 
-    2017/07/13 7.0      DAG Display the processor architecture and subsystem
-                            (32 or 64 bits) and the Windows version on which the
-                            process is executing.
+    2017/07/13 7.0       DAG Display the processor architecture and subsystem
+                             (32 or 64 bits) and the Windows version on which
+                             the process is executing.
 
-    2017/07/17 7.0      DAG Incorporate and activate alternative blocks to
-                            exercise the new extension methods on the string
-                            class.
+    2017/07/17 7.0       DAG Incorporate and activate alternative blocks to
+                             exercise the new extension methods on the string
+                             class.
 
-    2017/07/19 7.0      DAG 1) Integrate EnumerateStringResourcesInAssembly, an
-                               experimental method to enumerate every string
-                               resource defined in an assembly into a special
-                               case test and the main test body.
+    2017/07/19 7.0       DAG 1) Integrate EnumerateStringResourcesInAssembly, an
+                                experimental method to enumerate every string
+                                resource defined in an assembly into a special
+                                case test and the main test body.
 
-                            2) Move the exercises that comprise the main body
-                               into the IF statement that pauses the output if
-                               the test succeeded, or throws an exception if it
-                               fails.
+                             2) Move the exercises that comprise the main body
+                                into the IF statement that pauses the output if
+                                the test succeeded, or throws an exception if it
+                                fails.
 
-    2017/09/10 7.0      DAG Integrate the unit tests that cover the classes
-                            that were merged into this library constellation
-                            from WizardWrx.SharedUtl4 and elsewhere.
+    2017/09/10 7.0       DAG Integrate the unit tests that cover the classes
+                             that were merged into this library constellation
+                             from WizardWrx.SharedUtl4 and elsewhere.
 
-    2017/09/13 7.0      DAG Add the "s_" prefix to AbsoluteDataDirectoryName.
+    2017/09/13 7.0       DAG Add the "s_" prefix to AbsoluteDataDirectoryName.
 
-    2018/10/07 7.1      DAG Add CapitalizeWordsExercises to test a new string
-                            class extension method, and add a new method,
-                            SpecialStringExercises, that lists and displays the
-                            SpecializedStrings constants.
+    2018/10/07 7.1       DAG Add CapitalizeWordsExercises to test a new string
+                             class extension method, and add a new method,
+                             SpecialStringExercises, that lists and displays the
+                             SpecializedStrings constants.
 
-    2018/11/15 7.11     DAG Add EnumFromStringExercises to test a new string
-                            extension method that converts a string to an
-                            enumeration, and MoreMathTests.Run to test the new
-                            MoreMath class.
+    2018/11/15 7.11      DAG Add EnumFromStringExercises to test a new string
+                             extension method that converts a string to an
+                             enumeration, and MoreMathTests.Run to test the new
+                             MoreMath class.
 
-    2019/02/17 7.15     DAG Replace Reflection.MethodBase.GetCurrentMethod
-                            with ClassAndMethodDiagnosticInfo.GetMyMethodName,
-                            which shifts most of the work to the compile phase
-                            of the build cycle, and report the contents of the
-                            ExceptionLogger.s_strSettingsOmittedFromConfigFile
-                            property, a static string that returns a message to
-                            be displayed to the program operator.
+    2019/02/17 7.15      DAG Replace Reflection.MethodBase.GetCurrentMethod
+                             with ClassAndMethodDiagnosticInfo.GetMyMethodName,
+                             which shifts most of the work to the compile phase
+                             of the build cycle, and report the contents of the
+                             ExceptionLogger.s_strSettingsOmittedFromConfigFile
+                             property, a static string that returns a message to
+                             be displayed to the program operator.
 
-    2019/05/03 7.15     DAG Implement and deploy RecoveredExceptionTests.
+    2019/05/03 7.15      DAG Implement and deploy RecoveredExceptionTests.
 
-    2019/05/19 7.17     DAG Implement tests for the following improvements:
+    2019/05/19 7.17      DAG Implement tests for the following improvements:
 
-                            1) StringFixups: Demonstrate its ToString method.
+                             1) StringFixups: Demonstrate its ToString method.
 
-                            2) ReplaceEscapedTabsInResourceString: Demonstrate
-                               this string extension method.
+                             2) ReplaceEscapedTabsInResourceString: Demonstrate
+                                this string extension method.
 
-                            3) ShowFileDetails: Demonstrate this FileInfo
-                               extension method, and put it through its paces,
-                               and demonstrate the ToString method on the
-                               array of StringFixups structures.
+                             3) ShowFileDetails: Demonstrate this FileInfo
+                                extension method, and put it through its paces,
+                                and demonstrate the ToString method on the
+                                array of StringFixups structures.
 
-    2019/05/30 7.19     DAG Implement tests for the following string extension
-                            methods via class LinEndingFixupTests:
+    2019/05/30 7.19      DAG Implement tests for the following string extension
+                             methods via class LinEndingFixupTests:
 
-                            UnixLineEndings      Replace CR/LF pairs and bare CRs
-                                                 with bare LFs.
+                             UnixLineEndings      Replace CR/LF pairs and bare
+                                                  CRs with bare LFs.
 
-                            WindowsLineEndings   Replace bare LFs with CR/LF
-                                                 pairs.
+                             WindowsLineEndings   Replace bare LFs with CR/LF
+                                                  pairs.
 
-                            OldMacLineEndings    Replace CR/LF pairs and bare LFs
-                                                 with bare CRs.
+                             OldMacLineEndings    Replace CR/LF pairs and bare
+                                                  LFs with bare CRs.
 
-    2019/06/09 7.20     DAG Add a section to invoke the amended test method
-                            EnumerateStringResourcesInAssembly to test the
-                            ListResourcesInAssemblyByName overload that takes a
-                            StreamWriter into which it is expected to write a
-                            tab delimited list of the string resources stored in
-                            a specified assembly.
+    2019/06/09 7.20      DAG Add a section to invoke the amended test method
+                             EnumerateStringResourcesInAssembly to test the
+                             ListResourcesInAssemblyByName overload that takes a
+                             StreamWriter into which it is expected to write a
+                             tab delimited list of the string resources stored
+                             in a specified assembly.
 
-    2019/06/09 7.20     DAG Add the assembly name to the report listing its
-                            string resources.
+    2019/06/09 7.20      DAG Add the assembly name to the report listing its
+                             string resources.
 
-    2019/07/18 7.21     DAG 1) Move most of the new tests outside the block that
-                               deals with standard stream redirection.
+    2019/07/18 7.21      DAG 1) Move most of the new tests outside the block that
+                                deals with standard stream redirection.
 
-                            2) Add an argument to PauseForPictures that takes a
-                               string that is displayed on the error console
-                               when standard output is redirected.
+                             2) Add an argument to PauseForPictures that takes a
+                                string that is displayed on the error console
+                                when standard output is redirected.
 
-    2019/10/03 7.22     DAG Since the tab consistency checker add-in flagged
-                            this file as inconsistently tabbed, I let it replace
-                            tabs with spaces. The code is otherwise unchanged.
+    2019/10/03 7.22      DAG Since the tab consistency checker add-in flagged
+                             this file as inconsistently tabbed, I let it 
+                             replace tabs with spaces. The code is otherwise
+                             unchanged.
 
-    2019/12/17 7.23.120 DAG Static method ExerciseGetDependentAssemblyInfos 
-                            makes its debut.
+    2019/12/17 7.23.120  DAG Static method ExerciseGetDependentAssemblyInfos 
+                             makes its debut.
 
-    2019/12/25 7.23.121 DAG Static method ExerciseGetDependentAssemblyInfos gets
-                            a list of additional assemblies to process, and a
-                            bug of long standing gets fixed so that nonzero
-                            return codes reach the calling process.
+    2019/12/25 7.23.121  DAG Static method ExerciseGetDependentAssemblyInfos 
+                             gets a list of additional assemblies to process,
+                             and a bug of long standing gets fixed so that
+                             nonzero return codes reach the calling process.
+
+    2020/10/11 7.23.1312 DAG Implement a new command line argument,
+                             DirectDependentAssemblyEnumerator, that invokes the
+                             ExercisseDirectDependentAssemblyEnumerator method,
+                             then terminates the program.
     ============================================================================
 */
 
@@ -545,6 +551,10 @@ namespace DLLServices2TestStand
                 else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_EVENT_MSG_CLEANUP_TESTS )
                 {
                     EventMessageCleanupTests ( ref intTestNumber );
+                }
+                else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_DIRECT_DEPENDENT_ASSEMBLY_ENUMERATION )
+                {
+                    ExercisseDirectDependentAssemblyEnumerator ( ref intTestNumber );
                 }
                 else
                 {	// Run the whole set, starting with this test, which leaves the flags set so that the original message can be reconstructed from a psLogList export.

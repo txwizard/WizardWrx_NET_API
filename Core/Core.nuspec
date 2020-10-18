@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>This update of an established very stable library adopts the industry standard SemVer version numbering. Though the code is unchanged from the initial release, the build number must be incremented to get it accepted into the library.</releaseNotes>
+	    <releaseNotes>This update of an established very stable library complements the industry standard SemVer version numbering by implementing the Deterministic compiler switch.</releaseNotes>
     	<copyright>$copyright$</copyright>
     	<tags>Constants Arrays RegExp FileInfo Strings Singleton</tags>
 	</metadata>

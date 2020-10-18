@@ -37,6 +37,8 @@
     2019/07/04 DAG Add NuGet package and documentation generation.
     2019/12/15 DAG Define custom task NuGetPackageNameFixup, and add tasks to
                    build a package and push it to the NuGet repository.
+
+    2020/10/18 DAG Add -Source nuget.org to NuGet Puse command line.
     ============================================================================
 -->
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
@@ -72,6 +74,7 @@
     <AssemblyName>WizardWrx.Core</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
 
     <!-- 2019/05/18 16:54:22 - DAG - Added for NuGet package builder -->
@@ -172,6 +175,7 @@
       <Project>{c1fb48d6-4a54-4424-bca1-4777f3aae2df}</Project>
       <Name>Common</Name>
     </ProjectReference>
+
     <ProjectReference Include="..\FormatStringEngine\FormatStringEngine.csproj">
       <Project>{4d82458f-864f-494e-a537-1e89d6c8073c}</Project>
       <Name>FormatStringEngine</Name>
@@ -226,9 +230,11 @@
       <Output PropertyName="NuGetPackageVersion"
       	      TaskParameter="ActualNugetPackageVersion" />
     </NuGetPackageNameFixup>
+
     <Exec WorkingDirectory="$(PackageDir)"
-    	  Command="NuGet.exe push $(AssemblyName).$(NuGetPackageVersion).nupkg" />
+    	  Command="NuGet.exe push $(AssemblyName).$(NuGetPackageVersion).nupkg -Source nuget.org" />
   </Target>
+
   <Target Name="BeforeBuild"
   	      Condition=" '$(Configuration)' == 'Debug'">
     <Exec WorkingDirectory="$(ProjectDir)"

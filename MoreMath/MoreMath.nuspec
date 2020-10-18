@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>Define new IncrementAndReturnNewValue methods, with four overloads, covering the four generic integral types (int, uint, long, ulong). All four take a reference to an integer and increment it, returning the new value.</releaseNotes>
+	    <releaseNotes>This release implements the industry standard SemVer version numbering, which it complements by implementing the Deterministic compiler switch.</releaseNotes>
     	<copyright>$copyright$</copyright>
     	<tags>Modulus Decimal Shift</tags>
 	</metadata>

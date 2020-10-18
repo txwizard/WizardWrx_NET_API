@@ -6,3 +6,12 @@ F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ASCIIInfo
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ASCIIInfo\obj\Debug\ASCIIInfo.csproj.GenerateResource.cache
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ASCIIInfo\obj\Debug\WizardWrx.ASCIIInfo.dll
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ASCIIInfo\obj\Debug\WizardWrx.ASCIIInfo.pdb
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ASCIIInfo\bin\Debug\Wizardwrx.ASCIIInfo.XML
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ASCIIInfo\bin\Debug\WizardWrx.ASCIIInfo.dll
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ASCIIInfo\bin\Debug\WizardWrx.ASCIIInfo.pdb
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ASCIIInfo\obj\Debug\ASCIIInfo.csprojAssemblyReference.cache
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ASCIIInfo\obj\Debug\WizardWrx.Properties.Resources.resources
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ASCIIInfo\obj\Debug\ASCIIInfo.csproj.GenerateResource.cache
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ASCIIInfo\obj\Debug\ASCIIInfo.csproj.CoreCompileInputs.cache
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ASCIIInfo\obj\Debug\WizardWrx.ASCIIInfo.dll
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ASCIIInfo\obj\Debug\WizardWrx.ASCIIInfo.pdb

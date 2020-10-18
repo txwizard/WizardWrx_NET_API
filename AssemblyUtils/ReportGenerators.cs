@@ -71,6 +71,9 @@
 
     2019/12/22 7.23.120 DAG The tab to spaces conversion add-in flagged this
                             module as inconsistent.
+
+    2020/09/20 7.23.122 DAG Replace NuGet packages for sibling libraries with
+                            direct project references.
     ============================================================================
 */
 

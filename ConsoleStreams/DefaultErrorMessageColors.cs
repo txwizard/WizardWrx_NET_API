@@ -80,6 +80,9 @@
 
     2019/04/28 7.15    DAG    Supplement the PropsSetFromConfig property with a
                               PropsLeftAtDefault property.
+
+	2020/09/20 7.23    DAG    Replace NuGet packages for sibling libraries with
+                              direct project references.
     ============================================================================
 */
 

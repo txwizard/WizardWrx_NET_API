@@ -14,11 +14,20 @@
     Date       By  Description
     ========== === =============================================================
     2019/04/28 DAG Add ProductAssemblyInfo.cs the right way, as a link.
+
     2019/07/05 DAG Add automatic NuGet package publication.
+
     2019/12/15 DAG Adjust the NuGet publication task to support NuGet three-part
                    version strings, the SemVer version numbering scheme.
+
+    2020/09/20 DAG Substitute the nuget restore command string from the working
+                   string in the AssemblyUtils project.
+
+    2020/10/18 DAG Add -Source nuget.org to NuGet Puse command line.
+
     ============================================================================
 -->
+
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <!-- 2019/12/01 - DAG Define custom task NuGetPackageNameFixup by copying its source from F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\AnyCSV\AnyCSV\AnyCSV.csproj.  -->
   <UsingTask TaskName="NuGetPackageNameFixup"
@@ -49,6 +58,7 @@
     <AssemblyName>WizardWrx.FormatStringEngine</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
     <!-- 2019/07/04 13:27:28 - DAG - Added for NuGet package builder -->
     <PackageDir>Package</PackageDir>
@@ -104,6 +114,7 @@
     <Reference Include="WizardWrx.AnyCSV, Version=7.2.145.0, Culture=neutral, PublicKeyToken=39f6551a21db420a, processorArchitecture=MSIL">
       <HintPath>C:\Users\DAG\.nuget\packages\WizardWrx.AnyCSV.7.2.145\lib\net20\WizardWrx.AnyCSV.dll</HintPath>
     </Reference>
+
     <Reference Include="WizardWrx.BitMath, Version=4.3.125.29248, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>C:\Users\DAG\.nuget\packages\WizardWrx.BitMath.4.3.125.29248\lib\net20\WizardWrx.BitMath.dll</HintPath>
     </Reference>
@@ -155,13 +166,13 @@
         	    TaskParameter="ActualNugetPackageVersion" />
     </NuGetPackageNameFixup>
     <Exec WorkingDirectory="$(PackageDir)"
-          Command="NuGet.exe push $(AssemblyName).$(NuGetPackageVersion).nupkg" />
+    	  Command="NuGet.exe push $(AssemblyName).$(NuGetPackageVersion).nupkg -Source nuget.org" />
   </Target>
   <Target Name="BeforeBuild" Condition=" '$(Configuration)' == 'Debug'">
     <Exec WorkingDirectory="$(ProjectDir)"
     	  Command="nuget update $(ProjectDir)packages.config" />
     <Exec WorkingDirectory="$(ProjectDir)"
-    	  Command="nuget restore $(ProjectDir)packages.config" />
+    	  Command="nuget restore packages.config -OutputDirectory $(SolutionDir)\packages" />
   </Target>
 
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

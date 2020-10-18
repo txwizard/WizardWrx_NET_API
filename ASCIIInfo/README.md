@@ -41,6 +41,8 @@ The easiest way to incorporate the library into your own code is by installing t
 
 | Date       | Version | Synopsis
 |------------|---------|---------------------------
+| 2020/09/20 | 7.23.85 | This build reflects updating of the project-wide copyright year from 2019  |
+|            |         | to 2020. The code is otherwise unchanged.                                  |
 | 2018/10/07 | 7.23.84 | Adopt the 3-part SemVer version numbering scheme that has become the standard for NuGet packages. The code is otherwise unchanged, and the fourth part of the version number goes away.
 | 2018/10/07 | 7.1.83  | Override ToString to render all three representations (printable string, hexadecimal, then decimal, in that order), and define static method DisplayCharacterInfo to provide that service for an arbitrary character without instantiating ASCII_Character_Display_Table.
 | 2017/08/04 | 7.0     | Relocated to the constellation of core libraries that began as WizardWrx.DllServices2.dll.

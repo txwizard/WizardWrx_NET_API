@@ -9,13 +9,15 @@
       ========== === ===========================================================
       2019/12/15 DAG Define custom task NuGetPackageNameFixup, and add tasks to
                      build a package and push it to the NuGet repository.
+
+      2020/10/18 DAG Add -Source nuget.org to NuGet Puse command line.
       ==========================================================================
   -->
 
   <!-- 2019/12/15 - DAG Copy custom task NuGetPackageNameFixup from AnyCSV.  -->
   <UsingTask TaskName="NuGetPackageNameFixup"
-               TaskFactory="CodeTaskFactory"
-               AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll">
+             TaskFactory="CodeTaskFactory"
+             AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll">
     <ParameterGroup>
         <RawNugetPackageVersion    ParameterType="System.String"
                                    Required="true" />
@@ -23,7 +25,8 @@
                                    Output="true" />
     </ParameterGroup>
     <Task>
-      <Code Type="Fragment" Language="cs">
+      <Code Type="Fragment"
+      	    Language="cs">
         <![CDATA[
             ActualNugetPackageVersion = RawNugetPackageVersion.EndsWith ( ".0" ) ? RawNugetPackageVersion.Substring(0,RawNugetPackageVersion.Length-2) : RawNugetPackageVersion;
             Log.LogMessage ( "Custom Task NuGetPackageNameFixup: RawNugetPackageVersion    = "+ RawNugetPackageVersion    );
@@ -45,6 +48,7 @@
     <AssemblyName>WizardWrx.ASCIIInfo</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
     <!-- 2019/12/15 11:57:09 - DAG - Added for NuGet package builder (copied from WizardWrx.Common project) -->
     <PackageDir>$(ProjectDir)Package</PackageDir>
@@ -126,6 +130,7 @@
         <Output TaskParameter="Assemblies"
                 ItemName="OutputAssemblyInfo" />
     </GetAssemblyIdentity>
+
     <Message Text="Info: Assembly $(AssemblyName).dll version = %(OutputAssemblyInfo.Version)" />
   </Target>
 
@@ -134,6 +139,7 @@
           Condition=" '$(Configuration)' == 'Release'">
     <!-- Ensure the Package directory exists for this project -->
     <MakeDir Directories="$(PackageDir)" />
+
     <!-- Package the project -->
     <Exec WorkingDirectory="$(BuildDir)"
    	      Command="NuGet.exe pack $(ProjectName).csproj -Properties Configuration=$(Configuration) -OutputDir $(PackageDir) -Verbosity detailed" />
@@ -144,9 +150,11 @@
           AfterTargets="Package"
           Condition=" '$(Configuration)' == 'Release' ">
     <NuGetPackageNameFixup RawNugetPackageVersion="%(OutputAssemblyInfo.Version)">
-        <Output PropertyName="NuGetPackageVersion" TaskParameter="ActualNugetPackageVersion" />
+        <Output PropertyName="NuGetPackageVersion"
+        	    TaskParameter="ActualNugetPackageVersion" />
     </NuGetPackageNameFixup>
+
     <Exec WorkingDirectory="$(PackageDir)"
-          Command="NuGet.exe push $(AssemblyName).$(NuGetPackageVersion).nupkg" />
+    	  Command="NuGet.exe push $(AssemblyName).$(NuGetPackageVersion).nupkg -Source nuget.org" />
   </Target>
 </Project>

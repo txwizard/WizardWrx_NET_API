@@ -5,6 +5,18 @@ libraries that comprise the __WizardWrx .NET API__. A companion document,
 `ChangeLog.md`, gives a much more thorough accounting of the improvements and
 bug fixes incorporated in each release.
 
+## Release Notes, 2020-10-18 10:56:24, Entire Library
+
+This release completes alignment of the library collection with the SemVer
+version numbering scheme, and implements the Deterministic compiler switch
+throughout.
+
+Nothing else of note has happened since `WizardWrx.AssemblyUtils` was updated on
+16 December 2019, the 249th birthday of Ludwing van Beethoven. Finishing the
+implementation by the end of 2019 faded quickly as life intervened, and I was
+becoming concerned that it might take until the master composer's 250th
+birthday.
+
 ## Release Notes, 2019/12/16, WizardWrx.AssemblyUtils
 
 This library gets the SemVer treatment, a new instance method on its

@@ -635,4 +635,8 @@
     <value>Item\tActivity_Date\tOpen\tHigh\tLow\tClose\tAdjustedClose\tVolume\tDividendAmount\tSplitCoefficient</value>
     <comment>Use this string to demonstrate the ReplaceEscapedTabsInStringFromResX extension method.</comment>
   </data>
+  <data name="CMDARG_DIRECT_DEPENDENT_ASSEMBLY_ENUMERATION" xml:space="preserve">
+    <value>DirectDependentAssemblyEnumerator</value>
+    <comment>Use this command line argument to invoke ExercisseDirectDependentAssemblyEnumerator by itself.</comment>
+  </data>
 </root>

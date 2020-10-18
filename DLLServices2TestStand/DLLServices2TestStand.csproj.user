@@ -10,9 +10,8 @@
     <EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <StartWorkingDirectory>F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API</StartWorkingDirectory>
-    <StartArguments>
-    </StartArguments>
+    <StartWorkingDirectory>D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API</StartWorkingDirectory>
+    <StartArguments>DirectDependentAssemblyEnumerator</StartArguments>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>

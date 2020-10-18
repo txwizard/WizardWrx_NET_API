@@ -327,6 +327,8 @@
                               lists the properties that are absent from the DLL
                               configuration file, along with their hard coded
                               default values.
+
+	2020/09/20 7.23    DAG    Eliminate redundant assembly reference to Common.
 	============================================================================
 */
 
@@ -337,7 +339,6 @@ using System.IO;
 
 using WizardWrx;
 using WizardWrx.AssemblyUtils;
-using WizardWrx.Common;
 using WizardWrx.Core;
 using WizardWrx.ConsoleStreams;
 

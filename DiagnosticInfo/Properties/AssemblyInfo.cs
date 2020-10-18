@@ -2,16 +2,25 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// -----------------------------------------------------------------------------
-// Project Revision History
-// -----------------------------------------------------------------------------
-// Date       By  Remark
-// ---------- --- --------------------------------------------------------------
-// 2019/07/04 DAG Re-build to resolve diamond dependencies on WizardWrx.Common
-//                and WizardWrx.AnyCSV. This build also falls back to wild card
-//                revision number assignment, which conflicts with the new
-//                Deterministic project build setting, which I already disabled.
-//                See DiagnosticInfo.csproj for the commented-out setting.
+//
+//  ----------------------------------------------------------------------------
+//  Project Revision History
+//  ----------------------------------------------------------------------------
+//
+//  Date       By  Remark
+//  ---------- --- -------------------------------------------------------------
+//  2019/07/04 DAG Re-build to resolve diamond dependencies on WizardWrx.Common
+//                 and WizardWrx.AnyCSV. This build also falls back to wild card
+//                 revision number assignment, which conflicts with the new
+//                 Deterministic project build setting, which I already disabled.
+//                 See DiagnosticInfo.csproj for the commented-out setting.
+//
+// 	2019/12/01 DAG Adopt SemVer version numbering scheme.
+//
+//  2020/09/20 DAG This build reflects updating the package copyright year from
+//                 2019 to 2020, which affects all assemblies in the solution.
+// 	============================================================================
+
 // =============================================================================
 
 // General Information about an assembly is controlled through the following
@@ -35,4 +44,4 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion ( "7.22.5.0" )]
+[assembly: AssemblyVersion ( "7.22.6.0" )]

@@ -42,6 +42,8 @@ Revision History
 +---------------------------------------------------------------------------------------------------+
 | Date       | Version | Synopsis                                                                   |
 |------------|---------|----------------------------------------------------------------------------|
+| 2020/09/20 | 7.23.85 | This build reflects updating of the project-wide copyright year from 2019  |
+|            |         | to 2020. The code is otherwise unchanged.                                  |
 | 2018/10/07 | 7.23.84 | Adopt the 3-part SemVer version numbering scheme that has become the       |
 |            |         | standard for NuGet packages. The code is otherwise unchanged, and the      |
 |            |         | fourth part of the version number goes away.                               |
