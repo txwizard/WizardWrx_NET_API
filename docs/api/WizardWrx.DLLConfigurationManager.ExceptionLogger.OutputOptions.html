@@ -1,0 +1,327 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Enum ExceptionLogger.OutputOptions
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Enum ExceptionLogger.OutputOptions
+   ">
+    <meta name="generator" content="docfx 2.56.3.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions">
+  
+  
+  <h1 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptions" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions" class="text-break">Enum ExceptionLogger.OutputOptions
+  </h1>
+  <div class="markdown level0 summary"><p>Use these flags to control the output. There is no flag for the
+Message property, which always becomes part of the message.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="WizardWrx.DLLConfigurationManager.html">WizardWrx.DLLConfigurationManager</a></h6>
+  <h6><strong>Assembly</strong>: WizardWrx.DLLConfigurationManager.dll</h6>
+  <h5 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptions_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Flags]
+public enum OutputOptions : byte</code></pre>
+  </div>
+  <h5 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptions_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>DiscardNewlines and NBSpaceForNewlines arose to resolve an issue
+that came to light when a desire arose to reconstruct an exception
+report from the message posted into a Microsoft Excel workbook that
+was populated from the output of a run of PsLogList.exe. To cause it
+to keep each message on a single logical line, so that it would
+import into a single worksheet row,  PsLogList.exe is invoked with
+its -s switch, causing PsLogList to print (output) Event Log records
+one-per-line, with comma delimited fields.</p>
+<p>To preserve the newlines in the event log file and have some
+indication of their original positions when PsLogList strips
+them, set the NBSpaceForNewlines flag to TRUE. This causes each
+embedded newline to be preceded in the output by a NOLBREAKING_SPACE
+(ASCII character code 160, A0h, Unicode code point U+0A0) character.</p>
+<p>To substitute a NOLBREAKING_SPACE for each newline, set this flag
+AND DiscardNewlines to TRUE.</p>
+</div>
+  <h3 id="fields">Fields
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    <thead>
+    <tbody>
+      <tr>
+        <td id="WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptions_ActiveProperties">ActiveProperties</td>
+        <td><p>Use this bit mask to include all auxiliary properties of the
+Exception (StackTrace, TargetSite, Source, DiscardNewlines, and
+NBSpaceForNewlines) in the report, or to strip them form a set
+of flags.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptions_ActivePropsEverywhere">ActivePropsEverywhere</td>
+        <td><p>Use this bit mask to include all auxiliary properties of the
+Exception (StackTrace, TargetSite, and Source) in the report,
+and to send the report to a Windows event log and both the
+standard output and standard error streams. This is useful when
+you know that the standard output is redirected, and you want to
+preserve the report in the output file, in addition to having a
+copy displayed on the console.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptions_ActivePropsToEventLog">ActivePropsToEventLog</td>
+        <td><p>Use this bit mask to include all auxiliary properties of the
+Exception (StackTrace, TargetSite, and Source) in the report,
+and to send the report to a Windows event log.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptions_ActivePropsToStdErr">ActivePropsToStdErr</td>
+        <td><p>Use this bit mask to include all auxiliary properties of the
+Exception (StackTrace, TargetSite, and Source) in the report,
+and to send the report to the standard error stream.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptions_ActivePropsToStdOut">ActivePropsToStdOut</td>
+        <td><p>Use this bit mask to include all auxiliary properties of the
+Exception (StackTrace, TargetSite, and Source) in the report,
+and to send the report to the standard output stream.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptions_AllDestiations">AllDestiations</td>
+        <td><p>Use this flag to include all destinations for output, or as a
+mask to strip them from a set of flags.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptions_AllFlags">AllFlags</td>
+        <td><p>This flag turns on everything, and is of no practical use, but
+is defined for reference, to document that every bit in the byte
+is accounted for. Now that all bits have assignments, this flag
+and AllProperties resolve to the same value.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptions_AllProperties">AllProperties</td>
+        <td><p>Use this flag to include all auxiliary properties of the
+Exception (StackTrace, TargetSite, Source, DiscardNewlines, and
+NBSpaceForNewlines) in the report, or to strip them form a set
+of flags.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptions_DiscardNewlines">DiscardNewlines</td>
+        <td><p>Discard newlines entirely, unless NBSpaceForNewlines is also
+true, in which case each newline is retained, preceded by a
+NOLBREAKING_SPACE (ASCII character code 160, A0h, U+0A0)
+character.</p>
+<p>Please see the Remarks on the enumeration for important details.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptions_EventLog">EventLog</td>
+        <td><p>Post to associated event log if TRUE.</p>
+<p>The value of the event source associated with the current
+ExceptionLogger instance determines which event log gets the
+message.</p>
+<p>WARNING: Unless your event source string is already registered,
+the application MUST run, one time only, with full administrator
+privileges AND use the event source to write a message into the
+Windows event log in order for it to be registered with Windows,
+which maps it to an event log. Alternatively, you may register
+the event source by any number of other means, such as by way of
+an installation script.</p>
+<p>Once the event source string is registered, the application can
+use it to post messages to the event log in any Windows security
+context.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptions_Method">Method</td>
+        <td><p>Show Method Name if TRUE.</p>
+<p>If the EventLog flag is also set, the method name is always
+written there.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptions_NBSpaceForNewlines">NBSpaceForNewlines</td>
+        <td><p>Precede each newline with a NOLBREAKING_SPACE (ASCII character
+code 160, A0h, Unicode code point U+0A0) character, unless
+DiscardNewlines is also true, in which case a NOLBREAKING_SPACE
+precedes the newline, which is preserved.</p>
+<p>Please see the Remarks on the enumeration for important details.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptions_NoFlags">NoFlags</td>
+        <td><p>Use this member to evaluate whether all flags are OFF.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptions_ReplaceNewlines">ReplaceNewlines</td>
+        <td><p>Deploy this flag combination to substitute a NOLBREAKING_SPACE
+(ASCII character code 160, A0h, Unicode code point U+0A0) for
+every platform-dependent newline. On a Windows platform, the
+outcome is a slightly shorter message string, since each space
+replaces two characters. In all cases, the NOLBREAKING_SPACE
+guarantees that each event record occupies one line when output
+as text, while providing a means of restoring the newlines by
+reversing the replacement.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptions_Source">Source</td>
+        <td><p>Show Source (Assembly) Name if TRUE.</p>
+<p>If the EventLog flag is also set, the originating assembly name
+is always written there.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptions_Stack">Stack</td>
+        <td><p>Show Stack Trace if TRUE.</p>
+<p>If the EventLog flag is also set, the stack trace is always
+written there.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptions_StandardError">StandardError</td>
+        <td><p>Write message on STDERR if TRUE and if the application has a
+working console.</p>
+<p>The setting of this flag also governs the behavior of the
+ScrollUp method.</p>
+<p>CAUTION: Although it is technically legal to set both
+StandardOutput and StandardError to TRUE, this can have the
+unwanted consequence of generating TWO copies of the message,
+unless STDOUT and/or STDERR is directed to a file or if both are
+redirected to the SAME file.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptions_StandardOutput">StandardOutput</td>
+        <td><p>Write message on STDOUT if TRUE and if the application has a
+working console.</p>
+<p>The setting of this flag also governs the behavior of the
+ScrollUp method.</p>
+<p>CAUTION: Although it is technically legal to set both
+StandardOutput and StandardError to TRUE, this can have the
+unwanted consequence of generating TWO copies of the message,
+unless STDOUT and/or STDERR is directed to a file or if both are
+redirected to the SAME file.</p>
+</td>
+      </tr>
+    </tbody>
+  </thead></thead></table>
+  <h5 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptions_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="WizardWrx.DLLConfigurationManager.ExceptionLogger.ErrorExitOptions.html">ExceptionLogger.ErrorExitOptions</a></div>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="WizardWrx.StringExtensions.html#WizardWrx_StringExtensions_RenderEvenWhenNull__1___0_System_String_System_String_System_IFormatProvider_">StringExtensions.RenderEvenWhenNull&lt;ExceptionLogger.OutputOptions&gt;(String, String, IFormatProvider)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptions.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L421" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

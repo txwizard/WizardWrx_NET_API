@@ -1,0 +1,262 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ASCII_Character_Display_Table
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ASCII_Character_Display_Table
+   ">
+    <meta name="generator" content="docfx 2.56.3.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="WizardWrx.ASCII_Character_Display_Table">
+  
+  
+  <h1 id="WizardWrx_ASCII_Character_Display_Table" data-uid="WizardWrx.ASCII_Character_Display_Table" class="text-break">Class ASCII_Character_Display_Table
+  </h1>
+  <div class="markdown level0 summary"><p>Provide read only access to a table of ASCII characters and text to
+display for selected special characters.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">ASCII_Character_Display_Table</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="WizardWrx.html">WizardWrx</a></h6>
+  <h6><strong>Assembly</strong>: WizardWrx.ASCIIInfo.dll</h6>
+  <h5 id="WizardWrx_ASCII_Character_Display_Table_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ASCII_Character_Display_Table</code></pre>
+  </div>
+  <h5 id="WizardWrx_ASCII_Character_Display_Table_examples"><strong>Examples</strong></h5>
+  <p>The ASCII code for a space is 32. ASCIICharacterDisplayInfo[32], for C#,
+or ASCIICharacterDisplayInfo(32), for Visual Basic, returns the item for
+the space character.</p>
+<p>Likewise, the ASCII code for a horizontal TAB character is 9. Hence, the
+C# expression ASCIICharacterDisplayInfo[9] evaluates to the information
+about the TAB character. Likewise, ASCIICharacterDisplayInfo(9) does the
+same thing in Visual Basic.</p>
+<p>The following example comes from production code in the class library
+that motivated me to create this library.</p>
+<p>ASCIICharacterDisplayInfo [ ] asciiCharTbl = ASCII_Character_Display_Table.GetTheSingleInstance ( ).AllASCIICharacters;
+StringBuilder sbTheBadChar = new StringBuilder ( );
+sbTheBadChar.Append ( asciiCharTbl [ ( uint ) _chrBad ].DisplayText );</p>
+<p>Obviously, more things go into the message before it is returned to the
+calling routine.</p>
+
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ASCII_Character_Display_Table_AllASCIICharacters.md&amp;value=---%0Auid%3A%20WizardWrx.ASCII_Character_Display_Table.AllASCIICharacters%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ASCIIInfo/ASCII_Character_Display_Table.cs/#L175">View Source</a>
+  </span>
+  <a id="WizardWrx_ASCII_Character_Display_Table_AllASCIICharacters_" data-uid="WizardWrx.ASCII_Character_Display_Table.AllASCIICharacters*"></a>
+  <h4 id="WizardWrx_ASCII_Character_Display_Table_AllASCIICharacters" data-uid="WizardWrx.ASCII_Character_Display_Table.AllASCIICharacters">AllASCIICharacters</h4>
+  <div class="markdown level1 summary"><p>Gets the populated ASCIICharacterDisplayInfo array that is the sole
+public property of this class, which exists to ensure that exactly
+one instance of this table exists.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ASCIICharacterDisplayInfo[] AllASCIICharacters { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.ASCIICharacterDisplayInfo.html">ASCIICharacterDisplayInfo</a>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ASCII_Character_Display_Table_GetTheSingleInstance.md&amp;value=---%0Auid%3A%20WizardWrx.ASCII_Character_Display_Table.GetTheSingleInstance%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ASCIIInfo/ASCII_Character_Display_Table.cs/#L159">View Source</a>
+  </span>
+  <a id="WizardWrx_ASCII_Character_Display_Table_GetTheSingleInstance_" data-uid="WizardWrx.ASCII_Character_Display_Table.GetTheSingleInstance*"></a>
+  <h4 id="WizardWrx_ASCII_Character_Display_Table_GetTheSingleInstance" data-uid="WizardWrx.ASCII_Character_Display_Table.GetTheSingleInstance">GetTheSingleInstance()</h4>
+  <div class="markdown level1 summary"><p>Gets a reference to the single ASCII_Character_Display_Table
+instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ASCII_Character_Display_Table GetTheSingleInstance()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.ASCII_Character_Display_Table.html">ASCII_Character_Display_Table</a></td>
+        <td><p>The return value is a reference to the single instance of this class
+that is created in response to the first call to this method. Please
+see the remarks.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_ASCII_Character_Display_Table_GetTheSingleInstance_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The example given under the help topic for this class shows you that
+you need not actually allocate storage for the instance, since what
+you really need is a copy of the ASCIICharacterDisplayInfo table,
+available through the read only AllASCIICharacters property, which
+can be assigned directly to an AllASCIICharacters array.</p>
+<p>To preserve its independence, this class uses the archaic Singleton
+implementation, rather than inherit from the abstract base class in
+WizardWrx.DllServices2.dll, although I could certainly fix that by
+linking the source code into this assembly. Since that creates an
+even more awkward dependency, and I don't want to put an actual copy
+in this source tree, I'll leave it alone. After all, this class is
+not exactly a high traffic property.</p>
+</div>
+  <h3 id="seealso">See Also</h3>
+  <div class="seealso">
+      <div><a class="xref" href="WizardWrx.ASCIICharacterDisplayInfo.html">ASCIICharacterDisplayInfo</a></div>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ASCII_Character_Display_Table.md&amp;value=---%0Auid%3A%20WizardWrx.ASCII_Character_Display_Table%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ASCIIInfo/ASCII_Character_Display_Table.cs/#L113" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

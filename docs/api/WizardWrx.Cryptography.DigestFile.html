@@ -1,0 +1,486 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class DigestFile
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class DigestFile
+   ">
+    <meta name="generator" content="docfx 2.56.3.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="WizardWrx.Cryptography.DigestFile">
+  
+  
+  <h1 id="WizardWrx_Cryptography_DigestFile" data-uid="WizardWrx.Cryptography.DigestFile" class="text-break">Class DigestFile
+  </h1>
+  <div class="markdown level0 summary"><p>Static methods for computing message digests for files, using the most
+common algorithms.</p>
+<p>iMPORTANT: Since files are read in binary, they are loaded directly
+into the hash algorithm as byte arrays. This means that the digest
+of a file of ASCII characters and the hash of the file contents read
+into a CLR string object, which is a string of Unicode characters,
+will differ. The reason for this is that the string of Unicode
+characters yields a different byte stream than the byte stream that
+came from reading the file in binary mode.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">DigestFile</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="WizardWrx.Cryptography.html">WizardWrx.Cryptography</a></h6>
+  <h6><strong>Assembly</strong>: WizardWrx.Core.dll</h6>
+  <h5 id="WizardWrx_Cryptography_DigestFile_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class DigestFile</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Cryptography_DigestFile_MD5Hash_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.Cryptography.DigestFile.MD5Hash(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/DigestFile.cs/#L181">View Source</a>
+  </span>
+  <a id="WizardWrx_Cryptography_DigestFile_MD5Hash_" data-uid="WizardWrx.Cryptography.DigestFile.MD5Hash*"></a>
+  <h4 id="WizardWrx_Cryptography_DigestFile_MD5Hash_System_String_" data-uid="WizardWrx.Cryptography.DigestFile.MD5Hash(System.String)">MD5Hash(String)</h4>
+  <div class="markdown level1 summary"><p>Given the name of a file, return its MD5 message digest as a 32
+character string of hexadecimal digits.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This algorithm is classified as broken and unsafe. Use SHA256Hash, SHA384Hash, or SHA512Hash.&quot;)]
+public static string MD5Hash(string pstrFileName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrFileName</span></td>
+        <td><p>String containing the name of the file to be digested. See Remarks
+for important information about the internal implementation.</p>
+<p>iMPORTANT: Since files are read in binary, they are loaded directly
+into the hash algorithm as byte arrays. This means that the digest
+of a file of ASCII characters and the hash of the file contents read
+into a CLR string object, which is a string of Unicode characters,
+will differ. The reason for this is that the string of Unicode
+characters yields a different byte stream than the byte stream that
+came from reading the file in binary mode.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The message digest, consisting of a string of 32 hexadecimal
+characters. This string is identical with the strings returned by
+the reference implementation, published by Dr. Ronald Rivest, who is
+credited with inventing the MD5 digest algorithm.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Cryptography_DigestFile_MD5Hash_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Since the internal hashing implementations expect byte arrays, the
+input string must be converted. The Encoding.Default.GetBytes method
+is called upon to convert the string into a byte array.</p>
+<p>A slightly modified version of the Rivest code, written in ANSI C,
+is the engine in my MD5WIN stand-alone program and my MD5Digest
+Windows Dynamic Link Library.</p>
+<p>However, this function uses a MD5CryptoServiceProvider object, which
+provides a managed interface to the Cryptographic Service Provider
+in the host's installation of Microsoft Windows. I chose this over
+the 100% managed implementation for two reasons.</p>
+<ol>
+<li><p>The CSP implementation uses native machine code for the
+computation, and should outperform managed code on large plain-texts.</p>
+</li>
+<li><p>By using the native implementation, the CLR is eliminated as a
+potential point of failure due to a weakness in the implementation
+of the algorithm.</p>
+</li>
+</ol>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Cryptography_DigestFile_SHA1Hash_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.Cryptography.DigestFile.SHA1Hash(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/DigestFile.cs/#L226">View Source</a>
+  </span>
+  <a id="WizardWrx_Cryptography_DigestFile_SHA1Hash_" data-uid="WizardWrx.Cryptography.DigestFile.SHA1Hash*"></a>
+  <h4 id="WizardWrx_Cryptography_DigestFile_SHA1Hash_System_String_" data-uid="WizardWrx.Cryptography.DigestFile.SHA1Hash(System.String)">SHA1Hash(String)</h4>
+  <div class="markdown level1 summary"><p>Given the name of a file, return its SHA-1 message digest as a 32
+character string of hexadecimal digits.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This algorithm is classified as broken and unsafe. Use SHA256Hash, SHA384Hash, or SHA512Hash.&quot;)]
+public static string SHA1Hash(string pstrFileName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrFileName</span></td>
+        <td><p>String containing the name of the file to be digested.</p>
+<p>iMPORTANT: Since files are read in binary, they are loaded directly
+into the hash algorithm as byte arrays. This means that the digest
+of a file of ASCII characters and the hash of the file contents read
+into a CLR string object, which is a string of Unicode characters,
+will differ. The reason for this is that the string of Unicode
+characters yields a different byte stream than the byte stream that
+came from reading the file in binary mode.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The message digest, consisting of a string of 40 hexadecimal
+characters.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Cryptography_DigestFile_SHA256Hash_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.Cryptography.DigestFile.SHA256Hash(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/DigestFile.cs/#L267">View Source</a>
+  </span>
+  <a id="WizardWrx_Cryptography_DigestFile_SHA256Hash_" data-uid="WizardWrx.Cryptography.DigestFile.SHA256Hash*"></a>
+  <h4 id="WizardWrx_Cryptography_DigestFile_SHA256Hash_System_String_" data-uid="WizardWrx.Cryptography.DigestFile.SHA256Hash(System.String)">SHA256Hash(String)</h4>
+  <div class="markdown level1 summary"><p>Given the name of a file, return its SHA-256 message digest as a 64
+character string of hexadecimal digits.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string SHA256Hash(string pstrFileName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrFileName</span></td>
+        <td><p>String containing the name of the file to be digested.</p>
+<p>iMPORTANT: Since files are read in binary, they are loaded directly
+into the hash algorithm as byte arrays. This means that the digest
+of a file of ASCII characters and the hash of the file contents read
+into a CLR string object, which is a string of Unicode characters,
+will differ. The reason for this is that the string of Unicode
+characters yields a different byte stream than the byte stream that
+came from reading the file in binary mode.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The message digest, consisting of a string of 64 hexadecimal
+characters.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Cryptography_DigestFile_SHA384Hash_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.Cryptography.DigestFile.SHA384Hash(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/DigestFile.cs/#L307">View Source</a>
+  </span>
+  <a id="WizardWrx_Cryptography_DigestFile_SHA384Hash_" data-uid="WizardWrx.Cryptography.DigestFile.SHA384Hash*"></a>
+  <h4 id="WizardWrx_Cryptography_DigestFile_SHA384Hash_System_String_" data-uid="WizardWrx.Cryptography.DigestFile.SHA384Hash(System.String)">SHA384Hash(String)</h4>
+  <div class="markdown level1 summary"><p>Given the name of a file, return its SHA-384 message digest as a 96
+character string of hexadecimal digits.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string SHA384Hash(string pstrFileName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrFileName</span></td>
+        <td><p>String containing the name of the file to be digested.</p>
+<p>iMPORTANT: Since files are read in binary, they are loaded directly
+into the hash algorithm as byte arrays. This means that the digest
+of a file of ASCII characters and the hash of the file contents read
+into a CLR string object, which is a string of Unicode characters,
+will differ. The reason for this is that the string of Unicode
+characters yields a different byte stream than the byte stream that
+came from reading the file in binary mode.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The message digest, consisting of a string of 64 hexadecimal
+characters.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Cryptography_DigestFile_SHA512Hash_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.Cryptography.DigestFile.SHA512Hash(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/DigestFile.cs/#L347">View Source</a>
+  </span>
+  <a id="WizardWrx_Cryptography_DigestFile_SHA512Hash_" data-uid="WizardWrx.Cryptography.DigestFile.SHA512Hash*"></a>
+  <h4 id="WizardWrx_Cryptography_DigestFile_SHA512Hash_System_String_" data-uid="WizardWrx.Cryptography.DigestFile.SHA512Hash(System.String)">SHA512Hash(String)</h4>
+  <div class="markdown level1 summary"><p>Given the name of a file, return its SHA-512 message digest as a 128
+character string of hexadecimal digits.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string SHA512Hash(string pstrFileName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrFileName</span></td>
+        <td><p>String containing the name of the file to be digested.</p>
+<p>iMPORTANT: Since files are read in binary, they are loaded directly
+into the hash algorithm as byte arrays. This means that the digest
+of a file of ASCII characters and the hash of the file contents read
+into a CLR string object, which is a string of Unicode characters,
+will differ. The reason for this is that the string of Unicode
+characters yields a different byte stream than the byte stream that
+came from reading the file in binary mode.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The message digest, consisting of a string of 64 hexadecimal
+characters.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Cryptography_DigestFile.md&amp;value=---%0Auid%3A%20WizardWrx.Cryptography.DigestFile%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/DigestFile.cs/#L134" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

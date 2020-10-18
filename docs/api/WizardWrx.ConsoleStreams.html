@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Namespace WizardWrx.ConsoleStreams
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Namespace WizardWrx.ConsoleStreams
+   ">
+    <meta name="generator" content="docfx 2.56.3.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="WizardWrx.ConsoleStreams">
+  
+  <h1 id="WizardWrx_ConsoleStreams" data-uid="WizardWrx.ConsoleStreams" class="text-break">Namespace WizardWrx.ConsoleStreams
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+    <h3 id="classes">Classes
+  </h3>
+      <h4><a class="xref" href="WizardWrx.ConsoleStreams.DefaultErrorMessageColors.html">DefaultErrorMessageColors</a></h4>
+      <section><p>Expose the default fatal and nonfatal exception message colors, which
+are defined in a standard application configuration file that is linked
+to the assembly that defines this class.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.ConsoleStreams.ErrorMessagesInColor.html">ErrorMessagesInColor</a></h4>
+      <section><p>Console.Error.Write and Console.Error.WriteLine methods that write in
+living color.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.ConsoleStreams.ErrorMessagesInColorConverter.html">ErrorMessagesInColorConverter</a></h4>
+      <section><p>Although its scope is public, the only practical use for this class is
+to facilitate storage of default or user specified ErrorMessagesInColor
+values in application settings files. That being the case, I put it at
+the end of the source file that defines that class.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.ConsoleStreams.MessageInColor.html">MessageInColor</a></h4>
+      <section><p>Console.Write and Console.WriteLine methods that write in living color.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.ConsoleStreams.MessageInColorConverter.html">MessageInColorConverter</a></h4>
+      <section><p>Although its scope is public, the only practical use for this class is
+to facilitate storage of default or user specified MessageInColor values
+in application settings files.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.ConsoleStreams.StandardHandleInfo.html">StandardHandleInfo</a></h4>
+      <section><p>This static class provides type-safe managed methods to determine the
+true redirection state of a standard console handle, including, if
+applicable, learning the name of the file to which it is redirected.</p>
+</section>
+    <h3 id="enums">Enums
+  </h3>
+      <h4><a class="xref" href="WizardWrx.ConsoleStreams.ErrorMessagesInColor.ErrorSeverity.html">ErrorMessagesInColor.ErrorSeverity</a></h4>
+      <section><p>Use this enumeration to specify the desired color scheme to the
+GetDefaultErrorMessageColors and GetDefaultMessageColors methods.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.ConsoleStreams.StandardHandleInfo.ConsoleModes.html">StandardHandleInfo.ConsoleModes</a></h4>
+      <section><p>Use these flags to test the values returned by GetConsoleMode.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.ConsoleStreams.StandardHandleInfo.ConsoleOutputModes.html">StandardHandleInfo.ConsoleOutputModes</a></h4>
+      <section><p>Use these flags with SetConsoleMode to control how long output lines
+are handled.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.ConsoleStreams.StandardHandleInfo.StandardConsoleHandle.html">StandardHandleInfo.StandardConsoleHandle</a></h4>
+      <section><p>This enumeration defines the three valid values for an enumeration,
+StandardConsoleHandle, the input argument type of methods
+StandardHandleState and GetRedirectedFileName, both public methods,
+and GetStandardHandle, currently private, but under consideration
+for a promotion.</p>
+<p>The upper and lower values are for efficient boundary testing.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.ConsoleStreams.StandardHandleInfo.StandardHandleState.html">StandardHandleInfo.StandardHandleState</a></h4>
+      <section><p>This enumeration defines the two valid states and two defined error
+states that may be returned by the StandardHandleState method, along
+with a pair of values that may be returned to indicate one of two
+error conditions.</p>
+</section>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

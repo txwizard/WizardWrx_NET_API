@@ -1,0 +1,1488 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class SysDateFormatters
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class SysDateFormatters
+   ">
+    <meta name="generator" content="docfx 2.56.3.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="WizardWrx.SysDateFormatters">
+  
+  
+  <h1 id="WizardWrx_SysDateFormatters" data-uid="WizardWrx.SysDateFormatters" class="text-break">Class SysDateFormatters
+  </h1>
+  <div class="markdown level0 summary"><p>This class implements my stalwart date formatter, ReformatSysDateP6C,
+which I created initially as a Windows Interface Language (WIL,
+a. k. a. WinBatch) library function, Reformat_Date_YmdHms_P6C, in
+October 2001, although its roots go back much further in my WIL script
+development.</p>
+<p>Since static classes are implicitly sealed, this class cannot be inherited.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">SysDateFormatters</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="WizardWrx.html">WizardWrx</a></h6>
+  <h6><strong>Assembly</strong>: WizardWrx.Core.dll</h6>
+  <h5 id="WizardWrx_SysDateFormatters_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class SysDateFormatters</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_RFD_DD_MM_YYYY.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.RFD_DD_MM_YYYY%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/SysDateFormatters.cs/#L245">View Source</a>
+  </span>
+  <h4 id="WizardWrx_SysDateFormatters_RFD_DD_MM_YYYY" data-uid="WizardWrx.SysDateFormatters.RFD_DD_MM_YYYY">RFD_DD_MM_YYYY</h4>
+  <div class="markdown level1 summary"><p>Apply the following format to a date: DD/MM/YYYY</p>
+<p>This is the standard format used in most of the English speaking
+world, by all military organizations of which I am aware, Europeans,
+and others who take their lead from any of the above groups.</p>
+<p>Only the date is returned, all four digits of the year are included,
+and the month and day have leading zeros if either is less than 10.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string RFD_DD_MM_YYYY = &quot;^DD/^MM/^YYYY&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_RFD_HH_MM.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.RFD_HH_MM%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/SysDateFormatters.cs/#L262">View Source</a>
+  </span>
+  <h4 id="WizardWrx_SysDateFormatters_RFD_HH_MM" data-uid="WizardWrx.SysDateFormatters.RFD_HH_MM">RFD_HH_MM</h4>
+  <div class="markdown level1 summary"><p>Apply the following format to a time: hh:mm</p>
+<p>The returned string represents the hours on a 24 hour clock.</p>
+<p>At present, 12 hour (AM/PM) representation is unsupported.</p>
+<p>This is a standard format used in most of the English speaking
+world, by all military organizations of which I am aware, Europeans,
+and others who take their lead from any of the above groups.</p>
+<p>Only the time is returned, and the hour and minute have leading
+zeros if either is less than 10.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string RFD_HH_MM = &quot;^hh:^mm&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_RFD_HH_MM_SS.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.RFD_HH_MM_SS%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/SysDateFormatters.cs/#L279">View Source</a>
+  </span>
+  <h4 id="WizardWrx_SysDateFormatters_RFD_HH_MM_SS" data-uid="WizardWrx.SysDateFormatters.RFD_HH_MM_SS">RFD_HH_MM_SS</h4>
+  <div class="markdown level1 summary"><p>Apply the following format to a time: hh:mm:ss</p>
+<p>The returned string represents the hours on a 24 hour clock.</p>
+<p>At present, 12 hour (AM/PM) representation is unsupported.</p>
+<p>This is a standard format used in most of the English speaking
+world, by all military organizations of which I am aware, Europeans,
+and others who take their lead from any of the above groups.</p>
+<p>Only the time is returned, and the hour, minute, and second have
+leading zeros if any of them is less than 10.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string RFD_HH_MM_SS = &quot;^hh:^mm:^ss&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_RFD_HH_MM_SS_TTT.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.RFD_HH_MM_SS_TTT%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/SysDateFormatters.cs/#L300">View Source</a>
+  </span>
+  <h4 id="WizardWrx_SysDateFormatters_RFD_HH_MM_SS_TTT" data-uid="WizardWrx.SysDateFormatters.RFD_HH_MM_SS_TTT">RFD_HH_MM_SS_TTT</h4>
+  <div class="markdown level1 summary"><p>Apply the following format to a time: hh:mm:ss.ttt</p>
+<p>The returned string represents the hours on a 24 hour clock.</p>
+<p>At present, 12 hour (AM/PM) representation is unsupported.</p>
+<p>The final token, ttt, is the milliseconds portion of the time,
+which is reported with leading zeros.</p>
+<p>This is an extension of a standard format used in most of the
+English speaking world, by all military organizations of which I am
+aware, Europeans, and others who take their lead from any of the
+above groups.</p>
+<p>Only the time is returned, and the hour, minute, and second have
+leading zeros if any of them is less than 10.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string RFD_HH_MM_SS_TTT = &quot;^hh:^mm:^ss.^ttt&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_RFD_MM_DD_YY.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.RFD_MM_DD_YY%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/SysDateFormatters.cs/#L221">View Source</a>
+  </span>
+  <h4 id="WizardWrx_SysDateFormatters_RFD_MM_DD_YY" data-uid="WizardWrx.SysDateFormatters.RFD_MM_DD_YY">RFD_MM_DD_YY</h4>
+  <div class="markdown level1 summary"><p>Apply the following format to a date: MM/DD/YY</p>
+<p>This is the standard short format used in the USA.</p>
+<p>Only the date is returned, including only the year of century, and
+the month and day have leading zeros if either is less than 10.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string RFD_MM_DD_YY = &quot;^MM/^DD/^YY&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_RFD_MM_DD_YYYY.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.RFD_MM_DD_YYYY%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/SysDateFormatters.cs/#L232">View Source</a>
+  </span>
+  <h4 id="WizardWrx_SysDateFormatters_RFD_MM_DD_YYYY" data-uid="WizardWrx.SysDateFormatters.RFD_MM_DD_YYYY">RFD_MM_DD_YYYY</h4>
+  <div class="markdown level1 summary"><p>Apply the following format to a date: MM/DD/YYYY</p>
+<p>This is the standard format used in the USA.</p>
+<p>Only the date is returned, all four digits of the year are included,
+and the month and day have leading zeros if either is less than 10.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string RFD_MM_DD_YYYY = &quot;^MM/^DD/^YYYY&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_RFD_WW_DD_MM_YYYY.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.RFD_WW_DD_MM_YYYY%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/SysDateFormatters.cs/#L387">View Source</a>
+  </span>
+  <h4 id="WizardWrx_SysDateFormatters_RFD_WW_DD_MM_YYYY" data-uid="WizardWrx.SysDateFormatters.RFD_WW_DD_MM_YYYY">RFD_WW_DD_MM_YYYY</h4>
+  <div class="markdown level1 summary"><p>Apply the following format to a date: WW DD/MM/YYYY</p>
+<p>The first token, WW, represents enough of the three letter weekday
+name abbreviation, which is derived from the regional settings in
+the Windows Control Panel, to uniquely identify the weekday. The
+returned string conforms to the settings in the UICulture of the
+calling thread.</p>
+<p>This is the standard format used in most of the English speaking
+world, by all military organizations of which I am aware, Europeans,
+and others who take their lead from any of the above groups.</p>
+<p>Only the date is returned, all four digits of the year are included,
+and the month and day have leading zeros if either is less than 10.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string RFD_WW_DD_MM_YYYY = &quot;^WW ^DD/^MM/^YYYY&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_RFD_WW_MM_DD_YYYY.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.RFD_WW_MM_DD_YYYY%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/SysDateFormatters.cs/#L404">View Source</a>
+  </span>
+  <h4 id="WizardWrx_SysDateFormatters_RFD_WW_MM_DD_YYYY" data-uid="WizardWrx.SysDateFormatters.RFD_WW_MM_DD_YYYY">RFD_WW_MM_DD_YYYY</h4>
+  <div class="markdown level1 summary"><p>Apply the following format to a date: WW DD/MM/YYYY</p>
+<p>The first token, WW, represents enough of the three letter weekday
+name abbreviation, which is derived from the regional settings in
+the Windows Control Panel, to uniquely identify the weekday. The
+returned string conforms to the settings in the UICulture of the
+calling thread.</p>
+<p>This is the standard format used in the USA.</p>
+<p>Only the date is returned, all four digits of the year are included,
+and the month and day have leading zeros if either is less than 10.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string RFD_WW_MM_DD_YYYY = &quot;^WW ^MM/^DD/^YYYY&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_RFD_WWW_DD_MM_YYYY.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.RFD_WWW_DD_MM_YYYY%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/SysDateFormatters.cs/#L353">View Source</a>
+  </span>
+  <h4 id="WizardWrx_SysDateFormatters_RFD_WWW_DD_MM_YYYY" data-uid="WizardWrx.SysDateFormatters.RFD_WWW_DD_MM_YYYY">RFD_WWW_DD_MM_YYYY</h4>
+  <div class="markdown level1 summary"><p>Apply the following format to a date: WWW DD/MM/YYYY</p>
+<p>The first token, WWW, represents the three letter abbreviation of
+the weekday name, which is derived from the regional settings in the
+Windows Control Panel. The returned string conforms to the settings
+in the UICulture of the calling thread.</p>
+<p>This is the standard format used in most of the English speaking
+world, by all military organizations of which I am aware, Europeans,
+and others who take their lead from any of the above groups.</p>
+<p>Only the date is returned, all four digits of the year are included,
+and the month and day have leading zeros if either is less than 10.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string RFD_WWW_DD_MM_YYYY = &quot;^WWW ^DD/^MM/^YYYY&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_RFD_WWW_MM_DD_YYYY.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.RFD_WWW_MM_DD_YYYY%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/SysDateFormatters.cs/#L369">View Source</a>
+  </span>
+  <h4 id="WizardWrx_SysDateFormatters_RFD_WWW_MM_DD_YYYY" data-uid="WizardWrx.SysDateFormatters.RFD_WWW_MM_DD_YYYY">RFD_WWW_MM_DD_YYYY</h4>
+  <div class="markdown level1 summary"><p>Apply the following format to a date: WWW DD/MM/YYYY</p>
+<p>The first token, WWW, represents the three letter abbreviation of
+the weekday name, which is derived from the regional settings in the
+Windows Control Panel. The returned string conforms to the settings
+in the UICulture of the calling thread.</p>
+<p>This is the standard format used in the USA.</p>
+<p>Only the date is returned, all four digits of the year are included,
+and the month and day have leading zeros if either is less than 10.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string RFD_WWW_MM_DD_YYYY = &quot;^WWW ^MM/^DD/^YYYY&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_RFD_WWWW_DD_MM_YYYY.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.RFD_WWWW_DD_MM_YYYY%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/SysDateFormatters.cs/#L422">View Source</a>
+  </span>
+  <h4 id="WizardWrx_SysDateFormatters_RFD_WWWW_DD_MM_YYYY" data-uid="WizardWrx.SysDateFormatters.RFD_WWWW_DD_MM_YYYY">RFD_WWWW_DD_MM_YYYY</h4>
+  <div class="markdown level1 summary"><p>Apply the following format to a date: WWWW DD/MM/YYYY</p>
+<p>The first token, WWWW, represents full name of the weekday, which is
+derived from the regional settings in the Windows Control Panel. The
+returned string conforms to the settings in the UICulture of the
+calling thread.</p>
+<p>This is the standard format used in most of the English speaking
+world, by all military organizations of which I am aware, Europeans,
+and others who take their lead from any of the above groups.</p>
+<p>Only the date is returned, all four digits of the year are included,
+and the month and day have leading zeros if either is less than 10.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string RFD_WWWW_DD_MM_YYYY = &quot;^WWWW, ^DD/^MM/^YYYY&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_RFD_WWWW_MM_DD_YYYY.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.RFD_WWWW_MM_DD_YYYY%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/SysDateFormatters.cs/#L438">View Source</a>
+  </span>
+  <h4 id="WizardWrx_SysDateFormatters_RFD_WWWW_MM_DD_YYYY" data-uid="WizardWrx.SysDateFormatters.RFD_WWWW_MM_DD_YYYY">RFD_WWWW_MM_DD_YYYY</h4>
+  <div class="markdown level1 summary"><p>Apply the following format to a date: WWWW DD/MM/YYYY</p>
+<p>The first token, WWWW, represents full name of the weekday, which is
+derived from the regional settings in the Windows Control Panel. The
+returned string conforms to the settings in the UICulture of the
+calling thread.</p>
+<p>This is the standard format used in the USA.</p>
+<p>Only the date is returned, all four digits of the year are included,
+and the month and day have leading zeros if either is less than 10.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string RFD_WWWW_MM_DD_YYYY = &quot;^WWWW, ^MM/^DD/^YYYY&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_RFD_YYYY_MM_DD.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.RFD_YYYY_MM_DD%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/SysDateFormatters.cs/#L210">View Source</a>
+  </span>
+  <h4 id="WizardWrx_SysDateFormatters_RFD_YYYY_MM_DD" data-uid="WizardWrx.SysDateFormatters.RFD_YYYY_MM_DD">RFD_YYYY_MM_DD</h4>
+  <div class="markdown level1 summary"><p>Apply the following format to a date: YYYY/MM/DD</p>
+<p>With respect to the date only, this format confirms to the ISO 8601
+standard for time representation.</p>
+<p>Only the date is returned, all four digits of the year are included,
+and the month and day have leading zeros if either is less than 10.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string RFD_YYYY_MM_DD = &quot;^YYYY/^MM/^DD&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_RFD_YYYY_MM_DD_HH_MM_SS.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.RFD_YYYY_MM_DD_HH_MM_SS%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/SysDateFormatters.cs/#L316">View Source</a>
+  </span>
+  <h4 id="WizardWrx_SysDateFormatters_RFD_YYYY_MM_DD_HH_MM_SS" data-uid="WizardWrx.SysDateFormatters.RFD_YYYY_MM_DD_HH_MM_SS">RFD_YYYY_MM_DD_HH_MM_SS</h4>
+  <div class="markdown level1 summary"><p>Apply the following format to a date and time: YYYY/MM/DD hh:mm:ss</p>
+<p>The returned string represents the hours on a 24 hour clock.</p>
+<p>At present, 12 hour (AM/PM) representation is unsupported.</p>
+<p>This format conforms fully to the ISO 8601 standard for time
+representation.</p>
+<p>The month, day, hour, minute, and second have leading zeros if any
+of them is less than 10.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string RFD_YYYY_MM_DD_HH_MM_SS = &quot;^YYYY/^MM/^DD ^hh:^mm:^ss&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_RFD_YYYY_MM_DD_HH_MM_SS_TTT.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.RFD_YYYY_MM_DD_HH_MM_SS_TTT%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/SysDateFormatters.cs/#L335">View Source</a>
+  </span>
+  <h4 id="WizardWrx_SysDateFormatters_RFD_YYYY_MM_DD_HH_MM_SS_TTT" data-uid="WizardWrx.SysDateFormatters.RFD_YYYY_MM_DD_HH_MM_SS_TTT">RFD_YYYY_MM_DD_HH_MM_SS_TTT</h4>
+  <div class="markdown level1 summary"><p>Apply the following format to a date and time: YYYY/MM/DD hh:mm:ss.ttt</p>
+<p>The returned string represents the hours on a 24 hour clock.</p>
+<p>At present, 12 hour (AM/PM) representation is unsupported.</p>
+<p>This format conforms fully to the ISO 8601 standard for time
+representation.</p>
+<p>The final token, ttt, is the milliseconds portion of the time,
+which is reported with leading zeros.</p>
+<p>The month, day, hour, minute, and second have leading zeros if any
+of them is less than 10.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string RFD_YYYY_MM_DD_HH_MM_SS_TTT = &quot;^YYYY/^MM/^DD ^hh:^mm:^ss.^ttt&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_RFDHHMMSS.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.RFDHHMMSS%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/SysDateFormatters.cs/#L485">View Source</a>
+  </span>
+  <h4 id="WizardWrx_SysDateFormatters_RFDHHMMSS" data-uid="WizardWrx.SysDateFormatters.RFDHHMMSS">RFDHHMMSS</h4>
+  <div class="markdown level1 summary"><p>Apply the following format to a date and time: hhmmss</p>
+<p>The returned string represents the hours on a 24 hour clock.</p>
+<p>At present, 12 hour (AM/PM) representation is unsupported.</p>
+<p>This format conforms fully to the ISO 8601 standard for time
+representation.</p>
+<p>The hour, minute, and second have leading zeros if any of them is
+less than 10.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string RFDHHMMSS = &quot;^hh^mm^ss&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_RFDYYYYMMDD.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.RFDYYYYMMDD%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/SysDateFormatters.cs/#L469">View Source</a>
+  </span>
+  <h4 id="WizardWrx_SysDateFormatters_RFDYYYYMMDD" data-uid="WizardWrx.SysDateFormatters.RFDYYYYMMDD">RFDYYYYMMDD</h4>
+  <div class="markdown level1 summary"><p>Apply the following format to a date and time: YYYYMMDD</p>
+<p>The returned string represents the hours on a 24 hour clock.</p>
+<p>At present, 12 hour (AM/PM) representation is unsupported.</p>
+<p>This format conforms fully to the ISO 8601 standard for time
+representation.</p>
+<p>The month and day have leading zeros if either is less than 10.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string RFDYYYYMMDD = &quot;^YYYY^MM^DD&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_RFDYYYYMMDD_HHMMSS.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.RFDYYYYMMDD_HHMMSS%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/SysDateFormatters.cs/#L454">View Source</a>
+  </span>
+  <h4 id="WizardWrx_SysDateFormatters_RFDYYYYMMDD_HHMMSS" data-uid="WizardWrx.SysDateFormatters.RFDYYYYMMDD_HHMMSS">RFDYYYYMMDD_HHMMSS</h4>
+  <div class="markdown level1 summary"><p>Apply the following format to a date and time: YYYYMMDD_hhmmss</p>
+<p>The returned string represents the hours on a 24 hour clock.</p>
+<p>At present, 12 hour (AM/PM) representation is unsupported.</p>
+<p>This format conforms fully to the ISO 8601 standard for time
+representation.</p>
+<p>The month, day, hour, minute, and second have leading zeros if any
+of them is less than 10.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string RFDYYYYMMDD_HHMMSS = &quot;^YYYY^MM^DD_^hh^mm^ss&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_RSD_TOKENS.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.RSD_TOKENS%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/SysDateFormatters.cs/#L181">View Source</a>
+  </span>
+  <h4 id="WizardWrx_SysDateFormatters_RSD_TOKENS" data-uid="WizardWrx.SysDateFormatters.RSD_TOKENS">RSD_TOKENS</h4>
+  <div class="markdown level1 summary"><p>The strings in this array are the substitution tokens supported by
+the date formatters in this class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly string[] RSD_TOKENS</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_STANDARD_DISPLAY_DATE_FORMAT.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.STANDARD_DISPLAY_DATE_FORMAT%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/SysDateFormatters.cs/#L497">View Source</a>
+  </span>
+  <h4 id="WizardWrx_SysDateFormatters_STANDARD_DISPLAY_DATE_FORMAT" data-uid="WizardWrx.SysDateFormatters.STANDARD_DISPLAY_DATE_FORMAT">STANDARD_DISPLAY_DATE_FORMAT</h4>
+  <div class="markdown level1 summary"><p>I use this with my SysDateFormatters class to format a date (sans
+time) so that it prints as YYYY/MM/DD.</p>
+<p>IMPORTANT: This string specifically targets the methods in the
+SysDateFormatters class. SysDateFormatters strings are incompatible
+with ToString.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string STANDARD_DISPLAY_DATE_FORMAT = &quot;^YYYY/^MM/^DD&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_SysDateFormatters_STANDARD_DISPLAY_DATE_FORMAT_examples">Examples</h5>
+  <p>2014/09/04</p>
+
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_STANDARD_DISPLAY_DATE_TIME_FORMAT.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.STANDARD_DISPLAY_DATE_TIME_FORMAT%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/SysDateFormatters.cs/#L510">View Source</a>
+  </span>
+  <h4 id="WizardWrx_SysDateFormatters_STANDARD_DISPLAY_DATE_TIME_FORMAT" data-uid="WizardWrx.SysDateFormatters.STANDARD_DISPLAY_DATE_TIME_FORMAT">STANDARD_DISPLAY_DATE_TIME_FORMAT</h4>
+  <div class="markdown level1 summary"><p>I use this with my SysDateFormatters class to format a date and time
+so that it prints as YYYY/MM/DD HH:MM:SS.</p>
+<p>IMPORTANT: This string specifically targets the methods in the
+SysDateFormatters class. SysDateFormatters strings are incompatible
+with ToString.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string STANDARD_DISPLAY_DATE_TIME_FORMAT = &quot;^YYYY/^MM/^DD ^hh:^mm:^ss&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_SysDateFormatters_STANDARD_DISPLAY_DATE_TIME_FORMAT_examples">Examples</h5>
+  <p>2014/09/04 16:17:30</p>
+
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_STANDARD_DISPLAY_TIME_FORMAT.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.STANDARD_DISPLAY_TIME_FORMAT%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/SysDateFormatters.cs/#L523">View Source</a>
+  </span>
+  <h4 id="WizardWrx_SysDateFormatters_STANDARD_DISPLAY_TIME_FORMAT" data-uid="WizardWrx.SysDateFormatters.STANDARD_DISPLAY_TIME_FORMAT">STANDARD_DISPLAY_TIME_FORMAT</h4>
+  <div class="markdown level1 summary"><p>I use this with my SysDateFormatters class to format a time (sans
+date) so that it prints as HH:MM:SS.</p>
+<p>IMPORTANT: This string specifically targets the methods in the
+SysDateFormatters class. SysDateFormatters strings are incompatible
+with ToString.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string STANDARD_DISPLAY_TIME_FORMAT = &quot;^hh:^mm:^ss&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_SysDateFormatters_STANDARD_DISPLAY_TIME_FORMAT_examples">Examples</h5>
+  <p>16:17:30</p>
+
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_FormatDateForShow_System_DateTime_.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.FormatDateForShow(System.DateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/SysDateFormatters.cs/#L692">View Source</a>
+  </span>
+  <a id="WizardWrx_SysDateFormatters_FormatDateForShow_" data-uid="WizardWrx.SysDateFormatters.FormatDateForShow*"></a>
+  <h4 id="WizardWrx_SysDateFormatters_FormatDateForShow_System_DateTime_" data-uid="WizardWrx.SysDateFormatters.FormatDateForShow(System.DateTime)">FormatDateForShow(DateTime)</h4>
+  <div class="markdown level1 summary"><p>Use my standard format string for displaying date stamps in
+reports, to format a DateTime structure.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string FormatDateForShow(DateTime pdtmTestDate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">pdtmTestDate</span></td>
+        <td><p>Specify the populated DateTime to be formatted. Since only the date
+goes into the format, the time component MAY be uninitialized.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The return value is a string representation of the date and time,
+rendered according to constant STANDARD_DISPLAY_TIME_FORMAT.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_FormatDateTimeForShow_System_DateTime_.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.FormatDateTimeForShow(System.DateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/SysDateFormatters.cs/#L713">View Source</a>
+  </span>
+  <a id="WizardWrx_SysDateFormatters_FormatDateTimeForShow_" data-uid="WizardWrx.SysDateFormatters.FormatDateTimeForShow*"></a>
+  <h4 id="WizardWrx_SysDateFormatters_FormatDateTimeForShow_System_DateTime_" data-uid="WizardWrx.SysDateFormatters.FormatDateTimeForShow(System.DateTime)">FormatDateTimeForShow(DateTime)</h4>
+  <div class="markdown level1 summary"><p>Use my standard format string for displaying date/time stamps in
+reports, to format a DateTime structure.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string FormatDateTimeForShow(DateTime pdtmTestDate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">pdtmTestDate</span></td>
+        <td><p>Specify the populated DateTime to be formatted. Since the date and
+time go into the output string, the entire structure must be
+initialized.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The return value is a string representation of the date and time,
+rendered according to constant STANDARD_DISPLAY_DATE_TIME_FORMAT.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_FormatTimeForShow_System_DateTime_.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.FormatTimeForShow(System.DateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/SysDateFormatters.cs/#L733">View Source</a>
+  </span>
+  <a id="WizardWrx_SysDateFormatters_FormatTimeForShow_" data-uid="WizardWrx.SysDateFormatters.FormatTimeForShow*"></a>
+  <h4 id="WizardWrx_SysDateFormatters_FormatTimeForShow_System_DateTime_" data-uid="WizardWrx.SysDateFormatters.FormatTimeForShow(System.DateTime)">FormatTimeForShow(DateTime)</h4>
+  <div class="markdown level1 summary"><p>Use my standard format string for displaying time stamps in reports,
+to format a DateTime structure.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string FormatTimeForShow(DateTime pdtmTestDate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">pdtmTestDate</span></td>
+        <td><p>Specify the populated DateTime to be formatted. Since only the time
+goes into the format, the date component MAY be uninitialized.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The return value is a string representation of the date and time,
+rendered according to constant STANDARD_DISPLAY_TIME_FORMAT.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_GetDisplayTimeZone_System_DateTime_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.GetDisplayTimeZone(System.DateTime%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/SysDateFormatters.cs/#L770">View Source</a>
+  </span>
+  <a id="WizardWrx_SysDateFormatters_GetDisplayTimeZone_" data-uid="WizardWrx.SysDateFormatters.GetDisplayTimeZone*"></a>
+  <h4 id="WizardWrx_SysDateFormatters_GetDisplayTimeZone_System_DateTime_System_String_" data-uid="WizardWrx.SysDateFormatters.GetDisplayTimeZone(System.DateTime,System.String)">GetDisplayTimeZone(DateTime, String)</h4>
+  <div class="markdown level1 summary"><p>Given a DateTime and a system time zone ID string, return the
+appropriate text to display, depending on whether the specified time
+is standard or Daylight Saving Time.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string GetDisplayTimeZone(DateTime pdtmTestDate, string pstrTimeZoneID)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">pdtmTestDate</span></td>
+        <td><p>Specify the Syatem.DateTime for which the appropriate time zone
+string is required. Both DateTime.MinValue and DateTime.MaxValue are
+invalid; specifying either elicits the empty string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrTimeZoneID</span></td>
+        <td><p>Specify a valid time zone ID string. Please see the Remarks.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>If the function succeeds, the return value is the appropriate string
+to display for the given time. Otherwise, the empty string is
+returned or one of several exceptions is thrown, the most likely of
+which is a TimeZoneNotFoundException, which is thrown when the
+specified time zone ID string is invalid.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_SysDateFormatters_GetDisplayTimeZone_System_DateTime_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>if in doubt, use TimeZoneInfo.GetSystemTimeZones to enumerate the
+time zones installed on the local machine. Invalid time zone strings
+always give rise to one of a number of exceptions, all of which are
+fully described in the documentation of a companion function,
+GetSystemTimeZoneInfo which this routine uses to get the time zone
+information that it needs.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_GetSystemTimeZoneInfo_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.GetSystemTimeZoneInfo(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/SysDateFormatters.cs/#L836">View Source</a>
+  </span>
+  <a id="WizardWrx_SysDateFormatters_GetSystemTimeZoneInfo_" data-uid="WizardWrx.SysDateFormatters.GetSystemTimeZoneInfo*"></a>
+  <h4 id="WizardWrx_SysDateFormatters_GetSystemTimeZoneInfo_System_String_" data-uid="WizardWrx.SysDateFormatters.GetSystemTimeZoneInfo(System.String)">GetSystemTimeZoneInfo(String)</h4>
+  <div class="markdown level1 summary"><p>Given a system time zone ID string, return the corresponding
+TimeZoneInfo object if the specified time zone is defined on the
+local system.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TimeZoneInfo GetSystemTimeZoneInfo(string pstrTimeZoneID)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrTimeZoneID</span></td>
+        <td><p>Specify a valid time zone ID string. There are two special IDs,
+LocalTime and UTC, both of which are accessible through static
+properties on the TimeZoneInfo class. Although you could use the ID
+properties with this method, the most efficient way to handle these
+special cases is by reference to the Local property for LocalTime
+and the UTC property for UTC time. (This method could take the same
+shortcut, but I decided that it wasn't worth the extra code and
+testing.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.TimeZoneInfo</span></td>
+        <td><p>If the function succeeds, the return value is a TimeZoneInfo object,
+populated from the Windows Registry. Otherwise, one of the
+exceptions listed and described below is thrown.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_SysDateFormatters_GetSystemTimeZoneInfo_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>if in doubt, use TimeZoneInfo.GetSystemTimeZones to enumerate the
+time zones installed on the local machine.</p>
+</div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.OutOfMemoryException</span></td>
+        <td><p>You should restart Windows if this happens.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p>Contact the author of the program. This is something that he or she
+must address.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.TimeZoneNotFoundException</span></td>
+        <td><p>Contact the author of the program. This is something that he or she
+must address.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Security.SecurityException</span></td>
+        <td><p>Contact your system administrator to inquire about why your program
+is forbidden to read the regional settings from the Windows
+Registry.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.InvalidTimeZoneException</span></td>
+        <td><p>Contact your system support group. A corrupted Windows Registry is a
+rare, but serious matter.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Exception</span></td>
+        <td><p>Start with your system support group, who may need to request the
+assistance of the author of the program.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_ReformatNow_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.ReformatNow(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/SysDateFormatters.cs/#L915">View Source</a>
+  </span>
+  <a id="WizardWrx_SysDateFormatters_ReformatNow_" data-uid="WizardWrx.SysDateFormatters.ReformatNow*"></a>
+  <h4 id="WizardWrx_SysDateFormatters_ReformatNow_System_String_" data-uid="WizardWrx.SysDateFormatters.ReformatNow(System.String)">ReformatNow(String)</h4>
+  <div class="markdown level1 summary"><p>This method has a nearly exact analogue in the constellations of WIL
+User Defined Functions that gave rise to its immediate predecessor,
+a like named function implemented in straight C, with a little help
+from the Windows National Language Subsystem, which underlies the
+CultureInfo class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string ReformatNow(string pstrFormat)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrFormat</span></td>
+        <td><p>This System.String is a combination of tokens and literal text that
+governs the formatting of the date.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The return value is a string containing the current date and time,
+formatted according to the rules spelled out in format string
+pstrFormat.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_ReformatSysDate_System_DateTime_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.ReformatSysDate(System.DateTime%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/SysDateFormatters.cs/#L954">View Source</a>
+  </span>
+  <a id="WizardWrx_SysDateFormatters_ReformatSysDate_" data-uid="WizardWrx.SysDateFormatters.ReformatSysDate*"></a>
+  <h4 id="WizardWrx_SysDateFormatters_ReformatSysDate_System_DateTime_System_String_" data-uid="WizardWrx.SysDateFormatters.ReformatSysDate(System.DateTime,System.String)">ReformatSysDate(DateTime, String)</h4>
+  <div class="markdown level1 summary"><p>ReformatSysDate is the core function of the constellation of
+routines that grew from the original WIL script. Substitution tokens
+drive construction of a formatted date string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string ReformatSysDate(DateTime pdtmToFormat, string pstrFormat)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">pdtmToFormat</span></td>
+        <td><p>This System.DateTime is the time to be formatted.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrFormat</span></td>
+        <td><p>This System.String is a combination of tokens and literal text that
+governs the formatting of the date.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The return value is a string containing the date and/or time in
+argument pdtmToFormat, formatted according to the rules spelled out
+in format string pstrFormat.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_ReformatUtcNow_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.ReformatUtcNow(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/SysDateFormatters.cs/#L933">View Source</a>
+  </span>
+  <a id="WizardWrx_SysDateFormatters_ReformatUtcNow_" data-uid="WizardWrx.SysDateFormatters.ReformatUtcNow*"></a>
+  <h4 id="WizardWrx_SysDateFormatters_ReformatUtcNow_System_String_" data-uid="WizardWrx.SysDateFormatters.ReformatUtcNow(System.String)">ReformatUtcNow(String)</h4>
+  <div class="markdown level1 summary"><p>In the original constellation of WinBatch functions and their C
+descendants, this function took the form of an optional argument to
+ReformatNow. I think I prefer this way.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string ReformatUtcNow(string pstrFormat)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrFormat</span></td>
+        <td><p>This System.String is a combination of tokens and literal text that
+governs the formatting of the date.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The return value is a string containing the current UTC time,
+formatted according to the rules spelled out in format string
+pstrFormat.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="seealso">See Also</h3>
+  <div class="seealso">
+      <div><a class="xref" href="WizardWrx.DisplayFormats.html">DisplayFormats</a></div>
+      <div><a class="xref" href="WizardWrx.Core.TimeDisplayFormatter.html">TimeDisplayFormatter</a></div>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/SysDateFormatters.cs/#L174" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
