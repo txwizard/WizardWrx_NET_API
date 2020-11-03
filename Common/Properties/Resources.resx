@@ -205,6 +205,14 @@
     <value>[blank]</value>
     <comment>Use this token to represent the empty string as the word "blank" in brackets. Contrast this with ERRMSG_NULLREF_NEVER_VALID and ERRMSG_ARG_IS_NULL_OR_EMPTY, both intended for use as the Message property of ArgumnetNullException exceptions.</comment>
   </data>
+  <data name="MSG_DUMMY" xml:space="preserve">
+    <value>Dummy</value>
+    <comment>Added to version 7.24.126.</comment>
+  </data>
+  <data name="MSG_DUMMY_VALUE" xml:space="preserve">
+    <value>DummyValue</value>
+    <comment>Added to version 7.24.126.</comment>
+  </data>
   <data name="MSG_INTEGER_EVENLY_DIVISIBLE_BY" xml:space="preserve">
     <value>is evenly divisible by</value>
     <comment>This is one of 18 strings from which to construct messages that I added to version 7.22.122 of the library.</comment>

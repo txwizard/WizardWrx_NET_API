@@ -27,6 +27,8 @@ using System.Runtime.InteropServices;
 // 2020/09/20 DAG Update the copyright year.
 // 2020/10/17 DAG Update the product build number to match the highest library
 //                build number.
+// 2020/11/02 DAG Update the product version number for the next set of point
+//                releases. Hence, 7.23 becomes 7.24.
 // =============================================================================
 
 // General Information about an assembly is controlled through the following
@@ -61,4 +63,4 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyFileVersion ( "7.23.214.0" )]
+[assembly: AssemblyFileVersion ( "7.24.214.0" )]

@@ -4,6 +4,50 @@ This file is a running history of fixes and improvements from version 7.0
 onwards. Changes are documented for the newest version first. Within each
 version, classes are covered in alphabetical order.
 
+## WizardWrx.Common.dll, Version 7.24.126, Released 2020-11-02
+
+This update adds a handful of new locale-sensitive string constants and another
+handful of string representations of character constants that are frequently
+needed as strings, too.
+
+|String Name                      |String Value          |Class               |
+|---------------------------------|----------------------|--------------------|
+|MSG_DUMMY                        |Dummy                 |Properties.Resources|
+|MSG_DUMMY_VALUE                  |DummyValue            |Properties.Resources|
+|ASTERISK                         |*                     |SpecialStrings      |
+|BRACE_LEFT                       |{                     |SpecialStrings      |
+|BRACE_RIGHT                      |}                     |SpecialStrings      |
+|BRACKET_LEFT                     |\[                    |SpecialStrings      |
+|BRACKET_RIGHT                    |\]                    |SpecialStrings      |
+|ASTERISK_CHAR                    |*                     |SpecialStrings      |
+|AT_SIGN                          |@                     |SpecialStrings      |
+|CARRIAGE_RETURN                  |\r                    |SpecialStrings      |
+|CHAR_NUMERAL_0                   |0                     |SpecialStrings      |
+|CHAR_NUMERAL_1                   |1                     |SpecialStrings      |
+|CHAR_NUMERAL_2                   |2                     |SpecialStrings      |
+|CHAR_NUMERAL_7                   |7                     |SpecialStrings      |
+|CHAR_LC_I                        |i                     |SpecialStrings      |
+|CHAR_UC_I                        |I                     |SpecialStrings      |
+|CHAR_LC_L                        |l                     |SpecialStrings      |
+|CHAR_UC_L                        |L                     |SpecialStrings      |
+|CHAR_LC_O                        |o                     |SpecialStrings      |
+|CHAR_UC_O                        |O                     |SpecialStrings      |
+|CHAR_LC_Z                        |z                     |SpecialStrings      |
+|CHAR_UC_Z                        |Z                     |SpecialStrings      |
+|CHECK_MARK_CHAR                  |\xFB                  |SpecialStrings      |
+|EQUALS_SIGN                      |=                     |SpecialStrings      |
+|HASH_TAG                         |#                     |SpecialStrings      |
+|LAST_ASCII_CHAR                  |\xFF                  |SpecialStrings      |
+|LINEFEED                         |\n                    |SpecialStrings      |
+|NONBREAKING_SPACE_CHAR           |\0xA0                 |SpecialStrings      |
+|PARENTHESIS_LEFT                 |(                     |SpecialStrings      |
+|PARENTHESIS_RIGHT                |)                     |SpecialStrings      |
+|PIPE_CHAR                        |\|                    |SpecialStrings      |
+|QUESTION_MARK                    |?                     |SpecialStrings      |
+
+As of this version, essentially everything that has a character representation
+has an analogous string representation.
+
 ## WizardWrx.AssemblyUtils 7.23.121, Released 2019/12/25
 
 This release corrects an omission from the overloaded `DependentAssemblies`

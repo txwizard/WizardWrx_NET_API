@@ -10,8 +10,16 @@ using System.Runtime.InteropServices;
 //	Date       By  Comment
 //	---------- --- -------------------------------------------------------------
 // 	2019/12/01 DAG Adopt SemVer version numbering scheme.
+//
 //  2020/09/20 DAG This build reflects updating the package copyright year from
 //                 2019 to 2020, which affects all assemblies in the solution.
+//
+//  2020/11/02 DAG 1) Update the product version number for the next set of
+//                    point  releases. Hence, 7.23 becomes 7.24.
+//
+//                 2) In addition to new constants in SpecialStrings, this
+//                    update adds two new strings to Properties.Resources,
+//                    MSG_DUMMY and MSG_DUMMY_VALUE.
 // 	============================================================================
 
 // General Information about an assembly is controlled through the following
@@ -44,4 +52,4 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion ( "7.23.125.0" )]
+[assembly: AssemblyVersion ( "7.24.126.0" )]

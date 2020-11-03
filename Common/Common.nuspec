@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>This update complements the industry standard SemVer version numbering by implementing the Deterministic compiler switch.</releaseNotes>
+	    <releaseNotes>This update adds a handful of new locale-sensitive string constants and another handful of string representations of character constants that are frequently needed as strings, too.</releaseNotes>
     	<copyright>$copyright$</copyright>
     	<tags>Constants Arrays RegExp</tags>
 	</metadata>

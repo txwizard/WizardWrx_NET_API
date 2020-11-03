@@ -3241,6 +3241,32 @@ references:
   isSpec: "True"
   fullName: WizardWrx.Common.Properties.Resources.MSG_BLANK_STRING
   nameWithType: Resources.MSG_BLANK_STRING
+- uid: WizardWrx.Common.Properties.Resources.MSG_DUMMY
+  name: MSG_DUMMY
+  href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_MSG_DUMMY
+  commentId: P:WizardWrx.Common.Properties.Resources.MSG_DUMMY
+  fullName: WizardWrx.Common.Properties.Resources.MSG_DUMMY
+  nameWithType: Resources.MSG_DUMMY
+- uid: WizardWrx.Common.Properties.Resources.MSG_DUMMY*
+  name: MSG_DUMMY
+  href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_MSG_DUMMY_
+  commentId: Overload:WizardWrx.Common.Properties.Resources.MSG_DUMMY
+  isSpec: "True"
+  fullName: WizardWrx.Common.Properties.Resources.MSG_DUMMY
+  nameWithType: Resources.MSG_DUMMY
+- uid: WizardWrx.Common.Properties.Resources.MSG_DUMMY_VALUE
+  name: MSG_DUMMY_VALUE
+  href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_MSG_DUMMY_VALUE
+  commentId: P:WizardWrx.Common.Properties.Resources.MSG_DUMMY_VALUE
+  fullName: WizardWrx.Common.Properties.Resources.MSG_DUMMY_VALUE
+  nameWithType: Resources.MSG_DUMMY_VALUE
+- uid: WizardWrx.Common.Properties.Resources.MSG_DUMMY_VALUE*
+  name: MSG_DUMMY_VALUE
+  href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_MSG_DUMMY_VALUE_
+  commentId: Overload:WizardWrx.Common.Properties.Resources.MSG_DUMMY_VALUE
+  isSpec: "True"
+  fullName: WizardWrx.Common.Properties.Resources.MSG_DUMMY_VALUE
+  nameWithType: Resources.MSG_DUMMY_VALUE
 - uid: WizardWrx.Common.Properties.Resources.MSG_INTEGER_EVENLY_DIVISIBLE_BY
   name: MSG_INTEGER_EVENLY_DIVISIBLE_BY
   href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_MSG_INTEGER_EVENLY_DIVISIBLE_BY
@@ -14393,12 +14419,138 @@ references:
   commentId: F:WizardWrx.SpecialStrings.ASP_RELATIVE_PATH_BEGIN
   fullName: WizardWrx.SpecialStrings.ASP_RELATIVE_PATH_BEGIN
   nameWithType: SpecialStrings.ASP_RELATIVE_PATH_BEGIN
+- uid: WizardWrx.SpecialStrings.ASTERISK
+  name: ASTERISK
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_ASTERISK
+  commentId: F:WizardWrx.SpecialStrings.ASTERISK
+  fullName: WizardWrx.SpecialStrings.ASTERISK
+  nameWithType: SpecialStrings.ASTERISK
+- uid: WizardWrx.SpecialStrings.ASTERISK_CHAR
+  name: ASTERISK_CHAR
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_ASTERISK_CHAR
+  commentId: F:WizardWrx.SpecialStrings.ASTERISK_CHAR
+  fullName: WizardWrx.SpecialStrings.ASTERISK_CHAR
+  nameWithType: SpecialStrings.ASTERISK_CHAR
 - uid: WizardWrx.SpecialStrings.AT_CHAR
   name: AT_CHAR
   href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_AT_CHAR
   commentId: F:WizardWrx.SpecialStrings.AT_CHAR
   fullName: WizardWrx.SpecialStrings.AT_CHAR
   nameWithType: SpecialStrings.AT_CHAR
+- uid: WizardWrx.SpecialStrings.AT_SIGN
+  name: AT_SIGN
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_AT_SIGN
+  commentId: F:WizardWrx.SpecialStrings.AT_SIGN
+  fullName: WizardWrx.SpecialStrings.AT_SIGN
+  nameWithType: SpecialStrings.AT_SIGN
+- uid: WizardWrx.SpecialStrings.BRACE_LEFT
+  name: BRACE_LEFT
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_BRACE_LEFT
+  commentId: F:WizardWrx.SpecialStrings.BRACE_LEFT
+  fullName: WizardWrx.SpecialStrings.BRACE_LEFT
+  nameWithType: SpecialStrings.BRACE_LEFT
+- uid: WizardWrx.SpecialStrings.BRACE_RIGHT
+  name: BRACE_RIGHT
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_BRACE_RIGHT
+  commentId: F:WizardWrx.SpecialStrings.BRACE_RIGHT
+  fullName: WizardWrx.SpecialStrings.BRACE_RIGHT
+  nameWithType: SpecialStrings.BRACE_RIGHT
+- uid: WizardWrx.SpecialStrings.BRACKET_LEFT
+  name: BRACKET_LEFT
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_BRACKET_LEFT
+  commentId: F:WizardWrx.SpecialStrings.BRACKET_LEFT
+  fullName: WizardWrx.SpecialStrings.BRACKET_LEFT
+  nameWithType: SpecialStrings.BRACKET_LEFT
+- uid: WizardWrx.SpecialStrings.BRACKET_RIGHT
+  name: BRACKET_RIGHT
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_BRACKET_RIGHT
+  commentId: F:WizardWrx.SpecialStrings.BRACKET_RIGHT
+  fullName: WizardWrx.SpecialStrings.BRACKET_RIGHT
+  nameWithType: SpecialStrings.BRACKET_RIGHT
+- uid: WizardWrx.SpecialStrings.CARRIAGE_RETURN
+  name: CARRIAGE_RETURN
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_CARRIAGE_RETURN
+  commentId: F:WizardWrx.SpecialStrings.CARRIAGE_RETURN
+  fullName: WizardWrx.SpecialStrings.CARRIAGE_RETURN
+  nameWithType: SpecialStrings.CARRIAGE_RETURN
+- uid: WizardWrx.SpecialStrings.CHAR_LC_I
+  name: CHAR_LC_I
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_CHAR_LC_I
+  commentId: F:WizardWrx.SpecialStrings.CHAR_LC_I
+  fullName: WizardWrx.SpecialStrings.CHAR_LC_I
+  nameWithType: SpecialStrings.CHAR_LC_I
+- uid: WizardWrx.SpecialStrings.CHAR_LC_L
+  name: CHAR_LC_L
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_CHAR_LC_L
+  commentId: F:WizardWrx.SpecialStrings.CHAR_LC_L
+  fullName: WizardWrx.SpecialStrings.CHAR_LC_L
+  nameWithType: SpecialStrings.CHAR_LC_L
+- uid: WizardWrx.SpecialStrings.CHAR_LC_O
+  name: CHAR_LC_O
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_CHAR_LC_O
+  commentId: F:WizardWrx.SpecialStrings.CHAR_LC_O
+  fullName: WizardWrx.SpecialStrings.CHAR_LC_O
+  nameWithType: SpecialStrings.CHAR_LC_O
+- uid: WizardWrx.SpecialStrings.CHAR_LC_Z
+  name: CHAR_LC_Z
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_CHAR_LC_Z
+  commentId: F:WizardWrx.SpecialStrings.CHAR_LC_Z
+  fullName: WizardWrx.SpecialStrings.CHAR_LC_Z
+  nameWithType: SpecialStrings.CHAR_LC_Z
+- uid: WizardWrx.SpecialStrings.CHAR_NUMERAL_0
+  name: CHAR_NUMERAL_0
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_CHAR_NUMERAL_0
+  commentId: F:WizardWrx.SpecialStrings.CHAR_NUMERAL_0
+  fullName: WizardWrx.SpecialStrings.CHAR_NUMERAL_0
+  nameWithType: SpecialStrings.CHAR_NUMERAL_0
+- uid: WizardWrx.SpecialStrings.CHAR_NUMERAL_1
+  name: CHAR_NUMERAL_1
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_CHAR_NUMERAL_1
+  commentId: F:WizardWrx.SpecialStrings.CHAR_NUMERAL_1
+  fullName: WizardWrx.SpecialStrings.CHAR_NUMERAL_1
+  nameWithType: SpecialStrings.CHAR_NUMERAL_1
+- uid: WizardWrx.SpecialStrings.CHAR_NUMERAL_2
+  name: CHAR_NUMERAL_2
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_CHAR_NUMERAL_2
+  commentId: F:WizardWrx.SpecialStrings.CHAR_NUMERAL_2
+  fullName: WizardWrx.SpecialStrings.CHAR_NUMERAL_2
+  nameWithType: SpecialStrings.CHAR_NUMERAL_2
+- uid: WizardWrx.SpecialStrings.CHAR_NUMERAL_7
+  name: CHAR_NUMERAL_7
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_CHAR_NUMERAL_7
+  commentId: F:WizardWrx.SpecialStrings.CHAR_NUMERAL_7
+  fullName: WizardWrx.SpecialStrings.CHAR_NUMERAL_7
+  nameWithType: SpecialStrings.CHAR_NUMERAL_7
+- uid: WizardWrx.SpecialStrings.CHAR_UC_I
+  name: CHAR_UC_I
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_CHAR_UC_I
+  commentId: F:WizardWrx.SpecialStrings.CHAR_UC_I
+  fullName: WizardWrx.SpecialStrings.CHAR_UC_I
+  nameWithType: SpecialStrings.CHAR_UC_I
+- uid: WizardWrx.SpecialStrings.CHAR_UC_L
+  name: CHAR_UC_L
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_CHAR_UC_L
+  commentId: F:WizardWrx.SpecialStrings.CHAR_UC_L
+  fullName: WizardWrx.SpecialStrings.CHAR_UC_L
+  nameWithType: SpecialStrings.CHAR_UC_L
+- uid: WizardWrx.SpecialStrings.CHAR_UC_O
+  name: CHAR_UC_O
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_CHAR_UC_O
+  commentId: F:WizardWrx.SpecialStrings.CHAR_UC_O
+  fullName: WizardWrx.SpecialStrings.CHAR_UC_O
+  nameWithType: SpecialStrings.CHAR_UC_O
+- uid: WizardWrx.SpecialStrings.CHAR_UC_Z
+  name: CHAR_UC_Z
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_CHAR_UC_Z
+  commentId: F:WizardWrx.SpecialStrings.CHAR_UC_Z
+  fullName: WizardWrx.SpecialStrings.CHAR_UC_Z
+  nameWithType: SpecialStrings.CHAR_UC_Z
+- uid: WizardWrx.SpecialStrings.CHECK_MARK_CHAR
+  name: CHECK_MARK_CHAR
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_CHECK_MARK_CHAR
+  commentId: F:WizardWrx.SpecialStrings.CHECK_MARK_CHAR
+  fullName: WizardWrx.SpecialStrings.CHECK_MARK_CHAR
+  nameWithType: SpecialStrings.CHECK_MARK_CHAR
 - uid: WizardWrx.SpecialStrings.COLON
   name: COLON
   href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_COLON
@@ -14423,6 +14575,12 @@ references:
   commentId: F:WizardWrx.SpecialStrings.EMPTY_STRING
   fullName: WizardWrx.SpecialStrings.EMPTY_STRING
   nameWithType: SpecialStrings.EMPTY_STRING
+- uid: WizardWrx.SpecialStrings.EQUALS_SIGN
+  name: EQUALS_SIGN
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_EQUALS_SIGN
+  commentId: F:WizardWrx.SpecialStrings.EQUALS_SIGN
+  fullName: WizardWrx.SpecialStrings.EQUALS_SIGN
+  nameWithType: SpecialStrings.EQUALS_SIGN
 - uid: WizardWrx.SpecialStrings.ERRMSG_SUCCESS_PLACEHOLDER
   name: ERRMSG_SUCCESS_PLACEHOLDER
   href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_ERRMSG_SUCCESS_PLACEHOLDER
@@ -14435,6 +14593,12 @@ references:
   commentId: F:WizardWrx.SpecialStrings.FULL_STOP
   fullName: WizardWrx.SpecialStrings.FULL_STOP
   nameWithType: SpecialStrings.FULL_STOP
+- uid: WizardWrx.SpecialStrings.HASH_TAG
+  name: HASH_TAG
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_HASH_TAG
+  commentId: F:WizardWrx.SpecialStrings.HASH_TAG
+  fullName: WizardWrx.SpecialStrings.HASH_TAG
+  nameWithType: SpecialStrings.HASH_TAG
 - uid: WizardWrx.SpecialStrings.HTML_COMMENT_PREFIX
   name: HTML_COMMENT_PREFIX
   href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_HTML_COMMENT_PREFIX
@@ -14471,6 +14635,18 @@ references:
   commentId: F:WizardWrx.SpecialStrings.HYPHEN
   fullName: WizardWrx.SpecialStrings.HYPHEN
   nameWithType: SpecialStrings.HYPHEN
+- uid: WizardWrx.SpecialStrings.LAST_ASCII_CHAR
+  name: LAST_ASCII_CHAR
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_LAST_ASCII_CHAR
+  commentId: F:WizardWrx.SpecialStrings.LAST_ASCII_CHAR
+  fullName: WizardWrx.SpecialStrings.LAST_ASCII_CHAR
+  nameWithType: SpecialStrings.LAST_ASCII_CHAR
+- uid: WizardWrx.SpecialStrings.LINEFEED
+  name: LINEFEED
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_LINEFEED
+  commentId: F:WizardWrx.SpecialStrings.LINEFEED
+  fullName: WizardWrx.SpecialStrings.LINEFEED
+  nameWithType: SpecialStrings.LINEFEED
 - uid: WizardWrx.SpecialStrings.LOCALHOST
   name: LOCALHOST
   href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_LOCALHOST
@@ -14483,12 +14659,42 @@ references:
   commentId: F:WizardWrx.SpecialStrings.LOCALHOST_IP_ADDR
   fullName: WizardWrx.SpecialStrings.LOCALHOST_IP_ADDR
   nameWithType: SpecialStrings.LOCALHOST_IP_ADDR
+- uid: WizardWrx.SpecialStrings.NONBREAKING_SPACE_CHAR
+  name: NONBREAKING_SPACE_CHAR
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_NONBREAKING_SPACE_CHAR
+  commentId: F:WizardWrx.SpecialStrings.NONBREAKING_SPACE_CHAR
+  fullName: WizardWrx.SpecialStrings.NONBREAKING_SPACE_CHAR
+  nameWithType: SpecialStrings.NONBREAKING_SPACE_CHAR
+- uid: WizardWrx.SpecialStrings.PARENTHESIS_LEFT
+  name: PARENTHESIS_LEFT
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_PARENTHESIS_LEFT
+  commentId: F:WizardWrx.SpecialStrings.PARENTHESIS_LEFT
+  fullName: WizardWrx.SpecialStrings.PARENTHESIS_LEFT
+  nameWithType: SpecialStrings.PARENTHESIS_LEFT
+- uid: WizardWrx.SpecialStrings.PARENTHESIS_RIGHT
+  name: PARENTHESIS_RIGHT
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_PARENTHESIS_RIGHT
+  commentId: F:WizardWrx.SpecialStrings.PARENTHESIS_RIGHT
+  fullName: WizardWrx.SpecialStrings.PARENTHESIS_RIGHT
+  nameWithType: SpecialStrings.PARENTHESIS_RIGHT
 - uid: WizardWrx.SpecialStrings.PERCENT_SIGN
   name: PERCENT_SIGN
   href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_PERCENT_SIGN
   commentId: F:WizardWrx.SpecialStrings.PERCENT_SIGN
   fullName: WizardWrx.SpecialStrings.PERCENT_SIGN
   nameWithType: SpecialStrings.PERCENT_SIGN
+- uid: WizardWrx.SpecialStrings.PIPE_CHAR
+  name: PIPE_CHAR
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_PIPE_CHAR
+  commentId: F:WizardWrx.SpecialStrings.PIPE_CHAR
+  fullName: WizardWrx.SpecialStrings.PIPE_CHAR
+  nameWithType: SpecialStrings.PIPE_CHAR
+- uid: WizardWrx.SpecialStrings.QUESTION_MARK
+  name: QUESTION_MARK
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_QUESTION_MARK
+  commentId: F:WizardWrx.SpecialStrings.QUESTION_MARK
+  fullName: WizardWrx.SpecialStrings.QUESTION_MARK
+  nameWithType: SpecialStrings.QUESTION_MARK
 - uid: WizardWrx.SpecialStrings.SEMICOLON
   name: SEMICOLON
   href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_SEMICOLON

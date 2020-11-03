@@ -3626,6 +3626,20 @@
             </summary>
             <seealso cref="F:WizardWrx.SpecialCharacters.AMPERSAND"/>
         </member>
+        <member name="F:WizardWrx.SpecialStrings.ASTERISK">
+            <summary>
+            Asterisks are everywhere; use this constant to make asterisks that
+            are intended to be treated as characters unambiguous.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.AMPERSAND"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.COLON"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.HASH_TAG"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.PERCENT_SIGN"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.PIPE_CHAR"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.SEMICOLON"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.TAB_CHAR"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.UNDERSCORE_CHAR"/>
+        </member>
         <member name="F:WizardWrx.SpecialStrings.AT_CHAR">
             <summary>
             Use this when your code requires a string composed of a single AT
@@ -3669,6 +3683,189 @@
             <seealso cref="F:WizardWrx.SpecialStrings.ASP_APP_DIR_DEFAULT_START_PAGE"/>
             <seealso cref="F:WizardWrx.SpecialStrings.ASP_APP_START_PAGE_KEY"/>
             <seealso cref="F:WizardWrx.SpecialStrings.ASP_RELATIVE_PATH_BEGIN"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.BRACE_LEFT">
+            <summary>
+            Use this in your code to specify a left French brace, also called a
+            left brace or opening brace, as a character literal.
+            </summary>
+            <remarks>
+            In addition to implementing DLM_FORMAT_ITEM_BEGIN for a specific use
+            case, I implemented the generic use case and its twin, BRACE_RIGHT.
+            </remarks>
+            <seealso cref="F:WizardWrx.SpecialStrings.BRACE_RIGHT"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.BRACE_RIGHT">
+            <summary>
+            Use this in your code to specify a right French brace, also called a
+            right brace or closing brace, as a character literal.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.BRACE_LEFT"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.BRACKET_LEFT">
+            <summary>
+            Use this in your code to specify a left square bracket, also called
+            an opening bracket, as a character literal.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.BRACKET_RIGHT"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.BRACE_LEFT"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.BRACKET_RIGHT">
+            <summary>
+            Use this in your code to specify a right square bracket, also called
+            a closing bracket, as a character literal.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.BRACKET_LEFT"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.BRACE_RIGHT"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.ASTERISK_CHAR">
+            <summary>
+            Both ASTERISK_CHAR and ASTERISK resolve to the same character.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.AMPERSAND"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.COLON"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.HASH_TAG"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.PERCENT_SIGN"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.PIPE_CHAR"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.SEMICOLON"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.TAB_CHAR"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.UNDERSCORE_CHAR"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.AT_SIGN">
+            <summary>
+            Both AT_SIGH and AT_CHAR resolve to the same character.
+            </summary>
+            <remarks>
+            The '@' character has many uses in computing circles, mostly obscure
+            ones, such as their use in many command line tools to denote that a
+            specified file is not, itself, the object of interest, but is a list
+            of files or other entities that are.
+            </remarks>
+            <see cref="F:WizardWrx.SpecialStrings.AT_CHAR"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.AMPERSAND"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.COLON"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.HASH_TAG"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.PERCENT_SIGN"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.PIPE_CHAR"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.SEMICOLON"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.TAB_CHAR"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.UNDERSCORE_CHAR"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.CARRIAGE_RETURN">
+            <summary>
+            Use this character anywhere in your code that requires a bare
+            carriage return character.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.LINEFEED"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.STRING_SPLIT_CARRIAGE_RETURN"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.STRING_SPLIT_LINEFEED"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.STRING_SPLIT_NEWLINE"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.CHAR_NUMERAL_0">
+            <summary>
+            Numeric character 0, for use in code where it might be mistaken for
+            a letter O.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.CHAR_LC_O"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.CHAR_UC_O"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.CHAR_NUMERAL_1">
+            <summary>
+            Numeric character 1, for use in code where it might be mistaken for
+            a lower case l or an upper case I.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.CHAR_UC_I"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.CHAR_LC_L"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.CHAR_NUMERAL_2">
+            <summary>
+            Numeric character 2, for use in code where it might be mistaken for
+            a letter Z or a numeral 7.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.CHAR_LC_Z"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.CHAR_UC_Z"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.CHAR_NUMERAL_7"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.CHAR_NUMERAL_7">
+            <summary>
+            Numeric character 2, for use in code where it might be mistaken for
+            a letter Z or a numeral 7.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.CHAR_LC_Z"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.CHAR_UC_Z"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.CHAR_NUMERAL_2"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.CHAR_LC_I">
+            <summary>
+            Lower case I, for use in code, where it might be easily mistaken for
+            a number 1 or a letter L.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.CHAR_UC_I">
+            <summary>
+            Upper case I, for use in code, where it might be easily mistaken for
+            a number 1 or a letter L.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.CHAR_LC_L"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.CHAR_NUMERAL_1"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.CHAR_LC_L">
+            <summary>
+            Lower case L, for use in code, where it might be easily mistaken for
+            a number 1 or a letter I.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.CHAR_UC_I"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.CHAR_NUMERAL_1"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.CHAR_UC_L">
+            <summary>
+            Upper case L, for use in code, where it might be easily mistaken for
+            a number 1 or a letter I.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.CHAR_LC_L"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.CHAR_NUMERAL_1"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.CHAR_LC_O">
+            <summary>
+            Lower case O, for use in code where it might be easily mistaken for
+            a number zero. 
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.CHAR_LC_O"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.CHAR_UC_O"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.CHAR_NUMERAL_0"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.CHAR_UC_O">
+            <summary>
+            Upper case O, for use in code where it might be easily mistaken for
+            a number zero.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.CHAR_LC_O"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.CHAR_UC_O"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.CHAR_NUMERAL_0"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.CHAR_LC_Z">
+            <summary>
+            Lower case Z, for use in code where it might be easily mistaken for
+            a numeric character 2 or 7.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.CHAR_UC_Z"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.CHAR_NUMERAL_2"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.CHAR_NUMERAL_7"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.CHAR_UC_Z">
+            <summary>
+            Upper case Z, for use in code where it might be easily mistaken for
+            a numeric character 2 or 7.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.CHAR_LC_Z"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.CHAR_NUMERAL_2"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.CHAR_NUMERAL_7"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.CHECK_MARK_CHAR">
+            <summary>
+            The check-mark character prints as such only in selected Windows
+            fonts.
+            </summary>
         </member>
         <member name="F:WizardWrx.SpecialStrings.COLON">
             <summary>
@@ -3723,12 +3920,25 @@
             <see cref="F:WizardWrx.MagicNumbers.ERROR_SUCCESS"/>
             <seealso cref="F:WizardWrx.MagicNumbers.ERROR_RUNTIME"/>
         </member>
+        <member name="F:WizardWrx.SpecialStrings.EQUALS_SIGN">
+            <summary>
+            Use this constant when your code requires a literal equals sign.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.HYPHEN"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.HASH_TAG"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.UNDERSCORE_CHAR"/>
+        </member>
         <member name="F:WizardWrx.SpecialStrings.FULL_STOP">
             <summary>
             This is one of many single characters that are frequently needed as
             single-character string constants.
             </summary>
             <seealso cref="F:WizardWrx.SpecialCharacters.FULL_STOP"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.HASH_TAG">
+            <summary>
+            Use this constant to specify a hash-tag literal character
+            </summary>
         </member>
         <member name="F:WizardWrx.SpecialStrings.HYPHEN">
             <summary>
@@ -3763,15 +3973,55 @@
             filler, especially in dynamically generated tables.
             </summary>
         </member>
+        <member name="F:WizardWrx.SpecialStrings.LAST_ASCII_CHAR">
+            <summary>
+            The highest integer that can represent any ASCII character is 255,
+            which is all 8 bits turned ON.
+            </summary>
+        </member>
         <member name="F:WizardWrx.SpecialStrings.LOCALHOST">
             <summary>
             The DNS name of the local loop-back is always "localhost".
             </summary>
         </member>
+        <member name="F:WizardWrx.SpecialStrings.LINEFEED">
+            <summary>
+            Use this character anywhere in your code that requires a bare
+            linefeed character.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.STRING_SPLIT_NEWLINE"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.STRING_SPLIT_CARRIAGE_RETURN"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.STRING_SPLIT_LINEFEED"/>
+        </member>
         <member name="F:WizardWrx.SpecialStrings.LOCALHOST_IP_ADDR">
             <summary>
             The local loop-back has the reserved IP address of 127.0.0.1.
             </summary>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.NONBREAKING_SPACE_CHAR">
+            <summary>
+            The non-breaking space character doesn't print; although the Unicode
+            encoding treats it as a white space character, most other encodings,
+            including both Unicode and US-ASCII, do not.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.PARENTHESIS_LEFT">
+            <summary>
+            Use this in your code to specify a left parenthesis, also called an
+            opening parenthesis, as a character literal.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.PARENTHESIS_RIGHT"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.BRACE_LEFT"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.BRACKET_LEFT"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.PARENTHESIS_RIGHT">
+            <summary>
+            Use this in your code to specify a right parenthesis, also called a
+            closing parenthesis, as a character literal.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.PARENTHESIS_LEFT"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.BRACE_RIGHT"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.BRACKET_RIGHT"/>
         </member>
         <member name="F:WizardWrx.SpecialStrings.PERCENT_SIGN">
             <summary>
@@ -3779,6 +4029,26 @@
             string.
             </summary>
             <seealso cref="F:WizardWrx.SpecialCharacters.PERCENT_SIGN"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.QUESTION_MARK">
+            <summary>
+            The question mark is another special character that is frequently
+            used as an operator; use this to differentiate such use from that of
+            an operand.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.PIPE_CHAR">
+            <summary>
+            How have I got on this long without my faithful field separator?
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.AMPERSAND"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.COLON"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.COMMA"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.HASH_TAG"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.PERCENT_SIGN"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.SEMICOLON"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.TAB_CHAR"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.UNDERSCORE_CHAR"/>
         </member>
         <member name="F:WizardWrx.SpecialStrings.SEMICOLON">
             <summary>
@@ -4650,6 +4920,16 @@
         <member name="P:WizardWrx.Common.Properties.Resources.MSG_BLANK_STRING">
             <summary>
               Looks up a localized string similar to [blank].
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.MSG_DUMMY">
+            <summary>
+              Looks up a localized string similar to Dummy.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.MSG_DUMMY_VALUE">
+            <summary>
+              Looks up a localized string similar to DummyValue.
             </summary>
         </member>
         <member name="P:WizardWrx.Common.Properties.Resources.MSG_INTEGER_EVENLY_DIVISIBLE_BY">

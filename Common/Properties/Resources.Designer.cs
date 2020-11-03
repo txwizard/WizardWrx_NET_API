@@ -259,6 +259,24 @@ namespace WizardWrx.Common.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dummy.
+        /// </summary>
+        public static string MSG_DUMMY {
+            get {
+                return ResourceManager.GetString("MSG_DUMMY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DummyValue.
+        /// </summary>
+        public static string MSG_DUMMY_VALUE {
+            get {
+                return ResourceManager.GetString("MSG_DUMMY_VALUE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to is evenly divisible by.
         /// </summary>
         public static string MSG_INTEGER_EVENLY_DIVISIBLE_BY {
