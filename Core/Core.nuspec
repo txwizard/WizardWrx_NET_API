@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>This update of an established very stable library complements the industry standard SemVer version numbering by implementing the Deterministic compiler switch.</releaseNotes>
+	    <releaseNotes>This update corrects some internal issues that surfaced when dependent library WizardWrx.DLLConfigurationManager.dll was called upon for the first time to use a completely populated configuration file. The result was an uninitialized dictionary owned by the PropertyDefaults class exposed by the core library.</releaseNotes>
     	<copyright>$copyright$</copyright>
     	<tags>Constants Arrays RegExp FileInfo Strings Singleton</tags>
 	</metadata>

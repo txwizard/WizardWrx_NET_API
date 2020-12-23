@@ -4,6 +4,43 @@ This file is a running history of fixes and improvements from version 7.0
 onwards. Changes are documented for the newest version first. Within each
 version, classes are covered in alphabetical order.
 
+
+## WizardWrx.Core.dll, Version 7.24.185.0, Released 2020-12-21
+
+This update corrects some internal issues that surfaced when dependent library
+`WizardWrx.DLLConfigurationManager.dll` was called upon for the first time to
+use a completely populated configuration file. The result was an uninitialized
+dictionary owned by the `PropertyDefaults` class exposed by the core library.
+
+Since virtually everything else depends on this library, this is a complete
+release, although the only other change, also internal and of no significance to
+most users, affects the `ExceptionLogger` singleton exposed by
+`WizardWrx.DLLConfigurationManager.dll`.
+
+Whether or not it depends on `WizardWrx.Core.dll` (which all but 3 do),
+everything got a minor version bump and a build bump.
+
+## WizardWrx.Common.dll, Version 7.24.127, Released 2020-12-20
+
+|Name                     |Value |Class               |
+|-------------------------|------|--------------------|
+|CAPACITY_4               |     4|MagicNumbers        |
+|CAPACITY_8               |     8|MagicNumbers        |
+|CAPACITY_10              |    10|MagicNumbers        |
+|CAPACITY_16              |    16|MagicNumbers        |
+|CAPACITY_128             |   128|MagicNumbers        |
+|CAPACITY_255             |   255|MagicNumbers        |
+|CAPACITY_256             |   256|MagicNumbers        |
+|PLUS_THREE               |     3|MagicNumbers        |
+|PLUS_FOUR                |     4|MagicNumbers        |
+|PLUS_FIVE                |     5|MagicNumbers        |
+|PLUS_SIX                 |     6|MagicNumbers        |
+|PLUS_SEVEN               |     7|MagicNumbers        |
+|PLUS_EIGHT               |     8|MagicNumbers        |
+|PLUS_NINE                |     9|MagicNumbers        |
+|MSO_COLLECTION_FIRST_ITEM|     1|MagicNumbers        |
+|ARRAY_NEXT_INDEX         |     1|ArrayInfo           |
+
 ## WizardWrx.Common.dll, Version 7.24.126, Released 2020-11-02
 
 This update adds a handful of new locale-sensitive string constants and another

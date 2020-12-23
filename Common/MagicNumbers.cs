@@ -66,8 +66,8 @@
 
     Author:             David A. Gray
 
-    License:            Copyright (C) 2014-2017, David A. Gray. 
-						All rights reserved.
+    License:            Copyright (C) 2014-2020, David A. Gray
+						All rights reserved
 
                         Redistribution and use in source and binary forms, with
                         or without modification, are permitted provided that the
@@ -207,6 +207,33 @@
                               These tick values were computed by a custom class,
                               and the constants were derived therefrom by Excel
                               worksheet formulas.
+
+	2020/12/21 7.24    DAG    Define the constants listed below.
+
+                                CAPACITY_4
+                                CAPACITY_8
+                                CAPACITY_10
+                                CAPACITY_16
+
+                                CAPACITY_128
+                                CAPACITY_255
+                                CAPACITY_256
+
+		                        PLUS_THREE
+		                        PLUS_FOUR
+		                        PLUS_FIVE
+		                        PLUS_SIX
+		                        PLUS_SEVEN
+		                        PLUS_EIGHT
+		                        PLUS_NINE
+                                MSO_COLLECTION_FIRST_ITEM
+
+                              Observant code reviewers may notice the absence of
+                              the new constants from the unit test. Since the
+                              "test" consists of listing their values, I beg you
+                              to overlook this oversight, which came about due
+                              to their addition being made to meet a pressing
+                              need.
 	============================================================================
 */
 
@@ -239,100 +266,207 @@ namespace WizardWrx
 		/// </summary>
 		public const uint APPLICATION_ERROR_MASK = 0x20000000;
 
-		/// <summary>
-		/// Constant for sizing a 1 KB StringBuilder, array, or buffer.
-		/// </summary>
-		/// <seealso cref="CAPACITY_02KB"/>
-		/// <seealso cref="CAPACITY_04KB"/>
-		/// <seealso cref="CAPACITY_08KB"/>
-		/// <seealso cref="CAPACITY_16KB"/>
-		/// <seealso cref="CAPACITY_32KB"/>
-		/// <seealso cref="CAPACITY_64KB"/>
-		/// <seealso cref="CAPACITY_MAX_PATH"/>
-		public const int CAPACITY_01KB = 1024;
+        /// <summary>
+        /// Use this to set a small capacity on empty List and Dictionary collections.
+        /// </summary>
+        /// <seealso cref="CAPACITY_8"/>
+        /// <seealso cref="CAPACITY_10"/>
+        /// <seealso cref="CAPACITY_16"/>
+        public const int CAPACITY_4 = 4;
 
-		/// <summary>
-		/// Constant for sizing a 2 KB StringBuilder, array, or buffer.
-		/// </summary>
-		/// <seealso cref="CAPACITY_01KB"/>
-		/// <seealso cref="CAPACITY_04KB"/>
-		/// <seealso cref="CAPACITY_08KB"/>
-		/// <seealso cref="CAPACITY_16KB"/>
-		/// <seealso cref="CAPACITY_32KB"/>
-		/// <seealso cref="CAPACITY_64KB"/>
-		/// <seealso cref="CAPACITY_MAX_PATH"/>
-		public const int CAPACITY_02KB	= 2048;
+        /// <summary>
+        /// Use this to set a small capacity on empty List and Dictionary collections.
+        /// </summary>
+        /// <seealso cref="CAPACITY_4"/>
+        /// <seealso cref="CAPACITY_10"/>
+        /// <seealso cref="CAPACITY_16"/>
+        public const int CAPACITY_8 = 8;
 
-		/// <summary>
-		/// Constant for sizing a 4 KB StringBuilder, array, or buffer.
-		/// </summary>
-		/// <seealso cref="CAPACITY_01KB"/>
-		/// <seealso cref="CAPACITY_02KB"/>
-		/// <seealso cref="CAPACITY_08KB"/>
-		/// <seealso cref="CAPACITY_16KB"/>
-		/// <seealso cref="CAPACITY_32KB"/>
-		/// <seealso cref="CAPACITY_64KB"/>
-		/// <seealso cref="CAPACITY_MAX_PATH"/>
-		public const int CAPACITY_04KB	= 4096;
+        /// <summary>
+        /// Use this to set a small capacity on empty List and Dictionary collections.
+        /// </summary>
+        /// <seealso cref="CAPACITY_4"/>
+        /// <seealso cref="CAPACITY_8"/>
+        /// <seealso cref="CAPACITY_16"/>
+        public const int CAPACITY_10 = 10;
 
-		/// <summary>
-		/// Constant for sizing a 8 KB StringBuilder, array, or buffer.
-		/// </summary>
-		/// <seealso cref="CAPACITY_01KB"/>
-		/// <seealso cref="CAPACITY_02KB"/>
-		/// <seealso cref="CAPACITY_04KB"/>
-		/// <seealso cref="CAPACITY_16KB"/>
-		/// <seealso cref="CAPACITY_32KB"/>
-		/// <seealso cref="CAPACITY_64KB"/>
-		/// <seealso cref="CAPACITY_MAX_PATH"/>
-		public const int CAPACITY_08KB = 8192;
+        /// <summary>
+        /// Use this to set a small capacity on empty List and Dictionary collections.
+        /// </summary>
+        /// <seealso cref="CAPACITY_4"/>
+        /// <seealso cref="CAPACITY_8"/>
+        public const int CAPACITY_16 = 16;
 
-		/// <summary>
-		/// Constant for sizing a 16 KB StringBuilder, array, or buffer.
-		/// </summary>
-		/// <seealso cref="CAPACITY_01KB"/>
-		/// <seealso cref="CAPACITY_02KB"/>
-		/// <seealso cref="CAPACITY_04KB"/>
-		/// <seealso cref="CAPACITY_08KB"/>
-		/// <seealso cref="CAPACITY_32KB"/>
-		/// <seealso cref="CAPACITY_64KB"/>
-		/// <seealso cref="CAPACITY_MAX_PATH"/>
-		public const int CAPACITY_16KB = 16384;
+        /// <summary>
+        /// Constant for sizing a 128 unit StringBuilder, array, or buffer.
+        /// </summary>
+        /// <seealso cref="CAPACITY_255"/>
+        /// <seealso cref="CAPACITY_256"/>
+        /// <seealso cref="CAPACITY_01KB"/>
+        /// <seealso cref="CAPACITY_02KB"/>
+        /// <seealso cref="CAPACITY_04KB"/>
+        /// <seealso cref="CAPACITY_08KB"/>
+        /// <seealso cref="CAPACITY_16KB"/>
+        /// <seealso cref="CAPACITY_32KB"/>
+        /// <seealso cref="CAPACITY_64KB"/>
+        /// <seealso cref="CAPACITY_MAX_PATH"/>
+        public const int CAPACITY_128 = 128;
 
-		/// <summary>
-		/// Constant for sizing a 32 KB StringBuilder, array, or buffer.
-		/// </summary>
-		/// <seealso cref="CAPACITY_01KB"/>
-		/// <seealso cref="CAPACITY_02KB"/>
-		/// <seealso cref="CAPACITY_04KB"/>
-		/// <seealso cref="CAPACITY_08KB"/>
-		/// <seealso cref="CAPACITY_16KB"/>
-		/// <seealso cref="CAPACITY_64KB"/>
-		/// <seealso cref="CAPACITY_MAX_PATH"/>
-		public const int CAPACITY_32KB = 32768;
+        /// <summary>
+        /// Constant for sizing a 255 unit StringBuilder, array, or buffer.
+        /// </summary>
+        /// <seealso cref="CAPACITY_128"/>
+        /// <seealso cref="CAPACITY_256"/>
+        /// <seealso cref="CAPACITY_01KB"/>
+        /// <seealso cref="CAPACITY_02KB"/>
+        /// <seealso cref="CAPACITY_04KB"/>
+        /// <seealso cref="CAPACITY_08KB"/>
+        /// <seealso cref="CAPACITY_16KB"/>
+        /// <seealso cref="CAPACITY_32KB"/>
+        /// <seealso cref="CAPACITY_64KB"/>
+        /// <seealso cref="CAPACITY_MAX_PATH"/>
+        public const int CAPACITY_255 = 255;
 
-		/// <summary>
-		/// Constant for sizing a 64 KB StringBuilder, array, or buffer.
-		/// </summary>
-		/// <seealso cref="CAPACITY_01KB"/>
-		/// <seealso cref="CAPACITY_02KB"/>
-		/// <seealso cref="CAPACITY_04KB"/>
-		/// <seealso cref="CAPACITY_08KB"/>
-		/// <seealso cref="CAPACITY_16KB"/>
-		/// <seealso cref="CAPACITY_32KB"/>
-		/// <seealso cref="CAPACITY_MAX_PATH"/>
-		public const int CAPACITY_64KB = 65536;
+        /// <summary>
+        /// Constant for sizing a 256 unit StringBuilder, array, or buffer.
+        /// </summary>
+        /// <seealso cref="CAPACITY_128"/>
+        /// <seealso cref="CAPACITY_255"/>
+        /// <seealso cref="CAPACITY_01KB"/>
+        /// <seealso cref="CAPACITY_02KB"/>
+        /// <seealso cref="CAPACITY_04KB"/>
+        /// <seealso cref="CAPACITY_08KB"/>
+        /// <seealso cref="CAPACITY_16KB"/>
+        /// <seealso cref="CAPACITY_32KB"/>
+        /// <seealso cref="CAPACITY_64KB"/>
+        /// <seealso cref="CAPACITY_MAX_PATH"/>
+        public const int CAPACITY_256 = 256;
 
-		/// <summary>
-		/// Constant for sizing a MAX_PATH StringBuilder, array, or buffer.
-		/// </summary>
-		/// <seealso cref="CAPACITY_01KB"/>
-		/// <seealso cref="CAPACITY_02KB"/>
-		/// <seealso cref="CAPACITY_04KB"/>
-		/// <seealso cref="CAPACITY_08KB"/>
-		/// <seealso cref="CAPACITY_16KB"/>
-		/// <seealso cref="CAPACITY_32KB"/>
-		public const int CAPACITY_MAX_PATH = 260;
+        /// <summary>
+        /// Constant for sizing a 1 KB StringBuilder, array, or buffer.
+        /// </summary>
+        /// <seealso cref="CAPACITY_128"/>
+        /// <seealso cref="CAPACITY_255"/>
+        /// <seealso cref="CAPACITY_256"/>
+        /// <seealso cref="CAPACITY_02KB"/>
+        /// <seealso cref="CAPACITY_04KB"/>
+        /// <seealso cref="CAPACITY_08KB"/>
+        /// <seealso cref="CAPACITY_16KB"/>
+        /// <seealso cref="CAPACITY_32KB"/>
+        /// <seealso cref="CAPACITY_64KB"/>
+        /// <seealso cref="CAPACITY_MAX_PATH"/>
+        public const int CAPACITY_01KB = 1024;
+
+        /// <summary>
+        /// Constant for sizing a 2 KB StringBuilder, array, or buffer.
+        /// </summary>
+        /// <seealso cref="CAPACITY_128"/>
+        /// <seealso cref="CAPACITY_255"/>
+        /// <seealso cref="CAPACITY_256"/>
+        /// <seealso cref="CAPACITY_01KB"/>
+        /// <seealso cref="CAPACITY_04KB"/>
+        /// <seealso cref="CAPACITY_08KB"/>
+        /// <seealso cref="CAPACITY_16KB"/>
+        /// <seealso cref="CAPACITY_32KB"/>
+        /// <seealso cref="CAPACITY_64KB"/>
+        /// <seealso cref="CAPACITY_MAX_PATH"/>
+        public const int CAPACITY_02KB	= 2048;
+
+        /// <summary>
+        /// Constant for sizing a 4 KB StringBuilder, array, or buffer.
+        /// </summary>
+        /// <seealso cref="CAPACITY_128"/>
+        /// <seealso cref="CAPACITY_255"/>
+        /// <seealso cref="CAPACITY_256"/>
+        /// <seealso cref="CAPACITY_01KB"/>
+        /// <seealso cref="CAPACITY_02KB"/>
+        /// <seealso cref="CAPACITY_08KB"/>
+        /// <seealso cref="CAPACITY_16KB"/>
+        /// <seealso cref="CAPACITY_32KB"/>
+        /// <seealso cref="CAPACITY_64KB"/>
+        /// <seealso cref="CAPACITY_MAX_PATH"/>
+        public const int CAPACITY_04KB	= 4096;
+
+        /// <summary>
+        /// Constant for sizing a 8 KB StringBuilder, array, or buffer.
+        /// </summary>
+        /// <seealso cref="CAPACITY_128"/>
+        /// <seealso cref="CAPACITY_255"/>
+        /// <seealso cref="CAPACITY_256"/>
+        /// <seealso cref="CAPACITY_01KB"/>
+        /// <seealso cref="CAPACITY_02KB"/>
+        /// <seealso cref="CAPACITY_04KB"/>
+        /// <seealso cref="CAPACITY_16KB"/>
+        /// <seealso cref="CAPACITY_32KB"/>
+        /// <seealso cref="CAPACITY_64KB"/>
+        /// <seealso cref="CAPACITY_MAX_PATH"/>
+        public const int CAPACITY_08KB = 8192;
+
+        /// <summary>
+        /// Constant for sizing a 16 KB StringBuilder, array, or buffer.
+        /// </summary>
+        /// <seealso cref="CAPACITY_128"/>
+        /// <seealso cref="CAPACITY_255"/>
+        /// <seealso cref="CAPACITY_256"/>
+        /// <seealso cref="CAPACITY_01KB"/>
+        /// <seealso cref="CAPACITY_02KB"/>
+        /// <seealso cref="CAPACITY_04KB"/>
+        /// <seealso cref="CAPACITY_08KB"/>
+        /// <seealso cref="CAPACITY_32KB"/>
+        /// <seealso cref="CAPACITY_64KB"/>
+        /// <seealso cref="CAPACITY_MAX_PATH"/>
+        public const int CAPACITY_16KB = 16384;
+
+        /// <summary>
+        /// Constant for sizing a 32 KB StringBuilder, array, or buffer.
+        /// </summary>
+        /// <seealso cref="CAPACITY_128"/>
+        /// <seealso cref="CAPACITY_255"/>
+        /// <seealso cref="CAPACITY_256"/>
+        /// <seealso cref="CAPACITY_01KB"/>
+        /// <seealso cref="CAPACITY_02KB"/>
+        /// <seealso cref="CAPACITY_04KB"/>
+        /// <seealso cref="CAPACITY_08KB"/>
+        /// <seealso cref="CAPACITY_16KB"/>
+        /// <seealso cref="CAPACITY_64KB"/>
+        /// <seealso cref="CAPACITY_MAX_PATH"/>
+        public const int CAPACITY_32KB = 32768;
+
+        /// <summary>
+        /// Constant for sizing a 64 KB StringBuilder, array, or buffer.
+        /// </summary>
+        /// <seealso cref="CAPACITY_128"/>
+        /// <seealso cref="CAPACITY_255"/>
+        /// <seealso cref="CAPACITY_256"/>
+        /// <seealso cref="CAPACITY_01KB"/>
+        /// <seealso cref="CAPACITY_02KB"/>
+        /// <seealso cref="CAPACITY_04KB"/>
+        /// <seealso cref="CAPACITY_08KB"/>
+        /// <seealso cref="CAPACITY_16KB"/>
+        /// <seealso cref="CAPACITY_32KB"/>
+        /// <seealso cref="CAPACITY_MAX_PATH"/>
+        public const int CAPACITY_64KB = 65536;
+
+        /// <summary>
+        /// Constant for sizing a MAX_PATH StringBuilder, array, or buffer.
+        /// </summary>
+        /// <seealso cref="CAPACITY_128"/>
+        /// <seealso cref="CAPACITY_255"/>
+        /// <seealso cref="CAPACITY_256"/>
+        /// <seealso cref="CAPACITY_01KB"/>
+        /// <seealso cref="CAPACITY_02KB"/>
+        /// <seealso cref="CAPACITY_04KB"/>
+        /// <seealso cref="CAPACITY_08KB"/>
+        /// <seealso cref="CAPACITY_16KB"/>
+        /// <seealso cref="CAPACITY_32KB"/>
+        public const int CAPACITY_MAX_PATH = 260;
+
+        /// <summary>
+        /// Use this integer to start a loop over a one-based collection of
+        /// Microsoft Office object collections, such as cells in an Excel
+        /// worksheet.
+        /// </summary>
+        public const int MSO_COLLECTION_FIRST_ITEM = PLUS_ONE;
 
 		/// <summary>
 		/// Use this constant to document when zero stands for the length of the
@@ -629,6 +763,90 @@ namespace WizardWrx
 		/// <seealso cref="SpecialCharacters.CHAR_NUMERAL_7"/>
 		public const int PLUS_TWO = 2;
 
+
+        /// <summary>
+        /// Thres makes a crowd.
+        /// </summary>
+		/// <seealso cref="MINUS_ONE"/>
+		/// <seealso cref="PLUS_ONE"/>
+		/// <seealso cref="PLUS_SEVEN"/>
+		/// <seealso cref="ZERO"/>
+		/// <seealso cref="SpecialCharacters.CHAR_UC_I"/>
+		/// <seealso cref="SpecialCharacters.CHAR_LC_L"/>
+		/// <seealso cref="SpecialCharacters.CHAR_UC_L"/>
+		/// <seealso cref="SpecialCharacters.CHAR_LC_O"/>
+		/// <seealso cref="SpecialCharacters.CHAR_UC_O"/>
+		/// <seealso cref="SpecialCharacters.CHAR_LC_Z"/>
+		/// <seealso cref="SpecialCharacters.CHAR_UC_Z"/>
+		/// <seealso cref="SpecialCharacters.CHAR_NUMERAL_0"/>
+		/// <seealso cref="SpecialCharacters.CHAR_NUMERAL_1"/>
+		/// <seealso cref="SpecialCharacters.CHAR_NUMERAL_2"/>
+		/// <seealso cref="SpecialCharacters.CHAR_NUMERAL_7"/>
+        public const int PLUS_THREE = 3;
+
+
+        /// <summary>
+        /// Two times two equals four, the first integral power of two.
+        /// </summary>
+		/// <seealso cref="MINUS_ONE"/>
+		/// <seealso cref="PLUS_ONE"/>
+		/// <seealso cref="PLUS_SEVEN"/>
+		/// <seealso cref="ZERO"/>
+		/// <seealso cref="SpecialCharacters.CHAR_UC_I"/>
+		/// <seealso cref="SpecialCharacters.CHAR_LC_L"/>
+		/// <seealso cref="SpecialCharacters.CHAR_UC_L"/>
+		/// <seealso cref="SpecialCharacters.CHAR_LC_O"/>
+		/// <seealso cref="SpecialCharacters.CHAR_UC_O"/>
+		/// <seealso cref="SpecialCharacters.CHAR_LC_Z"/>
+		/// <seealso cref="SpecialCharacters.CHAR_UC_Z"/>
+		/// <seealso cref="SpecialCharacters.CHAR_NUMERAL_0"/>
+		/// <seealso cref="SpecialCharacters.CHAR_NUMERAL_1"/>
+		/// <seealso cref="SpecialCharacters.CHAR_NUMERAL_2"/>
+		/// <seealso cref="SpecialCharacters.CHAR_NUMERAL_7"/>
+        public const int PLUS_FOUR = 4;
+
+
+        /// <summary>
+        /// Five fingers has a normal, fully-equipped human hand.
+        /// </summary>
+		/// <seealso cref="MINUS_ONE"/>
+		/// <seealso cref="PLUS_ONE"/>
+		/// <seealso cref="PLUS_SEVEN"/>
+		/// <seealso cref="ZERO"/>
+		/// <seealso cref="SpecialCharacters.CHAR_UC_I"/>
+		/// <seealso cref="SpecialCharacters.CHAR_LC_L"/>
+		/// <seealso cref="SpecialCharacters.CHAR_UC_L"/>
+		/// <seealso cref="SpecialCharacters.CHAR_LC_O"/>
+		/// <seealso cref="SpecialCharacters.CHAR_UC_O"/>
+		/// <seealso cref="SpecialCharacters.CHAR_LC_Z"/>
+		/// <seealso cref="SpecialCharacters.CHAR_UC_Z"/>
+		/// <seealso cref="SpecialCharacters.CHAR_NUMERAL_0"/>
+		/// <seealso cref="SpecialCharacters.CHAR_NUMERAL_1"/>
+		/// <seealso cref="SpecialCharacters.CHAR_NUMERAL_2"/>
+		/// <seealso cref="SpecialCharacters.CHAR_NUMERAL_7"/>
+        public const int PLUS_FIVE = 5;
+
+
+        /// <summary>
+        /// Six fills the gap between five and seven.
+        /// </summary>
+        /// <seealso cref="MINUS_ONE"/>
+        /// <seealso cref="PLUS_ONE"/>
+        /// <seealso cref="PLUS_SEVEN"/>
+        /// <seealso cref="ZERO"/>
+        /// <seealso cref="SpecialCharacters.CHAR_UC_I"/>
+        /// <seealso cref="SpecialCharacters.CHAR_LC_L"/>
+        /// <seealso cref="SpecialCharacters.CHAR_UC_L"/>
+        /// <seealso cref="SpecialCharacters.CHAR_LC_O"/>
+        /// <seealso cref="SpecialCharacters.CHAR_UC_O"/>
+        /// <seealso cref="SpecialCharacters.CHAR_LC_Z"/>
+        /// <seealso cref="SpecialCharacters.CHAR_UC_Z"/>
+        /// <seealso cref="SpecialCharacters.CHAR_NUMERAL_0"/>
+        /// <seealso cref="SpecialCharacters.CHAR_NUMERAL_1"/>
+        /// <seealso cref="SpecialCharacters.CHAR_NUMERAL_2"/>
+        /// <seealso cref="SpecialCharacters.CHAR_NUMERAL_7"/>
+        public const int PLUS_SIX = 6;
+
 		/// <summary>
 		/// Number 7, to clearly distinguish it from a letter Z and a numeral 2,
 		/// which can look a lot like it.
@@ -652,6 +870,55 @@ namespace WizardWrx
 		/// <seealso cref="SpecialCharacters.CHAR_NUMERAL_2"/>
 		/// <seealso cref="SpecialCharacters.CHAR_NUMERAL_7"/>
 		public const int PLUS_SEVEN = 7;
+
+
+        /// <summary>
+        /// Eight is the cube of two.
+        /// </summary>
+        /// <seealso cref="MINUS_ONE"/>
+        /// <seealso cref="PLUS_ONE"/>
+        /// <seealso cref="PLUS_SEVEN"/>
+        /// <seealso cref="ZERO"/>
+        /// <seealso cref="SpecialCharacters.CHAR_UC_I"/>
+        /// <seealso cref="SpecialCharacters.CHAR_LC_L"/>
+        /// <seealso cref="SpecialCharacters.CHAR_UC_L"/>
+        /// <seealso cref="SpecialCharacters.CHAR_LC_O"/>
+        /// <seealso cref="SpecialCharacters.CHAR_UC_O"/>
+        /// <seealso cref="SpecialCharacters.CHAR_LC_Z"/>
+        /// <seealso cref="SpecialCharacters.CHAR_UC_Z"/>
+        /// <seealso cref="SpecialCharacters.CHAR_NUMERAL_0"/>
+        /// <seealso cref="SpecialCharacters.CHAR_NUMERAL_1"/>
+        /// <seealso cref="SpecialCharacters.CHAR_NUMERAL_2"/>
+        /// <seealso cref="SpecialCharacters.CHAR_NUMERAL_7"/>
+        public const int PLUS_EIGHT = 8;
+
+
+        /// <summary>
+        /// Number Nine, number nine, number nine . . .
+        /// </summary>
+		/// <seealso cref="MINUS_ONE"/>
+		/// <seealso cref="PLUS_ONE"/>
+		/// <seealso cref="PLUS_TWO"/>
+		/// <seealso cref="PLUS_THREE"/>
+		/// <seealso cref="PLUS_FOUR"/>
+		/// <seealso cref="PLUS_FIVE"/>
+		/// <seealso cref="PLUS_SIX"/>
+		/// <seealso cref="PLUS_SEVEN"/>
+		/// <seealso cref="PLUS_EIGHT"/>
+		/// <seealso cref="PLUS_NINE"/>
+		/// <seealso cref="ZERO"/>
+		/// <seealso cref="SpecialCharacters.CHAR_UC_I"/>
+		/// <seealso cref="SpecialCharacters.CHAR_LC_L"/>
+		/// <seealso cref="SpecialCharacters.CHAR_UC_L"/>
+		/// <seealso cref="SpecialCharacters.CHAR_LC_O"/>
+		/// <seealso cref="SpecialCharacters.CHAR_UC_O"/>
+		/// <seealso cref="SpecialCharacters.CHAR_LC_Z"/>
+		/// <seealso cref="SpecialCharacters.CHAR_UC_Z"/>
+		/// <seealso cref="SpecialCharacters.CHAR_NUMERAL_0"/>
+		/// <seealso cref="SpecialCharacters.CHAR_NUMERAL_1"/>
+		/// <seealso cref="SpecialCharacters.CHAR_NUMERAL_2"/>
+		/// <seealso cref="SpecialCharacters.CHAR_NUMERAL_7"/>
+        public const int PLUS_NINE = 9;
 
 		/// <summary>
 		/// Value returned by the IndexOf methods, e. g., of the String class,

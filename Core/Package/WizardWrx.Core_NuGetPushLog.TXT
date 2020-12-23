@@ -1,0 +1,2 @@
+Package_Id = WizardWrx.Core
+Package_Version = 7.23.183

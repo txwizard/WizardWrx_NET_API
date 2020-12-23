@@ -57,13 +57,15 @@
     Date       Version Author Synopsis
     ---------- ------- ------ --------------------------------------------------
 	2019/04/28 7.15    DAG    This class makes its debut.
+
+    2020/12/21 7.24    DAG    This class needs its own GetTheSingleInstance.
     ============================================================================
 */
 
+
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+
 
 namespace WizardWrx.Core
 {
@@ -74,6 +76,41 @@ namespace WizardWrx.Core
     /// </summary>
     public class UnconfiguredDLLSettings : GenericSingletonBase<UnconfiguredDLLSettings>
     {
+        /// <summary>
+        /// Singletons keep ALL their constructors private.
+        /// </summary>
+        private UnconfiguredDLLSettings ( )
+        {
+            _valuePairs = new Dictionary<string , UnconfiguredSetting> ( );
+        }   // private UnconfiguredDLLSettings
+
+
+        /// <summary>
+        /// Return a reference to the single instance after initializing it if
+        /// needed.
+        /// </summary>
+        /// <returns>
+        /// This method overrides the like-named method on the base class, so
+        /// that it can initialize its Dictionary object.
+        /// </returns>
+        /// <remarks>
+        /// Initializing the dictionary is handled by the private instance
+        /// constructor.
+        /// </remarks>
+        public static new UnconfiguredDLLSettings GetTheSingleInstance ( )
+        {
+            lock ( s_syncRoot )
+            {
+                if ( s_dLLSettings == null )
+                {
+                    s_dLLSettings = new UnconfiguredDLLSettings ( );
+                }   // if ( s_dLLSettings == null )
+            }   // lock ( s_syncRoot )
+
+            return s_dLLSettings;
+        }   // public static UnconfiguredDLLSetting
+
+
         /// <summary>
         /// Add a new unconfigured setting.
         /// </summary>
@@ -154,7 +191,6 @@ namespace WizardWrx.Core
         }   // public int Count property (read-only)
 
 
-        private Dictionary<string , UnconfiguredSetting> _valuePairs = null;
         /// <summary>
         /// Settings are organized into a private collection that belongs to the
         /// singleton.
@@ -276,6 +312,26 @@ namespace WizardWrx.Core
                     ConfigFileName ,
                     PropName );
             }   // public override string ToString
-        }
+        }   // public class UnconfiguredSetting
+
+
+        /// <summary>
+        /// Hide the Dictionary from the world; it's an implementation detail.
+        /// </summary>
+        private Dictionary<string , UnconfiguredSetting> _valuePairs = null;
+
+
+        /// <summary>
+        /// Unlike the genric objects usually used as synchronization guards,
+        /// ours is labeled, and its ToString property returns the label to
+        /// identify it in object dumps.
+        /// </summary>
+        private static SyncRoot s_syncRoot = new SyncRoot ( @"SyncRoot_for_UnconfiguredDLLSettings" );
+
+
+        /// <summary>
+        /// The singleton keeps up with its one and only instance here.
+        /// </summary>
+        private static UnconfiguredDLLSettings s_dLLSettings = null;
     }   // public class UnconfiguredDLLSettings
 }   // partial namespace WizardWrx.Core

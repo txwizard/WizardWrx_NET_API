@@ -15,9 +15,10 @@
                         decided to break the dependency on WizardWrs.SharedUtl2,
                         which I want to eventually retire.
 
-    Author:             David A. Gray, Simple Soft Services, Inc.
+    Author:             David A. Gray
 
-    License:            Copyright (C) 2015-2017, David A. Gray. All rights reserved.
+    License:            Copyright (C) 2015-2020, David A. Gray
+                        All rights reserved
 
                         Redistribution and use in source and binary forms, with
                         or without modification, are permitted provided that the
@@ -80,6 +81,9 @@
 						      This module moved into WizardWrx.Common.dll, a new
                               dynamic-link library, but stays in the WizardWrx
                               root namespace.
+
+	2020/12/22 7.24    DAG    ARRAY_NEXT_INDEX is intended for those frequent
+                              situations in which one forgets about NEXT_INDEX.
     ============================================================================
 */
 
@@ -142,6 +146,12 @@ namespace WizardWrx
 		/// <seealso cref="ORDINAL_FROM_INDEX"/>
 		public const int ARRAY_INVALID_INDEX = MagicNumbers.MINUS_ONE;
 
+        /// <summary>
+        /// The next index is plus one, which is ambiguous, at best, in code.
+        /// </summary>
+        /// <seealso cref="NEXT_INDEX"/>
+        public const int ARRAY_NEXT_INDEX = MagicNumbers.PLUS_ONE;
+
 		/// <summary>
 		/// There is an amazing number of situations that require a refeerence
 		/// to the second element of an array or list.
@@ -169,7 +179,7 @@ namespace WizardWrx
 		public const int INDEX_FROM_ORDINAL = MagicNumbers.MINUS_ONE;
 
         /// <summary>
-        /// The next index is plus one, which is ambiguous, at best, in code
+        /// The next index is plus one, which is ambiguous, at best, in code.
         /// listings.
         /// </summary>
 		/// <seealso cref="ARRAY_FIRST_ELEMENT"/>
@@ -178,6 +188,7 @@ namespace WizardWrx
 		/// <seealso cref="ARRAY_SECOND_ELEMENT"/>
 		/// <seealso cref="INDEX_FROM_ORDINAL"/>
 		/// <seealso cref="ORDINAL_FROM_INDEX"/>
+        /// <seealso cref="ARRAY_NEXT_INDEX"/>
 		public const int NEXT_INDEX = MagicNumbers.PLUS_ONE;
 
         /// <summary>

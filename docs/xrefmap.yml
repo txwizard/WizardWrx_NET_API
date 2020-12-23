@@ -1898,6 +1898,44 @@ references:
   isSpec: "True"
   fullName: DLLServices2TestStand.Properties.Resources.TEST_EXCEPTION_MESSAGE
   nameWithType: Resources.TEST_EXCEPTION_MESSAGE
+- uid: GUITestStand
+  name: GUITestStand
+  href: api/GUITestStand.html
+  commentId: N:GUITestStand
+  fullName: GUITestStand
+  nameWithType: GUITestStand
+- uid: GUITestStand.frmMain
+  name: frmMain
+  href: api/GUITestStand.frmMain.html
+  commentId: T:GUITestStand.frmMain
+  fullName: GUITestStand.frmMain
+  nameWithType: frmMain
+- uid: GUITestStand.frmMain.#ctor
+  name: frmMain()
+  href: api/GUITestStand.frmMain.html#GUITestStand_frmMain__ctor
+  commentId: M:GUITestStand.frmMain.#ctor
+  fullName: GUITestStand.frmMain.frmMain()
+  nameWithType: frmMain.frmMain()
+- uid: GUITestStand.frmMain.#ctor*
+  name: frmMain
+  href: api/GUITestStand.frmMain.html#GUITestStand_frmMain__ctor_
+  commentId: Overload:GUITestStand.frmMain.#ctor
+  isSpec: "True"
+  fullName: GUITestStand.frmMain.frmMain
+  nameWithType: frmMain.frmMain
+- uid: GUITestStand.frmMain.Dispose(System.Boolean)
+  name: Dispose(Boolean)
+  href: api/GUITestStand.frmMain.html#GUITestStand_frmMain_Dispose_System_Boolean_
+  commentId: M:GUITestStand.frmMain.Dispose(System.Boolean)
+  fullName: GUITestStand.frmMain.Dispose(System.Boolean)
+  nameWithType: frmMain.Dispose(Boolean)
+- uid: GUITestStand.frmMain.Dispose*
+  name: Dispose
+  href: api/GUITestStand.frmMain.html#GUITestStand_frmMain_Dispose_
+  commentId: Overload:GUITestStand.frmMain.Dispose
+  isSpec: "True"
+  fullName: GUITestStand.frmMain.Dispose
+  nameWithType: frmMain.Dispose
 - uid: WizardWrx
   name: WizardWrx
   href: api/WizardWrx.html
@@ -1928,6 +1966,12 @@ references:
   commentId: F:WizardWrx.ArrayInfo.ARRAY_IS_EMPTY
   fullName: WizardWrx.ArrayInfo.ARRAY_IS_EMPTY
   nameWithType: ArrayInfo.ARRAY_IS_EMPTY
+- uid: WizardWrx.ArrayInfo.ARRAY_NEXT_INDEX
+  name: ARRAY_NEXT_INDEX
+  href: api/WizardWrx.ArrayInfo.html#WizardWrx_ArrayInfo_ARRAY_NEXT_INDEX
+  commentId: F:WizardWrx.ArrayInfo.ARRAY_NEXT_INDEX
+  fullName: WizardWrx.ArrayInfo.ARRAY_NEXT_INDEX
+  nameWithType: ArrayInfo.ARRAY_NEXT_INDEX
 - uid: WizardWrx.ArrayInfo.ARRAY_SECOND_ELEMENT
   name: ARRAY_SECOND_ELEMENT
   href: api/WizardWrx.ArrayInfo.html#WizardWrx_ArrayInfo_ARRAY_SECOND_ELEMENT
@@ -7537,6 +7581,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.Core.UnconfiguredDLLSettings.GetMissingPropsForFile
   nameWithType: UnconfiguredDLLSettings.GetMissingPropsForFile
+- uid: WizardWrx.Core.UnconfiguredDLLSettings.GetTheSingleInstance
+  name: GetTheSingleInstance()
+  href: api/WizardWrx.Core.UnconfiguredDLLSettings.html#WizardWrx_Core_UnconfiguredDLLSettings_GetTheSingleInstance
+  commentId: M:WizardWrx.Core.UnconfiguredDLLSettings.GetTheSingleInstance
+  fullName: WizardWrx.Core.UnconfiguredDLLSettings.GetTheSingleInstance()
+  nameWithType: UnconfiguredDLLSettings.GetTheSingleInstance()
+- uid: WizardWrx.Core.UnconfiguredDLLSettings.GetTheSingleInstance*
+  name: GetTheSingleInstance
+  href: api/WizardWrx.Core.UnconfiguredDLLSettings.html#WizardWrx_Core_UnconfiguredDLLSettings_GetTheSingleInstance_
+  commentId: Overload:WizardWrx.Core.UnconfiguredDLLSettings.GetTheSingleInstance
+  isSpec: "True"
+  fullName: WizardWrx.Core.UnconfiguredDLLSettings.GetTheSingleInstance
+  nameWithType: UnconfiguredDLLSettings.GetTheSingleInstance
 - uid: WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting
   name: UnconfiguredDLLSettings.UnconfiguredSetting
   href: api/WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.html
@@ -11845,24 +11902,66 @@ references:
   commentId: F:WizardWrx.MagicNumbers.CAPACITY_08KB
   fullName: WizardWrx.MagicNumbers.CAPACITY_08KB
   nameWithType: MagicNumbers.CAPACITY_08KB
+- uid: WizardWrx.MagicNumbers.CAPACITY_10
+  name: CAPACITY_10
+  href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_CAPACITY_10
+  commentId: F:WizardWrx.MagicNumbers.CAPACITY_10
+  fullName: WizardWrx.MagicNumbers.CAPACITY_10
+  nameWithType: MagicNumbers.CAPACITY_10
+- uid: WizardWrx.MagicNumbers.CAPACITY_128
+  name: CAPACITY_128
+  href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_CAPACITY_128
+  commentId: F:WizardWrx.MagicNumbers.CAPACITY_128
+  fullName: WizardWrx.MagicNumbers.CAPACITY_128
+  nameWithType: MagicNumbers.CAPACITY_128
+- uid: WizardWrx.MagicNumbers.CAPACITY_16
+  name: CAPACITY_16
+  href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_CAPACITY_16
+  commentId: F:WizardWrx.MagicNumbers.CAPACITY_16
+  fullName: WizardWrx.MagicNumbers.CAPACITY_16
+  nameWithType: MagicNumbers.CAPACITY_16
 - uid: WizardWrx.MagicNumbers.CAPACITY_16KB
   name: CAPACITY_16KB
   href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_CAPACITY_16KB
   commentId: F:WizardWrx.MagicNumbers.CAPACITY_16KB
   fullName: WizardWrx.MagicNumbers.CAPACITY_16KB
   nameWithType: MagicNumbers.CAPACITY_16KB
+- uid: WizardWrx.MagicNumbers.CAPACITY_255
+  name: CAPACITY_255
+  href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_CAPACITY_255
+  commentId: F:WizardWrx.MagicNumbers.CAPACITY_255
+  fullName: WizardWrx.MagicNumbers.CAPACITY_255
+  nameWithType: MagicNumbers.CAPACITY_255
+- uid: WizardWrx.MagicNumbers.CAPACITY_256
+  name: CAPACITY_256
+  href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_CAPACITY_256
+  commentId: F:WizardWrx.MagicNumbers.CAPACITY_256
+  fullName: WizardWrx.MagicNumbers.CAPACITY_256
+  nameWithType: MagicNumbers.CAPACITY_256
 - uid: WizardWrx.MagicNumbers.CAPACITY_32KB
   name: CAPACITY_32KB
   href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_CAPACITY_32KB
   commentId: F:WizardWrx.MagicNumbers.CAPACITY_32KB
   fullName: WizardWrx.MagicNumbers.CAPACITY_32KB
   nameWithType: MagicNumbers.CAPACITY_32KB
+- uid: WizardWrx.MagicNumbers.CAPACITY_4
+  name: CAPACITY_4
+  href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_CAPACITY_4
+  commentId: F:WizardWrx.MagicNumbers.CAPACITY_4
+  fullName: WizardWrx.MagicNumbers.CAPACITY_4
+  nameWithType: MagicNumbers.CAPACITY_4
 - uid: WizardWrx.MagicNumbers.CAPACITY_64KB
   name: CAPACITY_64KB
   href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_CAPACITY_64KB
   commentId: F:WizardWrx.MagicNumbers.CAPACITY_64KB
   fullName: WizardWrx.MagicNumbers.CAPACITY_64KB
   nameWithType: MagicNumbers.CAPACITY_64KB
+- uid: WizardWrx.MagicNumbers.CAPACITY_8
+  name: CAPACITY_8
+  href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_CAPACITY_8
+  commentId: F:WizardWrx.MagicNumbers.CAPACITY_8
+  fullName: WizardWrx.MagicNumbers.CAPACITY_8
+  nameWithType: MagicNumbers.CAPACITY_8
 - uid: WizardWrx.MagicNumbers.CAPACITY_MAX_PATH
   name: CAPACITY_MAX_PATH
   href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_CAPACITY_MAX_PATH
@@ -11965,6 +12064,12 @@ references:
   commentId: F:WizardWrx.MagicNumbers.MINUS_ONE
   fullName: WizardWrx.MagicNumbers.MINUS_ONE
   nameWithType: MagicNumbers.MINUS_ONE
+- uid: WizardWrx.MagicNumbers.MSO_COLLECTION_FIRST_ITEM
+  name: MSO_COLLECTION_FIRST_ITEM
+  href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_MSO_COLLECTION_FIRST_ITEM
+  commentId: F:WizardWrx.MagicNumbers.MSO_COLLECTION_FIRST_ITEM
+  fullName: WizardWrx.MagicNumbers.MSO_COLLECTION_FIRST_ITEM
+  nameWithType: MagicNumbers.MSO_COLLECTION_FIRST_ITEM
 - uid: WizardWrx.MagicNumbers.NUMBER_BASE_DECIMAL
   name: NUMBER_BASE_DECIMAL
   href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_NUMBER_BASE_DECIMAL
@@ -11977,6 +12082,30 @@ references:
   commentId: F:WizardWrx.MagicNumbers.NUMBER_BASE_HEXADECIMAL
   fullName: WizardWrx.MagicNumbers.NUMBER_BASE_HEXADECIMAL
   nameWithType: MagicNumbers.NUMBER_BASE_HEXADECIMAL
+- uid: WizardWrx.MagicNumbers.PLUS_EIGHT
+  name: PLUS_EIGHT
+  href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_PLUS_EIGHT
+  commentId: F:WizardWrx.MagicNumbers.PLUS_EIGHT
+  fullName: WizardWrx.MagicNumbers.PLUS_EIGHT
+  nameWithType: MagicNumbers.PLUS_EIGHT
+- uid: WizardWrx.MagicNumbers.PLUS_FIVE
+  name: PLUS_FIVE
+  href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_PLUS_FIVE
+  commentId: F:WizardWrx.MagicNumbers.PLUS_FIVE
+  fullName: WizardWrx.MagicNumbers.PLUS_FIVE
+  nameWithType: MagicNumbers.PLUS_FIVE
+- uid: WizardWrx.MagicNumbers.PLUS_FOUR
+  name: PLUS_FOUR
+  href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_PLUS_FOUR
+  commentId: F:WizardWrx.MagicNumbers.PLUS_FOUR
+  fullName: WizardWrx.MagicNumbers.PLUS_FOUR
+  nameWithType: MagicNumbers.PLUS_FOUR
+- uid: WizardWrx.MagicNumbers.PLUS_NINE
+  name: PLUS_NINE
+  href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_PLUS_NINE
+  commentId: F:WizardWrx.MagicNumbers.PLUS_NINE
+  fullName: WizardWrx.MagicNumbers.PLUS_NINE
+  nameWithType: MagicNumbers.PLUS_NINE
 - uid: WizardWrx.MagicNumbers.PLUS_ONE
   name: PLUS_ONE
   href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_PLUS_ONE
@@ -11989,6 +12118,18 @@ references:
   commentId: F:WizardWrx.MagicNumbers.PLUS_SEVEN
   fullName: WizardWrx.MagicNumbers.PLUS_SEVEN
   nameWithType: MagicNumbers.PLUS_SEVEN
+- uid: WizardWrx.MagicNumbers.PLUS_SIX
+  name: PLUS_SIX
+  href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_PLUS_SIX
+  commentId: F:WizardWrx.MagicNumbers.PLUS_SIX
+  fullName: WizardWrx.MagicNumbers.PLUS_SIX
+  nameWithType: MagicNumbers.PLUS_SIX
+- uid: WizardWrx.MagicNumbers.PLUS_THREE
+  name: PLUS_THREE
+  href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_PLUS_THREE
+  commentId: F:WizardWrx.MagicNumbers.PLUS_THREE
+  fullName: WizardWrx.MagicNumbers.PLUS_THREE
+  nameWithType: MagicNumbers.PLUS_THREE
 - uid: WizardWrx.MagicNumbers.PLUS_TWO
   name: PLUS_TWO
   href: api/WizardWrx.MagicNumbers.html#WizardWrx_MagicNumbers_PLUS_TWO

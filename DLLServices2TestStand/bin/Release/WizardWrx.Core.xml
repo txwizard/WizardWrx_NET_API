@@ -3540,6 +3540,25 @@
             DLL configuration file, this class must be a Singleton.
             </summary>
         </member>
+        <member name="M:WizardWrx.Core.UnconfiguredDLLSettings.#ctor">
+            <summary>
+            Singletons keep ALL their constructors private.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.Core.UnconfiguredDLLSettings.GetTheSingleInstance">
+            <summary>
+            Return a reference to the single instance after initializing it if
+            needed.
+            </summary>
+            <returns>
+            This method overrides the like-named method on the base class, so
+            that it can initialize its Dictionary object.
+            </returns>
+            <remarks>
+            Initializing the dictionary is handled by the private instance
+            constructor.
+            </remarks>
+        </member>
         <member name="M:WizardWrx.Core.UnconfiguredDLLSettings.Add(System.String,System.String,System.String)">
             <summary>
             Add a new unconfigured setting.
@@ -3646,6 +3665,23 @@
             The return value is the configuration file name and key name,
             separated by an underscore character.
             </returns>
+        </member>
+        <member name="F:WizardWrx.Core.UnconfiguredDLLSettings._valuePairs">
+            <summary>
+            Hide the Dictionary from the world; it's an implementation detail.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.Core.UnconfiguredDLLSettings.s_syncRoot">
+            <summary>
+            Unlike the genric objects usually used as synchronization guards,
+            ours is labeled, and its ToString property returns the label to
+            identify it in object dumps.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.Core.UnconfiguredDLLSettings.s_dLLSettings">
+            <summary>
+            The singleton keeps up with its one and only instance here.
+            </summary>
         </member>
         <member name="T:WizardWrx.Core.UnmanagedLibrary">
             <summary>

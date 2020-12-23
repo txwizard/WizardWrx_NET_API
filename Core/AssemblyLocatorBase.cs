@@ -48,7 +48,7 @@
 
     Author:				David A. Gray
 
-    License:            Copyright (C) 2012-2017, David A. Gray. 
+    License:            Copyright (C) 2012-2020, David A. Gray. 
 						All rights reserved.
 
                         Redistribution and use in source and binary forms, with
@@ -186,6 +186,10 @@
 
                               2) Replace the properties collection enumeration
                                  with the much more efficient dictionary lookup.
+
+    2020/12/20 7.24    DAG    Replace the reference to the single instance of
+                              UnconfiguredDLLSettings MissingConfigSettings with
+                              a call to its static GetTheSingleInstance method.
     ============================================================================
 */
 
@@ -741,7 +745,7 @@ namespace WizardWrx.Core
                     }   // TRUE (The configuration file has a value for this property.) block, if ( piThisProperty != null )
                     else
                     {
-                        MissingConfigSettings = MissingConfigSettings ?? UnconfiguredDLLSettings.TheOnlyInstance;
+                        MissingConfigSettings = MissingConfigSettings ?? UnconfiguredDLLSettings.GetTheSingleInstance ( );
 
                         MissingConfigSettings.Add (
                             Path.GetFileName ( _strAssemblyLocation ) ,

@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>This update of and established stable library complements the industry standard SemVer version numbering by implementing the Deterministic compiler switch.</releaseNotes>
+	    <releaseNotes>This release incorporates the current version of dependent library WizardWrx.Core.dll.</releaseNotes>
     	<copyright>$copyright$</copyright>
     	<tags>STDOUT STDERR Errors Console Colors ConsoleColors</tags>
 	</metadata>

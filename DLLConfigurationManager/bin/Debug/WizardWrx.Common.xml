@@ -59,6 +59,12 @@
             <seealso cref="F:WizardWrx.ArrayInfo.NEXT_INDEX"/>
             <seealso cref="F:WizardWrx.ArrayInfo.ORDINAL_FROM_INDEX"/>
         </member>
+        <member name="F:WizardWrx.ArrayInfo.ARRAY_NEXT_INDEX">
+            <summary>
+            The next index is plus one, which is ambiguous, at best, in code.
+            </summary>
+            <seealso cref="F:WizardWrx.ArrayInfo.NEXT_INDEX"/>
+        </member>
         <member name="F:WizardWrx.ArrayInfo.ARRAY_SECOND_ELEMENT">
             <summary>
             There is an amazing number of situations that require a refeerence
@@ -87,7 +93,7 @@
         </member>
         <member name="F:WizardWrx.ArrayInfo.NEXT_INDEX">
             <summary>
-            The next index is plus one, which is ambiguous, at best, in code
+            The next index is plus one, which is ambiguous, at best, in code.
             listings.
             </summary>
             <seealso cref="F:WizardWrx.ArrayInfo.ARRAY_FIRST_ELEMENT"/>
@@ -96,6 +102,7 @@
             <seealso cref="F:WizardWrx.ArrayInfo.ARRAY_SECOND_ELEMENT"/>
             <seealso cref="F:WizardWrx.ArrayInfo.INDEX_FROM_ORDINAL"/>
             <seealso cref="F:WizardWrx.ArrayInfo.ORDINAL_FROM_INDEX"/>
+            <seealso cref="F:WizardWrx.ArrayInfo.ARRAY_NEXT_INDEX"/>
         </member>
         <member name="F:WizardWrx.ArrayInfo.ORDINAL_FROM_INDEX">
             <summary>
@@ -812,10 +819,89 @@
             codes returned by Marshal.GetLastWin32Error.
             </summary>
         </member>
+        <member name="F:WizardWrx.MagicNumbers.CAPACITY_4">
+            <summary>
+            Use this to set a small capacity on empty List and Dictionary collections.
+            </summary>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_8"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_10"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_16"/>
+        </member>
+        <member name="F:WizardWrx.MagicNumbers.CAPACITY_8">
+            <summary>
+            Use this to set a small capacity on empty List and Dictionary collections.
+            </summary>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_4"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_10"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_16"/>
+        </member>
+        <member name="F:WizardWrx.MagicNumbers.CAPACITY_10">
+            <summary>
+            Use this to set a small capacity on empty List and Dictionary collections.
+            </summary>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_4"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_8"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_16"/>
+        </member>
+        <member name="F:WizardWrx.MagicNumbers.CAPACITY_16">
+            <summary>
+            Use this to set a small capacity on empty List and Dictionary collections.
+            </summary>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_4"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_8"/>
+        </member>
+        <member name="F:WizardWrx.MagicNumbers.CAPACITY_128">
+            <summary>
+            Constant for sizing a 128 unit StringBuilder, array, or buffer.
+            </summary>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_255"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_256"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_01KB"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_02KB"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_04KB"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_08KB"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_16KB"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_32KB"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_64KB"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_MAX_PATH"/>
+        </member>
+        <member name="F:WizardWrx.MagicNumbers.CAPACITY_255">
+            <summary>
+            Constant for sizing a 255 unit StringBuilder, array, or buffer.
+            </summary>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_128"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_256"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_01KB"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_02KB"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_04KB"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_08KB"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_16KB"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_32KB"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_64KB"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_MAX_PATH"/>
+        </member>
+        <member name="F:WizardWrx.MagicNumbers.CAPACITY_256">
+            <summary>
+            Constant for sizing a 256 unit StringBuilder, array, or buffer.
+            </summary>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_128"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_255"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_01KB"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_02KB"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_04KB"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_08KB"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_16KB"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_32KB"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_64KB"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_MAX_PATH"/>
+        </member>
         <member name="F:WizardWrx.MagicNumbers.CAPACITY_01KB">
             <summary>
             Constant for sizing a 1 KB StringBuilder, array, or buffer.
             </summary>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_128"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_255"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_256"/>
             <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_02KB"/>
             <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_04KB"/>
             <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_08KB"/>
@@ -828,6 +914,9 @@
             <summary>
             Constant for sizing a 2 KB StringBuilder, array, or buffer.
             </summary>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_128"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_255"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_256"/>
             <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_01KB"/>
             <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_04KB"/>
             <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_08KB"/>
@@ -840,6 +929,9 @@
             <summary>
             Constant for sizing a 4 KB StringBuilder, array, or buffer.
             </summary>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_128"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_255"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_256"/>
             <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_01KB"/>
             <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_02KB"/>
             <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_08KB"/>
@@ -852,6 +944,9 @@
             <summary>
             Constant for sizing a 8 KB StringBuilder, array, or buffer.
             </summary>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_128"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_255"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_256"/>
             <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_01KB"/>
             <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_02KB"/>
             <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_04KB"/>
@@ -864,6 +959,9 @@
             <summary>
             Constant for sizing a 16 KB StringBuilder, array, or buffer.
             </summary>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_128"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_255"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_256"/>
             <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_01KB"/>
             <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_02KB"/>
             <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_04KB"/>
@@ -876,6 +974,9 @@
             <summary>
             Constant for sizing a 32 KB StringBuilder, array, or buffer.
             </summary>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_128"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_255"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_256"/>
             <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_01KB"/>
             <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_02KB"/>
             <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_04KB"/>
@@ -888,6 +989,9 @@
             <summary>
             Constant for sizing a 64 KB StringBuilder, array, or buffer.
             </summary>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_128"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_255"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_256"/>
             <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_01KB"/>
             <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_02KB"/>
             <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_04KB"/>
@@ -900,12 +1004,22 @@
             <summary>
             Constant for sizing a MAX_PATH StringBuilder, array, or buffer.
             </summary>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_128"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_255"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_256"/>
             <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_01KB"/>
             <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_02KB"/>
             <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_04KB"/>
             <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_08KB"/>
             <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_16KB"/>
             <seealso cref="F:WizardWrx.MagicNumbers.CAPACITY_32KB"/>
+        </member>
+        <member name="F:WizardWrx.MagicNumbers.MSO_COLLECTION_FIRST_ITEM">
+            <summary>
+            Use this integer to start a loop over a one-based collection of
+            Microsoft Office object collections, such as cells in an Excel
+            worksheet.
+            </summary>
         </member>
         <member name="F:WizardWrx.MagicNumbers.EMPTY_STRING_LENGTH">
             <summary>
@@ -1202,6 +1316,86 @@
             <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_NUMERAL_2"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_NUMERAL_7"/>
         </member>
+        <member name="F:WizardWrx.MagicNumbers.PLUS_THREE">
+            <summary>
+            Thres makes a crowd.
+            </summary>
+            <seealso cref="F:WizardWrx.MagicNumbers.MINUS_ONE"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.PLUS_ONE"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.PLUS_SEVEN"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.ZERO"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_UC_I"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_LC_L"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_UC_L"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_LC_O"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_UC_O"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_LC_Z"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_UC_Z"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_NUMERAL_0"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_NUMERAL_1"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_NUMERAL_2"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_NUMERAL_7"/>
+        </member>
+        <member name="F:WizardWrx.MagicNumbers.PLUS_FOUR">
+            <summary>
+            Two times two equals four, the first integral power of two.
+            </summary>
+            <seealso cref="F:WizardWrx.MagicNumbers.MINUS_ONE"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.PLUS_ONE"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.PLUS_SEVEN"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.ZERO"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_UC_I"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_LC_L"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_UC_L"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_LC_O"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_UC_O"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_LC_Z"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_UC_Z"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_NUMERAL_0"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_NUMERAL_1"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_NUMERAL_2"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_NUMERAL_7"/>
+        </member>
+        <member name="F:WizardWrx.MagicNumbers.PLUS_FIVE">
+            <summary>
+            Five fingers has a normal, fully-equipped human hand.
+            </summary>
+            <seealso cref="F:WizardWrx.MagicNumbers.MINUS_ONE"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.PLUS_ONE"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.PLUS_SEVEN"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.ZERO"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_UC_I"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_LC_L"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_UC_L"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_LC_O"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_UC_O"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_LC_Z"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_UC_Z"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_NUMERAL_0"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_NUMERAL_1"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_NUMERAL_2"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_NUMERAL_7"/>
+        </member>
+        <member name="F:WizardWrx.MagicNumbers.PLUS_SIX">
+            <summary>
+            Six fills the gap between five and seven.
+            </summary>
+            <seealso cref="F:WizardWrx.MagicNumbers.MINUS_ONE"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.PLUS_ONE"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.PLUS_SEVEN"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.ZERO"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_UC_I"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_LC_L"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_UC_L"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_LC_O"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_UC_O"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_LC_Z"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_UC_Z"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_NUMERAL_0"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_NUMERAL_1"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_NUMERAL_2"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_NUMERAL_7"/>
+        </member>
         <member name="F:WizardWrx.MagicNumbers.PLUS_SEVEN">
             <summary>
             Number 7, to clearly distinguish it from a letter Z and a numeral 2,
@@ -1213,6 +1407,53 @@
             <seealso cref="F:WizardWrx.MagicNumbers.MINUS_ONE"/>
             <seealso cref="F:WizardWrx.MagicNumbers.PLUS_ONE"/>
             <seealso cref="F:WizardWrx.MagicNumbers.PLUS_TWO"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.ZERO"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_UC_I"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_LC_L"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_UC_L"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_LC_O"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_UC_O"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_LC_Z"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_UC_Z"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_NUMERAL_0"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_NUMERAL_1"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_NUMERAL_2"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_NUMERAL_7"/>
+        </member>
+        <member name="F:WizardWrx.MagicNumbers.PLUS_EIGHT">
+            <summary>
+            Eight is the cube of two.
+            </summary>
+            <seealso cref="F:WizardWrx.MagicNumbers.MINUS_ONE"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.PLUS_ONE"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.PLUS_SEVEN"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.ZERO"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_UC_I"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_LC_L"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_UC_L"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_LC_O"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_UC_O"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_LC_Z"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_UC_Z"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_NUMERAL_0"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_NUMERAL_1"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_NUMERAL_2"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_NUMERAL_7"/>
+        </member>
+        <member name="F:WizardWrx.MagicNumbers.PLUS_NINE">
+            <summary>
+            Number Nine, number nine, number nine . . .
+            </summary>
+            <seealso cref="F:WizardWrx.MagicNumbers.MINUS_ONE"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.PLUS_ONE"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.PLUS_TWO"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.PLUS_THREE"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.PLUS_FOUR"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.PLUS_FIVE"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.PLUS_SIX"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.PLUS_SEVEN"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.PLUS_EIGHT"/>
+            <seealso cref="F:WizardWrx.MagicNumbers.PLUS_NINE"/>
             <seealso cref="F:WizardWrx.MagicNumbers.ZERO"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_UC_I"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_LC_L"/>

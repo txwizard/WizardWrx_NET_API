@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>This update adds a handful of new locale-sensitive string constants and another handful of string representations of character constants that are frequently needed as strings, too.</releaseNotes>
+	    <releaseNotes>This update adds a couple of overlooked, but frequently required numeric constants.</releaseNotes>
     	<copyright>$copyright$</copyright>
     	<tags>Constants Arrays RegExp</tags>
 	</metadata>

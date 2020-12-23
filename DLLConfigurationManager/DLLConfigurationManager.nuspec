@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>This release is unchanged from the first release of this established library apart from that it implements the industry standard SemVer version numbering, which it complements by implementing the Deterministic compiler switch.</releaseNotes>
+	    <releaseNotes>This release incorporates the current version of dependent library WizardWrx.Core.dll.</releaseNotes>
     	<copyright>$copyright$</copyright>
     	<tags>Exception Logger Windows Event Log INI File</tags>
 	</metadata>

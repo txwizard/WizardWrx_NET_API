@@ -329,6 +329,16 @@
                               default values.
 
 	2020/09/20 7.23    DAG    Eliminate redundant assembly reference to Common.
+
+	2020/12/21 7.24    DAG    1) GetDefaultEventSourceID becomes an instance
+                                 method (like it matters for a singleton) to
+                                 make the subsystem ID visible to it, so that it
+                                 can skip everything related to console streams
+                                 unless the execution environment is character
+                                 mode.
+
+                              2) ReportAsDirected gets the same treatment unless
+                                 its execution context is character mode.
 	============================================================================
 */
 
@@ -1719,7 +1729,6 @@ namespace WizardWrx.DLLConfigurationManager
 		/// returned to the next line, but no additional line feeds follow.
 		/// Hence, if you want your error message to be followed by a blank
 		/// line, you must follow this call with an empty Console.WriteLine
-		/// or, 
 		/// </returns>
 		/// <remarks>
 		/// This routine processes ANY exception of the IOException class and
@@ -1975,50 +1984,53 @@ namespace WizardWrx.DLLConfigurationManager
 
 			bool fWroteOnStandardError = false;
 
-			if ( ( _enmOutputOptions & OutputOptions.StandardError ) == OutputOptions.StandardError )
-			{	// The client assembly wants errors written onto the standard error stream.
-				fWroteOnStandardError = true;
+			if ( _enmProcessSubsystem == PESubsystemInfo.PESubsystemID.IMAGE_SUBSYSTEM_WINDOWS_CUI )
+			{	// None of this matters unless we are in Character Mode.
+				if ( ( _enmOutputOptions & OutputOptions.StandardError ) == OutputOptions.StandardError )
+				{   // The client assembly wants errors written onto the standard error stream.
+					fWroteOnStandardError = true;
 
-				if ( _emsgColorsStdOut == null )
-				{	// Write directly to the standard error stream.
-					Console.Error.WriteLine ( pstrMsg );                        // Use the current screen colors.
-				}
-				else
-				{	// Write indirectly to the standard error stream through the ErrorMessagesInColor class.
-					_emsgColorsStdErr.Write ( pstrMsg );                        // Use the custom screen colors.
-				}	// if ( _emsgColorsStdOut == null )
-			}	// if ( ( _enmOutputOptions & OutputOptions.StandardError ) == OutputOptions.StandardError )
+					if ( _emsgColorsStdOut == null )
+					{   // Write directly to the standard error stream.
+						Console.Error.WriteLine ( pstrMsg );                    // Use the current screen colors.
+					}
+					else
+					{   // Write indirectly to the standard error stream through the ErrorMessagesInColor class.
+						_emsgColorsStdErr.Write ( pstrMsg );                    // Use the custom screen colors.
+					}   // if ( _emsgColorsStdOut == null )
+				}   // if ( ( _enmOutputOptions & OutputOptions.StandardError ) == OutputOptions.StandardError )
 
-			if ( ( _enmOutputOptions & OutputOptions.StandardOutput ) == OutputOptions.StandardOutput )
-			{	// The client assembly wants errors written onto the standard output stream.
-				if ( fWroteOnStandardError )
-				{	// Suppress if this is a duplicate, which is true if standard error was written and standard output is attached to the console.
-					if ( _fStdOutIsRedirected )
-					{	// Although the message was written on standard error, since standard output is redirected, it gets a copy.
+				if ( ( _enmOutputOptions & OutputOptions.StandardOutput ) == OutputOptions.StandardOutput )
+				{   // The client assembly wants errors written onto the standard output stream.
+					if ( fWroteOnStandardError )
+					{   // Suppress if this is a duplicate, which is true if standard error was written and standard output is attached to the console.
+						if ( _fStdOutIsRedirected )
+						{   // Although the message was written on standard error, since standard output is redirected, it gets a copy.
+							if ( _emsgColorsStdOut == null )
+							{   // Write directly to the standard output stream.
+								Console.WriteLine ( pstrMsg );                  // Use the current screen colors.
+							}
+							else
+							{   // Write indirectly to the standard output stream through the MessageInColor class.
+								_emsgColorsStdOut.Write ( pstrMsg );            // Use the custom screen colors.
+							}   // if ( _emsgColorsStdOut == null )
+						}   // if ( _fStdOutIsRedirected )
+					}   // TRUE (The message was written on the Standard Error stream.) block, if ( fWroteOnStandardError )
+					else
+					{   // If it didn't go on Standard Error, the redirection state of Standard Output is moot.
 						if ( _emsgColorsStdOut == null )
-						{	// Write directly to the standard output stream.
+						{   // Write directly to the standard output stream.
 							Console.WriteLine ( pstrMsg );                      // Use the current screen colors.
 						}
 						else
-						{	// Write indirectly to the standard output stream through the MessageInColor class.
+						{   // Write indirectly to the standard output stream through the MessageInColor class.
 							_emsgColorsStdOut.Write ( pstrMsg );                // Use the custom screen colors.
-						}	// if ( _emsgColorsStdOut == null )
-					}	// if ( _fStdOutIsRedirected )
-				}	// TRUE (The message was written on the Standard Error stream.) block, if ( fWroteOnStandardError )
-				else
-				{	// If it didn't go on Standard Error, the redirection state of Standard Output is moot.
-					if ( _emsgColorsStdOut == null )
-					{	// Write directly to the standard output stream.
-						Console.WriteLine ( pstrMsg );                          // Use the current screen colors.
-					}
-					else
-					{	// Write indirectly to the standard output stream through the MessageInColor class.
-						_emsgColorsStdOut.Write ( pstrMsg );                    // Use the custom screen colors.
-					}	// if ( _emsgColorsStdOut == null )
-				}	// FALSE (The message was NOT written on the Standard Error stream.) block, if ( fWroteOnStandardError )
-			}	// if ( ( _enmOutputOptions & OutputOptions.StandardOutput ) == OutputOptions.StandardOutput )
+						}   // if ( _emsgColorsStdOut == null )
+					}   // FALSE (The message was NOT written on the Standard Error stream.) block, if ( fWroteOnStandardError )
+				}   // if ( ( _enmOutputOptions & OutputOptions.StandardOutput ) == OutputOptions.StandardOutput )
 
-			ScrollUp ( );														// Compensate for some methods that do write, rather than writeLine, so that visible behavior is consistent.
+				ScrollUp ( );                                                   // Compensate for some methods that do write, rather than writeLine, so that visible behavior is consistent.
+			}   // if (_enmProcessSubsystem== PESubsystemInfo.PESubsystemID.IMAGE_SUBSYSTEM_WINDOWS_CUI)
 
 			if ( UseEventLog ( _enmOutputOptions ) )
 				System.Diagnostics.EventLog.WriteEntry (
@@ -2028,7 +2040,7 @@ namespace WizardWrx.DLLConfigurationManager
 					pstrLogMsg ,
 					System.Diagnostics.EventLogEntryType.Error );
 
-			return pstrMsg;                                                    // Return a copy to the caller.
+			return pstrMsg;														// Return a copy to the caller.
 		}   // ReportAsDirected method
 
 
@@ -2390,7 +2402,7 @@ namespace WizardWrx.DLLConfigurationManager
 		/// To save trips to the disk or its cache, once read, the event source
 		/// ID is cached in static string s_strDefaultEventSource.
 		/// </returns>
-		private static string GetDefaultEventSourceID ( )
+		private string GetDefaultEventSourceID ( )
 		{
 			if ( string.IsNullOrEmpty ( s_strDefaultEventSource ) )
 			{   // The first request initializes s_strDefaultEventSource.
@@ -2401,16 +2413,19 @@ namespace WizardWrx.DLLConfigurationManager
 						PropertyDefaults DLLProperties = new PropertyDefaults ( System.Reflection.Assembly.GetExecutingAssembly ( ) );
                         s_strSettingsOmittedFromConfigFile = DLLProperties.EnumerateMissingConfigurationValues ( );
 
-                        if ( string.IsNullOrEmpty ( s_strSettingsOmittedFromConfigFile ) )
-                        {
-                            Console.WriteLine ( @"All DLL configuration settings have explicit values." );
-                        }   // TRUE (All settings have explicit values.) block, if ( string.IsNullOrEmpty ( s_strSettingsOmittedFromConfigFile ) )
-                        else
-                        {
-                            Console.WriteLine ( s_strSettingsOmittedFromConfigFile );
-                        }   // FALSE (One or more settings took its default value.) block, if ( string.IsNullOrEmpty ( s_strSettingsOmittedFromConfigFile ) )
+						if ( _enmProcessSubsystem == PESubsystemInfo.PESubsystemID.IMAGE_SUBSYSTEM_WINDOWS_CUI )
+						{	// Don't try to write to the console that doesn't exist.
+							if ( string.IsNullOrEmpty ( s_strSettingsOmittedFromConfigFile ) )
+							{
+								Console.WriteLine ( @"All DLL configuration settings have explicit values." );
+							}   // TRUE (All settings have explicit values.) block, if ( string.IsNullOrEmpty ( s_strSettingsOmittedFromConfigFile ) )
+							else
+							{
+								Console.WriteLine ( s_strSettingsOmittedFromConfigFile );
+							}   // FALSE (One or more settings took its default value.) block, if ( string.IsNullOrEmpty ( s_strSettingsOmittedFromConfigFile ) )
+						}   // if ( _enmProcessSubsystem == PESubsystemInfo.PESubsystemID.IMAGE_SUBSYSTEM_WINDOWS_CUI )
 
-                        System.Configuration.KeyValueConfigurationCollection DLLConfigurationSettings = DLLProperties.ValuesCollection;
+						System.Configuration.KeyValueConfigurationCollection DLLConfigurationSettings = DLLProperties.ValuesCollection;
 						s_strDefaultEventSource = DLLConfigurationSettings [ Properties.Resources.DEFAULT_EVENT_SOURCE_ID ].Value;
 					}
 					catch ( Exception exAll )

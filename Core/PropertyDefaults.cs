@@ -110,6 +110,10 @@
                               method that reports configuration values that are
                               defined, but are missing from the configuration
                               file.
+
+    2020/12/20 7.24    DAG    Replace the reference to the single instance of
+                              UnconfiguredDLLSettings MissingConfigSettings with
+                              a call to its static GetTheSingleInstance method.
     ============================================================================
 */
 
@@ -230,7 +234,7 @@ namespace WizardWrx.Core
         /// </returns>
         public string EnumerateMissingConfigurationValues ( )
         {
-            MissingConfigSettings = MissingConfigSettings ?? UnconfiguredDLLSettings.TheOnlyInstance;
+            MissingConfigSettings = MissingConfigSettings ?? UnconfiguredDLLSettings.GetTheSingleInstance ( );
             List<UnconfiguredDLLSettings.UnconfiguredSetting> missing = MissingConfigSettings.GetMissingPropsForFile (
                 System.IO.Path.GetFileName (
                     _strAssemblyLocation ) );

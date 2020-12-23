@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class NumericFormats
    ">
-    <meta name="generator" content="docfx 2.56.3.0">
+    <meta name="generator" content="docfx 2.56.6.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -206,7 +206,7 @@ left of the implied decimal point.</p>
 set our own default number of decimal places, rather than relying on
 the Regional Settings (Locale), which can be changed, at any time,
 by any user, even with restricted permissions.</p>
-<table><thead><tr><th>Format StringGenerator RoutineWidth Override</th><th></th></tr></thead><tbody><tr><td>DECIMALFixedWidthIntegerint pintTotalDigits</td><td></td></tr><tr><td>FIXEDFixedPointDecimalint pintFractionDigits</td><td></td></tr><tr><td>GENERALGeneralXPrecisionint pintPrecisionDigits [1]</td><td></td></tr><tr><td>HEXADECIMALHexadecimalIntegerint pintTotalDigits</td><td></td></tr><tr><td>NUMBER_PER_REG_SETTINGSIntegerPerRegSettingsN /A</td><td></td></tr><tr><td>NUMBER_PER_REG_SETTINGSNumberPerRegSettingsint pintFractionDigits</td><td></td></tr><tr><td>PERCENTPercentToDecimalPlacesint pintFractionDigits</td><td></td></tr></tbody></table>
+<table><thead><tr><th>Format String</th><th>Generator Routine</th><th>Width Override</th></tr></thead><tbody><tr><td>DECIMAL</td><td>FixedWidthInteger</td><td>int pintTotalDigits</td></tr><tr><td>FIXED</td><td>FixedPointDecimal</td><td>int pintFractionDigits</td></tr><tr><td>GENERAL</td><td>GeneralXPrecision</td><td>int pintPrecisionDigits [1]</td></tr><tr><td>HEXADECIMAL</td><td>HexadecimalInteger</td><td>int pintTotalDigits</td></tr><tr><td>NUMBER_PER_REG_SETTINGS</td><td>IntegerPerRegSettings</td><td>N /A</td></tr><tr><td>NUMBER_PER_REG_SETTINGS</td><td>NumberPerRegSettings</td><td>int pintFractionDigits</td></tr><tr><td>PERCENT</td><td>PercentToDecimalPlaces</td><td>int pintFractionDigits</td></tr></tbody></table>
 Note 1: There is only one of these methods, and it accepts the
 pintTotalDigits argument.
 </div>
@@ -2810,7 +2810,8 @@ number of digits to display.</p>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>
