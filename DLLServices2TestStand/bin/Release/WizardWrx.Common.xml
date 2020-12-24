@@ -91,6 +91,12 @@
             <seealso cref="F:WizardWrx.ArrayInfo.NEXT_INDEX"/>
             <seealso cref="F:WizardWrx.ArrayInfo.ORDINAL_FROM_INDEX"/>
         </member>
+        <member name="F:WizardWrx.ArrayInfo.MSO_COLLECTION_FIRST_ITEM">
+            <summary>
+            Indexing of collections of Microsoft Office objects begins at plus one.
+            </summary>
+            <seealso cref="F:WizardWrx.ArrayInfo.ARRAY_FIRST_ELEMENT"/>
+        </member>
         <member name="F:WizardWrx.ArrayInfo.NEXT_INDEX">
             <summary>
             The next index is plus one, which is ambiguous, at best, in code.
@@ -103,6 +109,7 @@
             <seealso cref="F:WizardWrx.ArrayInfo.INDEX_FROM_ORDINAL"/>
             <seealso cref="F:WizardWrx.ArrayInfo.ORDINAL_FROM_INDEX"/>
             <seealso cref="F:WizardWrx.ArrayInfo.ARRAY_NEXT_INDEX"/>
+            <seealso cref="F:WizardWrx.ArrayInfo.MSO_COLLECTION_FIRST_ITEM"/>
         </member>
         <member name="F:WizardWrx.ArrayInfo.ORDINAL_FROM_INDEX">
             <summary>
@@ -3371,6 +3378,13 @@
             <seealso cref="T:WizardWrx.MagicNumbers"/>
             <seealso cref="T:WizardWrx.SpecialStrings"/>
         </member>
+        <member name="F:WizardWrx.SpecialCharacters.ALARM">
+            <summary>
+            The Alarm (bell or BEL) character must often be stripped from strings.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialCharacters.BEL"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.BELL"/>
+        </member>
         <member name="F:WizardWrx.SpecialCharacters.AMPERSAND">
             <summary>
             Use this when your code requires a ampersand literal, when you want the
@@ -3413,6 +3427,61 @@
             <seealso cref="F:WizardWrx.SpecialCharacters.TAB_CHAR"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.UNDERSCORE_CHAR"/>
         </member>
+        <member name="F:WizardWrx.SpecialCharacters.ASTERISK_CHAR">
+            <summary>
+            Both ASTERISK_CHAR and ASTERISK resolve to the same character.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialCharacters.AMPERSAND"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.COLON"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.HASH_TAG"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.PERCENT_SIGN"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.PIPE_CHAR"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.SEMICOLON"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.TAB_CHAR"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.UNDERSCORE_CHAR"/>
+        </member>
+        <member name="F:WizardWrx.SpecialCharacters.AT_SIGN">
+            <summary>
+            Both AT_SIGH and AT_CHAR resolve to the same character.
+            </summary>
+            <remarks>
+            The '@' character has many uses in computing circles, mostly obscure
+            ones, such as their use in many command line tools to denote that a
+            specified file is not, itself, the object of interest, but is a list
+            of files or other entities that are.
+            </remarks>
+            <see cref="F:WizardWrx.SpecialCharacters.AT_CHAR"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.AMPERSAND"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.COLON"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.HASH_TAG"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.PERCENT_SIGN"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.PIPE_CHAR"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.SEMICOLON"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.TAB_CHAR"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.UNDERSCORE_CHAR"/>
+        </member>
+        <member name="F:WizardWrx.SpecialCharacters.BACKSPACE">
+            <summary>
+            The backspace character is sometimes also cited as the non-destructive
+            backspace because it moves the cursor backwards without destroying the
+            character at that positon.
+            </summary>
+            <see href="ttps://www.quora.com/Whats-the-use-of-b-in-C"/>
+        </member>
+        <member name="F:WizardWrx.SpecialCharacters.BEL">
+            <summary>
+            The Alarm (bell or BEL) character must often be stripped from strings.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialCharacters.ALARM"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.BELL"/>
+        </member>
+        <member name="F:WizardWrx.SpecialCharacters.BELL">
+            <summary>
+            The Alarm (bell or BEL) character must often be stripped from strings.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialCharacters.ALARM"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.BEL"/>
+        </member>
         <member name="F:WizardWrx.SpecialCharacters.BRACE_LEFT">
             <summary>
             Use this in your code to specify a left French brace, also called a
@@ -3447,39 +3516,6 @@
             </summary>
             <seealso cref="F:WizardWrx.SpecialCharacters.BRACKET_LEFT"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.BRACE_RIGHT"/>
-        </member>
-        <member name="F:WizardWrx.SpecialCharacters.ASTERISK_CHAR">
-            <summary>
-            Both ASTERISK_CHAR and ASTERISK resolve to the same character.
-            </summary>
-            <seealso cref="F:WizardWrx.SpecialCharacters.AMPERSAND"/>
-            <seealso cref="F:WizardWrx.SpecialCharacters.COLON"/>
-            <seealso cref="F:WizardWrx.SpecialCharacters.HASH_TAG"/>
-            <seealso cref="F:WizardWrx.SpecialCharacters.PERCENT_SIGN"/>
-            <seealso cref="F:WizardWrx.SpecialCharacters.PIPE_CHAR"/>
-            <seealso cref="F:WizardWrx.SpecialCharacters.SEMICOLON"/>
-            <seealso cref="F:WizardWrx.SpecialCharacters.TAB_CHAR"/>
-            <seealso cref="F:WizardWrx.SpecialCharacters.UNDERSCORE_CHAR"/>
-        </member>
-        <member name="F:WizardWrx.SpecialCharacters.AT_SIGN">
-            <summary>
-            Both AT_SIGH and AT_CHAR resolve to the same character.
-            </summary>
-            <remarks>
-            The '@' character has many uses in computing circles, mostly obscure
-            ones, such as their use in many command line tools to denote that a
-            specified file is not, itself, the object of interest, but is a list
-            of files or other entities that are.
-            </remarks>
-            <see cref="F:WizardWrx.SpecialCharacters.AT_CHAR"/>
-            <seealso cref="F:WizardWrx.SpecialCharacters.AMPERSAND"/>
-            <seealso cref="F:WizardWrx.SpecialCharacters.COLON"/>
-            <seealso cref="F:WizardWrx.SpecialCharacters.HASH_TAG"/>
-            <seealso cref="F:WizardWrx.SpecialCharacters.PERCENT_SIGN"/>
-            <seealso cref="F:WizardWrx.SpecialCharacters.PIPE_CHAR"/>
-            <seealso cref="F:WizardWrx.SpecialCharacters.SEMICOLON"/>
-            <seealso cref="F:WizardWrx.SpecialCharacters.TAB_CHAR"/>
-            <seealso cref="F:WizardWrx.SpecialCharacters.UNDERSCORE_CHAR"/>
         </member>
         <member name="F:WizardWrx.SpecialCharacters.CARRIAGE_RETURN">
             <summary>
@@ -3654,6 +3690,20 @@
             <seealso cref="F:WizardWrx.SpecialCharacters.SPACE_CHAR"/>
             <seealso cref="F:WizardWrx.SpecialStrings.DOUBLE_QUOTE"/>
         </member>
+        <member name="F:WizardWrx.SpecialCharacters.END_OF_FILE">
+            <summary>
+            Though seldome encountered today, the MS-DOS End of File (EOF) character
+            has, at minimum, historical significance.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialCharacters.EOF"/>
+        </member>
+        <member name="F:WizardWrx.SpecialCharacters.EOF">
+            <summary>
+            Though seldome encountered today, the MS-DOS End of File (EOF) character
+            has, at minimum, historical significance.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialCharacters.END_OF_FILE"/>
+        </member>
         <member name="F:WizardWrx.SpecialCharacters.ENV_STR_DLM">
             <summary>
             Environment strings that appear in REG_EXPAND_SZ Registry keys and
@@ -3674,6 +3724,12 @@
             <seealso cref="F:WizardWrx.SpecialCharacters.HYPHEN"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.HASH_TAG"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.UNDERSCORE_CHAR"/>
+        </member>
+        <member name="F:WizardWrx.SpecialCharacters.ESCAPE_CHAR">
+            <summary>
+            Another character that is largely of historical interest, yet may appear
+            from time to time in a dsta stream is the ASCII ESCape character.
+            </summary>
         </member>
         <member name="F:WizardWrx.SpecialCharacters.FULL_STOP">
             <summary>

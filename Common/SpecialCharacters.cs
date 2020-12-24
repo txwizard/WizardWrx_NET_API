@@ -24,7 +24,7 @@
     Author:             David A. Gray
 
     License:            Copyright (C) 2014-2018, David A. Gray 
-						All rights reserved.
+						All rights reserved
 
                         Redistribution and use in source and binary forms, with
                         or without modification, are permitted provided that the
@@ -128,6 +128,22 @@
                                    SINGLE_QUOTE
                                    TAB_CHAR
                                    UNDERSCORE_CHAR
+
+	2020/12/23 7.24    DAG    Add the following special characters that I need
+                              to exist as constants so that their values can be
+                              ussed in switch statements.
+
+									ALARM       = ASCII character code 7
+									BEL         = Synonymn for ALARM
+									BELL        = Synonymn for ALARM
+                                    BACKSPACE   = Also called Non-Destructive BS
+									END_OF_FILE = The MS-DOS End of File
+									EOF			= Synonymn for END_OF_FILE
+									ESCAPE_CHAR = The MS-DOS Escape character
+
+						      At the moment, there are no analogoue string
+                              representations of these characters, nor do I see
+                              a need for them.
     ============================================================================
 */
 
@@ -149,6 +165,13 @@ namespace WizardWrx
 	/// <seealso cref="SpecialStrings"/>
 	public static class SpecialCharacters
     {
+		/// <summary>
+		/// The Alarm (bell or BEL) character must often be stripped from strings.
+		/// </summary>
+		/// <seealso cref="BEL"/>
+		/// <seealso cref="BELL"/>
+		public const char ALARM = '\a';
+
 		/// <summary>
 		/// Use this when your code requires a ampersand literal, when you want the
 		/// listing to be crystal clear about what it is.
@@ -192,6 +215,60 @@ namespace WizardWrx
 		public const char AT_CHAR = '@';
 
 		/// <summary>
+		/// Both ASTERISK_CHAR and ASTERISK resolve to the same character.
+		/// </summary>
+		/// <seealso cref="AMPERSAND"/>
+		/// <seealso cref="COLON"/>
+		/// <seealso cref="HASH_TAG"/>
+		/// <seealso cref="PERCENT_SIGN"/>
+		/// <seealso cref="PIPE_CHAR"/>
+		/// <seealso cref="SEMICOLON"/>
+		/// <seealso cref="TAB_CHAR"/>
+		/// <seealso cref="UNDERSCORE_CHAR"/>
+		public const char ASTERISK_CHAR = ASTERISK;
+
+		/// <summary>
+		/// Both AT_SIGH and AT_CHAR resolve to the same character.
+		/// </summary>
+		/// <remarks>
+		/// The '@' character has many uses in computing circles, mostly obscure
+		/// ones, such as their use in many command line tools to denote that a
+		/// specified file is not, itself, the object of interest, but is a list
+		/// of files or other entities that are.
+		/// </remarks>
+		/// <see cref="AT_CHAR"/>
+		/// <seealso cref="AMPERSAND"/>
+		/// <seealso cref="COLON"/>
+		/// <seealso cref="HASH_TAG"/>
+		/// <seealso cref="PERCENT_SIGN"/>
+		/// <seealso cref="PIPE_CHAR"/>
+		/// <seealso cref="SEMICOLON"/>
+		/// <seealso cref="TAB_CHAR"/>
+		/// <seealso cref="UNDERSCORE_CHAR"/>
+		public const char AT_SIGN = AT_CHAR;
+
+		/// <summary>
+		/// The backspace character is sometimes also cited as the non-destructive
+		/// backspace because it moves the cursor backwards without destroying the
+		/// character at that positon.
+		/// </summary>
+		/// <see href="ttps://www.quora.com/Whats-the-use-of-b-in-C"/>
+		public const char BACKSPACE = '\b';
+
+		/// <summary>
+		/// The Alarm (bell or BEL) character must often be stripped from strings.
+		/// </summary>
+		/// <seealso cref="ALARM"/>
+		/// <seealso cref="BELL"/>
+		public const char BEL = ALARM;
+
+		/// <summary>
+		/// The Alarm (bell or BEL) character must often be stripped from strings.
+		/// </summary>
+		/// <seealso cref="ALARM"/>
+		/// <seealso cref="BEL"/>
+		public const char BELL = ALARM;
+		/// <summary>
 		/// Use this in your code to specify a left French brace, also called a
 		/// left brace or opening brace, as a character literal.
 		/// </summary>
@@ -225,39 +302,6 @@ namespace WizardWrx
 		/// <seealso cref="BRACKET_LEFT"/>
 		/// <seealso cref="BRACE_RIGHT"/>
 		public const char BRACKET_RIGHT = ']';
-
-		/// <summary>
-		/// Both ASTERISK_CHAR and ASTERISK resolve to the same character.
-		/// </summary>
-		/// <seealso cref="AMPERSAND"/>
-		/// <seealso cref="COLON"/>
-		/// <seealso cref="HASH_TAG"/>
-		/// <seealso cref="PERCENT_SIGN"/>
-		/// <seealso cref="PIPE_CHAR"/>
-		/// <seealso cref="SEMICOLON"/>
-		/// <seealso cref="TAB_CHAR"/>
-		/// <seealso cref="UNDERSCORE_CHAR"/>
-		public const char ASTERISK_CHAR = ASTERISK;
-
-		/// <summary>
-		/// Both AT_SIGH and AT_CHAR resolve to the same character.
-		/// </summary>
-		/// <remarks>
-		/// The '@' character has many uses in computing circles, mostly obscure
-		/// ones, such as their use in many command line tools to denote that a
-		/// specified file is not, itself, the object of interest, but is a list
-		/// of files or other entities that are.
-		/// </remarks>
-		/// <see cref="AT_CHAR"/>
-		/// <seealso cref="AMPERSAND"/>
-		/// <seealso cref="COLON"/>
-		/// <seealso cref="HASH_TAG"/>
-		/// <seealso cref="PERCENT_SIGN"/>
-		/// <seealso cref="PIPE_CHAR"/>
-		/// <seealso cref="SEMICOLON"/>
-		/// <seealso cref="TAB_CHAR"/>
-		/// <seealso cref="UNDERSCORE_CHAR"/>
-		public const char AT_SIGN = AT_CHAR;
 
 		/// <summary>
 		/// Use this character anywhere in your code that requires a bare
@@ -433,6 +477,20 @@ namespace WizardWrx
 		public const char DOUBLE_QUOTE = '"';
 
 		/// <summary>
+		/// Though seldome encountered today, the MS-DOS End of File (EOF) character
+		/// has, at minimum, historical significance.
+		/// </summary>
+		/// <seealso cref="EOF"/>
+		public const char END_OF_FILE = '\x1A';
+
+		/// <summary>
+		/// Though seldome encountered today, the MS-DOS End of File (EOF) character
+		/// has, at minimum, historical significance.
+		/// </summary>
+		/// <seealso cref="END_OF_FILE"/>
+		public const char EOF = END_OF_FILE;
+
+		/// <summary>
 		/// Environment strings that appear in REG_EXPAND_SZ Registry keys and
 		/// elsewhere are enclosed in pairs of this character.
 		/// </summary>
@@ -453,12 +511,19 @@ namespace WizardWrx
 		/// <seealso cref="UNDERSCORE_CHAR"/>
 		public const char EQUALS_SIGN = '=';
 
+
+		/// <summary>
+		/// Another character that is largely of historical interest, yet may appear
+		/// from time to time in a dsta stream is the ASCII ESCape character.
+		/// </summary>
+		public const char ESCAPE_CHAR = '\x1B';
+
 		/// <summary>
 		/// Use this character to unambiguously denote a period character, for
 		/// example, when specifying a delimiter character or appending a full
 		/// stop character to a string.
 		/// </summary>
-        /// <seealso cref="SpecialStrings.FULL_STOP"/>
+		/// <seealso cref="SpecialStrings.FULL_STOP"/>
 		public const char FULL_STOP = '.';
 
 		/// <summary>

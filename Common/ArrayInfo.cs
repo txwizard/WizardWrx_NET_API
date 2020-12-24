@@ -84,6 +84,10 @@
 
 	2020/12/22 7.24    DAG    ARRAY_NEXT_INDEX is intended for those frequent
                               situations in which one forgets about NEXT_INDEX.
+
+	2020/12/22 7.24    DAG    MSO_COLLECTION_FIRST_ITEM is intended for use with
+                              collections of Microsoft Office objects that are
+                              indexed from a base of one, rather than zero.
     ============================================================================
 */
 
@@ -179,6 +183,12 @@ namespace WizardWrx
 		public const int INDEX_FROM_ORDINAL = MagicNumbers.MINUS_ONE;
 
         /// <summary>
+        /// Indexing of collections of Microsoft Office objects begins at plus one.
+        /// </summary>
+        /// <seealso cref="ARRAY_FIRST_ELEMENT"/>
+        public const int MSO_COLLECTION_FIRST_ITEM = MagicNumbers.PLUS_ONE;
+
+        /// <summary>
         /// The next index is plus one, which is ambiguous, at best, in code.
         /// listings.
         /// </summary>
@@ -189,6 +199,7 @@ namespace WizardWrx
 		/// <seealso cref="INDEX_FROM_ORDINAL"/>
 		/// <seealso cref="ORDINAL_FROM_INDEX"/>
         /// <seealso cref="ARRAY_NEXT_INDEX"/>
+        /// <seealso cref="MSO_COLLECTION_FIRST_ITEM"/>
 		public const int NEXT_INDEX = MagicNumbers.PLUS_ONE;
 
         /// <summary>

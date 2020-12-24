@@ -1997,6 +1997,12 @@ references:
   isSpec: "True"
   fullName: WizardWrx.ArrayInfo.IndexFromOrdinal
   nameWithType: ArrayInfo.IndexFromOrdinal
+- uid: WizardWrx.ArrayInfo.MSO_COLLECTION_FIRST_ITEM
+  name: MSO_COLLECTION_FIRST_ITEM
+  href: api/WizardWrx.ArrayInfo.html#WizardWrx_ArrayInfo_MSO_COLLECTION_FIRST_ITEM
+  commentId: F:WizardWrx.ArrayInfo.MSO_COLLECTION_FIRST_ITEM
+  fullName: WizardWrx.ArrayInfo.MSO_COLLECTION_FIRST_ITEM
+  nameWithType: ArrayInfo.MSO_COLLECTION_FIRST_ITEM
 - uid: WizardWrx.ArrayInfo.NEXT_INDEX
   name: NEXT_INDEX
   href: api/WizardWrx.ArrayInfo.html#WizardWrx_ArrayInfo_NEXT_INDEX
@@ -14248,6 +14254,12 @@ references:
   commentId: T:WizardWrx.SpecialCharacters
   fullName: WizardWrx.SpecialCharacters
   nameWithType: SpecialCharacters
+- uid: WizardWrx.SpecialCharacters.ALARM
+  name: ALARM
+  href: api/WizardWrx.SpecialCharacters.html#WizardWrx_SpecialCharacters_ALARM
+  commentId: F:WizardWrx.SpecialCharacters.ALARM
+  fullName: WizardWrx.SpecialCharacters.ALARM
+  nameWithType: SpecialCharacters.ALARM
 - uid: WizardWrx.SpecialCharacters.AMPERSAND
   name: AMPERSAND
   href: api/WizardWrx.SpecialCharacters.html#WizardWrx_SpecialCharacters_AMPERSAND
@@ -14278,6 +14290,24 @@ references:
   commentId: F:WizardWrx.SpecialCharacters.AT_SIGN
   fullName: WizardWrx.SpecialCharacters.AT_SIGN
   nameWithType: SpecialCharacters.AT_SIGN
+- uid: WizardWrx.SpecialCharacters.BACKSPACE
+  name: BACKSPACE
+  href: api/WizardWrx.SpecialCharacters.html#WizardWrx_SpecialCharacters_BACKSPACE
+  commentId: F:WizardWrx.SpecialCharacters.BACKSPACE
+  fullName: WizardWrx.SpecialCharacters.BACKSPACE
+  nameWithType: SpecialCharacters.BACKSPACE
+- uid: WizardWrx.SpecialCharacters.BEL
+  name: BEL
+  href: api/WizardWrx.SpecialCharacters.html#WizardWrx_SpecialCharacters_BEL
+  commentId: F:WizardWrx.SpecialCharacters.BEL
+  fullName: WizardWrx.SpecialCharacters.BEL
+  nameWithType: SpecialCharacters.BEL
+- uid: WizardWrx.SpecialCharacters.BELL
+  name: BELL
+  href: api/WizardWrx.SpecialCharacters.html#WizardWrx_SpecialCharacters_BELL
+  commentId: F:WizardWrx.SpecialCharacters.BELL
+  fullName: WizardWrx.SpecialCharacters.BELL
+  nameWithType: SpecialCharacters.BELL
 - uid: WizardWrx.SpecialCharacters.BRACE_LEFT
   name: BRACE_LEFT
   href: api/WizardWrx.SpecialCharacters.html#WizardWrx_SpecialCharacters_BRACE_LEFT
@@ -14410,18 +14440,36 @@ references:
   commentId: F:WizardWrx.SpecialCharacters.DOUBLE_QUOTE
   fullName: WizardWrx.SpecialCharacters.DOUBLE_QUOTE
   nameWithType: SpecialCharacters.DOUBLE_QUOTE
+- uid: WizardWrx.SpecialCharacters.END_OF_FILE
+  name: END_OF_FILE
+  href: api/WizardWrx.SpecialCharacters.html#WizardWrx_SpecialCharacters_END_OF_FILE
+  commentId: F:WizardWrx.SpecialCharacters.END_OF_FILE
+  fullName: WizardWrx.SpecialCharacters.END_OF_FILE
+  nameWithType: SpecialCharacters.END_OF_FILE
 - uid: WizardWrx.SpecialCharacters.ENV_STR_DLM
   name: ENV_STR_DLM
   href: api/WizardWrx.SpecialCharacters.html#WizardWrx_SpecialCharacters_ENV_STR_DLM
   commentId: F:WizardWrx.SpecialCharacters.ENV_STR_DLM
   fullName: WizardWrx.SpecialCharacters.ENV_STR_DLM
   nameWithType: SpecialCharacters.ENV_STR_DLM
+- uid: WizardWrx.SpecialCharacters.EOF
+  name: EOF
+  href: api/WizardWrx.SpecialCharacters.html#WizardWrx_SpecialCharacters_EOF
+  commentId: F:WizardWrx.SpecialCharacters.EOF
+  fullName: WizardWrx.SpecialCharacters.EOF
+  nameWithType: SpecialCharacters.EOF
 - uid: WizardWrx.SpecialCharacters.EQUALS_SIGN
   name: EQUALS_SIGN
   href: api/WizardWrx.SpecialCharacters.html#WizardWrx_SpecialCharacters_EQUALS_SIGN
   commentId: F:WizardWrx.SpecialCharacters.EQUALS_SIGN
   fullName: WizardWrx.SpecialCharacters.EQUALS_SIGN
   nameWithType: SpecialCharacters.EQUALS_SIGN
+- uid: WizardWrx.SpecialCharacters.ESCAPE_CHAR
+  name: ESCAPE_CHAR
+  href: api/WizardWrx.SpecialCharacters.html#WizardWrx_SpecialCharacters_ESCAPE_CHAR
+  commentId: F:WizardWrx.SpecialCharacters.ESCAPE_CHAR
+  fullName: WizardWrx.SpecialCharacters.ESCAPE_CHAR
+  nameWithType: SpecialCharacters.ESCAPE_CHAR
 - uid: WizardWrx.SpecialCharacters.FULL_STOP
   name: FULL_STOP
   href: api/WizardWrx.SpecialCharacters.html#WizardWrx_SpecialCharacters_FULL_STOP

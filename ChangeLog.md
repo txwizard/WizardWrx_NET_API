@@ -4,6 +4,26 @@ This file is a running history of fixes and improvements from version 7.0
 onwards. Changes are documented for the newest version first. Within each
 version, classes are covered in alphabetical order.
 
+## WizardWrx.Common.dll, Version 7.24.128, Released 2020-12-23
+
+This release adds more overlooked symbolic constants that I use from time to
+time. The character constants are great for use in switch blocks, which the C#
+compiler transforms into very efficient jump tables, as do the optimizing C and
+C++ compilers.
+
+|Name                      |Value |Class               |
+|--------------------------|------|--------------------|
+|MSO_COLLECTION_FIRST_ITEM |     1|ArrayInfo           |
+|ALARM                     |     7|SpecialCharacters   |
+|BEL                       |     7|SpecialCharacters   |
+|BELL                      |     7|SpecialCharacters   |
+|BACKSPACE                 |     8|SpecialCharacters   |
+|END_OF_FILE               |    26|SpecialCharacters   |
+|EOF                       |    26|SpecialCharacters   |
+|ESCAPE_CHAR               |    27|SpecialCharacters   |
+
+At present, the special characters have no counterparts in the SpecialStrings
+list.
 
 ## WizardWrx.Core.dll, Version 7.24.185.0, Released 2020-12-21
 
@@ -22,24 +42,26 @@ everything got a minor version bump and a build bump.
 
 ## WizardWrx.Common.dll, Version 7.24.127, Released 2020-12-20
 
-|Name                     |Value |Class               |
-|-------------------------|------|--------------------|
-|CAPACITY_4               |     4|MagicNumbers        |
-|CAPACITY_8               |     8|MagicNumbers        |
-|CAPACITY_10              |    10|MagicNumbers        |
-|CAPACITY_16              |    16|MagicNumbers        |
-|CAPACITY_128             |   128|MagicNumbers        |
-|CAPACITY_255             |   255|MagicNumbers        |
-|CAPACITY_256             |   256|MagicNumbers        |
-|PLUS_THREE               |     3|MagicNumbers        |
-|PLUS_FOUR                |     4|MagicNumbers        |
-|PLUS_FIVE                |     5|MagicNumbers        |
-|PLUS_SIX                 |     6|MagicNumbers        |
-|PLUS_SEVEN               |     7|MagicNumbers        |
-|PLUS_EIGHT               |     8|MagicNumbers        |
-|PLUS_NINE                |     9|MagicNumbers        |
-|MSO_COLLECTION_FIRST_ITEM|     1|MagicNumbers        |
-|ARRAY_NEXT_INDEX         |     1|ArrayInfo           |
+This release adds some overlooked symbolic constants that I use regularly.
+
+|Name                      |Value |Class               |
+|--------------------------|------|--------------------|
+|CAPACITY_4                |     4|MagicNumbers        |
+|CAPACITY_8                |     8|MagicNumbers        |
+|CAPACITY_10               |    10|MagicNumbers        |
+|CAPACITY_16               |    16|MagicNumbers        |
+|CAPACITY_128              |   128|MagicNumbers        |
+|CAPACITY_255              |   255|MagicNumbers        |
+|CAPACITY_256              |   256|MagicNumbers        |
+|PLUS_THREE                |     3|MagicNumbers        |
+|PLUS_FOUR                 |     4|MagicNumbers        |
+|PLUS_FIVE                 |     5|MagicNumbers        |
+|PLUS_SIX                  |     6|MagicNumbers        |
+|PLUS_SEVEN                |     7|MagicNumbers        |
+|PLUS_EIGHT                |     8|MagicNumbers        |
+|PLUS_NINE                 |     9|MagicNumbers        |
+|MSO_COLLECTION_FIRST_ITEM |     1|MagicNumbers        |
+|ARRAY_NEXT_INDEX          |     1|ArrayInfo           |
 
 ## WizardWrx.Common.dll, Version 7.24.126, Released 2020-11-02
 

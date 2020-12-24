@@ -81,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.ArrayInfo.html",
-          "hash": "h2e5QnoViJYObP8XavAI3g=="
+          "hash": "RVxp7+WG0Qk5YqH01o719w=="
         }
       },
       "is_incremental": false,
@@ -1092,7 +1092,7 @@
           "hash": "Wfam4wx54sGqwQWLPUFgvw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -1281,7 +1281,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.SpecialCharacters.html",
-          "hash": "jw4YmWUWtx2fsY0BgZWEOA=="
+          "hash": "DiVxA4NS1TO1id2UfZzAqA=="
         }
       },
       "is_incremental": false,
@@ -1463,7 +1463,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 114,
-          "skipped_file_count": 113
+          "skipped_file_count": 112
         },
         "TocDocumentProcessor": {
           "can_incremental": false,
