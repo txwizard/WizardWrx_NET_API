@@ -4,6 +4,12 @@ This file is a running history of fixes and improvements from version 7.0
 onwards. Changes are documented for the newest version first. Within each
 version, classes are covered in alphabetical order.
 
+## 2020-12-31
+
+Now that I again have a working API key, the NuGet packages are up to date!
+
+I wish a happy New Year to everyone.
+
 ## WizardWrx.Common.dll, Version 7.24.128, Released 2020-12-23
 
 This release adds more overlooked symbolic constants that I use from time to
