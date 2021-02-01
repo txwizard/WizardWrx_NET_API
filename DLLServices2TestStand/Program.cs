@@ -266,6 +266,12 @@
                              DirectDependentAssemblyEnumerator, that invokes the
                              ExercisseDirectDependentAssemblyEnumerator method,
                              then terminates the program.
+
+    2021/01/31 8.0       DAG Implement a small loop to test a new static method,
+                             GetAssemblyVersionInfo, exported by class library
+                             WizardWrx.AssemblyUtils. The new static method,
+                             ExerciseGetAssemblyVersionInfo, tests all valid
+                             use cases.
     ============================================================================
 */
 
@@ -451,6 +457,23 @@ namespace DLLServices2TestStand
                 ExceptionLogger.OutputOptions.NBSpaceForNewlines )
         };	// s_utpOutputOptionTestData
 
+        //  --------------------------------------------------------------------
+        //  Use this array to thoroughly exercise GetAssemblyVersionInfo.
+        //  --------------------------------------------------------------------
+
+        private static AssemblyAttributeHelpers.AttributeFriendlyName [ ] s_aenmAttributeFriendlyName =
+        {
+            AssemblyAttributeHelpers.AttributeFriendlyName.Company ,
+            AssemblyAttributeHelpers.AttributeFriendlyName.Copyright ,
+            AssemblyAttributeHelpers.AttributeFriendlyName.Culture ,
+            AssemblyAttributeHelpers.AttributeFriendlyName.Description ,
+            AssemblyAttributeHelpers.AttributeFriendlyName.FileVersion ,
+            AssemblyAttributeHelpers.AttributeFriendlyName.Product ,
+            AssemblyAttributeHelpers.AttributeFriendlyName.Title ,
+            AssemblyAttributeHelpers.AttributeFriendlyName.Trademark ,
+            AssemblyAttributeHelpers.AttributeFriendlyName.Version
+        };  // s_aenmAttributeFriendlyName
+
         internal static StateManager s_smTheApp = StateManager.GetTheSingleInstance ( );
 
         static void Main ( string [ ] pastrArgs )
@@ -507,6 +530,13 @@ namespace DLLServices2TestStand
                     "{1}Real Entry Assembly Name               = {0}{1}" ,
                     s_smTheApp.AppRootAssemblyFileName ,
                     Environment.NewLine );
+
+                //	------------------------------------------------------------
+                //  Use GetAssemblyVersionInfo to display version details about
+                //  the entry assembly and one of its dependents.
+                //	------------------------------------------------------------
+
+                ExerciseGetAssemblyVersionInfo ( );
 
                 //	------------------------------------------------------------
                 //	DisplayDefaultAppDomainProperties is the improved method
@@ -1417,6 +1447,52 @@ namespace DLLServices2TestStand
             asmDllCfgMgr = null;
             daOfEntryAsm.DestroyDependents ( );
         }   // ExerciseDynamicExceptionReporting
+
+
+        private static void ExerciseGetAssemblyVersionInfo ( )
+        {
+            Console.WriteLine (
+                @"{0}Use GetAssemblyVersionInfo to report on the entry assembly.{0}" ,
+                Environment.NewLine );
+
+            for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+                      intJ < s_aenmAttributeFriendlyName.Length ;
+                      intJ++ )
+            {
+                Console.WriteLine (
+                    @"Entry Assembly {0} = {1}" ,                               // Format Control String
+                    s_aenmAttributeFriendlyName [ intJ ] ,                      // Format Item 0: Entry Assembly {0}
+                    AssemblyAttributeHelpers.GetAssemblyVersionInfo (           // Format Item 1:  = {1}
+                        s_aenmAttributeFriendlyName [ intJ ] ,                  // AttributeFriendlyName penmAttributeFriendlyName
+                        null ) );                                               // Assembly              pasm                       = null
+            }   // for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ; intJ < s_aenmAttributeFriendlyName.Length ; intJ++ )
+
+            Console.WriteLine (
+                @"{0}End of GetAssemblyVersionInfo report on the entry assembly{0}" ,
+                Environment.NewLine );
+
+            Console.WriteLine (
+                @"Use GetAssemblyVersionInfo to report on another assembly.{0}" ,
+                Environment.NewLine );
+
+            System.Reflection.Assembly assemblyThis = System.Reflection.Assembly.GetAssembly ( typeof ( WizardWrx.AnyCSV.CSVParseEngine ) );
+
+            for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+                      intJ < s_aenmAttributeFriendlyName.Length ;
+                      intJ++ )
+            {
+                Console.WriteLine (
+                    @"Entry Assembly {0} = {1}" ,                               // Format Control String
+                    s_aenmAttributeFriendlyName [ intJ ] ,                      // Format Item 0: Entry Assembly {0}
+                    AssemblyAttributeHelpers.GetAssemblyVersionInfo (           // Format Item 1:  = {1}
+                        s_aenmAttributeFriendlyName [ intJ ] ,                  // AttributeFriendlyName penmAttributeFriendlyName
+                        assemblyThis ) );                                       // Assembly              pasm                       = null
+            }   // for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ; intJ < s_aenmAttributeFriendlyName.Length ; intJ++ )
+
+            Console.WriteLine (
+                @"{0}End of GetAssemblyVersionInfo report on the another assembly{0}" ,
+                Environment.NewLine );
+        }   // ExerciseGetAssemblyVersionInfo
 
 
         private static void ExerciseSpecialMessageGenerators ( )

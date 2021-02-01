@@ -371,4 +371,40 @@
     <value>ItemNbr\tName\tValue</value>
     <comment>Static method ListResourcesInAssemblyByName generates the label row for a tab delimited report file from this template.</comment>
   </data>
+  <data name="ATTRIBUTE_SHORT_NAME_COMPANY" xml:space="preserve">
+    <value>Company</value>
+    <comment>This string maps to the System.Reflection.AssemblyCompanyAttribute Assembly Custom Attribute. It is used internally by GetStartupAssemblyVersionInfo.</comment>
+  </data>
+  <data name="ATTRIBUTE_SHORT_NAME_COPYRIGHT" xml:space="preserve">
+    <value>Copyright</value>
+    <comment>This string maps to the System.Reflection.AssemblyCopyrightAttribute Assembly Custom Attribute. It is used internally by GetStartupAssemblyVersionInfo.</comment>
+  </data>
+  <data name="ATTRIBUTE_SHORT_NAME_DESCRIPTION" xml:space="preserve">
+    <value>Description</value>
+    <comment>This string maps to the System.Reflection.AssemblyDescriptionAttribute Assembly Custom Attribute. It is used internally by GetStartupAssemblyVersionInfo.</comment>
+  </data>
+  <data name="ATTRIBUTE_SHORT_NAME_PRODUCT" xml:space="preserve">
+    <value>Product</value>
+    <comment>This string maps to the System.Reflection.AssemblyProductAttribute Assembly Custom Attribute. It is used internally by GetStartupAssemblyVersionInfo.</comment>
+  </data>
+  <data name="ATTRIBUTE_SHORT_NAME_TITLE" xml:space="preserve">
+    <value>Title</value>
+    <comment>This string maps to the System.Reflection.AssemblyTitleAttribute Assembly Custom Attribute. It is used internally by GetStartupAssemblyVersionInfo.</comment>
+  </data>
+  <data name="ATTRIBUTE_SHORT_NAME_TRADEMARK" xml:space="preserve">
+    <value>Trademark</value>
+    <comment>This string maps to the System.Reflection.AssemblyTrademarkAttribute Assembly Custom Attribute. It is used internally by GetStartupAssemblyVersionInfo.</comment>
+  </data>
+  <data name="ATTRIBUTE_SHORT_NAME_CULTURE" xml:space="preserve">
+    <value>Culture</value>
+    <comment>This string maps to the System.Reflection.AssemblyCultureAttribute Assembly Custom Attribute. It is used internally by GetStartupAssemblyVersionInfo.</comment>
+  </data>
+  <data name="ATTRIBUTE_SHORT_NAME_FILEVERSION" xml:space="preserve">
+    <value>FileVersion</value>
+    <comment>This string maps to the System.Reflection.AssemblyFileVersionAttribute Assembly Custom Attribute. It is used internally by GetStartupAssemblyVersionInfo.</comment>
+  </data>
+  <data name="ATTRIBUTE_SHORT_NAME_VERSION" xml:space="preserve">
+    <value>Version</value>
+    <comment>This string maps to the System.Reflection.AssemblyVersionAttribute Assembly Custom Attribute. It is used internally by GetStartupAssemblyVersionInfo.</comment>
+  </data>
 </root>

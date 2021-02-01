@@ -61,6 +61,87 @@ namespace WizardWrx.AssemblyUtils.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Company.
+        /// </summary>
+        internal static string ATTRIBUTE_SHORT_NAME_COMPANY {
+            get {
+                return ResourceManager.GetString("ATTRIBUTE_SHORT_NAME_COMPANY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copyright.
+        /// </summary>
+        internal static string ATTRIBUTE_SHORT_NAME_COPYRIGHT {
+            get {
+                return ResourceManager.GetString("ATTRIBUTE_SHORT_NAME_COPYRIGHT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Culture.
+        /// </summary>
+        internal static string ATTRIBUTE_SHORT_NAME_CULTURE {
+            get {
+                return ResourceManager.GetString("ATTRIBUTE_SHORT_NAME_CULTURE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        internal static string ATTRIBUTE_SHORT_NAME_DESCRIPTION {
+            get {
+                return ResourceManager.GetString("ATTRIBUTE_SHORT_NAME_DESCRIPTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FileVersion.
+        /// </summary>
+        internal static string ATTRIBUTE_SHORT_NAME_FILEVERSION {
+            get {
+                return ResourceManager.GetString("ATTRIBUTE_SHORT_NAME_FILEVERSION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product.
+        /// </summary>
+        internal static string ATTRIBUTE_SHORT_NAME_PRODUCT {
+            get {
+                return ResourceManager.GetString("ATTRIBUTE_SHORT_NAME_PRODUCT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title.
+        /// </summary>
+        internal static string ATTRIBUTE_SHORT_NAME_TITLE {
+            get {
+                return ResourceManager.GetString("ATTRIBUTE_SHORT_NAME_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trademark.
+        /// </summary>
+        internal static string ATTRIBUTE_SHORT_NAME_TRADEMARK {
+            get {
+                return ResourceManager.GetString("ATTRIBUTE_SHORT_NAME_TRADEMARK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Version.
+        /// </summary>
+        internal static string ATTRIBUTE_SHORT_NAME_VERSION {
+            get {
+                return ResourceManager.GetString("ATTRIBUTE_SHORT_NAME_VERSION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {{{0} (FullName = {1}, IsLoaded = {2})}}.
         /// </summary>
         internal static string DEPENDENT_ASSEMBLYINFO_TOSTRING_TEMPLATE {

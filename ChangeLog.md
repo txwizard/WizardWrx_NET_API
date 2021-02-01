@@ -4,6 +4,22 @@ This file is a running history of fixes and improvements from version 7.0
 onwards. Changes are documented for the newest version first. Within each
 version, classes are covered in alphabetical order.
 
+## 2021-01-30
+
+This release updates the product version number for the next major version, 8.0.
+Hence, 7.24 becomes 8.0. Going forward, the FileVersionthis version
+Going forward, the AssemblyFileVersion shall remain unchanged unless the API
+undergoes another major revision, which seems unlikely.
+
+However, the AssemblyVersion attribute of each library shall continue to inch
+upwards. All build numbers will increment from the last valuses they had in the
+previous major version, and each release will include each library, regardless
+of whether the build includes relevant changes.
+
+If README.MD and the NuGet package file are unchanged, you are safe in assuming
+that the code is unchanged, and the new library is backwards compatible with its
+predecessors.
+
 ## 2020-12-31
 
 Now that I again have a working API key, the NuGet packages are up to date!

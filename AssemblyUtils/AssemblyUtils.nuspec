@@ -10,13 +10,12 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>This release incorporates the current version of dependent library WizardWrx.Core.dll.</releaseNotes>
+	    <releaseNotes>This release adds a new class, AssemblyAttributeHelpers, which exposes one static method, GetAssemblyVersionInfo. It also incorporates the current version of dependent library WizardWrx.Core.dll.</releaseNotes>
     	<copyright>$copyright$</copyright>
     	<tags>Assemblies Dependenciess Resources Enumerators</tags>
 	</metadata>
 	<files>
    		<file src="readme.md" target="" />
-   		<file src="readme.txt" target="" />
    		<file src="bin\$configuration$\$id$.pdb" target="lib" />
    		<file src="bin\$configuration$\$id$.xml" target="lib" />
 	</files>

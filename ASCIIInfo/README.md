@@ -39,13 +39,35 @@ The easiest way to incorporate the library into your own code is by installing t
 
 # Revision History
 
-| Date       | Version | Synopsis
-|------------|---------|---------------------------
+**Note:** Going forward, every release will include a new build of every library in the WizardWrx
+.NET API, so that all versions stay reasonably well synchronized. _However_, unless the code changes,
+the change log will not cite every library for every release. Moreover, the release notes reported by
+the NuGet Package Manager will remain static unless there is a noteworthy change that affects that
+library.
+
+The objective of this policy change is to attempt to eliminate dependency diamonds that otherwise
+arise inevitably because of unavoidable cascading dependencies among the libraries at the bottom of
+the call stack, such as WizardWrx.Common.dll, WizardWrx.ASCIIInfo.dll, and others.
+
+| Date       | Version | Synopsis                                                                   |
+|------------|---------|----------------------------------------------------------------------------|
+| 2021/01/30 | 8.0.87  | Upgrade the API version to 8.0, and align the file versioning with the     |
+|            |         | Microsoft convention that the file version remains unchanged between major |
+|            |         | version icrements.                                                         |
 | 2020/09/20 | 7.23.85 | This build reflects updating of the project-wide copyright year from 2019  |
 |            |         | to 2020. The code is otherwise unchanged.                                  |
-| 2018/10/07 | 7.23.84 | Adopt the 3-part SemVer version numbering scheme that has become the standard for NuGet packages. The code is otherwise unchanged, and the fourth part of the version number goes away.
-| 2018/10/07 | 7.1.83  | Override ToString to render all three representations (printable string, hexadecimal, then decimal, in that order), and define static method DisplayCharacterInfo to provide that service for an arbitrary character without instantiating ASCII_Character_Display_Table.
-| 2017/08/04 | 7.0     | Relocated to the constellation of core libraries that began as WizardWrx.DllServices2.dll.
-| 2016/06/12 | 3.0     | 1) Break the dependency on WizardWrx.SharedUtl2.dll, correct misspelled words flagged by the spelling checker add-in, and incorporate my three-clause BSD license.
-|            |         | 2) Add a Comment property, to support a like named node in the XML document tree.
-| 2014/07/19 | 1.0     | Initial implementation.
+| 2018/10/07 | 7.23.84 | Adopt the 3-part SemVer version numbering scheme that has become the       |
+|            |         | standard for NuGet packages. The code is otherwise unchanged, and the      |
+|            |         | fourth part of the version number goes away.                               |
+| 2018/10/07 | 7.1.83  | Override ToString to render all three representations (printable string,   |
+|            |         | hexadecimal, then decimal, in that order), and define static method        |
+|            |         | DisplayCharacterInfo to provide that service for an arbitrary character    |
+|            |         | without instantiating ASCII_Character_Display_Table.                       |
+| 2017/08/04 | 7.0     | Relocated to the constellation of core libraries that began as             |
+|            |         | WizardWrx.DllServices2.dll.                                                |
+| 2016/06/12 | 3.0     | 1) Break the dependency on WizardWrx.SharedUtl2.dll, correct misspelled    |
+|            |         | words flagged by the spelling checker add-in, and incorporate my           |
+|            |         | three-clause BSD license.                                                  |
+|            |         | 2) Add a Comment property, to support a like named node in the XML         |
+|            |         | document tree.                                                             |
+| 2014/07/19 | 1.0     | Initial implementation.                                                    |

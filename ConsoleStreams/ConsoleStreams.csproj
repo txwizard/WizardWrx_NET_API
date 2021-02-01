@@ -46,34 +46,26 @@
                    		SolutionPackageDir
 
     2020/10/18 DAG Add -Source nuget.org to NuGet Puse command line.
+
+    2021/01/30 DAG Reinstate wwBldNbrMgr.
     ============================================================================
 -->
-
-<Project ToolsVersion="12.0"
-	     DefaultTargets="Build"
-	     xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <!-- 2020-10-16 23:27:07 - DAG Copy custom task NuGetPackageNameFixup from AssemblyUtils.  -->
-  <UsingTask TaskName="NuGetPackageNameFixup"
-  	         TaskFactory="CodeTaskFactory"
-  	         AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll">
+  <UsingTask TaskName="NuGetPackageNameFixup" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll">
     <ParameterGroup>
-      <RawNugetPackageVersion    ParameterType="System.String"
-      	                         Required="true" />
-      <ActualNugetPackageVersion ParameterType="System.String"
-      	                         Output="true" />
+      <RawNugetPackageVersion ParameterType="System.String" Required="true" />
+      <ActualNugetPackageVersion ParameterType="System.String" Output="true" />
     </ParameterGroup>
     <Task>
-      <Code Type="Fragment"
-      	    Language="cs"><![CDATA[
+      <Code Type="Fragment" Language="cs"><![CDATA[
             ActualNugetPackageVersion = RawNugetPackageVersion.EndsWith ( ".0" ) ? RawNugetPackageVersion.Substring(0,RawNugetPackageVersion.Length-2) : RawNugetPackageVersion;
             Log.LogMessage ( "Custom Task NuGetPackageNameFixup: RawNugetPackageVersion    = "+ RawNugetPackageVersion    );
             Log.LogMessage ( "Custom Task NuGetPackageNameFixup: ActualNugetPackageVersion = "+ ActualNugetPackageVersion );
       ]]></Code>
     </Task>
   </UsingTask>
-
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -93,7 +85,6 @@
     <!-- 2020-10-17 00:06:24 - DAG - Define SolutionPackageDir, which points to the local NuGet package directory shared by the entire solution. -->
     <SolutionPackageDir>$(ProjectDir)..\packages</SolutionPackageDir>
   </PropertyGroup>
-
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -104,7 +95,6 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\Wizardwrx.ConsoleStreams.xml</DocumentationFile>
   </PropertyGroup>
-
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
@@ -114,11 +104,9 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\Wizardwrx.ConsoleStreams.XML</DocumentationFile>
   </PropertyGroup>
-
   <ItemGroup>
     <Reference Include="System" />
   </ItemGroup>
-
   <ItemGroup>
     <Compile Include="..\ProductAssemblyInfo.cs">
       <Link>Properties\ProductAssemblyInfo.cs</Link>
@@ -135,36 +123,31 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
   </ItemGroup>
-
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{c1fb48d6-4a54-4424-bca1-4777f3aae2df}</Project>
       <Name>Common</Name>
     </ProjectReference>
-
     <ProjectReference Include="..\Core\Core.csproj">
       <Project>{b5282e82-d211-4bea-bebd-b2cc6e45bf5c}</Project>
       <Name>Core</Name>
     </ProjectReference>
   </ItemGroup>
-
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. -->
+  <!-- Other similar extension points exist, see Microsoft.Common.targets.                           -->
   <PropertyGroup>
     <PreBuildEvent>wwBldNbrMgr.exe "$(ProjectDir) "</PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PostBuildEvent>wwBldNbrMgr.exe -r "-p$(ProjectDir) " "-t$(TargetPath)"</PostBuildEvent>
   </PropertyGroup>
-    -->
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
@@ -176,42 +159,25 @@
   <Target Name="AfterBuild">
     <!-- Load up the information from the assembly -->
     <GetAssemblyIdentity AssemblyFiles="$(OutputPath)$(AssemblyName).dll">
-      <Output TaskParameter="Assemblies"
-      	      ItemName="OutputAssemblyInfo" />
+      <Output TaskParameter="Assemblies" ItemName="OutputAssemblyInfo" />
     </GetAssemblyIdentity>
-
     <Message Text="Info: Assembly $(AssemblyName).dll version = %(OutputAssemblyInfo.Version)" />
     <Message Text="Info: Relative project package directory name = $(PackageDir)" />
   </Target>
-
-  <Target Name="Package"
-  	      AfterTargets="AfterBuild"
-  	      Condition=" '$(Configuration)' == 'Release'">
-
+  <Target Name="Package" AfterTargets="AfterBuild" Condition=" '$(Configuration)' == 'Release'">
     <!-- Ensure the Package directory exists for this project -->
     <MakeDir Directories="$(PackageDir)" />
-
     <!-- Package the project -->
-    <Exec WorkingDirectory="$(BuildDir)"
-    	  Command="NuGet.exe pack $(ProjectName).csproj -Properties Configuration=$(Configuration) -OutputDir $(PackageDir) -IncludeReferencedProjects -Verbosity detailed" />
+    <Exec WorkingDirectory="$(BuildDir)" Command="NuGet.exe pack $(ProjectName).csproj -Properties Configuration=$(Configuration) -OutputDir $(PackageDir) -IncludeReferencedProjects -Verbosity detailed" />
   </Target>
-
   <!-- Publish the project. -->
-  <Target Name="Publish"
-  	      AfterTargets="Package"
-  	      Condition=" '$(Configuration)' == 'Release'">
+  <Target Name="Publish" AfterTargets="Package" Condition=" '$(Configuration)' == 'Release'">
     <NuGetPackageNameFixup RawNugetPackageVersion="%(OutputAssemblyInfo.Version)">
-      <Output PropertyName="NuGetPackageVersion"
-      	      TaskParameter="ActualNugetPackageVersion" />
+      <Output PropertyName="NuGetPackageVersion" TaskParameter="ActualNugetPackageVersion" />
     </NuGetPackageNameFixup>
-
-    <Exec WorkingDirectory="$(PackageDir)"
-    	  Command="NuGet.exe push $(AssemblyName).$(NuGetPackageVersion).nupkg -Source nuget.org" />
+    <Exec WorkingDirectory="$(PackageDir)" Command="NuGet.exe push $(AssemblyName).$(NuGetPackageVersion).nupkg -Source nuget.org" />
   </Target>
-
-  <Target Name="BeforeBuild"
-  	      Condition=" '$(Configuration)' == 'Debug'">
-    <Exec WorkingDirectory="$(ProjectDir)"
-    	  Command="nuget install packages.config -OutputDirectory $(SolutionDir)\packages" />
+  <Target Name="BeforeBuild" Condition=" '$(Configuration)' == 'Debug'">
+    <Exec WorkingDirectory="$(ProjectDir)" Command="nuget install packages.config -OutputDirectory $(SolutionDir)\packages" />
   </Target>
 </Project>

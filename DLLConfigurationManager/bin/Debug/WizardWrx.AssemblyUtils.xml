@@ -4,6 +4,99 @@
         <name>WizardWrx.AssemblyUtils</name>
     </assembly>
     <members>
+        <member name="T:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers">
+            <summary>
+            Provide static methods for obtaining AssemblyAttributes for various
+            uses, such as identifying programs in their user interfaces.
+            </summary>
+        </member>
+        <member name="T:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName">
+            <summary>
+            This enumeration maps strings developed for the original, and used
+            internally as keys for a NameValueCollection of selected Assembly
+            Attributes, to safe, fast integers, which serve as the input of
+            static method GetStartupAssemblyVersionInfo.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.Company">
+            <summary>
+            This maps to the Company (long name AssemblyCompanyAttribute).
+            </summary>
+        </member>
+        <member name="F:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.Copyright">
+            <summary>
+            This maps to the Copyright (long name AssemblyCopyrightAttribute).
+            </summary>
+        </member>
+        <member name="F:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.Culture">
+            <summary>
+            This maps to the Culture (long name AssemblyCultureAttribute).
+            </summary>
+        </member>
+        <member name="F:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.Description">
+            <summary>
+            This maps to the Description (long name AssemblyDescriptionAttribute).
+            </summary>
+        </member>
+        <member name="F:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.FileVersion">
+            <summary>
+            This maps to the FileVersion (long name AssemblyFileVersionAttribute).
+            </summary>
+        </member>
+        <member name="F:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.Product">
+            <summary>
+            This maps to the Product (long name AssemblyProductAttribute).
+            </summary>
+        </member>
+        <member name="F:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.Title">
+            <summary>
+            This maps to the Title (long name AssemblyTitleAttribute).
+            </summary>
+        </member>
+        <member name="F:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.Trademark">
+            <summary>
+            This maps to the TradeMark (long name AssemblyTrademarkAttribute).
+            </summary>
+        </member>
+        <member name="F:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.Version">
+            <summary>
+            This maps to the Version (long name AssemblyVersionAttribute).
+            </summary>
+        </member>
+        <member name="M:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyVersionInfo(WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName,System.Reflection.Assembly)">
+            <summary>
+            Get common version attributes from the entry assembly.
+            </summary>
+            <param name="penmAttributeFriendlyName">
+            A member of the AttributeFriendlyName describes the desired version
+            attribute.
+            </param>
+            <param name="pasm">
+            Pass in a reference to the Assembly for which assembly attributes are
+            wanted, or pass NULL to get the metadata from the entry assembly.
+            </param>
+            <returns>
+            The string returned by this method is the string representation of
+            the value of the attribute specified by
+            <paramref name="penmAttributeFriendlyName"/> as it was recorded in
+            AssemblyInfo.cs of the assembly specified by <paramref name="pasm"/>.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyAttribs(System.Reflection.Assembly)">
+            <summary>
+            Get the set of commonly requested "custom" assembly attributes from
+            the specified assembly.
+            </summary>
+            <param name="pasm">
+            Pass in a reference to the Assembly for which assembly attributes are
+            wanted, or pass NULL to get the metadata from the entry assembly.
+            </param>
+            <returns>
+            The return value of this private static method is a small
+            NameValueCollection, keyed by friendly names, of the "custom"
+            attributes bound to the assembly specified by <paramref name="pasm"/>.
+            </returns>
+        </member>
         <member name="T:WizardWrx.AssemblyUtils.AssemblyContainer">
             <summary>
             Use this class to hold a reference to an assembly that you want to
@@ -809,6 +902,51 @@
             <summary>
               Overrides the current thread's CurrentUICulture property for all
               resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.ATTRIBUTE_SHORT_NAME_COMPANY">
+            <summary>
+              Looks up a localized string similar to Company.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.ATTRIBUTE_SHORT_NAME_COPYRIGHT">
+            <summary>
+              Looks up a localized string similar to Copyright.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.ATTRIBUTE_SHORT_NAME_CULTURE">
+            <summary>
+              Looks up a localized string similar to Culture.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.ATTRIBUTE_SHORT_NAME_DESCRIPTION">
+            <summary>
+              Looks up a localized string similar to Description.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.ATTRIBUTE_SHORT_NAME_FILEVERSION">
+            <summary>
+              Looks up a localized string similar to FileVersion.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.ATTRIBUTE_SHORT_NAME_PRODUCT">
+            <summary>
+              Looks up a localized string similar to Product.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.ATTRIBUTE_SHORT_NAME_TITLE">
+            <summary>
+              Looks up a localized string similar to Title.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.ATTRIBUTE_SHORT_NAME_TRADEMARK">
+            <summary>
+              Looks up a localized string similar to Trademark.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.ATTRIBUTE_SHORT_NAME_VERSION">
+            <summary>
+              Looks up a localized string similar to Version.
             </summary>
         </member>
         <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.DEPENDENT_ASSEMBLYINFO_TOSTRING_TEMPLATE">

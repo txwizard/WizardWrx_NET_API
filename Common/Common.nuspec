@@ -10,13 +10,12 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>This update adds a couple of overlooked, but frequently required numeric constants.</releaseNotes>
+	    <releaseNotes>This update is backwards compatible with its predecessors. It is a maintenance update, which is being released along with the other libraries that implement the WizardWrx .NET API.</releaseNotes>
     	<copyright>$copyright$</copyright>
     	<tags>Constants Arrays RegExp</tags>
 	</metadata>
 	<files>
    		<file src="readme.md" target="" />
-   		<file src="readme.txt" target="" />
    		<file src="bin\$configuration$\$id$.pdb" target="lib" />
    		<file src="bin\$configuration$\$id$.xml" target="lib" />
 	</files>

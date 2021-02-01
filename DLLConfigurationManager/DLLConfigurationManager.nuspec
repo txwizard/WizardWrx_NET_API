@@ -16,7 +16,8 @@
 	</metadata>
 	<files>
    		<file src="readme.md" target="" />
-   		<file src="readme.txt" target="" />
    		<file src="WizardWrx.DLLConfigurationManager.dll.config" target="" />
+   		<file src="bin\$configuration$\$id$.pdb" target="lib" />
+   		<file src="bin\$configuration$\$id$.xml" target="lib" />
 	</files>
 </package>

@@ -10,12 +10,13 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>This update of an established, very stable, library complements the industry standard SemVer version numbering by implementing the Deterministic compiler switch. Though the code is unchanged from the initial release, the build number must be incremented to get it accepted into the library.</releaseNotes>
+	    <releaseNotes>This update is backwards compatible with its predecessors. It is a maintenance update, which is being released along with the other libraries that implement the WizardWrx .NET API. From 2/1/2020 onwards, it also attempts to add the PDB to the package. Unless I get energetic and add HTML entities, this package will probably remain unchanged indefinitely. Do I have any volunteers?</releaseNotes>
     	<copyright>$copyright$</copyright>
 	    <tags>ASCII Metadata Table</tags>
   	</metadata>
 	<files>
    		<file src="readme.md" target="" />
-   		<file src="readme.txt" target="" />
+   		<file src="bin\$configuration$\$id$.pdb" target="lib" />
+   		<file src="bin\$configuration$\$id$.xml" target="lib" />
 	</files>
 </package>

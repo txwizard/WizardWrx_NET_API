@@ -29,8 +29,20 @@ The easiest way to incorporate the library into your own code is by installing t
 
 ## Revision History
 
-This file is being released a few days after version 7.15 of the WizardWrx .NET
-API, of which it is a component. To track changes, please see
+**Note:** Going forward, every release will include a new build of every library in the WizardWrx
+.NET API, so that all versions stay reasonably well synchronized. _However_, unless the code changes,
+the change log will not cite every library for every release. Moreover, the release notes reported by
+the NuGet Package Manager will remain static unless there is a noteworthy change that affects that
+library.
+
+The objective of this policy change is to attempt to eliminate dependency diamonds that otherwise
+arise inevitably because of unavoidable cascading dependencies among the libraries at the bottom of
+the call stack, such as WizardWrx.Common.dll, WizardWrx.ASCIIInfo.dll, and others.
+
+At present, the GitHub repository is not updated between releases. However, changes tend to be developed
+and released quickly when the need for a change becomes evident.
+
+This file was originally released a few days after version 7.15 of the WizardWrx .NET API, of which it is a component. To track changes, please see
 [https://github.com/txwizard/WizardWrx_NET_API/blob/master/ChangeLog.md](https://github.com/txwizard/WizardWrx_NET_API/blob/master/ChangeLog.md),
 which reports changes by namespace and class for each release.
 

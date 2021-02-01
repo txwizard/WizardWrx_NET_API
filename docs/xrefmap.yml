@@ -2189,6 +2189,85 @@ references:
   commentId: N:WizardWrx.AssemblyUtils
   fullName: WizardWrx.AssemblyUtils
   nameWithType: WizardWrx.AssemblyUtils
+- uid: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers
+  name: AssemblyAttributeHelpers
+  href: api/WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.html
+  commentId: T:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers
+  fullName: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers
+  nameWithType: AssemblyAttributeHelpers
+- uid: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName
+  name: AssemblyAttributeHelpers.AttributeFriendlyName
+  href: api/WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.html
+  commentId: T:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName
+  fullName: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName
+  nameWithType: AssemblyAttributeHelpers.AttributeFriendlyName
+- uid: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.Company
+  name: Company
+  href: api/WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.html#WizardWrx_AssemblyUtils_AssemblyAttributeHelpers_AttributeFriendlyName_Company
+  commentId: F:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.Company
+  fullName: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.Company
+  nameWithType: AssemblyAttributeHelpers.AttributeFriendlyName.Company
+- uid: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.Copyright
+  name: Copyright
+  href: api/WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.html#WizardWrx_AssemblyUtils_AssemblyAttributeHelpers_AttributeFriendlyName_Copyright
+  commentId: F:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.Copyright
+  fullName: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.Copyright
+  nameWithType: AssemblyAttributeHelpers.AttributeFriendlyName.Copyright
+- uid: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.Culture
+  name: Culture
+  href: api/WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.html#WizardWrx_AssemblyUtils_AssemblyAttributeHelpers_AttributeFriendlyName_Culture
+  commentId: F:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.Culture
+  fullName: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.Culture
+  nameWithType: AssemblyAttributeHelpers.AttributeFriendlyName.Culture
+- uid: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.Description
+  name: Description
+  href: api/WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.html#WizardWrx_AssemblyUtils_AssemblyAttributeHelpers_AttributeFriendlyName_Description
+  commentId: F:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.Description
+  fullName: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.Description
+  nameWithType: AssemblyAttributeHelpers.AttributeFriendlyName.Description
+- uid: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.FileVersion
+  name: FileVersion
+  href: api/WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.html#WizardWrx_AssemblyUtils_AssemblyAttributeHelpers_AttributeFriendlyName_FileVersion
+  commentId: F:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.FileVersion
+  fullName: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.FileVersion
+  nameWithType: AssemblyAttributeHelpers.AttributeFriendlyName.FileVersion
+- uid: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.Product
+  name: Product
+  href: api/WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.html#WizardWrx_AssemblyUtils_AssemblyAttributeHelpers_AttributeFriendlyName_Product
+  commentId: F:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.Product
+  fullName: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.Product
+  nameWithType: AssemblyAttributeHelpers.AttributeFriendlyName.Product
+- uid: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.Title
+  name: Title
+  href: api/WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.html#WizardWrx_AssemblyUtils_AssemblyAttributeHelpers_AttributeFriendlyName_Title
+  commentId: F:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.Title
+  fullName: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.Title
+  nameWithType: AssemblyAttributeHelpers.AttributeFriendlyName.Title
+- uid: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.Trademark
+  name: Trademark
+  href: api/WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.html#WizardWrx_AssemblyUtils_AssemblyAttributeHelpers_AttributeFriendlyName_Trademark
+  commentId: F:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.Trademark
+  fullName: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.Trademark
+  nameWithType: AssemblyAttributeHelpers.AttributeFriendlyName.Trademark
+- uid: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.Version
+  name: Version
+  href: api/WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.html#WizardWrx_AssemblyUtils_AssemblyAttributeHelpers_AttributeFriendlyName_Version
+  commentId: F:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.Version
+  fullName: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.Version
+  nameWithType: AssemblyAttributeHelpers.AttributeFriendlyName.Version
+- uid: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyVersionInfo(WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName,System.Reflection.Assembly)
+  name: GetAssemblyVersionInfo(AssemblyAttributeHelpers.AttributeFriendlyName, Assembly)
+  href: api/WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.html#WizardWrx_AssemblyUtils_AssemblyAttributeHelpers_GetAssemblyVersionInfo_WizardWrx_AssemblyUtils_AssemblyAttributeHelpers_AttributeFriendlyName_System_Reflection_Assembly_
+  commentId: M:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyVersionInfo(WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName,System.Reflection.Assembly)
+  fullName: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyVersionInfo(WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName, System.Reflection.Assembly)
+  nameWithType: AssemblyAttributeHelpers.GetAssemblyVersionInfo(AssemblyAttributeHelpers.AttributeFriendlyName, Assembly)
+- uid: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyVersionInfo*
+  name: GetAssemblyVersionInfo
+  href: api/WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.html#WizardWrx_AssemblyUtils_AssemblyAttributeHelpers_GetAssemblyVersionInfo_
+  commentId: Overload:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyVersionInfo
+  isSpec: "True"
+  fullName: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyVersionInfo
+  nameWithType: AssemblyAttributeHelpers.GetAssemblyVersionInfo
 - uid: WizardWrx.AssemblyUtils.AssemblyContainer
   name: AssemblyContainer
   href: api/WizardWrx.AssemblyUtils.AssemblyContainer.html
