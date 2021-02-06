@@ -4,6 +4,29 @@ This file is a running history of fixes and improvements from version 7.0
 onwards. Changes are documented for the newest version first. Within each
 version, classes are covered in alphabetical order.
 
+## 2021-02-06
+
+In addition to the following classes that incorporate new features, everything else
+gets a general refresh, in which all libraries are built against the latest versions
+of their dependents. Likewise, the corresponding NuGet packages are kept current with
+respect to their dependencies.
+
+### WizardWrx.ASCIIInfo.dll, Version 8.0.113
+
+The ASCII table entries expose many new properties, of which the most significant
+are:
+
+1. `DisplayText`, which always offers a presentable rendering of the character
+2. `HTMLName`, which returns a HTML entity string
+3. `URLEncoding`, which returns a value that can be used to URL encode any character
+
+### WizardWrx.AssemblyUtils, Version 8.0.156
+
+This release adds a single static class, `AssemblyAttributeHelpers`, which exposes
+one equally static method, `GetAssemblyVersionInfo`, that queries any assembly for
+its major Custom Attribute values, most of which revolve around versioning and
+identification.
+
 ## 2021-01-30
 
 This release updates the product version number for the next major version, 8.0.
