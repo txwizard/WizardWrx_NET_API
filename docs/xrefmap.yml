@@ -2092,6 +2092,147 @@ references:
   isSpec: "True"
   fullName: WizardWrx.ASCIICharacterDisplayInfo.ASCIICharacter
   nameWithType: ASCIICharacterDisplayInfo.ASCIICharacter
+- uid: WizardWrx.ASCIICharacterDisplayInfo.CHAR
+  name: CHAR
+  href: api/WizardWrx.ASCIICharacterDisplayInfo.html#WizardWrx_ASCIICharacterDisplayInfo_CHAR
+  commentId: P:WizardWrx.ASCIICharacterDisplayInfo.CHAR
+  fullName: WizardWrx.ASCIICharacterDisplayInfo.CHAR
+  nameWithType: ASCIICharacterDisplayInfo.CHAR
+- uid: WizardWrx.ASCIICharacterDisplayInfo.CHAR*
+  name: CHAR
+  href: api/WizardWrx.ASCIICharacterDisplayInfo.html#WizardWrx_ASCIICharacterDisplayInfo_CHAR_
+  commentId: Overload:WizardWrx.ASCIICharacterDisplayInfo.CHAR
+  isSpec: "True"
+  fullName: WizardWrx.ASCIICharacterDisplayInfo.CHAR
+  nameWithType: ASCIICharacterDisplayInfo.CHAR
+- uid: WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype
+  name: ASCIICharacterDisplayInfo.CharacterSubtype
+  href: api/WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.html
+  commentId: T:WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype
+  fullName: WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype
+  nameWithType: ASCIICharacterDisplayInfo.CharacterSubtype
+- uid: WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.Control
+  name: Control
+  href: api/WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.html#WizardWrx_ASCIICharacterDisplayInfo_CharacterSubtype_Control
+  commentId: F:WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.Control
+  fullName: WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.Control
+  nameWithType: ASCIICharacterDisplayInfo.CharacterSubtype.Control
+- uid: WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.Greek_Letter
+  name: Greek_Letter
+  href: api/WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.html#WizardWrx_ASCIICharacterDisplayInfo_CharacterSubtype_Greek_Letter
+  commentId: F:WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.Greek_Letter
+  fullName: WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.Greek_Letter
+  nameWithType: ASCIICharacterDisplayInfo.CharacterSubtype.Greek_Letter
+- uid: WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.LC_Latin_1_Letter
+  name: LC_Latin_1_Letter
+  href: api/WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.html#WizardWrx_ASCIICharacterDisplayInfo_CharacterSubtype_LC_Latin_1_Letter
+  commentId: F:WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.LC_Latin_1_Letter
+  fullName: WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.LC_Latin_1_Letter
+  nameWithType: ASCIICharacterDisplayInfo.CharacterSubtype.LC_Latin_1_Letter
+- uid: WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.NULL
+  name: "NULL"
+  href: api/WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.html#WizardWrx_ASCIICharacterDisplayInfo_CharacterSubtype_NULL
+  commentId: F:WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.NULL
+  fullName: WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.NULL
+  nameWithType: ASCIICharacterDisplayInfo.CharacterSubtype.NULL
+- uid: WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.Numeral
+  name: Numeral
+  href: api/WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.html#WizardWrx_ASCIICharacterDisplayInfo_CharacterSubtype_Numeral
+  commentId: F:WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.Numeral
+  fullName: WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.Numeral
+  nameWithType: ASCIICharacterDisplayInfo.CharacterSubtype.Numeral
+- uid: WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.Other_Letter
+  name: Other_Letter
+  href: api/WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.html#WizardWrx_ASCIICharacterDisplayInfo_CharacterSubtype_Other_Letter
+  commentId: F:WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.Other_Letter
+  fullName: WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.Other_Letter
+  nameWithType: ASCIICharacterDisplayInfo.CharacterSubtype.Other_Letter
+- uid: WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.Punctuation
+  name: Punctuation
+  href: api/WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.html#WizardWrx_ASCIICharacterDisplayInfo_CharacterSubtype_Punctuation
+  commentId: F:WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.Punctuation
+  fullName: WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.Punctuation
+  nameWithType: ASCIICharacterDisplayInfo.CharacterSubtype.Punctuation
+- uid: WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.Symbol
+  name: Symbol
+  href: api/WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.html#WizardWrx_ASCIICharacterDisplayInfo_CharacterSubtype_Symbol
+  commentId: F:WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.Symbol
+  fullName: WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.Symbol
+  nameWithType: ASCIICharacterDisplayInfo.CharacterSubtype.Symbol
+- uid: WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.UC_Latin_1_Letter
+  name: UC_Latin_1_Letter
+  href: api/WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.html#WizardWrx_ASCIICharacterDisplayInfo_CharacterSubtype_UC_Latin_1_Letter
+  commentId: F:WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.UC_Latin_1_Letter
+  fullName: WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.UC_Latin_1_Letter
+  nameWithType: ASCIICharacterDisplayInfo.CharacterSubtype.UC_Latin_1_Letter
+- uid: WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.Undefined
+  name: Undefined
+  href: api/WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.html#WizardWrx_ASCIICharacterDisplayInfo_CharacterSubtype_Undefined
+  commentId: F:WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.Undefined
+  fullName: WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.Undefined
+  nameWithType: ASCIICharacterDisplayInfo.CharacterSubtype.Undefined
+- uid: WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.White_Space
+  name: White_Space
+  href: api/WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.html#WizardWrx_ASCIICharacterDisplayInfo_CharacterSubtype_White_Space
+  commentId: F:WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.White_Space
+  fullName: WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.White_Space
+  nameWithType: ASCIICharacterDisplayInfo.CharacterSubtype.White_Space
+- uid: WizardWrx.ASCIICharacterDisplayInfo.CharacterType
+  name: ASCIICharacterDisplayInfo.CharacterType
+  href: api/WizardWrx.ASCIICharacterDisplayInfo.CharacterType.html
+  commentId: T:WizardWrx.ASCIICharacterDisplayInfo.CharacterType
+  fullName: WizardWrx.ASCIICharacterDisplayInfo.CharacterType
+  nameWithType: ASCIICharacterDisplayInfo.CharacterType
+- uid: WizardWrx.ASCIICharacterDisplayInfo.CharacterType.Extended
+  name: Extended
+  href: api/WizardWrx.ASCIICharacterDisplayInfo.CharacterType.html#WizardWrx_ASCIICharacterDisplayInfo_CharacterType_Extended
+  commentId: F:WizardWrx.ASCIICharacterDisplayInfo.CharacterType.Extended
+  fullName: WizardWrx.ASCIICharacterDisplayInfo.CharacterType.Extended
+  nameWithType: ASCIICharacterDisplayInfo.CharacterType.Extended
+- uid: WizardWrx.ASCIICharacterDisplayInfo.CharacterType.NonPrintable
+  name: NonPrintable
+  href: api/WizardWrx.ASCIICharacterDisplayInfo.CharacterType.html#WizardWrx_ASCIICharacterDisplayInfo_CharacterType_NonPrintable
+  commentId: F:WizardWrx.ASCIICharacterDisplayInfo.CharacterType.NonPrintable
+  fullName: WizardWrx.ASCIICharacterDisplayInfo.CharacterType.NonPrintable
+  nameWithType: ASCIICharacterDisplayInfo.CharacterType.NonPrintable
+- uid: WizardWrx.ASCIICharacterDisplayInfo.CharacterType.Printable
+  name: Printable
+  href: api/WizardWrx.ASCIICharacterDisplayInfo.CharacterType.html#WizardWrx_ASCIICharacterDisplayInfo_CharacterType_Printable
+  commentId: F:WizardWrx.ASCIICharacterDisplayInfo.CharacterType.Printable
+  fullName: WizardWrx.ASCIICharacterDisplayInfo.CharacterType.Printable
+  nameWithType: ASCIICharacterDisplayInfo.CharacterType.Printable
+- uid: WizardWrx.ASCIICharacterDisplayInfo.CharacterType.Undefined
+  name: Undefined
+  href: api/WizardWrx.ASCIICharacterDisplayInfo.CharacterType.html#WizardWrx_ASCIICharacterDisplayInfo_CharacterType_Undefined
+  commentId: F:WizardWrx.ASCIICharacterDisplayInfo.CharacterType.Undefined
+  fullName: WizardWrx.ASCIICharacterDisplayInfo.CharacterType.Undefined
+  nameWithType: ASCIICharacterDisplayInfo.CharacterType.Undefined
+- uid: WizardWrx.ASCIICharacterDisplayInfo.CharSubType
+  name: CharSubType
+  href: api/WizardWrx.ASCIICharacterDisplayInfo.html#WizardWrx_ASCIICharacterDisplayInfo_CharSubType
+  commentId: P:WizardWrx.ASCIICharacterDisplayInfo.CharSubType
+  fullName: WizardWrx.ASCIICharacterDisplayInfo.CharSubType
+  nameWithType: ASCIICharacterDisplayInfo.CharSubType
+- uid: WizardWrx.ASCIICharacterDisplayInfo.CharSubType*
+  name: CharSubType
+  href: api/WizardWrx.ASCIICharacterDisplayInfo.html#WizardWrx_ASCIICharacterDisplayInfo_CharSubType_
+  commentId: Overload:WizardWrx.ASCIICharacterDisplayInfo.CharSubType
+  isSpec: "True"
+  fullName: WizardWrx.ASCIICharacterDisplayInfo.CharSubType
+  nameWithType: ASCIICharacterDisplayInfo.CharSubType
+- uid: WizardWrx.ASCIICharacterDisplayInfo.CharType
+  name: CharType
+  href: api/WizardWrx.ASCIICharacterDisplayInfo.html#WizardWrx_ASCIICharacterDisplayInfo_CharType
+  commentId: P:WizardWrx.ASCIICharacterDisplayInfo.CharType
+  fullName: WizardWrx.ASCIICharacterDisplayInfo.CharType
+  nameWithType: ASCIICharacterDisplayInfo.CharType
+- uid: WizardWrx.ASCIICharacterDisplayInfo.CharType*
+  name: CharType
+  href: api/WizardWrx.ASCIICharacterDisplayInfo.html#WizardWrx_ASCIICharacterDisplayInfo_CharType_
+  commentId: Overload:WizardWrx.ASCIICharacterDisplayInfo.CharType
+  isSpec: "True"
+  fullName: WizardWrx.ASCIICharacterDisplayInfo.CharType
+  nameWithType: ASCIICharacterDisplayInfo.CharType
 - uid: WizardWrx.ASCIICharacterDisplayInfo.Code
   name: Code
   href: api/WizardWrx.ASCIICharacterDisplayInfo.html#WizardWrx_ASCIICharacterDisplayInfo_Code
@@ -2144,6 +2285,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.ASCIICharacterDisplayInfo.Comment
   nameWithType: ASCIICharacterDisplayInfo.Comment
+- uid: WizardWrx.ASCIICharacterDisplayInfo.Description
+  name: Description
+  href: api/WizardWrx.ASCIICharacterDisplayInfo.html#WizardWrx_ASCIICharacterDisplayInfo_Description
+  commentId: P:WizardWrx.ASCIICharacterDisplayInfo.Description
+  fullName: WizardWrx.ASCIICharacterDisplayInfo.Description
+  nameWithType: ASCIICharacterDisplayInfo.Description
+- uid: WizardWrx.ASCIICharacterDisplayInfo.Description*
+  name: Description
+  href: api/WizardWrx.ASCIICharacterDisplayInfo.html#WizardWrx_ASCIICharacterDisplayInfo_Description_
+  commentId: Overload:WizardWrx.ASCIICharacterDisplayInfo.Description
+  isSpec: "True"
+  fullName: WizardWrx.ASCIICharacterDisplayInfo.Description
+  nameWithType: ASCIICharacterDisplayInfo.Description
 - uid: WizardWrx.ASCIICharacterDisplayInfo.DisplayCharacterInfo(System.Char)
   name: DisplayCharacterInfo(Char)
   href: api/WizardWrx.ASCIICharacterDisplayInfo.html#WizardWrx_ASCIICharacterDisplayInfo_DisplayCharacterInfo_System_Char_
@@ -2170,6 +2324,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.ASCIICharacterDisplayInfo.DisplayText
   nameWithType: ASCIICharacterDisplayInfo.DisplayText
+- uid: WizardWrx.ASCIICharacterDisplayInfo.HTMLName
+  name: HTMLName
+  href: api/WizardWrx.ASCIICharacterDisplayInfo.html#WizardWrx_ASCIICharacterDisplayInfo_HTMLName
+  commentId: P:WizardWrx.ASCIICharacterDisplayInfo.HTMLName
+  fullName: WizardWrx.ASCIICharacterDisplayInfo.HTMLName
+  nameWithType: ASCIICharacterDisplayInfo.HTMLName
+- uid: WizardWrx.ASCIICharacterDisplayInfo.HTMLName*
+  name: HTMLName
+  href: api/WizardWrx.ASCIICharacterDisplayInfo.html#WizardWrx_ASCIICharacterDisplayInfo_HTMLName_
+  commentId: Overload:WizardWrx.ASCIICharacterDisplayInfo.HTMLName
+  isSpec: "True"
+  fullName: WizardWrx.ASCIICharacterDisplayInfo.HTMLName
+  nameWithType: ASCIICharacterDisplayInfo.HTMLName
 - uid: WizardWrx.ASCIICharacterDisplayInfo.ToString
   name: ToString()
   href: api/WizardWrx.ASCIICharacterDisplayInfo.html#WizardWrx_ASCIICharacterDisplayInfo_ToString
@@ -2183,6 +2350,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.ASCIICharacterDisplayInfo.ToString
   nameWithType: ASCIICharacterDisplayInfo.ToString
+- uid: WizardWrx.ASCIICharacterDisplayInfo.URLEncoding
+  name: URLEncoding
+  href: api/WizardWrx.ASCIICharacterDisplayInfo.html#WizardWrx_ASCIICharacterDisplayInfo_URLEncoding
+  commentId: P:WizardWrx.ASCIICharacterDisplayInfo.URLEncoding
+  fullName: WizardWrx.ASCIICharacterDisplayInfo.URLEncoding
+  nameWithType: ASCIICharacterDisplayInfo.URLEncoding
+- uid: WizardWrx.ASCIICharacterDisplayInfo.URLEncoding*
+  name: URLEncoding
+  href: api/WizardWrx.ASCIICharacterDisplayInfo.html#WizardWrx_ASCIICharacterDisplayInfo_URLEncoding_
+  commentId: Overload:WizardWrx.ASCIICharacterDisplayInfo.URLEncoding
+  isSpec: "True"
+  fullName: WizardWrx.ASCIICharacterDisplayInfo.URLEncoding
+  nameWithType: ASCIICharacterDisplayInfo.URLEncoding
 - uid: WizardWrx.AssemblyUtils
   name: WizardWrx.AssemblyUtils
   href: api/WizardWrx.AssemblyUtils.html
@@ -2231,6 +2411,12 @@ references:
   commentId: F:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.FileVersion
   fullName: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.FileVersion
   nameWithType: AssemblyAttributeHelpers.AttributeFriendlyName.FileVersion
+- uid: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.GUID
+  name: GUID
+  href: api/WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.html#WizardWrx_AssemblyUtils_AssemblyAttributeHelpers_AttributeFriendlyName_GUID
+  commentId: F:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.GUID
+  fullName: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.GUID
+  nameWithType: AssemblyAttributeHelpers.AttributeFriendlyName.GUID
 - uid: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.Product
   name: Product
   href: api/WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.html#WizardWrx_AssemblyUtils_AssemblyAttributeHelpers_AttributeFriendlyName_Product

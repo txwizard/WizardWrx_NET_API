@@ -407,4 +407,8 @@
     <value>Version</value>
     <comment>This string maps to the System.Reflection.AssemblyVersionAttribute Assembly Custom Attribute. It is used internally by GetStartupAssemblyVersionInfo.</comment>
   </data>
+  <data name="ATTRIBUTE_SHORT_NAME_ASSEMBLY_GUID" xml:space="preserve">
+    <value>AssemblyGUID</value>
+    <comment>This string maps to the System.Runtime.InteropServices.GuidAttribute Assembly Custom Attribute. It is used internally by GetStartupAssemblyVersionInfo. Note the different namespace.</comment>
+  </data>
 </root>

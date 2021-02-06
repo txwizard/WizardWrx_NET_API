@@ -74,14 +74,13 @@
 
     2017/08/04 7.0     DAG Relocated to the constellation of core libraries that
                            began as WizardWrx.DllServices2.dll.
+
+	2021/02/05 8.0     DAG At long last, this class exposes HTML entities and
+                           URL encoding strings.
     ============================================================================
 */
 
-
 using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Xml;
 
 namespace WizardWrx
 {
@@ -118,7 +117,10 @@ namespace WizardWrx
         private static ASCII_Character_Display_Table s_theOneAndOnly = null;
 
         private ASCII_Character_Display_Table ( )
-        { InitialzeInstance ( ); }
+        {
+            InitialzeInstance ( );
+        }   // private ASCII_Character_Display_Table
+
 
         private static void CreateOnFirstUse (
             string plwlMaster ,
@@ -186,143 +188,101 @@ namespace WizardWrx
         /// </summary>
         private void InitialzeInstance ( )
         {
-            const int ARRAY_INVALID_INDEX = -1;
-            const string ASCII_CODE_NODE_NAME = @"Code";
+            const int ASCII_CHARACTER_COUNT = 256;
+            const string ASCII_TABLE_SOURCE = @"ASCII_Character_Display_Table.TSV";
 
             //  ----------------------------------------------------------------
-            //  The file is named ASCII_Character_Display_Table.xml in the file
-            //  system, but the default namespace name, in this case, WizardWrx,
-            //  prepends the name when the bound resource is created.
+            //  The expected row count is one greater than the number of ASCII
+            //  characters because the first row in the table contains column
+            //  labels.
+            //
+            //  As a sanity check, the label row is compared against a constant,
+            //  LABEL_ROW.
             //  ----------------------------------------------------------------
 
-            const string ASCII_TABLE_SOURCE = @"WizardWrx.ASCII_Character_Display_Table.xml";
+            const int EXPECTED_ROW_COUNT = ASCII_CHARACTER_COUNT + ArrayInfo.ORDINAL_FROM_INDEX;
 
-            const int NODE_COUNT_CODE_BY_ITSELF = 1;
-            const int NODE_COUNT_CODE_WITH_ALTERNATE_OR_COMMENT = 2;
-            const int NODE_COUNT_CODE_WITH_ALTERNATE_AND_COMMENT = 3;
-            const int NODE_INDEX_OF_CODE = 0;
-            const int NODE_INDEX_OF_DETAIL_ITEM_1 = 1;
-            const int NODE_INDEX_OF_DETAIL_ITEM_2 = 2;
+            //const int COL_CODE = 0;
+            const int COL_CHARTYPE = 1;
+            const int COL_SUBTYPE = 2;
+            const int COL_CHAR = 3;
+            const int COL_DESCRIPTION = 4;
+            const int COL_HTML_NAME = 5;
+            const int COL_DISPLAY = 6;
+            const int COL_COMMENT = 7;
+            const int COL_EXPECTED_COUNT = 8;
 
-            const int REAL_ROOT_NODE_INDEX = 2;
+            const string LABEL_ROW = "Code\tCharType\tSubtype\tCHAR\tDESCRIPTION\tHTML Name\tDisplay\tComment";
 
-            XmlDocument xmlASCIITable = new XmlDocument ( );
-            xmlASCIITable.Load ( System.Reflection.Assembly.GetExecutingAssembly ( ).GetManifestResourceStream ( ASCII_TABLE_SOURCE ) );
-            XmlNode xmlRealParent = xmlASCIITable.ChildNodes [ REAL_ROOT_NODE_INDEX ];
-            int intNextSlot = ARRAY_INVALID_INDEX;
-            _asciiTable = new ASCIICharacterDisplayInfo [ xmlRealParent.ChildNodes.Count ];
+            string [ ] astrASCIITable = Readers.LoadTextFileFromCallingAssembly ( ASCII_TABLE_SOURCE );
 
-            foreach ( XmlNode xmlCharacter in xmlRealParent.ChildNodes )
+            if ( astrASCIITable.Length == EXPECTED_ROW_COUNT )
             {
-                int intGrandChildren = xmlCharacter.ChildNodes.Count;
+                _asciiTable = new ASCIICharacterDisplayInfo [ ASCII_CHARACTER_COUNT ];
 
-                ++intNextSlot;
-
-                XmlNode xmlCode = xmlCharacter.ChildNodes [ NODE_INDEX_OF_CODE ];
-
-                if ( xmlCode.Name != ASCII_CODE_NODE_NAME )
-                    throw new InvalidOperationException (
-                        Properties.Resources.ERRMSG_INVALID_NODE_IN_ASCII_TABLE +
-                        xmlCharacter.InnerXml );
-
-                uint uintNodeCode;
-
-                if ( uint.TryParse ( xmlCode.InnerXml , out uintNodeCode ) )
-                {   // It's a valid integer.
-                    switch ( intGrandChildren )
+                for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+                          intJ < EXPECTED_ROW_COUNT ;
+                          intJ++ )
+                {
+                    if ( intJ == ArrayInfo.ARRAY_FIRST_ELEMENT )
                     {
-                        case NODE_COUNT_CODE_BY_ITSELF:
-                            _asciiTable [ intNextSlot ] = new ASCIICharacterDisplayInfo ( 
-                                uintNodeCode );
-                            break;  // case NODE_COUNT_CODE_BY_ITSELF
+                        if ( astrASCIITable [ ArrayInfo.ARRAY_FIRST_ELEMENT ] != LABEL_ROW )
+                        {   // Verify that the label row is as expected.
+                            throw new Exception (
+                                string.Format (
+                                    Properties.Resources.ERRMSG_BAD_LABEL_ROW ,                     // Format Control String: Internal Table Error: The label row is invalid.{2}Expected label row = {0}{2}Actaul label row = {1}
+                                    LABEL_ROW ,                                                     // Format Item 0: Expected label row = {0}
+                                    astrASCIITable [ ArrayInfo.ARRAY_FIRST_ELEMENT ] ,              // Format Item 1: Actaul label row   = {1}
+                                    Environment.NewLine ) );                                        // Format Item 2: Line break between message parts
+                        }   // if ( astrASCIITable [ ArrayInfo.ARRAY_FIRST_ELEMENT ] != LABEL_ROW )
+                    }   // TRUE (This is the label row.) block, if ( intJ == ArrayInfo.ARRAY_FIRST_ELEMENT )
+                    else
+                    {
+                        string [ ] astrFields = astrASCIITable [ intJ ].Split ( SpecialCharacters.TAB_CHAR );
 
-                        case NODE_COUNT_CODE_WITH_ALTERNATE_OR_COMMENT:
-                            ParseDetailItem ( intNextSlot , xmlCharacter , uintNodeCode , NODE_INDEX_OF_DETAIL_ITEM_1 );
-                            break;  // case NODE_COUNT_CODE_WITH_ALTERNATE
-
-                        case NODE_COUNT_CODE_WITH_ALTERNATE_AND_COMMENT:
-                            for ( int intNodeIndex = NODE_INDEX_OF_DETAIL_ITEM_1 ;
-                                      intNodeIndex < NODE_INDEX_OF_DETAIL_ITEM_2 ;
-                                      intNodeIndex++ )
-                                ParseDetailItem (
-                                    intNextSlot ,
-                                    xmlCharacter ,
-                                    uintNodeCode ,
-                                    intNodeIndex );
-                            break;	// case NODE_COUNT_CODE_WITH_ALTERNATE_AND_COMMENT
-                    }   // switch ( intGrandChildren )
-                }   // TRUE (expected outcome) block, if ( uint.TryParse ( xmlCode.InnerXml , out uintNodeCode ) )
-                else
-                {   // If I can't use this node, I am unprepared to trest the rest of them.
-                    throw new InvalidOperationException (
-                        Properties.Resources.ERRMSG_INVALID_NODE_IN_ASCII_TABLE +
-                        xmlCharacter.InnerXml );
-                }   // FALSE (UNexpected outcome) block, if ( uint.TryParse ( xmlCode.InnerXml , out uintNodeCode ) )
-            }   // foreach ( XmlNode xmlCharacter in xmlRealParent.ChildNodes )
-        }   // InitialzeInstance
-
-
-        /// <summary>
-        /// Parse the detail items, of which two are currently defined, into the
-        /// properties of a new ASCIICharacterDisplayInfo instance, which can be
-        /// fully initialized by any of its three public constructors, depending
-        /// on what properties have values.
-        /// </summary>
-        /// <param name="pintNextSlot">
-        /// Argument pintNextSlot is the subscript of the _asciiTable element to
-        /// store the current character.
-        /// 
-        /// The _asciiTable array contains 256 elements, which happens to be the
-        /// number of ASCII characters. Since characters are numbered from zero
-        /// through 255, the ASCII code is the obvious index for the array.
-        /// 
-        /// Instance member _asciiTable is ab array of ASCIICharacterDisplayInfo
-        /// objects that is initialized with the details read from the XML 
-        /// document in which they are stored. The XML document is stored in the
-        /// DLL as n custom resource. 
-        /// </param>
-        /// <param name="pxmlCharacterInfo">
-        /// Each character is represented as a XmlNode; this method processes the
-        /// detail items on one such node.
-        /// </param>
-        /// <param name="puintNodeCode">
-        /// This is the ASCII code, which the calling routine derives by parsing
-        /// its first child node, which is required to store the ASCII code.
-        /// 
-        /// Since this routine processes an embedded XML document, we can afford
-        /// to impose a rigid schema.
-        /// </param>
-        /// <param name="pintChildRank">
-        /// Each invocation of this method processes one child node on the XmlNode
-        /// supplied as its pxmlCharacterInfo argument. The calling routine keeps
-        /// track of the number of children, and calls it once for each child.
-        /// </param>
-        private void ParseDetailItem (
-            int pintNextSlot ,
-            XmlNode pxmlCharacterInfo ,
-            uint puintNodeCode ,
-            int pintChildRank )
-        {
-            const string ASCII_DISPLAY_ALTERNATIVE_NODE_NAME = @"Display";
-            const string ASCII_DISPLAY_COMMENT = @"Comment";
-
-            XmlNode xmlDetailItem = pxmlCharacterInfo.ChildNodes [ pintChildRank ];
-
-            if ( xmlDetailItem.Name == ASCII_DISPLAY_ALTERNATIVE_NODE_NAME )
-                _asciiTable [ pintNextSlot ] = new ASCIICharacterDisplayInfo (
-                    puintNodeCode ,
-                    xmlDetailItem.InnerXml );
-            else if ( xmlDetailItem.Name == ASCII_DISPLAY_COMMENT )
-                _asciiTable [ pintNextSlot ] = new ASCIICharacterDisplayInfo (
-                    puintNodeCode ,
-                    null ,
-                    xmlDetailItem.InnerXml );
+                        if ( astrFields.Length == COL_EXPECTED_COUNT )
+                        {
+                            int intCharacterCode = ArrayInfo.IndexFromOrdinal ( intJ );
+                            _asciiTable [ intCharacterCode ] = new ASCIICharacterDisplayInfo (
+                                ( uint ) intCharacterCode ,                     // uint puintCode
+                                ( char ) intCharacterCode ,                     // char pchrCharacter
+                                ( ASCIICharacterDisplayInfo.CharacterType ) Enum.Parse (                  // CharacterType penmCharacterType
+                                    typeof ( ASCIICharacterDisplayInfo.CharacterType ) ,                  // Type enumType
+                                    astrFields [ COL_CHARTYPE ] ,               // string value
+                                    true ) ,                                    // bool ignoreCase
+                                ( ASCIICharacterDisplayInfo.CharacterSubtype ) Enum.Parse (               // CharacterType penmCharacterType
+                                    typeof ( ASCIICharacterDisplayInfo.CharacterSubtype ) ,               // Type enumType
+                                    astrFields [ COL_SUBTYPE ] ,                // string value
+                                    true ) ,                                    // bool ignoreCase
+                                astrFields [ COL_CHAR ] ,                       // string pstrCHAR
+                                astrFields [ COL_DESCRIPTION ] ,                // string pstrDescription
+                                astrFields [ COL_HTML_NAME ] ,                  // string pstrHTMLName
+                                astrFields [ COL_DISPLAY ] ,                    // string pstrAlternateText
+                                astrFields [ COL_COMMENT ] );                   // string pstrComment
+                        }   // TRUE (anticipated outcome) block, if ( astrFields.Length == COL_EXPECTED_COUNT )
+                        else
+                        {
+                            throw new Exception (
+                                string.Format (
+                                    Properties.Resources.ERRMSG_BAD_DETAIL_ROW ,// Format Control String: Internal Table Error: Detaill row {0} is invalid.{3}Expected field count = {1}{3}Actaul field count = {2}
+                                    intJ ,                                      // Format Item 0: Detaill row {0} is invalid.
+                                    COL_EXPECTED_COUNT ,                        // Format Item 1: Expected field count = {1}
+                                    astrFields.Length ,                         // Format Item 2: Actaul field count   = {2}
+                                    Environment.NewLine ) );                    // Format Item 3: Line Break
+                        }   // FALSE (unanticipated outcome) block, if ( astrFields.Length == COL_EXPECTED_COUNT )
+                    }   // FALSE (This is a detail row.) block, if ( intJ == ArrayInfo.ARRAY_FIRST_ELEMENT )
+                }   // for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ; intJ < EXPECTED_ROW_COUNT ; intJ++ )
+            }   // TRUE (anticipated outcome) block, if ( astrASCIITable.Length == EXPECTED_ROW_COUNT )
             else
-                throw new InvalidOperationException (
-                    Properties.Resources.ERRMSG_INVALID_NODE_IN_ASCII_TABLE +
-                    pxmlCharacterInfo.InnerXml );
-        }	// ParseDetailItem
-        #endregion	// Private Instance Methods
+            {
+                throw new Exception (
+                    string.Format (
+                        Properties.Resources.ERRMSG_UNEXPECTED_ROW_COUNT ,      // Format Control String: Internal Table Error: The ASCII Table should contain {0} rows. Instead, it contains {1} rows.
+                        EXPECTED_ROW_COUNT ,                                    // Format Item 0: The ASCII Table should contain {0} rows.
+                        astrASCIITable.Length ) );                              // Format Item 1: Instead, it contains {1} rows.
+            }   // FALSE (unanticipated outcome) block, if ( astrASCIITable.Length == EXPECTED_ROW_COUNT )
+        }   // InitialzeInstance
+        #endregion // Private Instance Methods
 
 
         #region Private Instance Storage

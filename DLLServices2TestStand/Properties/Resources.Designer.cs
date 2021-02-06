@@ -304,7 +304,7 @@ namespace DLLServices2TestStand.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to         Character {0} ({1}): Display Value = {2}{3}.
+        ///   Looks up a localized string similar to Character {0} ({1}): URL Encoding = {2}, Display Value = {3}{4}.
         /// </summary>
         public static string IDS_ASCII_TABLE_ITEM {
             get {

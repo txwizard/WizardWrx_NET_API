@@ -62,10 +62,16 @@
     Date       Version Author Description
     ---------- ------- ------ --------------------------------------------------
     2021/01/31 8.0     DAG    This class makes its debut.
+
+    2021/02/03 8.0     DAG    1) Replace the public NameValueCollection with a
+                                 Dictionary, and replace the bland Object array
+                                 with an array of Attribute objects.
+
+                              2) Export the Assembly's GUID.
     ============================================================================
 */
 
-using System.Collections.Specialized;
+using System.Collections.Generic;
 using System.Reflection;
 
 
@@ -79,7 +85,7 @@ namespace WizardWrx.AssemblyUtils
     {
         /// <summary>
         /// This enumeration maps strings developed for the original, and used
-        /// internally as keys for a NameValueCollection of selected Assembly
+        /// publicly as keys for a NameValueCollection of selected Assembly
         /// Attributes, to safe, fast integers, which serve as the input of
         /// static method GetStartupAssemblyVersionInfo.
         /// </summary>
@@ -108,7 +114,21 @@ namespace WizardWrx.AssemblyUtils
             /// <summary>
             /// This maps to the FileVersion (long name AssemblyFileVersionAttribute).
             /// </summary>
+            /// <remarks>
+            /// It appears that executable assemblies always have an AssemblyFileAttribute,
+            /// which corresponds to this enumeration value, but they may not possess a
+            /// Version attribute.
+            /// </remarks>
             FileVersion,
+
+            /// <summary>
+            /// This maps to the System.Runtime.InteropServices.GuidAttribute attribute.
+            /// </summary>
+            /// <remarks>
+            /// Though all assemblies sport one of these, their most common use is for
+            /// exposing them to COM.
+            /// </remarks>
+            GUID,
 
             /// <summary>
             /// This maps to the Product (long name AssemblyProductAttribute).
@@ -128,6 +148,12 @@ namespace WizardWrx.AssemblyUtils
             /// <summary>
             /// This maps to the Version (long name AssemblyVersionAttribute).
             /// </summary>
+            /// <remarks>
+            /// Version maps to AssemblyVersion, and it appears that, at least
+            /// in the case of executable assemblies (.EXE files), assemblies
+            /// have an AssemblyFileAttribute (enumeration value FileVersion),
+            /// but the AssemblyAttribute custom attribute may be absent.
+            /// </remarks>
             Version
         }   // public enum AttributeFriendlyName
 
@@ -154,9 +180,17 @@ namespace WizardWrx.AssemblyUtils
             Assembly pasm = null )
         {
             Assembly assembly = pasm == null ? Assembly.GetEntryAssembly ( ) : pasm;
-            NameValueCollection asmAttribs = GetAssemblyAttribs ( assembly );
+            Dictionary<string , string> dctAttribs = GetAssemblyAttribs ( assembly );
+            string strAttributeNameString = penmAttributeFriendlyName.ToString ( );
 
-            return asmAttribs [ penmAttributeFriendlyName.ToString ( ) ];
+            if ( dctAttribs.ContainsKey ( strAttributeNameString ) )
+            {   // The requested value exists on the specified assembly. Return it.
+                return dctAttribs [ strAttributeNameString ];
+            }   // TRUE (The specified assembly has the requested attribute.) block, if ( dctAttribs.ContainsKey ( strAttributeNameString ) )
+            else
+            {   // The requested value is absent from the specified assembly. Return the empty string.
+                return SpecialStrings.EMPTY_STRING;
+            }   // FALSE (The specified assembly has no such attribute.) block, if ( dctAttribs.ContainsKey ( strAttributeNameString ) )
         }   // public static string GetAssemblyVersionInfo
 
 
@@ -173,17 +207,17 @@ namespace WizardWrx.AssemblyUtils
         /// NameValueCollection, keyed by friendly names, of the "custom"
         /// attributes bound to the assembly specified by <paramref name="pasm"/>.
         /// </returns>
-        private static NameValueCollection GetAssemblyAttribs ( Assembly pasm = null )
+        private static Dictionary<string , string> GetAssemblyAttribs ( Assembly pasm = null )
         {
-            NameValueCollection rnvc = new NameValueCollection ( );
-
             string strAttribNameLong;
             string strAttribValue;
 
-            object [ ] attribs = pasm != null ? pasm.GetCustomAttributes ( false ) : Assembly.GetEntryAssembly ( ).GetCustomAttributes ( false );
+            object [ ] aobjAttributesAsObjects = pasm != null ? pasm.GetCustomAttributes ( false ) : Assembly.GetEntryAssembly ( ).GetCustomAttributes ( false );
+            Dictionary<string , string> rdctMatchedAttributes = new Dictionary<string , string> ( aobjAttributesAsObjects.Length );
+
             string strAttribNameShort = SpecialStrings.EMPTY_STRING;
 
-            foreach ( object attrib in attribs )
+            foreach ( object attrib in aobjAttributesAsObjects )
             {
                 strAttribNameLong = attrib.GetType ( ).ToString ( );
                 strAttribValue = SpecialStrings.EMPTY_STRING;
@@ -219,18 +253,27 @@ namespace WizardWrx.AssemblyUtils
                         strAttribNameShort = Properties.Resources.ATTRIBUTE_SHORT_NAME_DESCRIPTION;
                         strAttribValue = ( ( AssemblyDescriptionAttribute ) attrib ).Description.ToString ( );
                         break;
+
                     case @"System.Reflection.AssemblyFileVersionAttribute":
                         strAttribNameShort = Properties.Resources.ATTRIBUTE_SHORT_NAME_FILEVERSION;
                         strAttribValue = ( ( AssemblyFileVersionAttribute ) attrib ).Version.ToString ( );
                         break;
+
                     case @"System.Reflection.AssemblyVersionAttribute":
                         strAttribNameShort = Properties.Resources.ATTRIBUTE_SHORT_NAME_VERSION;
                         strAttribValue = ( ( AssemblyVersionAttribute ) attrib ).Version.ToString ( );
                         break;
+
                     case @"System.Reflection.AssemblyCultureAttribute":
                         strAttribNameShort = Properties.Resources.ATTRIBUTE_SHORT_NAME_CULTURE;
                         strAttribValue = ( ( AssemblyCultureAttribute ) attrib ).Culture.ToString ( );
                         break;
+
+                    case @"System.Runtime.InteropServices.GuidAttribute":
+                        strAttribNameShort = Properties.Resources.ATTRIBUTE_SHORT_NAME_ASSEMBLY_GUID;
+                        strAttribValue = ( ( System.Runtime.InteropServices.GuidAttribute ) attrib ).Value.ToString ( );
+                        break;
+
                     default:
                         break;
                 }   // switch ( Name )
@@ -239,14 +282,14 @@ namespace WizardWrx.AssemblyUtils
                 {
                     if ( strAttribNameShort != SpecialStrings.EMPTY_STRING )
                     {
-                        rnvc.Add (
+                        rdctMatchedAttributes.Add (
                             strAttribNameShort ,
                             strAttribValue );
                     }   // if ( AttribName != SpecialStrings.EMPTY_STRING )
                 }   // if ( AttribValue != SpecialStrings.EMPTY_STRING )
             }   // foreach ( object attrib in attribs )
 
-            return rnvc;
+            return rdctMatchedAttributes;
         }   // NameValueCollection GetAssemblyAttribs
     }   // public static class AssemblyAttributeHelpers
 }   // partial namespace WizardWrx.AssemblyUtils

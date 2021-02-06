@@ -18,7 +18,7 @@
                         the displays are augmented by numerical and hexadecimal
                         displays.
 
-    License:            Copyright (C) 2014-2018, David A. Gray. 
+    License:            Copyright (C) 2014-2021, David A. Gray. 
 						All rights reserved.
 
                         Redistribution and use in source and binary forms, with
@@ -82,13 +82,13 @@
 						   order), and define static method DisplayCharacterInfo
 						   to provide that service for an arbitrary character
 						   without instantiating ASCII_Character_Display_Table.
+
+	2021/02/06 8.0     DAG At long last, this class exposes HTML entities and
+                           such.
     ============================================================================
 */
 
-
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace WizardWrx
 {
@@ -121,12 +121,124 @@ namespace WizardWrx
     /// <see cref="ASCII_Character_Display_Table"/>
     public class ASCIICharacterDisplayInfo
     {
-		const string DISPLAY_TEMPLATE = @"{0} (Hex. = {1}, Dec. = {2}";
+        #region Public Enumerations
+        /// <summary>
+        /// This enumeration maps the CharType strings to fast, efficient, safe
+        /// integer values that correspond to three broad groups of characters.
+        /// </summary>
+        public enum CharacterType
+        {
+            /// <summary>
+            /// The value is uninitialized.
+            /// </summary>
+            Undefined,
 
-		uint _uintCode;
-        string _strAlternateText;
-		string _strComment;
+            /// <summary>
+            /// The character is of a nonprintable type. Most of these are
+            /// output device control codes.
+            /// </summary>
+            NonPrintable,
 
+            /// <summary>
+            /// These are the characters from which most text is composed.
+            /// </summary>
+            Printable,
+
+            /// <summary>
+            /// These are the extended ASCII characters that have code points at
+            /// or above 128, that require 8 bits to represent in binary coding.
+            /// </summary>
+            Extended
+        }   // public enum CharacterType
+
+
+        /// <summary>
+        /// This enumeration maps the Subtype strings to fast, efficient, safe
+        /// integer values that correspond to ten specialized groups of
+        /// characters. These correspond roughly to the Unicode character
+        /// categories.
+        /// </summary>
+        public enum CharacterSubtype
+        {
+            /// <summary>
+            /// The value is uninitialized.
+            /// </summary>
+            Undefined,
+
+            /// <summary>
+            /// There is but one character in this subgroup, the ASCII NULL,
+            /// sometimes called NUL, which has a numerical value of zero.
+            /// </summary>
+            NULL,
+
+            /// <summary>
+            /// These are the characters that have code point values between 1
+            /// and 31, most of which are device control characters that
+            /// originally drove line printers.
+            /// </summary>
+            Control,
+
+            /// <summary>
+            /// White space is another tiny subgroup; it contains five code
+            /// points, 32, the everyday SPACE character, 160, the nonbreaking
+            /// Space, 8, the destructive backspace, 9, the horizontal tab, and
+            /// 11, the vertical tab, only one of which, the regular space, is
+            /// considered printable. The nonbreaking space, also printable, is
+            /// classified as an extended character because its code point is
+            /// greater than 127, while the rest fall into the group that is
+            /// comprised otherwise of device control codes. Since that is their
+            /// primary function, they belong in this group.
+            /// </summary>
+            White_Space,
+
+            /// <summary>
+            /// Characters in this group are generally accepted as punctuation
+            /// marks, of which one, the inverted question mark, belongs to the
+            /// Extended group, owing to its high code point, 191.
+            /// </summary>
+            Punctuation,
+
+            /// <summary>
+            /// Characters in this group are a mixed bag of mathematical and
+            /// other symbols.
+            /// </summary>
+            Symbol,
+
+            /// <summary>
+            /// These characters represent the Arabic numerals zero through nine.
+            /// </summary>
+            Numeral,
+
+            /// <summary>
+            /// Characters in this group represent the upper case letters of the
+            /// Latin alphabet.
+            /// </summary>
+            UC_Latin_1_Letter,
+
+            /// <summary>
+            /// Characters in this group represent the lower case letters of the
+            /// Latin alphabet.
+            /// </summary>
+            LC_Latin_1_Letter,
+
+            /// <summary>
+            /// Only a handful of characters, all of which fall into the
+            /// Extended group, are specifically identified as letters of the
+            /// Greek alphabet. Others may have been overlooked. If you find one
+            /// of them, please submit a pull request or open an issue.
+            /// </summary>
+            Greek_Letter,
+
+            /// <summary>
+            /// This large group represents latters and joined characters used
+            /// in other Western alphabets.
+            /// </summary>
+            Other_Letter
+        }   // public enum CharacterSubtype
+        #endregion  // Public Enumerations
+
+
+        #region Constructors
         /// <summary>
         /// This constructor satisfies interfaces that require a default
         /// constructor. It is marked private because the assembly that owns all
@@ -142,91 +254,243 @@ namespace WizardWrx
         /// <param name="puintCode">
         /// The code is an unsigned integer between zero and 255.
         /// </param>
-        internal ASCIICharacterDisplayInfo ( uint puintCode )
+        private ASCIICharacterDisplayInfo ( uint puintCode )
         {
-			InitializeInstance (
-				puintCode ,				// uint puintCode
-				null ,					// string pstrAlternateText
-				null );					// string pstrComment
-		}	// ASCIICharacterDisplayInfo (Public constructor 1 of 3)
+            if ( CodeIsValid ( puintCode ) )
+                _uintCode = puintCode;
+            else
+                throw new ArgumentOutOfRangeException (
+                    nameof ( puintCode ) ,                                      // string paramName
+                    puintCode ,                                                 // object actualValue
+                    string.Format (                                             // string message
+                        Properties.Resources.ERRMSG_CHAR_CODE_OUT_OF_RANGE ,    // Format Control String: Character code {0} is out of range. It must be between {1} and {2}.
+                        puintCode ,                                             // Format Item 0: Character code {0} is out of range.
+                        VALID_CODE_LOWEST ,                                     // Format Item 1: It must be between {1}
+                        VALID_CODE_HIGHEST ) );                                 // Format Item 2: and {2}.
+        }	// ASCIICharacterDisplayInfo (private constructor 2 of 2)
 
 
         /// <summary>
-        /// Create an instance for a character that has alternate display text.
+        /// All instances of this class are created by calling this constructor.
         /// </summary>
         /// <param name="puintCode">
         /// The code is an unsigned integer between zero and 255.
+        /// 
+        /// This argument receives the Code column from the embedded CSV file,
+        /// which is stored and becomes the subscript (index) of an array.
+        /// </param>
+        /// <param name="pchrCharacter">
+        /// This value is the Unicode representation of the character.
+        /// 
+        /// This argument receives the CHAR(n) column from the embedded CSV
+        /// file.
+        /// </param>
+        /// <param name="penmCharacterType">
+        /// This value is the CharacterType enumeration mapping of the
+        /// character.
+        /// 
+        /// This argument receives the CharType column from the embedded CSV
+        /// file.
+        /// </param>
+        /// <param name="penmCharacterSubtype">
+        /// This value is the CharacterSubtype enumeration mapping of the
+        /// character.
+        /// 
+        /// This argument receives the Subtype column from the embedded CSV
+        /// file.
+        /// </param>
+        /// <param name="pstrCHAR">
+        /// This value is the standard two or three character acronymn for the
+        /// character, including the square brackets that usually enclose it.
+        /// This value is meaningful only for the Control Characters group. This
+        /// value is blank for all others.
+        /// 
+        /// This argument receives the CHAR column from the embedded CSV file. 
+        /// </param>
+        /// <param name="pstrDescription">
+        /// When appropriate, this field returns a short text description of the
+        /// character.
+        /// 
+        /// This argument receives the DESCRIPTION column from the embedded CSV
+        /// file.
+        /// </param>
+        /// <param name="pstrHTMLName">
+        /// This field returns the HTML entity name, when one exists, of the
+        /// character, its HTML entity string.
+        /// 
+        /// This argument receives the HTML Name column from the embedded CSV
+        /// file.
         /// </param>
         /// <param name="pstrAlternateText">
         /// Specify alternate text to display in place of the actual character.
+        /// 
+        /// This argument receives the Display column from the embedded CSV
+        /// file.
+        /// </param>
+        /// <param name="pstrComment">
+        /// Specify a comment for optional display on listings.
+        /// 
+        /// This argument receives the Comment column from the embedded CSV
+        /// file.
         /// </param>
         internal ASCIICharacterDisplayInfo (
             uint puintCode ,
-            string pstrAlternateText )
-        {
-			InitializeInstance (
-				puintCode ,				// uint puintCode
-				pstrAlternateText ,		// string pstrAlternateText
-				null );					// string pstrComment
-		}	// ASCIICharacterDisplayInfo (Public constructor 2 of 3)
+            char pchrCharacter,
+            CharacterType penmCharacterType ,
+            CharacterSubtype penmCharacterSubtype ,
+            string pstrCHAR,
+            string pstrDescription,
+            string pstrHTMLName,
+            string pstrAlternateText ,
+            string pstrComment )
+        {   // Code,CHAR(n),CharType,Subtype,CHAR,DESCRIPTION,HTML Name,Display,Comment
+            if ( CodeIsValid ( puintCode ) )
+                _uintCode = puintCode;
+            else
+                throw new ArgumentOutOfRangeException (
+                    nameof ( puintCode ) ,                                      // string paramName
+                    puintCode ,                                                 // object actualValue
+                    string.Format (                                             // string message
+                        Properties.Resources.ERRMSG_CHAR_CODE_OUT_OF_RANGE ,    // Format Control String: Character code {0} is out of range. It must be between {1} and {2}.
+                        puintCode ,                                             // Format Item 0: Character code {0} is out of range.
+                        VALID_CODE_LOWEST ,                                     // Format Item 1: It must be between {1}
+                        VALID_CODE_HIGHEST ) );                                 // Format Item 2: and {2}.
+
+            if ( !string.IsNullOrEmpty ( pstrCHAR ) )
+                _strCHAR = pstrCHAR;
+
+            if ( !string.IsNullOrEmpty ( pstrDescription ) )
+                _strDescription = pstrDescription;
+
+            if ( !string.IsNullOrEmpty ( pstrHTMLName ) )
+                _strHTMLName = pstrHTMLName;
+
+            if ( !string.IsNullOrEmpty ( pstrAlternateText ) )
+                _strAlternateText = pstrAlternateText;
+
+            if ( !string.IsNullOrEmpty ( pstrComment ) )
+                _strComment = pstrComment;
+
+            if ( penmCharacterType != CharacterType.Undefined )
+                CharType = penmCharacterType;
+            else
+                throw new System.ComponentModel.InvalidEnumArgumentException (
+                    nameof ( penmCharacterType ) ,
+                    ( int ) penmCharacterType ,
+                    typeof ( CharacterType ) );
+
+            if ( penmCharacterSubtype != CharacterSubtype.Undefined )
+                CharSubType = penmCharacterSubtype;
+            else
+                throw new System.ComponentModel.InvalidEnumArgumentException (
+                    nameof ( penmCharacterSubtype ) ,
+                    ( int ) penmCharacterSubtype ,
+                    typeof ( CharacterSubtype ) );
+        }   // internal ('public') ASCIICharacterDisplayInfo, the one and only public constructor
+        #endregion  // Constructors
 
 
-		/// <summary>
-		/// Create an instance for a character that has alternate display text and/or a comment.
-		/// </summary>
-		/// <param name="puintCode">
-		/// The code is an unsigned integer between zero and 255.
-		/// </param>
-		/// <param name="pstrAlternateText">
-		/// Specify alternate text to display in place of the actual character.
-		/// </param>
-		/// <param name="pstrComment">
-		/// Specify a comment to display next to the character or its display property.
-		/// </param>
-		internal ASCIICharacterDisplayInfo (
-			uint puintCode ,
-			string pstrAlternateText ,
-			string pstrComment )
-		{
-			InitializeInstance (
-				puintCode ,				// uint puintCode
-				pstrAlternateText ,		// string pstrAlternateText
-				pstrComment );			// string pstrComment
-		}	// ASCIICharacterDisplayInfo (Public constructor 3 of 3)
-
-
+        #region Public Read-Only Properties
         /// <summary>
-        /// Gets the Unicode character represented by the code.
+        /// Gets the Unicode character represented by the code
         /// </summary>
         public char ASCIICharacter
         { get { return ( char ) _uintCode; } }
 
 
         /// <summary>
-        /// Gets the alternate text, if one exists, or returns the empty string.
+        /// Gets an alternative visual representation of certain nonprintable
+        /// and otherwise ambiguous characters, such as the SPACE character.
         /// </summary>
         public string AlternateText
         {
             get
             {
                 if ( string.IsNullOrEmpty ( _strAlternateText ) )
-                    return string.Empty;
+                    return SpecialStrings.EMPTY_STRING;
                 else
                     return _strAlternateText;
             }   // AlternateText get method
         }   // AlternateText property
 
 
-		/// <summary>
-		/// Gets the associated comment, if one exists, or returns the empty
-		/// string.
-		/// </summary>
-		public string Comment
+        /// <summary>
+        /// This value is the standard two or three character acronymn for the
+        /// character, including the square brackets that usually enclose it.
+        /// This value is meaningful only for the Control Characters group. This
+        /// value is blank for all others.
+        /// </summary>
+        public string CHAR
+        {
+            get
+            {
+                if ( string.IsNullOrEmpty ( _strCHAR ) )
+                    return SpecialStrings.EMPTY_STRING;
+                else
+                    return _strCHAR;
+            }   // CHAR get method
+        }   // public string CHAR property
+
+
+        /// <summary>
+        /// Gets the CharacterType enumeration mapping of the character
+        /// </summary>
+        public CharacterType CharType { get; }
+
+
+        /// <summary>
+        /// Gets the CharacterSubtype enumeration mapping of the character
+        /// </summary>
+        public CharacterSubtype CharSubType { get; }
+
+        /// <summary>
+        /// Gets the unsigned integer representation of the ASCII code
+        /// </summary>
+        public uint Code
+        { get { return _uintCode; } }
+
+
+        /// <summary>
+        /// Gets a string representation of the raw ASCII code as a decimal
+        /// number, formatted to always occupy the maximum number of characters
+        /// needed, three
+        /// </summary>
+        public string CodeAsDecimal
+        {
+            get
+            {
+                return string.Format (
+                    @"{0,3:N0}" ,
+                    _uintCode );
+            }   // public string CodeAsDecimal getter method
+        }   // public string CodeAsDecimal
+
+
+        /// <summary>
+        /// Gets a string representation of the ASCII code as a hexadecimal
+        /// number.
+        /// </summary>
+        public string CodeAsHexadecimal
+        {
+            get
+            {
+                return string.Format (
+                    @"0x{0:x2}" ,
+                    _uintCode );
+            }   // public string CodeAsHexadecimal getter method
+        }   // public string CodeAsHexadecimal
+
+
+        /// <summary>
+        /// Gets the associated comment, if one exists, or returns the empty
+        /// string.
+        /// </summary>
+        public string Comment
 		{
 			get
 			{
 				if ( string.IsNullOrEmpty ( _strComment ) )
-					return string.Empty;
+					return SpecialStrings.EMPTY_STRING;
 				else
 					return _strComment;
 			}	// Comment property get method
@@ -234,104 +498,158 @@ namespace WizardWrx
 
 
         /// <summary>
-        /// Gets the raw ASCII code, as an unsigned integer.
+        /// When appropriate, this field returns a short text description of the
+        /// character.
         /// </summary>
-        public uint Code
-        { get { return _uintCode; } }
+        public string Description
+        {
+            get
+            {
+                if ( string.IsNullOrEmpty ( _strDescription ) )
+                    return SpecialStrings.EMPTY_STRING;
+                else
+                    return _strDescription;
+            }   // Description get method
+        }   // public string Description property
 
 
         /// <summary>
-        /// Gets a string representation of the raw ASCII code, as a decimal
-        /// number.
+        /// Use this property to guarantee that any character will display
+        /// something useful when the character is presented on its own, out of
+        /// context, such as in an error message.
         /// </summary>
-        public string CodeAsDecimal
-        { get { return string.Format ( @"{0,3:N0}" , _uintCode ); } }
-
-
-        /// <summary>
-        /// Gets a string representation of the raw ASCII code, as a hexadecimal
-        /// number.
-        /// </summary>
-        public string CodeAsHexadecimal
-        { get { return string.Format ( @"0x{0:x2}" , _uintCode ); } }
-
-
-        /// <summary>
-        /// Gets the display text, regardless of source, from one place.
-        /// </summary>
+        /// <remarks>
+        /// The objective of this property is to return something that is always
+        /// acceptable in printed matter, without surprises such as line feeds,
+        /// line wraps, and page ejects, among other things elicited by some of
+        /// the control codes.
+        /// </remarks>
         public string DisplayText
         {
             get
             {
                 if ( string.IsNullOrEmpty ( _strAlternateText ) )
-                    return this.ASCIICharacter.ToString ( );
+                {   // The ASCII code is adequate for a human-readable display. Use it.
+                    return ASCIICharacter.ToString ( );
+                }   // TRUE (No alternative display is provided.) block, if ( string.IsNullOrEmpty ( _strAlternateText ) )
                 else
+                {   // The code is inappropriate for one of several reasons to effectivly convey information out of context. Use the provided alternative.
                     return _strAlternateText;
-            }   // DisplayText get method
-        }   // DisplayText property
+                }   // FALSE (Since an alternative is provided, it is probably better.
+            }   // public string DisplayText property getter method
+        }   // public string DisplayText property
 
 
-		/// <summary>
-		/// Override ToString to render all three defined formats.
-		/// </summary>
-		/// <returns>
-		/// The return value is a string containing a printable representation
-		/// of the character, followed by its hexadecimal and decimal values,
-		/// both enclosed in a single pair of parenethese.
-		/// </returns>
-		public override string ToString ( )
+        /// <summary>
+        /// This field returns the HTML entity name, when one exists, of the
+        /// character, its HTML entity string. Otherwise, the return value is
+        /// the empty string, represented herein by a true constant,
+        /// SpecialStrings.EMPTY_STRING.
+        /// </summary>
+        /// <remarks>
+        /// If this returns anything besides the empty string, the string
+        /// returned by this property should probably take its place in HTML
+        /// text.
+        /// </remarks>
+        public string HTMLName
+        {
+            get
+            {
+                if ( string.IsNullOrEmpty ( _strHTMLName ) )
+                    return SpecialStrings.EMPTY_STRING;
+                else
+                    return _strHTMLName;
+            }   // HTMLName get method
+        }   // public string HTMLName property
+
+        
+        /// <summary>
+        /// Gets the URLEncoding value of the character, which is available for
+        /// ANY character, though it is needed only for punctuation, control
+        /// codes, white space, and other special characters
+        /// </summary>
+        public string URLEncoding
+        {
+            get
+            {
+                return string.Format (
+                    @"%{0:X2}" ,
+                    _uintCode );
+            }   // public string URLEncoding property getter method
+        }   // public string URLEncoding property
+        #endregion  // Public Read-Only Properties
+
+
+        #region Base Class Method Overrides
+        /// <summary>
+        /// Override ToString to render all three defined formats and most other
+        /// properties.
+        /// </summary>
+        /// <returns>
+        /// The return value is a string containing a printable representation
+        /// of the character, followed by its hexadecimal and decimal values,
+        /// both enclosed in a single pair of parenetheses, then by every
+        /// conceivable way to represent the character except the URL encoding,
+        /// which can be inferred from the hexadecimal string inserted as the
+        /// CodeAsHexadecimal property value.
+        /// </returns>
+        public override string ToString ( )
 		{
-			return string.Format (
-				DISPLAY_TEMPLATE ,
-				DisplayText ,
-				CodeAsHexadecimal , 
-				CodeAsDecimal );
-		}   // public override string ToString
+            return string.Format (
+                Properties.Resources.DISPLAY_TEMPLATE ,     // Format Control String: {0} (Hex. = {1}, Dec. = {2}
+                Code ,                                      // Format Item 0: Code = {0}
+                CodeAsHexadecimal ,                         // Format Item 1: (Hex = {1}),
+                CharType ,                                  // Format Item 2: Character Type = {2}
+                CharSubType ,                               // Format Item 3: Character Subtype = {3}
+                ASCIICharacter ,                            // Format Item 4: Unicode Display {4}
+                AlternateText ,                             // Format Item 5: Alternate Dsiplay = {5}
+                HTMLName ,                                  // Format Item 6: HTML Entity Name = {6}
+                CHAR ,                                      // Format Item 7: Control Code Acronymn {7}
+                Description ,                               // Format Item 8: Description = {8}
+                Comment );                                  // Format Item 9: Comment = {9}
+        }   // public override string ToString
+        #endregion  // Base Class Method Overrides
 
 
-		/// <summary>
-		/// Create a ASCIICharacterDisplayInfo instance to represent a specified
-		/// ASCII character, and call its ToString method to return all three
-		/// representations of it (Printable, Hexadecimal, and Decimal, in that
-		/// order.
-		/// </summary>
-		/// <param name="pchr">
-		/// Specify the character for which to render the three representations.
-		/// </param>
-		/// <returns>
-		/// Return the output of ToString on the ASCIICharacterDisplayInfo.
-		/// </returns>
-		public static string DisplayCharacterInfo ( char pchr )
+        #region Public Static Methods
+        /// <summary>
+        /// Create a ASCIICharacterDisplayInfo instance to represent a specified
+        /// ASCII character, and call its ToString method to return all three
+        /// representations of it (Printable, Hexadecimal, and Decimal, in that
+        /// order.
+        /// </summary>
+        /// <param name="pchr">
+        /// Specify the character for which to render the three representations.
+        /// </param>
+        /// <returns>
+        /// Return the output of ToString on the ASCIICharacterDisplayInfo.
+        /// </returns>
+        public static string DisplayCharacterInfo ( char pchr )
 		{
 			ASCIICharacterDisplayInfo aSCIICharacterDisplayInfo = new ASCIICharacterDisplayInfo ( ( uint ) pchr );
 			return aSCIICharacterDisplayInfo.ToString ( );
 		}   // public static string DisplayCharacterInfo
+        #endregion  // Public Static Methods
 
 
-		/// <summary>
-		/// All three public constructors use this routine to initialize everything.
-		/// </summary>
-		/// <param name="puintCode">
-		/// The code is an unsigned integer between zero and 255.
-		/// </param>
-		/// <param name="pstrAlternateText">
-		/// Specify alternate text to display in place of the actual character.
-		/// </param>
-		/// <param name="pstrComment">
-		/// Specify a comment for optional display on listings.
-		/// </param>
-		private void InitializeInstance (
-            uint puintCode , 
-            string pstrAlternateText ,
-			string pstrComment )
+        #region Private Static Methods
+        private static bool CodeIsValid ( uint puintCode )
         {
-            _uintCode = puintCode;
+            return ( puintCode >= VALID_CODE_LOWEST && puintCode <= VALID_CODE_HIGHEST );
+        }   // private static bool CodeIsValid
+        #endregion  // Private Static Methods
 
-            if ( !string.IsNullOrEmpty ( pstrAlternateText ) )
-                _strAlternateText = pstrAlternateText;
 
-			if ( !string.IsNullOrEmpty ( pstrComment ) )
-				_strComment = pstrComment;
-		}   // InitializeInstance
+        #region Private Constants and Instance Storage
+        const int VALID_CODE_LOWEST = 0;
+        const int VALID_CODE_HIGHEST = 255;
+
+        uint _uintCode;
+        string _strCHAR;
+        string _strAlternateText;
+        string _strComment;
+        string _strDescription;
+        string _strHTMLName;
+        #endregion  // Private Constants and Instance Storage
     }   // class ASCIICharacterDisplayInfo
 }   // partial namespace WizardWrx

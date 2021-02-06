@@ -267,7 +267,7 @@
                              ExercisseDirectDependentAssemblyEnumerator method,
                              then terminates the program.
 
-    2021/01/31 8.0       DAG Implement a small loop to test a new static method,
+    2021/02/04 8.0       DAG Implement a small loop to test a new static method,
                              GetAssemblyVersionInfo, exported by class library
                              WizardWrx.AssemblyUtils. The new static method,
                              ExerciseGetAssemblyVersionInfo, tests all valid
@@ -1482,7 +1482,7 @@ namespace DLLServices2TestStand
                       intJ++ )
             {
                 Console.WriteLine (
-                    @"Entry Assembly {0} = {1}" ,                               // Format Control String
+                    @"CSVParseEngine Assembly {0} = {1}" ,                      // Format Control String
                     s_aenmAttributeFriendlyName [ intJ ] ,                      // Format Item 0: Entry Assembly {0}
                     AssemblyAttributeHelpers.GetAssemblyVersionInfo (           // Format Item 1:  = {1}
                         s_aenmAttributeFriendlyName [ intJ ] ,                  // AttributeFriendlyName penmAttributeFriendlyName

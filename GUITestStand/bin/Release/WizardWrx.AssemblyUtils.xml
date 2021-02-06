@@ -13,7 +13,7 @@
         <member name="T:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName">
             <summary>
             This enumeration maps strings developed for the original, and used
-            internally as keys for a NameValueCollection of selected Assembly
+            publicly as keys for a NameValueCollection of selected Assembly
             Attributes, to safe, fast integers, which serve as the input of
             static method GetStartupAssemblyVersionInfo.
             </summary>
@@ -42,6 +42,20 @@
             <summary>
             This maps to the FileVersion (long name AssemblyFileVersionAttribute).
             </summary>
+            <remarks>
+            It appears that executable assemblies always have an AssemblyFileAttribute,
+            which corresponds to this enumeration value, but they may not possess a
+            Version attribute.
+            </remarks>
+        </member>
+        <member name="F:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.GUID">
+            <summary>
+            This maps to the System.Runtime.InteropServices.GuidAttribute attribute.
+            </summary>
+            <remarks>
+            Though all assemblies sport one of these, their most common use is for
+            exposing them to COM.
+            </remarks>
         </member>
         <member name="F:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.Product">
             <summary>
@@ -62,6 +76,12 @@
             <summary>
             This maps to the Version (long name AssemblyVersionAttribute).
             </summary>
+            <remarks>
+            Version maps to AssemblyVersion, and it appears that, at least
+            in the case of executable assemblies (.EXE files), assemblies
+            have an AssemblyFileAttribute (enumeration value FileVersion),
+            but the AssemblyAttribute custom attribute may be absent.
+            </remarks>
         </member>
         <member name="M:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyVersionInfo(WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName,System.Reflection.Assembly)">
             <summary>
@@ -902,6 +922,11 @@
             <summary>
               Overrides the current thread's CurrentUICulture property for all
               resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.ATTRIBUTE_SHORT_NAME_ASSEMBLY_GUID">
+            <summary>
+              Looks up a localized string similar to AssemblyGUID.
             </summary>
         </member>
         <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.ATTRIBUTE_SHORT_NAME_COMPANY">

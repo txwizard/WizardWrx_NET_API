@@ -61,6 +61,15 @@ namespace WizardWrx.AssemblyUtils.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to AssemblyGUID.
+        /// </summary>
+        internal static string ATTRIBUTE_SHORT_NAME_ASSEMBLY_GUID {
+            get {
+                return ResourceManager.GetString("ATTRIBUTE_SHORT_NAME_ASSEMBLY_GUID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Company.
         /// </summary>
         internal static string ATTRIBUTE_SHORT_NAME_COMPANY {

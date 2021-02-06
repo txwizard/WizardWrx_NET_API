@@ -88,13 +88,15 @@
 	2018/10/07 7.1     DAG    Exercise static method DisplayCharacterInfo on the
 	                          ASCIICharacterDisplayInfo class BEFORE singleton
 							  ASCII_Character_Display_Table is referenced.
+
+	2021/02/06 8.0     DAG    Cover the improved ASCII table display, which has
+                              many new attributes.
     ============================================================================
 */
 
 
 using System;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
 
 using WizardWrx;
 using WizardWrx.FormatStringEngine;
@@ -134,20 +136,7 @@ namespace DLLServices2TestStand
         };  // s_astrValuseOfIrrelevantLengths
 
 		const int ARRAY_FIRST_ELEMENT = 0;
-		const int ARRAY_INVALID_INDEX = -1;
 		const int ARRAY_LIST_ORDINAL_TO_SUBSCRIPT = +1;
-		const int JUST_ONE = +1;
-		const int NO_FORMAT_ITEMS = 0;
-		const int REGEXP_FIRST_MATCH = 0;										// The first member of the Groups collection is the entire match.
-		const int REGEXP_FIRST_SUBMATCH = 1;									// Subexpressions follow the match, and are numbered as they are in Perl.
-		const int SUBSTR_2ND_CHAR = +1;
-		const int SUBSTR_ALL_BUT_TWO = +2;
-
-		const int COMPLETE_FORMAT_ITEM = REGEXP_FIRST_MATCH;					// This has no direct analogue in Perl.
-		const int FORMAT_ITEM_INDEX = REGEXP_FIRST_SUBMATCH;					// As in Perl, sub-matches are numbered from 1.
-		const int WIDTH_AND_ALIGNMENT = 2;
-		const int FORMAT_STRING = 6;
-
 
 		internal static void ASCII_Table_Gen ( )
 		{
@@ -160,16 +149,28 @@ namespace DLLServices2TestStand
 				Environment.NewLine );                                          // Format Item 0 = Embedded Newline
 			string strDetailFormatTemplate = Properties.Resources.IDS_ASCII_CHARACTER_INFO;
 
-			for ( int intCharacterIndex = ARRAY_FIRST_ELEMENT ;
-				      intCharacterIndex <= byte.MaxValue ;
-					  intCharacterIndex++ )
+			try
 			{
-				Console.WriteLine (
-					strDetailFormatTemplate ,                                   // Format control string
-					intCharacterIndex ,                                         // Format Item 0: Character index {0}
-					ASCIICharacterDisplayInfo.DisplayCharacterInfo (            // Format Item 1: : {1}
-						( char ) intCharacterIndex ) );                         // Cast the integer to its char equivalent.
-			}   // for ( int intCharacterIndex = ARRAY_FIRST_ELEMENT ; intCharacterIndex <= byte.MaxValue ; intCharacterIndex++ )
+				ASCII_Character_Display_Table aSCII_Character_Display_Table = ASCII_Character_Display_Table.GetTheSingleInstance ( );
+
+				for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+						  intJ < aSCII_Character_Display_Table.AllASCIICharacters.Length ;
+						  intJ++ )
+				{
+					ASCIICharacterDisplayInfo displayInfo = aSCII_Character_Display_Table.AllASCIICharacters [ intJ ];
+					Console.WriteLine (
+						@"Character {0,3}: Numerical Value = {1,3} ({2} hex), Display Value = {3}, HTML Entity = {4}" ,
+						intJ ,                                                  // Format Item 0: Character {0:-3}: Numerical
+						displayInfo.CodeAsDecimal ,                             // Format Item 1: Numerical Value = {1,3} (
+						displayInfo.CodeAsHexadecimal ,                         // Format Item 2: ({2} hex),
+						displayInfo.DisplayText ,                               // Format Item 3: Display Value = {3}
+						displayInfo.HTMLName );                                 // Format Item 4: HTML Entity = {4}
+				}   // for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ; intJ < aSCII_Character_Display_Table.AllASCIICharacters.Length ; intJ++ )
+			}
+			catch ( Exception exAll )
+			{
+				Program.s_smTheApp.AppExceptionLogger.ReportException ( exAll );
+			}
 
 			Console.WriteLine (
 				Properties.Resources.IDS_ASCII_TABLE_ENUMERATION ,              // Print this message between the two tables.
@@ -178,27 +179,30 @@ namespace DLLServices2TestStand
 			ASCII_Character_Display_Table asciiShowMan = ASCII_Character_Display_Table.GetTheSingleInstance ( );
 			strDetailFormatTemplate = Properties.Resources.IDS_ASCII_TABLE_ITEM;
 
-			foreach ( ASCIICharacterDisplayInfo asciiInfo in asciiShowMan.AllASCIICharacters )
+			foreach ( ASCIICharacterDisplayInfo asciiInfo
+				      in asciiShowMan.AllASCIICharacters )
 			{
 				Console.WriteLine (
 					strDetailFormatTemplate ,                                   // Format control string, read above the loop
 					new object [ ]
 					{
-						asciiInfo.CodeAsDecimal ,								// Format Item 0 = Decimal code of character
-						asciiInfo.CodeAsHexadecimal ,							// Format Item 1 = Hexadecimal representation of character code
-						asciiInfo.DisplayText ,									// Format Item 2 = Character as displayed, or substitute for characters that won't print anything usable
-						string.IsNullOrEmpty ( asciiInfo.Comment )				// Format Item 3 = Comment, if present, else nothing			
+						asciiInfo.CodeAsDecimal ,								// Format Item 0: Character {0} (
+						asciiInfo.CodeAsHexadecimal ,							// Format Item 1: ({1}): Display
+						asciiInfo.URLEncoding ,									// Format Item 2: URL Encoding = {2}
+						asciiInfo.DisplayText ,									// Format Item 3: Display Value = {3}
+						string.IsNullOrEmpty ( asciiInfo.Comment )				// Format Item 4: Comment, if present, else nothing
 							? string.Empty										//		Since there is no comment, show nothing.
-							: string.Concat (									//		Comments get wrapped in parentheses, and separated by a space.
-								" (" ,											//		Leading space and left parenthesis
-								asciiInfo.Comment ,								//		Comment from XML document
-								")" )											//		Right parenthesis
+							: string.Concat (									//		Comments get wrapped in parentheses and separated by a space.
+								SpecialCharacters.SPACE_CHAR ,					//		Leading space 
+								SpecialCharacters.PARENTHESIS_LEFT ,			//      and left parenthesis
+								asciiInfo.Comment ,								//		Comment from document
+								SpecialCharacters.PARENTHESIS_RIGHT )			//		Right parenthesis
 					} );
 			}   // foreach ( ASCIICharacterDisplayInfo asciiInfo in asciiShowMan.AllASCIICharacters )
-		}	// ASCII_Table_Gen
+        }   // ASCII_Table_Gen
 
 
-		internal static void TestFormatItemBuilders ( )
+        internal static void TestFormatItemBuilders ( )
 		{
 			const string ERRMSG_UNEQUAL_ARRAYS = @"An internal error has occurred. Arrays s_astrLabelsOfVariousLengths and s_astrValuseOfIrrelevantLengths are of unequal length.{2}s_astrLabelsOfVariousLengths Length    = {0}{2}s_astrValuseOfIrrelevantLengths Length = {1}";
 			const string MSG_PROLOGUE = @"{1}Exercising routine AdjustToMaximumWidth: Item Count = {0}{1}";

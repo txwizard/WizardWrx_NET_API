@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>This update is backwards compatible with its predecessors. It is a maintenance update, which is being released along with the other libraries that implement the WizardWrx .NET API. From 2/1/2020 onwards, it also attempts to add the PDB to the package. Unless I get energetic and add HTML entities, this package will probably remain unchanged indefinitely. Do I have any volunteers?</releaseNotes>
+	    <releaseNotes>This update extends the ASCII table to include HTML endities and the coded strings required to implement URL encoding, yet it remains backwards compaatible.</releaseNotes>
     	<copyright>$copyright$</copyright>
 	    <tags>ASCII Metadata Table</tags>
   	</metadata>
