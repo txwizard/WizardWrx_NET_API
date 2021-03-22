@@ -36,9 +36,11 @@ goto SKIPREM
 ::                                                    file that I import into a
 ::                                                    Microsoft Excel workbook.
 ::
-::                      ShowTime.CMD                = This little shell script
-::                                                    displays the current time
-::                                                    per the machine clock.
+::                      ShowTime.exe                = This 64-bit C++ utility
+::                                                    supersedes the like-named
+::                                                    shell script, but affords
+::                                                    much greater control over
+::                                                    the display format.
 ::
 ::                      WWPause.exe                 = This 32-bit character mode
 ::                                                    Windows program replaces
@@ -81,11 +83,15 @@ goto SKIPREM
 ::  2019/07/18 DAG Amend to set the current working directory to the parent of
 ::                 the script directory, rather than its sibling, _NOTES, which
 ::                 also requires the relative paths to be reformulated a bit.
+::  2021/02/21 DAG Replace ShowTime.CMD with ShowTime.exe, a small 64-bit C++
+::                 utility that affords much greater control over the format of
+::                 the time display.
 ::  ============================================================================
 
 :SKIPREM
 
     ECHO Entering script %0, version %~t0
+	ShowTime.exe
 
     if "%_Confiuration%" == "" (
         echo.

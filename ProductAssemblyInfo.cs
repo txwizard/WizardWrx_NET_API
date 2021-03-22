@@ -18,6 +18,42 @@ using System.Runtime.InteropServices;
 //						the attributes that apply to all assemblies in the
 //						solution.
 //
+//  License:            Copyright ( C ) 2011 - 2021, David A.Gray.
+//                      All rights reserved.
+//
+//                      Redistribution and use in source and binary forms , with
+//                      or without modification , are permitted provided that
+//                      the following conditions are met:
+//
+//                      *   Redistributions of source code must retain the above
+//                          copyright notice , this list of conditions and the
+//                          following disclaimer.
+//
+//                      *   Redistributions in binary form must reproduce the
+//                          above copyright notice , this list of conditions and
+//                          the following disclaimer in the documentation and/or
+//                          other materials provided with the distribution.
+//
+//                      *   Neither the name of David A.Gray, nor the names of
+//                          his contributors may be used to endorse or promote
+//                          products derived from this software without specific
+//                          prior written permission.
+//
+//                      THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+//                      CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
+//                      WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+//                      WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+//                      PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
+//                      David A. Gray BE LIABLE FOR ANY DIRECT, INDIRECT,
+//                      INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+//                      (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+//                      SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+//                      PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+//                      ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+//                      LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+//                      ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+//                      IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+//
 // -----------------------------------------------------------------------------
 // Revision History
 // -----------------------------------------------------------------------------
@@ -33,9 +69,10 @@ using System.Runtime.InteropServices;
 //                releases. Hence, 7.23 becomes 7.24.
 //
 // 2021/01/30 DAG Update the product version number for the next major version.
-//                releases. Hence, 7.24 becomes 8.0. Going forward, the
-//                AssemblyFileVersion shall remain unchanged unless the API
-//                undergoes another major revision, which seems unlikely.
+//                Hence, 7.24 becomes 8.0. Going forward, AssemblyFileVersion
+//                shall remain unchanged unless the API undergoes another major
+//                revision, which seems unlikely.
+//
 //                However, the AssemblyVersion attribute of each library shall
 //                continue to inch upwards. All build numbers will increment
 //                from the last valuses they had in the previous major version,
@@ -44,6 +81,12 @@ using System.Runtime.InteropServices;
 //                the NuGet package file are unchanged, you are safe in assuming
 //                that the code is unchanged, and the new library is backwards
 //                compatible with its predecessors.
+//
+// 2021/03/21 DAG 1) Correct typographical errors in these comments, and add a
+//                   note immediately above the AssemblyFileVersion key to
+//                   remind myself that its value is frozen.
+//
+//                2) Incorporate my three-clause BSD license into this file.
 // =============================================================================
 
 // General Information about an assembly is controlled through the following
@@ -78,4 +121,11 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
+//
+// IMPORTANT MAINTENANCE NOTE: Henceforth, the AssemblyFileVersion property is
+//                             frozen at its current value, 8.0.0.0.
+//
+//                             AssemblyVersion shall continue to track build
+//                             numbers, and all major+minor assembly version
+//                             numbers shall be at least 8.0.
 [assembly: AssemblyFileVersion ( "8.0.0.0" )]

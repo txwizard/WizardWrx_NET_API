@@ -936,6 +936,32 @@ references:
   isSpec: "True"
   fullName: DLLServices2TestStand.Properties.Resources.MSG_ASBSOLUTE_ASSEMBLYNAME
   nameWithType: Resources.MSG_ASBSOLUTE_ASSEMBLYNAME
+- uid: DLLServices2TestStand.Properties.Resources.MSG_ASCII_TABLE_DETAIL
+  name: MSG_ASCII_TABLE_DETAIL
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_MSG_ASCII_TABLE_DETAIL
+  commentId: P:DLLServices2TestStand.Properties.Resources.MSG_ASCII_TABLE_DETAIL
+  fullName: DLLServices2TestStand.Properties.Resources.MSG_ASCII_TABLE_DETAIL
+  nameWithType: Resources.MSG_ASCII_TABLE_DETAIL
+- uid: DLLServices2TestStand.Properties.Resources.MSG_ASCII_TABLE_DETAIL*
+  name: MSG_ASCII_TABLE_DETAIL
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_MSG_ASCII_TABLE_DETAIL_
+  commentId: Overload:DLLServices2TestStand.Properties.Resources.MSG_ASCII_TABLE_DETAIL
+  isSpec: "True"
+  fullName: DLLServices2TestStand.Properties.Resources.MSG_ASCII_TABLE_DETAIL
+  nameWithType: Resources.MSG_ASCII_TABLE_DETAIL
+- uid: DLLServices2TestStand.Properties.Resources.MSG_ASCII_TABLES_REPORT
+  name: MSG_ASCII_TABLES_REPORT
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_MSG_ASCII_TABLES_REPORT
+  commentId: P:DLLServices2TestStand.Properties.Resources.MSG_ASCII_TABLES_REPORT
+  fullName: DLLServices2TestStand.Properties.Resources.MSG_ASCII_TABLES_REPORT
+  nameWithType: Resources.MSG_ASCII_TABLES_REPORT
+- uid: DLLServices2TestStand.Properties.Resources.MSG_ASCII_TABLES_REPORT*
+  name: MSG_ASCII_TABLES_REPORT
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_MSG_ASCII_TABLES_REPORT_
+  commentId: Overload:DLLServices2TestStand.Properties.Resources.MSG_ASCII_TABLES_REPORT
+  isSpec: "True"
+  fullName: DLLServices2TestStand.Properties.Resources.MSG_ASCII_TABLES_REPORT
+  nameWithType: Resources.MSG_ASCII_TABLES_REPORT
 - uid: DLLServices2TestStand.Properties.Resources.MSG_ASSEMBLY_SUBSYSTEM
   name: MSG_ASSEMBLY_SUBSYSTEM
   href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_MSG_ASSEMBLY_SUBSYSTEM

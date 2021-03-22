@@ -97,6 +97,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 
 using WizardWrx;
 using WizardWrx.FormatStringEngine;
@@ -140,69 +141,134 @@ namespace DLLServices2TestStand
 
 		internal static void ASCII_Table_Gen ( )
 		{
-			Console.WriteLine (
-				Properties.Resources.IDS_ASCII_TABLE_PREAMBLE ,					// Print this message above both tables.
-				Environment.NewLine );                                          // Format Item 0 = Embedded Newline
-
-			Console.WriteLine (
-				Properties.Resources.IDS_ASCII_TABLE_CHARACTER_PROPERTIES ,		// Print this message above the first table.
-				Environment.NewLine );                                          // Format Item 0 = Embedded Newline
-			string strDetailFormatTemplate = Properties.Resources.IDS_ASCII_CHARACTER_INFO;
+			StreamWriter swAsciiTableLists = null;
 
 			try
 			{
-				ASCII_Character_Display_Table aSCII_Character_Display_Table = ASCII_Character_Display_Table.GetTheSingleInstance ( );
+				swAsciiTableLists = GetAsciiTableListFileHandle ( );
 
-				for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ;
-						  intJ < aSCII_Character_Display_Table.AllASCIICharacters.Length ;
-						  intJ++ )
+				Console.WriteLine (
+					Properties.Resources.IDS_ASCII_TABLE_PREAMBLE ,             // Print this message above both tables.
+					Environment.NewLine );                                      // Format Item 0 = Embedded Newline
+				swAsciiTableLists.WriteLine (
+					Properties.Resources.IDS_ASCII_TABLE_PREAMBLE ,             // Print this message above both tables.
+					Environment.NewLine );                                      // Format Item 0 = Embedded Newline
+
+				Console.WriteLine (
+					Properties.Resources.IDS_ASCII_TABLE_CHARACTER_PROPERTIES , // Print this message above the first table.
+					Environment.NewLine );                                      // Format Item 0 = Embedded Newline
+				swAsciiTableLists.WriteLine (
+					Properties.Resources.IDS_ASCII_TABLE_CHARACTER_PROPERTIES , // Print this message above the first table.
+					Environment.NewLine );                                      // Format Item 0 = Embedded Newline
+
+				string strDetailFormatTemplate = Properties.Resources.IDS_ASCII_CHARACTER_INFO;
+				string strDisplayInfoTemplate = Properties.Resources.MSG_ASCII_TABLE_DETAIL;
+
+				try
 				{
-					ASCIICharacterDisplayInfo displayInfo = aSCII_Character_Display_Table.AllASCIICharacters [ intJ ];
+					ASCII_Character_Display_Table aSCII_Character_Display_Table = ASCII_Character_Display_Table.GetTheSingleInstance ( );
+
+					for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+							  intJ < aSCII_Character_Display_Table.AllASCIICharacters.Length ;
+							  intJ++ )
+					{
+						ASCIICharacterDisplayInfo displayInfo = aSCII_Character_Display_Table.AllASCIICharacters [ intJ ];
+						Console.WriteLine (
+							strDisplayInfoTemplate ,							// Format Control String
+							intJ ,                                              // Format Item 0: Character {0:-3}: Numerical
+							displayInfo.CodeAsDecimal ,                         // Format Item 1: Numerical Value = {1,3} (
+							displayInfo.CodeAsHexadecimal ,                     // Format Item 2: ({2} hex),
+							displayInfo.DisplayText ,                           // Format Item 3: Display Value = {3}
+							displayInfo.HTMLName );                             // Format Item 4: HTML Entity = {4}
+						swAsciiTableLists.WriteLine (
+							strDisplayInfoTemplate ,                            // Format Control String
+							intJ ,                                              // Format Item 0: Character {0:-3}: Numerical
+							displayInfo.CodeAsDecimal ,                         // Format Item 1: Numerical Value = {1,3} (
+							displayInfo.CodeAsHexadecimal ,                     // Format Item 2: ({2} hex),
+							displayInfo.DisplayText ,                           // Format Item 3: Display Value = {3}
+							displayInfo.HTMLName );                             // Format Item 4: HTML Entity = {4}
+					}   // for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ; intJ < aSCII_Character_Display_Table.AllASCIICharacters.Length ; intJ++ )
+				}
+				catch ( Exception exAll )
+				{
+					Program.s_smTheApp.AppExceptionLogger.ReportException ( exAll );
+				}
+
+				Console.WriteLine (
+					Properties.Resources.IDS_ASCII_TABLE_ENUMERATION ,          // Print this message between the two tables.
+					Environment.NewLine );                                      // Format Item 0 = Embedded Newline
+				swAsciiTableLists.WriteLine (
+					Properties.Resources.IDS_ASCII_TABLE_ENUMERATION ,          // Print this message between the two tables.
+					Environment.NewLine );                                      // Format Item 0 = Embedded Newline
+
+				ASCII_Character_Display_Table asciiShowMan = ASCII_Character_Display_Table.GetTheSingleInstance ( );
+				strDetailFormatTemplate = Properties.Resources.IDS_ASCII_TABLE_ITEM;
+
+				foreach ( ASCIICharacterDisplayInfo asciiInfo
+						  in asciiShowMan.AllASCIICharacters )
+				{
 					Console.WriteLine (
-						@"Character {0,3}: Numerical Value = {1,3} ({2} hex), Display Value = {3}, HTML Entity = {4}" ,
-						intJ ,                                                  // Format Item 0: Character {0:-3}: Numerical
-						displayInfo.CodeAsDecimal ,                             // Format Item 1: Numerical Value = {1,3} (
-						displayInfo.CodeAsHexadecimal ,                         // Format Item 2: ({2} hex),
-						displayInfo.DisplayText ,                               // Format Item 3: Display Value = {3}
-						displayInfo.HTMLName );                                 // Format Item 4: HTML Entity = {4}
-				}   // for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ; intJ < aSCII_Character_Display_Table.AllASCIICharacters.Length ; intJ++ )
+						strDetailFormatTemplate ,                               // Format control string, read above the loop
+						new object [ ]
+						{
+							asciiInfo.CodeAsDecimal ,							// Format Item 0: Character {0} (
+							asciiInfo.CodeAsHexadecimal ,						// Format Item 1: ({1}): Display
+							asciiInfo.URLEncoding ,								// Format Item 2: URL Encoding = {2}
+							asciiInfo.DisplayText ,								// Format Item 3: Display Value = {3}
+							string.IsNullOrEmpty ( asciiInfo.Comment )			// Format Item 4: Comment, if present, else nothing
+								? string.Empty									//		Since there is no comment, show nothing.
+								: string.Concat (								//		Comments get wrapped in parentheses and separated by a space.
+									SpecialCharacters.SPACE_CHAR ,				//		Leading space 
+									SpecialCharacters.PARENTHESIS_LEFT ,		//      and left parenthesis
+									asciiInfo.Comment ,							//		Comment from document
+									SpecialCharacters.PARENTHESIS_RIGHT )       //		Right parenthesis
+						} );
+					swAsciiTableLists.WriteLine (
+						strDetailFormatTemplate ,                               // Format control string, read above the loop
+						new object [ ]
+						{
+							asciiInfo.CodeAsDecimal ,							// Format Item 0: Character {0} (
+							asciiInfo.CodeAsHexadecimal ,						// Format Item 1: ({1}): Display
+							asciiInfo.URLEncoding ,								// Format Item 2: URL Encoding = {2}
+							asciiInfo.DisplayText ,								// Format Item 3: Display Value = {3}
+							string.IsNullOrEmpty ( asciiInfo.Comment )			// Format Item 4: Comment, if present, else nothing
+								? string.Empty									//		Since there is no comment, show nothing.
+								: string.Concat (								//		Comments get wrapped in parentheses and separated by a space.
+									SpecialCharacters.SPACE_CHAR ,				//		Leading space 
+									SpecialCharacters.PARENTHESIS_LEFT ,		//      and left parenthesis
+									asciiInfo.Comment ,							//		Comment from document
+									SpecialCharacters.PARENTHESIS_RIGHT )       //		Right parenthesis
+						} );
+				}   // foreach ( ASCIICharacterDisplayInfo asciiInfo in asciiShowMan.AllASCIICharacters )
+
+				swAsciiTableLists.Close ( );
+				swAsciiTableLists.Dispose ( );
+				swAsciiTableLists = null;
 			}
 			catch ( Exception exAll )
 			{
 				Program.s_smTheApp.AppExceptionLogger.ReportException ( exAll );
 			}
-
-			Console.WriteLine (
-				Properties.Resources.IDS_ASCII_TABLE_ENUMERATION ,              // Print this message between the two tables.
-				Environment.NewLine );                                          // Format Item 0 = Embedded Newline
-
-			ASCII_Character_Display_Table asciiShowMan = ASCII_Character_Display_Table.GetTheSingleInstance ( );
-			strDetailFormatTemplate = Properties.Resources.IDS_ASCII_TABLE_ITEM;
-
-			foreach ( ASCIICharacterDisplayInfo asciiInfo
-				      in asciiShowMan.AllASCIICharacters )
-			{
-				Console.WriteLine (
-					strDetailFormatTemplate ,                                   // Format control string, read above the loop
-					new object [ ]
-					{
-						asciiInfo.CodeAsDecimal ,								// Format Item 0: Character {0} (
-						asciiInfo.CodeAsHexadecimal ,							// Format Item 1: ({1}): Display
-						asciiInfo.URLEncoding ,									// Format Item 2: URL Encoding = {2}
-						asciiInfo.DisplayText ,									// Format Item 3: Display Value = {3}
-						string.IsNullOrEmpty ( asciiInfo.Comment )				// Format Item 4: Comment, if present, else nothing
-							? string.Empty										//		Since there is no comment, show nothing.
-							: string.Concat (									//		Comments get wrapped in parentheses and separated by a space.
-								SpecialCharacters.SPACE_CHAR ,					//		Leading space 
-								SpecialCharacters.PARENTHESIS_LEFT ,			//      and left parenthesis
-								asciiInfo.Comment ,								//		Comment from document
-								SpecialCharacters.PARENTHESIS_RIGHT )			//		Right parenthesis
-					} );
-			}   // foreach ( ASCIICharacterDisplayInfo asciiInfo in asciiShowMan.AllASCIICharacters )
         }   // ASCII_Table_Gen
 
 
-        internal static void TestFormatItemBuilders ( )
+        private static StreamWriter GetAsciiTableListFileHandle ( )
+        {
+			string strAsciiTestFileName = Program.AbsolutePathStringFromSettings (
+				Properties.Settings.Default.ASCII_Table_Listings );				// string		pstrRawStringValue	- Tokenized string to process
+			Console.WriteLine (
+				Properties.Resources.MSG_ASCII_TABLES_REPORT ,					// Format Control String
+				strAsciiTestFileName ,                                          // Format Item 0: The ASCII Table details are reproduced as a separate text file, {0}
+				Environment.NewLine );                                          // Format Item 1: {1}The ASCII AND .{1}
+			return new StreamWriter (
+				strAsciiTestFileName ,                                          // path			String				- The complete file path to write to.
+				FileIOFlags.FILE_OUT_CREATE ,                                   // append		Boolean				- true to append data to the file; false to overwrite the file. If the specified file does not exist, this parameter has no effect, and the constructor creates a new file.
+				System.Text.Encoding.UTF8 ,                                     // encoding		Encoding			- The character encoding to use.
+				MagicNumbers.CAPACITY_08KB );                                   // bufferSize	Int32				- The buffer size, in bytes.
+		}   
+		// private static TextWriter GetAsciiTableListFileHandle
+
+		internal static void TestFormatItemBuilders ( )
 		{
 			const string ERRMSG_UNEQUAL_ARRAYS = @"An internal error has occurred. Arrays s_astrLabelsOfVariousLengths and s_astrValuseOfIrrelevantLengths are of unequal length.{2}s_astrLabelsOfVariousLengths Length    = {0}{2}s_astrValuseOfIrrelevantLengths Length = {1}";
 			const string MSG_PROLOGUE = @"{1}Exercising routine AdjustToMaximumWidth: Item Count = {0}{1}";

@@ -1,8 +1,14 @@
 # WizardWrx .NET API Change Log
 
-This file is a running history of fixes and improvements from version 7.0
-onwards. Changes are documented for the newest version first. Within each
-version, classes are covered in alphabetical order.
+## 2021-03-22
+
+The libraries are unchanged. The only change in this release is that the unit
+test and demonstration assembly, DLLServices2TestStand.exe version 8.0.1388.0,
+fully covers the last batch of constants defined in WizardWrx.Common.dll,
+Version 7.24.128.
+
+Since I updated ProductAssemblyInfo.cs, every library got a refresh with a build
+number increment or three.
 
 ## 2021-02-06
 
@@ -30,12 +36,13 @@ identification.
 ## 2021-01-30
 
 This release updates the product version number for the next major version, 8.0.
-Hence, 7.24 becomes 8.0. Going forward, the FileVersionthis version
+Hence, 7.24 becomes 8.0.
+
 Going forward, the AssemblyFileVersion shall remain unchanged unless the API
 undergoes another major revision, which seems unlikely.
 
 However, the AssemblyVersion attribute of each library shall continue to inch
-upwards. All build numbers will increment from the last valuses they had in the
+upwards. Build numbers will increment from the last values they had in the
 previous major version, and each release will include each library, regardless
 of whether the build includes relevant changes.
 

@@ -22,7 +22,7 @@
 
     Author:				David A. Gray
 
-    License:            Copyright (C) 2011-2020, David A. Gray.
+    License:            Copyright (C) 2011-2021, David A. Gray.
                         All rights reserved.
 
                         Redistribution and use in source and binary forms, with
@@ -267,11 +267,16 @@
                              ExercisseDirectDependentAssemblyEnumerator method,
                              then terminates the program.
 
-    2021/02/04 8.0       DAG Implement a small loop to test a new static method,
+    2021/02/04 8.0.1382  DAG Implement a small loop to test a new static method,
                              GetAssemblyVersionInfo, exported by class library
                              WizardWrx.AssemblyUtils. The new static method,
                              ExerciseGetAssemblyVersionInfo, tests all valid
                              use cases.
+
+    2021/03/21 8.0.1384  DAG Implement s_strAbsoluteReportsDirectoryName, which
+                             constructs an absolute directory name to which an
+                             unqualified file name can be appended to create an
+                             absolute (fully qualiffied) file name.
     ============================================================================
 */
 
@@ -305,7 +310,10 @@ namespace DLLServices2TestStand
 
         internal static readonly string s_strAbsoluteDataDirectoryName = Path.Combine (
             Environment.CurrentDirectory ,
-            Properties.Settings.Default.Data_Directory.EnsureLastCharIs ( System.IO.Path.DirectorySeparatorChar ) );
+            Properties.Settings.Default.Data_Directory.EnsureLastCharIs ( Path.DirectorySeparatorChar ) );
+        internal static readonly string s_strAbsoluteReportsDirectoryName = Path.Combine (
+            Environment.CurrentDirectory ,
+            Properties.Settings.Default.Reports_Directory.EnsureLastCharIs ( Path.DirectorySeparatorChar ) );
 
         static readonly int [ ] s_aenmAssemblyVersionRequests =
         {
@@ -1159,7 +1167,7 @@ namespace DLLServices2TestStand
 
         private static void EnumExcpetionGUIDs ( )
         {
-            using ( System.IO.StreamWriter swOutputStream = new System.IO.StreamWriter (
+            using ( StreamWriter swOutputStream = new StreamWriter (
                 AbsolutePathStringFromSettings ( Properties.Settings.Default.ExceptionGUIDsListingFile ) ,
                 FileIOFlags.FILE_OUT_CREATE ,
                 System.Text.Encoding.ASCII ,
@@ -1181,7 +1189,7 @@ namespace DLLServices2TestStand
                         } );
                 }	// foreach ( Type typCurrent in s_atypCommonExceptionTypes )
 
-                System.IO.FileInfo fiOutputFile = new System.IO.FileInfo ( AbsolutePathStringFromSettings ( Properties.Settings.Default.ExceptionGUIDsListingFile ) );
+                System.IO.FileInfo fiOutputFile = new FileInfo ( AbsolutePathStringFromSettings ( Properties.Settings.Default.ExceptionGUIDsListingFile ) );
                 Console.WriteLine (
                     "{1}Properties of selected System Object Types written onto file {0}{1}" ,
                     fiOutputFile.FullName ,
@@ -1738,10 +1746,13 @@ namespace DLLServices2TestStand
         internal static string AbsolutePathStringFromSettings ( string pstrRawSettingValue )
         {
             const string DATA_DIRECTORY_NAME_TOKEN = @"$$DATADIRNAME$$\";
+            const string REPORTS_DIRECTORY_NAME_TOKEN = @"$$REPORTSDIRNAME$$";
 
             return pstrRawSettingValue.Replace (
                 DATA_DIRECTORY_NAME_TOKEN ,
-                s_strAbsoluteDataDirectoryName );
+                s_strAbsoluteDataDirectoryName ).Replace (
+                REPORTS_DIRECTORY_NAME_TOKEN ,
+                s_strAbsoluteReportsDirectoryName );
         }	// AbsolutePathStringFromSettings method
 
 

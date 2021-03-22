@@ -691,6 +691,24 @@ namespace DLLServices2TestStand.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Character {0,3}: Numerical Value = {1,3} ({2} hex), Display Value = {3}, HTML Entity = {4}.
+        /// </summary>
+        public static string MSG_ASCII_TABLE_DETAIL {
+            get {
+                return ResourceManager.GetString("MSG_ASCII_TABLE_DETAIL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {1}The ASCII Table details are reproduced as a separate text file, {0}.{1}.
+        /// </summary>
+        public static string MSG_ASCII_TABLES_REPORT {
+            get {
+                return ResourceManager.GetString("MSG_ASCII_TABLES_REPORT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {2}Executable Subsystem = {0}: {1}{2}.
         /// </summary>
         public static string MSG_ASSEMBLY_SUBSYSTEM {

@@ -12,7 +12,7 @@ namespace DLLServices2TestStand.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.3.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.8.1.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -152,6 +152,24 @@ namespace DLLServices2TestStand.Properties {
         public string DependentAssemblies_Test_Case_Data_FileName {
             get {
                 return ((string)(this["DependentAssemblies_Test_Case_Data_FileName"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("$$REPORTSDIRNAME$$\\ASCII_Tables.TXT")]
+        public string ASCII_Table_Listings {
+            get {
+                return ((string)(this["ASCII_Table_Listings"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(".\\Test_Reports")]
+        public string Reports_Directory {
+            get {
+                return ((string)(this["Reports_Directory"]));
             }
         }
     }

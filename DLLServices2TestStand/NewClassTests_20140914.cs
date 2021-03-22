@@ -61,113 +61,119 @@
     Revision History
     ----------------------------------------------------------------------------
 
-    Date       Version Author Description
-    ---------- ------- ------ --------------------------------------------------
-    2014/09/15 5.2     DAG    Initial implementation.
+    Date       Version  By  Description
+    ---------- -------- --- --------------------------------------------------
+    2014/09/15 5.2      DAG Initial implementation.
 
-    2015/06/21 5.5     DAG    Move to WizardWrx.DLLServices2TestStand.exe, to 
-                              which the associated classes moved, extend to test
-                              the loop index state evaluators and the
-                              implementation in C# of the Unless idiom that I
-                              borrowed from the Perl scripting language, and put
-                              under my 3-clause BSD license.
+    2015/06/21 5.5      DAG Move to WizardWrx.DLLServices2TestStand.exe, to 
+                            which the associated classes moved, extend to test
+                            the loop index state evaluators and the
+                            implementation in C# of the Unless idiom that I
+                            borrowed from the Perl scripting language, and put
+                            under my 3-clause BSD license.
 
-    2015/08/31 5.6     DAG    Add a couple of overlooked special characters and
-                              strings, along with a new method, ChopChop, to
-                              test the new Chop method.
+    2015/08/31 5.6      DAG Add a couple of overlooked special characters and
+                            strings, along with a new method, ChopChop, to
+                            test the new Chop method.
 
-    2016/04/05 6.0     DAG    Add overlooked special characters to the listing.
+    2016/04/05 6.0      DAG Add overlooked special characters to the listing.
 
-    2016/06/04 6.2     DAG    Add the two new stream I/O flags and the routine
-                              to put the new hex digit formatter through its
-                              paces. IntegerToHexStrExercises is the name of the
-                              new test routine.
+    2016/06/04 6.2      DAG Add the two new stream I/O flags and the routine
+                            to put the new hex digit formatter through its
+                            paces. IntegerToHexStrExercises is the name of the
+                            new test routine.
 
-    2017/03/16 7.0     DAG    Adjust for the breakup of WizardWrx.DllServices2,
-                              and add ExerciseUtf8ResourceReader, to exercise
-                              the new UTF-8 embedded resource reader.
+    2017/03/16 7.0      DAG Adjust for the breakup of WizardWrx.DllServices2,
+                            and add ExerciseUtf8ResourceReader, to exercise
+                            the new UTF-8 embedded resource reader.
 
-                              Add a mapping for the 16 numeral hexadecimal long
-                              integer format string.
+                            Add a mapping for the 16 numeral hexadecimal long
+                            integer format string.
 
-    2017/06/24 7.0     DAG    Enumerate the MagicNumbers constants the hard way.
+    2017/06/24 7.0      DAG Enumerate the MagicNumbers constants the hard way.
 
-    2017/07/17 7.0     DAG    1) Replace references to string.empty, which isn't
-                                 a constant, with SpecialString.s.EMPTY_STRING,
-                                 which is one.
+    2017/07/17 7.0      DAG 1) Replace references to string.empty, which isn't
+                               a constant, with SpecialString.s.EMPTY_STRING,
+                               which is one.
 
-                              2) Add the three new characters (BRACE_LEFT,
-                                 BRACE_RIGHT, and DLM_FORMAT_ITEM_BEGIN) to the
-                                 listing of special characters.
+                            2) Add the three new characters (BRACE_LEFT,
+                               BRACE_RIGHT, and DLM_FORMAT_ITEM_BEGIN) to the
+                               listing of special characters.
 
-                              3) Incorporate and activate alternative blocks to
-                                 exercise the new extension methods on the
-                                 System.string class.
+                            3) Incorporate and activate alternative blocks to
+                               exercise the new extension methods on the
+                               System.string class.
 
-    2017/07/19 7.0     DAG    Define EnumerateStringResourcesInAssembly, an 
-                              experimental method to enumerate every string
-                              resource defined in an assembly, and suppress the
-                              UTF-8 file reading test unless the command line is
-                              empty.
+    2017/07/19 7.0      DAG Define EnumerateStringResourcesInAssembly, an 
+                            experimental method to enumerate every string
+                            resource defined in an assembly, and suppress the
+                            UTF-8 file reading test unless the command line is
+                            empty.
  
-    2017/09/04 7.0     DAG    Add the new character constants, several of which
-                              are aliases of existing character constants.
+    2017/09/04 7.0      DAG Add the new character constants, several of which
+                            are aliases of existing character constants.
 
-    2017/09/10 7.0     DAG    Make BeginTest and TestDone visible to the whole
-                              assembly.
+    2017/09/10 7.0      DAG Make BeginTest and TestDone visible to the whole
+                            assembly.
 
-    2017/09/17 7.0     DAG    Add 3 NumericFormat and MagicNumbers constants.
+    2017/09/17 7.0      DAG Add 3 NumericFormat and MagicNumbers constants.
 
-    2018/10/07 7.1     DAG    1) Test the new CapitalizeWords extension method.
+    2018/10/07 7.1      DAG 1) Test the new CapitalizeWords extension method.
 
-                              2) Define SpecialStringExercises to list and show
-                                 the SpecialStrings constants.
+                            2) Define SpecialStringExercises to list and show
+                               the SpecialStrings constants.
 
-    2018/11/10 7.11    DAG    1) Add EnumFromStringExercises to test a new 
-                                 string extension method that converts a string 
-                                 to an enumeration.
+    2018/11/10 7.11     DAG 1) Add EnumFromStringExercises to test a new 
+                               string extension method that converts a string 
+                               to an enumeration.
 
-                              2) Display decimal and hexadecimal representations
-                                 of all MagicNumbers constants, including the 2
-                                 new ones, EXACTLY_TEN and EVENLY_DIVISIBLE.
+                            2) Display decimal and hexadecimal representations
+                               of all MagicNumbers constants, including the 2
+                               new ones, EXACTLY_TEN and EVENLY_DIVISIBLE.
 
-    2017/09/17 7.13    DAG    Display decimal and hexadecimal representations of
-                              new integer constants EXACTLY_ONE_HUNDRED_MILLION,
-                              EXACTLY_ONE_HUNDRED_MILLION_LONG, and
-                              EXACTLY_ONE_HUNDRED_THOUSAND.
+    2017/09/17 7.13     DAG Display decimal and hexadecimal representations of
+                            new integer constants EXACTLY_ONE_HUNDRED_MILLION,
+                            EXACTLY_ONE_HUNDRED_MILLION_LONG, and
+                            EXACTLY_ONE_HUNDRED_THOUSAND.
 
-    2018/12/24 7.14    DAG    Add the TICKS_PER_* constants incorporated into
-                              the MagicNumbers class to the listing in method
-                              DisplayFormatsExercises. The breaking change is
-                              self-correcting.
+    2018/12/24 7.14     DAG Add the TICKS_PER_* constants incorporated into
+                            the MagicNumbers class to the listing in method
+                            DisplayFormatsExercises. The breaking change is
+                            self-correcting.
 
-    2019/06/09 7.20    DAG    Amend EnumerateStringResourcesInAssembly to test
-                              the ListResourcesInAssemblyByName overload that
-                              takes a StreamWriter into which it is expected to
-                              write a tab-delimited list of the string resources
-                              stored in the specified assembly.
+    2019/06/09 7.20     DAG Amend EnumerateStringResourcesInAssembly to test
+                            the ListResourcesInAssemblyByName overload that
+                            takes a StreamWriter into which it is expected to
+                            write a tab-delimited list of the string resources
+                            stored in the specified assembly.
 
-    2019/07/04 7.21    DAG    1) Amend Registry key and value name constants in
-                                 UtilsExercises, so that all keys exist, and can
-                                 be expected to exist on all Windows
-                                 installations.
+    2019/07/04 7.21     DAG 1) Amend Registry key and value name constants in
+                               UtilsExercises, so that all keys exist, and can
+                               be expected to exist on all Windows
+                               installations.
 
-                              2) Move the REGISTRY_VALUE_TYPE_* strings into the
-                                 public string resources exposed by the Common
-                                 library.
+                            2) Move the REGISTRY_VALUE_TYPE_* strings into the
+                               public string resources exposed by the Common
+                               library.
 
-    2019/07/18 7.21    DAG    1) Add generalization of SpecialStringExercises to
-                                 the task list. This gets a revision history
-                                 item because adding the task list item changes
-                                 the file modified date.
+    2019/07/18 7.21     DAG 1) Add generalization of SpecialStringExercises to
+                               the task list. This gets a revision history
+                               item because adding the task list item changes
+                               the file modified date.
 
-                              2) Add an argument to PauseForPictures that takes
-                                 a string that is displayed on the error console
-                                 when standard output is redirected.
+                            2) Add an argument to PauseForPictures that takes
+                               a string that is displayed on the error console
+                               when standard output is redirected.
 
-    2019/11/17 7.23    DAG    Add code to exercise most of the static methods in
-                              the NumericFormats class, in particular the new
-                              FormatIntegerLeftPadded method.
+    2019/11/17 7.23     DAG Add code to exercise most of the static methods in
+                            the NumericFormats class, in particular the new
+                            FormatIntegerLeftPadded method.
+
+    2021/03/21 8.0.1384 DAG 1) Cover constants added to WizardWrx.Common.dll,
+                               Version 7.24.128.
+
+                            2) Create $$DATADIRNAME$$\ASCII_Tables.TXT as an
+                               independent file, for use as a reference list.
     ============================================================================
 */
 
@@ -267,16 +273,17 @@ namespace DLLServices2TestStand
                 System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,
                 ref pintTestNumber );
 
-            Console.WriteLine ( "    Public  Constant ArrayInfo.ARRAY_FIRST_ELEMENT  = {0}" , ArrayInfo.ARRAY_FIRST_ELEMENT );
-            Console.WriteLine ( "    Public  Constant ArrayInfo.ARRAY_IS_EMPTY       = {0}" , ArrayInfo.ARRAY_IS_EMPTY );
-            Console.WriteLine ( "    Public  Constant ArrayInfo.ARRAY_INVALID_INDEX  = {0}" , ArrayInfo.ARRAY_INVALID_INDEX );
-            Console.WriteLine ( "    Public  Constant ArrayInfo.INDEX_FROM_ORDINAL   = {0}" , ArrayInfo.INDEX_FROM_ORDINAL );
-            Console.WriteLine ( "    Public  Constant ArrayInfo.ARRAY_SECOND_ELEMENT = {0}" , ArrayInfo.ARRAY_SECOND_ELEMENT );
-            Console.WriteLine ( "    Public  Constant ArrayInfo.NEXT_INDEX           = {0}" , ArrayInfo.NEXT_INDEX );
-            Console.WriteLine ( "    Public  Constant ArrayInfo.ORDINAL_FROM_INDEX   = {0}{1}" , ArrayInfo.ORDINAL_FROM_INDEX , Environment.NewLine );
+            Console.WriteLine ( "    Public  Constant ArrayInfo.ARRAY_FIRST_ELEMENT       = {0}" , ArrayInfo.ARRAY_FIRST_ELEMENT );
+            Console.WriteLine ( "    Public  Constant ArrayInfo.ARRAY_IS_EMPTY            = {0}" , ArrayInfo.ARRAY_IS_EMPTY );
+            Console.WriteLine ( "    Public  Constant ArrayInfo.ARRAY_INVALID_INDEX       = {0}" , ArrayInfo.ARRAY_INVALID_INDEX );
+            Console.WriteLine ( "    Public  Constant ArrayInfo.INDEX_FROM_ORDINAL        = {0}" , ArrayInfo.INDEX_FROM_ORDINAL );
+            Console.WriteLine ( "    Public  Constant ArrayInfo.ARRAY_SECOND_ELEMENT      = {0}" , ArrayInfo.ARRAY_SECOND_ELEMENT );
+            Console.WriteLine ( "    Public  Constant ArrayInfo.MSO_COLLECTION_FIRST_ITEM = {0}" , ArrayInfo.MSO_COLLECTION_FIRST_ITEM );
+            Console.WriteLine ( "    Public  Constant ArrayInfo.NEXT_INDEX                = {0}" , ArrayInfo.NEXT_INDEX );
+            Console.WriteLine ( "    Public  Constant ArrayInfo.ORDINAL_FROM_INDEX        = {0}{1}" , ArrayInfo.ORDINAL_FROM_INDEX , Environment.NewLine );
 
-            Console.WriteLine ( "    Public method ArrayInfo.IndexFromOrdinal       = {0,2:N0} , for pintOrdinal = {1,2:N0}" , ArrayInfo.IndexFromOrdinal ( TEST_INDEX ) , TEST_INDEX );
-            Console.WriteLine ( "    Public method ArrayInfo.OrdinalFromIndex       = {0,2:N0} , for pintIndex   = {1,2:N0}" , ArrayInfo.OrdinalFromIndex ( TEST_INDEX ) , TEST_INDEX );
+            Console.WriteLine ( "    Public method ArrayInfo.IndexFromOrdinal             = {0,2:N0} , for pintOrdinal = {1,2:N0}" , ArrayInfo.IndexFromOrdinal ( TEST_INDEX ) , TEST_INDEX );
+            Console.WriteLine ( "    Public method ArrayInfo.OrdinalFromIndex             = {0,2:N0} , for pintIndex   = {1,2:N0}" , ArrayInfo.OrdinalFromIndex ( TEST_INDEX ) , TEST_INDEX );
 
             return TestDone (
                 WizardWrx.MagicNumbers.ERROR_SUCCESS ,
@@ -302,7 +309,7 @@ namespace DLLServices2TestStand
             }   // for ( int intCaseIndex = ArrayInfo.ARRAY_FIRST_ELEMENT ; intCaseIndex < s_astrStringsToCapitalize.Length ; intCaseIndex++ )
 
             return TestDone (
-                WizardWrx.MagicNumbers.ERROR_SUCCESS ,
+                MagicNumbers.ERROR_SUCCESS ,
                 pintTestNumber );
         }   // CapitalizeWordsExercises method
 
@@ -377,7 +384,7 @@ namespace DLLServices2TestStand
             }	// Null string degenerate case.
 
             return TestDone (
-                WizardWrx.MagicNumbers.ERROR_SUCCESS ,
+                MagicNumbers.ERROR_SUCCESS ,
                 pintTestNumber );
         }	// ChopChop method
 
@@ -408,7 +415,7 @@ namespace DLLServices2TestStand
                 astrDummyRecords.Length );
 
             return TestDone (
-                WizardWrx.MagicNumbers.ERROR_SUCCESS ,
+                MagicNumbers.ERROR_SUCCESS ,
                 pintTestNumber );
         }   // CSVFileInfoExercises method
 
@@ -669,6 +676,23 @@ namespace DLLServices2TestStand
             Console.WriteLine ( "{0}Enumerate all MagicNumbers Constants:{0}" , Environment.NewLine );
 
             Console.WriteLine ( "    MagicNumbers.APPLICATION_ERROR_MASK            = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.APPLICATION_ERROR_MASK , MagicNumbers.APPLICATION_ERROR_MASK.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.APPLICATION_ERROR_MASK.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+
+            //  ----------------------------------------------------------------
+            //  Initial capacities for lists, dictionaries, and such:
+            //  ----------------------------------------------------------------
+
+            Console.WriteLine ( "    MagicNumbers.CAPACITY_4                        = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_4 , MagicNumbers.CAPACITY_4.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_4.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( "    MagicNumbers.CAPACITY_8                        = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_8 , MagicNumbers.CAPACITY_8.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_8.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( "    MagicNumbers.CAPACITY_10                       = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_10 , MagicNumbers.CAPACITY_10.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_10.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( "    MagicNumbers.CAPACITY_16                       = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_16 , MagicNumbers.CAPACITY_16.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_16.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( "    MagicNumbers.CAPACITY_128                      = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_128 , MagicNumbers.CAPACITY_128.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_128.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( "    MagicNumbers.CAPACITY_255                      = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_255 , MagicNumbers.CAPACITY_255.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_255.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( "    MagicNumbers.CAPACITY_256                      = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_256 , MagicNumbers.CAPACITY_256.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_256.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+
+            //  ----------------------------------------------------------------
+            //  Capacities for file I/O and other buffers:
+            //  ----------------------------------------------------------------
+
             Console.WriteLine ( "    MagicNumbers.CAPACITY_01KB                     = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_01KB , MagicNumbers.CAPACITY_01KB.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_01KB.ToString ( NumericFormats.HEXADECIMAL_8 ) );
             Console.WriteLine ( "    MagicNumbers.CAPACITY_02KB                     = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_02KB , MagicNumbers.CAPACITY_02KB.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_02KB.ToString ( NumericFormats.HEXADECIMAL_8 ) );
             Console.WriteLine ( "    MagicNumbers.CAPACITY_04KB                     = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_04KB , MagicNumbers.CAPACITY_04KB.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_04KB.ToString ( NumericFormats.HEXADECIMAL_8 ) );
@@ -677,6 +701,11 @@ namespace DLLServices2TestStand
             Console.WriteLine ( "    MagicNumbers.CAPACITY_32KB                     = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_32KB , MagicNumbers.CAPACITY_32KB.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_32KB.ToString ( NumericFormats.HEXADECIMAL_8 ) );
             Console.WriteLine ( "    MagicNumbers.CAPACITY_64KB                     = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_64KB , MagicNumbers.CAPACITY_64KB.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_64KB.ToString ( NumericFormats.HEXADECIMAL_8 ) );
             Console.WriteLine ( "    MagicNumbers.CAPACITY_MAX_PATH                 = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_MAX_PATH , MagicNumbers.CAPACITY_MAX_PATH.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_MAX_PATH.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+
+            //  ----------------------------------------------------------------
+            //  Assorted commonly used magic numbers:
+            //  ----------------------------------------------------------------
+
             Console.WriteLine ( "    MagicNumbers.EMPTY_STRING_LENGTH               = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.EMPTY_STRING_LENGTH , MagicNumbers.EMPTY_STRING_LENGTH.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.EMPTY_STRING_LENGTH.ToString ( NumericFormats.HEXADECIMAL_8 ) );
             Console.WriteLine ( "    MagicNumbers.ERROR_INVALID_CMD_LNE_ARGS        = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.ERROR_INVALID_CMD_LNE_ARGS , MagicNumbers.ERROR_INVALID_CMD_LNE_ARGS.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.ERROR_INVALID_CMD_LNE_ARGS.ToString ( NumericFormats.HEXADECIMAL_8 ) );
             Console.WriteLine ( "    MagicNumbers.ERROR_RUNTIME                     = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.ERROR_RUNTIME , MagicNumbers.ERROR_RUNTIME.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.ERROR_RUNTIME.ToString ( NumericFormats.HEXADECIMAL_8 ) );
@@ -693,11 +722,19 @@ namespace DLLServices2TestStand
             Console.WriteLine ( "    MagicNumbers.EXACTLY_ONE_BILLION               = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.EXACTLY_ONE_BILLION , MagicNumbers.EXACTLY_ONE_BILLION.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.EXACTLY_ONE_BILLION.ToString ( NumericFormats.HEXADECIMAL_8 ) );
             Console.WriteLine ( "    MagicNumbers.MILLISECONDS_PER_SECOND           = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.MILLISECONDS_PER_SECOND , MagicNumbers.MILLISECONDS_PER_SECOND.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.MILLISECONDS_PER_SECOND.ToString ( NumericFormats.HEXADECIMAL_8 ) );
             Console.WriteLine ( "    MagicNumbers.MINUS_ONE                         = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.MINUS_ONE , MagicNumbers.MINUS_ONE.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.MINUS_ONE.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( "    MagicNumbers.MSO_COLLECTION_FIRST_ITEM         = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.MSO_COLLECTION_FIRST_ITEM , MagicNumbers.MSO_COLLECTION_FIRST_ITEM.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.MSO_COLLECTION_FIRST_ITEM.ToString ( NumericFormats.HEXADECIMAL_8 ) );
             Console.WriteLine ( "    MagicNumbers.NUMBER_BASE_DECIMAL               = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.NUMBER_BASE_DECIMAL , MagicNumbers.NUMBER_BASE_DECIMAL.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.NUMBER_BASE_DECIMAL.ToString ( NumericFormats.HEXADECIMAL_8 ) );
             Console.WriteLine ( "    MagicNumbers.NUMBER_BASE_HEXADECIMAL           = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.NUMBER_BASE_HEXADECIMAL , MagicNumbers.NUMBER_BASE_HEXADECIMAL.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.NUMBER_BASE_HEXADECIMAL.ToString ( NumericFormats.HEXADECIMAL_8 ) );
             Console.WriteLine ( "    MagicNumbers.PLUS_ONE                          = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.PLUS_ONE , MagicNumbers.PLUS_ONE.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.PLUS_ONE.ToString ( NumericFormats.HEXADECIMAL_8 ) );
             Console.WriteLine ( "    MagicNumbers.PLUS_TWO                          = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.PLUS_TWO , MagicNumbers.PLUS_TWO.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.PLUS_TWO.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( "    MagicNumbers.PLUS_THREE                        = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.PLUS_THREE , MagicNumbers.PLUS_THREE.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.PLUS_THREE.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( "    MagicNumbers.PLUS_FOUR                         = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.PLUS_FOUR , MagicNumbers.PLUS_FOUR.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.PLUS_FOUR.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( "    MagicNumbers.PLUS_FIVE                         = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.PLUS_FIVE , MagicNumbers.PLUS_FIVE.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.PLUS_FIVE.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( "    MagicNumbers.PLUS_SIX                          = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.PLUS_SIX , MagicNumbers.PLUS_SIX.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.PLUS_SIX.ToString ( NumericFormats.HEXADECIMAL_8 ) );
             Console.WriteLine ( "    MagicNumbers.PLUS_SEVEN                        = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.PLUS_SEVEN , MagicNumbers.PLUS_SEVEN.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.PLUS_SEVEN.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( "    MagicNumbers.PLUS_EIGHT                        = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.PLUS_EIGHT , MagicNumbers.PLUS_EIGHT.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.PLUS_EIGHT.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( "    MagicNumbers.PLUS_NINE                        = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.PLUS_NINE , MagicNumbers.PLUS_NINE.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.PLUS_NINE.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+
             Console.WriteLine ( "    MagicNumbers.STRING_INDEXOF_NOT_FOUND          = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.STRING_INDEXOF_NOT_FOUND , MagicNumbers.STRING_INDEXOF_NOT_FOUND.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.STRING_INDEXOF_NOT_FOUND.ToString ( NumericFormats.HEXADECIMAL_8 ) );
             Console.WriteLine ( "    MagicNumbers.STRING_SUBSTR_BEGINNING           = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.STRING_SUBSTR_BEGINNING , MagicNumbers.STRING_SUBSTR_BEGINNING.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.STRING_SUBSTR_BEGINNING.ToString ( NumericFormats.HEXADECIMAL_8 ) );
             Console.WriteLine ( "    MagicNumbers.TICKS_PER_SECOND                  = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.TICKS_PER_SECOND , MagicNumbers.TICKS_PER_SECOND.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.TICKS_PER_SECOND.ToString ( NumericFormats.HEXADECIMAL_8 ) );
@@ -770,7 +807,7 @@ namespace DLLServices2TestStand
                 ref pintTestNumber );
 
             List<System.Reflection.FieldInfo> fieldInfos = typeof ( SpecialStrings ).GetFields (
-                System.Reflection.BindingFlags.Public
+                  System.Reflection.BindingFlags.Public
                 | System.Reflection.BindingFlags.Static
                 | System.Reflection.BindingFlags.FlattenHierarchy ).Where (
                 fi => fi.IsLiteral && !fi.IsInitOnly ).ToList ( );
@@ -1032,7 +1069,16 @@ namespace DLLServices2TestStand
             Console.WriteLine ( "    Public Constant SpecialCharacters.NUL_CHAR              = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.NULL_CHAR , ( int ) SpecialCharacters.NULL_CHAR , ( ( int ) SpecialCharacters.NULL_CHAR ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
             Console.WriteLine ( "    Public Constant SpecialCharacters.NONBREAKING_SPACE     = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.NONBREAKING_SPACE_CHAR , ( int ) SpecialCharacters.NONBREAKING_SPACE_CHAR , ( ( int ) SpecialCharacters.NONBREAKING_SPACE_CHAR ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
             Console.WriteLine ( "    Public Constant SpecialCharacters.CHECK_MARK_CHAR       = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.CHECK_MARK_CHAR , ( int ) SpecialCharacters.CHECK_MARK_CHAR , ( ( int ) SpecialCharacters.CHECK_MARK_CHAR ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.LAST_ASCII_CHAR       = {0} (ASCII code = {1,2:N0} (0x{2}){3}" , SpecialCharacters.LAST_ASCII_CHAR , ( int ) SpecialCharacters.LAST_ASCII_CHAR , ( ( int ) SpecialCharacters.LAST_ASCII_CHAR ).ToString ( DisplayFormats.HEXADECIMAL_2 ) , Environment.NewLine ); ;
+            Console.WriteLine ( "    Public Constant SpecialCharacters.LAST_ASCII_CHAR       = {0} (ASCII code = {1,2:N0} (0x{2}){3}" , SpecialCharacters.LAST_ASCII_CHAR , ( int ) SpecialCharacters.LAST_ASCII_CHAR , ( ( int ) SpecialCharacters.LAST_ASCII_CHAR ).ToString ( DisplayFormats.HEXADECIMAL_2 ) , Environment.NewLine );
+
+            Console.WriteLine ( "    Public Constant SpecialCharacters.ALARM                 = {0} (ASCII code = {1,2:N0} (0x{2}){3}" , SpecialCharacters.ALARM , ( int ) SpecialCharacters.ALARM , ( ( int ) SpecialCharacters.ALARM ).ToString ( DisplayFormats.HEXADECIMAL_2 ) , Environment.NewLine );
+            Console.WriteLine ( "    Public Constant SpecialCharacters.BEL                   = {0} (ASCII code = {1,2:N0} (0x{2}){3}" , SpecialCharacters.BEL , ( int ) SpecialCharacters.BEL , ( ( int ) SpecialCharacters.BEL ).ToString ( DisplayFormats.HEXADECIMAL_2 ) , Environment.NewLine );
+            Console.WriteLine ( "    Public Constant SpecialCharacters.BELL                  = {0} (ASCII code = {1,2:N0} (0x{2}){3}" , SpecialCharacters.BELL , ( int ) SpecialCharacters.BELL , ( ( int ) SpecialCharacters.BELL ).ToString ( DisplayFormats.HEXADECIMAL_2 ) , Environment.NewLine );
+
+            Console.WriteLine ( "    Public Constant SpecialCharacters.BACKSPACE             = {0} (ASCII code = {1,2:N0} (0x{2}){3}" , SpecialCharacters.BACKSPACE , ( int ) SpecialCharacters.BACKSPACE , ( ( int ) SpecialCharacters.BACKSPACE ).ToString ( DisplayFormats.HEXADECIMAL_2 ) , Environment.NewLine );
+            Console.WriteLine ( "    Public Constant SpecialCharacters.END_OF_FILE           = {0} (ASCII code = {1,2:N0} (0x{2}){3}" , SpecialCharacters.END_OF_FILE , ( int ) SpecialCharacters.END_OF_FILE , ( ( int ) SpecialCharacters.END_OF_FILE ).ToString ( DisplayFormats.HEXADECIMAL_2 ) , Environment.NewLine );
+            Console.WriteLine ( "    Public Constant SpecialCharacters.EOF                   = {0} (ASCII code = {1,2:N0} (0x{2}){3}" , SpecialCharacters.EOF , ( int ) SpecialCharacters.EOF , ( ( int ) SpecialCharacters.EOF ).ToString ( DisplayFormats.HEXADECIMAL_2 ) , Environment.NewLine );
+            Console.WriteLine ( "    Public Constant SpecialCharacters.ESCAPE_CHAR           = {0} (ASCII code = {1,2:N0} (0x{2}){3}" , SpecialCharacters.ESCAPE_CHAR , ( int ) SpecialCharacters.ESCAPE_CHAR , ( ( int ) SpecialCharacters.ESCAPE_CHAR ).ToString ( DisplayFormats.HEXADECIMAL_2 ) , Environment.NewLine );
 
             Console.WriteLine ( "    Public Constant SpecialCharacters.CHAR_LC_I             = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.CHAR_LC_I , ( int ) SpecialCharacters.CHAR_LC_I , ( ( int ) SpecialCharacters.CHAR_LC_I ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
             Console.WriteLine ( "    Public Constant SpecialCharacters.CHAR_LC_L             = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.CHAR_LC_L , ( int ) SpecialCharacters.CHAR_LC_L , ( ( int ) SpecialCharacters.CHAR_LC_L ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
