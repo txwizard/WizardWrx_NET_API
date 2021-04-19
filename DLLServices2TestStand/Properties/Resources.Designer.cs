@@ -88,6 +88,15 @@ namespace DLLServices2TestStand.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to NameValueCollectionFromEmbbededList.
+        /// </summary>
+        public static string CMDARG_EMBEDDED_NVC_TEST {
+            get {
+                return ResourceManager.GetString("CMDARG_EMBEDDED_NVC_TEST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to EnumExcpetionGUIDs.
         /// </summary>
         public static string CMDARG_ENUMERATE_EXCEPTION_GUIDS {
@@ -628,6 +637,24 @@ namespace DLLServices2TestStand.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to AppConfig_OutgoingMailServer_Mapping.TXT.
+        /// </summary>
+        public static string MAIL_SERVER_KEY_MAP_FILENAME {
+            get {
+                return ResourceManager.GetString("MAIL_SERVER_KEY_MAP_FILENAME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OutgoingMailServer_PropertyName	SettingsPropertyValueCollection_KeyName.
+        /// </summary>
+        public static string MAIL_SERVER_KEY_MAP_LABEL_ROW {
+            get {
+                return ResourceManager.GetString("MAIL_SERVER_KEY_MAP_LABEL_ROW", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Item\tActivity_Date\tOpen\tHigh\tLow\tClose\tAdjustedClose\tVolume\tDividendAmount\tSplitCoefficient.
         /// </summary>
         public static string MESSAGE_CONTAINS_ESCAPED_TABS {
@@ -894,6 +921,15 @@ namespace DLLServices2TestStand.Properties {
         public static string MSG_HANDLEBASE_NULL {
             get {
                 return ResourceManager.GetString("MSG_HANDLEBASE_NULL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {2}Total keys in embedded resource file {0} = {1}{2}.
+        /// </summary>
+        public static string MSG_KEY_MAP_COUNT {
+            get {
+                return ResourceManager.GetString("MSG_KEY_MAP_COUNT", resourceCulture);
             }
         }
         

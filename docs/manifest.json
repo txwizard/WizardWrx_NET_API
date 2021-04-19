@@ -9,10 +9,10 @@
       "output": {
         ".html": {
           "relative_path": "api/DLLServices2TestStand.Properties.Resources.html",
-          "hash": "uoPPgoC0TDDdGpGqy19K5A=="
+          "hash": "a+7JnfG/M/oY0VqRPFF0QA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -24,7 +24,7 @@
           "hash": "ej2hbEJiyyApJBjVNAfpoA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -36,7 +36,7 @@
           "hash": "UDbTeIA69KE6BmYrYDfP9Q=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -48,7 +48,7 @@
           "hash": "XhZMht/vE7jPjjNA9MQrcA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -681,7 +681,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.Core.UnmanagedLibrary.html",
-          "hash": "/5PxU9CikVq/6kRKR8bzLQ=="
+          "hash": "Q4JFjTjl+kZSe+PHy5jdBA=="
         }
       },
       "is_incremental": true,
@@ -897,10 +897,10 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.EmbeddedTextFile.Readers.html",
-          "hash": "sZALZTYAYMHhKjqIJnIpuA=="
+          "hash": "BXp3HLEWUdfd16Hp+aK6Ow=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -912,7 +912,7 @@
           "hash": "1Za8QeOXdxJ5cYmjMgd/Aw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -1077,7 +1077,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.GenericSingletonBase-1.html",
-          "hash": "yUibZgbvSxwAfhTFp4YuRg=="
+          "hash": "du3ITRWDGmapUlWGdW9umg=="
         }
       },
       "is_incremental": true,
@@ -1101,7 +1101,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.ListHelpers.html",
-          "hash": "1jTENn5C+WfmgkiPDq6Ggg=="
+          "hash": "u9sUQgDr2p+IedyQeTfgEw=="
         }
       },
       "is_incremental": true,
@@ -1353,7 +1353,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.StringExtensions.html",
-          "hash": "dOAnYYNktsO/Lc9Zcpka9A=="
+          "hash": "inh2vZwAv7Ms75uzMuCM9g=="
         }
       },
       "is_incremental": true,
@@ -1511,7 +1511,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 118,
-          "skipped_file_count": 117
+          "skipped_file_count": 116
         },
         "TocDocumentProcessor": {
           "can_incremental": false,

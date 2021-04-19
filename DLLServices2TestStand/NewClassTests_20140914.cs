@@ -19,7 +19,7 @@
 
     Author:             David A. Gray
 
-    License:            Copyright (C) 2011-2019, David A. Gray. 
+    License:            Copyright (C) 2011-2021, David A. Gray. 
                         All rights reserved.
 
                         Redistribution and use in source and binary forms, with
@@ -174,6 +174,8 @@
 
                             2) Create $$DATADIRNAME$$\ASCII_Tables.TXT as an
                                independent file, for use as a reference list.
+
+    2021/04/18 8.0.1389 DAG Test NameValueCollectionFromEmbbededList.
     ============================================================================
 */
 
@@ -286,7 +288,7 @@ namespace DLLServices2TestStand
             Console.WriteLine ( "    Public method ArrayInfo.OrdinalFromIndex             = {0,2:N0} , for pintIndex   = {1,2:N0}" , ArrayInfo.OrdinalFromIndex ( TEST_INDEX ) , TEST_INDEX );
 
             return TestDone (
-                WizardWrx.MagicNumbers.ERROR_SUCCESS ,
+                MagicNumbers.ERROR_SUCCESS ,
                 pintTestNumber );
         }   // ArrayInfoExercises method
 
@@ -800,6 +802,62 @@ namespace DLLServices2TestStand
         }   // EnumFromStringExercises methods
 
 
+        internal static int Exercise_NameValueCollectionFromEmbbededList ( ref int pintTestNumber )
+        {
+            const string REPORT_ITEM_NVP_TPL = @"    Item {0}: {1} = {2}";
+            const int REPORT_ITEM_NVP_KEY_ITEM = 1;
+
+            BeginTest (
+                System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,
+                ref pintTestNumber );
+
+            //  ----------------------------------------------------------------
+            //  Exercise the new NameValueCollectionFromEmbbededList routine.
+            //  ----------------------------------------------------------------
+
+            System.Collections.Specialized.NameValueCollection nvcKeyMap = WizardWrx.EmbeddedTextFile.Readers.NameValueCollectionFromEmbbededList (
+                Properties.Resources.MAIL_SERVER_KEY_MAP_FILENAME ,
+                Properties.Resources.MAIL_SERVER_KEY_MAP_LABEL_ROW );
+
+            List<string> lstKeyNames = new List<string> ( nvcKeyMap.AllKeys );
+            int intNKeys = lstKeyNames.Count;
+            lstKeyNames.Sort ( );
+
+            Console.WriteLine (
+                Properties.Resources.MSG_KEY_MAP_COUNT ,                        // Message template string
+                Properties.Resources.MAIL_SERVER_KEY_MAP_FILENAME ,             // Format Item 0 = Name of embedded resource file
+                intNKeys ,                                                      // Format Item 1 = Count of keys defined in file
+                Environment.NewLine );                                          // Format Item 2 = NewLine, my way
+
+            //  ----------------------------------------------------------------
+            //  New School isn't always Better School. The array remains the
+            //  simplest data structure above a scalar, and a generic List is
+            //  only a tiny step above that. For all practical purposes, a List
+            //  is an elastic array.
+            //  ----------------------------------------------------------------
+
+            for ( int intCurrKey = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+                      intCurrKey < intNKeys ;
+                      intCurrKey++ )
+            {
+                Console.WriteLine (
+                    WizardWrx.FormatStringEngine.FormatItem.UpgradeFormatItem ( // Message template string (format string)
+                        REPORT_ITEM_NVP_TPL ,                                       // string pstrFormat
+                        REPORT_ITEM_NVP_KEY_ITEM ,                                  // uint puintItemIndex
+                        WizardWrx.FormatStringEngine.FormatItem.Alignment.Left ,    // Alignment penmAlignment
+                        null ,                                                      // string pstrFormatString (optional, omitted)
+                        new List<string> ( lstKeyNames ) ) ,                        // List<string> pastrValueArray - Construct an anonymous, disposable List of strings.
+                    ArrayInfo.OrdinalFromIndex ( intCurrKey ) ,                 // Format Item 0 = Item number
+                    lstKeyNames [ intCurrKey ] ,                                // Format Item 1 = Key Name
+                    nvcKeyMap [ lstKeyNames [ intCurrKey ] ] );                 // Format Item 2 = Key Value
+            }   // for ( int intCurrKey = ArrayInfo.ARRAY_FIRST_ELEMENT ; intCurrKey < intNKeys ; intCurrKey++ )
+
+            return TestDone (
+                MagicNumbers.ERROR_SUCCESS ,
+                pintTestNumber );
+        }   // Exercise_NameValueCollectionFromEmbbededList method
+
+
         internal static int SpecialStringExercises ( ref int pintTestNumber )
         {   // ToDo: Move this into the core library as a generic property enumerator.
             BeginTest (
@@ -821,7 +879,7 @@ namespace DLLServices2TestStand
             }   // foreach ( System.Reflection.FieldInfo fieldInfo in fieldInfos )
 
             return TestDone (
-                WizardWrx.MagicNumbers.ERROR_SUCCESS ,
+                MagicNumbers.ERROR_SUCCESS ,
                 pintTestNumber );
         }   // SpecialStringExercises
 
@@ -845,7 +903,7 @@ namespace DLLServices2TestStand
             Console.WriteLine ( "    Public Constant FileIOFlags.MAKE_STREAM_IO_SYNCHRONOUS       = {0}" , FileIOFlags.MAKE_STREAM_IO_SYNCHRONOUS );
 
             return TestDone (
-                WizardWrx.MagicNumbers.ERROR_SUCCESS ,
+                MagicNumbers.ERROR_SUCCESS ,
                 pintTestNumber );
         }   // FileIOFlagsExercises method
 
@@ -980,7 +1038,7 @@ namespace DLLServices2TestStand
             Console.WriteLine ( "    Public Method ListInfo.SecondCharacterOfString     = {0}" , ListInfo.SecondCharacterOfString ( SAMPLE_2 ) != SpecialCharacters.NULL_CHAR ? ListInfo.SecondCharacterOfString ( SAMPLE_2 ).ToString ( ) : NULL_CHAR );
 
             return TestDone (
-                WizardWrx.MagicNumbers.ERROR_SUCCESS ,
+                MagicNumbers.ERROR_SUCCESS ,
                 pintTestNumber );
         }   // ListInfoExercises method
 
@@ -1416,7 +1474,7 @@ namespace DLLServices2TestStand
             EvaluateLoopState ( );
 
             return TestDone (
-                WizardWrx.MagicNumbers.ERROR_SUCCESS ,
+                MagicNumbers.ERROR_SUCCESS ,
                 pintTestNumber );
         }   // UtilsExercises method
         #endregion  // Public Methods

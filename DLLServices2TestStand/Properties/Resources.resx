@@ -651,4 +651,19 @@
     <value>Character {0,3}: Numerical Value = {1,3} ({2} hex), Display Value = {3}, HTML Entity = {4}</value>
     <comment>ASCII_Table_Gen formats its report details from this string.</comment>
   </data>
+  <data name="CMDARG_EMBEDDED_NVC_TEST" xml:space="preserve">
+    <value>NameValueCollectionFromEmbbededList</value>
+    <comment>Select this one-off task to process a set of NameValuePairs that are embedded in a binary assembly resource.</comment>
+  </data>
+  <data name="MAIL_SERVER_KEY_MAP_FILENAME" xml:space="preserve">
+    <value>AppConfig_OutgoingMailServer_Mapping.TXT</value>
+    <comment>This is the name of the source file from which is generated a like named embedded binary resource.</comment>
+  </data>
+  <data name="MAIL_SERVER_KEY_MAP_LABEL_ROW" xml:space="preserve">
+    <value>OutgoingMailServer_PropertyName	SettingsPropertyValueCollection_KeyName</value>
+    <comment>This string must match the label row of the file named in resource string MAIL_SERVER_KEY_MAP_FILENAME. The non-printing character is a TAB, which must be manually input as ALT-009.</comment>
+  </data>
+  <data name="MSG_KEY_MAP_COUNT" xml:space="preserve">
+    <value>{2}Total keys in embedded resource file {0} = {1}{2}</value>
+  </data>
 </root>

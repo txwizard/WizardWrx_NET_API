@@ -19,7 +19,7 @@ namespace WizardWrx.EmbeddedTextFile.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -61,6 +61,33 @@ namespace WizardWrx.EmbeddedTextFile.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The label row in embedded resource {0} is invalid.{3}Actual Label Row   = {1}{3}Expected Label Row = {2}.
+        /// </summary>
+        internal static string ERRMSG_BAD_LABEL_ROW {
+            get {
+                return ResourceManager.GetString("ERRMSG_BAD_LABEL_ROW", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The field count in row {1} in embedded resource {0} is incorrect.{5}Actual Field Count   = {2}{5}Expected Field Count = {3}{5}Complete Row         = {4}.
+        /// </summary>
+        internal static string ERRMSG_BAD_RECORD {
+            get {
+                return ResourceManager.GetString("ERRMSG_BAD_RECORD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The key field in row {1} in embedded resource {0} is a duplicate.{4}Key value    = {2}{4}Complete row = {3}.
+        /// </summary>
+        internal static string ERRMSG_DUPE_KEY {
+            get {
+                return ResourceManager.GetString("ERRMSG_DUPE_KEY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Resource {0} cannot be found in assembly {1}..
         /// </summary>
         internal static string ERRMSG_EMBEDDED_RESOURCE_NOT_FOUND {
@@ -84,6 +111,15 @@ namespace WizardWrx.EmbeddedTextFile.Properties {
         internal static string ERRMSG_EMBEDDED_RESOURCE_READ_TRUNCATED {
             get {
                 return ResourceManager.GetString("ERRMSG_EMBEDDED_RESOURCE_READ_TRUNCATED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Embedded key map {0} is empty..
+        /// </summary>
+        internal static string ERRMSG_EMPTY_MAP {
+            get {
+                return ResourceManager.GetString("ERRMSG_EMPTY_MAP", resourceCulture);
             }
         }
     }

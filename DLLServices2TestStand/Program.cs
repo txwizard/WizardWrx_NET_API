@@ -277,6 +277,8 @@
                              constructs an absolute directory name to which an
                              unqualified file name can be appended to create an
                              absolute (fully qualiffied) file name.
+
+    2021/04/18 8.0.1389 DAG Test NameValueCollectionFromEmbbededList.
     ============================================================================
 */
 
@@ -291,6 +293,7 @@ using WizardWrx.Core;
 using WizardWrx.ConsoleStreams;
 using WizardWrx.DLLConfigurationManager;
 using System.Collections.Generic;
+
 
 namespace DLLServices2TestStand
 {
@@ -594,6 +597,10 @@ namespace DLLServices2TestStand
                 {
                     ExercisseDirectDependentAssemblyEnumerator ( ref intTestNumber );
                 }
+                else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_EMBEDDED_NVC_TEST )
+                {
+                    NewClassTests_20140914.Exercise_NameValueCollectionFromEmbbededList ( ref intTestNumber );
+                }
                 else
                 {	// Run the whole set, starting with this test, which leaves the flags set so that the original message can be reconstructed from a psLogList export.
                     EnumerateDependentAssemblies ( );
@@ -604,7 +611,7 @@ namespace DLLServices2TestStand
 
                     try
                     {
-                        ExercisseDirectDependentAssemblyEnumerator ( ref intTestNumber );
+                        intTestNumber = ExercisseDirectDependentAssemblyEnumerator ( ref intTestNumber );
                     }
                     catch ( Exception exAll )
                     {
@@ -621,12 +628,12 @@ namespace DLLServices2TestStand
                         goto FinalReport;
                     }   // if ( s_smTheApp.AppReturnCode > MagicNumbers.ERROR_SUCCESS )
 
-                    RecoveredExceptionTests ( ref intTestNumber );
+                    intTestNumber = RecoveredExceptionTests ( ref intTestNumber );
                     PauseForPictures (
                         APPEND_LINEFEED ,
                         @"RecoveredExceptionTests" );
 
-                    ExerciseStringFixups ( ref intTestNumber );
+                    intTestNumber = ExerciseStringFixups ( ref intTestNumber );
                     PauseForPictures (
                         APPEND_LINEFEED ,
                         @"ExerciseStringFixups" );
@@ -648,7 +655,12 @@ namespace DLLServices2TestStand
                         OMIT_LINEFEED ,
                         @"LineEndingFixupTests" );
 
-                    EventMessageCleanupTests ( ref intTestNumber );
+                    intTestNumber = NewClassTests_20140914.Exercise_NameValueCollectionFromEmbbededList ( ref intTestNumber );
+                    PauseForPictures (
+                        OMIT_LINEFEED ,
+                        @"Exercise_NameValueCollectionFromEmbbededList" );
+
+                    intTestNumber = EventMessageCleanupTests ( ref intTestNumber );
                     PauseForPictures (
                         APPEND_LINEFEED ,
                         @"EventMessageCleanupTests" );
@@ -1189,7 +1201,7 @@ namespace DLLServices2TestStand
                         } );
                 }	// foreach ( Type typCurrent in s_atypCommonExceptionTypes )
 
-                System.IO.FileInfo fiOutputFile = new FileInfo ( AbsolutePathStringFromSettings ( Properties.Settings.Default.ExceptionGUIDsListingFile ) );
+                FileInfo fiOutputFile = new FileInfo ( AbsolutePathStringFromSettings ( Properties.Settings.Default.ExceptionGUIDsListingFile ) );
                 Console.WriteLine (
                     "{1}Properties of selected System Object Types written onto file {0}{1}" ,
                     fiOutputFile.FullName ,
@@ -1224,7 +1236,7 @@ namespace DLLServices2TestStand
         }	// EnumerateDependentAssemblies method
 
 
-        private static void EventMessageCleanupTests ( ref int pintTestNumber )
+        private static int EventMessageCleanupTests ( ref int pintTestNumber )
         {
             const string DEMO_EXCEPTION_REPORT = @"Exception condition: {0}";
             const string RESTORE_ERROR = @"The RestoreSavedOptions yielded an unexpected outcome.{2}    Options expected to be restored = {0}.{2}    Options actually restored       = {1}.";
@@ -1281,8 +1293,8 @@ namespace DLLServices2TestStand
             logger.OutputOptionTurnOn ( ExceptionLogger.OutputOptions.ReplaceNewlines );
             logger.OutputOptionsDisplay ( OUTPUT_OPTIONS_FINAL );
 
-            NewClassTests_20140914.TestDone (
-                WizardWrx.MagicNumbers.ERROR_SUCCESS ,
+            return NewClassTests_20140914.TestDone (
+                MagicNumbers.ERROR_SUCCESS ,
                 pintTestNumber );
         }   // EventMessageCleanupTests method
 
@@ -1304,7 +1316,7 @@ namespace DLLServices2TestStand
         }   // ExerciseClearScreen method
 
 
-        private static void ExercisseDirectDependentAssemblyEnumerator ( ref int pintTestNumber )
+        private static int ExercisseDirectDependentAssemblyEnumerator ( ref int pintTestNumber )
         {
             const int COL_CASE_NUMBER = ArrayInfo.ARRAY_FIRST_ELEMENT;
             const int COL_CASE_LABEL = COL_CASE_NUMBER + ArrayInfo.NEXT_INDEX;
@@ -1418,7 +1430,7 @@ namespace DLLServices2TestStand
                 s_smTheApp.AppReturnCode = MagicNumbers.ERROR_RUNTIME;
             }   // FALSE (unanticipated outcome) block, if ( File.Exists ( strAbsoluteInputFileName ) )
 
-            NewClassTests_20140914.TestDone (
+            return NewClassTests_20140914.TestDone (
                 MagicNumbers.ERROR_SUCCESS ,
                 pintTestNumber );
         }   // ExercisseDirectDependentAssemblyEnumerator
@@ -1515,7 +1527,7 @@ namespace DLLServices2TestStand
         }	// ExerciseSpecialMessageGenerators method
 
 
-        private static void ExerciseStringFixups ( ref int pintTestNumber )
+        private static int ExerciseStringFixups ( ref int pintTestNumber )
         {
             NewClassTests_20140914.BeginTest (
                 ClassAndMethodDiagnosticInfo.GetMyMethodName ( ) ,
@@ -1581,7 +1593,7 @@ namespace DLLServices2TestStand
                     } );
             }   // for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ; intJ < s_astrFixupInputs.Length ; intJ++ )
 
-            NewClassTests_20140914.TestDone (
+            return NewClassTests_20140914.TestDone (
                 MagicNumbers.ERROR_SUCCESS ,
                 pintTestNumber );
         }   // ExerciseStringFixups method
@@ -1680,7 +1692,7 @@ namespace DLLServices2TestStand
         }   // private static int ListEmbeddedResources
 
 
-        private static void RecoveredExceptionTests ( ref int pintTestNumber )
+        private static int RecoveredExceptionTests ( ref int pintTestNumber )
         {
             const int TEST_COUNTER_1 = 1;
             const int TEST_COUNTER_2 = 2;
@@ -1715,7 +1727,7 @@ namespace DLLServices2TestStand
                 recoveredException2 ,
                 TEST_COUNTER_2 );
 
-            NewClassTests_20140914.TestDone (
+            return NewClassTests_20140914.TestDone (
                 MagicNumbers.ERROR_SUCCESS ,
                 pintTestNumber );
         }   // RecoveredExceptionTests method

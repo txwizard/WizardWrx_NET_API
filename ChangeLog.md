@@ -1,5 +1,18 @@
 # WizardWrx .NET API Change Log
 
+## 2021-04-18
+
+### WizardWrx.EmbeddedTextFile, version 8.0.129
+
+Static class `Readers` gets a new method, `NameValueCollectionFromEmbbededList`,
+that returns a `System.Collections.Specialized.NameValueCollection` populated
+from an embedded binary resource consisting of a tab-delimited text file.
+
+In addition to the foregoing classes that incorporate new features, everything else
+gets a general refresh, in which all libraries are built against the latest versions
+of their dependents. Likewise, the corresponding NuGet packages are kept current with
+respect to their dependencies.
+
 ## 2021-03-22
 
 The libraries are unchanged. The only change in this release is that the unit

@@ -18,7 +18,7 @@
 
     Author:             David A. Gray
 
-	License:            Copyright (C) 2014-2018, David A. Gray.
+	License:            Copyright (C) 2014-2021, David A. Gray.
 						All rights reserved.
 
                         Redistribution and use in source and binary forms, with
@@ -75,12 +75,16 @@
                               make technical corrections in the help text,
                               including coverage of exceptions that I discovered
                               was missing.
+
+	2021/04/18 8.0.127 DAG    Merge NameValueCollectionFromEmbbededList from the
+                              deprecated WizardWrx.ApplicationHelpers2 library.
     ============================================================================
 */
 
 using System;
 using System.IO;
 using System.Reflection;
+using System.Collections.Specialized;
 
 
 namespace WizardWrx.EmbeddedTextFile
@@ -350,6 +354,128 @@ namespace WizardWrx.EmbeddedTextFile
 				}   // if ( stgTheFile != null )
 			}   // Try/Catch/Finally block
 		}   // LoadBinaryResourceFromAnyAssembly
+
+
+		/// <summary>
+		/// Construct a NameValueCollection from the tab delimited list read
+		/// from a text file stored in an embedded resource.
+		/// </summary>
+		/// <param name="pstrUnqualifiedResourceName">
+		/// Specify the name of the text file as it appears in the Solution
+		/// Explorer (or the Windows Explorer, for that matter).
+		///
+		/// IMPORTNAT: The file must be marked as an embedded resource; do this
+		/// in the Solution Explorer by displaying the properties of the file.
+		/// </param>
+		/// <param name="pstrExpectedLabelRow">
+		/// The specified string is checked against the label row; unless both
+		/// are identical, the resource is assumed to be corrupted, and the
+		/// method throws an exception and croaks.
+		/// </param>
+		/// <returns>
+		/// If the method succeeds, it returns a NameValueCollection of
+		/// key/value pairs that contains exactly one value per key.
+		/// </returns>
+		/// <exception cref="ArgumentException">
+		/// And ArgumentException is thrown when the data file referenced by
+		/// <paramref name="pstrUnqualifiedResourceName"/> contains duplicate
+		/// keys, if one of the records contains two or more values, or the
+		/// input file is empty. The messages attached to the exceptions are
+		/// explicit about which of the three conditions caused the exception,
+		/// and they attempt to provide enough detail to enable the programmer
+		/// to quickly identify and resolve the problem.
+		/// </exception>
+		public static NameValueCollection NameValueCollectionFromEmbbededList (
+			string pstrUnqualifiedResourceName ,
+			string pstrExpectedLabelRow )
+		{
+			const int FIELD_KEY = ArrayInfo.ARRAY_FIRST_ELEMENT;
+			const int FIELD_VALUE = ArrayInfo.ARRAY_SECOND_ELEMENT;
+			const int FIELD_COUNT = FIELD_VALUE + ArrayInfo.ORDINAL_FROM_INDEX;
+
+			string [ ] astrMapInfoFromResource = LoadTextFileFromEntryAssembly ( pstrUnqualifiedResourceName );
+
+			int intKeyCount = CSVFileInfo.RecordCount ( astrMapInfoFromResource );
+
+			if ( astrMapInfoFromResource [ CSVFileInfo.LABEL_ROW ] == pstrExpectedLabelRow )
+			{   // Each element is a TAB delimited string, which must contain exactly two fields, which become the key and value of a pair.
+				if ( astrMapInfoFromResource.Length > ListInfo.LIST_IS_EMPTY )
+				{   // Have data. Create index.
+					NameValueCollection rnvcConfigKeyMap = new NameValueCollection ( astrMapInfoFromResource.Length );
+
+					for ( int intRow = CSVFileInfo.FIRST_RECORD ;
+							  intRow <= intKeyCount ;
+							  intRow++ )
+					{
+						string [ ] astrKVP = astrMapInfoFromResource [ intRow ].Split ( SpecialCharacters.TAB_CHAR );
+
+						if ( astrKVP.Length == FIELD_COUNT )
+						{   // Test for duplicates.
+							if ( rnvcConfigKeyMap.Get ( astrKVP [ FIELD_KEY ] ) == null )
+							{   // Key is unique. Add it.
+								rnvcConfigKeyMap.Add (
+									astrKVP [ FIELD_KEY ] ,
+									astrKVP [ FIELD_VALUE ] );
+							}   // TRUE (expected outcome) block, if ( rdctConfigKeyMap.Get ( astrKVP [ FIELD_KEY ] ) == null )
+							else
+							{   // Oops! Duplicate keys indicate an invalid or corrupted table.
+								throw new ArgumentException (
+									string.Format (								// Message
+										Properties.Resources.ERRMSG_DUPE_KEY ,	// Message template
+										new object [ ]
+										{
+											pstrUnqualifiedResourceName ,       // Format Item 0 = External name of embedded resource
+                                            intRow ,                            // Format Item 1 = Logical row number
+                                            astrKVP [ FIELD_KEY ] ,             // Format Item 2 = Value of duplicate key
+                                            astrMapInfoFromResource [ intRow ] ,// Format Item 3 = Copy of entire row
+                                            Environment.NewLine                 // Format Item 4 = NewLine, my way
+                                        } ) ,
+									nameof ( pstrUnqualifiedResourceName ) );	// ParamName
+							}   // FALSE (UNexpected outcome) block, if ( rdctConfigKeyMap.Get ( astrKVP [ FIELD_KEY ] ) == null )
+						}   // TRUE (expected outcome) block, if ( astrKVP.Length == FIELD_COUNT )
+						else
+						{   // Throw up and croak.
+							throw new ArgumentException (
+								string.Format (                                 // Message
+									Properties.Resources.ERRMSG_BAD_RECORD ,    // Message template
+									new object [ ]
+									{
+										pstrUnqualifiedResourceName ,           // Format Item 0 = External name of embedded resource
+                                        intRow ,                                // Format Item 1 = Logical row number
+                                        astrKVP.Length ,                        // Format Item 2 = Actual field count
+                                        FIELD_COUNT ,                           // Format Item 3 = Expected field count
+                                        astrMapInfoFromResource [ intRow ] ,    // Format Item 4 = Copy of entire row
+                                        Environment.NewLine } ) ,               // Format Item 5 = NewLine, my way
+								nameof ( pstrUnqualifiedResourceName ) );       // ParamName
+						}   // FALSE (UNexpected outcome) block, if ( astrKVP.Length == FIELD_COUNT )
+					}   // for ( int intRowIndex = CSVFileInfo.FIRST_RECORD ; intRowIndex <= intKeyCount ; intRowIndex++ )
+
+					return rnvcConfigKeyMap;
+				}   // TRUE (expected outcome) block, if ( astrMapInfoFromResource.Length > ListInfo.LIST_IS_EMPTY )
+				else
+				{   // The map resource is empty or corrupted.
+					throw new ArgumentException (
+						string.Format (
+							Properties.Resources.ERRMSG_EMPTY_MAP ,
+							pstrUnqualifiedResourceName ) ,
+						nameof ( pstrUnqualifiedResourceName ) );
+				}   // FALSE (UNexpected outcome) block, if ( astrMapInfoFromResource.Length > ListInfo.LIST_IS_EMPTY )
+			}   // TRUE (expected outcome) block, if ( astrMapInfoFromResource [ CSVFileInfo.LABEL_ROW ] == pstrExpectedLabelRow )
+			else
+			{   // Throw up and croak.
+				throw new ArgumentException (
+					string.Format (                                             // Message
+						Properties.Resources.ERRMSG_BAD_LABEL_ROW ,                 // Message template
+						new string [ ]
+						{
+							pstrUnqualifiedResourceName ,                           // Format Item 0 = External resource name
+                            astrMapInfoFromResource [ CSVFileInfo.LABEL_ROW ] ,     // Format Item 1 = Actual label row read from resource
+                            pstrExpectedLabelRow ,                                  // Format Item 2 = Expected label row
+                            Environment.NewLine                                     // Format Item 3 = Newline, my way
+                        } ) ,
+					nameof ( pstrExpectedLabelRow ) );                                                // ParamName
+			}   // FALSE (UNexpected outcome) block, if ( astrMapInfoFromResource [ CSVFileInfo.LABEL_ROW ] == pstrExpectedLabelRow )
+		}   // public static Dictionary<string , string> NameValueCollectionFromEmbbededList
 
 
 		/// <summary>

@@ -52,6 +52,19 @@ references:
   isSpec: "True"
   fullName: DLLServices2TestStand.Properties.Resources.CMDARG_DIRECT_DEPENDENT_ASSEMBLY_ENUMERATION
   nameWithType: Resources.CMDARG_DIRECT_DEPENDENT_ASSEMBLY_ENUMERATION
+- uid: DLLServices2TestStand.Properties.Resources.CMDARG_EMBEDDED_NVC_TEST
+  name: CMDARG_EMBEDDED_NVC_TEST
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_CMDARG_EMBEDDED_NVC_TEST
+  commentId: P:DLLServices2TestStand.Properties.Resources.CMDARG_EMBEDDED_NVC_TEST
+  fullName: DLLServices2TestStand.Properties.Resources.CMDARG_EMBEDDED_NVC_TEST
+  nameWithType: Resources.CMDARG_EMBEDDED_NVC_TEST
+- uid: DLLServices2TestStand.Properties.Resources.CMDARG_EMBEDDED_NVC_TEST*
+  name: CMDARG_EMBEDDED_NVC_TEST
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_CMDARG_EMBEDDED_NVC_TEST_
+  commentId: Overload:DLLServices2TestStand.Properties.Resources.CMDARG_EMBEDDED_NVC_TEST
+  isSpec: "True"
+  fullName: DLLServices2TestStand.Properties.Resources.CMDARG_EMBEDDED_NVC_TEST
+  nameWithType: Resources.CMDARG_EMBEDDED_NVC_TEST
 - uid: DLLServices2TestStand.Properties.Resources.CMDARG_ENUMERATE_EXCEPTION_GUIDS
   name: CMDARG_ENUMERATE_EXCEPTION_GUIDS
   href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_CMDARG_ENUMERATE_EXCEPTION_GUIDS
@@ -845,6 +858,32 @@ references:
   isSpec: "True"
   fullName: DLLServices2TestStand.Properties.Resources.IDS_UNSUPPORTED_DATASOURCE
   nameWithType: Resources.IDS_UNSUPPORTED_DATASOURCE
+- uid: DLLServices2TestStand.Properties.Resources.MAIL_SERVER_KEY_MAP_FILENAME
+  name: MAIL_SERVER_KEY_MAP_FILENAME
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_MAIL_SERVER_KEY_MAP_FILENAME
+  commentId: P:DLLServices2TestStand.Properties.Resources.MAIL_SERVER_KEY_MAP_FILENAME
+  fullName: DLLServices2TestStand.Properties.Resources.MAIL_SERVER_KEY_MAP_FILENAME
+  nameWithType: Resources.MAIL_SERVER_KEY_MAP_FILENAME
+- uid: DLLServices2TestStand.Properties.Resources.MAIL_SERVER_KEY_MAP_FILENAME*
+  name: MAIL_SERVER_KEY_MAP_FILENAME
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_MAIL_SERVER_KEY_MAP_FILENAME_
+  commentId: Overload:DLLServices2TestStand.Properties.Resources.MAIL_SERVER_KEY_MAP_FILENAME
+  isSpec: "True"
+  fullName: DLLServices2TestStand.Properties.Resources.MAIL_SERVER_KEY_MAP_FILENAME
+  nameWithType: Resources.MAIL_SERVER_KEY_MAP_FILENAME
+- uid: DLLServices2TestStand.Properties.Resources.MAIL_SERVER_KEY_MAP_LABEL_ROW
+  name: MAIL_SERVER_KEY_MAP_LABEL_ROW
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_MAIL_SERVER_KEY_MAP_LABEL_ROW
+  commentId: P:DLLServices2TestStand.Properties.Resources.MAIL_SERVER_KEY_MAP_LABEL_ROW
+  fullName: DLLServices2TestStand.Properties.Resources.MAIL_SERVER_KEY_MAP_LABEL_ROW
+  nameWithType: Resources.MAIL_SERVER_KEY_MAP_LABEL_ROW
+- uid: DLLServices2TestStand.Properties.Resources.MAIL_SERVER_KEY_MAP_LABEL_ROW*
+  name: MAIL_SERVER_KEY_MAP_LABEL_ROW
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_MAIL_SERVER_KEY_MAP_LABEL_ROW_
+  commentId: Overload:DLLServices2TestStand.Properties.Resources.MAIL_SERVER_KEY_MAP_LABEL_ROW
+  isSpec: "True"
+  fullName: DLLServices2TestStand.Properties.Resources.MAIL_SERVER_KEY_MAP_LABEL_ROW
+  nameWithType: Resources.MAIL_SERVER_KEY_MAP_LABEL_ROW
 - uid: DLLServices2TestStand.Properties.Resources.MESSAGE_CONTAINS_ESCAPED_TABS
   name: MESSAGE_CONTAINS_ESCAPED_TABS
   href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_MESSAGE_CONTAINS_ESCAPED_TABS
@@ -1235,6 +1274,19 @@ references:
   isSpec: "True"
   fullName: DLLServices2TestStand.Properties.Resources.MSG_HANDLEBASE_NULL
   nameWithType: Resources.MSG_HANDLEBASE_NULL
+- uid: DLLServices2TestStand.Properties.Resources.MSG_KEY_MAP_COUNT
+  name: MSG_KEY_MAP_COUNT
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_MSG_KEY_MAP_COUNT
+  commentId: P:DLLServices2TestStand.Properties.Resources.MSG_KEY_MAP_COUNT
+  fullName: DLLServices2TestStand.Properties.Resources.MSG_KEY_MAP_COUNT
+  nameWithType: Resources.MSG_KEY_MAP_COUNT
+- uid: DLLServices2TestStand.Properties.Resources.MSG_KEY_MAP_COUNT*
+  name: MSG_KEY_MAP_COUNT
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_MSG_KEY_MAP_COUNT_
+  commentId: Overload:DLLServices2TestStand.Properties.Resources.MSG_KEY_MAP_COUNT
+  isSpec: "True"
+  fullName: DLLServices2TestStand.Properties.Resources.MSG_KEY_MAP_COUNT
+  nameWithType: Resources.MSG_KEY_MAP_COUNT
 - uid: DLLServices2TestStand.Properties.Resources.MSG_LOOP_LIMIT_VALUES
   name: MSG_LOOP_LIMIT_VALUES
   href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_MSG_LOOP_LIMIT_VALUES
@@ -10188,6 +10240,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.EmbeddedTextFile.Readers.LoadTextFileFromEntryAssembly
   nameWithType: Readers.LoadTextFileFromEntryAssembly
+- uid: WizardWrx.EmbeddedTextFile.Readers.NameValueCollectionFromEmbbededList(System.String,System.String)
+  name: NameValueCollectionFromEmbbededList(String, String)
+  href: api/WizardWrx.EmbeddedTextFile.Readers.html#WizardWrx_EmbeddedTextFile_Readers_NameValueCollectionFromEmbbededList_System_String_System_String_
+  commentId: M:WizardWrx.EmbeddedTextFile.Readers.NameValueCollectionFromEmbbededList(System.String,System.String)
+  fullName: WizardWrx.EmbeddedTextFile.Readers.NameValueCollectionFromEmbbededList(System.String, System.String)
+  nameWithType: Readers.NameValueCollectionFromEmbbededList(String, String)
+- uid: WizardWrx.EmbeddedTextFile.Readers.NameValueCollectionFromEmbbededList*
+  name: NameValueCollectionFromEmbbededList
+  href: api/WizardWrx.EmbeddedTextFile.Readers.html#WizardWrx_EmbeddedTextFile_Readers_NameValueCollectionFromEmbbededList_
+  commentId: Overload:WizardWrx.EmbeddedTextFile.Readers.NameValueCollectionFromEmbbededList
+  isSpec: "True"
+  fullName: WizardWrx.EmbeddedTextFile.Readers.NameValueCollectionFromEmbbededList
+  nameWithType: Readers.NameValueCollectionFromEmbbededList
 - uid: WizardWrx.EmbeddedTextFile.Readers.StringFromANSICharacterArray(System.Byte[])
   name: StringFromANSICharacterArray(Byte[])
   href: api/WizardWrx.EmbeddedTextFile.Readers.html#WizardWrx_EmbeddedTextFile_Readers_StringFromANSICharacterArray_System_Byte___

@@ -1,0 +1,6 @@
+OutgoingMailServer_PropertyName	SettingsPropertyValueCollection_KeyName
+Host	SMTP_Host
+User	SMTP_User
+Pass	SMTP_Pass
+Port	SMTP_Port
+TimeOut	SMTP_TimeOut
