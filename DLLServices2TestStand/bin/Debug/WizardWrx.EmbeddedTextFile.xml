@@ -219,12 +219,21 @@
              <param name="pstrExpectedLabelRow">
              The specified string is checked against the label row; unless both
              are identical, the resource is assumed to be corrupted, and the
-             program throws an exception and croaks.
+             method throws an exception and croaks.
              </param>
              <returns>
              If the method succeeds, it returns a NameValueCollection of
              key/value pairs that contains exactly one value per key.
              </returns>
+             <exception cref="T:System.ArgumentException">
+             And ArgumentException is thrown when the data file referenced by
+             <paramref name="pstrUnqualifiedResourceName"/> contains duplicate
+             keys, if one of the records contains two or more values, or the
+             input file is empty. The messages attached to the exceptions are
+             explicit about which of the three conditions caused the exception,
+             and they attempt to provide enough detail to enable the programmer
+             to quickly identify and resolve the problem.
+             </exception>
         </member>
         <member name="M:WizardWrx.EmbeddedTextFile.Readers.StringFromANSICharacterArray(System.Byte[])">
             <summary>

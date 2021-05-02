@@ -10,12 +10,13 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>This update extends the ASCII table to include HTML endities and the coded strings required to implement URL encoding, yet it remains backwards compaatible.</releaseNotes>
+	    <releaseNotes>This release incorporates ChangeLog.md from the root directory of the library constellation of which it is a component. As always, it also incorporates the current versions of its dependent libraries and their dependents.</releaseNotes>
     	<copyright>$copyright$</copyright>
 	    <tags>ASCII Metadata Table</tags>
   	</metadata>
 	<files>
-   		<file src="readme.md" target="" />
+   		<file src="readme.md"                    target=""    />
+   		<file src="..\ChangeLog.md"              target=""    />
    		<file src="bin\$configuration$\$id$.pdb" target="lib" />
    		<file src="bin\$configuration$\$id$.xml" target="lib" />
 	</files>

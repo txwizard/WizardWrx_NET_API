@@ -10,12 +10,13 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>This update is backwards compatible with its predecessors. It is a maintenance update, which is being released along with the other libraries that implement the WizardWrx .NET API.</releaseNotes>
+	    <releaseNotes>This release incorporates ChangeLog.md from the root directory of the library constellation of which it is a component. As always, it also incorporates the current versions of its dependent libraries and their dependents.</releaseNotes>
     	<copyright>$copyright$</copyright>
     	<tags>Format Control String Formatting Printing</tags>
 	</metadata>
 	<files>
-   		<file src="readme.md" target="" />
+   		<file src="readme.md"                    target=""    />
+   		<file src="..\ChangeLog.md"              target=""    />
    		<file src="bin\$configuration$\$id$.pdb" target="lib" />
    		<file src="bin\$configuration$\$id$.xml" target="lib" />
 	</files>

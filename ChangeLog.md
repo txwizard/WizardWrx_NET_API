@@ -1,4 +1,15 @@
-# WizardWrx .NET API Change Log
+y# WizardWrx .NET API Change Log
+
+## 05/02/2021 03:53:04
+
+The NuGet packages of all libraries now include a copy of this change log.
+
+`WizardWrx.AssemblyInfo` gets a copy of its DLL configuration file, which
+includes a binding redirect that you might need for WizardWrx.AnyCSV, which has
+a strong name because it is exposed to COM.
+
+Finally, `WizardWrx.DLLConfigurationManager` also has a DLL configuration file,
+but its NuSpec had an error that prevented its deployment.
 
 ## 2021-04-18
 

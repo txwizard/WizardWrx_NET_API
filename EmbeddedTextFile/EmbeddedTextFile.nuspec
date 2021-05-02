@@ -10,12 +10,13 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>Static class Readers gets a new method, NameValueCollectionFromEmbbededList, that returns a System.Collections.Specialized.NameValueCollection populated from an embedded binary resource consisting of a tab-delimited text file.</releaseNotes>
+	    <releaseNotes>This release incorporates ChangeLog.md from the root directory of the library constellation of which it is a component. As always, it also incorporates the current versions of its dependent libraries and their dependents.</releaseNotes>
     	<copyright>$copyright$</copyright>
     	<tags>Embbedded Resource Reader</tags>
 	</metadata>
 	<files>
-   		<file src="readme.md" target="" />
+   		<file src="readme.md"                    target=""    />
+   		<file src="..\ChangeLog.md"              target=""    />
    		<file src="bin\$configuration$\$id$.pdb" target="lib" />
    		<file src="bin\$configuration$\$id$.xml" target="lib" />
 	</files>
