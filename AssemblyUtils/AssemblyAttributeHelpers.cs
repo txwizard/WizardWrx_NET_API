@@ -68,11 +68,18 @@
                                  with an array of Attribute objects.
 
                               2) Export the Assembly's GUID.
+
+	2021/05/19 8.0.167 DAG    New Methods: GetAssemblyCompanyNameSnakeCased
+                                           GetAssemblyAppDataDirectoryName
     ============================================================================
 */
 
+using System;
+
 using System.Collections.Generic;
 using System.Reflection;
+
+using WizardWrx.Core;
 
 
 namespace WizardWrx.AssemblyUtils
@@ -195,6 +202,76 @@ namespace WizardWrx.AssemblyUtils
 
 
         /// <summary>
+        /// Get the absolute (fully qualified) name of the Application Data
+        /// directory that is set aside for use by assemblies published by the
+        /// company named in the AssemblyCompany property of the entry assembly.
+        /// </summary>
+        /// <param name="pfCreate">
+        /// If TRUE, the specified directory is created if necessary.
+        /// </param>
+        /// <returns>
+        /// The return value is the absolute (fully qualified) name of the
+        /// Application Data directory that is set aside for use by assemblies
+        /// published by the company named in the AssemblyCompany property of
+        /// the entry assembly. If <paramref name="pfCreate"/> is TRUE, the
+        /// directory named therein is guaranteed to exist. Otherwise, its
+        /// existence is not guaranteed.
+        /// </returns>
+        public static string GetAssemblyAppDataDirectoryName ( bool pfCreate )
+        {   // See the first example shown in https://docs.microsoft.com/en-us/dotnet/api/system.environment.specialfolder?view=netframework-3.5&f1url=%3FappId%3DDev16IDEF1%26l%3DEN-US%26k%3Dk(System.Environment.SpecialFolder.ApplicationData);k(TargetFrameworkMoniker-.NETFramework,Version%253Dv3.5);k(DevLang-csharp)%26rd%3Dtrue.
+            string rstrAssemblyAppDataDirectoryName = System.IO.Path.Combine (
+                Environment.GetFolderPath ( Environment.SpecialFolder.ApplicationData ) ,
+                GetAssemblyCompanyNameSnakeCased ( null ) );
+
+            if ( pfCreate )
+            {
+                System.IO.DirectoryInfo directoryInfo = new System.IO.DirectoryInfo ( rstrAssemblyAppDataDirectoryName );
+
+                if ( !directoryInfo.Exists )
+                {
+                    directoryInfo = System.IO.Directory.CreateDirectory ( rstrAssemblyAppDataDirectoryName );
+
+                    if ( !directoryInfo.Exists )
+                    {
+                        throw new InvalidOperationException (
+                            string.Format (                                                         // string message
+                                Properties.Resources.ERRMSG_CREATE_DIRECTORY_FAILED ,               // Format Control String
+                                MethodBase.GetCurrentMethod ( ).Name ,                              // Format Item 0: Library method {0}
+                                rstrAssemblyAppDataDirectoryName ) );                               // Format Item 1: was unable to create directory {1}.
+                    }   // if ( !directoryInfo.Exists )
+                }   // if ( !directoryInfo.Exists )
+            }   // if ( pfCreate )
+
+            return rstrAssemblyAppDataDirectoryName;
+        }   // public static string GetAssemblyAppDataDirectoryName
+
+
+        /// <summary>
+        /// Get the AssemblyCompany property, which usually contains spaces, and
+        /// often commas and other invalid characters, and either remove them or
+        /// replace them with underscores.
+        /// </summary>
+        /// Pass in a reference to the Assembly for which assembly attributes are
+        /// wanted, or pass NULL to get the metadata from the entry assembly.
+        /// <returns>
+        /// The string returned by this method is the string representation of
+        /// the value of AttributeFriendlyName.Company as it was recorded in
+        /// AssemblyInfo.cs of the assembly specified by <paramref name="pasm"/>,
+        /// with commas, underscores, single quotes, hyphens, and spaces replaced
+        /// by underscores, and sequential underscores reduced to one.
+        /// </returns>
+        public static string GetAssemblyCompanyNameSnakeCased ( Assembly pasm = null )
+        {
+            string strAssemblyCompany = GetAssemblyVersionInfo (
+                AttributeFriendlyName.Company ,             // AttributeFriendlyName penmAttributeFriendlyName 
+                pasm );                                     // Assembly pasm = null
+            StringFixups fixups = new StringFixups ( s_fixups );
+
+            return fixups.ApplyFixups ( strAssemblyCompany );
+        }   // public static string GetAssemblyCompanyNameSnakeCased
+
+
+        /// <summary>
         /// Get the set of commonly requested "custom" assembly attributes from
         /// the specified assembly.
         /// </summary>
@@ -291,5 +368,27 @@ namespace WizardWrx.AssemblyUtils
 
             return rdctMatchedAttributes;
         }   // NameValueCollection GetAssemblyAttribs
+
+
+        private static readonly StringFixups.StringFixup [ ] s_fixups =
+        {
+            new StringFixups.StringFixup (
+                SpecialStrings.COMMA,
+                SpecialStrings.UNDERSCORE_CHAR ),
+            new StringFixups.StringFixup (
+                SpecialStrings.FULL_STOP,
+                SpecialStrings.UNDERSCORE_CHAR ),
+            new StringFixups.StringFixup (
+                SpecialStrings.SINGLE_QUOTE,
+                SpecialStrings.UNDERSCORE_CHAR ),
+            new StringFixups.StringFixup (
+                SpecialStrings.SPACE_CHAR,
+                SpecialStrings.UNDERSCORE_CHAR ),
+            new StringFixups.StringFixup (
+                string.Concat (
+                    SpecialCharacters.UNDERSCORE_CHAR,
+                    SpecialCharacters.UNDERSCORE_CHAR ),
+                SpecialStrings.UNDERSCORE_CHAR )
+        };  // private static readonly StringFixups.StringFixup s_fixups
     }   // public static class AssemblyAttributeHelpers
 }   // partial namespace WizardWrx.AssemblyUtils

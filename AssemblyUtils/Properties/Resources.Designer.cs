@@ -160,6 +160,15 @@ namespace WizardWrx.AssemblyUtils.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Library method {0} was unable to create directory {1}..
+        /// </summary>
+        internal static string ERRMSG_CREATE_DIRECTORY_FAILED {
+            get {
+                return ResourceManager.GetString("ERRMSG_CREATE_DIRECTORY_FAILED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Properties of direct dependent assemblies follow.{0}.
         /// </summary>
         internal static string MSG_ASM_DEPENDENTS_DETAILS_HEAD {

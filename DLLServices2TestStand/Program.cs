@@ -279,6 +279,9 @@
                              absolute (fully qualiffied) file name.
 
     2021/04/18 8.0.1389 DAG Test NameValueCollectionFromEmbbededList.
+
+    2021/05/19 8.0.1401 DAG Test new methods GetAssemblyCompanyNameSnakeCased
+                            and GetAssemblyAppDataDirectoryName.
     ============================================================================
 */
 
@@ -1480,7 +1483,7 @@ namespace DLLServices2TestStand
                       intJ++ )
             {
                 Console.WriteLine (
-                    @"Entry Assembly {0} = {1}" ,                               // Format Control String
+                    @"    Entry Assembly {0} = {1}" ,                               // Format Control String
                     s_aenmAttributeFriendlyName [ intJ ] ,                      // Format Item 0: Entry Assembly {0}
                     AssemblyAttributeHelpers.GetAssemblyVersionInfo (           // Format Item 1:  = {1}
                         s_aenmAttributeFriendlyName [ intJ ] ,                  // AttributeFriendlyName penmAttributeFriendlyName
@@ -1502,12 +1505,79 @@ namespace DLLServices2TestStand
                       intJ++ )
             {
                 Console.WriteLine (
-                    @"CSVParseEngine Assembly {0} = {1}" ,                      // Format Control String
+                    @"    CSVParseEngine Assembly {0} = {1}" ,                      // Format Control String
                     s_aenmAttributeFriendlyName [ intJ ] ,                      // Format Item 0: Entry Assembly {0}
                     AssemblyAttributeHelpers.GetAssemblyVersionInfo (           // Format Item 1:  = {1}
                         s_aenmAttributeFriendlyName [ intJ ] ,                  // AttributeFriendlyName penmAttributeFriendlyName
                         assemblyThis ) );                                       // Assembly              pasm                       = null
             }   // for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ; intJ < s_aenmAttributeFriendlyName.Length ; intJ++ )
+
+            Console.WriteLine (
+                @"{0}Use GetCompanyNameSnakeCased to return a string suitable for use as a directory name.{0}" ,
+                Environment.NewLine );
+
+            Console.WriteLine (
+                @"    Entry Assembly Company Name = {0}" ,                      // Format Control String
+                AssemblyAttributeHelpers.GetAssemblyVersionInfo (               // Format Item 0: Assembly Company Name = {0}
+                    AssemblyAttributeHelpers.AttributeFriendlyName.Company ,    // AttributeFriendlyName penmAttributeFriendlyName
+                    null ) );                                                   // Assembly              pasm                       = null
+            Console.WriteLine (
+                @"    Entry Assembly Company Path = {0}{1}" ,                   // Format Control String
+                AssemblyAttributeHelpers.GetAssemblyCompanyNameSnakeCased (     // Format Item 0: Assembly Company Path = {0}
+                    null ) ,                                                    // Assembly              pasm                       = null
+                Environment.NewLine );                                          // Format Item 1: Platform-dependent newline
+
+            Console.WriteLine (
+                @"    CSVParseEngine Assembly Company Name = {0}" ,             // Format Control String
+                AssemblyAttributeHelpers.GetAssemblyVersionInfo (               // Format Item 0: Assembly Company Name = {0}
+                    AssemblyAttributeHelpers.AttributeFriendlyName.Company ,    // AttributeFriendlyName penmAttributeFriendlyName
+                    assemblyThis ) );                                           // Assembly              pasm                       = null
+            Console.WriteLine (
+                @"    CSVParseEngine Assembly Company Path = {0}{1}" ,          // Format Control String
+                AssemblyAttributeHelpers.GetAssemblyCompanyNameSnakeCased (     // Format Item 0: Assembly Company Path = {0}
+                    assemblyThis ) ,                                            // Assembly              pasm                       = null
+                Environment.NewLine );                                          // Format Item 1: Platform-dependent newline
+
+            string strAssemblyAppDataDirName = AssemblyAttributeHelpers.GetAssemblyAppDataDirectoryName ( false );
+
+            if ( Directory.Exists ( strAssemblyAppDataDirName ) )
+            {
+                if ( Directory.GetFiles ( strAssemblyAppDataDirName ).Length == ListInfo.LIST_IS_EMPTY && Directory.GetDirectories ( strAssemblyAppDataDirName ).Length == ListInfo.LIST_IS_EMPTY )
+                {
+                    Directory.Delete ( strAssemblyAppDataDirName );
+                }   // TRUE (desired outcome) block, if ( Directory.GetFiles( strAssemblyAppDataDirName ).Length == ListInfo.LIST_IS_EMPTY && Directory.GetDirectories( strAssemblyAppDataDirName).Length == ListInfo.LIST_IS_EMPTY )
+                else
+                {
+                    Console.WriteLine (
+                        "ERROR: Directory {0} must be empty. Test results will be invalid." ,
+                        strAssemblyAppDataDirName );
+                }   // FALSE (undesired outcome) block, if ( Directory.GetFiles( strAssemblyAppDataDirName ).Length == ListInfo.LIST_IS_EMPTY && Directory.GetDirectories( strAssemblyAppDataDirName).Length == ListInfo.LIST_IS_EMPTY )
+            }   // if ( Directory.Exists ( strAssemblyAppDataDirName ) )
+
+            strAssemblyAppDataDirName = AssemblyAttributeHelpers.GetAssemblyAppDataDirectoryName ( false );
+            Console.WriteLine (
+                @"    Assembly Company Directory name = {0}{1}" ,
+                strAssemblyAppDataDirName ,
+                Environment.NewLine );
+
+            if ( Directory.Exists ( strAssemblyAppDataDirName ) )
+                Console.WriteLine ( @"    On the first pass, the directory exists." );
+            else
+                Console.WriteLine ( @"    On the first pass, the directory does NOT exist." );
+
+            strAssemblyAppDataDirName = AssemblyAttributeHelpers.GetAssemblyAppDataDirectoryName ( true );
+
+            if ( Directory.Exists ( strAssemblyAppDataDirName ) )
+                Console.WriteLine ( @"    On the second pass, the directory exists." );
+            else
+                Console.WriteLine ( @"    On the second pass, the directory does NOT exist." );
+
+            strAssemblyAppDataDirName = AssemblyAttributeHelpers.GetAssemblyAppDataDirectoryName ( true );
+
+            if ( Directory.Exists ( strAssemblyAppDataDirName ) )
+                Console.WriteLine ( @"    On the third pass, the directory exists." );
+            else
+                Console.WriteLine ( @"    On the third pass, the directory does NOT exist." );
 
             Console.WriteLine (
                 @"{0}End of GetAssemblyVersionInfo report on the another assembly{0}" ,

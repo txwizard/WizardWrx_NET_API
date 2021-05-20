@@ -102,6 +102,40 @@
             AssemblyInfo.cs of the assembly specified by <paramref name="pasm"/>.
             </returns>
         </member>
+        <member name="M:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyAppDataDirectoryName(System.Boolean)">
+            <summary>
+            Get the absolute (fully qualified) name of the Application Data
+            directory that is set aside for use by assemblies published by the
+            company named in the AssemblyCompany property of the entry assembly.
+            </summary>
+            <param name="pfCreate">
+            If TRUE, the specified directory is created if necessary.
+            </param>
+            <returns>
+            The return value is the absolute (fully qualified) name of the
+            Application Data directory that is set aside for use by assemblies
+            published by the company named in the AssemblyCompany property of
+            the entry assembly. If <paramref name="pfCreate"/> is TRUE, the
+            directory named therein is guaranteed to exist. Otherwise, its
+            existence is not guaranteed.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyCompanyNameSnakeCased(System.Reflection.Assembly)">
+            <summary>
+            Get the AssemblyCompany property, which usually contains spaces, and
+            often commas and other invalid characters, and either remove them or
+            replace them with underscores.
+            </summary>
+            Pass in a reference to the Assembly for which assembly attributes are
+            wanted, or pass NULL to get the metadata from the entry assembly.
+            <returns>
+            The string returned by this method is the string representation of
+            the value of AttributeFriendlyName.Company as it was recorded in
+            AssemblyInfo.cs of the assembly specified by <paramref name="pasm"/>,
+            with commas, underscores, single quotes, hyphens, and spaces replaced
+            by underscores, and sequential underscores reduced to one.
+            </returns>
+        </member>
         <member name="M:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyAttribs(System.Reflection.Assembly)">
             <summary>
             Get the set of commonly requested "custom" assembly attributes from
@@ -977,6 +1011,11 @@
         <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.DEPENDENT_ASSEMBLYINFO_TOSTRING_TEMPLATE">
             <summary>
               Looks up a localized string similar to {{{0} (FullName = {1}, IsLoaded = {2})}}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.ERRMSG_CREATE_DIRECTORY_FAILED">
+            <summary>
+              Looks up a localized string similar to Library method {0} was unable to create directory {1}..
             </summary>
         </member>
         <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.MSG_ASM_DEPENDENTS_DETAILS_HEAD">

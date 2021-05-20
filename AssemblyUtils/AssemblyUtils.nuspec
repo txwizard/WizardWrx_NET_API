@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>This release incorporates ChangeLog.md from the root directory of the library constellation of which it is a component, along with its configuration file, which contains a binding redirect that you may need for a strong named assembly that is exposed to COM. As always, it also incorporates the current version of dependent library WizardWrx.Core.dll and its dependents.</releaseNotes>
+	    <releaseNotes>This release incorporates adds two newr static methods that build on GetAssemblyVersionInfo, added to version 8.0.156, to render the AssemblyCompany string as something suitable for use in a path string, such that the path is devoid of embedded spaces, and can be freely used without quoting it. For additional details please see ChangeLog.md or the online documentation in GitHub Pages.</releaseNotes>
     	<copyright>$copyright$</copyright>
     	<tags>Assemblies Dependenciess Resources Enumerators</tags>
 	</metadata>

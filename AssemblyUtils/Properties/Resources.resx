@@ -411,4 +411,8 @@
     <value>AssemblyGUID</value>
     <comment>This string maps to the System.Runtime.InteropServices.GuidAttribute Assembly Custom Attribute. It is used internally by GetStartupAssemblyVersionInfo. Note the different namespace.</comment>
   </data>
+  <data name="ERRMSG_CREATE_DIRECTORY_FAILED" xml:space="preserve">
+    <value>Library method {0} was unable to create directory {1}.</value>
+    <comment>Created for GetAssemblyAppDataDirectoryName, the string is adaptable for use by other methods.</comment>
+  </data>
 </root>

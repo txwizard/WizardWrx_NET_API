@@ -1,4 +1,23 @@
-y# WizardWrx .NET API Change Log
+# WizardWrx .NET API Change Log
+
+## 2021-05-19
+
+`WizardWrx.AssemblyUtils`, Version 8.0.167, adds two newr static methods that
+build on `GetAssemblyVersionInfo`, added to version 8.0.156, to render the
+`AssemblyCompany` string as something suitable for use in a path string, such
+that the path is devoid of embedded spaces, and can be freely used without
+quoting it.
+
+The new methods are:
+
+1. `GetAssemblyCompanyNameSnakeCased` gets the `AssemblyCompany` attribute of an
+assemly (by default, the entry assembly), replaces embedded commas, periods,
+single quote marks, hyphens, and spaces with underscores, then makes another
+pass to replace consecutive underscores with one of them.
+
+2. `GetAssemblyAppDataDirectoryName` gets the name of the directory in the
+user's APPDATA directory that corresponds to its company name, optionally
+creating the directory unless it exists.
 
 ## 05/02/2021 03:53:04
 

@@ -2519,6 +2519,32 @@ references:
   commentId: F:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.Version
   fullName: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.Version
   nameWithType: AssemblyAttributeHelpers.AttributeFriendlyName.Version
+- uid: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyAppDataDirectoryName(System.Boolean)
+  name: GetAssemblyAppDataDirectoryName(Boolean)
+  href: api/WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.html#WizardWrx_AssemblyUtils_AssemblyAttributeHelpers_GetAssemblyAppDataDirectoryName_System_Boolean_
+  commentId: M:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyAppDataDirectoryName(System.Boolean)
+  fullName: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyAppDataDirectoryName(System.Boolean)
+  nameWithType: AssemblyAttributeHelpers.GetAssemblyAppDataDirectoryName(Boolean)
+- uid: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyAppDataDirectoryName*
+  name: GetAssemblyAppDataDirectoryName
+  href: api/WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.html#WizardWrx_AssemblyUtils_AssemblyAttributeHelpers_GetAssemblyAppDataDirectoryName_
+  commentId: Overload:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyAppDataDirectoryName
+  isSpec: "True"
+  fullName: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyAppDataDirectoryName
+  nameWithType: AssemblyAttributeHelpers.GetAssemblyAppDataDirectoryName
+- uid: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyCompanyNameSnakeCased(System.Reflection.Assembly)
+  name: GetAssemblyCompanyNameSnakeCased(Assembly)
+  href: api/WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.html#WizardWrx_AssemblyUtils_AssemblyAttributeHelpers_GetAssemblyCompanyNameSnakeCased_System_Reflection_Assembly_
+  commentId: M:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyCompanyNameSnakeCased(System.Reflection.Assembly)
+  fullName: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyCompanyNameSnakeCased(System.Reflection.Assembly)
+  nameWithType: AssemblyAttributeHelpers.GetAssemblyCompanyNameSnakeCased(Assembly)
+- uid: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyCompanyNameSnakeCased*
+  name: GetAssemblyCompanyNameSnakeCased
+  href: api/WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.html#WizardWrx_AssemblyUtils_AssemblyAttributeHelpers_GetAssemblyCompanyNameSnakeCased_
+  commentId: Overload:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyCompanyNameSnakeCased
+  isSpec: "True"
+  fullName: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyCompanyNameSnakeCased
+  nameWithType: AssemblyAttributeHelpers.GetAssemblyCompanyNameSnakeCased
 - uid: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyVersionInfo(WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName,System.Reflection.Assembly)
   name: GetAssemblyVersionInfo(AssemblyAttributeHelpers.AttributeFriendlyName, Assembly)
   href: api/WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.html#WizardWrx_AssemblyUtils_AssemblyAttributeHelpers_GetAssemblyVersionInfo_WizardWrx_AssemblyUtils_AssemblyAttributeHelpers_AttributeFriendlyName_System_Reflection_Assembly_
