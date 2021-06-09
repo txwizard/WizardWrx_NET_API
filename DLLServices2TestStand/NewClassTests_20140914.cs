@@ -176,6 +176,8 @@
                                independent file, for use as a reference list.
 
     2021/04/18 8.0.1389 DAG Test NameValueCollectionFromEmbbededList.
+
+    2021/05/20 8.0.1413 DAG Extended tests of the StringFixups class.
     ============================================================================
 */
 
@@ -263,6 +265,31 @@ namespace DLLServices2TestStand
             null ,
             @"Everything"
         };  // s_astrEnumFromStringTestsValues
+
+
+        private static readonly StringFixups.StringFixup [ ] s_astrKeywordFixups =
+        {
+            new StringFixups.StringFixup (
+                SpecialStrings.COMMA,                       // InputValue
+                SpecialStrings.UNDERSCORE_CHAR ),           // OutputValue
+            new StringFixups.StringFixup (
+                SpecialStrings.FULL_STOP,                   // InputValue
+                SpecialStrings.UNDERSCORE_CHAR ),           // OutputValue
+            new StringFixups.StringFixup (
+                SpecialStrings.SINGLE_QUOTE,                // InputValue
+                SpecialStrings.UNDERSCORE_CHAR ),           // OutputValue
+            new StringFixups.StringFixup (
+                SpecialStrings.HYPHEN,                      // InputValue
+                SpecialStrings.UNDERSCORE_CHAR ),           // OutputValue
+            new StringFixups.StringFixup (
+                SpecialStrings.SPACE_CHAR,                  // InputValue
+                SpecialStrings.UNDERSCORE_CHAR ),           // OutputValue
+            new StringFixups.StringFixup (
+                string.Concat (                             // InputValue
+                    SpecialCharacters.UNDERSCORE_CHAR,      // Character 1 of 2
+                    SpecialCharacters.UNDERSCORE_CHAR ),    // Character 2 of 2
+                SpecialStrings.UNDERSCORE_CHAR )            // OutputValue
+        };  // private static readonly StringFixups.StringFixup s_astrKeywordFixups
         #endregion  // Private Test Data Arrays
 
 
@@ -671,6 +698,44 @@ namespace DLLServices2TestStand
                 MagicNumbers.ERROR_SUCCESS ,
                 pintTestNumber );
         }   // EnumerateStringResourcesInAssembly method
+
+
+        internal static void ExerciseStringFixups_Extended ( )
+        {
+            const string TEST_INPUT = @"35192-set-default-folder-view-all-folders-windows-10-a";
+
+            StringFixups fixups = new StringFixups ( s_astrKeywordFixups );
+            string strTestOutput = fixups.ApplyFixups ( TEST_INPUT );
+
+            Console.WriteLine (
+                @"{0} Begin" ,
+                System.Reflection.MethodBase.GetCurrentMethod ( ).Name );
+
+            Console.WriteLine (
+                @"    Input String  = {0}" ,
+                TEST_INPUT );
+            Console.WriteLine (
+                @"    Output String = {0}" ,
+                strTestOutput );
+
+            Console.WriteLine (
+                @"    Fixups Count  = {0}" ,
+                s_astrKeywordFixups.Length );
+
+            for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+                      intJ < s_astrKeywordFixups.Length ;
+                      intJ++ )
+            {
+                Console.WriteLine (
+                    @"    Fixup # {0}     = {1}" ,
+                    intJ ,
+                    s_astrKeywordFixups [ intJ ] );
+            }   // for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ; intJ < s_astrKeywordFixups.Length ; intJ++ )
+
+            Console.WriteLine (
+                @"{0} Done" ,
+                System.Reflection.MethodBase.GetCurrentMethod ( ).Name );
+        }   // internal static void ExerciseStringFixups_Extended
 
 
         private static void MagicNumberExercises ( )

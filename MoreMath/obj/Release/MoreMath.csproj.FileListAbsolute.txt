@@ -21,10 +21,10 @@ D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\bin\Release\WizardWrx.Common.xml
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\bin\Release\WizardWrx.DiagnosticInfo.pdb
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\bin\Release\WizardWrx.DiagnosticInfo.xml
-D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\obj\Release\MoreMath.csprojAssemblyReference.cache
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\obj\Release\WizardWrx.Properties.Resources.resources
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\obj\Release\MoreMath.csproj.GenerateResource.cache
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\obj\Release\MoreMath.csproj.CoreCompileInputs.cache
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\obj\Release\MoreMath.csproj.CopyComplete
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\obj\Release\WizardWrx.MoreMath.dll
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\obj\Release\WizardWrx.MoreMath.pdb
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\obj\Release\MoreMath.csproj.AssemblyReference.cache

@@ -30,10 +30,10 @@ D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStr
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\bin\Debug\WizardWrx.Common.xml
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\bin\Debug\WizardWrx.AnyCSV.xml
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\bin\Debug\WizardWrx.BitMath.xml
-D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\obj\Debug\FormatStringEngine.csprojAssemblyReference.cache
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\obj\Debug\WizardWrx.FormatStringEngine.Properties.Resources.resources
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\obj\Debug\FormatStringEngine.csproj.GenerateResource.cache
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\obj\Debug\FormatStringEngine.csproj.CoreCompileInputs.cache
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\obj\Debug\FormatStringEngine.csproj.CopyComplete
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\obj\Debug\WizardWrx.FormatStringEngine.dll
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\obj\Debug\WizardWrx.FormatStringEngine.pdb
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\obj\Debug\FormatStringEngine.csproj.AssemblyReference.cache

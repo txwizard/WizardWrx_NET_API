@@ -53,12 +53,9 @@
                         4)  Static method LengthOfLongestString, in
                             C:\Documents and Settings\DAG\My Documents\Visual Studio 2010\Projects\_Laboratory\_MyPlayPen\_MyPlayPen\Program.cs
 
-    Copyright:          2008-2012, WizardWrx. All rights reserved world wide.
-                        WizardWrx is a trade mark of Simple Soft Services, Inc.
-
     Author:             David A. Gray
 
-	License:            Copyright (C) 2008-2017, David A. Gray. All rights reserved.
+	License:            Copyright (C) 2008-2021, David A. Gray. All rights reserved.
 
                         Redistribution and use in source and binary forms, with
                         or without modification, are permitted provided that the
@@ -93,9 +90,9 @@
                         ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
                         IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-    Contact:            dgray@wizardwrx.com
+    Contact:            dgray@p6c.com
 
-    Date Written:       Saturday, 02 August 2008.
+    Date Written:       Saturday, 02 August 2008
 
     ----------------------------------------------------------------------------
     Revision History
@@ -219,6 +216,10 @@
 
                               Eliminate the unreferenced using directive for the
                               System.Text namespace.
+
+	2021/06/09 8.0.146 DAG    Define a new StrFill method, implemented by code
+                              that I imported from another C# source module, in
+                              which it had its unit tests.
     ============================================================================
 */
 
@@ -226,6 +227,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Text;
 
 
 namespace WizardWrx
@@ -1040,11 +1042,90 @@ namespace WizardWrx
 				pstrFieldName ,
 				pstrTokenEnds );
 		}   // public static function MakeToken (2 of 2)
-		#endregion	// MakeToken Methods
+        #endregion // MakeToken Methods
 
 
-		#region QuoteString Method
-		/// <summary>
+        #region ParseCommentInHTMLComment Method
+        /// <summary>
+        /// Extract parameters, expressed as key-value pairs, from a standard
+        /// HTML comment.
+        /// </summary>
+        /// <param name="pstrInput">
+        /// String containing a well formed HTML comment, surrounding the
+        /// key-value pairs. If the string is not a well formed HTML comment,
+        /// with a single space between the comment delimiters and the body,
+        /// or the string is null or empty, the returned collection is empty.
+        /// </param>
+        /// <returns>
+        /// A NameValueCollection of parameter names and values, which may be
+        /// empty, but is guaranteed to be returned, empty or not.
+        /// </returns>
+        /// <example>
+        /// <code>
+        /// Parse this: &lt;!-- ForPage=default;UseTable=False --&gt;
+        ///
+        /// Return this:
+        ///
+        ///			=======================
+        ///			Name		Value
+        ///			-----------	-----------
+        ///			ForPage		default
+        ///			UseTable	False
+        ///			=======================
+        /// </code>
+        /// <para>The returned NameValueCollection contains two members.</para>
+        /// <para>Since this method guarantees to return an initialized
+        /// NameValueCollection, the empty collection is allocated by the first
+        /// statement, and is unconditionally returned by the last statement.</para>
+        /// </example>
+        [Obsolete ( OBSOLETE_MSG , OBSOLETE_USAGE_IS_LEGAL )]
+        public static NameValueCollection ParseCommentInHTMLComment ( string pstrInput )
+        {
+            // Parse this: <!-- ForPage=default;UseTable=False -->
+
+            const string LEFT_DELIMITER = @"<!-- ";
+            const string RIGHT_DELIMITER = @" -->";
+
+            const char ARG_DELIM = ';';
+            const char VALUE_DELIM = '=';
+
+            const int VALUE_FROM_NAME = 2;
+            const int NAME_INDEX = 0;
+            const int VALUE_INDEX = 1;
+
+            NameValueCollection rnvcArgs = new NameValueCollection ( );
+
+            if ( !string.IsNullOrEmpty ( pstrInput ) )
+            {
+                if ( pstrInput.StartsWith ( LEFT_DELIMITER ) && pstrInput.EndsWith ( RIGHT_DELIMITER ) )
+                {
+                    int intTotalLen = pstrInput.Length;
+                    int intLeftLen = LEFT_DELIMITER.Length;
+                    int intRightLen = RIGHT_DELIMITER.Length;
+                    int intMiddleLen = intTotalLen - ( intLeftLen + intRightLen );
+
+                    string strMeat = pstrInput.Substring ( intLeftLen , intMiddleLen );
+                    string [ ] astrParams = strMeat.Split ( ARG_DELIM );
+
+                    foreach ( string strParam in astrParams )
+                    {
+                        string [ ] astrPVPair = strParam.Split (
+                            new char [ ] { VALUE_DELIM } ,
+                            VALUE_FROM_NAME );
+                        rnvcArgs.Add (
+                            astrPVPair [ NAME_INDEX ] ,
+                            astrPVPair [ VALUE_INDEX ] );
+                    }   // foreach ( string strParam in astrParams )
+                }   // if ( pstrInput.StartsWith ( LEFT_DELIMITER ) && pstrInput.EndsWith ( RIGHT_DELIMITER ) )
+            }   // if ( !string.IsNullOrEmpty ( pstrInput ) )
+
+            return rnvcArgs;
+        }   // ParseCommentInHTMLComment
+        #endregion // ParseCommentInHTMLComment Methods
+
+
+        #region QuoteString Method
+        /// <summary>
         /// Append a quote character to both ends of a string, unless it is
         /// already present.
         /// </summary>
@@ -1055,7 +1136,7 @@ namespace WizardWrx
         /// <returns>
         /// String with quote character at both ends.
         /// </returns>
-		[Obsolete ( OBSOLETE_MSG , OBSOLETE_USAGE_IS_LEGAL )]
+        [Obsolete ( OBSOLETE_MSG , OBSOLETE_USAGE_IS_LEGAL )]
 		public static string QuoteString ( string pstrIn )
 		{
 			return EncloseInChar (
@@ -1680,87 +1761,66 @@ namespace WizardWrx
         #endregion // ReplaceTokensFromList Methods
 
 
-        #region ParseCommentInHTMLComment Method
+        #region StrFill Methods
         /// <summary>
-        /// Extract parameters, expressed as key-value pairs, from a standard
-        /// HTML comment.
+        /// Return a string composed of a specified number of a specified
+        /// character.
         /// </summary>
-        /// <param name="pstrInput">
-        /// String containing a well formed HTML comment, surrounding the
-        /// key-value pairs. If the string is not a well formed HTML comment,
-        /// with a single space between the comment delimiters and the body,
-        /// or the string is null or empty, the returned collection is empty.
+        /// <param name="pchr">
+        /// Specify the character with which to fill the string, which may be
+        /// anything except the null character.
+        /// </param>
+        /// <param name="pintCount">
+        /// Specify how many characters should be in the returned string.
         /// </param>
         /// <returns>
-        /// A NameValueCollection of parameter names and values, which may be
-        /// empty, but is guaranteed to be returned, empty or not.
+        /// If the function succeeds, the return value is a string composed of a
+        /// specified number of a specified character.
+        /// 
+        /// If pintCount is less than 1, the return value is a null reference.
+        /// 
+        /// If <paramref name="pchr"/> is the null character, the return value
+        /// is the empty string.
         /// </returns>
-        /// <example>
-        /// <code>
-        /// Parse this: &lt;!-- ForPage=default;UseTable=False --&gt;
-        ///
-        /// Return this:
-        ///
-        ///			=======================
-        ///			Name		Value
-        ///			-----------	-----------
-        ///			ForPage		default
-        ///			UseTable	False
-        ///			=======================
-        /// </code>
-        /// <para>The returned NameValueCollection contains two members.</para>
-        /// <para>Since this method guarantees to return an initialized
-        /// NameValueCollection, the empty collection is allocated by the first
-        /// statement, and is unconditionally returned by the last statement.</para>
-        /// </example>
-        [Obsolete ( OBSOLETE_MSG , OBSOLETE_USAGE_IS_LEGAL )]
-		public static NameValueCollection ParseCommentInHTMLComment ( string pstrInput )
-		{
-			// Parse this: <!-- ForPage=default;UseTable=False -->
+        /// <remarks>
+        /// Reserving both the empty string and the null reference for different
+        /// input conditions permits complete diagnostic reporting without
+        /// throwing any exceptions.
+        /// </remarks>
+        public static string StrFill (
+            char pchr ,
+            int pintCount )
+        {
+            if ( pintCount > ListInfo.LIST_IS_EMPTY )
+            {
+                if ( pchr != SpecialCharacters.NULL_CHAR )
+                {
+                    StringBuilder sbResult = new StringBuilder ( pintCount );
 
-			const string LEFT_DELIMITER = @"<!-- ";
-			const string RIGHT_DELIMITER = @" -->";
+                    for ( int intIndex = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+                              intIndex < pintCount ;
+                              intIndex++ )
+                    {
+                        sbResult.Append ( pchr );
+                    }   // for ( int intIndex = ArrayInfo.ARRAY_FIRST_ELEMENT ; intIndex < pintCount ; intIndex++ )
 
-			const char ARG_DELIM = ';';
-			const char VALUE_DELIM = '=';
-
-			const int VALUE_FROM_NAME = 2;
-			const int NAME_INDEX = 0;
-			const int VALUE_INDEX = 1;
-
-			NameValueCollection rnvcArgs = new NameValueCollection ( );
-
-			if ( !string.IsNullOrEmpty ( pstrInput ) )
-			{
-				if ( pstrInput.StartsWith ( LEFT_DELIMITER ) && pstrInput.EndsWith ( RIGHT_DELIMITER ) )
-				{
-					int intTotalLen = pstrInput.Length;
-					int intLeftLen = LEFT_DELIMITER.Length;
-					int intRightLen = RIGHT_DELIMITER.Length;
-					int intMiddleLen = intTotalLen - ( intLeftLen + intRightLen );
-
-					string strMeat = pstrInput.Substring ( intLeftLen , intMiddleLen );
-					string [ ] astrParams = strMeat.Split ( ARG_DELIM );
-
-					foreach ( string strParam in astrParams )
-					{
-						string [ ] astrPVPair = strParam.Split (
-							new char [] { VALUE_DELIM } ,
-							VALUE_FROM_NAME );
-						rnvcArgs.Add (
-							astrPVPair [ NAME_INDEX ] ,
-							astrPVPair [ VALUE_INDEX ] );
-					}   // foreach ( string strParam in astrParams )
-				}   // if ( pstrInput.StartsWith ( LEFT_DELIMITER ) && pstrInput.EndsWith ( RIGHT_DELIMITER ) )
-			}   // if ( !string.IsNullOrEmpty ( pstrInput ) )
-
-			return rnvcArgs;
-		}   // ParseCommentInHTMLComment
-		#endregion	// ParseCommentInHTMLComment Methods
+                    return sbResult.ToString ( );
+                }   // TRUE (anticipated outcome) block, if ( pchr != SpecialCharacters.NULL_CHAR )
+                else
+                {
+                    return SpecialStrings.EMPTY_STRING;
+                }   // FALSE (unanticipated outcome) block, if ( pchr != SpecialCharacters.NULL_CHAR )
+            }   // TRUE (anticipated outcome) block, if ( pintCount > ListInfo.LIST_IS_EMPTY )
+            else
+            {
+                return null;
+            }   // FALSE (unanticipated outcome) block, if ( pintCount > ListInfo.LIST_IS_EMPTY )
+        }   // StrFill
+        #endregion  // StrFill Methods
 
 
-		#region Truncate Method
-		/// <summary>
+        #region Truncate Method
+        /// <summary>
         /// Supply the missing Truncate function to members of the String class.
         /// </summary>
         /// <param name="pstrSource">
@@ -1785,7 +1845,7 @@ namespace WizardWrx
         ///
         /// Regardless, the return value is a new System.String object.
         /// </returns>
-		[Obsolete ( OBSOLETE_MSG , OBSOLETE_USAGE_IS_LEGAL )]
+        [Obsolete ( OBSOLETE_MSG , OBSOLETE_USAGE_IS_LEGAL )]
 		public static string Truncate (
             string pstrSource ,
             int pintMaxLength )

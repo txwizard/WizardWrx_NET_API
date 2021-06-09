@@ -15,7 +15,6 @@ F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedT
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\obj\Debug\EmbeddedTextFile.csproj.CopyComplete
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\obj\Debug\WizardWrx.EmbeddedTextFile.dll
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\obj\Debug\WizardWrx.EmbeddedTextFile.pdb
-D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\obj\Debug\EmbeddedTextFile.csprojAssemblyReference.cache
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\obj\Debug\WizardWrx.EmbeddedTextFile.Properties.Resources.resources
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\obj\Debug\EmbeddedTextFile.csproj.GenerateResource.cache
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\obj\Debug\EmbeddedTextFile.csproj.CoreCompileInputs.cache
@@ -46,3 +45,4 @@ D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedT
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\bin\Debug\WizardWrx.ASCIIInfo.xml
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\bin\Debug\WizardWrx.AnyCSV.xml
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\obj\Debug\EmbeddedTextFile.csproj.CopyComplete
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\obj\Debug\EmbeddedTextFile.csproj.AssemblyReference.cache

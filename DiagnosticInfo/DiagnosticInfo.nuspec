@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>This release incorporates ChangeLog.md from the root directory of the library constellation of which it is a component. As always, it also incorporates the current versions of its dependent libraries and their dependents.</releaseNotes>
+	    <releaseNotes>This release adds a new static method, ListObjectProperties. For additional details, please see ChangeLog.md. As always, it also incorporates the current versions of its dependent libraries and their dependents.</releaseNotes>
     	<copyright>$copyright$</copyright>
     	<tags>Compile-time Diagnostic Info Reflection</tags>
 	</metadata>

@@ -282,6 +282,9 @@
 
     2021/05/19 8.0.1401 DAG Test new methods GetAssemblyCompanyNameSnakeCased
                             and GetAssemblyAppDataDirectoryName.
+
+    2021/06/09 8.0.1418     Add the test routine for ListObjectProperties, a new
+                            static method on ObjectPropertyEnumerators.
     ============================================================================
 */
 
@@ -603,6 +606,14 @@ namespace DLLServices2TestStand
                 else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_EMBEDDED_NVC_TEST )
                 {
                     NewClassTests_20140914.Exercise_NameValueCollectionFromEmbbededList ( ref intTestNumber );
+                }
+                else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_STRING_FIXUPS )
+                {
+                    NewClassTests_20140914.ExerciseStringFixups_Extended ( );
+                }
+                else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_LIST_OBJECT_PROPERTIES )
+                {
+                    EnumerateObjectProperties ( s_smTheApp );
                 }
                 else
                 {	// Run the whole set, starting with this test, which leaves the flags set so that the original message can be reconstructed from a psLogList export.
@@ -1237,6 +1248,14 @@ namespace DLLServices2TestStand
                 }	// using ( StreamWriter swOut = new StreamWriter ( strDependentAssemblyInfoReportFileName , FileIOFlags.FILE_OUT_CREATE , System.Text.Encoding.UTF8 , MagicNumbers.CAPACITY_08KB ) )
             }	// FALSE (standard case block, if ( string.IsNullOrEmpty ( strDependentAssemblyInfoReportFileName ) )
         }	// EnumerateDependentAssemblies method
+
+
+        private static void EnumerateObjectProperties ( object pobj )
+        {
+            ObjectPropertyEnumerators.ListObjectProperties (
+                nameof ( pobj ) ,                                               // string                         pstrNameOfObject
+                pobj );                                                         // System.Reflection.BindingFlags penmbindingFlags
+        }   // private static void EnumerateObjectProperties
 
 
         private static int EventMessageCleanupTests ( ref int pintTestNumber )

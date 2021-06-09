@@ -117,6 +117,19 @@ references:
   isSpec: "True"
   fullName: DLLServices2TestStand.Properties.Resources.CMDARG_LIST_COMMON_STRINGS
   nameWithType: Resources.CMDARG_LIST_COMMON_STRINGS
+- uid: DLLServices2TestStand.Properties.Resources.CMDARG_LIST_OBJECT_PROPERTIES
+  name: CMDARG_LIST_OBJECT_PROPERTIES
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_CMDARG_LIST_OBJECT_PROPERTIES
+  commentId: P:DLLServices2TestStand.Properties.Resources.CMDARG_LIST_OBJECT_PROPERTIES
+  fullName: DLLServices2TestStand.Properties.Resources.CMDARG_LIST_OBJECT_PROPERTIES
+  nameWithType: Resources.CMDARG_LIST_OBJECT_PROPERTIES
+- uid: DLLServices2TestStand.Properties.Resources.CMDARG_LIST_OBJECT_PROPERTIES*
+  name: CMDARG_LIST_OBJECT_PROPERTIES
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_CMDARG_LIST_OBJECT_PROPERTIES_
+  commentId: Overload:DLLServices2TestStand.Properties.Resources.CMDARG_LIST_OBJECT_PROPERTIES
+  isSpec: "True"
+  fullName: DLLServices2TestStand.Properties.Resources.CMDARG_LIST_OBJECT_PROPERTIES
+  nameWithType: Resources.CMDARG_LIST_OBJECT_PROPERTIES
 - uid: DLLServices2TestStand.Properties.Resources.CMDARG_REDIRECTION_DETECTION
   name: CMDARG_REDIRECTION_DETECTION
   href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_CMDARG_REDIRECTION_DETECTION
@@ -143,6 +156,19 @@ references:
   isSpec: "True"
   fullName: DLLServices2TestStand.Properties.Resources.CMDARG_REDIRECTION_STATE_TESTS
   nameWithType: Resources.CMDARG_REDIRECTION_STATE_TESTS
+- uid: DLLServices2TestStand.Properties.Resources.CMDARG_STRING_FIXUPS
+  name: CMDARG_STRING_FIXUPS
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_CMDARG_STRING_FIXUPS
+  commentId: P:DLLServices2TestStand.Properties.Resources.CMDARG_STRING_FIXUPS
+  fullName: DLLServices2TestStand.Properties.Resources.CMDARG_STRING_FIXUPS
+  nameWithType: Resources.CMDARG_STRING_FIXUPS
+- uid: DLLServices2TestStand.Properties.Resources.CMDARG_STRING_FIXUPS*
+  name: CMDARG_STRING_FIXUPS
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_CMDARG_STRING_FIXUPS_
+  commentId: Overload:DLLServices2TestStand.Properties.Resources.CMDARG_STRING_FIXUPS
+  isSpec: "True"
+  fullName: DLLServices2TestStand.Properties.Resources.CMDARG_STRING_FIXUPS
+  nameWithType: Resources.CMDARG_STRING_FIXUPS
 - uid: DLLServices2TestStand.Properties.Resources.COLOR_MESSAGE_TEXT
   name: COLOR_MESSAGE_TEXT
   href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_COLOR_MESSAGE_TEXT
@@ -13439,6 +13465,31 @@ references:
   isSpec: "True"
   fullName: WizardWrx.NumericFormats.ScientificXPrecisionUC
   nameWithType: NumericFormats.ScientificXPrecisionUC
+- uid: WizardWrx.ObjectPropertyEnumerators
+  name: ObjectPropertyEnumerators
+  href: api/WizardWrx.ObjectPropertyEnumerators.html
+  commentId: T:WizardWrx.ObjectPropertyEnumerators
+  fullName: WizardWrx.ObjectPropertyEnumerators
+  nameWithType: ObjectPropertyEnumerators
+- uid: WizardWrx.ObjectPropertyEnumerators.DEFAULT_BINDING_FLAGS
+  name: DEFAULT_BINDING_FLAGS
+  href: api/WizardWrx.ObjectPropertyEnumerators.html#WizardWrx_ObjectPropertyEnumerators_DEFAULT_BINDING_FLAGS
+  commentId: F:WizardWrx.ObjectPropertyEnumerators.DEFAULT_BINDING_FLAGS
+  fullName: WizardWrx.ObjectPropertyEnumerators.DEFAULT_BINDING_FLAGS
+  nameWithType: ObjectPropertyEnumerators.DEFAULT_BINDING_FLAGS
+- uid: WizardWrx.ObjectPropertyEnumerators.ListObjectProperties(System.String,System.Object,System.Reflection.BindingFlags,System.Object,System.Int32)
+  name: ListObjectProperties(String, Object, BindingFlags, Object, Int32)
+  href: api/WizardWrx.ObjectPropertyEnumerators.html#WizardWrx_ObjectPropertyEnumerators_ListObjectProperties_System_String_System_Object_System_Reflection_BindingFlags_System_Object_System_Int32_
+  commentId: M:WizardWrx.ObjectPropertyEnumerators.ListObjectProperties(System.String,System.Object,System.Reflection.BindingFlags,System.Object,System.Int32)
+  fullName: WizardWrx.ObjectPropertyEnumerators.ListObjectProperties(System.String, System.Object, System.Reflection.BindingFlags, System.Object, System.Int32)
+  nameWithType: ObjectPropertyEnumerators.ListObjectProperties(String, Object, BindingFlags, Object, Int32)
+- uid: WizardWrx.ObjectPropertyEnumerators.ListObjectProperties*
+  name: ListObjectProperties
+  href: api/WizardWrx.ObjectPropertyEnumerators.html#WizardWrx_ObjectPropertyEnumerators_ListObjectProperties_
+  commentId: Overload:WizardWrx.ObjectPropertyEnumerators.ListObjectProperties
+  isSpec: "True"
+  fullName: WizardWrx.ObjectPropertyEnumerators.ListObjectProperties
+  nameWithType: ObjectPropertyEnumerators.ListObjectProperties
 - uid: WizardWrx.PathPositions
   name: PathPositions
   href: api/WizardWrx.PathPositions.html
@@ -16147,6 +16198,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.StringTricks.ReplaceTokensFromList
   nameWithType: StringTricks.ReplaceTokensFromList
+- uid: WizardWrx.StringTricks.StrFill(System.Char,System.Int32)
+  name: StrFill(Char, Int32)
+  href: api/WizardWrx.StringTricks.html#WizardWrx_StringTricks_StrFill_System_Char_System_Int32_
+  commentId: M:WizardWrx.StringTricks.StrFill(System.Char,System.Int32)
+  fullName: WizardWrx.StringTricks.StrFill(System.Char, System.Int32)
+  nameWithType: StringTricks.StrFill(Char, Int32)
+- uid: WizardWrx.StringTricks.StrFill*
+  name: StrFill
+  href: api/WizardWrx.StringTricks.html#WizardWrx_StringTricks_StrFill_
+  commentId: Overload:WizardWrx.StringTricks.StrFill
+  isSpec: "True"
+  fullName: WizardWrx.StringTricks.StrFill
+  nameWithType: StringTricks.StrFill
 - uid: WizardWrx.StringTricks.Truncate(System.String,System.Int32)
   name: Truncate(String, Int32)
   href: api/WizardWrx.StringTricks.html#WizardWrx_StringTricks_Truncate_System_String_System_Int32_

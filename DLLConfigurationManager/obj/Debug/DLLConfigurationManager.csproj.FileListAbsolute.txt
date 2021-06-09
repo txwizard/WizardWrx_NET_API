@@ -17,7 +17,6 @@ F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLConfig
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLConfigurationManager\obj\Debug\DLLConfigurationManager.csproj.CopyComplete
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLConfigurationManager\obj\Debug\WizardWrx.DLLConfigurationManager.dll
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLConfigurationManager\obj\Debug\WizardWrx.DLLConfigurationManager.pdb
-D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLConfigurationManager\obj\Debug\DLLConfigurationManager.csprojAssemblyReference.cache
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLConfigurationManager\obj\Debug\WizardWrx.DLLConfigurationManager.Properties.Resources.resources
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLConfigurationManager\obj\Debug\DLLConfigurationManager.csproj.GenerateResource.cache
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLConfigurationManager\obj\Debug\DLLConfigurationManager.csproj.CoreCompileInputs.cache
@@ -52,3 +51,4 @@ D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLConfig
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLConfigurationManager\bin\Debug\WizardWrx.ASCIIInfo.xml
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLConfigurationManager\bin\Debug\WizardWrx.AnyCSV.xml
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLConfigurationManager\obj\Debug\DLLConfigurationManager.csproj.CopyComplete
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLConfigurationManager\obj\Debug\DLLConfigurationManager.csproj.AssemblyReference.cache

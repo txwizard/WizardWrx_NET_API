@@ -666,4 +666,12 @@
   <data name="MSG_KEY_MAP_COUNT" xml:space="preserve">
     <value>{2}Total keys in embedded resource file {0} = {1}{2}</value>
   </data>
+  <data name="CMDARG_STRING_FIXUPS" xml:space="preserve">
+    <value>StringFixups</value>
+    <comment>Perform extended tests of the StringFixups class.</comment>
+  </data>
+  <data name="CMDARG_LIST_OBJECT_PROPERTIES" xml:space="preserve">
+    <value>ListObjectProperties</value>
+    <comment>Select this one-off task to list the properties of an arbitrary object.</comment>
+  </data>
 </root>

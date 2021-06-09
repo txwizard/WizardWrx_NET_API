@@ -4788,6 +4788,40 @@
             argument pstrFieldName.
             </returns>
         </member>
+        <member name="M:WizardWrx.StringTricks.ParseCommentInHTMLComment(System.String)">
+             <summary>
+             Extract parameters, expressed as key-value pairs, from a standard
+             HTML comment.
+             </summary>
+             <param name="pstrInput">
+             String containing a well formed HTML comment, surrounding the
+             key-value pairs. If the string is not a well formed HTML comment,
+             with a single space between the comment delimiters and the body,
+             or the string is null or empty, the returned collection is empty.
+             </param>
+             <returns>
+             A NameValueCollection of parameter names and values, which may be
+             empty, but is guaranteed to be returned, empty or not.
+             </returns>
+             <example>
+             <code>
+             Parse this: &lt;!-- ForPage=default;UseTable=False --&gt;
+            
+             Return this:
+            
+            			=======================
+            			Name		Value
+            			-----------	-----------
+            			ForPage		default
+            			UseTable	False
+            			=======================
+             </code>
+             <para>The returned NameValueCollection contains two members.</para>
+             <para>Since this method guarantees to return an initialized
+             NameValueCollection, the empty collection is allocated by the first
+             statement, and is unconditionally returned by the last statement.</para>
+             </example>
+        </member>
         <member name="M:WizardWrx.StringTricks.QuoteString(System.String)">
             <summary>
             Append a quote character to both ends of a string, unless it is
@@ -5032,39 +5066,32 @@
              object in the pnvcList OR the pdctDefaults collection preserved.
              </returns>
         </member>
-        <member name="M:WizardWrx.StringTricks.ParseCommentInHTMLComment(System.String)">
-             <summary>
-             Extract parameters, expressed as key-value pairs, from a standard
-             HTML comment.
-             </summary>
-             <param name="pstrInput">
-             String containing a well formed HTML comment, surrounding the
-             key-value pairs. If the string is not a well formed HTML comment,
-             with a single space between the comment delimiters and the body,
-             or the string is null or empty, the returned collection is empty.
-             </param>
-             <returns>
-             A NameValueCollection of parameter names and values, which may be
-             empty, but is guaranteed to be returned, empty or not.
-             </returns>
-             <example>
-             <code>
-             Parse this: &lt;!-- ForPage=default;UseTable=False --&gt;
+        <member name="M:WizardWrx.StringTricks.StrFill(System.Char,System.Int32)">
+            <summary>
+            Return a string composed of a specified number of a specified
+            character.
+            </summary>
+            <param name="pchr">
+            Specify the character with which to fill the string, which may be
+            anything except the null character.
+            </param>
+            <param name="pintCount">
+            Specify how many characters should be in the returned string.
+            </param>
+            <returns>
+            If the function succeeds, the return value is a string composed of a
+            specified number of a specified character.
             
-             Return this:
+            If pintCount is less than 1, the return value is a null reference.
             
-            			=======================
-            			Name		Value
-            			-----------	-----------
-            			ForPage		default
-            			UseTable	False
-            			=======================
-             </code>
-             <para>The returned NameValueCollection contains two members.</para>
-             <para>Since this method guarantees to return an initialized
-             NameValueCollection, the empty collection is allocated by the first
-             statement, and is unconditionally returned by the last statement.</para>
-             </example>
+            If <paramref name="pchr"/> is the null character, the return value
+            is the empty string.
+            </returns>
+            <remarks>
+            Reserving both the empty string and the null reference for different
+            input conditions permits complete diagnostic reporting without
+            throwing any exceptions.
+            </remarks>
         </member>
         <member name="M:WizardWrx.StringTricks.Truncate(System.String,System.Int32)">
              <summary>

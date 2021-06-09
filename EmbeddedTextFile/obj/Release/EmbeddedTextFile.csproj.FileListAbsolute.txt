@@ -38,10 +38,10 @@ D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedT
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\bin\Release\WizardWrx.FormatStringEngine.dll.config
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\bin\Release\WizardWrx.ASCIIInfo.pdb
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\bin\Release\WizardWrx.ASCIIInfo.xml
-D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\obj\Release\EmbeddedTextFile.csprojAssemblyReference.cache
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\obj\Release\WizardWrx.EmbeddedTextFile.Properties.Resources.resources
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\obj\Release\EmbeddedTextFile.csproj.GenerateResource.cache
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\obj\Release\EmbeddedTextFile.csproj.CoreCompileInputs.cache
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\obj\Release\EmbeddedTextFile.csproj.CopyComplete
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\obj\Release\WizardWrx.EmbeddedTextFile.dll
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\obj\Release\WizardWrx.EmbeddedTextFile.pdb
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\obj\Release\EmbeddedTextFile.csproj.AssemblyReference.cache

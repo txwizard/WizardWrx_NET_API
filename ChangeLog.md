@@ -1,5 +1,18 @@
 # WizardWrx .NET API Change Log
 
+## 2021-06-09
+
+## WizardWrx.Common.dll, Version 8.0.148.0
+
+`StringTricks.StrFill` is a new static method that returns a string filled with
+a specified number of a character.
+
+## WizardWrx.DiagnosticInfo.dll version = 8.0.28.0
+
+`ObjectPropertyEnumerators.ListObjectProperties` is a new static method that
+lists the public properties of an object, along with the string representations
+of their values, on the console.
+
 ## 2021-05-19
 
 `WizardWrx.AssemblyUtils`, Version 8.0.167, adds two newr static methods that
@@ -47,7 +60,7 @@ respect to their dependencies.
 
 The libraries are unchanged. The only change in this release is that the unit
 test and demonstration assembly, DLLServices2TestStand.exe version 8.0.1388.0,
-fully covers the last batch of constants defined in WizardWrx.Common.dll,
+fully covers the last batch of constants defined in `WizardWrx.Common.dll`,
 Version 7.24.128.
 
 Since I updated ProductAssemblyInfo.cs, every library got a refresh with a build

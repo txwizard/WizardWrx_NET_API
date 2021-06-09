@@ -11,10 +11,11 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <StartWorkingDirectory>D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API</StartWorkingDirectory>
-    <StartArguments>NameValueCollectionFromEmbbededList</StartArguments>
+    <StartArguments>ListObjectProperties</StartArguments>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
-    <StartArguments>EnumerateStringResourcesInAssembly</StartArguments>
+    <StartArguments>StringFixups
+</StartArguments>
   </PropertyGroup>
 </Project>

@@ -7,7 +7,6 @@ F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Diagnosti
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DiagnosticInfo\obj\Debug\DiagnosticInfo.csproj.CopyComplete
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DiagnosticInfo\obj\Debug\WizardWrx.DiagnosticInfo.dll
 F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DiagnosticInfo\obj\Debug\WizardWrx.DiagnosticInfo.pdb
-D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DiagnosticInfo\obj\Debug\DiagnosticInfo.csprojAssemblyReference.cache
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DiagnosticInfo\obj\Debug\DiagnosticInfo.csproj.CoreCompileInputs.cache
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DiagnosticInfo\obj\Debug\WizardWrx.DiagnosticInfo.dll
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DiagnosticInfo\obj\Debug\WizardWrx.DiagnosticInfo.pdb
@@ -20,3 +19,6 @@ D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Diagnosti
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DiagnosticInfo\bin\Debug\WizardWrx.Common.xml
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DiagnosticInfo\bin\Debug\WizardWrx.BitMath.xml
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DiagnosticInfo\obj\Debug\DiagnosticInfo.csproj.CopyComplete
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DiagnosticInfo\obj\Debug\DiagnosticInfo.csproj.AssemblyReference.cache
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DiagnosticInfo\obj\Debug\WizardWrx.Properties.Resources.resources
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DiagnosticInfo\obj\Debug\DiagnosticInfo.csproj.GenerateResource.cache

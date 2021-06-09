@@ -133,6 +133,15 @@ namespace DLLServices2TestStand.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ListObjectProperties.
+        /// </summary>
+        public static string CMDARG_LIST_OBJECT_PROPERTIES {
+            get {
+                return ResourceManager.GetString("CMDARG_LIST_OBJECT_PROPERTIES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to RedirectionDetection.
         /// </summary>
         public static string CMDARG_REDIRECTION_DETECTION {
@@ -147,6 +156,15 @@ namespace DLLServices2TestStand.Properties {
         public static string CMDARG_REDIRECTION_STATE_TESTS {
             get {
                 return ResourceManager.GetString("CMDARG_REDIRECTION_STATE_TESTS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to StringFixups.
+        /// </summary>
+        public static string CMDARG_STRING_FIXUPS {
+            get {
+                return ResourceManager.GetString("CMDARG_STRING_FIXUPS", resourceCulture);
             }
         }
         
