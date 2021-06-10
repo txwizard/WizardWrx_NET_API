@@ -285,6 +285,9 @@
 
     2021/06/09 8.0.1418     Add the test routine for ListObjectProperties, a new
                             static method on ObjectPropertyEnumerators.
+
+    2021/06/10 8.0.1420 DAG Rearrange the argument list to put the optional
+                            arguments in order most likely to be overrridden.
     ============================================================================
 */
 
@@ -614,6 +617,7 @@ namespace DLLServices2TestStand
                 else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_LIST_OBJECT_PROPERTIES )
                 {
                     EnumerateObjectProperties ( s_smTheApp );
+                    EnumerateObjectProperties ( s_smTheApp.AppExceptionLogger , 4 );
                 }
                 else
                 {	// Run the whole set, starting with this test, which leaves the flags set so that the original message can be reconstructed from a psLogList export.
@@ -1250,11 +1254,23 @@ namespace DLLServices2TestStand
         }	// EnumerateDependentAssemblies method
 
 
-        private static void EnumerateObjectProperties ( object pobj )
+        private static void EnumerateObjectProperties ( 
+            object pobj ,
+            int pintLeftPadding = MagicNumbers.ZERO )
         {
-            ObjectPropertyEnumerators.ListObjectProperties (
-                nameof ( pobj ) ,                                               // string                         pstrNameOfObject
-                pobj );                                                         // System.Reflection.BindingFlags penmbindingFlags
+            if ( pintLeftPadding == MagicNumbers.ZERO )
+            {
+                ObjectPropertyEnumerators.ListObjectProperties (
+                    nameof ( pobj ) ,                                               // string                         pstrNameOfObject
+                    pobj );                                                         // System.Reflection.BindingFlags penmbindingFlags
+            }   // TRUE (degenerate case, no left padding) block, if ( pintLeftPadding == MagicNumbers.ZERO )
+            else
+            {
+                ObjectPropertyEnumerators.ListObjectProperties (
+                    nameof ( pobj ) ,                                               // string                         pstrNameOfObject
+                    pobj ,                                                          // System.Reflection.BindingFlags penmbindingFlags
+                    pintLeftPadding );                                            // int                            pintLeftPadding
+            }   // FALSE (standard case, left padding specified)) block, if ( pintLeftPadding == MagicNumbers.ZERO )
         }   // private static void EnumerateObjectProperties
 
 

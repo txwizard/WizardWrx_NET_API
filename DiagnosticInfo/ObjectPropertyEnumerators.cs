@@ -62,6 +62,9 @@
     Date       Version Author Synopsis
     ---------- ------- ------ --------------------------------------------------
 	2021/06/09 8.0.26  DAG    This class makes its debut.
+
+    2021/06/10 8.0.30  DAG    Rearrange the argument list to put the optional
+                              arguments in order most likely to be overrridden.
     ============================================================================
 */
 
@@ -93,21 +96,21 @@ namespace WizardWrx
         /// <param name="pObjThisOne">
         /// Reference to the object from which to enumerate properties
         /// </param>
-        /// <param name="penmBindingFlags">
-        /// Binding flags mask, which determines which properties are enumerated
+        /// <param name="pintLeftPadding">
+        /// Optional left padding for the report
         /// </param>
         /// <param name="pstrObjectLabelSuffix">
         /// Optional supplementary label information for the object
         /// </param>
-        /// <param name="pintLeftPadding">
-        /// Optional left padding for the report
+        /// <param name="penmBindingFlags">
+        /// Binding flags mask, which determines which properties are enumerated
         /// </param>
         public static void ListObjectProperties (
             string pstrNameOfObject ,
             object pObjThisOne ,
-            BindingFlags penmBindingFlags = DEFAULT_BINDING_FLAGS ,
-            object pstrObjectLabelSuffix = null ,
-            int pintLeftPadding = ListInfo.EMPTY_STRING_LENGTH )
+            int pintLeftPadding = ListInfo.EMPTY_STRING_LENGTH ,
+            string pstrObjectLabelSuffix = null ,
+            BindingFlags penmBindingFlags = DEFAULT_BINDING_FLAGS )
         {
             //const int FORMAT_ITEM_TO_LEFT_ALIGN = 1;
 

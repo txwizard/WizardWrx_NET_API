@@ -63,7 +63,7 @@
             Default binding flags bit mask
             </summary>
         </member>
-        <member name="M:WizardWrx.ObjectPropertyEnumerators.ListObjectProperties(System.String,System.Object,System.Reflection.BindingFlags,System.Object,System.Int32)">
+        <member name="M:WizardWrx.ObjectPropertyEnumerators.ListObjectProperties(System.String,System.Object,System.Int32,System.String,System.Reflection.BindingFlags)">
             <summary>
             Enumerate the properties of an object as a formatted listing.
             </summary>
@@ -73,14 +73,14 @@
             <param name="pObjThisOne">
             Reference to the object from which to enumerate properties
             </param>
-            <param name="penmBindingFlags">
-            Binding flags mask, which determines which properties are enumerated
+            <param name="pintLeftPadding">
+            Optional left padding for the report
             </param>
             <param name="pstrObjectLabelSuffix">
             Optional supplementary label information for the object
             </param>
-            <param name="pintLeftPadding">
-            Optional left padding for the report
+            <param name="penmBindingFlags">
+            Binding flags mask, which determines which properties are enumerated
             </param>
         </member>
         <member name="T:WizardWrx.Properties.Resources">

@@ -13477,12 +13477,12 @@ references:
   commentId: F:WizardWrx.ObjectPropertyEnumerators.DEFAULT_BINDING_FLAGS
   fullName: WizardWrx.ObjectPropertyEnumerators.DEFAULT_BINDING_FLAGS
   nameWithType: ObjectPropertyEnumerators.DEFAULT_BINDING_FLAGS
-- uid: WizardWrx.ObjectPropertyEnumerators.ListObjectProperties(System.String,System.Object,System.Reflection.BindingFlags,System.Object,System.Int32)
-  name: ListObjectProperties(String, Object, BindingFlags, Object, Int32)
-  href: api/WizardWrx.ObjectPropertyEnumerators.html#WizardWrx_ObjectPropertyEnumerators_ListObjectProperties_System_String_System_Object_System_Reflection_BindingFlags_System_Object_System_Int32_
-  commentId: M:WizardWrx.ObjectPropertyEnumerators.ListObjectProperties(System.String,System.Object,System.Reflection.BindingFlags,System.Object,System.Int32)
-  fullName: WizardWrx.ObjectPropertyEnumerators.ListObjectProperties(System.String, System.Object, System.Reflection.BindingFlags, System.Object, System.Int32)
-  nameWithType: ObjectPropertyEnumerators.ListObjectProperties(String, Object, BindingFlags, Object, Int32)
+- uid: WizardWrx.ObjectPropertyEnumerators.ListObjectProperties(System.String,System.Object,System.Int32,System.String,System.Reflection.BindingFlags)
+  name: ListObjectProperties(String, Object, Int32, String, BindingFlags)
+  href: api/WizardWrx.ObjectPropertyEnumerators.html#WizardWrx_ObjectPropertyEnumerators_ListObjectProperties_System_String_System_Object_System_Int32_System_String_System_Reflection_BindingFlags_
+  commentId: M:WizardWrx.ObjectPropertyEnumerators.ListObjectProperties(System.String,System.Object,System.Int32,System.String,System.Reflection.BindingFlags)
+  fullName: WizardWrx.ObjectPropertyEnumerators.ListObjectProperties(System.String, System.Object, System.Int32, System.String, System.Reflection.BindingFlags)
+  nameWithType: ObjectPropertyEnumerators.ListObjectProperties(String, Object, Int32, String, BindingFlags)
 - uid: WizardWrx.ObjectPropertyEnumerators.ListObjectProperties*
   name: ListObjectProperties
   href: api/WizardWrx.ObjectPropertyEnumerators.html#WizardWrx_ObjectPropertyEnumerators_ListObjectProperties_
