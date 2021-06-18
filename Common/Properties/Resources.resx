@@ -317,6 +317,10 @@
     <value>   at </value>
     <comment>Each entry in the English-language string representation of a stack trace begins with this text. Note that it contains 3 leading spaces and one trailing space.</comment>
   </data>
+  <data name="VALUE_IS_NULL" xml:space="preserve">
+    <value>[null]</value>
+    <comment>Added for StringTricks.TruncateValueToOneLine</comment>
+  </data>
   <data name="VERSION_STRING_PART_BUILD_ABBR" xml:space="preserve">
     <value>Bld.</value>
     <comment>Use these strings as abbreviated labels for the four parts of a canonical version number string.</comment>

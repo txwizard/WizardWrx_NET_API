@@ -115,6 +115,15 @@ namespace DLLServices2TestStand.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to TruncateValueToOneLine.
+        /// </summary>
+        public static string CMDARG_EXERCISE_TRUNCATEVALUETOONELINE {
+            get {
+                return ResourceManager.GetString("CMDARG_EXERCISE_TRUNCATEVALUETOONELINE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to GenerateExceptionMessageFormatTable.
         /// </summary>
         public static string CMDARG_GENERATE_EXCEPTION_MESSAGE_FORMAT_TABLE {

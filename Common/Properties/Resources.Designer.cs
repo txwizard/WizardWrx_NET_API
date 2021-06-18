@@ -511,6 +511,15 @@ namespace WizardWrx.Common.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to [null].
+        /// </summary>
+        public static string VALUE_IS_NULL {
+            get {
+                return ResourceManager.GetString("VALUE_IS_NULL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bld..
         /// </summary>
         public static string VERSION_STRING_PART_BUILD_ABBR {

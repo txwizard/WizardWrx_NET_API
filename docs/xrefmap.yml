@@ -91,6 +91,19 @@ references:
   isSpec: "True"
   fullName: DLLServices2TestStand.Properties.Resources.CMDARG_EVENT_MSG_CLEANUP_TESTS
   nameWithType: Resources.CMDARG_EVENT_MSG_CLEANUP_TESTS
+- uid: DLLServices2TestStand.Properties.Resources.CMDARG_EXERCISE_TRUNCATEVALUETOONELINE
+  name: CMDARG_EXERCISE_TRUNCATEVALUETOONELINE
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_CMDARG_EXERCISE_TRUNCATEVALUETOONELINE
+  commentId: P:DLLServices2TestStand.Properties.Resources.CMDARG_EXERCISE_TRUNCATEVALUETOONELINE
+  fullName: DLLServices2TestStand.Properties.Resources.CMDARG_EXERCISE_TRUNCATEVALUETOONELINE
+  nameWithType: Resources.CMDARG_EXERCISE_TRUNCATEVALUETOONELINE
+- uid: DLLServices2TestStand.Properties.Resources.CMDARG_EXERCISE_TRUNCATEVALUETOONELINE*
+  name: CMDARG_EXERCISE_TRUNCATEVALUETOONELINE
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_CMDARG_EXERCISE_TRUNCATEVALUETOONELINE_
+  commentId: Overload:DLLServices2TestStand.Properties.Resources.CMDARG_EXERCISE_TRUNCATEVALUETOONELINE
+  isSpec: "True"
+  fullName: DLLServices2TestStand.Properties.Resources.CMDARG_EXERCISE_TRUNCATEVALUETOONELINE
+  nameWithType: Resources.CMDARG_EXERCISE_TRUNCATEVALUETOONELINE
 - uid: DLLServices2TestStand.Properties.Resources.CMDARG_GENERATE_EXCEPTION_MESSAGE_FORMAT_TABLE
   name: CMDARG_GENERATE_EXCEPTION_MESSAGE_FORMAT_TABLE
   href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_CMDARG_GENERATE_EXCEPTION_MESSAGE_FORMAT_TABLE
@@ -4063,6 +4076,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.Common.Properties.Resources.STACK_TRACE_ENTRY_PREFIX
   nameWithType: Resources.STACK_TRACE_ENTRY_PREFIX
+- uid: WizardWrx.Common.Properties.Resources.VALUE_IS_NULL
+  name: VALUE_IS_NULL
+  href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_VALUE_IS_NULL
+  commentId: P:WizardWrx.Common.Properties.Resources.VALUE_IS_NULL
+  fullName: WizardWrx.Common.Properties.Resources.VALUE_IS_NULL
+  nameWithType: Resources.VALUE_IS_NULL
+- uid: WizardWrx.Common.Properties.Resources.VALUE_IS_NULL*
+  name: VALUE_IS_NULL
+  href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_VALUE_IS_NULL_
+  commentId: Overload:WizardWrx.Common.Properties.Resources.VALUE_IS_NULL
+  isSpec: "True"
+  fullName: WizardWrx.Common.Properties.Resources.VALUE_IS_NULL
+  nameWithType: Resources.VALUE_IS_NULL
 - uid: WizardWrx.Common.Properties.Resources.VERSION_STRING_PART_BUILD_ABBR
   name: VERSION_STRING_PART_BUILD_ABBR
   href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_VERSION_STRING_PART_BUILD_ABBR
@@ -16078,6 +16104,12 @@ references:
   isSpec: "True"
   fullName: WizardWrx.StringTricks.MakeToken
   nameWithType: StringTricks.MakeToken
+- uid: WizardWrx.StringTricks.MAXIMUM_CHARACTERS_TO_DISPLAY
+  name: MAXIMUM_CHARACTERS_TO_DISPLAY
+  href: api/WizardWrx.StringTricks.html#WizardWrx_StringTricks_MAXIMUM_CHARACTERS_TO_DISPLAY
+  commentId: F:WizardWrx.StringTricks.MAXIMUM_CHARACTERS_TO_DISPLAY
+  fullName: WizardWrx.StringTricks.MAXIMUM_CHARACTERS_TO_DISPLAY
+  nameWithType: StringTricks.MAXIMUM_CHARACTERS_TO_DISPLAY
 - uid: WizardWrx.StringTricks.ParseCommentInHTMLComment(System.String)
   name: ParseCommentInHTMLComment(String)
   href: api/WizardWrx.StringTricks.html#WizardWrx_StringTricks_ParseCommentInHTMLComment_System_String_
@@ -16224,6 +16256,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.StringTricks.Truncate
   nameWithType: StringTricks.Truncate
+- uid: WizardWrx.StringTricks.TruncateValueToOneLine(System.Object,System.Int32)
+  name: TruncateValueToOneLine(Object, Int32)
+  href: api/WizardWrx.StringTricks.html#WizardWrx_StringTricks_TruncateValueToOneLine_System_Object_System_Int32_
+  commentId: M:WizardWrx.StringTricks.TruncateValueToOneLine(System.Object,System.Int32)
+  fullName: WizardWrx.StringTricks.TruncateValueToOneLine(System.Object, System.Int32)
+  nameWithType: StringTricks.TruncateValueToOneLine(Object, Int32)
+- uid: WizardWrx.StringTricks.TruncateValueToOneLine*
+  name: TruncateValueToOneLine
+  href: api/WizardWrx.StringTricks.html#WizardWrx_StringTricks_TruncateValueToOneLine_
+  commentId: Overload:WizardWrx.StringTricks.TruncateValueToOneLine
+  isSpec: "True"
+  fullName: WizardWrx.StringTricks.TruncateValueToOneLine
+  nameWithType: StringTricks.TruncateValueToOneLine
 - uid: WizardWrx.SyncRoot
   name: SyncRoot
   href: api/WizardWrx.SyncRoot.html

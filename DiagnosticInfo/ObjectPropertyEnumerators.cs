@@ -65,6 +65,10 @@
 
     2021/06/10 8.0.30  DAG    Rearrange the argument list to put the optional
                               arguments in order most likely to be overrridden.
+
+    2021/06/18 8.0.34  DAG    ListObjectProperties: Right-align the property
+                              numbers in the listing, and limit property strings
+                              to one line of fewer than 133 characters.
     ============================================================================
 */
 
@@ -112,8 +116,6 @@ namespace WizardWrx
             string pstrObjectLabelSuffix = null ,
             BindingFlags penmBindingFlags = DEFAULT_BINDING_FLAGS )
         {
-            //const int FORMAT_ITEM_TO_LEFT_ALIGN = 1;
-
             string strIndentation =
                 pintLeftPadding > ListInfo.EMPTY_STRING_LENGTH
                 ? StringTricks.StrFill (
@@ -122,7 +124,7 @@ namespace WizardWrx
                 SpecialStrings.EMPTY_STRING;
 
             PropertyInfo [ ] apropertyInfos = pObjThisOne.GetType ( ).GetProperties ( penmBindingFlags );
-
+            int intMaxDigits = apropertyInfos.Length.ToString ( ).Length;       // Compute the width of the largest possible ordinal.
             Console.WriteLine (
                Properties.Resources.MSG_PROPERTY_LIST_HEADER ,                  // Format Control String
                 strIndentation ,                                                // Format Item 0: {0}Object
@@ -142,11 +144,15 @@ namespace WizardWrx
                     Console.WriteLine (
                         Properties.Resources.MSG_PROPERTY_LIST_DETAIL ,         // Format Control String
                         strIndentation ,                                        // Format Item 0: {0}Property
-                        ArrayInfo.OrdinalFromIndex ( intPropertyIndex ) ,       // Format Item 1: Property {1}:
+                        NumericFormats.FormatIntegerLeftPadded (                // Format Item 1: Property {1}:
+                            ArrayInfo.OrdinalFromIndex (                        // Get the ordinal equivalent to array subscript.
+                                intPropertyIndex ),                             // Array subscript for which to get the corresponding ordinal.
+                            intMaxDigits ),                                     // Right align to this width.
                         apropertyInfos [ intPropertyIndex ].Name ,              // Format Item 2: : {2} =
-                        apropertyInfos [ intPropertyIndex ].GetValue (          // Format Item 3: = {3}
-                            pObjThisOne ,
-                            null ) );
+                        StringTricks.TruncateValueToOneLine (                   // Format Item 3: = {3}
+                            apropertyInfos [ intPropertyIndex ].GetValue (      // Get value from the apropertyInfos in array slot intPropertyIndex.
+                            pObjThisOne ,                                       // Object from which to get property value.
+                            null ) ) );                                         // The null CultureInfo causes the method to infer the culture of the calling thread.
                 }
                 catch ( TargetInvocationException ex )
                 {

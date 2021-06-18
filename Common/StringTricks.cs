@@ -220,6 +220,10 @@
 	2021/06/09 8.0.146 DAG    Define a new StrFill method, implemented by code
                               that I imported from another C# source module, in
                               which it had its unit tests.
+
+	2021/06/18 8.0.153 DAG    Define a new TruncateValueToOneLine method. Unlike
+                              its sibling Trucate method, this method checks for
+                              line breaks, eliminating all but the first line.
     ============================================================================
 */
 
@@ -246,11 +250,17 @@ namespace WizardWrx
         /// method, MakeToken, which takes one argument.
         /// </summary>
         public const string DEFAULT_TOKEN_DELM = @"$$";
-		#endregion	// Public Constants
+
+        /// <summary>
+        /// Take this as the default value of the second argument to 
+        /// TruncateValueToOneLine.
+        /// </summary>
+        public const int MAXIMUM_CHARACTERS_TO_DISPLAY = 132;
+        #endregion    // Public Constants
 
 
-		#region Private Constants
-		const string OBSOLETE_MSG = @"Use the corresponding extension method.";
+        #region Private Constants
+        const string OBSOLETE_MSG = @"Use the corresponding extension method.";
 		const bool OBSOLETE_USAGE_IS_LEGAL = false;
 		#endregion	// Private Constants
 
@@ -1863,6 +1873,96 @@ namespace WizardWrx
                     else
                         return pstrSource;
         }   // public static string Truncate method
-		#endregion	// Truncate Method
-	}   // class StringTricks
+        #endregion // Truncate Method
+
+
+        #region TruncateValueToOneLine
+        /// <summary>
+        /// The name says it pretty well; truncate the string representation of
+        /// <paramref name="pobjValueToDisplay"/> so that it contains only the
+        /// first line of text.
+        /// </summary>
+        /// <param name="pobjValueToDisplay">
+        /// Pass in the object for which a string representation is required.
+        /// </param>
+        /// <param name="pintMaxLengthOfOneLine">
+        /// <para>
+        /// When specified, this optional value is the maximun number of
+        /// characters to display.
+        /// </para>
+        /// <para>
+        /// This limit applies to all string represenntations, regardless of
+        /// whether they contain embedded newline characters that already cause
+        /// them to be truncated.
+        /// </para>
+        /// </param>
+        /// <returns>
+        /// The return value is a string that occupies no more than one line.
+        /// </returns>
+        public static string TruncateValueToOneLine (
+            object pobjValueToDisplay,
+            int pintMaxLengthOfOneLine= MAXIMUM_CHARACTERS_TO_DISPLAY )
+        {
+            if ( pobjValueToDisplay != null )
+            {
+                string strWholeStringRepresentation = pobjValueToDisplay.ToString ( );
+
+                if ( string.IsNullOrEmpty ( strWholeStringRepresentation ) )
+                {
+                    return Common.Properties.Resources.MSG_THE_EMPTY_STRING;
+                }   // TRUE (degenerate case) block, if ( string.IsNullOrEmpty ( strWholeStringRepresentation ) )
+                else
+                {   // Check for CR/LF pairs.
+                    int intPosNewline = strWholeStringRepresentation.IndexOf ( SpecialStrings.STRING_SPLIT_NEWLINE );
+
+                    if ( intPosNewline > ListInfo.INDEXOF_NOT_FOUND )
+                    {   // The string contains at least one CR/LF pair.
+                        return strWholeStringRepresentation.Substring (
+                            ListInfo.SUBSTR_BEGINNING ,
+                            intPosNewline );
+                    }   // TRUE (The string contains at least one CR/LF pair.) block, if ( intPosNewline > ListInfo.INDEXOF_NOT_FOUND )
+                    else
+                    {   // Check next for a bare LF character.
+                        intPosNewline = strWholeStringRepresentation.IndexOf ( SpecialCharacters.LINEFEED );
+
+                        if ( intPosNewline > ListInfo.INDEXOF_NOT_FOUND )
+                        {   // The string contains at least one bare LF character.
+                            return strWholeStringRepresentation.Substring (
+                                ListInfo.SUBSTR_BEGINNING ,
+                                intPosNewline );
+                        }   // TRUE (The string contains at least one bare LF character.) block, if ( intPosNewline > ListInfo.INDEXOF_NOT_FOUND )
+                        else
+                        {   // Check for a bare CR character.
+                            intPosNewline = strWholeStringRepresentation.IndexOf ( SpecialCharacters.CARRIAGE_RETURN );
+
+                            if ( intPosNewline > ListInfo.INDEXOF_NOT_FOUND )
+                            {   // The string contains at least one bare CR character.
+                                return strWholeStringRepresentation.Substring (
+                                    ListInfo.SUBSTR_BEGINNING ,
+                                    intPosNewline );
+                            }   // TRUE (The string contains at least one bare CR character.) block, if ( intPosNewline > ListInfo.INDEXOF_NOT_FOUND )
+                            else
+                            {   // The string can theoretically fit on one line.
+                                if ( strWholeStringRepresentation.Length > pintMaxLengthOfOneLine )
+                                {   // Return the first 132 characters of a longer string.
+                                    return strWholeStringRepresentation.Substring (
+                                        ListInfo.BEGINNING_OF_BUFFER ,
+                                        pintMaxLengthOfOneLine );
+                                }   // TRUE (The string length exceeds pintMaxLengthOfOneLine characters.) block, if ( strWholeStringRepresentation.Length > pintMaxLengthOfOneLine )
+                                else
+                                {   // Return the whole string.
+                                    return strWholeStringRepresentation;
+                                }   // FALSE (The string length is less than or equal to pintMaxLengthOfOneLine characters.) block, if ( strWholeStringRepresentation.Length > pintMaxLengthOfOneLine )
+                            }   // FALSE block, if ( intPosNewline > ListInfo.INDEXOF_NOT_FOUND )
+                        }   // FALSE (String is devoid of bare LF character.) block, if ( intPosNewline > ListInfo.INDEXOF_NOT_FOUND )
+                    }   // FALSE (String is devoid of CR/LF pairs.) block, if ( intPosNewline > ListInfo.INDEXOF_NOT_FOUND )
+                }   // FALSE (anticipated outcome) block, if ( string.IsNullOrEmpty ( strWholeStringRepresentation ) )
+            }   // TRUE (anticipated outcome) block, if ( pobjValueToDisplay != null )
+            else
+            {
+                return Common.Properties.Resources.VALUE_IS_NULL;
+            }   // FALSE (unanticipated outcome) block, if ( pobjValueToDisplay != null )
+        }   // private static string TruncateValueToOneLine
+        #endregion  // TruncateValueToOneLine
+    }   // class StringTricks
 }   // partial namespace WizardWrx

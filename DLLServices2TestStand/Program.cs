@@ -283,11 +283,14 @@
     2021/05/19 8.0.1401 DAG Test new methods GetAssemblyCompanyNameSnakeCased
                             and GetAssemblyAppDataDirectoryName.
 
-    2021/06/09 8.0.1418     Add the test routine for ListObjectProperties, a new
+    2021/06/09 8.0.1417     Add the test routine for ListObjectProperties, a new
                             static method on ObjectPropertyEnumerators.
 
-    2021/06/10 8.0.1420 DAG Rearrange the argument list to put the optional
-                            arguments in order most likely to be overrridden.
+    2021/06/10 8.0.1419 DAG Rearrange the argument list of ListObjectProperties
+                            to put the optional arguments in order most likely
+                            to be overrridden.
+
+    2021/06/17 8.0.1426 DAG Exercise StringTricks.TruncateValueToOneLine.
     ============================================================================
 */
 
@@ -338,7 +341,7 @@ namespace DLLServices2TestStand
             MagicNumbers.ZERO
         };	// s_aenmAssemblyVersionRequests
 
-        static readonly Type [ ] s_atypCommonExceptionTypes = new Type [ ] 
+        static readonly Type [ ] s_atypCommonExceptionTypes = new Type [ ]
         {
             typeof ( System.Exception ) ,
             typeof ( System.ArgumentException ) ,
@@ -494,6 +497,18 @@ namespace DLLServices2TestStand
             AssemblyAttributeHelpers.AttributeFriendlyName.Version
         };  // s_aenmAttributeFriendlyName
 
+        private static string [ ] s_astrStringsToTruncate =
+        {
+            "Line 1 of a three-line CR/LF terminated string\r\nLine 2 of a three-line CR/LF terminated string\r\nLine 3 of a three-line CR/LF terminated string",
+            "Line 1 of a three-line CR terminated string\rLine 2 of a three-line CR terminated string\rLine 3 of a three-line CR terminated string",
+            "Line 1 of a three-line LF terminated string\nLine 2 of a three-line LF terminated string\nLine 3 of a three-line LF terminated string",
+            "This line is suppoed to be very long, but devoid of line breaks. Its objective is to push the inbuilt length limit of the object truncation routine, which limits its output to the width of an old-fashioned wide carriage printer or a standard mainframe or minicomputer line printer.",
+            "This line is intentionally shorter than the one above it. Its intention is to be too long by one character, which is to be truncated.",
+            "This line is short enough to be rendereed in its entirety.",
+            SpecialStrings.EMPTY_STRING ,
+            null
+        };
+
         internal static StateManager s_smTheApp = StateManager.GetTheSingleInstance ( );
 
         static void Main ( string [ ] pastrArgs )
@@ -619,13 +634,32 @@ namespace DLLServices2TestStand
                     EnumerateObjectProperties ( s_smTheApp );
                     EnumerateObjectProperties ( s_smTheApp.AppExceptionLogger , 4 );
                 }
+                else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_EXERCISE_TRUNCATEVALUETOONELINE )
+                {
+                    Exercise_TruncateValueToOneLine ( );
+                }
                 else
                 {	// Run the whole set, starting with this test, which leaves the flags set so that the original message can be reconstructed from a psLogList export.
                     EnumerateDependentAssemblies ( );
-
                     PauseForPictures (
                         APPEND_LINEFEED ,
                         @"EnumerateDependentAssemblies" );
+
+                    EnumerateObjectProperties ( s_smTheApp );
+                    PauseForPictures (
+                        APPEND_LINEFEED ,
+                        @"EnumerateObjectProperties test 1 of 2" );
+
+                    EnumerateObjectProperties ( s_smTheApp.AppExceptionLogger , 4 );
+                    PauseForPictures (
+                        APPEND_LINEFEED ,
+                        @"EnumerateObjectProperties test 2 of 2" );
+
+                    Exercise_TruncateValueToOneLine ( );
+
+                    PauseForPictures (
+                        APPEND_LINEFEED ,
+                        @"Exercise_TruncateValueToOneLine" );
 
                     try
                     {
@@ -1138,7 +1172,7 @@ namespace DLLServices2TestStand
                 //	Write the final report, clean up, and shut down.
                 //	------------------------------------------------------------
 
-                ExceptionLogger.TimeStampedTraceWrite ( 
+                ExceptionLogger.TimeStampedTraceWrite (
                     string.Format (
                         "EOJ {0}." ,
                         s_smTheApp.AppRootAssemblyFileBaseName ) );
@@ -1254,7 +1288,7 @@ namespace DLLServices2TestStand
         }	// EnumerateDependentAssemblies method
 
 
-        private static void EnumerateObjectProperties ( 
+        private static void EnumerateObjectProperties (
             object pobj ,
             int pintLeftPadding = MagicNumbers.ZERO )
         {
@@ -1339,7 +1373,7 @@ namespace DLLServices2TestStand
 
         private static void ExerciseClearScreen ( )
         {
-            Console.WriteLine ( 
+            Console.WriteLine (
                 "{0}To exercise the ClearScreen function, the next statement will clear the console buffer.{0}If you need the contents of the output buffer, save it now, before you press the return.{0}" ,
                 Environment.NewLine );
             Console.ReadLine ( );
@@ -1704,6 +1738,24 @@ namespace DLLServices2TestStand
         }   // ExerciseStringFixups method
 
 
+        private static void Exercise_TruncateValueToOneLine ( )
+        {
+            int intTestCount = s_astrStringsToTruncate.Length;
+            int intDesiredWidth = StringTricks.MAXIMUM_CHARACTERS_TO_DISPLAY.ToString ( ).Length;
+            Console.WriteLine ( $"\r\nUsing {intTestCount} strings of varying lengths to test TruncateValueToOneLine:\r\n" );
+
+            for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+                      intJ < intTestCount ;
+                      intJ++ )
+            {
+                string strTruncated = StringTricks.TruncateValueToOneLine ( s_astrStringsToTruncate [ intJ ] );
+                Console.WriteLine ( $"    Test {ArrayInfo.OrdinalFromIndex ( intJ )}: Length of Result = {NumericFormats.FormatIntegerLeftPadded ( strTruncated.Length , intDesiredWidth )}, Truncated Result = {strTruncated}" );
+            }   // for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ; intJ < intTestCount ; intJ++ )
+
+            Console.WriteLine ( "\r\nEnd of TruncateValueToOneLine tests\r\n" );
+        }   // private static void Exercise_TruncateValueToOneLine
+
+
         private static void GenerateExceptionMessageFormatTable ( )
         {
             const string RESERVED_GUID = @"{733C6022-332D-4D3A-B9AE-41600AAE349F}";
@@ -1836,10 +1888,10 @@ namespace DLLServices2TestStand
                 MagicNumbers.ERROR_SUCCESS ,
                 pintTestNumber );
         }   // RecoveredExceptionTests method
-#endregion // Local Test Implementations
+        #endregion // Local Test Implementations
 
 
-#region Subroutines, Some Scoped to the Application
+        #region Subroutines, Some Scoped to the Application
         //	====================================================================
         //	Subroutines, one of which is marked Internal, so that routines in
         //	related classes can call it.
@@ -1944,35 +1996,35 @@ namespace DLLServices2TestStand
 
 
         private static void EvaluateConsoleHandleStates ( )
-        {	// The function nesting is encoded in the stepwise indentations.
+        {   // The function nesting is encoded in the stepwise indentations.
 #if USE_STRING_EXTENSION_METHODS
-                Console.WriteLine (
-                    string.Format (
-                        Properties.Resources.MSG_STANDARD_HANDLE_STATE ,													// Format control string
-                        Properties.Resources.MSG_STDIN ,																	// Format Item 0: Textual description of stream
-                        ConsoleHandleStateMessage (
-                            s_smTheApp.StandardHandleState (
-                                StandardHandleInfo.StandardConsoleHandle.StandardInput ) ) ,								// Format Item 1: Standard handle state
-                        BeautifyStandardHandleFQFN (
-                            StandardHandleInfo.StandardConsoleHandle.StandardInput ) ).AppendFullStopIfMissing ( ) );		// Format Item 2: File name to which redirected, if applicable.
-                Console.WriteLine (
-                    string.Format (
-                        Properties.Resources.MSG_STANDARD_HANDLE_STATE ,													// Format control string
-                        Properties.Resources.MSG_STDOUT ,																	// Format Item 0: Textual description of stream
-                        ConsoleHandleStateMessage (
-                            s_smTheApp.StandardHandleState (
-                                StandardHandleInfo.StandardConsoleHandle.StandardOutput ) ) ,								// Format Item 1: Standard handle state
-                        BeautifyStandardHandleFQFN (
-                            StandardHandleInfo.StandardConsoleHandle.StandardOutput ) ).AppendFullStopIfMissing ( ) );		// Format Item 2: File name to which redirected, if applicable.
-                Console.WriteLine (
-                    string.Format (
-                        Properties.Resources.MSG_STANDARD_HANDLE_STATE ,													// Format control string
-                        Properties.Resources.MSG_STDERR ,																	// Format Item 0: Textual description of stream
-                        ConsoleHandleStateMessage (
-                            s_smTheApp.StandardHandleState (
-                                StandardHandleInfo.StandardConsoleHandle.StandardError ) ) ,								// Format Item 1: Standard handle state
-                        BeautifyStandardHandleFQFN (
-                            StandardHandleInfo.StandardConsoleHandle.StandardError ) ).AppendFullStopIfMissing ( ) );		// Format Item 2: File name to which redirected, if applicable.
+            Console.WriteLine (
+                string.Format (
+                    Properties.Resources.MSG_STANDARD_HANDLE_STATE ,                                                    // Format control string
+                    Properties.Resources.MSG_STDIN ,                                                                    // Format Item 0: Textual description of stream
+                    ConsoleHandleStateMessage (
+                        s_smTheApp.StandardHandleState (
+                            StandardHandleInfo.StandardConsoleHandle.StandardInput ) ) ,                                // Format Item 1: Standard handle state
+                    BeautifyStandardHandleFQFN (
+                        StandardHandleInfo.StandardConsoleHandle.StandardInput ) ).AppendFullStopIfMissing ( ) );       // Format Item 2: File name to which redirected, if applicable.
+            Console.WriteLine (
+                string.Format (
+                    Properties.Resources.MSG_STANDARD_HANDLE_STATE ,                                                    // Format control string
+                    Properties.Resources.MSG_STDOUT ,                                                                   // Format Item 0: Textual description of stream
+                    ConsoleHandleStateMessage (
+                        s_smTheApp.StandardHandleState (
+                            StandardHandleInfo.StandardConsoleHandle.StandardOutput ) ) ,                               // Format Item 1: Standard handle state
+                    BeautifyStandardHandleFQFN (
+                        StandardHandleInfo.StandardConsoleHandle.StandardOutput ) ).AppendFullStopIfMissing ( ) );      // Format Item 2: File name to which redirected, if applicable.
+            Console.WriteLine (
+                string.Format (
+                    Properties.Resources.MSG_STANDARD_HANDLE_STATE ,                                                    // Format control string
+                    Properties.Resources.MSG_STDERR ,                                                                   // Format Item 0: Textual description of stream
+                    ConsoleHandleStateMessage (
+                        s_smTheApp.StandardHandleState (
+                            StandardHandleInfo.StandardConsoleHandle.StandardError ) ) ,                                // Format Item 1: Standard handle state
+                    BeautifyStandardHandleFQFN (
+                        StandardHandleInfo.StandardConsoleHandle.StandardError ) ).AppendFullStopIfMissing ( ) );		// Format Item 2: File name to which redirected, if applicable.
 #else
                 Console.WriteLine ( StringTricks.AppendFullStopIfMissing (
                     string.Format (
@@ -2075,8 +2127,8 @@ namespace DLLServices2TestStand
                 {	// Skip the pauses if standard output is redirected.
                     Console.Error.Write ( Properties.Resources.MSG_PHOTO_OP );
                     Console.ReadLine ( );
-                }	// if ( fPauseing )
-                    
+                }   // if ( fPauseing )
+
                 MessageInColor.SafeConsoleClear ( );	// SafeConsoleClear is a non-throwing wrapper around Console.Clear ( );
 
                 if ( pfAppendLineFeed )
@@ -2239,7 +2291,7 @@ namespace DLLServices2TestStand
             Console.WriteLine (
                 "{0}UnaryMinusExercises Done!{0}" ,
                 Environment.NewLine );
-        }	// UnaryMinusExercises method
-#endregion  // Subroutines, Some Scoped to the Application
+        }   // UnaryMinusExercises method
+        #endregion  // Subroutines, Some Scoped to the Application
     }   // class Program
 }   // partial namespace DLLServices2TestStand

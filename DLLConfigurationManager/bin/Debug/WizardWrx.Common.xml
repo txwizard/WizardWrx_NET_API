@@ -4442,6 +4442,12 @@
             method, MakeToken, which takes one argument.
             </summary>
         </member>
+        <member name="F:WizardWrx.StringTricks.MAXIMUM_CHARACTERS_TO_DISPLAY">
+            <summary>
+            Take this as the default value of the second argument to 
+            TruncateValueToOneLine.
+            </summary>
+        </member>
         <member name="M:WizardWrx.StringTricks.AdjustNumberOfNoun(System.UInt32,System.String,System.String,System.String)">
             <summary>
             If the count of objects to which a noun refers is greater than 1,
@@ -5120,6 +5126,30 @@
              Regardless, the return value is a new System.String object.
              </returns>
         </member>
+        <member name="M:WizardWrx.StringTricks.TruncateValueToOneLine(System.Object,System.Int32)">
+            <summary>
+            The name says it pretty well; truncate the string representation of
+            <paramref name="pobjValueToDisplay"/> so that it contains only the
+            first line of text.
+            </summary>
+            <param name="pobjValueToDisplay">
+            Pass in the object for which a string representation is required.
+            </param>
+            <param name="pintMaxLengthOfOneLine">
+            <para>
+            When specified, this optional value is the maximun number of
+            characters to display.
+            </para>
+            <para>
+            This limit applies to all string represenntations, regardless of
+            whether they contain embedded newline characters that already cause
+            them to be truncated.
+            </para>
+            </param>
+            <returns>
+            The return value is a string that occupies no more than one line.
+            </returns>
+        </member>
         <member name="T:WizardWrx.Common.Properties.Resources">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
@@ -5384,6 +5414,11 @@
         <member name="P:WizardWrx.Common.Properties.Resources.STACK_TRACE_ENTRY_PREFIX">
             <summary>
               Looks up a localized string similar to    at .
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.VALUE_IS_NULL">
+            <summary>
+              Looks up a localized string similar to [null].
             </summary>
         </member>
         <member name="P:WizardWrx.Common.Properties.Resources.VERSION_STRING_PART_BUILD_ABBR">
