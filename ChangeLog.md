@@ -1,5 +1,20 @@
 # WizardWrx .NET API Change Log
 
+## 06/18/2021
+
+## WizardWrx.Common.dll, Version 8.0.156
+
+Define a new `TruncateValueToOneLine` method in the static `StringTricks` class.
+Unlike its sibling `Trucate` method, this method checks for line breaks,
+eliminating all but the first line, and truncating to a specfied maximum length,
+which is 132 characters by default.
+
+## WizardWrx.DiagnosticInfo.dll, Version 8.0.38
+
+
+`ListObjectProperties` now right-aligns the property numbers in the listing, and
+limits property strings to one line of fewer than 133 characters.
+
 ## 2021-06-09
 
 ## WizardWrx.Common.dll, Version 8.0.148.0
