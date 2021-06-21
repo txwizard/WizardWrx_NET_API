@@ -290,6 +290,11 @@
             was loaded into the private application domain.
             </returns>
         </member>
+        <member name="P:WizardWrx.AssemblyUtils.DependentAssemblies.NamesOfDependentAssemblies">
+            <summary>
+            Return a reference to the DependentAssemblyInfo List.
+            </summary>
+        </member>
         <member name="P:WizardWrx.AssemblyUtils.DependentAssemblies.Root">
             <summary>
             Get the root assembly around which the instance was constructed.

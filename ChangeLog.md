@@ -1,28 +1,35 @@
 # WizardWrx .NET API Change Log
 
+## 06/21/2021
+
+## WizardWrx.AssemblyUtils.dll, Version 8.0.187
+
+`WizardWrx.AssemblyUtils`, Version 8.0.187, adds a new read-only property,
+`NamesOfDependentAssemblies`, that exposes the list of dependent assemblies that
+it keeps.
+
 ## 06/18/2021
 
-## WizardWrx.Common.dll, Version 8.0.156
+### WizardWrx.Common.dll, Version 8.0.156
 
 Define a new `TruncateValueToOneLine` method in the static `StringTricks` class.
 Unlike its sibling `Trucate` method, this method checks for line breaks,
 eliminating all but the first line, and truncating to a specfied maximum length,
 which is 132 characters by default.
 
-## WizardWrx.DiagnosticInfo.dll, Version 8.0.38
-
+### WizardWrx.DiagnosticInfo.dll, Version 8.0.38
 
 `ListObjectProperties` now right-aligns the property numbers in the listing, and
 limits property strings to one line of fewer than 133 characters.
 
 ## 2021-06-09
 
-## WizardWrx.Common.dll, Version 8.0.148.0
+### WizardWrx.Common.dll, Version 8.0.148.0
 
 `StringTricks.StrFill` is a new static method that returns a string filled with
 a specified number of a character.
 
-## WizardWrx.DiagnosticInfo.dll version = 8.0.28.0
+### WizardWrx.DiagnosticInfo.dll version = 8.0.28.0
 
 `ObjectPropertyEnumerators.ListObjectProperties` is a new static method that
 lists the public properties of an object, along with the string representations
@@ -127,7 +134,7 @@ Now that I again have a working API key, the NuGet packages are up to date!
 
 I wish a happy New Year to everyone.
 
-## WizardWrx.Common.dll, Version 7.24.128, Released 2020-12-23
+### WizardWrx.Common.dll, Version 7.24.128, Released 2020-12-23
 
 This release adds more overlooked symbolic constants that I use from time to
 time. The character constants are great for use in switch blocks, which the C#
@@ -148,7 +155,7 @@ C++ compilers.
 At present, the special characters have no counterparts in the SpecialStrings
 list.
 
-## WizardWrx.Core.dll, Version 7.24.185.0, Released 2020-12-21
+### WizardWrx.Core.dll, Version 7.24.185.0, Released 2020-12-21
 
 This update corrects some internal issues that surfaced when dependent library
 `WizardWrx.DLLConfigurationManager.dll` was called upon for the first time to
@@ -163,7 +170,7 @@ most users, affects the `ExceptionLogger` singleton exposed by
 Whether or not it depends on `WizardWrx.Core.dll` (which all but 3 do),
 everything got a minor version bump and a build bump.
 
-## WizardWrx.Common.dll, Version 7.24.127, Released 2020-12-20
+### WizardWrx.Common.dll, Version 7.24.127, Released 2020-12-20
 
 This release adds some overlooked symbolic constants that I use regularly.
 
@@ -186,7 +193,7 @@ This release adds some overlooked symbolic constants that I use regularly.
 |MSO_COLLECTION_FIRST_ITEM |     1|MagicNumbers        |
 |ARRAY_NEXT_INDEX          |     1|ArrayInfo           |
 
-## WizardWrx.Common.dll, Version 7.24.126, Released 2020-11-02
+### WizardWrx.Common.dll, Version 7.24.126, Released 2020-11-02
 
 This update adds a handful of new locale-sensitive string constants and another
 handful of string representations of character constants that are frequently
@@ -230,37 +237,37 @@ needed as strings, too.
 As of this version, essentially everything that has a character representation
 has an analogous string representation.
 
-## WizardWrx.AssemblyUtils 7.23.121, Released 2019/12/25
+### WizardWrx.AssemblyUtils 7.23.121, Released 2019/12/25
 
 This release corrects an omission from the overloaded `DependentAssemblies`
 constructor that rendered it inoperable.
 
-## WizardWrx.AssemblyUtils 7.23.119, Released 2019/12/17
+### WizardWrx.AssemblyUtils 7.23.119, Released 2019/12/17
 
 This release adds a new instance method, `GetDependentAssemblyInfos`, to class
 `DependentAssemblies`, which returns a sorted list of dependent assemblies.
 Though this could be implemted as a read-only property, I chose to implement it
 as a method.
 
-## WizardWrx.Core 7.23.182, Released 2019/12/16
+### WizardWrx.Core 7.23.182, Released 2019/12/16
 
 This update adopts the generally accepted SemVer version numbering scheme.
 
 The code is otherwise unchanged from the previous release.
 
-## WizardWrx.Common.dll, Version 7.23.123, Released 2019/12/15
+### WizardWrx.Common.dll, Version 7.23.123, Released 2019/12/15
 
 This update adds static method FormatIntegerLeftPadded to the NumericFormats
 class. This update also adopts the generally accepted SemVer version numbering
 scheme.
 
-## WizardWrx.ASCIIInfo 7.23.84, Released 2019/12/15
+### WizardWrx.ASCIIInfo 7.23.84, Released 2019/12/15
 
 This update adopts the generally accepted SemVer version numbering scheme.
 
 The code is otherwise unchanged from the previous release.
 
-## WizardWrx.FormatStringEngine 7.23.167, Released 2019/12/15
+### WizardWrx.FormatStringEngine 7.23.167, Released 2019/12/15
 
 This update adopts the generally accepted SemVer version numbering scheme.
 

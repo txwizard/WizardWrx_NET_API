@@ -2758,6 +2758,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.AssemblyUtils.DependentAssemblies.GetDependentAssemblyInfos
   nameWithType: DependentAssemblies.GetDependentAssemblyInfos
+- uid: WizardWrx.AssemblyUtils.DependentAssemblies.NamesOfDependentAssemblies
+  name: NamesOfDependentAssemblies
+  href: api/WizardWrx.AssemblyUtils.DependentAssemblies.html#WizardWrx_AssemblyUtils_DependentAssemblies_NamesOfDependentAssemblies
+  commentId: P:WizardWrx.AssemblyUtils.DependentAssemblies.NamesOfDependentAssemblies
+  fullName: WizardWrx.AssemblyUtils.DependentAssemblies.NamesOfDependentAssemblies
+  nameWithType: DependentAssemblies.NamesOfDependentAssemblies
+- uid: WizardWrx.AssemblyUtils.DependentAssemblies.NamesOfDependentAssemblies*
+  name: NamesOfDependentAssemblies
+  href: api/WizardWrx.AssemblyUtils.DependentAssemblies.html#WizardWrx_AssemblyUtils_DependentAssemblies_NamesOfDependentAssemblies_
+  commentId: Overload:WizardWrx.AssemblyUtils.DependentAssemblies.NamesOfDependentAssemblies
+  isSpec: "True"
+  fullName: WizardWrx.AssemblyUtils.DependentAssemblies.NamesOfDependentAssemblies
+  nameWithType: DependentAssemblies.NamesOfDependentAssemblies
 - uid: WizardWrx.AssemblyUtils.DependentAssemblies.Root
   name: Root
   href: api/WizardWrx.AssemblyUtils.DependentAssemblies.html#WizardWrx_AssemblyUtils_DependentAssemblies_Root

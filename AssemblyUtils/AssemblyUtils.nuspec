@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>This release incorporates adds two newr static methods that build on GetAssemblyVersionInfo, added to version 8.0.156, to render the AssemblyCompany string as something suitable for use in a path string, such that the path is devoid of embedded spaces, and can be freely used without quoting it. For additional details please see ChangeLog.md or the online documentation in GitHub Pages.</releaseNotes>
+	    <releaseNotes>This release incorporates one new read-only property on DependentAssemblies that exposes the private list of dependent assemblies that it keeps. For additional details please see ChangeLog.md or the online documentation in GitHub Pages.</releaseNotes>
     	<copyright>$copyright$</copyright>
     	<tags>Assemblies Dependenciess Resources Enumerators</tags>
 	</metadata>

@@ -1514,6 +1514,16 @@ namespace DLLServices2TestStand
             const string ASM_REPORT_NAME = @"ReportException";
 
             System.IO.IOException exIO = new IOException ( "This is a dummy Syatem.IOException Exception." );
+            //ToDo: Either replace or remove this block.
+            //switch ( exIO.GetType().GUID)
+            //{
+            //    case s_agidSupportedExceptionTypes [ 6 ]:
+            //        Console.WriteLine ( "{0} is an I/O Exception." , nameof ( exIO ) );
+            //        break;
+            //    default:
+            //        Console.WriteLine ( "{0} is some other kind of Exception." , nameof ( exIO ) );
+            //        break;
+            //}
             Type typeOfExceptionLogger = typeof ( WizardWrx.DLLConfigurationManager.ExceptionLogger );
             System.Reflection.AssemblyName assemblyNameOfExceptionLogger = new System.Reflection.AssemblyName (
                 System.Reflection.Assembly.GetAssembly (

@@ -61,7 +61,7 @@
 
     Author:				David A. Gray
 
-    License:            Copyright (C) 2017-2019, David A. Gray.
+    License:            Copyright (C) 2017-2021, David A. Gray.
                         All rights reserved.
 
                         Redistribution and use in source and binary forms, with
@@ -124,6 +124,11 @@
                                EnumerateDependents, and InitializeInstance with
                                more efficient old-school FOR loops, and feed the
                                loop control variables to the report writers.
+
+    2021/06/21 8.0.187  DAG    Make the list of dependents visible through a
+                               read-only property, NamesOfDependentAssemblies.
+
+                               Owing to its simplicity, I dispensed with a test.
     ============================================================================
 */
 
@@ -429,6 +434,18 @@ namespace WizardWrx.AssemblyUtils
 
 
         #region Public Properties
+        /// <summary>
+        /// Return a reference to the DependentAssemblyInfo List.
+        /// </summary>
+        public List<DependentAssemblyInfo> NamesOfDependentAssemblies
+        {
+            get
+            {
+                return _lstNamesOfDependentAssemblies;
+            }   // public NamesOfDependentAssemblies getter method
+        }   // public NamesOfDependentAssemblies property
+
+
         /// <summary>
         /// Get the root assembly around which the instance was constructed.
         /// </summary>
