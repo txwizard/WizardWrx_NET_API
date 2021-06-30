@@ -123,7 +123,7 @@
   </data>
   <data name="MSG_PROPERTY_LIST_DETAIL" xml:space="preserve">
     <value>{0}    Property {1}: {2} = {3}</value>
-    <comment>Used by ListObjectProperties</comment>
+    <comment>Used by ListObjectProperties to display the current value of each public object property (member).</comment>
   </data>
   <data name="MSG_PROPERTY_LIST_FOOTER" xml:space="preserve">
     <value>{1}{0}End of list{1}</value>
@@ -132,5 +132,9 @@
   <data name="MSG_PROPERTY_LIST_HEADER" xml:space="preserve">
     <value>{4}{0}Object {1}{2} exposes the following {3} public properties:{4}</value>
     <comment>Used by ListObjectProperties</comment>
+  </data>
+  <data name="MSG_PROP_TYPE_AND_VALUE_DETAIL" xml:space="preserve">
+    <value>{0}    Property {1}: {2} ({3}) = {4}</value>
+    <comment>Used by ListObjectPropertyTypesAndValues to display the type and current value of each public object property (member).</comment>
   </data>
 </root>

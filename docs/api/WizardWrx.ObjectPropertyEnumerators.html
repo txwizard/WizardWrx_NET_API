@@ -118,7 +118,7 @@
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ObjectPropertyEnumerators_DEFAULT_BINDING_FLAGS.md&amp;value=---%0Auid%3A%20WizardWrx.ObjectPropertyEnumerators.DEFAULT_BINDING_FLAGS%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DiagnosticInfo/ObjectPropertyEnumerators.cs/#L90">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DiagnosticInfo/ObjectPropertyEnumerators.cs/#L87">View Source</a>
   </span>
   <h4 id="WizardWrx_ObjectPropertyEnumerators_DEFAULT_BINDING_FLAGS" data-uid="WizardWrx.ObjectPropertyEnumerators.DEFAULT_BINDING_FLAGS">DEFAULT_BINDING_FLAGS</h4>
   <div class="markdown level1 summary"><p>Default binding flags bit mask</p>
@@ -154,12 +154,72 @@
   </span>
   <a id="WizardWrx_ObjectPropertyEnumerators_ListObjectProperties_" data-uid="WizardWrx.ObjectPropertyEnumerators.ListObjectProperties*"></a>
   <h4 id="WizardWrx_ObjectPropertyEnumerators_ListObjectProperties_System_String_System_Object_System_Int32_System_String_System_Reflection_BindingFlags_" data-uid="WizardWrx.ObjectPropertyEnumerators.ListObjectProperties(System.String,System.Object,System.Int32,System.String,System.Reflection.BindingFlags)">ListObjectProperties(String, Object, Int32, String, BindingFlags)</h4>
-  <div class="markdown level1 summary"><p>Enumerate the properties of an object as a formatted listing.</p>
+  <div class="markdown level1 summary"><p>Enumerate the properties of an object, showing the value of each, as
+a formatted listing.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void ListObjectProperties(string pstrNameOfObject, object pObjThisOne, int pintLeftPadding = 0, string pstrObjectLabelSuffix = null, BindingFlags penmBindingFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.FlattenHierarchy)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrNameOfObject</span></td>
+        <td><p>Name of object as it appears in the calling routine</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">pObjThisOne</span></td>
+        <td><p>Reference to the object from which to enumerate properties</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintLeftPadding</span></td>
+        <td><p>Optional left padding for the report</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrObjectLabelSuffix</span></td>
+        <td><p>Optional supplementary label information for the object</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Reflection.BindingFlags</span></td>
+        <td><span class="parametername">penmBindingFlags</span></td>
+        <td><p>Binding flags mask, which determines which properties are enumerated</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ObjectPropertyEnumerators_ListObjectPropertyTypesAndValues_System_String_System_Object_System_Int32_System_String_System_Reflection_BindingFlags_.md&amp;value=---%0Auid%3A%20WizardWrx.ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues(System.String%2CSystem.Object%2CSystem.Int32%2CSystem.String%2CSystem.Reflection.BindingFlags)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DiagnosticInfo/ObjectPropertyEnumerators.cs/#L194">View Source</a>
+  </span>
+  <a id="WizardWrx_ObjectPropertyEnumerators_ListObjectPropertyTypesAndValues_" data-uid="WizardWrx.ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues*"></a>
+  <h4 id="WizardWrx_ObjectPropertyEnumerators_ListObjectPropertyTypesAndValues_System_String_System_Object_System_Int32_System_String_System_Reflection_BindingFlags_" data-uid="WizardWrx.ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues(System.String,System.Object,System.Int32,System.String,System.Reflection.BindingFlags)">ListObjectPropertyTypesAndValues(String, Object, Int32, String, BindingFlags)</h4>
+  <div class="markdown level1 summary"><p>Enumerate the properties of an object, showing for each its type and
+value, as a formatted listing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ListObjectPropertyTypesAndValues(string pstrNameOfObject, object pObjThisOne, int pintLeftPadding = 0, string pstrObjectLabelSuffix = null, BindingFlags penmBindingFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.FlattenHierarchy)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -214,7 +274,7 @@
                     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ObjectPropertyEnumerators.md&amp;value=---%0Auid%3A%20WizardWrx.ObjectPropertyEnumerators%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DiagnosticInfo/ObjectPropertyEnumerators.cs/#L85" class="contribution-link">View Source</a>
+                    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DiagnosticInfo/ObjectPropertyEnumerators.cs/#L82" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

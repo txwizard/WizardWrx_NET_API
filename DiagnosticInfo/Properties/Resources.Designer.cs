@@ -70,6 +70,15 @@ namespace WizardWrx.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0}    Property {1}: {2} ({3}) = {4}.
+        /// </summary>
+        internal static string MSG_PROP_TYPE_AND_VALUE_DETAIL {
+            get {
+                return ResourceManager.GetString("MSG_PROP_TYPE_AND_VALUE_DETAIL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0}    Property {1}: {2} = {3}.
         /// </summary>
         internal static string MSG_PROPERTY_LIST_DETAIL {

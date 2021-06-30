@@ -13529,6 +13529,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.ObjectPropertyEnumerators.ListObjectProperties
   nameWithType: ObjectPropertyEnumerators.ListObjectProperties
+- uid: WizardWrx.ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues(System.String,System.Object,System.Int32,System.String,System.Reflection.BindingFlags)
+  name: ListObjectPropertyTypesAndValues(String, Object, Int32, String, BindingFlags)
+  href: api/WizardWrx.ObjectPropertyEnumerators.html#WizardWrx_ObjectPropertyEnumerators_ListObjectPropertyTypesAndValues_System_String_System_Object_System_Int32_System_String_System_Reflection_BindingFlags_
+  commentId: M:WizardWrx.ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues(System.String,System.Object,System.Int32,System.String,System.Reflection.BindingFlags)
+  fullName: WizardWrx.ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues(System.String, System.Object, System.Int32, System.String, System.Reflection.BindingFlags)
+  nameWithType: ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues(String, Object, Int32, String, BindingFlags)
+- uid: WizardWrx.ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues*
+  name: ListObjectPropertyTypesAndValues
+  href: api/WizardWrx.ObjectPropertyEnumerators.html#WizardWrx_ObjectPropertyEnumerators_ListObjectPropertyTypesAndValues_
+  commentId: Overload:WizardWrx.ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues
+  isSpec: "True"
+  fullName: WizardWrx.ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues
+  nameWithType: ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues
 - uid: WizardWrx.PathPositions
   name: PathPositions
   href: api/WizardWrx.PathPositions.html

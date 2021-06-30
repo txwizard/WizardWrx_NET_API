@@ -7,9 +7,9 @@
 
 	File Name:			ClassAndMethodDiagnosticInfo.cs
 
-    Synopsis:			This class is type-safe managed wrappers for kernel32
-						routines LoadLibrary and GetProcAddress, published as
-                        part of an article on the subject.
+    Synopsis:			The static methods on this class use compiler-generated
+                        metadata to supply details about the currently executing
+                        method at runtime without using Reflection.
 
     Remarks:			These are 100% independent of System.Reflection, relying
                         instead on compile-time metadata supplied by the
@@ -19,7 +19,7 @@
 
     Author:             David A. Gray
 
-    License:            Copyright (C) 2018, David A. Gray. 
+    License:            Copyright (C) 2018-2021, David A. Gray. 
 						All rights reserved.
 
                         Redistribution and use in source and binary forms, with
@@ -62,6 +62,8 @@
     Date       Version Author Synopsis
     ---------- ------- ------ --------------------------------------------------
 	2018/12/24 7.14	   DAG    This class makes its debut.
+
+    2021/06/29 8.0.44  DAG    Correct the synopsis. The code is unchanged.
     ============================================================================
 */
 

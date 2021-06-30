@@ -261,10 +261,10 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.ClassAndMethodDiagnosticInfo.html",
-          "hash": "lxwg0YINjJPDTUDi+9pqsg=="
+          "hash": "yM3CfMxafZwi2v+DhwpSYw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -1209,10 +1209,10 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.ObjectPropertyEnumerators.html",
-          "hash": "LQa8F6rE0AUTRu4hHmTDFw=="
+          "hash": "aEgpQBBj2G0tjQBnpnD77w=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -1428,7 +1428,7 @@
           "hash": "wRg0Y+f2ob5yKw50GP8oxA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -1523,7 +1523,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 119,
-          "skipped_file_count": 119
+          "skipped_file_count": 117
         },
         "TocDocumentProcessor": {
           "can_incremental": false,

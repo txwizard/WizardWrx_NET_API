@@ -1,8 +1,16 @@
 # WizardWrx .NET API Change Log
 
+## 06/29/2021
+
+### WizardWrx.DiagnosticInfo.dll, Version 8.0.44
+
+`ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues` is identical to
+its sibling, `ObjectPropertyEnumerators.ListObjectProperties`, except that it
+lists the property type in parentheses between the property name and its value.
+
 ## 06/21/2021
 
-## WizardWrx.AssemblyUtils.dll, Version 8.0.187
+### WizardWrx.AssemblyUtils.dll, Version 8.0.187
 
 `WizardWrx.AssemblyUtils`, Version 8.0.187, adds a new read-only property,
 `NamesOfDependentAssemblies`, that exposes the list of dependent assemblies that

@@ -291,6 +291,9 @@
                             to be overrridden.
 
     2021/06/17 8.0.1426 DAG Exercise StringTricks.TruncateValueToOneLine.
+
+    2021/06/29 8.0.1442 DAG Exercise method ListObjectPropertyTypesAndValues on
+                            ObjectPropertyEnumerators.
     ============================================================================
 */
 
@@ -1297,13 +1300,20 @@ namespace DLLServices2TestStand
                 ObjectPropertyEnumerators.ListObjectProperties (
                     nameof ( pobj ) ,                                               // string                         pstrNameOfObject
                     pobj );                                                         // System.Reflection.BindingFlags penmbindingFlags
+                ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues (
+                    nameof ( pobj ) ,                                               // string                         pstrNameOfObject
+                    pobj );                                                         // System.Reflection.BindingFlags penmbindingFlags
             }   // TRUE (degenerate case, no left padding) block, if ( pintLeftPadding == MagicNumbers.ZERO )
             else
             {
                 ObjectPropertyEnumerators.ListObjectProperties (
                     nameof ( pobj ) ,                                               // string                         pstrNameOfObject
                     pobj ,                                                          // System.Reflection.BindingFlags penmbindingFlags
-                    pintLeftPadding );                                            // int                            pintLeftPadding
+                    pintLeftPadding );                                              // int                            pintLeftPadding
+                ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues (
+                    nameof ( pobj ) ,                                               // string                         pstrNameOfObject
+                    pobj ,                                                          // System.Reflection.BindingFlags penmbindingFlags
+                    pintLeftPadding );                                              // int                            pintLeftPadding
             }   // FALSE (standard case, left padding specified)) block, if ( pintLeftPadding == MagicNumbers.ZERO )
         }   // private static void EnumerateObjectProperties
 
