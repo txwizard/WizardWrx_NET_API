@@ -53,10 +53,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WizardWrx.FormatStringEngine</RootNamespace>
     <AssemblyName>WizardWrx.FormatStringEngine</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <!-- 2019/07/04 13:27:28 - DAG - Added for NuGet package builder -->
     <PackageDir>Package</PackageDir>
   </PropertyGroup>

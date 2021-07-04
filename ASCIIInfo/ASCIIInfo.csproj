@@ -44,10 +44,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WizardWrx</RootNamespace>
     <AssemblyName>WizardWrx.ASCIIInfo</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <!-- 2019/12/15 11:57:09 - DAG - Added for NuGet package builder (copied from WizardWrx.Common project) -->
     <PackageDir>$(ProjectDir)Package</PackageDir>
     <SolutionPackageDir>$(ProjectDir)..\packages</SolutionPackageDir>

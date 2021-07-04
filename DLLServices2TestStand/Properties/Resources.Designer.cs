@@ -169,6 +169,15 @@ namespace DLLServices2TestStand.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to RemoveAt.
+        /// </summary>
+        public static string CMDARG_REMOVE_AT {
+            get {
+                return ResourceManager.GetString("CMDARG_REMOVE_AT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to StringFixups.
         /// </summary>
         public static string CMDARG_STRING_FIXUPS {

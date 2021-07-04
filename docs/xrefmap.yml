@@ -169,6 +169,19 @@ references:
   isSpec: "True"
   fullName: DLLServices2TestStand.Properties.Resources.CMDARG_REDIRECTION_STATE_TESTS
   nameWithType: Resources.CMDARG_REDIRECTION_STATE_TESTS
+- uid: DLLServices2TestStand.Properties.Resources.CMDARG_REMOVE_AT
+  name: CMDARG_REMOVE_AT
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_CMDARG_REMOVE_AT
+  commentId: P:DLLServices2TestStand.Properties.Resources.CMDARG_REMOVE_AT
+  fullName: DLLServices2TestStand.Properties.Resources.CMDARG_REMOVE_AT
+  nameWithType: Resources.CMDARG_REMOVE_AT
+- uid: DLLServices2TestStand.Properties.Resources.CMDARG_REMOVE_AT*
+  name: CMDARG_REMOVE_AT
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_CMDARG_REMOVE_AT_
+  commentId: Overload:DLLServices2TestStand.Properties.Resources.CMDARG_REMOVE_AT
+  isSpec: "True"
+  fullName: DLLServices2TestStand.Properties.Resources.CMDARG_REMOVE_AT
+  nameWithType: Resources.CMDARG_REMOVE_AT
 - uid: DLLServices2TestStand.Properties.Resources.CMDARG_STRING_FIXUPS
   name: CMDARG_STRING_FIXUPS
   href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_CMDARG_STRING_FIXUPS
@@ -2145,6 +2158,22 @@ references:
   isSpec: "True"
   fullName: WizardWrx.ArrayInfo.OrdinalFromIndex
   nameWithType: ArrayInfo.OrdinalFromIndex
+- uid: WizardWrx.ArrayInfo.RemoveAt*
+  name: RemoveAt
+  href: api/WizardWrx.ArrayInfo.html#WizardWrx_ArrayInfo_RemoveAt_
+  commentId: Overload:WizardWrx.ArrayInfo.RemoveAt
+  isSpec: "True"
+  fullName: WizardWrx.ArrayInfo.RemoveAt
+  nameWithType: ArrayInfo.RemoveAt
+- uid: WizardWrx.ArrayInfo.RemoveAt``1(``0[],System.Int32)
+  name: RemoveAt<T>(T[], Int32)
+  href: api/WizardWrx.ArrayInfo.html#WizardWrx_ArrayInfo_RemoveAt__1___0___System_Int32_
+  commentId: M:WizardWrx.ArrayInfo.RemoveAt``1(``0[],System.Int32)
+  name.vb: RemoveAt(Of T)(T(), Int32)
+  fullName: WizardWrx.ArrayInfo.RemoveAt<T>(T[], System.Int32)
+  fullName.vb: WizardWrx.ArrayInfo.RemoveAt(Of T)(T(), System.Int32)
+  nameWithType: ArrayInfo.RemoveAt<T>(T[], Int32)
+  nameWithType.vb: ArrayInfo.RemoveAt(Of T)(T(), Int32)
 - uid: WizardWrx.ASCII_Character_Display_Table
   name: ASCII_Character_Display_Table
   href: api/WizardWrx.ASCII_Character_Display_Table.html

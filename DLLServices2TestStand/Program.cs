@@ -294,6 +294,9 @@
 
     2021/06/29 8.0.1442 DAG Exercise method ListObjectPropertyTypesAndValues on
                             ObjectPropertyEnumerators.
+
+    2021/07/04 8.0.1448 DAG Exercise the new RemoveAt extension method for all
+                            types of Arrays.
     ============================================================================
 */
 
@@ -512,6 +515,21 @@ namespace DLLServices2TestStand
             null
         };
 
+        private static string [ ] s_astrRemoveAtTest1 =
+        {
+            @"This element is at index 0.",
+            @"This element is at index 1.",
+            @"This element is at index 2.",
+            @"This element is at index 3.",
+            @"This element is at index 4.",
+            @"This element is at index 5.",
+            @"This element is at index 6.",
+            @"This element is at index 7.",
+            @"This element is at index 8."
+        };
+
+        private static int [ ] s_aintRemoveAtTest2 = { 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 };
+
         internal static StateManager s_smTheApp = StateManager.GetTheSingleInstance ( );
 
         static void Main ( string [ ] pastrArgs )
@@ -641,6 +659,10 @@ namespace DLLServices2TestStand
                 {
                     Exercise_TruncateValueToOneLine ( );
                 }
+                else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_REMOVE_AT )
+                {
+                    Exercise_RemoveAtArrayExtensionMethod ( );
+                }
                 else
                 {	// Run the whole set, starting with this test, which leaves the flags set so that the original message can be reconstructed from a psLogList export.
                     EnumerateDependentAssemblies ( );
@@ -659,6 +681,14 @@ namespace DLLServices2TestStand
                         @"EnumerateObjectProperties test 2 of 2" );
 
                     Exercise_TruncateValueToOneLine ( );
+                    PauseForPictures (
+                        APPEND_LINEFEED ,
+                        @"Exercise_TruncateValueToOneLine" );
+                    Exercise_RemoveAtArrayExtensionMethod ( );
+
+                    PauseForPictures (
+                        APPEND_LINEFEED ,
+                        @"Exercise_RemoveAtArrayExtensionMethod" );
 
                     PauseForPictures (
                         APPEND_LINEFEED ,
@@ -1672,6 +1702,117 @@ namespace DLLServices2TestStand
                 @"{0}End of GetAssemblyVersionInfo report on the another assembly{0}" ,
                 Environment.NewLine );
         }   // ExerciseGetAssemblyVersionInfo
+
+
+        private static void Exercise_RemoveAtArrayExtensionMethod ( )
+        {
+            const int REMOVE_INDEX = 4;
+
+            Console.WriteLine (
+                @"{0}Exercising the new RemoveAt extension method for arrays of any type.{0}" ,
+                Environment.NewLine );
+
+            //  ---------------------------------------------------------------
+            //  Exercise with an array of strings.
+            //  ----------------------------------------------------------------
+
+            Console.WriteLine (
+                @"    Exercsing RemoveAt with an array of Strings:{0}" ,
+                Environment.NewLine );
+
+            {   // Constrain the scope of array astrArrayOfStrings and integer intNElements.
+                string [ ] astrArrayOfStrings = s_astrRemoveAtTest1;
+                int intNElements = astrArrayOfStrings.Length;
+                Console.WriteLine (
+                    @"        Count of elements in input array = {0}{1}" ,
+                    intNElements ,
+                    Environment.NewLine );
+
+                for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+                          intJ < intNElements ;
+                          intJ++ )
+                {
+                    Console.WriteLine (
+                        @"            Original Element at index {0} = {1}" ,
+                        intJ ,
+                        astrArrayOfStrings [ intJ ] );
+                }   // for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ; intJ < intNElements ; intJ++ )
+
+                Console.WriteLine (
+                    @"{1}            Remmoving element at index {0}{1}" ,
+                    REMOVE_INDEX ,
+                    Environment.NewLine );
+                astrArrayOfStrings = astrArrayOfStrings.RemoveAt ( REMOVE_INDEX );
+                intNElements = astrArrayOfStrings.Length;
+                Console.WriteLine (
+                    @"        Count of elements in output array = {0}{1}" ,
+                    intNElements ,
+                    Environment.NewLine );
+
+                for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+                          intJ < intNElements ;
+                          intJ++ )
+                {
+                    Console.WriteLine (
+                        @"            Original Element at index {0} = {1}" ,
+                        intJ ,
+                        astrArrayOfStrings [ intJ ] );
+                }   // for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ; intJ < intNElements ; intJ++ )
+            }   // Array astrArrayOfStrings and integer intNElements go out of scope.
+
+            //  ---------------------------------------------------------------
+            //  Exercise with an array of integers.
+            //  ----------------------------------------------------------------
+
+            Console.WriteLine (
+                @"{0}    Exercsing RemoveAt with an array of Integers:{0}" ,
+                Environment.NewLine );
+
+            {   // Constrain the scope of array aintArrayOfIntegers and integer intNElements.
+                int [ ] aintArrayOfIntegers = s_aintRemoveAtTest2;
+                int intNElements = aintArrayOfIntegers.Length;
+
+                Console.WriteLine (
+                    @"        Count of elements in input array = {0}{1}" ,
+                    intNElements ,
+                    Environment.NewLine );
+
+                for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+                          intJ < intNElements ;
+                          intJ++ )
+                {
+                    Console.WriteLine (
+                        @"            Original Element at index {0} = {1}" ,
+                        intJ ,
+                        aintArrayOfIntegers [ intJ ] );
+                }   // for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ; intJ < intNElements ; intJ++ )
+
+                Console.WriteLine (
+                    @"{1}            Remmoving element at index {0}{1}" ,
+                    REMOVE_INDEX ,
+                    Environment.NewLine );
+                aintArrayOfIntegers = aintArrayOfIntegers.RemoveAt ( REMOVE_INDEX );
+                intNElements = aintArrayOfIntegers.Length;
+                Console.WriteLine (
+                    @"        Count of elements in output array = {0}{1}" ,
+                    intNElements ,
+                    Environment.NewLine );
+
+                for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+                          intJ < intNElements ;
+                          intJ++ )
+                {
+                    Console.WriteLine (
+                        @"            Original Element at index {0} = {1}" ,
+                        intJ ,
+                        aintArrayOfIntegers [ intJ ] );
+                }   // for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ; intJ < intNElements ; intJ++ )
+            }   // Array aintArrayOfIntegers and integer intNElements go out of scope.
+
+            Console.WriteLine (
+                @"{0}That's all, folks!{0}" ,
+                Environment.NewLine );
+        }   // private static void Exercise_RemoveAtArrayExtensionMethod
 
 
         private static void ExerciseSpecialMessageGenerators ( )

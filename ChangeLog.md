@@ -1,4 +1,33 @@
-# WizardWrx .NET API Change Log
+﻿# WizardWrx .NET API Change Log
+
+## 2021-07-04
+
+### WizardWrx.Common.dll, Version 8.0.163
+
+`ArrayInfo.RemoveAt` is a new extension method that removes the element at a
+specified index in an array. Since arrays are immutable objects, it accomplishes
+this feat by returning a new array with the element at the specified index
+removed from it.
+
+Since it uses LINQ, this addition requires the target framework version to be
+raised from 2.0 to 3.5 Client Profile. Since these have been published as a unit
+for many years, you should be unaffected by this change.
+
+### WizardWrx.ASCIIInfo.dll, Version 8.0.191
+
+Since this library is dependent upon WizardWrx.Common.dll, Version 8.0.163,
+which had to be upgraded to implement LINQ and extension methods, and the
+libraries above it already target Microsoft .NET Framework 3.5 Client Profile,
+it was upgraded to prevent obscure build errors caused by mismatched target
+frameworks.
+
+### WizardWrx.FormatStringEngine 8.0.226
+
+Since this library is dependent upon WizardWrx.Common.dll, Version 8.0.163,
+which had to be upgraded to implement LINQ and extension methods, and the
+libraries above it already target Microsoft .NET Framework 3.5 Client Profile,
+it was upgraded to prevent obscure build errors caused by mismatched target
+frameworks.
 
 ## 06/29/2021
 

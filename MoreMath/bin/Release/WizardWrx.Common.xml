@@ -161,6 +161,53 @@
             </remarks>
             <seealso cref="M:WizardWrx.ArrayInfo.IndexFromOrdinal(System.Int32)"/>
         </member>
+        <member name="M:WizardWrx.ArrayInfo.RemoveAt``1(``0[],System.Int32)">
+            <summary>
+            This method removes the element at index (subscript) <paramref name="pintIndex"/>
+            from array <paramref name="parr"/>.
+            </summary>
+            <typeparam name="T">
+            The type parameter is unconstrained, since the relevant concern is
+            that the input is an array.
+            </typeparam>
+            <param name="parr">
+            Specify the array from which the element at subscript <paramref name="pintIndex"/>
+            should be removed.
+            </param>
+            <param name="pintIndex">
+            Specify the zero-based index (subscript) of the element to be
+            removed from array <paramref name="parr"/>.
+            </param>
+            <returns>
+            The return value is a new array of type T from which the element at
+            subscript <paramref name="pintIndex"/> has been removed.
+            </returns>
+            <example>
+            <para>
+            Assume an array that contains at least 5 elements, so that 4 is a
+            valid index (subscript).
+            </para>
+            astrArrayOfStrings = astrArrayOfStrings.RemoveAt ( 4 );
+            <para>
+            As is true of string objects, which are also immutable, you must
+            return into a new variable by using an assignment statement. Note,
+            however, that you may reuse the variable name just as you might with
+            an extension method on System.String.
+            </para>
+            </example>
+            <remarks>
+            <para>
+            This method is implemented as an extension method.
+            </para>
+            <para>
+            As mentioned by the article cited herein, since arrays are immutable
+            objects, the only way to plysically remove an element from it is by
+            creating a new array and copying into it every element except the
+            one to be excluded.
+            </para>
+            </remarks>
+            <see href="https://stackoverflow.com/questions/34712363/how-to-remove-an-element-from-an-array-in-c-sharp#:~:text=Since%20arrays%20are%20immutable%20in%20C%23%2C%20you%20can%27t,call%20it%20like%20that%3A%20myarr%20%3D%20myarr.RemoveAt%20%28index%29%3B"/>
+        </member>
         <member name="T:WizardWrx.CSVFileInfo">
             <summary>
             Use these constants and service routines to simplify working with CSV

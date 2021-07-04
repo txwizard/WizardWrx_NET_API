@@ -17,7 +17,7 @@
 
     Author:             David A. Gray
 
-    License:            Copyright (C) 2015-2020, David A. Gray
+    License:            Copyright (C) 2015-2021, David A. Gray
                         All rights reserved
 
                         Redistribution and use in source and binary forms, with
@@ -88,9 +88,15 @@
 	2020/12/22 7.24    DAG    MSO_COLLECTION_FIRST_ITEM is intended for use with
                               collections of Microsoft Office objects that are
                               indexed from a base of one, rather than zero.
+
+    2021/07/04 8.0.163 DAG    RemoveAt is a new extension method that removes an
+                              element from an array at a designated index, which
+                              it accoumplishes by returning a new array without
+                              the element that was at the specified index.
     ============================================================================
 */
 
+using System.Linq;
 
 namespace WizardWrx
 {
@@ -261,5 +267,58 @@ namespace WizardWrx
             return pintIndex + ORDINAL_FROM_INDEX;
         }   // public static int OrdinalFromIndex
         #endregion  // Service Methods
+
+
+        #region Array Extension Methods
+        /// <summary>
+        /// This method removes the element at index (subscript) <paramref name="pintIndex"/>
+        /// from array <paramref name="parr"/>.
+        /// </summary>
+        /// <typeparam name="T">
+        /// The type parameter is unconstrained, since the relevant concern is
+        /// that the input is an array.
+        /// </typeparam>
+        /// <param name="parr">
+        /// Specify the array from which the element at subscript <paramref name="pintIndex"/>
+        /// should be removed.
+        /// </param>
+        /// <param name="pintIndex">
+        /// Specify the zero-based index (subscript) of the element to be
+        /// removed from array <paramref name="parr"/>.
+        /// </param>
+        /// <returns>
+        /// The return value is a new array of type T from which the element at
+        /// subscript <paramref name="pintIndex"/> has been removed.
+        /// </returns>
+        /// <example>
+        /// <para>
+        /// Assume an array that contains at least 5 elements, so that 4 is a
+        /// valid index (subscript).
+        /// </para>
+        /// astrArrayOfStrings = astrArrayOfStrings.RemoveAt ( 4 );
+        /// <para>
+        /// As is true of string objects, which are also immutable, you must
+        /// return into a new variable by using an assignment statement. Note,
+        /// however, that you may reuse the variable name just as you might with
+        /// an extension method on System.String.
+        /// </para>
+        /// </example>
+        /// <remarks>
+        /// <para>
+        /// This method is implemented as an extension method.
+        /// </para>
+        /// <para>
+        /// As mentioned by the article cited herein, since arrays are immutable
+        /// objects, the only way to plysically remove an element from it is by
+        /// creating a new array and copying into it every element except the
+        /// one to be excluded.
+        /// </para>
+        /// </remarks>
+        /// <see href="https://stackoverflow.com/questions/34712363/how-to-remove-an-element-from-an-array-in-c-sharp#:~:text=Since%20arrays%20are%20immutable%20in%20C%23%2C%20you%20can%27t,call%20it%20like%20that%3A%20myarr%20%3D%20myarr.RemoveAt%20%28index%29%3B"/>
+        public static T [ ] RemoveAt<T> ( this T [ ] parr , int pintIndex )
+        {
+            return parr.Where ( ( e , i ) => i != pintIndex ).ToArray ( );
+        }   // public static T [ ] RemoveAt<T>
+        #endregion  // Array Extension Methods
     }   // public static class ArrayInfo
 }   // partial namespace WizardWrx
