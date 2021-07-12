@@ -50,5 +50,11 @@
     <Setting Name="Reports_Directory" Type="System.String" Scope="Application">
       <Value Profile="(Default)">.\Test_Reports</Value>
     </Setting>
+    <Setting Name="Base64EncodingSource" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">D:\Source_Code\Visual_Studio\Projects\SalesTalk\Sweeper365\NOTES\Registration_Confirmation_for_My_UWP_App.pdf</Value>
+    </Setting>
+    <Setting Name="Base64EncodingRoundTrip" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">D:\Source_Code\Visual_Studio\Projects\SalesTalk\Sweeper365\NOTES\Registration_Confirmation_for_My_UWP_App_RoundTrip.pdf</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

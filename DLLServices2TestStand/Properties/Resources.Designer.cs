@@ -79,6 +79,15 @@ namespace DLLServices2TestStand.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ByteArrayBase64Converters.
+        /// </summary>
+        public static string CMDARG_BASE64_ENCODING {
+            get {
+                return ResourceManager.GetString("CMDARG_BASE64_ENCODING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to DirectDependentAssemblyEnumerator.
         /// </summary>
         public static string CMDARG_DIRECT_DEPENDENT_ASSEMBLY_ENUMERATION {

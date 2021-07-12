@@ -1,6 +1,44 @@
 ### YamlMime:XRefMap
 sorted: true
 references:
+- uid: DLLServices2TestStand
+  name: DLLServices2TestStand
+  href: api/DLLServices2TestStand.html
+  commentId: N:DLLServices2TestStand
+  fullName: DLLServices2TestStand
+  nameWithType: DLLServices2TestStand
+- uid: DLLServices2TestStand.MoreMath2
+  name: MoreMath2
+  href: api/DLLServices2TestStand.MoreMath2.html
+  commentId: T:DLLServices2TestStand.MoreMath2
+  fullName: DLLServices2TestStand.MoreMath2
+  nameWithType: MoreMath2
+- uid: DLLServices2TestStand.MoreMath2.FractionalMultiply2Integer(System.Int32,System.Double)
+  name: FractionalMultiply2Integer(Int32, Double)
+  href: api/DLLServices2TestStand.MoreMath2.html#DLLServices2TestStand_MoreMath2_FractionalMultiply2Integer_System_Int32_System_Double_
+  commentId: M:DLLServices2TestStand.MoreMath2.FractionalMultiply2Integer(System.Int32,System.Double)
+  fullName: DLLServices2TestStand.MoreMath2.FractionalMultiply2Integer(System.Int32, System.Double)
+  nameWithType: MoreMath2.FractionalMultiply2Integer(Int32, Double)
+- uid: DLLServices2TestStand.MoreMath2.FractionalMultiply2Integer*
+  name: FractionalMultiply2Integer
+  href: api/DLLServices2TestStand.MoreMath2.html#DLLServices2TestStand_MoreMath2_FractionalMultiply2Integer_
+  commentId: Overload:DLLServices2TestStand.MoreMath2.FractionalMultiply2Integer
+  isSpec: "True"
+  fullName: DLLServices2TestStand.MoreMath2.FractionalMultiply2Integer
+  nameWithType: MoreMath2.FractionalMultiply2Integer
+- uid: DLLServices2TestStand.MoreMath2.MakeEvenlyDivisibleByFour(System.Int32)
+  name: MakeEvenlyDivisibleByFour(Int32)
+  href: api/DLLServices2TestStand.MoreMath2.html#DLLServices2TestStand_MoreMath2_MakeEvenlyDivisibleByFour_System_Int32_
+  commentId: M:DLLServices2TestStand.MoreMath2.MakeEvenlyDivisibleByFour(System.Int32)
+  fullName: DLLServices2TestStand.MoreMath2.MakeEvenlyDivisibleByFour(System.Int32)
+  nameWithType: MoreMath2.MakeEvenlyDivisibleByFour(Int32)
+- uid: DLLServices2TestStand.MoreMath2.MakeEvenlyDivisibleByFour*
+  name: MakeEvenlyDivisibleByFour
+  href: api/DLLServices2TestStand.MoreMath2.html#DLLServices2TestStand_MoreMath2_MakeEvenlyDivisibleByFour_
+  commentId: Overload:DLLServices2TestStand.MoreMath2.MakeEvenlyDivisibleByFour
+  isSpec: "True"
+  fullName: DLLServices2TestStand.MoreMath2.MakeEvenlyDivisibleByFour
+  nameWithType: MoreMath2.MakeEvenlyDivisibleByFour
 - uid: DLLServices2TestStand.Properties
   name: DLLServices2TestStand.Properties
   href: api/DLLServices2TestStand.Properties.html
@@ -39,6 +77,19 @@ references:
   isSpec: "True"
   fullName: DLLServices2TestStand.Properties.Resources.CHOP_TEST_REPORT
   nameWithType: Resources.CHOP_TEST_REPORT
+- uid: DLLServices2TestStand.Properties.Resources.CMDARG_BASE64_ENCODING
+  name: CMDARG_BASE64_ENCODING
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_CMDARG_BASE64_ENCODING
+  commentId: P:DLLServices2TestStand.Properties.Resources.CMDARG_BASE64_ENCODING
+  fullName: DLLServices2TestStand.Properties.Resources.CMDARG_BASE64_ENCODING
+  nameWithType: Resources.CMDARG_BASE64_ENCODING
+- uid: DLLServices2TestStand.Properties.Resources.CMDARG_BASE64_ENCODING*
+  name: CMDARG_BASE64_ENCODING
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_CMDARG_BASE64_ENCODING_
+  commentId: Overload:DLLServices2TestStand.Properties.Resources.CMDARG_BASE64_ENCODING
+  isSpec: "True"
+  fullName: DLLServices2TestStand.Properties.Resources.CMDARG_BASE64_ENCODING
+  nameWithType: Resources.CMDARG_BASE64_ENCODING
 - uid: DLLServices2TestStand.Properties.Resources.CMDARG_DIRECT_DEPENDENT_ASSEMBLY_ENUMERATION
   name: CMDARG_DIRECT_DEPENDENT_ASSEMBLY_ENUMERATION
   href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_CMDARG_DIRECT_DEPENDENT_ASSEMBLY_ENUMERATION
@@ -6527,6 +6578,57 @@ references:
   isSpec: "True"
   fullName: WizardWrx.Core.BasicSystemInfoDisplayMessages.WWKW_OSIsWindowsXPOrNewer
   nameWithType: BasicSystemInfoDisplayMessages.WWKW_OSIsWindowsXPOrNewer
+- uid: WizardWrx.Core.ByteArrayBase64Converters
+  name: ByteArrayBase64Converters
+  href: api/WizardWrx.Core.ByteArrayBase64Converters.html
+  commentId: T:WizardWrx.Core.ByteArrayBase64Converters
+  fullName: WizardWrx.Core.ByteArrayBase64Converters
+  nameWithType: ByteArrayBase64Converters
+- uid: WizardWrx.Core.ByteArrayBase64Converters.Base64DecodeByteArray(System.Byte[])
+  name: Base64DecodeByteArray(Byte[])
+  href: api/WizardWrx.Core.ByteArrayBase64Converters.html#WizardWrx_Core_ByteArrayBase64Converters_Base64DecodeByteArray_System_Byte___
+  commentId: M:WizardWrx.Core.ByteArrayBase64Converters.Base64DecodeByteArray(System.Byte[])
+  name.vb: Base64DecodeByteArray(Byte())
+  fullName: WizardWrx.Core.ByteArrayBase64Converters.Base64DecodeByteArray(System.Byte[])
+  fullName.vb: WizardWrx.Core.ByteArrayBase64Converters.Base64DecodeByteArray(System.Byte())
+  nameWithType: ByteArrayBase64Converters.Base64DecodeByteArray(Byte[])
+  nameWithType.vb: ByteArrayBase64Converters.Base64DecodeByteArray(Byte())
+- uid: WizardWrx.Core.ByteArrayBase64Converters.Base64DecodeByteArray*
+  name: Base64DecodeByteArray
+  href: api/WizardWrx.Core.ByteArrayBase64Converters.html#WizardWrx_Core_ByteArrayBase64Converters_Base64DecodeByteArray_
+  commentId: Overload:WizardWrx.Core.ByteArrayBase64Converters.Base64DecodeByteArray
+  isSpec: "True"
+  fullName: WizardWrx.Core.ByteArrayBase64Converters.Base64DecodeByteArray
+  nameWithType: ByteArrayBase64Converters.Base64DecodeByteArray
+- uid: WizardWrx.Core.ByteArrayBase64Converters.Base64DecodeByteArray2File(System.String,System.Byte[])
+  name: Base64DecodeByteArray2File(String, Byte[])
+  href: api/WizardWrx.Core.ByteArrayBase64Converters.html#WizardWrx_Core_ByteArrayBase64Converters_Base64DecodeByteArray2File_System_String_System_Byte___
+  commentId: M:WizardWrx.Core.ByteArrayBase64Converters.Base64DecodeByteArray2File(System.String,System.Byte[])
+  name.vb: Base64DecodeByteArray2File(String, Byte())
+  fullName: WizardWrx.Core.ByteArrayBase64Converters.Base64DecodeByteArray2File(System.String, System.Byte[])
+  fullName.vb: WizardWrx.Core.ByteArrayBase64Converters.Base64DecodeByteArray2File(System.String, System.Byte())
+  nameWithType: ByteArrayBase64Converters.Base64DecodeByteArray2File(String, Byte[])
+  nameWithType.vb: ByteArrayBase64Converters.Base64DecodeByteArray2File(String, Byte())
+- uid: WizardWrx.Core.ByteArrayBase64Converters.Base64DecodeByteArray2File*
+  name: Base64DecodeByteArray2File
+  href: api/WizardWrx.Core.ByteArrayBase64Converters.html#WizardWrx_Core_ByteArrayBase64Converters_Base64DecodeByteArray2File_
+  commentId: Overload:WizardWrx.Core.ByteArrayBase64Converters.Base64DecodeByteArray2File
+  isSpec: "True"
+  fullName: WizardWrx.Core.ByteArrayBase64Converters.Base64DecodeByteArray2File
+  nameWithType: ByteArrayBase64Converters.Base64DecodeByteArray2File
+- uid: WizardWrx.Core.ByteArrayBase64Converters.Base64EncodeBinaryFile(System.String)
+  name: Base64EncodeBinaryFile(String)
+  href: api/WizardWrx.Core.ByteArrayBase64Converters.html#WizardWrx_Core_ByteArrayBase64Converters_Base64EncodeBinaryFile_System_String_
+  commentId: M:WizardWrx.Core.ByteArrayBase64Converters.Base64EncodeBinaryFile(System.String)
+  fullName: WizardWrx.Core.ByteArrayBase64Converters.Base64EncodeBinaryFile(System.String)
+  nameWithType: ByteArrayBase64Converters.Base64EncodeBinaryFile(String)
+- uid: WizardWrx.Core.ByteArrayBase64Converters.Base64EncodeBinaryFile*
+  name: Base64EncodeBinaryFile
+  href: api/WizardWrx.Core.ByteArrayBase64Converters.html#WizardWrx_Core_ByteArrayBase64Converters_Base64EncodeBinaryFile_
+  commentId: Overload:WizardWrx.Core.ByteArrayBase64Converters.Base64EncodeBinaryFile
+  isSpec: "True"
+  fullName: WizardWrx.Core.ByteArrayBase64Converters.Base64EncodeBinaryFile
+  nameWithType: ByteArrayBase64Converters.Base64EncodeBinaryFile
 - uid: WizardWrx.Core.ByteArrayFormatters
   name: ByteArrayFormatters
   href: api/WizardWrx.Core.ByteArrayFormatters.html

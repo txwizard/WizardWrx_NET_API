@@ -1,5 +1,32 @@
 ﻿# WizardWrx .NET API Change Log
 
+## 2021-07-11
+
+### WizardWrx.Core.dll, Version 8.0.247
+
+This release incorporates a new static class, `ByteArrayBase64Converters`, that
+exposes static methods to efficiently convert files and byte arrays to and from
+__Base64__.
+
+|Name                      |Class                      |
+|--------------------------|---------------------------|
+|Base64EncodeBinaryFile    |Read an input file into a  |
+|                          |byte array of Base64       |
+|                          |encoded characters that    |
+|                          |represents its contents in |
+|                          |a form that can be included|
+|                          |in a MIME encoded email    |
+|                          |message.                   |
+|Base64DecodeByteArray2File|Decode a byte array and    |
+|                          |write the decoded bytes    |
+|                          |into a binary file.        |
+|Base64DecodeByteArray     |Decode a byte array that   |
+|                          |represents a set of Base64 |
+|                          |encoded characters,        |
+|                          |returning a new byte array |
+|                          |containing their decoded   |
+|                          |representation.            |
+
 ## 2021-07-04
 
 ### WizardWrx.Common.dll, Version 8.0.163

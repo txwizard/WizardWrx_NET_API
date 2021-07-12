@@ -682,4 +682,7 @@
     <value>RemoveAt</value>
     <comment>Use this command line argument to exercise the new RemoveAt extension method on arrays of any type.</comment>
   </data>
+  <data name="CMDARG_BASE64_ENCODING" xml:space="preserve">
+    <value>ByteArrayBase64Converters</value>
+  </data>
 </root>

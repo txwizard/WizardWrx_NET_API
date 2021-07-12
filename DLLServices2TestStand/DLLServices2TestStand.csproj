@@ -88,6 +88,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="AppDomainDetails.cs" />
+    <Compile Include="Base64RoundTripExperiments.cs" />
     <Compile Include="CmdLneArgsTests.cs" />
     <Compile Include="DigestTestCases.cs" />
     <Compile Include="FileNameTricks_Exerciser.cs" />
@@ -96,6 +97,7 @@
     <Compile Include="LineEndingFixupTests.cs" />
     <Compile Include="MaxStringLength_Tester.cs" />
     <Compile Include="MergeNewItemsIntoArray_Tester.cs" />
+    <Compile Include="MoreMath2.cs" />
     <Compile Include="MoreMathTests.cs" />
     <Compile Include="NewClassTests_20140914.cs" />
     <Compile Include="Settings.cs" />

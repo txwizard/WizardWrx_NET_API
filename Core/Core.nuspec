@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>This release incorporates ChangeLog.md from the root directory of the library constellation of which it is a component. As always, it also incorporates the current versions of its dependent libraries and their dependents.</releaseNotes>
+	    <releaseNotes>This release incorporates a new static class, ByteArrayBase64Converters, that exposes static methods to efficiently convert files and byte arrays to and from Base64. As always, it also incorporates the current versions of its dependent libraries and their dependents.</releaseNotes>
     	<copyright>$copyright$</copyright>
     	<tags>Constants Arrays RegExp FileInfo Strings Singleton</tags>
 	</metadata>

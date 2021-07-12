@@ -12,7 +12,7 @@ namespace DLLServices2TestStand.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.8.1.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.10.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -170,6 +170,26 @@ namespace DLLServices2TestStand.Properties {
         public string Reports_Directory {
             get {
                 return ((string)(this["Reports_Directory"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("D:\\Source_Code\\Visual_Studio\\Projects\\SalesTalk\\Sweeper365\\NOTES\\Registration_Con" +
+            "firmation_for_My_UWP_App.pdf")]
+        public string Base64EncodingSource {
+            get {
+                return ((string)(this["Base64EncodingSource"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("D:\\Source_Code\\Visual_Studio\\Projects\\SalesTalk\\Sweeper365\\NOTES\\Registration_Con" +
+            "firmation_for_My_UWP_App_RoundTrip.pdf")]
+        public string Base64EncodingRoundTrip {
+            get {
+                return ((string)(this["Base64EncodingRoundTrip"]));
             }
         }
     }

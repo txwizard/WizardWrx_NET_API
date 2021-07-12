@@ -614,6 +614,59 @@
             return FALSE.
             </returns>
         </member>
+        <member name="T:WizardWrx.Core.ByteArrayBase64Converters">
+            <summary>
+            This static class exposes methods that efficiently encode binary data as
+            Base64 byte arrays and converts such byte arrays into binary data in the
+            form of a new byte array or binary data written into a disk file.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.Core.ByteArrayBase64Converters.Base64EncodeBinaryFile(System.String)">
+            <summary>
+            Read an input file into a byte array of Base64 encoded characters
+            that represents its contents in a form that can be included in a
+            MIME encoded email message.
+            </summary>
+            <param name="pstrInputFileName">
+            Pass in the absolute or relative (to the Current Working Directory)
+            name of the file to read and encode into a byte array that represents
+            the Base64 encoded characters.
+            </param>
+            <returns>
+            The return value is a byte array that contains 4 characters for each
+            three bytes read from the input file.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.Core.ByteArrayBase64Converters.Base64DecodeByteArray2File(System.String,System.Byte[])">
+            <summary>
+            Decode byte array <paramref name="pabytBase64Characters"/> and write
+            the decoded bytes into file <paramref name="pstrFileName"/>.
+            </summary>
+            <param name="pstrFileName">
+            Specify the name (absolute or relative to the current working
+            directory) of the file into which to write the decoded bytes
+            represented by <paramref name="pabytBase64Characters"/>.
+            </param>
+            <param name="pabytBase64Characters">
+            Pass in a reference to the array of Base64 encoded bytes to be
+            decoded and saved into file <paramref name="pstrFileName"/>.
+            </param>
+        </member>
+        <member name="M:WizardWrx.Core.ByteArrayBase64Converters.Base64DecodeByteArray(System.Byte[])">
+            <summary>
+            Decode a byte array that represents a set of Base64 encoded
+            characters, returning a new byte array containing their decoded
+            representation.
+            </summary>
+            <param name="pabytBase64Characters">
+            Pass in a reference to the array of Base64 encoded bytes to be
+            decoded and returned.
+            </param>
+            <returns>
+            The return value is the byte array containing the Base64 decoded
+            bytes. Expect an array containing 3/4 as many elements as the input.
+            </returns>
+        </member>
         <member name="T:WizardWrx.Core.ByteArrayFormatters">
             <summary>
             The static methods in this class format byte arrays into strings of

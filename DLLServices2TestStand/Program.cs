@@ -297,6 +297,8 @@
 
     2021/07/04 8.0.1448 DAG Exercise the new RemoveAt extension method for all
                             types of Arrays.
+
+	2021/07/11 8.0.1453 DAG Exercise the new Base64 conversion methods.
     ============================================================================
 */
 
@@ -663,6 +665,10 @@ namespace DLLServices2TestStand
                 {
                     Exercise_RemoveAtArrayExtensionMethod ( );
                 }
+                else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_BASE64_ENCODING )
+                {
+                    Base64RoundTripExperiments.Exercise_Base64_ToAndFrom ( );
+                }
                 else
                 {	// Run the whole set, starting with this test, which leaves the flags set so that the original message can be reconstructed from a psLogList export.
                     EnumerateDependentAssemblies ( );
@@ -685,14 +691,13 @@ namespace DLLServices2TestStand
                         APPEND_LINEFEED ,
                         @"Exercise_TruncateValueToOneLine" );
                     Exercise_RemoveAtArrayExtensionMethod ( );
-
                     PauseForPictures (
                         APPEND_LINEFEED ,
                         @"Exercise_RemoveAtArrayExtensionMethod" );
-
+                    Base64RoundTripExperiments.Exercise_Base64_ToAndFrom ( );
                     PauseForPictures (
                         APPEND_LINEFEED ,
-                        @"Exercise_TruncateValueToOneLine" );
+                        @"Exercise_Base64_ToAndFrom" );
 
                     try
                     {
