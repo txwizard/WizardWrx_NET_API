@@ -5443,14 +5443,6 @@
             only instance.
             </remarks>
         </member>
-        <member name="F:WizardWrx.GenericSingletonBase`1.PRIVATE_CTOR_OK">
-            <summary>
-            The static GenericSingletonBase constructor uses this flag as the
-            second of two arguments to Activator.CreateInstance, to tell it that
-            a private constructor is acceptable, which meets a requirement of
-            the Singleton design pattern.
-            </summary>
-        </member>
         <member name="M:WizardWrx.GenericSingletonBase`1.#ctor">
             <summary>
             The private constructor has no real work to do, but it must exist to

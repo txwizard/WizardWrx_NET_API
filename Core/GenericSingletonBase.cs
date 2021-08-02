@@ -21,18 +21,69 @@
 
 						I've thought several times over the last few years that
 						the Singleton design pattern probably lends itself to an
-						implementation as an abstract base class, though it had
-						not yet occurred to me to make it a Generic. Then, while
-						I was investigating whether it was practical to inherit
-						from sibling class StateManager, I read the article
-						cited below.
+						abstract base class, though it had not yet occurred to
+						me to make it a Generic. Then, while I was investigating
+						whether it was practical to inherit from sibling class
+						StateManager, I read the first article cited below.
+
+						Though the article that inspired me has vanished, a new
+						article, by Boris Brock, dated 05 April 2013, covers the
+						same ground. The only difference between the two
+						implemntations is that Mr. Brock used Lazy<T>, which
+						made its debut in version 4.0 of the Microsoft .NET
+						Framework. I see no reason to upgrade solid, functioning
+						code for its sake.
+
+						The revisions of Sunday, 01 August 2021 arose because
+						reading the fourth article prompted a review of this
+						class to see whether it uses the double-checked locking
+						mechanism mentioned therein as the gold standard of lazy
+						singleton instantiation implementations.
+
+						As I reviewed my code, I was reminded that this code can
+						dispense with double-checked locking because the static
+						constructor initializes the object. Since the framework
+						guarantees that the static constructor is called exactly
+						once, the very first time the object is referenced, it
+						can safely dispense with the double-checked locking
+						because static constructors are intrinsically thread-safe.
 
 	References:			1)	Base class for Singleton Pattern with Generics
 							http://geekswithblogs.net/NewThingsILearned/archive/2009/07/24/base-class-for-singleton-pattern-with-generics.aspx
+							
+							As of Sunday, 01 August 2021, this article is no
+							longer avaliable, and is superseded by the next
+							reference.
 
-    Author:				David A. Gray
+						2)	A Reusable Base Class for the Singleton Pattern in C#
+							https://www.codeproject.com/articles/572263/a-reusable-base-class-for-the-singleton-pattern-in
 
-    License:            Copyright (C) 2016-2017, David A. Gray. 
+							Since Lazy<T> didn't arrive until the next version
+							of the Microsoft .NET Framework, this implementation
+							makes do without it.
+
+						3)	CreateInstance(Type, Boolean)
+							https://docs.microsoft.com/en-us/dotnet/api/system.activator.createinstance?view=netframework-3.5#System_Activator_CreateInstance_System_Type_System_Boolean_
+
+							Though it doesn't explicitly say so, this document
+							implies that this method is intended for use by
+							compilers, rather than user code. Nevertheless, the
+							method is publicly documented, and the public
+							documentation is devoid of outright restrictions on
+							use in user code.
+
+						4)	5 Ways to Implement the Singleton Design Anti-Pattern in C#
+							https://levelup.gitconnected.com/5-ways-to-implement-the-singleton-design-anti-pattern-in-c-68bb664c31f2
+
+							Reading this article prompted me to review the
+							implemnentation of this class to remind myself how
+							and why it dispenses with the usual double-checked
+							locking mechanism that seems to be the gold standard
+							for lazy singleton instantiation.
+
+	Author:				David A. Gray
+
+    License:            Copyright (C) 2016-2021, David A. Gray. 
 						All rights reserved.
 
                         Redistribution and use in source and binary forms, with
@@ -75,18 +126,32 @@
     Date       Version Author Synopsis
     ---------- ------- ------ --------------------------------------------------
     2016/04/09 6.0     DAG    This class makes its debut.
+
 	2017/02/25 7.0     DAG    This class is promoted to the root WizardWrx
                               namespace, and moved to WizardWrx.Core.dll.
+
 	2018/09/06 7.0     DAG    Replace leftover documentation that came along for
 	                          the ride when I copied another file to create this
 							  class module, and add a GetTheSingleInstance
 							  method.
+
+	2021/08/01 8.0.248 DAG    Update the references to account for the article
+                              that inspired the original implementation ceased
+							  to exist. Thankfully, I found a newer article that
+                              covers the same ground with one difference; its
+                              example uses the Lazy<T> class, which arrived with
+                              version 4 of the Microsoft .NET Framework.
+
+							  This revision is a documentation revision. Other
+                              than eliminating two unused using directives and
+							  hiding PRIVATE_CTOR_OK in the method that uses it,
+							  the code is unchanged.
     ============================================================================
 */
 
+
 using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace WizardWrx
 {
@@ -114,14 +179,6 @@ namespace WizardWrx
 	public abstract class GenericSingletonBase<T> where T : GenericSingletonBase<T>
 	{
 		/// <summary>
-		/// The static GenericSingletonBase constructor uses this flag as the
-		/// second of two arguments to Activator.CreateInstance, to tell it that
-		/// a private constructor is acceptable, which meets a requirement of
-		/// the Singleton design pattern.
-		/// </summary>
-		const bool PRIVATE_CTOR_OK = true;
-
-		/// <summary>
 		/// The private constructor has no real work to do, but it must exist to
 		/// prevent the framework from generating a public constructor, which
 		/// would violate a critical constraint of the Singleton design pattern.
@@ -134,7 +191,8 @@ namespace WizardWrx
 		/// </remarks>
 		protected GenericSingletonBase ( )
 		{
-		}	// private GenericSingletonBase, to suppress generation of a public parameterless constructor
+		}   // protected GenericSingletonBase, to suppress generation of a public parameterless constructor
+
 
 		/// <summary>
 		/// The static constructor initializes the private static 
@@ -155,8 +213,15 @@ namespace WizardWrx
 		/// </remarks>
 		static GenericSingletonBase ( )
 		{
+			// 	Use this as the second argument to Activator.CreateInstance, to
+			// 	tell it that a private constructor is acceptable, which meets a
+			// 	requirement of the Singleton design pattern.
+
+			const bool PRIVATE_CTOR_OK = true;
+
 			s_genTheOnlyInstance = ( T ) Activator.CreateInstance ( typeof ( T ) , PRIVATE_CTOR_OK );
 		}	// GenericSingletonBase
+
 
 		/// <summary>
 		/// This static member holds the reference to the one and only instance
@@ -169,6 +234,7 @@ namespace WizardWrx
 		/// cannot start until an instance exists.
 		/// </remarks>
 		protected static T s_genTheOnlyInstance;
+
 
 		/// <summary>
 		/// This implementation simplifies access to the single instance by way
@@ -187,6 +253,7 @@ namespace WizardWrx
 				return s_genTheOnlyInstance;
 			}	// public static T TheOnlyInstance get method
 		}   // public static T TheOnlyInstance, read only static property
+
 
 		/// <summary>
 		/// Implement the traditional GetTheSingleInstance method for obtaining
