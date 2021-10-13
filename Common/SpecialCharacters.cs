@@ -23,7 +23,7 @@
 
     Author:             David A. Gray
 
-    License:            Copyright (C) 2014-2018, David A. Gray 
+    License:            Copyright (C) 2014-2021, David A. Gray 
 						All rights reserved
 
                         Redistribution and use in source and binary forms, with
@@ -144,6 +144,11 @@
 						      At the moment, there are no analogoue string
                               representations of these characters, nor do I see
                               a need for them.
+
+	2021/10/13 8.0.170 DAG    This release incorporates two new character
+                              constants, SpecialCharacters.PLUS and
+                              SpecialCharacters.MINUS.
+
     ============================================================================
 */
 
@@ -557,6 +562,12 @@ namespace WizardWrx
 		public const char LINEFEED ='\n';
 
 		/// <summary>
+		/// Use this character anywhere in your code that requires a plus sign
+		/// that represents that symbol explicitly as a character.
+		/// </summary>
+		public const char MINUS = '-';
+
+		/// <summary>
 		/// The non-breaking space character doesn't print; although the Unicode
 		/// encoding treats it as a white space character, most other encodings,
 		/// including both Unicode and US-ASCII, do not.
@@ -614,6 +625,10 @@ namespace WizardWrx
 		/// <seealso cref="TAB_CHAR"/>
 		/// <seealso cref="UNDERSCORE_CHAR"/>
 		public const char PIPE_CHAR = '|';
+
+		/// Use this character anywhere in your code that requires a minus sign
+		/// that represents that symbol explicitly as a character.
+		public const char PLUS = '+';
 
 		/// <summary>
 		/// The question mark is another special character that is frequently

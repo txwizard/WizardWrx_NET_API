@@ -141,6 +141,7 @@
     <Compile Include="SysDateFormatters.cs" />
     <Compile Include="TextBlocks.cs" />
     <Compile Include="TimeDisplayFormatter.cs" />
+    <Compile Include="TimeZoneInfoExtensions.cs" />
     <Compile Include="TraceLogger.cs" />
     <Compile Include="UnconfiguredDLLSettings.cs" />
     <Compile Include="UnmanagedLibrary.cs" />

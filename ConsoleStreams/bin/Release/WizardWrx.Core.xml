@@ -9331,6 +9331,20 @@
             16:17:30
             </example>
         </member>
+        <member name="F:WizardWrx.SysDateFormatters.TZ_NAME_FULL">
+            <summary>
+            Specify this constant as the pfAbbreviateTZName argument value to
+            method GetDisplayTimeZone to explicitly elicit the default (legacy)
+            behavior of returning the system-defined (spelled out) time zone
+            name.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.SysDateFormatters.TZ_NAME_ABBR">
+            Specify this constant as the pfAbbreviateTZName argument value to
+            method GetDisplayTimeZone to elicit the new behavior of returning
+            the abbreviated time zone name generated from the system-defined
+            (spelled out) time zone name.
+        </member>
         <member name="M:WizardWrx.SysDateFormatters.FormatDateForShow(System.DateTime)">
             <summary>
             Use my standard format string for displaying date stamps in
@@ -9374,7 +9388,7 @@
             rendered according to constant STANDARD_DISPLAY_TIME_FORMAT.
             </returns>
         </member>
-        <member name="M:WizardWrx.SysDateFormatters.GetDisplayTimeZone(System.DateTime,System.String)">
+        <member name="M:WizardWrx.SysDateFormatters.GetDisplayTimeZone(System.DateTime,System.String,System.Boolean)">
             <summary>
             Given a DateTime and a system time zone ID string, return the
             appropriate text to display, depending on whether the specified time
@@ -9387,6 +9401,21 @@
             </param>
             <param name="pstrTimeZoneID">
             Specify a valid time zone ID string. Please see the Remarks.
+            </param>
+            <param name="pfAbbreviateTZName">
+            <para>
+            Specify TZ_NAME_ABBR (Boolean True) to cause the method to return
+            the abbreviated time zone name that it constructs from the full
+            (spelled out) name that is the system default.
+            </para>
+            <para>
+            You may also specify TZ_NAME_FULL to explicitly cause the full time
+            zone name to be returned.
+            </para>
+            <para>
+            If this argument is omitted, the full time zone name is returned, so
+            that this method is backwards compatible.
+            </para>
             </param>
             <returns>
             If the function succeeds, the return value is the appropriate string
@@ -9729,6 +9758,86 @@
             <returns>
             Array of strings, containing exactly one element, which contains
             the single input string.
+            </returns>
+        </member>
+        <member name="T:WizardWrx.TimeZoneInfoExtensions">
+            <summary>
+            Extend the sealed TimeZoneInfo class to support abbreviated time zone
+            names.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.TimeZoneInfoExtensions.AbbreviateDaylightName(System.TimeZoneInfo)">
+            <summary>
+            Get the abbreviated time zone Daylight Name.
+            </summary>
+            <param name="ptzi">
+            Specify the TimeZoneInfo object to process. This implicit paramteer
+            is supplied by the runtime when the extension method is called.
+            </param>
+            <returns>
+            The abbreviated name is constructed from the name specified on the
+            DaylightName property on the TimeZoneInfo object by extracting from
+            it the first letter of each word.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.TimeZoneInfoExtensions.AbbreviateDisplayName(System.TimeZoneInfo)">
+            <summary>
+            Get the abbreviated time zone Display Name.
+            </summary>
+            <param name="ptzi">
+            Specify the TimeZoneInfo object to process. This implicit paramteer
+            is supplied by the runtime when the extension method is called.
+            </param>
+            <returns>
+            The abbreviated name is constructed from the name specified on the
+            DisplayName property on the TimeZoneInfo object by extracting from
+            it the first letter of each word.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.TimeZoneInfoExtensions.AbbreviatedStandardName(System.TimeZoneInfo)">
+            <summary>
+            Get the abbreviated time zone Standard Name.
+            </summary>
+            <param name="ptzi">
+            Specify the TimeZoneInfo object to process. This implicit paramteer
+            is supplied by the runtime when the extension method is called.
+            </param>
+            <returns>
+            The abbreviated name is constructed from the name specified on the
+            StandardName property on the TimeZoneInfo object by extracting from
+            it the first letter of each word.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.TimeZoneInfoExtensions.AbbreviateAnyTZName(System.String)">
+            <summary>
+            Construct the abbreviated time zone name.
+            </summary>
+            <param name="pstrTimeZoneName">
+            This string specifies one of the three time zone name properties on
+            the TimeZoneInfo object that was passed into the method that called
+            it.
+            </param>
+            <returns>
+            <para>
+            The abbreviated name is constructed from the name specified on the
+            StandardName property on the TimeZoneInfo object by extracting from
+            it the first letter of each word.
+            </para>
+            <para>
+            Two special cases exist.
+            </para>
+            <list type="number">
+            <item>
+            Regional time zones (e .g., Mexico) display the region in
+            parentheses. The abbreviations enclose the first character of the
+            region name in parentheses.
+            </item>
+            <item>
+            Time zones that are known only by their UTC offsets have names like
+            "UTC+11" that are abbreviated as "U+11" by taking the plus character
+            and everything that follows it.
+            </item>
+            </list>
             </returns>
         </member>
     </members>

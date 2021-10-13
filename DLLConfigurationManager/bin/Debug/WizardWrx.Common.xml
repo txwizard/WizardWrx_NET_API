@@ -3816,6 +3816,12 @@
             <seealso cref="F:WizardWrx.SpecialStrings.STRING_SPLIT_CARRIAGE_RETURN"/>
             <seealso cref="F:WizardWrx.SpecialStrings.STRING_SPLIT_LINEFEED"/>
         </member>
+        <member name="F:WizardWrx.SpecialCharacters.MINUS">
+            <summary>
+            Use this character anywhere in your code that requires a plus sign
+            that represents that symbol explicitly as a character.
+            </summary>
+        </member>
         <member name="F:WizardWrx.SpecialCharacters.NONBREAKING_SPACE_CHAR">
             <summary>
             The non-breaking space character doesn't print; although the Unicode
@@ -3874,6 +3880,10 @@
             <seealso cref="F:WizardWrx.SpecialCharacters.SEMICOLON"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.TAB_CHAR"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.UNDERSCORE_CHAR"/>
+        </member>
+        <member name="F:WizardWrx.SpecialCharacters.PLUS">
+            Use this character anywhere in your code that requires a minus sign
+            that represents that symbol explicitly as a character.
         </member>
         <member name="F:WizardWrx.SpecialCharacters.QUESTION_MARK">
             <summary>

@@ -1,5 +1,18 @@
 ﻿# WizardWrx .NET API Change Log
 
+## 2021-10-13
+
+### WizardWrx.Common.dll, Version 8.0.170
+
+This release incorporates two new character constants, SpecialCharacters.PLUS
+and SpecialCharacters.MINUS.
+
+### WizardWrx.Core.dll, Version 8.0.252
+
+This release incorporates a new static class, TimeZoneInfoExtensions, which
+implements extension methods on the sealed TimeZoneInfo class that generate
+abbreviations from the display names.
+
 ## 2021-08-01
 
 ### WizardWrx.Core.dll, Version 8.0.250

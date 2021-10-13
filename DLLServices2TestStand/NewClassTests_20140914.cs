@@ -178,6 +178,12 @@
     2021/04/18 8.0.1389 DAG Test NameValueCollectionFromEmbbededList.
 
     2021/05/20 8.0.1413 DAG Extended tests of the StringFixups class.
+
+    2021/10/13 8.0.1460 DAG 1) Add SpecialCharacters.MINUS and PLUS to method
+                               SpecialCharactersExercises.
+
+                            2) Add tests of the new optioanl argument to method
+                               GetDisplayTimeZone to method UtilsExercises.
     ============================================================================
 */
 
@@ -1236,6 +1242,10 @@ namespace DLLServices2TestStand
             Console.WriteLine ( "    Public Constant SpecialCharacters.FULL_STOP             = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.FULL_STOP , ( int ) SpecialCharacters.FULL_STOP , ( ( int ) SpecialCharacters.FULL_STOP ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
             Console.WriteLine ( "    Public Constant SpecialCharacters.HASH_TAG              = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.HASH_TAG , ( int ) SpecialCharacters.HASH_TAG , ( ( int ) SpecialCharacters.HASH_TAG ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
             Console.WriteLine ( "    Public Constant SpecialCharacters.HYPHEN                = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.HYPHEN , ( int ) SpecialCharacters.HYPHEN , ( ( int ) SpecialCharacters.HYPHEN ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+
+            Console.WriteLine ( "    Public Constant SpecialCharacters.MINUS                 = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.MINUS , ( int ) SpecialCharacters.MINUS , ( ( int ) SpecialCharacters.MINUS ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( "    Public Constant SpecialCharacters.PLUS                  = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.PLUS , ( int ) SpecialCharacters.PLUS , ( ( int ) SpecialCharacters.PLUS ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+
             Console.WriteLine ( "    Public Constant SpecialCharacters.PARENTHESIS_LEFT      = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.PARENTHESIS_LEFT , ( int ) SpecialCharacters.PARENTHESIS_LEFT , ( ( int ) SpecialCharacters.PARENTHESIS_LEFT ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
             Console.WriteLine ( "    Public Constant SpecialCharacters.PARENTHESIS_RIGHT     = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.PARENTHESIS_RIGHT , ( int ) SpecialCharacters.PARENTHESIS_RIGHT , ( ( int ) SpecialCharacters.PARENTHESIS_RIGHT ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );			
             Console.WriteLine ( "    Public Constant SpecialCharacters.PERCENT_SIGN          = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.PERCENT_SIGN , ( int ) SpecialCharacters.PERCENT_SIGN , ( ( int ) SpecialCharacters.PERCENT_SIGN ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
@@ -1332,12 +1342,26 @@ namespace DLLServices2TestStand
             //  ----------------------------------------------------------------
 
 #if NET35
-            Console.WriteLine ( "{2}Current Local Time Zone for Machine {0} = {1}{2}" ,     // Message Template
-                Environment.MachineName ,                                                   // Format Item 0 = Machine Name
-                WizardWrx.SysDateFormatters.GetDisplayTimeZone (                                // Format Item 1 = Time Zone
-                    DateTime.Now ,                                                              // DateTime pdtmTestDate = Current time from clock
-                    TimeZoneInfo.Local.Id ) ,                                                   // string pstrTimeZoneID = ID of Local Machine time zone, per TimeZoneInfo
-                Environment.NewLine );                                                      // Format Item 2 = Newline, my way
+            Console.WriteLine ( "{2}Implicit Full Current Local Time Zone for Machine {0} = {1}{2}" ,   // Message Template
+                Environment.MachineName ,                                                               // Format Item 0 = Machine Name
+                SysDateFormatters.GetDisplayTimeZone (                                                  // Format Item 1 = Time Zone
+                    DateTime.Now ,                                                                      // DateTime pdtmTestDate = Current time from clock
+                    TimeZoneInfo.Local.Id ) ,                                                           // string pstrTimeZoneID = ID of Local Machine time zone, per TimeZoneInfo
+                Environment.NewLine );                                                                  // Format Item 2 = Newline, my way
+            Console.WriteLine ( "{2}Abbreviated Current Local Time Zone for Machine {0} = {1}{2}" ,     // Message Template
+                Environment.MachineName ,                                                               // Format Item 0 = Machine Name
+                SysDateFormatters.GetDisplayTimeZone (                                                  // Format Item 1 = Time Zone
+                    DateTime.Now ,                                                                      // DateTime pdtmTestDate = Current time from clock
+                    TimeZoneInfo.Local.Id ,                                                             // string pstrTimeZoneID = ID of Local Machine time zone, per TimeZoneInfo
+                    SysDateFormatters.TZ_NAME_ABBR ) ,                                                  // bool pfAbbreviateTZName = false (overridden as TRUE)
+                Environment.NewLine );                                                                  // Format Item 2 = Newline, my way
+            Console.WriteLine ( "{2}EXplicit Full Current Local Time Zone for Machine {0} = {1}{2}" ,   // Message Template
+                Environment.MachineName ,                                                               // Format Item 0 = Machine Name
+                SysDateFormatters.GetDisplayTimeZone (                                                  // Format Item 1 = Time Zone
+                    DateTime.Now ,                                                                      // DateTime pdtmTestDate = Current time from clock
+                    TimeZoneInfo.Local.Id ,                                                             // string pstrTimeZoneID = ID of Local Machine time zone, per TimeZoneInfo
+                    SysDateFormatters.TZ_NAME_FULL ) ,                                                  // bool pfAbbreviateTZName = false (overridden as FALSE to explicitly specify legacy behavior)
+                Environment.NewLine );                                                                  // Format Item 2 = Newline, my way
 #endif	// #if NET35
 
             {   // Constrain the scope of Microsoft.Win32.RegistryKey hK and string strTpl.

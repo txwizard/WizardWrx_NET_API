@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>This release incorporates a documentation update of class GenericSingletonBase. . As always, it also incorporates the current versions of its dependent libraries and their dependents.</releaseNotes>
+	    <releaseNotes>This release incorporates a new static class, TimeZoneInfoExtensions, which implements extension methods on the sealed TimeZoneInfo class that generate abbreviations from the display names. As always, it also incorporates the current versions of its dependent libraries and their dependents.</releaseNotes>
     	<copyright>$copyright$</copyright>
     	<tags>Constants Arrays RegExp FileInfo Strings Singleton</tags>
 	</metadata>

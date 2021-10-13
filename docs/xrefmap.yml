@@ -15116,6 +15116,12 @@ references:
   commentId: F:WizardWrx.SpecialCharacters.LINEFEED
   fullName: WizardWrx.SpecialCharacters.LINEFEED
   nameWithType: SpecialCharacters.LINEFEED
+- uid: WizardWrx.SpecialCharacters.MINUS
+  name: MINUS
+  href: api/WizardWrx.SpecialCharacters.html#WizardWrx_SpecialCharacters_MINUS
+  commentId: F:WizardWrx.SpecialCharacters.MINUS
+  fullName: WizardWrx.SpecialCharacters.MINUS
+  nameWithType: SpecialCharacters.MINUS
 - uid: WizardWrx.SpecialCharacters.NONBREAKING_SPACE_CHAR
   name: NONBREAKING_SPACE_CHAR
   href: api/WizardWrx.SpecialCharacters.html#WizardWrx_SpecialCharacters_NONBREAKING_SPACE_CHAR
@@ -15152,6 +15158,12 @@ references:
   commentId: F:WizardWrx.SpecialCharacters.PIPE_CHAR
   fullName: WizardWrx.SpecialCharacters.PIPE_CHAR
   nameWithType: SpecialCharacters.PIPE_CHAR
+- uid: WizardWrx.SpecialCharacters.PLUS
+  name: PLUS
+  href: api/WizardWrx.SpecialCharacters.html#WizardWrx_SpecialCharacters_PLUS
+  commentId: F:WizardWrx.SpecialCharacters.PLUS
+  fullName: WizardWrx.SpecialCharacters.PLUS
+  nameWithType: SpecialCharacters.PLUS
 - uid: WizardWrx.SpecialCharacters.QUESTION_MARK
   name: QUESTION_MARK
   href: api/WizardWrx.SpecialCharacters.html#WizardWrx_SpecialCharacters_QUESTION_MARK
@@ -16522,12 +16534,12 @@ references:
   isSpec: "True"
   fullName: WizardWrx.SysDateFormatters.FormatTimeForShow
   nameWithType: SysDateFormatters.FormatTimeForShow
-- uid: WizardWrx.SysDateFormatters.GetDisplayTimeZone(System.DateTime,System.String)
-  name: GetDisplayTimeZone(DateTime, String)
-  href: api/WizardWrx.SysDateFormatters.html#WizardWrx_SysDateFormatters_GetDisplayTimeZone_System_DateTime_System_String_
-  commentId: M:WizardWrx.SysDateFormatters.GetDisplayTimeZone(System.DateTime,System.String)
-  fullName: WizardWrx.SysDateFormatters.GetDisplayTimeZone(System.DateTime, System.String)
-  nameWithType: SysDateFormatters.GetDisplayTimeZone(DateTime, String)
+- uid: WizardWrx.SysDateFormatters.GetDisplayTimeZone(System.DateTime,System.String,System.Boolean)
+  name: GetDisplayTimeZone(DateTime, String, Boolean)
+  href: api/WizardWrx.SysDateFormatters.html#WizardWrx_SysDateFormatters_GetDisplayTimeZone_System_DateTime_System_String_System_Boolean_
+  commentId: M:WizardWrx.SysDateFormatters.GetDisplayTimeZone(System.DateTime,System.String,System.Boolean)
+  fullName: WizardWrx.SysDateFormatters.GetDisplayTimeZone(System.DateTime, System.String, System.Boolean)
+  nameWithType: SysDateFormatters.GetDisplayTimeZone(DateTime, String, Boolean)
 - uid: WizardWrx.SysDateFormatters.GetDisplayTimeZone*
   name: GetDisplayTimeZone
   href: api/WizardWrx.SysDateFormatters.html#WizardWrx_SysDateFormatters_GetDisplayTimeZone_
@@ -16719,6 +16731,18 @@ references:
   commentId: F:WizardWrx.SysDateFormatters.STANDARD_DISPLAY_TIME_FORMAT
   fullName: WizardWrx.SysDateFormatters.STANDARD_DISPLAY_TIME_FORMAT
   nameWithType: SysDateFormatters.STANDARD_DISPLAY_TIME_FORMAT
+- uid: WizardWrx.SysDateFormatters.TZ_NAME_ABBR
+  name: TZ_NAME_ABBR
+  href: api/WizardWrx.SysDateFormatters.html#WizardWrx_SysDateFormatters_TZ_NAME_ABBR
+  commentId: F:WizardWrx.SysDateFormatters.TZ_NAME_ABBR
+  fullName: WizardWrx.SysDateFormatters.TZ_NAME_ABBR
+  nameWithType: SysDateFormatters.TZ_NAME_ABBR
+- uid: WizardWrx.SysDateFormatters.TZ_NAME_FULL
+  name: TZ_NAME_FULL
+  href: api/WizardWrx.SysDateFormatters.html#WizardWrx_SysDateFormatters_TZ_NAME_FULL
+  commentId: F:WizardWrx.SysDateFormatters.TZ_NAME_FULL
+  fullName: WizardWrx.SysDateFormatters.TZ_NAME_FULL
+  nameWithType: SysDateFormatters.TZ_NAME_FULL
 - uid: WizardWrx.TextBlocks
   name: TextBlocks
   href: api/WizardWrx.TextBlocks.html
@@ -16909,3 +16933,48 @@ references:
   isSpec: "True"
   fullName: WizardWrx.TextBlocks.Suffix
   nameWithType: TextBlocks.Suffix
+- uid: WizardWrx.TimeZoneInfoExtensions
+  name: TimeZoneInfoExtensions
+  href: api/WizardWrx.TimeZoneInfoExtensions.html
+  commentId: T:WizardWrx.TimeZoneInfoExtensions
+  fullName: WizardWrx.TimeZoneInfoExtensions
+  nameWithType: TimeZoneInfoExtensions
+- uid: WizardWrx.TimeZoneInfoExtensions.AbbreviateDaylightName(System.TimeZoneInfo)
+  name: AbbreviateDaylightName(TimeZoneInfo)
+  href: api/WizardWrx.TimeZoneInfoExtensions.html#WizardWrx_TimeZoneInfoExtensions_AbbreviateDaylightName_System_TimeZoneInfo_
+  commentId: M:WizardWrx.TimeZoneInfoExtensions.AbbreviateDaylightName(System.TimeZoneInfo)
+  fullName: WizardWrx.TimeZoneInfoExtensions.AbbreviateDaylightName(System.TimeZoneInfo)
+  nameWithType: TimeZoneInfoExtensions.AbbreviateDaylightName(TimeZoneInfo)
+- uid: WizardWrx.TimeZoneInfoExtensions.AbbreviateDaylightName*
+  name: AbbreviateDaylightName
+  href: api/WizardWrx.TimeZoneInfoExtensions.html#WizardWrx_TimeZoneInfoExtensions_AbbreviateDaylightName_
+  commentId: Overload:WizardWrx.TimeZoneInfoExtensions.AbbreviateDaylightName
+  isSpec: "True"
+  fullName: WizardWrx.TimeZoneInfoExtensions.AbbreviateDaylightName
+  nameWithType: TimeZoneInfoExtensions.AbbreviateDaylightName
+- uid: WizardWrx.TimeZoneInfoExtensions.AbbreviateDisplayName(System.TimeZoneInfo)
+  name: AbbreviateDisplayName(TimeZoneInfo)
+  href: api/WizardWrx.TimeZoneInfoExtensions.html#WizardWrx_TimeZoneInfoExtensions_AbbreviateDisplayName_System_TimeZoneInfo_
+  commentId: M:WizardWrx.TimeZoneInfoExtensions.AbbreviateDisplayName(System.TimeZoneInfo)
+  fullName: WizardWrx.TimeZoneInfoExtensions.AbbreviateDisplayName(System.TimeZoneInfo)
+  nameWithType: TimeZoneInfoExtensions.AbbreviateDisplayName(TimeZoneInfo)
+- uid: WizardWrx.TimeZoneInfoExtensions.AbbreviateDisplayName*
+  name: AbbreviateDisplayName
+  href: api/WizardWrx.TimeZoneInfoExtensions.html#WizardWrx_TimeZoneInfoExtensions_AbbreviateDisplayName_
+  commentId: Overload:WizardWrx.TimeZoneInfoExtensions.AbbreviateDisplayName
+  isSpec: "True"
+  fullName: WizardWrx.TimeZoneInfoExtensions.AbbreviateDisplayName
+  nameWithType: TimeZoneInfoExtensions.AbbreviateDisplayName
+- uid: WizardWrx.TimeZoneInfoExtensions.AbbreviatedStandardName(System.TimeZoneInfo)
+  name: AbbreviatedStandardName(TimeZoneInfo)
+  href: api/WizardWrx.TimeZoneInfoExtensions.html#WizardWrx_TimeZoneInfoExtensions_AbbreviatedStandardName_System_TimeZoneInfo_
+  commentId: M:WizardWrx.TimeZoneInfoExtensions.AbbreviatedStandardName(System.TimeZoneInfo)
+  fullName: WizardWrx.TimeZoneInfoExtensions.AbbreviatedStandardName(System.TimeZoneInfo)
+  nameWithType: TimeZoneInfoExtensions.AbbreviatedStandardName(TimeZoneInfo)
+- uid: WizardWrx.TimeZoneInfoExtensions.AbbreviatedStandardName*
+  name: AbbreviatedStandardName
+  href: api/WizardWrx.TimeZoneInfoExtensions.html#WizardWrx_TimeZoneInfoExtensions_AbbreviatedStandardName_
+  commentId: Overload:WizardWrx.TimeZoneInfoExtensions.AbbreviatedStandardName
+  isSpec: "True"
+  fullName: WizardWrx.TimeZoneInfoExtensions.AbbreviatedStandardName
+  nameWithType: TimeZoneInfoExtensions.AbbreviatedStandardName

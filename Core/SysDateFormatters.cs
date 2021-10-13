@@ -36,7 +36,7 @@
 
     Author:             David A. Gray
 
-    License:            Copyright (C) 2012-2017, David A. Gray. 
+    License:            Copyright (C) 2012-2021, David A. Gray. 
 						All rights reserved.
 
                         Redistribution and use in source and binary forms, with
@@ -145,6 +145,12 @@
 	2017/07/16 7.0     DAG    Replace references to string.empty, which is not a
                               true constant, with SpecialStrings.EMPTY_STRING,
                               which is one.
+
+    2021/10/13 8.0.252 DAG    Add an optional Boolean flag to GetDisplayTimeZone
+                              that causes it to leverage the new TimeZoneInfo
+                              extension methods defined in sibling static class
+                              TimeZoneInfoExtensions to render abbreviated time
+                              zone names.
     ============================================================================
 */
 
@@ -197,7 +203,6 @@ namespace WizardWrx
             @"^ttt"
         };  // public static readonly string [ ] RSD_TOKENS
 
-
         /// <summary>
         /// Apply the following format to a date: YYYY/MM/DD
         /// 
@@ -209,7 +214,6 @@ namespace WizardWrx
         /// </summary>
         public const string RFD_YYYY_MM_DD = @"^YYYY/^MM/^DD";
 
-
         /// <summary>
         /// Apply the following format to a date: MM/DD/YY
         /// 
@@ -220,7 +224,6 @@ namespace WizardWrx
         /// </summary>
         public const string RFD_MM_DD_YY = @"^MM/^DD/^YY";
 
-
         /// <summary>
         /// Apply the following format to a date: MM/DD/YYYY
         /// 
@@ -230,7 +233,6 @@ namespace WizardWrx
         /// and the month and day have leading zeros if either is less than 10.
         /// </summary>
         public const string RFD_MM_DD_YYYY = @"^MM/^DD/^YYYY";
-
 
         /// <summary>
         /// Apply the following format to a date: DD/MM/YYYY
@@ -243,7 +245,6 @@ namespace WizardWrx
         /// and the month and day have leading zeros if either is less than 10.
         /// </summary>
         public const string RFD_DD_MM_YYYY = @"^DD/^MM/^YYYY";
-
 
         /// <summary>
         /// Apply the following format to a time: hh:mm
@@ -261,7 +262,6 @@ namespace WizardWrx
         /// </summary>
         public const string RFD_HH_MM = @"^hh:^mm";
 
-
         /// <summary>
         /// Apply the following format to a time: hh:mm:ss
         /// 
@@ -277,7 +277,6 @@ namespace WizardWrx
         /// leading zeros if any of them is less than 10.
         /// </summary>
         public const string RFD_HH_MM_SS = @"^hh:^mm:^ss";
-
 
         /// <summary>
         /// Apply the following format to a time: hh:mm:ss.ttt
@@ -299,7 +298,6 @@ namespace WizardWrx
         /// </summary>
         public const string RFD_HH_MM_SS_TTT = @"^hh:^mm:^ss.^ttt";
 
-
         /// <summary>
         /// Apply the following format to a date and time: YYYY/MM/DD hh:mm:ss
         /// 
@@ -314,7 +312,6 @@ namespace WizardWrx
         /// of them is less than 10.
         /// </summary>
         public const string RFD_YYYY_MM_DD_HH_MM_SS = @"^YYYY/^MM/^DD ^hh:^mm:^ss";
-
 
         /// <summary>
         /// Apply the following format to a date and time: YYYY/MM/DD hh:mm:ss.ttt
@@ -334,7 +331,6 @@ namespace WizardWrx
         /// </summary>
         public const string RFD_YYYY_MM_DD_HH_MM_SS_TTT = @"^YYYY/^MM/^DD ^hh:^mm:^ss.^ttt";
 
-
         /// <summary>
         /// Apply the following format to a date: WWW DD/MM/YYYY
         /// 
@@ -352,7 +348,6 @@ namespace WizardWrx
         /// </summary>
         public const string RFD_WWW_DD_MM_YYYY = @"^WWW ^DD/^MM/^YYYY";
 
-        
         /// <summary>
         /// Apply the following format to a date: WWW DD/MM/YYYY
         /// 
@@ -386,7 +381,6 @@ namespace WizardWrx
         /// </summary>
         public const string RFD_WW_DD_MM_YYYY = @"^WW ^DD/^MM/^YYYY";
 
-
         /// <summary>
         /// Apply the following format to a date: WW DD/MM/YYYY
         /// 
@@ -402,7 +396,6 @@ namespace WizardWrx
         /// and the month and day have leading zeros if either is less than 10.
         /// </summary>
         public const string RFD_WW_MM_DD_YYYY = @"^WW ^MM/^DD/^YYYY";
-
 
         /// <summary>
         /// Apply the following format to a date: WWWW DD/MM/YYYY
@@ -421,7 +414,6 @@ namespace WizardWrx
         /// </summary>
         public const string RFD_WWWW_DD_MM_YYYY = @"^WWWW, ^DD/^MM/^YYYY";
 
-
         /// <summary>
         /// Apply the following format to a date: WWWW DD/MM/YYYY
         /// 
@@ -436,7 +428,6 @@ namespace WizardWrx
         /// and the month and day have leading zeros if either is less than 10.
         /// </summary>
         public const string RFD_WWWW_MM_DD_YYYY = @"^WWWW, ^MM/^DD/^YYYY";
-
 
         /// <summary>
         /// Apply the following format to a date and time: YYYYMMDD_hhmmss
@@ -453,7 +444,6 @@ namespace WizardWrx
         /// </summary>
         public const string RFDYYYYMMDD_HHMMSS = @"^YYYY^MM^DD_^hh^mm^ss";
 
-
         /// <summary>
         /// Apply the following format to a date and time: YYYYMMDD
         /// 
@@ -468,7 +458,6 @@ namespace WizardWrx
         /// </summary>
         public const string RFDYYYYMMDD = @"^YYYY^MM^DD";
 
-
         /// <summary>
         /// Apply the following format to a date and time: hhmmss
         /// 
@@ -482,6 +471,7 @@ namespace WizardWrx
         /// The hour, minute, and second have leading zeros if any of them is
         /// less than 10.
         /// </summary>
+
         public const string RFDHHMMSS = @"^hh^mm^ss";
 		/// <summary>
 		/// I use this with my SysDateFormatters class to format a date (sans
@@ -521,7 +511,21 @@ namespace WizardWrx
 		/// 16:17:30
 		/// </example>
 		public const string STANDARD_DISPLAY_TIME_FORMAT = SysDateFormatters.RFD_HH_MM_SS;
-		#endregion	// Public constants define the substitution tokens and a selection of useful format strings.
+
+        /// <summary>
+        /// Specify this constant as the pfAbbreviateTZName argument value to
+        /// method GetDisplayTimeZone to explicitly elicit the default (legacy)
+        /// behavior of returning the system-defined (spelled out) time zone
+        /// name.
+        /// </summary>
+        public const bool TZ_NAME_FULL = false;
+
+        /// Specify this constant as the pfAbbreviateTZName argument value to
+        /// method GetDisplayTimeZone to elicit the new behavior of returning
+        /// the abbreviated time zone name generated from the system-defined
+        /// (spelled out) time zone name.
+        public const bool TZ_NAME_ABBR = true;
+        #endregion	// Public constants define the substitution tokens and a selection of useful format strings.
 
 
 		#region Although static, this class requires several tables that are initialized at compile time.
@@ -751,6 +755,21 @@ namespace WizardWrx
         /// <param name="pstrTimeZoneID">
         /// Specify a valid time zone ID string. Please see the Remarks.
         /// </param>
+        /// <param name="pfAbbreviateTZName">
+        /// <para>
+        /// Specify TZ_NAME_ABBR (Boolean True) to cause the method to return
+        /// the abbreviated time zone name that it constructs from the full
+        /// (spelled out) name that is the system default.
+        /// </para>
+        /// <para>
+        /// You may also specify TZ_NAME_FULL to explicitly cause the full time
+        /// zone name to be returned.
+        /// </para>
+        /// <para>
+        /// If this argument is omitted, the full time zone name is returned, so
+        /// that this method is backwards compatible.
+        /// </para>
+        /// </param>
         /// <returns>
         /// If the function succeeds, the return value is the appropriate string
         /// to display for the given time. Otherwise, the empty string is
@@ -769,7 +788,8 @@ namespace WizardWrx
         /// <see cref="GetSystemTimeZoneInfo"/>
         public static string GetDisplayTimeZone (
             DateTime pdtmTestDate ,
-            string pstrTimeZoneID )
+            string pstrTimeZoneID ,
+            bool pfAbbreviateTZName = false )
         {
             if ( pdtmTestDate == DateTime.MinValue || pdtmTestDate == DateTime.MaxValue )
             {   // Insufficient data available
@@ -778,9 +798,19 @@ namespace WizardWrx
             else
             {
                 TimeZoneInfo tzinfo = GetSystemTimeZoneInfo ( pstrTimeZoneID );
-                return tzinfo.IsDaylightSavingTime ( pdtmTestDate ) ?
-                    tzinfo.DaylightName :
-                    tzinfo.StandardName;
+
+                if ( pfAbbreviateTZName )
+                {   // Use the new TimeZoneInfo extension methods to render abbreviated names.
+                    return tzinfo.IsDaylightSavingTime ( pdtmTestDate ) ?
+                        tzinfo.AbbreviateDaylightName ( ) :
+                        tzinfo.AbbreviatedStandardName ( );
+                }   // TRUE (Render abbreviated time zone names.) block, if ( pfAbbreviateTZName )
+                else
+                {   // Render the default time zone display names, which are spelled out. This is the legacy behavior.
+                    return tzinfo.IsDaylightSavingTime ( pdtmTestDate ) ?
+                        tzinfo.DaylightName :
+                        tzinfo.StandardName;
+                }   // TRUE (Render fully spelled out time zone names.) block, if ( pfAbbreviateTZName )
             }   // FALSE (desired outcome) block, if ( pdtmTestDate == DateTime.MinValue || pdtmTestDate == DateTime.MaxValue || string.IsNullOrEmpty(pstrTimeZoneID) )
         }   // public static string GetDisplayTimeZone
 
