@@ -19,7 +19,7 @@ namespace WizardWrx.Core.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -178,6 +178,24 @@ namespace WizardWrx.Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Environment string, {0}, used in the definition of ErrorLogFile, {1}, is undefined..
+        /// </summary>
+        internal static string ERRMSG_ENVIRONMENT_TOKEN_UNDEFINED {
+            get {
+                return ResourceManager.GetString("ERRMSG_ENVIRONMENT_TOKEN_UNDEFINED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Can&apos;t acquire the EnvTokenExpander..
+        /// </summary>
+        internal static string ERRMSG_ENVIRONMENT_UNAVAILABLE {
+            get {
+                return ResourceManager.GetString("ERRMSG_ENVIRONMENT_UNAVAILABLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to An {0} Exception was caught while attempting to define a switch named {1} with a default value of {2}..
         /// </summary>
         internal static string ERRMSG_EXCEPTION_IN_DEFINE_NEW_SWITCH {
@@ -201,6 +219,15 @@ namespace WizardWrx.Core.Properties {
         internal static string ERRMSG_FROM_THROWN_EXCEPTION {
             get {
                 return ResourceManager.GetString("ERRMSG_FROM_THROWN_EXCEPTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ContainsEnvToken method cannot be called twice while the EnvTokenExpander is frozen. Extract the token, or thaw the EnvTokenExpander..
+        /// </summary>
+        internal static string ERRMSG_ILLEGAL_METHOD_CALL {
+            get {
+                return ResourceManager.GetString("ERRMSG_ILLEGAL_METHOD_CALL", resourceCulture);
             }
         }
         

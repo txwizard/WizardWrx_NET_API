@@ -2826,6 +2826,149 @@
             line.
             </summary>
         </member>
+        <member name="T:WizardWrx.Core.EnvTokenExpander">
+            <summary>
+            This class is implemented as a very lean Singleton.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.Core.EnvTokenExpander.ENV_STR_DLM">
+            <summary>
+            For reference, the character that delminits an environment string
+            token is exposed as a public constant.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.Core.EnvTokenExpander.GetTokenExpander">
+            <summary>
+            All classes that want to call methods on this object must first call
+            this method.
+            </summary>
+            <returns>
+            A reference to the single instance of this object, which all
+            consumers share.
+            </returns>
+            <remarks>
+            This pseudo-constructor must be declared static. Its only real job
+            is to return a reference to itself, personified as _TheInstance. 
+            </remarks>
+        </member>
+        <member name="M:WizardWrx.Core.EnvTokenExpander.Acquire">
+            <summary>
+            Rather than have the caller lock the object, I provide this pair of
+            methods that create a similar effect, by causing a competing caller
+            of an object in a Frozen state to told to wait its turn.
+            </summary>
+            <returns>
+            TRUE, unless the object is already frozen by another thread.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.Core.EnvTokenExpander.ContainsEnvToken(System.String)">
+            <summary>
+            Returns TRUE if the input string contains at least one environment
+            string token.
+            </summary>
+            <param name="pstrIn">
+            String to evaluate for presence of environment string tokens.
+            </param>
+            <returns>
+            TRUE if the string contains at least one environment string token.
+            Otherwise return FALSE.
+            </returns>
+            <remarks>
+            An environment string token is defined as a substring delimited
+            by '%' charagers, which are symbolically represented by
+            ENV_STR_DLM in this class.
+            
+            Because this is a public method of a singleton, it cannot be marked
+            Static. If it were so marked, it would lose access to the private
+            storage that motivated me to finally sit down and figure out how to
+            implement the Singleton pattern in C#.
+            </remarks>
+        </member>
+        <member name="M:WizardWrx.Core.EnvTokenExpander.ExtractEnvToken(System.String)">
+            <summary>
+            If the input string contains an enviroment token, extract and return
+            it.
+            </summary>
+            <param name="pstrIn">
+            String from which to extract an environment variable token.
+            </param>
+            <returns>
+            String containing the token, minus its delimiters.
+            </returns>
+            <remarks>
+            An environment string token is defined as a substring delimited
+            by '%' charagers, which are symbolically represented by
+            ENV_STR_DLM in this class.
+            
+            Since this method returns the string without its delimiters, pass it
+            to static method TokenizeEnvVarName to convert it to a string that
+            can be passed into a Replace method, to replace the token with its
+            value, which you got by calling Environment.GetEnvironmentVariable.
+            
+            Because this is a public method of a singleton, it cannot be marked
+            Static. If it were so marked, it would lose access to the private
+            storage that motivated me to finally sit down and figure out how to
+            implement the Singleton pattern in C#.
+            </remarks>
+        </member>
+        <member name="M:WizardWrx.Core.EnvTokenExpander.Free">
+            <summary>
+            Rather than have the caller lock the object, I provide this pair of
+            methods that create a similar effect, by causing a competing caller
+            of an object in a Frozen state to be thrown and exception.
+            </summary>
+            <returns>
+            Always True.
+            </returns>
+        </member>
+        <member name="P:WizardWrx.Core.EnvTokenExpander.Busy">
+            <summary>
+            Returns TRUE if the EnvTokenExpander is Busy, which means that a thread
+            has acquired it, by calling its Acquire method.
+            </summary>
+            <remarks>
+            By acquiring the EnvTokenExpander, a thread can shave a tad off the
+            processing needed to find the first occurrance of a token, in order
+            to extract it, if it intends to call ContainsEnvToken before calling
+            ExtractEnvToken.
+            </remarks>
+        </member>
+        <member name="M:WizardWrx.Core.EnvTokenExpander.ExpandEnvironmentTokens(System.String,System.String)">
+            <summary>
+            Given a string that contains one or more environment string tokens,
+            expand the tokens, returning the resulting string.
+            </summary>
+            <param name="pstrIn">
+            String to parse and expand environment string tokens.
+            </param>
+            <param name="pstrDefault">
+            Optional string to return as default if an undefined (empty)
+            environment variable is encountered in input string
+            <paramref name="pstrIn"/>.
+            </param>
+            <returns>
+            The return value is string <paramref name="pstrIn"/> with its
+            environment tokens expanded.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.Core.EnvTokenExpander.TokenizeEnvVarName(System.String)">
+            <summary>
+            Given a string, assumed to be the name of an environment string,
+            return it with the expected escape ("quote") characters appended to
+            both ends.
+            </summary>
+            <param name="pstrIn">
+            String to turn into an environment variable token.
+            </param>
+            <returns>
+            String pstrIn, with the escape characters (%) appended to both ends.
+            </returns>
+            <remarks>
+            Use this method to turn the output of ExtractEnvToken into a string
+            that can be fed to a Replace method to substitute the value of the
+            environment variable for its token.
+            </remarks>
+        </member>
         <member name="T:WizardWrx.Core.PropertyDefaults">
             <summary>
             Expose the AppSettingsSection associated with this DLL. 
@@ -3905,6 +4048,16 @@
               Looks up a localized string similar to {0}{3}    Input Value   = {1}{3}    Expected Type = {2}{3}.
             </summary>
         </member>
+        <member name="P:WizardWrx.Core.Properties.Resources.ERRMSG_ENVIRONMENT_TOKEN_UNDEFINED">
+            <summary>
+              Looks up a localized string similar to Environment string, {0}, used in the definition of ErrorLogFile, {1}, is undefined..
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Core.Properties.Resources.ERRMSG_ENVIRONMENT_UNAVAILABLE">
+            <summary>
+              Looks up a localized string similar to Can&apos;t acquire the EnvTokenExpander..
+            </summary>
+        </member>
         <member name="P:WizardWrx.Core.Properties.Resources.ERRMSG_EXCEPTION_IN_DEFINE_NEW_SWITCH">
             <summary>
               Looks up a localized string similar to An {0} Exception was caught while attempting to define a switch named {1} with a default value of {2}..
@@ -3918,6 +4071,11 @@
         <member name="P:WizardWrx.Core.Properties.Resources.ERRMSG_FROM_THROWN_EXCEPTION">
             <summary>
               Looks up a localized string similar to Message from Exception Thrown and Logged: {0}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Core.Properties.Resources.ERRMSG_ILLEGAL_METHOD_CALL">
+            <summary>
+              Looks up a localized string similar to ContainsEnvToken method cannot be called twice while the EnvTokenExpander is frozen. Extract the token, or thaw the EnvTokenExpander..
             </summary>
         </member>
         <member name="P:WizardWrx.Core.Properties.Resources.ERRMSG_INTERNAL_ERROR_UNSUPP_ALG">

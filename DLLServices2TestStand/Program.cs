@@ -299,6 +299,8 @@
                             types of Arrays.
 
 	2021/07/11 8.0.1453 DAG Exercise the new Base64 conversion methods.
+
+    2021/10/19 8.0.1463 DAG Implement code to exercise class EnvTokenExpander.
     ============================================================================
 */
 
@@ -654,8 +656,14 @@ namespace DLLServices2TestStand
                 }
                 else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_LIST_OBJECT_PROPERTIES )
                 {
-                    EnumerateObjectProperties ( s_smTheApp );
-                    EnumerateObjectProperties ( s_smTheApp.AppExceptionLogger , 4 );
+                    EnumerateObjectProperties ( 
+                        s_smTheApp ,
+                        MagicNumbers.ZERO ,
+                        nameof ( s_smTheApp ) );
+                    EnumerateObjectProperties (
+                        s_smTheApp.AppExceptionLogger ,
+                        MagicNumbers.PLUS_FOUR ,
+                        nameof ( s_smTheApp.AppExceptionLogger ) );
                 }
                 else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_EXERCISE_TRUNCATEVALUETOONELINE )
                 {
@@ -676,16 +684,23 @@ namespace DLLServices2TestStand
                         APPEND_LINEFEED ,
                         @"EnumerateDependentAssemblies" );
 
-                    EnumerateObjectProperties ( s_smTheApp );
+                    EnumerateObjectProperties (
+                        s_smTheApp ,
+                        MagicNumbers.ZERO ,
+                        nameof ( s_smTheApp ) );
                     PauseForPictures (
                         APPEND_LINEFEED ,
                         @"EnumerateObjectProperties test 1 of 2" );
 
-                    EnumerateObjectProperties ( s_smTheApp.AppExceptionLogger , 4 );
+                    EnumerateObjectProperties (
+                        s_smTheApp.AppExceptionLogger ,
+                        MagicNumbers.PLUS_FOUR ,
+                        nameof ( s_smTheApp.AppExceptionLogger ) );
                     PauseForPictures (
                         APPEND_LINEFEED ,
                         @"EnumerateObjectProperties test 2 of 2" );
 
+                    ExerciseEnvTokenExpander ( );
                     Exercise_TruncateValueToOneLine ( );
                     PauseForPictures (
                         APPEND_LINEFEED ,
@@ -1328,27 +1343,28 @@ namespace DLLServices2TestStand
 
         private static void EnumerateObjectProperties (
             object pobj ,
-            int pintLeftPadding = MagicNumbers.ZERO )
+            int pintLeftPadding = MagicNumbers.ZERO ,
+            string pstrObjectName = null )
         {
             if ( pintLeftPadding == MagicNumbers.ZERO )
             {
                 ObjectPropertyEnumerators.ListObjectProperties (
-                    nameof ( pobj ) ,                                               // string                         pstrNameOfObject
-                    pobj );                                                         // System.Reflection.BindingFlags penmbindingFlags
+                    pstrObjectName ,                                            // string                         pstrNameOfObject
+                    pobj );                                                     // System.Reflection.BindingFlags penmbindingFlags
                 ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues (
-                    nameof ( pobj ) ,                                               // string                         pstrNameOfObject
-                    pobj );                                                         // System.Reflection.BindingFlags penmbindingFlags
+                    pstrObjectName ,                                            // string                         pstrNameOfObject
+                    pobj );                                                     // System.Reflection.BindingFlags penmbindingFlags
             }   // TRUE (degenerate case, no left padding) block, if ( pintLeftPadding == MagicNumbers.ZERO )
             else
             {
                 ObjectPropertyEnumerators.ListObjectProperties (
-                    nameof ( pobj ) ,                                               // string                         pstrNameOfObject
-                    pobj ,                                                          // System.Reflection.BindingFlags penmbindingFlags
-                    pintLeftPadding );                                              // int                            pintLeftPadding
+                    pstrObjectName ,                                            // string                         pstrNameOfObject
+                    pobj ,                                                      // System.Reflection.BindingFlags penmbindingFlags
+                    pintLeftPadding );                                          // int                            pintLeftPadding
                 ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues (
-                    nameof ( pobj ) ,                                               // string                         pstrNameOfObject
-                    pobj ,                                                          // System.Reflection.BindingFlags penmbindingFlags
-                    pintLeftPadding );                                              // int                            pintLeftPadding
+                    pstrObjectName ,                                            // string                         pstrNameOfObject
+                    pobj ,                                                      // System.Reflection.BindingFlags penmbindingFlags
+                    pintLeftPadding );                                          // int                            pintLeftPadding
             }   // FALSE (standard case, left padding specified)) block, if ( pintLeftPadding == MagicNumbers.ZERO )
         }   // private static void EnumerateObjectProperties
 
@@ -1595,6 +1611,67 @@ namespace DLLServices2TestStand
             daOfEntryAsm.DestroyDependents ( );
         }   // ExerciseDynamicExceptionReporting
 
+
+        private static void ExerciseEnvTokenExpander ( )
+        {
+            const string STRING_CONTAINS_VALID_TOKEN = @"%APPDATA%\WizardWrx\wwBldNbrMgr.LOG";
+            const string STRING_CONTAINS_UNDEFINED_TOKEN= @"%APPLICATION_DATA%\WizardWrx\wwBldNbrMgr.LOG";
+            const string STRING_IS_DEVOID_OF_TOKENS = @"FooBar.LOG";
+
+            const string ENVIRONMENT_STRING_NAME = @"APPLICATION_DATA";
+
+            Console.WriteLine ( $"{Environment.NewLine}ExerciseEnvTokenExpander Begin:{Environment.NewLine}" );
+
+            EnvTokenExpander envTokenExpander = EnvTokenExpander.GetTokenExpander ( );
+
+            Console.WriteLine ( $"    Input String = {STRING_CONTAINS_VALID_TOKEN}{Environment.NewLine}    ContainsEnvToken = {envTokenExpander.ContainsEnvToken ( STRING_CONTAINS_VALID_TOKEN )}{Environment.NewLine}" );
+            Console.WriteLine ( $"    Input String = {STRING_CONTAINS_UNDEFINED_TOKEN}{Environment.NewLine}    ContainsEnvToken = {envTokenExpander.ContainsEnvToken ( STRING_CONTAINS_UNDEFINED_TOKEN )}{Environment.NewLine}" );
+            Console.WriteLine ( $"    Input String = {STRING_IS_DEVOID_OF_TOKENS}{Environment.NewLine}    ContainsEnvToken = {envTokenExpander.ContainsEnvToken ( STRING_IS_DEVOID_OF_TOKENS )}{Environment.NewLine}" );
+
+            Console.WriteLine ( $"    Input String = {STRING_CONTAINS_VALID_TOKEN}{Environment.NewLine}    ExtractEnvToken = {envTokenExpander.ContainsEnvToken ( STRING_CONTAINS_VALID_TOKEN )}{Environment.NewLine}" );
+            Console.WriteLine ( $"    Input String = {STRING_CONTAINS_UNDEFINED_TOKEN}{Environment.NewLine}    ExtractEnvToken = {envTokenExpander.ContainsEnvToken ( STRING_CONTAINS_UNDEFINED_TOKEN )}{Environment.NewLine}" );
+            Console.WriteLine ( $"    Input String = {STRING_IS_DEVOID_OF_TOKENS}{Environment.NewLine}    ExtractEnvToken = {envTokenExpander.ContainsEnvToken ( STRING_IS_DEVOID_OF_TOKENS )}{Environment.NewLine}{Environment.NewLine}{Environment.NewLine}" );
+
+            try
+            {
+                Console.WriteLine ( $"    Input String = {STRING_CONTAINS_VALID_TOKEN}{Environment.NewLine}    ExpandEnvironmentTokens = {EnvTokenExpander.ExpandEnvironmentTokens ( STRING_CONTAINS_VALID_TOKEN )}{Environment.NewLine}" );
+            }
+            catch ( Exception exAll )
+            {
+                s_smTheApp.AppExceptionLogger.ReportException ( exAll );
+            }
+
+            try
+            {
+                Console.WriteLine ( $"    Input String = {STRING_CONTAINS_UNDEFINED_TOKEN}{Environment.NewLine}    ExpandEnvironmentTokens = {EnvTokenExpander.ExpandEnvironmentTokens ( STRING_CONTAINS_UNDEFINED_TOKEN )}{Environment.NewLine}" );
+            }
+            catch ( Exception exAll )
+            {
+                s_smTheApp.AppExceptionLogger.ReportException ( exAll );
+            }
+
+            try
+            {
+                Console.WriteLine ( $"    Input String = {STRING_CONTAINS_UNDEFINED_TOKEN}{Environment.NewLine}    ExpandEnvironmentTokens = {EnvTokenExpander.ExpandEnvironmentTokens ( STRING_CONTAINS_UNDEFINED_TOKEN , SpecialStrings.EMPTY_STRING )}{Environment.NewLine}" );
+            }
+            catch ( Exception exAll )
+            {
+                s_smTheApp.AppExceptionLogger.ReportException ( exAll );
+            }
+
+            try
+            {
+                Console.WriteLine ( $"    Input String = {STRING_IS_DEVOID_OF_TOKENS}{Environment.NewLine}    ExpandEnvironmentTokens = {EnvTokenExpander.ExpandEnvironmentTokens ( STRING_IS_DEVOID_OF_TOKENS )}{Environment.NewLine}{Environment.NewLine}" );
+            }
+            catch ( Exception exAll )
+            {
+                s_smTheApp.AppExceptionLogger.ReportException ( exAll );
+            }
+
+            Console.WriteLine ( $"    Input String = {ENVIRONMENT_STRING_NAME}{Environment.NewLine}    TokenizeEnvVarName = {EnvTokenExpander.TokenizeEnvVarName ( ENVIRONMENT_STRING_NAME )}" );
+
+            Console.WriteLine ( $"{Environment.NewLine}ExerciseEnvTokenExpander End{Environment.NewLine}" );
+        }
 
         private static void ExerciseGetAssemblyVersionInfo ( )
         {

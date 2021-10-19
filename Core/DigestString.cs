@@ -1,7 +1,7 @@
 ﻿/*
     ============================================================================
 
-    Namespace:          namespace WizardWrx.Cryptography
+    Namespace:          WizardWrx.Cryptography
 
     Class Name:         DigestString
 
@@ -86,16 +86,17 @@
 
     2017/08/03 7.0     DAG    Move this class from WizardWrx.SharedUtl4.dll into
                               WizardWrx.Core.dll.
+
+    2021/10/18 8.0.252 DAG    Delete a redundant label in the namespace declared
+                              at the top of this flower box, found when I went
+                              in search of a pattern for copying into the new
+                              EnvTokenExpander class.
     ============================================================================
 */
 
 
-using System;
-using System.Collections.Generic;
 using System.Text;
 using System.Security.Cryptography;
-
-using WizardWrx;
 
 
 namespace WizardWrx.Cryptography

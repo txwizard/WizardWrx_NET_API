@@ -1,5 +1,12 @@
 ﻿# WizardWrx .NET API Change Log
 
+## 2021-10-19
+
+### WizardWrx.Core.dll, Version 8.0.259.0
+
+This release incorporates a new static class, EnvTokenExpander, which
+implements expansion of environment string tokens.
+
 ## 2021-10-13
 
 ### WizardWrx.Common.dll, Version 8.0.170

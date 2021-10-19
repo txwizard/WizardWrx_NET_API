@@ -581,6 +581,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Core.EnvTokenExpander.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Core.EnvTokenExpander.html",
+          "hash": "e4MGfDQWO/sk3ik4Nrdjaw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/WizardWrx.Core.PropertyDefaults.yml",
       "output": {
         ".html": {
@@ -729,7 +741,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.Core.html",
-          "hash": "pihGQkbOU4wSXD01E2w2nw=="
+          "hash": "72pRQbGhC9Eu9oCNSnwkrg=="
         }
       },
       "is_incremental": false,
@@ -753,7 +765,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.Cryptography.DigestString.html",
-          "hash": "/MD4wkarhlB4kUjZVYljFA=="
+          "hash": "GhVo8h387mCSbYonQbMSew=="
         }
       },
       "is_incremental": false,
@@ -1497,7 +1509,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "mW5ljYl00OjyiHfgMt26/w=="
+          "hash": "6WA9ooXevwMCaNrjFLY37g=="
         }
       },
       "is_incremental": false,
@@ -1570,8 +1582,8 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 123,
-          "skipped_file_count": 97
+          "total_file_count": 124,
+          "skipped_file_count": 121
         },
         "TocDocumentProcessor": {
           "can_incremental": false,

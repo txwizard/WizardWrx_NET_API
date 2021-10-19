@@ -122,6 +122,7 @@
     <Compile Include="CmdLneArgsBasic.cs" />
     <Compile Include="DigestFile.cs" />
     <Compile Include="DigestString.cs" />
+    <Compile Include="EnvTokenExpander.cs" />
     <Compile Include="FileInfoExtension.cs" />
     <Compile Include="FileInfoExtensionMethods.cs" />
     <Compile Include="FileNameTricks.cs" />
