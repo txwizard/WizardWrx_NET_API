@@ -4429,6 +4429,7 @@
             wanted th use a real constant.
             </remarks>
             <seealso cref="F:WizardWrx.SpecialCharacters.SPACE_CHAR"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.TWO_SPACES"/>
         </member>
         <member name="F:WizardWrx.SpecialStrings.SPACING_TEMPLATE">
             <summary>
@@ -4477,6 +4478,12 @@
             single-character string constants.
             </summary>
             <seealso cref="F:WizardWrx.SpecialCharacters.TAB_CHAR"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.TWO_SPACES">
+            <summary>
+            Render two back-to-back spaces.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.SPACE_CHAR"/>
         </member>
         <member name="F:WizardWrx.SpecialStrings.UNDERSCORE_CHAR">
             <summary>
@@ -5316,6 +5323,11 @@
         <member name="P:WizardWrx.Common.Properties.Resources.ERRMSG_RUNTIME">
             <summary>
               Looks up a localized string similar to A run-time exception has occurred..
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.ERRMSG_STRING_CONTAINS_ONLY_WHITESPACE">
+            <summary>
+              Looks up a localized string similar to The input string is invalid because it contains only whitespace characters..
             </summary>
         </member>
         <member name="P:WizardWrx.Common.Properties.Resources.ERRMSG_SUCCESS">

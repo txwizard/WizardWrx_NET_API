@@ -193,6 +193,10 @@
     <value>A run-time exception has occurred.</value>
     <comment>Exit code 1 is reserved for reporting miscellaneous run-time exceptions.</comment>
   </data>
+  <data name="ERRMSG_STRING_CONTAINS_ONLY_WHITESPACE" xml:space="preserve">
+    <value>The input string is invalid because it contains only whitespace characters.</value>
+    <comment>Use this string to report an exception when IsNullOrWhiteSpace returns TRUE after IsNullOrEmpty intercepts null references.</comment>
+  </data>
   <data name="ERRMSG_SUCCESS" xml:space="preserve">
     <value>The task completed successfully.</value>
     <comment>This message is seldom written; it is a place holder for exit code zero in the table of error messages that is loaded into the state manager singleton.</comment>

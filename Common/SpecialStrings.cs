@@ -181,6 +181,7 @@
                                    PIPE_CHAR
                                    QUESTION_MARK
 
+	2021/12/09 8.0.174 DAG 	  Add an overlooked, but often needed TWO_SPACES.
     ============================================================================
 */
 
@@ -656,6 +657,7 @@ namespace WizardWrx
 		/// wanted th use a real constant.
 		/// </remarks>
 		/// <seealso cref="SpecialCharacters.SPACE_CHAR"/>
+		/// <seealso cref="TWO_SPACES"/>
 		public const string SPACE_CHAR = @" ";
 
 		/// <summary>
@@ -705,6 +707,12 @@ namespace WizardWrx
         /// </summary>
         /// <seealso cref="SpecialCharacters.TAB_CHAR"/>
         public const string TAB_CHAR = "\t";
+
+		/// <summary>
+		/// Render two back-to-back spaces.
+		/// </summary>
+		/// <seealso cref="SPACE_CHAR"/>
+		public const string TWO_SPACES = @"  ";
 
         /// <summary>
         /// This is one of many single characters that are frequently needed as

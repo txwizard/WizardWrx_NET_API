@@ -3753,6 +3753,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.Common.Properties.Resources.ERRMSG_RUNTIME
   nameWithType: Resources.ERRMSG_RUNTIME
+- uid: WizardWrx.Common.Properties.Resources.ERRMSG_STRING_CONTAINS_ONLY_WHITESPACE
+  name: ERRMSG_STRING_CONTAINS_ONLY_WHITESPACE
+  href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_ERRMSG_STRING_CONTAINS_ONLY_WHITESPACE
+  commentId: P:WizardWrx.Common.Properties.Resources.ERRMSG_STRING_CONTAINS_ONLY_WHITESPACE
+  fullName: WizardWrx.Common.Properties.Resources.ERRMSG_STRING_CONTAINS_ONLY_WHITESPACE
+  nameWithType: Resources.ERRMSG_STRING_CONTAINS_ONLY_WHITESPACE
+- uid: WizardWrx.Common.Properties.Resources.ERRMSG_STRING_CONTAINS_ONLY_WHITESPACE*
+  name: ERRMSG_STRING_CONTAINS_ONLY_WHITESPACE
+  href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_ERRMSG_STRING_CONTAINS_ONLY_WHITESPACE_
+  commentId: Overload:WizardWrx.Common.Properties.Resources.ERRMSG_STRING_CONTAINS_ONLY_WHITESPACE
+  isSpec: "True"
+  fullName: WizardWrx.Common.Properties.Resources.ERRMSG_STRING_CONTAINS_ONLY_WHITESPACE
+  nameWithType: Resources.ERRMSG_STRING_CONTAINS_ONLY_WHITESPACE
 - uid: WizardWrx.Common.Properties.Resources.ERRMSG_SUCCESS
   name: ERRMSG_SUCCESS
   href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_ERRMSG_SUCCESS
@@ -15676,6 +15689,12 @@ references:
   commentId: F:WizardWrx.SpecialStrings.TAB_CHAR
   fullName: WizardWrx.SpecialStrings.TAB_CHAR
   nameWithType: SpecialStrings.TAB_CHAR
+- uid: WizardWrx.SpecialStrings.TWO_SPACES
+  name: TWO_SPACES
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_TWO_SPACES
+  commentId: F:WizardWrx.SpecialStrings.TWO_SPACES
+  fullName: WizardWrx.SpecialStrings.TWO_SPACES
+  nameWithType: SpecialStrings.TWO_SPACES
 - uid: WizardWrx.SpecialStrings.UNDERSCORE_CHAR
   name: UNDERSCORE_CHAR
   href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_UNDERSCORE_CHAR

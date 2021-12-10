@@ -232,6 +232,15 @@ namespace WizardWrx.Common.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The input string is invalid because it contains only whitespace characters..
+        /// </summary>
+        public static string ERRMSG_STRING_CONTAINS_ONLY_WHITESPACE {
+            get {
+                return ResourceManager.GetString("ERRMSG_STRING_CONTAINS_ONLY_WHITESPACE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The task completed successfully..
         /// </summary>
         public static string ERRMSG_SUCCESS {

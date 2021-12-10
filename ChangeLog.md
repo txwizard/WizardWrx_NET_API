@@ -1,5 +1,12 @@
 ﻿# WizardWrx .NET API Change Log
 
+## 2021-12-09
+
+### WizardWrx.Common.dll, Version 8.0.174
+
+Define two new strings, TWO_SPACES, a compile-time constant, and
+ERRMSG_STRING_CONTAINS_ONLY_WHITESPACE, a string resource.
+
 ## 2021-10-19
 
 ### WizardWrx.Core.dll, Version 8.0.259.0
