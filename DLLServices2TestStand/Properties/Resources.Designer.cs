@@ -142,6 +142,15 @@ namespace DLLServices2TestStand.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to GuardStringIfNeeded.
+        /// </summary>
+        public static string CMDARG_GUARD_STRING_IF_NEEDED {
+            get {
+                return ResourceManager.GetString("CMDARG_GUARD_STRING_IF_NEEDED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to EnumerateStringResourcesInAssembly.
         /// </summary>
         public static string CMDARG_LIST_COMMON_STRINGS {

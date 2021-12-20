@@ -168,6 +168,19 @@ references:
   isSpec: "True"
   fullName: DLLServices2TestStand.Properties.Resources.CMDARG_GENERATE_EXCEPTION_MESSAGE_FORMAT_TABLE
   nameWithType: Resources.CMDARG_GENERATE_EXCEPTION_MESSAGE_FORMAT_TABLE
+- uid: DLLServices2TestStand.Properties.Resources.CMDARG_GUARD_STRING_IF_NEEDED
+  name: CMDARG_GUARD_STRING_IF_NEEDED
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_CMDARG_GUARD_STRING_IF_NEEDED
+  commentId: P:DLLServices2TestStand.Properties.Resources.CMDARG_GUARD_STRING_IF_NEEDED
+  fullName: DLLServices2TestStand.Properties.Resources.CMDARG_GUARD_STRING_IF_NEEDED
+  nameWithType: Resources.CMDARG_GUARD_STRING_IF_NEEDED
+- uid: DLLServices2TestStand.Properties.Resources.CMDARG_GUARD_STRING_IF_NEEDED*
+  name: CMDARG_GUARD_STRING_IF_NEEDED
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_CMDARG_GUARD_STRING_IF_NEEDED_
+  commentId: Overload:DLLServices2TestStand.Properties.Resources.CMDARG_GUARD_STRING_IF_NEEDED
+  isSpec: "True"
+  fullName: DLLServices2TestStand.Properties.Resources.CMDARG_GUARD_STRING_IF_NEEDED
+  nameWithType: Resources.CMDARG_GUARD_STRING_IF_NEEDED
 - uid: DLLServices2TestStand.Properties.Resources.CMDARG_LIST_COMMON_STRINGS
   name: CMDARG_LIST_COMMON_STRINGS
   href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_CMDARG_LIST_COMMON_STRINGS
@@ -15950,6 +15963,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.StringExtensions.ExtractBoundedSubstrings
   nameWithType: StringExtensions.ExtractBoundedSubstrings
+- uid: WizardWrx.StringExtensions.GuardStringIfNeeded(System.String,System.Char,System.Char)
+  name: GuardStringIfNeeded(String, Char, Char)
+  href: api/WizardWrx.StringExtensions.html#WizardWrx_StringExtensions_GuardStringIfNeeded_System_String_System_Char_System_Char_
+  commentId: M:WizardWrx.StringExtensions.GuardStringIfNeeded(System.String,System.Char,System.Char)
+  fullName: WizardWrx.StringExtensions.GuardStringIfNeeded(System.String, System.Char, System.Char)
+  nameWithType: StringExtensions.GuardStringIfNeeded(String, Char, Char)
+- uid: WizardWrx.StringExtensions.GuardStringIfNeeded*
+  name: GuardStringIfNeeded
+  href: api/WizardWrx.StringExtensions.html#WizardWrx_StringExtensions_GuardStringIfNeeded_
+  commentId: Overload:WizardWrx.StringExtensions.GuardStringIfNeeded
+  isSpec: "True"
+  fullName: WizardWrx.StringExtensions.GuardStringIfNeeded
+  nameWithType: StringExtensions.GuardStringIfNeeded
 - uid: WizardWrx.StringExtensions.LeftPadNChars(System.String,System.Int32)
   name: LeftPadNChars(String, Int32)
   href: api/WizardWrx.StringExtensions.html#WizardWrx_StringExtensions_LeftPadNChars_System_String_System_Int32_

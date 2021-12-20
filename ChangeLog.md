@@ -1,5 +1,14 @@
 ﻿# WizardWrx .NET API Change Log
 
+## 2021-12-19
+
+### WizardWrx.Core.dll, Version 8.0.263.0
+
+This release incorporates a new string extension method, GuardStringIfNeeded. It
+returns a new string that is enclosed in a specified quoting character, defaulting
+to a double quote, if the input string contains a specified delimiter character,
+defaulting to a comma.
+
 ## 2021-12-09
 
 ### WizardWrx.Common.dll, Version 8.0.174

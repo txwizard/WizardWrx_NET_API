@@ -4088,6 +4088,11 @@
               Looks up a localized string similar to CORRUPTED SYSTEM REGISTRY: The GetDisplayTimeZone method found the specified key, but the corresponding Registry key is corrupted.{1}                           Specified ID = {0}.
             </summary>
         </member>
+        <member name="P:WizardWrx.Core.Properties.Resources.ERRMSG_INVALID_GUARD_STRING_PARAMETERS">
+            <summary>
+              Looks up a localized string similar to String extension method GuardStringIfNeeded was invoked with invalid arguments.{3}    String value = {0}{3}    Integer representation of delimiter character = {1}{3}    Integer representation of guard character = {2}.
+            </summary>
+        </member>
         <member name="P:WizardWrx.Core.Properties.Resources.ERRMSG_MISSING_CONFIG_FILE">
             <summary>
               Looks up a localized string similar to There is no valid configuration file for DLL file {0}..
@@ -8204,6 +8209,34 @@
              run-time exceptions. If anything is out of order, an empty string is
              returned.
              </remarks>
+        </member>
+        <member name="M:WizardWrx.StringExtensions.GuardStringIfNeeded(System.String,System.Char,System.Char)">
+            <summary>
+            Return a new string that is enclosed in a specified quoting
+            character, defaulting to a double quote, if the input string
+            contains a specified delimiter character, defaulting to a comma.
+            </summary>
+            <param name="pstrThisString">
+            Pass in a reference to a string, which may be a null reference or a
+            pointer to the empty string.
+            </param>
+            <param name="pchrDelimiter">
+            Pass in the delimiter character, which cannot be the NULL character,
+            and must differ from the <paramref name="pchrGuard"/> character.
+            </param>
+            <param name="pchrGuard">
+            Pass in the guard character (the quoting character), which cannot be
+            the NULL character, and must differ from the
+            <paramref name="pchrDelimiter"/> character.
+            </param>
+            <returns>
+            When <paramref name="pstrThisString"/> contains at least one instance
+            of the <paramref name="pchrDelimiter"/> character, the return value
+            is <paramref name="pstrThisString"/> enclosed in <paramref name="pchrGuard"/>
+            characters. Otherwise, the string is returned as is, substituting
+            the empty string when <paramref name="pstrThisString"/> is a NULL
+            reference.
+            </returns>
         </member>
         <member name="M:WizardWrx.StringExtensions.LeftPadNChars(System.String,System.Int32)">
             <summary>

@@ -25,7 +25,7 @@
 
     Author:             David A. Gray
 
-    License:            Copyright (C) 2017-2019, David A. Gray. 
+    License:            Copyright (C) 2017-2021, David A. Gray. 
                         All rights reserved.
 
                         Redistribution and use in source and binary forms, with
@@ -130,6 +130,12 @@
                            new build is required to add a binding redirect, and
                            the version numbering transitions to the SemVer
                            scheme.
+
+    2021/12/19 8.263   DAG Implement GuardStringIfNeeded, which returns a new 
+                           string that is enclosed in a specified quoting
+                           character, defaulting to a double quote, if the input
+                           string contains a specified delimiter character,
+                           defaulting to a comma.
     ============================================================================
 */
 
@@ -1257,6 +1263,67 @@ namespace WizardWrx
         }   // ExtractBoundedSubstrings (3 of 3)
         #endregion // ExtractBoundedSubstrings Methods
 
+
+        #region GuardStringIfNeeded Methods
+        /// <summary>
+        /// Return a new string that is enclosed in a specified quoting
+        /// character, defaulting to a double quote, if the input string
+        /// contains a specified delimiter character, defaulting to a comma.
+        /// </summary>
+        /// <param name="pstrThisString">
+        /// Pass in a reference to a string, which may be a null reference or a
+        /// pointer to the empty string.
+        /// </param>
+        /// <param name="pchrDelimiter">
+        /// Pass in the delimiter character, which cannot be the NULL character,
+        /// and must differ from the <paramref name="pchrGuard"/> character.
+        /// </param>
+        /// <param name="pchrGuard">
+        /// Pass in the guard character (the quoting character), which cannot be
+        /// the NULL character, and must differ from the
+        /// <paramref name="pchrDelimiter"/> character.
+        /// </param>
+        /// <returns>
+        /// When <paramref name="pstrThisString"/> contains at least one instance
+        /// of the <paramref name="pchrDelimiter"/> character, the return value
+        /// is <paramref name="pstrThisString"/> enclosed in <paramref name="pchrGuard"/>
+        /// characters. Otherwise, the string is returned as is, substituting
+        /// the empty string when <paramref name="pstrThisString"/> is a NULL
+        /// reference.
+        /// </returns>
+        public static string GuardStringIfNeeded ( this string pstrThisString , char pchrDelimiter = SpecialCharacters.COMMA , char pchrGuard = SpecialCharacters.DOUBLE_QUOTE )
+        {
+            if ( ( pchrDelimiter == SpecialCharacters.NULL_CHAR || pchrGuard == SpecialCharacters.NULL_CHAR ) || ( pchrGuard == pchrDelimiter ) )
+            {   // The delimiter characters are invalid.
+                throw new ArgumentException (
+                    string.Format (
+                        Core.Properties.Resources.ERRMSG_INVALID_GUARD_STRING_PARAMETERS ,  // Format Control String
+                        pstrThisString ,                                                    // Format Item 0: String value = {0}
+                        ( int ) pchrDelimiter ,                                             // Format Item 1: Integer representation of delimiter character = {1
+                        ( int ) pchrGuard ,                                                 // Format Item 2: Integer representation of guard character = {2}
+                        Environment.NewLine ) );                                            // Format Item 3: Line break
+            }   // if ( ( pchrDelimiter == SpecialCharacters.NULL_CHAR || pchrGuard == SpecialCharacters.NULL_CHAR ) || ( pchrGuard == pchrDelimiter ) )
+
+            if ( string.IsNullOrEmpty ( pstrThisString ) )
+            {   // Degenerate case 1 of 2 is the null or empty string. Returning the empty string spares the caller testing again for null.
+                return SpecialStrings.EMPTY_STRING;
+            }   // TRUE (degenerate case 1 of 2) block, if ( string.IsNullOrEmpty ( pstrThisString ) )
+            else
+            {
+                if ( pstrThisString.IndexOf ( pchrDelimiter ) == ListInfo.INDEXOF_NOT_FOUND )
+                {   // When the delimiter character is absent, the string is returned as is. Use QuoteString to unconditionally do it.
+                    return pstrThisString;
+                }   // TRUE (degenerate case 2 of 2) block, if ( pstrThisString.IndexOf ( pchrDelimiter ) == ListInfo.INDEXOF_NOT_FOUND )
+                else
+                {   // When the delimiter character is present, append the specifiied quoting character to both ends.
+                    return string.Concat (
+                        pchrGuard ,
+                        pstrThisString ,
+                        pchrGuard );
+                }   // FALSE (degenerate case 2 of 2) block, if ( pstrThisString.IndexOf ( pchrDelimiter ) == ListInfo.INDEXOF_NOT_FOUND )
+            }   // FALSE (degenerate case 1 of 2) block, if ( string.IsNullOrEmpty ( pstrThisString ) )
+        }   // public static string GuardStringIfNeeded
+        #endregion  // GuardStringIfNeeded Methods
 
         #region LeftPadNChars Extension Methods
         /// <summary>

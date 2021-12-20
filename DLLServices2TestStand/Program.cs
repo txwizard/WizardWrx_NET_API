@@ -301,6 +301,9 @@
 	2021/07/11 8.0.1453 DAG Exercise the new Base64 conversion methods.
 
     2021/10/19 8.0.1463 DAG Implement code to exercise class EnvTokenExpander.
+
+    2021/12/19 8.0.1476 DAG Implement code to exercise string extension method
+                            GuardStringIfNeeded.
     ============================================================================
 */
 
@@ -642,6 +645,10 @@ namespace DLLServices2TestStand
                 {
                     EventMessageCleanupTests ( ref intTestNumber );
                 }
+                else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_GUARD_STRING_IF_NEEDED )
+                {
+                    NewClassTests_20140914.ExerciseGuardStringIfNeeded ( ref intTestNumber );
+                }
                 else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_DIRECT_DEPENDENT_ASSEMBLY_ENUMERATION )
                 {
                     ExercisseDirectDependentAssemblyEnumerator ( ref intTestNumber );
@@ -713,6 +720,7 @@ namespace DLLServices2TestStand
                     PauseForPictures (
                         APPEND_LINEFEED ,
                         @"Exercise_Base64_ToAndFrom" );
+                    NewClassTests_20140914.ExerciseGuardStringIfNeeded ( ref intTestNumber );
 
                     try
                     {

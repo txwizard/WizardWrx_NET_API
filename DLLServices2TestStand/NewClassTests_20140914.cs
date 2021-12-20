@@ -184,6 +184,9 @@
 
                             2) Add tests of the new optioanl argument to method
                                GetDisplayTimeZone to method UtilsExercises.
+
+    2021/12/19 8.0.1476 DAG Implement code to exercise string extension method
+                            GuardStringIfNeeded.
     ============================================================================
 */
 
@@ -675,6 +678,103 @@ namespace DLLServices2TestStand
                 MagicNumbers.ERROR_SUCCESS ,
                 pintTestNumber );
         }   // DisplayFormatsExercises method
+
+
+        internal static void ExerciseGuardStringIfNeeded ( ref int intTestNumber )
+        {
+            const string INPUT_STRING_WITHOUT_DELIMITERS = @"This is a test string that is devoid of delimiterss.";
+            const string INPUT_STRING_WITH_EMBEDDED_COMMA = @"Unlike the first string, this one contains one delimiting COMMA.";
+            const string INPUT_STRING_WITH_EMBEDDED_TAB = "This string contains one\t TAB character.";
+            const char DELIMITER_COMMA = SpecialCharacters.COMMA;
+            const char DELIMITER_TAB = SpecialCharacters.TAB_CHAR;
+            const char GUARD_DOUBLE_QUOTE = SpecialCharacters.DOUBLE_QUOTE;
+            const char GUARD_SINGLE_QUOTE = SpecialCharacters.SINGLE_QUOTE;
+
+            Console.WriteLine ( $"{Environment.NewLine}Test {intTestNumber}: ExerciseGuardStringIfNeeded Begin:{Environment.NewLine}" );
+
+            int intCurrentCase = MagicNumbers.ZERO;
+
+            intCurrentCase = GuardStringExercise (
+                intCurrentCase ,
+                INPUT_STRING_WITHOUT_DELIMITERS ,
+                DELIMITER_COMMA ,
+                GUARD_DOUBLE_QUOTE );
+            intCurrentCase = GuardStringExercise (
+                intCurrentCase ,
+                INPUT_STRING_WITH_EMBEDDED_COMMA ,
+                DELIMITER_COMMA ,
+                GUARD_DOUBLE_QUOTE );
+            intCurrentCase = GuardStringExercise (
+                intCurrentCase ,
+                INPUT_STRING_WITH_EMBEDDED_TAB ,
+                DELIMITER_COMMA ,
+                GUARD_DOUBLE_QUOTE );
+
+            intCurrentCase = GuardStringExercise (
+                intCurrentCase ,
+                INPUT_STRING_WITHOUT_DELIMITERS ,
+                DELIMITER_TAB ,
+                GUARD_DOUBLE_QUOTE );
+            intCurrentCase = GuardStringExercise (
+                intCurrentCase ,
+                INPUT_STRING_WITH_EMBEDDED_COMMA ,
+                DELIMITER_TAB ,
+                GUARD_DOUBLE_QUOTE );
+            intCurrentCase = GuardStringExercise (
+                intCurrentCase ,
+                INPUT_STRING_WITH_EMBEDDED_TAB ,
+                DELIMITER_TAB ,
+                GUARD_DOUBLE_QUOTE );
+
+            intCurrentCase = GuardStringExercise (
+                intCurrentCase ,
+                INPUT_STRING_WITHOUT_DELIMITERS ,
+                DELIMITER_TAB ,
+                GUARD_SINGLE_QUOTE );
+            intCurrentCase = GuardStringExercise (
+                intCurrentCase ,
+                INPUT_STRING_WITH_EMBEDDED_COMMA ,
+                DELIMITER_TAB ,
+                GUARD_SINGLE_QUOTE );
+            intCurrentCase = GuardStringExercise (
+                intCurrentCase ,
+                INPUT_STRING_WITH_EMBEDDED_TAB ,
+                DELIMITER_TAB ,
+                GUARD_SINGLE_QUOTE );
+
+            Console.WriteLine ( $"{Environment.NewLine}Test {intTestNumber}: ExerciseGuardStringIfNeeded Done{Environment.NewLine}" );
+        }   // ExerciseGuardStringIfNeeded
+
+
+        private static int GuardStringExercise (
+            int pintCurrentCase ,
+            string pstrInputString ,
+            char pchrDelimiter ,
+            char pchrGuard )
+        {
+            Console.WriteLine ( @"Case {0}: Input String        = {1}" , ++pintCurrentCase , pstrInputString );
+            Console.WriteLine ( @"        Delimiter character = {0}" , ( int ) pchrDelimiter );
+            Console.WriteLine ( @"        Guard character     = {0}" , ( int ) pchrGuard );
+
+            string strGuardedString = null;
+
+            if ( pchrDelimiter == SpecialCharacters.COMMA && pchrGuard == SpecialCharacters.DOUBLE_QUOTE )
+            {
+                strGuardedString = pstrInputString.GuardStringIfNeeded ( );
+            }   // TRUE (degenerate case) block, if ( pchrDelimiter == SpecialCharacters.COMMA && pchrGuard == SpecialCharacters.DOUBLE_QUOTE )
+            else if ( pchrGuard == SpecialCharacters.DOUBLE_QUOTE )
+            {
+                strGuardedString = pstrInputString.GuardStringIfNeeded ( pchrDelimiter );
+            }   // TRUE (second argument is the default value) block, else if ( pchrGuard == SpecialCharacters.DOUBLE_QUOTE )
+            else
+            {
+                strGuardedString = pstrInputString.GuardStringIfNeeded ( pchrDelimiter , pchrGuard );
+            }   // FALSE (NEITHER of the aobve)
+
+            Console.WriteLine ( $"        Output string       = {strGuardedString}{Environment.NewLine}" );
+            
+            return pintCurrentCase;
+        }   // GuardStringExercise
 
 
         internal static int EnumerateStringResourcesInAssembly (

@@ -250,6 +250,15 @@ namespace WizardWrx.Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to String extension method GuardStringIfNeeded was invoked with invalid arguments.{3}    String value = {0}{3}    Integer representation of delimiter character = {1}{3}    Integer representation of guard character = {2}.
+        /// </summary>
+        internal static string ERRMSG_INVALID_GUARD_STRING_PARAMETERS {
+            get {
+                return ResourceManager.GetString("ERRMSG_INVALID_GUARD_STRING_PARAMETERS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to There is no valid configuration file for DLL file {0}..
         /// </summary>
         internal static string ERRMSG_MISSING_CONFIG_FILE {

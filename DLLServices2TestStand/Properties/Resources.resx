@@ -685,4 +685,8 @@
   <data name="CMDARG_BASE64_ENCODING" xml:space="preserve">
     <value>ByteArrayBase64Converters</value>
   </data>
+  <data name="CMDARG_GUARD_STRING_IF_NEEDED" xml:space="preserve">
+    <value>GuardStringIfNeeded</value>
+    <comment>Specify this command line argument to limit the run to a test of the new GuardStringIfNeeded string extensio method</comment>
+  </data>
 </root>
