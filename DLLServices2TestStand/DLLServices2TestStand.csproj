@@ -90,6 +90,7 @@
     <Compile Include="AppDomainDetails.cs" />
     <Compile Include="Base64RoundTripExperiments.cs" />
     <Compile Include="CmdLneArgsTests.cs" />
+    <Compile Include="DateOfMostRecentWeekdayDay_UnitTests.cs" />
     <Compile Include="DigestTestCases.cs" />
     <Compile Include="FileNameTricks_Exerciser.cs" />
     <Compile Include="FormatStringParsing_Drills.cs" />

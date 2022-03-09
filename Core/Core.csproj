@@ -120,6 +120,7 @@
     <Compile Include="ByteArrayBase64Converters.cs" />
     <Compile Include="ByteArrayFormatters.cs" />
     <Compile Include="CmdLneArgsBasic.cs" />
+    <Compile Include="DateTimeExtensions.cs" />
     <Compile Include="DigestFile.cs" />
     <Compile Include="DigestString.cs" />
     <Compile Include="EnvTokenExpander.cs" />

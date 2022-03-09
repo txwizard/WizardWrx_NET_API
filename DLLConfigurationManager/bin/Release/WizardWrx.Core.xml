@@ -4383,6 +4383,85 @@
               Looks up a localized string similar to &quot;                                                                                                InnerException                 = [null].
             </summary>
         </member>
+        <member name="T:WizardWrx.DateTimeExtensions">
+            <summary>
+            This class implements two overloads of DateOfMostRecentWeekdayDay, a
+            static method, implemented as an extension method on the System.DateTime
+            type. The two overloads accept their one externally visible argment as
+            either a DayOfWeek enumeration member or its integral value.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.DateTimeExtensions.DateOfMostRecentWeekday(System.DateTime,System.DayOfWeek)">
+            <summary>
+            Given a date and a day of the week, return the date of the most
+            recent instance of the specified day of the week.
+            </summary>
+            <param name="pdtmThisDate">
+            Specify the DateTime to serve as the reference point against which
+            calculate the most recent weekday given by <paramref name="penmDayOfWeek"/>.
+            </param>
+            <param name="penmDayOfWeek">
+            Specify the weekday in terms of the DayOfWeek enumeration for which the
+            weekday nearest to <paramref name="pdtmThisDate"/> is desired.
+            </param>
+            <returns>
+            The return value is the date, represented as a DateTime object, for
+            which the DayOfWeek property is the value specified by
+            <paramref name="penmDayOfWeek"/> that is the most recent instance of
+            the specified weekday that is on or before the date specified by
+            <paramref name="pdtmThisDate"/>.
+            </returns>
+            <example>
+            When <paramref name="pdtmThisDate"/> is 03/08/2022 and
+            <paramref name="penmDayOfWeek"/> is Sunday, the return value is
+            Sunday, 03/06/2022.
+            </example>
+            <remarks>
+            Since enumerated types can be freely converted to and from integers,
+            and a program stands a fair chance of having the weekday specified
+            in terms of either, two versions of this method are offered. Since
+            integers are easier to manipulate, the overload that accepts the
+            integer representation of the weekday implements both; the overload
+            that takes the enumeration casts it to integer and calls the other
+            overload, through which it returns.
+            </remarks>
+        </member>
+        <member name="M:WizardWrx.DateTimeExtensions.DateOfMostRecentWeekday(System.DateTime,System.Int32)">
+            <summary>
+            Given a date and a day of the week, return the date of the most
+            recent instance of the specified day of the week.
+            </summary>
+            <param name="pdtmThisDate">
+            Specify the DateTime to serve as the reference point against which
+            calculate the most recent weekday given by <paramref name="pintDayOfWeekIndex"/>.
+            </param>
+            <param name="pintDayOfWeekIndex">
+            Specify the weekday in terms of the integer that maps to the intended
+            DayOfWeek enumeration value for which the weekday nearest to
+            <paramref name="pdtmThisDate"/> is desired.
+            </param>
+            <returns>
+            The return value is the date, represented as a DateTime object, for
+            which the DayOfWeek property is the value specified as integer
+            <paramref name="pintDayOfWeekIndex"/> that is the most recent instance of
+            the specified weekday that is on or before the date specified by
+            <paramref name="pdtmThisDate"/>.
+            </returns>
+            <example>
+            When <paramref name="pdtmThisDate"/> is 03/08/2022 and
+            <paramref name="pintDayOfWeekIndex"/> is Sunday, the return value is
+            Sunday, 03/06/2022.
+            </example>
+            <remarks>
+            Since enumerated types can be freely converted to and from integers,
+            and a program stands a fair chance of having the weekday specified
+            in terms of either, two versions of this method are offered. Since
+            integers are easier to manipulate, the overload that accepts the
+            integer representation of the weekday implements both; the overload
+            that takes the enumeration casts it to integer and calls the other
+            overload, through which it returns.
+            </remarks>
+        </member>
         <member name="T:WizardWrx.Cryptography.DigestFile">
             <summary>
             Static methods for computing message digests for files, using the most

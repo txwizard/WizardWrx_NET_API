@@ -1,5 +1,14 @@
 ﻿# WizardWrx .NET API Change Log
 
+## 2022-03-08
+
+### WizardWrx.Core, Version=8.0.266
+
+This release incorporates a new extension method for the System.DateTime type,
+DateOfMostRecentWeekday, which returns the most recent previous date for which
+the weekday matches its input criterion. Versions exist that accept the weekday
+as a DayOfWeek enumeration member or as the corresponding integer (0-6) value.
+
 ## 2021-12-19
 
 ### WizardWrx.Core.dll, Version 8.0.263.0

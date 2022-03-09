@@ -304,6 +304,8 @@
 
     2021/12/19 8.0.1476 DAG Implement code to exercise string extension method
                             GuardStringIfNeeded.
+
+    2021/12/19 8.0.1483 DAG Implement TestFindingMostRecentWeekday.
     ============================================================================
 */
 
@@ -663,7 +665,7 @@ namespace DLLServices2TestStand
                 }
                 else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_LIST_OBJECT_PROPERTIES )
                 {
-                    EnumerateObjectProperties ( 
+                    EnumerateObjectProperties (
                         s_smTheApp ,
                         MagicNumbers.ZERO ,
                         nameof ( s_smTheApp ) );
@@ -683,6 +685,10 @@ namespace DLLServices2TestStand
                 else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_BASE64_ENCODING )
                 {
                     Base64RoundTripExperiments.Exercise_Base64_ToAndFrom ( );
+                }
+                else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_FIND_LAST_OCCURRENCE_OF_WEEKDAY )
+                {   // Exercise static method DateOfMostRecentWeekday, an extension method on System.DateTime.
+                    DateOfMostRecentWeekdayDay_UnitTests.TestFindingMostRecentWeekday ( );
                 }
                 else
                 {	// Run the whole set, starting with this test, which leaves the flags set so that the original message can be reconstructed from a psLogList export.
@@ -1176,6 +1182,13 @@ namespace DLLServices2TestStand
                                 intRetCode ) );
                     }   // if ( ( intRetCode = NewClassTests_20140914.EnumFromStringExercises ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
 
+                    //  --------------------------------------------------------
+                    //  The DateOfMostRecentWeekday System.DateTime extension
+                    //  gets its own static unit test class that encapsulates
+                    //  its test data as a pair of private static arrays.
+                    //  --------------------------------------------------------
+
+                    DateOfMostRecentWeekdayDay_UnitTests.TestFindingMostRecentWeekday ( );
 #if DEBUGGER_IN_SHELL_SCRIPT
                     if ( System.Diagnostics.Debugger.IsAttached )
                     {

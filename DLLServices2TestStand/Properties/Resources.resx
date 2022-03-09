@@ -689,4 +689,11 @@
     <value>GuardStringIfNeeded</value>
     <comment>Specify this command line argument to limit the run to a test of the new GuardStringIfNeeded string extensio method</comment>
   </data>
+  <data name="CMDARG_FIND_LAST_OCCURRENCE_OF_WEEKDAY" xml:space="preserve">
+    <value>FindLastOcurrenceOfWeekday</value>
+    <comment>Select this one-off task to execute static method TestFindingMostRecentWeekday, which puts DateTime extension method DateOfMostRecentWeekdayDay through its paces.</comment>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
 </root>

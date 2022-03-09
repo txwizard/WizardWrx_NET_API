@@ -155,6 +155,19 @@ references:
   isSpec: "True"
   fullName: DLLServices2TestStand.Properties.Resources.CMDARG_EXERCISE_TRUNCATEVALUETOONELINE
   nameWithType: Resources.CMDARG_EXERCISE_TRUNCATEVALUETOONELINE
+- uid: DLLServices2TestStand.Properties.Resources.CMDARG_FIND_LAST_OCCURRENCE_OF_WEEKDAY
+  name: CMDARG_FIND_LAST_OCCURRENCE_OF_WEEKDAY
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_CMDARG_FIND_LAST_OCCURRENCE_OF_WEEKDAY
+  commentId: P:DLLServices2TestStand.Properties.Resources.CMDARG_FIND_LAST_OCCURRENCE_OF_WEEKDAY
+  fullName: DLLServices2TestStand.Properties.Resources.CMDARG_FIND_LAST_OCCURRENCE_OF_WEEKDAY
+  nameWithType: Resources.CMDARG_FIND_LAST_OCCURRENCE_OF_WEEKDAY
+- uid: DLLServices2TestStand.Properties.Resources.CMDARG_FIND_LAST_OCCURRENCE_OF_WEEKDAY*
+  name: CMDARG_FIND_LAST_OCCURRENCE_OF_WEEKDAY
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_CMDARG_FIND_LAST_OCCURRENCE_OF_WEEKDAY_
+  commentId: Overload:DLLServices2TestStand.Properties.Resources.CMDARG_FIND_LAST_OCCURRENCE_OF_WEEKDAY
+  isSpec: "True"
+  fullName: DLLServices2TestStand.Properties.Resources.CMDARG_FIND_LAST_OCCURRENCE_OF_WEEKDAY
+  nameWithType: Resources.CMDARG_FIND_LAST_OCCURRENCE_OF_WEEKDAY
 - uid: DLLServices2TestStand.Properties.Resources.CMDARG_GENERATE_EXCEPTION_MESSAGE_FORMAT_TABLE
   name: CMDARG_GENERATE_EXCEPTION_MESSAGE_FORMAT_TABLE
   href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_CMDARG_GENERATE_EXCEPTION_MESSAGE_FORMAT_TABLE
@@ -2066,6 +2079,19 @@ references:
   isSpec: "True"
   fullName: DLLServices2TestStand.Properties.Resources.ResourceManager
   nameWithType: Resources.ResourceManager
+- uid: DLLServices2TestStand.Properties.Resources.String1
+  name: String1
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_String1
+  commentId: P:DLLServices2TestStand.Properties.Resources.String1
+  fullName: DLLServices2TestStand.Properties.Resources.String1
+  nameWithType: Resources.String1
+- uid: DLLServices2TestStand.Properties.Resources.String1*
+  name: String1
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_String1_
+  commentId: Overload:DLLServices2TestStand.Properties.Resources.String1
+  isSpec: "True"
+  fullName: DLLServices2TestStand.Properties.Resources.String1
+  nameWithType: Resources.String1
 - uid: DLLServices2TestStand.Properties.Resources.TEST_EXCEPTION_LABEL
   name: TEST_EXCEPTION_LABEL
   href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_TEST_EXCEPTION_LABEL
@@ -8674,6 +8700,31 @@ references:
   isSpec: "True"
   fullName: WizardWrx.CSVFileInfo.RecordCount
   nameWithType: CSVFileInfo.RecordCount
+- uid: WizardWrx.DateTimeExtensions
+  name: DateTimeExtensions
+  href: api/WizardWrx.DateTimeExtensions.html
+  commentId: T:WizardWrx.DateTimeExtensions
+  fullName: WizardWrx.DateTimeExtensions
+  nameWithType: DateTimeExtensions
+- uid: WizardWrx.DateTimeExtensions.DateOfMostRecentWeekday(System.DateTime,System.DayOfWeek)
+  name: DateOfMostRecentWeekday(DateTime, DayOfWeek)
+  href: api/WizardWrx.DateTimeExtensions.html#WizardWrx_DateTimeExtensions_DateOfMostRecentWeekday_System_DateTime_System_DayOfWeek_
+  commentId: M:WizardWrx.DateTimeExtensions.DateOfMostRecentWeekday(System.DateTime,System.DayOfWeek)
+  fullName: WizardWrx.DateTimeExtensions.DateOfMostRecentWeekday(System.DateTime, System.DayOfWeek)
+  nameWithType: DateTimeExtensions.DateOfMostRecentWeekday(DateTime, DayOfWeek)
+- uid: WizardWrx.DateTimeExtensions.DateOfMostRecentWeekday(System.DateTime,System.Int32)
+  name: DateOfMostRecentWeekday(DateTime, Int32)
+  href: api/WizardWrx.DateTimeExtensions.html#WizardWrx_DateTimeExtensions_DateOfMostRecentWeekday_System_DateTime_System_Int32_
+  commentId: M:WizardWrx.DateTimeExtensions.DateOfMostRecentWeekday(System.DateTime,System.Int32)
+  fullName: WizardWrx.DateTimeExtensions.DateOfMostRecentWeekday(System.DateTime, System.Int32)
+  nameWithType: DateTimeExtensions.DateOfMostRecentWeekday(DateTime, Int32)
+- uid: WizardWrx.DateTimeExtensions.DateOfMostRecentWeekday*
+  name: DateOfMostRecentWeekday
+  href: api/WizardWrx.DateTimeExtensions.html#WizardWrx_DateTimeExtensions_DateOfMostRecentWeekday_
+  commentId: Overload:WizardWrx.DateTimeExtensions.DateOfMostRecentWeekday
+  isSpec: "True"
+  fullName: WizardWrx.DateTimeExtensions.DateOfMostRecentWeekday
+  nameWithType: DateTimeExtensions.DateOfMostRecentWeekday
 - uid: WizardWrx.DisplayFormats
   name: DisplayFormats
   href: api/WizardWrx.DisplayFormats.html
