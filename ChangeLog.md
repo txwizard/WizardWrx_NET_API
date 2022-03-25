@@ -1,5 +1,23 @@
 ﻿# WizardWrx .NET API Change Log
 
+## 2022-03-24
+
+### WizardWrx.Core, Version=8.0.270
+
+This release extends static class TimeZoneInfoExtensions, which implements
+extension methods on the sealed TimeZoneInfo class that generate the correct
+abbreviation of the display name that corresponds to the part of the year
+(Standard versus Daylight) represented by a given System.DateTime object.
+The new method, GetCurrentTimeZoneName, takes a System.DateTime object that is
+expected to represent the local time for which the Time Zone Name string is
+needed and a boolean that is set to True to cause the abbreviated time to be
+computed from the display names by passing the appropriate full name string to
+either AbbreviateDaylightName or AbbreviatedStandardName, depending on whether
+Daylight Saving Time is in force at the indicated time.
+
+Furthermore, overlooked unit tests for the TimeZoneInfoExtensions class are
+included in the included unit test program.
+
 ## 2022-03-08
 
 ### WizardWrx.Core, Version=8.0.266

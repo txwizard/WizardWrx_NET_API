@@ -1,0 +1,876 @@
+id: WizardWrx.DiagnosticInfo
+language: CSharp
+name:
+  Default: WizardWrx.DiagnosticInfo
+qualifiedName:
+  Default: WizardWrx.DiagnosticInfo
+type: Assembly
+modifiers: {}
+items:
+- id: WizardWrx
+  commentId: N:WizardWrx
+  language: CSharp
+  name:
+    CSharp: WizardWrx
+    VB: WizardWrx
+  nameWithType:
+    CSharp: WizardWrx
+    VB: WizardWrx
+  qualifiedName:
+    CSharp: WizardWrx
+    VB: WizardWrx
+  type: Namespace
+  assemblies:
+  - WizardWrx.DiagnosticInfo
+  modifiers: {}
+  items:
+  - id: WizardWrx.ClassAndMethodDiagnosticInfo
+    commentId: T:WizardWrx.ClassAndMethodDiagnosticInfo
+    language: CSharp
+    name:
+      CSharp: ClassAndMethodDiagnosticInfo
+      VB: ClassAndMethodDiagnosticInfo
+    nameWithType:
+      CSharp: ClassAndMethodDiagnosticInfo
+      VB: ClassAndMethodDiagnosticInfo
+    qualifiedName:
+      CSharp: WizardWrx.ClassAndMethodDiagnosticInfo
+      VB: WizardWrx.ClassAndMethodDiagnosticInfo
+    type: Class
+    assemblies:
+    - WizardWrx.DiagnosticInfo
+    namespace: WizardWrx
+    source:
+      remote:
+        path: DiagnosticInfo/ClassAndMethodDiagnosticInfo.cs
+        branch: master
+        repo: https://github.com/txwizard/WizardWrx_NET_API.git
+      id: ClassAndMethodDiagnosticInfo
+      path: ../DiagnosticInfo/ClassAndMethodDiagnosticInfo.cs
+      startLine: 80
+    summary: "\nThe static methods in this class expose the internal name, source code\nfile name, and source file line number from which calls to them\noriginated.\n"
+    example: []
+    syntax:
+      content:
+        CSharp: public static class ClassAndMethodDiagnosticInfo
+        VB: Public Module ClassAndMethodDiagnosticInfo
+    inheritance:
+    - System.Object
+    inheritedMembers:
+    - System.Object.ToString
+    - System.Object.Equals(System.Object)
+    - System.Object.Equals(System.Object,System.Object)
+    - System.Object.ReferenceEquals(System.Object,System.Object)
+    - System.Object.GetHashCode
+    - System.Object.GetType
+    - System.Object.MemberwiseClone
+    modifiers:
+      CSharp:
+      - public
+      - static
+      - class
+      VB:
+      - Public
+      - Module
+    items:
+    - id: WizardWrx.ClassAndMethodDiagnosticInfo.GetMyMethodName(System.String)
+      commentId: M:WizardWrx.ClassAndMethodDiagnosticInfo.GetMyMethodName(System.String)
+      language: CSharp
+      name:
+        CSharp: GetMyMethodName(String)
+        VB: GetMyMethodName(String)
+      nameWithType:
+        CSharp: ClassAndMethodDiagnosticInfo.GetMyMethodName(String)
+        VB: ClassAndMethodDiagnosticInfo.GetMyMethodName(String)
+      qualifiedName:
+        CSharp: WizardWrx.ClassAndMethodDiagnosticInfo.GetMyMethodName(System.String)
+        VB: WizardWrx.ClassAndMethodDiagnosticInfo.GetMyMethodName(System.String)
+      type: Method
+      assemblies:
+      - WizardWrx.DiagnosticInfo
+      namespace: WizardWrx
+      source:
+        remote:
+          path: DiagnosticInfo/ClassAndMethodDiagnosticInfo.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API.git
+        id: GetMyMethodName
+        path: ../DiagnosticInfo/ClassAndMethodDiagnosticInfo.cs
+        startLine: 93
+      summary: "\nGet the unqualified name of the calling method.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public static string GetMyMethodName(string pstrMemberName = "")
+          VB: Public Shared Function GetMyMethodName(pstrMemberName As String = "") As String
+        parameters:
+        - id: pstrMemberName
+          type: System.String
+          description: "\nThis parameter is configured as optional, and is set by the compiler\nto the unqualified name of the method that called it.\n"
+        return:
+          type: System.String
+          description: "\nThe return value is the unqualified compile-time name of the method\nthat called it\n"
+      overload: WizardWrx.ClassAndMethodDiagnosticInfo.GetMyMethodName*
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+    - id: WizardWrx.ClassAndMethodDiagnosticInfo.GetMySourceFileName(System.String)
+      commentId: M:WizardWrx.ClassAndMethodDiagnosticInfo.GetMySourceFileName(System.String)
+      language: CSharp
+      name:
+        CSharp: GetMySourceFileName(String)
+        VB: GetMySourceFileName(String)
+      nameWithType:
+        CSharp: ClassAndMethodDiagnosticInfo.GetMySourceFileName(String)
+        VB: ClassAndMethodDiagnosticInfo.GetMySourceFileName(String)
+      qualifiedName:
+        CSharp: WizardWrx.ClassAndMethodDiagnosticInfo.GetMySourceFileName(System.String)
+        VB: WizardWrx.ClassAndMethodDiagnosticInfo.GetMySourceFileName(System.String)
+      type: Method
+      assemblies:
+      - WizardWrx.DiagnosticInfo
+      namespace: WizardWrx
+      source:
+        remote:
+          path: DiagnosticInfo/ClassAndMethodDiagnosticInfo.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API.git
+        id: GetMySourceFileName
+        path: ../DiagnosticInfo/ClassAndMethodDiagnosticInfo.cs
+        startLine: 113
+      summary: "\nGet the absolute (fully qualified) name of the source file in which\nthe calling method is defined.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public static string GetMySourceFileName(string pstrCallerFilePath = "")
+          VB: Public Shared Function GetMySourceFileName(pstrCallerFilePath As String = "") As String
+        parameters:
+        - id: pstrCallerFilePath
+          type: System.String
+          description: "\nThis parameter is configured as optional, and is set by the compiler\nto the absolute (fully qualified) name of the source file in which\nthe method that called it is defined.\n"
+        return:
+          type: System.String
+          description: "\nThe return value is the absolute (fully qualified) name of the file,\nindicated by <code data-dev-comment-type=\"paramref\" class=\"paramref\">pstrCallerFilePath</code>, in which the\ncall originated.\n"
+      overload: WizardWrx.ClassAndMethodDiagnosticInfo.GetMySourceFileName*
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+    - id: WizardWrx.ClassAndMethodDiagnosticInfo.GetMySourceLineNumber(System.Int32)
+      commentId: M:WizardWrx.ClassAndMethodDiagnosticInfo.GetMySourceLineNumber(System.Int32)
+      language: CSharp
+      name:
+        CSharp: GetMySourceLineNumber(Int32)
+        VB: GetMySourceLineNumber(Int32)
+      nameWithType:
+        CSharp: ClassAndMethodDiagnosticInfo.GetMySourceLineNumber(Int32)
+        VB: ClassAndMethodDiagnosticInfo.GetMySourceLineNumber(Int32)
+      qualifiedName:
+        CSharp: WizardWrx.ClassAndMethodDiagnosticInfo.GetMySourceLineNumber(System.Int32)
+        VB: WizardWrx.ClassAndMethodDiagnosticInfo.GetMySourceLineNumber(System.Int32)
+      type: Method
+      assemblies:
+      - WizardWrx.DiagnosticInfo
+      namespace: WizardWrx
+      source:
+        remote:
+          path: DiagnosticInfo/ClassAndMethodDiagnosticInfo.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API.git
+        id: GetMySourceLineNumber
+        path: ../DiagnosticInfo/ClassAndMethodDiagnosticInfo.cs
+        startLine: 130
+      summary: "\nGet the line number in the source file at which the call arose.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public static int GetMySourceLineNumber(int pintCallerLineNumber = 0)
+          VB: Public Shared Function GetMySourceLineNumber(pintCallerLineNumber As Integer = 0) As Integer
+        parameters:
+        - id: pintCallerLineNumber
+          type: System.Int32
+          description: "\nThis parameter is configured as optional, and is set by the compiler\nto the line number in the source file where the call originated.\n"
+        return:
+          type: System.Int32
+          description: "\nThe return value is the line number indicated by integer\n<code data-dev-comment-type=\"paramref\" class=\"paramref\">pintCallerLineNumber</code> where the call arose.\n"
+      overload: WizardWrx.ClassAndMethodDiagnosticInfo.GetMySourceLineNumber*
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+  - id: WizardWrx.ObjectPropertyEnumerators
+    commentId: T:WizardWrx.ObjectPropertyEnumerators
+    language: CSharp
+    name:
+      CSharp: ObjectPropertyEnumerators
+      VB: ObjectPropertyEnumerators
+    nameWithType:
+      CSharp: ObjectPropertyEnumerators
+      VB: ObjectPropertyEnumerators
+    qualifiedName:
+      CSharp: WizardWrx.ObjectPropertyEnumerators
+      VB: WizardWrx.ObjectPropertyEnumerators
+    type: Class
+    assemblies:
+    - WizardWrx.DiagnosticInfo
+    namespace: WizardWrx
+    source:
+      remote:
+        path: DiagnosticInfo/ObjectPropertyEnumerators.cs
+        branch: master
+        repo: https://github.com/txwizard/WizardWrx_NET_API.git
+      id: ObjectPropertyEnumerators
+      path: ../DiagnosticInfo/ObjectPropertyEnumerators.cs
+      startLine: 81
+    summary: "\nThis class exposes static methods for enumerating properties of objects.\n"
+    example: []
+    syntax:
+      content:
+        CSharp: public static class ObjectPropertyEnumerators
+        VB: Public Module ObjectPropertyEnumerators
+    inheritance:
+    - System.Object
+    inheritedMembers:
+    - System.Object.ToString
+    - System.Object.Equals(System.Object)
+    - System.Object.Equals(System.Object,System.Object)
+    - System.Object.ReferenceEquals(System.Object,System.Object)
+    - System.Object.GetHashCode
+    - System.Object.GetType
+    - System.Object.MemberwiseClone
+    modifiers:
+      CSharp:
+      - public
+      - static
+      - class
+      VB:
+      - Public
+      - Module
+    items:
+    - id: WizardWrx.ObjectPropertyEnumerators.DEFAULT_BINDING_FLAGS
+      commentId: F:WizardWrx.ObjectPropertyEnumerators.DEFAULT_BINDING_FLAGS
+      language: CSharp
+      name:
+        CSharp: DEFAULT_BINDING_FLAGS
+        VB: DEFAULT_BINDING_FLAGS
+      nameWithType:
+        CSharp: ObjectPropertyEnumerators.DEFAULT_BINDING_FLAGS
+        VB: ObjectPropertyEnumerators.DEFAULT_BINDING_FLAGS
+      qualifiedName:
+        CSharp: WizardWrx.ObjectPropertyEnumerators.DEFAULT_BINDING_FLAGS
+        VB: WizardWrx.ObjectPropertyEnumerators.DEFAULT_BINDING_FLAGS
+      type: Field
+      assemblies:
+      - WizardWrx.DiagnosticInfo
+      namespace: WizardWrx
+      source:
+        remote:
+          path: DiagnosticInfo/ObjectPropertyEnumerators.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API.git
+        id: DEFAULT_BINDING_FLAGS
+        path: ../DiagnosticInfo/ObjectPropertyEnumerators.cs
+        startLine: 86
+      summary: "\nDefault binding flags bit mask\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public const BindingFlags DEFAULT_BINDING_FLAGS = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.FlattenHierarchy
+          VB: Public Const DEFAULT_BINDING_FLAGS As BindingFlags = BindingFlags.Instance Or BindingFlags.Public Or BindingFlags.NonPublic Or BindingFlags.FlattenHierarchy
+        return:
+          type: System.Reflection.BindingFlags
+      modifiers:
+        CSharp:
+        - public
+        - const
+        VB:
+        - Public
+        - Const
+    - id: WizardWrx.ObjectPropertyEnumerators.ListObjectProperties(System.String,System.Object,System.Int32,System.String,System.Reflection.BindingFlags)
+      commentId: M:WizardWrx.ObjectPropertyEnumerators.ListObjectProperties(System.String,System.Object,System.Int32,System.String,System.Reflection.BindingFlags)
+      language: CSharp
+      name:
+        CSharp: ListObjectProperties(String, Object, Int32, String, BindingFlags)
+        VB: ListObjectProperties(String, Object, Int32, String, BindingFlags)
+      nameWithType:
+        CSharp: ObjectPropertyEnumerators.ListObjectProperties(String, Object, Int32, String, BindingFlags)
+        VB: ObjectPropertyEnumerators.ListObjectProperties(String, Object, Int32, String, BindingFlags)
+      qualifiedName:
+        CSharp: WizardWrx.ObjectPropertyEnumerators.ListObjectProperties(System.String, System.Object, System.Int32, System.String, System.Reflection.BindingFlags)
+        VB: WizardWrx.ObjectPropertyEnumerators.ListObjectProperties(System.String, System.Object, System.Int32, System.String, System.Reflection.BindingFlags)
+      type: Method
+      assemblies:
+      - WizardWrx.DiagnosticInfo
+      namespace: WizardWrx
+      source:
+        remote:
+          path: DiagnosticInfo/ObjectPropertyEnumerators.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API.git
+        id: ListObjectProperties
+        path: ../DiagnosticInfo/ObjectPropertyEnumerators.cs
+        startLine: 111
+      summary: "\nEnumerate the properties of an object, showing the value of each, as\na formatted listing.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public static void ListObjectProperties(string pstrNameOfObject, object pObjThisOne, int pintLeftPadding = 0, string pstrObjectLabelSuffix = null, BindingFlags penmBindingFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.FlattenHierarchy)
+          VB: Public Shared Sub ListObjectProperties(pstrNameOfObject As String, pObjThisOne As Object, pintLeftPadding As Integer = 0, pstrObjectLabelSuffix As String = Nothing, penmBindingFlags As BindingFlags = BindingFlags.Instance Or BindingFlags.Public Or BindingFlags.NonPublic Or BindingFlags.FlattenHierarchy)
+        parameters:
+        - id: pstrNameOfObject
+          type: System.String
+          description: "\nName of object as it appears in the calling routine\n"
+        - id: pObjThisOne
+          type: System.Object
+          description: "\nReference to the object from which to enumerate properties\n"
+        - id: pintLeftPadding
+          type: System.Int32
+          description: "\nOptional left padding for the report\n"
+        - id: pstrObjectLabelSuffix
+          type: System.String
+          description: "\nOptional supplementary label information for the object\n"
+        - id: penmBindingFlags
+          type: System.Reflection.BindingFlags
+          description: "\nBinding flags mask, which determines which properties are enumerated\n"
+      overload: WizardWrx.ObjectPropertyEnumerators.ListObjectProperties*
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+    - id: WizardWrx.ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues(System.String,System.Object,System.Int32,System.String,System.Reflection.BindingFlags)
+      commentId: M:WizardWrx.ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues(System.String,System.Object,System.Int32,System.String,System.Reflection.BindingFlags)
+      language: CSharp
+      name:
+        CSharp: ListObjectPropertyTypesAndValues(String, Object, Int32, String, BindingFlags)
+        VB: ListObjectPropertyTypesAndValues(String, Object, Int32, String, BindingFlags)
+      nameWithType:
+        CSharp: ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues(String, Object, Int32, String, BindingFlags)
+        VB: ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues(String, Object, Int32, String, BindingFlags)
+      qualifiedName:
+        CSharp: WizardWrx.ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues(System.String, System.Object, System.Int32, System.String, System.Reflection.BindingFlags)
+        VB: WizardWrx.ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues(System.String, System.Object, System.Int32, System.String, System.Reflection.BindingFlags)
+      type: Method
+      assemblies:
+      - WizardWrx.DiagnosticInfo
+      namespace: WizardWrx
+      source:
+        remote:
+          path: DiagnosticInfo/ObjectPropertyEnumerators.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API.git
+        id: ListObjectPropertyTypesAndValues
+        path: ../DiagnosticInfo/ObjectPropertyEnumerators.cs
+        startLine: 193
+      summary: "\nEnumerate the properties of an object, showing for each its type and\nvalue, as a formatted listing.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public static void ListObjectPropertyTypesAndValues(string pstrNameOfObject, object pObjThisOne, int pintLeftPadding = 0, string pstrObjectLabelSuffix = null, BindingFlags penmBindingFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.FlattenHierarchy)
+          VB: Public Shared Sub ListObjectPropertyTypesAndValues(pstrNameOfObject As String, pObjThisOne As Object, pintLeftPadding As Integer = 0, pstrObjectLabelSuffix As String = Nothing, penmBindingFlags As BindingFlags = BindingFlags.Instance Or BindingFlags.Public Or BindingFlags.NonPublic Or BindingFlags.FlattenHierarchy)
+        parameters:
+        - id: pstrNameOfObject
+          type: System.String
+          description: "\nName of object as it appears in the calling routine\n"
+        - id: pObjThisOne
+          type: System.Object
+          description: "\nReference to the object from which to enumerate properties\n"
+        - id: pintLeftPadding
+          type: System.Int32
+          description: "\nOptional left padding for the report\n"
+        - id: pstrObjectLabelSuffix
+          type: System.String
+          description: "\nOptional supplementary label information for the object\n"
+        - id: penmBindingFlags
+          type: System.Reflection.BindingFlags
+          description: "\nBinding flags mask, which determines which properties are enumerated\n"
+      overload: WizardWrx.ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues*
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+references:
+  System:
+    name:
+      CSharp:
+      - name: System
+        nameWithType: System
+        qualifiedName: System
+        isExternal: true
+      VB:
+      - name: System
+        nameWithType: System
+        qualifiedName: System
+    isDefinition: true
+    commentId: N:System
+  System.Object:
+    name:
+      CSharp:
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      VB:
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+    isDefinition: true
+    parent: System
+    commentId: T:System.Object
+  System.Object.ToString:
+    name:
+      CSharp:
+      - id: System.Object.ToString
+        name: ToString
+        nameWithType: Object.ToString
+        qualifiedName: System.Object.ToString
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.ToString
+        name: ToString
+        nameWithType: Object.ToString
+        qualifiedName: System.Object.ToString
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.ToString
+  System.Object.Equals(System.Object):
+    name:
+      CSharp:
+      - id: System.Object.Equals(System.Object)
+        name: Equals
+        nameWithType: Object.Equals
+        qualifiedName: System.Object.Equals
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.Equals(System.Object)
+        name: Equals
+        nameWithType: Object.Equals
+        qualifiedName: System.Object.Equals
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.Equals(System.Object)
+  System.Object.Equals(System.Object,System.Object):
+    name:
+      CSharp:
+      - id: System.Object.Equals(System.Object,System.Object)
+        name: Equals
+        nameWithType: Object.Equals
+        qualifiedName: System.Object.Equals
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.Equals(System.Object,System.Object)
+        name: Equals
+        nameWithType: Object.Equals
+        qualifiedName: System.Object.Equals
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.Equals(System.Object,System.Object)
+  System.Object.ReferenceEquals(System.Object,System.Object):
+    name:
+      CSharp:
+      - id: System.Object.ReferenceEquals(System.Object,System.Object)
+        name: ReferenceEquals
+        nameWithType: Object.ReferenceEquals
+        qualifiedName: System.Object.ReferenceEquals
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.ReferenceEquals(System.Object,System.Object)
+        name: ReferenceEquals
+        nameWithType: Object.ReferenceEquals
+        qualifiedName: System.Object.ReferenceEquals
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  System.Object.GetHashCode:
+    name:
+      CSharp:
+      - id: System.Object.GetHashCode
+        name: GetHashCode
+        nameWithType: Object.GetHashCode
+        qualifiedName: System.Object.GetHashCode
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.GetHashCode
+        name: GetHashCode
+        nameWithType: Object.GetHashCode
+        qualifiedName: System.Object.GetHashCode
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.GetHashCode
+  System.Object.GetType:
+    name:
+      CSharp:
+      - id: System.Object.GetType
+        name: GetType
+        nameWithType: Object.GetType
+        qualifiedName: System.Object.GetType
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.GetType
+        name: GetType
+        nameWithType: Object.GetType
+        qualifiedName: System.Object.GetType
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.GetType
+  System.Object.MemberwiseClone:
+    name:
+      CSharp:
+      - id: System.Object.MemberwiseClone
+        name: MemberwiseClone
+        nameWithType: Object.MemberwiseClone
+        qualifiedName: System.Object.MemberwiseClone
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.MemberwiseClone
+        name: MemberwiseClone
+        nameWithType: Object.MemberwiseClone
+        qualifiedName: System.Object.MemberwiseClone
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.MemberwiseClone
+  System.String:
+    name:
+      CSharp:
+      - id: System.String
+        name: String
+        nameWithType: String
+        qualifiedName: System.String
+        isExternal: true
+      VB:
+      - id: System.String
+        name: String
+        nameWithType: String
+        qualifiedName: System.String
+        isExternal: true
+    isDefinition: true
+    parent: System
+    commentId: T:System.String
+  WizardWrx.ClassAndMethodDiagnosticInfo.GetMyMethodName*:
+    name:
+      CSharp:
+      - id: WizardWrx.ClassAndMethodDiagnosticInfo.GetMyMethodName*
+        name: GetMyMethodName
+        nameWithType: ClassAndMethodDiagnosticInfo.GetMyMethodName
+        qualifiedName: WizardWrx.ClassAndMethodDiagnosticInfo.GetMyMethodName
+      VB:
+      - id: WizardWrx.ClassAndMethodDiagnosticInfo.GetMyMethodName*
+        name: GetMyMethodName
+        nameWithType: ClassAndMethodDiagnosticInfo.GetMyMethodName
+        qualifiedName: WizardWrx.ClassAndMethodDiagnosticInfo.GetMyMethodName
+    isDefinition: true
+    commentId: Overload:WizardWrx.ClassAndMethodDiagnosticInfo.GetMyMethodName
+  WizardWrx.ClassAndMethodDiagnosticInfo.GetMySourceFileName*:
+    name:
+      CSharp:
+      - id: WizardWrx.ClassAndMethodDiagnosticInfo.GetMySourceFileName*
+        name: GetMySourceFileName
+        nameWithType: ClassAndMethodDiagnosticInfo.GetMySourceFileName
+        qualifiedName: WizardWrx.ClassAndMethodDiagnosticInfo.GetMySourceFileName
+      VB:
+      - id: WizardWrx.ClassAndMethodDiagnosticInfo.GetMySourceFileName*
+        name: GetMySourceFileName
+        nameWithType: ClassAndMethodDiagnosticInfo.GetMySourceFileName
+        qualifiedName: WizardWrx.ClassAndMethodDiagnosticInfo.GetMySourceFileName
+    isDefinition: true
+    commentId: Overload:WizardWrx.ClassAndMethodDiagnosticInfo.GetMySourceFileName
+  System.Int32:
+    name:
+      CSharp:
+      - id: System.Int32
+        name: Int32
+        nameWithType: Int32
+        qualifiedName: System.Int32
+        isExternal: true
+      VB:
+      - id: System.Int32
+        name: Int32
+        nameWithType: Int32
+        qualifiedName: System.Int32
+        isExternal: true
+    isDefinition: true
+    parent: System
+    commentId: T:System.Int32
+  WizardWrx.ClassAndMethodDiagnosticInfo.GetMySourceLineNumber*:
+    name:
+      CSharp:
+      - id: WizardWrx.ClassAndMethodDiagnosticInfo.GetMySourceLineNumber*
+        name: GetMySourceLineNumber
+        nameWithType: ClassAndMethodDiagnosticInfo.GetMySourceLineNumber
+        qualifiedName: WizardWrx.ClassAndMethodDiagnosticInfo.GetMySourceLineNumber
+      VB:
+      - id: WizardWrx.ClassAndMethodDiagnosticInfo.GetMySourceLineNumber*
+        name: GetMySourceLineNumber
+        nameWithType: ClassAndMethodDiagnosticInfo.GetMySourceLineNumber
+        qualifiedName: WizardWrx.ClassAndMethodDiagnosticInfo.GetMySourceLineNumber
+    isDefinition: true
+    commentId: Overload:WizardWrx.ClassAndMethodDiagnosticInfo.GetMySourceLineNumber
+  WizardWrx.ClassAndMethodDiagnosticInfo:
+    name:
+      CSharp:
+      - id: WizardWrx.ClassAndMethodDiagnosticInfo
+        name: ClassAndMethodDiagnosticInfo
+        nameWithType: ClassAndMethodDiagnosticInfo
+        qualifiedName: WizardWrx.ClassAndMethodDiagnosticInfo
+      VB:
+      - id: WizardWrx.ClassAndMethodDiagnosticInfo
+        name: ClassAndMethodDiagnosticInfo
+        nameWithType: ClassAndMethodDiagnosticInfo
+        qualifiedName: WizardWrx.ClassAndMethodDiagnosticInfo
+    isDefinition: true
+    commentId: T:WizardWrx.ClassAndMethodDiagnosticInfo
+  System.Reflection:
+    name:
+      CSharp:
+      - name: System.Reflection
+        nameWithType: System.Reflection
+        qualifiedName: System.Reflection
+        isExternal: true
+      VB:
+      - name: System.Reflection
+        nameWithType: System.Reflection
+        qualifiedName: System.Reflection
+    isDefinition: true
+    commentId: N:System.Reflection
+  System.Reflection.BindingFlags:
+    name:
+      CSharp:
+      - id: System.Reflection.BindingFlags
+        name: BindingFlags
+        nameWithType: BindingFlags
+        qualifiedName: System.Reflection.BindingFlags
+        isExternal: true
+      VB:
+      - id: System.Reflection.BindingFlags
+        name: BindingFlags
+        nameWithType: BindingFlags
+        qualifiedName: System.Reflection.BindingFlags
+        isExternal: true
+    isDefinition: true
+    parent: System.Reflection
+    commentId: T:System.Reflection.BindingFlags
+  WizardWrx.ObjectPropertyEnumerators.ListObjectProperties*:
+    name:
+      CSharp:
+      - id: WizardWrx.ObjectPropertyEnumerators.ListObjectProperties*
+        name: ListObjectProperties
+        nameWithType: ObjectPropertyEnumerators.ListObjectProperties
+        qualifiedName: WizardWrx.ObjectPropertyEnumerators.ListObjectProperties
+      VB:
+      - id: WizardWrx.ObjectPropertyEnumerators.ListObjectProperties*
+        name: ListObjectProperties
+        nameWithType: ObjectPropertyEnumerators.ListObjectProperties
+        qualifiedName: WizardWrx.ObjectPropertyEnumerators.ListObjectProperties
+    isDefinition: true
+    commentId: Overload:WizardWrx.ObjectPropertyEnumerators.ListObjectProperties
+  WizardWrx.ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues*:
+    name:
+      CSharp:
+      - id: WizardWrx.ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues*
+        name: ListObjectPropertyTypesAndValues
+        nameWithType: ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues
+        qualifiedName: WizardWrx.ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues
+      VB:
+      - id: WizardWrx.ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues*
+        name: ListObjectPropertyTypesAndValues
+        nameWithType: ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues
+        qualifiedName: WizardWrx.ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues
+    isDefinition: true
+    commentId: Overload:WizardWrx.ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues
+  WizardWrx.ObjectPropertyEnumerators:
+    name:
+      CSharp:
+      - id: WizardWrx.ObjectPropertyEnumerators
+        name: ObjectPropertyEnumerators
+        nameWithType: ObjectPropertyEnumerators
+        qualifiedName: WizardWrx.ObjectPropertyEnumerators
+      VB:
+      - id: WizardWrx.ObjectPropertyEnumerators
+        name: ObjectPropertyEnumerators
+        nameWithType: ObjectPropertyEnumerators
+        qualifiedName: WizardWrx.ObjectPropertyEnumerators
+    isDefinition: true
+    commentId: T:WizardWrx.ObjectPropertyEnumerators
+  WizardWrx:
+    name:
+      CSharp:
+      - name: WizardWrx
+        nameWithType: WizardWrx
+        qualifiedName: WizardWrx
+      VB:
+      - name: WizardWrx
+        nameWithType: WizardWrx
+        qualifiedName: WizardWrx
+    isDefinition: true
+    commentId: N:WizardWrx

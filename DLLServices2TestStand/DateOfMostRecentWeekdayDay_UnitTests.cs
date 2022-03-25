@@ -160,7 +160,7 @@ namespace DLLServices2TestStand
 							  intK++ )
 					{
 						Console.WriteLine (
-							@"            Testing scenario {0} of {1}: Weekday Name = {2}, Enum value = {3}, Return value = {4:dddd, yyyy/MM/dd hh:mm:ss}" ,
+							@"            Testing scenario {0} of {1}: Weekday Name = {2}, Enum value = {3}, Return value = {4:dddd, yyyy/MM/dd}" ,
 							ArrayInfo.OrdinalFromIndex ( intK ) ,               // Format Item 0:Testing scenario {0}
 							intNDaysOfWeek2Test ,                               // Format Item 1: of {1}
 							s_aenmDayOfWeek [ intK ] ,                          // Format Item 2: Weekday Name = {2}

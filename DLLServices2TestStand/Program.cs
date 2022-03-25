@@ -306,6 +306,8 @@
                             GuardStringIfNeeded.
 
     2021/12/19 8.0.1483 DAG Implement TestFindingMostRecentWeekday.
+    
+    2022/03/24 8.0.1485 DAG Implement ExerciseTimeZoneInfoExtensions.
     ============================================================================
 */
 
@@ -539,6 +541,17 @@ namespace DLLServices2TestStand
 
         private static int [ ] s_aintRemoveAtTest2 = { 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 };
 
+        //  --------------------------------------------------------------------
+        //  Test cases for ExerciseTimeZoneInfoExtensions
+        //  --------------------------------------------------------------------
+
+        private static DateTime [ ] s_adtmTimeZoneTestCase =
+        {
+            DateTime.Now,
+            new DateTime(2022,02,14,14,16,34),
+            new DateTime(2022,03,25,12,13,14)
+        };
+
         internal static StateManager s_smTheApp = StateManager.GetTheSingleInstance ( );
 
         static void Main ( string [ ] pastrArgs )
@@ -616,6 +629,8 @@ namespace DLLServices2TestStand
                 AppDomainDetails.DisplayProcessProperties ( s_smTheApp.AppStartupTimeUtc );
 
                 ExerciseDynamicExceptionReporting ( );
+
+                ExerciseTimeZoneInfoExtensions ( );
 
                 if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_REDIRECTION_DETECTION )
                 {   // Focus on this single test, without any other stuff to interfere.
@@ -2000,6 +2015,34 @@ namespace DLLServices2TestStand
                 MagicNumbers.ERROR_SUCCESS ,
                 pintTestNumber );
         }   // ExerciseStringFixups method
+
+
+        private static void ExerciseTimeZoneInfoExtensions ( )
+        {
+            Console.WriteLine ( $"{Environment.NewLine}ExerciseTimeZoneInfoExtensions Begin:{Environment.NewLine}" );
+            TimeZoneInfo tzInfo = TimeZoneInfo.Local;
+
+            Console.WriteLine ( $"    Machine Local Time Zone ID                               = {tzInfo.Id}{Environment.NewLine}" );
+            Console.WriteLine ( $"    Machine Local Time Zone DisplayName                      = {tzInfo.DisplayName}" );
+            Console.WriteLine ( $"    Machine Local Time Zone StandardName                     = {tzInfo.StandardName}" );
+            Console.WriteLine ( $"    Machine Local Time Zone DaylightName                     = {tzInfo.DaylightName}{Environment.NewLine}" );
+
+            for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+                      intJ < s_adtmTimeZoneTestCase.Length ;
+                      intJ++ )
+            {
+                Console.WriteLine ( $"    Case {ArrayInfo.OrdinalFromIndex ( intJ )}: Current Time = {SysDateFormatters.FormatDateTimeForShow ( s_adtmTimeZoneTestCase [ intJ ] )}" );
+
+                Console.WriteLine ( $"            Machine Local Time Zone Abbreviated DisplayName   = {tzInfo.AbbreviateDisplayName ( )}" );
+                Console.WriteLine ( $"            Machine Local Time Zone Abbreviated StandardName  = {tzInfo.AbbreviatedStandardName ( )}" );
+                Console.WriteLine ( $"            Machine Local Time Zone Abbreviated DaylightName  = {tzInfo.AbbreviateDaylightName ( )}" );
+
+                Console.WriteLine ( $"            Machine Local Time Zone Display Name              = {tzInfo.GetCurrentTimeZoneName ( s_adtmTimeZoneTestCase [ intJ ] , false )}" );
+                Console.WriteLine ( $"            Machine Local Time Zone Abbreviated Display Name  = {tzInfo.GetCurrentTimeZoneName ( s_adtmTimeZoneTestCase [ intJ ] , true )}" );
+            }   // for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ; intJ < s_adtmTimeZoneTestCase.Length ; intJ++ )
+
+            Console.WriteLine ( $"{Environment.NewLine}ExerciseTimeZoneInfoExtensions Done{Environment.NewLine}" );
+        }   // private static void ExerciseTimeZoneInfoExtensions
 
 
         private static void Exercise_TruncateValueToOneLine ( )

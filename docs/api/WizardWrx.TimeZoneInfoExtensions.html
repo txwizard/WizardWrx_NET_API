@@ -119,7 +119,7 @@ names.</p>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_TimeZoneInfoExtensions_AbbreviateDaylightName_System_TimeZoneInfo_.md&amp;value=---%0Auid%3A%20WizardWrx.TimeZoneInfoExtensions.AbbreviateDaylightName(System.TimeZoneInfo)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/TimeZoneInfoExtensions.cs/#L93">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/TimeZoneInfoExtensions.cs/#L101">View Source</a>
   </span>
   <a id="WizardWrx_TimeZoneInfoExtensions_AbbreviateDaylightName_" data-uid="WizardWrx.TimeZoneInfoExtensions.AbbreviateDaylightName*"></a>
   <h4 id="WizardWrx_TimeZoneInfoExtensions_AbbreviateDaylightName_System_TimeZoneInfo_" data-uid="WizardWrx.TimeZoneInfoExtensions.AbbreviateDaylightName(System.TimeZoneInfo)">AbbreviateDaylightName(TimeZoneInfo)</h4>
@@ -172,7 +172,7 @@ it the first letter of each word.</p>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_TimeZoneInfoExtensions_AbbreviateDisplayName_System_TimeZoneInfo_.md&amp;value=---%0Auid%3A%20WizardWrx.TimeZoneInfoExtensions.AbbreviateDisplayName(System.TimeZoneInfo)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/TimeZoneInfoExtensions.cs/#L111">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/TimeZoneInfoExtensions.cs/#L126">View Source</a>
   </span>
   <a id="WizardWrx_TimeZoneInfoExtensions_AbbreviateDisplayName_" data-uid="WizardWrx.TimeZoneInfoExtensions.AbbreviateDisplayName*"></a>
   <h4 id="WizardWrx_TimeZoneInfoExtensions_AbbreviateDisplayName_System_TimeZoneInfo_" data-uid="WizardWrx.TimeZoneInfoExtensions.AbbreviateDisplayName(System.TimeZoneInfo)">AbbreviateDisplayName(TimeZoneInfo)</h4>
@@ -213,9 +213,16 @@ is supplied by the runtime when the extension method is called.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><p>The abbreviated name is constructed from the name specified on the
+        <td><p>
+The abbreviated name is constructed from the name specified on the
 DisplayName property on the TimeZoneInfo object by extracting from
-it the first letter of each word.</p>
+it the first letter of each word.
+</p>
+<p>
+The Display Name sees much less use because it includes the UTC
+offset, which confuses users who are unfamiliar with the details of
+UTC in particular and time zones in general.
+</p>
 </td>
       </tr>
     </tbody>
@@ -225,7 +232,7 @@ it the first letter of each word.</p>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_TimeZoneInfoExtensions_AbbreviatedStandardName_System_TimeZoneInfo_.md&amp;value=---%0Auid%3A%20WizardWrx.TimeZoneInfoExtensions.AbbreviatedStandardName(System.TimeZoneInfo)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/TimeZoneInfoExtensions.cs/#L129">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/TimeZoneInfoExtensions.cs/#L144">View Source</a>
   </span>
   <a id="WizardWrx_TimeZoneInfoExtensions_AbbreviatedStandardName_" data-uid="WizardWrx.TimeZoneInfoExtensions.AbbreviatedStandardName*"></a>
   <h4 id="WizardWrx_TimeZoneInfoExtensions_AbbreviatedStandardName_System_TimeZoneInfo_" data-uid="WizardWrx.TimeZoneInfoExtensions.AbbreviatedStandardName(System.TimeZoneInfo)">AbbreviatedStandardName(TimeZoneInfo)</h4>
@@ -273,6 +280,79 @@ it the first letter of each word.</p>
       </tr>
     </tbody>
   </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_TimeZoneInfoExtensions_GetCurrentTimeZoneName_System_TimeZoneInfo_System_DateTime_System_Boolean_.md&amp;value=---%0Auid%3A%20WizardWrx.TimeZoneInfoExtensions.GetCurrentTimeZoneName(System.TimeZoneInfo%2CSystem.DateTime%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/TimeZoneInfoExtensions.cs/#L176">View Source</a>
+  </span>
+  <a id="WizardWrx_TimeZoneInfoExtensions_GetCurrentTimeZoneName_" data-uid="WizardWrx.TimeZoneInfoExtensions.GetCurrentTimeZoneName*"></a>
+  <h4 id="WizardWrx_TimeZoneInfoExtensions_GetCurrentTimeZoneName_System_TimeZoneInfo_System_DateTime_System_Boolean_" data-uid="WizardWrx.TimeZoneInfoExtensions.GetCurrentTimeZoneName(System.TimeZoneInfo,System.DateTime,System.Boolean)">GetCurrentTimeZoneName(TimeZoneInfo, DateTime, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Given a DateTime object to establish whether to display the Stanadrd
+Name or the Daylight Name, return the appropriate string for the
+part of the year that it represents.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string GetCurrentTimeZoneName(this TimeZoneInfo ptzi, DateTime pdtmDateTime, bool pfAbbreviate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.TimeZoneInfo</span></td>
+        <td><span class="parametername">ptzi</span></td>
+        <td><p>Specify the TimeZoneInfo object to process. This implicit paramteer
+is supplied by the runtime when the extension method is called.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">pdtmDateTime</span></td>
+        <td><p>The IsDaylightSavingTime method on the <code data-dev-comment-type="paramref" class="paramref">ptzi</code>
+instance establishes the correct string to return for the time that
+it represents, assuming that its DateTimeKind property is Local or
+that it is implicitly interpreted as such.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">pfAbbreviate</span></td>
+        <td><p>When True, this flag causes the abbreviated time zone name to be
+displayed. Otherwise, the appropriate string from the extended
+TimeZoneInfo instance is returned.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The return value is the standard or daylight time zone name string
+or abbreviation that represents the time specified by argument
+<code data-dev-comment-type="paramref" class="paramref">pdtmDateTime</code> as directed by argument
+<code data-dev-comment-type="paramref" class="paramref">pfAbbreviate</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
 </article>
           </div>
           
@@ -284,7 +364,7 @@ it the first letter of each word.</p>
                     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_TimeZoneInfoExtensions.md&amp;value=---%0Auid%3A%20WizardWrx.TimeZoneInfoExtensions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/TimeZoneInfoExtensions.cs/#L79" class="contribution-link">View Source</a>
+                    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/TimeZoneInfoExtensions.cs/#L86" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

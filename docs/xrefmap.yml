@@ -17190,3 +17190,16 @@ references:
   isSpec: "True"
   fullName: WizardWrx.TimeZoneInfoExtensions.AbbreviatedStandardName
   nameWithType: TimeZoneInfoExtensions.AbbreviatedStandardName
+- uid: WizardWrx.TimeZoneInfoExtensions.GetCurrentTimeZoneName(System.TimeZoneInfo,System.DateTime,System.Boolean)
+  name: GetCurrentTimeZoneName(TimeZoneInfo, DateTime, Boolean)
+  href: api/WizardWrx.TimeZoneInfoExtensions.html#WizardWrx_TimeZoneInfoExtensions_GetCurrentTimeZoneName_System_TimeZoneInfo_System_DateTime_System_Boolean_
+  commentId: M:WizardWrx.TimeZoneInfoExtensions.GetCurrentTimeZoneName(System.TimeZoneInfo,System.DateTime,System.Boolean)
+  fullName: WizardWrx.TimeZoneInfoExtensions.GetCurrentTimeZoneName(System.TimeZoneInfo, System.DateTime, System.Boolean)
+  nameWithType: TimeZoneInfoExtensions.GetCurrentTimeZoneName(TimeZoneInfo, DateTime, Boolean)
+- uid: WizardWrx.TimeZoneInfoExtensions.GetCurrentTimeZoneName*
+  name: GetCurrentTimeZoneName
+  href: api/WizardWrx.TimeZoneInfoExtensions.html#WizardWrx_TimeZoneInfoExtensions_GetCurrentTimeZoneName_
+  commentId: Overload:WizardWrx.TimeZoneInfoExtensions.GetCurrentTimeZoneName
+  isSpec: "True"
+  fullName: WizardWrx.TimeZoneInfoExtensions.GetCurrentTimeZoneName
+  nameWithType: TimeZoneInfoExtensions.GetCurrentTimeZoneName

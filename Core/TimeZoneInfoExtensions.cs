@@ -14,7 +14,7 @@
     Remarks:            Extension methods are the only way to extend a
                         TimeZoneInfo object.
 
-	License:            Copyright (C) 2021, David A. Gray.
+	License:            Copyright (C) 2021-2022, David A. Gray.
 						All rights reserved.
 
                         Redistribution and use in source and binary forms, with
@@ -62,6 +62,13 @@
 
     2021/10/13 8.0.252 DAG    Migrate from TimeZoneLab, where the class was
                               perfected.
+
+    2022/03/24 8.0.269 DAG    Implement a new method, GetCurrentTimeZoneName,
+                              that takes a DateTime structure, along with the
+                              TimeZoneInfo instance that it extends, and returns
+                              the correct display time zone as either the
+                              appropriate instance property or the extended
+                              abbreviated property.
     ============================================================================
 */
 
@@ -78,6 +85,7 @@ namespace WizardWrx
     /// </summary>
     public static class TimeZoneInfoExtensions
     {
+        #region Public Extension Method
         /// <summary>
         /// Get the abbreviated time zone Daylight Name.
         /// </summary>
@@ -104,9 +112,16 @@ namespace WizardWrx
         /// is supplied by the runtime when the extension method is called.
         /// </param>
         /// <returns>
+        /// <para>
         /// The abbreviated name is constructed from the name specified on the
         /// DisplayName property on the TimeZoneInfo object by extracting from
         /// it the first letter of each word.
+        /// </para>
+        /// <para>
+        /// The Display Name sees much less use because it includes the UTC
+        /// offset, which confuses users who are unfamiliar with the details of
+        /// UTC in particular and time zones in general.
+        /// </para>
         /// </returns>
         public static string AbbreviateDisplayName ( this TimeZoneInfo ptzi )
         {
@@ -132,6 +147,61 @@ namespace WizardWrx
         }   // public static string AbbreviatedStandardName
 
 
+        /// <summary>
+        /// Given a DateTime object to establish whether to display the Stanadrd
+        /// Name or the Daylight Name, return the appropriate string for the
+        /// part of the year that it represents.
+        /// </summary>
+        /// <param name="ptzi">
+        /// Specify the TimeZoneInfo object to process. This implicit paramteer
+        /// is supplied by the runtime when the extension method is called.
+        /// </param>
+        /// <param name="pdtmDateTime">
+        /// The IsDaylightSavingTime method on the <paramref name="ptzi"/>
+        /// instance establishes the correct string to return for the time that
+        /// it represents, assuming that its DateTimeKind property is Local or
+        /// that it is implicitly interpreted as such.
+        /// </param>
+        /// <param name="pfAbbreviate">
+        /// When True, this flag causes the abbreviated time zone name to be
+        /// displayed. Otherwise, the appropriate string from the extended
+        /// TimeZoneInfo instance is returned.
+        /// </param>
+        /// <returns>
+        /// The return value is the standard or daylight time zone name string
+        /// or abbreviation that represents the time specified by argument
+        /// <paramref name="pdtmDateTime"/> as directed by argument
+        /// <paramref name="pfAbbreviate"/>.
+        /// </returns>
+        public static string GetCurrentTimeZoneName ( this TimeZoneInfo ptzi , DateTime pdtmDateTime , bool pfAbbreviate )
+        {
+            if ( ptzi.IsDaylightSavingTime ( pdtmDateTime ) )
+            {
+                if ( pfAbbreviate )
+                {   // At the cost of theoretical correctness, shorten the call stack by bypassing the extension method.
+                    return AbbreviateAnyTZName ( ptzi.DaylightName );
+                }   // TRUE (The caller wants the abbreviated time zone name.) block, if ( pfAbbreviate )
+                else
+                {   // Return the full DaylightName string.
+                    return ptzi.DaylightName;
+                }   // FALSE (The caller wants the regular time zone name.) block, if ( pfAbbreviate )
+            }   // TRUE (The current time is in the Daylight Saving Time portion of the year in the current time zone.) block, if ( ptzi.IsDaylightSavingTime ( pdtmDateTime ) )
+            else
+            {
+                if ( pfAbbreviate )
+                {   // At the cost of theoretical correctness, shorten the call stack by bypassing the extension method.
+                    return AbbreviateAnyTZName ( ptzi.StandardName );
+                }   // TRUE (The caller wants the abbreviated time zone name.) block, if ( pfAbbreviate )
+                else
+                {   // Return the full StandardName string.
+                    return ptzi.StandardName;
+                }   // FALSE (The caller wants the regular time zone name.) block, if ( pfAbbreviate )
+            }   // FALSE (The current time is in the Standard Time portion of the year in the current time zone.) block, if ( ptzi.IsDaylightSavingTime ( pdtmDateTime ) )
+        }   // public static string GetCurrentTimeZoneName
+        #endregion  // Public Extension Method
+
+
+        #region Private Helper Methods
         /// <summary>
         /// Construct the abbreviated time zone name.
         /// </summary>
@@ -217,5 +287,6 @@ namespace WizardWrx
 
             return rsbAbbreviatedName.ToString ( );
         }   // private static string AbbreviateAnyTZName
+        #endregion  // Private Helper Methods
     }   // public static class TimeZoneInfoExtensions
 }   // partial namespace WizardWrx

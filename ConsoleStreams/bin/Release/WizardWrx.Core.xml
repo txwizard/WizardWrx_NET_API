@@ -10059,9 +10059,16 @@
             is supplied by the runtime when the extension method is called.
             </param>
             <returns>
+            <para>
             The abbreviated name is constructed from the name specified on the
             DisplayName property on the TimeZoneInfo object by extracting from
             it the first letter of each word.
+            </para>
+            <para>
+            The Display Name sees much less use because it includes the UTC
+            offset, which confuses users who are unfamiliar with the details of
+            UTC in particular and time zones in general.
+            </para>
             </returns>
         </member>
         <member name="M:WizardWrx.TimeZoneInfoExtensions.AbbreviatedStandardName(System.TimeZoneInfo)">
@@ -10076,6 +10083,34 @@
             The abbreviated name is constructed from the name specified on the
             StandardName property on the TimeZoneInfo object by extracting from
             it the first letter of each word.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.TimeZoneInfoExtensions.GetCurrentTimeZoneName(System.TimeZoneInfo,System.DateTime,System.Boolean)">
+            <summary>
+            Given a DateTime object to establish whether to display the Stanadrd
+            Name or the Daylight Name, return the appropriate string for the
+            part of the year that it represents.
+            </summary>
+            <param name="ptzi">
+            Specify the TimeZoneInfo object to process. This implicit paramteer
+            is supplied by the runtime when the extension method is called.
+            </param>
+            <param name="pdtmDateTime">
+            The IsDaylightSavingTime method on the <paramref name="ptzi"/>
+            instance establishes the correct string to return for the time that
+            it represents, assuming that its DateTimeKind property is Local or
+            that it is implicitly interpreted as such.
+            </param>
+            <param name="pfAbbreviate">
+            When True, this flag causes the abbreviated time zone name to be
+            displayed. Otherwise, the appropriate string from the extended
+            TimeZoneInfo instance is returned.
+            </param>
+            <returns>
+            The return value is the standard or daylight time zone name string
+            or abbreviation that represents the time specified by argument
+            <paramref name="pdtmDateTime"/> as directed by argument
+            <paramref name="pfAbbreviate"/>.
             </returns>
         </member>
         <member name="M:WizardWrx.TimeZoneInfoExtensions.AbbreviateAnyTZName(System.String)">
