@@ -1,5 +1,12 @@
 ﻿# WizardWrx .NET API Change Log
 
+## 2022-04-07
+
+### WizardWrx.Core, Version 8.0.277
+
+`PathMakeRelative`: Amend to cover the case where the absolute path, `pstrFQPath`,
+starts with the directory to which it is to be made relative, `pstrDirectoryRelativeTo`.
+
 ## 2022-03-24
 
 ### WizardWrx.Core, Version=8.0.270
@@ -20,12 +27,12 @@ included in the included unit test program.
 
 ## 2022-03-08
 
-### WizardWrx.Core, Version=8.0.266
+### WizardWrx.Core, Version 8.0.266
 
-This release incorporates a new extension method for the System.DateTime type,
-DateOfMostRecentWeekday, which returns the most recent previous date for which
+This release incorporates a new extension method for the `System.DateTime` type,
+`DateOfMostRecentWeekday`, which returns the most recent previous date for which
 the weekday matches its input criterion. Versions exist that accept the weekday
-as a DayOfWeek enumeration member or as the corresponding integer (0-6) value.
+as a `DayOfWeek` enumeration member or as the corresponding integer (0-6) value.
 
 ## 2021-12-19
 

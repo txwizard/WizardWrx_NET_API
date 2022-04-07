@@ -5,36 +5,76 @@
 
 	Synopsis:			Put the FileNameTricks class through its paces.
 
+    License:            Copyright (C) 2008-2022, David A. Gray.
+                        All rights reserved.
+
+                        Redistribution and use in source and binary forms, with
+                        or without modification, are permitted provided that the
+                        following conditions are met:
+
+                        *   Redistributions of source code must retain the above
+                            copyright notice, this list of conditions and the
+                            following disclaimer.
+
+                        *   Redistributions in binary form must reproduce the
+                            above copyright notice, this list of conditions and
+                            the following disclaimer in the documentation and/or
+                            other materials provided with the distribution.
+
+                        *   Neither the name of David A. Gray, nor the names of
+                            his contributors may be used to endorse or promote
+                            products derived from this software without specific
+                            prior written permission.
+
+                        THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+                        CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
+                        WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+                        WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+                        PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
+                        David A. Gray BE LIABLE FOR ANY DIRECT, INDIRECT,
+                        INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+                        (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+                        SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+                        PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+                        ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+                        LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+                        ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+                        IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
 	----------------------------------------------------------------------------
     Revision History
 	----------------------------------------------------------------------------
 
-    Date       Version Author Synopsis
-    ---------- ------- ------ --------------------------------------------------
-	2008/06/12 2.0.7.0 DAG    Add code to exercise the new FileNameTricks class.
+    Date       Version  Author Synopsis
+    ---------- -------- ------ --------------------------------------------------
+	2008/06/12 2.0.7.0  DAG    Add code to exercise the new FileNameTricks class.
 
-    2009/12/15 2.4.15  DAG    Add text graphics to draw attention to internal
-                              comments, and to separate them from the code.
+    2009/12/15 2.4.15   DAG    Add text graphics to draw attention to internal
+                               comments, and to separate them from the code.
 
-    2010/10/22 2.52    DAG    Replace "Visual Studio 2005" with "Visual Studio
-                              2010" in all string literals.
+    2010/10/22 2.52     DAG    Replace "Visual Studio 2005" with "Visual Studio
+                               2010" in all string literals.
 
-                              This fix is required to compensate for relocation
-                              of this project, due to the upgrade to Visual
-                              Studio 2010. Otherwise, the test suite crashes
-                              with an unhandled exception.
+                               This fix is required to compensate for relocation
+                               of this project, due to the upgrade to Visual
+                               Studio 2010. Otherwise, the test suite crashes
+                               with an unhandled exception.
 
-    2011/11/28 2.63    DAG    Add PathMakeRelativeToPath method.
+    2011/11/28 2.63     DAG    Add PathMakeRelativeToPath method.
 
-	2017/02/22 7.0     DAG    Adjust for the breakup of WizardWrx.DllServices2.
+	2017/02/22 7.0      DAG    Adjust for the breakup of WizardWrx.DllServices2.
 
-	2017/06/29 7.0     DAG    Add the new properties, along with others that got
-                              overlooked. I took the opportunity to make the way
-                              newlines are processed platform agnostic.
+	2017/06/29 7.0      DAG    Add the new properties, along with others that got
+                               overlooked. I took the opportunity to make the way
+                               newlines are processed platform agnostic.
 
-	2017/08/27 7.0     DAG    Mark the class as static, and eliminate the hidden
-                              default constructor, which is thereby made
-                              redundant.
+	2017/08/27 7.0      DAG    Mark the class as static, and eliminate the hidden
+                               default constructor, which is thereby made
+                               redundant.
+
+	2022/04/07 8.0.1497 DAG    Add the use case that exposed a flaw in static
+                               method PathMakeRelative, which was based on work
+                               published by Rick Strahl on 20 December 2010.
     ============================================================================
 */
 
@@ -69,7 +109,7 @@ namespace DLLServices2TestStand
         const string TEST_REPORT_1 = "        Input String  = {0}\r\n        Output String   = {1}\r\n";
         const string TEST_REPORT_2 = "        Input String  = {0}\r\n        Include/Exclude = {1}\r\n        Output String = {2}\r\n";
         const string TEST_REPORT_3 = "        Input String  = {0}\r\n        Default Dir     = {1}\r\n        Output String = {2}\r\n";
-        const string TEST_REPORT_4 = "        Resource Path = {0}\r\n        Working Dir     = {1}\r\n        Relative Path = {2}\r\n";
+        const string TEST_REPORT_4 = "        Resource Path = {0}\r\n        Working Dir   = {1}\r\n        Relative Path = {2}\r\n";
 
         const string SAMPLE_RESOURCE_PATH_1 = @"C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\WizardWrx_Libs\SharedUtl2\SharedUtl2\bin\Release\WizardWrx.SharedUtl2.dll";
         const string SAMPLE_RESOURCE_PATH_2 = @"C:\Documents and Settings\David\My Documents\Visual Studio 2010\Projects\_TESTING WizardWrx Libs\SharedUtl2\SharedUtl2\bin\Release\WizardWrx.SharedUtl2.dll";
@@ -352,7 +392,7 @@ namespace DLLServices2TestStand
 			Console.WriteLine ( "    Finished testing method UQFBasename{0}" , Environment.NewLine );
 
 			//	----------------------------------------------------------------
-			//	Exercise PathMakeRelativeToPath
+			//	Exercise PathMakeRelative.
 			//	----------------------------------------------------------------
 
 			Console.WriteLine ( "    Test {0} - Testing method PathMakeRelativeToPath:{1}" , ++intTestNumber , Environment.NewLine );
@@ -371,6 +411,17 @@ namespace DLLServices2TestStand
 						strOutputString );
 				}   // foreach ( string strWorkingDir in astrWorkingDirs )
 			}   // foreach ( string strReource in astreResources )
+
+			string strReource2 = @"D:\SalesTalk\_Say2Sell\Free_Trial\~$ee_Trial_Enrollment_Journal.DOCX";
+			string strWorkingDir2 = @"D:\SalesTalk";
+			string strOutputString2 = WizardWrx.FileNameTricks.PathMakeRelative (
+				strReource2 ,
+				strWorkingDir2 );
+			Console.WriteLine (
+				TEST_REPORT_4 ,
+				strReource2 ,
+				strWorkingDir2 ,
+				strOutputString2 );
 
 			Console.WriteLine ( "    Finished testing method PathMakeRelativeToPath.{0}" , Environment.NewLine );
 

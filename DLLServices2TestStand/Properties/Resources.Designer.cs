@@ -133,6 +133,15 @@ namespace DLLServices2TestStand.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to FileNameTricks_Exercises.
+        /// </summary>
+        public static string CMDARG_FILE_NAME_TRICKS {
+            get {
+                return ResourceManager.GetString("CMDARG_FILE_NAME_TRICKS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to FindLastOcurrenceOfWeekday.
         /// </summary>
         public static string CMDARG_FIND_LAST_OCCURRENCE_OF_WEEKDAY {

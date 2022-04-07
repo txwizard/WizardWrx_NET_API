@@ -155,6 +155,19 @@ references:
   isSpec: "True"
   fullName: DLLServices2TestStand.Properties.Resources.CMDARG_EXERCISE_TRUNCATEVALUETOONELINE
   nameWithType: Resources.CMDARG_EXERCISE_TRUNCATEVALUETOONELINE
+- uid: DLLServices2TestStand.Properties.Resources.CMDARG_FILE_NAME_TRICKS
+  name: CMDARG_FILE_NAME_TRICKS
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_CMDARG_FILE_NAME_TRICKS
+  commentId: P:DLLServices2TestStand.Properties.Resources.CMDARG_FILE_NAME_TRICKS
+  fullName: DLLServices2TestStand.Properties.Resources.CMDARG_FILE_NAME_TRICKS
+  nameWithType: Resources.CMDARG_FILE_NAME_TRICKS
+- uid: DLLServices2TestStand.Properties.Resources.CMDARG_FILE_NAME_TRICKS*
+  name: CMDARG_FILE_NAME_TRICKS
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_CMDARG_FILE_NAME_TRICKS_
+  commentId: Overload:DLLServices2TestStand.Properties.Resources.CMDARG_FILE_NAME_TRICKS
+  isSpec: "True"
+  fullName: DLLServices2TestStand.Properties.Resources.CMDARG_FILE_NAME_TRICKS
+  nameWithType: Resources.CMDARG_FILE_NAME_TRICKS
 - uid: DLLServices2TestStand.Properties.Resources.CMDARG_FIND_LAST_OCCURRENCE_OF_WEEKDAY
   name: CMDARG_FIND_LAST_OCCURRENCE_OF_WEEKDAY
   href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_CMDARG_FIND_LAST_OCCURRENCE_OF_WEEKDAY

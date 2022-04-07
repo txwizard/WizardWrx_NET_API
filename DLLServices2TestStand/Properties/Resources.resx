@@ -696,4 +696,8 @@
   <data name="String1" xml:space="preserve">
     <value />
   </data>
+  <data name="CMDARG_FILE_NAME_TRICKS" xml:space="preserve">
+    <value>FileNameTricks_Exercises</value>
+    <comment>Select this one-off task to exercise the FileNameTricks class.</comment>
+  </data>
 </root>

@@ -21,7 +21,7 @@
                         Beginning with version 2.46 of this class, the build and
                         revision numbers are controlled by the build engine.
 
-    License:            Copyright (C) 2009-2019, David A. Gray. 
+    License:            Copyright (C) 2008-2022, David A. Gray. 
                         All rights reserved.
 
                         Redistribution and use in source and binary forms, with
@@ -126,6 +126,11 @@
                            new build is required to add a binding redirect, and
                            the version numbering transitions to the SemVer
                            scheme.
+
+    2022/04/07 8.0.273 DAG PathMakeRelative: Amend to cover the case where the
+                           absolute path, pstrFQPath, starts with the directory
+                           to which it is to be made relative,
+                           pstrDirectoryRelativeTo.
     ============================================================================
 */
 
@@ -383,94 +388,105 @@ namespace WizardWrx
         {
             /*
                 ----------------------------------------------------------------
-                References: "Getting Path Relative to the Current Working Directory,"
-                            http://stackoverflow.com/questions/703281/getting-path-relative-to-the-current-working-directory
+                References: 1)  Getting Path Relative to the Current Working Directory
+                                http://stackoverflow.com/questions/703281/getting-path-relative-to-the-current-working-directory
+
+                            2)  Finding a Relative Path in .NET
+                                Rick Strahl's WebLog, published 20 December 2010
+                                https://weblog.west-wind.com/posts/2010/Dec/20/Finding-a-Relative-Path-in-NET?msclkid=d01028eeb5e811ecbb1d5bbef246526d
                 ----------------------------------------------------------------
             */
 
-            const string ARG1_NAME = @"pstrFQPath";
-            const string ARG2_NAME = @"pstrDirectoryRelativeTo";
 
             if ( string.IsNullOrEmpty ( pstrFQPath ) )
                 throw new ArgumentException (
                     WizardWrx.Common.Properties.Resources.ERRMSG_ARG_IS_NULL_OR_EMPTY ,
-                    ARG1_NAME );
+                    nameof ( pstrFQPath ) );
 
             if ( string.IsNullOrEmpty ( pstrDirectoryRelativeTo ) )
                 throw new ArgumentException (
                     WizardWrx.Common.Properties.Resources.ERRMSG_ARG_IS_NULL_OR_EMPTY ,
-                    ARG2_NAME );
+                    nameof ( pstrDirectoryRelativeTo ) );
 
-            Uri uriFPath = null;
-            Uri uriDirectoryRelativeTo = null;
-
-            //  ----------------------------------------------------------------
-            //  These two try/catch blocks could have been replaced by unguarded
-            //  calls to the static TryParse method of the Uri class. Calling a
-            //  constructor within a try/catch block should yield more useful
-            //  diagnostic information.
-            //  ----------------------------------------------------------------
-
-            try
+            if ( pstrFQPath.StartsWith ( pstrDirectoryRelativeTo ) )
             {
-                uriFPath = new Uri ( pstrFQPath );
-            }
-            catch ( Exception exUriNew1 )
+                return pstrFQPath.Substring (
+                    EnsureHasTerminalBackslash (
+                        pstrDirectoryRelativeTo ).Length );
+            }   // TRUE (String pstrFQPath is a special case that starts with pstrDirectoryRelativeTo.) block, if ( pstrFQPath.StartsWith ( pstrDirectoryRelativeTo ) )
+            else
             {
-                throw new ArgumentException (
-                    string.Format (
-                        WizardWrx.Common.Properties.Resources.ERRMSG_BADSTRING ,
-                        pstrFQPath ) ,
-                    ARG1_NAME ,
-                    exUriNew1 );
-            }
+                Uri uriFPath = null;
+                Uri uriDirectoryRelativeTo = null;
 
-            try
-            {
+                //  ----------------------------------------------------------------
+                //  These two try/catch blocks could have been replaced by unguarded
+                //  calls to the static TryParse method of the Uri class. Calling a
+                //  constructor within a try/catch block should yield more useful
+                //  diagnostic information.
+                //  ----------------------------------------------------------------
 
-                uriDirectoryRelativeTo = new Uri ( pstrDirectoryRelativeTo );
-            }
-            catch ( Exception exUriNew2 )
-            {
-                throw new ArgumentException (
-                    string.Format (
-                        WizardWrx.Common.Properties.Resources.ERRMSG_BADSTRING ,
-                        pstrFQPath ) ,
-                    ARG1_NAME ,
-                    exUriNew2 );
-            }
+                try
+                {
+                    uriFPath = new Uri ( pstrFQPath );
+                }
+                catch ( Exception exUriNew1 )
+                {
+                    throw new ArgumentException (
+                        string.Format (
+                            Common.Properties.Resources.ERRMSG_BADSTRING ,
+                            pstrFQPath ) ,
+                        nameof ( pstrFQPath ) ,
+                        exUriNew1 );
+                }
 
-            //  ----------------------------------------------------------------
-            //  At this point, both URIs should be initialized. The magic comes
-            //  down to this single function call, which initially may seem too
-            //  complex to grasp.
-            //
-            //  1)  Given a path, such as that of a satellite DLL, represented
-            //      as a URI, and another path, such as that of the current
-            //      working directory, represented as a second URI, create a
-            //      relative path to the resource by calling the MakeRelativeUri
-            //      instance method on the first path.
-            //
-            //  2)  The return value is a new URI, whose default ToString method
-            //      returns its string representation.
-            //
-            //  3)  The string representation of the relative path is then fed
-            //      to the static UnescapeDataString method of the Uri class,
-            //      which substitutes spaces for the "%20" substrings that took
-            //      their place when the URI was constructed.
-            //
-            //  4)  The string returned by UnescapeDataString is fed through its
-            //      Replace method, to replace the URI path delimiters with the
-            //      required OS path delimiter.
-            //  ----------------------------------------------------------------
+                try
+                {
 
-            return Uri.UnescapeDataString (
-                uriDirectoryRelativeTo.MakeRelativeUri ( uriFPath ).ToString ( ) ).Replace (
-                    System.IO.Path.AltDirectorySeparatorChar ,
-                    System.IO.Path.DirectorySeparatorChar );
+                    uriDirectoryRelativeTo = new Uri ( pstrDirectoryRelativeTo );
+                }
+                catch ( Exception exUriNew2 )
+                {
+                    throw new ArgumentException (
+                        string.Format (
+                            WizardWrx.Common.Properties.Resources.ERRMSG_BADSTRING ,
+                            pstrFQPath ) ,
+                        nameof ( pstrDirectoryRelativeTo ) ,
+                        exUriNew2 );
+                }
+
+                //  ----------------------------------------------------------------
+                //  At this point, both URIs should be initialized. The magic comes
+                //  down to this single function call, which initially may seem too
+                //  complex to grasp.
+                //
+                //  1)  Given a path, such as that of a satellite DLL, represented
+                //      as a URI, and another path, such as that of the current
+                //      working directory, represented as a second URI, create a
+                //      relative path to the resource by calling the MakeRelativeUri
+                //      instance method on the first path.
+                //
+                //  2)  The return value is a new URI, whose default ToString method
+                //      returns its string representation.
+                //
+                //  3)  The string representation of the relative path is then fed
+                //      to the static UnescapeDataString method of the Uri class,
+                //      which substitutes spaces for the "%20" substrings that took
+                //      their place when the URI was constructed.
+                //
+                //  4)  The string returned by UnescapeDataString is fed through its
+                //      Replace method, to replace the URI path delimiters with the
+                //      required OS path delimiter.
+                //  ----------------------------------------------------------------
+
+                return Uri.UnescapeDataString (
+                    uriDirectoryRelativeTo.MakeRelativeUri ( uriFPath ).ToString ( ) ).Replace (
+                        Path.AltDirectorySeparatorChar ,
+                        Path.DirectorySeparatorChar );
+            }   // FALSE (String pstrFQPath is the general case.) block, if ( pstrFQPath.StartsWith ( pstrDirectoryRelativeTo ) )
         }   // public static string PathMakeRelative
 
-        
+
         /// <summary>
         /// Ensure that a path string has a terminal backslash.
         /// </summary>
@@ -721,7 +737,7 @@ namespace WizardWrx
                     intUQBNLength );
             }   // FALSE (normal) block, if (intExtensionPos == StandardConstants.STRING_INDEXOF_NOT_FOUND)
         }   // public static method UQFBasename
-        #endregion	// Public Static Methods
+        #endregion // Public Static Methods
 
 
         #region Private Constants

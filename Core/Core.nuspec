@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>GuardStringIfNeeded. It returns a new string that is enclosed in a specified quoting character, defaulting to a double quote, if the input string contains a specified delimiter character, defaulting to a comma. As always, it also incorporates the current versions of its dependent libraries and their dependents.</releaseNotes>
+	    <releaseNotes>PathMakeRelative: Amend to cover the case where the absolute path, pstrFQPath, starts with the directory to which it is to be made relative, pstrDirectoryRelativeTo. As always, it also incorporates the current versions of its dependent libraries and their dependents.</releaseNotes>
     	<copyright>$copyright$</copyright>
     	<tags>Constants Arrays RegExp FileInfo Strings Singleton</tags>
 	</metadata>

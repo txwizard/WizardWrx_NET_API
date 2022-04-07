@@ -22,7 +22,7 @@
 
     Author:				David A. Gray
 
-    License:            Copyright (C) 2011-2021, David A. Gray.
+    License:            Copyright (C) 2011-2022, David A. Gray.
                         All rights reserved.
 
                         Redistribution and use in source and binary forms, with
@@ -308,6 +308,12 @@
     2021/12/19 8.0.1483 DAG Implement TestFindingMostRecentWeekday.
     
     2022/03/24 8.0.1485 DAG Implement ExerciseTimeZoneInfoExtensions.
+
+	2022/04/07 8.0.1497 DAG Call DateOfMostRecentWeekdayDay_UnitTests.Drill from
+                            a one-off task block to test a use case that exposed
+                            a flaw in static method PathMakeRelative on class
+                            FileNameTricks, which was based on workpublished by
+                            Rick Strahl on 20 December 2010.
     ============================================================================
 */
 
@@ -704,6 +710,12 @@ namespace DLLServices2TestStand
                 else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_FIND_LAST_OCCURRENCE_OF_WEEKDAY )
                 {   // Exercise static method DateOfMostRecentWeekday, an extension method on System.DateTime.
                     DateOfMostRecentWeekdayDay_UnitTests.TestFindingMostRecentWeekday ( );
+                }
+                else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_FILE_NAME_TRICKS )
+                {   // Exercise the methods on static class FileNameTricks.
+                    FileNameTricks_Exerciser.Drill ( );
+                    Console.Beep ( );       // WaitForCarbonUnit emits a beep.
+                    Console.ReadLine ( );
                 }
                 else
                 {	// Run the whole set, starting with this test, which leaves the flags set so that the original message can be reconstructed from a psLogList export.
