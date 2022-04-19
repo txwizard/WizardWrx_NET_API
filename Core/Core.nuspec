@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>PathMakeRelative: Amend to cover the case where the absolute path, pstrFQPath, starts with the directory to which it is to be made relative, pstrDirectoryRelativeTo. As always, it also incorporates the current versions of its dependent libraries and their dependents.</releaseNotes>
+	    <releaseNotes>TraceLogger Class: The four static methods on the TraceLogger class get an optional StreamWriter that, when included in the argument list, takes the place of the trace listener, allowing the class to use ordinary text files as output destinations without the overhead of the trace listener mechanism.. As always, it also incorporates the current versions of its dependent libraries and their dependents.</releaseNotes>
     	<copyright>$copyright$</copyright>
     	<tags>Constants Arrays RegExp FileInfo Strings Singleton</tags>
 	</metadata>

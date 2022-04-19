@@ -430,6 +430,7 @@
   </data>
   <data name="TEST_EXCEPTION_MESSAGE" xml:space="preserve">
     <value>Test Exception Message Number {0} </value>
+    <comment>This is a dummy exception message.</comment>
   </data>
   <data name="CMDARG_LIST_COMMON_STRINGS" xml:space="preserve">
     <value>EnumerateStringResourcesInAssembly</value>
@@ -699,5 +700,9 @@
   <data name="CMDARG_FILE_NAME_TRICKS" xml:space="preserve">
     <value>FileNameTricks_Exercises</value>
     <comment>Select this one-off task to exercise the FileNameTricks class.</comment>
+  </data>
+  <data name="CMDARG_TRACE_LOGGING" xml:space="preserve">
+    <value>CallTraceToStreamWriter</value>
+    <comment>Select this one-off task to exercise the overloaded TraceLogger methods that take a StreamWriter for use in lieu of feeding the Trace Listener.</comment>
   </data>
 </root>

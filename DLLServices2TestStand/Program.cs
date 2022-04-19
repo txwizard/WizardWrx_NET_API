@@ -314,6 +314,10 @@
                             a flaw in static method PathMakeRelative on class
                             FileNameTricks, which was based on workpublished by
                             Rick Strahl on 20 December 2010.
+
+	2022/04/07 8.0.1504 DAG Implement CallTraceToStreamWriter to test optional
+                            StreamWriter objects for use with all TraceLogger
+                            methods.
     ============================================================================
 */
 
@@ -710,6 +714,10 @@ namespace DLLServices2TestStand
                 else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_FIND_LAST_OCCURRENCE_OF_WEEKDAY )
                 {   // Exercise static method DateOfMostRecentWeekday, an extension method on System.DateTime.
                     DateOfMostRecentWeekdayDay_UnitTests.TestFindingMostRecentWeekday ( );
+                }
+                else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_TRACE_LOGGING )
+                {
+                    CallTraceToStreamWriter ( );
                 }
                 else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_FILE_NAME_TRICKS )
                 {   // Exercise the methods on static class FileNameTricks.
@@ -1216,6 +1224,7 @@ namespace DLLServices2TestStand
                     //  --------------------------------------------------------
 
                     DateOfMostRecentWeekdayDay_UnitTests.TestFindingMostRecentWeekday ( );
+                    CallTraceToStreamWriter ( );
 #if DEBUGGER_IN_SHELL_SCRIPT
                     if ( System.Diagnostics.Debugger.IsAttached )
                     {
@@ -1301,7 +1310,48 @@ namespace DLLServices2TestStand
         }   // Main method
 
 
+
         #region Local Test Implementations
+        private static void CallTraceToStreamWriter ( )
+        {
+            string strAbsoluteTraceLogFileName = AbsolutePathStringFromSettings ( Properties.Settings.Default.TraceWriteTests );
+            Console.WriteLine ( $"{Environment.NewLine}Begin CallTraceToStreamWriter with output file {strAbsoluteTraceLogFileName}{Environment.NewLine}" );
+
+            using ( StreamWriter swOutputDocument = new StreamWriter (
+                strAbsoluteTraceLogFileName ,                                   // path       String
+                WizardWrx.FileIOFlags.FILE_OUT_CREATE ,                         // append     Boolean
+                System.Text.Encoding.UTF8 ,                                     // encoding   Encoding
+                MagicNumbers.CAPACITY_08KB ) )                                  // buffersize Int32
+            {
+                Console.WriteLine ( @"Phase 1 of 2: Append one message of each kind to the regular Trace Listener." );
+
+                TraceLogger.WriteWithBothTimesLabeledLocalFirst ( @"Test 1 of 8: WriteWithBothTimesLabeledLocalFirst to the regular Trace Listener"  );
+                TraceLogger.WriteWithBothTimesLabeledUTCFirst ( @"Test 2 of 8: WriteWithBothTimesLabeledUTCFirst to the regular Trace Listener" );
+                TraceLogger.WriteWithBothTimesUnlabeledLocalFirst ( @"Test 3 of 8: WriteWithBothTimesUnlabeledLocalFirst to the regular Trace Listener" );
+                TraceLogger.WriteWithBothTimesUnlabeledUTCFirst ( @"Test 4 of 8: WriteWithBothTimesUnlabeledUTCFirst to the regular Trace Listener" );
+                TraceLogger.WriteWithLabeledLocalTime ( @"Test 5 of 8: WriteWithLabeledLocalTime to the regular Trace Listener" );
+                TraceLogger.WriteWithLabeledUTCTime ( @"Test 6 of 8: WriteWithLabeledUTCTime to the regular Trace Listener" );
+                TraceLogger.WriteWithUnlabeledLocalTime ( @"Test 7 of 8: WriteWithUnlabeledLocalTime to the regular Trace Listener" );
+                TraceLogger.WriteWithUnlabeledUTCTime ( @"Test 8 of 8: WriteWithUnlabeledUTCTime to the regular Trace Listener" );
+
+                Console.WriteLine ( @"Phase 2 of 2: Append one message of each kind to the StreamWriter." );
+
+                TraceLogger.WriteWithBothTimesLabeledLocalFirst ( @"Test 1 of 8: WriteWithBothTimesLabeledLocalFirst to the StreamWriter" , swOutputDocument );
+                TraceLogger.WriteWithBothTimesLabeledUTCFirst ( @"Test 2 of 8: WriteWithBothTimesLabeledUTCFirst to the StreamWriter" , swOutputDocument );
+                TraceLogger.WriteWithBothTimesUnlabeledLocalFirst ( @"Test 3 of 8: WriteWithBothTimesUnlabeledLocalFirst to the StreamWriter" , swOutputDocument );
+                TraceLogger.WriteWithBothTimesUnlabeledUTCFirst ( @"Test 4 of 8: WriteWithBothTimesUnlabeledUTCFirst to the StreamWriter" , swOutputDocument );
+                TraceLogger.WriteWithLabeledLocalTime ( @"Test 5 of 8: WriteWithLabeledLocalTime to the StreamWriter" , swOutputDocument );
+                TraceLogger.WriteWithLabeledUTCTime ( @"Test 6 of 8: WriteWithLabeledUTCTime to the StreamWriter" , swOutputDocument );
+                TraceLogger.WriteWithUnlabeledLocalTime ( @"Test 7 of 8: WriteWithUnlabeledLocalTime to the StreamWriter" , swOutputDocument );
+                TraceLogger.WriteWithUnlabeledUTCTime ( @"Test 8 of 8: WriteWithUnlabeledUTCTime to the StreamWriter" , swOutputDocument );
+
+                swOutputDocument.Close ( );
+            }   // using ( StreamWriter swOutputDocument = new StreamWriter ( strAbsoluteTraceLogFileName , WizardWrx.FileIOFlags.FILE_OUT_CREATE , System.Text.Encoding.UTF8 , MagicNumbers.CAPACITY_08KB ) )
+
+            Console.WriteLine ( $"{Environment.NewLine}CallTraceToStreamWriter Done{Environment.NewLine}" );
+        }   // private static void CallTraceToStreamWriter
+
+
         private static void DeduplicateExceptionLogs ( )
         {
             Console.WriteLine (
@@ -1663,7 +1713,7 @@ namespace DLLServices2TestStand
         private static void ExerciseEnvTokenExpander ( )
         {
             const string STRING_CONTAINS_VALID_TOKEN = @"%APPDATA%\WizardWrx\wwBldNbrMgr.LOG";
-            const string STRING_CONTAINS_UNDEFINED_TOKEN= @"%APPLICATION_DATA%\WizardWrx\wwBldNbrMgr.LOG";
+            const string STRING_CONTAINS_UNDEFINED_TOKEN = @"%APPLICATION_DATA%\WizardWrx\wwBldNbrMgr.LOG";
             const string STRING_IS_DEVOID_OF_TOKENS = @"FooBar.LOG";
 
             const string ENVIRONMENT_STRING_NAME = @"APPLICATION_DATA";
@@ -2613,4 +2663,4 @@ namespace DLLServices2TestStand
         }   // UnaryMinusExercises method
         #endregion  // Subroutines, Some Scoped to the Application
     }   // class Program
-}   // partial namespace DLLServices2TestStand
+}   // partial namespace DLLServices2TestStand}

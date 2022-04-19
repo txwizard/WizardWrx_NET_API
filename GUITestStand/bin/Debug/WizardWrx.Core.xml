@@ -3631,7 +3631,7 @@
             are truly equal, and that local and UTC times are unambiguous.
             </remarks>
         </member>
-        <member name="M:WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledLocalFirst(System.String)">
+        <member name="M:WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledLocalFirst(System.String,System.IO.StreamWriter)">
             <summary>
             Write a time stamped trace log message, using the local and UTC 
             machine times as its time stamp prefix, local first, followed by
@@ -3641,8 +3641,11 @@
             The specified string is written verbatim, immediately after the time
             stamp.
             </param>
+            <param name="psw">
+            When supplied, this StreamWriter takes the place of the Trace Listener.
+            </param>
         </member>
-        <member name="M:WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledUTCFirst(System.String)">
+        <member name="M:WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledUTCFirst(System.String,System.IO.StreamWriter)">
             <summary>
             Write a time stamped trace log message, using the local and UTC 
             machine times as its time stamp prefix, UTC first, followed by
@@ -3652,8 +3655,11 @@
             The specified string is written verbatim, immediately after the time
             stamp.
             </param>
+            <param name="psw">
+            When supplied, this StreamWriter takes the place of the Trace Listener.
+            </param>
         </member>
-        <member name="M:WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledLocalFirst(System.String)">
+        <member name="M:WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledLocalFirst(System.String,System.IO.StreamWriter)">
             <summary>
             Write a time stamped trace log message, using the local and UTC 
             machine times as its time stamp prefix, local first, followed by
@@ -3663,8 +3669,11 @@
             The specified string is written verbatim, immediately after the time
             stamp.
             </param>
+            <param name="psw">
+            When supplied, this StreamWriter takes the place of the Trace Listener.
+            </param>
         </member>
-        <member name="M:WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledUTCFirst(System.String)">
+        <member name="M:WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledUTCFirst(System.String,System.IO.StreamWriter)">
             <summary>
             Write a time stamped trace log message, using the local and UTC 
             machine times as its time stamp prefix, UTC first, followed by
@@ -3674,8 +3683,11 @@
             The specified string is written verbatim, immediately after the time
             stamp.
             </param>
+            <param name="psw">
+            When supplied, this StreamWriter takes the place of the Trace Listener.
+            </param>
         </member>
-        <member name="M:WizardWrx.Core.TraceLogger.WriteWithLabeledLocalTime(System.String)">
+        <member name="M:WizardWrx.Core.TraceLogger.WriteWithLabeledLocalTime(System.String,System.IO.StreamWriter)">
             <summary>
             Write a time stamped trace log message, using the local machine time
             as its time stamp prefix.
@@ -3684,8 +3696,11 @@
             The specified string is written verbatim, immediately after the time
             stamp.
             </param>
+            <param name="psw">
+            When supplied, this StreamWriter takes the place of the Trace Listener.
+            </param>
         </member>
-        <member name="M:WizardWrx.Core.TraceLogger.WriteWithUnlabeledLocalTime(System.String)">
+        <member name="M:WizardWrx.Core.TraceLogger.WriteWithUnlabeledLocalTime(System.String,System.IO.StreamWriter)">
             <summary>
             Write a time stamped trace log message, using the local machine time
             as its time stamp prefix.
@@ -3694,8 +3709,11 @@
             The specified string is written verbatim, immediately after the time
             stamp.
             </param>
+            <param name="psw">
+            When supplied, this StreamWriter takes the place of the Trace Listener.
+            </param>
         </member>
-        <member name="M:WizardWrx.Core.TraceLogger.WriteWithLabeledUTCTime(System.String)">
+        <member name="M:WizardWrx.Core.TraceLogger.WriteWithLabeledUTCTime(System.String,System.IO.StreamWriter)">
             <summary>
             Write a time stamped trace log message, using the UTC machine time
             as its time stamp prefix.
@@ -3704,8 +3722,11 @@
             The specified string is written verbatim, immediately after the time
             stamp.
             </param>
+            <param name="psw">
+            When supplied, this StreamWriter takes the place of the Trace Listener.
+            </param>
         </member>
-        <member name="M:WizardWrx.Core.TraceLogger.WriteWithUnlabeledUTCTime(System.String)">
+        <member name="M:WizardWrx.Core.TraceLogger.WriteWithUnlabeledUTCTime(System.String,System.IO.StreamWriter)">
             <summary>
             Write a time stamped trace log message, using the UTC machine time
             as its time stamp prefix.
@@ -3713,6 +3734,9 @@
             <param name="pstrMessage">
             The specified string is written verbatim, immediately after the time
             stamp.
+            </param>
+            <param name="psw">
+            When supplied, this StreamWriter takes the place of the Trace Listener.
             </param>
         </member>
         <member name="M:WizardWrx.Core.TraceLogger.ReplaceNewlines(System.String)">
@@ -5660,25 +5684,6 @@
             <returns>
             Base name extracted from string. This means the unqualified file
             name, less its directory and its extension.
-            </returns>
-        </member>
-        <member name="M:WizardWrx.FileNameTricks.PathMakeRelativeSpecialCase(System.String,System.String)">
-            <summary>
-            Implement the special case of PathMakeRelative that arises when
-            <paramref name="pstrFQPath"/> starts with
-            <paramref name="pstrDirectoryRelativeTo"/>.
-            </summary>
-            <param name="pstrFQPath">
-            This argument is a pass-through of the like-named argument of its
-            only caller, PathMakeRelative.
-            </param>
-            <param name="pstrDirectoryRelativeTo">
-            This argument is a pass-through of the like-named argument of its
-            only caller, PathMakeRelative.
-            </param>
-            <returns>
-            The one and only caller, PathMakeRelative, returns through this
-            method.
             </returns>
         </member>
         <member name="T:WizardWrx.GenericSingletonBase`1">

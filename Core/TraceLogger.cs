@@ -22,7 +22,7 @@
 
     Author:				David A. Gray
 
-    License:            Copyright (C) 2017, David A. Gray. 
+    License:            Copyright (C) 2017-2022, David A. Gray. 
 						All rights reserved.
 
                         Redistribution and use in source and binary forms, with
@@ -72,12 +72,18 @@
 
     2017/04/03 7.0     DAG    Incorporate into WizaerdWrx.Core.dll, and the root
                               WizaerdWrx namespace.
+
+    2022/04/18 8.0.280 DAG    Add an optional StreamWriter argument to all four
+                              methods, so that they can be used withut wriing up
+                              a Trace Listener and incurring its overhead.
     ============================================================================
 */
 
 
 using System;
 using System.Diagnostics;
+using System.IO;
+
 
 namespace WizardWrx.Core
 {
@@ -111,20 +117,39 @@ namespace WizardWrx.Core
 		/// The specified string is written verbatim, immediately after the time
 		/// stamp.
 		/// </param>
-		public static void WriteWithBothTimesLabeledLocalFirst ( string pstrMessage )
+		/// <param name="psw">
+		/// When supplied, this StreamWriter takes the place of the Trace Listener.
+		/// </param>
+		public static void WriteWithBothTimesLabeledLocalFirst (
+			string pstrMessage ,
+			StreamWriter psw = null )
 		{
 			DateTime dtmUtcNow = DateTime.UtcNow;
 			DateTime dtmLocal = dtmUtcNow.ToLocalTime ( );
 
-			Trace.WriteLine (
-				string.Format (
-					TPL_LABELED_BOTH_TIMES ,									// Format Control String, followed by implicit parameter array
-					dtmLocal ,													// Format Item 0 = Current local machine time value
-					Properties.Resources.TIME_LABEL_LOCAL_SHORT ,				// Format Item 1 = Current local machine time label
-					dtmUtcNow ,													// Format Item 2 = Current UTC machine time value
-					Properties.Resources.TIME_LABEL_UTC ,						// Format Item 3 = Current UTC machine time label
-					ReplaceNewlines(pstrMessage ) ) );							// Format Item 4 = Message
-		}	// public static void WriteWithBothTimesLabeledLocalFirst
+			if ( psw == null )
+			{
+				Trace.WriteLine (
+					string.Format (
+						TPL_LABELED_BOTH_TIMES ,                                // Format Control String, followed by implicit parameter array
+						dtmLocal ,                                              // Format Item 0 = Current local machine time value
+						Properties.Resources.TIME_LABEL_LOCAL_SHORT ,           // Format Item 1 = Current local machine time label
+						dtmUtcNow ,                                             // Format Item 2 = Current UTC machine time value
+						Properties.Resources.TIME_LABEL_UTC ,                   // Format Item 3 = Current UTC machine time label
+						ReplaceNewlines ( pstrMessage ) ) );					// Format Item 4 = Message
+			}   // TRUE, and backward compatible, block, if ( psw == null )
+			else
+			{
+				psw.WriteLine (
+					string.Format (
+						TPL_LABELED_BOTH_TIMES ,                                // Format Control String, followed by implicit parameter array
+						dtmLocal ,                                              // Format Item 0 = Current local machine time value
+						Properties.Resources.TIME_LABEL_LOCAL_SHORT ,           // Format Item 1 = Current local machine time label
+						dtmUtcNow ,                                             // Format Item 2 = Current UTC machine time value
+						Properties.Resources.TIME_LABEL_UTC ,                   // Format Item 3 = Current UTC machine time label
+						ReplaceNewlines ( pstrMessage ) ) );                    // Format Item 4 = Message
+			}   // FALSE, dispensing with the Trace Listener, block, if ( psw == null )
+		}   // public static void WriteWithBothTimesLabeledLocalFirst
 
 
 		/// <summary>
@@ -136,23 +161,45 @@ namespace WizardWrx.Core
 		/// The specified string is written verbatim, immediately after the time
 		/// stamp.
 		/// </param>
-		public static void WriteWithBothTimesLabeledUTCFirst ( string pstrMessage )
+		/// <param name="psw">
+		/// When supplied, this StreamWriter takes the place of the Trace Listener.
+		/// </param>
+		public static void WriteWithBothTimesLabeledUTCFirst (
+			string pstrMessage ,
+			StreamWriter psw = null )
 		{
 			DateTime dtmUtcNow = DateTime.UtcNow;
 			DateTime dtmLocal = dtmUtcNow.ToLocalTime ( );
 
-			Trace.WriteLine (
-				string.Format (
-					TPL_LABELED_BOTH_TIMES ,									// Format Control String
-					new object [ ]												// This parameter array is explicit, and is built dynamically on the stack.
-					{
-						dtmUtcNow ,												// Format Item 0 = Current UTC machine time value
-						Properties.Resources.TIME_LABEL_UTC ,					// Format Item 1 = Current UTC machine time label
-						dtmLocal ,												// Format Item 2 = Current local machine time value
-						Properties.Resources.TIME_LABEL_LOCAL_SHORT ,			// Format Item 3 = Current local machine time label
-						ReplaceNewlines(pstrMessage ) 							// Format Item 4 = Message
-					} ) );
-		}	// public static void WriteWithBothTimesLabeledUTCFirst
+			if ( psw == null )
+			{
+				Trace.WriteLine (
+					string.Format (
+						TPL_LABELED_BOTH_TIMES ,                                // Format Control String
+						new object [ ]                                          // This parameter array is explicit, and is built dynamically on the stack.
+						{
+							dtmUtcNow ,											// Format Item 0 = Current UTC machine time value
+							Properties.Resources.TIME_LABEL_UTC ,				// Format Item 1 = Current UTC machine time label
+							dtmLocal ,											// Format Item 2 = Current local machine time value
+							Properties.Resources.TIME_LABEL_LOCAL_SHORT ,		// Format Item 3 = Current local machine time label
+							ReplaceNewlines(pstrMessage )                       // Format Item 4 = Message
+						} ) );
+			}   // TRUE, and backward compatible, block, if ( psw == null )
+			else
+			{
+				psw.WriteLine (
+					string.Format (
+						TPL_LABELED_BOTH_TIMES ,                                // Format Control String
+						new object [ ]                                          // This parameter array is explicit, and is built dynamically on the stack.
+						{
+							dtmUtcNow ,											// Format Item 0 = Current UTC machine time value
+							Properties.Resources.TIME_LABEL_UTC ,				// Format Item 1 = Current UTC machine time label
+							dtmLocal ,											// Format Item 2 = Current local machine time value
+							Properties.Resources.TIME_LABEL_LOCAL_SHORT ,		// Format Item 3 = Current local machine time label
+							ReplaceNewlines(pstrMessage )                       // Format Item 4 = Message
+						} ) );
+			}   // FALSE, dispensing with the Trace Listener, block, if ( psw == null )
+		}   // public static void WriteWithBothTimesLabeledUTCFirst
 
 
 		/// <summary>
@@ -164,18 +211,35 @@ namespace WizardWrx.Core
 		/// The specified string is written verbatim, immediately after the time
 		/// stamp.
 		/// </param>
-		public static void WriteWithBothTimesUnlabeledLocalFirst ( string pstrMessage )
+		/// <param name="psw">
+		/// When supplied, this StreamWriter takes the place of the Trace Listener.
+		/// </param>
+		public static void WriteWithBothTimesUnlabeledLocalFirst (
+			string pstrMessage ,
+			StreamWriter psw = null )
 		{
 			DateTime dtmUtcNow = DateTime.UtcNow;
 			DateTime dtmLocal = dtmUtcNow.ToLocalTime ( );
 
-			Trace.WriteLine (
-				string.Format (
-					TPL_UNLABELED_BOTH_TIMES ,									// Format Control String
-					dtmLocal ,													// Format Item 0 = Current local machine time value
-					dtmUtcNow ,													// Format Item 1 = Current UTC machine time value
-					ReplaceNewlines ( pstrMessage ) ) );						// Format Item 4 = Message
-		}	// public static void WriteWithBothTimesUnlabeledLocalFirst
+			if ( psw == null )
+			{
+				Trace.WriteLine (
+					string.Format (
+						TPL_UNLABELED_BOTH_TIMES ,                              // Format Control String
+						dtmLocal ,                                              // Format Item 0 = Current local machine time value
+						dtmUtcNow ,                                             // Format Item 1 = Current UTC machine time value
+						ReplaceNewlines ( pstrMessage ) ) );                    // Format Item 4 = Message
+			}   // TRUE, and backward compatible, block, if ( psw == null )
+			else
+			{
+				psw.WriteLine (
+					string.Format (
+						TPL_UNLABELED_BOTH_TIMES ,                              // Format Control String
+						dtmLocal ,                                              // Format Item 0 = Current local machine time value
+						dtmUtcNow ,                                             // Format Item 1 = Current UTC machine time value
+						ReplaceNewlines ( pstrMessage ) ) );                    // Format Item 4 = Message
+			}   // FALSE, dispensing with the Trace Listener, block, if ( psw == null )
+		}   // public static void WriteWithBothTimesUnlabeledLocalFirst
 
 
 		/// <summary>
@@ -187,18 +251,35 @@ namespace WizardWrx.Core
 		/// The specified string is written verbatim, immediately after the time
 		/// stamp.
 		/// </param>
-		public static void WriteWithBothTimesUnlabeledUTCFirst ( string pstrMessage )
+		/// <param name="psw">
+		/// When supplied, this StreamWriter takes the place of the Trace Listener.
+		/// </param>
+		public static void WriteWithBothTimesUnlabeledUTCFirst (
+			string pstrMessage ,
+			StreamWriter psw = null )
 		{
 			DateTime dtmUtcNow = DateTime.UtcNow;
 			DateTime dtmLocal = dtmUtcNow.ToLocalTime ( );
 
-			Trace.WriteLine (
-				string.Format (
-					TPL_UNLABELED_BOTH_TIMES ,									// Format Control String
-					dtmUtcNow ,													// Format Item 0 = Current UTC machine time value
-					dtmLocal ,													// Format Item 1 = Current local machine time value
-					ReplaceNewlines ( pstrMessage ) ) );						// Format Item 2 = Message
-		}	// public static void WriteWithBothTimesUnlabeledUTCFirst
+			if ( psw == null )
+			{
+				Trace.WriteLine (
+					string.Format (
+						TPL_UNLABELED_BOTH_TIMES ,                              // Format Control String
+						dtmUtcNow ,                                             // Format Item 0 = Current UTC machine time value
+						dtmLocal ,                                              // Format Item 1 = Current local machine time value
+						ReplaceNewlines ( pstrMessage ) ) );                    // Format Item 2 = Message
+			}   // TRUE, and backward compatible, block, if ( psw == null )
+			else
+			{
+				psw.WriteLine (
+					string.Format (
+						TPL_UNLABELED_BOTH_TIMES ,                              // Format Control String
+						dtmUtcNow ,                                             // Format Item 0 = Current UTC machine time value
+						dtmLocal ,                                              // Format Item 1 = Current local machine time value
+						ReplaceNewlines ( pstrMessage ) ) );                    // Format Item 2 = Message
+			}   // FALSE, dispensing with the Trace Listener, block, if ( psw == null )
+		}   // public static void WriteWithBothTimesUnlabeledUTCFirst
 
 
 		/// <summary>
@@ -209,15 +290,32 @@ namespace WizardWrx.Core
 		/// The specified string is written verbatim, immediately after the time
 		/// stamp.
 		/// </param>
-		public static void WriteWithLabeledLocalTime ( string pstrMessage )
+		/// <param name="psw">
+		/// When supplied, this StreamWriter takes the place of the Trace Listener.
+		/// </param>
+		public static void WriteWithLabeledLocalTime (
+			string pstrMessage ,
+			StreamWriter psw = null )
 		{
-			Trace.WriteLine (
-				string.Format (
-					TPL_LABELED_LOCAL_TIME ,									// Format Control String
-					DateTime.Now ,												// Format Item 0 = Current local machine time value
-					Properties.Resources.TIME_LABEL_LOCAL_SHORT ,				// Format Item 1 = Short label for local time stamp
-					ReplaceNewlines ( pstrMessage ) ) );						// Format Item 2 = Message
-		}	// public static void WriteWithLabeledLocalTime
+			if ( psw == null )
+			{
+				Trace.WriteLine (
+					string.Format (
+						TPL_LABELED_LOCAL_TIME ,                                // Format Control String
+						DateTime.Now ,                                          // Format Item 0 = Current local machine time value
+						Properties.Resources.TIME_LABEL_LOCAL_SHORT ,           // Format Item 1 = Short label for local time stamp
+						ReplaceNewlines ( pstrMessage ) ) );                    // Format Item 2 = Message
+			}   // TRUE, and backward compatible, block, if ( psw == null )
+			else
+			{
+				psw.WriteLine (
+					string.Format (
+						TPL_LABELED_LOCAL_TIME ,                                // Format Control String
+						DateTime.Now ,                                          // Format Item 0 = Current local machine time value
+						Properties.Resources.TIME_LABEL_LOCAL_SHORT ,           // Format Item 1 = Short label for local time stamp
+						ReplaceNewlines ( pstrMessage ) ) );                    // Format Item 2 = Message
+			}   // FALSE, dispensing with the Trace Listener, block, if ( psw == null )
+		}   // public static void WriteWithLabeledLocalTime
 
 
 		/// <summary>
@@ -228,14 +326,30 @@ namespace WizardWrx.Core
 		/// The specified string is written verbatim, immediately after the time
 		/// stamp.
 		/// </param>
-		public static void WriteWithUnlabeledLocalTime ( string pstrMessage )
+		/// <param name="psw">
+		/// When supplied, this StreamWriter takes the place of the Trace Listener.
+		/// </param>
+		public static void WriteWithUnlabeledLocalTime (
+			string pstrMessage ,
+			StreamWriter psw = null )
 		{
-			Trace.WriteLine (
-				string.Format (
-					TPL_UNLABELED_TIME ,										// Format Control String
-					DateTime.Now ,												// Format Item 0 = Current local machine time value
-					ReplaceNewlines ( pstrMessage ) ) );						// Format Item 1 = Message
-		}	// public static void WriteWithUnlabeledLocalTime
+			if ( psw == null )
+			{
+				Trace.WriteLine (
+					string.Format (
+						TPL_UNLABELED_TIME ,                                    // Format Control String
+						DateTime.Now ,                                          // Format Item 0 = Current local machine time value
+						ReplaceNewlines ( pstrMessage ) ) );                    // Format Item 1 = Message
+			}   // TRUE, and backward compatible, block, if ( psw == null )
+			else
+			{
+				psw.WriteLine (
+					string.Format (
+						TPL_UNLABELED_TIME ,                                    // Format Control String
+						DateTime.Now ,                                          // Format Item 0 = Current local machine time value
+						ReplaceNewlines ( pstrMessage ) ) );                    // Format Item 1 = Message
+			}   // FALSE, dispensing with the Trace Listener, block, if ( psw == null )
+		}   // public static void WriteWithUnlabeledLocalTime
 
 
 		/// <summary>
@@ -246,15 +360,32 @@ namespace WizardWrx.Core
 		/// The specified string is written verbatim, immediately after the time
 		/// stamp.
 		/// </param>
-		public static void WriteWithLabeledUTCTime ( string pstrMessage )
+		/// <param name="psw">
+		/// When supplied, this StreamWriter takes the place of the Trace Listener.
+		/// </param>
+		public static void WriteWithLabeledUTCTime (
+			string pstrMessage ,
+			StreamWriter psw = null )
 		{
-			Trace.WriteLine (
-				string.Format (
-					TPL_LABELED_UTC_TIME ,										// Format Control String
-					DateTime.UtcNow ,											// Format Item 0 = Current local machine time value
-					Properties.Resources.TIME_LABEL_UTC ,						// Format Item 1 = Label for UTC time, of which there is but one.
-					ReplaceNewlines ( pstrMessage ) ) );						// Format Item 2 = Message
-		}	// WriteWithLabeledUTCTime
+			if ( psw == null )
+			{
+				Trace.WriteLine (
+					string.Format (
+						TPL_LABELED_UTC_TIME ,                                  // Format Control String
+						DateTime.UtcNow ,                                       // Format Item 0 = Current local machine time value
+						Properties.Resources.TIME_LABEL_UTC ,                   // Format Item 1 = Label for UTC time, of which there is but one.
+						ReplaceNewlines ( pstrMessage ) ) );                    // Format Item 2 = Message
+			}   // TRUE, and backward compatible, block, if ( psw == null )
+			else
+			{
+				psw.WriteLine (
+					string.Format (
+						TPL_LABELED_UTC_TIME ,                                  // Format Control String
+						DateTime.UtcNow ,                                       // Format Item 0 = Current local machine time value
+						Properties.Resources.TIME_LABEL_UTC ,                   // Format Item 1 = Label for UTC time, of which there is but one.
+						ReplaceNewlines ( pstrMessage ) ) );                    // Format Item 2 = Message
+			}   // FALSE, dispensing with the Trace Listener, block, if ( psw == null )
+		}   // WriteWithLabeledUTCTime
 
 
 		/// <summary>
@@ -265,14 +396,30 @@ namespace WizardWrx.Core
 		/// The specified string is written verbatim, immediately after the time
 		/// stamp.
 		/// </param>
-		public static void WriteWithUnlabeledUTCTime ( string pstrMessage )
+		/// <param name="psw">
+		/// When supplied, this StreamWriter takes the place of the Trace Listener.
+		/// </param>
+		public static void WriteWithUnlabeledUTCTime (
+			string pstrMessage ,
+			StreamWriter psw = null )
 		{
-			Trace.WriteLine (
-				string.Format (
-					TPL_UNLABELED_TIME ,										// Format Control String
-					DateTime.UtcNow ,											// Format Item 0 = Current local machine time value
-					ReplaceNewlines ( pstrMessage ) ) );						// Format Item 1 = Message
-		}	// public static void WriteWithUnlabeledUTCTime
+			if ( psw == null )
+			{
+				Trace.WriteLine (
+					string.Format (
+						TPL_UNLABELED_TIME ,                                    // Format Control String
+						DateTime.UtcNow ,                                       // Format Item 0 = Current local machine time value
+						ReplaceNewlines ( pstrMessage ) ) );                    // Format Item 1 = Message
+			}   // TRUE, and backward compatible, block, if ( psw == null )
+			else
+			{
+				psw.WriteLine (
+					string.Format (
+						TPL_UNLABELED_TIME ,                                    // Format Control String
+						DateTime.UtcNow ,                                       // Format Item 0 = Current local machine time value
+						ReplaceNewlines ( pstrMessage ) ) );                    // Format Item 1 = Message
+			}   // FALSE, dispensing with the Trace Listener, block, if ( psw == null )
+		}   // public static void WriteWithUnlabeledUTCTime
 
 
 		/// <summary>
@@ -292,6 +439,6 @@ namespace WizardWrx.Core
 			return pstrMessage.Replace (
 				Environment.NewLine ,
 				TRACE_LOG_NEWLINE_REPLACEMENT );
-		}	// private static string ReplaceNewlines
-	}	// public static class TraceLogger
+		}   // private static string ReplaceNewlines
+	}   // public static class TraceLogger
 }	// partial namespace WizardWrx.Core

@@ -1,5 +1,15 @@
 ﻿# WizardWrx .NET API Change Log
 
+
+## 2022-04-18
+
+### WizardWrx.Core, Version 8.0.280
+
+The four static methods on the `TraceLogger` get an optional StreamWriter that,
+when included in the argument list, takes the place of the trace listener,
+allowing the class to use ordinary text files as output destinations without the
+overhead of the trace listener mechanism.
+
 ## 2022-04-07
 
 ### WizardWrx.Core, Version 8.0.277

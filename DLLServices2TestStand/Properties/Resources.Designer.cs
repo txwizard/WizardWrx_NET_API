@@ -223,6 +223,15 @@ namespace DLLServices2TestStand.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to CallTraceToStreamWriter.
+        /// </summary>
+        public static string CMDARG_TRACE_LOGGING {
+            get {
+                return ResourceManager.GetString("CMDARG_TRACE_LOGGING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {2}This text should appear as {0} letters on a {1} background.{2}.
         /// </summary>
         public static string COLOR_MESSAGE_TEXT {

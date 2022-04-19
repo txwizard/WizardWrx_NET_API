@@ -285,6 +285,19 @@ references:
   isSpec: "True"
   fullName: DLLServices2TestStand.Properties.Resources.CMDARG_STRING_FIXUPS
   nameWithType: Resources.CMDARG_STRING_FIXUPS
+- uid: DLLServices2TestStand.Properties.Resources.CMDARG_TRACE_LOGGING
+  name: CMDARG_TRACE_LOGGING
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_CMDARG_TRACE_LOGGING
+  commentId: P:DLLServices2TestStand.Properties.Resources.CMDARG_TRACE_LOGGING
+  fullName: DLLServices2TestStand.Properties.Resources.CMDARG_TRACE_LOGGING
+  nameWithType: Resources.CMDARG_TRACE_LOGGING
+- uid: DLLServices2TestStand.Properties.Resources.CMDARG_TRACE_LOGGING*
+  name: CMDARG_TRACE_LOGGING
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_CMDARG_TRACE_LOGGING_
+  commentId: Overload:DLLServices2TestStand.Properties.Resources.CMDARG_TRACE_LOGGING
+  isSpec: "True"
+  fullName: DLLServices2TestStand.Properties.Resources.CMDARG_TRACE_LOGGING
+  nameWithType: Resources.CMDARG_TRACE_LOGGING
 - uid: DLLServices2TestStand.Properties.Resources.COLOR_MESSAGE_TEXT
   name: COLOR_MESSAGE_TEXT
   href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_COLOR_MESSAGE_TEXT
@@ -8184,12 +8197,12 @@ references:
   commentId: T:WizardWrx.Core.TraceLogger
   fullName: WizardWrx.Core.TraceLogger
   nameWithType: TraceLogger
-- uid: WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledLocalFirst(System.String)
-  name: WriteWithBothTimesLabeledLocalFirst(String)
-  href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithBothTimesLabeledLocalFirst_System_String_
-  commentId: M:WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledLocalFirst(System.String)
-  fullName: WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledLocalFirst(System.String)
-  nameWithType: TraceLogger.WriteWithBothTimesLabeledLocalFirst(String)
+- uid: WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledLocalFirst(System.String,System.IO.StreamWriter)
+  name: WriteWithBothTimesLabeledLocalFirst(String, StreamWriter)
+  href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithBothTimesLabeledLocalFirst_System_String_System_IO_StreamWriter_
+  commentId: M:WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledLocalFirst(System.String,System.IO.StreamWriter)
+  fullName: WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledLocalFirst(System.String, System.IO.StreamWriter)
+  nameWithType: TraceLogger.WriteWithBothTimesLabeledLocalFirst(String, StreamWriter)
 - uid: WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledLocalFirst*
   name: WriteWithBothTimesLabeledLocalFirst
   href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithBothTimesLabeledLocalFirst_
@@ -8197,12 +8210,12 @@ references:
   isSpec: "True"
   fullName: WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledLocalFirst
   nameWithType: TraceLogger.WriteWithBothTimesLabeledLocalFirst
-- uid: WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledUTCFirst(System.String)
-  name: WriteWithBothTimesLabeledUTCFirst(String)
-  href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithBothTimesLabeledUTCFirst_System_String_
-  commentId: M:WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledUTCFirst(System.String)
-  fullName: WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledUTCFirst(System.String)
-  nameWithType: TraceLogger.WriteWithBothTimesLabeledUTCFirst(String)
+- uid: WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledUTCFirst(System.String,System.IO.StreamWriter)
+  name: WriteWithBothTimesLabeledUTCFirst(String, StreamWriter)
+  href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithBothTimesLabeledUTCFirst_System_String_System_IO_StreamWriter_
+  commentId: M:WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledUTCFirst(System.String,System.IO.StreamWriter)
+  fullName: WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledUTCFirst(System.String, System.IO.StreamWriter)
+  nameWithType: TraceLogger.WriteWithBothTimesLabeledUTCFirst(String, StreamWriter)
 - uid: WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledUTCFirst*
   name: WriteWithBothTimesLabeledUTCFirst
   href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithBothTimesLabeledUTCFirst_
@@ -8210,12 +8223,12 @@ references:
   isSpec: "True"
   fullName: WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledUTCFirst
   nameWithType: TraceLogger.WriteWithBothTimesLabeledUTCFirst
-- uid: WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledLocalFirst(System.String)
-  name: WriteWithBothTimesUnlabeledLocalFirst(String)
-  href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithBothTimesUnlabeledLocalFirst_System_String_
-  commentId: M:WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledLocalFirst(System.String)
-  fullName: WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledLocalFirst(System.String)
-  nameWithType: TraceLogger.WriteWithBothTimesUnlabeledLocalFirst(String)
+- uid: WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledLocalFirst(System.String,System.IO.StreamWriter)
+  name: WriteWithBothTimesUnlabeledLocalFirst(String, StreamWriter)
+  href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithBothTimesUnlabeledLocalFirst_System_String_System_IO_StreamWriter_
+  commentId: M:WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledLocalFirst(System.String,System.IO.StreamWriter)
+  fullName: WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledLocalFirst(System.String, System.IO.StreamWriter)
+  nameWithType: TraceLogger.WriteWithBothTimesUnlabeledLocalFirst(String, StreamWriter)
 - uid: WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledLocalFirst*
   name: WriteWithBothTimesUnlabeledLocalFirst
   href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithBothTimesUnlabeledLocalFirst_
@@ -8223,12 +8236,12 @@ references:
   isSpec: "True"
   fullName: WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledLocalFirst
   nameWithType: TraceLogger.WriteWithBothTimesUnlabeledLocalFirst
-- uid: WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledUTCFirst(System.String)
-  name: WriteWithBothTimesUnlabeledUTCFirst(String)
-  href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithBothTimesUnlabeledUTCFirst_System_String_
-  commentId: M:WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledUTCFirst(System.String)
-  fullName: WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledUTCFirst(System.String)
-  nameWithType: TraceLogger.WriteWithBothTimesUnlabeledUTCFirst(String)
+- uid: WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledUTCFirst(System.String,System.IO.StreamWriter)
+  name: WriteWithBothTimesUnlabeledUTCFirst(String, StreamWriter)
+  href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithBothTimesUnlabeledUTCFirst_System_String_System_IO_StreamWriter_
+  commentId: M:WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledUTCFirst(System.String,System.IO.StreamWriter)
+  fullName: WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledUTCFirst(System.String, System.IO.StreamWriter)
+  nameWithType: TraceLogger.WriteWithBothTimesUnlabeledUTCFirst(String, StreamWriter)
 - uid: WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledUTCFirst*
   name: WriteWithBothTimesUnlabeledUTCFirst
   href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithBothTimesUnlabeledUTCFirst_
@@ -8236,12 +8249,12 @@ references:
   isSpec: "True"
   fullName: WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledUTCFirst
   nameWithType: TraceLogger.WriteWithBothTimesUnlabeledUTCFirst
-- uid: WizardWrx.Core.TraceLogger.WriteWithLabeledLocalTime(System.String)
-  name: WriteWithLabeledLocalTime(String)
-  href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithLabeledLocalTime_System_String_
-  commentId: M:WizardWrx.Core.TraceLogger.WriteWithLabeledLocalTime(System.String)
-  fullName: WizardWrx.Core.TraceLogger.WriteWithLabeledLocalTime(System.String)
-  nameWithType: TraceLogger.WriteWithLabeledLocalTime(String)
+- uid: WizardWrx.Core.TraceLogger.WriteWithLabeledLocalTime(System.String,System.IO.StreamWriter)
+  name: WriteWithLabeledLocalTime(String, StreamWriter)
+  href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithLabeledLocalTime_System_String_System_IO_StreamWriter_
+  commentId: M:WizardWrx.Core.TraceLogger.WriteWithLabeledLocalTime(System.String,System.IO.StreamWriter)
+  fullName: WizardWrx.Core.TraceLogger.WriteWithLabeledLocalTime(System.String, System.IO.StreamWriter)
+  nameWithType: TraceLogger.WriteWithLabeledLocalTime(String, StreamWriter)
 - uid: WizardWrx.Core.TraceLogger.WriteWithLabeledLocalTime*
   name: WriteWithLabeledLocalTime
   href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithLabeledLocalTime_
@@ -8249,12 +8262,12 @@ references:
   isSpec: "True"
   fullName: WizardWrx.Core.TraceLogger.WriteWithLabeledLocalTime
   nameWithType: TraceLogger.WriteWithLabeledLocalTime
-- uid: WizardWrx.Core.TraceLogger.WriteWithLabeledUTCTime(System.String)
-  name: WriteWithLabeledUTCTime(String)
-  href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithLabeledUTCTime_System_String_
-  commentId: M:WizardWrx.Core.TraceLogger.WriteWithLabeledUTCTime(System.String)
-  fullName: WizardWrx.Core.TraceLogger.WriteWithLabeledUTCTime(System.String)
-  nameWithType: TraceLogger.WriteWithLabeledUTCTime(String)
+- uid: WizardWrx.Core.TraceLogger.WriteWithLabeledUTCTime(System.String,System.IO.StreamWriter)
+  name: WriteWithLabeledUTCTime(String, StreamWriter)
+  href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithLabeledUTCTime_System_String_System_IO_StreamWriter_
+  commentId: M:WizardWrx.Core.TraceLogger.WriteWithLabeledUTCTime(System.String,System.IO.StreamWriter)
+  fullName: WizardWrx.Core.TraceLogger.WriteWithLabeledUTCTime(System.String, System.IO.StreamWriter)
+  nameWithType: TraceLogger.WriteWithLabeledUTCTime(String, StreamWriter)
 - uid: WizardWrx.Core.TraceLogger.WriteWithLabeledUTCTime*
   name: WriteWithLabeledUTCTime
   href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithLabeledUTCTime_
@@ -8262,12 +8275,12 @@ references:
   isSpec: "True"
   fullName: WizardWrx.Core.TraceLogger.WriteWithLabeledUTCTime
   nameWithType: TraceLogger.WriteWithLabeledUTCTime
-- uid: WizardWrx.Core.TraceLogger.WriteWithUnlabeledLocalTime(System.String)
-  name: WriteWithUnlabeledLocalTime(String)
-  href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithUnlabeledLocalTime_System_String_
-  commentId: M:WizardWrx.Core.TraceLogger.WriteWithUnlabeledLocalTime(System.String)
-  fullName: WizardWrx.Core.TraceLogger.WriteWithUnlabeledLocalTime(System.String)
-  nameWithType: TraceLogger.WriteWithUnlabeledLocalTime(String)
+- uid: WizardWrx.Core.TraceLogger.WriteWithUnlabeledLocalTime(System.String,System.IO.StreamWriter)
+  name: WriteWithUnlabeledLocalTime(String, StreamWriter)
+  href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithUnlabeledLocalTime_System_String_System_IO_StreamWriter_
+  commentId: M:WizardWrx.Core.TraceLogger.WriteWithUnlabeledLocalTime(System.String,System.IO.StreamWriter)
+  fullName: WizardWrx.Core.TraceLogger.WriteWithUnlabeledLocalTime(System.String, System.IO.StreamWriter)
+  nameWithType: TraceLogger.WriteWithUnlabeledLocalTime(String, StreamWriter)
 - uid: WizardWrx.Core.TraceLogger.WriteWithUnlabeledLocalTime*
   name: WriteWithUnlabeledLocalTime
   href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithUnlabeledLocalTime_
@@ -8275,12 +8288,12 @@ references:
   isSpec: "True"
   fullName: WizardWrx.Core.TraceLogger.WriteWithUnlabeledLocalTime
   nameWithType: TraceLogger.WriteWithUnlabeledLocalTime
-- uid: WizardWrx.Core.TraceLogger.WriteWithUnlabeledUTCTime(System.String)
-  name: WriteWithUnlabeledUTCTime(String)
-  href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithUnlabeledUTCTime_System_String_
-  commentId: M:WizardWrx.Core.TraceLogger.WriteWithUnlabeledUTCTime(System.String)
-  fullName: WizardWrx.Core.TraceLogger.WriteWithUnlabeledUTCTime(System.String)
-  nameWithType: TraceLogger.WriteWithUnlabeledUTCTime(String)
+- uid: WizardWrx.Core.TraceLogger.WriteWithUnlabeledUTCTime(System.String,System.IO.StreamWriter)
+  name: WriteWithUnlabeledUTCTime(String, StreamWriter)
+  href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithUnlabeledUTCTime_System_String_System_IO_StreamWriter_
+  commentId: M:WizardWrx.Core.TraceLogger.WriteWithUnlabeledUTCTime(System.String,System.IO.StreamWriter)
+  fullName: WizardWrx.Core.TraceLogger.WriteWithUnlabeledUTCTime(System.String, System.IO.StreamWriter)
+  nameWithType: TraceLogger.WriteWithUnlabeledUTCTime(String, StreamWriter)
 - uid: WizardWrx.Core.TraceLogger.WriteWithUnlabeledUTCTime*
   name: WriteWithUnlabeledUTCTime
   href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithUnlabeledUTCTime_

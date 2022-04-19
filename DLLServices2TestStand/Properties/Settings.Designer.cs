@@ -192,5 +192,14 @@ namespace DLLServices2TestStand.Properties {
                 return ((string)(this["Base64EncodingRoundTrip"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("$$REPORTSDIRNAME$$\\TraceWriteTests.TXT")]
+        public string TraceWriteTests {
+            get {
+                return ((string)(this["TraceWriteTests"]));
+            }
+        }
     }
 }
