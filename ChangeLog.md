@@ -1,5 +1,6 @@
 ﻿# WizardWrx .NET API Change Log
 
+
 ## 2022-04-24
 
 Today marks the beginning of a new era in which a package that belongs to the
@@ -9,6 +10,23 @@ CI/CD pipelines, this will reduce churn caused by update that were limited to
 refreshing the dependency graph of a package. If your NuGet configuration file
 has a `dependencyVersion` key with its value set to `Highest`, your pipeline will
 keep your projects up to date.
+
+The table below lists every version that is included in this update. In all
+cases, the only change is the release note announcing the new operating plan
+just described.
+
+|Name                             |Version|
+|---------------------------------|-------|
+|WizardWrx.ASCIIInfo              |8.0.175|
+|WizardWrx.AssemblyUtils          |8.0.232|
+|WizardWrx.Common                 |8.0.196|
+|WizardWrx.ConsoleStreams         |8.0.292|
+|WizardWrx.Core                   |8.0.293|
+|WizardWrx.DiagnosticInfo         |8.0.74 |
+|WizardWrx.DLLConfigurationManager|8.0.320|
+|WizardWrx.FormatStringEngine     |8.0.262|
+|WizardWrx.MoreMath               |8.0.73 |
+|WizardWrx.EmbeddedTextFile       |8.0.199|
 
 ## 2022-04-19
 
