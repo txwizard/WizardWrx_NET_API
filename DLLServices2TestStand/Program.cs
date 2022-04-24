@@ -315,9 +315,10 @@
                             FileNameTricks, which was based on workpublished by
                             Rick Strahl on 20 December 2010.
 
-	2022/04/07 8.0.1504 DAG Implement CallTraceToStreamWriter to test optional
+	2022/04/18 8.0.1504 DAG Implement CallTraceToStreamWriter to test optional
                             StreamWriter objects for use with all TraceLogger
                             methods.
+	2022/04/19 8.0.1508 DAG 
     ============================================================================
 */
 

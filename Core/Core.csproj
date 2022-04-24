@@ -162,16 +162,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Common\Common.csproj">
-      <Project>{c1fb48d6-4a54-4424-bca1-4777f3aae2df}</Project>
-      <Name>Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FormatStringEngine\FormatStringEngine.csproj">
-      <Project>{4d82458f-864f-494e-a537-1e89d6c8073c}</Project>
-      <Name>FormatStringEngine</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

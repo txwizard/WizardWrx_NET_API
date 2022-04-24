@@ -76,6 +76,12 @@
     2022/04/18 8.0.280 DAG    Add an optional StreamWriter argument to all four
                               methods, so that they can be used withut wriing up
                               a Trace Listener and incurring its overhead.
+
+	2022/04/19 8.0.282 DAG    Add a set of methods that have names suffixed as
+                              "WithPassThrough" that behave exactly like their
+                              unsuffixed namesakes except that they return the
+                              message so that the calling routine can put it to
+                              other uses.
     ============================================================================
 */
 
@@ -152,6 +158,32 @@ namespace WizardWrx.Core
 		}   // public static void WriteWithBothTimesLabeledLocalFirst
 
 
+
+		/// <summary>
+		/// Call WriteWithBothTimesLabeledLocalFirst to write the message either
+		/// to the active Trace Listener or the alternate StreamWriter, then
+		/// return the message to the calling routine.
+		/// </summary>
+		/// <param name="pstrMessage">
+		/// The specified string is written verbatim, immediately after the time
+		/// stamp.
+		/// </param>
+		/// <param name="psw">
+		/// When supplied, this StreamWriter takes the place of the Trace Listener.
+		/// </param>
+		/// <returns>
+		/// The return value is a copy of <paramref name="pstrMessage"/>.
+		/// </returns>
+		public static string WriteWithBothTimesLabeledLocalFirstWithPassThrough (
+			string pstrMessage ,
+			StreamWriter psw = null )
+		{
+			WriteWithBothTimesLabeledLocalFirst ( pstrMessage , psw );
+			return pstrMessage;
+		}   // public static string WriteWithBothTimesLabeledLocalFirstWithPassThrough
+
+
+
 		/// <summary>
 		/// Write a time stamped trace log message, using the local and UTC 
 		/// machine times as its time stamp prefix, UTC first, followed by
@@ -202,6 +234,31 @@ namespace WizardWrx.Core
 		}   // public static void WriteWithBothTimesLabeledUTCFirst
 
 
+
+		/// <summary>
+		/// Call WriteWithBothTimesLabeledUTCFirst and write the message to the
+		/// active Trace Listener or the supplied StreamWriter, then return the
+		/// message to the calling routine.
+		/// </summary>
+		/// <param name="pstrMessage">
+		/// The specified string is written verbatim, immediately after the time
+		/// stamp.
+		/// </param>
+		/// <param name="psw">
+		/// When supplied, this StreamWriter takes the place of the Trace Listener.
+		/// </param>
+		/// <returns>
+		/// The return value is a copy of <paramref name="pstrMessage"/>.
+		/// </returns>
+		public static string WriteWithBothTimesLabeledUTCFirstWithPassTrhough (
+			string pstrMessage ,
+			StreamWriter psw = null )
+		{
+			WriteWithBothTimesLabeledUTCFirst ( pstrMessage , psw );
+			return pstrMessage;
+		}   // public static string WriteWithBothTimesLabeledUTCFirstWithPassTrhough
+
+
 		/// <summary>
 		/// Write a time stamped trace log message, using the local and UTC 
 		/// machine times as its time stamp prefix, local first, followed by
@@ -239,6 +296,30 @@ namespace WizardWrx.Core
 						dtmUtcNow ,                                             // Format Item 1 = Current UTC machine time value
 						ReplaceNewlines ( pstrMessage ) ) );                    // Format Item 4 = Message
 			}   // FALSE, dispensing with the Trace Listener, block, if ( psw == null )
+		}   // public static void WriteWithBothTimesUnlabeledLocalFirst
+
+
+		/// <summary>
+		/// Call WriteWithBothTimesUnlabeledLocalFirst and write the message to
+		/// the active Trace Listener or the supplied StreamWriter, then return
+		/// the message to the calling routine.
+		/// </summary>
+		/// <param name="pstrMessage">
+		/// The specified string is written verbatim, immediately after the time
+		/// stamp.
+		/// </param>
+		/// <param name="psw">
+		/// When supplied, this StreamWriter takes the place of the Trace Listener.
+		/// </param>
+		/// <returns>
+		/// The return value is a copy of <paramref name="pstrMessage"/>.
+		/// </returns>
+		public static string WriteWithBothTimesUnlabeledLocalFirstWithPassThrough (
+			string pstrMessage ,
+			StreamWriter psw = null )
+		{
+			WriteWithBothTimesUnlabeledLocalFirst ( pstrMessage , psw );
+			return pstrMessage;
 		}   // public static void WriteWithBothTimesUnlabeledLocalFirst
 
 
@@ -283,6 +364,30 @@ namespace WizardWrx.Core
 
 
 		/// <summary>
+		/// Call WriteWithBothTimesUnlabeledUTCFirst and write the message to
+		/// the active Trace Listener or the supplied StreamWriter, then return
+		/// the message to the calling routine.
+		/// </summary>
+		/// <param name="pstrMessage">
+		/// The specified string is written verbatim, immediately after the time
+		/// stamp.
+		/// </param>
+		/// <param name="psw">
+		/// When supplied, this StreamWriter takes the place of the Trace Listener.
+		/// </param>
+		/// <returns>
+		/// The return value is a copy of <paramref name="pstrMessage"/>.
+		/// </returns>
+		public static string WriteWithBothTimesUnlabeledUTCFirstWithPassThrough (
+			string pstrMessage ,
+			StreamWriter psw = null )
+		{
+			WriteWithBothTimesUnlabeledUTCFirst ( pstrMessage , psw );
+			return pstrMessage;
+		}   // public static string WriteWithBothTimesUnlabeledUTCFirstWithPassThrough
+
+
+		/// <summary>
 		/// Write a time stamped trace log message, using the local machine time
 		/// as its time stamp prefix.
 		/// </summary>
@@ -319,6 +424,30 @@ namespace WizardWrx.Core
 
 
 		/// <summary>
+		/// Call WriteWithLabeledLocalTime and write the message to the active
+		/// Trace Listener or the supplied StreamWriter, then return the message
+		/// to the calling routine.
+		/// </summary>
+		/// <param name="pstrMessage">
+		/// The specified string is written verbatim, immediately after the time
+		/// stamp.
+		/// </param>
+		/// <param name="psw">
+		/// When supplied, this StreamWriter takes the place of the Trace Listener.
+		/// </param>
+		/// <returns>
+		/// The return value is a copy of <paramref name="pstrMessage"/>.
+		/// </returns>
+		public static string WriteWithLabeledLocalTimeWithPassThrough (
+			string pstrMessage ,
+			StreamWriter psw = null )
+		{
+			WriteWithLabeledLocalTime ( pstrMessage , psw );
+			return pstrMessage;
+		}   // public static string WriteWithLabeledLocalTimeWithPassThrough
+
+
+		/// <summary>
 		/// Write a time stamped trace log message, using the local machine time
 		/// as its time stamp prefix.
 		/// </summary>
@@ -350,6 +479,30 @@ namespace WizardWrx.Core
 						ReplaceNewlines ( pstrMessage ) ) );                    // Format Item 1 = Message
 			}   // FALSE, dispensing with the Trace Listener, block, if ( psw == null )
 		}   // public static void WriteWithUnlabeledLocalTime
+
+
+		/// <summary>
+		/// Call WriteWithUnlabeledLocalTime and write the message to the active
+		/// Trace Listener or the supplied StreamWriter, then return the message
+		/// to the calling routine.
+		/// </summary>
+		/// <param name="pstrMessage">
+		/// The specified string is written verbatim, immediately after the time
+		/// stamp.
+		/// </param>
+		/// <param name="psw">
+		/// When supplied, this StreamWriter takes the place of the Trace Listener.
+		/// </param>
+		/// <returns>
+		/// The return value is a copy of <paramref name="pstrMessage"/>.
+		/// </returns>
+		public static string WriteWithUnlabeledLocalTimeWithPassThrough (
+			string pstrMessage ,
+			StreamWriter psw = null )
+		{
+			WriteWithUnlabeledLocalTime ( pstrMessage , psw );
+			return pstrMessage;
+		}   // public static string WriteWithUnlabeledLocalTimeWithPassThrough
 
 
 		/// <summary>
@@ -389,6 +542,30 @@ namespace WizardWrx.Core
 
 
 		/// <summary>
+		/// Call WriteWithLabeledUTCTime and write the message to the active
+		/// Trace Listener or the supplied StreamWriter, then return the message
+		/// to the calling routine.
+		/// </summary>
+		/// <param name="pstrMessage">
+		/// The specified string is written verbatim, immediately after the time
+		/// stamp.
+		/// </param>
+		/// <param name="psw">
+		/// When supplied, this StreamWriter takes the place of the Trace Listener.
+		/// </param>
+		/// <returns>
+		/// The return value is a copy of <paramref name="pstrMessage"/>.
+		/// </returns>
+		public static string WriteWithLabeledUTCTimeWithPassThrough (
+			string pstrMessage ,
+			StreamWriter psw = null )
+		{
+			WriteWithLabeledUTCTime ( pstrMessage , psw );
+			return pstrMessage;
+		}   // public static string WriteWithLabeledUTCTimeWithPassThrough
+
+
+		/// <summary>
 		/// Write a time stamped trace log message, using the UTC machine time
 		/// as its time stamp prefix.
 		/// </summary>
@@ -420,6 +597,30 @@ namespace WizardWrx.Core
 						ReplaceNewlines ( pstrMessage ) ) );                    // Format Item 1 = Message
 			}   // FALSE, dispensing with the Trace Listener, block, if ( psw == null )
 		}   // public static void WriteWithUnlabeledUTCTime
+
+
+		/// <summary>
+		/// Call WriteWithUnlabeledUTCTime and write the message to the active
+		/// Trace Listener or the supplied StreamWriter, then return the message
+		/// to the calling routine.
+		/// </summary>
+		/// <param name="pstrMessage">
+		/// The specified string is written verbatim, immediately after the time
+		/// stamp.
+		/// </param>
+		/// <param name="psw">
+		/// When supplied, this StreamWriter takes the place of the Trace Listener.
+		/// </param>
+		/// <returns>
+		/// The return value is a copy of <paramref name="pstrMessage"/>.
+		/// </returns>
+		public static string WriteWithUnlabeledUTCTimeWithPassThrough (
+			string pstrMessage ,
+			StreamWriter psw = null )
+		{
+			WriteWithUnlabeledUTCTime ( pstrMessage , psw );
+			return pstrMessage;
+		}   // public static string WriteWithUnlabeledUTCTimeWithPassThrough
 
 
 		/// <summary>

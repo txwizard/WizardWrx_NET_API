@@ -95,10 +95,6 @@
       <Project>{b5282e82-d211-4bea-bebd-b2cc6e45bf5c}</Project>
       <Name>Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DLLConfigurationManager\DLLConfigurationManager.csproj">
-      <Project>{6cffb889-9457-4bfa-9efb-614118885760}</Project>
-      <Name>DLLConfigurationManager</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="WW_Icon1.ico" />

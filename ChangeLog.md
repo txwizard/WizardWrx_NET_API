@@ -1,5 +1,16 @@
 ﻿# WizardWrx .NET API Change Log
 
+## 2022-04-19
+
+### WizardWrx.Core, Version 8.0.282
+
+The four static methods on the `TraceLogger` get a set of analogues having names
+that end with `WithPassThrough` that return the message so that the calling
+routine can easily put it to other uses.
+
+Breaking with past practice, this is the only package being released today. This
+is my plan forward, to reduce churn that is best avoided by leveraging existing
+mechanisms in NuGet package managers.
 
 ## 2022-04-18
 
