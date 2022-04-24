@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>This release incorporates ChangeLog.md from the root directory of the library constellation of which it is a component. As always, it also incorporates the current versions of its dependent libraries and their dependents.</releaseNotes>
+	    <releaseNotes>Today marks the beginning of a new era in which a package that belongs to the WizardWrx .NET API will be published only where it incorporates new code to implement a new feature or fix a bug. Since most developers rely upon automated CI/CD pipelines, this will reduce churn caused by update that were limited to refreshing the dependency graph of a package. If your NuGet configuration file has a dependencyVersion key with its value set to Highest, your pipeline will keep your projects up to date.</releaseNotes>
     	<copyright>$copyright$</copyright>
     	<tags>Embbedded Resource Reader</tags>
 	</metadata>

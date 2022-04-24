@@ -8210,6 +8210,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledLocalFirst
   nameWithType: TraceLogger.WriteWithBothTimesLabeledLocalFirst
+- uid: WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledLocalFirstWithPassThrough(System.String,System.IO.StreamWriter)
+  name: WriteWithBothTimesLabeledLocalFirstWithPassThrough(String, StreamWriter)
+  href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithBothTimesLabeledLocalFirstWithPassThrough_System_String_System_IO_StreamWriter_
+  commentId: M:WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledLocalFirstWithPassThrough(System.String,System.IO.StreamWriter)
+  fullName: WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledLocalFirstWithPassThrough(System.String, System.IO.StreamWriter)
+  nameWithType: TraceLogger.WriteWithBothTimesLabeledLocalFirstWithPassThrough(String, StreamWriter)
+- uid: WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledLocalFirstWithPassThrough*
+  name: WriteWithBothTimesLabeledLocalFirstWithPassThrough
+  href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithBothTimesLabeledLocalFirstWithPassThrough_
+  commentId: Overload:WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledLocalFirstWithPassThrough
+  isSpec: "True"
+  fullName: WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledLocalFirstWithPassThrough
+  nameWithType: TraceLogger.WriteWithBothTimesLabeledLocalFirstWithPassThrough
 - uid: WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledUTCFirst(System.String,System.IO.StreamWriter)
   name: WriteWithBothTimesLabeledUTCFirst(String, StreamWriter)
   href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithBothTimesLabeledUTCFirst_System_String_System_IO_StreamWriter_
@@ -8223,6 +8236,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledUTCFirst
   nameWithType: TraceLogger.WriteWithBothTimesLabeledUTCFirst
+- uid: WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledUTCFirstWithPassTrhough(System.String,System.IO.StreamWriter)
+  name: WriteWithBothTimesLabeledUTCFirstWithPassTrhough(String, StreamWriter)
+  href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithBothTimesLabeledUTCFirstWithPassTrhough_System_String_System_IO_StreamWriter_
+  commentId: M:WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledUTCFirstWithPassTrhough(System.String,System.IO.StreamWriter)
+  fullName: WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledUTCFirstWithPassTrhough(System.String, System.IO.StreamWriter)
+  nameWithType: TraceLogger.WriteWithBothTimesLabeledUTCFirstWithPassTrhough(String, StreamWriter)
+- uid: WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledUTCFirstWithPassTrhough*
+  name: WriteWithBothTimesLabeledUTCFirstWithPassTrhough
+  href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithBothTimesLabeledUTCFirstWithPassTrhough_
+  commentId: Overload:WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledUTCFirstWithPassTrhough
+  isSpec: "True"
+  fullName: WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledUTCFirstWithPassTrhough
+  nameWithType: TraceLogger.WriteWithBothTimesLabeledUTCFirstWithPassTrhough
 - uid: WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledLocalFirst(System.String,System.IO.StreamWriter)
   name: WriteWithBothTimesUnlabeledLocalFirst(String, StreamWriter)
   href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithBothTimesUnlabeledLocalFirst_System_String_System_IO_StreamWriter_
@@ -8236,6 +8262,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledLocalFirst
   nameWithType: TraceLogger.WriteWithBothTimesUnlabeledLocalFirst
+- uid: WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledLocalFirstWithPassThrough(System.String,System.IO.StreamWriter)
+  name: WriteWithBothTimesUnlabeledLocalFirstWithPassThrough(String, StreamWriter)
+  href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithBothTimesUnlabeledLocalFirstWithPassThrough_System_String_System_IO_StreamWriter_
+  commentId: M:WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledLocalFirstWithPassThrough(System.String,System.IO.StreamWriter)
+  fullName: WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledLocalFirstWithPassThrough(System.String, System.IO.StreamWriter)
+  nameWithType: TraceLogger.WriteWithBothTimesUnlabeledLocalFirstWithPassThrough(String, StreamWriter)
+- uid: WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledLocalFirstWithPassThrough*
+  name: WriteWithBothTimesUnlabeledLocalFirstWithPassThrough
+  href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithBothTimesUnlabeledLocalFirstWithPassThrough_
+  commentId: Overload:WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledLocalFirstWithPassThrough
+  isSpec: "True"
+  fullName: WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledLocalFirstWithPassThrough
+  nameWithType: TraceLogger.WriteWithBothTimesUnlabeledLocalFirstWithPassThrough
 - uid: WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledUTCFirst(System.String,System.IO.StreamWriter)
   name: WriteWithBothTimesUnlabeledUTCFirst(String, StreamWriter)
   href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithBothTimesUnlabeledUTCFirst_System_String_System_IO_StreamWriter_
@@ -8249,6 +8288,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledUTCFirst
   nameWithType: TraceLogger.WriteWithBothTimesUnlabeledUTCFirst
+- uid: WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledUTCFirstWithPassThrough(System.String,System.IO.StreamWriter)
+  name: WriteWithBothTimesUnlabeledUTCFirstWithPassThrough(String, StreamWriter)
+  href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithBothTimesUnlabeledUTCFirstWithPassThrough_System_String_System_IO_StreamWriter_
+  commentId: M:WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledUTCFirstWithPassThrough(System.String,System.IO.StreamWriter)
+  fullName: WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledUTCFirstWithPassThrough(System.String, System.IO.StreamWriter)
+  nameWithType: TraceLogger.WriteWithBothTimesUnlabeledUTCFirstWithPassThrough(String, StreamWriter)
+- uid: WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledUTCFirstWithPassThrough*
+  name: WriteWithBothTimesUnlabeledUTCFirstWithPassThrough
+  href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithBothTimesUnlabeledUTCFirstWithPassThrough_
+  commentId: Overload:WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledUTCFirstWithPassThrough
+  isSpec: "True"
+  fullName: WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledUTCFirstWithPassThrough
+  nameWithType: TraceLogger.WriteWithBothTimesUnlabeledUTCFirstWithPassThrough
 - uid: WizardWrx.Core.TraceLogger.WriteWithLabeledLocalTime(System.String,System.IO.StreamWriter)
   name: WriteWithLabeledLocalTime(String, StreamWriter)
   href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithLabeledLocalTime_System_String_System_IO_StreamWriter_
@@ -8262,6 +8314,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.Core.TraceLogger.WriteWithLabeledLocalTime
   nameWithType: TraceLogger.WriteWithLabeledLocalTime
+- uid: WizardWrx.Core.TraceLogger.WriteWithLabeledLocalTimeWithPassThrough(System.String,System.IO.StreamWriter)
+  name: WriteWithLabeledLocalTimeWithPassThrough(String, StreamWriter)
+  href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithLabeledLocalTimeWithPassThrough_System_String_System_IO_StreamWriter_
+  commentId: M:WizardWrx.Core.TraceLogger.WriteWithLabeledLocalTimeWithPassThrough(System.String,System.IO.StreamWriter)
+  fullName: WizardWrx.Core.TraceLogger.WriteWithLabeledLocalTimeWithPassThrough(System.String, System.IO.StreamWriter)
+  nameWithType: TraceLogger.WriteWithLabeledLocalTimeWithPassThrough(String, StreamWriter)
+- uid: WizardWrx.Core.TraceLogger.WriteWithLabeledLocalTimeWithPassThrough*
+  name: WriteWithLabeledLocalTimeWithPassThrough
+  href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithLabeledLocalTimeWithPassThrough_
+  commentId: Overload:WizardWrx.Core.TraceLogger.WriteWithLabeledLocalTimeWithPassThrough
+  isSpec: "True"
+  fullName: WizardWrx.Core.TraceLogger.WriteWithLabeledLocalTimeWithPassThrough
+  nameWithType: TraceLogger.WriteWithLabeledLocalTimeWithPassThrough
 - uid: WizardWrx.Core.TraceLogger.WriteWithLabeledUTCTime(System.String,System.IO.StreamWriter)
   name: WriteWithLabeledUTCTime(String, StreamWriter)
   href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithLabeledUTCTime_System_String_System_IO_StreamWriter_
@@ -8275,6 +8340,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.Core.TraceLogger.WriteWithLabeledUTCTime
   nameWithType: TraceLogger.WriteWithLabeledUTCTime
+- uid: WizardWrx.Core.TraceLogger.WriteWithLabeledUTCTimeWithPassThrough(System.String,System.IO.StreamWriter)
+  name: WriteWithLabeledUTCTimeWithPassThrough(String, StreamWriter)
+  href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithLabeledUTCTimeWithPassThrough_System_String_System_IO_StreamWriter_
+  commentId: M:WizardWrx.Core.TraceLogger.WriteWithLabeledUTCTimeWithPassThrough(System.String,System.IO.StreamWriter)
+  fullName: WizardWrx.Core.TraceLogger.WriteWithLabeledUTCTimeWithPassThrough(System.String, System.IO.StreamWriter)
+  nameWithType: TraceLogger.WriteWithLabeledUTCTimeWithPassThrough(String, StreamWriter)
+- uid: WizardWrx.Core.TraceLogger.WriteWithLabeledUTCTimeWithPassThrough*
+  name: WriteWithLabeledUTCTimeWithPassThrough
+  href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithLabeledUTCTimeWithPassThrough_
+  commentId: Overload:WizardWrx.Core.TraceLogger.WriteWithLabeledUTCTimeWithPassThrough
+  isSpec: "True"
+  fullName: WizardWrx.Core.TraceLogger.WriteWithLabeledUTCTimeWithPassThrough
+  nameWithType: TraceLogger.WriteWithLabeledUTCTimeWithPassThrough
 - uid: WizardWrx.Core.TraceLogger.WriteWithUnlabeledLocalTime(System.String,System.IO.StreamWriter)
   name: WriteWithUnlabeledLocalTime(String, StreamWriter)
   href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithUnlabeledLocalTime_System_String_System_IO_StreamWriter_
@@ -8288,6 +8366,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.Core.TraceLogger.WriteWithUnlabeledLocalTime
   nameWithType: TraceLogger.WriteWithUnlabeledLocalTime
+- uid: WizardWrx.Core.TraceLogger.WriteWithUnlabeledLocalTimeWithPassThrough(System.String,System.IO.StreamWriter)
+  name: WriteWithUnlabeledLocalTimeWithPassThrough(String, StreamWriter)
+  href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithUnlabeledLocalTimeWithPassThrough_System_String_System_IO_StreamWriter_
+  commentId: M:WizardWrx.Core.TraceLogger.WriteWithUnlabeledLocalTimeWithPassThrough(System.String,System.IO.StreamWriter)
+  fullName: WizardWrx.Core.TraceLogger.WriteWithUnlabeledLocalTimeWithPassThrough(System.String, System.IO.StreamWriter)
+  nameWithType: TraceLogger.WriteWithUnlabeledLocalTimeWithPassThrough(String, StreamWriter)
+- uid: WizardWrx.Core.TraceLogger.WriteWithUnlabeledLocalTimeWithPassThrough*
+  name: WriteWithUnlabeledLocalTimeWithPassThrough
+  href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithUnlabeledLocalTimeWithPassThrough_
+  commentId: Overload:WizardWrx.Core.TraceLogger.WriteWithUnlabeledLocalTimeWithPassThrough
+  isSpec: "True"
+  fullName: WizardWrx.Core.TraceLogger.WriteWithUnlabeledLocalTimeWithPassThrough
+  nameWithType: TraceLogger.WriteWithUnlabeledLocalTimeWithPassThrough
 - uid: WizardWrx.Core.TraceLogger.WriteWithUnlabeledUTCTime(System.String,System.IO.StreamWriter)
   name: WriteWithUnlabeledUTCTime(String, StreamWriter)
   href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithUnlabeledUTCTime_System_String_System_IO_StreamWriter_
@@ -8301,6 +8392,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.Core.TraceLogger.WriteWithUnlabeledUTCTime
   nameWithType: TraceLogger.WriteWithUnlabeledUTCTime
+- uid: WizardWrx.Core.TraceLogger.WriteWithUnlabeledUTCTimeWithPassThrough(System.String,System.IO.StreamWriter)
+  name: WriteWithUnlabeledUTCTimeWithPassThrough(String, StreamWriter)
+  href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithUnlabeledUTCTimeWithPassThrough_System_String_System_IO_StreamWriter_
+  commentId: M:WizardWrx.Core.TraceLogger.WriteWithUnlabeledUTCTimeWithPassThrough(System.String,System.IO.StreamWriter)
+  fullName: WizardWrx.Core.TraceLogger.WriteWithUnlabeledUTCTimeWithPassThrough(System.String, System.IO.StreamWriter)
+  nameWithType: TraceLogger.WriteWithUnlabeledUTCTimeWithPassThrough(String, StreamWriter)
+- uid: WizardWrx.Core.TraceLogger.WriteWithUnlabeledUTCTimeWithPassThrough*
+  name: WriteWithUnlabeledUTCTimeWithPassThrough
+  href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithUnlabeledUTCTimeWithPassThrough_
+  commentId: Overload:WizardWrx.Core.TraceLogger.WriteWithUnlabeledUTCTimeWithPassThrough
+  isSpec: "True"
+  fullName: WizardWrx.Core.TraceLogger.WriteWithUnlabeledUTCTimeWithPassThrough
+  nameWithType: TraceLogger.WriteWithUnlabeledUTCTimeWithPassThrough
 - uid: WizardWrx.Core.UnconfiguredDLLSettings
   name: UnconfiguredDLLSettings
   href: api/WizardWrx.Core.UnconfiguredDLLSettings.html
@@ -14028,6 +14132,19 @@ references:
   commentId: F:WizardWrx.RegExpSupport.FRIEDL_HTML_TAG_MATCH
   fullName: WizardWrx.RegExpSupport.FRIEDL_HTML_TAG_MATCH
   nameWithType: RegExpSupport.FRIEDL_HTML_TAG_MATCH
+- uid: WizardWrx.RegExpSupport.GoOrNoGo(System.String)
+  name: GoOrNoGo(String)
+  href: api/WizardWrx.RegExpSupport.html#WizardWrx_RegExpSupport_GoOrNoGo_System_String_
+  commentId: M:WizardWrx.RegExpSupport.GoOrNoGo(System.String)
+  fullName: WizardWrx.RegExpSupport.GoOrNoGo(System.String)
+  nameWithType: RegExpSupport.GoOrNoGo(String)
+- uid: WizardWrx.RegExpSupport.GoOrNoGo*
+  name: GoOrNoGo
+  href: api/WizardWrx.RegExpSupport.html#WizardWrx_RegExpSupport_GoOrNoGo_
+  commentId: Overload:WizardWrx.RegExpSupport.GoOrNoGo
+  isSpec: "True"
+  fullName: WizardWrx.RegExpSupport.GoOrNoGo
+  nameWithType: RegExpSupport.GoOrNoGo
 - uid: WizardWrx.RegExpSupport.MATCH_ALTERNATION
   name: MATCH_ALTERNATION
   href: api/WizardWrx.RegExpSupport.html#WizardWrx_RegExpSupport_MATCH_ALTERNATION

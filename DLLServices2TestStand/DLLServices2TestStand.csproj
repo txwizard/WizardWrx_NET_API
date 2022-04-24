@@ -78,6 +78,10 @@
     <Reference Include="WizardWrx.AnyCSV, Version=7.2.145.0, Culture=neutral, PublicKeyToken=39f6551a21db420a, processorArchitecture=MSIL">
       <HintPath>C:\Users\DAG\.nuget\packages\WizardWrx.AnyCSV.7.2.145\lib\net20\WizardWrx.AnyCSV.dll</HintPath>
     </Reference>
+    <Reference Include="WizardWrx.ASCIIInfo, Version=8.0.167.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ASCIIInfo\bin\Release\WizardWrx.ASCIIInfo.dll</HintPath>
+    </Reference>
     <Reference Include="WizardWrx.BitMath, Version=4.3.125.29248, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>C:\Users\DAG\.nuget\packages\WizardWrx.BitMath.4.3.125.29248\lib\net20\WizardWrx.BitMath.dll</HintPath>
     </Reference>
@@ -145,9 +149,41 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AssemblyUtils\AssemblyUtils.csproj">
+      <Project>{147d0ab7-a13a-4374-9011-a5584ae3a533}</Project>
+      <Name>AssemblyUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{c1fb48d6-4a54-4424-bca1-4777f3aae2df}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ConsoleStreams\ConsoleStreams.csproj">
+      <Project>{714f5bee-4663-4b0c-8865-8a2165bf6bf2}</Project>
+      <Name>ConsoleStreams</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Core\Core.csproj">
       <Project>{b5282e82-d211-4bea-bebd-b2cc6e45bf5c}</Project>
       <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DiagnosticInfo\DiagnosticInfo.csproj">
+      <Project>{a248e5a4-b42b-4b10-8f52-e58b06a0bc18}</Project>
+      <Name>DiagnosticInfo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DLLConfigurationManager\DLLConfigurationManager.csproj">
+      <Project>{6cffb889-9457-4bfa-9efb-614118885760}</Project>
+      <Name>DLLConfigurationManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EmbeddedTextFile\EmbeddedTextFile.csproj">
+      <Project>{d96c77fe-645b-4e6a-8a95-832467303787}</Project>
+      <Name>EmbeddedTextFile</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FormatStringEngine\FormatStringEngine.csproj">
+      <Project>{4d82458f-864f-494e-a537-1e89d6c8073c}</Project>
+      <Name>FormatStringEngine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MoreMath\MoreMath.csproj">
+      <Project>{a9512fcd-3f59-4ce9-8923-367aed4511a8}</Project>
+      <Name>MoreMath</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

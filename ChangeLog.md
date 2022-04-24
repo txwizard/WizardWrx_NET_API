@@ -1,5 +1,15 @@
 ﻿# WizardWrx .NET API Change Log
 
+## 2022-04-24
+
+Today marks the beginning of a new era in which a package that belongs to the
+WizardWrx .NET API will be published only where it incorporates new code to
+implement a new feature or fix a bug. Since most developers rely upon automated
+CI/CD pipelines, this will reduce churn caused by update that were limited to
+refreshing the dependency graph of a package. If your NuGet configuration file
+has a `dependencyVersion` key with its value set to `Highest`, your pipeline will
+keep your projects up to date.
+
 ## 2022-04-19
 
 ### WizardWrx.Core, Version 8.0.282

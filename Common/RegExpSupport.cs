@@ -625,6 +625,13 @@ namespace WizardWrx
                     ESCAPED_QUOTE
                 } );
 		}	// MatchHTMLPageTitleAttribute
+
+        public static string GoOrNoGo (string NuGetPackageConfigFileName )
+        {
+            string NuGetPackagePublishFlag = ( System.IO.File.GetAttributes ( NuGetPackageConfigFileName ) & System.IO.FileAttributes.Archive ) == System.IO.FileAttributes.Archive ? "true" : "false";
+            return NuGetPackagePublishFlag;
+        }
+
 		#endregion	// Static Methods
 	}   // class RegExpSupport
 }   // partial namespace WizardWrx

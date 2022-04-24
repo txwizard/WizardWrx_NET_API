@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>This release incorporates one new read-only property on DependentAssemblies that exposes the private list of dependent assemblies that it keeps. For additional details please see ChangeLog.md or the online documentation in GitHub Pages.</releaseNotes>
+	    <releaseNotes>Today marks the beginning of a new era in which a package that belongs to the WizardWrx .NET API will be published only where it incorporates new code to implement a new feature or fix a bug. Since most developers rely upon automated CI/CD pipelines, this will reduce churn caused by update that were limited to refreshing the dependency graph of a package. If your NuGet configuration file has a dependencyVersion key with its value set to Highest, your pipeline will keep your projects up to date.</releaseNotes>
     	<copyright>$copyright$</copyright>
     	<tags>Assemblies Dependenciess Resources Enumerators</tags>
 	</metadata>

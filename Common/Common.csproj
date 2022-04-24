@@ -25,24 +25,21 @@
     2020/10/18 DAG Add -Source nuget.org to NuGet Puse command line.
 
     2021/01/30 DAG Reinstate wwBldNbrMgr.
+
+      2022/04/24 DAG 1) Define a new UsingTask, NuGetPackagePublishDecision, and
+                        use it in a new PublishIfNew target that runs as the
+                        AfterBuild target so that its output can prevent the
+                        Package and Publish targets executing.
+
+                     2) Move everything involved with NuGet package management
+                        into a new WizardWrx_NuGet_Packages Targets file, which
+                        is imported (and processed) last.
 	============================================================================
 -->
+
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <!-- 2019/12/15 - DAG Copy custom task NuGetPackageNameFixup from AnyCSV.  -->
-  <UsingTask TaskName="NuGetPackageNameFixup" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll">
-    <ParameterGroup>
-      <RawNugetPackageVersion ParameterType="System.String" Required="true" />
-      <ActualNugetPackageVersion ParameterType="System.String" Output="true" />
-    </ParameterGroup>
-    <Task>
-      <Code Type="Fragment" Language="cs"><![CDATA[
-            ActualNugetPackageVersion = RawNugetPackageVersion.EndsWith ( ".0" ) ? RawNugetPackageVersion.Substring(0,RawNugetPackageVersion.Length-2) : RawNugetPackageVersion;
-            Log.LogMessage ( "Custom Task NuGetPackageNameFixup: RawNugetPackageVersion    = "+ RawNugetPackageVersion    );
-            Log.LogMessage ( "Custom Task NuGetPackageNameFixup: ActualNugetPackageVersion = "+ ActualNugetPackageVersion );
-        ]]></Code>
-    </Task>
-  </UsingTask>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -60,6 +57,7 @@
     <SolutionPackageDir>$(ProjectDir)..\packages</SolutionPackageDir>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>.pdb$;(AllowedOutputExtensionsInPackageBuildOutputFolder)</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
+
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -70,6 +68,7 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\Wizardwrx.Common.XML</DocumentationFile>
   </PropertyGroup>
+
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
@@ -79,6 +78,7 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\Wizardwrx.Common.XML</DocumentationFile>
   </PropertyGroup>
+
   <!--
     2015/06/09 DAG Add the following, per thread message that begins, "An
 	               alternative that is working for me so far is to add the
@@ -91,6 +91,7 @@
     <DefineConstants Condition=" !$(DefineConstants.Contains(';NET')) ">$(DefineConstants);$(TargetFrameworkVersion.Replace("v", "NET").Replace(".", ""))</DefineConstants>
     <DefineConstants Condition=" $(DefineConstants.Contains(';NET')) ">$(DefineConstants.Remove($(DefineConstants.LastIndexOf(";NET"))));$(TargetFrameworkVersion.Replace("v", "NET").Replace(".", ""))</DefineConstants>
   </PropertyGroup>
+
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data.Linq" />
@@ -98,6 +99,7 @@
       <HintPath>C:\Users\DAG\.nuget\packages\WizardWrx.BitMath.4.3.125.29248\lib\net20\WizardWrx.BitMath.dll</HintPath>
     </Reference>
   </ItemGroup>
+
   <ItemGroup>
     <Compile Include="..\ProductAssemblyInfo.cs">
       <Link>Properties\ProductAssemblyInfo.cs</Link>
@@ -122,50 +124,27 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
   </ItemGroup>
+
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- 2019/05/19 14:16:44 - DAG Everything from this point to the end is new, and was added to support NuGet package generation. -->
-  <Target Name="AfterBuild">
-    <!-- Load up the information from the assembly -->
-    <GetAssemblyIdentity AssemblyFiles="$(OutputPath)$(AssemblyName).dll">
-      <Output TaskParameter="Assemblies" ItemName="OutputAssemblyInfo" />
-    </GetAssemblyIdentity>
-    <Message Text="Info: Assembly $(AssemblyName).dll version =  %(OutputAssemblyInfo.Version)" />
-  </Target>
-  <Target Name="Package" AfterTargets="AfterBuild" Condition=" '$(Configuration)' == 'Release'">
-    <!-- Ensure the Package directory exists for this project -->
-    <MakeDir Directories="$(PackageDir)" />
-    <!-- Package the project -->
-    <Exec WorkingDirectory="$(BuildDir)" Command="NuGet.exe pack $(ProjectName).csproj -Properties Configuration=$(Configuration) -OutputDir $(PackageDir) -IncludeReferencedProjects -Verbosity detailed" />
-  </Target>
-  <!-- 2019/07/05 16:43:12 - DAG Switch on the push target. -->
-  <!-- Publish the project. -->
-  <Target Name="Publish" AfterTargets="Package" Condition=" '$(Configuration)' == 'Release'">
-    <NuGetPackageNameFixup RawNugetPackageVersion="%(OutputAssemblyInfo.Version)">
-      <Output PropertyName="NuGetPackageVersion" TaskParameter="ActualNugetPackageVersion" />
-    </NuGetPackageNameFixup>
-    <Exec WorkingDirectory="$(PackageDir)" Command="NuGet.exe push $(AssemblyName).$(NuGetPackageVersion).nupkg -Source nuget.org" />
-  </Target>
-  <Target Name="BeforeBuild" Condition=" '$(Configuration)' == 'Debug'">
-    <Exec WorkingDirectory="$(ProjectDir)" Command="nuget install packages.config -OutputDirectory $(SolutionPackageDir)" />
-  </Target>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+
   <PropertyGroup>
     <PreBuildEvent>wwBldNbrMgr.exe "$(ProjectDir) "</PreBuildEvent>
   </PropertyGroup>
+
   <PropertyGroup>
     <PostBuildEvent>wwBldNbrMgr.exe -r "-p$(ProjectDir) " "-t$(TargetPath)"</PostBuildEvent>
   </PropertyGroup>
+
+  <Import Project="$(Custom_MSBuild_Targets)\WizardWrx_NuGet_Packages.TARGETS" Condition="Exists('$(Custom_MSBuild_Targets)\WizardWrx_NuGet_Packages.TARGETS')" />
 </Project>
