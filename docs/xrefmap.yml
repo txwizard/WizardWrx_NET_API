@@ -285,6 +285,19 @@ references:
   isSpec: "True"
   fullName: DLLServices2TestStand.Properties.Resources.CMDARG_STRING_FIXUPS
   nameWithType: Resources.CMDARG_STRING_FIXUPS
+- uid: DLLServices2TestStand.Properties.Resources.CMDARG_TEXT_BETWEEN_MATCHES
+  name: CMDARG_TEXT_BETWEEN_MATCHES
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_CMDARG_TEXT_BETWEEN_MATCHES
+  commentId: P:DLLServices2TestStand.Properties.Resources.CMDARG_TEXT_BETWEEN_MATCHES
+  fullName: DLLServices2TestStand.Properties.Resources.CMDARG_TEXT_BETWEEN_MATCHES
+  nameWithType: Resources.CMDARG_TEXT_BETWEEN_MATCHES
+- uid: DLLServices2TestStand.Properties.Resources.CMDARG_TEXT_BETWEEN_MATCHES*
+  name: CMDARG_TEXT_BETWEEN_MATCHES
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_CMDARG_TEXT_BETWEEN_MATCHES_
+  commentId: Overload:DLLServices2TestStand.Properties.Resources.CMDARG_TEXT_BETWEEN_MATCHES
+  isSpec: "True"
+  fullName: DLLServices2TestStand.Properties.Resources.CMDARG_TEXT_BETWEEN_MATCHES
+  nameWithType: Resources.CMDARG_TEXT_BETWEEN_MATCHES
 - uid: DLLServices2TestStand.Properties.Resources.CMDARG_TRACE_LOGGING
   name: CMDARG_TRACE_LOGGING
   href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_CMDARG_TRACE_LOGGING
@@ -14120,6 +14133,19 @@ references:
   commentId: F:WizardWrx.RegExpSupport.ESCAPED_QUOTE
   fullName: WizardWrx.RegExpSupport.ESCAPED_QUOTE
   nameWithType: RegExpSupport.ESCAPED_QUOTE
+- uid: WizardWrx.RegExpSupport.ExtractTextBetweenMatches(System.Text.RegularExpressions.MatchCollection,System.Int32,System.String)
+  name: ExtractTextBetweenMatches(MatchCollection, Int32, String)
+  href: api/WizardWrx.RegExpSupport.html#WizardWrx_RegExpSupport_ExtractTextBetweenMatches_System_Text_RegularExpressions_MatchCollection_System_Int32_System_String_
+  commentId: M:WizardWrx.RegExpSupport.ExtractTextBetweenMatches(System.Text.RegularExpressions.MatchCollection,System.Int32,System.String)
+  fullName: WizardWrx.RegExpSupport.ExtractTextBetweenMatches(System.Text.RegularExpressions.MatchCollection, System.Int32, System.String)
+  nameWithType: RegExpSupport.ExtractTextBetweenMatches(MatchCollection, Int32, String)
+- uid: WizardWrx.RegExpSupport.ExtractTextBetweenMatches*
+  name: ExtractTextBetweenMatches
+  href: api/WizardWrx.RegExpSupport.html#WizardWrx_RegExpSupport_ExtractTextBetweenMatches_
+  commentId: Overload:WizardWrx.RegExpSupport.ExtractTextBetweenMatches
+  isSpec: "True"
+  fullName: WizardWrx.RegExpSupport.ExtractTextBetweenMatches
+  nameWithType: RegExpSupport.ExtractTextBetweenMatches
 - uid: WizardWrx.RegExpSupport.FRIEDL_GRAY_WHOLE_HTML_TAG_MATCH
   name: FRIEDL_GRAY_WHOLE_HTML_TAG_MATCH
   href: api/WizardWrx.RegExpSupport.html#WizardWrx_RegExpSupport_FRIEDL_GRAY_WHOLE_HTML_TAG_MATCH
@@ -14132,19 +14158,6 @@ references:
   commentId: F:WizardWrx.RegExpSupport.FRIEDL_HTML_TAG_MATCH
   fullName: WizardWrx.RegExpSupport.FRIEDL_HTML_TAG_MATCH
   nameWithType: RegExpSupport.FRIEDL_HTML_TAG_MATCH
-- uid: WizardWrx.RegExpSupport.GoOrNoGo(System.String)
-  name: GoOrNoGo(String)
-  href: api/WizardWrx.RegExpSupport.html#WizardWrx_RegExpSupport_GoOrNoGo_System_String_
-  commentId: M:WizardWrx.RegExpSupport.GoOrNoGo(System.String)
-  fullName: WizardWrx.RegExpSupport.GoOrNoGo(System.String)
-  nameWithType: RegExpSupport.GoOrNoGo(String)
-- uid: WizardWrx.RegExpSupport.GoOrNoGo*
-  name: GoOrNoGo
-  href: api/WizardWrx.RegExpSupport.html#WizardWrx_RegExpSupport_GoOrNoGo_
-  commentId: Overload:WizardWrx.RegExpSupport.GoOrNoGo
-  isSpec: "True"
-  fullName: WizardWrx.RegExpSupport.GoOrNoGo
-  nameWithType: RegExpSupport.GoOrNoGo
 - uid: WizardWrx.RegExpSupport.MATCH_ALTERNATION
   name: MATCH_ALTERNATION
   href: api/WizardWrx.RegExpSupport.html#WizardWrx_RegExpSupport_MATCH_ALTERNATION
@@ -15776,12 +15789,60 @@ references:
   commentId: F:WizardWrx.SpecialStrings.HTML_COMMENT_SUFFIX_SP
   fullName: WizardWrx.SpecialStrings.HTML_COMMENT_SUFFIX_SP
   nameWithType: SpecialStrings.HTML_COMMENT_SUFFIX_SP
+- uid: WizardWrx.SpecialStrings.HTML_LINE_BREAK_LC
+  name: HTML_LINE_BREAK_LC
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_HTML_LINE_BREAK_LC
+  commentId: F:WizardWrx.SpecialStrings.HTML_LINE_BREAK_LC
+  fullName: WizardWrx.SpecialStrings.HTML_LINE_BREAK_LC
+  nameWithType: SpecialStrings.HTML_LINE_BREAK_LC
+- uid: WizardWrx.SpecialStrings.HTML_LINE_BREAK_UC
+  name: HTML_LINE_BREAK_UC
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_HTML_LINE_BREAK_UC
+  commentId: F:WizardWrx.SpecialStrings.HTML_LINE_BREAK_UC
+  fullName: WizardWrx.SpecialStrings.HTML_LINE_BREAK_UC
+  nameWithType: SpecialStrings.HTML_LINE_BREAK_UC
+- uid: WizardWrx.SpecialStrings.HTML_NOLBREAKING_SPACE_UC
+  name: HTML_NOLBREAKING_SPACE_UC
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_HTML_NOLBREAKING_SPACE_UC
+  commentId: F:WizardWrx.SpecialStrings.HTML_NOLBREAKING_SPACE_UC
+  fullName: WizardWrx.SpecialStrings.HTML_NOLBREAKING_SPACE_UC
+  nameWithType: SpecialStrings.HTML_NOLBREAKING_SPACE_UC
 - uid: WizardWrx.SpecialStrings.HTML_NONBREAKING_SPACE
   name: HTML_NONBREAKING_SPACE
   href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_HTML_NONBREAKING_SPACE
   commentId: F:WizardWrx.SpecialStrings.HTML_NONBREAKING_SPACE
   fullName: WizardWrx.SpecialStrings.HTML_NONBREAKING_SPACE
   nameWithType: SpecialStrings.HTML_NONBREAKING_SPACE
+- uid: WizardWrx.SpecialStrings.HTML_NONBREAKING_SPACE_LC
+  name: HTML_NONBREAKING_SPACE_LC
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_HTML_NONBREAKING_SPACE_LC
+  commentId: F:WizardWrx.SpecialStrings.HTML_NONBREAKING_SPACE_LC
+  fullName: WizardWrx.SpecialStrings.HTML_NONBREAKING_SPACE_LC
+  nameWithType: SpecialStrings.HTML_NONBREAKING_SPACE_LC
+- uid: WizardWrx.SpecialStrings.HTML_PARAGRAPH_CLOSE_TAG_LC
+  name: HTML_PARAGRAPH_CLOSE_TAG_LC
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_HTML_PARAGRAPH_CLOSE_TAG_LC
+  commentId: F:WizardWrx.SpecialStrings.HTML_PARAGRAPH_CLOSE_TAG_LC
+  fullName: WizardWrx.SpecialStrings.HTML_PARAGRAPH_CLOSE_TAG_LC
+  nameWithType: SpecialStrings.HTML_PARAGRAPH_CLOSE_TAG_LC
+- uid: WizardWrx.SpecialStrings.HTML_PARAGRAPH_CLOSE_TAG_UC
+  name: HTML_PARAGRAPH_CLOSE_TAG_UC
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_HTML_PARAGRAPH_CLOSE_TAG_UC
+  commentId: F:WizardWrx.SpecialStrings.HTML_PARAGRAPH_CLOSE_TAG_UC
+  fullName: WizardWrx.SpecialStrings.HTML_PARAGRAPH_CLOSE_TAG_UC
+  nameWithType: SpecialStrings.HTML_PARAGRAPH_CLOSE_TAG_UC
+- uid: WizardWrx.SpecialStrings.HTML_PARAGRAPH_OPEN_TAG_LC
+  name: HTML_PARAGRAPH_OPEN_TAG_LC
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_HTML_PARAGRAPH_OPEN_TAG_LC
+  commentId: F:WizardWrx.SpecialStrings.HTML_PARAGRAPH_OPEN_TAG_LC
+  fullName: WizardWrx.SpecialStrings.HTML_PARAGRAPH_OPEN_TAG_LC
+  nameWithType: SpecialStrings.HTML_PARAGRAPH_OPEN_TAG_LC
+- uid: WizardWrx.SpecialStrings.HTML_PARAGRAPH_OPEN_TAG_UC
+  name: HTML_PARAGRAPH_OPEN_TAG_UC
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_HTML_PARAGRAPH_OPEN_TAG_UC
+  commentId: F:WizardWrx.SpecialStrings.HTML_PARAGRAPH_OPEN_TAG_UC
+  fullName: WizardWrx.SpecialStrings.HTML_PARAGRAPH_OPEN_TAG_UC
+  nameWithType: SpecialStrings.HTML_PARAGRAPH_OPEN_TAG_UC
 - uid: WizardWrx.SpecialStrings.HYPHEN
   name: HYPHEN
   href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_HYPHEN
@@ -15975,12 +16036,12 @@ references:
   isSpec: "True"
   fullName: WizardWrx.StringExtensions.CapitalizeWords
   nameWithType: StringExtensions.CapitalizeWords
-- uid: WizardWrx.StringExtensions.Chop(System.String)
-  name: Chop(String)
-  href: api/WizardWrx.StringExtensions.html#WizardWrx_StringExtensions_Chop_System_String_
-  commentId: M:WizardWrx.StringExtensions.Chop(System.String)
-  fullName: WizardWrx.StringExtensions.Chop(System.String)
-  nameWithType: StringExtensions.Chop(String)
+- uid: WizardWrx.StringExtensions.Chop(System.String,System.Boolean)
+  name: Chop(String, Boolean)
+  href: api/WizardWrx.StringExtensions.html#WizardWrx_StringExtensions_Chop_System_String_System_Boolean_
+  commentId: M:WizardWrx.StringExtensions.Chop(System.String,System.Boolean)
+  fullName: WizardWrx.StringExtensions.Chop(System.String, System.Boolean)
+  nameWithType: StringExtensions.Chop(String, Boolean)
 - uid: WizardWrx.StringExtensions.Chop*
   name: Chop
   href: api/WizardWrx.StringExtensions.html#WizardWrx_StringExtensions_Chop_
@@ -15988,6 +16049,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.StringExtensions.Chop
   nameWithType: StringExtensions.Chop
+- uid: WizardWrx.StringExtensions.ChopNBSP(System.String)
+  name: ChopNBSP(String)
+  href: api/WizardWrx.StringExtensions.html#WizardWrx_StringExtensions_ChopNBSP_System_String_
+  commentId: M:WizardWrx.StringExtensions.ChopNBSP(System.String)
+  fullName: WizardWrx.StringExtensions.ChopNBSP(System.String)
+  nameWithType: StringExtensions.ChopNBSP(String)
+- uid: WizardWrx.StringExtensions.ChopNBSP*
+  name: ChopNBSP
+  href: api/WizardWrx.StringExtensions.html#WizardWrx_StringExtensions_ChopNBSP_
+  commentId: Overload:WizardWrx.StringExtensions.ChopNBSP
+  isSpec: "True"
+  fullName: WizardWrx.StringExtensions.ChopNBSP
+  nameWithType: StringExtensions.ChopNBSP
 - uid: WizardWrx.StringExtensions.CountCharacterOccurrences(System.String,System.Char)
   name: CountCharacterOccurrences(String, Char)
   href: api/WizardWrx.StringExtensions.html#WizardWrx_StringExtensions_CountCharacterOccurrences_System_String_System_Char_

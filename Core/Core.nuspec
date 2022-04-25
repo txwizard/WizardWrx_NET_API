@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>Today marks the beginning of a new era in which a package that belongs to the WizardWrx .NET API will be published only where it incorporates new code to implement a new feature or fix a bug. Since most developers rely upon automated CI/CD pipelines, this will reduce churn caused by update that were limited to refreshing the dependency graph of a package. If your NuGet configuration file has a dependencyVersion key with its value set to Highest, your pipeline will keep your projects up to date.</releaseNotes>
+	    <releaseNotes> The static StringExtensions class gets two new methods. Chop has a new optioanl Boolean parameter, pfIncludeNBSP, that adds the nonbreaking space character to the list of things that it chops.ChopNBSP is a new method that confinse itself to chopping the nonbreaking space character. Since the StringExtensions class lives in the root namespace, you need not add an extra using directive to make it accessible, though you will need a library reference.</releaseNotes>
     	<copyright>$copyright$</copyright>
     	<tags>Constants Arrays RegExp FileInfo Strings Singleton</tags>
 	</metadata>

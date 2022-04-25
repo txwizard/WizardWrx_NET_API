@@ -25,7 +25,7 @@
 
     Author:             David A. Gray
 
-    License:            Copyright (C) 2017-2021, David A. Gray. 
+    License:            Copyright (C) 2017-2022, David A. Gray. 
                         All rights reserved.
 
                         Redistribution and use in source and binary forms, with
@@ -136,6 +136,13 @@
                            character, defaulting to a double quote, if the input
                            string contains a specified delimiter character,
                            defaulting to a comma.
+
+    2022/04/24 8.0.296 DAG 1) Chop has a new optioanl Boolean parameter,
+                              pfIncludeNBSP, that adds the nonbreaking space
+                              character to the list of things that it chops.
+
+                           2) ChopNBSP is a new method that confinse itself to
+                              chopping the nonbreaking space character.
     ============================================================================
 */
 
@@ -340,6 +347,16 @@ namespace WizardWrx
         /// <param name="pstrIn">
         /// Specify the string to be chopped.
         /// </param>
+        /// <param name="pfIncludeNBSP">
+        /// <para>
+        /// Specify TRUE to add the nonbreaking space to the chopping block,
+        /// thereby saving a call to ChopNBSP to handle the third case.
+        /// </para>
+        /// <para>
+        /// Since this argument is made optional and defaulted to False, this
+        /// routine is fully baclwards compatible.
+        /// </para>
+        /// </param>
         /// <returns>
         /// The chopped string is returned, minus its newline if it contained
         /// one. This method treats all newlines equally, meaning that any of
@@ -352,7 +369,7 @@ namespace WizardWrx
         /// <see cref="SpecialStrings.STRING_SPLIT_CARRIAGE_RETURN"/>
         /// <see cref="SpecialStrings.STRING_SPLIT_LINEFEED "/>
         /// <see cref="System.Environment.NewLine"/>
-        public static string Chop ( this string pstrIn )
+        public static string Chop ( this string pstrIn , bool pfIncludeNBSP = false )
         {
             if ( string.IsNullOrEmpty ( pstrIn ) )
             {   // Since they get identical treatment, a null reference and the empty string collapse into a single degenerate case 1, of 2,
@@ -361,26 +378,88 @@ namespace WizardWrx
             else if ( pstrIn.EndsWith ( Environment.NewLine ) )
             {   // The string ends with a Windows Newline pair (CR/LF), case 1 of 3.
                 return pstrIn.Substring (
-                    WizardWrx.ArrayInfo.ARRAY_FIRST_ELEMENT ,
+                    ArrayInfo.ARRAY_FIRST_ELEMENT ,
                     pstrIn.Length - Environment.NewLine.Length );
             }
             else if ( pstrIn.EndsWith ( SpecialStrings.STRING_SPLIT_CARRIAGE_RETURN ) )
             {   // The string ends with a Macintosh newline character (0x0d), case 2 of 3.
                 return pstrIn.Substring (
-                    WizardWrx.ArrayInfo.ARRAY_FIRST_ELEMENT ,
+                    ArrayInfo.ARRAY_FIRST_ELEMENT ,
                     pstrIn.Length - SpecialStrings.STRING_SPLIT_CARRIAGE_RETURN.Length );
             }
             else if ( pstrIn.EndsWith ( SpecialStrings.STRING_SPLIT_LINEFEED ) )
             {   // The string ends with a Unix newline character (0x0a), case 3 of 3.
                 return pstrIn.Substring (
-                    WizardWrx.ArrayInfo.ARRAY_FIRST_ELEMENT ,
+                    ArrayInfo.ARRAY_FIRST_ELEMENT ,
                     pstrIn.Length - SpecialStrings.STRING_SPLIT_LINEFEED.Length );
             }
+            else if ( pfIncludeNBSP && pstrIn.EndsWith ( SpecialStrings.NONBREAKING_SPACE_CHAR ) )
+            {   // The last character in the string is a nonbreaking space, and the caller wants it gone, too.
+                return pstrIn.Substring (
+                    ArrayInfo.ARRAY_FIRST_ELEMENT ,
+                    pstrIn.Length - SpecialStrings.NONBREAKING_SPACE_CHAR.Length );
+            }
             else
-            {   // The last character is something else; return the string as is, degenerate case 2 of 2.
+            {
+                // The last character is something else; return the string as is, degenerate case 2 of 2.
                 return pstrIn;
             }
         }   // Chop
+
+
+        /// <summary>
+        /// When the last character of string <paramref name="pstrStringToTrim"/>
+        /// is a nonbreaking space, remove it. Otherwise, return a copy of the
+        /// input string.
+        /// </summary>
+        /// <param name="pstrStringToTrim">
+        /// <para>
+        /// This string is anticipated to end with an unwanted nonbreaking
+        /// space. Note that implemtnation as an extension method makes this
+        /// argument both implicit and hidden from the IDE.
+        /// </para>
+        /// <para>
+        /// The empty string is a degenerate case, which returns another empty
+        /// string.
+        /// </para>
+        /// <para>
+        /// A null reference returns another null reference. Give me nothing and
+        /// I return nothing.
+        /// </para>
+        /// </param>
+        /// <returns>
+        /// The return value is the input string, minus its last character when
+        /// the last character is a nonbreaking space. Otherwise, the return
+        /// value is a copy of the original string.
+        /// </returns>
+        public static string ChopNBSP ( this string pstrStringToTrim )
+        {
+            if ( pstrStringToTrim == null )
+            {
+                return null;
+            }   // TRUE (The input is a null reference.) block, if ( pstrStringToTrim == null )
+            else
+            {
+                if ( string.IsNullOrEmpty ( pstrStringToTrim ) )
+                {
+                    return SpecialStrings.EMPTY_STRING;
+                }   // TRUE (The string is empty, since the previous evaluation eliminated null references.) block, if ( string.IsNullOrEmpty ( pstrStringToTrim ) )
+                else
+                {
+                    if ( pstrStringToTrim.EndsWith ( SpecialStrings.NONBREAKING_SPACE_CHAR ) )
+                    {
+                        return pstrStringToTrim.Substring (
+                            ListInfo.BEGINNING_OF_BUFFER ,
+                            pstrStringToTrim.Length - MagicNumbers.PLUS_ONE );
+                    }   // TRUE (The last chareacter in the input string is a nonbreaking space.) block, if ( pstrStringToTrim.EndsWith ( SpecialStrings.NONBREAKING_SPACE_CHAR ) )
+                    else
+                    {
+                        return pstrStringToTrim;
+                    }   // FALSE (The last character in the input string is something besides a nonbreaking space.) block, if ( pstrStringToTrim.EndsWith ( SpecialStrings.NONBREAKING_SPACE_CHAR ) )
+                }   // FALSE (The string is neither a null reference, nor the empty string.) block, if ( string.IsNullOrEmpty ( pstrStringToTrim ) )}
+            }   // FALSE (The input points to a string of some kind.) block, if ( pstrStringToTrim == null )
+        }   // private static string ChopNBSP
+
         #endregion // Chop Methods
 
 

@@ -59,5 +59,8 @@
     <Setting Name="TraceWriteTests" Type="System.String" Scope="Application">
       <Value Profile="(Default)">$$REPORTSDIRNAME$$\TraceWriteTests.TXT</Value>
     </Setting>
+    <Setting Name="UserNote4Test" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">$$DATADIRNAME$$\UserNote_Sample_Redacted.TXT</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

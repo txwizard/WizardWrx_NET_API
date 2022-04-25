@@ -318,7 +318,8 @@
 	2022/04/18 8.0.1504 DAG Implement CallTraceToStreamWriter to test optional
                             StreamWriter objects for use with all TraceLogger
                             methods.
-	2022/04/19 8.0.1508 DAG 
+
+	2022/04/24 8.0.1514 DAG Implement Exercise_ExtractTextBetweenMatches.
     ============================================================================
 */
 
@@ -673,6 +674,10 @@ namespace DLLServices2TestStand
                 {
                     EventMessageCleanupTests ( ref intTestNumber );
                 }
+                else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_TEXT_BETWEEN_MATCHES )
+                {
+                    Exercise_ExtractTextBetweenMatches ( );
+                }
                 else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_GUARD_STRING_IF_NEEDED )
                 {
                     NewClassTests_20140914.ExerciseGuardStringIfNeeded ( ref intTestNumber );
@@ -754,10 +759,17 @@ namespace DLLServices2TestStand
                     PauseForPictures (
                         APPEND_LINEFEED ,
                         @"Exercise_TruncateValueToOneLine" );
+
+                    Exercise_ExtractTextBetweenMatches ( );
+                    PauseForPictures (
+                        APPEND_LINEFEED ,
+                        @"Exercise_TruncateValueToOneLine" );
+
                     Exercise_RemoveAtArrayExtensionMethod ( );
                     PauseForPictures (
                         APPEND_LINEFEED ,
                         @"Exercise_RemoveAtArrayExtensionMethod" );
+
                     Base64RoundTripExperiments.Exercise_Base64_ToAndFrom ( );
                     PauseForPictures (
                         APPEND_LINEFEED ,
@@ -1711,6 +1723,51 @@ namespace DLLServices2TestStand
         }   // ExerciseDynamicExceptionReporting
 
 
+        private static void Exercise_ExtractTextBetweenMatches ( )
+        {
+            string strAllUserNotes = File.ReadAllText ( AbsolutePathStringFromSettings ( Properties.Settings.Default.UserNote4Test ) );
+
+            Console.WriteLine ( @"Input File Name            = D:\Source_Code\Visual_Studio\Projects\SalesTalk\ImportEngine1\NOTES\UserNote_Sample.TXT{0}" , Environment.NewLine );
+            Console.WriteLine ( $"Input Text Character Count = {strAllUserNotes.Length}" );
+            Console.WriteLine ( $"Nonbreaking Space Count    = {strAllUserNotes.CountCharacterOccurrences ( SpecialCharacters.NONBREAKING_SPACE_CHAR )}{Environment.NewLine}" );
+
+            //  ----------------------------------------------------------------
+            //  Match something like ~04/07/2022 22:28:
+            //  ----------------------------------------------------------------
+
+            System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex (
+                @"~(\d\d\/\d\d\/\d\d\d\d \d\d:\d\d): " ,
+                System.Text.RegularExpressions.RegexOptions.Singleline );
+            System.Text.RegularExpressions.MatchCollection matchCollection = regex.Matches ( strAllUserNotes );
+
+            for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+                      intJ < matchCollection.Count ;
+                      intJ++ )
+            {
+                string strInBetween =WizardWrx.RegExpSupport.ExtractTextBetweenMatches ( matchCollection , intJ , strAllUserNotes );
+                string strUserNate = strInBetween.ChopNBSP ( );
+                string strNoteDate = matchCollection [ intJ ].Groups [ RegExpSupport.REGEXP_FIRST_SUBMATCH ].Value;
+
+                Console.WriteLine ( $"Match # {ArrayInfo.OrdinalFromIndex ( intJ ),2:N0}: {matchCollection [ intJ ]}" );
+                Console.WriteLine ( $"            Position (Index) where match found = {matchCollection [ intJ ].Index}" );
+                Console.WriteLine ( $"            Length of matched text             = {matchCollection [ intJ ].Length}" );
+                Console.WriteLine ( $"            Group 0, the whole match           = {matchCollection [ intJ ].Groups [ RegExpSupport.REGEXP_FIRST_MATCH ].Value}" );
+                Console.WriteLine ( $"            Group 1, the first submatch        = {strNoteDate}" );
+                Console.WriteLine ( $"            Text between end of match and next = {strInBetween}" );
+                Console.WriteLine ( $"            Text between end of match and next = {strUserNate}" );
+
+                if ( DateTime.TryParseExact ( strNoteDate , @"MM/dd/yyyy HH:mm" , System.Globalization.CultureInfo.CurrentUICulture , System.Globalization.DateTimeStyles.None , out DateTime dtmLocalMountainTZTimeStamp ) )
+                {
+                    Console.WriteLine ( $"            Note date {strNoteDate} parsed into {dtmLocalMountainTZTimeStamp.ToString ( @"MM/dd/yyyy HH:mm:ss" )} Mountan Time.{Environment.NewLine}" );
+                }
+                else
+                {
+                    Console.WriteLine ( $"            Note date {strNoteDate} cannot be parsed under the specified conditions.{Environment.NewLine}" );
+                }
+            }   // for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ; intJ < matchCollection.Count ; intJ++ )
+        }   // private static void
+
+
         private static void ExerciseEnvTokenExpander ( )
         {
             const string STRING_CONTAINS_VALID_TOKEN = @"%APPDATA%\WizardWrx\wwBldNbrMgr.LOG";
@@ -1770,7 +1827,8 @@ namespace DLLServices2TestStand
             Console.WriteLine ( $"    Input String = {ENVIRONMENT_STRING_NAME}{Environment.NewLine}    TokenizeEnvVarName = {EnvTokenExpander.TokenizeEnvVarName ( ENVIRONMENT_STRING_NAME )}" );
 
             Console.WriteLine ( $"{Environment.NewLine}ExerciseEnvTokenExpander End{Environment.NewLine}" );
-        }
+        }   // private static void ExerciseEnvTokenExpander
+
 
         private static void ExerciseGetAssemblyVersionInfo ( )
         {

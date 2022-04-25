@@ -223,6 +223,15 @@ namespace DLLServices2TestStand.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Exercise_ExtractTextBetweenMatches.
+        /// </summary>
+        public static string CMDARG_TEXT_BETWEEN_MATCHES {
+            get {
+                return ResourceManager.GetString("CMDARG_TEXT_BETWEEN_MATCHES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to CallTraceToStreamWriter.
         /// </summary>
         public static string CMDARG_TRACE_LOGGING {

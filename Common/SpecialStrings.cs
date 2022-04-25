@@ -182,6 +182,8 @@
                                    QUESTION_MARK
 
 	2021/12/09 8.0.174 DAG 	  Add an overlooked, but often needed TWO_SPACES.
+
+	2022/04/24 8.0.296 DAG    
     ============================================================================
 */
 
@@ -524,37 +526,105 @@ namespace WizardWrx
 		public const string HASH_TAG = @"#";
 
 		/// <summary>
-		/// This is one of many single characters that are frequently needed as
-		/// single-character string constants.
+		/// Minimal HTML (and XML) comment prefix string.
 		/// </summary>
-		/// <seealso cref="SpecialCharacters.HYPHEN"/>
-		public const string HYPHEN = @"-";
-
-        /// <summary>
-        /// Minimal HTML (and XML) comment prefix string.
-        /// </summary>
-        public const string HTML_COMMENT_PREFIX = @"<!--";
+		/// <seealso cref="HTML_COMMENT_PREFIX_SP"/>
+		/// <seealso cref="HTML_COMMENT_SUFFIX"/>
+		/// <seealso cref="HTML_COMMENT_SUFFIX_SP"/>
+		public const string HTML_COMMENT_PREFIX = @"<!--";
 
 		/// <summary>
 		/// HTML (and XML) comment prefix string, followed by a single space.
 		/// </summary>
+		/// <seealso cref="HTML_COMMENT_PREFIX"/>
+		/// <seealso cref="HTML_COMMENT_SUFFIX"/>
+		/// <seealso cref="HTML_COMMENT_SUFFIX_SP"/>
 		public const string HTML_COMMENT_PREFIX_SP = @"<!-- ";
 
 		/// <summary>
 		/// Minimal HTML (and XML) comment suffix string.
 		/// </summary>
+		/// <seealso cref="HTML_COMMENT_PREFIX"/>
+		/// <seealso cref="HTML_COMMENT_PREFIX_SP"/>
+		/// <seealso cref="HTML_COMMENT_SUFFIX_SP"/>
 		public const string HTML_COMMENT_SUFFIX = @"-->";
 
 		/// <summary>
 		/// HTML (and XML) comment suffix string, preceded by a single space.
 		/// </summary>
+		/// <seealso cref="HTML_COMMENT_PREFIX"/>
+		/// <seealso cref="HTML_COMMENT_PREFIX_SP"/>
+		/// <seealso cref="HTML_COMMENT_SUFFIX"/>
 		public const string HTML_COMMENT_SUFFIX_SP = @" -->";
+
+		/// <summary>
+		/// HTML line break (Break) tag, rendered as lower case characters.
+		/// </summary>
+		/// <seealso cref="HTML_LINE_BREAK_UC"/>
+		public const string HTML_LINE_BREAK_LC = @"<br>";
+
+		/// <summary>
+		/// HTML line break (Break) tag, rendered as upper case characters
+		/// </summary>
+		/// <seealso cref="HTML_LINE_BREAK_LC"/>
+		public const string HTML_LINE_BREAK_UC = @"<BR>";
 
 		/// <summary>
 		/// Web Developers are always needing a non-breaking space, for use as
 		/// filler, especially in dynamically generated tables.
 		/// </summary>
+		/// <seealso cref="HTML_NONBREAKING_SPACE_LC"/>
+		/// <seealso cref="HTML_NOLBREAKING_SPACE_UC"/>
 		public const string HTML_NONBREAKING_SPACE = @"&nbsp;";
+
+		/// <summary>
+		/// HTML nonbreaking space entity, rendered as lower case characters.
+		/// </summary>
+		public const string HTML_NONBREAKING_SPACE_LC = HTML_NONBREAKING_SPACE;
+
+		/// <summary>
+		/// HTML nonbreaking space entity, rendered as upper case characters.
+		/// </summary>
+		public const string HTML_NOLBREAKING_SPACE_UC = @"&NBSP;";
+
+		/// <summary>
+		/// HTML paragraph opening tag, rendered as lower case characters.
+		/// </summary>
+		/// <seealso cref="HTML_PARAGRAPH_OPEN_TAG_UC"/>
+		/// <seealso cref="HTML_PARAGRAPH_CLOSE_TAG_LC"/>
+		/// <seealso cref="HTML_PARAGRAPH_CLOSE_TAG_UC"/>
+		public const string HTML_PARAGRAPH_OPEN_TAG_LC = @"<p>";
+
+		/// <summary>
+		/// HTML paragraph opening tag, rendered as upper case characters.
+		/// </summary>
+		/// <seealso cref="HTML_PARAGRAPH_OPEN_TAG_LC"/>
+		/// <seealso cref="HTML_PARAGRAPH_CLOSE_TAG_LC"/>
+		/// <seealso cref="HTML_PARAGRAPH_CLOSE_TAG_UC"/>
+		public const string HTML_PARAGRAPH_OPEN_TAG_UC = @"<P>";
+
+		/// <summary>
+		/// HTML paragraph closing tag, rendered as lower case characters.
+		/// </summary>
+		/// <seealso cref="HTML_PARAGRAPH_CLOSE_TAG_UC"/>
+		/// <seealso cref="HTML_PARAGRAPH_OPEN_TAG_LC"/>
+		/// <seealso cref="HTML_PARAGRAPH_OPEN_TAG_UC"/>
+		public const string HTML_PARAGRAPH_CLOSE_TAG_LC = @"</p>";
+
+		/// <summary>
+		/// HTML paragraph closing tag, rendered as upper case characters.
+		/// </summary>
+		/// <seealso cref="HTML_PARAGRAPH_CLOSE_TAG_LC"/>
+		/// <seealso cref="HTML_PARAGRAPH_OPEN_TAG_LC"/>
+		/// <seealso cref="HTML_PARAGRAPH_OPEN_TAG_UC"/>
+		public const string HTML_PARAGRAPH_CLOSE_TAG_UC = @"</P>";
+
+		/// <summary>
+		/// This is one of many single characters that are frequently needed as
+		/// single-character string constants.
+		/// </summary>
+		/// <seealso cref="SpecialCharacters.HYPHEN"/>
+		public const string HYPHEN = @"-";
 
 		/// <summary>
 		/// The highest integer that can represent any ASCII character is 255,

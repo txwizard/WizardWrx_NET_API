@@ -7992,12 +7992,22 @@
             coerced to lower case.
             </returns>
         </member>
-        <member name="M:WizardWrx.StringExtensions.Chop(System.String)">
+        <member name="M:WizardWrx.StringExtensions.Chop(System.String,System.Boolean)">
             <summary>
             Return a new string with the terminal newline, if present, removed.
             </summary>
             <param name="pstrIn">
             Specify the string to be chopped.
+            </param>
+            <param name="pfIncludeNBSP">
+            <para>
+            Specify TRUE to add the nonbreaking space to the chopping block,
+            thereby saving a call to ChopNBSP to handle the third case.
+            </para>
+            <para>
+            Since this argument is made optional and defaulted to False, this
+            routine is fully baclwards compatible.
+            </para>
             </param>
             <returns>
             The chopped string is returned, minus its newline if it contained
@@ -8011,6 +8021,33 @@
             <see cref="F:WizardWrx.SpecialStrings.STRING_SPLIT_CARRIAGE_RETURN"/>
             <see cref="F:WizardWrx.SpecialStrings.STRING_SPLIT_LINEFEED"/>
             <see cref="P:System.Environment.NewLine"/>
+        </member>
+        <member name="M:WizardWrx.StringExtensions.ChopNBSP(System.String)">
+            <summary>
+            When the last character of string <paramref name="pstrStringToTrim"/>
+            is a nonbreaking space, remove it. Otherwise, return a copy of the
+            input string.
+            </summary>
+            <param name="pstrStringToTrim">
+            <para>
+            This string is anticipated to end with an unwanted nonbreaking
+            space. Note that implemtnation as an extension method makes this
+            argument both implicit and hidden from the IDE.
+            </para>
+            <para>
+            The empty string is a degenerate case, which returns another empty
+            string.
+            </para>
+            <para>
+            A null reference returns another null reference. Give me nothing and
+            I return nothing.
+            </para>
+            </param>
+            <returns>
+            The return value is the input string, minus its last character when
+            the last character is a nonbreaking space. Otherwise, the return
+            value is a copy of the original string.
+            </returns>
         </member>
         <member name="M:WizardWrx.StringExtensions.CountCharacterOccurrences(System.String,System.Char)">
              <summary>

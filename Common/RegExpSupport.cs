@@ -15,7 +15,7 @@
 
 	Author:				David A. Gray
 
-    License:            Copyright (C) 2015-2017, David A. Gray. All rights reserved.
+    License:            Copyright (C) 2015-2022, David A. Gray. All rights reserved.
 
                         Redistribution and use in source and binary forms, with
                         or without modification, are permitted provided that the
@@ -129,6 +129,10 @@
 	2017/07/16 7.0     DAG Replace references to string.empty, which is not a
                            true constant, with SpecialStrings.EMPTY_STRING,
                            which is one.
+
+	2022/04/24 8.0.198 DAG ExtractTextBetweenMatches is a new method that
+                           returns the text between two matches or, in the case
+                           of the last match, the end of the string.
     ============================================================================
 */
 
@@ -456,15 +460,81 @@ namespace WizardWrx
 		private const string JOIN_TWO_PATTERNS = @"{0}{1}";
 		private const string JOIN_FOUR_PATTERNS = @"{0}{1}{2}{3}";
 		private const string JOIN_SIX_PATTERNS = @"{0}{1}{2}{3}{4}{5}";
-		#endregion	// Constructor and Private Constants
+        #endregion   // Constructor and Private Constants
 
 
-		#region Static Methods
-		/// <summary>
+        #region Static Methods
+        /// <summary>
+        /// Given the System.Text.RegularExpression.Match at index <paramref name="pintMatchIndex"/>
+        /// in System.Text.RegularExpression.MatchCollection <paramref name="prxpMatchCollection"/>,
+        /// return the substring that follows the matching text in string <paramref name="pstrInputString"/>
+        /// up to the beginning of the next match, or the rest of the string inthe case of the last match.
+        /// </summary>
+        /// <param name="prxpMatchCollection">
+        /// Pass in a reference to the System.Text.RegularExpression.MatchCollection attached to a
+        /// System.Text.RegularExpression.Regex that has one or more matches.
+        /// </param>
+        /// <param name="pintMatchIndex">
+        /// Pass in an integer that represents the index of the Match in <paramref name="prxpMatchCollection"/>
+        /// for which to return the text that follows the text that matched it.
+        /// This integer must be greater than or equal to zero and less than the
+        /// Count property on MatchCollection <paramref name="prxpMatchCollection"/>.
+        /// </param>
+        /// <param name="pstrInputString">
+        /// Pass in a reference to the string that was fed into the <paramref name="prxpMatchCollection"/>
+        /// constructor. This value cnnot be NULL or the empty string. It is the
+        /// caller's responsiblity to pass in the same string that was passed
+        /// into the constructor that created the <paramref name="prxpMatchCollection"/>
+        /// because this function makes no efrort to use Reflection to test it.
+        /// </param>
+        /// <returns>
+        /// There are two possible return values:
+        /// <list type="number">
+        /// <item>
+        /// When <paramref name="pintMatchIndex"/> is the index of the the last
+        /// Match in <paramref name="prxpMatchCollection"/>, the return value is
+        /// a substring comprising the text that begins immediately after the
+        /// last character of the Value of the Match at index
+        /// <paramref name="pintMatchIndex"/> in the collection and continues to
+        /// the end of string <paramref name="pstrInputString"/>.
+        /// </item>
+        /// <item>
+        /// In all other cases, the return value is a substring comprising the
+        /// text that begins immediately after the last character of the Value
+        /// of the Match at index <paramref name="pintMatchIndex"/> in the
+        /// collection and continues up to the character at the position that
+        /// corresponds to the Index of the next Match in the collection.
+        /// </item>
+        /// </list>
+        /// </returns>
+        /// <remarks>
+        /// This method was perfected independently in my RegExpLab project.
+        /// </remarks>
+        public static string ExtractTextBetweenMatches (
+            MatchCollection prxpMatchCollection ,
+            int pintMatchIndex ,
+            string pstrInputString )
+        {
+            Match rxpCurrentMatch = prxpMatchCollection [ pintMatchIndex ];
+            int intPosFollowingText = rxpCurrentMatch.Index + rxpCurrentMatch.Length;
+
+            if ( pintMatchIndex + ArrayInfo.ARRAY_NEXT_INDEX < prxpMatchCollection.Count )
+            {
+                Match rxpNextMatch = prxpMatchCollection [ pintMatchIndex + ArrayInfo.ARRAY_NEXT_INDEX ];
+                return pstrInputString.Substring ( intPosFollowingText , rxpNextMatch.Index - intPosFollowingText );
+            }   // TRUE (More matches follow the match specified by the index.) block, if ( intJ + ArrayInfo.ARRAY_NEXT_INDEX < matchCollection.Count )
+            else
+            {
+                return pstrInputString.Substring ( intPosFollowingText );
+            }   // FALSE (The index specifies the last match) block, if ( intJ + ArrayInfo.ARRAY_NEXT_INDEX < matchCollection.Count )
+        }   // public static string ExtractTextBetweenMatches
+
+
+        /// <summary>
         /// Return a string that matches the maximum number of any character.
         /// </summary>
         /// <returns></returns>
-		public static string MatchAnyCharacterGreedy ( )
+        public static string MatchAnyCharacterGreedy ( )
 		{
 			return string.Format (
 				JOIN_TWO_PATTERNS ,
@@ -625,13 +695,6 @@ namespace WizardWrx
                     ESCAPED_QUOTE
                 } );
 		}	// MatchHTMLPageTitleAttribute
-
-        public static string GoOrNoGo (string NuGetPackageConfigFileName )
-        {
-            string NuGetPackagePublishFlag = ( System.IO.File.GetAttributes ( NuGetPackageConfigFileName ) & System.IO.FileAttributes.Archive ) == System.IO.FileAttributes.Archive ? "true" : "false";
-            return NuGetPackagePublishFlag;
-        }
-
 		#endregion	// Static Methods
 	}   // class RegExpSupport
 }   // partial namespace WizardWrx

@@ -201,5 +201,14 @@ namespace DLLServices2TestStand.Properties {
                 return ((string)(this["TraceWriteTests"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("$$DATADIRNAME$$\\UserNote_Sample_Redacted.TXT")]
+        public string UserNote4Test {
+            get {
+                return ((string)(this["UserNote4Test"]));
+            }
+        }
     }
 }

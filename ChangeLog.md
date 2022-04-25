@@ -1,5 +1,42 @@
 ﻿# WizardWrx .NET API Change Log
 
+## 2022-04-24
+
+### WizardWrx.Common, Version 8.0.198
+
+`WizardWrx.RegExpSupport.ExtractTextBetweenMatches` is a new static method that
+returns the text between two matches or, in the case of the last match, the end
+of the string.
+
+The `SpecialStrings` collection gets the following eight new string entities, of
+which one, `HTML_NONBREAKING_SPACE_LC`, was technically already present under
+another name, `HTML_NONBREAKING_SPACE`.
+
+HTML_LINE_BREAK_LC
+HTML_LINE_BREAK_UC
+
+HTML_NONBREAKING_SPACE_LC
+HTML_NOLBREAKING_SPACE_UC
+
+HTML_PARAGRAPH_OPEN_TAG_LC
+HTML_PARAGRAPH_OPEN_TAG_UC
+
+HTML_PARAGRAPH_CLOSE_TAG_LC
+HTML_PARAGRAPH_CLOSE_TAG_UC
+
+### WizardWrx.Core, Version 8.0.295
+
+The static `StringExtensions` class gets two new methods.
+
+1. `Chop` has a new optioanl Boolean parameter, `pfIncludeNBSP`, that adds the
+nonbreaking space character to the list of things that it chops.
+
+2. `ChopNBSP` is a new method that confinse itself to chopping the nonbreaking
+space character.
+
+Since the `StringExtensions` class lives in the root namespace, you need not add
+an extra `using` directive to make it accessible, though you will need a library
+reference.
 
 ## 2022-04-24
 
