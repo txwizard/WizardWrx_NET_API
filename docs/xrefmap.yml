@@ -8210,6 +8210,19 @@ references:
   commentId: T:WizardWrx.Core.TraceLogger
   fullName: WizardWrx.Core.TraceLogger
   nameWithType: TraceLogger
+- uid: WizardWrx.Core.TraceLogger.ForceAutoFlush(System.IO.StreamWriter)
+  name: ForceAutoFlush(StreamWriter)
+  href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_ForceAutoFlush_System_IO_StreamWriter_
+  commentId: M:WizardWrx.Core.TraceLogger.ForceAutoFlush(System.IO.StreamWriter)
+  fullName: WizardWrx.Core.TraceLogger.ForceAutoFlush(System.IO.StreamWriter)
+  nameWithType: TraceLogger.ForceAutoFlush(StreamWriter)
+- uid: WizardWrx.Core.TraceLogger.ForceAutoFlush*
+  name: ForceAutoFlush
+  href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_ForceAutoFlush_
+  commentId: Overload:WizardWrx.Core.TraceLogger.ForceAutoFlush
+  isSpec: "True"
+  fullName: WizardWrx.Core.TraceLogger.ForceAutoFlush
+  nameWithType: TraceLogger.ForceAutoFlush
 - uid: WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledLocalFirst(System.String,System.IO.StreamWriter)
   name: WriteWithBothTimesLabeledLocalFirst(String, StreamWriter)
   href: api/WizardWrx.Core.TraceLogger.html#WizardWrx_Core_TraceLogger_WriteWithBothTimesLabeledLocalFirst_System_String_System_IO_StreamWriter_

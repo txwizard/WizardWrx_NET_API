@@ -693,10 +693,10 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.Core.TraceLogger.html",
-          "hash": "kAsjmutIQ41hk5d25Y8TZA=="
+          "hash": "qeEkBt4cuz08mpw8DdGf7Q=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -744,7 +744,7 @@
           "hash": "72pRQbGhC9Eu9oCNSnwkrg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -1595,7 +1595,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 125,
-          "skipped_file_count": 125
+          "skipped_file_count": 124
         },
         "TocDocumentProcessor": {
           "can_incremental": false,

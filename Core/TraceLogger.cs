@@ -82,6 +82,9 @@
                               unsuffixed namesakes except that they return the
                               message so that the calling routine can put it to
                               other uses.
+
+	2022/04/19 8.0.300 DAG    Add a ForceAutoFlush method, and use it internally
+                              when any methot receives a StreamWriter.
     ============================================================================
 */
 
@@ -115,6 +118,33 @@ namespace WizardWrx.Core
 
 
 		/// <summary>
+		/// Force a System.IO.StreamWriter into AutoFlush mode.
+		/// </summary>
+		/// <param name="psw">
+		/// Specify the System.IO.StreamWriter to make AutoFlush.
+		/// </param>
+		/// <returns>
+		/// The return value is True when <paramref name="psw"/> is already set
+		/// to AutoFlush mode. Otherwise, the mode is set, and the return value
+		/// is False, to indicate that it wasn't set on entry.
+		/// </returns>
+		public static bool ForceAutoFlush ( StreamWriter psw )
+		{
+			StreamWriter writer = ( StreamWriter ) psw;
+
+			if ( writer.AutoFlush )
+            {
+				return true;
+			}   // TRUE (AutoFlush mode is already enabled.) block, if ( writer.AutoFlush )
+			else
+            {
+				writer.AutoFlush = true;
+				return false;
+			}   // FALSE (AutoFlush mode was disabled, and has been enabled.) block, if ( writer.AutoFlush )
+		}   // public static bool ForceAutoFlush
+
+
+		/// <summary>
 		/// Write a time stamped trace log message, using the local and UTC 
 		/// machine times as its time stamp prefix, local first, followed by
 		/// UTC in parentheses.
@@ -130,6 +160,11 @@ namespace WizardWrx.Core
 			string pstrMessage ,
 			StreamWriter psw = null )
 		{
+			if ( psw != null )
+			{
+				ForceAutoFlush ( psw );
+			}   // if ( psw != null )
+
 			DateTime dtmUtcNow = DateTime.UtcNow;
 			DateTime dtmLocal = dtmUtcNow.ToLocalTime ( );
 
@@ -178,6 +213,11 @@ namespace WizardWrx.Core
 			string pstrMessage ,
 			StreamWriter psw = null )
 		{
+			if ( psw != null )
+			{
+				ForceAutoFlush ( psw );
+			}   // if ( psw != null )
+
 			WriteWithBothTimesLabeledLocalFirst ( pstrMessage , psw );
 			return pstrMessage;
 		}   // public static string WriteWithBothTimesLabeledLocalFirstWithPassThrough
@@ -200,6 +240,11 @@ namespace WizardWrx.Core
 			string pstrMessage ,
 			StreamWriter psw = null )
 		{
+			if ( psw != null )
+			{
+				ForceAutoFlush ( psw );
+			}   // if ( psw != null )
+
 			DateTime dtmUtcNow = DateTime.UtcNow;
 			DateTime dtmLocal = dtmUtcNow.ToLocalTime ( );
 
@@ -254,6 +299,11 @@ namespace WizardWrx.Core
 			string pstrMessage ,
 			StreamWriter psw = null )
 		{
+			if ( psw != null )
+			{
+				ForceAutoFlush ( psw );
+			}   // if ( psw != null )
+
 			WriteWithBothTimesLabeledUTCFirst ( pstrMessage , psw );
 			return pstrMessage;
 		}   // public static string WriteWithBothTimesLabeledUTCFirstWithPassTrhough
@@ -275,6 +325,11 @@ namespace WizardWrx.Core
 			string pstrMessage ,
 			StreamWriter psw = null )
 		{
+			if ( psw != null )
+			{
+				ForceAutoFlush ( psw );
+			}   // if ( psw != null )
+
 			DateTime dtmUtcNow = DateTime.UtcNow;
 			DateTime dtmLocal = dtmUtcNow.ToLocalTime ( );
 
@@ -318,6 +373,11 @@ namespace WizardWrx.Core
 			string pstrMessage ,
 			StreamWriter psw = null )
 		{
+			if ( psw != null )
+			{
+				ForceAutoFlush ( psw );
+			}   // if ( psw != null )
+
 			WriteWithBothTimesUnlabeledLocalFirst ( pstrMessage , psw );
 			return pstrMessage;
 		}   // public static void WriteWithBothTimesUnlabeledLocalFirst
@@ -339,6 +399,11 @@ namespace WizardWrx.Core
 			string pstrMessage ,
 			StreamWriter psw = null )
 		{
+			if ( psw != null )
+			{
+				ForceAutoFlush ( psw );
+			}   // if ( psw != null )
+
 			DateTime dtmUtcNow = DateTime.UtcNow;
 			DateTime dtmLocal = dtmUtcNow.ToLocalTime ( );
 
@@ -382,6 +447,11 @@ namespace WizardWrx.Core
 			string pstrMessage ,
 			StreamWriter psw = null )
 		{
+			if ( psw != null )
+			{
+				ForceAutoFlush ( psw );
+			}   // if ( psw != null )
+
 			WriteWithBothTimesUnlabeledUTCFirst ( pstrMessage , psw );
 			return pstrMessage;
 		}   // public static string WriteWithBothTimesUnlabeledUTCFirstWithPassThrough
@@ -402,6 +472,11 @@ namespace WizardWrx.Core
 			string pstrMessage ,
 			StreamWriter psw = null )
 		{
+			if ( psw != null )
+			{
+				ForceAutoFlush ( psw );
+			}   // if ( psw != null )
+
 			if ( psw == null )
 			{
 				Trace.WriteLine (
@@ -442,6 +517,11 @@ namespace WizardWrx.Core
 			string pstrMessage ,
 			StreamWriter psw = null )
 		{
+			if ( psw != null )
+			{
+				ForceAutoFlush ( psw );
+			}   // if ( psw != null )
+
 			WriteWithLabeledLocalTime ( pstrMessage , psw );
 			return pstrMessage;
 		}   // public static string WriteWithLabeledLocalTimeWithPassThrough
@@ -462,6 +542,11 @@ namespace WizardWrx.Core
 			string pstrMessage ,
 			StreamWriter psw = null )
 		{
+			if ( psw != null )
+			{
+				ForceAutoFlush ( psw );
+			}   // if ( psw != null )
+
 			if ( psw == null )
 			{
 				Trace.WriteLine (
@@ -500,6 +585,11 @@ namespace WizardWrx.Core
 			string pstrMessage ,
 			StreamWriter psw = null )
 		{
+			if ( psw != null )
+			{
+				ForceAutoFlush ( psw );
+			}   // if ( psw != null )
+
 			WriteWithUnlabeledLocalTime ( pstrMessage , psw );
 			return pstrMessage;
 		}   // public static string WriteWithUnlabeledLocalTimeWithPassThrough
@@ -531,6 +621,7 @@ namespace WizardWrx.Core
 			}   // TRUE, and backward compatible, block, if ( psw == null )
 			else
 			{
+				ForceAutoFlush ( psw );
 				psw.WriteLine (
 					string.Format (
 						TPL_LABELED_UTC_TIME ,                                  // Format Control String
@@ -560,6 +651,11 @@ namespace WizardWrx.Core
 			string pstrMessage ,
 			StreamWriter psw = null )
 		{
+			if ( psw != null )
+			{
+				ForceAutoFlush ( psw );
+			}   // if ( psw != null )
+
 			WriteWithLabeledUTCTime ( pstrMessage , psw );
 			return pstrMessage;
 		}   // public static string WriteWithLabeledUTCTimeWithPassThrough
@@ -590,6 +686,7 @@ namespace WizardWrx.Core
 			}   // TRUE, and backward compatible, block, if ( psw == null )
 			else
 			{
+				ForceAutoFlush ( psw );
 				psw.WriteLine (
 					string.Format (
 						TPL_UNLABELED_TIME ,                                    // Format Control String
@@ -618,6 +715,11 @@ namespace WizardWrx.Core
 			string pstrMessage ,
 			StreamWriter psw = null )
 		{
+			if ( psw != null )
+			{
+				ForceAutoFlush ( psw );
+			}   // if ( psw != null )
+
 			WriteWithUnlabeledUTCTime ( pstrMessage , psw );
 			return pstrMessage;
 		}   // public static string WriteWithUnlabeledUTCTimeWithPassThrough

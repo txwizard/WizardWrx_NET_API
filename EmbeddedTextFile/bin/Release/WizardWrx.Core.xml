@@ -3631,6 +3631,19 @@
             are truly equal, and that local and UTC times are unambiguous.
             </remarks>
         </member>
+        <member name="M:WizardWrx.Core.TraceLogger.ForceAutoFlush(System.IO.StreamWriter)">
+            <summary>
+            Force a System.IO.StreamWriter into AutoFlush mode.
+            </summary>
+            <param name="psw">
+            Specify the System.IO.StreamWriter to make AutoFlush.
+            </param>
+            <returns>
+            The return value is True when <paramref name="psw"/> is already set
+            to AutoFlush mode. Otherwise, the mode is set, and the return value
+            is False, to indicate that it wasn't set on entry.
+            </returns>
+        </member>
         <member name="M:WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledLocalFirst(System.String,System.IO.StreamWriter)">
             <summary>
             Write a time stamped trace log message, using the local and UTC 

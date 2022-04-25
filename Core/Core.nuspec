@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes> The static StringExtensions class gets two new methods. Chop has a new optioanl Boolean parameter, pfIncludeNBSP, that adds the nonbreaking space character to the list of things that it chops.ChopNBSP is a new method that confinse itself to chopping the nonbreaking space character. Since the StringExtensions class lives in the root namespace, you need not add an extra using directive to make it accessible, though you will need a library reference.</releaseNotes>
+	    <releaseNotes>Static class TraceLogger gets a new method, ForceAutoFlush, that forces the underlying stream into `AutoFlush` mode. All methods on this class call this method under the hood when supplied with a StreamWriter object.</releaseNotes>
     	<copyright>$copyright$</copyright>
     	<tags>Constants Arrays RegExp FileInfo Strings Singleton</tags>
 	</metadata>

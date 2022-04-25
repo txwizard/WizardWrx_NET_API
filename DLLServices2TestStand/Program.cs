@@ -320,6 +320,8 @@
                             methods.
 
 	2022/04/24 8.0.1514 DAG Implement Exercise_ExtractTextBetweenMatches.
+
+    2022/04/24 8.0.1517.0 DAG ForceAutoFlush gets a workout.
     ============================================================================
 */
 
@@ -1336,6 +1338,8 @@ namespace DLLServices2TestStand
                 System.Text.Encoding.UTF8 ,                                     // encoding   Encoding
                 MagicNumbers.CAPACITY_08KB ) )                                  // buffersize Int32
             {
+                TraceLogger.ForceAutoFlush ( swOutputDocument );
+
                 Console.WriteLine ( @"Phase 1 of 2: Append one message of each kind to the regular Trace Listener." );
 
                 TraceLogger.WriteWithBothTimesLabeledLocalFirst ( @"Test 1 of 8: WriteWithBothTimesLabeledLocalFirst to the regular Trace Listener"  );
@@ -1401,6 +1405,7 @@ namespace DLLServices2TestStand
                 System.Text.Encoding.ASCII ,
                 MagicNumbers.CAPACITY_08KB ) )
             {
+                TraceLogger.ForceAutoFlush ( swOutputStream );
                 swOutputStream.WriteLine ( "FullName\tName\tGUID\tTypeHandle\tGUIDBytes" );			// Label the columns.
 
                 foreach ( Type typCurrent in s_atypCommonExceptionTypes )
@@ -1444,6 +1449,7 @@ namespace DLLServices2TestStand
                                                                 System.Text.Encoding.UTF8 ,
                                                                 MagicNumbers.CAPACITY_08KB ) )
                 {
+                    TraceLogger.ForceAutoFlush ( swOut );
                     appDependents.DisplayProperties (
                         swOut ,
                         SpecialCharacters.TAB_CHAR );
@@ -2244,15 +2250,24 @@ namespace DLLServices2TestStand
             string strCommonStringsReportFileName = AbsolutePathStringFromSettings ( pstrReportFileName );
             System.Reflection.Assembly assembly = System.Reflection.Assembly.GetAssembly ( ptype );
 
-            using ( StreamWriter swCommonStringsReportFileName = new StreamWriter ( strCommonStringsReportFileName ,
+            using ( StreamWriter swEmbeddedResources = new StreamWriter ( strCommonStringsReportFileName ,
                                                                                     FileIOFlags.FILE_OUT_CREATE ,
                                                                                     System.Text.Encoding.Unicode ,
                                                                                     MagicNumbers.CAPACITY_08KB ) )
             {
+                if ( TraceLogger.ForceAutoFlush ( swEmbeddedResources ) )
+                {
+                    Console.WriteLine($"The base stream underlying the backing StreamWriter of {strCommonStringsReportFileName} was already operating in AutoFlush mode." );
+                }   // TRUE (AutoFlush mode was already on) block, if ( TraceLogger.ForceAutoFlush ( swCommonStringsReportFileName ) )
+                else
+                {
+                    Console.WriteLine ( $"The base stream underlying the backing StreamWriter of {strCommonStringsReportFileName} was put itno AutoFlush mode." );
+                }   // FALSE (AutoFlush mode was disalbed.)lock, if ( TraceLogger.ForceAutoFlush ( swCommonStringsReportFileName ) )
+
                 if ( ( rintRetCode = NewClassTests_20140914.EnumerateStringResourcesInAssembly (
                     ref pintTestNumber ,
                     assembly ,
-                    swCommonStringsReportFileName ) ) == MagicNumbers.ERROR_SUCCESS )
+                    swEmbeddedResources ) ) == MagicNumbers.ERROR_SUCCESS )
                 {
                     PauseForPictures (
                         OMIT_LINEFEED ,

@@ -1,5 +1,14 @@
 ﻿# WizardWrx .NET API Change Log
 
+
+## 2022-04-24
+
+### WizardWrx.Core, Version 8.0.300
+
+Static class `TraceLogger` gets a new method, ForceAutoFlush, that forces the
+underlying stream into `AutoFlush` mode. All methods on this class call this
+method under the hood when supplied with a StreamWriter object.
+
 ## 2022-04-24
 
 ### WizardWrx.Common, Version 8.0.198
