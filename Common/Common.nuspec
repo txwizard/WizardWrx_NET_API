@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>The static SpecialStrings class gets a new constant,BACK2BACK_NEWLINES, a specialized string for use by methods that return string representations of reports that were intended for display on a console.</releaseNotes>
+	    <releaseNotes>Name dependencies in the generated NuSpec file. The static SpecialStrings class gets a new constant,BACK2BACK_NEWLINES, a specialized string for use by methods that return string representations of reports that were intended for display on a console.</releaseNotes>
     	<copyright>$copyright$</copyright>
     	<tags>Constants Arrays RegExp</tags>
 	</metadata>
