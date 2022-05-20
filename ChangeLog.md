@@ -1,5 +1,25 @@
 ﻿# WizardWrx .NET API Change Log
 
+## 2022-05-19
+
+### WizardWrx.Common, Version 8.0.205
+
+The static `SpecialStrings` class gets a new constant,`BACK2BACK_NEWLINES`, a
+specialized string for use by methods that return string representations of
+reports that were intended for display on a console.
+
+### WizardWrx.DiagnosticInfo, Version 8.0.83
+
+Static class ObjectPropertyEnumerators gets two new methods.
+
+1. `ListObjectPropertyTypesAndValues2String` returns the same report produced by
+`ListObjectPropertyTypesAndValues` as one long string that can be logged.
+
+2. `ListObjectProperties2String` returns the same report produced by
+`ListObjectProperties` as one long string that can be logged.
+
+The new string constant, `BACK2BACK_NEWLINES`, is used by both new methods so that
+they can use the same format control string as their respective ancestors.
 
 ## 2022-04-24
 

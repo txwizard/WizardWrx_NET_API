@@ -321,7 +321,10 @@
 
 	2022/04/24 8.0.1514 DAG Implement Exercise_ExtractTextBetweenMatches.
 
-    2022/04/24 8.0.1517.0 DAG ForceAutoFlush gets a workout.
+    2022/04/24 8.0.1517 DAG ForceAutoFlush gets a workout.
+
+    2022/04/24 8.0.1521 DAG Exercise the new object property enumerators that
+                            return their reports as long strings.
     ============================================================================
 */
 
@@ -1471,6 +1474,17 @@ namespace DLLServices2TestStand
                 ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues (
                     pstrObjectName ,                                            // string                         pstrNameOfObject
                     pobj );                                                     // System.Reflection.BindingFlags penmbindingFlags
+
+
+                {   // Constrain the scope of string strObjectPropertyListing.
+                    string strObjectPropertyListing = ObjectPropertyEnumerators.ListObjectProperties2String ( pstrObjectName , pobj );
+                    Console.WriteLine ( @"-----------------------------------------------{1}ObjectProperties2String Output:{1}-----------------------------------------------{1}{0}{1}-----------------------------------------------{1}ObjectPropertiesString Done{1}-----------------------------------------------{1}" , strObjectPropertyListing , Environment.NewLine );
+                }   // String strObjectPropertyListing goes out of scope.
+
+                {   // Constrain the scope of string strObjectPropertyListing.
+                    string strObjectPropertyListing = ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues2String ( pstrObjectName , pobj );
+                    Console.WriteLine ( @"-----------------------------------------------{1}ObjectPropertyTypesAndValuesString Output:{1}-----------------------------------------------{1}{0}{1}-----------------------------------------------{1}ObjectPropertiesString Done{1}-----------------------------------------------{1}" , strObjectPropertyListing , Environment.NewLine );
+                }   // String strObjectPropertyListing goes out of scope.
             }   // TRUE (degenerate case, no left padding) block, if ( pintLeftPadding == MagicNumbers.ZERO )
             else
             {

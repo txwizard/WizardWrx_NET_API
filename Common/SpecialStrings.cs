@@ -183,7 +183,27 @@
 
 	2021/12/09 8.0.174 DAG 	  Add an overlooked, but often needed TWO_SPACES.
 
-	2022/04/24 8.0.296 DAG    
+	2022/04/24 8.0.296 DAG    This SpecialStrings collection gets the following 
+							  eight new string entities, of which one, 
+                              HTML_NONBREAKING_SPACE_LC, was technically already
+                              present under another name, HTML_NONBREAKING_SPACE.
+
+								HTML_LINE_BREAK_LC
+								HTML_LINE_BREAK_UC
+
+								HTML_NONBREAKING_SPACE_LC
+								HTML_NOLBREAKING_SPACE_UC
+
+								HTML_PARAGRAPH_OPEN_TAG_LC
+								HTML_PARAGRAPH_OPEN_TAG_UC
+
+								HTML_PARAGRAPH_CLOSE_TAG_LC
+								HTML_PARAGRAPH_CLOSE_TAG_UC
+
+	2022/05/19 8.0.205 DAG    Add BACK2BACK_NEWLINES, a specialized string for
+                              use by methods that return string representations
+                              of reports that were intended for display on a
+                              console.
     ============================================================================
 */
 
@@ -268,6 +288,14 @@ namespace WizardWrx
 		/// <seealso cref="ASP_APP_START_PAGE_KEY"/>
 		/// <seealso cref="ASP_RELATIVE_PATH_BEGIN"/>
 		public const string ASP_REL_EXEC_PATH_PREFIX = @"~/";
+
+		/// <summary>
+		/// Substitute this string for Environment.NewLine in formatted strings
+		/// that were designed for output as console messages when you want or
+		/// need to return them as long strings. The effect is the same as using
+		/// Console.WriteLine in place of StringBuilder.AppendFormat.
+		/// </summary>
+		public const string BACK2BACK_NEWLINES = STRING_SPLIT_NEWLINE + STRING_SPLIT_NEWLINE;
 
 		/// <summary>
 		/// Use this in your code to specify a left French brace, also called a

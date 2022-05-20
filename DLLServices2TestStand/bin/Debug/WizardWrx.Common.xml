@@ -4086,6 +4086,14 @@
             <seealso cref="F:WizardWrx.SpecialStrings.ASP_APP_START_PAGE_KEY"/>
             <seealso cref="F:WizardWrx.SpecialStrings.ASP_RELATIVE_PATH_BEGIN"/>
         </member>
+        <member name="F:WizardWrx.SpecialStrings.BACK2BACK_NEWLINES">
+            <summary>
+            Substitute this string for Environment.NewLine in formatted strings
+            that were designed for output as console messages when you want or
+            need to return them as long strings. The effect is the same as using
+            Console.WriteLine in place of StringBuilder.AppendFormat.
+            </summary>
+        </member>
         <member name="F:WizardWrx.SpecialStrings.BRACE_LEFT">
             <summary>
             Use this in your code to specify a left French brace, also called a

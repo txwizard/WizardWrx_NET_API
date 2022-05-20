@@ -14,7 +14,7 @@
 
     Author:             David A. Gray
 
-    License:            Copyright (C) 2021, David A. Gray. 
+    License:            Copyright (C) 2021-2022, David A. Gray. 
 						All rights reserved.
 
                         Redistribution and use in source and binary forms, with
@@ -66,12 +66,16 @@
                               to one line of fewer than 133 characters.
 
 	2021/06/29 8.0.44  DAG    ListObjectPropertyTypesAndValues is a new method.
+
+    2022/05/19 8.0.83  DAG    ListObjectPropertyTypesAndValues2String and 
+                              ListObjectProperties2String are new methods.
     ============================================================================
 */
 
 
 using System;
 using System.Reflection;
+using System.Text;
 
 
 namespace WizardWrx
@@ -109,6 +113,7 @@ namespace WizardWrx
         /// <param name="penmBindingFlags">
         /// Binding flags mask, which determines which properties are enumerated
         /// </param>
+        /// <seealso cref="ListObjectProperties2String"/>
         public static void ListObjectProperties (
             string pstrNameOfObject ,
             object pObjThisOne ,
@@ -173,6 +178,98 @@ namespace WizardWrx
 
 
         /// <summary>
+        /// Enumerate the properties of an object, showing the value of each, as
+        /// a formatted listing string.
+        /// </summary>
+        /// <param name="pstrNameOfObject">
+        /// Name of object as it appears in the calling routine
+        /// </param>
+        /// <param name="pObjThisOne">
+        /// Reference to the object from which to enumerate properties
+        /// </param>
+        /// <param name="pintLeftPadding">
+        /// Optional left padding for the report
+        /// </param>
+        /// <param name="pstrObjectLabelSuffix">
+        /// Optional supplementary label information for the object
+        /// </param>
+        /// <param name="penmBindingFlags">
+        /// Binding flags mask, which determines which properties are enumerated
+        /// </param>
+        /// <returns>
+        /// The return value is a string constructed from the strings that would
+        /// have been written on the console by ListObjectProperties.
+        /// </returns>
+        /// <seealso cref="ListObjectProperties"/>
+        public static string ListObjectProperties2String (
+            string pstrNameOfObject ,
+            object pObjThisOne ,
+            int pintLeftPadding = ListInfo.EMPTY_STRING_LENGTH ,
+            string pstrObjectLabelSuffix = null ,
+            BindingFlags penmBindingFlags = DEFAULT_BINDING_FLAGS )
+        {
+            StringBuilder rsb = new StringBuilder ( MagicNumbers.CAPACITY_08KB );
+
+            string strIndentation =
+                pintLeftPadding > ListInfo.EMPTY_STRING_LENGTH
+                ? StringTricks.StrFill (
+                    SpecialCharacters.SPACE_CHAR ,
+                    pintLeftPadding ) :
+                SpecialStrings.EMPTY_STRING;
+
+            PropertyInfo [ ] apropertyInfos = pObjThisOne.GetType ( ).GetProperties ( penmBindingFlags );
+            int intMaxDigits = apropertyInfos.Length.ToString ( ).Length;       // Compute the width of the largest possible ordinal.
+            rsb.AppendFormat (
+               Properties.Resources.MSG_PROPERTY_LIST_HEADER ,                  // Format Control String
+                strIndentation ,                                                // Format Item 0: {0}Object
+                pstrNameOfObject ,                                              // Format Item 1: Object {1}
+                pstrObjectLabelSuffix == null                                   // Format Item 2: {2} exposes the
+                    ? SpecialStrings.EMPTY_STRING                               // when pstrObjectLabelSuffix == null
+                    : $" ({pstrObjectLabelSuffix})" ,                           // when pstrObjectLabelSuffix != null
+                apropertyInfos.Length ,                                         // Format Item 3: exposes the following {2}
+                SpecialStrings.BACK2BACK_NEWLINES );                            // Format Item 4: public properties:{4}
+
+            for ( int intPropertyIndex = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+                      intPropertyIndex < apropertyInfos.Length ;
+                      intPropertyIndex++ )
+            {
+                try
+                {
+                    rsb.AppendFormat (
+                        Properties.Resources.MSG_PROPERTY_LIST_DETAIL ,         // Format Control String
+                        strIndentation ,                                        // Format Item 0: {0}Property
+                        NumericFormats.FormatIntegerLeftPadded (                // Format Item 1: Property {1}:
+                            ArrayInfo.OrdinalFromIndex (                        // Get the ordinal equivalent to array subscript.
+                                intPropertyIndex ) ,                            // Array subscript for which to get the corresponding ordinal.
+                            intMaxDigits ) ,                                    // Right align to this width.
+                        apropertyInfos [ intPropertyIndex ].Name ,              // Format Item 2: : {2} =
+                        StringTricks.TruncateValueToOneLine (                   // Format Item 3: = {3}
+                            apropertyInfos [ intPropertyIndex ].GetValue (      // Get value from the apropertyInfos in array slot intPropertyIndex.
+                            pObjThisOne ,                                       // Object from which to get property value.
+                            null ) ) );                                         // The null CultureInfo causes the method to infer the culture of the calling thread.
+                    rsb.AppendLine ( );                                         // Compensate for the missing newline that Console.WriteLine would have emitted.
+                }
+                catch ( TargetInvocationException ex )
+                {
+                    rsb.AppendFormat (
+                        Properties.Resources.ERRMSG_PROPERTY_LIST ,             // Format Control String
+                        strIndentation ,                                        // Format Item 0: {0}Property
+                        ArrayInfo.OrdinalFromIndex ( intPropertyIndex ) ,       // Format Item 1: Property {1}:
+                        apropertyInfos [ intPropertyIndex ].Name ,              // Format Item 2: : {2} =
+                        ex.Message );                                           // Format Item 3: = {3}
+                }
+            }   // for ( int intPropertyIndex = ArrayInfo.ARRAY_FIRST_ELEMENT ; intPropertyIndex < apropertyInfos.Length ; intPropertyIndex++ )
+
+            rsb.AppendFormat (
+                Properties.Resources.MSG_PROPERTY_LIST_FOOTER ,                 // Format Control String
+                strIndentation ,                                                // Format Item 0
+                SpecialStrings.BACK2BACK_NEWLINES );                            // Format Item 1
+
+            return rsb.ToString ( );
+        }   // public static string ListObjectProperties2String
+
+
+        /// <summary>
         /// Enumerate the properties of an object, showing for each its type and
         /// value, as a formatted listing.
         /// </summary>
@@ -191,6 +288,7 @@ namespace WizardWrx
         /// <param name="penmBindingFlags">
         /// Binding flags mask, which determines which properties are enumerated
         /// </param>
+        /// <seealso cref="ListObjectPropertyTypesAndValues2String"/>
         public static void ListObjectPropertyTypesAndValues (
             string pstrNameOfObject,
             object pObjThisOne,
@@ -252,6 +350,99 @@ namespace WizardWrx
                 Properties.Resources.MSG_PROPERTY_LIST_FOOTER ,                 // Format Control String
                 strIndentation ,                                                // Format Item 0
                 Environment.NewLine );                                          // Format Item 1
-        }   // void ListObjectPropertyTypesAndValues
+        }   // public static void ListObjectPropertyTypesAndValues
+
+
+        /// <summary>
+        /// Enumerate the properties of an object, showing for each its type and
+        /// value, as a formatted listing.
+        /// </summary>
+        /// <param name="pstrNameOfObject">
+        /// Name of object as it appears in the calling routine
+        /// </param>
+        /// <param name="pObjThisOne">
+        /// Reference to the object from which to enumerate properties
+        /// </param>
+        /// <param name="pintLeftPadding">
+        /// Optional left padding for the report
+        /// </param>
+        /// <param name="pstrObjectLabelSuffix">
+        /// Optional supplementary label information for the object
+        /// </param>
+        /// <param name="penmBindingFlags">
+        /// Binding flags mask, which determines which properties are enumerated
+        /// </param>
+        /// <returns>
+        /// The return value is a string constructed from the strings that would
+        /// have been written on the console by ListObjectProperties.
+        /// </returns>
+        /// <seealso cref="ListObjectPropertyTypesAndValues"/>
+        public static string ListObjectPropertyTypesAndValues2String (
+            string pstrNameOfObject ,
+            object pObjThisOne ,
+            int pintLeftPadding = ListInfo.EMPTY_STRING_LENGTH ,
+            string pstrObjectLabelSuffix = null ,
+            BindingFlags penmBindingFlags = DEFAULT_BINDING_FLAGS )
+        {
+            StringBuilder rsb = new StringBuilder ( MagicNumbers.CAPACITY_08KB );
+
+            string strIndentation =
+                pintLeftPadding > ListInfo.EMPTY_STRING_LENGTH
+                ? StringTricks.StrFill (
+                    SpecialCharacters.SPACE_CHAR ,
+                    pintLeftPadding ) :
+                SpecialStrings.EMPTY_STRING;
+
+            PropertyInfo [ ] apropertyInfos = pObjThisOne.GetType ( ).GetProperties ( penmBindingFlags );
+            int intMaxDigits = apropertyInfos.Length.ToString ( ).Length;       // Compute the width of the largest possible ordinal.
+            rsb.AppendFormat (
+               Properties.Resources.MSG_PROPERTY_LIST_HEADER ,                  // Format Control String
+                strIndentation ,                                                // Format Item 0: {0}Object
+                pstrNameOfObject ,                                              // Format Item 1: Object {1}
+                pstrObjectLabelSuffix == null                                   // Format Item 2: {2} exposes the
+                    ? SpecialStrings.EMPTY_STRING                               // when pstrObjectLabelSuffix == null
+                    : $" ({pstrObjectLabelSuffix})" ,                           // when pstrObjectLabelSuffix != null
+                apropertyInfos.Length ,                                         // Format Item 3: exposes the following {2}
+               SpecialStrings.BACK2BACK_NEWLINES );                             // Format Item 4: public properties:{4}
+
+            for ( int intPropertyIndex = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+                      intPropertyIndex < apropertyInfos.Length ;
+                      intPropertyIndex++ )
+            {
+                try
+                {
+                    rsb.AppendFormat (
+                        Properties.Resources.MSG_PROP_TYPE_AND_VALUE_DETAIL ,   // Format Control String
+                        strIndentation ,                                        // Format Item 0: {0}Property
+                        NumericFormats.FormatIntegerLeftPadded (                // Format Item 1: Property {1}:
+                            ArrayInfo.OrdinalFromIndex (                        // Get the ordinal equivalent to array subscript.
+                                intPropertyIndex ) ,                            // Array subscript for which to get the corresponding ordinal.
+                            intMaxDigits ) ,                                    // Right align to this width.
+                        apropertyInfos [ intPropertyIndex ].Name ,              // Format Item 2: : {2}
+                        apropertyInfos [ intPropertyIndex ].PropertyType.FullName ,// Format Item 3: ({3}) =
+                        StringTricks.TruncateValueToOneLine (                   // Format Item 4: = {4}
+                            apropertyInfos [ intPropertyIndex ].GetValue (      // Get value from the apropertyInfos in array slot intPropertyIndex.
+                            pObjThisOne ,                                       // Object from which to get property value.
+                            null ) ) );                                         // The null CultureInfo causes the method to infer the culture of the calling thread.
+                    rsb.AppendLine ( );                                         // Compensate for the missing newline that Console.WriteLine would have emitted.
+                }
+                catch ( TargetInvocationException ex )
+                {
+                    rsb.AppendFormat (
+                        Properties.Resources.ERRMSG_PROPERTY_LIST ,             // Format Control String
+                        strIndentation ,                                        // Format Item 0: {0}Property
+                        ArrayInfo.OrdinalFromIndex ( intPropertyIndex ) ,       // Format Item 1: Property {1}:
+                        apropertyInfos [ intPropertyIndex ].Name ,              // Format Item 2: : {2} =
+                        ex.Message );                                           // Format Item 3: = {3}
+                }
+            }   // for ( int intPropertyIndex = ArrayInfo.ARRAY_FIRST_ELEMENT ; intPropertyIndex < apropertyInfos.Length ; intPropertyIndex++ )
+
+            rsb.AppendFormat (
+                Properties.Resources.MSG_PROPERTY_LIST_FOOTER ,                 // Format Control String
+                strIndentation ,                                                // Format Item 0
+                SpecialStrings.BACK2BACK_NEWLINES );                            // Format Item 1
+
+            return rsb.ToString ( );
+        }   // public static string ListObjectPropertyTypesAndValues2String
     }   // public static class ObjectPropertyEnumerators
 }   // partial namespace WizardWrx

@@ -14009,6 +14009,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.ObjectPropertyEnumerators.ListObjectProperties
   nameWithType: ObjectPropertyEnumerators.ListObjectProperties
+- uid: WizardWrx.ObjectPropertyEnumerators.ListObjectProperties2String(System.String,System.Object,System.Int32,System.String,System.Reflection.BindingFlags)
+  name: ListObjectProperties2String(String, Object, Int32, String, BindingFlags)
+  href: api/WizardWrx.ObjectPropertyEnumerators.html#WizardWrx_ObjectPropertyEnumerators_ListObjectProperties2String_System_String_System_Object_System_Int32_System_String_System_Reflection_BindingFlags_
+  commentId: M:WizardWrx.ObjectPropertyEnumerators.ListObjectProperties2String(System.String,System.Object,System.Int32,System.String,System.Reflection.BindingFlags)
+  fullName: WizardWrx.ObjectPropertyEnumerators.ListObjectProperties2String(System.String, System.Object, System.Int32, System.String, System.Reflection.BindingFlags)
+  nameWithType: ObjectPropertyEnumerators.ListObjectProperties2String(String, Object, Int32, String, BindingFlags)
+- uid: WizardWrx.ObjectPropertyEnumerators.ListObjectProperties2String*
+  name: ListObjectProperties2String
+  href: api/WizardWrx.ObjectPropertyEnumerators.html#WizardWrx_ObjectPropertyEnumerators_ListObjectProperties2String_
+  commentId: Overload:WizardWrx.ObjectPropertyEnumerators.ListObjectProperties2String
+  isSpec: "True"
+  fullName: WizardWrx.ObjectPropertyEnumerators.ListObjectProperties2String
+  nameWithType: ObjectPropertyEnumerators.ListObjectProperties2String
 - uid: WizardWrx.ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues(System.String,System.Object,System.Int32,System.String,System.Reflection.BindingFlags)
   name: ListObjectPropertyTypesAndValues(String, Object, Int32, String, BindingFlags)
   href: api/WizardWrx.ObjectPropertyEnumerators.html#WizardWrx_ObjectPropertyEnumerators_ListObjectPropertyTypesAndValues_System_String_System_Object_System_Int32_System_String_System_Reflection_BindingFlags_
@@ -14022,6 +14035,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues
   nameWithType: ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues
+- uid: WizardWrx.ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues2String(System.String,System.Object,System.Int32,System.String,System.Reflection.BindingFlags)
+  name: ListObjectPropertyTypesAndValues2String(String, Object, Int32, String, BindingFlags)
+  href: api/WizardWrx.ObjectPropertyEnumerators.html#WizardWrx_ObjectPropertyEnumerators_ListObjectPropertyTypesAndValues2String_System_String_System_Object_System_Int32_System_String_System_Reflection_BindingFlags_
+  commentId: M:WizardWrx.ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues2String(System.String,System.Object,System.Int32,System.String,System.Reflection.BindingFlags)
+  fullName: WizardWrx.ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues2String(System.String, System.Object, System.Int32, System.String, System.Reflection.BindingFlags)
+  nameWithType: ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues2String(String, Object, Int32, String, BindingFlags)
+- uid: WizardWrx.ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues2String*
+  name: ListObjectPropertyTypesAndValues2String
+  href: api/WizardWrx.ObjectPropertyEnumerators.html#WizardWrx_ObjectPropertyEnumerators_ListObjectPropertyTypesAndValues2String_
+  commentId: Overload:WizardWrx.ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues2String
+  isSpec: "True"
+  fullName: WizardWrx.ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues2String
+  nameWithType: ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues2String
 - uid: WizardWrx.PathPositions
   name: PathPositions
   href: api/WizardWrx.PathPositions.html
@@ -15622,6 +15648,12 @@ references:
   commentId: F:WizardWrx.SpecialStrings.AT_SIGN
   fullName: WizardWrx.SpecialStrings.AT_SIGN
   nameWithType: SpecialStrings.AT_SIGN
+- uid: WizardWrx.SpecialStrings.BACK2BACK_NEWLINES
+  name: BACK2BACK_NEWLINES
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_BACK2BACK_NEWLINES
+  commentId: F:WizardWrx.SpecialStrings.BACK2BACK_NEWLINES
+  fullName: WizardWrx.SpecialStrings.BACK2BACK_NEWLINES
+  nameWithType: SpecialStrings.BACK2BACK_NEWLINES
 - uid: WizardWrx.SpecialStrings.BRACE_LEFT
   name: BRACE_LEFT
   href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_BRACE_LEFT

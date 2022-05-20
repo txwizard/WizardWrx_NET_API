@@ -18,7 +18,7 @@ using System.Runtime.InteropServices;
 //						the attributes that apply to all assemblies in the
 //						solution.
 //
-//  License:            Copyright ( C ) 2011 - 2021, David A.Gray.
+//  License:            Copyright ( C ) 2011 - 2022, David A.Gray.
 //                      All rights reserved.
 //
 //                      Redistribution and use in source and binary forms , with
@@ -87,6 +87,8 @@ using System.Runtime.InteropServices;
 //                   remind myself that its value is frozen.
 //
 //                2) Incorporate my three-clause BSD license into this file.
+//
+// 2022/05/19 DAG Update the terminal copyright year.
 // =============================================================================
 
 // General Information about an assembly is controlled through the following
@@ -103,7 +105,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration ( "" )]
 [assembly: AssemblyCompany ( "David A. Gray" )]
 [assembly: AssemblyProduct ( "Common Classes for the Microsoft .NET Framework 3.5 and Above" )]
-[assembly: AssemblyCopyright ( "Copyright © 2014-2021, David A. Gray" )]
+[assembly: AssemblyCopyright ( "Copyright © 2014-2022, David A. Gray" )]
 [assembly: AssemblyTrademark ( "This library is distributed under a three-clause BSD license." )]
 
 // Setting ComVisible to false makes the types in this assembly not visible

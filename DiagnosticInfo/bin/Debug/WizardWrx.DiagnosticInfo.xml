@@ -83,6 +83,33 @@
             <param name="penmBindingFlags">
             Binding flags mask, which determines which properties are enumerated
             </param>
+            <seealso cref="M:WizardWrx.ObjectPropertyEnumerators.ListObjectProperties2String(System.String,System.Object,System.Int32,System.String,System.Reflection.BindingFlags)"/>
+        </member>
+        <member name="M:WizardWrx.ObjectPropertyEnumerators.ListObjectProperties2String(System.String,System.Object,System.Int32,System.String,System.Reflection.BindingFlags)">
+            <summary>
+            Enumerate the properties of an object, showing the value of each, as
+            a formatted listing string.
+            </summary>
+            <param name="pstrNameOfObject">
+            Name of object as it appears in the calling routine
+            </param>
+            <param name="pObjThisOne">
+            Reference to the object from which to enumerate properties
+            </param>
+            <param name="pintLeftPadding">
+            Optional left padding for the report
+            </param>
+            <param name="pstrObjectLabelSuffix">
+            Optional supplementary label information for the object
+            </param>
+            <param name="penmBindingFlags">
+            Binding flags mask, which determines which properties are enumerated
+            </param>
+            <returns>
+            The return value is a string constructed from the strings that would
+            have been written on the console by ListObjectProperties.
+            </returns>
+            <seealso cref="M:WizardWrx.ObjectPropertyEnumerators.ListObjectProperties(System.String,System.Object,System.Int32,System.String,System.Reflection.BindingFlags)"/>
         </member>
         <member name="M:WizardWrx.ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues(System.String,System.Object,System.Int32,System.String,System.Reflection.BindingFlags)">
             <summary>
@@ -104,6 +131,33 @@
             <param name="penmBindingFlags">
             Binding flags mask, which determines which properties are enumerated
             </param>
+            <seealso cref="M:WizardWrx.ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues2String(System.String,System.Object,System.Int32,System.String,System.Reflection.BindingFlags)"/>
+        </member>
+        <member name="M:WizardWrx.ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues2String(System.String,System.Object,System.Int32,System.String,System.Reflection.BindingFlags)">
+            <summary>
+            Enumerate the properties of an object, showing for each its type and
+            value, as a formatted listing.
+            </summary>
+            <param name="pstrNameOfObject">
+            Name of object as it appears in the calling routine
+            </param>
+            <param name="pObjThisOne">
+            Reference to the object from which to enumerate properties
+            </param>
+            <param name="pintLeftPadding">
+            Optional left padding for the report
+            </param>
+            <param name="pstrObjectLabelSuffix">
+            Optional supplementary label information for the object
+            </param>
+            <param name="penmBindingFlags">
+            Binding flags mask, which determines which properties are enumerated
+            </param>
+            <returns>
+            The return value is a string constructed from the strings that would
+            have been written on the console by ListObjectProperties.
+            </returns>
+            <seealso cref="M:WizardWrx.ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues(System.String,System.Object,System.Int32,System.String,System.Reflection.BindingFlags)"/>
         </member>
         <member name="T:WizardWrx.Properties.Resources">
             <summary>
