@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>ListObjectPropertyTypesAndValues2String and ListObjectProperties2String are new methods that mirror ListObjectPropertyTypesAndValues and ListObjectProperties respectively, except that the new methods return strings in lieu of writing on the console stream.</releaseNotes>
+	    <releaseNotes>Name dependencies. ListObjectPropertyTypesAndValues2String and ListObjectProperties2String are new methods that mirror ListObjectPropertyTypesAndValues and ListObjectProperties respectively, except that the new methods return strings in lieu of writing on the console stream.</releaseNotes>
     	<copyright>$copyright$</copyright>
     	<tags>Compile-time Diagnostic Info Reflection</tags>
 	</metadata>
