@@ -10,8 +10,8 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>Static class TraceLogger gets a new method, ForceAutoFlush, that forces the underlying stream into `AutoFlush` mode. All methods on this class call this method under the hood when supplied with a StreamWriter object.</releaseNotes>
-    	<copyright>$copyright$</copyright>
+        <releaseNotes>To compensate for an apparent change in the behavior of the NuGet Package Manager implementation in Visual Studio 2019, all NuGet in the WizardWrx .NET API constellation of libraries are being re-released with dependencies named explicitly in the generated .nuspec file that goes into the package. This is accomplished by adding the IncludeReferencedProjects to the NuGet Pack command line. Otherwise, the program source code is unchanged, nor are the binaries. Henceforth, independend release schedules as described in the immediately previous published version of this library will resume.</releaseNotes>
+        <copyright>$copyright$</copyright>
     	<tags>Constants Arrays RegExp FileInfo Strings Singleton</tags>
 	</metadata>
 	<files>

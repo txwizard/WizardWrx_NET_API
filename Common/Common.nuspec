@@ -10,8 +10,8 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>Name dependencies in the generated NuSpec file. The static SpecialStrings class gets a new constant,BACK2BACK_NEWLINES, a specialized string for use by methods that return string representations of reports that were intended for display on a console.</releaseNotes>
-    	<copyright>$copyright$</copyright>
+        <releaseNotes>To compensate for an apparent change in the behavior of the NuGet Package Manager implementation in Visual Studio 2019, all NuGet in the WizardWrx .NET API constellation of libraries are being re-released with dependencies named explicitly in the generated .nuspec file that goes into the package. This is accomplished by adding the IncludeReferencedProjects to the NuGet Pack command line. Otherwise, the program source code is unchanged, nor are the binaries. Henceforth, independend release schedules as described in the immediately previous published version of this library will resume.</releaseNotes>
+        <copyright>$copyright$</copyright>
     	<tags>Constants Arrays RegExp</tags>
 	</metadata>
 	<files>

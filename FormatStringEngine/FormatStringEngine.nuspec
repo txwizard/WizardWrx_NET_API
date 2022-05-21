@@ -10,8 +10,8 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-	    <releaseNotes>Today marks the beginning of a new era in which a package that belongs to the WizardWrx .NET API will be published only where it incorporates new code to implement a new feature or fix a bug. Since most developers rely upon automated CI/CD pipelines, this will reduce churn caused by update that were limited to refreshing the dependency graph of a package. If your NuGet configuration file has a dependencyVersion key with its value set to Highest, your pipeline will keep your projects up to date.</releaseNotes>
-    	<copyright>$copyright$</copyright>
+        <releaseNotes>To compensate for an apparent change in the behavior of the NuGet Package Manager implementation in Visual Studio 2019, all NuGet in the WizardWrx .NET API constellation of libraries are being re-released with dependencies named explicitly in the generated .nuspec file that goes into the package. This is accomplished by adding the IncludeReferencedProjects to the NuGet Pack command line. Otherwise, the program source code is unchanged, nor are the binaries. Henceforth, independend release schedules as described in the immediately previous published version of this library will resume.</releaseNotes>
+        <copyright>$copyright$</copyright>
     	<tags>Format Control String Formatting Printing</tags>
 	</metadata>
 	<files>
