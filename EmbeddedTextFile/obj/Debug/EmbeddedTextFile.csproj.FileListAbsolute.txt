@@ -43,6 +43,5 @@ D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedT
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\bin\Debug\WizardWrx.FormatStringEngine.dll.config
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\bin\Debug\WizardWrx.ASCIIInfo.pdb
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\bin\Debug\WizardWrx.ASCIIInfo.xml
-D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\bin\Debug\WizardWrx.AnyCSV.xml
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\obj\Debug\EmbeddedTextFile.csproj.CopyComplete
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\EmbeddedTextFile\obj\Debug\EmbeddedTextFile.csproj.AssemblyReference.cache

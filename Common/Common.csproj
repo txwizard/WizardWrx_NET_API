@@ -26,18 +26,22 @@
 
     2021/01/30 DAG Reinstate wwBldNbrMgr.
 
-      2022/04/24 DAG 1) Define a new UsingTask, NuGetPackagePublishDecision, and
-                        use it in a new PublishIfNew target that runs as the
-                        AfterBuild target so that its output can prevent the
-                        Package and Publish targets executing.
+    2022/04/24 DAG 1) Define a new UsingTask, NuGetPackagePublishDecision, and
+                      use it in a new PublishIfNew target that runs as the
+                      AfterBuild target so that its output can prevent the
+                      Package and Publish targets executing.
 
-                     2) Move everything involved with NuGet package management
-                        into a new WizardWrx_NuGet_Packages Targets file, which
-                        is imported (and processed) last.
+                   2) Move everything involved with NuGet package management
+                      into a new WizardWrx_NuGet_Packages Targets file, which
+                      is imported (and processed) last.
+
+    2022/06/25 DAG Replace wwBldNbrMgr with AssemblyInfoUtil.
 	============================================================================
 -->
+
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -55,6 +59,7 @@
     <SolutionPackageDir>$(ProjectDir)..\packages</SolutionPackageDir>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>.pdb$;(AllowedOutputExtensionsInPackageBuildOutputFolder)</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
+
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -65,6 +70,7 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\Wizardwrx.Common.XML</DocumentationFile>
   </PropertyGroup>
+
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
@@ -74,6 +80,7 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\Wizardwrx.Common.XML</DocumentationFile>
   </PropertyGroup>
+
   <!--
     2015/06/09 DAG Add the following, per thread message that begins, "An
 	               alternative that is working for me so far is to add the
@@ -82,10 +89,12 @@
 	               Reference: "Conditional Compilation and Framework Targets," thread at
                               http://stackoverflow.com/questions/2923210/conditional-compilation-and-framework-targets
   -->
+
   <PropertyGroup>
     <DefineConstants Condition=" !$(DefineConstants.Contains(';NET')) ">$(DefineConstants);$(TargetFrameworkVersion.Replace("v", "NET").Replace(".", ""))</DefineConstants>
     <DefineConstants Condition=" $(DefineConstants.Contains(';NET')) ">$(DefineConstants.Remove($(DefineConstants.LastIndexOf(";NET"))));$(TargetFrameworkVersion.Replace("v", "NET").Replace(".", ""))</DefineConstants>
   </PropertyGroup>
+
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data.Linq" />
@@ -93,6 +102,7 @@
       <HintPath>C:\Users\DAG\.nuget\packages\WizardWrx.BitMath.4.3.125.29248\lib\net20\WizardWrx.BitMath.dll</HintPath>
     </Reference>
   </ItemGroup>
+
   <ItemGroup>
     <Compile Include="..\ProductAssemblyInfo.cs">
       <Link>Properties\ProductAssemblyInfo.cs</Link>
@@ -117,22 +127,27 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
   </ItemGroup>
+
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+
   <ItemGroup>
     <None Include="Common.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+
   <PropertyGroup>
-    <PreBuildEvent>wwBldNbrMgr.exe "$(ProjectDir) "</PreBuildEvent>
+    <PostBuildEvent>AssemblyInfoUtil.exe $(ProjectDir)Properties\AssemblyInfo.cs -inc:3 -fv -cy -onlywhenmodified</PostBuildEvent>
   </PropertyGroup>
+
   <PropertyGroup>
-    <PostBuildEvent>wwBldNbrMgr.exe -r "-p$(ProjectDir) " "-t$(TargetPath)"</PostBuildEvent>
+    <PreBuildEvent></PreBuildEvent>
   </PropertyGroup>
+
   <Import Project="$(Custom_MSBuild_Targets)\WizardWrx_NuGet_Packages.TARGETS" Condition="Exists('$(Custom_MSBuild_Targets)\WizardWrx_NuGet_Packages.TARGETS')" />
 </Project>

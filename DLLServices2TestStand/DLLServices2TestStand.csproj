@@ -15,6 +15,7 @@
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
+
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
@@ -27,6 +28,7 @@
     <UseVSHostingProcess>true</UseVSHostingProcess>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
@@ -37,9 +39,11 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+
   <PropertyGroup>
     <ApplicationIcon>WW_Icon1.ico</ApplicationIcon>
   </PropertyGroup>
+
   <!--
     2015/06/09 DAG Add the following, per thread message that begins, "An
 	               alternative that is working for me so far is to add the
@@ -48,10 +52,12 @@
 	               Reference: "Conditional Compilation and Framework Targets," thread at
                               http://stackoverflow.com/questions/2923210/conditional-compilation-and-framework-targets
   -->
+
   <PropertyGroup>
     <DefineConstants Condition=" !$(DefineConstants.Contains(';NET')) ">$(DefineConstants);$(TargetFrameworkVersion.Replace("v", "NET").Replace(".", ""))</DefineConstants>
     <DefineConstants Condition=" $(DefineConstants.Contains(';NET')) ">$(DefineConstants.Remove($(DefineConstants.LastIndexOf(";NET"))));$(TargetFrameworkVersion.Replace("v", "NET").Replace(".", ""))</DefineConstants>
   </PropertyGroup>
+
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\Debug\</OutputPath>
@@ -62,6 +68,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE;NET35;USE_STRING_EXTENSION_METHODS</DefineConstants>
@@ -72,6 +79,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.XML" />
@@ -86,6 +94,7 @@
       <HintPath>C:\Users\DAG\.nuget\packages\WizardWrx.BitMath.4.3.125.29248\lib\net20\WizardWrx.BitMath.dll</HintPath>
     </Reference>
   </ItemGroup>
+
   <ItemGroup>
     <Compile Include="..\ProductAssemblyInfo.cs">
       <Link>Properties\ProductAssemblyInfo.cs</Link>
@@ -121,6 +130,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
   </ItemGroup>
+
   <ItemGroup>
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
@@ -134,6 +144,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
+
   <ItemGroup>
     <EmbeddedResource Include="ClassTestMap.TXT" />
     <EmbeddedResource Include="TextWithUTF_8_BOM.TXT" />
@@ -141,6 +152,7 @@
     <EmbeddedResource Include="AppConfig_OutgoingMailServer_Mapping.TXT" />
     <Content Include="WW_Icon1.ico" />
   </ItemGroup>
+
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -148,6 +160,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\AssemblyUtils\AssemblyUtils.csproj">
       <Project>{147d0ab7-a13a-4374-9011-a5584ae3a533}</Project>
@@ -186,13 +199,15 @@
       <Name>MoreMath</Name>
     </ProjectReference>
   </ItemGroup>
+
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+
   <PropertyGroup>
-    <PreBuildEvent>wwBldNbrMgr.exe "$(ProjectDir) "</PreBuildEvent>
+    <PreBuildEvent>AssemblyInfoUtil.exe $(ProjectDir)Properties\AssemblyInfo.cs -inc:3 -fv -cy -onlywhenmodified</PreBuildEvent>
   </PropertyGroup>
+
   <PropertyGroup>
-    <PostBuildEvent>wwBldNbrMgr.exe -r "-p$(ProjectDir) " "-t$(TargetPath)"
-if exist       "$(SolutionDir)$(SolutionName)_Binaries_$(ConfigurationName).7z" sdelete -r "$(SolutionDir)$(SolutionName)_Binaries_$(ConfigurationName).7z"
+    <PostBuildEvent>if exist       "$(SolutionDir)$(SolutionName)_Binaries_$(ConfigurationName).7z" sdelete -r "$(SolutionDir)$(SolutionName)_Binaries_$(ConfigurationName).7z"
 7z a -bb3 -stl "$(SolutionDir)$(SolutionName)_Binaries_$(ConfigurationName).7z" "$(SolutionDir)$(ProjectName)\bin\$(ConfigurationName)\*"
 7z l           "$(SolutionDir)$(SolutionName)_Binaries_$(ConfigurationName).7z"
 attrib         "$(SolutionDir)$(SolutionName)_Binaries_$(ConfigurationName).7z" +r
@@ -216,6 +231,7 @@ if $(ConfigurationName) == Release (
     echo $(ConfigurationName) Post-Build done
 )</PostBuildEvent>
   </PropertyGroup>
+
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

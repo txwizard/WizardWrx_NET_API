@@ -45,7 +45,6 @@ D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyU
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyUtils\bin\Debug\WizardWrx.FormatStringEngine.dll.config
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyUtils\bin\Debug\WizardWrx.ASCIIInfo.pdb
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyUtils\bin\Debug\WizardWrx.ASCIIInfo.xml
-D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyUtils\bin\Debug\WizardWrx.AnyCSV.xml
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyUtils\obj\Debug\WizardWrx.AssemblyUtils.Properties.Resources.resources
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyUtils\obj\Debug\AssemblyUtils.csproj.GenerateResource.cache
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyUtils\obj\Debug\AssemblyUtils.csproj.CoreCompileInputs.cache

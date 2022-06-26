@@ -55,10 +55,14 @@
                      2) Move everything involved with NuGet package management
                         into a new WizardWrx_NuGet_Packages Targets file, which
                         is imported (and processed) last.
+
+    AssemblyInfoUtil.exe $(ProjectDir)Properties\AssemblyInfo.cs -inc:3 -fv -cy -onlywhenmodified
     ============================================================================
 -->
+
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -78,6 +82,7 @@
     <!-- 2020-10-17 01:27:48 - DAG - Define SolutionPackageDir, which points to the local NuGet package directory shared by the entire solution. -->
     <SolutionPackageDir>$(ProjectDir)..\packages</SolutionPackageDir>
   </PropertyGroup>
+
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -88,6 +93,7 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\Wizardwrx.EmbeddedTextFile.xml</DocumentationFile>
   </PropertyGroup>
+
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
@@ -97,6 +103,7 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\Wizardwrx.EmbeddedTextFile.xml</DocumentationFile>
   </PropertyGroup>
+
   <ItemGroup>
     <Compile Include="..\ProductAssemblyInfo.cs">
       <Link>Properties\ProductAssemblyInfo.cs</Link>
@@ -110,15 +117,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
   </ItemGroup>
+
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+
   <ItemGroup>
     <Reference Include="System" />
   </ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\AssemblyUtils\AssemblyUtils.csproj">
       <Project>{147d0ab7-a13a-4374-9011-a5584ae3a533}</Project>
@@ -129,17 +139,22 @@
       <Name>Common</Name>
     </ProjectReference>
   </ItemGroup>
+
   <ItemGroup>
     <None Include="EmbeddedTextFile.nuspec" />
   </ItemGroup>
+
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.  -->
-  <PropertyGroup>
-    <PreBuildEvent>wwBldNbrMgr.exe "$(ProjectDir) "</PreBuildEvent>
-  </PropertyGroup>
-  <PropertyGroup>
-    <PostBuildEvent>wwBldNbrMgr.exe -r "-p$(ProjectDir) " "-t$(TargetPath)"</PostBuildEvent>
-  </PropertyGroup>
+
+    <PropertyGroup>
+        <PostBuildEvent>AssemblyInfoUtil.exe $(ProjectDir)Properties\AssemblyInfo.cs -inc:3 -fv -cy -onlywhenmodified</PostBuildEvent>
+    </PropertyGroup>
+    <PropertyGroup>
+        <PreBuildEvent></PreBuildEvent>
+    </PropertyGroup>
+
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
@@ -147,5 +162,6 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+
   <Import Project="$(Custom_MSBuild_Targets)\WizardWrx_NuGet_Packages.TARGETS" Condition="Exists('$(Custom_MSBuild_Targets)\WizardWrx_NuGet_Packages.TARGETS')" />
 </Project>

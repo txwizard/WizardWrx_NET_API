@@ -130,4 +130,4 @@ using System.Runtime.InteropServices;
 //                             AssemblyVersion shall continue to track build
 //                             numbers, and all major+minor assembly version
 //                             numbers shall be at least 8.0.
-[assembly: AssemblyFileVersion ( "8.0.0.0" )]
+[assembly: AssemblyVersion ( "9.0.0.0" )]

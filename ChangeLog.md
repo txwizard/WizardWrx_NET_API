@@ -1,5 +1,31 @@
 ﻿# WizardWrx .NET API Change Log
 
+
+## 2022-06-25, AssemblyVersion 9.0.0.0
+
+Today's release is a full set of libraries, made necessary by further refinement
+of the build pipeline designed to furthe reduce churn by preventing libraries
+from having their build numbers incremented unless library code changed.
+
+In the process of doing so, I discovered that I split the AssemblyInfo.cs file
+incorrectly, so that the AssemblyInfo was updated with every build, while the
+AssemblyFileVersion, which the build system ignores, remained unchanged.
+
+To rectify this problem, the AssemblyVersion and the AssemblyFileVersion had to
+trade places, so that the AssemblyVersion is set in ProductAssemblyInfo.cs,
+which has solution scope, and is included in every project, while the
+AssemblyFileVersion is defined in the individual AssemblyInfo.cs file that
+belongs to each project.
+
+Since every build created since the assembly attributes were split between the
+two files got its AssemblyVersion from its AssemblyInfo.cs, swapping them means
+that AssemblyVersion must be increased by a full increment, to ensure that every
+assembly appears to the .NET runtime binder as newer than any like-named
+assembly that is currently installed into an application that consumes it.
+
+This update completes the task that began with the release of 2022-04-24. It is
+otherwise a no-change release.
+
 ## 2022-05-19
 
 ### WizardWrx.Common, Version 8.0.205

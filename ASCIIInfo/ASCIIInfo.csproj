@@ -27,6 +27,8 @@
                      2) Move everything involved with NuGet package management
                         into a new WizardWrx_NuGet_Packages Targets file, which
                         is imported (and processed) last.
+
+      2022/06/25 DAG Replace wwBldNbrMgr with AssemblyInfoUtil.
       ==========================================================================
   -->
   <PropertyGroup>
@@ -108,10 +110,10 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. -->
   <PropertyGroup>
-    <PostBuildEvent>wwBldNbrMgr.exe -r "-p$(ProjectDir) " "-t$(TargetPath)"</PostBuildEvent>
+    <PostBuildEvent>AssemblyInfoUtil.exe $(ProjectDir)Properties\AssemblyInfo.cs -inc:3 -fv -cy -onlywhenmodified</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PreBuildEvent>wwBldNbrMgr.exe "$(ProjectDir) "</PreBuildEvent>
+    <PreBuildEvent></PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

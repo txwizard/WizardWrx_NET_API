@@ -80,8 +80,6 @@ D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServic
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServices2TestStand\bin\Debug\WizardWrx.FormatStringEngine.dll.config
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServices2TestStand\bin\Debug\WizardWrx.MoreMath.pdb
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServices2TestStand\bin\Debug\WizardWrx.MoreMath.xml
-D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServices2TestStand\bin\Debug\WizardWrx.AnyCSV.xml
-D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServices2TestStand\bin\Debug\WizardWrx.BitMath.xml
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServices2TestStand\obj\Debug\DLLServices2TestStand.Properties.Resources.resources
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServices2TestStand\obj\Debug\DLLServices2TestStand.csproj.GenerateResource.cache
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServices2TestStand\obj\Debug\DLLServices2TestStand.csproj.CoreCompileInputs.cache

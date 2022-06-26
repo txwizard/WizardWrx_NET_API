@@ -19,6 +19,6 @@ D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Diagnosti
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DiagnosticInfo\obj\Release\DiagnosticInfo.csproj.CopyComplete
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DiagnosticInfo\obj\Release\WizardWrx.DiagnosticInfo.dll
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DiagnosticInfo\obj\Release\WizardWrx.DiagnosticInfo.pdb
-D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DiagnosticInfo\obj\Release\DiagnosticInfo.csproj.AssemblyReference.cache
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DiagnosticInfo\obj\Release\WizardWrx.Properties.Resources.resources
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DiagnosticInfo\obj\Release\DiagnosticInfo.csproj.GenerateResource.cache
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DiagnosticInfo\obj\Release\DiagnosticInfo.csproj.AssemblyReference.cache
