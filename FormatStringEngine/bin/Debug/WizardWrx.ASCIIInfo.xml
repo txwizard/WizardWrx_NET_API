@@ -269,7 +269,12 @@
         <member name="P:WizardWrx.ASCIICharacterDisplayInfo.CodeAsHexadecimal">
             <summary>
             Gets a string representation of the ASCII code as a hexadecimal
-            number.
+            number
+            </summary>
+        </member>
+        <member name="P:WizardWrx.ASCIICharacterDisplayInfo.UnicodeCodePoint">
+            <summary>
+            Gets a string representation of the Unicode code point
             </summary>
         </member>
         <member name="P:WizardWrx.ASCIICharacterDisplayInfo.Comment">

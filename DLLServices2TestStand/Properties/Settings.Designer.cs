@@ -210,5 +210,14 @@ namespace DLLServices2TestStand.Properties {
                 return ((string)(this["UserNote4Test"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("$$REPORTSDIRNAME$$\\ASCII_Table.TSV")]
+        public string ASCII_Table_Reference_File_Name {
+            get {
+                return ((string)(this["ASCII_Table_Reference_File_Name"]));
+            }
+        }
     }
 }

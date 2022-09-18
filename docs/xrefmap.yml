@@ -571,6 +571,19 @@ references:
   isSpec: "True"
   fullName: DLLServices2TestStand.Properties.Resources.IDS_ASCII_TABLE_ITEM
   nameWithType: Resources.IDS_ASCII_TABLE_ITEM
+- uid: DLLServices2TestStand.Properties.Resources.IDS_ASCII_TABLE_LABEL_ROW
+  name: IDS_ASCII_TABLE_LABEL_ROW
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_IDS_ASCII_TABLE_LABEL_ROW
+  commentId: P:DLLServices2TestStand.Properties.Resources.IDS_ASCII_TABLE_LABEL_ROW
+  fullName: DLLServices2TestStand.Properties.Resources.IDS_ASCII_TABLE_LABEL_ROW
+  nameWithType: Resources.IDS_ASCII_TABLE_LABEL_ROW
+- uid: DLLServices2TestStand.Properties.Resources.IDS_ASCII_TABLE_LABEL_ROW*
+  name: IDS_ASCII_TABLE_LABEL_ROW
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_IDS_ASCII_TABLE_LABEL_ROW_
+  commentId: Overload:DLLServices2TestStand.Properties.Resources.IDS_ASCII_TABLE_LABEL_ROW
+  isSpec: "True"
+  fullName: DLLServices2TestStand.Properties.Resources.IDS_ASCII_TABLE_LABEL_ROW
+  nameWithType: Resources.IDS_ASCII_TABLE_LABEL_ROW
 - uid: DLLServices2TestStand.Properties.Resources.IDS_ASCII_TABLE_PREAMBLE
   name: IDS_ASCII_TABLE_PREAMBLE
   href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_IDS_ASCII_TABLE_PREAMBLE
@@ -2625,6 +2638,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.ASCIICharacterDisplayInfo.ToString
   nameWithType: ASCIICharacterDisplayInfo.ToString
+- uid: WizardWrx.ASCIICharacterDisplayInfo.UnicodeCodePoint
+  name: UnicodeCodePoint
+  href: api/WizardWrx.ASCIICharacterDisplayInfo.html#WizardWrx_ASCIICharacterDisplayInfo_UnicodeCodePoint
+  commentId: P:WizardWrx.ASCIICharacterDisplayInfo.UnicodeCodePoint
+  fullName: WizardWrx.ASCIICharacterDisplayInfo.UnicodeCodePoint
+  nameWithType: ASCIICharacterDisplayInfo.UnicodeCodePoint
+- uid: WizardWrx.ASCIICharacterDisplayInfo.UnicodeCodePoint*
+  name: UnicodeCodePoint
+  href: api/WizardWrx.ASCIICharacterDisplayInfo.html#WizardWrx_ASCIICharacterDisplayInfo_UnicodeCodePoint_
+  commentId: Overload:WizardWrx.ASCIICharacterDisplayInfo.UnicodeCodePoint
+  isSpec: "True"
+  fullName: WizardWrx.ASCIICharacterDisplayInfo.UnicodeCodePoint
+  nameWithType: ASCIICharacterDisplayInfo.UnicodeCodePoint
 - uid: WizardWrx.ASCIICharacterDisplayInfo.URLEncoding
   name: URLEncoding
   href: api/WizardWrx.ASCIICharacterDisplayInfo.html#WizardWrx_ASCIICharacterDisplayInfo_URLEncoding
@@ -15504,6 +15530,12 @@ references:
   commentId: F:WizardWrx.SpecialCharacters.LINEFEED
   fullName: WizardWrx.SpecialCharacters.LINEFEED
   nameWithType: SpecialCharacters.LINEFEED
+- uid: WizardWrx.SpecialCharacters.LOGICAL_NEGATE
+  name: LOGICAL_NEGATE
+  href: api/WizardWrx.SpecialCharacters.html#WizardWrx_SpecialCharacters_LOGICAL_NEGATE
+  commentId: F:WizardWrx.SpecialCharacters.LOGICAL_NEGATE
+  fullName: WizardWrx.SpecialCharacters.LOGICAL_NEGATE
+  nameWithType: SpecialCharacters.LOGICAL_NEGATE
 - uid: WizardWrx.SpecialCharacters.MINUS
   name: MINUS
   href: api/WizardWrx.SpecialCharacters.html#WizardWrx_SpecialCharacters_MINUS

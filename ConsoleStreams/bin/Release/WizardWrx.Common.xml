@@ -3864,6 +3864,14 @@
             <seealso cref="F:WizardWrx.SpecialStrings.STRING_SPLIT_CARRIAGE_RETURN"/>
             <seealso cref="F:WizardWrx.SpecialStrings.STRING_SPLIT_LINEFEED"/>
         </member>
+        <member name="F:WizardWrx.SpecialCharacters.LOGICAL_NEGATE">
+            <summary>
+            Thanks to a suggestion from my esteemed colleague Bud Pass, this is my new
+            preferred field delimiter character. It supersedes my favorite for many
+            years, PIPE_CHAR.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialCharacters.PIPE_CHAR"/>
+        </member>
         <member name="F:WizardWrx.SpecialCharacters.MINUS">
             <summary>
             Use this character anywhere in your code that requires a plus sign
@@ -3924,6 +3932,7 @@
             <seealso cref="F:WizardWrx.SpecialCharacters.COLON"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.COMMA"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.HASH_TAG"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.LOGICAL_NEGATE"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.PERCENT_SIGN"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.SEMICOLON"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.TAB_CHAR"/>

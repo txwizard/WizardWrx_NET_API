@@ -49,20 +49,26 @@
 
     2021/01/30 DAG Reinstate wwBldNbrMgr.
 
-      2022/04/24 DAG 1) Define a new UsingTask, NuGetPackagePublishDecision, and
-                        use it in a new PublishIfNew target that runs as the
-                        AfterBuild target so that its output can prevent the
-                        Package and Publish targets executing.
+    2022/04/24 DAG 1) Define a new UsingTask, NuGetPackagePublishDecision, and
+                      use it in a new PublishIfNew target that runs as the
+                      AfterBuild target so that its output can prevent the
+                      Package and Publish targets executing.
 
-                     2) Move everything involved with NuGet package management
-                        into a new WizardWrx_NuGet_Packages Targets file, which
-                        is imported (and processed) last.
+                   2) Move everything involved with NuGet package management
+                      into a new WizardWrx_NuGet_Packages Targets file, which
+                      is imported (and processed) last.
 
     2022/06/25 DAG Replace wwBldNbrMgr with AssemblyInfoUtil.
+
+    2022/07/10 DAG When I replaced wwBldNbrMgr with AssemblyInfoUtil, I put it
+                   in the PostBuildEvent event instead of the PreBuildEvent
+                   target.
     ============================================================================
 -->
+
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -74,14 +80,21 @@
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+
     <!-- 2020-10-17 00:34:23 - DAG - Add the Deterministic compiler switch, which goes well with SemVer version numbering. -->
+
     <Deterministic>true</Deterministic>
+
     <!-- 2020-10-17 00:06:16 - DAG - Added for NuGet package builder -->
+
     <PackageDir>Package</PackageDir>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>.pdb$;(AllowedOutputExtensionsInPackageBuildOutputFolder)</AllowedOutputExtensionsInPackageBuildOutputFolder>
+
     <!-- 2020-10-17 00:06:24 - DAG - Define SolutionPackageDir, which points to the local NuGet package directory shared by the entire solution. -->
+
     <SolutionPackageDir>$(ProjectDir)..\packages</SolutionPackageDir>
   </PropertyGroup>
+
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -92,6 +105,7 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\Wizardwrx.ConsoleStreams.xml</DocumentationFile>
   </PropertyGroup>
+
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
@@ -101,9 +115,11 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\Wizardwrx.ConsoleStreams.XML</DocumentationFile>
   </PropertyGroup>
+
   <ItemGroup>
     <Reference Include="System" />
   </ItemGroup>
+
   <ItemGroup>
     <Compile Include="..\ProductAssemblyInfo.cs">
       <Link>Properties\ProductAssemblyInfo.cs</Link>
@@ -120,12 +136,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
   </ItemGroup>
+
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{c1fb48d6-4a54-4424-bca1-4777f3aae2df}</Project>
@@ -136,24 +154,27 @@
       <Name>Core</Name>
     </ProjectReference>
   </ItemGroup>
+
   <ItemGroup>
     <None Include="ConsoleStreams.nuspec" />
   </ItemGroup>
+
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. -->
-  <!-- Other similar extension points exist, see Microsoft.Common.targets.                           -->
-    <PropertyGroup>
-        <PostBuildEvent>AssemblyInfoUtil.exe $(ProjectDir)Properties\AssemblyInfo.cs -inc:3 -fv -cy -onlywhenmodified</PostBuildEvent>
-    </PropertyGroup>
-    <PropertyGroup>
-        <PreBuildEvent></PreBuildEvent>
-    </PropertyGroup>
-    <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
   <Target Name="AfterBuild">
   </Target>
   -->
+
+  <PropertyGroup>
+      <PreBuildEvent>AssemblyInfoUtil.exe $(ProjectDir)Properties\AssemblyInfo.cs -inc:3 -fv -cy -onlywhenmodified</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent></PostBuildEvent>
+  </PropertyGroup>
+
   <Import Project="$(Custom_MSBuild_Targets)\WizardWrx_NuGet_Packages.TARGETS" Condition="Exists('$(Custom_MSBuild_Targets)\WizardWrx_NuGet_Packages.TARGETS')" />
 </Project>

@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
 <!--
     ============================================================================
     Project Name:		FormatStringEngine.csproj
@@ -37,8 +38,13 @@
                       is imported (and processed) last.
 
     2022/06/25 DAG Replace wwBldNbrMgr with AssemblyInfoUtil.
+
+    2022/07/10 DAG When I replaced wwBldNbrMgr with AssemblyInfoUtil, I put it
+                   in the PostBuildEvent event instead of the PreBuildEvent
+                   target.
     ============================================================================
 -->
+
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -54,7 +60,9 @@
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+
     <!-- 2019/07/04 13:27:28 - DAG - Added for NuGet package builder -->
+
     <PackageDir>Package</PackageDir>
   </PropertyGroup>
 
@@ -132,14 +140,19 @@
 
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.  -->
-  <!-- Other similar extension points exist, see Microsoft.Common.targets.  -->
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
 
   <PropertyGroup>
-    <PostBuildEvent>AssemblyInfoUtil.exe $(ProjectDir)Properties\AssemblyInfo.cs -inc:3 -fv -cy -onlywhenmodified</PostBuildEvent>
+      <PreBuildEvent>AssemblyInfoUtil.exe $(ProjectDir)Properties\AssemblyInfo.cs -inc:3 -fv -cy -onlywhenmodified</PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PreBuildEvent></PreBuildEvent>
+    <PostBuildEvent></PostBuildEvent>
   </PropertyGroup>
 
   <Import Project="$(Custom_MSBuild_Targets)\WizardWrx_NuGet_Packages.TARGETS" Condition="Exists('$(Custom_MSBuild_Targets)\WizardWrx_NuGet_Packages.TARGETS')" />

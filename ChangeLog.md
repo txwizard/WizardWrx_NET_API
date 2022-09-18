@@ -1,5 +1,20 @@
 ﻿# WizardWrx .NET API Change Log
 
+## 2022/09/17
+
+This release corrects a deficiency in the procedure that led to the release of
+AssemblyVersion 9.0.0.0, which prevented publication of subsequent updates.
+
+Otherwise, except as noted below, this is a no-change release.
+
+### Common 9.0.239
+
+LOGICAL_NEGATE is a new character constant, which supersedes my long-time
+favorite, PIPE_CHAR.
+
+I owe this transition to my esteemed colleague, Bud Pass, Software Development
+Director of [SalesTalk Technologies, LLC](https://salesrelevance.com/), the
+company that has had the lion's share of my attention since the middle of 2019.
 
 ## 2022-06-25, AssemblyVersion 9.0.0.0
 

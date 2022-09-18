@@ -16,7 +16,7 @@
                         plain vanilla format item with a composite item that is
                         generated at run time.
 
-    License:            Copyright (C) 2014-2018, David A. Gray. 
+    License:            Copyright (C) 2014-2022, David A. Gray. 
 						All rights reserved.
 
                         Redistribution and use in source and binary forms, with
@@ -58,39 +58,43 @@
     Revision History
     ----------------------------------------------------------------------------
 
-    Date       Version Author Description
-    ---------- ------- ------ --------------------------------------------------
-    2014/07/19 2.5     DAG    Initial implementation.
+    Date       Version  Author Description
+    ---------- -------- ------ --------------------------------------------------
+    2014/07/19 2.5      DAG    Initial implementation.
 
-	2014/09/23 2.8     DAG    Add a couple of tests for AdjustToMaximumWidth, to
-                              cover the revisions made in version 1.2.
+	2014/09/23 2.8      DAG    Add a couple of tests for AdjustToMaximumWidth to
+                               cover the revisions made in version 1.2.
 
-	2016/06/12 3.0     DAG    Break the dependency on WizardWrx.SharedUtl2.dll,
-                              correct misspelled words flagged by the spelling
-                              checker add-in, and incorporate my three-clause
-                              BSD license, and document why I suppressed warning
-                              CS0618. Please see item 2 in Remarks (above).
+	2016/06/12 3.0      DAG    Break the dependency on WizardWrx.SharedUtl2.dll,
+                               correct misspelled words flagged by the spelling
+                               checker add-in, and incorporate my three-clause
+                               BSD license, and document why I suppressed
+                               warning CS0618. Please see item 2 in Remarks
+                               (above).
 
-                              Since there is one case that is expected to throw
-                              an exception, equip TestFormatItemCounters with a
-                              try/catch block that intercepts and reports the
-                              error, taking advantage of new features in the
-                              exception logger to write two copies if Standard
-                              Output is redirected.
+                               Since there is one case that is expected to throw
+                               an exception, equip TestFormatItemCounters with a
+                               try/catch block that intercepts and reports the
+                               error, taking advantage of new features in the
+                               exception logger to write two copies if Standard
+                               Output is redirected.
 
-    2017/08/26 7.0     DAG    Move the classes exercised by this class from 
-                              WizardWrx.SharedUtl4.dll into WizardWrx.Core.dll,
-                              and bring this class into DllServices2TestStand,
-                              and mark it as internal static.
+    2017/08/26 7.0      DAG    Move the classes exercised by this class from 
+                               WizardWrx.SharedUtl4.dll into WizardWrx.Core.dll,
+                               and bring this class into DllServices2TestStand,
+                               and mark it as internal static.
 
-	2017/09/07 7.0     DAG    Implement ItemDisplayOrder as a signe integer.
+	2017/09/07 7.0      DAG    Implement ItemDisplayOrder as a signe integer.
 
-	2018/10/07 7.1     DAG    Exercise static method DisplayCharacterInfo on the
-	                          ASCIICharacterDisplayInfo class BEFORE singleton
-							  ASCII_Character_Display_Table is referenced.
+	2018/10/07 7.1      DAG    Exercise static method DisplayCharacterInfo on the
+	                           ASCIICharacterDisplayInfo class BEFORE singleton
+							   ASCII_Character_Display_Table is referenced.
 
-	2021/02/06 8.0     DAG    Cover the improved ASCII table display, which has
-                              many new attributes.
+	2021/02/06 8.0      DAG    Cover the improved ASCII table display, which has
+                               many new attributes.
+
+	2022/07/10 9.0.1536 DAG    Implement Unicode code points and a new tab
+                               delimited reference table.
     ============================================================================
 */
 
@@ -109,43 +113,46 @@ namespace DLLServices2TestStand
 	{
 		static readonly string [ ] s_astrFormatStringSamples =
         {
-            "This is the degenerate case; it is devoid of format items." ,                                                              // String 1
-            "This string contains one {0} format item." ,                                                                               // String 2
-            "This string contains two {0} format {1} item." ,                                                                           // String 3
-            "{0}This string contains three {2} format {1} item." ,                                                                      // String 4
-            "{0}This string contains four {2} format {10} item, one {1} of which has a high index." ,                                   // String 5
-            "{0}This string contains four and 1/2 {0) {2} format {10} item, one {1} of which has a high index." ,                       // String 6
-            "{0}This string contains four {2} format {7} item, one {1} of which {{9}} has a high index, and an escaped format item." ,  // String 7
-            "        String {0,2:N0}: {1}{4}                   Balanced:      {2}{6}                   Highest Index: {3}{4}" ,         // String 8: This is PROGRESS_MSG, taken from this class.
-            "        String {5,2:N0}: {1}{4}                   Balanced:      {2}{4}                   Highest Index: {3}{4}" ,         // String 9: This is PROGRESS_MSG, modified to assign the highest index to the composite format item.
+            @"This is the degenerate case; it is devoid of format items." ,                                                              // String 1
+            @"This string contains one {0} format item." ,                                                                               // String 2
+            @"This string contains two {0} format {1} item." ,                                                                           // String 3
+            @"{0}This string contains three {2} format {1} item." ,                                                                      // String 4
+            @"{0}This string contains four {2} format {10} item, one {1} of which has a high index." ,                                   // String 5
+            @"{0}This string contains four and 1/2 {0) {2} format {10} item, one {1} of which has a high index." ,                       // String 6
+            @"{0}This string contains four {2} format {7} item, one {1} of which {{9}} has a high index, and an escaped format item." ,  // String 7
+            @"        String {0,2:N0}: {1}{4}                   Balanced:      {2}{6}                   Highest Index: {3}{4}" ,         // String 8: This is PROGRESS_MSG, taken from this class.
+            @"        String {5,2:N0}: {1}{4}                   Balanced:      {2}{4}                   Highest Index: {3}{4}" ,         // String 9: This is PROGRESS_MSG, modified to assign the highest index to the composite format item.
         };  // s_astrFormatStringSamples
 
 		static readonly string [ ] s_astrLabelsOfVariousLengths =
         {
-            "Label 1" ,
-            "Label 2" ,
-            "Label 2a" ,
-            "Label 3"
-        };  // s_astrLabelsOfVariousLengths
+			@"Label 1" ,
+			@"Label 2" ,
+			@"Label 2a" ,
+			@"Label 3"
+		};  // s_astrLabelsOfVariousLengths
 
 		static readonly string [ ] s_astrValuseOfIrrelevantLengths =
         {
-            "Value 1" ,
-            "Value 2" ,
-            "Value 2a" ,
-            "Value 3"
-        };  // s_astrValuseOfIrrelevantLengths
+			@"Value 1" ,
+			@"Value 2" ,
+			@"Value 2a" ,
+			@"Value 3"
+		};  // s_astrValuseOfIrrelevantLengths
 
 		const int ARRAY_FIRST_ELEMENT = 0;
 		const int ARRAY_LIST_ORDINAL_TO_SUBSCRIPT = +1;
 
+
 		internal static void ASCII_Table_Gen ( )
 		{
 			StreamWriter swAsciiTableLists = null;
+			StreamWriter swAsciiReferenceTable = null;
 
 			try
 			{
 				swAsciiTableLists = GetAsciiTableListFileHandle ( );
+				swAsciiReferenceTable = GetAsciiTableListFileHandle ( Properties.Settings.Default.ASCII_Table_Reference_File_Name );
 
 				Console.WriteLine (
 					Properties.Resources.IDS_ASCII_TABLE_PREAMBLE ,             // Print this message above both tables.
@@ -163,6 +170,12 @@ namespace DLLServices2TestStand
 
 				string strDetailFormatTemplate = Properties.Resources.IDS_ASCII_CHARACTER_INFO;
 				string strDisplayInfoTemplate = Properties.Resources.MSG_ASCII_TABLE_DETAIL;
+				string strReferenceTableTemplate = Properties.Resources.IDS_ASCII_TABLE_LABEL_ROW;
+				swAsciiReferenceTable.WriteLine (
+					strReferenceTableTemplate ,
+					SpecialCharacters.TAB_CHAR );
+
+				strReferenceTableTemplate = strReferenceTableTemplate.Replace ( @"Decimal" , @"{1}" ).Replace ( @"Hexadecimal" , @"{2}" ).Replace ( @"HTML Entity" , @"{3}" ).Replace ( @"URL Encoding" , @"{4}" ).Replace ( @"Unicode Code Point" , @"{5}" ).Replace ( @"Display Value" , @"{6}" ).Replace ( @"Comment" , @"{7}" );
 
 				try
 				{
@@ -187,6 +200,16 @@ namespace DLLServices2TestStand
 							displayInfo.CodeAsHexadecimal ,                     // Format Item 2: ({2} hex),
 							displayInfo.DisplayText ,                           // Format Item 3: Display Value = {3}
 							displayInfo.HTMLName );                             // Format Item 4: HTML Entity = {4}
+						swAsciiReferenceTable.WriteLine (
+							strReferenceTableTemplate ,                         // Format Control String
+							SpecialCharacters.TAB_CHAR ,                        // Format Item 0: Field delimiter
+							displayInfo.CodeAsDecimal ,                         // Format Item 1: Decimal
+							displayInfo.CodeAsHexadecimal ,                     // Format Item 2: Hexadecimal
+							displayInfo.HTMLName ,                              // Format Item 3: HTML Entity
+							displayInfo.URLEncoding ,                           // Format Item 4: URL Encoding
+							displayInfo.UnicodeCodePoint ,                      // Format Item 5: Unicode Code Point
+							displayInfo.DisplayText ,                           // Format Item 6: Display Value
+							displayInfo.Comment );								// Format Item 7: Comment
 					}   // for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ; intJ < aSCII_Character_Display_Table.AllASCIICharacters.Length ; intJ++ )
 				}
 				catch ( Exception exAll )
@@ -243,7 +266,9 @@ namespace DLLServices2TestStand
 
 				swAsciiTableLists.Close ( );
 				swAsciiTableLists.Dispose ( );
-				swAsciiTableLists = null;
+
+				swAsciiReferenceTable.Close ( );
+				swAsciiReferenceTable.Dispose ( );
 			}
 			catch ( Exception exAll )
 			{
@@ -252,10 +277,12 @@ namespace DLLServices2TestStand
         }   // ASCII_Table_Gen
 
 
-        private static StreamWriter GetAsciiTableListFileHandle ( )
+        private static StreamWriter GetAsciiTableListFileHandle ( string pstrAlternameSettingsKeyName = null )
         {
 			string strAsciiTestFileName = Program.AbsolutePathStringFromSettings (
-				Properties.Settings.Default.ASCII_Table_Listings );				// string		pstrRawStringValue	- Tokenized string to process
+				pstrAlternameSettingsKeyName == null                            // string		pstrRawStringValue	- Tokenized string to process
+				? Properties.Settings.Default.ASCII_Table_Listings				// Default
+				: pstrAlternameSettingsKeyName );								// Override
 			Console.WriteLine (
 				Properties.Resources.MSG_ASCII_TABLES_REPORT ,					// Format Control String
 				strAsciiTestFileName ,                                          // Format Item 0: The ASCII Table details are reproduced as a separate text file, {0}
@@ -263,10 +290,10 @@ namespace DLLServices2TestStand
 			return new StreamWriter (
 				strAsciiTestFileName ,                                          // path			String				- The complete file path to write to.
 				FileIOFlags.FILE_OUT_CREATE ,                                   // append		Boolean				- true to append data to the file; false to overwrite the file. If the specified file does not exist, this parameter has no effect, and the constructor creates a new file.
-				System.Text.Encoding.UTF8 ,                                     // encoding		Encoding			- The character encoding to use.
+				System.Text.Encoding.Unicode ,                                  // encoding		Encoding			- The character encoding to use.
 				MagicNumbers.CAPACITY_08KB );                                   // bufferSize	Int32				- The buffer size, in bytes.
-		}   
-		// private static TextWriter GetAsciiTableListFileHandle
+		}   // private static StreamWriter GetAsciiTableListFileHandle
+
 
 		internal static void TestFormatItemBuilders ( )
 		{
@@ -348,12 +375,12 @@ namespace DLLServices2TestStand
 					Console.WriteLine (
 						PROGRESS_MSG ,
 						new object [ ]
-                {
-                    intStringNumber ,											// Format Item 0
-                    s_astrFormatStringSamples [ intCurrStr ] ,					// Format Item 1
-                    aintHightesItemIndex [ intCurrStr ] ,						// Format Item 2
-                    Environment.NewLine											// Format Item 3
-                } );
+						{
+							intStringNumber ,									// Format Item 0
+							s_astrFormatStringSamples [ intCurrStr ] ,			// Format Item 1
+							aintHightesItemIndex [ intCurrStr ] ,				// Format Item 2
+							Environment.NewLine									// Format Item 3
+						} );
 
 					if ( fsp.FormatStringErrorCount > FormatStringParser.NO_ERRORS )
 					{

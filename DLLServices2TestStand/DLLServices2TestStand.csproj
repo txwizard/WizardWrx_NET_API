@@ -15,7 +15,6 @@
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
-
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
@@ -28,7 +27,6 @@
     <UseVSHostingProcess>true</UseVSHostingProcess>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
-
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
@@ -39,11 +37,9 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
-
   <PropertyGroup>
     <ApplicationIcon>WW_Icon1.ico</ApplicationIcon>
   </PropertyGroup>
-
   <!--
     2015/06/09 DAG Add the following, per thread message that begins, "An
 	               alternative that is working for me so far is to add the
@@ -52,12 +48,10 @@
 	               Reference: "Conditional Compilation and Framework Targets," thread at
                               http://stackoverflow.com/questions/2923210/conditional-compilation-and-framework-targets
   -->
-
   <PropertyGroup>
     <DefineConstants Condition=" !$(DefineConstants.Contains(';NET')) ">$(DefineConstants);$(TargetFrameworkVersion.Replace("v", "NET").Replace(".", ""))</DefineConstants>
     <DefineConstants Condition=" $(DefineConstants.Contains(';NET')) ">$(DefineConstants.Remove($(DefineConstants.LastIndexOf(";NET"))));$(TargetFrameworkVersion.Replace("v", "NET").Replace(".", ""))</DefineConstants>
   </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\Debug\</OutputPath>
@@ -68,7 +62,6 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE;NET35;USE_STRING_EXTENSION_METHODS</DefineConstants>
@@ -79,22 +72,16 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
-
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.XML" />
     <Reference Include="WizardWrx.AnyCSV, Version=7.2.145.0, Culture=neutral, PublicKeyToken=39f6551a21db420a, processorArchitecture=MSIL">
       <HintPath>C:\Users\DAG\.nuget\packages\WizardWrx.AnyCSV.7.2.145\lib\net20\WizardWrx.AnyCSV.dll</HintPath>
     </Reference>
-    <Reference Include="WizardWrx.ASCIIInfo, Version=8.0.167.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\ASCIIInfo\bin\Release\WizardWrx.ASCIIInfo.dll</HintPath>
-    </Reference>
     <Reference Include="WizardWrx.BitMath, Version=4.3.125.29248, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>C:\Users\DAG\.nuget\packages\WizardWrx.BitMath.4.3.125.29248\lib\net20\WizardWrx.BitMath.dll</HintPath>
     </Reference>
   </ItemGroup>
-
   <ItemGroup>
     <Compile Include="..\ProductAssemblyInfo.cs">
       <Link>Properties\ProductAssemblyInfo.cs</Link>
@@ -130,7 +117,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
   </ItemGroup>
-
   <ItemGroup>
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
@@ -144,7 +130,6 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
-
   <ItemGroup>
     <EmbeddedResource Include="ClassTestMap.TXT" />
     <EmbeddedResource Include="TextWithUTF_8_BOM.TXT" />
@@ -152,7 +137,6 @@
     <EmbeddedResource Include="AppConfig_OutgoingMailServer_Mapping.TXT" />
     <Content Include="WW_Icon1.ico" />
   </ItemGroup>
-
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -160,8 +144,11 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-
   <ItemGroup>
+    <ProjectReference Include="..\ASCIIInfo\ASCIIInfo.csproj">
+      <Project>{8c832c38-cf81-4247-baef-581f5c14f11f}</Project>
+      <Name>ASCIIInfo</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AssemblyUtils\AssemblyUtils.csproj">
       <Project>{147d0ab7-a13a-4374-9011-a5584ae3a533}</Project>
       <Name>AssemblyUtils</Name>
@@ -199,13 +186,10 @@
       <Name>MoreMath</Name>
     </ProjectReference>
   </ItemGroup>
-
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-
   <PropertyGroup>
     <PreBuildEvent>AssemblyInfoUtil.exe $(ProjectDir)Properties\AssemblyInfo.cs -inc:3 -fv -cy -onlywhenmodified</PreBuildEvent>
   </PropertyGroup>
-
   <PropertyGroup>
     <PostBuildEvent>if exist       "$(SolutionDir)$(SolutionName)_Binaries_$(ConfigurationName).7z" sdelete -r "$(SolutionDir)$(SolutionName)_Binaries_$(ConfigurationName).7z"
 7z a -bb3 -stl "$(SolutionDir)$(SolutionName)_Binaries_$(ConfigurationName).7z" "$(SolutionDir)$(ProjectName)\bin\$(ConfigurationName)\*"
@@ -231,7 +215,6 @@ if $(ConfigurationName) == Release (
     echo $(ConfigurationName) Post-Build done
 )</PostBuildEvent>
   </PropertyGroup>
-
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

@@ -709,4 +709,8 @@
     <value>Exercise_ExtractTextBetweenMatches</value>
     <comment>Use this command line argument to engage the routine that exercises the new ExtractTextBetweenMatche and ChopMBSP methods.</comment>
   </data>
+  <data name="IDS_ASCII_TABLE_LABEL_ROW" xml:space="preserve">
+    <value>Decimal{0}Hexadecimal{0}HTML Entity{0}URL Encoding{0}Unicode Code Point{0}Display Value{0}Comment</value>
+    <comment>This is the label row for a new tab-delimited ASCII table.</comment>
+  </data>
 </root>

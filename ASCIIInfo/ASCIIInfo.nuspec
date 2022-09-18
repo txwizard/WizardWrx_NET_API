@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-        <releaseNotes>This is a no-change release, as detailed in the most recent ChangeLog entry. Henceforth, independend release schedules as described in the immediately previous published version of this library will resume.</releaseNotes>
+        <releaseNotes>Add Unicode code points, overlooked until Saturday, 09 July 2022. To resolve an unrelated issue regarding how package versions are recorded in the NuGet Gallery, this release is part of a mass update of all packages in the WizardWrx .NET API. Henceforth, independent release schedules as described in the immediately previous published version of this library will resume.</releaseNotes>
         <copyright>$copyright$</copyright>
 	    <tags>ASCII Metadata Table</tags>
   	</metadata>

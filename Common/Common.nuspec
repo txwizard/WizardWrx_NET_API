@@ -10,9 +10,12 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-        <releaseNotes>This is a no-change release, as detailed in the most recent ChangeLog entry. Henceforth, independend release schedules as described in the immediately previous published version of this library will resume.</releaseNotes>
+        <releaseNotes>The last release updated the build number AFTER the project was built. More significantly, AssemblyInfo.cs was missing the AssemblyInformationalVersion attribute, causing the NuGet Gallery to report the AssemblyVersion, which is generally unchanged from release to release. Otherwise, the only change in this release is a new LOGICAL_NEGATE character constant, as detailed in the most recent ChangeLog entry. Henceforth, independent release schedules as described in the immediately previous published version of this library will resume.</releaseNotes>
         <copyright>$copyright$</copyright>
     	<tags>Constants Arrays RegExp</tags>
+    	<dependencies>
+			<group targetFramework=".NETFramework3.5-Client" />
+   		</dependencies>
 	</metadata>
 	<files>
    		<file src="readme.md"                    target=""    />

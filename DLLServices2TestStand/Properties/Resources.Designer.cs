@@ -412,6 +412,15 @@ namespace DLLServices2TestStand.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Decimal{0}Hexadecimal{0}HTML Entity{0}URL Encoding{0}Unicode Code Point{0}Display Value{0}Comment.
+        /// </summary>
+        public static string IDS_ASCII_TABLE_LABEL_ROW {
+            get {
+                return ResourceManager.GetString("IDS_ASCII_TABLE_LABEL_ROW", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0}The following tables list key attributes of every ASCII character.{0}.
         /// </summary>
         public static string IDS_ASCII_TABLE_PREAMBLE {

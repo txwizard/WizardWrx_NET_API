@@ -148,7 +148,9 @@
 	2021/10/13 8.0.170 DAG    This release incorporates two new character
                               constants, SpecialCharacters.PLUS and
                               SpecialCharacters.MINUS.
-
+	
+	2022/09/17 9.0.239 DAG    LOGICAL_NEGATE supersedes my long-time favoorite,
+                              PIPE_CHAR, as my preferred text delimiter.
     ============================================================================
 */
 
@@ -562,6 +564,14 @@ namespace WizardWrx
 		public const char LINEFEED ='\n';
 
 		/// <summary>
+		/// Thanks to a suggestion from my esteemed colleague Bud Pass, this is my new
+		/// preferred field delimiter character. It supersedes my favorite for many
+		/// years, PIPE_CHAR.
+		/// </summary>
+		/// <seealso cref="PIPE_CHAR"/>
+		public const char LOGICAL_NEGATE = '¬';
+
+		/// <summary>
 		/// Use this character anywhere in your code that requires a plus sign
 		/// that represents that symbol explicitly as a character.
 		/// </summary>
@@ -620,6 +630,7 @@ namespace WizardWrx
 		/// <seealso cref="COLON"/>
 		/// <seealso cref="COMMA"/>
 		/// <seealso cref="HASH_TAG"/>
+		/// <seealso cref="LOGICAL_NEGATE"/>
 		/// <seealso cref="PERCENT_SIGN"/>
 		/// <seealso cref="SEMICOLON"/>
 		/// <seealso cref="TAB_CHAR"/>

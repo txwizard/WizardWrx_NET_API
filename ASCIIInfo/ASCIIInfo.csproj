@@ -29,6 +29,10 @@
                         is imported (and processed) last.
 
       2022/06/25 DAG Replace wwBldNbrMgr with AssemblyInfoUtil.
+
+      2022/07/10 DAG When I replaced wwBldNbrMgr with AssemblyInfoUtil, I put it
+                     in the PostBuildEvent event instead of the PreBuildEvent
+                     target.
       ==========================================================================
   -->
   <PropertyGroup>
@@ -50,6 +54,7 @@
     <SolutionPackageDir>$(ProjectDir)..\packages</SolutionPackageDir>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>.pdb$;(AllowedOutputExtensionsInPackageBuildOutputFolder)</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
+
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -60,6 +65,7 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\Wizardwrx.ASCIIInfo.XML</DocumentationFile>
   </PropertyGroup>
+
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
@@ -69,9 +75,11 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\Wizardwrx.ASCIIInfo.XML</DocumentationFile>
   </PropertyGroup>
+
   <ItemGroup>
     <Reference Include="System" />
   </ItemGroup>
+
   <ItemGroup>
     <Compile Include="..\ProductAssemblyInfo.cs">
       <Link>Properties\ProductAssemblyInfo.cs</Link>
@@ -87,34 +95,33 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
   </ItemGroup>
+
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{c1fb48d6-4a54-4424-bca1-4777f3aae2df}</Project>
       <Name>Common</Name>
     </ProjectReference>
   </ItemGroup>
+
   <ItemGroup>
     <EmbeddedResource Include="..\_NOTES\ASCII_Table\ASCII_Character_Display_Table.TSV">
       <Link>ASCII_Character_Display_Table.TSV</Link>
     </EmbeddedResource>
   </ItemGroup>
+
   <ItemGroup>
     <None Include="ASCIIInfo.nuspec" />
   </ItemGroup>
+
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. -->
-  <PropertyGroup>
-    <PostBuildEvent>AssemblyInfoUtil.exe $(ProjectDir)Properties\AssemblyInfo.cs -inc:3 -fv -cy -onlywhenmodified</PostBuildEvent>
-  </PropertyGroup>
-  <PropertyGroup>
-    <PreBuildEvent></PreBuildEvent>
-  </PropertyGroup>
+
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
@@ -122,5 +129,13 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+
+  <PropertyGroup>
+      <PreBuildEvent>AssemblyInfoUtil.exe $(ProjectDir)Properties\AssemblyInfo.cs -inc:3 -fv -cy -onlywhenmodified</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent></PostBuildEvent>
+  </PropertyGroup>
+
   <Import Project="$(Custom_MSBuild_Targets)\WizardWrx_NuGet_Packages.TARGETS" Condition="Exists('$(Custom_MSBuild_Targets)\WizardWrx_NuGet_Packages.TARGETS')" />
 </Project>

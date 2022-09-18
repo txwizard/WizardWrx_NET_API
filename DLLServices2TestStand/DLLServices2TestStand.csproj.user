@@ -11,7 +11,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <StartWorkingDirectory>D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API</StartWorkingDirectory>
-    <StartArguments>ListObjectProperties</StartArguments>
+    <StartArguments>
+    </StartArguments>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>

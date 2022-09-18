@@ -85,10 +85,14 @@
 
 	2021/02/06 8.0     DAG At long last, this class exposes HTML entities and
                            such.
+
+    2022/07/10 9.0.197 DAG Add Unicode code points, overlooked until today.
     ============================================================================
 */
 
+
 using System;
+
 
 namespace WizardWrx
 {
@@ -463,12 +467,12 @@ namespace WizardWrx
                     @"{0,3:N0}" ,
                     _uintCode );
             }   // public string CodeAsDecimal getter method
-        }   // public string CodeAsDecimal
+        }   // public string CodeAsDecimal property
 
 
         /// <summary>
         /// Gets a string representation of the ASCII code as a hexadecimal
-        /// number.
+        /// number
         /// </summary>
         public string CodeAsHexadecimal
         {
@@ -478,7 +482,21 @@ namespace WizardWrx
                     @"0x{0:x2}" ,
                     _uintCode );
             }   // public string CodeAsHexadecimal getter method
-        }   // public string CodeAsHexadecimal
+        }   // public string CodeAsHexadecimal property
+
+
+        /// <summary>
+        /// Gets a string representation of the Unicode code point
+        /// </summary>
+        public string UnicodeCodePoint
+        {
+            get
+            {
+                return string.Format (
+                    @"\u00{0:x2}" ,
+                    _uintCode );
+            }   // public string UnicodeCodePoint getter method
+        }   // public string UnicodeCodePoint property
 
 
         /// <summary>
@@ -493,8 +511,8 @@ namespace WizardWrx
 					return SpecialStrings.EMPTY_STRING;
 				else
 					return _strComment;
-			}	// Comment property get method
-		}	// Comment property
+			}   // Comment property get method
+        }	// public string Comment property
 
 
         /// <summary>
