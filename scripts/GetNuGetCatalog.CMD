@@ -1,1 +1,0 @@
-C:/bin/GetNuGetCatalog.CMD

@@ -3631,7 +3631,20 @@
             are truly equal, and that local and UTC times are unambiguous.
             </remarks>
         </member>
-        <member name="M:WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledLocalFirst(System.String)">
+        <member name="M:WizardWrx.Core.TraceLogger.ForceAutoFlush(System.IO.StreamWriter)">
+            <summary>
+            Force a System.IO.StreamWriter into AutoFlush mode.
+            </summary>
+            <param name="psw">
+            Specify the System.IO.StreamWriter to make AutoFlush.
+            </param>
+            <returns>
+            The return value is True when <paramref name="psw"/> is already set
+            to AutoFlush mode. Otherwise, the mode is set, and the return value
+            is False, to indicate that it wasn't set on entry.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledLocalFirst(System.String,System.IO.StreamWriter)">
             <summary>
             Write a time stamped trace log message, using the local and UTC 
             machine times as its time stamp prefix, local first, followed by
@@ -3641,8 +3654,28 @@
             The specified string is written verbatim, immediately after the time
             stamp.
             </param>
+            <param name="psw">
+            When supplied, this StreamWriter takes the place of the Trace Listener.
+            </param>
         </member>
-        <member name="M:WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledUTCFirst(System.String)">
+        <member name="M:WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledLocalFirstWithPassThrough(System.String,System.IO.StreamWriter)">
+            <summary>
+            Call WriteWithBothTimesLabeledLocalFirst to write the message either
+            to the active Trace Listener or the alternate StreamWriter, then
+            return the message to the calling routine.
+            </summary>
+            <param name="pstrMessage">
+            The specified string is written verbatim, immediately after the time
+            stamp.
+            </param>
+            <param name="psw">
+            When supplied, this StreamWriter takes the place of the Trace Listener.
+            </param>
+            <returns>
+            The return value is a copy of <paramref name="pstrMessage"/>.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledUTCFirst(System.String,System.IO.StreamWriter)">
             <summary>
             Write a time stamped trace log message, using the local and UTC 
             machine times as its time stamp prefix, UTC first, followed by
@@ -3652,8 +3685,28 @@
             The specified string is written verbatim, immediately after the time
             stamp.
             </param>
+            <param name="psw">
+            When supplied, this StreamWriter takes the place of the Trace Listener.
+            </param>
         </member>
-        <member name="M:WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledLocalFirst(System.String)">
+        <member name="M:WizardWrx.Core.TraceLogger.WriteWithBothTimesLabeledUTCFirstWithPassTrhough(System.String,System.IO.StreamWriter)">
+            <summary>
+            Call WriteWithBothTimesLabeledUTCFirst and write the message to the
+            active Trace Listener or the supplied StreamWriter, then return the
+            message to the calling routine.
+            </summary>
+            <param name="pstrMessage">
+            The specified string is written verbatim, immediately after the time
+            stamp.
+            </param>
+            <param name="psw">
+            When supplied, this StreamWriter takes the place of the Trace Listener.
+            </param>
+            <returns>
+            The return value is a copy of <paramref name="pstrMessage"/>.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledLocalFirst(System.String,System.IO.StreamWriter)">
             <summary>
             Write a time stamped trace log message, using the local and UTC 
             machine times as its time stamp prefix, local first, followed by
@@ -3663,8 +3716,28 @@
             The specified string is written verbatim, immediately after the time
             stamp.
             </param>
+            <param name="psw">
+            When supplied, this StreamWriter takes the place of the Trace Listener.
+            </param>
         </member>
-        <member name="M:WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledUTCFirst(System.String)">
+        <member name="M:WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledLocalFirstWithPassThrough(System.String,System.IO.StreamWriter)">
+            <summary>
+            Call WriteWithBothTimesUnlabeledLocalFirst and write the message to
+            the active Trace Listener or the supplied StreamWriter, then return
+            the message to the calling routine.
+            </summary>
+            <param name="pstrMessage">
+            The specified string is written verbatim, immediately after the time
+            stamp.
+            </param>
+            <param name="psw">
+            When supplied, this StreamWriter takes the place of the Trace Listener.
+            </param>
+            <returns>
+            The return value is a copy of <paramref name="pstrMessage"/>.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledUTCFirst(System.String,System.IO.StreamWriter)">
             <summary>
             Write a time stamped trace log message, using the local and UTC 
             machine times as its time stamp prefix, UTC first, followed by
@@ -3674,8 +3747,28 @@
             The specified string is written verbatim, immediately after the time
             stamp.
             </param>
+            <param name="psw">
+            When supplied, this StreamWriter takes the place of the Trace Listener.
+            </param>
         </member>
-        <member name="M:WizardWrx.Core.TraceLogger.WriteWithLabeledLocalTime(System.String)">
+        <member name="M:WizardWrx.Core.TraceLogger.WriteWithBothTimesUnlabeledUTCFirstWithPassThrough(System.String,System.IO.StreamWriter)">
+            <summary>
+            Call WriteWithBothTimesUnlabeledUTCFirst and write the message to
+            the active Trace Listener or the supplied StreamWriter, then return
+            the message to the calling routine.
+            </summary>
+            <param name="pstrMessage">
+            The specified string is written verbatim, immediately after the time
+            stamp.
+            </param>
+            <param name="psw">
+            When supplied, this StreamWriter takes the place of the Trace Listener.
+            </param>
+            <returns>
+            The return value is a copy of <paramref name="pstrMessage"/>.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.Core.TraceLogger.WriteWithLabeledLocalTime(System.String,System.IO.StreamWriter)">
             <summary>
             Write a time stamped trace log message, using the local machine time
             as its time stamp prefix.
@@ -3684,8 +3777,28 @@
             The specified string is written verbatim, immediately after the time
             stamp.
             </param>
+            <param name="psw">
+            When supplied, this StreamWriter takes the place of the Trace Listener.
+            </param>
         </member>
-        <member name="M:WizardWrx.Core.TraceLogger.WriteWithUnlabeledLocalTime(System.String)">
+        <member name="M:WizardWrx.Core.TraceLogger.WriteWithLabeledLocalTimeWithPassThrough(System.String,System.IO.StreamWriter)">
+            <summary>
+            Call WriteWithLabeledLocalTime and write the message to the active
+            Trace Listener or the supplied StreamWriter, then return the message
+            to the calling routine.
+            </summary>
+            <param name="pstrMessage">
+            The specified string is written verbatim, immediately after the time
+            stamp.
+            </param>
+            <param name="psw">
+            When supplied, this StreamWriter takes the place of the Trace Listener.
+            </param>
+            <returns>
+            The return value is a copy of <paramref name="pstrMessage"/>.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.Core.TraceLogger.WriteWithUnlabeledLocalTime(System.String,System.IO.StreamWriter)">
             <summary>
             Write a time stamped trace log message, using the local machine time
             as its time stamp prefix.
@@ -3694,8 +3807,28 @@
             The specified string is written verbatim, immediately after the time
             stamp.
             </param>
+            <param name="psw">
+            When supplied, this StreamWriter takes the place of the Trace Listener.
+            </param>
         </member>
-        <member name="M:WizardWrx.Core.TraceLogger.WriteWithLabeledUTCTime(System.String)">
+        <member name="M:WizardWrx.Core.TraceLogger.WriteWithUnlabeledLocalTimeWithPassThrough(System.String,System.IO.StreamWriter)">
+            <summary>
+            Call WriteWithUnlabeledLocalTime and write the message to the active
+            Trace Listener or the supplied StreamWriter, then return the message
+            to the calling routine.
+            </summary>
+            <param name="pstrMessage">
+            The specified string is written verbatim, immediately after the time
+            stamp.
+            </param>
+            <param name="psw">
+            When supplied, this StreamWriter takes the place of the Trace Listener.
+            </param>
+            <returns>
+            The return value is a copy of <paramref name="pstrMessage"/>.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.Core.TraceLogger.WriteWithLabeledUTCTime(System.String,System.IO.StreamWriter)">
             <summary>
             Write a time stamped trace log message, using the UTC machine time
             as its time stamp prefix.
@@ -3704,8 +3837,28 @@
             The specified string is written verbatim, immediately after the time
             stamp.
             </param>
+            <param name="psw">
+            When supplied, this StreamWriter takes the place of the Trace Listener.
+            </param>
         </member>
-        <member name="M:WizardWrx.Core.TraceLogger.WriteWithUnlabeledUTCTime(System.String)">
+        <member name="M:WizardWrx.Core.TraceLogger.WriteWithLabeledUTCTimeWithPassThrough(System.String,System.IO.StreamWriter)">
+            <summary>
+            Call WriteWithLabeledUTCTime and write the message to the active
+            Trace Listener or the supplied StreamWriter, then return the message
+            to the calling routine.
+            </summary>
+            <param name="pstrMessage">
+            The specified string is written verbatim, immediately after the time
+            stamp.
+            </param>
+            <param name="psw">
+            When supplied, this StreamWriter takes the place of the Trace Listener.
+            </param>
+            <returns>
+            The return value is a copy of <paramref name="pstrMessage"/>.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.Core.TraceLogger.WriteWithUnlabeledUTCTime(System.String,System.IO.StreamWriter)">
             <summary>
             Write a time stamped trace log message, using the UTC machine time
             as its time stamp prefix.
@@ -3714,6 +3867,26 @@
             The specified string is written verbatim, immediately after the time
             stamp.
             </param>
+            <param name="psw">
+            When supplied, this StreamWriter takes the place of the Trace Listener.
+            </param>
+        </member>
+        <member name="M:WizardWrx.Core.TraceLogger.WriteWithUnlabeledUTCTimeWithPassThrough(System.String,System.IO.StreamWriter)">
+            <summary>
+            Call WriteWithUnlabeledUTCTime and write the message to the active
+            Trace Listener or the supplied StreamWriter, then return the message
+            to the calling routine.
+            </summary>
+            <param name="pstrMessage">
+            The specified string is written verbatim, immediately after the time
+            stamp.
+            </param>
+            <param name="psw">
+            When supplied, this StreamWriter takes the place of the Trace Listener.
+            </param>
+            <returns>
+            The return value is a copy of <paramref name="pstrMessage"/>.
+            </returns>
         </member>
         <member name="M:WizardWrx.Core.TraceLogger.ReplaceNewlines(System.String)">
             <summary>
@@ -7832,12 +8005,22 @@
             coerced to lower case.
             </returns>
         </member>
-        <member name="M:WizardWrx.StringExtensions.Chop(System.String)">
+        <member name="M:WizardWrx.StringExtensions.Chop(System.String,System.Boolean)">
             <summary>
             Return a new string with the terminal newline, if present, removed.
             </summary>
             <param name="pstrIn">
             Specify the string to be chopped.
+            </param>
+            <param name="pfIncludeNBSP">
+            <para>
+            Specify TRUE to add the nonbreaking space to the chopping block,
+            thereby saving a call to ChopNBSP to handle the third case.
+            </para>
+            <para>
+            Since this argument is made optional and defaulted to False, this
+            routine is fully baclwards compatible.
+            </para>
             </param>
             <returns>
             The chopped string is returned, minus its newline if it contained
@@ -7851,6 +8034,33 @@
             <see cref="F:WizardWrx.SpecialStrings.STRING_SPLIT_CARRIAGE_RETURN"/>
             <see cref="F:WizardWrx.SpecialStrings.STRING_SPLIT_LINEFEED"/>
             <see cref="P:System.Environment.NewLine"/>
+        </member>
+        <member name="M:WizardWrx.StringExtensions.ChopNBSP(System.String)">
+            <summary>
+            When the last character of string <paramref name="pstrStringToTrim"/>
+            is a nonbreaking space, remove it. Otherwise, return a copy of the
+            input string.
+            </summary>
+            <param name="pstrStringToTrim">
+            <para>
+            This string is anticipated to end with an unwanted nonbreaking
+            space. Note that implemtnation as an extension method makes this
+            argument both implicit and hidden from the IDE.
+            </para>
+            <para>
+            The empty string is a degenerate case, which returns another empty
+            string.
+            </para>
+            <para>
+            A null reference returns another null reference. Give me nothing and
+            I return nothing.
+            </para>
+            </param>
+            <returns>
+            The return value is the input string, minus its last character when
+            the last character is a nonbreaking space. Otherwise, the return
+            value is a copy of the original string.
+            </returns>
         </member>
         <member name="M:WizardWrx.StringExtensions.CountCharacterOccurrences(System.String,System.Char)">
              <summary>

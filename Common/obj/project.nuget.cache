@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "DBHh4uvTkAev3L5Ub6/wcNHuzwD7csI3/8jTQ505VCbhM8dV7OovKxdycwM5KyrkY6h/J8da0ova7H8kRZc8fg==",
+  "success": true,
+  "projectFilePath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Common\\Common.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\txwiz\\.nuget\\packages\\wizardwrx.bitmath\\4.3.125.29248\\wizardwrx.bitmath.4.3.125.29248.nupkg.sha512"
+  ],
+  "logs": []
+}

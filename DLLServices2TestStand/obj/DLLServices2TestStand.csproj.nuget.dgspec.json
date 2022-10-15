@@ -1,0 +1,439 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\DLLServices2TestStand\\DLLServices2TestStand.csproj": {}
+  },
+  "projects": {
+    "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\ASCIIInfo\\ASCIIInfo.csproj": {
+      "restore": {
+        "projectUniqueName": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\ASCIIInfo\\ASCIIInfo.csproj",
+        "projectName": "ASCIIInfo",
+        "projectPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\ASCIIInfo\\ASCIIInfo.csproj",
+        "frameworks": {
+          "net35-client": {
+            "projectReferences": {
+              "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Common\\Common.csproj": {
+                "projectPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Common\\Common.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net35-client": {}
+      }
+    },
+    "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\AssemblyUtils\\AssemblyUtils.csproj": {
+      "restore": {
+        "projectUniqueName": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\AssemblyUtils\\AssemblyUtils.csproj",
+        "projectName": "AssemblyUtils",
+        "projectPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\AssemblyUtils\\AssemblyUtils.csproj",
+        "frameworks": {
+          "net35-client": {
+            "projectReferences": {
+              "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Common\\Common.csproj": {
+                "projectPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Common\\Common.csproj"
+              },
+              "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Core\\Core.csproj": {
+                "projectPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Core\\Core.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net35-client": {}
+      }
+    },
+    "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Common\\Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Common\\Common.csproj",
+        "projectName": "Common",
+        "projectPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Common\\Common.csproj",
+        "packagesPath": "C:\\Users\\txwiz\\.nuget\\packages\\",
+        "outputPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\txwiz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net35-client"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net35-client": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net35-client": {
+          "dependencies": {
+            "WizardWrx.BitMath": {
+              "target": "Package",
+              "version": "[4.3.125.29248, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    },
+    "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\ConsoleStreams\\ConsoleStreams.csproj": {
+      "restore": {
+        "projectUniqueName": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\ConsoleStreams\\ConsoleStreams.csproj",
+        "projectName": "ConsoleStreams",
+        "projectPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\ConsoleStreams\\ConsoleStreams.csproj",
+        "frameworks": {
+          "net35-client": {
+            "projectReferences": {
+              "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Common\\Common.csproj": {
+                "projectPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Common\\Common.csproj"
+              },
+              "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Core\\Core.csproj": {
+                "projectPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Core\\Core.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net35-client": {}
+      }
+    },
+    "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Core\\Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Core\\Core.csproj",
+        "projectName": "Core",
+        "projectPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Core\\Core.csproj",
+        "packagesPath": "C:\\Users\\txwiz\\.nuget\\packages\\",
+        "outputPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\txwiz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net35-client"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net35-client": {
+            "projectReferences": {
+              "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Common\\Common.csproj": {
+                "projectPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Common\\Common.csproj"
+              },
+              "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\FormatStringEngine\\FormatStringEngine.csproj": {
+                "projectPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\FormatStringEngine\\FormatStringEngine.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net35-client": {
+          "dependencies": {
+            "WizardWrx.BitMath": {
+              "target": "Package",
+              "version": "[4.3.125.29248, )"
+            },
+            "WizardWrx.BitMath": {
+              "target": "Package",
+              "version": "[4.3.125.29248, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    },
+    "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\DiagnosticInfo\\DiagnosticInfo.csproj": {
+      "restore": {
+        "projectUniqueName": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\DiagnosticInfo\\DiagnosticInfo.csproj",
+        "projectName": "DiagnosticInfo",
+        "projectPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\DiagnosticInfo\\DiagnosticInfo.csproj",
+        "frameworks": {
+          "net45": {
+            "projectReferences": {
+              "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Common\\Common.csproj": {
+                "projectPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Common\\Common.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net45": {}
+      }
+    },
+    "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\DLLConfigurationManager\\DLLConfigurationManager.csproj": {
+      "restore": {
+        "projectUniqueName": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\DLLConfigurationManager\\DLLConfigurationManager.csproj",
+        "projectName": "DLLConfigurationManager",
+        "projectPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\DLLConfigurationManager\\DLLConfigurationManager.csproj",
+        "frameworks": {
+          "net35-client": {
+            "projectReferences": {
+              "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\AssemblyUtils\\AssemblyUtils.csproj": {
+                "projectPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\AssemblyUtils\\AssemblyUtils.csproj"
+              },
+              "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Common\\Common.csproj": {
+                "projectPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Common\\Common.csproj"
+              },
+              "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\ConsoleStreams\\ConsoleStreams.csproj": {
+                "projectPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\ConsoleStreams\\ConsoleStreams.csproj"
+              },
+              "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Core\\Core.csproj": {
+                "projectPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Core\\Core.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net35-client": {}
+      }
+    },
+    "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\DLLServices2TestStand\\DLLServices2TestStand.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\DLLServices2TestStand\\DLLServices2TestStand.csproj",
+        "projectName": "DLLServices2TestStand",
+        "projectPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\DLLServices2TestStand\\DLLServices2TestStand.csproj",
+        "packagesPath": "C:\\Users\\txwiz\\.nuget\\packages\\",
+        "outputPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\DLLServices2TestStand\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\txwiz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net452"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net452": {
+            "projectReferences": {
+              "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\ASCIIInfo\\ASCIIInfo.csproj": {
+                "projectPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\ASCIIInfo\\ASCIIInfo.csproj"
+              },
+              "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\AssemblyUtils\\AssemblyUtils.csproj": {
+                "projectPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\AssemblyUtils\\AssemblyUtils.csproj"
+              },
+              "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Common\\Common.csproj": {
+                "projectPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Common\\Common.csproj"
+              },
+              "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\ConsoleStreams\\ConsoleStreams.csproj": {
+                "projectPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\ConsoleStreams\\ConsoleStreams.csproj"
+              },
+              "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Core\\Core.csproj": {
+                "projectPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Core\\Core.csproj"
+              },
+              "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\DiagnosticInfo\\DiagnosticInfo.csproj": {
+                "projectPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\DiagnosticInfo\\DiagnosticInfo.csproj"
+              },
+              "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\DLLConfigurationManager\\DLLConfigurationManager.csproj": {
+                "projectPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\DLLConfigurationManager\\DLLConfigurationManager.csproj"
+              },
+              "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\EmbeddedTextFile\\EmbeddedTextFile.csproj": {
+                "projectPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\EmbeddedTextFile\\EmbeddedTextFile.csproj"
+              },
+              "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\FormatStringEngine\\FormatStringEngine.csproj": {
+                "projectPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\FormatStringEngine\\FormatStringEngine.csproj"
+              },
+              "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\MoreMath\\MoreMath.csproj": {
+                "projectPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\MoreMath\\MoreMath.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net452": {
+          "dependencies": {
+            "WizardWrx.AnyCSV": {
+              "target": "Package",
+              "version": "[7.2.145, )"
+            },
+            "WizardWrx.AnyCSV": {
+              "target": "Package",
+              "version": "[7.2.145, )"
+            },
+            "WizardWrx.BitMath": {
+              "target": "Package",
+              "version": "[4.3.125.29248, )"
+            },
+            "WizardWrx.BitMath": {
+              "target": "Package",
+              "version": "[4.3.125.29248, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    },
+    "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\EmbeddedTextFile\\EmbeddedTextFile.csproj": {
+      "restore": {
+        "projectUniqueName": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\EmbeddedTextFile\\EmbeddedTextFile.csproj",
+        "projectName": "EmbeddedTextFile",
+        "projectPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\EmbeddedTextFile\\EmbeddedTextFile.csproj",
+        "frameworks": {
+          "net35-client": {
+            "projectReferences": {
+              "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\AssemblyUtils\\AssemblyUtils.csproj": {
+                "projectPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\AssemblyUtils\\AssemblyUtils.csproj"
+              },
+              "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Common\\Common.csproj": {
+                "projectPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Common\\Common.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net35-client": {}
+      }
+    },
+    "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\FormatStringEngine\\FormatStringEngine.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\FormatStringEngine\\FormatStringEngine.csproj",
+        "projectName": "FormatStringEngine",
+        "projectPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\FormatStringEngine\\FormatStringEngine.csproj",
+        "packagesPath": "C:\\Users\\txwiz\\.nuget\\packages\\",
+        "outputPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\FormatStringEngine\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\txwiz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net35-client"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net35-client": {
+            "projectReferences": {
+              "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\ASCIIInfo\\ASCIIInfo.csproj": {
+                "projectPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\ASCIIInfo\\ASCIIInfo.csproj"
+              },
+              "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Common\\Common.csproj": {
+                "projectPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Common\\Common.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net35-client": {
+          "dependencies": {
+            "WizardWrx.AnyCSV": {
+              "target": "Package",
+              "version": "[7.2.145, )"
+            },
+            "WizardWrx.BitMath": {
+              "target": "Package",
+              "version": "[4.3.125.29248, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    },
+    "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\MoreMath\\MoreMath.csproj": {
+      "restore": {
+        "projectUniqueName": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\MoreMath\\MoreMath.csproj",
+        "projectName": "MoreMath",
+        "projectPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\MoreMath\\MoreMath.csproj",
+        "frameworks": {
+          "net45": {
+            "projectReferences": {
+              "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Common\\Common.csproj": {
+                "projectPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Common\\Common.csproj"
+              },
+              "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\DiagnosticInfo\\DiagnosticInfo.csproj": {
+                "projectPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\DiagnosticInfo\\DiagnosticInfo.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net45": {}
+      }
+    }
+  }
+}

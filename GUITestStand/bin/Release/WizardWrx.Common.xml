@@ -3323,6 +3323,54 @@
              "A" to MatchArbitraryHtmlClosingTag.
              </summary>
         </member>
+        <member name="M:WizardWrx.RegExpSupport.ExtractTextBetweenMatches(System.Text.RegularExpressions.MatchCollection,System.Int32,System.String)">
+            <summary>
+            Given the System.Text.RegularExpression.Match at index <paramref name="pintMatchIndex"/>
+            in System.Text.RegularExpression.MatchCollection <paramref name="prxpMatchCollection"/>,
+            return the substring that follows the matching text in string <paramref name="pstrInputString"/>
+            up to the beginning of the next match, or the rest of the string inthe case of the last match.
+            </summary>
+            <param name="prxpMatchCollection">
+            Pass in a reference to the System.Text.RegularExpression.MatchCollection attached to a
+            System.Text.RegularExpression.Regex that has one or more matches.
+            </param>
+            <param name="pintMatchIndex">
+            Pass in an integer that represents the index of the Match in <paramref name="prxpMatchCollection"/>
+            for which to return the text that follows the text that matched it.
+            This integer must be greater than or equal to zero and less than the
+            Count property on MatchCollection <paramref name="prxpMatchCollection"/>.
+            </param>
+            <param name="pstrInputString">
+            Pass in a reference to the string that was fed into the <paramref name="prxpMatchCollection"/>
+            constructor. This value cnnot be NULL or the empty string. It is the
+            caller's responsiblity to pass in the same string that was passed
+            into the constructor that created the <paramref name="prxpMatchCollection"/>
+            because this function makes no efrort to use Reflection to test it.
+            </param>
+            <returns>
+            There are two possible return values:
+            <list type="number">
+            <item>
+            When <paramref name="pintMatchIndex"/> is the index of the the last
+            Match in <paramref name="prxpMatchCollection"/>, the return value is
+            a substring comprising the text that begins immediately after the
+            last character of the Value of the Match at index
+            <paramref name="pintMatchIndex"/> in the collection and continues to
+            the end of string <paramref name="pstrInputString"/>.
+            </item>
+            <item>
+            In all other cases, the return value is a substring comprising the
+            text that begins immediately after the last character of the Value
+            of the Match at index <paramref name="pintMatchIndex"/> in the
+            collection and continues up to the character at the position that
+            corresponds to the Index of the next Match in the collection.
+            </item>
+            </list>
+            </returns>
+            <remarks>
+            This method was perfected independently in my RegExpLab project.
+            </remarks>
+        </member>
         <member name="M:WizardWrx.RegExpSupport.MatchAnyCharacterGreedy">
             <summary>
             Return a string that matches the maximum number of any character.
@@ -3816,6 +3864,14 @@
             <seealso cref="F:WizardWrx.SpecialStrings.STRING_SPLIT_CARRIAGE_RETURN"/>
             <seealso cref="F:WizardWrx.SpecialStrings.STRING_SPLIT_LINEFEED"/>
         </member>
+        <member name="F:WizardWrx.SpecialCharacters.LOGICAL_NEGATE">
+            <summary>
+            Thanks to a suggestion from my esteemed colleague Bud Pass, this is my new
+            preferred field delimiter character. It supersedes my favorite for many
+            years, PIPE_CHAR.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialCharacters.PIPE_CHAR"/>
+        </member>
         <member name="F:WizardWrx.SpecialCharacters.MINUS">
             <summary>
             Use this character anywhere in your code that requires a plus sign
@@ -3876,6 +3932,7 @@
             <seealso cref="F:WizardWrx.SpecialCharacters.COLON"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.COMMA"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.HASH_TAG"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.LOGICAL_NEGATE"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.PERCENT_SIGN"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.SEMICOLON"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.TAB_CHAR"/>
@@ -4037,6 +4094,14 @@
             <seealso cref="F:WizardWrx.SpecialStrings.ASP_APP_DIR_DEFAULT_START_PAGE"/>
             <seealso cref="F:WizardWrx.SpecialStrings.ASP_APP_START_PAGE_KEY"/>
             <seealso cref="F:WizardWrx.SpecialStrings.ASP_RELATIVE_PATH_BEGIN"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.BACK2BACK_NEWLINES">
+            <summary>
+            Substitute this string for Environment.NewLine in formatted strings
+            that were designed for output as console messages when you want or
+            need to return them as long strings. The effect is the same as using
+            Console.WriteLine in place of StringBuilder.AppendFormat.
+            </summary>
         </member>
         <member name="F:WizardWrx.SpecialStrings.BRACE_LEFT">
             <summary>
@@ -4294,38 +4359,106 @@
             Use this constant to specify a hash-tag literal character
             </summary>
         </member>
-        <member name="F:WizardWrx.SpecialStrings.HYPHEN">
-            <summary>
-            This is one of many single characters that are frequently needed as
-            single-character string constants.
-            </summary>
-            <seealso cref="F:WizardWrx.SpecialCharacters.HYPHEN"/>
-        </member>
         <member name="F:WizardWrx.SpecialStrings.HTML_COMMENT_PREFIX">
             <summary>
             Minimal HTML (and XML) comment prefix string.
             </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.HTML_COMMENT_PREFIX_SP"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.HTML_COMMENT_SUFFIX"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.HTML_COMMENT_SUFFIX_SP"/>
         </member>
         <member name="F:WizardWrx.SpecialStrings.HTML_COMMENT_PREFIX_SP">
             <summary>
             HTML (and XML) comment prefix string, followed by a single space.
             </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.HTML_COMMENT_PREFIX"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.HTML_COMMENT_SUFFIX"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.HTML_COMMENT_SUFFIX_SP"/>
         </member>
         <member name="F:WizardWrx.SpecialStrings.HTML_COMMENT_SUFFIX">
             <summary>
             Minimal HTML (and XML) comment suffix string.
             </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.HTML_COMMENT_PREFIX"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.HTML_COMMENT_PREFIX_SP"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.HTML_COMMENT_SUFFIX_SP"/>
         </member>
         <member name="F:WizardWrx.SpecialStrings.HTML_COMMENT_SUFFIX_SP">
             <summary>
             HTML (and XML) comment suffix string, preceded by a single space.
             </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.HTML_COMMENT_PREFIX"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.HTML_COMMENT_PREFIX_SP"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.HTML_COMMENT_SUFFIX"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.HTML_LINE_BREAK_LC">
+            <summary>
+            HTML line break (Break) tag, rendered as lower case characters.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.HTML_LINE_BREAK_UC"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.HTML_LINE_BREAK_UC">
+            <summary>
+            HTML line break (Break) tag, rendered as upper case characters
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.HTML_LINE_BREAK_LC"/>
         </member>
         <member name="F:WizardWrx.SpecialStrings.HTML_NONBREAKING_SPACE">
             <summary>
             Web Developers are always needing a non-breaking space, for use as
             filler, especially in dynamically generated tables.
             </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.HTML_NONBREAKING_SPACE_LC"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.HTML_NOLBREAKING_SPACE_UC"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.HTML_NONBREAKING_SPACE_LC">
+            <summary>
+            HTML nonbreaking space entity, rendered as lower case characters.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.HTML_NOLBREAKING_SPACE_UC">
+            <summary>
+            HTML nonbreaking space entity, rendered as upper case characters.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.HTML_PARAGRAPH_OPEN_TAG_LC">
+            <summary>
+            HTML paragraph opening tag, rendered as lower case characters.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.HTML_PARAGRAPH_OPEN_TAG_UC"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.HTML_PARAGRAPH_CLOSE_TAG_LC"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.HTML_PARAGRAPH_CLOSE_TAG_UC"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.HTML_PARAGRAPH_OPEN_TAG_UC">
+            <summary>
+            HTML paragraph opening tag, rendered as upper case characters.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.HTML_PARAGRAPH_OPEN_TAG_LC"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.HTML_PARAGRAPH_CLOSE_TAG_LC"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.HTML_PARAGRAPH_CLOSE_TAG_UC"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.HTML_PARAGRAPH_CLOSE_TAG_LC">
+            <summary>
+            HTML paragraph closing tag, rendered as lower case characters.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.HTML_PARAGRAPH_CLOSE_TAG_UC"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.HTML_PARAGRAPH_OPEN_TAG_LC"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.HTML_PARAGRAPH_OPEN_TAG_UC"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.HTML_PARAGRAPH_CLOSE_TAG_UC">
+            <summary>
+            HTML paragraph closing tag, rendered as upper case characters.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.HTML_PARAGRAPH_CLOSE_TAG_LC"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.HTML_PARAGRAPH_OPEN_TAG_LC"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.HTML_PARAGRAPH_OPEN_TAG_UC"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.HYPHEN">
+            <summary>
+            This is one of many single characters that are frequently needed as
+            single-character string constants.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialCharacters.HYPHEN"/>
         </member>
         <member name="F:WizardWrx.SpecialStrings.LAST_ASCII_CHAR">
             <summary>

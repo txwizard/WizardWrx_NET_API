@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "se+b0yJrqFQmzFmsRHbUno4/JioN5zVxQ5y+kAhikx2NWjHhOaD6JTiWg8+57e5/mGeVGJqfCWQ1Xyp8d/dZwA==",
+  "success": true,
+  "projectFilePath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\FormatStringEngine\\FormatStringEngine.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\txwiz\\.nuget\\packages\\wizardwrx.anycsv\\7.2.145\\wizardwrx.anycsv.7.2.145.nupkg.sha512",
+    "C:\\Users\\txwiz\\.nuget\\packages\\wizardwrx.bitmath\\4.3.125.29248\\wizardwrx.bitmath.4.3.125.29248.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-        <releaseNotes>The last release updated the build number AFTER the project was built. More significantly, AssemblyInfo.cs was missing the AssemblyInformationalVersion attribute, causing the NuGet Gallery to report the AssemblyFileVersion, which is generally unchanged from release to release. Otherwise, this is a no-change release, as detailed in the most recent ChangeLog entry. Henceforth, independent release schedules as described in the immediately previous published version of this library will resume.</releaseNotes>
+        <releaseNotes>This release is an attempt to resolve the issue that dependencies aren't being advertised. Henceforth, independent release schedules as described in the immediately previous published version of this library will resume.</releaseNotes>
         <copyright>$copyright$</copyright>
     	<tags>STDOUT STDERR Errors Console Colors ConsoleColors</tags>
 	</metadata>
