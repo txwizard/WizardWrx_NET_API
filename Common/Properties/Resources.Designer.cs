@@ -142,11 +142,74 @@ namespace WizardWrx.Common.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The label row in embedded resource {0} is invalid.{3}Actual Label Row   = {1}{3}Expected Label Row = {2}.
+        /// </summary>
+        public static string ERRMSG_BAD_LABEL_ROW {
+            get {
+                return ResourceManager.GetString("ERRMSG_BAD_LABEL_ROW", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The field count in row {1} in embedded resource {0} is incorrect.{5}Actual Field Count   = {2}{5}Expected Field Count = {3}{5}Complete Row         = {4}.
+        /// </summary>
+        public static string ERRMSG_BAD_RECORD {
+            get {
+                return ResourceManager.GetString("ERRMSG_BAD_RECORD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unable to process string {0}.
         /// </summary>
         public static string ERRMSG_BADSTRING {
             get {
                 return ResourceManager.GetString("ERRMSG_BADSTRING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The key field in row {1} in embedded resource {0} is a duplicate.{4}Key value    = {2}{4}Complete row = {3}.
+        /// </summary>
+        public static string ERRMSG_DUPE_KEY {
+            get {
+                return ResourceManager.GetString("ERRMSG_DUPE_KEY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Resource {0} cannot be found in assembly {1}..
+        /// </summary>
+        public static string ERRMSG_EMBEDDED_RESOURCE_NOT_FOUND {
+            get {
+                return ResourceManager.GetString("ERRMSG_EMBEDDED_RESOURCE_NOT_FOUND", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An error occurred while reading data from resources embedded in an assembly.{3}Assembly Full Name     = {0}{3}Internal Resource Name = {1}{3}I/O Error Message      = {2}{3}{3}The associated Inner Exception may contain additional clues..
+        /// </summary>
+        public static string ERRMSG_EMBEDDED_RESOURCE_READ_ERROR {
+            get {
+                return ResourceManager.GetString("ERRMSG_EMBEDDED_RESOURCE_READ_ERROR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An error occurred while reading a file from resources embedded in an assembly.{3}Internal Name = {0}{3}Expected File Length (bytes) = {1}{3}Bytes successfully read = {2}.
+        /// </summary>
+        public static string ERRMSG_EMBEDDED_RESOURCE_READ_TRUNCATED {
+            get {
+                return ResourceManager.GetString("ERRMSG_EMBEDDED_RESOURCE_READ_TRUNCATED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Embedded key map {0} is empty..
+        /// </summary>
+        public static string ERRMSG_EMPTY_MAP {
+            get {
+                return ResourceManager.GetString("ERRMSG_EMPTY_MAP", resourceCulture);
             }
         }
         

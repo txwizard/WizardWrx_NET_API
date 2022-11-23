@@ -1,8 +1,8 @@
-﻿10/15/2022 00:14:10 (LOC) 10/15/2022 05:14:10 (UTC): Test 1 of 8: WriteWithBothTimesLabeledLocalFirst to the StreamWriter
-10/15/2022 05:14:10 (UTC) 10/15/2022 00:14:10 (LOC): Test 2 of 8: WriteWithBothTimesLabeledUTCFirst to the StreamWriter
-10/15/2022 00:14:10 (10/15/2022 05:14:10): Test 3 of 8: WriteWithBothTimesUnlabeledLocalFirst to the StreamWriter
-10/15/2022 05:14:10 (10/15/2022 00:14:10): Test 4 of 8: WriteWithBothTimesUnlabeledUTCFirst to the StreamWriter
-10/15/2022 00:14:10 LOC: Test 5 of 8: WriteWithLabeledLocalTime to the StreamWriter
-10/15/2022 05:14:10 UTC: Test 6 of 8: WriteWithLabeledUTCTime to the StreamWriter
-10/15/2022 00:14:10: Test 7 of 8: WriteWithUnlabeledLocalTime to the StreamWriter
-10/15/2022 05:14:10: Test 8 of 8: WriteWithUnlabeledUTCTime to the StreamWriter
+﻿11/23/2022 01:27:53 (LOC) 11/23/2022 07:27:53 (UTC): Test 1 of 8: WriteWithBothTimesLabeledLocalFirst to the StreamWriter
+11/23/2022 07:27:53 (UTC) 11/23/2022 01:27:53 (LOC): Test 2 of 8: WriteWithBothTimesLabeledUTCFirst to the StreamWriter
+11/23/2022 01:27:53 (11/23/2022 07:27:53): Test 3 of 8: WriteWithBothTimesUnlabeledLocalFirst to the StreamWriter
+11/23/2022 07:27:53 (11/23/2022 01:27:53): Test 4 of 8: WriteWithBothTimesUnlabeledUTCFirst to the StreamWriter
+11/23/2022 01:27:53 LOC: Test 5 of 8: WriteWithLabeledLocalTime to the StreamWriter
+11/23/2022 07:27:53 UTC: Test 6 of 8: WriteWithLabeledUTCTime to the StreamWriter
+11/23/2022 01:27:53: Test 7 of 8: WriteWithUnlabeledLocalTime to the StreamWriter
+11/23/2022 07:27:53: Test 8 of 8: WriteWithUnlabeledUTCTime to the StreamWriter

@@ -14,7 +14,7 @@
     Remarks:            The test cases are read from a delimited text file that
                         is loaded from an embedded resource.
 
-    License:            Copyright (C) 2012-2017, David A. Gray. 
+    License:            Copyright (C) 2012-2022, David A. Gray. 
 						All rights reserved.
 
                         Redistribution and use in source and binary forms, with
@@ -56,25 +56,30 @@
     Revision History
     ----------------------------------------------------------------------------
 
-    Date       Version Author Description
-    ---------- ------- ------ --------------------------------------------------
-    2014/02/17 2.2     DAG    Initial implementation.
+    Date       Version  Author Description
+    ---------- -------- ------ -------------------------------------------------
+    2014/02/17 2.2      DAG    Initial implementation.
     
-	2014/07/31 2.7     DAG    Move the test case file into the assembly, as a
-                              manifest resources, which also exercises the new
-                              LoadTextFileFromEntryAssembly method used to load
-                              it from the entry point assembly, which tests two
-                              of the three new methods for loading resources
-                              from assemblies.
+	2014/07/31 2.7      DAG    Move the test case file into the assembly, as a
+                               manifest resources, which also exercises the new
+                               LoadTextFileFromEntryAssembly method used to load
+                               it from the entry point assembly, which tests two
+                               of the three new methods for loading resources
+                               from assemblies.
 
-	2016/06/05 3.0     DAG    Break the dependency on WizardWrx.SharedUtl2.dll,
-                              correct misspelled words flagged by the spelling
-                              checker add-in, and incorporate my three-clause
-                              BSD license, and document why I suppressed warning
-                              CS0618. Please see item 2 in Remarks (above).
+	2016/06/05 3.0      DAG    Break the dependency on WizardWrx.SharedUtl2.dll,
+                               correct misspelled words flagged by the spelling
+                               checker add-in, and incorporate my three-clause
+                               BSD license, and document why I suppressed
+                               warning CS0618. Please see item 2 in Remarks
+                               (above).
 
-    2017/08/03 7.0     DAG    Move this class from WizardWrx.SharedUtl4.dll into
-                              WizardWrx.Core.dll.
+    2017/08/03 7.0      DAG    Move this class from WizardWrx.SharedUtl4.dll
+                               into WizardWrx.Core.dll.
+
+    2022/11/23 9.0.1545 DAG    Adjust to account for the consolidation of the
+                               WizardWrx.EmbeddedTextFile namespace into the
+                               root namespace and library WizardWrx.Common.dll.
     ============================================================================
 */
 
@@ -110,7 +115,7 @@ namespace DLLServices2TestStand
 
             try
             {
-                string [ ] astrCases = WizardWrx.EmbeddedTextFile.Readers.LoadTextFileFromEntryAssembly ( TEST_CASE_FILENAME );
+                string [ ] astrCases = EmbeddedTextFileReaders.LoadTextFileFromEntryAssembly ( TEST_CASE_FILENAME );
                    
                 int intNRecords = astrCases.Length;
 

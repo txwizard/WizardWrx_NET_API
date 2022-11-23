@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-        <releaseNotes>This release is an attempt to resolve the issue that dependencies aren't being advertised. Henceforth, independent release schedules as described in the immediately previous published version of this library will resume.</releaseNotes>
+        <releaseNotes>Replace the local copy of the Readers class that I copied from WizardWrx.EmbeddedTextFile with a renamed EmbeddedTextFileReaders class, moved from the same place before the entire project was deleted from the constellation.</releaseNotes>
         <copyright>$copyright$</copyright>
 	    <tags>ASCII Metadata Table</tags>
   	</metadata>

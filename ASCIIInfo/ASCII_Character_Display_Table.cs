@@ -77,6 +77,12 @@
 
 	2021/02/05 8.0     DAG At long last, this class exposes HTML entities and
                            URL encoding strings.
+
+    2022/11/23 9.0.209 DAG Replace the local copy of the Readers class that I
+                           copied from WizardWrx.EmbeddedTextFile with a renamed
+                           EmbeddedTextFileReaders class, moved from the same
+                           place before the entire project was deleted from the
+                           constellation.
     ============================================================================
 */
 
@@ -214,7 +220,7 @@ namespace WizardWrx
 
             const string LABEL_ROW = "Code\tCharType\tSubtype\tCHAR\tDESCRIPTION\tHTML Name\tDisplay\tComment";
 
-            string [ ] astrASCIITable = Readers.LoadTextFileFromCallingAssembly ( ASCII_TABLE_SOURCE );
+            string [ ] astrASCIITable = EmbeddedTextFileReaders.LoadTextFileFromCallingAssembly ( ASCII_TABLE_SOURCE );
 
             if ( astrASCIITable.Length == EXPECTED_ROW_COUNT )
             {

@@ -35,3 +35,5 @@ D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStr
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\obj\Debug\WizardWrx.FormatStringEngine.dll
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\obj\Debug\WizardWrx.FormatStringEngine.pdb
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\obj\Debug\FormatStringEngine.csproj.AssemblyReference.cache
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\bin\Debug\WizardWrx.AnyCSV.dll
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\bin\Debug\WizardWrx.BitMath.dll

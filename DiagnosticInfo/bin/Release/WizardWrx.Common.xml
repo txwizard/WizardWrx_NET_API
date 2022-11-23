@@ -208,6 +208,112 @@
             </remarks>
             <see href="https://stackoverflow.com/questions/34712363/how-to-remove-an-element-from-an-array-in-c-sharp#:~:text=Since%20arrays%20are%20immutable%20in%20C%23%2C%20you%20can%27t,call%20it%20like%20that%3A%20myarr%20%3D%20myarr.RemoveAt%20%28index%29%3B"/>
         </member>
+        <member name="T:WizardWrx.ByteOrderMark">
+            <summary>
+            Use this class to evaluate arbitrary byte arrays for the presence of a Byte Order Mark.
+            </summary>
+        </member>
+        <member name="T:WizardWrx.ByteOrderMark.BOMType">
+            <summary>
+            Members of this enumeration report the type of byte order mark, if
+            any, present at its beginning.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ByteOrderMark.BOMType.None">
+            <summary>
+            The array has no Byte Order Mark.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ByteOrderMark.BOMType.UTF8">
+            <summary>
+            The array has a UTF-8 Byte Order Mark.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ByteOrderMark.BOMType.UTF16LE">
+            <summary>
+            The array has a UTF-16 Byte Order Mark that indicates 
+            little-endian character encoding.
+            </summary>
+            <remarks>
+            The little-endian encoding is the native encoding of the entire
+            Intel processor family and its clones (e. g., AMD).
+            </remarks>
+        </member>
+        <member name="F:WizardWrx.ByteOrderMark.BOMType.UTF16BE">
+            <summary>
+            The array has a UTF-16 Byte Order Mark that indicates big-endian
+            character encoding.
+            </summary>
+            <remarks>
+            The big-endian encoding is the native encoding of the MIPS Alpha
+            family of processors, among others.
+            </remarks>
+        </member>
+        <member name="F:WizardWrx.ByteOrderMark.BOMType.UnicodeLittleEndian">
+            <summary>
+            UnicodeLittleEndian is a synonym of UTF16LE, the encoding that
+            corresponds to the wide character encoding on Microsoft Windows.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ByteOrderMark.BOMType.UnicodeBigEndian">
+            <summary>
+            UnicodeLittleEndian is a synonym of UTF16BE, the encoding that
+            corresponds to the wide character encoding on Microsoft Windows,
+            running on a big-endian processor, which MAY include code that
+            runs on ARM processors.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ByteOrderMark.BOMType.UTF32LE">
+            <summary>
+            The array has a UTF-32 Byte Order Mark that indicates 
+            little-endian character encoding.
+            </summary>
+            <remarks>
+            This seldom-used encoding is defined for completeness, and in
+            anticipation of its usage increasing.
+            </remarks>
+        </member>
+        <member name="F:WizardWrx.ByteOrderMark.BOMType.UTF32BE">
+            <summary>
+            The array has a UTF-32 Byte Order Mark that indicates big-endian
+            character encoding.
+            </summary>
+            <remarks>
+            This seldom-used encoding is defined for completeness, and in
+            anticipation of its usage increasing.
+            </remarks>
+        </member>
+        <member name="M:WizardWrx.ByteOrderMark.#ctor(System.Byte[])">
+            <summary>
+            The only public constructor demands a reference to the byte array to evaluate.
+            </summary>
+            <param name="bytes">
+            Supply a reference to the byte array to test for a Byte Order Mark.
+            </param>
+        </member>
+        <member name="P:WizardWrx.ByteOrderMark.Kind">
+            <summary>
+            This read-only property returns the type of Byte Order Mark present
+            in the byte array that was supplied to the constructor.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.ByteOrderMark.Length">
+            <summary>
+            This read-only property returns the length of the Byte Order Mark.
+            </summary>
+            <remarks>
+            Since the property is initialized on first use, it may display an
+            invalid value of -1 in a watch window.
+            </remarks>
+        </member>
+        <member name="M:WizardWrx.ByteOrderMark.TestForBOM">
+            <summary>
+            If it hasn't been directly called, the first call to either property
+            getter calls this method, so that the work required to evaluate the
+            array for a byte order mark is deferred until it is needed, and it
+            is never subsequently repeated for the lifetime of the instance.
+            </summary>
+        </member>
         <member name="T:WizardWrx.CSVFileInfo">
             <summary>
             Use these constants and service routines to simplify working with CSV
@@ -3056,6 +3162,197 @@
             value is an index.
             </summary>
         </member>
+        <member name="T:WizardWrx.EmbeddedTextFileReaders">
+            <summary>
+            This static class exposes methods for loading text from custom resources
+            that are embedded in an assembly.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.EmbeddedTextFileReaders.LoadTextFileFromCallingAssembly(System.String)">
+            <summary>
+            Load the lines of a plain ASCII text file that has been stored with
+            the assembly as a embedded resource into an array of native strings.
+            </summary>
+            <param name="pstrResourceName">
+            Specify the absolute (fully qualified) resource name, which is its
+            source file name appended to the default assembly namespace.
+            </param>
+            <returns>
+            The return value is an array of Unicode strings, each of which is
+            the text of a line from the original text file, sans terminator.
+            </returns>
+            <see cref="M:WizardWrx.EmbeddedTextFileReaders.LoadTextFileFromAnyAssembly(System.String,System.Reflection.Assembly)"/>
+            <seealso cref="M:WizardWrx.EmbeddedTextFileReaders.LoadTextFileFromEntryAssembly(System.String)"/>
+        </member>
+        <member name="M:WizardWrx.EmbeddedTextFileReaders.LoadTextFileFromEntryAssembly(System.String)">
+            <summary>
+            Load the lines of a plain ASCII text file that has been stored with
+            the assembly as a embedded resource into an array of native strings.
+            </summary>
+            <param name="pstrResourceName">
+            Specify the fully qualified resource name, which is its source file
+            name appended to the default application namespace.
+            </param>
+            <returns>
+            The return value is an array of Unicode strings, each of which is
+            the text of a line from the original text file, sans terminator.
+            </returns>
+            <see cref="M:WizardWrx.EmbeddedTextFileReaders.LoadTextFileFromAnyAssembly(System.String,System.Reflection.Assembly)"/>
+            <seealso cref="M:WizardWrx.EmbeddedTextFileReaders.LoadTextFileFromCallingAssembly(System.String)"/>
+        </member>
+        <member name="M:WizardWrx.EmbeddedTextFileReaders.LoadTextFileFromAnyAssembly(System.String,System.Reflection.Assembly)">
+            <summary>
+            Load the lines of a plain ASCII text file that has been stored with
+            a specified assembly as a embedded resource into an array of native
+            strings.
+            </summary>
+            <param name="pstrResourceName">
+            Specify the absolute (fully qualified) resource name, which is its
+            source file name appended to the default assembly namespace name.
+            </param>
+            <param name="pasmSource">
+            Pass in a reference to the Assembly from which you expect to load
+            the text file. Use any means at your disposal to obtain a reference
+            from the System.Reflection namespace.
+            </param>
+            <returns></returns>
+            <seealso cref="M:WizardWrx.EmbeddedTextFileReaders.LoadTextFileFromCallingAssembly(System.String)"/>
+            <seealso cref="M:WizardWrx.EmbeddedTextFileReaders.LoadTextFileFromEntryAssembly(System.String)"/>
+        </member>
+        <member name="M:WizardWrx.EmbeddedTextFileReaders.LoadBinaryResourceFromAnyAssembly(System.String,System.Reflection.Assembly)">
+             <summary>
+             Load the named embedded binary resource into a byte array.
+             </summary>
+             <param name="pstrResourceName">
+             Specify the external name of the file as it appears in the source
+             file tree and the Solution Explorer.
+             </param>
+             <param name="pasmSource">
+             Supply a System.Reflection.Assembly reference to the assembly that
+             contains the embedded resource.
+             </param>
+             <returns>
+             If the function succeeds, it returns a byte array containing the raw
+             bytes that comprise the embedded resource. Hence, this method can
+             load ANY embedded resource.
+             </returns>
+             <remarks>
+             Since all other resource types ultimately come out as byte arrays,
+             the text file loaders call upon this routine to extract their data.
+            
+             The notes in the cited reference refreshed my memory of observations
+             that I made and documented a couple of weeks ago. However, it was a
+             lot easier to let Google find a reference document, which was
+             intended for students in the Computer Science department at Columbia
+             University, at http://www1.cs.columbia.edu/~lok/csharp/refdocs/System.IO/types/Stream.html"/>,
+             than find my own source.
+             </remarks>
+             <exception cref="T:System.Exception">
+             An Exception (the base Exception type) arises when the method is
+             called with a <paramref name="pstrResourceName"/> value that cannot
+             be found in the <paramref name="pasmSource"/> assembly. When the
+             exception arises during the read operation, the generic Exception
+             wraps an InvalidDataException exception, which is returned as its
+             InnnerException property.
+             </exception>
+        </member>
+        <member name="M:WizardWrx.EmbeddedTextFileReaders.NameValueCollectionFromEmbbededList(System.String,System.String)">
+             <summary>
+             Construct a NameValueCollection from the tab delimited list read
+             from a text file stored in an embedded resource.
+             </summary>
+             <param name="pstrUnqualifiedResourceName">
+             Specify the name of the text file as it appears in the Solution
+             Explorer (or the Windows Explorer, for that matter).
+            
+             IMPORTNAT: The file must be marked as an embedded resource; do this
+             in the Solution Explorer by displaying the properties of the file.
+             </param>
+             <param name="pstrExpectedLabelRow">
+             The specified string is checked against the label row; unless both
+             are identical, the resource is assumed to be corrupted, and the
+             method throws an exception and croaks.
+             </param>
+             <returns>
+             If the method succeeds, it returns a NameValueCollection of
+             key/value pairs that contains exactly one value per key.
+             </returns>
+             <exception cref="T:System.ArgumentException">
+             And ArgumentException is thrown when the data file referenced by
+             <paramref name="pstrUnqualifiedResourceName"/> contains duplicate
+             keys, if one of the records contains two or more values, or the
+             input file is empty. The messages attached to the exceptions are
+             explicit about which of the three conditions caused the exception,
+             and they attempt to provide enough detail to enable the programmer
+             to quickly identify and resolve the problem.
+             </exception>
+        </member>
+        <member name="M:WizardWrx.EmbeddedTextFileReaders.StringFromANSICharacterArray(System.Byte[])">
+            <summary>
+            Transform an array of bytes, each representing one ANSI character, into a string.
+            </summary>
+            <param name="pabytWholeFile">
+            Specify the array to transform.
+            </param>
+            <returns>
+            The <paramref name="pabytWholeFile"/> array is returned as a string.
+            </returns>
+            <remarks>
+            I did this refactoring, thinking that I had a new use for the code,
+            only to realize as I finished cleaning it up that I can't use it,
+            because it deals in ANSI characters, and my present need involves
+            Unicode characters. Nevertheless, the exercise is not a total loss,
+            because it reminded me of the trick that I needed to transform the
+            array of Unicode characters into a string.
+            </remarks>
+        </member>
+        <member name="M:WizardWrx.EmbeddedTextFileReaders.StringOfLinesToArray(System.String)">
+            <summary>
+            Split a string containing lines of text into an array of strings.
+            </summary>
+            <param name="pstrLines">
+            String containing lines of text, terminated by CR/LF pairs.
+            </param>
+            <returns>
+            Array of strings, one line per string. Blank lines are preserved as
+            empty strings.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.EmbeddedTextFileReaders.StringOfLinesToArray(System.String,System.StringSplitOptions)">
+            <summary>
+            Split a string containing lines of text into an array of strings,
+            as modified by the StringSplitOptions flag.
+            </summary>
+            <param name="pstrLines">
+            String containing lines of text, terminated by CR/LF pairs.
+            </param>
+            <param name="penmStringSplitOptions">
+            A member of the StringSplitOptions enumeration, presumably other
+            than StringSplitOptions.None, which is assumed by the first
+            overload. The only option supported by version 2 of the Microsoft
+            .NET CLR is RemoveEmptyEntries.
+            </param>
+            <returns>
+            Array of strings, one line per string. Blank lines are preserved as
+            empty strings unless penmStringSplitOptions is RemoveEmptyEntries,
+            as is most likely to be the case.
+            </returns>
+            <remarks>
+            Use this overload to convert a string, discarding blank lines.
+            </remarks>
+        </member>
+        <member name="M:WizardWrx.EmbeddedTextFileReaders.StringToArray(System.String)">
+            <summary>
+            Return a one-element array containing the input string.
+            </summary>
+            <param name="pstr">
+            String to place into the returned array.
+            </param>
+            <returns>
+            Array of strings, containing exactly one element, which contains
+            the single input string.
+            </returns>
+        </member>
         <member name="T:WizardWrx.RegExpSupport">
             <summary>
             Constants, some built from others by static methods, to expedite common
@@ -3457,6 +3754,102 @@
             Expression to match the Title attribute of an ASP.NET page.
             </summary>
             <returns></returns>
+        </member>
+        <member name="T:WizardWrx.SortableManagedResourceItem">
+            <summary>
+            Instances of this class represent arbitrary managed resource items.
+            </summary>
+            <remarks>
+            This class is necessary because the public dictionary is opaque, so a
+            consumer has no control over the order in which they are returned. Since
+            this wrapper implements the IComparable interface, collections of these
+            objects can be sorted.
+            </remarks>
+        </member>
+        <member name="M:WizardWrx.SortableManagedResourceItem.#ctor">
+            <summary>
+            Other than satisfying the requirements of the IList interface, the
+            uninitialized object is useless.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.SortableManagedResourceItem.#ctor(System.String,System.Object)">
+            <summary>
+            This constructor creates a fully initialized instance from the data
+            in the Current property of the IDictionaryEnumerator object returned
+            by a ResourceSet instance.
+            </summary>
+            <param name="pstrName">
+            Set the Name to the string returned by the Key property of the
+            enumerator.
+            </param>
+            <param name="pobjValue">
+            Set the Value to the System.object returned by the Value property of
+            the enumerator.
+            </param>
+        </member>
+        <member name="P:WizardWrx.SortableManagedResourceItem.Name">
+            <summary>
+            The Name is the Name shown in the property sheet grid into which 
+            garden variety managed string resources are input.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.SortableManagedResourceItem.Value">
+            <summary>
+            The ResourceValue property is the Value property shown in the
+            property sheet grid into which garden variety managed string
+            resources are input, and its type is usually System.string.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.SortableManagedResourceItem.TypeName">
+            <summary>
+            Since the full type specification is accessible through the Value
+            property, and the string representation of the FullName is its most
+            useful property, it gets its own read only property, which also
+            returns just "string" for the common case, for which the prefix is
+            redundant.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.SortableManagedResourceItem.System#IComparable{WizardWrx#SortableManagedResourceItem}#CompareTo(WizardWrx.SortableManagedResourceItem)">
+            <summary>
+            Making the comparison based on the Name property permits sorting the
+            resources in the most logical order.
+            </summary>
+            <param name="other">
+            The explicit implementation puts the burden of enforcing type safety
+            on the runtime system.
+            </param>
+            <returns>
+            Since it is a pass-through of another CompareTo method, the return
+            type is guaranteed to adhere to the interface specification.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.SortableManagedResourceItem.GetInternalResourceName(System.String,System.Reflection.Assembly)">
+            <summary>
+            Use the list of Manifest Resource Names returned by method
+            GetManifestResourceNames on a specified assembly. Each of several
+            methods employs a different mechanism to identify the assembly of
+            interest.
+            </summary>
+            <param name="pstrResourceName">
+            Specify the name of the file from which the embedded resource was
+            created. Typically, this will be the local name of the file in the
+            source code tree.
+            </param>
+            <param name="pasmSource">
+            Pass a reference to the Assembly that is supposed to contain the
+            desired resource.
+            </param>
+            <returns>
+            If the function succeeds, the return value is the internal name of
+            the requested resource, which is fed to GetManifestResourceStream on
+            the same assembly, which returns a read-only Stream backed by the
+            embedded resource. If the specified resource is not found, it
+            returns null.
+            </returns>
+            <remarks>
+            Since I cannot imagine any use for this method beyond its
+            infrastructure role in this class, I marked it private.
+            </remarks>
         </member>
         <member name="T:WizardWrx.SpecialCharacters">
             <summary>
@@ -4485,6 +4878,15 @@
             The local loop-back has the reserved IP address of 127.0.0.1.
             </summary>
         </member>
+        <member name="F:WizardWrx.SpecialStrings.LOGICAL_NEGATE">
+            <summary>
+            Thanks to a suggestion from my esteemed colleague Bud Pass, this is my new
+            preferred field delimiter character. It supersedes my favorite for many
+            years, PIPE_CHAR.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.PIPE_CHAR"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.LOGICAL_NEGATE"/>
+        </member>
         <member name="F:WizardWrx.SpecialStrings.NONBREAKING_SPACE_CHAR">
             <summary>
             The non-breaking space character doesn't print; although the Unicode
@@ -4532,10 +4934,12 @@
             <seealso cref="F:WizardWrx.SpecialStrings.COLON"/>
             <seealso cref="F:WizardWrx.SpecialStrings.COMMA"/>
             <seealso cref="F:WizardWrx.SpecialStrings.HASH_TAG"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.LOGICAL_NEGATE"/>
             <seealso cref="F:WizardWrx.SpecialStrings.PERCENT_SIGN"/>
             <seealso cref="F:WizardWrx.SpecialStrings.SEMICOLON"/>
             <seealso cref="F:WizardWrx.SpecialStrings.TAB_CHAR"/>
             <seealso cref="F:WizardWrx.SpecialStrings.UNDERSCORE_CHAR"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.PIPE_CHAR"/>
         </member>
         <member name="F:WizardWrx.SpecialStrings.SEMICOLON">
             <summary>
@@ -4569,6 +4973,37 @@
             Use this template when you need to either precede or follow a line
             of otherwise static text with a newline.
             </summary>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.SQL_DATETIME_FORMAT_PRECISE">
+            <summary>
+            This string is the most precise string representation of the format of a
+            SQL Server date.
+            </summary>
+            <remarks>
+            Since date literals must be enclosed in single quotation marks, the
+            formatted date value must be embedded in a string literal by interpolation
+            or by way of a format item token. Regardless, the single quotes must be
+            part of the string because including them in the format string invalidates
+            it, causing ToString and its friends to render the format string as
+            prescribed, rather than replacing it with the date value.
+            </remarks>
+            <seealso cref="F:WizardWrx.SpecialStrings.SQL_DATE_FORMAT"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.SQL_DATETIME_FORMAT_FULL"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.SQL_DATETIME_FORMAT_FULL">
+            <summary>
+            This string is the standard representation of a date and time to the
+            nearest second.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.SQL_DATE_FORMAT"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.SQL_DATETIME_FORMAT_PRECISE"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.SQL_DATE_FORMAT">
+            <summary>
+            This string is the standard representation of a date by itself.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.SQL_DATETIME_FORMAT_FULL"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.SQL_DATETIME_FORMAT_PRECISE"/>
         </member>
         <member name="F:WizardWrx.SpecialStrings.STRING_SPLIT_CARRIAGE_RETURN">
             <summary>
@@ -5408,9 +5843,44 @@
               Looks up a localized string similar to Array {0} ie empty; it exists, but contains no elements..
             </summary>
         </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.ERRMSG_BAD_LABEL_ROW">
+            <summary>
+              Looks up a localized string similar to The label row in embedded resource {0} is invalid.{3}Actual Label Row   = {1}{3}Expected Label Row = {2}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.ERRMSG_BAD_RECORD">
+            <summary>
+              Looks up a localized string similar to The field count in row {1} in embedded resource {0} is incorrect.{5}Actual Field Count   = {2}{5}Expected Field Count = {3}{5}Complete Row         = {4}.
+            </summary>
+        </member>
         <member name="P:WizardWrx.Common.Properties.Resources.ERRMSG_BADSTRING">
             <summary>
               Looks up a localized string similar to Unable to process string {0}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.ERRMSG_DUPE_KEY">
+            <summary>
+              Looks up a localized string similar to The key field in row {1} in embedded resource {0} is a duplicate.{4}Key value    = {2}{4}Complete row = {3}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.ERRMSG_EMBEDDED_RESOURCE_NOT_FOUND">
+            <summary>
+              Looks up a localized string similar to Resource {0} cannot be found in assembly {1}..
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.ERRMSG_EMBEDDED_RESOURCE_READ_ERROR">
+            <summary>
+              Looks up a localized string similar to An error occurred while reading data from resources embedded in an assembly.{3}Assembly Full Name     = {0}{3}Internal Resource Name = {1}{3}I/O Error Message      = {2}{3}{3}The associated Inner Exception may contain additional clues..
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.ERRMSG_EMBEDDED_RESOURCE_READ_TRUNCATED">
+            <summary>
+              Looks up a localized string similar to An error occurred while reading a file from resources embedded in an assembly.{3}Internal Name = {0}{3}Expected File Length (bytes) = {1}{3}Bytes successfully read = {2}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.ERRMSG_EMPTY_MAP">
+            <summary>
+              Looks up a localized string similar to Embedded key map {0} is empty..
             </summary>
         </member>
         <member name="P:WizardWrx.Common.Properties.Resources.ERRMSG_EMPTY_STRING_NEVER_VALID">

@@ -204,6 +204,18 @@
                               use by methods that return string representations
                               of reports that were intended for display on a
                               console.
+
+	2022/11/22 9.0.246 DAG    New format constants:
+
+								LOGICAL_NEGATE
+								SQL_DATETIME_FORMAT_PRECISE
+								SQL_DATETIME_FORMAT_FULL
+								SQL_DATE_FORMAT
+
+							  The first string listed above, LOGICAL_NEGATE, is
+							  paired with a like-named character constant, for
+                              the same reason the PIPE_CHAR amd others exist in
+                              both formats and classes.
     ============================================================================
 */
 
@@ -679,6 +691,16 @@ namespace WizardWrx
 		/// </summary>
 		public const string LOCALHOST_IP_ADDR = @"127.0.0.1";
 
+
+		/// <summary>
+		/// Thanks to a suggestion from my esteemed colleague Bud Pass, this is my new
+		/// preferred field delimiter character. It supersedes my favorite for many
+		/// years, PIPE_CHAR.
+		/// </summary>
+		/// <seealso cref="PIPE_CHAR"/>
+		/// <seealso cref="SpecialCharacters.LOGICAL_NEGATE"/>
+		public const string LOGICAL_NEGATE = @"¬";
+
 		/// <summary>
 		/// The non-breaking space character doesn't print; although the Unicode
 		/// encoding treats it as a white space character, most other encodings,
@@ -725,10 +747,12 @@ namespace WizardWrx
 		/// <seealso cref="COLON"/>
 		/// <seealso cref="COMMA"/>
 		/// <seealso cref="HASH_TAG"/>
+		/// <seealso cref="LOGICAL_NEGATE"/>
 		/// <seealso cref="PERCENT_SIGN"/>
 		/// <seealso cref="SEMICOLON"/>
 		/// <seealso cref="TAB_CHAR"/>
 		/// <seealso cref="UNDERSCORE_CHAR"/>
+		/// <seealso cref="SpecialCharacters.PIPE_CHAR"/>
 		public const string PIPE_CHAR = @"|";
 
 		/// <summary>
@@ -763,6 +787,37 @@ namespace WizardWrx
 		/// of otherwise static text with a newline.
 		/// </summary>
 		public const string SPACING_TEMPLATE = @"{0}{1}";
+
+		/// <summary>
+		/// This string is the most precise string representation of the format of a
+		/// SQL Server date.
+		/// </summary>
+		/// <remarks>
+		/// Since date literals must be enclosed in single quotation marks, the
+		/// formatted date value must be embedded in a string literal by interpolation
+		/// or by way of a format item token. Regardless, the single quotes must be
+		/// part of the string because including them in the format string invalidates
+		/// it, causing ToString and its friends to render the format string as
+		/// prescribed, rather than replacing it with the date value.
+		/// </remarks>
+		/// <seealso cref="SQL_DATE_FORMAT"/>
+		/// <seealso cref="SQL_DATETIME_FORMAT_FULL"/>
+		public const string SQL_DATETIME_FORMAT_PRECISE = @"MM-dd-yyyy HH:mm:ss.fff";
+
+		/// <summary>
+		/// This string is the standard representation of a date and time to the
+		/// nearest second.
+		/// </summary>
+		/// <seealso cref="SQL_DATE_FORMAT"/>
+		/// <seealso cref="SQL_DATETIME_FORMAT_PRECISE"/>
+		public const string SQL_DATETIME_FORMAT_FULL = @"MM-dd-yyyy HH:mm:ss";
+
+		/// <summary>
+		/// This string is the standard representation of a date by itself.
+		/// </summary>
+		/// <seealso cref="SQL_DATETIME_FORMAT_FULL"/>
+		/// <seealso cref="SQL_DATETIME_FORMAT_PRECISE"/>
+		public const string SQL_DATE_FORMAT = @"MM-dd-yyyy";
 
 		/// <summary>
 		/// Use this string as the solitary element of an array of strings to

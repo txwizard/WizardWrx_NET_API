@@ -19,7 +19,7 @@
 
     Author:             David A. Gray
 
-    License:            Copyright (C) 2011-2021, David A. Gray. 
+    License:            Copyright (C) 2011-2022, David A. Gray. 
                         All rights reserved.
 
                         Redistribution and use in source and binary forms, with
@@ -187,6 +187,10 @@
 
     2021/12/19 8.0.1476 DAG Implement code to exercise string extension method
                             GuardStringIfNeeded.
+
+    2022/11/23 9.0.1545 DAG Adjust to account for the consolidation of the
+                            WizardWrx.EmbeddedTextFile namespace into the root
+                            namespace and library WizardWrx.Common.dll.
     ============================================================================
 */
 
@@ -986,7 +990,7 @@ namespace DLLServices2TestStand
             //  Exercise the new NameValueCollectionFromEmbbededList routine.
             //  ----------------------------------------------------------------
 
-            System.Collections.Specialized.NameValueCollection nvcKeyMap = WizardWrx.EmbeddedTextFile.Readers.NameValueCollectionFromEmbbededList (
+            System.Collections.Specialized.NameValueCollection nvcKeyMap = EmbeddedTextFileReaders.NameValueCollectionFromEmbbededList (
                 Properties.Resources.MAIL_SERVER_KEY_MAP_FILENAME ,
                 Properties.Resources.MAIL_SERVER_KEY_MAP_LABEL_ROW );
 
@@ -2107,7 +2111,7 @@ namespace DLLServices2TestStand
 
             const string VALID_LABEL_ROW = @"Method Name	Class Tested";
 
-            string [ ] astrClassMap = WizardWrx.EmbeddedTextFile.Readers.LoadTextFileFromCallingAssembly ( CLASS_MAP_TABLE_NAME );
+            string [ ] astrClassMap = EmbeddedTextFileReaders.LoadTextFileFromCallingAssembly ( CLASS_MAP_TABLE_NAME );
 
             if ( Environment.GetCommandLineArgs ( ).Length == ListInfo.LIST_IS_EMPTY )
             {	// Run this only when the command line argument list is empty.
@@ -2196,7 +2200,7 @@ namespace DLLServices2TestStand
                 Environment.NewLine );
             int intNUtf8Lines = MagicNumbers.ZERO;
 
-            foreach ( string strLorenIpsum in WizardWrx.EmbeddedTextFile.Readers.LoadTextFileFromCallingAssembly ( TEXT_FILE_WITH_UTF_8_BOM ) )
+            foreach ( string strLorenIpsum in EmbeddedTextFileReaders.LoadTextFileFromCallingAssembly ( TEXT_FILE_WITH_UTF_8_BOM ) )
             {
                 Console.WriteLine (
                     MSG_UTF8_TEST_LINE ,

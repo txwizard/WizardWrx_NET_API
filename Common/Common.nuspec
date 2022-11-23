@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-        <releaseNotes>This release is an attempt to resolve the issue that dependencies aren't being advertised. Henceforth, independent release schedules as described in the immediately previous published version of this library will resume.</releaseNotes>
+        <releaseNotes>New string constants: LOGICAL_NEGATE mirrors an existing like-named character constant, while SQL_DATETIME_FORMAT_PRECISE, SQL_DATETIME_FORMAT_FULL, and SQL_DATE_FORMAT support formatting dates to be interpolated into Microsoft SQL Server scripts. Also, classes ByteOrderMark and Readers, renamed EmbeddedTextFileReaders, moved from WizardWrx.EmbeededTextFile, which is being deprecated and retired from the constellation, anabling redundant copies of both to be removed from WizardWrx.ASCIIInfo.</releaseNotes>
         <copyright>$copyright$</copyright>
     	<tags>Constants Arrays RegExp</tags>
     	<dependencies>

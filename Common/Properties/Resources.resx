@@ -157,6 +157,34 @@
     <value>Unable to process string {0}</value>
     <comment>Use this template to report a string that cannot be processed. The string is expected to be appended; to that end, there is a single substitution token. If you want it quoted, wrap it in quotes before you pass it into string.Format or one of its cousins. String extension method QuoteString, defined by WizardWrx.Core.dll, works well for this propose, and the nameof() pseudo-function works provides variable names at runtime.</comment>
   </data>
+  <data name="ERRMSG_BAD_LABEL_ROW" xml:space="preserve">
+    <value>The label row in embedded resource {0} is invalid.{3}Actual Label Row   = {1}{3}Expected Label Row = {2}</value>
+    <comment>This is the template for an error message, used by static method NameValueCollectionFromEmbbededList.</comment>
+  </data>
+  <data name="ERRMSG_BAD_RECORD" xml:space="preserve">
+    <value>The field count in row {1} in embedded resource {0} is incorrect.{5}Actual Field Count   = {2}{5}Expected Field Count = {3}{5}Complete Row         = {4}</value>
+    <comment>This is the template for an error message, used by static method NameValueCollectionFromEmbbededList.</comment>
+  </data>
+  <data name="ERRMSG_DUPE_KEY" xml:space="preserve">
+    <value>The key field in row {1} in embedded resource {0} is a duplicate.{4}Key value    = {2}{4}Complete row = {3}</value>
+    <comment>This is the template for an error message, used by static method NameValueCollectionFromEmbbededList.</comment>
+  </data>
+  <data name="ERRMSG_EMBEDDED_RESOURCE_NOT_FOUND" xml:space="preserve">
+    <value>Resource {0} cannot be found in assembly {1}.</value>
+    <comment>Method LoadBinaryResourceFromAnyAssembly formats a message from this template to report a missing resource.</comment>
+  </data>
+  <data name="ERRMSG_EMBEDDED_RESOURCE_READ_ERROR" xml:space="preserve">
+    <value>An error occurred while reading data from resources embedded in an assembly.{3}Assembly Full Name     = {0}{3}Internal Resource Name = {1}{3}I/O Error Message      = {2}{3}{3}The associated Inner Exception may contain additional clues.</value>
+    <comment>The LoadBinaryResourceFromAnyAssembly method constructs a message to accomapny exception reports.</comment>
+  </data>
+  <data name="ERRMSG_EMBEDDED_RESOURCE_READ_TRUNCATED" xml:space="preserve">
+    <value>An error occurred while reading a file from resources embedded in an assembly.{3}Internal Name = {0}{3}Expected File Length (bytes) = {1}{3}Bytes successfully read = {2}</value>
+    <comment>Method LoadBinaryResourceFromAnyAssembly formats a message from this template to report a read error.</comment>
+  </data>
+  <data name="ERRMSG_EMPTY_MAP" xml:space="preserve">
+    <value>Embedded key map {0} is empty.</value>
+    <comment>This is the template for an error message, used by static method NameValueCollectionFromEmbbededList.</comment>
+  </data>
   <data name="ERRMSG_EMPTY_STRING_NEVER_VALID" xml:space="preserve">
     <value>The empty string is never valid in this context.</value>
     <comment>Created for use by string extension method EnumFromString (defined in WizardWrx.Core.dll), this message will probably find other uses sooner or later.</comment>

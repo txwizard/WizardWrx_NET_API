@@ -19,7 +19,6 @@ D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\GUITestSt
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\GUITestStand\bin\Debug\WizardWrx.Core.xml
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\GUITestStand\bin\Debug\WizardWrx.DLLConfigurationManager.pdb
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\GUITestStand\bin\Debug\WizardWrx.DLLConfigurationManager.xml
-D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\GUITestStand\bin\Debug\WizardWrx.BitMath.xml
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\GUITestStand\bin\Debug\WizardWrx.FormatStringEngine.pdb
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\GUITestStand\bin\Debug\WizardWrx.FormatStringEngine.xml
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\GUITestStand\bin\Debug\WizardWrx.FormatStringEngine.dll.config

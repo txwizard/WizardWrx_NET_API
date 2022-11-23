@@ -1,5 +1,26 @@
 ﻿# WizardWrx .NET API Change Log
 
+## 2022/11/23
+
+### ASCIIInfo 9.0.210
+
+Replace the local copy of the Readers class that I copied from 
+`WizardWrx.EmbeddedTextFile` with a renamed `EmbeddedTextFileReaders` class,
+moved from the same place before the entire project was deleted from the
+constellation.
+
+### Common 9.0.246
+
+1. New string constants: `LOGICAL_NEGATE` mirrors an existing like-named
+character constant, while `SQL_DATETIME_FORMAT_PRECISE`,
+`SQL_DATETIME_FORMAT_FULL`, and `SQL_DATE_FORMAT` support formatting dates to be
+interpolated into Microsoft SQL Server scripts. 
+
+2. Classes `ByteOrderMark` and `Readers`, renamed `EmbeddedTextFileReaders`,
+moved from `WizardWrx.EmbeededTextFile`, which is being deprecated and retired
+from the constellation, anabling redundant copies of both to be removed from
+`WizardWrx.ASCIIInfo`.
+
 ## 2022/09/17
 
 This release corrects a deficiency in the procedure that led to the release of
