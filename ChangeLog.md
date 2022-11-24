@@ -1,5 +1,22 @@
 ﻿# WizardWrx .NET API Change Log
 
+## 2022/11/24
+
+### Common 9.0.253
+
+Completing work included in the last release, `SortableManagedResourceItem` has
+been completely moved into this library so that the copy in its original home,
+`WizardWrx.AssemblyUtils`, can be (and has been) completely removed.
+
+### AssemblyUtils 9.0.258
+
+Class `SortableManagedResourceItem` has moved completely to `WizardWrx.Common`,
+and been promoted to the root namespace, `WizardWrx`.
+
+Apart from removing `AssemblyUtils` from absolutely qualified method calls, this
+change has no effect on code that consumes this library because it brings with
+it a reference to its new home, `WizardWrx.Common`.
+
 ## 2022/11/23
 
 ### ASCIIInfo 9.0.210

@@ -20,7 +20,7 @@
 
     Author:             David A. Gray
 
-    License:            Copyright (C) 2017-2022, David A. Gray. 
+    License:            Copyright (C) 2017-2019, David A. Gray. 
                         All rights reserved.
 
                         Redistribution and use in source and binary forms, with
@@ -78,9 +78,15 @@
                            scheme. This version also eliminates an unreferenced
                            using directive.
 
-	2022/11/22 9.0.246 DAG    Move this class from WizardWrx.EmbeddedTextFile to
-                              WizardWrx.Common, trading the dedicated namespace
-                              for the root WizardWrx namespace. 
+	2022/11/22 9.0.246 DAG Move this class from WizardWrx.EmbeddedTextFile to
+                           WizardWrx.Common, trading the dedicated namespace
+                           for the root WizardWrx namespace.
+
+    2022/11/23 9.0.251 DAG When I copied this class into this library, I deleted
+                           the ListResourcesInAssemblyByName method, thinking it
+                           was incompatible. On closer inspection, it is, but I
+                           was confused by the many error messages that appeared
+                           when I added it.
     ============================================================================
 */
 
@@ -106,6 +112,7 @@ namespace WizardWrx
     /// </remarks>
     public class SortableManagedResourceItem : IComparable<SortableManagedResourceItem>
     {
+        #region Constructors
         /// <summary>
         /// Other than satisfying the requirements of the IList interface, the
         /// uninitialized object is useless.
@@ -135,13 +142,13 @@ namespace WizardWrx
             if ( string.IsNullOrEmpty ( pstrName ) )
             {
                 throw new ArgumentNullException (
-                    "pstrName" ,
+                    nameof ( pstrName ) ,
                     WizardWrx.Common.Properties.Resources.ERRMSG_ARG_IS_NULL_OR_EMPTY );
             }	// TRUE (unanticipated outcome) block, if ( string.IsNullOrEmpty ( pstrName ) )
             else if ( pobjValue == null )
             {
                 throw new ArgumentNullException (
-                    "pobjValue" ,
+                    nameof ( pobjValue ) ,
                     WizardWrx.Common.Properties.Resources.ERRMSG_ARG_IS_NULL );
             }	// TRUE (unanticipated outcome) block, else if ( pobjValue == null )
             else
@@ -150,8 +157,10 @@ namespace WizardWrx
                 _objValue = pobjValue;
             }	// FALSE (anticipated outcome) block, else if ( pobjValue == null )
         }	// SortableManagedResourceItem constructor (2 of 2)
+        #endregion	// Constructors
 
 
+        #region public Read-Only Properties
         /// <summary>
         /// The Name is the Name shown in the property sheet grid into which 
         /// garden variety managed string resources are input.
@@ -186,18 +195,22 @@ namespace WizardWrx
             {
                 string ValueTypeName = _objValue.GetType ( ).FullName;
 
-                if ( ValueTypeName == "System.String" )
-                    return "String";
+                if ( ValueTypeName == @"System.String" )
+                    return @"String";
                 else
                     return ValueTypeName;
             }	// TypeName property get method
         }	// TypeName property
+        #endregion	// public Read-Only Properties
 
 
+        #region Instance Storage
         string _strName;
         object _objValue;
+        #endregion	// Instance Storage
 
 
+        #region IComparable<SortableManagedResourceItem> Members
         /// <summary>
         /// Making the comparison based on the Name property permits sorting the
         /// resources in the most logical order.
@@ -215,8 +228,10 @@ namespace WizardWrx
         {
             return _strName.CompareTo ( other._strName );
         }	// CompareTo method
+        #endregion	// IComparable<SortableManagedResourceItem> Members
 
 
+        #region Static Methods
         /// <summary>
         /// Use the list of Manifest Resource Names returned by method
         /// GetManifestResourceNames on a specified assembly. Each of several
@@ -248,14 +263,170 @@ namespace WizardWrx
             Assembly pasmSource )
         {
             foreach ( string strManifestResourceName in pasmSource.GetManifestResourceNames ( ) )
-            {
                 if ( strManifestResourceName.EndsWith ( pstrResourceName ) )
-                {
                     return strManifestResourceName;
-                }   // if ( strManifestResourceName.EndsWith ( pstrResourceName ) )
-            }   // foreach ( string strManifestResourceName in pasmSource.GetManifestResourceNames ( ) )
 
             return null;
         }   // private static string GetInternalResourceName
+
+
+        /// <summary>
+        /// Call this static method from a console program to list the resources
+        /// defined in an assembly alphabetically by name.
+        /// </summary>
+        /// <param name="pasmInWhichEmbedded">
+        /// Specify the assembly that contains the resources to be enumerated.
+        /// </param>
+        /// <param name="pswReportFile">
+        /// Pass in a reference to an open StreamWriter to generate a
+        /// tab-delimited report in addition to the console output. File output
+        /// is suppressed when this parameter is null.
+        /// </param>
+        /// <remarks>
+        /// This method creates and consumes a generic List of instances of the
+        /// class that hosts it, and uses string padding to vertically align the
+        /// list without resorting to composite format items.
+        /// </remarks>
+        public static void ListResourcesInAssemblyByName (
+            Assembly pasmInWhichEmbedded ,
+            StreamWriter pswReportFile = null )
+        {
+            const string DEFAULT_STRING_RESOURCE_NAME = @"resources";
+
+            Console.WriteLine (
+                Common.Properties.Resources.MSG_RESOURCE_LIST_FQNAME ,
+                pasmInWhichEmbedded.FullName ,
+                Environment.NewLine );
+            Console.WriteLine (
+                Common.Properties.Resources.MSG_RESOURCE_LIST_BASENAME ,
+                pasmInWhichEmbedded.Location );
+
+            //	----------------------------------------------------------------
+            //	Since they own unmanaged resources, ResourceSet are disposable.
+            //	Moreover, they must be enumerated (ForEach is unsupported.), and
+            //	they can't be sorted in place. Thankfully, it's fairly easy to
+            //	make copies of the parts that matter to us, sort them, and show
+            //	them.
+            //	----------------------------------------------------------------
+
+            int intMaxNameLength = MagicNumbers.ZERO;
+            int intMaxTypeNameLength = MagicNumbers.ZERO;
+
+            List<SortableManagedResourceItem> lstResources = new List<SortableManagedResourceItem> ( );
+
+            //	----------------------------------------------------------------
+            //	The list of SortableManagedResourceItem items is complete. Get a
+            //	count, initialize an item counter, and sort the list, then use a
+            //	standard ForEach loop to display them in order by name. The next
+            //	improvement is to apply dynamic formatting to the item numbers
+            //	and names.
+            //	----------------------------------------------------------------
+
+            string [ ] astrNamedResources = pasmInWhichEmbedded.GetManifestResourceNames ( );
+
+            Console.WriteLine (
+                Common.Properties.Resources.MSG_RESOURCE_LIST_ITEM_COUNT ,      // Format control string
+                astrNamedResources.Length ,                                     // Format Item 0 = Item count
+                Environment.NewLine );                                          // Format Item 1 = Extra newline
+
+            int intItemNumber = ListInfo.LIST_IS_EMPTY;
+            int intItemNumberWidth = astrNamedResources.Length.ToString ( ).Length;
+
+            foreach ( string strName in astrNamedResources )
+            {   // Though most assemblies contain but a single resource, named "resources," they may contain an unlimited number of them. I have at least one assembly that contains three.
+                Console.WriteLine (
+                    Common.Properties.Resources.MSG_RESOURCE_LIST_NAMED_ITEM ,
+                    ( ++intItemNumber ).ToString ( ).PadRight ( intItemNumberWidth ) ,
+                    strName );
+            }   // foreach ( string strName in astrNamedResources)
+
+            Console.WriteLine (
+                Common.Properties.Resources.MSG_RESOURCE_LIST_NAMES_END ,
+                Environment.NewLine );
+
+            if ( astrNamedResources.Length > ListInfo.LIST_IS_EMPTY )
+            {
+                using ( Stream strOfResources = pasmInWhichEmbedded.GetManifestResourceStream ( GetInternalResourceName ( DEFAULT_STRING_RESOURCE_NAME , pasmInWhichEmbedded ) ) )
+                {
+                    if ( strOfResources != null )
+                    {
+                        using ( ResourceReader resReader4Embedded = new ResourceReader ( strOfResources ) )
+                        {
+                            IDictionaryEnumerator resourceEnumerator = resReader4Embedded.GetEnumerator ( );
+
+                            while ( resourceEnumerator.MoveNext ( ) )
+                            {
+                                string strName = resourceEnumerator.Key.ToString ( );
+
+                                if ( strName.Length > intMaxNameLength )
+                                {   // Update length if longer than any yet seen.
+                                    intMaxNameLength = strName.Length;
+                                }   // if ( strName.Length > intMaxNameLength )
+
+                                SortableManagedResourceItem resourceItem = new SortableManagedResourceItem (
+                                    strName ,
+                                    resourceEnumerator.Value );
+
+                                if ( resourceItem.TypeName.Length > intMaxTypeNameLength )
+                                {
+                                    intMaxTypeNameLength = resourceItem.TypeName.Length;
+                                }   // if ( item.TypeName.Length > intMaxTypeNameLength )
+
+                                lstResources.Add ( resourceItem );
+                            }   // while ( resourceEnumerator.MoveNext ( ) )
+                        }   // using ( ResourceReader resReader4Embedded = new ResourceReader ( strOfResources ) )
+                    }   // TRUE (anticipated outcome) block, if ( strOfResources != null )
+                    else
+                    {   // There is nothing to report about string resources, because there aren't any.
+                        Console.WriteLine ( Common.Properties.Resources.MSG_RESOURCE_LIST_NO_STRINGS );
+                    }   // FALSE (unanticipated outcome) block, if ( strOfResources != null )
+                }   // using ( Stream strOfResources = pasmInWhichEmbedded.GetManifestResourceStream ( GetInternalResourceName ( DEFAULT_STRING_RESOURCE_NAME , pasmInWhichEmbedded ) ) )
+            }   // TRUE (anticipated outcome) block, if ( astrNamedResources.Length > ListInfo.LIST_IS_EMPTY )
+            else
+            {   // The assembly is completely devoid of embedded resources of any kind, except the obligatory manifest.
+                Console.WriteLine ( Common.Properties.Resources.MSG_RESOURCE_LIST_NONE );
+            }   // FALSE (unanticipated outcome) block, if ( astrNamedResources.Length > ListInfo.LIST_IS_EMPTY )
+
+            int intItemCount = lstResources.Count;
+
+            intItemNumberWidth = intItemCount.ToString ( ).Length;
+            intItemNumber = ListInfo.LIST_IS_EMPTY;
+
+            lstResources.Sort ( );
+
+            string strReportDetailTemplate = null;
+
+            if ( pswReportFile != null )
+            {
+                string strLabelRow = Common.Properties.Resources.RESOURCE_REPORT_LABELS.Replace (
+                    SpecialStrings.EMBEDDED_TAB ,
+                    SpecialStrings.TAB_CHAR );
+                pswReportFile.WriteLine ( strLabelRow );
+                strReportDetailTemplate = ReportHelpers.DetailTemplateFromLabels ( strLabelRow );
+            }   // if ( pswReportFile != null )
+
+            foreach ( SortableManagedResourceItem resourceItem in lstResources )
+            {   // Padding to maximum width eliminates the need for composite format items.
+                Console.WriteLine (
+                    Common.Properties.Resources.MSG_RESOURCE_LIST_ITEM_DETAIL ,                     // Format control string
+                    new string [ ]
+                    {
+                        resourceItem.TypeName.PadRight(intMaxTypeNameLength) ,						// Format Item 0 = Item type
+                        ( ++intItemNumber ).ToString ( ).PadLeft ( intItemNumberWidth ) ,			// Format Item 1 = Item number, left padded
+                        resourceItem.Name.PadRight ( intMaxNameLength ) ,							// Format Item 2 = Name, right padded
+                        resourceItem.Value.ToString ( ) ,											// Format Item 3 = Value, as is
+                    } );
+
+                if ( pswReportFile != null )
+                {
+                    pswReportFile.WriteLine (
+                        strReportDetailTemplate ,
+                        intItemNumber ,
+                        resourceItem.Name ,
+                        resourceItem.Value );
+                }   // if ( pswReportFile != null )
+            }	// foreach ( SortableManagedResourceItem resourceItem in lstResources )
+        }	// ListResourcesInAssemblyByName
+        #endregion	// Static Methods
     }	// public class SortableManagedResourceItem
 }	// partial namespace WizardWrx

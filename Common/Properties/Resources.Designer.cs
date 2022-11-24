@@ -169,6 +169,15 @@ namespace WizardWrx.Common.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ERROR: The CreateFormatString method cannot process the specified format string.{1}    Specified format string = {0}.
+        /// </summary>
+        public static string ERRMSG_CANNOT_PARSE {
+            get {
+                return ResourceManager.GetString("ERRMSG_CANNOT_PARSE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The key field in row {1} in embedded resource {0} is a duplicate.{4}Key value    = {2}{4}Complete row = {3}.
         /// </summary>
         public static string ERRMSG_DUPE_KEY {
@@ -457,6 +466,78 @@ namespace WizardWrx.Common.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Location   = {0}.
+        /// </summary>
+        public static string MSG_RESOURCE_LIST_BASENAME {
+            get {
+                return ResourceManager.GetString("MSG_RESOURCE_LIST_BASENAME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assembly Name  = {0}{1}.
+        /// </summary>
+        public static string MSG_RESOURCE_LIST_FQNAME {
+            get {
+                return ResourceManager.GetString("MSG_RESOURCE_LIST_FQNAME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to # of Items = {0}{1}.
+        /// </summary>
+        public static string MSG_RESOURCE_LIST_ITEM_COUNT {
+            get {
+                return ResourceManager.GetString("MSG_RESOURCE_LIST_ITEM_COUNT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} # {1}: Name = {2}, Value = {3}.
+        /// </summary>
+        public static string MSG_RESOURCE_LIST_ITEM_DETAIL {
+            get {
+                return ResourceManager.GetString("MSG_RESOURCE_LIST_ITEM_DETAIL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Embedded Resource # {0}: {1}.
+        /// </summary>
+        public static string MSG_RESOURCE_LIST_NAMED_ITEM {
+            get {
+                return ResourceManager.GetString("MSG_RESOURCE_LIST_NAMED_ITEM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}    End of list{0}.
+        /// </summary>
+        public static string MSG_RESOURCE_LIST_NAMES_END {
+            get {
+                return ResourceManager.GetString("MSG_RESOURCE_LIST_NAMES_END", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The speicifed assembly contains no embedded string resources..
+        /// </summary>
+        public static string MSG_RESOURCE_LIST_NO_STRINGS {
+            get {
+                return ResourceManager.GetString("MSG_RESOURCE_LIST_NO_STRINGS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The specified assembly contains no embedded resources of any kind..
+        /// </summary>
+        public static string MSG_RESOURCE_LIST_NONE {
+            get {
+                return ResourceManager.GetString("MSG_RESOURCE_LIST_NONE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0} ({1:D} decimal).
         /// </summary>
         public static string MSG_STATUS_CODE {
@@ -570,6 +651,15 @@ namespace WizardWrx.Common.Properties {
         public static string REGISTRY_VALUE_TYPE_QWORD {
             get {
                 return ResourceManager.GetString("REGISTRY_VALUE_TYPE_QWORD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ItemNbr\tName\tValue.
+        /// </summary>
+        public static string RESOURCE_REPORT_LABELS {
+            get {
+                return ResourceManager.GetString("RESOURCE_REPORT_LABELS", resourceCulture);
             }
         }
         

@@ -3755,6 +3755,215 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:WizardWrx.ReportHelpers">
+            <summary>
+            This static class exposes methods to help prepare strings for use on
+            reports.
+            </summary>
+        </member>
+        <member name="T:WizardWrx.ReportHelpers.Alignment">
+            <summary>
+            Set the penmAlignment argument of the AdjustToMaximumWidth method to
+            a member of this enumeration.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ReportHelpers.Alignment.Left">
+            <summary>
+            Align text to left.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ReportHelpers.Alignment.Right">
+            <summary>
+            Align text to right.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ReportHelpers.DOUBLE_SPACE">
+            <summary>
+            Overlooked constant - two consecutive spaces.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ReportHelpers.EMBEDDED_TAB">
+            <summary>
+            Tab characters, as they must be entered into resource (.RESX) strings.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ReportHelpers.OUTPUT_TAB">
+            <summary>
+            Tab characters, as they must appear in the string before it can be
+            used.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.ReportHelpers.DetailTemplateFromLabels(System.String)">
+            <summary>
+            Given a formatted string for a label row, generate a format string
+            for the corresponding detail row.
+            </summary>
+            <param name="pstrReportLabels">
+            Label string for which to generate a detail string.
+            </param>
+            <returns>
+            String, for use with string.Format method.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.ReportHelpers.DetailTemplateFromLabels(System.String,System.Char)">
+            <summary>
+            Given a formatted string for a label row, generate a format string
+            for the corresponding detail row.
+            </summary>
+            <param name="pstrReportLabels">
+            Label string for which to generate a detail string.
+            </param>
+            <param name="pchrFieldSeparator">
+            Character to use in lieu of TAB as field separator.
+            </param>
+            <returns>
+            String, for use with string.Format method.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.ReportHelpers.MaxStringLength``1(System.Collections.Generic.List{``0})">
+            <summary>
+            Given an array of objects of any type, return the length of the
+            longest string made from them. See Remarks.
+            </summary>
+            <typeparam name="T">
+            This is a generic method; its argument may be of any type. This 
+            method needs only its ToString method.
+            </typeparam>
+            <param name="plstObjs">
+            This argument expects an array of objects, which may be of different
+            kinds.
+            
+            Since the generic List class has a constructor that takes an array,
+            which it copies into the new list that it returns, you can use this
+            method to process arrays by specifying a new List of the appropriate
+            type for this argument.
+            For additional information, please see the Remarks section.
+            </param>
+            <example>
+            The following example returns the length of the longest string 
+            contained in array astrLinesFromFile, an array of strings.
+            
+            int intLogestLine = WizardWrx.ReportHelpers.MaxStringLength ( new List&lt;string&gt; ( astrLinesFromFile ) );
+            
+            Note use of the List constructor, which transforms the array into a
+            disposable generic List.
+            </example>
+            <returns>
+            The return value is the length of the longest string made from the
+            objects in the input array. Since it is intended for use with the
+            PadRight method on a string, it is cast to int. See Remarks.
+            </returns>
+            <remarks>
+            The goal of this routine is to determine the maximum number of
+            characters required to represent any of a collection of objects such
+            as labels or members of an enumerated type. This method has at least
+            three use cases.
+            
+            1) Pad the strings to a uniform length, so that all of a set of
+            labeled values aligns vertically.
+            
+            2) Construct a key from several substrings, such that the substrings
+            are of uniform length, and the keys can be grouped by any of the
+            leading substrings, and ordered by the values of the last substring.
+            
+            3) Construct a composite format string that reserves enough room for
+            the widest item in the list, so that whatever follows it on a report
+            line aligns vertically.
+            </remarks>
+        </member>
+        <member name="M:WizardWrx.ReportHelpers.CountCharacterOccurrences(System.String,System.Char)">
+             <summary>
+             <para>
+             Strangely, the String class is missing an important static method to
+             count occurrences of a specified character within a string. This is
+             that missing method.
+             </para>
+             <para>
+             This method, which originated in StringExtensions, moves here as a
+             private method because this class needs it and the extension methods
+             class from which it cames must remain where it is to minimize the
+             number of breaking changes.
+             </para>
+             </summary>
+             <param name="pstrSource">
+             Specify the string in which to count occurrences of substring 
+             pstrToCount.
+            
+             If pstrSource is null or empty, the method returns zero.
+             
+             Since this is an extension method, pstrIn is supplied by the BCL
+             when it binds this method to an instance of System.string.
+             </param>
+             <param name="pchrToCount">
+             Specify the substring to count in string pstrSource. An empty string
+             causes the method to return MagicNumbers.STRING_INDEXOF_NOT_FOUND,
+             or -1.
+             </param>
+             <returns>
+             The return value is the number of times, if any, that string
+             pstrToCount occurs in string pstrSource, or
+             MagicNumbers.STRING_INDEXOF_NOT_FOUND (-1) if pstrToCount is either
+             null reference or empty the empty string.
+             </returns>
+             <remarks>
+             This method implements the only overload of the string.IndexOf
+             method that takes a character as its second argument for which I
+             have yet to make use. There is currently no implementation of the
+             overload that stops looking after scanning count characters, nor do
+             I have immediate plans to implement one, though it wouldn't be hard.
+             
+             This method uses the same algorithm as CountSubstrings, except that
+             its second argument is a single character, which CANNOT be the NULL
+             character.
+             </remarks>
+        </member>
+        <member name="M:WizardWrx.ReportHelpers.CreateFormatString(System.String,System.Char)">
+            <summary>
+            Given a formatted string for a label row, generate a format string
+            for the corresponding detail row. See Remarks.
+            </summary>
+            <param name="pstrReportLabels">
+            Label string for which to generate a detail string.
+            </param>
+            <param name="pchrFieldSeparator">
+            Character to use in lieu of TAB as field separator.
+            </param>
+            <returns>
+            String, for use with string.Format method.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.ReportHelpers.CreateLastToken(System.String,System.Char)">
+            <summary>
+            The last token is appended without a field delimiter. See Remarks.
+            </summary>
+            <param name="pstrTokenTemplate">
+            The token used for the preceding operations is fed into this routine
+            to have its delimiter removed. See Remarks.
+            </param>
+            <param name="pchrFieldSeparator">
+            Obviously, this routine needs a copy of the delimiter character, but
+            its use is a bit more complex. See Remarks.
+            </param>
+            <returns>
+            Regardless of whether the delimiter is a TAB, which requires special
+            handling, or another character, the return value is a bare token.
+            See Remarks.
+            </returns>
+            <remarks>
+            Since they are escaped when entered into a .NET resource (.RESX)
+            file, such TAB characters must be handled a tad differently, using
+            the doubly escaped token that represents a TAB character embedded in
+            a resource string as the first argument to the Replace method on the
+            input string, pstrTokenTemplate. To cover the case where the string
+            is a constant, embedded in the source file, this case must call the
+            Replace method on the new string returned by the first Replace call,
+            passing a string representation of the regular TAB character, since
+            the replacement is the empty string.
+            
+            In all other cases, the Replace method is called once, using the
+            actual delimiter character, pchrFieldSeparator.
+            </remarks>
+        </member>
         <member name="T:WizardWrx.SortableManagedResourceItem">
             <summary>
             Instances of this class represent arbitrary managed resource items.
@@ -3849,6 +4058,25 @@
             <remarks>
             Since I cannot imagine any use for this method beyond its
             infrastructure role in this class, I marked it private.
+            </remarks>
+        </member>
+        <member name="M:WizardWrx.SortableManagedResourceItem.ListResourcesInAssemblyByName(System.Reflection.Assembly,System.IO.StreamWriter)">
+            <summary>
+            Call this static method from a console program to list the resources
+            defined in an assembly alphabetically by name.
+            </summary>
+            <param name="pasmInWhichEmbedded">
+            Specify the assembly that contains the resources to be enumerated.
+            </param>
+            <param name="pswReportFile">
+            Pass in a reference to an open StreamWriter to generate a
+            tab-delimited report in addition to the console output. File output
+            is suppressed when this parameter is null.
+            </param>
+            <remarks>
+            This method creates and consumes a generic List of instances of the
+            class that hosts it, and uses string padding to vertically align the
+            list without resorting to composite format items.
             </remarks>
         </member>
         <member name="T:WizardWrx.SpecialCharacters">
@@ -4699,6 +4927,22 @@
             single-character string constants.
             </summary>
             <seealso cref="F:WizardWrx.SpecialCharacters.DOUBLE_QUOTE"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.DOUBLE_SPACE">
+            <summary>
+            Overlooked constant - two consecutive spaces.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.EMBEDDED_TAB">
+            <summary>
+            Tab characters, as they must be entered into resource (.RESX) strings.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.OUTPUT_TAB">
+            <summary>
+            Tab characters, as they must appear in the string before it can be
+            used.
+            </summary>
         </member>
         <member name="F:WizardWrx.SpecialStrings.EMPTY_STRING">
             <summary>
@@ -5858,6 +6102,11 @@
               Looks up a localized string similar to Unable to process string {0}.
             </summary>
         </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.ERRMSG_CANNOT_PARSE">
+            <summary>
+              Looks up a localized string similar to ERROR: The CreateFormatString method cannot process the specified format string.{1}    Specified format string = {0}.
+            </summary>
+        </member>
         <member name="P:WizardWrx.Common.Properties.Resources.ERRMSG_DUPE_KEY">
             <summary>
               Looks up a localized string similar to The key field in row {1} in embedded resource {0} is a duplicate.{4}Key value    = {2}{4}Complete row = {3}.
@@ -6018,6 +6267,46 @@
               Looks up a localized string similar to NULL.
             </summary>
         </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_BASENAME">
+            <summary>
+              Looks up a localized string similar to Location   = {0}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_FQNAME">
+            <summary>
+              Looks up a localized string similar to Assembly Name  = {0}{1}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_ITEM_COUNT">
+            <summary>
+              Looks up a localized string similar to # of Items = {0}{1}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_ITEM_DETAIL">
+            <summary>
+              Looks up a localized string similar to {0} # {1}: Name = {2}, Value = {3}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_NAMED_ITEM">
+            <summary>
+              Looks up a localized string similar to Embedded Resource # {0}: {1}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_NAMES_END">
+            <summary>
+              Looks up a localized string similar to {0}    End of list{0}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_NO_STRINGS">
+            <summary>
+              Looks up a localized string similar to The speicifed assembly contains no embedded string resources..
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_NONE">
+            <summary>
+              Looks up a localized string similar to The specified assembly contains no embedded resources of any kind..
+            </summary>
+        </member>
         <member name="P:WizardWrx.Common.Properties.Resources.MSG_STATUS_CODE">
             <summary>
               Looks up a localized string similar to {0} ({1:D} decimal).
@@ -6081,6 +6370,11 @@
         <member name="P:WizardWrx.Common.Properties.Resources.REGISTRY_VALUE_TYPE_QWORD">
             <summary>
               Looks up a localized string similar to REG_QWORD.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Common.Properties.Resources.RESOURCE_REPORT_LABELS">
+            <summary>
+              Looks up a localized string similar to ItemNbr\tName\tValue.
             </summary>
         </member>
         <member name="P:WizardWrx.Common.Properties.Resources.STACK_TRACE_ENTRY_PREFIX">

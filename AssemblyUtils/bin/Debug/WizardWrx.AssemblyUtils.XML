@@ -832,121 +832,6 @@
             Pass in the array element count, a 32 bit signed integer.
             </param>
         </member>
-        <member name="T:WizardWrx.AssemblyUtils.SortableManagedResourceItem">
-            <summary>
-            Instances of this class represent arbitrary managed resource items.
-            </summary>
-            <remarks>
-            This class is necessary because the public dictionary is opaque, so a
-            consumer has no control over the order in which they are returned. Since
-            this wrapper implements the IComparable interface, collections of these
-            objects can be sorted.
-            </remarks>
-        </member>
-        <member name="M:WizardWrx.AssemblyUtils.SortableManagedResourceItem.#ctor">
-            <summary>
-            Other than satisfying the requirements of the IList interface, the
-            uninitialized object is useless.
-            </summary>
-        </member>
-        <member name="M:WizardWrx.AssemblyUtils.SortableManagedResourceItem.#ctor(System.String,System.Object)">
-            <summary>
-            This constructor creates a fully initialized instance from the data
-            in the Current property of the IDictionaryEnumerator object returned
-            by a ResourceSet instance.
-            </summary>
-            <param name="pstrName">
-            Set the Name to the string returned by the Key property of the
-            enumerator.
-            </param>
-            <param name="pobjValue">
-            Set the Value to the System.object returned by the Value property of
-            the enumerator.
-            </param>
-        </member>
-        <member name="P:WizardWrx.AssemblyUtils.SortableManagedResourceItem.Name">
-            <summary>
-            The Name is the Name shown in the property sheet grid into which 
-            garden variety managed string resources are input.
-            </summary>
-        </member>
-        <member name="P:WizardWrx.AssemblyUtils.SortableManagedResourceItem.Value">
-            <summary>
-            The ResourceValue property is the Value property shown in the
-            property sheet grid into which garden variety managed string
-            resources are input, and its type is usually System.string.
-            </summary>
-        </member>
-        <member name="P:WizardWrx.AssemblyUtils.SortableManagedResourceItem.TypeName">
-            <summary>
-            Since the full type specification is accessible through the Value
-            property, and the string representation of the FullName is its most
-            useful property, it gets its own read only property, which also
-            returns just "string" for the common case, for which the prefix is
-            redundant.
-            </summary>
-        </member>
-        <member name="M:WizardWrx.AssemblyUtils.SortableManagedResourceItem.System#IComparable{WizardWrx#AssemblyUtils#SortableManagedResourceItem}#CompareTo(WizardWrx.AssemblyUtils.SortableManagedResourceItem)">
-            <summary>
-            Making the comparison based on the Name property permits sorting the
-            resources in the most logical order.
-            </summary>
-            <param name="other">
-            The explicit implementation puts the burden of enforcing type safety
-            on the runtime system.
-            </param>
-            <returns>
-            Since it is a pass-through of another CompareTo method, the return
-            type is guaranteed to adhere to the interface specification.
-            </returns>
-        </member>
-        <member name="M:WizardWrx.AssemblyUtils.SortableManagedResourceItem.GetInternalResourceName(System.String,System.Reflection.Assembly)">
-            <summary>
-            Use the list of Manifest Resource Names returned by method
-            GetManifestResourceNames on a specified assembly. Each of several
-            methods employs a different mechanism to identify the assembly of
-            interest.
-            </summary>
-            <param name="pstrResourceName">
-            Specify the name of the file from which the embedded resource was
-            created. Typically, this will be the local name of the file in the
-            source code tree.
-            </param>
-            <param name="pasmSource">
-            Pass a reference to the Assembly that is supposed to contain the
-            desired resource.
-            </param>
-            <returns>
-            If the function succeeds, the return value is the internal name of
-            the requested resource, which is fed to GetManifestResourceStream on
-            the same assembly, which returns a read-only Stream backed by the
-            embedded resource. If the specified resource is not found, it
-            returns null.
-            </returns>
-            <remarks>
-            Since I cannot imagine any use for this method beyond its
-            infrastructure role in this class, I marked it private.
-            </remarks>
-        </member>
-        <member name="M:WizardWrx.AssemblyUtils.SortableManagedResourceItem.ListResourcesInAssemblyByName(System.Reflection.Assembly,System.IO.StreamWriter)">
-            <summary>
-            Call this static method from a console program to list the resources
-            defined in an assembly alphabetically by name.
-            </summary>
-            <param name="pasmInWhichEmbedded">
-            Specify the assembly that contains the resources to be enumerated.
-            </param>
-            <param name="pswReportFile">
-            Pass in a reference to an open StreamWriter to generate a
-            tab-delimited report in addition to the console output. File output
-            is suppressed when this parameter is null.
-            </param>
-            <remarks>
-            This method creates and consumes a generic List of instances of the
-            class that hosts it, and uses string padding to vertically align the
-            list without resorting to composite format items.
-            </remarks>
-        </member>
         <member name="T:WizardWrx.AssemblyUtils.Properties.Resources">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
@@ -1273,46 +1158,6 @@
               Looks up a localized string similar to ReflectedAssemblyContainer for Assembly {0}&quot;.
             </summary>
         </member>
-        <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.MSG_RESOURCE_LIST_BASENAME">
-            <summary>
-              Looks up a localized string similar to     Location   = {0}.
-            </summary>
-        </member>
-        <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.MSG_RESOURCE_LIST_FQNAME">
-            <summary>
-              Looks up a localized string similar to Assembly Name  = {0}{1}.
-            </summary>
-        </member>
-        <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.MSG_RESOURCE_LIST_ITEM_COUNT">
-            <summary>
-              Looks up a localized string similar to     # of Items = {0}{1}.
-            </summary>
-        </member>
-        <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.MSG_RESOURCE_LIST_ITEM_DETAIL">
-            <summary>
-              Looks up a localized string similar to     {0} # {1}: Name = {2}, Value = {3}.
-            </summary>
-        </member>
-        <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.MSG_RESOURCE_LIST_NAMED_ITEM">
-            <summary>
-              Looks up a localized string similar to         Embedded Resource # {0}: {1}.
-            </summary>
-        </member>
-        <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.MSG_RESOURCE_LIST_NAMES_END">
-            <summary>
-              Looks up a localized string similar to {0}    End of list{0}.
-            </summary>
-        </member>
-        <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.MSG_RESOURCE_LIST_NO_STRINGS">
-            <summary>
-              Looks up a localized string similar to The speicifed assembly contains no embedded strings resources..
-            </summary>
-        </member>
-        <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.MSG_RESOURCE_LIST_NONE">
-            <summary>
-              Looks up a localized string similar to The specified assembly contains no embedded resources of any kind..
-            </summary>
-        </member>
         <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.MSG_UNSUPPORTED_PE_SUBSYSTEM">
             <summary>
               Looks up a localized string similar to Only assemblies that run in the character mode subsystem are supported.{2}The subsytem ID of the entry assembly is {0} ({1})..
@@ -1331,11 +1176,6 @@
         <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.REPORT_FIELD_NAMES">
             <summary>
               Looks up a localized string similar to FullName,AssemblyFileBaseName,AssemblyFileName,AssemblyGuidString,AssembyDirName,Comments,CompanyName,Culture,Description,FileCreationDate,FileModifiedDate,LegalCopyright,LegalTrademarks,ProductName,PublicKeyToken,RuntimeVersion,VersionString.
-            </summary>
-        </member>
-        <member name="P:WizardWrx.AssemblyUtils.Properties.Resources.RESOURCE_REPORT_LABELS">
-            <summary>
-              Looks up a localized string similar to ItemNbr\tName\tValue.
             </summary>
         </member>
     </members>

@@ -111,6 +111,7 @@
     <Compile Include="PathPositions.cs" />
     <Compile Include="EmbeddedTextFileReaders.cs" />
     <Compile Include="RegExpSupport.cs" />
+    <Compile Include="ReportHelpers.cs" />
     <Compile Include="SortableManagedResourceItem.cs" />
     <Compile Include="SpecialCharacters.cs" />
     <Compile Include="SpecialStrings.cs" />

@@ -350,6 +350,7 @@ namespace WizardWrx.AssemblyUtils
                         strAttribNameShort = Properties.Resources.ATTRIBUTE_SHORT_NAME_ASSEMBLY_GUID;
                         strAttribValue = ( ( System.Runtime.InteropServices.GuidAttribute ) attrib ).Value.ToString ( );
                         break;
+                    case @"System.Runtime.InteropServices.AssemblyInformationalVersionAttribute":
 
                     default:
                         break;

@@ -619,78 +619,6 @@ namespace WizardWrx.AssemblyUtils.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to     Location   = {0}.
-        /// </summary>
-        internal static string MSG_RESOURCE_LIST_BASENAME {
-            get {
-                return ResourceManager.GetString("MSG_RESOURCE_LIST_BASENAME", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Assembly Name  = {0}{1}.
-        /// </summary>
-        internal static string MSG_RESOURCE_LIST_FQNAME {
-            get {
-                return ResourceManager.GetString("MSG_RESOURCE_LIST_FQNAME", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to     # of Items = {0}{1}.
-        /// </summary>
-        internal static string MSG_RESOURCE_LIST_ITEM_COUNT {
-            get {
-                return ResourceManager.GetString("MSG_RESOURCE_LIST_ITEM_COUNT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to     {0} # {1}: Name = {2}, Value = {3}.
-        /// </summary>
-        internal static string MSG_RESOURCE_LIST_ITEM_DETAIL {
-            get {
-                return ResourceManager.GetString("MSG_RESOURCE_LIST_ITEM_DETAIL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to         Embedded Resource # {0}: {1}.
-        /// </summary>
-        internal static string MSG_RESOURCE_LIST_NAMED_ITEM {
-            get {
-                return ResourceManager.GetString("MSG_RESOURCE_LIST_NAMED_ITEM", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {0}    End of list{0}.
-        /// </summary>
-        internal static string MSG_RESOURCE_LIST_NAMES_END {
-            get {
-                return ResourceManager.GetString("MSG_RESOURCE_LIST_NAMES_END", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The speicifed assembly contains no embedded strings resources..
-        /// </summary>
-        internal static string MSG_RESOURCE_LIST_NO_STRINGS {
-            get {
-                return ResourceManager.GetString("MSG_RESOURCE_LIST_NO_STRINGS", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The specified assembly contains no embedded resources of any kind..
-        /// </summary>
-        internal static string MSG_RESOURCE_LIST_NONE {
-            get {
-                return ResourceManager.GetString("MSG_RESOURCE_LIST_NONE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Only assemblies that run in the character mode subsystem are supported.{2}The subsytem ID of the entry assembly is {0} ({1})..
         /// </summary>
         internal static string MSG_UNSUPPORTED_PE_SUBSYSTEM {
@@ -723,15 +651,6 @@ namespace WizardWrx.AssemblyUtils.Properties {
         internal static string REPORT_FIELD_NAMES {
             get {
                 return ResourceManager.GetString("REPORT_FIELD_NAMES", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to ItemNbr\tName\tValue.
-        /// </summary>
-        internal static string RESOURCE_REPORT_LABELS {
-            get {
-                return ResourceManager.GetString("RESOURCE_REPORT_LABELS", resourceCulture);
             }
         }
     }

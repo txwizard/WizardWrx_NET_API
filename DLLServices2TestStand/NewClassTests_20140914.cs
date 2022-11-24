@@ -191,6 +191,11 @@
     2022/11/23 9.0.1545 DAG Adjust to account for the consolidation of the
                             WizardWrx.EmbeddedTextFile namespace into the root
                             namespace and library WizardWrx.Common.dll.
+
+    2022/11/23 9.0.1550 DAG Adjust to acommodate SortableManagedResourceItem
+                            being relocated from WizardWrx.AssemblyUtils library
+                            and namespace to WizardWrx.Common library and root
+                            namespace WizardWrx.
     ============================================================================
 */
 
@@ -797,10 +802,10 @@ namespace DLLServices2TestStand
             //  ----------------------------------------------------------------
 
             if ( pswCommonStringsReportFileName == null )
-                WizardWrx.AssemblyUtils.SortableManagedResourceItem.ListResourcesInAssemblyByName (
+                SortableManagedResourceItem.ListResourcesInAssemblyByName (
                     pasmInWhichEmbedded );
             else
-                WizardWrx.AssemblyUtils.SortableManagedResourceItem.ListResourcesInAssemblyByName (
+                SortableManagedResourceItem.ListResourcesInAssemblyByName (
                     pasmInWhichEmbedded ,
                     pswCommonStringsReportFileName );
 

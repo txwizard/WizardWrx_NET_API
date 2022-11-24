@@ -130,7 +130,6 @@
     <Compile Include="RegistryValues.cs" />
     <Compile Include="ReportDetail.cs" />
     <Compile Include="ReportDetails.cs" />
-    <Compile Include="ReportHelpers.cs" />
     <Compile Include="StringExtensions.cs" />
     <Compile Include="StringFixups.cs" />
     <Compile Include="SyncRoot.cs" />

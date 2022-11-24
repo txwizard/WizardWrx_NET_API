@@ -3433,113 +3433,6 @@ references:
   isSpec: "True"
   fullName: WizardWrx.AssemblyUtils.ReportGenerators.ShowKeyAssemblyProperties
   nameWithType: ReportGenerators.ShowKeyAssemblyProperties
-- uid: WizardWrx.AssemblyUtils.SortableManagedResourceItem
-  name: SortableManagedResourceItem
-  href: api/WizardWrx.AssemblyUtils.SortableManagedResourceItem.html
-  commentId: T:WizardWrx.AssemblyUtils.SortableManagedResourceItem
-  fullName: WizardWrx.AssemblyUtils.SortableManagedResourceItem
-  nameWithType: SortableManagedResourceItem
-- uid: WizardWrx.AssemblyUtils.SortableManagedResourceItem.#ctor
-  name: SortableManagedResourceItem()
-  href: api/WizardWrx.AssemblyUtils.SortableManagedResourceItem.html#WizardWrx_AssemblyUtils_SortableManagedResourceItem__ctor
-  commentId: M:WizardWrx.AssemblyUtils.SortableManagedResourceItem.#ctor
-  fullName: WizardWrx.AssemblyUtils.SortableManagedResourceItem.SortableManagedResourceItem()
-  nameWithType: SortableManagedResourceItem.SortableManagedResourceItem()
-- uid: WizardWrx.AssemblyUtils.SortableManagedResourceItem.#ctor(System.String,System.Object)
-  name: SortableManagedResourceItem(String, Object)
-  href: api/WizardWrx.AssemblyUtils.SortableManagedResourceItem.html#WizardWrx_AssemblyUtils_SortableManagedResourceItem__ctor_System_String_System_Object_
-  commentId: M:WizardWrx.AssemblyUtils.SortableManagedResourceItem.#ctor(System.String,System.Object)
-  fullName: WizardWrx.AssemblyUtils.SortableManagedResourceItem.SortableManagedResourceItem(System.String, System.Object)
-  nameWithType: SortableManagedResourceItem.SortableManagedResourceItem(String, Object)
-- uid: WizardWrx.AssemblyUtils.SortableManagedResourceItem.#ctor*
-  name: SortableManagedResourceItem
-  href: api/WizardWrx.AssemblyUtils.SortableManagedResourceItem.html#WizardWrx_AssemblyUtils_SortableManagedResourceItem__ctor_
-  commentId: Overload:WizardWrx.AssemblyUtils.SortableManagedResourceItem.#ctor
-  isSpec: "True"
-  fullName: WizardWrx.AssemblyUtils.SortableManagedResourceItem.SortableManagedResourceItem
-  nameWithType: SortableManagedResourceItem.SortableManagedResourceItem
-- uid: WizardWrx.AssemblyUtils.SortableManagedResourceItem.GetInternalResourceName(System.String,System.Reflection.Assembly)
-  name: GetInternalResourceName(String, Assembly)
-  href: api/WizardWrx.AssemblyUtils.SortableManagedResourceItem.html#WizardWrx_AssemblyUtils_SortableManagedResourceItem_GetInternalResourceName_System_String_System_Reflection_Assembly_
-  commentId: M:WizardWrx.AssemblyUtils.SortableManagedResourceItem.GetInternalResourceName(System.String,System.Reflection.Assembly)
-  fullName: WizardWrx.AssemblyUtils.SortableManagedResourceItem.GetInternalResourceName(System.String, System.Reflection.Assembly)
-  nameWithType: SortableManagedResourceItem.GetInternalResourceName(String, Assembly)
-- uid: WizardWrx.AssemblyUtils.SortableManagedResourceItem.GetInternalResourceName*
-  name: GetInternalResourceName
-  href: api/WizardWrx.AssemblyUtils.SortableManagedResourceItem.html#WizardWrx_AssemblyUtils_SortableManagedResourceItem_GetInternalResourceName_
-  commentId: Overload:WizardWrx.AssemblyUtils.SortableManagedResourceItem.GetInternalResourceName
-  isSpec: "True"
-  fullName: WizardWrx.AssemblyUtils.SortableManagedResourceItem.GetInternalResourceName
-  nameWithType: SortableManagedResourceItem.GetInternalResourceName
-- uid: WizardWrx.AssemblyUtils.SortableManagedResourceItem.ListResourcesInAssemblyByName(System.Reflection.Assembly,System.IO.StreamWriter)
-  name: ListResourcesInAssemblyByName(Assembly, StreamWriter)
-  href: api/WizardWrx.AssemblyUtils.SortableManagedResourceItem.html#WizardWrx_AssemblyUtils_SortableManagedResourceItem_ListResourcesInAssemblyByName_System_Reflection_Assembly_System_IO_StreamWriter_
-  commentId: M:WizardWrx.AssemblyUtils.SortableManagedResourceItem.ListResourcesInAssemblyByName(System.Reflection.Assembly,System.IO.StreamWriter)
-  fullName: WizardWrx.AssemblyUtils.SortableManagedResourceItem.ListResourcesInAssemblyByName(System.Reflection.Assembly, System.IO.StreamWriter)
-  nameWithType: SortableManagedResourceItem.ListResourcesInAssemblyByName(Assembly, StreamWriter)
-- uid: WizardWrx.AssemblyUtils.SortableManagedResourceItem.ListResourcesInAssemblyByName*
-  name: ListResourcesInAssemblyByName
-  href: api/WizardWrx.AssemblyUtils.SortableManagedResourceItem.html#WizardWrx_AssemblyUtils_SortableManagedResourceItem_ListResourcesInAssemblyByName_
-  commentId: Overload:WizardWrx.AssemblyUtils.SortableManagedResourceItem.ListResourcesInAssemblyByName
-  isSpec: "True"
-  fullName: WizardWrx.AssemblyUtils.SortableManagedResourceItem.ListResourcesInAssemblyByName
-  nameWithType: SortableManagedResourceItem.ListResourcesInAssemblyByName
-- uid: WizardWrx.AssemblyUtils.SortableManagedResourceItem.Name
-  name: Name
-  href: api/WizardWrx.AssemblyUtils.SortableManagedResourceItem.html#WizardWrx_AssemblyUtils_SortableManagedResourceItem_Name
-  commentId: P:WizardWrx.AssemblyUtils.SortableManagedResourceItem.Name
-  fullName: WizardWrx.AssemblyUtils.SortableManagedResourceItem.Name
-  nameWithType: SortableManagedResourceItem.Name
-- uid: WizardWrx.AssemblyUtils.SortableManagedResourceItem.Name*
-  name: Name
-  href: api/WizardWrx.AssemblyUtils.SortableManagedResourceItem.html#WizardWrx_AssemblyUtils_SortableManagedResourceItem_Name_
-  commentId: Overload:WizardWrx.AssemblyUtils.SortableManagedResourceItem.Name
-  isSpec: "True"
-  fullName: WizardWrx.AssemblyUtils.SortableManagedResourceItem.Name
-  nameWithType: SortableManagedResourceItem.Name
-- uid: WizardWrx.AssemblyUtils.SortableManagedResourceItem.System#IComparable{WizardWrx#AssemblyUtils#SortableManagedResourceItem}#CompareTo(WizardWrx.AssemblyUtils.SortableManagedResourceItem)
-  name: IComparable<SortableManagedResourceItem>.CompareTo(SortableManagedResourceItem)
-  href: api/WizardWrx.AssemblyUtils.SortableManagedResourceItem.html#WizardWrx_AssemblyUtils_SortableManagedResourceItem_System_IComparable_WizardWrx_AssemblyUtils_SortableManagedResourceItem__CompareTo_WizardWrx_AssemblyUtils_SortableManagedResourceItem_
-  commentId: M:WizardWrx.AssemblyUtils.SortableManagedResourceItem.System#IComparable{WizardWrx#AssemblyUtils#SortableManagedResourceItem}#CompareTo(WizardWrx.AssemblyUtils.SortableManagedResourceItem)
-  name.vb: System.IComparable<WizardWrx.AssemblyUtils.SortableManagedResourceItem>.CompareTo(SortableManagedResourceItem)
-  fullName: WizardWrx.AssemblyUtils.SortableManagedResourceItem.System.IComparable<WizardWrx.AssemblyUtils.SortableManagedResourceItem>.CompareTo(WizardWrx.AssemblyUtils.SortableManagedResourceItem)
-  nameWithType: SortableManagedResourceItem.IComparable<SortableManagedResourceItem>.CompareTo(SortableManagedResourceItem)
-  nameWithType.vb: SortableManagedResourceItem.System.IComparable<WizardWrx.AssemblyUtils.SortableManagedResourceItem>.CompareTo(SortableManagedResourceItem)
-- uid: WizardWrx.AssemblyUtils.SortableManagedResourceItem.System#IComparable{WizardWrx#AssemblyUtils#SortableManagedResourceItem}#CompareTo*
-  name: IComparable<SortableManagedResourceItem>.CompareTo
-  href: api/WizardWrx.AssemblyUtils.SortableManagedResourceItem.html#WizardWrx_AssemblyUtils_SortableManagedResourceItem_System_IComparable_WizardWrx_AssemblyUtils_SortableManagedResourceItem__CompareTo_
-  commentId: Overload:WizardWrx.AssemblyUtils.SortableManagedResourceItem.System#IComparable{WizardWrx#AssemblyUtils#SortableManagedResourceItem}#CompareTo
-  isSpec: "True"
-  name.vb: System.IComparable<WizardWrx.AssemblyUtils.SortableManagedResourceItem>.CompareTo
-  fullName: WizardWrx.AssemblyUtils.SortableManagedResourceItem.System.IComparable<WizardWrx.AssemblyUtils.SortableManagedResourceItem>.CompareTo
-  nameWithType: SortableManagedResourceItem.IComparable<SortableManagedResourceItem>.CompareTo
-  nameWithType.vb: SortableManagedResourceItem.System.IComparable<WizardWrx.AssemblyUtils.SortableManagedResourceItem>.CompareTo
-- uid: WizardWrx.AssemblyUtils.SortableManagedResourceItem.TypeName
-  name: TypeName
-  href: api/WizardWrx.AssemblyUtils.SortableManagedResourceItem.html#WizardWrx_AssemblyUtils_SortableManagedResourceItem_TypeName
-  commentId: P:WizardWrx.AssemblyUtils.SortableManagedResourceItem.TypeName
-  fullName: WizardWrx.AssemblyUtils.SortableManagedResourceItem.TypeName
-  nameWithType: SortableManagedResourceItem.TypeName
-- uid: WizardWrx.AssemblyUtils.SortableManagedResourceItem.TypeName*
-  name: TypeName
-  href: api/WizardWrx.AssemblyUtils.SortableManagedResourceItem.html#WizardWrx_AssemblyUtils_SortableManagedResourceItem_TypeName_
-  commentId: Overload:WizardWrx.AssemblyUtils.SortableManagedResourceItem.TypeName
-  isSpec: "True"
-  fullName: WizardWrx.AssemblyUtils.SortableManagedResourceItem.TypeName
-  nameWithType: SortableManagedResourceItem.TypeName
-- uid: WizardWrx.AssemblyUtils.SortableManagedResourceItem.Value
-  name: Value
-  href: api/WizardWrx.AssemblyUtils.SortableManagedResourceItem.html#WizardWrx_AssemblyUtils_SortableManagedResourceItem_Value
-  commentId: P:WizardWrx.AssemblyUtils.SortableManagedResourceItem.Value
-  fullName: WizardWrx.AssemblyUtils.SortableManagedResourceItem.Value
-  nameWithType: SortableManagedResourceItem.Value
-- uid: WizardWrx.AssemblyUtils.SortableManagedResourceItem.Value*
-  name: Value
-  href: api/WizardWrx.AssemblyUtils.SortableManagedResourceItem.html#WizardWrx_AssemblyUtils_SortableManagedResourceItem_Value_
-  commentId: Overload:WizardWrx.AssemblyUtils.SortableManagedResourceItem.Value
-  isSpec: "True"
-  fullName: WizardWrx.AssemblyUtils.SortableManagedResourceItem.Value
-  nameWithType: SortableManagedResourceItem.Value
 - uid: WizardWrx.ByteOrderMark
   name: ByteOrderMark
   href: api/WizardWrx.ByteOrderMark.html
@@ -3881,6 +3774,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.Common.Properties.Resources.ERRMSG_BADSTRING
   nameWithType: Resources.ERRMSG_BADSTRING
+- uid: WizardWrx.Common.Properties.Resources.ERRMSG_CANNOT_PARSE
+  name: ERRMSG_CANNOT_PARSE
+  href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_ERRMSG_CANNOT_PARSE
+  commentId: P:WizardWrx.Common.Properties.Resources.ERRMSG_CANNOT_PARSE
+  fullName: WizardWrx.Common.Properties.Resources.ERRMSG_CANNOT_PARSE
+  nameWithType: Resources.ERRMSG_CANNOT_PARSE
+- uid: WizardWrx.Common.Properties.Resources.ERRMSG_CANNOT_PARSE*
+  name: ERRMSG_CANNOT_PARSE
+  href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_ERRMSG_CANNOT_PARSE_
+  commentId: Overload:WizardWrx.Common.Properties.Resources.ERRMSG_CANNOT_PARSE
+  isSpec: "True"
+  fullName: WizardWrx.Common.Properties.Resources.ERRMSG_CANNOT_PARSE
+  nameWithType: Resources.ERRMSG_CANNOT_PARSE
 - uid: WizardWrx.Common.Properties.Resources.ERRMSG_DUPE_KEY
   name: ERRMSG_DUPE_KEY
   href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_ERRMSG_DUPE_KEY
@@ -4297,6 +4203,110 @@ references:
   isSpec: "True"
   fullName: WizardWrx.Common.Properties.Resources.MSG_OBJECT_REFERENCE_IS_NULL_CAPS
   nameWithType: Resources.MSG_OBJECT_REFERENCE_IS_NULL_CAPS
+- uid: WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_BASENAME
+  name: MSG_RESOURCE_LIST_BASENAME
+  href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_MSG_RESOURCE_LIST_BASENAME
+  commentId: P:WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_BASENAME
+  fullName: WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_BASENAME
+  nameWithType: Resources.MSG_RESOURCE_LIST_BASENAME
+- uid: WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_BASENAME*
+  name: MSG_RESOURCE_LIST_BASENAME
+  href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_MSG_RESOURCE_LIST_BASENAME_
+  commentId: Overload:WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_BASENAME
+  isSpec: "True"
+  fullName: WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_BASENAME
+  nameWithType: Resources.MSG_RESOURCE_LIST_BASENAME
+- uid: WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_FQNAME
+  name: MSG_RESOURCE_LIST_FQNAME
+  href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_MSG_RESOURCE_LIST_FQNAME
+  commentId: P:WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_FQNAME
+  fullName: WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_FQNAME
+  nameWithType: Resources.MSG_RESOURCE_LIST_FQNAME
+- uid: WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_FQNAME*
+  name: MSG_RESOURCE_LIST_FQNAME
+  href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_MSG_RESOURCE_LIST_FQNAME_
+  commentId: Overload:WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_FQNAME
+  isSpec: "True"
+  fullName: WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_FQNAME
+  nameWithType: Resources.MSG_RESOURCE_LIST_FQNAME
+- uid: WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_ITEM_COUNT
+  name: MSG_RESOURCE_LIST_ITEM_COUNT
+  href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_MSG_RESOURCE_LIST_ITEM_COUNT
+  commentId: P:WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_ITEM_COUNT
+  fullName: WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_ITEM_COUNT
+  nameWithType: Resources.MSG_RESOURCE_LIST_ITEM_COUNT
+- uid: WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_ITEM_COUNT*
+  name: MSG_RESOURCE_LIST_ITEM_COUNT
+  href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_MSG_RESOURCE_LIST_ITEM_COUNT_
+  commentId: Overload:WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_ITEM_COUNT
+  isSpec: "True"
+  fullName: WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_ITEM_COUNT
+  nameWithType: Resources.MSG_RESOURCE_LIST_ITEM_COUNT
+- uid: WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_ITEM_DETAIL
+  name: MSG_RESOURCE_LIST_ITEM_DETAIL
+  href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_MSG_RESOURCE_LIST_ITEM_DETAIL
+  commentId: P:WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_ITEM_DETAIL
+  fullName: WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_ITEM_DETAIL
+  nameWithType: Resources.MSG_RESOURCE_LIST_ITEM_DETAIL
+- uid: WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_ITEM_DETAIL*
+  name: MSG_RESOURCE_LIST_ITEM_DETAIL
+  href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_MSG_RESOURCE_LIST_ITEM_DETAIL_
+  commentId: Overload:WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_ITEM_DETAIL
+  isSpec: "True"
+  fullName: WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_ITEM_DETAIL
+  nameWithType: Resources.MSG_RESOURCE_LIST_ITEM_DETAIL
+- uid: WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_NAMED_ITEM
+  name: MSG_RESOURCE_LIST_NAMED_ITEM
+  href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_MSG_RESOURCE_LIST_NAMED_ITEM
+  commentId: P:WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_NAMED_ITEM
+  fullName: WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_NAMED_ITEM
+  nameWithType: Resources.MSG_RESOURCE_LIST_NAMED_ITEM
+- uid: WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_NAMED_ITEM*
+  name: MSG_RESOURCE_LIST_NAMED_ITEM
+  href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_MSG_RESOURCE_LIST_NAMED_ITEM_
+  commentId: Overload:WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_NAMED_ITEM
+  isSpec: "True"
+  fullName: WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_NAMED_ITEM
+  nameWithType: Resources.MSG_RESOURCE_LIST_NAMED_ITEM
+- uid: WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_NAMES_END
+  name: MSG_RESOURCE_LIST_NAMES_END
+  href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_MSG_RESOURCE_LIST_NAMES_END
+  commentId: P:WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_NAMES_END
+  fullName: WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_NAMES_END
+  nameWithType: Resources.MSG_RESOURCE_LIST_NAMES_END
+- uid: WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_NAMES_END*
+  name: MSG_RESOURCE_LIST_NAMES_END
+  href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_MSG_RESOURCE_LIST_NAMES_END_
+  commentId: Overload:WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_NAMES_END
+  isSpec: "True"
+  fullName: WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_NAMES_END
+  nameWithType: Resources.MSG_RESOURCE_LIST_NAMES_END
+- uid: WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_NO_STRINGS
+  name: MSG_RESOURCE_LIST_NO_STRINGS
+  href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_MSG_RESOURCE_LIST_NO_STRINGS
+  commentId: P:WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_NO_STRINGS
+  fullName: WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_NO_STRINGS
+  nameWithType: Resources.MSG_RESOURCE_LIST_NO_STRINGS
+- uid: WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_NO_STRINGS*
+  name: MSG_RESOURCE_LIST_NO_STRINGS
+  href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_MSG_RESOURCE_LIST_NO_STRINGS_
+  commentId: Overload:WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_NO_STRINGS
+  isSpec: "True"
+  fullName: WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_NO_STRINGS
+  nameWithType: Resources.MSG_RESOURCE_LIST_NO_STRINGS
+- uid: WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_NONE
+  name: MSG_RESOURCE_LIST_NONE
+  href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_MSG_RESOURCE_LIST_NONE
+  commentId: P:WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_NONE
+  fullName: WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_NONE
+  nameWithType: Resources.MSG_RESOURCE_LIST_NONE
+- uid: WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_NONE*
+  name: MSG_RESOURCE_LIST_NONE
+  href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_MSG_RESOURCE_LIST_NONE_
+  commentId: Overload:WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_NONE
+  isSpec: "True"
+  fullName: WizardWrx.Common.Properties.Resources.MSG_RESOURCE_LIST_NONE
+  nameWithType: Resources.MSG_RESOURCE_LIST_NONE
 - uid: WizardWrx.Common.Properties.Resources.MSG_STATUS_CODE
   name: MSG_STATUS_CODE
   href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_MSG_STATUS_CODE
@@ -4466,6 +4476,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.Common.Properties.Resources.REGISTRY_VALUE_TYPE_QWORD
   nameWithType: Resources.REGISTRY_VALUE_TYPE_QWORD
+- uid: WizardWrx.Common.Properties.Resources.RESOURCE_REPORT_LABELS
+  name: RESOURCE_REPORT_LABELS
+  href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_RESOURCE_REPORT_LABELS
+  commentId: P:WizardWrx.Common.Properties.Resources.RESOURCE_REPORT_LABELS
+  fullName: WizardWrx.Common.Properties.Resources.RESOURCE_REPORT_LABELS
+  nameWithType: Resources.RESOURCE_REPORT_LABELS
+- uid: WizardWrx.Common.Properties.Resources.RESOURCE_REPORT_LABELS*
+  name: RESOURCE_REPORT_LABELS
+  href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_RESOURCE_REPORT_LABELS_
+  commentId: Overload:WizardWrx.Common.Properties.Resources.RESOURCE_REPORT_LABELS
+  isSpec: "True"
+  fullName: WizardWrx.Common.Properties.Resources.RESOURCE_REPORT_LABELS
+  nameWithType: Resources.RESOURCE_REPORT_LABELS
 - uid: WizardWrx.Common.Properties.Resources.ResourceManager
   name: ResourceManager
   href: api/WizardWrx.Common.Properties.Resources.html#WizardWrx_Common_Properties_Resources_ResourceManager
@@ -10864,246 +10887,6 @@ references:
   commentId: F:WizardWrx.DLLConfigurationManager.StateManager.UNSUPPORTED_EXE_SUBSYSTEM
   fullName: WizardWrx.DLLConfigurationManager.StateManager.UNSUPPORTED_EXE_SUBSYSTEM
   nameWithType: StateManager.UNSUPPORTED_EXE_SUBSYSTEM
-- uid: WizardWrx.EmbeddedTextFile
-  name: WizardWrx.EmbeddedTextFile
-  href: api/WizardWrx.EmbeddedTextFile.html
-  commentId: N:WizardWrx.EmbeddedTextFile
-  fullName: WizardWrx.EmbeddedTextFile
-  nameWithType: WizardWrx.EmbeddedTextFile
-- uid: WizardWrx.EmbeddedTextFile.ByteOrderMark
-  name: ByteOrderMark
-  href: api/WizardWrx.EmbeddedTextFile.ByteOrderMark.html
-  commentId: T:WizardWrx.EmbeddedTextFile.ByteOrderMark
-  fullName: WizardWrx.EmbeddedTextFile.ByteOrderMark
-  nameWithType: ByteOrderMark
-- uid: WizardWrx.EmbeddedTextFile.ByteOrderMark.#ctor(System.Byte[])
-  name: ByteOrderMark(Byte[])
-  href: api/WizardWrx.EmbeddedTextFile.ByteOrderMark.html#WizardWrx_EmbeddedTextFile_ByteOrderMark__ctor_System_Byte___
-  commentId: M:WizardWrx.EmbeddedTextFile.ByteOrderMark.#ctor(System.Byte[])
-  name.vb: ByteOrderMark(Byte())
-  fullName: WizardWrx.EmbeddedTextFile.ByteOrderMark.ByteOrderMark(System.Byte[])
-  fullName.vb: WizardWrx.EmbeddedTextFile.ByteOrderMark.ByteOrderMark(System.Byte())
-  nameWithType: ByteOrderMark.ByteOrderMark(Byte[])
-  nameWithType.vb: ByteOrderMark.ByteOrderMark(Byte())
-- uid: WizardWrx.EmbeddedTextFile.ByteOrderMark.#ctor*
-  name: ByteOrderMark
-  href: api/WizardWrx.EmbeddedTextFile.ByteOrderMark.html#WizardWrx_EmbeddedTextFile_ByteOrderMark__ctor_
-  commentId: Overload:WizardWrx.EmbeddedTextFile.ByteOrderMark.#ctor
-  isSpec: "True"
-  fullName: WizardWrx.EmbeddedTextFile.ByteOrderMark.ByteOrderMark
-  nameWithType: ByteOrderMark.ByteOrderMark
-- uid: WizardWrx.EmbeddedTextFile.ByteOrderMark.BOMType
-  name: ByteOrderMark.BOMType
-  href: api/WizardWrx.EmbeddedTextFile.ByteOrderMark.BOMType.html
-  commentId: T:WizardWrx.EmbeddedTextFile.ByteOrderMark.BOMType
-  fullName: WizardWrx.EmbeddedTextFile.ByteOrderMark.BOMType
-  nameWithType: ByteOrderMark.BOMType
-- uid: WizardWrx.EmbeddedTextFile.ByteOrderMark.BOMType.None
-  name: None
-  href: api/WizardWrx.EmbeddedTextFile.ByteOrderMark.BOMType.html#WizardWrx_EmbeddedTextFile_ByteOrderMark_BOMType_None
-  commentId: F:WizardWrx.EmbeddedTextFile.ByteOrderMark.BOMType.None
-  fullName: WizardWrx.EmbeddedTextFile.ByteOrderMark.BOMType.None
-  nameWithType: ByteOrderMark.BOMType.None
-- uid: WizardWrx.EmbeddedTextFile.ByteOrderMark.BOMType.UnicodeBigEndian
-  name: UnicodeBigEndian
-  href: api/WizardWrx.EmbeddedTextFile.ByteOrderMark.BOMType.html#WizardWrx_EmbeddedTextFile_ByteOrderMark_BOMType_UnicodeBigEndian
-  commentId: F:WizardWrx.EmbeddedTextFile.ByteOrderMark.BOMType.UnicodeBigEndian
-  fullName: WizardWrx.EmbeddedTextFile.ByteOrderMark.BOMType.UnicodeBigEndian
-  nameWithType: ByteOrderMark.BOMType.UnicodeBigEndian
-- uid: WizardWrx.EmbeddedTextFile.ByteOrderMark.BOMType.UnicodeLittleEndian
-  name: UnicodeLittleEndian
-  href: api/WizardWrx.EmbeddedTextFile.ByteOrderMark.BOMType.html#WizardWrx_EmbeddedTextFile_ByteOrderMark_BOMType_UnicodeLittleEndian
-  commentId: F:WizardWrx.EmbeddedTextFile.ByteOrderMark.BOMType.UnicodeLittleEndian
-  fullName: WizardWrx.EmbeddedTextFile.ByteOrderMark.BOMType.UnicodeLittleEndian
-  nameWithType: ByteOrderMark.BOMType.UnicodeLittleEndian
-- uid: WizardWrx.EmbeddedTextFile.ByteOrderMark.BOMType.UTF16BE
-  name: UTF16BE
-  href: api/WizardWrx.EmbeddedTextFile.ByteOrderMark.BOMType.html#WizardWrx_EmbeddedTextFile_ByteOrderMark_BOMType_UTF16BE
-  commentId: F:WizardWrx.EmbeddedTextFile.ByteOrderMark.BOMType.UTF16BE
-  fullName: WizardWrx.EmbeddedTextFile.ByteOrderMark.BOMType.UTF16BE
-  nameWithType: ByteOrderMark.BOMType.UTF16BE
-- uid: WizardWrx.EmbeddedTextFile.ByteOrderMark.BOMType.UTF16LE
-  name: UTF16LE
-  href: api/WizardWrx.EmbeddedTextFile.ByteOrderMark.BOMType.html#WizardWrx_EmbeddedTextFile_ByteOrderMark_BOMType_UTF16LE
-  commentId: F:WizardWrx.EmbeddedTextFile.ByteOrderMark.BOMType.UTF16LE
-  fullName: WizardWrx.EmbeddedTextFile.ByteOrderMark.BOMType.UTF16LE
-  nameWithType: ByteOrderMark.BOMType.UTF16LE
-- uid: WizardWrx.EmbeddedTextFile.ByteOrderMark.BOMType.UTF32BE
-  name: UTF32BE
-  href: api/WizardWrx.EmbeddedTextFile.ByteOrderMark.BOMType.html#WizardWrx_EmbeddedTextFile_ByteOrderMark_BOMType_UTF32BE
-  commentId: F:WizardWrx.EmbeddedTextFile.ByteOrderMark.BOMType.UTF32BE
-  fullName: WizardWrx.EmbeddedTextFile.ByteOrderMark.BOMType.UTF32BE
-  nameWithType: ByteOrderMark.BOMType.UTF32BE
-- uid: WizardWrx.EmbeddedTextFile.ByteOrderMark.BOMType.UTF32LE
-  name: UTF32LE
-  href: api/WizardWrx.EmbeddedTextFile.ByteOrderMark.BOMType.html#WizardWrx_EmbeddedTextFile_ByteOrderMark_BOMType_UTF32LE
-  commentId: F:WizardWrx.EmbeddedTextFile.ByteOrderMark.BOMType.UTF32LE
-  fullName: WizardWrx.EmbeddedTextFile.ByteOrderMark.BOMType.UTF32LE
-  nameWithType: ByteOrderMark.BOMType.UTF32LE
-- uid: WizardWrx.EmbeddedTextFile.ByteOrderMark.BOMType.UTF8
-  name: UTF8
-  href: api/WizardWrx.EmbeddedTextFile.ByteOrderMark.BOMType.html#WizardWrx_EmbeddedTextFile_ByteOrderMark_BOMType_UTF8
-  commentId: F:WizardWrx.EmbeddedTextFile.ByteOrderMark.BOMType.UTF8
-  fullName: WizardWrx.EmbeddedTextFile.ByteOrderMark.BOMType.UTF8
-  nameWithType: ByteOrderMark.BOMType.UTF8
-- uid: WizardWrx.EmbeddedTextFile.ByteOrderMark.Kind
-  name: Kind
-  href: api/WizardWrx.EmbeddedTextFile.ByteOrderMark.html#WizardWrx_EmbeddedTextFile_ByteOrderMark_Kind
-  commentId: P:WizardWrx.EmbeddedTextFile.ByteOrderMark.Kind
-  fullName: WizardWrx.EmbeddedTextFile.ByteOrderMark.Kind
-  nameWithType: ByteOrderMark.Kind
-- uid: WizardWrx.EmbeddedTextFile.ByteOrderMark.Kind*
-  name: Kind
-  href: api/WizardWrx.EmbeddedTextFile.ByteOrderMark.html#WizardWrx_EmbeddedTextFile_ByteOrderMark_Kind_
-  commentId: Overload:WizardWrx.EmbeddedTextFile.ByteOrderMark.Kind
-  isSpec: "True"
-  fullName: WizardWrx.EmbeddedTextFile.ByteOrderMark.Kind
-  nameWithType: ByteOrderMark.Kind
-- uid: WizardWrx.EmbeddedTextFile.ByteOrderMark.Length
-  name: Length
-  href: api/WizardWrx.EmbeddedTextFile.ByteOrderMark.html#WizardWrx_EmbeddedTextFile_ByteOrderMark_Length
-  commentId: P:WizardWrx.EmbeddedTextFile.ByteOrderMark.Length
-  fullName: WizardWrx.EmbeddedTextFile.ByteOrderMark.Length
-  nameWithType: ByteOrderMark.Length
-- uid: WizardWrx.EmbeddedTextFile.ByteOrderMark.Length*
-  name: Length
-  href: api/WizardWrx.EmbeddedTextFile.ByteOrderMark.html#WizardWrx_EmbeddedTextFile_ByteOrderMark_Length_
-  commentId: Overload:WizardWrx.EmbeddedTextFile.ByteOrderMark.Length
-  isSpec: "True"
-  fullName: WizardWrx.EmbeddedTextFile.ByteOrderMark.Length
-  nameWithType: ByteOrderMark.Length
-- uid: WizardWrx.EmbeddedTextFile.ByteOrderMark.TestForBOM
-  name: TestForBOM()
-  href: api/WizardWrx.EmbeddedTextFile.ByteOrderMark.html#WizardWrx_EmbeddedTextFile_ByteOrderMark_TestForBOM
-  commentId: M:WizardWrx.EmbeddedTextFile.ByteOrderMark.TestForBOM
-  fullName: WizardWrx.EmbeddedTextFile.ByteOrderMark.TestForBOM()
-  nameWithType: ByteOrderMark.TestForBOM()
-- uid: WizardWrx.EmbeddedTextFile.ByteOrderMark.TestForBOM*
-  name: TestForBOM
-  href: api/WizardWrx.EmbeddedTextFile.ByteOrderMark.html#WizardWrx_EmbeddedTextFile_ByteOrderMark_TestForBOM_
-  commentId: Overload:WizardWrx.EmbeddedTextFile.ByteOrderMark.TestForBOM
-  isSpec: "True"
-  fullName: WizardWrx.EmbeddedTextFile.ByteOrderMark.TestForBOM
-  nameWithType: ByteOrderMark.TestForBOM
-- uid: WizardWrx.EmbeddedTextFile.Readers
-  name: Readers
-  href: api/WizardWrx.EmbeddedTextFile.Readers.html
-  commentId: T:WizardWrx.EmbeddedTextFile.Readers
-  fullName: WizardWrx.EmbeddedTextFile.Readers
-  nameWithType: Readers
-- uid: WizardWrx.EmbeddedTextFile.Readers.LoadBinaryResourceFromAnyAssembly(System.String,System.Reflection.Assembly)
-  name: LoadBinaryResourceFromAnyAssembly(String, Assembly)
-  href: api/WizardWrx.EmbeddedTextFile.Readers.html#WizardWrx_EmbeddedTextFile_Readers_LoadBinaryResourceFromAnyAssembly_System_String_System_Reflection_Assembly_
-  commentId: M:WizardWrx.EmbeddedTextFile.Readers.LoadBinaryResourceFromAnyAssembly(System.String,System.Reflection.Assembly)
-  fullName: WizardWrx.EmbeddedTextFile.Readers.LoadBinaryResourceFromAnyAssembly(System.String, System.Reflection.Assembly)
-  nameWithType: Readers.LoadBinaryResourceFromAnyAssembly(String, Assembly)
-- uid: WizardWrx.EmbeddedTextFile.Readers.LoadBinaryResourceFromAnyAssembly*
-  name: LoadBinaryResourceFromAnyAssembly
-  href: api/WizardWrx.EmbeddedTextFile.Readers.html#WizardWrx_EmbeddedTextFile_Readers_LoadBinaryResourceFromAnyAssembly_
-  commentId: Overload:WizardWrx.EmbeddedTextFile.Readers.LoadBinaryResourceFromAnyAssembly
-  isSpec: "True"
-  fullName: WizardWrx.EmbeddedTextFile.Readers.LoadBinaryResourceFromAnyAssembly
-  nameWithType: Readers.LoadBinaryResourceFromAnyAssembly
-- uid: WizardWrx.EmbeddedTextFile.Readers.LoadTextFileFromAnyAssembly(System.String,System.Reflection.Assembly)
-  name: LoadTextFileFromAnyAssembly(String, Assembly)
-  href: api/WizardWrx.EmbeddedTextFile.Readers.html#WizardWrx_EmbeddedTextFile_Readers_LoadTextFileFromAnyAssembly_System_String_System_Reflection_Assembly_
-  commentId: M:WizardWrx.EmbeddedTextFile.Readers.LoadTextFileFromAnyAssembly(System.String,System.Reflection.Assembly)
-  fullName: WizardWrx.EmbeddedTextFile.Readers.LoadTextFileFromAnyAssembly(System.String, System.Reflection.Assembly)
-  nameWithType: Readers.LoadTextFileFromAnyAssembly(String, Assembly)
-- uid: WizardWrx.EmbeddedTextFile.Readers.LoadTextFileFromAnyAssembly*
-  name: LoadTextFileFromAnyAssembly
-  href: api/WizardWrx.EmbeddedTextFile.Readers.html#WizardWrx_EmbeddedTextFile_Readers_LoadTextFileFromAnyAssembly_
-  commentId: Overload:WizardWrx.EmbeddedTextFile.Readers.LoadTextFileFromAnyAssembly
-  isSpec: "True"
-  fullName: WizardWrx.EmbeddedTextFile.Readers.LoadTextFileFromAnyAssembly
-  nameWithType: Readers.LoadTextFileFromAnyAssembly
-- uid: WizardWrx.EmbeddedTextFile.Readers.LoadTextFileFromCallingAssembly(System.String)
-  name: LoadTextFileFromCallingAssembly(String)
-  href: api/WizardWrx.EmbeddedTextFile.Readers.html#WizardWrx_EmbeddedTextFile_Readers_LoadTextFileFromCallingAssembly_System_String_
-  commentId: M:WizardWrx.EmbeddedTextFile.Readers.LoadTextFileFromCallingAssembly(System.String)
-  fullName: WizardWrx.EmbeddedTextFile.Readers.LoadTextFileFromCallingAssembly(System.String)
-  nameWithType: Readers.LoadTextFileFromCallingAssembly(String)
-- uid: WizardWrx.EmbeddedTextFile.Readers.LoadTextFileFromCallingAssembly*
-  name: LoadTextFileFromCallingAssembly
-  href: api/WizardWrx.EmbeddedTextFile.Readers.html#WizardWrx_EmbeddedTextFile_Readers_LoadTextFileFromCallingAssembly_
-  commentId: Overload:WizardWrx.EmbeddedTextFile.Readers.LoadTextFileFromCallingAssembly
-  isSpec: "True"
-  fullName: WizardWrx.EmbeddedTextFile.Readers.LoadTextFileFromCallingAssembly
-  nameWithType: Readers.LoadTextFileFromCallingAssembly
-- uid: WizardWrx.EmbeddedTextFile.Readers.LoadTextFileFromEntryAssembly(System.String)
-  name: LoadTextFileFromEntryAssembly(String)
-  href: api/WizardWrx.EmbeddedTextFile.Readers.html#WizardWrx_EmbeddedTextFile_Readers_LoadTextFileFromEntryAssembly_System_String_
-  commentId: M:WizardWrx.EmbeddedTextFile.Readers.LoadTextFileFromEntryAssembly(System.String)
-  fullName: WizardWrx.EmbeddedTextFile.Readers.LoadTextFileFromEntryAssembly(System.String)
-  nameWithType: Readers.LoadTextFileFromEntryAssembly(String)
-- uid: WizardWrx.EmbeddedTextFile.Readers.LoadTextFileFromEntryAssembly*
-  name: LoadTextFileFromEntryAssembly
-  href: api/WizardWrx.EmbeddedTextFile.Readers.html#WizardWrx_EmbeddedTextFile_Readers_LoadTextFileFromEntryAssembly_
-  commentId: Overload:WizardWrx.EmbeddedTextFile.Readers.LoadTextFileFromEntryAssembly
-  isSpec: "True"
-  fullName: WizardWrx.EmbeddedTextFile.Readers.LoadTextFileFromEntryAssembly
-  nameWithType: Readers.LoadTextFileFromEntryAssembly
-- uid: WizardWrx.EmbeddedTextFile.Readers.NameValueCollectionFromEmbbededList(System.String,System.String)
-  name: NameValueCollectionFromEmbbededList(String, String)
-  href: api/WizardWrx.EmbeddedTextFile.Readers.html#WizardWrx_EmbeddedTextFile_Readers_NameValueCollectionFromEmbbededList_System_String_System_String_
-  commentId: M:WizardWrx.EmbeddedTextFile.Readers.NameValueCollectionFromEmbbededList(System.String,System.String)
-  fullName: WizardWrx.EmbeddedTextFile.Readers.NameValueCollectionFromEmbbededList(System.String, System.String)
-  nameWithType: Readers.NameValueCollectionFromEmbbededList(String, String)
-- uid: WizardWrx.EmbeddedTextFile.Readers.NameValueCollectionFromEmbbededList*
-  name: NameValueCollectionFromEmbbededList
-  href: api/WizardWrx.EmbeddedTextFile.Readers.html#WizardWrx_EmbeddedTextFile_Readers_NameValueCollectionFromEmbbededList_
-  commentId: Overload:WizardWrx.EmbeddedTextFile.Readers.NameValueCollectionFromEmbbededList
-  isSpec: "True"
-  fullName: WizardWrx.EmbeddedTextFile.Readers.NameValueCollectionFromEmbbededList
-  nameWithType: Readers.NameValueCollectionFromEmbbededList
-- uid: WizardWrx.EmbeddedTextFile.Readers.StringFromANSICharacterArray(System.Byte[])
-  name: StringFromANSICharacterArray(Byte[])
-  href: api/WizardWrx.EmbeddedTextFile.Readers.html#WizardWrx_EmbeddedTextFile_Readers_StringFromANSICharacterArray_System_Byte___
-  commentId: M:WizardWrx.EmbeddedTextFile.Readers.StringFromANSICharacterArray(System.Byte[])
-  name.vb: StringFromANSICharacterArray(Byte())
-  fullName: WizardWrx.EmbeddedTextFile.Readers.StringFromANSICharacterArray(System.Byte[])
-  fullName.vb: WizardWrx.EmbeddedTextFile.Readers.StringFromANSICharacterArray(System.Byte())
-  nameWithType: Readers.StringFromANSICharacterArray(Byte[])
-  nameWithType.vb: Readers.StringFromANSICharacterArray(Byte())
-- uid: WizardWrx.EmbeddedTextFile.Readers.StringFromANSICharacterArray*
-  name: StringFromANSICharacterArray
-  href: api/WizardWrx.EmbeddedTextFile.Readers.html#WizardWrx_EmbeddedTextFile_Readers_StringFromANSICharacterArray_
-  commentId: Overload:WizardWrx.EmbeddedTextFile.Readers.StringFromANSICharacterArray
-  isSpec: "True"
-  fullName: WizardWrx.EmbeddedTextFile.Readers.StringFromANSICharacterArray
-  nameWithType: Readers.StringFromANSICharacterArray
-- uid: WizardWrx.EmbeddedTextFile.Readers.StringOfLinesToArray(System.String)
-  name: StringOfLinesToArray(String)
-  href: api/WizardWrx.EmbeddedTextFile.Readers.html#WizardWrx_EmbeddedTextFile_Readers_StringOfLinesToArray_System_String_
-  commentId: M:WizardWrx.EmbeddedTextFile.Readers.StringOfLinesToArray(System.String)
-  fullName: WizardWrx.EmbeddedTextFile.Readers.StringOfLinesToArray(System.String)
-  nameWithType: Readers.StringOfLinesToArray(String)
-- uid: WizardWrx.EmbeddedTextFile.Readers.StringOfLinesToArray(System.String,System.StringSplitOptions)
-  name: StringOfLinesToArray(String, StringSplitOptions)
-  href: api/WizardWrx.EmbeddedTextFile.Readers.html#WizardWrx_EmbeddedTextFile_Readers_StringOfLinesToArray_System_String_System_StringSplitOptions_
-  commentId: M:WizardWrx.EmbeddedTextFile.Readers.StringOfLinesToArray(System.String,System.StringSplitOptions)
-  fullName: WizardWrx.EmbeddedTextFile.Readers.StringOfLinesToArray(System.String, System.StringSplitOptions)
-  nameWithType: Readers.StringOfLinesToArray(String, StringSplitOptions)
-- uid: WizardWrx.EmbeddedTextFile.Readers.StringOfLinesToArray*
-  name: StringOfLinesToArray
-  href: api/WizardWrx.EmbeddedTextFile.Readers.html#WizardWrx_EmbeddedTextFile_Readers_StringOfLinesToArray_
-  commentId: Overload:WizardWrx.EmbeddedTextFile.Readers.StringOfLinesToArray
-  isSpec: "True"
-  fullName: WizardWrx.EmbeddedTextFile.Readers.StringOfLinesToArray
-  nameWithType: Readers.StringOfLinesToArray
-- uid: WizardWrx.EmbeddedTextFile.Readers.StringToArray(System.String)
-  name: StringToArray(String)
-  href: api/WizardWrx.EmbeddedTextFile.Readers.html#WizardWrx_EmbeddedTextFile_Readers_StringToArray_System_String_
-  commentId: M:WizardWrx.EmbeddedTextFile.Readers.StringToArray(System.String)
-  fullName: WizardWrx.EmbeddedTextFile.Readers.StringToArray(System.String)
-  nameWithType: Readers.StringToArray(String)
-- uid: WizardWrx.EmbeddedTextFile.Readers.StringToArray*
-  name: StringToArray
-  href: api/WizardWrx.EmbeddedTextFile.Readers.html#WizardWrx_EmbeddedTextFile_Readers_StringToArray_
-  commentId: Overload:WizardWrx.EmbeddedTextFile.Readers.StringToArray
-  isSpec: "True"
-  fullName: WizardWrx.EmbeddedTextFile.Readers.StringToArray
-  nameWithType: Readers.StringToArray
 - uid: WizardWrx.EmbeddedTextFileReaders
   name: EmbeddedTextFileReaders
   href: api/WizardWrx.EmbeddedTextFileReaders.html
@@ -15641,6 +15424,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.SortableManagedResourceItem.GetInternalResourceName
   nameWithType: SortableManagedResourceItem.GetInternalResourceName
+- uid: WizardWrx.SortableManagedResourceItem.ListResourcesInAssemblyByName(System.Reflection.Assembly,System.IO.StreamWriter)
+  name: ListResourcesInAssemblyByName(Assembly, StreamWriter)
+  href: api/WizardWrx.SortableManagedResourceItem.html#WizardWrx_SortableManagedResourceItem_ListResourcesInAssemblyByName_System_Reflection_Assembly_System_IO_StreamWriter_
+  commentId: M:WizardWrx.SortableManagedResourceItem.ListResourcesInAssemblyByName(System.Reflection.Assembly,System.IO.StreamWriter)
+  fullName: WizardWrx.SortableManagedResourceItem.ListResourcesInAssemblyByName(System.Reflection.Assembly, System.IO.StreamWriter)
+  nameWithType: SortableManagedResourceItem.ListResourcesInAssemblyByName(Assembly, StreamWriter)
+- uid: WizardWrx.SortableManagedResourceItem.ListResourcesInAssemblyByName*
+  name: ListResourcesInAssemblyByName
+  href: api/WizardWrx.SortableManagedResourceItem.html#WizardWrx_SortableManagedResourceItem_ListResourcesInAssemblyByName_
+  commentId: Overload:WizardWrx.SortableManagedResourceItem.ListResourcesInAssemblyByName
+  isSpec: "True"
+  fullName: WizardWrx.SortableManagedResourceItem.ListResourcesInAssemblyByName
+  nameWithType: SortableManagedResourceItem.ListResourcesInAssemblyByName
 - uid: WizardWrx.SortableManagedResourceItem.Name
   name: Name
   href: api/WizardWrx.SortableManagedResourceItem.html#WizardWrx_SortableManagedResourceItem_Name
@@ -16231,6 +16027,18 @@ references:
   commentId: F:WizardWrx.SpecialStrings.DOUBLE_QUOTE
   fullName: WizardWrx.SpecialStrings.DOUBLE_QUOTE
   nameWithType: SpecialStrings.DOUBLE_QUOTE
+- uid: WizardWrx.SpecialStrings.DOUBLE_SPACE
+  name: DOUBLE_SPACE
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_DOUBLE_SPACE
+  commentId: F:WizardWrx.SpecialStrings.DOUBLE_SPACE
+  fullName: WizardWrx.SpecialStrings.DOUBLE_SPACE
+  nameWithType: SpecialStrings.DOUBLE_SPACE
+- uid: WizardWrx.SpecialStrings.EMBEDDED_TAB
+  name: EMBEDDED_TAB
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_EMBEDDED_TAB
+  commentId: F:WizardWrx.SpecialStrings.EMBEDDED_TAB
+  fullName: WizardWrx.SpecialStrings.EMBEDDED_TAB
+  nameWithType: SpecialStrings.EMBEDDED_TAB
 - uid: WizardWrx.SpecialStrings.EMPTY_STRING
   name: EMPTY_STRING
   href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_EMPTY_STRING
@@ -16381,6 +16189,12 @@ references:
   commentId: F:WizardWrx.SpecialStrings.NONBREAKING_SPACE_CHAR
   fullName: WizardWrx.SpecialStrings.NONBREAKING_SPACE_CHAR
   nameWithType: SpecialStrings.NONBREAKING_SPACE_CHAR
+- uid: WizardWrx.SpecialStrings.OUTPUT_TAB
+  name: OUTPUT_TAB
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_OUTPUT_TAB
+  commentId: F:WizardWrx.SpecialStrings.OUTPUT_TAB
+  fullName: WizardWrx.SpecialStrings.OUTPUT_TAB
+  nameWithType: SpecialStrings.OUTPUT_TAB
 - uid: WizardWrx.SpecialStrings.PARENTHESIS_LEFT
   name: PARENTHESIS_LEFT
   href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_PARENTHESIS_LEFT

@@ -216,6 +216,10 @@
 							  paired with a like-named character constant, for
                               the same reason the PIPE_CHAR amd others exist in
                               both formats and classes.
+
+	2022/11/22 9.0.253 DAG   Move DOUBLE_SPACE, EMBEDDED_TAB and OUTPUT_TAB from
+                             class ReportHelpers, which is also moving to this
+                             library.
     ============================================================================
 */
 
@@ -513,18 +517,34 @@ namespace WizardWrx
         /// <seealso cref="SpecialCharacters.DOUBLE_QUOTE"/>
         public const string DOUBLE_QUOTE = "\"";
 
-        /// <summary>
-        /// I like having a way to initialize a constant to the empty string.
-        /// </summary>
-        /// <seealso cref="ArrayInfo.ARRAY_FIRST_ELEMENT"/>
-        /// <seealso cref="ArrayInfo.ARRAY_IS_EMPTY"/>
-        /// <seealso cref="ArrayInfo.ARRAY_INVALID_INDEX"/>
-        /// <seealso cref="ArrayInfo.ARRAY_SECOND_ELEMENT"/>
-        /// <seealso cref="ArrayInfo.INDEX_FROM_ORDINAL"/>
-        /// <seealso cref="ArrayInfo.NEXT_INDEX"/>
-        /// <seealso cref="ArrayInfo.ORDINAL_FROM_INDEX"/>
-        /// <seealso cref="MagicNumbers.EMPTY_STRING_LENGTH"/>
-        public const string EMPTY_STRING = @"";
+		/// <summary>
+		/// Overlooked constant - two consecutive spaces.
+		/// </summary>
+		public const string DOUBLE_SPACE = @"  ";
+
+		/// <summary>
+		/// Tab characters, as they must be entered into resource (.RESX) strings.
+		/// </summary>
+		public const string EMBEDDED_TAB = "\\t";
+
+		/// <summary>
+		/// Tab characters, as they must appear in the string before it can be
+		/// used.
+		/// </summary>
+		public const string OUTPUT_TAB = "\t";
+
+		/// <summary>
+		/// I like having a way to initialize a constant to the empty string.
+		/// </summary>
+		/// <seealso cref="ArrayInfo.ARRAY_FIRST_ELEMENT"/>
+		/// <seealso cref="ArrayInfo.ARRAY_IS_EMPTY"/>
+		/// <seealso cref="ArrayInfo.ARRAY_INVALID_INDEX"/>
+		/// <seealso cref="ArrayInfo.ARRAY_SECOND_ELEMENT"/>
+		/// <seealso cref="ArrayInfo.INDEX_FROM_ORDINAL"/>
+		/// <seealso cref="ArrayInfo.NEXT_INDEX"/>
+		/// <seealso cref="ArrayInfo.ORDINAL_FROM_INDEX"/>
+		/// <seealso cref="MagicNumbers.EMPTY_STRING_LENGTH"/>
+		public const string EMPTY_STRING = @"";
 
 		/// <summary>
 		/// Since ErrorExit is never invoked for ERROR_SUCCESS, and the table of

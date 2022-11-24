@@ -165,6 +165,10 @@
     <value>The field count in row {1} in embedded resource {0} is incorrect.{5}Actual Field Count   = {2}{5}Expected Field Count = {3}{5}Complete Row         = {4}</value>
     <comment>This is the template for an error message, used by static method NameValueCollectionFromEmbbededList.</comment>
   </data>
+  <data name="ERRMSG_CANNOT_PARSE" xml:space="preserve">
+    <value>ERROR: The CreateFormatString method cannot process the specified format string.{1}    Specified format string = {0}</value>
+    <comment>The CreateFormatString report helper method generates an exception report from this template.</comment>
+  </data>
   <data name="ERRMSG_DUPE_KEY" xml:space="preserve">
     <value>The key field in row {1} in embedded resource {0} is a duplicate.{4}Key value    = {2}{4}Complete row = {3}</value>
     <comment>This is the template for an error message, used by static method NameValueCollectionFromEmbbededList.</comment>
@@ -293,6 +297,38 @@
     <value>NULL</value>
     <comment>This is one of 18 strings from which to construct messages that I added to version 7.22.122 of the library.</comment>
   </data>
+  <data name="MSG_RESOURCE_LIST_BASENAME" xml:space="preserve">
+    <value>Location   = {0}</value>
+    <comment>ListResourcesInAssemblyByName next lists the basename of the resource.</comment>
+  </data>
+  <data name="MSG_RESOURCE_LIST_FQNAME" xml:space="preserve">
+    <value>Assembly Name  = {0}{1}</value>
+    <comment>ListResourcesInAssemblyByName opens its report with this message.</comment>
+  </data>
+  <data name="MSG_RESOURCE_LIST_ITEM_COUNT" xml:space="preserve">
+    <value># of Items = {0}{1}</value>
+    <comment>ListResourcesInAssemblyByName next shows the number of resources defined in the assembly, which are about to be listed.</comment>
+  </data>
+  <data name="MSG_RESOURCE_LIST_ITEM_DETAIL" xml:space="preserve">
+    <value>{0} # {1}: Name = {2}, Value = {3}</value>
+    <comment>Finally, ListResourcesInAssemblyByName lists each resource by name.</comment>
+  </data>
+  <data name="MSG_RESOURCE_LIST_NAMED_ITEM" xml:space="preserve">
+    <value>Embedded Resource # {0}: {1}</value>
+    <comment>ListResourcesInAssemblyByName uses this template to display the name of a named resource. Usually, there is one, at most, but I have assemblies that contain as many as three embedded resources.</comment>
+  </data>
+  <data name="MSG_RESOURCE_LIST_NAMES_END" xml:space="preserve">
+    <value>{0}    End of list{0}</value>
+    <comment>ListResourcesInAssemblyByName uses this template to format a message when it has displayed the name of the last embedded resource.</comment>
+  </data>
+  <data name="MSG_RESOURCE_LIST_NONE" xml:space="preserve">
+    <value>The specified assembly contains no embedded resources of any kind.</value>
+    <comment>ListResourcesInAssemblyByName displays this message when the specifieed assembly is devoid of embedded resources.</comment>
+  </data>
+  <data name="MSG_RESOURCE_LIST_NO_STRINGS" xml:space="preserve">
+    <value>The speicifed assembly contains no embedded string resources.</value>
+    <comment>ListResourcesInAssemblyByName displays this message when the specifieed assembly is devoid of embedded string resources.</comment>
+  </data>
   <data name="MSG_STATUS_CODE" xml:space="preserve">
     <value>{0} ({1:D} decimal)</value>
     <comment>Use this method to specify a status code or HRESULT, showing both decimal and hexadecimal representations. A single item number is used twice, with different format strings, so that one argument feeds both. Alas, printf() and its kin cannot do this.</comment>
@@ -344,6 +380,10 @@
   <data name="REGISTRY_VALUE_TYPE_QWORD" xml:space="preserve">
     <value>REG_QWORD</value>
     <comment>Use these strings to describe the type of a Registry value.</comment>
+  </data>
+  <data name="RESOURCE_REPORT_LABELS" xml:space="preserve">
+    <value>ItemNbr\tName\tValue</value>
+    <comment>Static method ListResourcesInAssemblyByName generates the label row for a tab delimited report file from this template.</comment>
   </data>
   <data name="STACK_TRACE_ENTRY_PREFIX" xml:space="preserve">
     <value>   at </value>

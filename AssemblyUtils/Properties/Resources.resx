@@ -333,43 +333,9 @@
     <value>{{{0} (Subsystem ID = {1} ({2})}}</value>
     <comment>The PeSubsystemInfo ToString override uses this template.</comment>
   </data>
-  <data name="MSG_RESOURCE_LIST_BASENAME" xml:space="preserve">
-    <value>    Location   = {0}</value>
-    <comment>ListResourcesInAssemblyByName next lists the basename of the resource.</comment>
-  </data>
-  <data name="MSG_RESOURCE_LIST_FQNAME" xml:space="preserve">
-    <value>Assembly Name  = {0}{1}</value>
-    <comment>ListResourcesInAssemblyByName opens its report with this message.</comment>
-  </data>
-  <data name="MSG_RESOURCE_LIST_ITEM_COUNT" xml:space="preserve">
-    <value>    # of Items = {0}{1}</value>
-    <comment>ListResourcesInAssemblyByName next shows the number of resources defined in the assembly, which are about to be listed.</comment>
-  </data>
-  <data name="MSG_RESOURCE_LIST_ITEM_DETAIL" xml:space="preserve">
-    <value>    {0} # {1}: Name = {2}, Value = {3}</value>
-    <comment>Finally, ListResourcesInAssemblyByName lists each resource by name.</comment>
-  </data>
-  <data name="MSG_RESOURCE_LIST_NAMED_ITEM" xml:space="preserve">
-    <value>        Embedded Resource # {0}: {1}</value>
-    <comment>ListResourcesInAssemblyByName uses this template to display the name of a named resource. Usually, there is one, at most, but I have assemblies that contain as many as three embedded resourc3es.</comment>
-  </data>
-  <data name="MSG_RESOURCE_LIST_NAMES_END" xml:space="preserve">
-    <value>{0}    End of list{0}</value>
-    <comment>ListResourcesInAssemblyByName uses this template to format a message when it has displayed the name of the last embedded resource.</comment>
-  </data>
-  <data name="MSG_RESOURCE_LIST_NONE" xml:space="preserve">
-    <value>The specified assembly contains no embedded resources of any kind.</value>
-  </data>
-  <data name="MSG_RESOURCE_LIST_NO_STRINGS" xml:space="preserve">
-    <value>The speicifed assembly contains no embedded strings resources.</value>
-  </data>
   <data name="MSG_ASM_PROPS_ASSEMBLYVERSION" xml:space="preserve">
     <value>        AssemblyVersion      = {0} (per AssemblyName.GetAssemblyName)</value>
     <comment>Used by ReportGenerators.ShowKeyAssemblyProperties Method</comment>
-  </data>
-  <data name="RESOURCE_REPORT_LABELS" xml:space="preserve">
-    <value>ItemNbr\tName\tValue</value>
-    <comment>Static method ListResourcesInAssemblyByName generates the label row for a tab delimited report file from this template.</comment>
   </data>
   <data name="ATTRIBUTE_SHORT_NAME_COMPANY" xml:space="preserve">
     <value>Company</value>

@@ -99,6 +99,14 @@
                               CreateLastToken by way of a much more efficient
                               algorithm that consumes much less memory and CPU
                               time.
+
+	2022/11/22 9.0.253 DAG    Move this class from WizardWrx.Core to acommodate
+                              the needs of SortableManagedResourceItem, which is
+                              moving up the namespace tree and into this library
+                              to acommodate the classes that moved here as part
+                              of the consolidation of EmbeddedTextFile into this
+                              library. (I copied everything except static method
+                              ListResourcesInAssemblyByName yesterday.)
     ============================================================================
 */
 
@@ -126,7 +134,7 @@ namespace WizardWrx
             /// <summary>
             /// Align text to left.
             /// </summary>
-            Left ,
+            Left,
 
             /// <summary>
             /// Align text to right.
@@ -142,13 +150,13 @@ namespace WizardWrx
         /// <summary>
         /// Tab characters, as they must be entered into resource (.RESX) strings.
         /// </summary>
-        public const string EMBEDDED_TAB = "\\t";
+        public const string EMBEDDED_TAB = SpecialStrings.EMBEDDED_TAB;
 
         /// <summary>
         /// Tab characters, as they must appear in the string before it can be
         /// used.
         /// </summary>
-        public const string OUTPUT_TAB = "\t";
+        public const string OUTPUT_TAB = SpecialStrings.EMBEDDED_TAB;
         #endregion  // Public Enumerations and Constants
 
 
@@ -264,8 +272,8 @@ namespace WizardWrx
                     {   // Update return value if string is longest so far.
                         rintMaxLength = strObjectAsString.Length;
                     }   // if ( strObjectAsString.Length > rintMaxLength )
-				}   // foreach ( T objCurrent in plstObjs )
-			}   // if ( plstObjs != null )
+                }   // foreach ( T objCurrent in plstObjs )
+            }   // if ( plstObjs != null )
 
             return rintMaxLength;
         }   // public static int MaxStringLength
@@ -273,6 +281,90 @@ namespace WizardWrx
 
 
         #region Private Methods
+        /// <summary>
+        /// <para>
+        /// Strangely, the String class is missing an important static method to
+        /// count occurrences of a specified character within a string. This is
+        /// that missing method.
+        /// </para>
+        /// <para>
+        /// This method, which originated in StringExtensions, moves here as a
+        /// private method because this class needs it and the extension methods
+        /// class from which it cames must remain where it is to minimize the
+        /// number of breaking changes.
+        /// </para>
+        /// </summary>
+        /// <param name="pstrSource">
+        /// Specify the string in which to count occurrences of substring 
+        /// pstrToCount.
+        ///
+        /// If pstrSource is null or empty, the method returns zero.
+        /// 
+        /// Since this is an extension method, pstrIn is supplied by the BCL
+        /// when it binds this method to an instance of System.string.
+        /// </param>
+        /// <param name="pchrToCount">
+        /// Specify the substring to count in string pstrSource. An empty string
+        /// causes the method to return MagicNumbers.STRING_INDEXOF_NOT_FOUND,
+        /// or -1.
+        /// </param>
+        /// <returns>
+        /// The return value is the number of times, if any, that string
+        /// pstrToCount occurs in string pstrSource, or
+        /// MagicNumbers.STRING_INDEXOF_NOT_FOUND (-1) if pstrToCount is either
+        /// null reference or empty the empty string.
+        /// </returns>
+        /// <remarks>
+        /// This method implements the only overload of the string.IndexOf
+        /// method that takes a character as its second argument for which I
+        /// have yet to make use. There is currently no implementation of the
+        /// overload that stops looking after scanning count characters, nor do
+        /// I have immediate plans to implement one, though it wouldn't be hard.
+        /// 
+        /// This method uses the same algorithm as CountSubstrings, except that
+        /// its second argument is a single character, which CANNOT be the NULL
+        /// character.
+        /// </remarks>
+        private static int CountCharacterOccurrences (
+            string pstrSource ,
+            char pchrToCount )
+        {
+            if ( string.IsNullOrEmpty ( pstrSource ) )
+            {   // Treat null strings as empty, and treat both as a valid, but degenerate, case.
+                return MagicNumbers.ZERO;
+            }   // if ( string.IsNullOrEmpty ( pstrSource ) )
+
+            if ( pchrToCount == SpecialCharacters.NULL_CHAR )
+            {   // This is an error. String pstrToCount should never be null or empty.
+                return MagicNumbers.STRING_INDEXOF_NOT_FOUND;
+            }   // if ( string.IsNullOrEmpty ( pstrToCount ) )
+
+            int rintCount = MagicNumbers.ZERO;
+
+            //	----------------------------------------------------------------
+            //	Unless pstrSource contains at least one instance of pstrToCount,
+            //	this first IndexOf is the only one that executes.
+            //
+            //	If there are no matches, intPos is STRING_INDEXOF_NOT_FOUND (-1)
+            //	and the WHILE loop is skipped. Hence, if control falls into the
+            //	loop, at least one item was found, and must be counted, and the
+            //	loop continues until intPos becomes STRING_INDEXOF_NOT_FOUND.
+            //	----------------------------------------------------------------
+
+            int intPos = pstrSource.IndexOf ( pchrToCount );                    // Look for first instance.
+
+            while ( intPos != MagicNumbers.STRING_INDEXOF_NOT_FOUND )
+            {                                                                   // Found at least one.
+                rintCount++;                                                    // Count it.
+                intPos = pstrSource.IndexOf (
+                    pchrToCount ,
+                    ( intPos + ArrayInfo.NEXT_INDEX ) );                        // Search for more.
+            }   // while ( intPos != MagicNumbers.STRING_INDEXOF_NOT_FOUND )
+
+            return rintCount;                                                   // Report.
+        }   // CountCharacterOccurrences
+
+
         /// <summary>
         /// Given a formatted string for a label row, generate a format string
         /// for the corresponding detail row. See Remarks.
@@ -290,7 +382,9 @@ namespace WizardWrx
             string pstrReportLabels ,
             char pchrFieldSeparator )
         {
-            int intDelimiterCount = pstrReportLabels.CountCharacterOccurrences ( pchrFieldSeparator );
+            int intDelimiterCount = CountCharacterOccurrences (
+                pstrReportLabels ,                          // string pstrSource
+                pchrFieldSeparator );                       // char pchrToCount
 
             if ( intDelimiterCount > ListInfo.LIST_IS_EMPTY )
             {
@@ -300,8 +394,8 @@ namespace WizardWrx
 
                 StringBuilder sbFormat = new StringBuilder ( pstrReportLabels.Length );
 
-                for ( int intTokenIndex = ArrayInfo.ARRAY_FIRST_ELEMENT ;
-                          intTokenIndex <= intDelimiterCount ;
+                for ( int intTokenIndex = ArrayInfo.ARRAY_FIRST_ELEMENT;
+                          intTokenIndex <= intDelimiterCount;
                           intTokenIndex++ )
                 {
                     if ( intTokenIndex < intDelimiterCount )
@@ -346,11 +440,11 @@ namespace WizardWrx
             }   // TRUE block, else if ( pstrReportLabels.Contains ( DOUBLE_SPACE ) )
             else
             {
-                throw new ArgumentException ( 
-					string.Format (
-	                    Core.Properties.Resources.ERRMSG_CANNOT_PARSE ,
-						pstrReportLabels ,
-						Environment.NewLine ) );
+                throw new ArgumentException (
+                    string.Format (
+                        Common.Properties.Resources.ERRMSG_CANNOT_PARSE ,
+                        pstrReportLabels ,
+                        Environment.NewLine ) );
             }   // FALSE block of anticipated outcome) block, if ( intDelimiterCount > ListInfo.LIST_IS_EMPTY ) AND else if ( pstrReportLabels.Contains ( DOUBLE_SPACE ) )
         }   // private static string CreateFormatString
 
@@ -386,7 +480,7 @@ namespace WizardWrx
         /// actual delimiter character, pchrFieldSeparator.
         /// </remarks>
         private static string CreateLastToken (
-            string pstrTokenTemplate , 
+            string pstrTokenTemplate ,
             char pchrFieldSeparator )
         {
             if ( pchrFieldSeparator == SpecialCharacters.TAB_CHAR )

@@ -1,0 +1,257 @@
+Code	CharType	Subtype	CHAR	DESCRIPTION	HTML Name	Display	Comment
+0	NonPrintable	NULL	[NUL]	null character		NUL/Null	
+1	NonPrintable	Control	[SOH]	start of heading			
+2	NonPrintable	Control	[STX]	start of text			
+3	NonPrintable	Control	[ETX]	end of text			
+4	NonPrintable	Control	[EOT]	end of transmission			
+5	NonPrintable	Control	[ENQ]	enquiry			
+6	NonPrintable	Control	[ACK]	acknowledgment			
+7	NonPrintable	Control	[BEL]	audible bell		BEL (Alarm)	Causes the default PC beep.
+8	NonPrintable	Control	[BS]	back space		BS (Backspace)	Technically defined as the non-destructive backspace, which moves the curser bacwards one space, leaving the character that occupies it
+9	NonPrintable	White_Space	[HT]	horizontal tab		HT (Horizontal Tab)	
+10	NonPrintable	Control	[LF]	line feed		CR (Carriage Return)	Unix Newline, on Windows, reset the cursor to left edge
+11	NonPrintable	White_Space	[VT]	vertical tab		VT (Vertical Tab)	
+12	NonPrintable	Control	[FF]	form feed		FF (Form Feed)	Eject page from printer, often used to signify page breaks in text files
+13	NonPrintable	Control	[CR]	carriage return		LF (Line Feed)	Windows Line Feed, on Windows, scroll the output buffer up one line
+14	NonPrintable	Control	[SO]	shift out			
+15	NonPrintable	Control	[SI]	shift in			
+16	NonPrintable	Control	[DLE]	data link escape			
+17	NonPrintable	Control	[DC1]	device control 1			
+18	NonPrintable	Control	[DC2]	device control 2			
+19	NonPrintable	Control	[DC3]	device control 3			
+20	NonPrintable	Control	[DC4]	device control 4			
+21	NonPrintable	Control	[NAK]	negative acknowledge			
+22	NonPrintable	Control	[SYN]	synchronous idle			
+23	NonPrintable	Control	[ETB]	end of transmit block			
+24	NonPrintable	Control	[CAN]	cancel			
+25	NonPrintable	Control	[EM]	end of medium			
+26	NonPrintable	Control	[SUB]	substitution		EOF (DOS End of File)	Modern files seldom use this character.
+27	NonPrintable	Control	[ESC]	escape		ESC (Escape, for Printer)	Still used in printer control languages, such as Hewlett-Packard Printer Control Language (PCL)
+28	NonPrintable	Control	[FS]	file separator			
+29	NonPrintable	Control	[GS]	group separator			
+30	NonPrintable	Control	[RS]	record separator			
+31	NonPrintable	Control	[US]	unit separator			
+32	Printable	White_Space				SP (Single Space)	
+33	Printable	Punctuation				Exclamation Point (!)	
+34	Printable	Symbol			&quot;	Double Quote (")	
+35	Printable	Symbol				Hash or Pound (#)	
+36	Printable	Symbol				Dollar ($)	
+37	Printable	Symbol				Percent (%)	
+38	Printable	Punctuation			&amp;	Ampersand (&)	
+39	Printable	Punctuation				Single Quote	
+40	Printable	Punctuation				Left Parenthesis [(]	
+41	Printable	Symbol				Right Parenthesis [)]	
+42	Printable	Symbol				Asterisk (*)	
+43	Printable	Symbol				Plus (+)	
+44	Printable	Punctuation				Comma (,)	
+45	Printable	Punctuation				Minus/Hyphen (-)	
+46	Printable	Punctuation				Period/Full Stop (.)	
+47	Printable	Symbol				Forward Slash (/)	
+48	Printable	Numeral				Numeral 0	
+49	Printable	Numeral				Numeral 1	
+50	Printable	Numeral				Numeral 2	
+51	Printable	Numeral				Numeral 3	
+52	Printable	Numeral				Numeral 4	
+53	Printable	Numeral				Numeral 5	
+54	Printable	Numeral				Numeral 6	
+55	Printable	Numeral				Numeral 7	
+56	Printable	Numeral				Numeral 8	
+57	Printable	Numeral				Numeral 9	
+58	Printable	Punctuation				Colon (:)	
+59	Printable	Punctuation				Semicolon (;)	
+60	Printable	Symbol			&lt;	Left Angle Bracket (>)	
+61	Printable	Symbol				Equals (=)	
+62	Printable	Symbol			&gt;	Right Angle Bracket (>)	
+63	Printable	Punctuation				Question Mark (?)	
+64	Printable	Symbol				At (@)	
+65	Printable	UC_Latin_1_Letter					Upper Case Lettter A
+66	Printable	UC_Latin_1_Letter					Upper Case Lettter B
+67	Printable	UC_Latin_1_Letter					Upper Case Lettter C
+68	Printable	UC_Latin_1_Letter					Upper Case Lettter D
+69	Printable	UC_Latin_1_Letter					Upper Case Lettter E
+70	Printable	UC_Latin_1_Letter					Upper Case Lettter F
+71	Printable	UC_Latin_1_Letter					Upper Case Lettter G
+72	Printable	UC_Latin_1_Letter					Upper Case Lettter H
+73	Printable	UC_Latin_1_Letter				Upper Case I	Upper Case Lettter I
+74	Printable	UC_Latin_1_Letter					Upper Case Lettter J
+75	Printable	UC_Latin_1_Letter					Upper Case Lettter K
+76	Printable	UC_Latin_1_Letter					Upper Case Lettter L
+77	Printable	UC_Latin_1_Letter					Upper Case Lettter M
+78	Printable	UC_Latin_1_Letter					Upper Case Lettter N
+79	Printable	UC_Latin_1_Letter				Upper Case O	Upper Case Lettter O
+80	Printable	UC_Latin_1_Letter					Upper Case Lettter P
+81	Printable	UC_Latin_1_Letter					Upper Case Lettter Q
+82	Printable	UC_Latin_1_Letter					Upper Case Lettter R
+83	Printable	UC_Latin_1_Letter					Upper Case Lettter S
+84	Printable	UC_Latin_1_Letter					Upper Case Lettter T
+85	Printable	UC_Latin_1_Letter					Upper Case Lettter U
+86	Printable	UC_Latin_1_Letter				Upper Case V	Upper Case Lettter V
+87	Printable	UC_Latin_1_Letter					Upper Case Lettter W
+88	Printable	UC_Latin_1_Letter				Upper Case X	Upper Case Lettter X
+89	Printable	UC_Latin_1_Letter					Upper Case Lettter Y
+90	Printable	UC_Latin_1_Letter				Upper Case Z	Upper Case Lettter Z
+91	Printable	Symbol				Left Square Bracket ([)	
+92	Printable	Symbol				Backslash (\)	
+93	Printable	Symbol				Right Square Bracket (])	
+94	Printable	Symbol				Carat (^)	
+95	Printable	Symbol				Underscore (_)	
+96	Printable	Punctuation				Back-Quote/Back-tick (`)	
+97	Printable	LC_Latin_1_Letter					Lower Case Lettter a
+98	Printable	LC_Latin_1_Letter					Lower Case Lettter b
+99	Printable	LC_Latin_1_Letter					Lower Case Lettter c
+100	Printable	LC_Latin_1_Letter					Lower Case Lettter d
+101	Printable	LC_Latin_1_Letter					Lower Case Lettter e
+102	Printable	LC_Latin_1_Letter					Lower Case Lettter f
+103	Printable	LC_Latin_1_Letter					Lower Case Lettter g
+104	Printable	LC_Latin_1_Letter					Lower Case Lettter h
+105	Printable	LC_Latin_1_Letter				Lower Case I	Lower Case Lettter i
+106	Printable	LC_Latin_1_Letter					Lower Case Lettter j
+107	Printable	LC_Latin_1_Letter					Lower Case Lettter k
+108	Printable	LC_Latin_1_Letter				Lower Case L	Lower Case Lettter l
+109	Printable	LC_Latin_1_Letter					Lower Case Lettter m
+110	Printable	LC_Latin_1_Letter					Lower Case Lettter n
+111	Printable	LC_Latin_1_Letter				Lower Case O	Lower Case Lettter o
+112	Printable	LC_Latin_1_Letter					Lower Case Lettter p
+113	Printable	LC_Latin_1_Letter					Lower Case Lettter q
+114	Printable	LC_Latin_1_Letter					Lower Case Lettter r
+115	Printable	LC_Latin_1_Letter					Lower Case Lettter s
+116	Printable	LC_Latin_1_Letter					Lower Case Lettter t
+117	Printable	LC_Latin_1_Letter					Lower Case Lettter u
+118	Printable	LC_Latin_1_Letter				Lower Case V	Lower Case Lettter v
+119	Printable	LC_Latin_1_Letter				Lower case W	Lower Case Lettter w
+120	Printable	LC_Latin_1_Letter				Lower Case X	Lower Case Lettter x
+121	Printable	LC_Latin_1_Letter					Lower Case Lettter y
+122	Printable	LC_Latin_1_Letter				Lower Case Z	Lower Case Lettter z
+123	Printable	Symbol				Left French Brace ({)	
+124	Printable	Symbol				Vertical Bar/Pipe (|)	
+125	Printable	Symbol				Right French Brace (})	
+126	Printable	Symbol				Tilde (~)	
+127	Printable	Symbol					Last Valid 7 Bit Character
+128	Printable	Symbol			&euro;	&euro;	Start High ASCII Range
+129	Extended	Symbol					
+130	Extended	Symbol			&sbquo;		
+131	Extended	Symbol			&fnof;		
+132	Extended	Symbol			&bdquo;		
+133	Extended	Symbol			&hellip;		
+134	Extended	Symbol			&dagger;		
+135	Extended	Symbol			&Dagger;		
+136	Extended	Symbol			&circ;		
+137	Extended	Symbol			&permil;		
+138	Extended	Symbol			&Scaron;		
+139	Extended	Symbol			&lsaquo;		
+140	Extended	Symbol			&OElig;		
+141	Extended	Symbol					
+142	Extended	Symbol					
+143	Extended	Symbol					
+144	Extended	Symbol					
+145	Extended	Symbol			&lsquo;		
+146	Extended	Symbol			&rsquo;		
+147	Extended	Symbol			&ldquo;		
+148	Extended	Symbol			&rdquo;		
+149	Extended	Symbol			&bull;		
+150	Extended	Symbol			&ndash;		
+151	Extended	Symbol			&mdash;		
+152	Extended	Symbol			&tilde;		
+153	Extended	Symbol			&trade;	Trade Mark (™)	
+154	Extended	Symbol			&scaron;		
+155	Extended	Symbol			&rsaquo;		
+156	Extended	Symbol			&oelig;		
+157	Extended	Symbol					
+158	Extended	Symbol					
+159	Extended	Symbol			&yuml;		
+160	Extended	White_Space			&nbsp;	Non-breaking Space	
+161	Extended	Symbol			&iexcl;		
+162	Extended	Symbol			&cent;		
+163	Extended	Symbol			&pound;		
+164	Extended	Symbol			&curren;		
+165	Extended	Symbol			&yen;		
+166	Extended	Symbol			&brvbar;		
+167	Extended	Symbol			&sect;		
+168	Extended	Symbol			&uml;		
+169	Extended	Symbol			&copy;		
+170	Extended	Symbol			&ordf;		
+171	Extended	Symbol			&laquo;		
+172	Extended	Symbol			&not;		
+173	Extended	Symbol			&shy;		
+174	Extended	Symbol			&reg;		
+175	Extended	Symbol			&macr;		
+176	Extended	Symbol			&deg;		
+177	Extended	Symbol			&plusmn;	Plus or Minus (±)	
+178	Extended	Symbol			&sup2;	Squared (³)	
+179	Extended	Symbol			&sup3;		
+180	Extended	Symbol			&acute;		
+181	Extended	Greek_Letter			&micro;		
+182	Extended	Symbol			&para;		
+183	Extended	Symbol			&middot;		
+184	Extended	Symbol			&cedil;		
+185	Extended	Symbol			&sup1;		
+186	Extended	Symbol			&ordm;		
+187	Extended	Symbol			&raquo;		
+188	Extended	Symbol			&frac14;		
+189	Extended	Symbol			&frac12;		
+190	Extended	Symbol			&frac34;		
+191	Extended	Punctuation			&iquest;		
+192	Extended	Other_Letter			&Agrave;		
+193	Extended	Other_Letter			&Aacute;		
+194	Extended	Other_Letter			&Acirc;		
+195	Extended	Other_Letter			&Atilde;		
+196	Extended	Other_Letter			&Auml;		
+197	Extended	Other_Letter			&Aring;		
+198	Extended	Other_Letter			&AElig;		
+199	Extended	Other_Letter			&Ccedil;		
+200	Extended	Other_Letter			&Egrave;		
+201	Extended	Other_Letter			&Eacute;		
+202	Extended	Other_Letter			&Ecirc;		
+203	Extended	Other_Letter			&Euml;		
+204	Extended	Other_Letter			&Igrave;		
+205	Extended	Other_Letter			&Iacute;		
+206	Extended	Other_Letter			&Icirc;		
+207	Extended	Other_Letter			&Iuml;		
+208	Extended	Other_Letter			&ETH;		
+209	Extended	Other_Letter			&Ntilde;		
+210	Extended	Other_Letter			&Ograve;		
+211	Extended	Other_Letter			&Oacute;		
+212	Extended	Other_Letter			&Ocirc;		
+213	Extended	Other_Letter			&Otilde;		
+214	Extended	Other_Letter			&Ouml;		
+215	Extended	Other_Letter			&times;		
+216	Extended	Other_Letter			&Oslash;		
+217	Extended	Other_Letter			&Ugrave;		
+218	Extended	Other_Letter			&Uacute;		
+219	Extended	Other_Letter			&Ucirc;		
+220	Extended	Other_Letter			&Uuml;		
+221	Extended	Other_Letter			&Yacute;		
+222	Extended	Other_Letter			&THORN;		
+223	Extended	Other_Letter			&szlig;		
+224	Extended	Other_Letter			&agrave;		
+225	Extended	Other_Letter			&aacute;		
+226	Extended	Other_Letter			&acirc;		
+227	Extended	Other_Letter			&atilde;		
+228	Extended	Other_Letter			&auml;		
+229	Extended	Other_Letter			&aring;		
+230	Extended	Other_Letter			&aelig;		
+231	Extended	Other_Letter			&ccedil;		
+232	Extended	Other_Letter			&egrave;		
+233	Extended	Other_Letter			&eacute;		
+234	Extended	Other_Letter			&ecirc;		
+235	Extended	Other_Letter			&euml;		
+236	Extended	Other_Letter			&igrave;		
+237	Extended	Other_Letter			&iacute;		
+238	Extended	Other_Letter			&icirc;		
+239	Extended	Other_Letter			&iuml;		
+240	Extended	Other_Letter			&eth;		
+241	Extended	Other_Letter			&ntilde;		
+242	Extended	Other_Letter			&ograve;		
+243	Extended	Other_Letter			&oacute;		
+244	Extended	Other_Letter			&ocirc;		
+245	Extended	Other_Letter			&otilde;		
+246	Extended	Other_Letter			&ouml;		
+247	Extended	Other_Letter			&divide;		
+248	Extended	Other_Letter			&oslash;		
+249	Extended	Other_Letter			&ugrave;		
+250	Extended	Other_Letter			&uacute;		
+251	Extended	Other_Letter			&ucirc;		ASCII Check Mark (in SOME code pages and fonts)
+252	Extended	Other_Letter			&uuml;		
+253	Extended	Other_Letter			&yacute;		
+254	Extended	Other_Letter			&thorn;		
+255	Extended	Other_Letter			&yuml;		The End
