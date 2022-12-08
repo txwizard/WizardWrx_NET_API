@@ -1,5 +1,14 @@
 ﻿# WizardWrx .NET API Change Log
 
+## 2022/12/08
+
+### AssemblyUtils 9.0.266
+
+This build is forced to align the constraints specified in the generated NUSPEC
+with the latest published version of dependency package WizardWrx.Core.
+
+Otherwise, there are no changes.
+
 ## 2022/11/24
 
 ### Common 9.0.253
