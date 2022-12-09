@@ -741,7 +741,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.Core.UnmanagedLibrary.html",
-          "hash": "Q4JFjTjl+kZSe+PHy5jdBA=="
+          "hash": "/5PxU9CikVq/6kRKR8bzLQ=="
         }
       },
       "is_incremental": false,
@@ -1068,7 +1068,7 @@
           "hash": "1zkKRzv6HLnk2O8racG1Xg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1092,7 +1092,7 @@
           "hash": "YPXNAjoAYm5qTETARL/TYQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1104,7 +1104,7 @@
           "hash": "GPeLaQAZ+dqWh/wBSiOssQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1113,7 +1113,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.GenericSingletonBase-1.html",
-          "hash": "Y8435ELotbi/f6Bv2DWtEg=="
+          "hash": "MB6SMzmt1+nuhPTFXtbVfg=="
         }
       },
       "is_incremental": false,
@@ -1137,7 +1137,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.ListHelpers.html",
-          "hash": "u9sUQgDr2p+IedyQeTfgEw=="
+          "hash": "1jTENn5C+WfmgkiPDq6Ggg=="
         }
       },
       "is_incremental": false,
@@ -1380,7 +1380,7 @@
           "hash": "pCxXWxudxtsyXPU4fu1Efg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1413,7 +1413,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.StringExtensions.html",
-          "hash": "pvrf2TC5JBP42vgXmtvlyw=="
+          "hash": "RlyB0m3o1JzS14H9HjOQew=="
         }
       },
       "is_incremental": false,
@@ -1583,7 +1583,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 124,
-          "skipped_file_count": 107
+          "skipped_file_count": 109
         },
         "TocDocumentProcessor": {
           "can_incremental": false,

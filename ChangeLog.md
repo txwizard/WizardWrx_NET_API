@@ -2,22 +2,28 @@
 
 ## 2022/12/08
 
-### AssemblyUtils 9.0.266
+### WizardWrx.AssemblyUtils 9.0.266
 
 This build is forced to align the constraints specified in the generated NUSPEC
 with the latest published version of dependency package WizardWrx.Core.
 
 Otherwise, there are no changes.
 
+### WizardWrx.Core 9.0.327
+
+This is a forced build to update the published package from 9.0.319 to 9.0.326.
+
+The code is otherwise unchanged.
+
 ## 2022/11/24
 
-### Common 9.0.253
+### WizardWrx.Common 9.0.253
 
 Completing work included in the last release, `SortableManagedResourceItem` has
 been completely moved into this library so that the copy in its original home,
 `WizardWrx.AssemblyUtils`, can be (and has been) completely removed.
 
-### AssemblyUtils 9.0.258
+### WizardWrx.AssemblyUtils 9.0.258
 
 Class `SortableManagedResourceItem` has moved completely to `WizardWrx.Common`,
 and been promoted to the root namespace, `WizardWrx`.
@@ -28,14 +34,14 @@ it a reference to its new home, `WizardWrx.Common`.
 
 ## 2022/11/23
 
-### ASCIIInfo 9.0.210
+### WizardWrx.ASCIIInfo 9.0.210
 
 Replace the local copy of the Readers class that I copied from 
 `WizardWrx.EmbeddedTextFile` with a renamed `EmbeddedTextFileReaders` class,
 moved from the same place before the entire project was deleted from the
 constellation.
 
-### Common 9.0.246
+### WizardWrx.Common 9.0.246
 
 1. New string constants: `LOGICAL_NEGATE` mirrors an existing like-named
 character constant, while `SQL_DATETIME_FORMAT_PRECISE`,
@@ -54,7 +60,7 @@ AssemblyVersion 9.0.0.0, which prevented publication of subsequent updates.
 
 Otherwise, except as noted below, this is a no-change release.
 
-### Common 9.0.239
+### WizardWrx.Common 9.0.239
 
 LOGICAL_NEGATE is a new character constant, which supersedes my long-time
 favorite, PIPE_CHAR.

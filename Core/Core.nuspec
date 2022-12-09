@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-        <releaseNotes>This release is an attempt to resolve the issue that dependencies aren't being advertised. Henceforth, independent release schedules as described in the immediately previous published version of this library will resume.</releaseNotes>
+        <releaseNotes>This is a forced build to update the published package from 9.0.319 to 9.0.326. The code is otherwise unchanged.</releaseNotes>
         <copyright>$copyright$</copyright>
     	<tags>Constants Arrays RegExp FileInfo Strings Singleton</tags>
 	</metadata>
