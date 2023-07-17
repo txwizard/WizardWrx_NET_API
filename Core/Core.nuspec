@@ -10,8 +10,8 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-        <releaseNotes>This is a forced build to update the published package from 9.0.319 to 9.0.326. The code is otherwise unchanged.</releaseNotes>
-        <copyright>$copyright$</copyright>
+		<releaseNotes>Upgrade the target framework from 3.5 to 4.8.</releaseNotes>
+		<copyright>$copyright$</copyright>
     	<tags>Constants Arrays RegExp FileInfo Strings Singleton</tags>
 	</metadata>
 	<files>

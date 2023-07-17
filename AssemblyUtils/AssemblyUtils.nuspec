@@ -10,13 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-        <releaseNotes>This build is forced to align the constraints specified in the generated NUSPEC with the latest published version of dependency package WizardWrx.Core. Otherwise, there are no changes; nevertheless, I am leaving the release notes for the immediately previous published build.
-        
-            Class SortableManagedResourceItem has moved completely to WizardWrx.Common, and been promoted to the root namespace, WizardWrx.
-        
-            Apart from removing AssemblyUtils from absolutely qualified method calls, this change has no effect on code that consumes this library because it brings with it a reference to its new home, WizardWrx.Common.</releaseNotes>
-        <copyright>$copyright$</copyright>
-    	<tags>Assemblies Dependenciess Resources Enumerators</tags>
+        <releaseNotes>Upgrade the target framework from 3.5 to 4.8.</releaseNotes>    	<tags>Assemblies Dependenciess Resources Enumerators</tags>
 	</metadata>
 	<files>
    		<file src="readme.md"                           target=""    />

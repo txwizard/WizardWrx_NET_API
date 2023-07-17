@@ -10,18 +10,9 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-        <releaseNotes>Completing work included in the last release, SortableManagedResourceItem has been completely moved into this library so that the copy in its original home, WizardWrx.AssemblyUtils, can be (and has been) completely removed.
-
-        Changes made to version 9.0.251, left in the release notes because the two releases are so close together, are as follows.
-
-        New string constants: LOGICAL_NEGATE mirrors an existing like-named character constant, while SQL_DATETIME_FORMAT_PRECISE, SQL_DATETIME_FORMAT_FULL, and SQL_DATE_FORMAT support formatting dates to be interpolated into Microsoft SQL Server scripts.
-
-        Classes ByteOrderMark and Readers, renamed EmbeddedTextFileReaders, moved from WizardWrx.EmbeededTextFile, which is being deprecated and retired from the constellation, anabling redundant copies of both to be removed from WizardWrx.ASCIIInfo.</releaseNotes>
-        <copyright>$copyright$</copyright>
+		<releaseNotes>Upgrade the target framework from 3.5 to 4.8.</releaseNotes>
+		<copyright>$copyright$</copyright>
     	<tags>Constants Arrays RegExp</tags>
-    	<dependencies>
-			<group targetFramework=".NETFramework3.5-Client" />
-   		</dependencies>
 	</metadata>
 	<files>
    		<file src="readme.md"                    target=""    />

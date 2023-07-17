@@ -40,6 +40,11 @@
     2022/07/10 DAG When I replaced wwBldNbrMgr with AssemblyInfoUtil, I put it
                    in the PostBuildEvent event instead of the PreBuildEvent
                    target.
+
+    2023/07/16 DAG Remove the TargetFrameworkProfile key, which is obsolete with
+                   respect to the new target framework. This change accompanies
+                   an API-wide target framework upgrade in which this library is
+                   upgraded from 3.5 to 4.8.
 	============================================================================
 -->
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
@@ -52,10 +57,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WizardWrx.Common</RootNamespace>
     <AssemblyName>WizardWrx.Common</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <!-- 07/16/2023 18:19:00 - DAG - Remove the TargetFrameworkProfile key, which is obsolete with respect to the new target framework. -->
     <!-- 2019/05/18 16:54:22 - DAG - Added for NuGet package builder -->
     <PackageDir>$(ProjectDir)Package</PackageDir>
     <SolutionPackageDir>$(ProjectDir)..\packages</SolutionPackageDir>
@@ -70,6 +75,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\Wizardwrx.Common.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -79,6 +85,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\Wizardwrx.Common.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <!--
   2015/06/09 DAG Add the following, per thread message that begins, "An
@@ -94,6 +101,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="WizardWrx.BitMath, Version=4.3.125.29248, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WizardWrx.BitMath.4.3.125.29248\lib\net20\WizardWrx.BitMath.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\ProductAssemblyInfo.cs">

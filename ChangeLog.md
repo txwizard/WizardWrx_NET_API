@@ -1,5 +1,39 @@
 ﻿# WizardWrx .NET API Change Log
 
+## 2022/07/16
+
+Upgrading my development platform from Visual Studio 2019 to Visual Studio 2022
+prompted an overdue upgrade of target frameworks all around. The following table
+lists the old target frameworks and the version included in this release.
+
+This release supersedes the build number two less than that shown in the Version
+column of the table below. The calumn labeled **TF** shows the Target Framework
+of the previous version. The target framework of all current releases is 4.8.
+
+Unless your project targets a lower framework, upgrading should have no effect
+on your application code; it should just work. If your project targets a lower
+version of the Microsoft .NET Framework and you cannot upgrade your target
+framework, your version of these libraries is effectively frozen. All previous
+versions of the libraries will remain in the NuGet Gallery, and their source
+code will remain in previous commits on GitHub.
+
+|Assembly (Project) Name|TF   |Version |
+|-----------------------|-----|--------|
+|ASCIIInfo              |3.5  |9.0.212 |
+|AssemblyUtils          |3.5  |9.0.268 |
+|Common                 |3.5  |9.0.257 |
+|ConsoleStreams         |3.5  |9.0.320 |
+|Core                   |3.5  |9.0.329 |
+|DiagnosticInfo         |4.5  |9.0.103 |
+|DLLConfigurationManager|3.5  |9.0.348 |
+|DLLServices2TestStand  |4.5.2|9.0.1554|
+|FormatStringEngine     |3.5  |9.0.290 |
+|GUITestStand           |4.7.2|9.0.133 |
+|MoreMath               |4.5  |9.0.102 |
+
+Other than the target framework upgrades, this release is the same as the code
+that was released at the end of 2022.
+
 ## 2022/12/08
 
 ### WizardWrx.AssemblyUtils 9.0.266

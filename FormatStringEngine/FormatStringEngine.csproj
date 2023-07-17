@@ -41,9 +41,14 @@
     2022/07/10 DAG When I replaced wwBldNbrMgr with AssemblyInfoUtil, I put it
                    in the PostBuildEvent event instead of the PreBuildEvent
                    target.
+
+    2023/07/16 DAG Remove the TargetFrameworkProfile key, which is obsolete with
+                   respect to the new target framework. This change accompanies
+                   an API-wide target framework upgrade in which this library is
+                   upgraded from 3.5 to 4.8.
     ============================================================================
 -->
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -54,10 +59,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WizardWrx.FormatStringEngine</RootNamespace>
     <AssemblyName>WizardWrx.FormatStringEngine</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <!-- 07/16/2023 18:46:00 - DAG - Remove the TargetFrameworkProfile key, which is obsolete with respect to the new target framework. -->
     <!-- 2019/07/04 13:27:28 - DAG - Added for NuGet package builder -->
     <PackageDir>Package</PackageDir>
   </PropertyGroup>
@@ -70,6 +75,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\Wizardwrx.FormatStringEngine.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -79,6 +85,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\Wizardwrx.FormatStringEngine.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="..\ProductAssemblyInfo.cs">
@@ -104,6 +111,12 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="WizardWrx.AnyCSV, Version=7.2.145.0, Culture=neutral, PublicKeyToken=39f6551a21db420a, processorArchitecture=MSIL">
+      <HintPath>..\packages\WizardWrx.AnyCSV.7.2.145\lib\net20\WizardWrx.AnyCSV.dll</HintPath>
+    </Reference>
+    <Reference Include="WizardWrx.BitMath, Version=4.3.125.29248, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WizardWrx.BitMath.4.3.125.29248\lib\net20\WizardWrx.BitMath.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

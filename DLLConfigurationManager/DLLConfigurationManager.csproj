@@ -1,5 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-
 <!--
     ============================================================================
     Project Name:       ConsoleStreams.csproj
@@ -66,10 +65,8 @@
                    target.
     ============================================================================
 -->
-
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -78,23 +75,18 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WizardWrx.DLLConfigurationManager</RootNamespace>
     <AssemblyName>WizardWrx.DLLConfigurationManager</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
-
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <!-- 2020-10-17 01:27:48 - DAG - Add the Deterministic compiler switch, which goes well with SemVer version numbering. -->
-
     <Deterministic>true</Deterministic>
-
     <!-- 2020-10-17 01:27:48 - DAG - Added for NuGet package builder -->
     <PackageDir>Package</PackageDir>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>.pdb$;(AllowedOutputExtensionsInPackageBuildOutputFolder)</AllowedOutputExtensionsInPackageBuildOutputFolder>
-
     <!-- 2020-10-17 01:27:48 - DAG - Define SolutionPackageDir, which points to the local NuGet package directory shared by the entire solution. -->
-
     <SolutionPackageDir>$(ProjectDir)..\packages</SolutionPackageDir>
   </PropertyGroup>
-
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -104,8 +96,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\Wizardwrx.DLLConfigurationManager.xml</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
-
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
@@ -114,8 +106,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\Wizardwrx.DLLConfigurationManager.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
-
   <!--
     2015/06/09 DAG Add the following, per thread message that begins, "An
 	               alternative that is working for me so far is to add the
@@ -124,17 +116,14 @@
 	               Reference: "Conditional Compilation and Framework Targets," thread at
                               http://stackoverflow.com/questions/2923210/conditional-compilation-and-framework-targets
   -->
-
   <PropertyGroup>
     <DefineConstants Condition=" !$(DefineConstants.Contains(';NET')) ">$(DefineConstants);$(TargetFrameworkVersion.Replace("v", "NET").Replace(".", ""))</DefineConstants>
     <DefineConstants Condition=" $(DefineConstants.Contains(';NET')) ">$(DefineConstants.Remove($(DefineConstants.LastIndexOf(";NET"))));$(TargetFrameworkVersion.Replace("v", "NET").Replace(".", ""))</DefineConstants>
   </PropertyGroup>
-
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
   </ItemGroup>
-
   <ItemGroup>
     <Compile Include="..\ProductAssemblyInfo.cs">
       <Link>Properties\ProductAssemblyInfo.cs</Link>
@@ -149,7 +138,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
   </ItemGroup>
-
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -157,14 +145,12 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-
   <ItemGroup>
     <None Include="DLLConfigurationManager.nuspec" />
     <None Include="WizardWrx.DLLConfigurationManager.dll.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\AssemblyUtils\AssemblyUtils.csproj">
       <Project>{147d0ab7-a13a-4374-9011-a5584ae3a533}</Project>
@@ -183,10 +169,7 @@
       <Name>Core</Name>
     </ProjectReference>
   </ItemGroup>
-
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-
-
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
@@ -194,13 +177,12 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-
   <PropertyGroup>
-      <PreBuildEvent>AssemblyInfoUtil.exe $(ProjectDir)Properties\AssemblyInfo.cs -inc:3 -fv -cy -onlywhenmodified</PreBuildEvent>
+    <PreBuildEvent>AssemblyInfoUtil.exe $(ProjectDir)Properties\AssemblyInfo.cs -inc:3 -fv -cy -onlywhenmodified</PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent></PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
-
   <Import Project="$(Custom_MSBuild_Targets)\WizardWrx_NuGet_Packages.TARGETS" Condition="Exists('$(Custom_MSBuild_Targets)\WizardWrx_NuGet_Packages.TARGETS')" />
 </Project>

@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-        <releaseNotes>Replace the local copy of the Readers class that I copied from WizardWrx.EmbeddedTextFile with a renamed EmbeddedTextFileReaders class, moved from the same place before the entire project was deleted from the constellation.</releaseNotes>
+        <releaseNotes>Upgrade the target framework from 3.5 to 4.8.</releaseNotes>
         <copyright>$copyright$</copyright>
 	    <tags>ASCII Metadata Table</tags>
   	</metadata>
