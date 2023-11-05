@@ -49,5 +49,5 @@ using System.Runtime.InteropServices;
 //  2016/10/29 7.0 Break this library apart, so that smaller subsets of classes
 //                 can be distributed and consumed independently.
 //	============================================================================
-[assembly: AssemblyFileVersion ( "9.0.1563.0" )]
-[assembly: AssemblyInformationalVersion ( "9.0.1563" )]
+[assembly: AssemblyFileVersion ( "9.0.1573.0" )]
+[assembly: AssemblyInformationalVersion ( "9.0.1573" )]

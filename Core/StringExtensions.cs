@@ -1850,6 +1850,81 @@ namespace WizardWrx
         #endregion  // RenderEvenWhenNull Method
 
 
+        #region Replace Overloads
+        /// <summary>
+        /// This overload of the standard Replace method implements a third 
+        /// argumeent, <paramref name="comparisonType"/> that brings a 
+        /// StringComparison object to the standard find and replace task.
+        /// </summary>
+        /// <param name="pstrIn">
+        /// This string stands in for the string object to which this method is applied.
+        /// </param>
+        /// <param name="oldValue">
+        /// This string is the substring to find and replace in <paramref name="pstrIn"/>.
+        /// </param>
+        /// <param name="newValue">
+        /// This string is the substring that replaces every occurrence of
+        /// <paramref name="oldValue"/> in <paramref name="pstrIn"/>.
+        /// </param>
+        /// <param name="comparisonType">
+        /// This enumeration type specifies the culture, case, and sort rules to
+        /// be used by certain overloads of the Compare(String, String) and
+        /// Equals(Object) methods.
+        /// </param>
+        /// <returns>
+        /// The return value is a copy of <paramref name="pstrIn"/> in which all
+        /// occurrences of <paramref name="oldValue"/> are replaced by
+        /// <paramref name="newValue"/>, using <paramref name="comparisonType"/>
+        /// to identify them.
+        /// </returns>
+        public static string Replace ( 
+            this string pstrIn ,
+            string oldValue , 
+            string newValue , 
+            StringComparison comparisonType )
+        {   //  ----------------------------------------------------------------
+            //  Reference:  "Is there an alternative to string.Replace that is case-insensitive?"
+            //              https://stackoverflow.com/questions/244531/is-there-an-alternative-to-string-replace-that-is-case-insensitive/6755752#6755752
+            //
+            //  Unlike the implementation cited above, mine uses a StringBuilder
+            //  to do thee whole thing in one pass.
+            //  ----------------------------------------------------------------
+
+            int intPosNextMatch = ListInfo.SUBSTR_BEGINNING;
+            int intPosLastMatch = ListInfo.SUBSTR_BEGINNING;
+            StringBuilder sb = new StringBuilder ( pstrIn.Length * MagicNumbers.PLUS_TWO );
+
+            while ( intPosNextMatch > ListInfo.INDEXOF_NOT_FOUND )
+            {
+                intPosNextMatch = pstrIn.IndexOf ( 
+                    oldValue ,
+                    intPosLastMatch , 
+                    comparisonType );
+
+                if ( intPosNextMatch > ListInfo.INDEXOF_NOT_FOUND )
+                {
+                    sb.Append ( pstrIn.Substring ( intPosLastMatch , intPosNextMatch - intPosLastMatch ) );
+                    sb.Append ( newValue );
+
+                    intPosLastMatch = intPosNextMatch + oldValue.Length;
+                }   // if ( intPosNextMatch > ListInfo.INDEXOF_NOT_FOUND )
+            }   // while ( intStartIndex > ListInfo.INDEXOF_NOT_FOUND )
+
+            //  ----------------------------------------------------------------
+            //  Append remaining characters to the new string that's in the
+            //  StringBuilder.
+            //  ----------------------------------------------------------------
+
+            if ( ArrayInfo.OrdinalFromIndex ( intPosLastMatch ) < pstrIn.Length )
+            {
+                sb.Append ( pstrIn.Substring ( intPosLastMatch ) );
+            }   // if ( ArrayInfo.OrdinalFromIndex ( intPosLastMatch ) < pstrIn.Length )
+
+            return sb.ToString ( );
+        }   // public static string Replace
+        #endregion  // Replace Overloads
+
+
         #region ReplaceEscapedTabsInStringFromResX Method
         /// <summary>
         /// 

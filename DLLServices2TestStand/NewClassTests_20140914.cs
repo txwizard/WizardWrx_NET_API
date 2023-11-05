@@ -196,6 +196,8 @@
                             being relocated from WizardWrx.AssemblyUtils library
                             and namespace to WizardWrx.Common library and root
                             namespace WizardWrx.
+
+    2023/11/02 9.0.1565 DAG Exercise the new Replace method on String objects.
     ============================================================================
 */
 
@@ -1857,6 +1859,35 @@ namespace DLLServices2TestStand
         }	// EvaluateLoopState method
 
 
+        internal static void ExerciseCaseInsensitiveStringReplace ( )
+        {
+            const string INPUT_1 = @"The quick brown fox jumped oveer thee lazy dog.";
+            const string OLD_STRING_1 = @"THEE";
+            const string NEW_STRING_1 = @"the";
+            const string INPUT_2 = @"The quick brown fox jumped oveer thee lazy dog. The quick brown fox wasn't quite quick enough to jump oveer thee sleeping cat.";
+            const string INPUT_3 = @"The quick brown fox jumped over thee lazy dawg";
+            const string OLD_STRING_2 = @"DAWG";
+            const string NEW_STRING_2 = @"dog.";
+
+            string strOutput1 = INPUT_1.Replace ( OLD_STRING_1 , NEW_STRING_1 , StringComparison.CurrentCultureIgnoreCase );
+            string strOutput2 = INPUT_2.Replace ( OLD_STRING_1 , NEW_STRING_1 , StringComparison.CurrentCultureIgnoreCase );
+            string strOutput3 = INPUT_3.Replace ( OLD_STRING_2 , NEW_STRING_2 , StringComparison.CurrentCultureIgnoreCase );
+
+            Console.WriteLine ( $"{nameof ( INPUT_1 )}      = {INPUT_1}" );
+            Console.WriteLine ( $"{nameof ( OLD_STRING_1 )} = {OLD_STRING_1}" );
+            Console.WriteLine ( $"{nameof ( NEW_STRING_1 )} = {NEW_STRING_1}" );
+            Console.WriteLine ( $"{nameof ( strOutput1 )}   = {strOutput1}" );
+
+            Console.WriteLine ( $"{nameof ( INPUT_1 )}      = {INPUT_1}" );
+            Console.WriteLine ( $"{nameof ( strOutput2 )}   = {strOutput2}" );
+
+            Console.WriteLine ( $"{nameof ( INPUT_2 )}      = {INPUT_2}" );
+            Console.WriteLine ( $"{nameof ( OLD_STRING_2 )} = {OLD_STRING_2}" );
+            Console.WriteLine ( $"{nameof ( NEW_STRING_2 )} = {NEW_STRING_2}" );
+            Console.WriteLine ( $"{nameof ( strOutput3 )}   = {strOutput3}" );
+        }   // internal static void ExerciseCaseInsensitiveStringReplace
+
+
         private static void ExerciseLoopStateEvaluators (
             LimitCondition penmLimitCondition ,
             int pintLoopStart ,
@@ -2214,7 +2245,7 @@ namespace DLLServices2TestStand
             }	// foreach ( string strLorenIpsum in WizardWrx.EmbeddedTextFile.Readers.LoadTextFileFromCallingAssembly ( TEXT_FILE_WITH_UTF_8_BOM ) )
 
             Console.WriteLine ( MSG_UTF8_TEST_EPILOGUE , intNUtf8Lines , Environment.NewLine );
-        }	// ExerciseUtf8ResourceReader method
+        }   // ExerciseUtf8ResourceReader method
         #endregion  // Private Methods
     }   // internal static class NewClassTests_20140914
 }   // partial namespace DLLServices2TestStand

@@ -1,5 +1,4 @@
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\GUITestStand\obj\Debug\GUITestStand.csproj.AssemblyReference.cache
-D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\GUITestStand\obj\Debug\GUITestStand.csproj.SuggestedBindingRedirects.cache
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\GUITestStand\obj\Debug\GUITestStand.frmMain.resources
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\GUITestStand\obj\Debug\GUITestStand.Properties.Resources.resources
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\GUITestStand\obj\Debug\GUITestStand.csproj.GenerateResource.cache

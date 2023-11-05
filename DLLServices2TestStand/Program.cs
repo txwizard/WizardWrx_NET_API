@@ -325,6 +325,8 @@
 
     2022/04/24 8.0.1521 DAG Exercise the new object property enumerators that
                             return their reports as long strings.
+
+    2023/11/02 9.0.1565 DAG Exercise the new Replace method on String objects.
     ============================================================================
 */
 
@@ -649,7 +651,11 @@ namespace DLLServices2TestStand
 
                 ExerciseTimeZoneInfoExtensions ( );
 
-                if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_REDIRECTION_DETECTION )
+                if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_CASE_INSENSITIVE_STRING_REPLACE )
+                {
+                    NewClassTests_20140914.ExerciseCaseInsensitiveStringReplace ( );
+                }   // TRUE block, if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_CASE_INSENSITIVE_STRING_REPLACE )
+                else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_REDIRECTION_DETECTION )
                 {   // Focus on this single test, without any other stuff to interfere.
                     System.Diagnostics.Debugger.Launch ( );
                     EvaluateConsoleHandleStates ( );

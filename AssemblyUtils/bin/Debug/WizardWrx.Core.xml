@@ -8611,6 +8611,34 @@
             as the value of <paramref name="pstrValueIfNull"/>.
             </remarks>
         </member>
+        <member name="M:WizardWrx.StringExtensions.Replace(System.String,System.String,System.String,System.StringComparison)">
+            <summary>
+            This overload of the standard Replace method implements a third 
+            argumeent, <paramref name="comparisonType"/> that brings a 
+            StringComparison object to the standard find and replace task.
+            </summary>
+            <param name="pstrIn">
+            This string stands in for the string object to which this method is applied.
+            </param>
+            <param name="oldValue">
+            This string is the substring to find and replace in <paramref name="pstrIn"/>.
+            </param>
+            <param name="newValue">
+            This string is the substring that replaces every occurrence of
+            <paramref name="oldValue"/> in <paramref name="pstrIn"/>.
+            </param>
+            <param name="comparisonType">
+            This enumeration type specifies the culture, case, and sort rules to
+            be used by certain overloads of the Compare(String, String) and
+            Equals(Object) methods.
+            </param>
+            <returns>
+            The return value is a copy of <paramref name="pstrIn"/> in which all
+            occurrences of <paramref name="oldValue"/> are replaced by
+            <paramref name="newValue"/>, using <paramref name="comparisonType"/>
+            to identify them.
+            </returns>
+        </member>
         <member name="M:WizardWrx.StringExtensions.ReplaceEscapedTabsInStringFromResX(System.String)">
             <summary>
             

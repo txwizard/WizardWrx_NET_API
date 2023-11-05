@@ -1,5 +1,13 @@
 ﻿# WizardWrx .NET API Change Log
 
+## 2023/11/02
+
+### WizardWrx.Core 9.0.339
+
+Implement a new `Replace` string extension method that takes a `StringComparison`
+enumeration value as its third argument, so that it can perform case insensitive
+replacements.
+
 ## 2022/07/16
 
 Upgrading my development platform from Visual Studio 2019 to Visual Studio 2022

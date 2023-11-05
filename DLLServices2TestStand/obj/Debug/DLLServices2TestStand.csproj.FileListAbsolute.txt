@@ -1,5 +1,4 @@
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServices2TestStand\obj\Debug\DLLServices2TestStand.csproj.AssemblyReference.cache
-D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServices2TestStand\obj\Debug\DLLServices2TestStand.csproj.SuggestedBindingRedirects.cache
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServices2TestStand\obj\Debug\DLLServices2TestStand.Properties.Resources.resources
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServices2TestStand\obj\Debug\DLLServices2TestStand.csproj.GenerateResource.cache
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServices2TestStand\obj\Debug\DLLServices2TestStand.csproj.CoreCompileInputs.cache

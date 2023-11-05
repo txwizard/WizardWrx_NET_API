@@ -713,4 +713,8 @@
     <value>Decimal{0}Hexadecimal{0}HTML Entity{0}URL Encoding{0}Unicode Code Point{0}Display Value{0}Comment</value>
     <comment>This is the label row for a new tab-delimited ASCII table.</comment>
   </data>
+  <data name="CMDARG_CASE_INSENSITIVE_STRING_REPLACE" xml:space="preserve">
+    <value>CaseInsensitiveStringReplace</value>
+    <comment>Select this one-off task to exercise the case insensitive Replace method that extends the System.String object..</comment>
+  </data>
 </root>
