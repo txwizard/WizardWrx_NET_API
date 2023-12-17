@@ -1,0 +1,436 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AssemblyInfoUtil</name>
+    </assembly>
+    <members>
+        <member name="T:AssemblyInfoUtil.Program">
+            <summary>
+            Class Program defines the entry point routine of a Console application.
+            </summary>
+        </member>
+        <member name="M:AssemblyInfoUtil.Program.Main(System.String[])">
+            <summary>
+            Static method Main is the entry point routine of a Console
+            application.
+            </summary>
+            <param name="args">
+            Main MAY accept the command line arguments as an array of strings,
+            which MAY be empty, but never NULL.
+            </param>
+        </member>
+        <member name="M:AssemblyInfoUtil.Program.CheckCopyrightYear(System.String)">
+            <summary>
+            When static Boolean object member s_FixCopyrightYear is TRUE, caller
+            ProcessLinePart returns through this method to look after the
+            copyright year (AssemblyCopyright) attribute.
+            </summary>
+            <param name="pstrLineIn">
+            Calling method ProcessLinePart passes in the string that it is about
+            to return to its caller, ProcessLine, so that it can process the
+            AssemblyCopyright attribute.
+            </param>
+            <returns>
+            Unless the string is the AssemblyCopyright attribute, the input is
+            returned unchanged. Otherwise, the AssemblyCopyright is parsed for a
+            date range, which, if found, is updated to the current year per the
+            system clock.
+            </returns>
+        </member>
+        <member name="M:AssemblyInfoUtil.Program.DisplayHelpAndSetStatusCode(System.Int32)">
+            <summary>
+            Display a short help message and return the status code specified in
+            <paramref name="pintStatusCode"/>.
+            </summary>
+            <param name="pintStatusCode">
+            This signed integer receives the status code to return to the
+            operating system.
+            </param>
+        </member>
+        <member name="M:AssemblyInfoUtil.Program.HandleAssemblyInformationalVersion(System.Collections.Generic.List{System.String})">
+            <summary>
+            <para>
+            Do whatever is needed to implement AssemblyInformationalVersion.
+            </para>
+            <para>
+            If one exists and the FileVersion string was updated, update it with
+            the new FileVersion string.
+            </para>
+            <para>
+            If there isn't one yet and an updated FileVersion string exists,
+            create it and initialize it with the current FileVersion string.
+            </para>
+            </summary>
+            <param name="plstAssemblyInfoLines">
+            Like the routine that calls it, this routine needs to see the whole
+            list of assembly attributes.
+            </param>
+        </member>
+        <member name="M:AssemblyInfoUtil.Program.OK2Proceed">
+            <summary>
+            Evaluate the s_OnlyWhenModified flag, which is TRUE when command
+            line argument -onlywhenmodified is present. When it is, return TRUE
+            only when at least one file in the directory that contains the
+            AssemblyInfo.cs file specified in the command line or its immediate
+            parent is newer than AssemblyInfo.cs or has its Archive flag set.
+            </summary>
+            <returns>
+            See summary.
+            </returns>
+        </member>
+        <member name="M:AssemblyInfoUtil.Program.ParseCommandLineArgs(System.String[])">
+            <summary>
+            Parse the command line arguments received by the calling main
+            routine, storing their values in class-scoped static members.
+            </summary>
+            <param name="pastrArgs">
+            This array of strings returns the array of strings received by the
+            main routine from the operating system.
+            </param>
+            <returns>
+            This method returns TRUE when all command line arguments are valid
+            and the input file specified therein as a positional parameter
+            exists.
+            </returns>
+        </member>
+        <member name="M:AssemblyInfoUtil.Program.PerformTask">
+            <summary>
+            The main routine calls this routine to perform the task(s) specified
+            by the command line switches. Its inputs are object-scoped static
+            members.
+            </summary>
+        </member>
+        <member name="M:AssemblyInfoUtil.Program.ProcessLine(System.Collections.Generic.List{System.String},System.Int32)">
+            <summary>
+            This method is called once for each line in the input AssemblyInfo.
+            </summary>
+            <param name="plstAssemblyInfoAttributes">
+            This argument receives a reference to the generic List of strings
+            that holds the contents of the AsseemblyInfo file.
+            </param>
+            <param name="pintLineNumber">
+            This argument receives a copy of the current indes into the
+            <paramref name="plstAssemblyInfoAttributes"/> List of assembly
+            attribute strings.
+            </param>
+            <returns>
+            The return value is the input string, modified as dictated by its
+            contents and the object-scoped static members that are set according
+            to the command line arguments.
+            </returns>
+        </member>
+        <member name="M:AssemblyInfoUtil.Program.ProcessLinePart(System.String,System.String)">
+            <summary>
+            The ProcessLine method calls this string, passing in a copy of the
+            whole input line as <paramref name="pstrLineIn"/> and the prefix
+            that identifies its place in the collection of AssemblyInfo 
+            attributes, which comes in as <paramref name="pstrLinePart"/>. This
+            routine is dedicated to processing AssemblyVersion attributes.
+            </summary>
+            <param name="pstrLineIn">
+            This string argument receives a copy of the entire line as read from
+            the input AssemblyInfo.cs file.
+            </param>
+            <param name="pstrLinePart">
+            This string argument receives a copy of the prefix that identifies
+            the assembly attribute represented by the whole line passed in as
+            <paramref name="pstrLineIn"/>.
+            </param>
+            <returns>
+            <para>
+            This method returns the string to write into the AssemblyInfo.cs
+            file being built in the temporary output file that will eventually
+            replace the input file.
+            </para>
+            <para>
+            When static object member s_FixCopyrightYear is TRUE, this method
+            returns through CheckCopyrightYear, another method that handles the
+            independent task of fixing up the copyright year.
+            </para>
+            </returns>
+        </member>
+        <member name="M:AssemblyInfoUtil.Program.ReportSettings">
+            <summary>
+            The main routine calls this method to display the command line
+            options. Its inputs are defined as object-scoped static members.
+            </summary>
+        </member>
+        <member name="M:AssemblyInfoUtil.Program.SemVerStringFromFileVersionString(System.String)">
+            <summary>
+            Generate a Semantic Version (SemVer) version string from a 4-part
+            FileVersion string.
+            </summary>
+            <param name="pstrCurrentFileVersionString">
+            This string is a copy of the FileVersion string from which to derive
+            a SemVer string.
+            </param>
+            <returns>
+            The return value is a SemVer string.
+            </returns>
+        </member>
+        <member name="M:AssemblyInfoUtil.Utl.AwaitCarbonUnit">
+            <summary>
+            Prompt the user to press the RETURN key to end the program, allowing
+            it to be launched from the File Explorer.
+            </summary>
+        </member>
+        <member name="M:AssemblyInfoUtil.Utl.CreateShutdownBanner">
+            <summary>
+            Generate a shutdown message that reports the name of the calling
+            program, the current time per the system clock, and the wall clock
+            time consumed by the program.
+            </summary>
+            <returns>
+            The return value is a string that can be displayed on the console or
+            recorded in a log file.
+            </returns>
+        </member>
+        <member name="M:AssemblyInfoUtil.Utl.CreateStartupBanner">
+            <summary>
+            Create a startup message that reports the name and version (major
+            and minor) of the calling program and the current time per the
+            system clock.
+            </summary>
+            <returns>
+            The return value is a string that can be displayed on the console or
+            recorded in a log file.
+            </returns>
+        </member>
+        <member name="M:AssemblyInfoUtil.Utl.PrettyTrace(System.String,System.Int32)">
+            <summary>
+            Format a stack trace so that it prints with subsequent entries
+            aligned under the first entry.
+            </summary>
+            <param name="pstrStackTrace">
+            StackTrace property on an Exception
+            </param>
+            <param name="pintLeadingSpaceCount">
+            Count of leading spaces to insert between trace items
+            </param>
+            <returns>
+            Pretty stack trace for printing vertically alinged
+            </returns>
+        </member>
+        <member name="T:AssemblyInfoUtil.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.ERRMSG_VERSION_STRING_PARTS_COUNT">
+            <summary>
+              Looks up a localized string similar to {4}The format of the version string fed into method {0} is invalid.{4}    The expected number of version substrings is {1}.{4}    The actual number of substrings is {2}.{4}    The version string is {3}.{4}.
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.IDS_ASSEMBLYCOPYRIGHT">
+            <summary>
+              Looks up a localized string similar to AssemblyCopyright.
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.IDS_ASSEMBLYFILEVERSION_PREFIX">
+            <summary>
+              Looks up a localized string similar to [assembly: AssemblyFileVersion.
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.IDS_ASSEMBLYINFORMATIONALVERSION_PREFIX">
+            <summary>
+              Looks up a localized string similar to [assembly: AssemblyInformationalVersion.
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.IDS_ASSEMBLYINFORMATIONALVERSION_TEMPLATE">
+            <summary>
+              Looks up a localized string similar to [assembly: AssemblyInformationalVersion ( {0} )].
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.IDS_ASSEMBLYVERSION_PREFIX">
+            <summary>
+              Looks up a localized string similar to [assembly: AssemblyVersion.
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.IDS_COPYRIGHT">
+            <summary>
+              Looks up a localized string similar to Copyright.
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.MSG_ASSEMBLYINFORMATIONALVERSION_ADDED">
+            <summary>
+              Looks up a localized string similar to AssemblyInformationalVersion added: {0}{1}.
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.MSG_ASSEMBLYINFORMATIONALVERSION_UPDATED">
+            <summary>
+              Looks up a localized string similar to AssemblyInformationalVersion updateded: {0}{1}.
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.MSG_AWAIT_CARBON_UNIT">
+            <summary>
+              Looks up a localized string similar to Please press Return to fully stop the program..
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.MSG_COPYRIGHT_YEAR_CHANGE">
+            <summary>
+              Looks up a localized string similar to {2}Copyright Year Changed: Old Value = {0}{2}                        New Value = {1}{2}.
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.MSG_COPYRIGHT_YEAR_IS_SINGLE_YEAR">
+            <summary>
+              Looks up a localized string similar to {1}The copyright year is a single year: {0}{1}.
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.MSG_COPYRIGHT_YEAR_UNCHANGED">
+            <summary>
+              Looks up a localized string similar to {1}Copyright Year Unchanged: Current Value = {0}{1}.
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.MSG_ERR_RUNTIME">
+            <summary>
+              Looks up a localized string similar to {5}An {0} exception arose.{5}    Message   : {1}{5}    TargetSite: {2}{5}    Source    : {3}{5}    StackTrace: {4}{5}.
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.MSG_FILE_NOT_FOUND">
+            <summary>
+              Looks up a localized string similar to Error: Can not find file {0}.
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.MSG_INCREMENT_MUST_BE_NUMERIC">
+            <summary>
+              Looks up a localized string similar to Error: Increment value must be numeric.{1}       Specified value = {0}{1}.
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.MSG_INCREMENT_OUT_OF_RANGE">
+            <summary>
+              Looks up a localized string similar to Error: Increment value must be between {0} and {1}.{3}       Specified value = {2}{3}.
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.MSG_INVALID_VERSION_SUBSTRING">
+            <summary>
+              Looks up a localized string similar to Error: The version substring at position {0} is invalid.{2}       Version substring = {1}{2}.
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.MSG_NEW_VERSION_STRING">
+            <summary>
+              Looks up a localized string similar to Replacing {0} version string {1} with {2}.
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.MSG_NO_FILENAME">
+            <summary>
+              Looks up a localized string similar to Error: You must specify the name of the file to process.{0}.
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.MSG_PROCESSING_BEGIN">
+            <summary>
+              Looks up a localized string similar to Processing {0}:.
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.MSG_PROCESSING_DONE">
+            <summary>
+              Looks up a localized string similar to Done!.
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.MSG_SOURCE_UNCHANGED">
+            <summary>
+              Looks up a localized string similar to {0}Since the project is unchanged, AssemblyInfo.cs remains unchanged and unexamined.{0}.
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.MSG_START">
+            <summary>
+              Looks up a localized string similar to {0}, version {1}.{2},{5}{3} ({4} UTC){5}.
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.MSG_STOP">
+            <summary>
+              Looks up a localized string similar to {4}{0} Done, {1} ({2} UTC){4}Running time = {3}{4}.
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.MSG_UPDATING_ANSWER_COPYRIGHT_YEAR">
+            <summary>
+              Looks up a localized string similar to Updating the Copyright year if needed.
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.MSG_UPDATING_ASMFVER">
+            <summary>
+              Looks up a localized string similar to Updating AssemblyFileVersion.
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.MSG_UPDATING_ASMVER">
+            <summary>
+              Looks up a localized string similar to Updating AssemblyVersion.
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.MSG_UPDATING_ASMVER_AND_ASMFVER">
+            <summary>
+              Looks up a localized string similar to Updating both AssemblyVersion and AssemblyFileVersion.
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.MSG_USAGE_1">
+            <summary>
+              Looks up a localized string similar to Usage: AssemblyInfoUtil &lt;path to AssemblyInfo.cs or AssemblyInfo.vb file&gt; [options]{0}.
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.MSG_USAGE_2">
+            <summary>
+              Looks up a localized string similar to Options: {0}&lt;new version number&gt; - set new version number (in NN.NN.NN.NN format).
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.MSG_USAGE_3">
+            <summary>
+              Looks up a localized string similar to          {0}&lt;parameter index&gt;    - increases the parameter with specified index (can be from 1 to 4)..
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.MSG_USAGE_4">
+            <summary>
+              Looks up a localized string similar to          {0}                       - Set the AssemblyVersion, leaving AssemblyFileVersion as is..
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.MSG_USAGE_5">
+            <summary>
+              Looks up a localized string similar to          {0}                       - Set the AssemblyFileVersion, leaving AssemblyVersion as is..
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.MSG_USAGE_6">
+            <summary>
+              Looks up a localized string similar to {0}                     - Update the copyright year when hyphenated..
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.MSG_USAGE_7">
+            <summary>
+              Looks up a localized string similar to          {0}                     - Do nothing unless at least one file is newer than AssemblyInfo.cs or has its Archive flag set..
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.MSG_USAGE_8">
+            <summary>
+              Looks up a localized string similar to         {0}                     - Stop and await RETURN key when done..
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.MSG_VERSION_CHANGE">
+            <summary>
+              Looks up a localized string similar to {2}FileVersion Changed: Old Value = {0}{2}                     New Value = {1}{2}.
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.MSG_VERSION_STRING_PART_INCR">
+            <summary>
+              Looks up a localized string similar to Incrementing {0} version string part {1} ({2}) from {3} to {4}, new version = {5}.
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.MSG_VERSION_UNCHANGED">
+            <summary>
+              Looks up a localized string similar to {1}FileVersion Unchanged:    Current Value = {0}{1}.
+            </summary>
+        </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.TEMP_FILENAME_EXTENSION">
+            <summary>
+              Looks up a localized string similar to .out.
+            </summary>
+        </member>
+    </members>
+</doc>

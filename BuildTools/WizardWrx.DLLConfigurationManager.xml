@@ -1,0 +1,1999 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WizardWrx.DLLConfigurationManager</name>
+    </assembly>
+    <members>
+        <member name="T:WizardWrx.DLLConfigurationManager.ExceptionLogger">
+             <summary>
+             This Singleton class exposes methods for formatting data from instances
+             of the System.Exception class, and commonly used derived classes, and
+             displaying the formatted data on a console (strictly speaking, on
+             STDOUT, which can be redirected to a file), and recording them in a
+             Windows event log.
+            
+             Unlike most of the classes defined in this library, this class may be
+             inherited.
+            
+             All methods of this class are thread-safe. See Remarks.
+             </summary>
+             <remarks>
+             This class was developed to report exceptions in a multi threaded console
+             application. Its methods were designed to report messages in a manner
+             that is thread-safe, yet keeps each message intact.
+            
+             Both objectives are achieved fairly easily.
+            
+             1) All methods use only local variables. The only class level static
+             data is a handful of constants, which are, by definition, read only, and
+             the private SyncRoot object used to synchronize access to the object and
+             its properties. This satisfies the first condition of thread safety,
+             because all methods have exclusive access to all of their data.
+            
+             2) Each message is built up, line by line, by appending to an instance
+             of a StringBuilder class, using its AppendFormat method, which behaves
+             like the static Format method of the System.String class. Although the
+             AppendFormat method is an instance method, since the associated instance
+             is local, thread safety remains intact. See Reference 1.
+            
+             2) A single call to TextWriter.Synchronized ( Console.Out ).WriteLine
+             or TextWriter.Synchronized ( Console.Error ).WriteLine writes the
+             message, all at once, onto the console, preserving its integrity. Since
+             the only event that uses a shared resource is called once only, and that
+             call is synchronized, the message display is intact.
+            
+             Since each method uses the shared resource, access to the console
+             Standard Error (STDERR) stream, once only, and does so in a synchronized
+             (thread-safe) way, the entire method is thread-safe.
+            
+             As a reminder to include WizardWrx.DLLServices2.dll in your projects, I
+             left this class in the WizardWrx.DLLServices2 namespace. Only symbolic
+             constants got promoted to the root namespace.
+             </remarks>
+             <seealso cref="T:WizardWrx.Core.PropertyDefaults"/>
+        </member>
+        <member name="T:WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions">
+            <summary>
+            Use these flags to control the output. There is no flag for the
+            Message property, which always becomes part of the message.
+            </summary>
+            <remarks>
+            DiscardNewlines and NBSpaceForNewlines arose to resolve an issue
+            that came to light when a desire arose to reconstruct an exception
+            report from the message posted into a Microsoft Excel workbook that
+            was populated from the output of a run of PsLogList.exe. To cause it
+            to keep each message on a single logical line, so that it would
+            import into a single worksheet row,  PsLogList.exe is invoked with
+            its -s switch, causing PsLogList to print (output) Event Log records
+            one-per-line, with comma delimited fields.
+            
+            To preserve the newlines in the event log file and have some
+            indication of their original positions when PsLogList strips
+            them, set the NBSpaceForNewlines flag to TRUE. This causes each
+            embedded newline to be preceded in the output by a NOLBREAKING_SPACE
+            (ASCII character code 160, A0h, Unicode code point U+0A0) character.
+            
+            To substitute a NOLBREAKING_SPACE for each newline, set this flag
+            AND DiscardNewlines to TRUE.
+            </remarks>
+            <seealso cref="T:WizardWrx.DLLConfigurationManager.ExceptionLogger.ErrorExitOptions"/>
+        </member>
+        <member name="F:WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions.NoFlags">
+            <summary>
+            Use this member to evaluate whether all flags are OFF.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions.Method">
+             <summary>
+             Show Method Name if TRUE.
+            
+             If the EventLog flag is also set, the method name is always
+             written there.
+             </summary>
+        </member>
+        <member name="F:WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions.Source">
+             <summary>
+             Show Source (Assembly) Name if TRUE.
+            
+             If the EventLog flag is also set, the originating assembly name
+             is always written there.
+             </summary>
+        </member>
+        <member name="F:WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions.Stack">
+             <summary>
+             Show Stack Trace if TRUE.
+            
+             If the EventLog flag is also set, the stack trace is always
+             written there.
+             </summary>
+        </member>
+        <member name="F:WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions.EventLog">
+             <summary>
+             Post to associated event log if TRUE.
+            
+             The value of the event source associated with the current
+             ExceptionLogger instance determines which event log gets the
+             message.
+            
+             WARNING: Unless your event source string is already registered,
+             the application MUST run, one time only, with full administrator
+             privileges AND use the event source to write a message into the
+             Windows event log in order for it to be registered with Windows,
+             which maps it to an event log. Alternatively, you may register
+             the event source by any number of other means, such as by way of
+             an installation script.
+            
+             Once the event source string is registered, the application can
+             use it to post messages to the event log in any Windows security
+             context.
+             </summary>
+        </member>
+        <member name="F:WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions.StandardOutput">
+             <summary>
+             Write message on STDOUT if TRUE and if the application has a
+             working console.
+             
+             The setting of this flag also governs the behavior of the
+             ScrollUp method.
+            
+             CAUTION: Although it is technically legal to set both
+             StandardOutput and StandardError to TRUE, this can have the
+             unwanted consequence of generating TWO copies of the message,
+             unless STDOUT and/or STDERR is directed to a file or if both are
+             redirected to the SAME file.
+             </summary>
+        </member>
+        <member name="F:WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions.StandardError">
+             <summary>
+             Write message on STDERR if TRUE and if the application has a
+             working console.
+             
+             The setting of this flag also governs the behavior of the
+             ScrollUp method.
+            
+             CAUTION: Although it is technically legal to set both
+             StandardOutput and StandardError to TRUE, this can have the
+             unwanted consequence of generating TWO copies of the message,
+             unless STDOUT and/or STDERR is directed to a file or if both are
+             redirected to the SAME file.
+             </summary>
+        </member>
+        <member name="F:WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions.DiscardNewlines">
+            <summary>
+            Discard newlines entirely, unless NBSpaceForNewlines is also
+            true, in which case each newline is retained, preceded by a
+            NOLBREAKING_SPACE (ASCII character code 160, A0h, U+0A0) 
+            character.
+            
+            Please see the Remarks on the enumeration for important details.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions.NBSpaceForNewlines">
+            <summary>
+            Precede each newline with a NOLBREAKING_SPACE (ASCII character 
+            code 160, A0h, Unicode code point U+0A0) character, unless
+            DiscardNewlines is also true, in which case a NOLBREAKING_SPACE
+            precedes the newline, which is preserved.
+            
+            Please see the Remarks on the enumeration for important details.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions.ReplaceNewlines">
+            <summary>
+            Deploy this flag combination to substitute a NOLBREAKING_SPACE
+            (ASCII character code 160, A0h, Unicode code point U+0A0) for
+            every platform-dependent newline. On a Windows platform, the
+            outcome is a slightly shorter message string, since each space
+            replaces two characters. In all cases, the NOLBREAKING_SPACE
+            guarantees that each event record occupies one line when output
+            as text, while providing a means of restoring the newlines by
+            reversing the replacement.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions.ActiveProperties">
+            <summary>
+            Use this bit mask to include all auxiliary properties of the
+            Exception (StackTrace, TargetSite, Source, DiscardNewlines, and
+            NBSpaceForNewlines) in the report, or to strip them form a set
+            of flags.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions.ActivePropsToEventLog">
+            <summary>
+            Use this bit mask to include all auxiliary properties of the
+            Exception (StackTrace, TargetSite, and Source) in the report,
+            and to send the report to a Windows event log.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions.ActivePropsToStdErr">
+            <summary>
+            Use this bit mask to include all auxiliary properties of the
+            Exception (StackTrace, TargetSite, and Source) in the report,
+            and to send the report to the standard error stream.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions.ActivePropsToStdOut">
+            <summary>
+            Use this bit mask to include all auxiliary properties of the
+            Exception (StackTrace, TargetSite, and Source) in the report,
+            and to send the report to the standard output stream.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions.ActivePropsEverywhere">
+            <summary>
+            Use this bit mask to include all auxiliary properties of the
+            Exception (StackTrace, TargetSite, and Source) in the report,
+            and to send the report to a Windows event log and both the
+            standard output and standard error streams. This is useful when
+            you know that the standard output is redirected, and you want to
+            preserve the report in the output file, in addition to having a
+            copy displayed on the console.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions.AllProperties">
+            <summary>
+            Use this flag to include all auxiliary properties of the 
+            Exception (StackTrace, TargetSite, Source, DiscardNewlines, and
+            NBSpaceForNewlines) in the report, or to strip them form a set
+            of flags.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions.AllDestiations">
+            <summary>
+            Use this flag to include all destinations for output, or as a
+            mask to strip them from a set of flags.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions.AllFlags">
+            <summary>
+            This flag turns on everything, and is of no practical use, but
+            is defined for reference, to document that every bit in the byte
+            is accounted for. Now that all bits have assignments, this flag
+            and AllProperties resolve to the same value.
+            </summary>
+        </member>
+        <member name="T:WizardWrx.DLLConfigurationManager.ExceptionLogger.ErrorExitOptions">
+            <summary>
+            Use with the static GetSpecifiedReservedErrorMessage method or with
+            the overloaded instance GetReservedErrorMessage method that allows
+            callers to override the behavior dictated by its properties.
+            </summary>
+            <remarks>
+            The correspondence between the naming and numbering of the members
+            of this enumeration is by design, since the two work hand in hand
+            internally, and the consistency should simplify writing calls to the
+            GetReservedErrorMessage methods.
+            </remarks>
+            <see cref="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.GetSpecifiedReservedErrorMessage(WizardWrx.DLLConfigurationManager.ExceptionLogger.ErrorExitOptions)"/>
+            <see cref="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.GetSpecifiedReservedErrorMessage(WizardWrx.DLLConfigurationManager.ExceptionLogger.ErrorExitOptions)"/>
+            <seealso cref="T:WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions"/>
+        </member>
+        <member name="F:WizardWrx.DLLConfigurationManager.ExceptionLogger.ErrorExitOptions.Succeeded">
+            <summary>
+            Execution succeeded; return the ERROR_SUCCESS placeholder for
+            the table of error messages.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.DLLConfigurationManager.ExceptionLogger.ErrorExitOptions.RecordedInEventLog">
+            <summary>
+            Details of the run-time exception were reported in a Windows
+            Event Log.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.DLLConfigurationManager.ExceptionLogger.ErrorExitOptions.RecordedInStandardOutput">
+            <summary>
+            Details of the run-time exception were listed on STDOUT if the
+            application has a working console.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.DLLConfigurationManager.ExceptionLogger.ErrorExitOptions.RecordedInStandardError">
+            <summary>
+            Details of the run-time exception were listed on STDERR if the
+            application has a working console.
+            </summary>
+        </member>
+        <member name="T:WizardWrx.DLLConfigurationManager.ExceptionLogger.ScrollUpResult">
+            <summary>
+            As a convenience, the ScrollUp method reports the result through a
+            bit-mapped enumeration.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.DLLConfigurationManager.ExceptionLogger.ScrollUpResult.NoAction">
+            <summary>
+            Nothing happened, most likely because the calling process runs
+            in the Windows (graphical) User Interface subsystem, which is
+            unsupported, though not treated as an outright failure.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.DLLConfigurationManager.ExceptionLogger.ScrollUpResult.StandardError">
+            <summary>
+            The standard error console stream was scrolled up one line.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.DLLConfigurationManager.ExceptionLogger.ScrollUpResult.StandardOutput">
+            <summary>
+            The standard output console stream was scrolled up one line.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.DLLConfigurationManager.ExceptionLogger.ScrollUpResult.Both">
+            <summary>
+            Both console streams were scrolled up one line, which happens
+            only when the standard output stream is redirected AND messages
+            are being reported on both streams.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.DLLConfigurationManager.ExceptionLogger.WIZARDWRX_EVENT_SOURCE_ID">
+            <summary>
+            This string defines a default event source ID, WizardWrx, which I
+            register on behalf of my own applications.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.ExceptionLogger.AppEventSourceID">
+             <summary>
+             Along with the EventLoggingState property, this property governs
+             recording of events in the Windows Application Event Log or in a
+             custom event log of your choice.
+            
+             The value of this property is the event source ID string to use. To
+             simplify applications, this property has a default value, defined by
+             WIZARDWRX_EVENT_SOURCE_ID.
+            
+             IMPORTANT: Each event source ID string is machine specific, and each
+             maps to one, and only one, event log, which is designated when the
+             source is registered, as it must be before its first use.
+             </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.ExceptionLogger.ApplicationSubsystem">
+            <summary>
+            The value of this property is the actual subsystem ID reported by a
+            fully managed function that yields the same result as the usual
+            native (unmanaged) method.
+            </summary>
+            <remarks>
+            This property uses GetExeSubsystem in lieu of GetProcessSubsystem to
+            circumvent an anomaly in the Visual Studio debugging engine, which
+            causes that function to return 2 (Windows GUI subsystem) when you
+            use the Visual Studio Hosting Process, which runs in the Windows
+            subsystem. The cause of this behavior is that the Visual Studio
+            Hosting Process trades places with the process under study, becoming
+            the first executable file loaded into the active process.
+            </remarks>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.ExceptionLogger.ErrorMessageColors">
+             <summary>
+             Set this property to cause error messages to be displayed in a
+             distinctive pair of foreground and background colors.
+            
+             Unless the AppSubsystem property is Console or CUI, this property is
+             meaningless.
+            
+             Unlike other properties, ErrorMessageColors must be set directly,
+             and it may be changed at any time.
+             </summary>
+             <remarks>
+             A hidden MessageInColor is maintained in tandem with this property,
+             for use with STDERR. In this way, messages written to either STDOUT
+             or STDERR use the same color scheme.
+             </remarks>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.ExceptionLogger.OptionFlags">
+            <summary>
+            Gets or sets the new OutputOptions enumeration, which supersedes the
+            obsolete individual flags.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.ExceptionLogger.StdErrIsRedirected">
+            <summary>
+            Return TRUE if the Standard Error console stream was redirected by
+            the shell. Otherwise, the return value is FALSE.
+            
+            This flag is meaningless unless the ApplicationSubsystem property
+            value is equal to ProcessSubsystem.Console, indicating that the
+            calling process is running in the Windows Character Mode (CUI)
+            subsystem.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.ExceptionLogger.StdOutIsRedirected">
+            <summary>
+            Return TRUE if the Standard Output console stream was redirected by
+            the shell. Otherwise, the return value is FALSE.
+            
+            This flag is meaningless unless the ApplicationSubsystem property
+            value is equal to ProcessSubsystem.Console, indicating that the
+            calling process is running in the Windows Character Mode (CUI)
+            subsystem.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.GetTheSingleInstance">
+             <summary>
+             Call this static method from anywhere to get a reference to the
+             ExceptionLogger singleton.
+             </summary>
+             <returns>
+             The return value is a reference to the singleton, which is created
+             the first time the method is called. Subsequent calls return a
+             reference to the singleton.
+             </returns>
+             <remarks>
+             All overloads call this method, caching the returned reference in a
+             local variable, before they override one or more of its default
+             property values. When all overrides have been processed, the cached
+             reference is returned through the overload that took the call.
+            
+             This roundabout procedure is necessary because the properties cannot
+             be set until the object has been created. The most straightforward
+             way to do this is to call the default method, which performs a task
+             usually performed by a default constructor in this implementation of
+             the singleton design pattern.
+             </remarks>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.GetTheSingleInstance(WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions)">
+            <summary>
+            Call this static method from anywhere to get a reference to the
+            ExceptionLogger singleton and set its OptionFlags property.
+            </summary>
+            <param name="penmOutputOptions">
+            The OutputOptions enumeration is organized for use as a bit mask.
+            Set its flags as desired to control the format and content of output
+            generated by the ReportException methods.
+            </param>
+            <returns>
+            The return value is a reference to the singleton, which is created
+            the first time the method is called. Subsequent calls return a
+            reference to the singleton.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.GetTheSingleInstance(WizardWrx.AssemblyUtils.PESubsystemInfo.PESubsystemID,WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions,System.String)">
+            <summary>
+            Call this static method from anywhere to get a reference to the
+            ExceptionLogger singleton and set its ProcessSubsystem,
+            OptionFlags, and AppEventSourceID properties.
+            </summary>
+            <param name="penmProcessSubsystem">
+            Use this member of the ProcessSubsystem enumeration to modify the
+            default behavior of the exception logging methods, by enabling
+            console output if the calling application has one.
+            </param>
+            <param name="penmOutputOptions">
+            The OutputOptions enumeration is organized for use as a bit mask.
+            Set its flags as desired to control the format and content of output
+            generated by the ReportException methods.
+            </param>
+            <param name="pstrEventSourceID">
+            Use this string to override the default event source ID,  which is
+            WIZARDWRX_EVENT_SOURCE_ID.
+            </param>
+            <returns>
+            The return value is a reference to the singleton, which is created
+            the first time the method is called. Subsequent calls return a
+            reference to the singleton.
+            </returns>
+            <remarks>
+            This method looks entirely forward, which means that it doesn't
+            bother with the obsolete properties.
+            </remarks>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.GetTheSingleInstance(WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions,System.String)">
+            <summary>
+            Call this static method from anywhere to get a reference to the
+            ExceptionLogger singleton and set its ProcessSubsystem,
+            OptionFlags, and AppEventSourceID properties.
+            </summary>
+            <param name="penmOutputOptions">
+            The OutputOptions enumeration is organized for use as a bit mask.
+            Set its flags as desired to control the format and content of output
+            generated by the ReportException methods.
+            </param>
+            <param name="pstrEventSourceID">
+            Use this string to override the default event source ID,  which is
+            WIZARDWRX_EVENT_SOURCE_ID.
+            </param>
+            <returns>
+            The return value is a reference to the singleton, which is created
+            the first time the method is called. Subsequent calls return a
+            reference to the singleton.
+            </returns>
+            <remarks>
+            This method looks entirely forward, which means that it doesn't
+            bother with the obsolete properties.
+            </remarks>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.GetTheSingleInstance(WizardWrx.AssemblyUtils.PESubsystemInfo.PESubsystemID)">
+            <summary>
+            Call this static method from anywhere to get a reference to the
+            ExceptionLogger singleton and set its AppSubsystem
+            property.
+            </summary>
+            <param name="penmProcessSubsystem">
+            Use this member of the ProcessSubsystem enumeration to modify the
+            default behavior of the exception logging methods, by enabling
+            console output if the calling application has one.
+            </param>
+            <returns>
+            The return value is a reference to the singleton, which is created
+            the first time the method is called. Subsequent calls return a
+            reference to the singleton.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.RestoreDefaultColors(System.Boolean)">
+            <summary>
+            Restore the default exception message colors.
+            </summary>
+            <param name="pfWipeSavedColors">
+            To have the colors saved by the last call to SaveCurrentColors
+            discarded, set this argument to TRUE. Otherwise, the saved colors
+            are preserved.
+            </param>
+            <returns>
+            The return value is the reinstated default exception message colors,
+            which may be NULL if the color scheme is invalid (both colors set to
+            the same value) or missing (no color scheme is configured).
+            </returns>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.GetReservedErrorMessage">
+            <summary>
+            Return a message suitable for display on a console to accompany a
+            status code of ERROR_SUCCESS (zero) or ERROR_RUNTIME (one), both
+            defined in the MagicNumbers class of standard constant definitions.
+            </summary>
+            <returns>
+            Since its operation is self contained, this method should always
+            succeed in returning an appropriate message.
+            </returns>
+            <seealso cref="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.GetSpecifiedReservedErrorMessage(WizardWrx.DLLConfigurationManager.ExceptionLogger.ErrorExitOptions)"/>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.GetReservedErrorMessage(WizardWrx.DLLConfigurationManager.ExceptionLogger.ErrorExitOptions)">
+            <summary>
+            Return a message suitable for display on a console to accompany a
+            status code of ERROR_SUCCESS (zero) or ERROR_RUNTIME (one), both
+            defined in the MagicNumbers class of standard constant definitions.
+            </summary>
+            <param name="penmErrorExitOptions">
+            A member of the ErrorExitOptions specifies the desired action. This
+            value overrides the corresponding bits in the OptionFlags bit mask.
+            
+            If an invalid value is specified, the returned string is an error 
+            message that starts with "An internal error has occurred." If this
+            happens, it should be treated as a coding error.
+            </param>
+            <returns>
+            If the function succeeds, the returned message is ready to use; 
+            appropriate substitutions have already been made. Otherwise, the
+            return value is the error message described in the documentation
+            of argument penmErrorExitOptions.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptionsDisplay(System.String)">
+            <summary>
+            Return a labeled string representation of the current OptionFlags,
+            along with decimal and hexadecimal representations of the bit mask.
+            </summary>
+            <param name="pstrLabel">
+            Specify a label to be inserted into the message. This may be the
+            empty string, or even a null reference, to omit the label.
+            </param>
+            <returns>
+            The returned string is ready to display via Console.WriteLine or
+            MessageBox.Show.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptionTurnOff(WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions)">
+            <summary>
+            Turn the specified bit in the OutputOptions bit mask OFF.
+            </summary>
+            <param name="penmOutputOptions">
+            Specify the member of the OutputOptions enumerated type to turn OFF.
+            </param>
+            <returns>
+            The return value is the updated OutputOptions enumerated type, which
+            is organized as a bit mask.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptionTurnOn(WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions)">
+            <summary>
+            Turn the specified bit in the OutputOptions bit mask ON.
+            </summary>
+            <param name="penmOutputOptions">
+            Specify the member of the OutputOptions enumerated type to turn ON.
+            </param>
+            <returns>
+            The return value is the updated OutputOptions enumerated type, which
+            is organized as a bit mask.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.RestoreDefaultOptions">
+            <summary>
+            Restore the state of the OutputOptions flags to their initial
+            (default) values.
+            </summary>
+            <returns>
+            The return value is the reinstated property value.
+            </returns>
+            <remarks>
+            This routine calls the same static SetDefaultOptions method used by
+            the static initializer, so that the defaults can be changed by
+            visiting just one routine.
+            </remarks>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.RestoreSavedOptions">
+            <summary>
+            Restore the state of the OutputOptions flags from the copy saved by
+            the last SaveCurrentOptions method call.
+            </summary>
+            <returns>
+            This method returns the options that were just restored, so that
+            callers can sanity check them against the expected settings.
+            </returns>
+            <remarks>
+            CAUTION: Unless this method is preceded by a call to
+            SaveCurrentOptions, this call clears all flags, not just back to
+            their initial state, but truly clear - all flags OFF.
+            </remarks>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.RestoreSavedColors">
+            <summary>
+            Restore the ErrorMessageColors from the copy saved by the last
+            SaveCurrentColors method call.
+            </summary>
+            <returns>
+            This method returns the restored message colors, so that callers may
+            sanity check them against the expected values.
+            </returns>
+            <remarks>
+            CAUTION: Unless this method is preceded by a call to
+            SaveCurrentColors, this call completely disables color error
+            messages, unless the static initializer set default colors from a
+            configuration file.
+            </remarks>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.SaveCurrentColors">
+            <summary>
+            Save a copy of the current colors defined by the ErrorMessageColors
+            property into a private area reserved for the purpose.
+            </summary>
+            <returns>
+            The current settings (the settings just saved) are returned.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.SaveCurrentOptions">
+            <summary>
+            Save a copy of the current state of the OutputOptions flags into a
+            private area reserved for the purpose.
+            </summary>
+            <returns>
+            The current settings (the settings just saved) are returned.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.GetSpecifiedReservedErrorMessage(WizardWrx.DLLConfigurationManager.ExceptionLogger.ErrorExitOptions)">
+            <summary>
+            Return a message suitable for display on a console to accompany a
+            status code of ERROR_SUCCESS (zero) or ERROR_RUNTIME (one), both
+            defined in the MagicNumbers class of standard constant definitions.
+            
+            Call this method with penmErrorExitOptions equal to Succeeded to get
+            the ERROR_SUCCESS placeholder string for your error message table.
+            </summary>
+            <param name="penmErrorExitOptions">
+            A member of the ErrorExitOptions specifies the desired action. Since
+            this is a static method, and doesn't have access to the instance
+            properties, this value substitutes for the corresponding bits in the
+            OptionFlags bit mask.
+            
+            If an invalid value is specified, the returned string is an error 
+            message that starts with "An internal error has occurred." If this
+            happens, it should be treated as a coding error.
+            </param>
+            <returns>
+            If the function succeeds, the returned message is ready to use; 
+            appropriate substitutions have already been made. Otherwise, the
+            return value is the error message described in the documentation
+            of argument penmErrorExitOptions.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.TimeStampedTraceWrite(System.String)">
+            <summary>
+            Append a message to a standard ISO-8601 time stamp.
+            </summary>
+            <param name="pstrMessage">
+            Specify the message to record.
+            </param>
+            <remarks>
+            Though written ostensibly for internal use, I marked this method as
+            public because it will quickly find employment outside this library.
+            </remarks>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(System.Exception)">
+             <summary>
+             Format and report the properties of a generic Exception on a console
+             in a thread-safe manner.
+             </summary>
+             <param name="perrAny">
+             The instance of the base Exception class to process. See Remarks.
+             </param>
+             <returns>
+             The return value is the string that was written onto the standard
+             error or standard output stream (or both, depending on the flags).
+             
+             NOTE: The returned string is terminated by a single newline. Since
+             it is appended to the stream by a Console.Write, the carriage is
+             returned to the next line, but no additional line feeds follow.
+             Hence, if you want your error message to be followed by a blank
+             line, you must follow this call with an empty Console.WriteLine
+             or, 
+             </returns>
+             <remarks>
+             This can be ANY exception type, although the intent is to limit its
+             use to reporting exceptions thrown by the base class,
+             System.Exception.
+            
+             Other overloads exist for reporting exceptions thrown by types
+             derived from System.Exception.
+            
+             The TargetSite property, exposed by descendants of System.Exception,
+             is the name of the method in which the exception was thrown.
+             </remarks>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(System.ArgumentException)">
+             <summary>
+             Format and report the properties of an ArgumentException exception on
+             a console in a thread-safe manner.
+             </summary>
+             <param name="perrBadArg">
+             The instance of the ArgumentException exception to process. See
+             Remarks.
+             </param>
+             <returns>
+             The return value is the string that was written onto the standard
+             error or standard output stream (or both, depending on the flags).
+             
+             NOTE: The returned string is terminated by a single newline. Since
+             it is appended to the stream by a Console.Write, the carriage is
+             returned to the next line, but no additional line feeds follow.
+             Hence, if you want your error message to be followed by a blank
+             line, you must follow this call with an empty Console.WriteLine
+             or, 
+             </returns>
+             <remarks>
+             Although this method can process objects of ANY class which derives
+             from ArgumentException, other methods of this class specialize in
+             processing objects of the commonly used ArgumentOutOfRangeException
+             and ArgumentNullException derived classes.
+            
+             The TargetSite property, exposed by descendants of System.Exception,
+             is the name of the method in which the exception was thrown.
+             </remarks>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(System.ArgumentOutOfRangeException)">
+            <summary>
+            Format and report the properties of an ArgumentOutOfRangeException
+            exception on a console in a thread-safe manner.
+            </summary>
+            <param name="perrBadArg">
+            The instance of the ArgumentOutOfRangeException class to process.
+            </param>
+            <returns>
+            The return value is the string that was written onto the standard
+            error or standard output stream (or both, depending on the flags).
+            
+            NOTE: The returned string is terminated by a single newline. Since
+            it is appended to the stream by a Console.Write, the carriage is
+            returned to the next line, but no additional line feeds follow.
+            Hence, if you want your error message to be followed by a blank
+            line, you must follow this call with an empty Console.WriteLine
+            or, 
+            </returns>
+            <remarks>
+            The TargetSite property, exposed by descendants of System.Exception,
+            is the name of the method in which the exception was thrown.
+            </remarks>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(System.ArgumentNullException)">
+            <summary>
+            Format and report the properties of an ArgumentNullException
+            exception on a console in a thread-safe manner. See Remarks.
+            </summary>
+            <param name="perrNullArg">
+            The instance of an ArgumentNullException exception to process.
+            </param>
+            <returns>
+            The return value is the string that was written onto the standard
+            error or standard output stream (or both, depending on the flags).
+            
+            NOTE: The returned string is terminated by a single newline. Since
+            it is appended to the stream by a Console.Write, the carriage is
+            returned to the next line, but no additional line feeds follow.
+            Hence, if you want your error message to be followed by a blank
+            line, you must follow this call with an empty Console.WriteLine
+            or, 
+            </returns>
+            <remarks>
+            The TargetSite property, exposed by descendants of System.Exception,
+            is the name of the method in which the exception was thrown.
+            </remarks>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(System.ObjectDisposedException)">
+             <summary>
+             Format and report the properties of an ObjectDisposedException
+             exception on a console in a thread-safe manner. See Remarks.
+             </summary>
+             <param name="perrDisposed">
+             The instance of the ObjectDisposedException Exception class to
+             process.
+             </param>
+             <returns>
+             The return value is the string that was written onto the standard
+             error or standard output stream (or both, depending on the flags).
+             
+             NOTE: The returned string is terminated by a single newline. Since
+             it is appended to the stream by a Console.Write, the carriage is
+             returned to the next line, but no additional line feeds follow.
+             Hence, if you want your error message to be followed by a blank
+             line, you must follow this call with an empty Console.WriteLine
+             or, 
+             </returns>
+             <remarks>
+             Any process that throws an ObjectDisposedException exception is in
+             serious trouble, and deserves to crash, and be investigated, because
+             this type of exception is almost invariably caused by a programming
+             logic error.
+            
+             The TargetSite property, exposed by descendants of System.Exception,
+             is the name of the method in which the exception was thrown.
+             </remarks>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(System.IO.IOException,System.IO.FileInfo)">
+             <summary>
+             Format and report the properties of an IOException exception on a
+             console in a thread-safe manner.
+             </summary>
+             <param name="perrIOError">
+             The instance of the IOException class to process. See Remarks.
+             </param>
+             <param name="pfi">
+             The FileInfo object makes available much more than the file name,
+             allowing for the possibility of an override to deliver more detailed
+             information about the file being processed.
+             </param>
+             <returns>
+             The return value is the string that was written onto the standard
+             error or standard output stream (or both, depending on the flags).
+             
+             NOTE: The returned string is terminated by a single newline. Since
+             it is appended to the stream by a Console.Write, the carriage is
+             returned to the next line, but no additional line feeds follow.
+             Hence, if you want your error message to be followed by a blank
+             line, you must follow this call with an empty Console.WriteLine
+             </returns>
+             <remarks>
+             This routine processes ANY exception of the IOException class and
+             its derivatives. Methods for parsing published derived classes are
+             somewhere on my ToDo list.
+            
+             The TargetSite property, exposed by descendants of System.Exception,
+             is the name of the method in which the exception was thrown.
+             </remarks>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(System.FormatException,System.String)">
+            <summary>
+            Format and report the properties of an FormatException exception on
+            a console in a thread-safe manner.
+            </summary>
+            <param name="perrrBadFormat">
+            The instance of the FormatException class to process.
+            </param>
+            <param name="pstrFormatString">
+            This should be the format string which caused the exception. There
+            should be a way to feed this to the exception, or recover it, but I
+            have yet to find it.
+            </param>
+            <returns>
+            The return value is the string that was written onto the standard
+            error or standard output stream (or both, depending on the flags).
+            
+            NOTE: The returned string is terminated by a single newline. Since
+            it is appended to the stream by a Console.Write, the carriage is
+            returned to the next line, but no additional line feeds follow.
+            Hence, if you want your error message to be followed by a blank
+            line, you must follow this call with an empty Console.WriteLine
+            or, 
+            </returns>
+            <remarks>
+            The TargetSite property, exposed by descendants of System.Exception,
+            is the name of the method in which the exception was thrown.
+            </remarks>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.ExceptionLogger.s_strSettingsOmittedFromConfigFile">
+            <summary>
+            Once an instance has spring into being, this static property returns
+            the configuration values that are missing a setting in the
+            configuration file.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.GetStandardHandleStates(WizardWrx.DLLConfigurationManager.StateManager)">
+            <summary>
+            The StateManager calls this method once, immediately after both it
+            and the ExceptionLogger exist.
+            </summary>
+            <param name="psmOfThisApp">
+            To simplify matters a bit, the state manager passes a reference to
+            itself.
+            </param>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.OptionIsOn(WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions)">
+            <summary>
+            Test whether an OutputOptions is ON or OFF.
+            </summary>
+            <param name="penmTestThisOption">
+            Specify the OutputOptions enumeration member to test.
+            </param>
+            <returns>
+            Return TRUE if the specified option is ON; otherwise, return FALSE.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportAsDirected(System.String,System.String)">
+             <summary>
+             Report as indicated by the flags stored in the _enmOutputOptions bit
+             mask.
+             </summary>
+             <param name="pstrMsg">
+             The message string to return to the caller.
+             </param>
+             <param name="pstrLogMsg">
+             To correctly report inner exceptions, the messages for the user and
+             the event log must be segregated and built concurrently.
+             </param>
+             <returns>
+             The message to report.
+             </returns>
+             <remarks>
+             This is the only private instance method. Making it static would
+             require four additional arguments into it. I'd rather save those 128
+             bytes of stack frame for when I really need it.
+            
+             The same message is recorded on the console, if so indicated, and in
+             the application event log, EXCEPT that the copy that goes into the
+             event log ALWAYS gets a stack trace attached for the exception and
+             each inner exception, if any. Finally, the text is returned, so that
+             the caller can use it, for example, in a message box.
+             </remarks>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.ScrollUp">
+            <summary>
+            Scroll up one line upon request, unless the system already generated
+            a blank line by passing the message to a WriteLine method, which
+            appends a second newline following the one that's already there, since
+            every message ends with a newline.
+            </summary>
+            <returns>
+            The return value is a member of the ScrollUpResult bit mapped
+            enumeration, which indicates which console stream(s) got scrolled. A
+            message that goes out by way of a WriteLine method doesn't get one,
+            since it's already scrolled up.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.SetMessageColors">
+            <summary>
+            This method attends to default message colors, setting or
+            reinstating them as needed.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.AddCommonElementsReportAndReturn(System.Exception,System.Text.StringBuilder,System.Text.StringBuilder)">
+            <summary>
+            The last two blocks of every ReportException method are identical,
+            and are extracted to reduce the code size.
+            </summary>
+            <param name="perrAny">
+            Pass in a reference to the exception being reported, from which
+            private method AddCommonElements, which may get folded into it,
+            extracts the TargetSite, StackTrace, and other common properties,
+            depending on the current state of the option flags.
+            </param>
+            <param name="psbMsg">
+            Pass in a reference to the partially constructed message, which has
+            the raw or parsed message, along with other properties that vary by
+            exception type.
+            
+            This StringBuilder is eventually sent to the console if the option
+            flags so indicate, and becomes the value returned by the method.
+            </param>
+            <param name="psbLogMsg">
+            Pass in a reference to the partially constructed message, which has
+            the raw or parsed message, along with other properties that vary by
+            exception type.
+            
+            This StringBuilder is eventually sent to a Windows Event Log, if the
+            option flags so indicate; otherwise, it is discarded.
+            </param>
+            <returns>
+            The completed sbLogMsg is always returned to the calling routine,
+            which may dispose of it as it sees fit, and usually discards it if
+            the calling routine is a console program, or displays it in a
+            message box if the program is running in the graphical subsystem.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.PrepareMessageForEventLog(System.Text.StringBuilder)">
+            <summary>
+            Prepare the log message for the event log by replacing newlines with
+            a non-breaking space followed by a newline, a non-breaking space, by
+            itself, or nothing, depending on the values of the DiscardNewlines
+            and NBSpaceForNewlines bits on the _enmOutputOptions bit mask.
+            </summary>
+            <param name="psbLogMsg">
+            The input is the string constructed from the components of the 
+            exception, which usually contains numerous newlines, since the event
+            log always gets a complete report.
+            </param>
+            <returns>
+            The returned string has newlines either preserved or replaced, ready
+            to go into the event log.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.AddCommonElements(System.Text.StringBuilder,System.Text.StringBuilder,System.Exception,WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions)">
+             <summary>
+             Add the Source, TargetSite, and StackTrace properties to the
+             exception report. See Remarks.
+             </summary>
+             <param name="psbMsg">
+             Append the report items to this StringBuilder.
+             </param>
+             <param name="psbLogMsg">
+             Since the stack trace is always included, the message for the event
+             log must be assembled separately. If event logging is disabled, this
+             argument is a null reference, so we don't waste effort if it would
+             be discarded.
+             </param>
+             <param name="perrAnyKind">
+             This is an instance of the System.Exception class, or one of its
+             derivatives. See Remarks.
+             </param>
+             <param name="penmOutputOptions">
+             Combine members of the OutputOptions enumeration to specify items to
+             include in the report, and how to log the error. (The enumeration is
+             a bit mask.)
+             </param>
+             <remarks>
+             This method is called recursively to process inner exceptions.
+            
+             By default, all exceptions which derive from System.Exception expose
+             these three properties, and any of them can be cast to this type.
+            
+             The TargetSite string contains the name of the method that threw the
+             exception.
+            
+             The Source string contains the name of the class to which the method
+             named in the TargetSite string belongs.
+             </remarks>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.CreateForEventLog(WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions)">
+            <summary>
+            Return a new empty StringBuilder if event logging is enabled.
+            Otherwise, return a null reference, which signals the exception
+            reporting routines to skip building a message for it.
+            </summary>
+            <param name="penmOutputOptions">
+            Since some of the methods with which it works are static because
+            they are called recursively, this routine must also be static, and
+            it must receive a copy of the OutputOptions bit mask.
+            </param>
+            <returns>
+            If a copy of the report is bound for a Windows event log, it is
+            constructed in the StringBuilder returned by this method. Otherwise,
+            the null reference signals the message formatters not to bother.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.FormatStackTrace(System.Exception)">
+            <summary>
+            Format the stack trace to make it (hopefully) a tad easier to read.
+            </summary>
+            <param name="perrAnyKind">
+            A reference to the entire exception is passed into the method, from
+            which this routine extracts the stack trace.
+            </param>
+            <returns>
+            The returned string contains the formatted stack trace.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.GetDefaultEventSourceID">
+             <summary>
+             Read the default event source ID string from the DLL configuration.
+             </summary>
+             <returns>
+             If the function succeeds, the return value is the event source ID
+             string stored in the configuration file that comes along for the
+             ride whenever this DLL is imported into a project. Otherwise, the
+             default event source ID defined in WIZARDWRX_EVENT_SOURCE_ID is
+             returned.
+            
+             To save trips to the disk or its cache, once read, the event source
+             ID is cached in static string s_strDefaultEventSource.
+             </returns>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.GetMessageTruncationStart(System.Guid)">
+             <summary>
+             Look up the exception in the list of known exceptions and, if found,
+             return a string that marks the point where the displayed message is
+             to be truncated.
+             </summary>
+             <param name="pguidExceptionTypeName">
+             This string contains the fully qualified type name of the exception,
+             which is the key to an public Dictionary of strings that mark the
+             point where the message should be truncated for display. Please see
+             the Remarks section.
+             </param>
+             <returns>
+             The return value, which may be the empty string, is text, such as a
+             fixed label, that marks a point where the message supplied by the
+             exception is truncated.
+             </returns>
+             <remarks>
+             Typically, a message is truncated because we present the information
+             in a more visually appealing and/or accessible format. Of the myriad
+             exceptions exposed by the Base Class Library, not to mention custom
+             exceptions derived from System.Exception, only a handful are "known"
+             types that require attention.
+            
+             Messages from types that are unknown to this class (i. e., they have
+             no entry in the s_dctKnowExceptionTypes dictionary, are preserved.
+            
+             This private method hides the processing required to cover for the
+             unknown exception type.
+             </remarks>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.ReformatExceptionMessage(System.Exception,System.String,System.String)">
+            <summary>
+            This private method beautifies the format of invalid argument
+            exception reports.
+            </summary>
+            <param name="pexAnyKind">
+            Reference to exception from which to extract and format its Message
+            property.
+            </param>
+            <param name="pstrRoutineLabel">
+            This string identifies the place in the source code where the
+            exception was thrown.
+            </param>
+            <param name="pstrMessageTemplate">
+            Format string, suitable for use with String.Format, from which the
+            beautified message is constructed.
+            </param>
+            <returns>
+            Beautified string, suitable for presentation on a console.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.SetDefaultOptions">
+            <summary>
+            The purpose of this routine is to keep the code that sets the
+            default option flags in one place only.
+            </summary>
+            <returns>
+            The return value is the OutputOptions bit mask with all flags set to
+            their initial default values.
+            </returns>
+            <remarks>
+            I expect this one-line syntactic candy to be optimized away in the
+            Release build.
+            </remarks>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.InitializeInstance(WizardWrx.DLLConfigurationManager.ExceptionLogger,WizardWrx.AssemblyUtils.PESubsystemInfo.PESubsystemID)">
+            <summary>
+            Synchronize old and new flags and set default message colors if
+            necessary.
+            </summary>
+            <param name="pTheInstance">
+            Since this method must be static, a reference to the ExceptionLogger
+            singleton must be passed into it.
+            </param>
+            <param name="penmProcessSubsystem">
+            Use this member of the ProcessSubsystem enumeration to modify the
+            default behavior of the exception logging methods, by enabling
+            console output if the calling application has one.
+            </param>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.ExceptionLogger.UseEventLog(WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions)">
+            <summary>
+            Hide the complexity of bit mask testing from cursory scanning of the
+            code, so that the reader doesn't feel compelled to slow down to
+            study the bit test. At compile time, this routine is optimized away,
+            replaced by inline code.
+            </summary>
+            <param name="penmOutputOptions">
+            The OutputOptions enumeration is organized for use as a bit mask.
+            Set its flags as desired to control the format and content of output
+            generated by the ReportException methods.
+            </param>
+            <returns>
+            Return TRUE if event logging is enabled.
+            </returns>
+        </member>
+        <member name="T:WizardWrx.DLLConfigurationManager.IniFileReader">
+            <summary>
+            Provide a managed interface to GetPrivateProfileString in the Windows
+            API, with methods to retrieve the values of individual keys and lists of
+            the keys in a section or the sections in a file.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.DLLConfigurationManager.IniFileReader.path">
+            <summary>
+            This string holds the fully qualified name of the private profile
+            file to process, which is passed into the constructor, but can be
+            changed as needed.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.IniFileReader.#ctor(System.String)">
+            <summary>
+            Construct an instance of the class.
+            </summary>
+            <param name="INIPath">
+            This string must be the fully qualified name of a well formed
+            private profile (INI) file.
+            </param>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.IniFileReader.GetSectionNames">
+            <summary>
+            The Function called to obtain the SectionHeaders, and returns them
+            in an Dynamic Array
+            </summary>
+            <returns>
+            The return value is an array of strings, each of which is the name
+            of a section.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.IniFileReader.GetEntryNames(System.String)">
+            <summary>
+            The Function called to obtain the EntryKeys from the given
+            SectionHeader string passed, and returns them in an Dynamic Array
+            </summary>
+            <param name="section">
+            This string must be the name of a section which is expected to be
+            present, though possibly empty.
+            </param>
+            <returns>
+            The return value is an array of strings, each of which is the name
+            of a key (entry) in the specified section.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.IniFileReader.GetEntryValue(System.String,System.String)">
+            <summary>
+            The Function called to obtain the EntryKey Value from the given
+            SectionHeader and EntryKey string passed, then returned
+            </summary>
+            <param name="section">
+            This string must be the name of a section that is expected to exist.
+            </param>
+            <param name="entry">
+            This string must be the name of a key (entry) that is expected to
+            exist, though it might be empty.
+            </param>
+            <returns>
+            The return value is a string, which may be empty.
+            </returns>
+        </member>
+        <member name="T:WizardWrx.DLLConfigurationManager.StateManager">
+            <summary>
+            This class maintains run-time information about the executing assembly,
+            assumed to be a desktop application, that calls it into being. Since it
+            implements the Singleton design pattern, there is never more than one
+            instance.
+            </summary>
+            <remarks>
+            This class has several read-write properties, all of which are protected
+            by thread-safe accessors. Both the Get and Set methods are protected, so
+            that a get request blocks until a set request executing in another thread
+            completes.
+            </remarks>
+        </member>
+        <member name="F:WizardWrx.DLLConfigurationManager.StateManager.ASSEMBLYVERSION_COMPLETE">
+            <summary>
+            Specify this constant to the ToString method of a System.Version
+            object (e. g., of an Assembly) to cause it to return the entire
+            version string.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.DLLConfigurationManager.StateManager.ASSEMBLYVERSION_EXCEPT_REVISION">
+            <summary>
+            Specify this constant to the ToString method of a System.Version
+            object (e. g., of an Assembly) to cause it to return all but the
+            build number.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.DLLConfigurationManager.StateManager.ASSEMBLYVERSION_MAJOR_AND_MINOR">
+            <summary>
+            Specify this constant to the ToString method of a System.Version
+            object (e. g., of an Assembly) to cause it to return only the
+            major and minor version numbers.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.DLLConfigurationManager.StateManager.ASSEMBLYVERSION_MAJOR_ONLY">
+            <summary>
+            Specify this constant to the ToString method of a System.Version
+            object (e. g., of an Assembly) to cause it to return only the
+            major version number.
+            </summary>
+        </member>
+        <member name="T:WizardWrx.DLLConfigurationManager.StateManager.AssemblyVersionRequest">
+            <summary>
+            Use this enumeration as input to the overloaded StateManager class's
+            GetAssemblyProductAndVersion method, to specify how many parts of
+            the version string to return.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.DLLConfigurationManager.StateManager.AssemblyVersionRequest.MajorOnly">
+            <summary>
+            This is functionally equivalent to specifying a constant value of
+            ASSEMBLYVERSION_MAJOR_ONLY to the ToString method of a
+            System.Version object, and is intended to do so through the
+            GetAssemblyProductAndVersion instance method of this class.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.DLLConfigurationManager.StateManager.AssemblyVersionRequest.MajorAndMinor">
+            <summary>
+            This is functionally equivalent to specifying a constant value of
+            ASSEMBLYVERSION_MAJOR_AND_MINOR to the ToString method of a
+            System.Version object, and is intended to do so through the
+            GetAssemblyProductAndVersion instance method of this class.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.DLLConfigurationManager.StateManager.AssemblyVersionRequest.MajroMinorBuild">
+            <summary>
+            This is functionally equivalent to specifying a constant value of
+            ASSEMBLYVERSION_EXCEPT_REVISION to the ToString method of a
+            System.Version object, and is intended to do so through the
+            GetAssemblyProductAndVersion instance method of this class.
+            
+            MajroMinorBuild and MajorMinorExceptRevision are synonyms.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.DLLConfigurationManager.StateManager.AssemblyVersionRequest.MajorMinorExceptRevision">
+            <summary>
+            This is functionally equivalent to specifying a constant value of
+            ASSEMBLYVERSION_EXCEPT_REVISION to the ToString method of a
+            System.Version object, and is intended to do so through the
+            GetAssemblyProductAndVersion instance method of this class.
+            
+            MajroMinorBuild and MajorMinorExceptRevision are synonyms.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.DLLConfigurationManager.StateManager.AssemblyVersionRequest.MajorMinroBuildRevision">
+            <summary>
+            This is functionally equivalent to specifying a constant value of
+            ASSEMBLYVERSION_COMPLETE to the ToString method of a
+            System.Version object, and is intended to do so through the
+            GetAssemblyProductAndVersion instance method of this class.
+            
+            MajorMinroBuildRevision and Complete are synonyms.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.DLLConfigurationManager.StateManager.AssemblyVersionRequest.Complete">
+            <summary>
+            This is functionally equivalent to specifying a constant value of
+            ASSEMBLYVERSION_COMPLETE to the ToString method of a
+            System.Version object, and is intended to do so through the
+            GetAssemblyProductAndVersion instance method of this class.
+            
+            MajorMinroBuildRevision and Complete are synonyms.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.DLLConfigurationManager.StateManager.UNSUPPORTED_EXE_SUBSYSTEM">
+            <summary>
+            The DWLastDllError property returns this value when 
+            StandardHandleState is called by code running in anything except the
+            Windows character mode subsystem.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.StateManager.#ctor">
+            <summary>
+            To prevent the framework from generating a default constructor and
+            marking it public, which would break the singleton design pattern,
+            we provide our own do-nothing constructor.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.StateManager.GetTheSingleInstance(System.Reflection.Assembly)">
+            <summary>
+            Call this method from any class that exposes a reference to the
+            singleton as a read only property. Please see the Remarks section.
+            </summary>
+            <param name="pasmCallingAssembly">
+            Pass in a reference to the assembly that is calling this method on
+            behalf of an object that exposes a reference to this object as a
+            read only property. Please see the Remarks section.
+            </param>
+            <returns>
+            The return value is a reference to the singleton, which is created
+            the first time the method is called. Subsequent calls return a
+            reference to the singleton.
+            </returns>
+            <remarks>
+            Since making a protected constructor safe for use by a class that
+            implements the Singleton design pattern, and a class that calls this
+            method causes System.Reflection.Assembly.GetCalllingAssembly to
+            report the assembly in which the call executes as the calling
+            assembly, any such method must explicitly identify the assembly that
+            contains the process entry point.
+            
+            When the Visual Studio Hosting Process is enabled, it becomes the
+            entry assembly, hiding the "real" entry assembly (the assembly under
+            test), System.Reflection.Assembly.GetEntryAssembly cannot be used
+            safely. Moreover, since the Visual Studio Hosting Process runs in
+            the graphical (Windows) subsystem, the entry assembly cannot be used
+            to correctly determine whether the entry assembly runs in the
+            character mode subsystem.
+            
+            Although the class needs only the Location property off the Assembly
+            instance, I elected to call for the entire Assembly to be passed in,
+            to make the needs of this method unambiguous. Since the calling
+            method must call one of two static methods on the Assembly class,
+            both of which return instances of Assembly, this doesn't impose any
+            extra burden on the calling assembly.
+            </remarks>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.StateManager.GetAssemblyFQFN">
+             <summary>
+             Return the fully qualified name of the assembly that started the
+             current process.
+             </summary>
+             <returns>
+             The return value is a string that contains the fully qualified name
+             of the assembly that started the current process.
+             </returns>
+            <remarks>
+             I made this a method so that it is computed as needed, even in a
+             debugging session when the Visual Studio Hosting process runs all
+             the property getters when an object is expanded in the locals and
+             watch windows.
+             </remarks>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.StateManager.GetAssemblyProductAndVersion">
+            <summary>
+            Get the assembly product name and version number is a string that is
+            suitable for use as a window caption.
+            </summary>
+            <returns>
+            The return value is a string, suitable for use as the caption of a
+            window, such as a form or message box. The returned string contains
+            the product name, followed by the entire 4-part version string.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.StateManager.GetAssemblyProductAndVersion(WizardWrx.DLLConfigurationManager.StateManager.AssemblyVersionRequest)">
+            <summary>
+            Get the assembly product name and version number is a string that is
+            suitable for use as a window caption.
+            </summary>
+            <param name="penmAssemblyVersionRequest">
+            Use a member of the AssemblyVersionRequest enumeration to indicate
+            how many parts of the four-part version number to include.
+            </param>
+            <returns>
+            The return value is a string, suitable for use as the caption of a
+            window, such as a form or message box. The returned string contains
+            the product name, followed by the specified number of parts of the
+            product version.
+            </returns>
+            <seealso cref="P:WizardWrx.DLLConfigurationManager.StateManager.AppRootAssemblyName"/>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.StateManager.GetAppSubsystemID">
+            <summary>
+            Return the AppSubsystemID property, explicitly cast to a PESubsystemID.
+            </summary>
+            <returns>
+            The return value is the AppSubsystemID property, cast to a member of
+            the ESubsystemInfo.PESubsystemID enumeration.
+            </returns>
+            <remarks>
+            This method provides a more meaningful interpretation of the AppSubsystemID value.
+            
+            This routine is implemented as an instance method, so that its code runs only as needed.
+            </remarks>
+            <seealso cref="P:WizardWrx.DLLConfigurationManager.StateManager.AppSubsystemID"/>
+            <seealso cref="M:WizardWrx.DLLConfigurationManager.StateManager.GetAppSubsystemString"/>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.StateManager.GetAppSubsystemString">
+             <summary>
+             Return a sentence that identifies the subsystem in which the 
+             assembly that started the current process runs.
+             </summary>
+             <returns>
+             The return value is a short sentence that describes the subsystem in
+             which the assembly that started the current process runs.
+             </returns>
+            <remarks>
+             I made this a method so that it is computed strictly as needed, even
+             in a debugging session when the Visual Studio Hosting process runs
+             all the property getters when an object is expanded in the locals or
+             watch window.
+            
+             This method is much more expensive than GetAssemblyFQFN, because it
+             gets the returned string from a string resource.
+            </remarks>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.StateManager.LoadErrorMessageTable(System.String[])">
+             <summary>
+             Load the table of error messages for use with the ErrorExit method.
+             </summary>
+             <param name="pastrErrorMessages">
+             Array of strings, for use as error messages. See Remarks.
+             </param>
+             <returns>
+             Count of error messages loaded into the object. Hence, the Ubound of
+             the array is one less than the return value, and its LBound is zero.
+             </returns>
+             <remarks>
+             Error message numbers are array subscripts. This imposes two
+             requirements on the list.
+            
+             1) You must supply a message for the default exit code of zero,
+             even if you don't use it.
+            
+             2) Status codes must be sequentially numbered.
+            
+             The second requirement can be relaxed, at the cost of inserting one
+             or more dummy error messages, which may be empty strings, to account
+             for the skipped numbers. The obvious disadvantage is some bloat in
+             the message table.
+            
+             You must call this method before your program can get a useful error
+             message from ErrorExit. Although the call to ErrorExit succeeds, the
+             message is "Internal error: Unknown status code," followed by the
+             supplied raw exit code.
+             </remarks>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.StateManager.AppErrorMessages">
+            <summary>
+            Make the array of error messages available, for reading only, under
+            guard of a lock, to ensure that another thread isn't adding to the
+            array while it is being returned.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.StateManager.AppReturnCode">
+            <summary>
+            Use this read/write property to set the application return code from
+            anywhere, so that you don't have to use another, potentially awkward,
+            method to get the word back to the main routine.
+            </summary>
+            <remarks>
+            Access to this property is synchronized by an internally managed
+            object lock.
+            </remarks>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.StateManager.AppRootAssemblyFileBaseName">
+            <summary>
+            This property is a shortcut to the AssemblyFileBaseName property of
+            the AppRootAssembly property.
+            </summary>
+            <remarks>
+            Since the underlying property is read only, and has a static
+            initializer, it is thread-safe without the overhead of a lock.
+            </remarks>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.StateManager.AppRootAssemblyFileDirName">
+            <summary>
+            This property is a shortcut to the AssembyDirName property of
+            the AppRootAssembly property.
+            </summary>
+            <remarks>
+            Since the underlying property is read only, and has a static
+            initializer, it is thread-safe without the overhead of a lock.
+            </remarks>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.StateManager.AppRootAssemblyFileName">
+            <summary>
+            This property is a shortcut to the AssemblyFileName property of
+            the AppRootAssembly property.
+            </summary>
+            <remarks>
+            Since the underlying property is read only, and has a static
+            initializer, it is thread-safe without the overhead of a lock.
+            </remarks>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.StateManager.AppRootAssemblyName">
+            <summary>
+            This property returns the fully qualified name of the root assembly,
+            the first assembly that loaded into the default application domain.
+            </summary>
+            <remarks>
+            This property yields a wealth of information about the assembly,
+            including all four parts of its version number, its public key
+            token, if it has one, and its culture.
+            </remarks>
+            <seealso cref="M:WizardWrx.DLLConfigurationManager.StateManager.GetAssemblyProductAndVersion"/>
+            <seealso cref="M:WizardWrx.DLLConfigurationManager.StateManager.GetAssemblyProductAndVersion(WizardWrx.DLLConfigurationManager.StateManager.AssemblyVersionRequest)"/>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.StateManager.AppStartupTimeLocal">
+            <summary>
+            This property is a shortcut to the StartupTime property of
+            the AppRootAssembly property.
+            </summary>
+            <remarks>
+            Since the underlying property is read only, and has a static
+            initializer, it is thread-safe without the overhead of a lock.
+            </remarks>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.StateManager.AppStartupTimeUtc">
+            <summary>
+            This property is a shortcut to the StartupTimeUTC property of
+            the AppRootAssembly property.
+            </summary>
+            <remarks>
+            Since the underlying property is read only, and has a static
+            initializer, it is thread-safe without the overhead of a lock.
+            </remarks>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.StateManager.AppUptime">
+            <summary>
+            Gets the elapsed time since the application started.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.StateManager.AppSubsystemID">
+            <summary>
+            Return the ID of the subsystem in which the assembly runs. Call the
+            GetAppSubsystemString method to translate the ID into a human
+            readable message. The translation is way too expensive to expose as
+            a property, and too infrequently needed to justify having the
+            constructor store it in a string.
+            </summary>
+            <seealso cref="M:WizardWrx.DLLConfigurationManager.StateManager.GetAppSubsystemID"/>
+            <seealso cref="M:WizardWrx.DLLConfigurationManager.StateManager.GetAppSubsystemString"/>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.StateManager.ConsoleMessageTimeFormat">
+            <summary>
+            Use this property to get a reference to the FormattedLocalTime
+            object that governs the formatting of the times displayed in the BOJ
+            and EOJ messages.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.StateManager.DefaultEventSourceID">
+            <summary>
+            Gets the registered default event source ID.
+            </summary>
+            <remarks>
+            If no event source is registered, this property returns the 
+            WIZARDWRX_EVENT_SOURCE_ID string static ExceptionLogger string.
+            </remarks>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.StateManager.InitialWorkingDirectoryName">
+            <summary>
+            Gets the initial working directory, which reflects its value when
+            the application started.
+            </summary>
+            <remarks>
+            This property has a static initializer, and is never changed.
+            </remarks>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.StateManager.DWLastDllError">
+            <summary>
+            Query this property for the value returned by GetLastError.
+            </summary>
+            <remarks>
+            Strictly speaking, the value is returned by Marshal.GetLastWin32Error.
+            </remarks>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.StateManager.AppExceptionLogger">
+            <summary>
+            This property returns a reference to the singleton ExceptionLogger,
+            which is created immediately following creation of this instance.
+            Hence, by the time the reference is returned, this reference is
+            guaranteed to be valid and read only for work.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.StateManager.ShowUTCTime">
+             <summary>
+             Set this property to TRUE to cause UTC times to be displayed in all
+             time stamps included in console BOJ and EOJ messages.
+            
+             Set it to FALSE to display only local times. The class default
+             setting is TRUE.
+            
+             See the Remarks listed with the class definition.
+             </summary>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.StateManager.GetStdHandleFQFN(WizardWrx.ConsoleStreams.StandardHandleInfo.StandardConsoleHandle)">
+            <summary>
+            Report the file, if any, to which the specified standard handle is
+            redirected.
+            </summary>
+            <param name="penmStdHandle">
+            Specify the StandardHandleInfo.StandardConsoleHandle member that
+            corresponds to the handle for which you wish to know whether it is
+            attached or redirected.
+            </param>
+            <returns>
+            If the function succeeds and the handle is redirected, the return
+            value is the name of the file to which the specified handle is
+            redirected.
+            
+            Otherwise, the return value is one of two strings that explain the
+            error.
+            
+            Properties.Resources.MSG_APP_CHARACTER_MODE_APPS_ONLY is the 
+            complete text of the message displayed when the calling routine is
+            running in the Windows graphical mode subsystem.
+            
+            Properties.Resources.ERRMSG_STD_HANDLE_STATE is the beginning of a
+            message, which is followed by the returned system status code, shown
+            in both hexadecimal and decimal notation, followed by the associated
+            system message.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.StateManager.StandardHandleState(WizardWrx.ConsoleStreams.StandardHandleInfo.StandardConsoleHandle)">
+            <summary>
+            Evaluate whether a standard handle is attached to a console or 
+            redirected.
+            </summary>
+            <param name="penmStdHandle">
+            Specify the StandardHandleInfo.StandardConsoleHandle member that
+            corresponds to the handle for which you wish to know whether it is
+            attached or redirected.
+            </param>
+            <returns>
+            If the function succeeds, the return value is either ShsAttached or
+            ShsRedirected. Otherwise, there was an error, and you should call
+            Marshal.GetLastWin32Error to determine exactly what happened. The 
+            singleton has a private property where the return value is stored.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.DLLConfigurationManager.StateManager.FormatSystemErrorMessage(System.Int32)">
+            <summary>
+            Return the message associated with a system status code.
+            </summary>
+            <param name="pdwLastError">
+            Specify the status code for which the system message is desired.
+            </param>
+            <returns>
+            A new Win32Exception exception is constructed from the specified
+            status code, and its Message property is returned.
+            </returns>
+            <remarks>
+            This convenience method amounts to syntactic sugar. Since it is very
+            unlikely to ever be called by the method that motivated me to create
+            it, I'll let it go ahead and call through it, even though calling
+            the constructor directly, passing in the static member that holds the
+            status code would be a couple of orders of magnitude more efficient.
+            </remarks>
+        </member>
+        <member name="T:WizardWrx.DLLConfigurationManager.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.DEFAULT_EVENT_SOURCE_ID">
+            <summary>
+              Looks up a localized string similar to DefaultWindowsEventSourceID.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.ERRMSG_ARGNAME_TPL">
+            <summary>
+              Looks up a localized string similar to Argument Name    = {0}{1}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.ERRMSG_ARGVALUE_TPL">
+            <summary>
+              Looks up a localized string similar to Argument Value   = {0}{1}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.ERRMSG_ASM_SUBSYSTEM">
+            <summary>
+              Looks up a localized string similar to While attempting to identify the subsystem of {0}, GetExeSubsystem returned exit code {1}: {2}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.ERRMSG_CONFIG_FILE_IS_EMPTY">
+            <summary>
+              Looks up a localized string similar to The specified DLL configuration file, {0}, exists, but is empty.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.ERRMSG_EX_EVTMSG_TPL">
+            <summary>
+              Looks up a localized string similar to An {0} exception was caught in routine {1}:{3}               Message          = {2}{3}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.ERRMSG_EX_MSG_TPL">
+            <summary>
+              Looks up a localized string similar to An {0} exception was caught in routine {1}:{3}               Message          = {2}{3}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.ERRMSG_FILENAME_TPL">
+            <summary>
+              Looks up a localized string similar to File Name        = {0}{1}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.ERRMSG_FORMATSTRING_TPL">
+            <summary>
+              Looks up a localized string similar to Format String    = {0}{1}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.ERRMSG_HRESULT">
+            <summary>
+              Looks up a localized string similar to HRESULT = {0} ({1} decimal){2}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.ERRMSG_INNER">
+            <summary>
+              Looks up a localized string similar to Inner Exception:{1}               Message          = {0}{1}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.ERRMSG_INV_TZINFO">
+            <summary>
+              Looks up a localized string similar to CORRUPTED SYSTEM REGISTRY: The GetDisplayTimeZone method found the specified key, but the corresponding Registry key is corrupted.{1}                           Specified ID = {0}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.ERRMSG_INVALID_ERROREXITOPTIONS">
+            <summary>
+              Looks up a localized string similar to An internal error has occurred.{1}Internal routine GetReservedErrorMessage was called with an invalid ErrorExitOptions value of {0}..
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.ERRMSG_METHOD">
+            <summary>
+              Looks up a localized string similar to Exception Method = {0}{1}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.ERRMSG_MISSING_CONFIG_FILE">
+            <summary>
+              Looks up a localized string similar to There is no valid configuration file for DLL file {0}..
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.ERRMSG_NO_MEMORY">
+            <summary>
+              Looks up a localized string similar to SYSTEM RESOURCE FAMINE: The GetDisplayTimeZone method ran out of memory..
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.ERRMSG_NULL_TZ_ID">
+            <summary>
+              Looks up a localized string similar to INTERNAL ERROR: The GetDisplayTimeZone method let a null pstrTimeZoneID through to TimeZoneInfo.FindSystemTimeZoneById..
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.ERRMSG_OBJNAME_TPL">
+            <summary>
+              Looks up a localized string similar to Object Name      = {0}{1}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.ERRMSG_RUNTIME">
+            <summary>
+              Looks up a localized string similar to RUNTIME EXCEPTION: The GetDisplayTimeZone method found the specified key, but the corresponding Registry key is corrupted.{1}                    Specified ID = {0}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.ERRMSG_RUNTIME_SEE_EVENT_LOG">
+            <summary>
+              Looks up a localized string similar to A run-time exception forced the program to end prematurely.{0}Pleasr see he (0) event log for a message with event source = (0)..
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.ERRMSG_RUNTIME_SEE_MESSAGE_ABOVE">
+            <summary>
+              Looks up a localized string similar to A run-time exception forced the program to end prematurely.{0}Please see the message just above this line..
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.ERRMSG_SECURITY">
+            <summary>
+              Looks up a localized string similar to ACCESS VIOLATION: The GetDisplayTimeZone method cannot read the Registry keys where the time zone information is kept. The process has insufficient access permissions on that key..
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.ERRMSG_SOURCE">
+            <summary>
+              Looks up a localized string similar to Exception Source = {0}{1}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.ERRMSG_STD_HANDLE_STATE">
+            <summary>
+              Looks up a localized string similar to The StandardHandleState routine reported an exception.\nException Code = 0x{0} ({1} decimal): {2}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.ERRMSG_TZ_NOT_FOUND">
+            <summary>
+              Looks up a localized string similar to INTERNAL or DATA ERROR: The GetDisplayTimeZone method let a pstrTimeZoneID that isn&apos;t registered on this computer through to TimeZoneInfo.FindSystemTimeZoneById.{1}                        Specified ID = {0}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.ERRMSG_UNBALANCED">
+            <summary>
+              Looks up a localized string similar to The sizes of internal tables s_astrTrimStart and s_astrExceptionTypeNames are unequal.{2}    s_astrTrimStart Elemnent Count          = {0}{2}    s_astrExceptionTypeNames  Elemnent Count = {1}{2}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.EXCEPTION_DLL_CONFIG_IS_MISSING">
+            <summary>
+              Looks up a localized string similar to DLL configuration file, {0}.config, which defines the default event source ID string, is missing..
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.EXCEPTION_MESSAGE_NULL_REFERENCE">
+            <summary>
+              Looks up a localized string similar to Object reference not set to an instance of an object..
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.MSG_APP_CHARACTER_MODE_APPS_ONLY">
+            <summary>
+              Looks up a localized string similar to The GetStdHandleFQFN routine supports only character mode (console mode) applications..
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.MSG_CONSOLE_HAS_STD_HANDLE">
+            <summary>
+              Looks up a localized string similar to , NOT redirected.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.MSG_MUST_INITIALIZE_PESUBSYSTEMINFO">
+            <summary>
+              Looks up a localized string similar to The assembly that defines the entry point of the process must call{0}ExtendedProcessInfo.PESubsystemInfo.InitializeInstance before{0}the first StreamStateInfo instance is constructed..
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.MSG_UNSUPPORTED_PE_SUBSYSTEM">
+            <summary>
+              Looks up a localized string similar to Only assemblies that run in the character mode subsystem are supported.{2}The subsytem ID of the entry assembly is {0} ({1})..
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.MSG_XLATE_SUBSYST_INVALID_ID">
+            <summary>
+              Looks up a localized string similar to The subsystem ID must be greater than zero and less than ten..
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.OUTPUT_OPTIONS_DISPLAY_FORMAT">
+            <summary>
+              Looks up a localized string similar to OutputOptions {0}= {1} ({2} decimal = {3}).
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.PRODUCT_NAME_AND_VERSION_TPL">
+            <summary>
+              Looks up a localized string similar to {0}, version {1}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.STACKTRACE_TPL">
+            <summary>
+              Looks up a localized string similar to {1}Stack Trace Begin:{1}{0}{1}End of Stack Trace{1}{1}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.STREAM_NAME_STDERR_LONG">
+            <summary>
+              Looks up a localized string similar to Standard Error.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.STREAM_NAME_STDERR_SHORT">
+            <summary>
+              Looks up a localized string similar to StdError.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.STREAM_NAME_STDIN_LONG">
+            <summary>
+              Looks up a localized string similar to Standard Input.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.STREAM_NAME_STDIN_SHORT">
+            <summary>
+              Looks up a localized string similar to StdIn.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.STREAM_NAME_STDOUT_LONG">
+            <summary>
+              Looks up a localized string similar to Standard Output.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.STREAM_NAME_STDOUT_SHORT">
+            <summary>
+              Looks up a localized string similar to StdOut.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.STREAM_NAME_UNSPECIFIED_LONG">
+            <summary>
+              Looks up a localized string similar to Invalid Value.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.STREAM_NAME_UNSPECIFIED_SHORT">
+            <summary>
+              Looks up a localized string similar to Unsupported.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.STREAMSTATEINFO_TOSTRING_TEMPLATE">
+            <summary>
+              Looks up a localized string similar to StreamID = {0} ({1}), ConsoleStreamState = {2}, RedirectFileName = {3}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.DLLConfigurationManager.Properties.Resources.THIS_IS_THE_LAST">
+            <summary>
+              Looks up a localized string similar to There are no further exceptions to report.{0}.
+            </summary>
+        </member>
+    </members>
+</doc>

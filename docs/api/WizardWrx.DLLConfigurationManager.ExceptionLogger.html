@@ -1,0 +1,1837 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ExceptionLogger
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ExceptionLogger
+   ">
+    <meta name="generator" content="docfx 2.56.3.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger">
+  
+  
+  <h1 id="WizardWrx_DLLConfigurationManager_ExceptionLogger" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger" class="text-break">Class ExceptionLogger
+  </h1>
+  <div class="markdown level0 summary"><p>This Singleton class exposes methods for formatting data from instances
+of the System.Exception class, and commonly used derived classes, and
+displaying the formatted data on a console (strictly speaking, on
+STDOUT, which can be redirected to a file), and recording them in a
+Windows event log.</p>
+<p>Unlike most of the classes defined in this library, this class may be
+inherited.</p>
+<p>All methods of this class are thread-safe. See Remarks.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="WizardWrx.GenericSingletonBase-1.html">GenericSingletonBase</a>&lt;<a class="xref" href="WizardWrx.DLLConfigurationManager.ExceptionLogger.html">ExceptionLogger</a>&gt;</div>
+    <div class="level2"><span class="xref">ExceptionLogger</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="WizardWrx.GenericSingletonBase-1.html#WizardWrx_GenericSingletonBase_1_s_genTheOnlyInstance">GenericSingletonBase&lt;ExceptionLogger&gt;.s_genTheOnlyInstance</a>
+    </div>
+    <div>
+      <a class="xref" href="WizardWrx.GenericSingletonBase-1.html#WizardWrx_GenericSingletonBase_1_TheOnlyInstance">GenericSingletonBase&lt;ExceptionLogger&gt;.TheOnlyInstance</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="WizardWrx.DLLConfigurationManager.html">WizardWrx.DLLConfigurationManager</a></h6>
+  <h6><strong>Assembly</strong>: WizardWrx.DLLConfigurationManager.dll</h6>
+  <h5 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ExceptionLogger : GenericSingletonBase&lt;ExceptionLogger&gt;</code></pre>
+  </div>
+  <h5 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>This class was developed to report exceptions in a multi threaded console
+application. Its methods were designed to report messages in a manner
+that is thread-safe, yet keeps each message intact.</p>
+<p>Both objectives are achieved fairly easily.</p>
+<ol>
+<li><p>All methods use only local variables. The only class level static
+data is a handful of constants, which are, by definition, read only, and
+the private SyncRoot object used to synchronize access to the object and
+its properties. This satisfies the first condition of thread safety,
+because all methods have exclusive access to all of their data.</p>
+</li>
+<li><p>Each message is built up, line by line, by appending to an instance
+of a StringBuilder class, using its AppendFormat method, which behaves
+like the static Format method of the System.String class. Although the
+AppendFormat method is an instance method, since the associated instance
+is local, thread safety remains intact. See Reference 1.</p>
+</li>
+<li><p>A single call to TextWriter.Synchronized ( Console.Out ).WriteLine
+or TextWriter.Synchronized ( Console.Error ).WriteLine writes the
+message, all at once, onto the console, preserving its integrity. Since
+the only event that uses a shared resource is called once only, and that
+call is synchronized, the message display is intact.</p>
+</li>
+</ol>
+<p>Since each method uses the shared resource, access to the console
+Standard Error (STDERR) stream, once only, and does so in a synchronized
+(thread-safe) way, the entire method is thread-safe.</p>
+<p>As a reminder to include WizardWrx.DLLServices2.dll in your projects, I
+left this class in the WizardWrx.DLLServices2 namespace. Only symbolic
+constants got promoted to the root namespace.</p>
+</div>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_WIZARDWRX_EVENT_SOURCE_ID.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.WIZARDWRX_EVENT_SOURCE_ID%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L690">View Source</a>
+  </span>
+  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_WIZARDWRX_EVENT_SOURCE_ID" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.WIZARDWRX_EVENT_SOURCE_ID">WIZARDWRX_EVENT_SOURCE_ID</h4>
+  <div class="markdown level1 summary"><p>This string defines a default event source ID, WizardWrx, which I
+register on behalf of my own applications.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string WIZARDWRX_EVENT_SOURCE_ID = null</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_AppEventSourceID.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.AppEventSourceID%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L787">View Source</a>
+  </span>
+  <a id="WizardWrx_DLLConfigurationManager_ExceptionLogger_AppEventSourceID_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.AppEventSourceID*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_AppEventSourceID" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.AppEventSourceID">AppEventSourceID</h4>
+  <div class="markdown level1 summary"><p>Along with the EventLoggingState property, this property governs
+recording of events in the Windows Application Event Log or in a
+custom event log of your choice.</p>
+<p>The value of this property is the event source ID string to use. To
+simplify applications, this property has a default value, defined by
+WIZARDWRX_EVENT_SOURCE_ID.</p>
+<p>IMPORTANT: Each event source ID string is machine specific, and each
+maps to one, and only one, event log, which is designated when the
+source is registered, as it must be before its first use.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string AppEventSourceID { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_ApplicationSubsystem.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.ApplicationSubsystem%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L819">View Source</a>
+  </span>
+  <a id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ApplicationSubsystem_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.ApplicationSubsystem*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ApplicationSubsystem" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.ApplicationSubsystem">ApplicationSubsystem</h4>
+  <div class="markdown level1 summary"><p>The value of this property is the actual subsystem ID reported by a
+fully managed function that yields the same result as the usual
+native (unmanaged) method.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PESubsystemInfo.PESubsystemID ApplicationSubsystem { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.AssemblyUtils.PESubsystemInfo.PESubsystemID.html">PESubsystemInfo.PESubsystemID</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ApplicationSubsystem_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This property uses GetExeSubsystem in lieu of GetProcessSubsystem to
+circumvent an anomaly in the Visual Studio debugging engine, which
+causes that function to return 2 (Windows GUI subsystem) when you
+use the Visual Studio Hosting Process, which runs in the Windows
+subsystem. The cause of this behavior is that the Visual Studio
+Hosting Process trades places with the process under study, becoming
+the first executable file loaded into the active process.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_ErrorMessageColors.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.ErrorMessageColors%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L840">View Source</a>
+  </span>
+  <a id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ErrorMessageColors_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.ErrorMessageColors*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ErrorMessageColors" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.ErrorMessageColors">ErrorMessageColors</h4>
+  <div class="markdown level1 summary"><p>Set this property to cause error messages to be displayed in a
+distinctive pair of foreground and background colors.</p>
+<p>Unless the AppSubsystem property is Console or CUI, this property is
+meaningless.</p>
+<p>Unlike other properties, ErrorMessageColors must be set directly,
+and it may be changed at any time.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ErrorMessagesInColor ErrorMessageColors { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.ConsoleStreams.ErrorMessagesInColor.html">ErrorMessagesInColor</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ErrorMessageColors_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>A hidden MessageInColor is maintained in tandem with this property,
+for use with STDERR. In this way, messages written to either STDOUT
+or STDERR use the same color scheme.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_OptionFlags.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.OptionFlags%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L883">View Source</a>
+  </span>
+  <a id="WizardWrx_DLLConfigurationManager_ExceptionLogger_OptionFlags_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.OptionFlags*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_OptionFlags" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.OptionFlags">OptionFlags</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the new OutputOptions enumeration, which supersedes the
+obsolete individual flags.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ExceptionLogger.OutputOptions OptionFlags { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions.html">ExceptionLogger.OutputOptions</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_s_strSettingsOmittedFromConfigFile.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.s_strSettingsOmittedFromConfigFile%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L1864">View Source</a>
+  </span>
+  <a id="WizardWrx_DLLConfigurationManager_ExceptionLogger_s_strSettingsOmittedFromConfigFile_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.s_strSettingsOmittedFromConfigFile*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_s_strSettingsOmittedFromConfigFile" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.s_strSettingsOmittedFromConfigFile">s_strSettingsOmittedFromConfigFile</h4>
+  <div class="markdown level1 summary"><p>Once an instance has spring into being, this static property returns
+the configuration values that are missing a setting in the
+configuration file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string s_strSettingsOmittedFromConfigFile { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_StdErrIsRedirected.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.StdErrIsRedirected%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L906">View Source</a>
+  </span>
+  <a id="WizardWrx_DLLConfigurationManager_ExceptionLogger_StdErrIsRedirected_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.StdErrIsRedirected*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_StdErrIsRedirected" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.StdErrIsRedirected">StdErrIsRedirected</h4>
+  <div class="markdown level1 summary"><p>Return TRUE if the Standard Error console stream was redirected by
+the shell. Otherwise, the return value is FALSE.</p>
+<p>This flag is meaningless unless the ApplicationSubsystem property
+value is equal to ProcessSubsystem.Console, indicating that the
+calling process is running in the Windows Character Mode (CUI)
+subsystem.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool StdErrIsRedirected { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_StdOutIsRedirected.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.StdOutIsRedirected%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L920">View Source</a>
+  </span>
+  <a id="WizardWrx_DLLConfigurationManager_ExceptionLogger_StdOutIsRedirected_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.StdOutIsRedirected*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_StdOutIsRedirected" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.StdOutIsRedirected">StdOutIsRedirected</h4>
+  <div class="markdown level1 summary"><p>Return TRUE if the Standard Output console stream was redirected by
+the shell. Otherwise, the return value is FALSE.</p>
+<p>This flag is meaningless unless the ApplicationSubsystem property
+value is equal to ProcessSubsystem.Console, indicating that the
+calling process is running in the Windows Character Mode (CUI)
+subsystem.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool StdOutIsRedirected { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_GetReservedErrorMessage.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.GetReservedErrorMessage%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L1153">View Source</a>
+  </span>
+  <a id="WizardWrx_DLLConfigurationManager_ExceptionLogger_GetReservedErrorMessage_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.GetReservedErrorMessage*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_GetReservedErrorMessage" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.GetReservedErrorMessage">GetReservedErrorMessage()</h4>
+  <div class="markdown level1 summary"><p>Return a message suitable for display on a console to accompany a
+status code of ERROR_SUCCESS (zero) or ERROR_RUNTIME (one), both
+defined in the MagicNumbers class of standard constant definitions.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetReservedErrorMessage()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>Since its operation is self contained, this method should always
+succeed in returning an appropriate message.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_GetReservedErrorMessage_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="WizardWrx.DLLConfigurationManager.ExceptionLogger.html#WizardWrx_DLLConfigurationManager_ExceptionLogger_GetSpecifiedReservedErrorMessage_WizardWrx_DLLConfigurationManager_ExceptionLogger_ErrorExitOptions_">GetSpecifiedReservedErrorMessage(ExceptionLogger.ErrorExitOptions)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_GetReservedErrorMessage_WizardWrx_DLLConfigurationManager_ExceptionLogger_ErrorExitOptions_.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.GetReservedErrorMessage(WizardWrx.DLLConfigurationManager.ExceptionLogger.ErrorExitOptions)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L1178">View Source</a>
+  </span>
+  <a id="WizardWrx_DLLConfigurationManager_ExceptionLogger_GetReservedErrorMessage_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.GetReservedErrorMessage*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_GetReservedErrorMessage_WizardWrx_DLLConfigurationManager_ExceptionLogger_ErrorExitOptions_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.GetReservedErrorMessage(WizardWrx.DLLConfigurationManager.ExceptionLogger.ErrorExitOptions)">GetReservedErrorMessage(ExceptionLogger.ErrorExitOptions)</h4>
+  <div class="markdown level1 summary"><p>Return a message suitable for display on a console to accompany a
+status code of ERROR_SUCCESS (zero) or ERROR_RUNTIME (one), both
+defined in the MagicNumbers class of standard constant definitions.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetReservedErrorMessage(ExceptionLogger.ErrorExitOptions penmErrorExitOptions)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.DLLConfigurationManager.ExceptionLogger.ErrorExitOptions.html">ExceptionLogger.ErrorExitOptions</a></td>
+        <td><span class="parametername">penmErrorExitOptions</span></td>
+        <td><p>A member of the ErrorExitOptions specifies the desired action. This
+value overrides the corresponding bits in the OptionFlags bit mask.</p>
+<p>If an invalid value is specified, the returned string is an error
+message that starts with &quot;An internal error has occurred.&quot; If this
+happens, it should be treated as a coding error.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>If the function succeeds, the returned message is ready to use;
+appropriate substitutions have already been made. Otherwise, the
+return value is the error message described in the documentation
+of argument penmErrorExitOptions.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_GetSpecifiedReservedErrorMessage_WizardWrx_DLLConfigurationManager_ExceptionLogger_ErrorExitOptions_.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.GetSpecifiedReservedErrorMessage(WizardWrx.DLLConfigurationManager.ExceptionLogger.ErrorExitOptions)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L1361">View Source</a>
+  </span>
+  <a id="WizardWrx_DLLConfigurationManager_ExceptionLogger_GetSpecifiedReservedErrorMessage_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.GetSpecifiedReservedErrorMessage*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_GetSpecifiedReservedErrorMessage_WizardWrx_DLLConfigurationManager_ExceptionLogger_ErrorExitOptions_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.GetSpecifiedReservedErrorMessage(WizardWrx.DLLConfigurationManager.ExceptionLogger.ErrorExitOptions)">GetSpecifiedReservedErrorMessage(ExceptionLogger.ErrorExitOptions)</h4>
+  <div class="markdown level1 summary"><p>Return a message suitable for display on a console to accompany a
+status code of ERROR_SUCCESS (zero) or ERROR_RUNTIME (one), both
+defined in the MagicNumbers class of standard constant definitions.</p>
+<p>Call this method with penmErrorExitOptions equal to Succeeded to get
+the ERROR_SUCCESS placeholder string for your error message table.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string GetSpecifiedReservedErrorMessage(ExceptionLogger.ErrorExitOptions penmErrorExitOptions)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.DLLConfigurationManager.ExceptionLogger.ErrorExitOptions.html">ExceptionLogger.ErrorExitOptions</a></td>
+        <td><span class="parametername">penmErrorExitOptions</span></td>
+        <td><p>A member of the ErrorExitOptions specifies the desired action. Since
+this is a static method, and doesn't have access to the instance
+properties, this value substitutes for the corresponding bits in the
+OptionFlags bit mask.</p>
+<p>If an invalid value is specified, the returned string is an error
+message that starts with &quot;An internal error has occurred.&quot; If this
+happens, it should be treated as a coding error.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>If the function succeeds, the returned message is ready to use;
+appropriate substitutions have already been made. Otherwise, the
+return value is the error message described in the documentation
+of argument penmErrorExitOptions.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_GetTheSingleInstance.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.GetTheSingleInstance%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L949">View Source</a>
+  </span>
+  <a id="WizardWrx_DLLConfigurationManager_ExceptionLogger_GetTheSingleInstance_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.GetTheSingleInstance*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_GetTheSingleInstance" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.GetTheSingleInstance">GetTheSingleInstance()</h4>
+  <div class="markdown level1 summary"><p>Call this static method from anywhere to get a reference to the
+ExceptionLogger singleton.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ExceptionLogger GetTheSingleInstance()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.DLLConfigurationManager.ExceptionLogger.html">ExceptionLogger</a></td>
+        <td><p>The return value is a reference to the singleton, which is created
+the first time the method is called. Subsequent calls return a
+reference to the singleton.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_GetTheSingleInstance_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>All overloads call this method, caching the returned reference in a
+local variable, before they override one or more of its default
+property values. When all overrides have been processed, the cached
+reference is returned through the overload that took the call.</p>
+<p>This roundabout procedure is necessary because the properties cannot
+be set until the object has been created. The most straightforward
+way to do this is to call the default method, which performs a task
+usually performed by a default constructor in this implementation of
+the singleton design pattern.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_GetTheSingleInstance_WizardWrx_AssemblyUtils_PESubsystemInfo_PESubsystemID_.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.GetTheSingleInstance(WizardWrx.AssemblyUtils.PESubsystemInfo.PESubsystemID)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L1085">View Source</a>
+  </span>
+  <a id="WizardWrx_DLLConfigurationManager_ExceptionLogger_GetTheSingleInstance_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.GetTheSingleInstance*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_GetTheSingleInstance_WizardWrx_AssemblyUtils_PESubsystemInfo_PESubsystemID_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.GetTheSingleInstance(WizardWrx.AssemblyUtils.PESubsystemInfo.PESubsystemID)">GetTheSingleInstance(PESubsystemInfo.PESubsystemID)</h4>
+  <div class="markdown level1 summary"><p>Call this static method from anywhere to get a reference to the
+ExceptionLogger singleton and set its AppSubsystem
+property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ExceptionLogger GetTheSingleInstance(PESubsystemInfo.PESubsystemID penmProcessSubsystem)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.AssemblyUtils.PESubsystemInfo.PESubsystemID.html">PESubsystemInfo.PESubsystemID</a></td>
+        <td><span class="parametername">penmProcessSubsystem</span></td>
+        <td><p>Use this member of the ProcessSubsystem enumeration to modify the
+default behavior of the exception logging methods, by enabling
+console output if the calling application has one.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.DLLConfigurationManager.ExceptionLogger.html">ExceptionLogger</a></td>
+        <td><p>The return value is a reference to the singleton, which is created
+the first time the method is called. Subsequent calls return a
+reference to the singleton.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_GetTheSingleInstance_WizardWrx_AssemblyUtils_PESubsystemInfo_PESubsystemID_WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptions_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.GetTheSingleInstance(WizardWrx.AssemblyUtils.PESubsystemInfo.PESubsystemID%2CWizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L1016">View Source</a>
+  </span>
+  <a id="WizardWrx_DLLConfigurationManager_ExceptionLogger_GetTheSingleInstance_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.GetTheSingleInstance*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_GetTheSingleInstance_WizardWrx_AssemblyUtils_PESubsystemInfo_PESubsystemID_WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptions_System_String_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.GetTheSingleInstance(WizardWrx.AssemblyUtils.PESubsystemInfo.PESubsystemID,WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions,System.String)">GetTheSingleInstance(PESubsystemInfo.PESubsystemID, ExceptionLogger.OutputOptions, String)</h4>
+  <div class="markdown level1 summary"><p>Call this static method from anywhere to get a reference to the
+ExceptionLogger singleton and set its ProcessSubsystem,
+OptionFlags, and AppEventSourceID properties.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ExceptionLogger GetTheSingleInstance(PESubsystemInfo.PESubsystemID penmProcessSubsystem, ExceptionLogger.OutputOptions penmOutputOptions, string pstrEventSourceID)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.AssemblyUtils.PESubsystemInfo.PESubsystemID.html">PESubsystemInfo.PESubsystemID</a></td>
+        <td><span class="parametername">penmProcessSubsystem</span></td>
+        <td><p>Use this member of the ProcessSubsystem enumeration to modify the
+default behavior of the exception logging methods, by enabling
+console output if the calling application has one.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions.html">ExceptionLogger.OutputOptions</a></td>
+        <td><span class="parametername">penmOutputOptions</span></td>
+        <td><p>The OutputOptions enumeration is organized for use as a bit mask.
+Set its flags as desired to control the format and content of output
+generated by the ReportException methods.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrEventSourceID</span></td>
+        <td><p>Use this string to override the default event source ID,  which is
+WIZARDWRX_EVENT_SOURCE_ID.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.DLLConfigurationManager.ExceptionLogger.html">ExceptionLogger</a></td>
+        <td><p>The return value is a reference to the singleton, which is created
+the first time the method is called. Subsequent calls return a
+reference to the singleton.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_GetTheSingleInstance_WizardWrx_AssemblyUtils_PESubsystemInfo_PESubsystemID_WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptions_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method looks entirely forward, which means that it doesn't
+bother with the obsolete properties.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_GetTheSingleInstance_WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptions_.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.GetTheSingleInstance(WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L974">View Source</a>
+  </span>
+  <a id="WizardWrx_DLLConfigurationManager_ExceptionLogger_GetTheSingleInstance_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.GetTheSingleInstance*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_GetTheSingleInstance_WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptions_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.GetTheSingleInstance(WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions)">GetTheSingleInstance(ExceptionLogger.OutputOptions)</h4>
+  <div class="markdown level1 summary"><p>Call this static method from anywhere to get a reference to the
+ExceptionLogger singleton and set its OptionFlags property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ExceptionLogger GetTheSingleInstance(ExceptionLogger.OutputOptions penmOutputOptions)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions.html">ExceptionLogger.OutputOptions</a></td>
+        <td><span class="parametername">penmOutputOptions</span></td>
+        <td><p>The OutputOptions enumeration is organized for use as a bit mask.
+Set its flags as desired to control the format and content of output
+generated by the ReportException methods.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.DLLConfigurationManager.ExceptionLogger.html">ExceptionLogger</a></td>
+        <td><p>The return value is a reference to the singleton, which is created
+the first time the method is called. Subsequent calls return a
+reference to the singleton.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_GetTheSingleInstance_WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptions_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.GetTheSingleInstance(WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L1055">View Source</a>
+  </span>
+  <a id="WizardWrx_DLLConfigurationManager_ExceptionLogger_GetTheSingleInstance_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.GetTheSingleInstance*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_GetTheSingleInstance_WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptions_System_String_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.GetTheSingleInstance(WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions,System.String)">GetTheSingleInstance(ExceptionLogger.OutputOptions, String)</h4>
+  <div class="markdown level1 summary"><p>Call this static method from anywhere to get a reference to the
+ExceptionLogger singleton and set its ProcessSubsystem,
+OptionFlags, and AppEventSourceID properties.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ExceptionLogger GetTheSingleInstance(ExceptionLogger.OutputOptions penmOutputOptions, string pstrEventSourceID)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions.html">ExceptionLogger.OutputOptions</a></td>
+        <td><span class="parametername">penmOutputOptions</span></td>
+        <td><p>The OutputOptions enumeration is organized for use as a bit mask.
+Set its flags as desired to control the format and content of output
+generated by the ReportException methods.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrEventSourceID</span></td>
+        <td><p>Use this string to override the default event source ID,  which is
+WIZARDWRX_EVENT_SOURCE_ID.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.DLLConfigurationManager.ExceptionLogger.html">ExceptionLogger</a></td>
+        <td><p>The return value is a reference to the singleton, which is created
+the first time the method is called. Subsequent calls return a
+reference to the singleton.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_GetTheSingleInstance_WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptions_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method looks entirely forward, which means that it doesn't
+bother with the obsolete properties.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptionsDisplay_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptionsDisplay(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L1197">View Source</a>
+  </span>
+  <a id="WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptionsDisplay_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptionsDisplay*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptionsDisplay_System_String_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptionsDisplay(System.String)">OutputOptionsDisplay(String)</h4>
+  <div class="markdown level1 summary"><p>Return a labeled string representation of the current OptionFlags,
+along with decimal and hexadecimal representations of the bit mask.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string OutputOptionsDisplay(string pstrLabel)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrLabel</span></td>
+        <td><p>Specify a label to be inserted into the message. This may be the
+empty string, or even a null reference, to omit the label.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The returned string is ready to display via Console.WriteLine or
+MessageBox.Show.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptionTurnOff_WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptions_.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptionTurnOff(WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L1223">View Source</a>
+  </span>
+  <a id="WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptionTurnOff_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptionTurnOff*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptionTurnOff_WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptions_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptionTurnOff(WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions)">OutputOptionTurnOff(ExceptionLogger.OutputOptions)</h4>
+  <div class="markdown level1 summary"><p>Turn the specified bit in the OutputOptions bit mask OFF.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ExceptionLogger.OutputOptions OutputOptionTurnOff(ExceptionLogger.OutputOptions penmOutputOptions)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions.html">ExceptionLogger.OutputOptions</a></td>
+        <td><span class="parametername">penmOutputOptions</span></td>
+        <td><p>Specify the member of the OutputOptions enumerated type to turn OFF.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions.html">ExceptionLogger.OutputOptions</a></td>
+        <td><p>The return value is the updated OutputOptions enumerated type, which
+is organized as a bit mask.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptionTurnOn_WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptions_.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptionTurnOn(WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L1240">View Source</a>
+  </span>
+  <a id="WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptionTurnOn_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptionTurnOn*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptionTurnOn_WizardWrx_DLLConfigurationManager_ExceptionLogger_OutputOptions_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptionTurnOn(WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions)">OutputOptionTurnOn(ExceptionLogger.OutputOptions)</h4>
+  <div class="markdown level1 summary"><p>Turn the specified bit in the OutputOptions bit mask ON.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ExceptionLogger.OutputOptions OutputOptionTurnOn(ExceptionLogger.OutputOptions penmOutputOptions)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions.html">ExceptionLogger.OutputOptions</a></td>
+        <td><span class="parametername">penmOutputOptions</span></td>
+        <td><p>Specify the member of the OutputOptions enumerated type to turn ON.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions.html">ExceptionLogger.OutputOptions</a></td>
+        <td><p>The return value is the updated OutputOptions enumerated type, which
+is organized as a bit mask.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_ArgumentException_.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(ArgumentException)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L1491">View Source</a>
+  </span>
+  <a id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_ArgumentException_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(ArgumentException)">ReportException(ArgumentException)</h4>
+  <div class="markdown level1 summary"><p>Format and report the properties of an ArgumentException exception on
+a console in a thread-safe manner.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ReportException(ArgumentException perrBadArg)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ArgumentException</span></td>
+        <td><span class="parametername">perrBadArg</span></td>
+        <td><p>The instance of the ArgumentException exception to process. See
+Remarks.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The return value is the string that was written onto the standard
+error or standard output stream (or both, depending on the flags).</p>
+<p>NOTE: The returned string is terminated by a single newline. Since
+it is appended to the stream by a Console.Write, the carriage is
+returned to the next line, but no additional line feeds follow.
+Hence, if you want your error message to be followed by a blank
+line, you must follow this call with an empty Console.WriteLine
+or,</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_ArgumentException__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Although this method can process objects of ANY class which derives
+from ArgumentException, other methods of this class specialize in
+processing objects of the commonly used ArgumentOutOfRangeException
+and ArgumentNullException derived classes.</p>
+<p>The TargetSite property, exposed by descendants of System.Exception,
+is the name of the method in which the exception was thrown.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_ArgumentNullException_.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(ArgumentNullException)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L1613">View Source</a>
+  </span>
+  <a id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_ArgumentNullException_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(ArgumentNullException)">ReportException(ArgumentNullException)</h4>
+  <div class="markdown level1 summary"><p>Format and report the properties of an ArgumentNullException
+exception on a console in a thread-safe manner. See Remarks.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ReportException(ArgumentNullException perrNullArg)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ArgumentNullException</span></td>
+        <td><span class="parametername">perrNullArg</span></td>
+        <td><p>The instance of an ArgumentNullException exception to process.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The return value is the string that was written onto the standard
+error or standard output stream (or both, depending on the flags).</p>
+<p>NOTE: The returned string is terminated by a single newline. Since
+it is appended to the stream by a Console.Write, the carriage is
+returned to the next line, but no additional line feeds follow.
+Hence, if you want your error message to be followed by a blank
+line, you must follow this call with an empty Console.WriteLine
+or,</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_ArgumentNullException__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The TargetSite property, exposed by descendants of System.Exception,
+is the name of the method in which the exception was thrown.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_ArgumentOutOfRangeException_.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(ArgumentOutOfRangeException)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L1548">View Source</a>
+  </span>
+  <a id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_ArgumentOutOfRangeException_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(ArgumentOutOfRangeException)">ReportException(ArgumentOutOfRangeException)</h4>
+  <div class="markdown level1 summary"><p>Format and report the properties of an ArgumentOutOfRangeException
+exception on a console in a thread-safe manner.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ReportException(ArgumentOutOfRangeException perrBadArg)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ArgumentOutOfRangeException</span></td>
+        <td><span class="parametername">perrBadArg</span></td>
+        <td><p>The instance of the ArgumentOutOfRangeException class to process.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The return value is the string that was written onto the standard
+error or standard output stream (or both, depending on the flags).</p>
+<p>NOTE: The returned string is terminated by a single newline. Since
+it is appended to the stream by a Console.Write, the carriage is
+returned to the next line, but no additional line feeds follow.
+Hence, if you want your error message to be followed by a blank
+line, you must follow this call with an empty Console.WriteLine
+or,</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_ArgumentOutOfRangeException__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The TargetSite property, exposed by descendants of System.Exception,
+is the name of the method in which the exception was thrown.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_Exception_.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(Exception)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L1438">View Source</a>
+  </span>
+  <a id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_Exception_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(Exception)">ReportException(Exception)</h4>
+  <div class="markdown level1 summary"><p>Format and report the properties of a generic Exception on a console
+in a thread-safe manner.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ReportException(Exception perrAny)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Exception</span></td>
+        <td><span class="parametername">perrAny</span></td>
+        <td><p>The instance of the base Exception class to process. See Remarks.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The return value is the string that was written onto the standard
+error or standard output stream (or both, depending on the flags).</p>
+<p>NOTE: The returned string is terminated by a single newline. Since
+it is appended to the stream by a Console.Write, the carriage is
+returned to the next line, but no additional line feeds follow.
+Hence, if you want your error message to be followed by a blank
+line, you must follow this call with an empty Console.WriteLine
+or,</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_Exception__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This can be ANY exception type, although the intent is to limit its
+use to reporting exceptions thrown by the base class,
+System.Exception.</p>
+<p>Other overloads exist for reporting exceptions thrown by types
+derived from System.Exception.</p>
+<p>The TargetSite property, exposed by descendants of System.Exception,
+is the name of the method in which the exception was thrown.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_FormatException_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(FormatException%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L1820">View Source</a>
+  </span>
+  <a id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_FormatException_System_String_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(FormatException,System.String)">ReportException(FormatException, String)</h4>
+  <div class="markdown level1 summary"><p>Format and report the properties of an FormatException exception on
+a console in a thread-safe manner.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ReportException(FormatException perrrBadFormat, string pstrFormatString)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">FormatException</span></td>
+        <td><span class="parametername">perrrBadFormat</span></td>
+        <td><p>The instance of the FormatException class to process.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrFormatString</span></td>
+        <td><p>This should be the format string which caused the exception. There
+should be a way to feed this to the exception, or recover it, but I
+have yet to find it.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The return value is the string that was written onto the standard
+error or standard output stream (or both, depending on the flags).</p>
+<p>NOTE: The returned string is terminated by a single newline. Since
+it is appended to the stream by a Console.Write, the carriage is
+returned to the next line, but no additional line feeds follow.
+Hence, if you want your error message to be followed by a blank
+line, you must follow this call with an empty Console.WriteLine
+or,</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_FormatException_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The TargetSite property, exposed by descendants of System.Exception,
+is the name of the method in which the exception was thrown.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_IOException_FileInfo_.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(IOException%2CFileInfo)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L1741">View Source</a>
+  </span>
+  <a id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_IOException_FileInfo_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(IOException,FileInfo)">ReportException(IOException, FileInfo)</h4>
+  <div class="markdown level1 summary"><p>Format and report the properties of an IOException exception on a
+console in a thread-safe manner.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ReportException(IOException perrIOError, FileInfo pfi)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IOException</span></td>
+        <td><span class="parametername">perrIOError</span></td>
+        <td><p>The instance of the IOException class to process. See Remarks.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">FileInfo</span></td>
+        <td><span class="parametername">pfi</span></td>
+        <td><p>The FileInfo object makes available much more than the file name,
+allowing for the possibility of an override to deliver more detailed
+information about the file being processed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The return value is the string that was written onto the standard
+error or standard output stream (or both, depending on the flags).</p>
+<p>NOTE: The returned string is terminated by a single newline. Since
+it is appended to the stream by a Console.Write, the carriage is
+returned to the next line, but no additional line feeds follow.
+Hence, if you want your error message to be followed by a blank
+line, you must follow this call with an empty Console.WriteLine</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_IOException_FileInfo__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This routine processes ANY exception of the IOException class and
+its derivatives. Methods for parsing published derived classes are
+somewhere on my ToDo list.</p>
+<p>The TargetSite property, exposed by descendants of System.Exception,
+is the name of the method in which the exception was thrown.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_ObjectDisposedException_.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(ObjectDisposedException)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L1676">View Source</a>
+  </span>
+  <a id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_ObjectDisposedException_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(ObjectDisposedException)">ReportException(ObjectDisposedException)</h4>
+  <div class="markdown level1 summary"><p>Format and report the properties of an ObjectDisposedException
+exception on a console in a thread-safe manner. See Remarks.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ReportException(ObjectDisposedException perrDisposed)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ObjectDisposedException</span></td>
+        <td><span class="parametername">perrDisposed</span></td>
+        <td><p>The instance of the ObjectDisposedException Exception class to
+process.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The return value is the string that was written onto the standard
+error or standard output stream (or both, depending on the flags).</p>
+<p>NOTE: The returned string is terminated by a single newline. Since
+it is appended to the stream by a Console.Write, the carriage is
+returned to the next line, but no additional line feeds follow.
+Hence, if you want your error message to be followed by a blank
+line, you must follow this call with an empty Console.WriteLine
+or,</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_ObjectDisposedException__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Any process that throws an ObjectDisposedException exception is in
+serious trouble, and deserves to crash, and be investigated, because
+this type of exception is almost invariably caused by a programming
+logic error.</p>
+<p>The TargetSite property, exposed by descendants of System.Exception,
+is the name of the method in which the exception was thrown.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_RestoreDefaultColors_System_Boolean_.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.RestoreDefaultColors(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L1130">View Source</a>
+  </span>
+  <a id="WizardWrx_DLLConfigurationManager_ExceptionLogger_RestoreDefaultColors_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.RestoreDefaultColors*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_RestoreDefaultColors_System_Boolean_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.RestoreDefaultColors(System.Boolean)">RestoreDefaultColors(Boolean)</h4>
+  <div class="markdown level1 summary"><p>Restore the default exception message colors.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ErrorMessagesInColor RestoreDefaultColors(bool pfWipeSavedColors)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">pfWipeSavedColors</span></td>
+        <td><p>To have the colors saved by the last call to SaveCurrentColors
+discarded, set this argument to TRUE. Otherwise, the saved colors
+are preserved.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.ConsoleStreams.ErrorMessagesInColor.html">ErrorMessagesInColor</a></td>
+        <td><p>The return value is the reinstated default exception message colors,
+which may be NULL if the color scheme is invalid (both colors set to
+the same value) or missing (no color scheme is configured).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_RestoreDefaultOptions.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.RestoreDefaultOptions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L1259">View Source</a>
+  </span>
+  <a id="WizardWrx_DLLConfigurationManager_ExceptionLogger_RestoreDefaultOptions_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.RestoreDefaultOptions*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_RestoreDefaultOptions" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.RestoreDefaultOptions">RestoreDefaultOptions()</h4>
+  <div class="markdown level1 summary"><p>Restore the state of the OutputOptions flags to their initial
+(default) values.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ExceptionLogger.OutputOptions RestoreDefaultOptions()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions.html">ExceptionLogger.OutputOptions</a></td>
+        <td><p>The return value is the reinstated property value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_RestoreDefaultOptions_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This routine calls the same static SetDefaultOptions method used by
+the static initializer, so that the defaults can be changed by
+visiting just one routine.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_RestoreSavedColors.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.RestoreSavedColors%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L1300">View Source</a>
+  </span>
+  <a id="WizardWrx_DLLConfigurationManager_ExceptionLogger_RestoreSavedColors_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.RestoreSavedColors*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_RestoreSavedColors" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.RestoreSavedColors">RestoreSavedColors()</h4>
+  <div class="markdown level1 summary"><p>Restore the ErrorMessageColors from the copy saved by the last
+SaveCurrentColors method call.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ErrorMessagesInColor RestoreSavedColors()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.ConsoleStreams.ErrorMessagesInColor.html">ErrorMessagesInColor</a></td>
+        <td><p>This method returns the restored message colors, so that callers may
+sanity check them against the expected values.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_RestoreSavedColors_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>CAUTION: Unless this method is preceded by a call to
+SaveCurrentColors, this call completely disables color error
+messages, unless the static initializer set default colors from a
+configuration file.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_RestoreSavedOptions.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.RestoreSavedOptions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L1279">View Source</a>
+  </span>
+  <a id="WizardWrx_DLLConfigurationManager_ExceptionLogger_RestoreSavedOptions_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.RestoreSavedOptions*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_RestoreSavedOptions" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.RestoreSavedOptions">RestoreSavedOptions()</h4>
+  <div class="markdown level1 summary"><p>Restore the state of the OutputOptions flags from the copy saved by
+the last SaveCurrentOptions method call.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ExceptionLogger.OutputOptions RestoreSavedOptions()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions.html">ExceptionLogger.OutputOptions</a></td>
+        <td><p>This method returns the options that were just restored, so that
+callers can sanity check them against the expected settings.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_RestoreSavedOptions_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>CAUTION: Unless this method is preceded by a call to
+SaveCurrentOptions, this call clears all flags, not just back to
+their initial state, but truly clear - all flags OFF.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_SaveCurrentColors.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.SaveCurrentColors%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L1314">View Source</a>
+  </span>
+  <a id="WizardWrx_DLLConfigurationManager_ExceptionLogger_SaveCurrentColors_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.SaveCurrentColors*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_SaveCurrentColors" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.SaveCurrentColors">SaveCurrentColors()</h4>
+  <div class="markdown level1 summary"><p>Save a copy of the current colors defined by the ErrorMessageColors
+property into a private area reserved for the purpose.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ErrorMessagesInColor SaveCurrentColors()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.ConsoleStreams.ErrorMessagesInColor.html">ErrorMessagesInColor</a></td>
+        <td><p>The current settings (the settings just saved) are returned.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_SaveCurrentOptions.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.SaveCurrentOptions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L1328">View Source</a>
+  </span>
+  <a id="WizardWrx_DLLConfigurationManager_ExceptionLogger_SaveCurrentOptions_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.SaveCurrentOptions*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_SaveCurrentOptions" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.SaveCurrentOptions">SaveCurrentOptions()</h4>
+  <div class="markdown level1 summary"><p>Save a copy of the current state of the OutputOptions flags into a
+private area reserved for the purpose.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ExceptionLogger.OutputOptions SaveCurrentOptions()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions.html">ExceptionLogger.OutputOptions</a></td>
+        <td><p>The current settings (the settings just saved) are returned.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_TimeStampedTraceWrite_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.TimeStampedTraceWrite(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L1396">View Source</a>
+  </span>
+  <a id="WizardWrx_DLLConfigurationManager_ExceptionLogger_TimeStampedTraceWrite_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.TimeStampedTraceWrite*"></a>
+  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_TimeStampedTraceWrite_System_String_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.TimeStampedTraceWrite(System.String)">TimeStampedTraceWrite(String)</h4>
+  <div class="markdown level1 summary"><p>Append a message to a standard ISO-8601 time stamp.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void TimeStampedTraceWrite(string pstrMessage)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrMessage</span></td>
+        <td><p>Specify the message to record.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_TimeStampedTraceWrite_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Though written ostensibly for internal use, I marked this method as
+public because it will quickly find employment outside this library.</p>
+</div>
+  <h3 id="seealso">See Also</h3>
+  <div class="seealso">
+      <div><a class="xref" href="WizardWrx.Core.PropertyDefaults.html">PropertyDefaults</a></div>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L404" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

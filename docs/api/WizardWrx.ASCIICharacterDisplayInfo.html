@@ -1,0 +1,706 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ASCIICharacterDisplayInfo
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ASCIICharacterDisplayInfo
+   ">
+    <meta name="generator" content="docfx 2.56.3.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="WizardWrx.ASCIICharacterDisplayInfo">
+  
+  
+  <h1 id="WizardWrx_ASCIICharacterDisplayInfo" data-uid="WizardWrx.ASCIICharacterDisplayInfo" class="text-break">Class ASCIICharacterDisplayInfo
+  </h1>
+  <div class="markdown level0 summary"><p>Instances of this class represent individual ASCII characters. Since the
+NUL character is defined, and occupies the first element, the numeric
+code that corresponds to a character maps directly to the corresponding
+element in this array.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">ASCIICharacterDisplayInfo</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="WizardWrx.html">WizardWrx</a></h6>
+  <h6><strong>Assembly</strong>: WizardWrx.ASCIIInfo.dll</h6>
+  <h5 id="WizardWrx_ASCIICharacterDisplayInfo_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ASCIICharacterDisplayInfo : object</code></pre>
+  </div>
+  <h5 id="WizardWrx_ASCIICharacterDisplayInfo_examples"><strong>Examples</strong></h5>
+  <p>The ASCII code for a space is 32. ASCIICharacterDisplayInfo[32], for C#,
+or ASCIICharacterDisplayInfo(32), for Visual Basic, returns the item for
+the space character.</p>
+<p>Likewise, the ASCII code for a horizontal TAB character is 9. Hence, the
+C# expression ASCIICharacterDisplayInfo[9] evaluates to the information
+about the TAB character. Likewise, ASCIICharacterDisplayInfo(9) does the
+same thing in Visual Basic.</p>
+<p>The following example comes from production code in the class library
+that motivated me to create this library.</p>
+<p>ASCIICharacterDisplayInfo [ ] asciiCharTbl = ASCII_Character_Display_Table.GetTheSingleInstance ( ).AllASCIICharacters;
+StringBuilder sbTheBadChar = new StringBuilder ( );
+sbTheBadChar.Append ( asciiCharTbl [ ( uint ) _chrBad ].DisplayText );</p>
+<p>Obviously, more things go into the message before it is returned to the
+calling routine.</p>
+
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ASCIICharacterDisplayInfo_AlternateText.md&amp;value=---%0Auid%3A%20WizardWrx.ASCIICharacterDisplayInfo.AlternateText%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ASCIIInfo/ASCIICharacterDisplayInfo.cs/#L409">View Source</a>
+  </span>
+  <a id="WizardWrx_ASCIICharacterDisplayInfo_AlternateText_" data-uid="WizardWrx.ASCIICharacterDisplayInfo.AlternateText*"></a>
+  <h4 id="WizardWrx_ASCIICharacterDisplayInfo_AlternateText" data-uid="WizardWrx.ASCIICharacterDisplayInfo.AlternateText">AlternateText</h4>
+  <div class="markdown level1 summary"><p>Gets an alternative visual representation of certain nonprintable
+and otherwise ambiguous characters, such as the SPACE character.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string AlternateText { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ASCIICharacterDisplayInfo_ASCIICharacter.md&amp;value=---%0Auid%3A%20WizardWrx.ASCIICharacterDisplayInfo.ASCIICharacter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ASCIIInfo/ASCIICharacterDisplayInfo.cs/#L401">View Source</a>
+  </span>
+  <a id="WizardWrx_ASCIICharacterDisplayInfo_ASCIICharacter_" data-uid="WizardWrx.ASCIICharacterDisplayInfo.ASCIICharacter*"></a>
+  <h4 id="WizardWrx_ASCIICharacterDisplayInfo_ASCIICharacter" data-uid="WizardWrx.ASCIICharacterDisplayInfo.ASCIICharacter">ASCIICharacter</h4>
+  <div class="markdown level1 summary"><p>Gets the Unicode character represented by the code</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public char ASCIICharacter { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ASCIICharacterDisplayInfo_CHAR.md&amp;value=---%0Auid%3A%20WizardWrx.ASCIICharacterDisplayInfo.CHAR%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ASCIIInfo/ASCIICharacterDisplayInfo.cs/#L427">View Source</a>
+  </span>
+  <a id="WizardWrx_ASCIICharacterDisplayInfo_CHAR_" data-uid="WizardWrx.ASCIICharacterDisplayInfo.CHAR*"></a>
+  <h4 id="WizardWrx_ASCIICharacterDisplayInfo_CHAR" data-uid="WizardWrx.ASCIICharacterDisplayInfo.CHAR">CHAR</h4>
+  <div class="markdown level1 summary"><p>This value is the standard two or three character acronymn for the
+character, including the square brackets that usually enclose it.
+This value is meaningful only for the Control Characters group. This
+value is blank for all others.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string CHAR { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ASCIICharacterDisplayInfo_CharSubType.md&amp;value=---%0Auid%3A%20WizardWrx.ASCIICharacterDisplayInfo.CharSubType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ASCIIInfo/ASCIICharacterDisplayInfo.cs/#L448">View Source</a>
+  </span>
+  <a id="WizardWrx_ASCIICharacterDisplayInfo_CharSubType_" data-uid="WizardWrx.ASCIICharacterDisplayInfo.CharSubType*"></a>
+  <h4 id="WizardWrx_ASCIICharacterDisplayInfo_CharSubType" data-uid="WizardWrx.ASCIICharacterDisplayInfo.CharSubType">CharSubType</h4>
+  <div class="markdown level1 summary"><p>Gets the CharacterSubtype enumeration mapping of the character</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ASCIICharacterDisplayInfo.CharacterSubtype CharSubType { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.html">ASCIICharacterDisplayInfo.CharacterSubtype</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ASCIICharacterDisplayInfo_CharType.md&amp;value=---%0Auid%3A%20WizardWrx.ASCIICharacterDisplayInfo.CharType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ASCIIInfo/ASCIICharacterDisplayInfo.cs/#L442">View Source</a>
+  </span>
+  <a id="WizardWrx_ASCIICharacterDisplayInfo_CharType_" data-uid="WizardWrx.ASCIICharacterDisplayInfo.CharType*"></a>
+  <h4 id="WizardWrx_ASCIICharacterDisplayInfo_CharType" data-uid="WizardWrx.ASCIICharacterDisplayInfo.CharType">CharType</h4>
+  <div class="markdown level1 summary"><p>Gets the CharacterType enumeration mapping of the character</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ASCIICharacterDisplayInfo.CharacterType CharType { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.ASCIICharacterDisplayInfo.CharacterType.html">ASCIICharacterDisplayInfo.CharacterType</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ASCIICharacterDisplayInfo_Code.md&amp;value=---%0Auid%3A%20WizardWrx.ASCIICharacterDisplayInfo.Code%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ASCIIInfo/ASCIICharacterDisplayInfo.cs/#L453">View Source</a>
+  </span>
+  <a id="WizardWrx_ASCIICharacterDisplayInfo_Code_" data-uid="WizardWrx.ASCIICharacterDisplayInfo.Code*"></a>
+  <h4 id="WizardWrx_ASCIICharacterDisplayInfo_Code" data-uid="WizardWrx.ASCIICharacterDisplayInfo.Code">Code</h4>
+  <div class="markdown level1 summary"><p>Gets the unsigned integer representation of the ASCII code</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uint Code { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ASCIICharacterDisplayInfo_CodeAsDecimal.md&amp;value=---%0Auid%3A%20WizardWrx.ASCIICharacterDisplayInfo.CodeAsDecimal%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ASCIIInfo/ASCIICharacterDisplayInfo.cs/#L462">View Source</a>
+  </span>
+  <a id="WizardWrx_ASCIICharacterDisplayInfo_CodeAsDecimal_" data-uid="WizardWrx.ASCIICharacterDisplayInfo.CodeAsDecimal*"></a>
+  <h4 id="WizardWrx_ASCIICharacterDisplayInfo_CodeAsDecimal" data-uid="WizardWrx.ASCIICharacterDisplayInfo.CodeAsDecimal">CodeAsDecimal</h4>
+  <div class="markdown level1 summary"><p>Gets a string representation of the raw ASCII code as a decimal
+number, formatted to always occupy the maximum number of characters
+needed, three</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string CodeAsDecimal { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ASCIICharacterDisplayInfo_CodeAsHexadecimal.md&amp;value=---%0Auid%3A%20WizardWrx.ASCIICharacterDisplayInfo.CodeAsHexadecimal%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ASCIIInfo/ASCIICharacterDisplayInfo.cs/#L477">View Source</a>
+  </span>
+  <a id="WizardWrx_ASCIICharacterDisplayInfo_CodeAsHexadecimal_" data-uid="WizardWrx.ASCIICharacterDisplayInfo.CodeAsHexadecimal*"></a>
+  <h4 id="WizardWrx_ASCIICharacterDisplayInfo_CodeAsHexadecimal" data-uid="WizardWrx.ASCIICharacterDisplayInfo.CodeAsHexadecimal">CodeAsHexadecimal</h4>
+  <div class="markdown level1 summary"><p>Gets a string representation of the ASCII code as a hexadecimal
+number</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string CodeAsHexadecimal { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ASCIICharacterDisplayInfo_Comment.md&amp;value=---%0Auid%3A%20WizardWrx.ASCIICharacterDisplayInfo.Comment%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ASCIIInfo/ASCIICharacterDisplayInfo.cs/#L506">View Source</a>
+  </span>
+  <a id="WizardWrx_ASCIICharacterDisplayInfo_Comment_" data-uid="WizardWrx.ASCIICharacterDisplayInfo.Comment*"></a>
+  <h4 id="WizardWrx_ASCIICharacterDisplayInfo_Comment" data-uid="WizardWrx.ASCIICharacterDisplayInfo.Comment">Comment</h4>
+  <div class="markdown level1 summary"><p>Gets the associated comment, if one exists, or returns the empty
+string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Comment { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ASCIICharacterDisplayInfo_Description.md&amp;value=---%0Auid%3A%20WizardWrx.ASCIICharacterDisplayInfo.Description%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ASCIIInfo/ASCIICharacterDisplayInfo.cs/#L522">View Source</a>
+  </span>
+  <a id="WizardWrx_ASCIICharacterDisplayInfo_Description_" data-uid="WizardWrx.ASCIICharacterDisplayInfo.Description*"></a>
+  <h4 id="WizardWrx_ASCIICharacterDisplayInfo_Description" data-uid="WizardWrx.ASCIICharacterDisplayInfo.Description">Description</h4>
+  <div class="markdown level1 summary"><p>When appropriate, this field returns a short text description of the
+character.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Description { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ASCIICharacterDisplayInfo_DisplayText.md&amp;value=---%0Auid%3A%20WizardWrx.ASCIICharacterDisplayInfo.DisplayText%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ASCIIInfo/ASCIICharacterDisplayInfo.cs/#L545">View Source</a>
+  </span>
+  <a id="WizardWrx_ASCIICharacterDisplayInfo_DisplayText_" data-uid="WizardWrx.ASCIICharacterDisplayInfo.DisplayText*"></a>
+  <h4 id="WizardWrx_ASCIICharacterDisplayInfo_DisplayText" data-uid="WizardWrx.ASCIICharacterDisplayInfo.DisplayText">DisplayText</h4>
+  <div class="markdown level1 summary"><p>Use this property to guarantee that any character will display
+something useful when the character is presented on its own, out of
+context, such as in an error message.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string DisplayText { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_ASCIICharacterDisplayInfo_DisplayText_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The objective of this property is to return something that is always
+acceptable in printed matter, without surprises such as line feeds,
+line wraps, and page ejects, among other things elicited by some of
+the control codes.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ASCIICharacterDisplayInfo_HTMLName.md&amp;value=---%0Auid%3A%20WizardWrx.ASCIICharacterDisplayInfo.HTMLName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ASCIIInfo/ASCIICharacterDisplayInfo.cs/#L572">View Source</a>
+  </span>
+  <a id="WizardWrx_ASCIICharacterDisplayInfo_HTMLName_" data-uid="WizardWrx.ASCIICharacterDisplayInfo.HTMLName*"></a>
+  <h4 id="WizardWrx_ASCIICharacterDisplayInfo_HTMLName" data-uid="WizardWrx.ASCIICharacterDisplayInfo.HTMLName">HTMLName</h4>
+  <div class="markdown level1 summary"><p>This field returns the HTML entity name, when one exists, of the
+character, its HTML entity string. Otherwise, the return value is
+the empty string, represented herein by a true constant,
+SpecialStrings.EMPTY_STRING.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string HTMLName { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_ASCIICharacterDisplayInfo_HTMLName_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If this returns anything besides the empty string, the string
+returned by this property should probably take its place in HTML
+text.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ASCIICharacterDisplayInfo_UnicodeCodePoint.md&amp;value=---%0Auid%3A%20WizardWrx.ASCIICharacterDisplayInfo.UnicodeCodePoint%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ASCIIInfo/ASCIICharacterDisplayInfo.cs/#L491">View Source</a>
+  </span>
+  <a id="WizardWrx_ASCIICharacterDisplayInfo_UnicodeCodePoint_" data-uid="WizardWrx.ASCIICharacterDisplayInfo.UnicodeCodePoint*"></a>
+  <h4 id="WizardWrx_ASCIICharacterDisplayInfo_UnicodeCodePoint" data-uid="WizardWrx.ASCIICharacterDisplayInfo.UnicodeCodePoint">UnicodeCodePoint</h4>
+  <div class="markdown level1 summary"><p>Gets a string representation of the Unicode code point</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string UnicodeCodePoint { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ASCIICharacterDisplayInfo_URLEncoding.md&amp;value=---%0Auid%3A%20WizardWrx.ASCIICharacterDisplayInfo.URLEncoding%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ASCIIInfo/ASCIICharacterDisplayInfo.cs/#L589">View Source</a>
+  </span>
+  <a id="WizardWrx_ASCIICharacterDisplayInfo_URLEncoding_" data-uid="WizardWrx.ASCIICharacterDisplayInfo.URLEncoding*"></a>
+  <h4 id="WizardWrx_ASCIICharacterDisplayInfo_URLEncoding" data-uid="WizardWrx.ASCIICharacterDisplayInfo.URLEncoding">URLEncoding</h4>
+  <div class="markdown level1 summary"><p>Gets the URLEncoding value of the character, which is available for
+ANY character, though it is needed only for punctuation, control
+codes, white space, and other special characters</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string URLEncoding { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ASCIICharacterDisplayInfo_DisplayCharacterInfo_System_Char_.md&amp;value=---%0Auid%3A%20WizardWrx.ASCIICharacterDisplayInfo.DisplayCharacterInfo(System.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ASCIIInfo/ASCIICharacterDisplayInfo.cs/#L645">View Source</a>
+  </span>
+  <a id="WizardWrx_ASCIICharacterDisplayInfo_DisplayCharacterInfo_" data-uid="WizardWrx.ASCIICharacterDisplayInfo.DisplayCharacterInfo*"></a>
+  <h4 id="WizardWrx_ASCIICharacterDisplayInfo_DisplayCharacterInfo_System_Char_" data-uid="WizardWrx.ASCIICharacterDisplayInfo.DisplayCharacterInfo(System.Char)">DisplayCharacterInfo(Char)</h4>
+  <div class="markdown level1 summary"><p>Create a ASCIICharacterDisplayInfo instance to represent a specified
+ASCII character, and call its ToString method to return all three
+representations of it (Printable, Hexadecimal, and Decimal, in that
+order.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string DisplayCharacterInfo(char pchr)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">pchr</span></td>
+        <td><p>Specify the character for which to render the three representations.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>Return the output of ToString on the ASCIICharacterDisplayInfo.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ASCIICharacterDisplayInfo_ToString.md&amp;value=---%0Auid%3A%20WizardWrx.ASCIICharacterDisplayInfo.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ASCIIInfo/ASCIICharacterDisplayInfo.cs/#L614">View Source</a>
+  </span>
+  <a id="WizardWrx_ASCIICharacterDisplayInfo_ToString_" data-uid="WizardWrx.ASCIICharacterDisplayInfo.ToString*"></a>
+  <h4 id="WizardWrx_ASCIICharacterDisplayInfo_ToString" data-uid="WizardWrx.ASCIICharacterDisplayInfo.ToString">ToString()</h4>
+  <div class="markdown level1 summary"><p>Override ToString to render all three defined formats and most other
+properties.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The return value is a string containing a printable representation
+of the character, followed by its hexadecimal and decimal values,
+both enclosed in a single pair of parenetheses, then by every
+conceivable way to represent the character except the URL encoding,
+which can be inferred from the hexadecimal string inserted as the
+CodeAsHexadecimal property value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ASCIICharacterDisplayInfo.md&amp;value=---%0Auid%3A%20WizardWrx.ASCIICharacterDisplayInfo%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ASCIIInfo/ASCIICharacterDisplayInfo.cs/#L126" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

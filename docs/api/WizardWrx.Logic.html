@@ -1,0 +1,1081 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Logic
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Logic
+   ">
+    <meta name="generator" content="docfx 2.56.3.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="WizardWrx.Logic">
+  
+  
+  <h1 id="WizardWrx_Logic" data-uid="WizardWrx.Logic" class="text-break">Class Logic
+  </h1>
+  <div class="markdown level0 summary"><p>This sealed class exposes methods that encapsulate many common, tricky
+loop state tests.</p>
+<p>Since static classes are implicitly sealed, this class cannot be inherited.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">Logic</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="WizardWrx.html">WizardWrx</a></h6>
+  <h6><strong>Assembly</strong>: WizardWrx.Core.dll</h6>
+  <h5 id="WizardWrx_Logic_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class Logic : object</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Logic_IsFirstForIteration_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.Logic.IsFirstForIteration(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/Logic.cs/#L111">View Source</a>
+  </span>
+  <a id="WizardWrx_Logic_IsFirstForIteration_" data-uid="WizardWrx.Logic.IsFirstForIteration*"></a>
+  <h4 id="WizardWrx_Logic_IsFirstForIteration_System_Int32_System_Int32_" data-uid="WizardWrx.Logic.IsFirstForIteration(System.Int32,System.Int32)">IsFirstForIteration(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Return TRUE if the FOR loop driven by pintLoopIndex is on its first
+iteration.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsFirstForIteration(int pintLoopIndex, int pintInitialValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintLoopIndex</span></td>
+        <td><p>Specify the integer loop index.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintInitialValue</span></td>
+        <td><p>Specify the integer initial value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>This function returns TRUE if the index of a FOR loop is at its
+initial value, indicating the first iteration of the loop.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Logic_IsFirstForIteration_System_Int32_System_Int32__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationEQ_System_Int32_System_Int32_">IsLastForIterationEQ(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationGE_System_Int32_System_Int32_">IsLastForIterationGE(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationGT_System_Int32_System_Int32_">IsLastForIterationGT(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationLE_System_Int32_System_Int32_">IsLastForIterationLE(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationLT_System_Int32_System_Int32_">IsLastForIterationLT(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsNextForIteration_System_Int32_System_Int32_">IsNextForIteration(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeEQ_System_Int32_System_Int32_">MoreForIterationsToComeEQ(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeGE_System_Int32_System_Int32_">MoreForIterationsToComeGE(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeGT_System_Int32_System_Int32_">MoreForIterationsToComeGT(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeLE_System_Int32_System_Int32_">MoreForIterationsToComeLE(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeLT_System_Int32_System_Int32_">MoreForIterationsToComeLT(Int32, Int32)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Logic_IsLastForIterationEQ_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.Logic.IsLastForIterationEQ(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/Logic.cs/#L146">View Source</a>
+  </span>
+  <a id="WizardWrx_Logic_IsLastForIterationEQ_" data-uid="WizardWrx.Logic.IsLastForIterationEQ*"></a>
+  <h4 id="WizardWrx_Logic_IsLastForIterationEQ_System_Int32_System_Int32_" data-uid="WizardWrx.Logic.IsLastForIterationEQ(System.Int32,System.Int32)">IsLastForIterationEQ(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Return TRUE if the FOR loop driven by pintLoopIndex is on its last
+iteration, given that the limit criterion is pintLoopIndex is
+greater than pintLimit.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsLastForIterationEQ(int pintLoopIndex, int pintLimit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintLoopIndex</span></td>
+        <td><p>Specify the integer loop index.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintLimit</span></td>
+        <td><p>Specify the integer limit value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>This function returns TRUE if the next increment of the loop index
+would set one less than pintLimit, stopping the loop without another
+iteration.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Logic_IsLastForIterationEQ_System_Int32_System_Int32__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsFirstForIteration_System_Int32_System_Int32_">IsFirstForIteration(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsNextForIteration_System_Int32_System_Int32_">IsNextForIteration(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationEQ_System_Int32_System_Int32_">IsLastForIterationEQ(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationGE_System_Int32_System_Int32_">IsLastForIterationGE(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationLE_System_Int32_System_Int32_">IsLastForIterationLE(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationLT_System_Int32_System_Int32_">IsLastForIterationLT(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsNextForIteration_System_Int32_System_Int32_">IsNextForIteration(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeGE_System_Int32_System_Int32_">MoreForIterationsToComeGE(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeGT_System_Int32_System_Int32_">MoreForIterationsToComeGT(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeLE_System_Int32_System_Int32_">MoreForIterationsToComeLE(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeLT_System_Int32_System_Int32_">MoreForIterationsToComeLT(Int32, Int32)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Logic_IsLastForIterationGE_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.Logic.IsLastForIterationGE(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/Logic.cs/#L182">View Source</a>
+  </span>
+  <a id="WizardWrx_Logic_IsLastForIterationGE_" data-uid="WizardWrx.Logic.IsLastForIterationGE*"></a>
+  <h4 id="WizardWrx_Logic_IsLastForIterationGE_System_Int32_System_Int32_" data-uid="WizardWrx.Logic.IsLastForIterationGE(System.Int32,System.Int32)">IsLastForIterationGE(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Return TRUE if the FOR loop driven by pintLoopIndex is on its last
+iteration, given that the limit criterion is pintLoopIndex is
+greater than or equal to pintLimit.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsLastForIterationGE(int pintLoopIndex, int pintLimit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintLoopIndex</span></td>
+        <td><p>Specify the integer loop index.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintLimit</span></td>
+        <td><p>Specify the integer limit value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>This function returns TRUE if the next increment of the loop index
+would set equal to pintLimit, stopping the loop without another
+iteration.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Logic_IsLastForIterationGE_System_Int32_System_Int32__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsFirstForIteration_System_Int32_System_Int32_">IsFirstForIteration(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsNextForIteration_System_Int32_System_Int32_">IsNextForIteration(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationEQ_System_Int32_System_Int32_">IsLastForIterationEQ(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationGE_System_Int32_System_Int32_">IsLastForIterationGE(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationGT_System_Int32_System_Int32_">IsLastForIterationGT(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationLE_System_Int32_System_Int32_">IsLastForIterationLE(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationLT_System_Int32_System_Int32_">IsLastForIterationLT(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsNextForIteration_System_Int32_System_Int32_">IsNextForIteration(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeEQ_System_Int32_System_Int32_">MoreForIterationsToComeEQ(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeGE_System_Int32_System_Int32_">MoreForIterationsToComeGE(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeGT_System_Int32_System_Int32_">MoreForIterationsToComeGT(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeLE_System_Int32_System_Int32_">MoreForIterationsToComeLE(Int32, Int32)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Logic_IsLastForIterationGT_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.Logic.IsLastForIterationGT(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/Logic.cs/#L217">View Source</a>
+  </span>
+  <a id="WizardWrx_Logic_IsLastForIterationGT_" data-uid="WizardWrx.Logic.IsLastForIterationGT*"></a>
+  <h4 id="WizardWrx_Logic_IsLastForIterationGT_System_Int32_System_Int32_" data-uid="WizardWrx.Logic.IsLastForIterationGT(System.Int32,System.Int32)">IsLastForIterationGT(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Return TRUE if the FOR loop driven by pintLoopIndex is on its last
+iteration, given that the limit criterion is pintLoopIndex is
+greater than pintLimit.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsLastForIterationGT(int pintLoopIndex, int pintLimit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintLoopIndex</span></td>
+        <td><p>Specify the integer loop index.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintLimit</span></td>
+        <td><p>Specify the integer limit value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>This function returns TRUE if the next increment of the loop index
+would set one less than pintLimit, stopping the loop without another
+iteration.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Logic_IsLastForIterationGT_System_Int32_System_Int32__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsFirstForIteration_System_Int32_System_Int32_">IsFirstForIteration(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsNextForIteration_System_Int32_System_Int32_">IsNextForIteration(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationEQ_System_Int32_System_Int32_">IsLastForIterationEQ(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationGE_System_Int32_System_Int32_">IsLastForIterationGE(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationLE_System_Int32_System_Int32_">IsLastForIterationLE(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationLT_System_Int32_System_Int32_">IsLastForIterationLT(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsNextForIteration_System_Int32_System_Int32_">IsNextForIteration(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeEQ_System_Int32_System_Int32_">MoreForIterationsToComeEQ(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeGE_System_Int32_System_Int32_">MoreForIterationsToComeGE(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeGT_System_Int32_System_Int32_">MoreForIterationsToComeGT(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeLE_System_Int32_System_Int32_">MoreForIterationsToComeLE(Int32, Int32)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Logic_IsLastForIterationLE_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.Logic.IsLastForIterationLE(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/Logic.cs/#L252">View Source</a>
+  </span>
+  <a id="WizardWrx_Logic_IsLastForIterationLE_" data-uid="WizardWrx.Logic.IsLastForIterationLE*"></a>
+  <h4 id="WizardWrx_Logic_IsLastForIterationLE_System_Int32_System_Int32_" data-uid="WizardWrx.Logic.IsLastForIterationLE(System.Int32,System.Int32)">IsLastForIterationLE(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Return TRUE if the FOR loop driven by pintLoopIndex is on its last
+iteration, given that the limit criterion is pintLoopIndex is less
+than or equal to pintLimit.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsLastForIterationLE(int pintLoopIndex, int pintLimit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintLoopIndex</span></td>
+        <td><p>Specify the integer loop index.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintLimit</span></td>
+        <td><p>Specify the integer limit value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>This function returns TRUE if the next increment of the loop index
+would set it equal to pintLimit, stopping the loop without another
+iteration.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Logic_IsLastForIterationLE_System_Int32_System_Int32__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsFirstForIteration_System_Int32_System_Int32_">IsFirstForIteration(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationEQ_System_Int32_System_Int32_">IsLastForIterationEQ(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationGE_System_Int32_System_Int32_">IsLastForIterationGE(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationGT_System_Int32_System_Int32_">IsLastForIterationGT(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationLT_System_Int32_System_Int32_">IsLastForIterationLT(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsNextForIteration_System_Int32_System_Int32_">IsNextForIteration(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeEQ_System_Int32_System_Int32_">MoreForIterationsToComeEQ(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeGE_System_Int32_System_Int32_">MoreForIterationsToComeGE(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeGT_System_Int32_System_Int32_">MoreForIterationsToComeGT(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeLE_System_Int32_System_Int32_">MoreForIterationsToComeLE(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeLT_System_Int32_System_Int32_">MoreForIterationsToComeLT(Int32, Int32)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Logic_IsLastForIterationLT_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.Logic.IsLastForIterationLT(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/Logic.cs/#L288">View Source</a>
+  </span>
+  <a id="WizardWrx_Logic_IsLastForIterationLT_" data-uid="WizardWrx.Logic.IsLastForIterationLT*"></a>
+  <h4 id="WizardWrx_Logic_IsLastForIterationLT_System_Int32_System_Int32_" data-uid="WizardWrx.Logic.IsLastForIterationLT(System.Int32,System.Int32)">IsLastForIterationLT(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Return TRUE if the FOR loop driven by pintLoopIndex is on its last
+iteration, given that the limit criterion is pintLoopIndex is less
+than pintLimit.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsLastForIterationLT(int pintLoopIndex, int pintLimit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintLoopIndex</span></td>
+        <td><p>Specify the integer loop index.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintLimit</span></td>
+        <td><p>Specify the integer limit value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>This function returns TRUE if the next increment of the loop index
+would set it equal to pintLimit, stopping the loop without another
+iteration.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Logic_IsLastForIterationLT_System_Int32_System_Int32__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsFirstForIteration_System_Int32_System_Int32_">IsFirstForIteration(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsNextForIteration_System_Int32_System_Int32_">IsNextForIteration(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationEQ_System_Int32_System_Int32_">IsLastForIterationEQ(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationGE_System_Int32_System_Int32_">IsLastForIterationGE(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationGT_System_Int32_System_Int32_">IsLastForIterationGT(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationLE_System_Int32_System_Int32_">IsLastForIterationLE(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationLT_System_Int32_System_Int32_">IsLastForIterationLT(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsNextForIteration_System_Int32_System_Int32_">IsNextForIteration(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeEQ_System_Int32_System_Int32_">MoreForIterationsToComeEQ(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeGE_System_Int32_System_Int32_">MoreForIterationsToComeGE(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeGT_System_Int32_System_Int32_">MoreForIterationsToComeGT(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeLE_System_Int32_System_Int32_">MoreForIterationsToComeLE(Int32, Int32)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Logic_IsNextForIteration_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.Logic.IsNextForIteration(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/Logic.cs/#L321">View Source</a>
+  </span>
+  <a id="WizardWrx_Logic_IsNextForIteration_" data-uid="WizardWrx.Logic.IsNextForIteration*"></a>
+  <h4 id="WizardWrx_Logic_IsNextForIteration_System_Int32_System_Int32_" data-uid="WizardWrx.Logic.IsNextForIteration(System.Int32,System.Int32)">IsNextForIteration(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Return TRUE if the FOR loop driven by pintLoopIndex is on a
+subsequent iteration.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsNextForIteration(int pintLoopIndex, int pintInitialValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintLoopIndex</span></td>
+        <td><p>Specify the integer loop index.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintInitialValue</span></td>
+        <td><p>Specify the integer initial value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>This function returns TRUE if the index of a FOR loop has passed its
+initial value, indicating that it is on a subsequent iteration of
+the loop.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Logic_IsNextForIteration_System_Int32_System_Int32__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsFirstForIteration_System_Int32_System_Int32_">IsFirstForIteration(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationEQ_System_Int32_System_Int32_">IsLastForIterationEQ(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationGE_System_Int32_System_Int32_">IsLastForIterationGE(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationGT_System_Int32_System_Int32_">IsLastForIterationGT(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationLE_System_Int32_System_Int32_">IsLastForIterationLE(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationLT_System_Int32_System_Int32_">IsLastForIterationLT(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeEQ_System_Int32_System_Int32_">MoreForIterationsToComeEQ(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeGE_System_Int32_System_Int32_">MoreForIterationsToComeGE(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeGT_System_Int32_System_Int32_">MoreForIterationsToComeGT(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeLE_System_Int32_System_Int32_">MoreForIterationsToComeLE(Int32, Int32)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Logic_MoreForIterationsToComeEQ_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.Logic.MoreForIterationsToComeEQ(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/Logic.cs/#L355">View Source</a>
+  </span>
+  <a id="WizardWrx_Logic_MoreForIterationsToComeEQ_" data-uid="WizardWrx.Logic.MoreForIterationsToComeEQ*"></a>
+  <h4 id="WizardWrx_Logic_MoreForIterationsToComeEQ_System_Int32_System_Int32_" data-uid="WizardWrx.Logic.MoreForIterationsToComeEQ(System.Int32,System.Int32)">MoreForIterationsToComeEQ(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Return TRUE if the FOR loop driven by pintLoopIndex has one or more
+iteration to go, given that the limit criterion is pintLoopIndex is
+equal to pintLimit.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool MoreForIterationsToComeEQ(int pintLoopIndex, int pintLimit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintLoopIndex</span></td>
+        <td><p>Specify the integer loop index.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintLimit</span></td>
+        <td><p>Specify the integer limit value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>This function returns TRUE if the index and limit indicate that one
+or more iterations remain.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Logic_MoreForIterationsToComeEQ_System_Int32_System_Int32__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsFirstForIteration_System_Int32_System_Int32_">IsFirstForIteration(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationEQ_System_Int32_System_Int32_">IsLastForIterationEQ(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationGE_System_Int32_System_Int32_">IsLastForIterationGE(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationGT_System_Int32_System_Int32_">IsLastForIterationGT(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationLE_System_Int32_System_Int32_">IsLastForIterationLE(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationLT_System_Int32_System_Int32_">IsLastForIterationLT(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsNextForIteration_System_Int32_System_Int32_">IsNextForIteration(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeGE_System_Int32_System_Int32_">MoreForIterationsToComeGE(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeGT_System_Int32_System_Int32_">MoreForIterationsToComeGT(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeLE_System_Int32_System_Int32_">MoreForIterationsToComeLE(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeLT_System_Int32_System_Int32_">MoreForIterationsToComeLT(Int32, Int32)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Logic_MoreForIterationsToComeGE_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.Logic.MoreForIterationsToComeGE(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/Logic.cs/#L389">View Source</a>
+  </span>
+  <a id="WizardWrx_Logic_MoreForIterationsToComeGE_" data-uid="WizardWrx.Logic.MoreForIterationsToComeGE*"></a>
+  <h4 id="WizardWrx_Logic_MoreForIterationsToComeGE_System_Int32_System_Int32_" data-uid="WizardWrx.Logic.MoreForIterationsToComeGE(System.Int32,System.Int32)">MoreForIterationsToComeGE(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Return TRUE if the FOR loop driven by pintLoopIndex has one or more
+iteration to go, given that the limit criterion is pintLoopIndex is
+greater than or equal to pintLimit.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool MoreForIterationsToComeGE(int pintLoopIndex, int pintLimit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintLoopIndex</span></td>
+        <td><p>Specify the integer loop index.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintLimit</span></td>
+        <td><p>Specify the integer limit value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>This function returns TRUE if the index and limit indicate that one
+or more iterations remain.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Logic_MoreForIterationsToComeGE_System_Int32_System_Int32__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsFirstForIteration_System_Int32_System_Int32_">IsFirstForIteration(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationEQ_System_Int32_System_Int32_">IsLastForIterationEQ(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationGE_System_Int32_System_Int32_">IsLastForIterationGE(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationGT_System_Int32_System_Int32_">IsLastForIterationGT(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationLE_System_Int32_System_Int32_">IsLastForIterationLE(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationLT_System_Int32_System_Int32_">IsLastForIterationLT(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsNextForIteration_System_Int32_System_Int32_">IsNextForIteration(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeEQ_System_Int32_System_Int32_">MoreForIterationsToComeEQ(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeGT_System_Int32_System_Int32_">MoreForIterationsToComeGT(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeLE_System_Int32_System_Int32_">MoreForIterationsToComeLE(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeLT_System_Int32_System_Int32_">MoreForIterationsToComeLT(Int32, Int32)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Logic_MoreForIterationsToComeGT_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.Logic.MoreForIterationsToComeGT(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/Logic.cs/#L422">View Source</a>
+  </span>
+  <a id="WizardWrx_Logic_MoreForIterationsToComeGT_" data-uid="WizardWrx.Logic.MoreForIterationsToComeGT*"></a>
+  <h4 id="WizardWrx_Logic_MoreForIterationsToComeGT_System_Int32_System_Int32_" data-uid="WizardWrx.Logic.MoreForIterationsToComeGT(System.Int32,System.Int32)">MoreForIterationsToComeGT(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Return TRUE if the FOR loop driven by pintLoopIndex has one or more
+iteration to go, given that the limit criterion is pintLoopIndex is
+greater than pintLimit.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool MoreForIterationsToComeGT(int pintLoopIndex, int pintLimit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintLoopIndex</span></td>
+        <td><p>Specify the integer loop index.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintLimit</span></td>
+        <td><p>Specify the integer limit value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>This function returns TRUE if the index and limit indicate that one
+or more iterations remain.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Logic_MoreForIterationsToComeGT_System_Int32_System_Int32__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsFirstForIteration_System_Int32_System_Int32_">IsFirstForIteration(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationEQ_System_Int32_System_Int32_">IsLastForIterationEQ(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationGE_System_Int32_System_Int32_">IsLastForIterationGE(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationGT_System_Int32_System_Int32_">IsLastForIterationGT(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationLE_System_Int32_System_Int32_">IsLastForIterationLE(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationLT_System_Int32_System_Int32_">IsLastForIterationLT(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsNextForIteration_System_Int32_System_Int32_">IsNextForIteration(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeEQ_System_Int32_System_Int32_">MoreForIterationsToComeEQ(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeLE_System_Int32_System_Int32_">MoreForIterationsToComeLE(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeLT_System_Int32_System_Int32_">MoreForIterationsToComeLT(Int32, Int32)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Logic_MoreForIterationsToComeLE_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.Logic.MoreForIterationsToComeLE(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/Logic.cs/#L459">View Source</a>
+  </span>
+  <a id="WizardWrx_Logic_MoreForIterationsToComeLE_" data-uid="WizardWrx.Logic.MoreForIterationsToComeLE*"></a>
+  <h4 id="WizardWrx_Logic_MoreForIterationsToComeLE_System_Int32_System_Int32_" data-uid="WizardWrx.Logic.MoreForIterationsToComeLE(System.Int32,System.Int32)">MoreForIterationsToComeLE(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Return TRUE if the FOR loop driven by pintLoopIndex has one or more
+iteration to go, given that the limit criterion is pintLoopIndex is less
+than or equal to pintLimit.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool MoreForIterationsToComeLE(int pintLoopIndex, int pintLimit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintLoopIndex</span></td>
+        <td><p>Specify the integer loop index.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintLimit</span></td>
+        <td><p>Specify the integer limit value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>This function returns TRUE if the index and limit indicate that one
+or more iterations remain.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Logic_MoreForIterationsToComeLE_System_Int32_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Sometimes, it is more sensible to test whether there are iterations
+remaining.</p>
+</div>
+  <h5 id="WizardWrx_Logic_MoreForIterationsToComeLE_System_Int32_System_Int32__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsFirstForIteration_System_Int32_System_Int32_">IsFirstForIteration(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationGE_System_Int32_System_Int32_">IsLastForIterationGE(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationGT_System_Int32_System_Int32_">IsLastForIterationGT(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationLE_System_Int32_System_Int32_">IsLastForIterationLE(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationLT_System_Int32_System_Int32_">IsLastForIterationLT(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsNextForIteration_System_Int32_System_Int32_">IsNextForIteration(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeEQ_System_Int32_System_Int32_">MoreForIterationsToComeEQ(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeGE_System_Int32_System_Int32_">MoreForIterationsToComeGE(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeGT_System_Int32_System_Int32_">MoreForIterationsToComeGT(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeLT_System_Int32_System_Int32_">MoreForIterationsToComeLT(Int32, Int32)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Logic_MoreForIterationsToComeLT_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.Logic.MoreForIterationsToComeLT(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/Logic.cs/#L496">View Source</a>
+  </span>
+  <a id="WizardWrx_Logic_MoreForIterationsToComeLT_" data-uid="WizardWrx.Logic.MoreForIterationsToComeLT*"></a>
+  <h4 id="WizardWrx_Logic_MoreForIterationsToComeLT_System_Int32_System_Int32_" data-uid="WizardWrx.Logic.MoreForIterationsToComeLT(System.Int32,System.Int32)">MoreForIterationsToComeLT(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Return TRUE if the FOR loop driven by pintLoopIndex has one or more
+iteration to go, given that the limit criterion is pintLoopIndex is less
+than pintLimit.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool MoreForIterationsToComeLT(int pintLoopIndex, int pintLimit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintLoopIndex</span></td>
+        <td><p>Specify the integer loop index.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintLimit</span></td>
+        <td><p>Specify the integer limit value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>This function returns TRUE if the index and limit indicate that one
+or more iterations remain.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Logic_MoreForIterationsToComeLT_System_Int32_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Sometimes, it is more sensible to test whether there are iterations
+remaining.</p>
+</div>
+  <h5 id="WizardWrx_Logic_MoreForIterationsToComeLT_System_Int32_System_Int32__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsFirstForIteration_System_Int32_System_Int32_">IsFirstForIteration(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationGE_System_Int32_System_Int32_">IsLastForIterationGE(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationGT_System_Int32_System_Int32_">IsLastForIterationGT(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationLE_System_Int32_System_Int32_">IsLastForIterationLE(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsLastForIterationLT_System_Int32_System_Int32_">IsLastForIterationLT(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_IsNextForIteration_System_Int32_System_Int32_">IsNextForIteration(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeEQ_System_Int32_System_Int32_">MoreForIterationsToComeEQ(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeGE_System_Int32_System_Int32_">MoreForIterationsToComeGE(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeGT_System_Int32_System_Int32_">MoreForIterationsToComeGT(Int32, Int32)</a></div>
+      <div><a class="xref" href="WizardWrx.Logic.html#WizardWrx_Logic_MoreForIterationsToComeLE_System_Int32_System_Int32_">MoreForIterationsToComeLE(Int32, Int32)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Logic_Unless_System_Boolean_.md&amp;value=---%0Auid%3A%20WizardWrx.Logic.Unless(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/Logic.cs/#L524">View Source</a>
+  </span>
+  <a id="WizardWrx_Logic_Unless_" data-uid="WizardWrx.Logic.Unless*"></a>
+  <h4 id="WizardWrx_Logic_Unless_System_Boolean_" data-uid="WizardWrx.Logic.Unless(System.Boolean)">Unless(Boolean)</h4>
+  <div class="markdown level1 summary"><p>Return the inverse of the truth value of an expression.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool Unless(bool pfUnlessWhat)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">pfUnlessWhat</span></td>
+        <td><p>Specify the expression to invert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>Return TRUE if pfUnlessWhat is FALSE, and vice vers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Logic_Unless_System_Boolean__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>I shamelessly borrowed this idiom from Perl, with full credit to
+Larry Wall, and implemented it as a macro for the C and C++ source
+code preprocessors about a decade ago. I don't know why it's taken
+me this long to realize that it is equally easy to implement in C#,
+and the implementation is sufficiently small that the code optimizer
+will almost certainly inline it, so that its performance impact is
+equivalent to the C/C++ macro.</p>
+<p>The C# implementation is not quite as neat as the C/C++ macro.</p>
+</div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Logic.md&amp;value=---%0Auid%3A%20WizardWrx.Logic%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/Logic.cs/#L84" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

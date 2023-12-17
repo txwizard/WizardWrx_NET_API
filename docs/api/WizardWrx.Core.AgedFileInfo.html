@@ -1,0 +1,379 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class AgedFileInfo
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class AgedFileInfo
+   ">
+    <meta name="generator" content="docfx 2.56.3.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="WizardWrx.Core.AgedFileInfo">
+  
+  
+  <h1 id="WizardWrx_Core_AgedFileInfo" data-uid="WizardWrx.Core.AgedFileInfo" class="text-break">Class AgedFileInfo
+  </h1>
+  <div class="markdown level0 summary"><p>This class extends a FileInfo object with a custom IComparable interface
+implementation.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">AgedFileInfo</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="WizardWrx.Core.html">WizardWrx.Core</a></h6>
+  <h6><strong>Assembly</strong>: WizardWrx.Core.dll</h6>
+  <h5 id="WizardWrx_Core_AgedFileInfo_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class AgedFileInfo : IComparable&lt;AgedFileInfo&gt;</code></pre>
+  </div>
+  <h5 id="WizardWrx_Core_AgedFileInfo_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>This class and AgedFileInfoCollection are designed to be used together
+to achieve the goal of processing a list of the files that match a file
+specification from newest to oldest.</p>
+<p>These objects are not intended for independent use, since they must go
+into a collection that can be sorted to leverage the IComparable
+interface implementation that permits them to be sorted in reverse order
+by LastWriteTimeUTC.</p>
+<p>Each AgedFileInfo is a FileInfo object, wrapped in a small class that
+augments it with a custom IComparable interface implementation that
+allows the list to be sorted by LastWriteTimeUTC. Using LastWriteTimeUTC
+guarantees that the files are always sorted correctly, even when the set
+includes one or more files that were created during the transition hour
+that occurs twice annually, on the days when the transitions to and from
+Daylight Saving Time occur. LastWriteTimeUTC time stamps created during
+this hour are not guaranteed to sort correctly, especially during the
+&quot;fall back&quot; transition that occurs in Autumn, when the local time is set
+back by 1 hour, so that there are two hours during which the same local
+hour is reported.</p>
+<p>In the course of investigating an unexpected exception, I again read the
+recommendation from Microsoft (published in the MSDN library) about
+overriding other methods (Equals and GetHashCode), implementing other
+interfaces (IEquatable and IEqualityComparer), and overloading the
+equality and inequality operators, all of which I went ahead and did,
+even though doing so is almost certainly overkill for this class.</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_AgedFileInfo__ctor.md&amp;value=---%0Auid%3A%20WizardWrx.Core.AgedFileInfo.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AgedFileInfo.cs/#L92">View Source</a>
+  </span>
+  <a id="WizardWrx_Core_AgedFileInfo__ctor_" data-uid="WizardWrx.Core.AgedFileInfo.#ctor*"></a>
+  <h4 id="WizardWrx_Core_AgedFileInfo__ctor" data-uid="WizardWrx.Core.AgedFileInfo.#ctor">AgedFileInfo()</h4>
+  <div class="markdown level1 summary"><p>The default constructor would be private, except that I believe that
+it must be marked as Public to satisfy the IComparable and IList
+interfaces.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgedFileInfo()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_AgedFileInfo__ctor_FileInfo_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.AgedFileInfo.%23ctor(FileInfo)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AgedFileInfo.cs/#L104">View Source</a>
+  </span>
+  <a id="WizardWrx_Core_AgedFileInfo__ctor_" data-uid="WizardWrx.Core.AgedFileInfo.#ctor*"></a>
+  <h4 id="WizardWrx_Core_AgedFileInfo__ctor_FileInfo_" data-uid="WizardWrx.Core.AgedFileInfo.#ctor(FileInfo)">AgedFileInfo(FileInfo)</h4>
+  <div class="markdown level1 summary"><p>The single overloaded constructor stashes a reference to a FileInfo,
+which this class augments with a custom implementation of the
+IComparable interface that supports inverse ordering.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgedFileInfo(FileInfo pfileInfo)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">FileInfo</span></td>
+        <td><span class="parametername">pfileInfo</span></td>
+        <td><p>Pass in a reference to the FileInfo to be stored in the instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_AgedFileInfo_Details.md&amp;value=---%0Auid%3A%20WizardWrx.Core.AgedFileInfo.Details%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AgedFileInfo.cs/#L118">View Source</a>
+  </span>
+  <a id="WizardWrx_Core_AgedFileInfo_Details_" data-uid="WizardWrx.Core.AgedFileInfo.Details*"></a>
+  <h4 id="WizardWrx_Core_AgedFileInfo_Details" data-uid="WizardWrx.Core.AgedFileInfo.Details">Details</h4>
+  <div class="markdown level1 summary"><p>Return a reference to the FileInfo that was loaded into the
+constructor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FileInfo Details { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">FileInfo</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_AgedFileInfo_Details_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>While this protects the reference against destruction, it doesn't
+prevent callers from changing read/write properties. For that, each
+property must be individually exposed as a read-only property.</p>
+</div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_AgedFileInfo_Equals_System_Object_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.AgedFileInfo.Equals(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AgedFileInfo.cs/#L176">View Source</a>
+  </span>
+  <a id="WizardWrx_Core_AgedFileInfo_Equals_" data-uid="WizardWrx.Core.AgedFileInfo.Equals*"></a>
+  <h4 id="WizardWrx_Core_AgedFileInfo_Equals_System_Object_" data-uid="WizardWrx.Core.AgedFileInfo.Equals(System.Object)">Equals(Object)</h4>
+  <div class="markdown level1 summary"><p>Override the base imp0lementation of the Equals method to return a
+result that is consistent with the algorithm implemented by the
+IComparable interface.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>The object against which to compare must be another AgedFileInfo, or
+the return value is False.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>The returned Boolean value is that returned by comparing the two
+_fileInfo.LastAccessTimeUtc.Ticks property values.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_AgedFileInfo_GetHashCode.md&amp;value=---%0Auid%3A%20WizardWrx.Core.AgedFileInfo.GetHashCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AgedFileInfo.cs/#L199">View Source</a>
+  </span>
+  <a id="WizardWrx_Core_AgedFileInfo_GetHashCode_" data-uid="WizardWrx.Core.AgedFileInfo.GetHashCode*"></a>
+  <h4 id="WizardWrx_Core_AgedFileInfo_GetHashCode" data-uid="WizardWrx.Core.AgedFileInfo.GetHashCode">GetHashCode()</h4>
+  <div class="markdown level1 summary"><p>Override the base GetHashCode method to return a result that is
+consistent with the algorithm implemented by the IComparable
+interface.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The return value is the HashCode of the LastWriteTimeUTC.Ticks
+property of the underlying FileInfo object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_AgedFileInfo_ToString.md&amp;value=---%0Auid%3A%20WizardWrx.Core.AgedFileInfo.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AgedFileInfo.cs/#L143">View Source</a>
+  </span>
+  <a id="WizardWrx_Core_AgedFileInfo_ToString_" data-uid="WizardWrx.Core.AgedFileInfo.ToString*"></a>
+  <h4 id="WizardWrx_Core_AgedFileInfo_ToString" data-uid="WizardWrx.Core.AgedFileInfo.ToString">ToString()</h4>
+  <div class="markdown level1 summary"><p>Override the base class ToString method, so that it renders the most
+critical properties of the underlying file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The returned string lists the name of the exporting class, as usual,
+but followed immediately by the key properties that a debugger will
+most likely need.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_AgedFileInfo.md&amp;value=---%0Auid%3A%20WizardWrx.Core.AgedFileInfo%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AgedFileInfo.cs/#L84" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Enum StandardHandleInfo.ConsoleOutputModes
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Enum StandardHandleInfo.ConsoleOutputModes
+   ">
+    <meta name="generator" content="docfx 2.56.3.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="WizardWrx.ConsoleStreams.StandardHandleInfo.ConsoleOutputModes">
+  
+  
+  <h1 id="WizardWrx_ConsoleStreams_StandardHandleInfo_ConsoleOutputModes" data-uid="WizardWrx.ConsoleStreams.StandardHandleInfo.ConsoleOutputModes" class="text-break">Enum StandardHandleInfo.ConsoleOutputModes
+  </h1>
+  <div class="markdown level0 summary"><p>Use these flags with SetConsoleMode to control how long output lines
+are handled.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="WizardWrx.ConsoleStreams.html">WizardWrx.ConsoleStreams</a></h6>
+  <h6><strong>Assembly</strong>: WizardWrx.ConsoleStreams.dll</h6>
+  <h5 id="WizardWrx_ConsoleStreams_StandardHandleInfo_ConsoleOutputModes_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public enum ConsoleOutputModes : int</code></pre>
+  </div>
+  <h5 id="WizardWrx_ConsoleStreams_StandardHandleInfo_ConsoleOutputModes_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>In wincon.h, these are defined as symbolic constants, although there
+is ample justification for rolling them into a bit-mapped
+enumeration. I suspect the reason they aren't is that the change
+would break too much legacy code.</p>
+<p>For the present, SetConsoleMode is not called.</p>
+<p>Though currently unused, the enumeration is reserved for future use.</p>
+<p>The summaries shown here for all but the last member of this
+enumeration are quoted verbatim from the MSDN manual page of the
+SetConsoleMode function cited below.</p>
+</div>
+  <h3 id="fields">Fields
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    <thead>
+    <tbody>
+      <tr>
+        <td id="WizardWrx_ConsoleStreams_StandardHandleInfo_ConsoleOutputModes_ENABLE_PROCESSED_OUTPUT">ENABLE_PROCESSED_OUTPUT</td>
+        <td><p>Characters written by the WriteFile or WriteConsole function or
+echoed by the ReadFile or ReadConsole function are examined for
+ASCII control sequences and the correct action is performed.
+Backspace, tab, bell, carriage return, and line feed characters
+are processed.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="WizardWrx_ConsoleStreams_StandardHandleInfo_ConsoleOutputModes_ENABLE_WRAP_AT_EOL_OUTPUT">ENABLE_WRAP_AT_EOL_OUTPUT</td>
+        <td><p>When writing with WriteFile or WriteConsole or echoing with
+ReadFile or ReadConsole, the cursor moves to the beginning of
+the next row when it reaches the end of the current row. This
+causes the rows displayed in the console window to scroll up
+automatically when the cursor advances beyond the last row in
+the window. It also causes the contents of the console screen
+buffer to scroll up (discarding the top row of the console
+screen buffer) when the cursor advances beyond the last row in
+the console screen buffer. If this mode is disabled, the last
+character in the row is overwritten with any subsequent
+characters.</p>
+</td>
+      </tr>
+    </tbody>
+  </thead></thead></table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_StandardHandleInfo_ConsoleOutputModes.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.StandardHandleInfo.ConsoleOutputModes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ConsoleStreams/StandardHandleInfo.cs/#L237" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

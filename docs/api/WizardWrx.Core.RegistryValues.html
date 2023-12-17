@@ -1,0 +1,623 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class RegistryValues
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class RegistryValues
+   ">
+    <meta name="generator" content="docfx 2.56.3.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="WizardWrx.Core.RegistryValues">
+  
+  
+  <h1 id="WizardWrx_Core_RegistryValues" data-uid="WizardWrx.Core.RegistryValues" class="text-break">Class RegistryValues
+  </h1>
+  <div class="markdown level0 summary"><p>This sealed class exposes static methods for efficiently testing for the
+presence of named values in a Registry key that behave more like the
+Item property of a collection, and retrieving Registry value types that
+require a transformation of one sort or another to get them into the
+appropriate native type.</p>
+<p>Since static classes are implicitly sealed, this class cannot be inherited.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">RegistryValues</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="WizardWrx.Core.html">WizardWrx.Core</a></h6>
+  <h6><strong>Assembly</strong>: WizardWrx.Core.dll</h6>
+  <h5 id="WizardWrx_Core_RegistryValues_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class RegistryValues : object</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_RegistryValues_REG_BIANRY_EMPTY_ARRAY_FOR_ABSENT.md&amp;value=---%0Auid%3A%20WizardWrx.Core.RegistryValues.REG_BIANRY_EMPTY_ARRAY_FOR_ABSENT%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/RegistryValues.cs/#L114">View Source</a>
+  </span>
+  <h4 id="WizardWrx_Core_RegistryValues_REG_BIANRY_EMPTY_ARRAY_FOR_ABSENT" data-uid="WizardWrx.Core.RegistryValues.REG_BIANRY_EMPTY_ARRAY_FOR_ABSENT">REG_BIANRY_EMPTY_ARRAY_FOR_ABSENT</h4>
+  <div class="markdown level1 summary"><p>Specify this constant as the value of RegQueryValue argument pfNullIsOK if
+your routine expects an array of some kind, even when the requested value
+is absent or the wrong type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const bool REG_BIANRY_EMPTY_ARRAY_FOR_ABSENT = null</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_RegistryValues_REG_BINARY_NULL_FOR_ABSENT.md&amp;value=---%0Auid%3A%20WizardWrx.Core.RegistryValues.REG_BINARY_NULL_FOR_ABSENT%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/RegistryValues.cs/#L106">View Source</a>
+  </span>
+  <h4 id="WizardWrx_Core_RegistryValues_REG_BINARY_NULL_FOR_ABSENT" data-uid="WizardWrx.Core.RegistryValues.REG_BINARY_NULL_FOR_ABSENT">REG_BINARY_NULL_FOR_ABSENT</h4>
+  <div class="markdown level1 summary"><p>Specify this constant as the value of RegQueryValue argument pfNullIsOK if
+your routine expects a null reference when the requested value is absent
+or the wrong type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const bool REG_BINARY_NULL_FOR_ABSENT = null</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_RegistryValues_RegQueryValue_RegistryKey_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.RegistryValues.RegQueryValue(RegistryKey%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/RegistryValues.cs/#L366">View Source</a>
+  </span>
+  <a id="WizardWrx_Core_RegistryValues_RegQueryValue_" data-uid="WizardWrx.Core.RegistryValues.RegQueryValue*"></a>
+  <h4 id="WizardWrx_Core_RegistryValues_RegQueryValue_RegistryKey_System_String_" data-uid="WizardWrx.Core.RegistryValues.RegQueryValue(RegistryKey,System.String)">RegQueryValue(RegistryKey, String)</h4>
+  <div class="markdown level1 summary"><p>Return the multiple values stored in a REG_MULTI_SZ Registry value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string[] RegQueryValue(RegistryKey phRegKey, string pstrValueName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">RegistryKey</span></td>
+        <td><span class="parametername">phRegKey</span></td>
+        <td><p>Pass in a handle to the Registry sub-key that is supposed to contain
+the required REG_MULTI_SZ value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrValueName</span></td>
+        <td><p>Pass in a string that contains the name of the value to be queried
+and returned if present. See notes in the Return Value comment.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><p>If the function succeeds, the return value is an array of strings
+that contains one string for each substring in the REG_MULTI_SZ
+value.</p>
+<p>If the value specified by pstrValueName is missing entirely, an
+empty array is returned.</p>
+<p>If the requested string is something other than REG_MULTI_SZ, this
+method treats the call as a degenerate case, returning an array of
+one element if the value is either REG_SZ or REG_EXPAND_SZ.</p>
+<p>ALL other types return empty arrays.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_RegistryValues_RegQueryValue_RegistryKey_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.RegistryValues.RegQueryValue(RegistryKey%2CSystem.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/RegistryValues.cs/#L150">View Source</a>
+  </span>
+  <a id="WizardWrx_Core_RegistryValues_RegQueryValue_" data-uid="WizardWrx.Core.RegistryValues.RegQueryValue*"></a>
+  <h4 id="WizardWrx_Core_RegistryValues_RegQueryValue_RegistryKey_System_String_System_Boolean_" data-uid="WizardWrx.Core.RegistryValues.RegQueryValue(RegistryKey,System.String,System.Boolean)">RegQueryValue(RegistryKey, String, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Get a REG_BINARY value from the Windows Registry.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static byte[] RegQueryValue(RegistryKey phRegKey, string pstrValueName, bool pfNullIsOK)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">RegistryKey</span></td>
+        <td><span class="parametername">phRegKey</span></td>
+        <td><p>Specify the handle of the Registry key where the value is expected
+to exist. This must be the key that holds the value, since neither
+RegistryKey.GetValueKind, nor RegistryKey.GetValue supports paths.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrValueName</span></td>
+        <td><p>Specify the name, sans square brackets, which aren't needed, since
+the string is the unqualified name of a value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">pfNullIsOK</span></td>
+        <td><p>Specify True if your code tests the return value for a null
+reference. Otherwise, specify False, and expect an uninitialized
+one-element byte array.</p>
+<p>This is a specific instance in which I believe that a null reference
+is the best solution to the problem of what to use as a default for
+a missing REG_BINARY value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span>[]</td>
+        <td><p>If the specified value exists and its type is REG_BINARY, the return
+value is a byte array containing the value read from the Registry.
+Otherwise, the return value is null (Nothing in Visual Basic).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_RegistryValues_RegQueryValue_RegistryKey_System_String_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.RegistryValues.RegQueryValue(RegistryKey%2CSystem.String%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/RegistryValues.cs/#L204">View Source</a>
+  </span>
+  <a id="WizardWrx_Core_RegistryValues_RegQueryValue_" data-uid="WizardWrx.Core.RegistryValues.RegQueryValue*"></a>
+  <h4 id="WizardWrx_Core_RegistryValues_RegQueryValue_RegistryKey_System_String_System_Int32_" data-uid="WizardWrx.Core.RegistryValues.RegQueryValue(RegistryKey,System.String,System.Int32)">RegQueryValue(RegistryKey, String, Int32)</h4>
+  <div class="markdown level1 summary"><p>Get a REG_DWORD value from the Windows Registry.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int RegQueryValue(RegistryKey phRegKey, string pstrValueName, int pintDefault)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">RegistryKey</span></td>
+        <td><span class="parametername">phRegKey</span></td>
+        <td><p>Specify the handle of the Registry key where the value is expected
+to exist. This must be the key that holds the value, since neither
+RegistryKey.GetValueKind, nor RegistryKey.GetValue supports paths.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrValueName</span></td>
+        <td><p>Specify the name, sans square brackets, which aren't needed, since
+the string is the unqualified name of a value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintDefault</span></td>
+        <td><p>Although a DWORD seems logically more like an unsigned integer, I am
+somewhat surprised that the framework casts it to int, which carries
+a sign. Nevertheless, since the return is cast to int, so is its
+default, which is returned if the specified value is absent, or if
+it exists, but has a different type (ValueKind) property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>If the named value exists in the specified key and its type is
+REG_DWORD, it is returned, as a SIGNED integer. Otherwise, the value
+specified in pintDefault is returned.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_RegistryValues_RegQueryValue_RegistryKey_System_String_System_Int64_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.RegistryValues.RegQueryValue(RegistryKey%2CSystem.String%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/RegistryValues.cs/#L255">View Source</a>
+  </span>
+  <a id="WizardWrx_Core_RegistryValues_RegQueryValue_" data-uid="WizardWrx.Core.RegistryValues.RegQueryValue*"></a>
+  <h4 id="WizardWrx_Core_RegistryValues_RegQueryValue_RegistryKey_System_String_System_Int64_" data-uid="WizardWrx.Core.RegistryValues.RegQueryValue(RegistryKey,System.String,System.Int64)">RegQueryValue(RegistryKey, String, Int64)</h4>
+  <div class="markdown level1 summary"><p>Get a REG_QWORD value from the Windows Registry.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static long RegQueryValue(RegistryKey phRegKey, string pstrValueName, long plngDefault)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">RegistryKey</span></td>
+        <td><span class="parametername">phRegKey</span></td>
+        <td><p>Specify the handle of the Registry key where the value is expected
+to exist. This must be the key that holds the value, since neither
+RegistryKey.GetValueKind, nor RegistryKey.GetValue supports paths.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrValueName</span></td>
+        <td><p>Specify the name, sans square brackets, which aren't needed, since
+the string is the unqualified name of a value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">plngDefault</span></td>
+        <td><p>Although a QWORD seems logically more like an unsigned long, I am
+somewhat surprised that the framework casts it to long, which
+carries a sign. Nevertheless, since the return is cast to long, so
+is its default, which is returned if the specified value is absent,
+or if it exists, but has a different type (ValueKind) property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><p>If the named value exists in the specified key and its type is
+REG_QWORD, it is returned, as a SIGNED long integer. Otherwise, the
+value specified in plngDefault is returned.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_RegistryValues_RegQueryValue_RegistryKey_System_String_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.RegistryValues.RegQueryValue(RegistryKey%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/RegistryValues.cs/#L311">View Source</a>
+  </span>
+  <a id="WizardWrx_Core_RegistryValues_RegQueryValue_" data-uid="WizardWrx.Core.RegistryValues.RegQueryValue*"></a>
+  <h4 id="WizardWrx_Core_RegistryValues_RegQueryValue_RegistryKey_System_String_System_String_" data-uid="WizardWrx.Core.RegistryValues.RegQueryValue(RegistryKey,System.String,System.String)">RegQueryValue(RegistryKey, String, String)</h4>
+  <div class="markdown level1 summary"><p>Return the single string representation of a REG_SZ or
+REG_EXPAND_SZ Registry value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string RegQueryValue(RegistryKey phRegKey, string pstrValueName, string pstrDefault)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">RegistryKey</span></td>
+        <td><span class="parametername">phRegKey</span></td>
+        <td><p>Pass in a handle to the Registry sub-key that is supposed to contain
+the required REG_SZ or REG_EXPAND_SZ value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrValueName</span></td>
+        <td><p>Pass in a string that contains the name of the value to be queried
+and returned if present. See notes in the Return Value comment.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrDefault</span></td>
+        <td><p>Specify the string to return if the value is missing or of the wrong type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>If the function succeeds, the return value is a string containing
+the value. If the value type is REG_EXPAND_SZ, environment variables
+are expanded.</p>
+<p>If the value specified by pstrValueName is missing entirely, the
+return value is pstrDefault.</p>
+<p>If the requested string is something other than REG_SZ or
+REG_EXPAND_SZ, the return value is pstrDefault.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_RegistryValues_ValueExists_RegistryKey_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.RegistryValues.ValueExists(RegistryKey%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/RegistryValues.cs/#L416">View Source</a>
+  </span>
+  <a id="WizardWrx_Core_RegistryValues_ValueExists_" data-uid="WizardWrx.Core.RegistryValues.ValueExists*"></a>
+  <h4 id="WizardWrx_Core_RegistryValues_ValueExists_RegistryKey_System_String_" data-uid="WizardWrx.Core.RegistryValues.ValueExists(RegistryKey,System.String)">ValueExists(RegistryKey, String)</h4>
+  <div class="markdown level1 summary"><p>Return TRUE if a specified value exists on a specified key of the
+Windows Registry.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool ValueExists(RegistryKey phRegKey, string pstrValueName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">RegistryKey</span></td>
+        <td><span class="parametername">phRegKey</span></td>
+        <td><p>Pass in a handle to the Registry sub-key that is supposed to contain
+the desired value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrValueName</span></td>
+        <td><p>Pass in a string that contains the name of the value to be queried
+and returned if present. See notes in the Return Value comment.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>The function returns true if the key contains a value with the
+specified name, or if pstrValueName is the empty string or a null
+reference, either of which stands for the default value, which is
+always present, though seldom set. Otherwise, the return value is
+false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_RegistryValues_ValueExists_RegistryKey_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This was written as a service routine for companion methods
+GetRegDwordValue and GetRegMultiStringValue. However, since it is
+almost certain to find use on its own, I marked it public.</p>
+</div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_RegistryValues.md&amp;value=---%0Auid%3A%20WizardWrx.Core.RegistryValues%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/RegistryValues.cs/#L99" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

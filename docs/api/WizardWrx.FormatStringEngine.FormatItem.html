@@ -1,0 +1,1942 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class FormatItem
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class FormatItem
+   ">
+    <meta name="generator" content="docfx 2.56.3.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="WizardWrx.FormatStringEngine.FormatItem">
+  
+  
+  <h1 id="WizardWrx_FormatStringEngine_FormatItem" data-uid="WizardWrx.FormatStringEngine.FormatItem" class="text-break">Class FormatItem
+  </h1>
+  <div class="markdown level0 summary"><p>This is an infrastructure class; instances represent a FormatItem found
+in the FormatString associated with the FormatStringParser that owns it.</p>
+<p>The static methods of this class are public, and are very handy for
+creating compact summary reports.</p>
+<p>Use them to construct composite format items that have their
+characteristics, especially their widths, established at runtime.
+Setting the width dynamically permits summary totals and their labels,
+all of which may have widely varying widths that are unknown in advance
+to be set in such a way that a set of numeric values and their labels
+can be printed with labels on the left, and a minimum amount of white
+space between the longest label and the numbers.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">FormatItem</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="WizardWrx.FormatStringEngine.html">WizardWrx.FormatStringEngine</a></h6>
+  <h6><strong>Assembly</strong>: WizardWrx.FormatStringEngine.dll</h6>
+  <h5 id="WizardWrx_FormatStringEngine_FormatItem_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class FormatItem : object</code></pre>
+  </div>
+  <h5 id="WizardWrx_FormatStringEngine_FormatItem_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>While the class, itself, is marked Public, everything else about it is
+marked as Internal, so that only instances of classes defined in this
+assembly can create instances, while instances of the FormatStringParser
+class expose a collection of them through its FormatItems property, a
+FormatItemsCollection.</p>
+</div>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_FormatStringEngine_FormatItem_APPEARANCE_ORDER_NOT_SET.md&amp;value=---%0Auid%3A%20WizardWrx.FormatStringEngine.FormatItem.APPEARANCE_ORDER_NOT_SET%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/FormatStringEngine/FormatItem.cs/#L177">View Source</a>
+  </span>
+  <h4 id="WizardWrx_FormatStringEngine_FormatItem_APPEARANCE_ORDER_NOT_SET" data-uid="WizardWrx.FormatStringEngine.FormatItem.APPEARANCE_ORDER_NOT_SET">APPEARANCE_ORDER_NOT_SET</h4>
+  <div class="markdown level1 summary"><p>The ApperanceOrder property evaluating to this value means that the
+property is uninitialized.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const uint APPEARANCE_ORDER_NOT_SET = null</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_FormatStringEngine_FormatItem_INTEGER_PER_REG_SETTINGS.md&amp;value=---%0Auid%3A%20WizardWrx.FormatStringEngine.FormatItem.INTEGER_PER_REG_SETTINGS%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/FormatStringEngine/FormatItem.cs/#L217">View Source</a>
+  </span>
+  <h4 id="WizardWrx_FormatStringEngine_FormatItem_INTEGER_PER_REG_SETTINGS" data-uid="WizardWrx.FormatStringEngine.FormatItem.INTEGER_PER_REG_SETTINGS">INTEGER_PER_REG_SETTINGS</h4>
+  <div class="markdown level1 summary"><p>Like all good array subscripts, format item indexes start at zero.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string INTEGER_PER_REG_SETTINGS = null</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_FormatStringEngine_FormatItem_INVALID_INDEX.md&amp;value=---%0Auid%3A%20WizardWrx.FormatStringEngine.FormatItem.INVALID_INDEX%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/FormatStringEngine/FormatItem.cs/#L183">View Source</a>
+  </span>
+  <h4 id="WizardWrx_FormatStringEngine_FormatItem_INVALID_INDEX" data-uid="WizardWrx.FormatStringEngine.FormatItem.INVALID_INDEX">INVALID_INDEX</h4>
+  <div class="markdown level1 summary"><p>Make the lower bound of an index visible to class consumers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int INVALID_INDEX = null</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_FormatStringEngine_FormatItem_INVALID_OFFSET.md&amp;value=---%0Auid%3A%20WizardWrx.FormatStringEngine.FormatItem.INVALID_OFFSET%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/FormatStringEngine/FormatItem.cs/#L189">View Source</a>
+  </span>
+  <h4 id="WizardWrx_FormatStringEngine_FormatItem_INVALID_OFFSET" data-uid="WizardWrx.FormatStringEngine.FormatItem.INVALID_OFFSET">INVALID_OFFSET</h4>
+  <div class="markdown level1 summary"><p>Make the lower bound of a string offset visible to class consumers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int INVALID_OFFSET = null</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_FormatStringEngine_FormatItem_INVALID_RAW_LENGTH.md&amp;value=---%0Auid%3A%20WizardWrx.FormatStringEngine.FormatItem.INVALID_RAW_LENGTH%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/FormatStringEngine/FormatItem.cs/#L196">View Source</a>
+  </span>
+  <h4 id="WizardWrx_FormatStringEngine_FormatItem_INVALID_RAW_LENGTH" data-uid="WizardWrx.FormatStringEngine.FormatItem.INVALID_RAW_LENGTH">INVALID_RAW_LENGTH</h4>
+  <div class="markdown level1 summary"><p>Make the lower bound of the RawLength property visible to class
+consumers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int INVALID_RAW_LENGTH = null</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_FormatStringEngine_FormatItem_INVALID_WIDTH.md&amp;value=---%0Auid%3A%20WizardWrx.FormatStringEngine.FormatItem.INVALID_WIDTH%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/FormatStringEngine/FormatItem.cs/#L203">View Source</a>
+  </span>
+  <h4 id="WizardWrx_FormatStringEngine_FormatItem_INVALID_WIDTH" data-uid="WizardWrx.FormatStringEngine.FormatItem.INVALID_WIDTH">INVALID_WIDTH</h4>
+  <div class="markdown level1 summary"><p>Make the lower bound of the MinimumWidth property visible to class
+consumers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int INVALID_WIDTH = null</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_FormatStringEngine_FormatItem_MINIMUM_VALID_FORMAT_ITEM_INDEX.md&amp;value=---%0Auid%3A%20WizardWrx.FormatStringEngine.FormatItem.MINIMUM_VALID_FORMAT_ITEM_INDEX%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/FormatStringEngine/FormatItem.cs/#L209">View Source</a>
+  </span>
+  <h4 id="WizardWrx_FormatStringEngine_FormatItem_MINIMUM_VALID_FORMAT_ITEM_INDEX" data-uid="WizardWrx.FormatStringEngine.FormatItem.MINIMUM_VALID_FORMAT_ITEM_INDEX">MINIMUM_VALID_FORMAT_ITEM_INDEX</h4>
+  <div class="markdown level1 summary"><p>Like all good array subscripts, format item indexes start at zero.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int MINIMUM_VALID_FORMAT_ITEM_INDEX = null</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_FormatStringEngine_FormatItem_AppearanceOrder.md&amp;value=---%0Auid%3A%20WizardWrx.FormatStringEngine.FormatItem.AppearanceOrder%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/FormatStringEngine/FormatItem.cs/#L328">View Source</a>
+  </span>
+  <a id="WizardWrx_FormatStringEngine_FormatItem_AppearanceOrder_" data-uid="WizardWrx.FormatStringEngine.FormatItem.AppearanceOrder*"></a>
+  <h4 id="WizardWrx_FormatStringEngine_FormatItem_AppearanceOrder" data-uid="WizardWrx.FormatStringEngine.FormatItem.AppearanceOrder">AppearanceOrder</h4>
+  <div class="markdown level1 summary"><p>Gets the AppearanceOrder property, which is the order, counting from
+1, of its appearance in the format string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uint AppearanceOrder { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_FormatStringEngine_FormatItem_AppearanceOrder_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This property is set when the Add method of a FormatItemsCollection
+object calls the SetAppearanceOrder on the instance just added. This
+is achieved by overriding the Add method of its base class.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_FormatStringEngine_FormatItem_Index.md&amp;value=---%0Auid%3A%20WizardWrx.FormatStringEngine.FormatItem.Index%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/FormatStringEngine/FormatItem.cs/#L339">View Source</a>
+  </span>
+  <a id="WizardWrx_FormatStringEngine_FormatItem_Index_" data-uid="WizardWrx.FormatStringEngine.FormatItem.Index*"></a>
+  <h4 id="WizardWrx_FormatStringEngine_FormatItem_Index" data-uid="WizardWrx.FormatStringEngine.FormatItem.Index">Index</h4>
+  <div class="markdown level1 summary"><p>Gets the Index property of the item, which is the first, or only,
+number found within the item string.</p>
+<p>A return value of minus one means that the Index property is
+uninitialized, which should be true only when the entire object is
+uninitialized.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Index { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_FormatStringEngine_FormatItem_ItemFormat.md&amp;value=---%0Auid%3A%20WizardWrx.FormatStringEngine.FormatItem.ItemFormat%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/FormatStringEngine/FormatItem.cs/#L349">View Source</a>
+  </span>
+  <a id="WizardWrx_FormatStringEngine_FormatItem_ItemFormat_" data-uid="WizardWrx.FormatStringEngine.FormatItem.ItemFormat*"></a>
+  <h4 id="WizardWrx_FormatStringEngine_FormatItem_ItemFormat" data-uid="WizardWrx.FormatStringEngine.FormatItem.ItemFormat">ItemFormat</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the optional ItemFormat property of the item.</p>
+<p>A return value of null (Nothing in Visual Basic) means that the
+ItemFormat property is undefined, which is permissible, since it is
+optional.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ItemFormat { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_FormatStringEngine_FormatItem_MinimumWidth.md&amp;value=---%0Auid%3A%20WizardWrx.FormatStringEngine.FormatItem.MinimumWidth%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/FormatStringEngine/FormatItem.cs/#L380">View Source</a>
+  </span>
+  <a id="WizardWrx_FormatStringEngine_FormatItem_MinimumWidth_" data-uid="WizardWrx.FormatStringEngine.FormatItem.MinimumWidth*"></a>
+  <h4 id="WizardWrx_FormatStringEngine_FormatItem_MinimumWidth" data-uid="WizardWrx.FormatStringEngine.FormatItem.MinimumWidth">MinimumWidth</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the optional MinimumWidth property of the item.</p>
+<p>A return value of zero means that the MinimumWidth property is
+undefined, which is permissible, since it is optional.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MinimumWidth { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_FormatStringEngine_FormatItem_MinimumWidth_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Once initialized, this property may subsequently be updated by
+calling the UpdateMinimumWidth method on the instance. The
+synopsis of the UpdateMinimumWidth method explains in greater
+detail.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_FormatStringEngine_FormatItem_RawLength.md&amp;value=---%0Auid%3A%20WizardWrx.FormatStringEngine.FormatItem.RawLength%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/FormatStringEngine/FormatItem.cs/#L416">View Source</a>
+  </span>
+  <a id="WizardWrx_FormatStringEngine_FormatItem_RawLength_" data-uid="WizardWrx.FormatStringEngine.FormatItem.RawLength*"></a>
+  <h4 id="WizardWrx_FormatStringEngine_FormatItem_RawLength" data-uid="WizardWrx.FormatStringEngine.FormatItem.RawLength">RawLength</h4>
+  <div class="markdown level1 summary"><p>Gets the RawLength property, the length, in characters, of the raw
+format item in the format string.</p>
+<p>A return value of zero means that the StartOffset property is
+uninitialized or partially initialized.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int RawLength { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_FormatStringEngine_FormatItem_RawLength_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Instance method SetRawLength is called when the closing French brace
+is found to set this property.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_FormatStringEngine_FormatItem_StartOffset.md&amp;value=---%0Auid%3A%20WizardWrx.FormatStringEngine.FormatItem.StartOffset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/FormatStringEngine/FormatItem.cs/#L431">View Source</a>
+  </span>
+  <a id="WizardWrx_FormatStringEngine_FormatItem_StartOffset_" data-uid="WizardWrx.FormatStringEngine.FormatItem.StartOffset*"></a>
+  <h4 id="WizardWrx_FormatStringEngine_FormatItem_StartOffset" data-uid="WizardWrx.FormatStringEngine.FormatItem.StartOffset">StartOffset</h4>
+  <div class="markdown level1 summary"><p>Gets the required StartOffset property, the offset, counting from 0,
+where the format item appears in the format string.</p>
+<p>A return value of minus one means that the StartOffset property is
+uninitialized, which should be true only when the entire object is
+uninitialized.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int StartOffset { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_FormatStringEngine_FormatItem_StartOffset_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This property is immutable.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_FormatStringEngine_FormatItem_TextAlignment.md&amp;value=---%0Auid%3A%20WizardWrx.FormatStringEngine.FormatItem.TextAlignment%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/FormatStringEngine/FormatItem.cs/#L438">View Source</a>
+  </span>
+  <a id="WizardWrx_FormatStringEngine_FormatItem_TextAlignment_" data-uid="WizardWrx.FormatStringEngine.FormatItem.TextAlignment*"></a>
+  <h4 id="WizardWrx_FormatStringEngine_FormatItem_TextAlignment" data-uid="WizardWrx.FormatStringEngine.FormatItem.TextAlignment">TextAlignment</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the Alignment property, if any, associated with the
+item.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FormatItem.Alignment TextAlignment { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.FormatStringEngine.FormatItem.Alignment.html">FormatItem.Alignment</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_FormatStringEngine_FormatItem_AdjustItemNumberWidthPerMaxValue_System_String_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.FormatStringEngine.FormatItem.AdjustItemNumberWidthPerMaxValue(System.String%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/FormatStringEngine/FormatItem.cs/#L668">View Source</a>
+  </span>
+  <a id="WizardWrx_FormatStringEngine_FormatItem_AdjustItemNumberWidthPerMaxValue_" data-uid="WizardWrx.FormatStringEngine.FormatItem.AdjustItemNumberWidthPerMaxValue*"></a>
+  <h4 id="WizardWrx_FormatStringEngine_FormatItem_AdjustItemNumberWidthPerMaxValue_System_String_System_Int32_System_Int32_" data-uid="WizardWrx.FormatStringEngine.FormatItem.AdjustItemNumberWidthPerMaxValue(System.String,System.Int32,System.Int32)">AdjustItemNumberWidthPerMaxValue(String, Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Replace a basic format item of the form &quot;{n}&quot; where &quot;n&quot; is the item
+number, with a composite item that right aligns a numeric value in a
+screen width that will accommodate the maximum value that will be
+substituted for it in the current instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string AdjustItemNumberWidthPerMaxValue(string pstrInputFormatString, int pintItemIndex, int pintHighestValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrInputFormatString</span></td>
+        <td><p>Specify the format string into which to substitute the composite
+format item.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintItemIndex</span></td>
+        <td><p>Specify the index number of the item to be replaced. The string must
+contain a format item &quot;{pintItemIndex}&quot; which is replaced.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintHighestValue</span></td>
+        <td><p>Specify the highest value that you expect to substitute for format
+item {pintItemIndex} such as the Count property of an array that
+holds items to be listed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>A new string is returned, with format item {pintItemIndex} replaced
+with {pintItemIndex,m:N0}, where m = the minimum width required to
+display pintHighestValue using the numeric formatting defined by the
+current Region and Language settings in the Windows Control Panel,
+overriding the decimal places value with a value of zero.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_FormatStringEngine_FormatItem_AdjustItemNumberWidthPerMaxValue_System_String_System_Int32_System_UInt32_.md&amp;value=---%0Auid%3A%20WizardWrx.FormatStringEngine.FormatItem.AdjustItemNumberWidthPerMaxValue(System.String%2CSystem.Int32%2CSystem.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/FormatStringEngine/FormatItem.cs/#L764">View Source</a>
+  </span>
+  <a id="WizardWrx_FormatStringEngine_FormatItem_AdjustItemNumberWidthPerMaxValue_" data-uid="WizardWrx.FormatStringEngine.FormatItem.AdjustItemNumberWidthPerMaxValue*"></a>
+  <h4 id="WizardWrx_FormatStringEngine_FormatItem_AdjustItemNumberWidthPerMaxValue_System_String_System_Int32_System_UInt32_" data-uid="WizardWrx.FormatStringEngine.FormatItem.AdjustItemNumberWidthPerMaxValue(System.String,System.Int32,System.UInt32)">AdjustItemNumberWidthPerMaxValue(String, Int32, UInt32)</h4>
+  <div class="markdown level1 summary"><p>Replace a basic format item of the form &quot;{n}&quot; where &quot;n&quot; is the item
+number, with a composite item that right aligns a numeric value in a
+screen width that will accommodate the maximum value that will be
+substituted for it in the current instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string AdjustItemNumberWidthPerMaxValue(string pstrInputFormatString, int pintItemIndex, uint puintHighestValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrInputFormatString</span></td>
+        <td><p>Specify the format string into which to substitute the composite
+format item.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintItemIndex</span></td>
+        <td><p>Specify the index number of the item to be replaced. The string must
+contain a format item &quot;{pintItemIndex}&quot; which is replaced.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td><span class="parametername">puintHighestValue</span></td>
+        <td><p>Specify the highest value that you expect to substitute for format
+item {pintItemIndex} such as the Count property of an array that
+holds items to be listed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>A new string is returned, with format item {pintItemIndex} replaced
+with {pintItemIndex,m:N0}, where m = the minimum width required to
+display pintHighestValue using the numeric formatting defined by the
+current Region and Language settings in the Windows Control Panel,
+overriding the decimal places value with a value of zero.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_FormatStringEngine_FormatItem_AdjustItemNumberWidthPerMaxValue_System_String_System_Int32_WizardWrx_FormatStringEngine_FormatItem_Alignment_System_Int32_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.FormatStringEngine.FormatItem.AdjustItemNumberWidthPerMaxValue(System.String%2CSystem.Int32%2CWizardWrx.FormatStringEngine.FormatItem.Alignment%2CSystem.Int32%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/FormatStringEngine/FormatItem.cs/#L865">View Source</a>
+  </span>
+  <a id="WizardWrx_FormatStringEngine_FormatItem_AdjustItemNumberWidthPerMaxValue_" data-uid="WizardWrx.FormatStringEngine.FormatItem.AdjustItemNumberWidthPerMaxValue*"></a>
+  <h4 id="WizardWrx_FormatStringEngine_FormatItem_AdjustItemNumberWidthPerMaxValue_System_String_System_Int32_WizardWrx_FormatStringEngine_FormatItem_Alignment_System_Int32_System_String_" data-uid="WizardWrx.FormatStringEngine.FormatItem.AdjustItemNumberWidthPerMaxValue(System.String,System.Int32,WizardWrx.FormatStringEngine.FormatItem.Alignment,System.Int32,System.String)">AdjustItemNumberWidthPerMaxValue(String, Int32, FormatItem.Alignment, Int32, String)</h4>
+  <div class="markdown level1 summary"><p>Replace a basic format item of the form &quot;{n}&quot; where &quot;n&quot; is the item
+number, with a composite item that right aligns a numeric value in a
+screen width that will accommodate the maximum value that will be
+substituted for it in the current instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string AdjustItemNumberWidthPerMaxValue(string pstrFormat, int pintItemIndex, FormatItem.Alignment penmAlignment, int pintMaximumWidth, string pstrFormatString)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrFormat</span></td>
+        <td><p>Specify a valid format string to upgrade. The string must contain a
+token of the form {n}, where n is equal to pintItemIndex.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintItemIndex</span></td>
+        <td><p>Specify the index of the item to be upgraded. The integer must be
+positive, and pstrFormat must contain at least once instance of a
+correspondingly numbered format item.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.FormatStringEngine.FormatItem.Alignment.html">FormatItem.Alignment</a></td>
+        <td><span class="parametername">penmAlignment</span></td>
+        <td><p>Specify Left or Right. Center alignment is unsupported, although it
+could be achieved with custom code.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintMaximumWidth</span></td>
+        <td><p>The maximum width is a positive integer that specifies the desired
+width of the item.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrFormatString</span></td>
+        <td><p>Specify a Standard Numeric, Date, or Text format string or a custom
+string composed around a standard string.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The return value is a new format control string, with the original
+vanilla format item at the specified index replaced with a new one
+that has its width adjusted precisely to accommodate the widest
+expected value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_FormatStringEngine_FormatItem_AdjustItemNumberWidthPerMaxValue_System_String_System_UInt32_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.FormatStringEngine.FormatItem.AdjustItemNumberWidthPerMaxValue(System.String%2CSystem.UInt32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/FormatStringEngine/FormatItem.cs/#L717">View Source</a>
+  </span>
+  <a id="WizardWrx_FormatStringEngine_FormatItem_AdjustItemNumberWidthPerMaxValue_" data-uid="WizardWrx.FormatStringEngine.FormatItem.AdjustItemNumberWidthPerMaxValue*"></a>
+  <h4 id="WizardWrx_FormatStringEngine_FormatItem_AdjustItemNumberWidthPerMaxValue_System_String_System_UInt32_System_Int32_" data-uid="WizardWrx.FormatStringEngine.FormatItem.AdjustItemNumberWidthPerMaxValue(System.String,System.UInt32,System.Int32)">AdjustItemNumberWidthPerMaxValue(String, UInt32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Replace a basic format item of the form &quot;{n}&quot; where &quot;n&quot; is the item
+number, with a composite item that right aligns a numeric value in a
+screen width that will accommodate the maximum value that will be
+substituted for it in the current instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string AdjustItemNumberWidthPerMaxValue(string pstrInputFormatString, uint puintItemIndex, int pintHighestValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrInputFormatString</span></td>
+        <td><p>Specify the format string into which to substitute the composite
+format item.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td><span class="parametername">puintItemIndex</span></td>
+        <td><p>Specify the index number of the item to be replaced. The string must
+contain a format item &quot;{pintItemIndex}&quot; which is replaced.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintHighestValue</span></td>
+        <td><p>Specify the highest value that you expect to substitute for format
+item {pintItemIndex} such as the Count property of an array that
+holds items to be listed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>A new string is returned, with format item {pintItemIndex} replaced
+with {pintItemIndex,m:N0}, where m = the minimum width required to
+display pintHighestValue using the numeric formatting defined by the
+current Region and Language settings in the Windows Control Panel,
+overriding the decimal places value with a value of zero.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_FormatStringEngine_FormatItem_AdjustItemNumberWidthPerMaxValue_System_String_System_UInt32_System_UInt32_.md&amp;value=---%0Auid%3A%20WizardWrx.FormatStringEngine.FormatItem.AdjustItemNumberWidthPerMaxValue(System.String%2CSystem.UInt32%2CSystem.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/FormatStringEngine/FormatItem.cs/#L811">View Source</a>
+  </span>
+  <a id="WizardWrx_FormatStringEngine_FormatItem_AdjustItemNumberWidthPerMaxValue_" data-uid="WizardWrx.FormatStringEngine.FormatItem.AdjustItemNumberWidthPerMaxValue*"></a>
+  <h4 id="WizardWrx_FormatStringEngine_FormatItem_AdjustItemNumberWidthPerMaxValue_System_String_System_UInt32_System_UInt32_" data-uid="WizardWrx.FormatStringEngine.FormatItem.AdjustItemNumberWidthPerMaxValue(System.String,System.UInt32,System.UInt32)">AdjustItemNumberWidthPerMaxValue(String, UInt32, UInt32)</h4>
+  <div class="markdown level1 summary"><p>Replace a basic format item of the form &quot;{n}&quot; where &quot;n&quot; is the item
+number, with a composite item that right aligns a numeric value in a
+screen width that will accommodate the maximum value that will be
+substituted for it in the current instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string AdjustItemNumberWidthPerMaxValue(string pstrInputFormatString, uint puintItemIndex, uint puintHighestValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrInputFormatString</span></td>
+        <td><p>Specify the format string into which to substitute the composite
+format item.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td><span class="parametername">puintItemIndex</span></td>
+        <td><p>Specify the index number of the item to be replaced. The string must
+contain a format item &quot;{pintItemIndex}&quot; which is replaced.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td><span class="parametername">puintHighestValue</span></td>
+        <td><p>Specify the highest value that you expect to substitute for format
+item {pintItemIndex} such as the Count property of an array that
+holds items to be listed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>A new string is returned, with format item {pintItemIndex} replaced
+with {pintItemIndex,m:N0}, where m = the minimum width required to
+display pintHighestValue using the numeric formatting defined by the
+current Region and Language settings in the Windows Control Panel,
+overriding the decimal places value with a value of zero.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_FormatStringEngine_FormatItem_AdjustToMaximumWidth_System_Int32_System_Int32_WizardWrx_FormatStringEngine_FormatItem_Alignment_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.FormatStringEngine.FormatItem.AdjustToMaximumWidth(System.Int32%2CSystem.Int32%2CWizardWrx.FormatStringEngine.FormatItem.Alignment%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/FormatStringEngine/FormatItem.cs/#L609">View Source</a>
+  </span>
+  <a id="WizardWrx_FormatStringEngine_FormatItem_AdjustToMaximumWidth_" data-uid="WizardWrx.FormatStringEngine.FormatItem.AdjustToMaximumWidth*"></a>
+  <h4 id="WizardWrx_FormatStringEngine_FormatItem_AdjustToMaximumWidth_System_Int32_System_Int32_WizardWrx_FormatStringEngine_FormatItem_Alignment_System_String_" data-uid="WizardWrx.FormatStringEngine.FormatItem.AdjustToMaximumWidth(System.Int32,System.Int32,WizardWrx.FormatStringEngine.FormatItem.Alignment,System.String)">AdjustToMaximumWidth(Int32, Int32, FormatItem.Alignment, String)</h4>
+  <div class="markdown level1 summary"><p>Assemble a composite format item from its constituents.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string AdjustToMaximumWidth(int pintItemIndex, int pintMaximumWidth, FormatItem.Alignment penmAlignment, string pstrFormatString)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintItemIndex</span></td>
+        <td><p>The index is a standard zero based array subscript which corresponds
+to the position of an item in a list of objects. The list happens to
+be the items that correspond to the format items in a format string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintMaximumWidth</span></td>
+        <td><p>The maximum width is a positive integer that specifies the desired
+width of the item.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.FormatStringEngine.FormatItem.Alignment.html">FormatItem.Alignment</a></td>
+        <td><span class="parametername">penmAlignment</span></td>
+        <td><p>Specify Left or Right. Center alignment is unsupported, although it
+could be achieved with custom code.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrFormatString</span></td>
+        <td><p>Specify a Standard Numeric, Date, or Text format string or a custom
+string composed around a standard string.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The returned string is ready to insert into a complete format string
+for use with string.Format, Console.WriteLine, and their numerous
+cousins.</p>
+<p>The safest way to insert it into a format string is by calling a
+companion method, UpgradeFormatItem, which expects a format string,
+puintItemIndex, and the string returned by this method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_FormatStringEngine_FormatItem_AdjustToMaximumWidth_System_Int32_System_UInt32_WizardWrx_FormatStringEngine_FormatItem_Alignment_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.FormatStringEngine.FormatItem.AdjustToMaximumWidth(System.Int32%2CSystem.UInt32%2CWizardWrx.FormatStringEngine.FormatItem.Alignment%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/FormatStringEngine/FormatItem.cs/#L521">View Source</a>
+  </span>
+  <a id="WizardWrx_FormatStringEngine_FormatItem_AdjustToMaximumWidth_" data-uid="WizardWrx.FormatStringEngine.FormatItem.AdjustToMaximumWidth*"></a>
+  <h4 id="WizardWrx_FormatStringEngine_FormatItem_AdjustToMaximumWidth_System_Int32_System_UInt32_WizardWrx_FormatStringEngine_FormatItem_Alignment_System_String_" data-uid="WizardWrx.FormatStringEngine.FormatItem.AdjustToMaximumWidth(System.Int32,System.UInt32,WizardWrx.FormatStringEngine.FormatItem.Alignment,System.String)">AdjustToMaximumWidth(Int32, UInt32, FormatItem.Alignment, String)</h4>
+  <div class="markdown level1 summary"><p>Assemble a composite format item from its constituents.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string AdjustToMaximumWidth(int pintItemIndex, uint puintMaximumWidth, FormatItem.Alignment penmAlignment, string pstrFormatString)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintItemIndex</span></td>
+        <td><p>The index is a standard zero based array subscript which corresponds
+to the position of an item in a list of objects. The list happens to
+be the items that correspond to the format items in a format string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td><span class="parametername">puintMaximumWidth</span></td>
+        <td><p>The maximum width is a positive integer that specifies the desired
+width of the item.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.FormatStringEngine.FormatItem.Alignment.html">FormatItem.Alignment</a></td>
+        <td><span class="parametername">penmAlignment</span></td>
+        <td><p>Specify Left or Right. Center alignment is unsupported, although it
+could be achieved with custom code.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrFormatString</span></td>
+        <td><p>Specify a Standard Numeric, Date, or Text format string or a custom
+string composed around a standard string.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The returned string is ready to insert into a complete format string
+for use with string.Format, Console.WriteLine, and their numerous
+cousins.</p>
+<p>The safest way to insert it into a format string is by calling a
+companion method, UpgradeFormatItem, which expects a format string,
+puintItemIndex, and the string returned by this method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_FormatStringEngine_FormatItem_AdjustToMaximumWidth_System_UInt32_System_Int32_WizardWrx_FormatStringEngine_FormatItem_Alignment_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.FormatStringEngine.FormatItem.AdjustToMaximumWidth(System.UInt32%2CSystem.Int32%2CWizardWrx.FormatStringEngine.FormatItem.Alignment%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/FormatStringEngine/FormatItem.cs/#L565">View Source</a>
+  </span>
+  <a id="WizardWrx_FormatStringEngine_FormatItem_AdjustToMaximumWidth_" data-uid="WizardWrx.FormatStringEngine.FormatItem.AdjustToMaximumWidth*"></a>
+  <h4 id="WizardWrx_FormatStringEngine_FormatItem_AdjustToMaximumWidth_System_UInt32_System_Int32_WizardWrx_FormatStringEngine_FormatItem_Alignment_System_String_" data-uid="WizardWrx.FormatStringEngine.FormatItem.AdjustToMaximumWidth(System.UInt32,System.Int32,WizardWrx.FormatStringEngine.FormatItem.Alignment,System.String)">AdjustToMaximumWidth(UInt32, Int32, FormatItem.Alignment, String)</h4>
+  <div class="markdown level1 summary"><p>Assemble a composite format item from its constituents.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string AdjustToMaximumWidth(uint puintItemIndex, int pintMaximumWidth, FormatItem.Alignment penmAlignment, string pstrFormatString)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td><span class="parametername">puintItemIndex</span></td>
+        <td><p>The index is a standard zero based array subscript which corresponds
+to the position of an item in a list of objects. The list happens to
+be the items that correspond to the format items in a format string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintMaximumWidth</span></td>
+        <td><p>The maximum width is a positive integer that specifies the desired
+width of the item.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.FormatStringEngine.FormatItem.Alignment.html">FormatItem.Alignment</a></td>
+        <td><span class="parametername">penmAlignment</span></td>
+        <td><p>Specify Left or Right. Center alignment is unsupported, although it
+could be achieved with custom code.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrFormatString</span></td>
+        <td><p>Specify a Standard Numeric, Date, or Text format string or a custom
+string composed around a standard string.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The returned string is ready to insert into a complete format string
+for use with string.Format, Console.WriteLine, and their numerous
+cousins.</p>
+<p>The safest way to insert it into a format string is by calling a
+companion method, UpgradeFormatItem, which expects a format string,
+puintItemIndex, and the string returned by this method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_FormatStringEngine_FormatItem_AdjustToMaximumWidth_System_UInt32_System_UInt32_WizardWrx_FormatStringEngine_FormatItem_Alignment_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.FormatStringEngine.FormatItem.AdjustToMaximumWidth(System.UInt32%2CSystem.UInt32%2CWizardWrx.FormatStringEngine.FormatItem.Alignment%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/FormatStringEngine/FormatItem.cs/#L477">View Source</a>
+  </span>
+  <a id="WizardWrx_FormatStringEngine_FormatItem_AdjustToMaximumWidth_" data-uid="WizardWrx.FormatStringEngine.FormatItem.AdjustToMaximumWidth*"></a>
+  <h4 id="WizardWrx_FormatStringEngine_FormatItem_AdjustToMaximumWidth_System_UInt32_System_UInt32_WizardWrx_FormatStringEngine_FormatItem_Alignment_System_String_" data-uid="WizardWrx.FormatStringEngine.FormatItem.AdjustToMaximumWidth(System.UInt32,System.UInt32,WizardWrx.FormatStringEngine.FormatItem.Alignment,System.String)">AdjustToMaximumWidth(UInt32, UInt32, FormatItem.Alignment, String)</h4>
+  <div class="markdown level1 summary"><p>Assemble a composite format item from its constituents.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string AdjustToMaximumWidth(uint puintItemIndex, uint puintMaximumWidth, FormatItem.Alignment penmAlignment, string pstrFormatString)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td><span class="parametername">puintItemIndex</span></td>
+        <td><p>The index is a standard zero based array subscript which corresponds
+to the position of an item in a list of objects. The list happens to
+be the items that correspond to the format items in a format string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td><span class="parametername">puintMaximumWidth</span></td>
+        <td><p>The maximum width is a positive integer that specifies the desired
+width of the item.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.FormatStringEngine.FormatItem.Alignment.html">FormatItem.Alignment</a></td>
+        <td><span class="parametername">penmAlignment</span></td>
+        <td><p>Specify Left or Right. Center alignment is unsupported, although it
+could be achieved with custom code.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrFormatString</span></td>
+        <td><p>Specify a Standard Numeric, Date, or Text format string or a custom
+string composed around a standard string.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The returned string is ready to insert into a complete format string
+for use with string.Format, Console.WriteLine, and their numerous
+cousins.</p>
+<p>The safest way to insert it into a format string is by calling a
+companion method, UpgradeFormatItem, which expects a format string,
+puintItemIndex, and the string returned by this method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_FormatStringEngine_FormatItem_IntegerPerRegSettings.md&amp;value=---%0Auid%3A%20WizardWrx.FormatStringEngine.FormatItem.IntegerPerRegSettings%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/FormatStringEngine/FormatItem.cs/#L1571">View Source</a>
+  </span>
+  <a id="WizardWrx_FormatStringEngine_FormatItem_IntegerPerRegSettings_" data-uid="WizardWrx.FormatStringEngine.FormatItem.IntegerPerRegSettings*"></a>
+  <h4 id="WizardWrx_FormatStringEngine_FormatItem_IntegerPerRegSettings" data-uid="WizardWrx.FormatStringEngine.FormatItem.IntegerPerRegSettings">IntegerPerRegSettings()</h4>
+  <div class="markdown level1 summary"><p>Return a string suitable for formatting an integer per the Regional
+Settings, overriding the default number of digits to display to the
+right of the decimal point to display zero digits to the right of
+the decimal point.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string IntegerPerRegSettings()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>Format string suitable for formatting an integer</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_FormatStringEngine_FormatItem_IntegerPerRegSettings_seealso">See Also</h5>
+  <div class="seealso">
+      <div><span><a href="https://msdn.microsoft.com/en-us/library/dwhawy9k(v=vs.100).aspx">https://msdn.microsoft.com/en-us/library/dwhawy9k(v=vs.100).aspx</a></span></div>
+      <div><a class="xref" href="WizardWrx.NumericFormats.html#WizardWrx_NumericFormats_NUMBER_PER_REG_SETTINGS_0D">NUMBER_PER_REG_SETTINGS_0D</a></div>
+      <div><a class="xref" href="WizardWrx.NumericFormats.html#WizardWrx_NumericFormats_NUMBER_PER_REG_SETTINGS_2D">NUMBER_PER_REG_SETTINGS_2D</a></div>
+      <div><a class="xref" href="WizardWrx.NumericFormats.html#WizardWrx_NumericFormats_NUMBER_PER_REG_SETTINGS_3D">NUMBER_PER_REG_SETTINGS_3D</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_FormatStringEngine_FormatItem_UpgradeFormatItem_System_String_System_Int32_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.FormatStringEngine.FormatItem.UpgradeFormatItem(System.String%2CSystem.Int32%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/FormatStringEngine/FormatItem.cs/#L917">View Source</a>
+  </span>
+  <a id="WizardWrx_FormatStringEngine_FormatItem_UpgradeFormatItem_" data-uid="WizardWrx.FormatStringEngine.FormatItem.UpgradeFormatItem*"></a>
+  <h4 id="WizardWrx_FormatStringEngine_FormatItem_UpgradeFormatItem_System_String_System_Int32_System_String_" data-uid="WizardWrx.FormatStringEngine.FormatItem.UpgradeFormatItem(System.String,System.Int32,System.String)">UpgradeFormatItem(String, Int32, String)</h4>
+  <div class="markdown level1 summary"><p>Upgrade a plain vanilla format item of the form {n}, where n is the
+number of a format item that exists somewhere in a format string to
+a composite string that specifies a width that is computed at run
+time to be appropriate to the current data set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string UpgradeFormatItem(string pstrFormat, int pintItemIndex, string pstrUpgrade)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrFormat</span></td>
+        <td><p>Specify a valid format string to upgrade. The string must contain a
+token of the form {n}, where n is equal to pintItemIndex.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintItemIndex</span></td>
+        <td><p>Specify the index of the item to be upgraded. The integer must be
+positive, and pstrFormat must contain at least once instance of a
+correspondingly numbered format item.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrUpgrade</span></td>
+        <td><p>Specify the upgraded format item, such as the string returned by the
+static AdjustToMaximumWidth method of this class.</p>
+<p>Contrast this with pstrFormatString, which expects you to supply a
+standard or custom Numeric or DateTime format string, from which it
+constructs a complete, well formed Format Item.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>If the function succeeds, the return value is the upgraded format
+string, in which the indicated plain vanilla format item has been
+replaced with a dynamically generated composite format item.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_FormatStringEngine_FormatItem_UpgradeFormatItem_System_String_System_Int32_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This routine expends a good deal of effort to validate its inputs,
+so that it can be safely used to process user input, such as data
+read into the program from a configuration file.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_FormatStringEngine_FormatItem_UpgradeFormatItem_System_String_System_Int32_WizardWrx_FormatStringEngine_FormatItem_Alignment_System_String_System_String___.md&amp;value=---%0Auid%3A%20WizardWrx.FormatStringEngine.FormatItem.UpgradeFormatItem(System.String%2CSystem.Int32%2CWizardWrx.FormatStringEngine.FormatItem.Alignment%2CSystem.String%2CSystem.String%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/FormatStringEngine/FormatItem.cs/#L1085">View Source</a>
+  </span>
+  <a id="WizardWrx_FormatStringEngine_FormatItem_UpgradeFormatItem_" data-uid="WizardWrx.FormatStringEngine.FormatItem.UpgradeFormatItem*"></a>
+  <h4 id="WizardWrx_FormatStringEngine_FormatItem_UpgradeFormatItem_System_String_System_Int32_WizardWrx_FormatStringEngine_FormatItem_Alignment_System_String_System_String___" data-uid="WizardWrx.FormatStringEngine.FormatItem.UpgradeFormatItem(System.String,System.Int32,WizardWrx.FormatStringEngine.FormatItem.Alignment,System.String,System.String[])">UpgradeFormatItem(String, Int32, FormatItem.Alignment, String, String[])</h4>
+  <div class="markdown level1 summary"><p>Upgrade a plain vanilla format item of the form {n}, where n is the
+number of a format item that exists somewhere in a format string to
+a composite string that specifies a width that is computed at run
+time to be appropriate to the current data set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string UpgradeFormatItem(string pstrFormat, int pintItemIndex, FormatItem.Alignment penmAlignment, string pstrFormatString, string[] pastrValueArray)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrFormat</span></td>
+        <td><p>Specify a valid format string to upgrade. The string must contain a
+token of the form {n}, where n is equal to pintItemIndex.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintItemIndex</span></td>
+        <td><p>Specify the index of the item to be upgraded. The integer must be
+positive, and pstrFormat must contain at least once instance of a
+correspondingly numbered format item.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.FormatStringEngine.FormatItem.Alignment.html">FormatItem.Alignment</a></td>
+        <td><span class="parametername">penmAlignment</span></td>
+        <td><p>Specify Left or Right. Center alignment is unsupported, although it
+could be achieved with custom code.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrFormatString</span></td>
+        <td><p>Specify a standard or custom Numeric or DateTime format string.</p>
+<p>Contrast this with pstrUpgrade, which expects you to supply the
+entire format item, ready for substitution.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">pastrValueArray</span></td>
+        <td><p>Specify an array of strings, all of which are values intended to be
+formatted by the upgraded format item. This routine determines the
+length of the longest string, which becomes the basis of the
+alignment parameter inserted into the upgraded format item.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>If the function succeeds, the return value is the upgraded format
+string, in which the indicated plain vanilla format item has been
+replaced with a dynamically generated composite format item.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_FormatStringEngine_FormatItem_UpgradeFormatItem_System_String_System_UInt32_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.FormatStringEngine.FormatItem.UpgradeFormatItem(System.String%2CSystem.UInt32%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/FormatStringEngine/FormatItem.cs/#L1000">View Source</a>
+  </span>
+  <a id="WizardWrx_FormatStringEngine_FormatItem_UpgradeFormatItem_" data-uid="WizardWrx.FormatStringEngine.FormatItem.UpgradeFormatItem*"></a>
+  <h4 id="WizardWrx_FormatStringEngine_FormatItem_UpgradeFormatItem_System_String_System_UInt32_System_String_" data-uid="WizardWrx.FormatStringEngine.FormatItem.UpgradeFormatItem(System.String,System.UInt32,System.String)">UpgradeFormatItem(String, UInt32, String)</h4>
+  <div class="markdown level1 summary"><p>Upgrade a plain vanilla format item of the form {n}, where n is the
+number of a format item that exists somewhere in a format string to
+a composite string that specifies a width that is computed at run
+time to be appropriate to the current data set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string UpgradeFormatItem(string pstrFormat, uint puintItemIndex, string pstrUpgrade)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrFormat</span></td>
+        <td><p>Specify a valid format string to upgrade. The string must contain a
+token of the form {n}, where n is equal to puintItemIndex.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td><span class="parametername">puintItemIndex</span></td>
+        <td><p>Specify the index of the item to be upgraded. The integer must be
+positive, and pstrFormat must contain at least once instance of a
+correspondingly numbered format item.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrUpgrade</span></td>
+        <td><p>Specify the upgraded format item, such as the string returned by the
+static AdjustToMaximumWidth method of this class.</p>
+<p>Contrast this with pstrFormatString, which expects you to supply a
+standard or custom Numeric or DateTime format string, from which it
+constructs a complete, well formed Format Item.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>If the function succeeds, the return value is the upgraded format
+string, in which the indicated plain vanilla format item has been
+replaced with a dynamically generated composite format item.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_FormatStringEngine_FormatItem_UpgradeFormatItem_System_String_System_UInt32_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This routine expends a good deal of effort to validate its inputs,
+so that it can be safely used to process user input, such as data
+read into the program from a configuration file.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_FormatStringEngine_FormatItem_UpgradeFormatItem_System_String_System_UInt32_WizardWrx_FormatStringEngine_FormatItem_Alignment_System_String_List_System_String__.md&amp;value=---%0Auid%3A%20WizardWrx.FormatStringEngine.FormatItem.UpgradeFormatItem(System.String%2CSystem.UInt32%2CWizardWrx.FormatStringEngine.FormatItem.Alignment%2CSystem.String%2CList%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/FormatStringEngine/FormatItem.cs/#L1140">View Source</a>
+  </span>
+  <a id="WizardWrx_FormatStringEngine_FormatItem_UpgradeFormatItem_" data-uid="WizardWrx.FormatStringEngine.FormatItem.UpgradeFormatItem*"></a>
+  <h4 id="WizardWrx_FormatStringEngine_FormatItem_UpgradeFormatItem_System_String_System_UInt32_WizardWrx_FormatStringEngine_FormatItem_Alignment_System_String_List_System_String__" data-uid="WizardWrx.FormatStringEngine.FormatItem.UpgradeFormatItem(System.String,System.UInt32,WizardWrx.FormatStringEngine.FormatItem.Alignment,System.String,List{System.String})">UpgradeFormatItem(String, UInt32, FormatItem.Alignment, String, List&lt;String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Upgrade a plain vanilla format item of the form {n}, where n is the
+number of a format item that exists somewhere in a format string to
+a composite string that specifies a width that is computed at run
+time to be appropriate to the current data set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string UpgradeFormatItem(string pstrFormat, uint puintItemIndex, FormatItem.Alignment penmAlignment, string pstrFormatString, List&lt;string&gt; pastrValueArray)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrFormat</span></td>
+        <td><p>Specify a valid format string to upgrade. The string must contain a
+token of the form {n}, where n is equal to pintItemIndex.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td><span class="parametername">puintItemIndex</span></td>
+        <td><p>Specify the index of the item to be upgraded. The integer must be
+positive, and pstrFormat must contain at least once instance of a
+correspondingly numbered format item.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.FormatStringEngine.FormatItem.Alignment.html">FormatItem.Alignment</a></td>
+        <td><span class="parametername">penmAlignment</span></td>
+        <td><p>Specify Left or Right. Center alignment is unsupported, although it
+could be achieved with custom code.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrFormatString</span></td>
+        <td><p>Specify a standard or custom Numeric or DateTime format string.</p>
+<p>Contrast this with pstrUpgrade, which expects you to supply the
+entire format item, ready for substitution.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pastrValueArray</span></td>
+        <td><p>Specify an array of strings, all of which are values intended to be
+formatted by the upgraded format item. This routine determines the
+length of the longest string, which becomes the basis of the
+alignment parameter inserted into the upgraded format item.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>If the function succeeds, the return value is the upgraded format
+string, in which the indicated plain vanilla format item has been
+replaced with a dynamically generated composite format item.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_FormatStringEngine_FormatItem_XofY_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.FormatStringEngine.FormatItem.XofY(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/FormatStringEngine/FormatItem.cs/#L1281">View Source</a>
+  </span>
+  <a id="WizardWrx_FormatStringEngine_FormatItem_XofY_" data-uid="WizardWrx.FormatStringEngine.FormatItem.XofY*"></a>
+  <h4 id="WizardWrx_FormatStringEngine_FormatItem_XofY_System_Int32_System_Int32_" data-uid="WizardWrx.FormatStringEngine.FormatItem.XofY(System.Int32,System.Int32)">XofY(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Given two integral values X and Y, where X is less than or equal to
+Y, return a string of the form &quot;X of Y&quot; for use on a report.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string XofY(int pintX, int pintY)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintX</span></td>
+        <td><p>X is the ordinal number of the item in the list, expressed as a
+signed integer.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintY</span></td>
+        <td><p>Y is the total number of items in the list, expressed as a signed
+integer.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The returned string is literally &quot;X of Y,&quot; where X and Y are the two
+integers representing, respectively, the current item number and the
+total number of items in the set. The formatting of X and Y is such
+that a list is guaranteed to be vertically aligned, because X is set
+in a right aligned field whose width is the same as that of a string
+representation of Y.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_FormatStringEngine_FormatItem_XofY_System_Int32_System_UInt32_.md&amp;value=---%0Auid%3A%20WizardWrx.FormatStringEngine.FormatItem.XofY(System.Int32%2CSystem.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/FormatStringEngine/FormatItem.cs/#L1213">View Source</a>
+  </span>
+  <a id="WizardWrx_FormatStringEngine_FormatItem_XofY_" data-uid="WizardWrx.FormatStringEngine.FormatItem.XofY*"></a>
+  <h4 id="WizardWrx_FormatStringEngine_FormatItem_XofY_System_Int32_System_UInt32_" data-uid="WizardWrx.FormatStringEngine.FormatItem.XofY(System.Int32,System.UInt32)">XofY(Int32, UInt32)</h4>
+  <div class="markdown level1 summary"><p>Given two integral values X and Y, where X is less than or equal to
+Y, return a string of the form &quot;X of Y&quot; for use on a report.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string XofY(int pintX, uint puintY)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintX</span></td>
+        <td><p>X is the ordinal number of the item in the list, expressed as a
+signed integer.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td><span class="parametername">puintY</span></td>
+        <td><p>Y is the total number of items in the list, expressed as an unsigned
+integer.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The returned string is literally &quot;X of Y,&quot; where X and Y are the two
+integers representing, respectively, the current item number and the
+total number of items in the set. The formatting of X and Y is such
+that a list is guaranteed to be vertically aligned, because X is set
+in a right aligned field whose width is the same as that of a string
+representation of Y.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_FormatStringEngine_FormatItem_XofY_System_UInt32_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.FormatStringEngine.FormatItem.XofY(System.UInt32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/FormatStringEngine/FormatItem.cs/#L1247">View Source</a>
+  </span>
+  <a id="WizardWrx_FormatStringEngine_FormatItem_XofY_" data-uid="WizardWrx.FormatStringEngine.FormatItem.XofY*"></a>
+  <h4 id="WizardWrx_FormatStringEngine_FormatItem_XofY_System_UInt32_System_Int32_" data-uid="WizardWrx.FormatStringEngine.FormatItem.XofY(System.UInt32,System.Int32)">XofY(UInt32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Given two integral values X and Y, where X is less than or equal to
+Y, return a string of the form &quot;X of Y&quot; for use on a report.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string XofY(uint puintX, int pintY)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td><span class="parametername">puintX</span></td>
+        <td><p>X is the ordinal number of the item in the list, expressed as an
+unsigned integer.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintY</span></td>
+        <td><p>Y is the total number of items in the list, expressed as a signed
+integer.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The returned string is literally &quot;X of Y,&quot; where X and Y are the two
+integers representing, respectively, the current item number and the
+total number of items in the set. The formatting of X and Y is such
+that a list is guaranteed to be vertically aligned, because X is set
+in a right aligned field whose width is the same as that of a string
+representation of Y.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_FormatStringEngine_FormatItem_XofY_System_UInt32_System_UInt32_.md&amp;value=---%0Auid%3A%20WizardWrx.FormatStringEngine.FormatItem.XofY(System.UInt32%2CSystem.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/FormatStringEngine/FormatItem.cs/#L1179">View Source</a>
+  </span>
+  <a id="WizardWrx_FormatStringEngine_FormatItem_XofY_" data-uid="WizardWrx.FormatStringEngine.FormatItem.XofY*"></a>
+  <h4 id="WizardWrx_FormatStringEngine_FormatItem_XofY_System_UInt32_System_UInt32_" data-uid="WizardWrx.FormatStringEngine.FormatItem.XofY(System.UInt32,System.UInt32)">XofY(UInt32, UInt32)</h4>
+  <div class="markdown level1 summary"><p>Given two integral values X and Y, where X is less than or equal to
+Y, return a string of the form &quot;X of Y&quot; for use on a report.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string XofY(uint puintX, uint puintY)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td><span class="parametername">puintX</span></td>
+        <td><p>X is the ordinal number of the item in the list, expressed as an
+unsigned integer.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td><span class="parametername">puintY</span></td>
+        <td><p>Y is the total number of items in the list, expressed as an unsigned
+integer.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The returned string is literally &quot;X of Y,&quot; where X and Y are the two
+integers representing, respectively, the current item number and the
+total number of items in the set. The formatting of X and Y is such
+that a list is guaranteed to be vertically aligned, because X is set
+in a right aligned field whose width is the same as that of a string
+representation of Y.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_FormatStringEngine_FormatItem.md&amp;value=---%0Auid%3A%20WizardWrx.FormatStringEngine.FormatItem%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/FormatStringEngine/FormatItem.cs/#L143" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
