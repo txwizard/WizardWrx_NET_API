@@ -135,6 +135,7 @@
     <EmbeddedResource Include="TextWithUTF_8_BOM.TXT" />
     <EmbeddedResource Include="DigestMD5TestCases.TXT" />
     <EmbeddedResource Include="AppConfig_OutgoingMailServer_Mapping.TXT" />
+    <EmbeddedResource Include="TextForBoundedSubstringsTest.TXT" />
     <Content Include="WW_Icon1.ico" />
   </ItemGroup>
   <ItemGroup>

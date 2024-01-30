@@ -327,6 +327,9 @@
                             return their reports as long strings.
 
     2023/11/02 9.0.1565 DAG Exercise the new Replace method on String objects.
+
+    2023/01/30 9.0.1575 DAG Exercise the ExtractBoundedSubstrings String 
+                            Extension method.
     ============================================================================
 */
 
@@ -573,6 +576,7 @@ namespace DLLServices2TestStand
 
         internal static StateManager s_smTheApp = StateManager.GetTheSingleInstance ( );
 
+
         static void Main ( string [ ] pastrArgs )
         {
             const string ARCH_EQUALS = @" = ";
@@ -651,7 +655,11 @@ namespace DLLServices2TestStand
 
                 ExerciseTimeZoneInfoExtensions ( );
 
-                if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_CASE_INSENSITIVE_STRING_REPLACE )
+                if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_EXTRACT_BOUNDED_SUBSTRINGS )
+                {
+                    Exercise_ExtractBoundedSubStrings ( );
+                }
+                else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_CASE_INSENSITIVE_STRING_REPLACE )
                 {
                     NewClassTests_20140914.ExerciseCaseInsensitiveStringReplace ( );
                 }   // TRUE block, if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_CASE_INSENSITIVE_STRING_REPLACE )
@@ -1331,8 +1339,7 @@ namespace DLLServices2TestStand
                     Environment.NewLine
                 } );
             Environment.Exit ( s_smTheApp.AppReturnCode );
-        }   // Main method
-
+        }   // static void Main
 
 
         #region Local Test Implementations
@@ -1566,7 +1573,7 @@ namespace DLLServices2TestStand
             return NewClassTests_20140914.TestDone (
                 MagicNumbers.ERROR_SUCCESS ,
                 pintTestNumber );
-        }   // EventMessageCleanupTests method
+        }   // private static void EventMessageCleanupTests method
 
 
         private static void ExerciseClearScreen ( )
@@ -1583,7 +1590,7 @@ namespace DLLServices2TestStand
                 System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,
                 Environment.NewLine );
             Console.ReadLine ( );
-        }   // ExerciseClearScreen method
+        }   // private static void ExerciseClearScreen method
 
 
         private static int ExercisseDirectDependentAssemblyEnumerator ( ref int pintTestNumber )
@@ -1703,7 +1710,7 @@ namespace DLLServices2TestStand
             return NewClassTests_20140914.TestDone (
                 MagicNumbers.ERROR_SUCCESS ,
                 pintTestNumber );
-        }   // ExercisseDirectDependentAssemblyEnumerator
+        }   // private static void ExercisseDirectDependentAssemblyEnumerator
 
 
         private static void ExerciseDynamicExceptionReporting ( )
@@ -1746,7 +1753,7 @@ namespace DLLServices2TestStand
 
             asmDllCfgMgr = null;
             daOfEntryAsm.DestroyDependents ( );
-        }   // ExerciseDynamicExceptionReporting
+        }   // private static void ExerciseDynamicExceptionReporting
 
 
         private static void Exercise_ExtractTextBetweenMatches ( )
@@ -1791,7 +1798,26 @@ namespace DLLServices2TestStand
                     Console.WriteLine ( $"            Note date {strNoteDate} cannot be parsed under the specified conditions.{Environment.NewLine}" );
                 }
             }   // for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ; intJ < matchCollection.Count ; intJ++ )
-        }   // private static void
+        }   // private static void Exercise_ExtractTextBetweenMatches
+
+
+        private static void Exercise_ExtractBoundedSubStrings ( )
+        {
+            const string TEXTFORBOUNDEDSUBSTRINGSTEST = @"TextForBoundedSubstringsTest.TXT";
+            const string CALL_ID_PREFIX = SpecialStrings.DOUBLE_QUOTE + @"by_callid" + SpecialStrings.DOUBLE_QUOTE + SpecialStrings.COLON + SpecialStrings.DOUBLE_QUOTE;
+            const string CALL_ID_SUFFIX = SpecialStrings.DOUBLE_QUOTE + SpecialStrings.COMMA + SpecialStrings.DOUBLE_QUOTE;
+
+            Console.WriteLine ( $"{Environment.NewLine}Exercise_ExtractBoundedSubStrings Begin{Environment.NewLine}" );
+            string [ ] astrInputText = EmbeddedTextFileReaders.LoadTextFileFromCallingAssembly ( TEXTFORBOUNDEDSUBSTRINGSTEST );
+            Console.WriteLine ( $"TEXTFORBOUNDEDSUBSTRINGSTEST                           = {TEXTFORBOUNDEDSUBSTRINGSTEST}" );
+            Console.WriteLine ( $"CALL_ID_PREFIX                                         = {CALL_ID_PREFIX}" );
+            Console.WriteLine ( $"CALL_ID_PREFIX                                         = {CALL_ID_PREFIX}" );
+            Console.WriteLine ( $"astrInputText [ ArrayInfo.ARRAY_FIRST_ELEMENT ] Length = {astrInputText [ ArrayInfo.ARRAY_FIRST_ELEMENT ].Length}{Environment.NewLine}" );
+            Console.WriteLine ( $"astrInputText [ ArrayInfo.ARRAY_FIRST_ELEMENT ] Value  = {astrInputText [ ArrayInfo.ARRAY_FIRST_ELEMENT ]}{Environment.NewLine}" );
+            string strCallId = astrInputText [ ArrayInfo.ARRAY_FIRST_ELEMENT ].ExtractBoundedSubstrings ( CALL_ID_PREFIX , CALL_ID_SUFFIX );
+            Console.WriteLine ( $"strCallId                                              = {strCallId}" );
+            Console.WriteLine ( $"{Environment.NewLine}Exercise_ExtractBoundedSubStrings DONE{Environment.NewLine}" );
+        }   // private static void Exercise_ExtractBoundedSubStrings
 
 
         private static void ExerciseEnvTokenExpander ( )

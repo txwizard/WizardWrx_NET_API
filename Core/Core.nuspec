@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-		<releaseNotes>Implement a new Replace string extension method that takes a StringComparison argument, so that it can perform case insensitive replacements.</releaseNotes>
+		<releaseNotes>Replace a suspected corrupted production build.</releaseNotes>
 		<copyright>$copyright$</copyright>
     	<tags>Constants Arrays RegExp FileInfo Strings Singleton</tags>
 	</metadata>

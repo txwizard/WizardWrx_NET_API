@@ -78,6 +78,21 @@
             See summary.
             </returns>
         </member>
+        <member name="M:AssemblyInfoUtil.Program.ProcessSubdirectory(System.IO.DirectoryInfo)">
+            <summary>
+            This method is called recursively to process the files and their
+            directories underneath the main project directory.
+            </summary>
+            <param name="pdiSubDirectoryInfo">
+            Specify the DirectoryInfo of the source code subdirectory to
+            process.
+            </param>
+            <returns>
+            When a file that has its Archive flag set is encountered, the
+            function returns True. If it exhausts all files and subdirectories
+            in the directory witout doing so, the return valuee is False.
+            </returns>
+        </member>
         <member name="M:AssemblyInfoUtil.Program.ParseCommandLineArgs(System.String[])">
             <summary>
             Parse the command line arguments received by the calling main

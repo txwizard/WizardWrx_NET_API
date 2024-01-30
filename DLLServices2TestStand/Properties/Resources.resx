@@ -717,4 +717,7 @@
     <value>CaseInsensitiveStringReplace</value>
     <comment>Select this one-off task to exercise the case insensitive Replace method that extends the System.String object..</comment>
   </data>
+  <data name="CMDARG_EXTRACT_BOUNDED_SUBSTRINGS" xml:space="preserve">
+    <value>ExtractBoundedSubstrings</value>
+  </data>
 </root>

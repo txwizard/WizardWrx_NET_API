@@ -142,6 +142,15 @@ namespace DLLServices2TestStand.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ExtractBoundedSubstrings.
+        /// </summary>
+        public static string CMDARG_EXTRACT_BOUNDED_SUBSTRINGS {
+            get {
+                return ResourceManager.GetString("CMDARG_EXTRACT_BOUNDED_SUBSTRINGS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to FileNameTricks_Exercises.
         /// </summary>
         public static string CMDARG_FILE_NAME_TRICKS {
