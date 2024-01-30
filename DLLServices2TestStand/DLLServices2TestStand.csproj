@@ -194,7 +194,7 @@
 attrib         "$(SolutionDir)$(SolutionName)_Binaries_$(ConfigurationName).7z" +r
 if $(ConfigurationName) == Release (
     echo Regenerate API documentation.
-    docfx.exe $(SolutionDir)docfx_project\docfx.json --metadata
+    C:\bin\DocFX\docfx.exe $(SolutionDir)docfx_project\docfx.json --metadata
     echo Mark DLLs in project output directory as Read Only.
     attrib $(TargetDir)*.dll +r
     attrib $(TargetDir)*.pdb +r

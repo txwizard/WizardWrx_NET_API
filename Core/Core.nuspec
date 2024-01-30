@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-		<releaseNotes>Replace a suspected corrupted production build.</releaseNotes>
+		<releaseNotes>In string extension method ExtractBoundedSubstrings, substitute IsNullOrWhiteSpace for IsNullOrEmpty.</releaseNotes>
 		<copyright>$copyright$</copyright>
     	<tags>Constants Arrays RegExp FileInfo Strings Singleton</tags>
 	</metadata>

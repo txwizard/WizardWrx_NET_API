@@ -1,5 +1,17 @@
 ﻿# WizardWrx .NET API Change Log
 
+## 2024/01/30
+
+### WizardWrx.Core 9.0.355
+
+In string extension method `ExtractBoundedSubstrings`, substitute
+`IsNullOrWhiteSpace` for `IsNullOrEmpty`.
+
+### All Other Assemblies
+
+Everything else gets rebuilt because I changed the copyright year in the master
+AssemblyInfo.
+
 ## 2023/11/02
 
 ### WizardWrx.Core 9.0.339

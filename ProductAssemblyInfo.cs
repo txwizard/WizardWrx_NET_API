@@ -105,7 +105,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration ( "" )]
 [assembly: AssemblyCompany ( "David A. Gray" )]
 [assembly: AssemblyProduct ( "Common Classes for the Microsoft .NET Framework 3.5 and Above" )]
-[assembly: AssemblyCopyright ( "Copyright © 2014-2022, David A. Gray" )]
+[assembly: AssemblyCopyright ( "Copyright © 2014-2024, David A. Gray" )]
 [assembly: AssemblyTrademark ( "This library is distributed under a three-clause BSD license." )]
 
 // Setting ComVisible to false makes the types in this assembly not visible

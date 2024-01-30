@@ -1,0 +1,1465 @@
+id: WizardWrx.MoreMath
+language: CSharp
+name:
+  Default: WizardWrx.MoreMath
+qualifiedName:
+  Default: WizardWrx.MoreMath
+type: Assembly
+modifiers: {}
+items:
+- id: WizardWrx
+  commentId: N:WizardWrx
+  language: CSharp
+  name:
+    CSharp: WizardWrx
+    VB: WizardWrx
+  nameWithType:
+    CSharp: WizardWrx
+    VB: WizardWrx
+  qualifiedName:
+    CSharp: WizardWrx
+    VB: WizardWrx
+  type: Namespace
+  assemblies:
+  - WizardWrx.MoreMath
+  modifiers: {}
+  items:
+  - id: WizardWrx.MoreMath
+    commentId: T:WizardWrx.MoreMath
+    language: CSharp
+    name:
+      CSharp: MoreMath
+      VB: MoreMath
+    nameWithType:
+      CSharp: MoreMath
+      VB: MoreMath
+    qualifiedName:
+      CSharp: WizardWrx.MoreMath
+      VB: WizardWrx.MoreMath
+    type: Class
+    assemblies:
+    - WizardWrx.MoreMath
+    namespace: WizardWrx
+    source:
+      remote:
+        path: MoreMath/MoreMath.cs
+        branch: master
+        repo: https://github.com/txwizard/WizardWrx_NET_API.git
+      id: MoreMath
+      path: ../MoreMath/MoreMath.cs
+      startLine: 127
+    summary: "\nThis static class exposes methods that perform a variety of infrequently\nused, but technically obscure or deceptively tricky mathematical\ncomputations.\n"
+    example: []
+    syntax:
+      content:
+        CSharp: 'public static class MoreMath : object'
+        VB: >-
+          Public Module MoreMath
+
+              Inherits Object
+    inheritance:
+    - System.Object
+    modifiers:
+      CSharp:
+      - public
+      - static
+      - class
+      VB:
+      - Public
+      - Module
+    items:
+    - id: WizardWrx.MoreMath.EXCEPTION_ON_INVALID_INPUT
+      commentId: F:WizardWrx.MoreMath.EXCEPTION_ON_INVALID_INPUT
+      language: CSharp
+      name:
+        CSharp: EXCEPTION_ON_INVALID_INPUT
+        VB: EXCEPTION_ON_INVALID_INPUT
+      nameWithType:
+        CSharp: MoreMath.EXCEPTION_ON_INVALID_INPUT
+        VB: MoreMath.EXCEPTION_ON_INVALID_INPUT
+      qualifiedName:
+        CSharp: WizardWrx.MoreMath.EXCEPTION_ON_INVALID_INPUT
+        VB: WizardWrx.MoreMath.EXCEPTION_ON_INVALID_INPUT
+      type: Field
+      assemblies:
+      - WizardWrx.MoreMath
+      namespace: WizardWrx
+      source:
+        remote:
+          path: MoreMath/MoreMath.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API.git
+        id: EXCEPTION_ON_INVALID_INPUT
+        path: ../MoreMath/MoreMath.cs
+        startLine: 135
+      summary: "\nUse with IsGregorianLeapYear and IsValidGregorianYear to cause them\nto throw an exception when either is fed an invalid Gregorian year,\nrather than return FALSE.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public const bool EXCEPTION_ON_INVALID_INPUT = null
+          VB: Public Const EXCEPTION_ON_INVALID_INPUT As Boolean = Nothing
+        return:
+          type: System.Boolean
+      modifiers:
+        CSharp:
+        - public
+        - const
+        VB:
+        - Public
+        - Const
+    - id: WizardWrx.MoreMath.FALSE_ON_INVALID_INPUT
+      commentId: F:WizardWrx.MoreMath.FALSE_ON_INVALID_INPUT
+      language: CSharp
+      name:
+        CSharp: FALSE_ON_INVALID_INPUT
+        VB: FALSE_ON_INVALID_INPUT
+      nameWithType:
+        CSharp: MoreMath.FALSE_ON_INVALID_INPUT
+        VB: MoreMath.FALSE_ON_INVALID_INPUT
+      qualifiedName:
+        CSharp: WizardWrx.MoreMath.FALSE_ON_INVALID_INPUT
+        VB: WizardWrx.MoreMath.FALSE_ON_INVALID_INPUT
+      type: Field
+      assemblies:
+      - WizardWrx.MoreMath
+      namespace: WizardWrx
+      source:
+        remote:
+          path: MoreMath/MoreMath.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API.git
+        id: FALSE_ON_INVALID_INPUT
+        path: ../MoreMath/MoreMath.cs
+        startLine: 142
+      summary: "\nUse with IsGregorianLeapYear and IsValidGregorianYear to cause them\nto suppress the ArgumentOutOfRange exception when either is fed an\ninvalid Gregorian year; instead, both return FALSE.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public const bool FALSE_ON_INVALID_INPUT = null
+          VB: Public Const FALSE_ON_INVALID_INPUT As Boolean = Nothing
+        return:
+          type: System.Boolean
+      modifiers:
+        CSharp:
+        - public
+        - const
+        VB:
+        - Public
+        - Const
+    - id: WizardWrx.MoreMath.GRGORIAN_CALENDAR_ADOPTION_YEAR
+      commentId: F:WizardWrx.MoreMath.GRGORIAN_CALENDAR_ADOPTION_YEAR
+      language: CSharp
+      name:
+        CSharp: GRGORIAN_CALENDAR_ADOPTION_YEAR
+        VB: GRGORIAN_CALENDAR_ADOPTION_YEAR
+      nameWithType:
+        CSharp: MoreMath.GRGORIAN_CALENDAR_ADOPTION_YEAR
+        VB: MoreMath.GRGORIAN_CALENDAR_ADOPTION_YEAR
+      qualifiedName:
+        CSharp: WizardWrx.MoreMath.GRGORIAN_CALENDAR_ADOPTION_YEAR
+        VB: WizardWrx.MoreMath.GRGORIAN_CALENDAR_ADOPTION_YEAR
+      type: Field
+      assemblies:
+      - WizardWrx.MoreMath
+      namespace: WizardWrx
+      source:
+        remote:
+          path: MoreMath/MoreMath.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API.git
+        id: GRGORIAN_CALENDAR_ADOPTION_YEAR
+        path: ../MoreMath/MoreMath.cs
+        startLine: 155
+      summary: "\nYear values must be greater than this value. Callers may use this\nconstant to perform their own validations, or for other\npurposes.\n\nThe Gregorian calendar was adopted in 1582. To be on the safe side,\nthis class rejects years prior to the following year, since, in its\npresent form, it cannot correctly process dates on the Julian\ncalendar that was in use before 1583.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public const int GRGORIAN_CALENDAR_ADOPTION_YEAR = null
+          VB: Public Const GRGORIAN_CALENDAR_ADOPTION_YEAR As Integer = Nothing
+        return:
+          type: System.Int32
+      modifiers:
+        CSharp:
+        - public
+        - const
+        VB:
+        - Public
+        - Const
+    - id: WizardWrx.MoreMath.DecimalShiftLeft(System.Int32,System.Int32)
+      commentId: M:WizardWrx.MoreMath.DecimalShiftLeft(System.Int32,System.Int32)
+      language: CSharp
+      name:
+        CSharp: DecimalShiftLeft(Int32, Int32)
+        VB: DecimalShiftLeft(Int32, Int32)
+      nameWithType:
+        CSharp: MoreMath.DecimalShiftLeft(Int32, Int32)
+        VB: MoreMath.DecimalShiftLeft(Int32, Int32)
+      qualifiedName:
+        CSharp: WizardWrx.MoreMath.DecimalShiftLeft(System.Int32, System.Int32)
+        VB: WizardWrx.MoreMath.DecimalShiftLeft(System.Int32, System.Int32)
+      type: Method
+      assemblies:
+      - WizardWrx.MoreMath
+      namespace: WizardWrx
+      source:
+        remote:
+          path: MoreMath/MoreMath.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API.git
+        id: DecimalShiftLeft
+        path: ../MoreMath/MoreMath.cs
+        startLine: 189
+      summary: "\nShift the decimal point of an integer value left by a poisitive\nnumber of digits.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public static int DecimalShiftLeft(int ShiftThis, int NDigits)
+          VB: Public Shared Function DecimalShiftLeft(ShiftThis As Integer, NDigits As Integer) As Integer
+        parameters:
+        - id: ShiftThis
+          type: System.Int32
+          description: "\nSpecify the integer value to be shifted left by the number of digits\nspecified by <code data-dev-comment-type=\"paramref\" class=\"paramref\">NDigits</code>.\n"
+        - id: NDigits
+          type: System.Int32
+          description: "\nSpecify the number of digits to the left by which to shift the\nvalue specified by <code data-dev-comment-type=\"paramref\" class=\"paramref\">ShiftThis</code>.\n"
+        return:
+          type: System.Int32
+          description: "\nReturn the value of <code data-dev-comment-type=\"paramref\" class=\"paramref\">ShiftThis</code> multiplied by\na power of ten that is one less than the value specified by\n<code data-dev-comment-type=\"paramref\" class=\"paramref\">NDigits</code>.\n"
+      overload: WizardWrx.MoreMath.DecimalShiftLeft*
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+    - id: WizardWrx.MoreMath.DecimalShiftLeft(System.Int64,System.Int32)
+      commentId: M:WizardWrx.MoreMath.DecimalShiftLeft(System.Int64,System.Int32)
+      language: CSharp
+      name:
+        CSharp: DecimalShiftLeft(Int64, Int32)
+        VB: DecimalShiftLeft(Int64, Int32)
+      nameWithType:
+        CSharp: MoreMath.DecimalShiftLeft(Int64, Int32)
+        VB: MoreMath.DecimalShiftLeft(Int64, Int32)
+      qualifiedName:
+        CSharp: WizardWrx.MoreMath.DecimalShiftLeft(System.Int64, System.Int32)
+        VB: WizardWrx.MoreMath.DecimalShiftLeft(System.Int64, System.Int32)
+      type: Method
+      assemblies:
+      - WizardWrx.MoreMath
+      namespace: WizardWrx
+      source:
+        remote:
+          path: MoreMath/MoreMath.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API.git
+        id: DecimalShiftLeft
+        path: ../MoreMath/MoreMath.cs
+        startLine: 246
+      summary: "\nShift the decimal point of an integer value left by a poisitive\nnumber of digits.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public static long DecimalShiftLeft(long ShiftThis, int NDigits)
+          VB: Public Shared Function DecimalShiftLeft(ShiftThis As Long, NDigits As Integer) As Long
+        parameters:
+        - id: ShiftThis
+          type: System.Int64
+          description: "\nSpecify the integer value to be shifted left by the number of digits\nspecified by <code data-dev-comment-type=\"paramref\" class=\"paramref\">NDigits</code>.\n"
+        - id: NDigits
+          type: System.Int32
+          description: "\nSpecify the number of digits to the left by which to shift the\nvalue specified by <code data-dev-comment-type=\"paramref\" class=\"paramref\">ShiftThis</code>.\n"
+        return:
+          type: System.Int64
+          description: "\nReturn the value of <code data-dev-comment-type=\"paramref\" class=\"paramref\">ShiftThis</code> multiplied by\na power of ten that is one less than the value specified by\n<code data-dev-comment-type=\"paramref\" class=\"paramref\">NDigits</code>.\n"
+      overload: WizardWrx.MoreMath.DecimalShiftLeft*
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+    - id: WizardWrx.MoreMath.DecimalShiftLeft(System.UInt32,System.Int32)
+      commentId: M:WizardWrx.MoreMath.DecimalShiftLeft(System.UInt32,System.Int32)
+      language: CSharp
+      name:
+        CSharp: DecimalShiftLeft(UInt32, Int32)
+        VB: DecimalShiftLeft(UInt32, Int32)
+      nameWithType:
+        CSharp: MoreMath.DecimalShiftLeft(UInt32, Int32)
+        VB: MoreMath.DecimalShiftLeft(UInt32, Int32)
+      qualifiedName:
+        CSharp: WizardWrx.MoreMath.DecimalShiftLeft(System.UInt32, System.Int32)
+        VB: WizardWrx.MoreMath.DecimalShiftLeft(System.UInt32, System.Int32)
+      type: Method
+      assemblies:
+      - WizardWrx.MoreMath
+      namespace: WizardWrx
+      source:
+        remote:
+          path: MoreMath/MoreMath.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API.git
+        id: DecimalShiftLeft
+        path: ../MoreMath/MoreMath.cs
+        startLine: 303
+      summary: "\nShift the decimal point of an integer value left by a poisitive\nnumber of digits.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public static uint DecimalShiftLeft(uint ShiftThis, int NDigits)
+          VB: Public Shared Function DecimalShiftLeft(ShiftThis As UInteger, NDigits As Integer) As UInteger
+        parameters:
+        - id: ShiftThis
+          type: System.UInt32
+          description: "\nSpecify the integer value to be shifted left by the number of digits\nspecified by <code data-dev-comment-type=\"paramref\" class=\"paramref\">NDigits</code>.\n"
+        - id: NDigits
+          type: System.Int32
+          description: "\nSpecify the number of digits to the left by which to shift the\nvalue specified by <code data-dev-comment-type=\"paramref\" class=\"paramref\">ShiftThis</code>.\n"
+        return:
+          type: System.UInt32
+          description: "\nReturn the value of <code data-dev-comment-type=\"paramref\" class=\"paramref\">ShiftThis</code> multiplied by\na power of ten that is one less than the value specified by\n<code data-dev-comment-type=\"paramref\" class=\"paramref\">NDigits</code>.\n"
+      overload: WizardWrx.MoreMath.DecimalShiftLeft*
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+    - id: WizardWrx.MoreMath.DecimalShiftLeft(System.UInt64,System.Int32)
+      commentId: M:WizardWrx.MoreMath.DecimalShiftLeft(System.UInt64,System.Int32)
+      language: CSharp
+      name:
+        CSharp: DecimalShiftLeft(UInt64, Int32)
+        VB: DecimalShiftLeft(UInt64, Int32)
+      nameWithType:
+        CSharp: MoreMath.DecimalShiftLeft(UInt64, Int32)
+        VB: MoreMath.DecimalShiftLeft(UInt64, Int32)
+      qualifiedName:
+        CSharp: WizardWrx.MoreMath.DecimalShiftLeft(System.UInt64, System.Int32)
+        VB: WizardWrx.MoreMath.DecimalShiftLeft(System.UInt64, System.Int32)
+      type: Method
+      assemblies:
+      - WizardWrx.MoreMath
+      namespace: WizardWrx
+      source:
+        remote:
+          path: MoreMath/MoreMath.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API.git
+        id: DecimalShiftLeft
+        path: ../MoreMath/MoreMath.cs
+        startLine: 362
+      summary: "\nShift the decimal point of an integer value left by a poisitive\nnumber of digits.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public static ulong DecimalShiftLeft(ulong ShiftThis, int NDigits)
+          VB: Public Shared Function DecimalShiftLeft(ShiftThis As ULong, NDigits As Integer) As ULong
+        parameters:
+        - id: ShiftThis
+          type: System.UInt64
+          description: "\nSpecify the integer value to be shifted left by the number of digits\nspecified by <code data-dev-comment-type=\"paramref\" class=\"paramref\">NDigits</code>.\n"
+        - id: NDigits
+          type: System.Int32
+          description: "\nSpecify the number of digits to the left by which to shift the\nvalue specified by <code data-dev-comment-type=\"paramref\" class=\"paramref\">ShiftThis</code>.\n"
+        return:
+          type: System.UInt64
+          description: "\nReturn the value of <code data-dev-comment-type=\"paramref\" class=\"paramref\">ShiftThis</code> multiplied by\na power of ten that is one less than the value specified by\n<code data-dev-comment-type=\"paramref\" class=\"paramref\">NDigits</code>.\n"
+      overload: WizardWrx.MoreMath.DecimalShiftLeft*
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+    - id: WizardWrx.MoreMath.DecimalShiftRight(System.Int32,System.Int32)
+      commentId: M:WizardWrx.MoreMath.DecimalShiftRight(System.Int32,System.Int32)
+      language: CSharp
+      name:
+        CSharp: DecimalShiftRight(Int32, Int32)
+        VB: DecimalShiftRight(Int32, Int32)
+      nameWithType:
+        CSharp: MoreMath.DecimalShiftRight(Int32, Int32)
+        VB: MoreMath.DecimalShiftRight(Int32, Int32)
+      qualifiedName:
+        CSharp: WizardWrx.MoreMath.DecimalShiftRight(System.Int32, System.Int32)
+        VB: WizardWrx.MoreMath.DecimalShiftRight(System.Int32, System.Int32)
+      type: Method
+      assemblies:
+      - WizardWrx.MoreMath
+      namespace: WizardWrx
+      source:
+        remote:
+          path: MoreMath/MoreMath.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API.git
+        id: DecimalShiftRight
+        path: ../MoreMath/MoreMath.cs
+        startLine: 420
+      summary: "\nShift the decimal point of an integer value right by a poisitive\nnumber of digits.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public static int DecimalShiftRight(int ShiftThis, int NDigits)
+          VB: Public Shared Function DecimalShiftRight(ShiftThis As Integer, NDigits As Integer) As Integer
+        parameters:
+        - id: ShiftThis
+          type: System.Int32
+          description: "\nSpecify the integer value to be shifted left by the number of digits\nspecified by <code data-dev-comment-type=\"paramref\" class=\"paramref\">NDigits</code>.\n"
+        - id: NDigits
+          type: System.Int32
+          description: ''
+        return:
+          type: System.Int32
+          description: "\nReturn the value of <code data-dev-comment-type=\"paramref\" class=\"paramref\">ShiftThis</code> multiplied by\na power of ten that is one less than the value specified by\n<code data-dev-comment-type=\"paramref\" class=\"paramref\">NDigits</code>.\n"
+      overload: WizardWrx.MoreMath.DecimalShiftRight*
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+    - id: WizardWrx.MoreMath.DecimalShiftRight(System.Single,System.Int32)
+      commentId: M:WizardWrx.MoreMath.DecimalShiftRight(System.Single,System.Int32)
+      language: CSharp
+      name:
+        CSharp: DecimalShiftRight(Single, Int32)
+        VB: DecimalShiftRight(Single, Int32)
+      nameWithType:
+        CSharp: MoreMath.DecimalShiftRight(Single, Int32)
+        VB: MoreMath.DecimalShiftRight(Single, Int32)
+      qualifiedName:
+        CSharp: WizardWrx.MoreMath.DecimalShiftRight(System.Single, System.Int32)
+        VB: WizardWrx.MoreMath.DecimalShiftRight(System.Single, System.Int32)
+      type: Method
+      assemblies:
+      - WizardWrx.MoreMath
+      namespace: WizardWrx
+      source:
+        remote:
+          path: MoreMath/MoreMath.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API.git
+        id: DecimalShiftRight
+        path: ../MoreMath/MoreMath.cs
+        startLine: 463
+      summary: "\nShift the decimal point of a float value right by a poisitive\nnumber of digits.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public static float DecimalShiftRight(float ShiftThis, int NDigits)
+          VB: Public Shared Function DecimalShiftRight(ShiftThis As Single, NDigits As Integer) As Single
+        parameters:
+        - id: ShiftThis
+          type: System.Single
+          description: "\nSpecify the integer value to be shifted left by the number of digits\nspecified by <code data-dev-comment-type=\"paramref\" class=\"paramref\">NDigits</code>.\n"
+        - id: NDigits
+          type: System.Int32
+          description: ''
+        return:
+          type: System.Single
+          description: "\nReturn the value of <code data-dev-comment-type=\"paramref\" class=\"paramref\">ShiftThis</code> multiplied by\na power of ten that is one less than the value specified by\n<code data-dev-comment-type=\"paramref\" class=\"paramref\">NDigits</code>.\n"
+      overload: WizardWrx.MoreMath.DecimalShiftRight*
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+    - id: WizardWrx.MoreMath.DecimalShiftRight(System.Decimal,System.Int32)
+      commentId: M:WizardWrx.MoreMath.DecimalShiftRight(System.Decimal,System.Int32)
+      language: CSharp
+      name:
+        CSharp: DecimalShiftRight(Decimal, Int32)
+        VB: DecimalShiftRight(Decimal, Int32)
+      nameWithType:
+        CSharp: MoreMath.DecimalShiftRight(Decimal, Int32)
+        VB: MoreMath.DecimalShiftRight(Decimal, Int32)
+      qualifiedName:
+        CSharp: WizardWrx.MoreMath.DecimalShiftRight(System.Decimal, System.Int32)
+        VB: WizardWrx.MoreMath.DecimalShiftRight(System.Decimal, System.Int32)
+      type: Method
+      assemblies:
+      - WizardWrx.MoreMath
+      namespace: WizardWrx
+      source:
+        remote:
+          path: MoreMath/MoreMath.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API.git
+        id: DecimalShiftRight
+        path: ../MoreMath/MoreMath.cs
+        startLine: 506
+      summary: "\nShift the decimal point of a decimal value right by a poisitive\nnumber of digits.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public static decimal DecimalShiftRight(decimal ShiftThis, int NDigits)
+          VB: Public Shared Function DecimalShiftRight(ShiftThis As Decimal, NDigits As Integer) As Decimal
+        parameters:
+        - id: ShiftThis
+          type: System.Decimal
+          description: "\nSpecify the integer value to be shifted left by the number of digits\nspecified by <code data-dev-comment-type=\"paramref\" class=\"paramref\">NDigits</code>.\n"
+        - id: NDigits
+          type: System.Int32
+          description: ''
+        return:
+          type: System.Decimal
+          description: "\nReturn the value of <code data-dev-comment-type=\"paramref\" class=\"paramref\">ShiftThis</code> multiplied by\na power of ten that is one less than the value specified by\n<code data-dev-comment-type=\"paramref\" class=\"paramref\">NDigits</code>.\n"
+      overload: WizardWrx.MoreMath.DecimalShiftRight*
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+    - id: WizardWrx.MoreMath.DecimalShiftRight(System.Double,System.Int32)
+      commentId: M:WizardWrx.MoreMath.DecimalShiftRight(System.Double,System.Int32)
+      language: CSharp
+      name:
+        CSharp: DecimalShiftRight(Double, Int32)
+        VB: DecimalShiftRight(Double, Int32)
+      nameWithType:
+        CSharp: MoreMath.DecimalShiftRight(Double, Int32)
+        VB: MoreMath.DecimalShiftRight(Double, Int32)
+      qualifiedName:
+        CSharp: WizardWrx.MoreMath.DecimalShiftRight(System.Double, System.Int32)
+        VB: WizardWrx.MoreMath.DecimalShiftRight(System.Double, System.Int32)
+      type: Method
+      assemblies:
+      - WizardWrx.MoreMath
+      namespace: WizardWrx
+      source:
+        remote:
+          path: MoreMath/MoreMath.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API.git
+        id: DecimalShiftRight
+        path: ../MoreMath/MoreMath.cs
+        startLine: 549
+      summary: "\nShift the decimal point of a double value right by a poisitive\nnumber of digits.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public static double DecimalShiftRight(double ShiftThis, int NDigits)
+          VB: Public Shared Function DecimalShiftRight(ShiftThis As Double, NDigits As Integer) As Double
+        parameters:
+        - id: ShiftThis
+          type: System.Double
+          description: "\nSpecify the integer value to be shifted left by the number of digits\nspecified by <code data-dev-comment-type=\"paramref\" class=\"paramref\">NDigits</code>.\n"
+        - id: NDigits
+          type: System.Int32
+          description: ''
+        return:
+          type: System.Double
+          description: "\nReturn the value of <code data-dev-comment-type=\"paramref\" class=\"paramref\">ShiftThis</code> multiplied by\na power of ten that is one less than the value specified by\n<code data-dev-comment-type=\"paramref\" class=\"paramref\">NDigits</code>.\n"
+      overload: WizardWrx.MoreMath.DecimalShiftRight*
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+    - id: WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int32,System.Int32)
+      commentId: M:WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int32,System.Int32)
+      language: CSharp
+      name:
+        CSharp: IsEvenlyDivisibleByAnyInteger(Int32, Int32)
+        VB: IsEvenlyDivisibleByAnyInteger(Int32, Int32)
+      nameWithType:
+        CSharp: MoreMath.IsEvenlyDivisibleByAnyInteger(Int32, Int32)
+        VB: MoreMath.IsEvenlyDivisibleByAnyInteger(Int32, Int32)
+      qualifiedName:
+        CSharp: WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int32, System.Int32)
+        VB: WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int32, System.Int32)
+      type: Method
+      assemblies:
+      - WizardWrx.MoreMath
+      namespace: WizardWrx
+      source:
+        remote:
+          path: MoreMath/MoreMath.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API.git
+        id: IsEvenlyDivisibleByAnyInteger
+        path: ../MoreMath/MoreMath.cs
+        startLine: 608
+      summary: "\nEvaluate whether integer <code data-dev-comment-type=\"paramref\" class=\"paramref\">pintDividend</code> is evenly\ndivisible by integer <code data-dev-comment-type=\"paramref\" class=\"paramref\">pintDivisor</code>.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public static bool IsEvenlyDivisibleByAnyInteger(int pintDividend, int pintDivisor)
+          VB: Public Shared Function IsEvenlyDivisibleByAnyInteger(pintDividend As Integer, pintDivisor As Integer) As Boolean
+        parameters:
+        - id: pintDividend
+          type: System.Int32
+          description: "\nSpecify the integer to evaluate for even divisibility against\n<code data-dev-comment-type=\"paramref\" class=\"paramref\">pintDivisor</code>.\n"
+        - id: pintDivisor
+          type: System.Int32
+          description: "\nSpecify the integer to determine whether integer\n<code data-dev-comment-type=\"paramref\" class=\"paramref\">pintDividend</code> is evenly divisible.\n"
+        return:
+          type: System.Boolean
+          description: "\nReturn TRUE if integer <code data-dev-comment-type=\"paramref\" class=\"paramref\">pintDividend</code> is evenly\ndivisible by <code data-dev-comment-type=\"paramref\" class=\"paramref\">pintDivisor</code>.\n\nOtherwise, return FALSE.\n"
+      overload: WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger*
+      seealso:
+      - linkId: WizardWrx.MoreMath.Mod(System.Int32,System.Int32)
+        commentId: M:WizardWrx.MoreMath.Mod(System.Int32,System.Int32)
+      - linkId: WizardWrx.MoreMath.Remainder(System.Int32,System.Int32)
+        commentId: M:WizardWrx.MoreMath.Remainder(System.Int32,System.Int32)
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+      references:
+        WizardWrx.MoreMath.Mod(System.Int32,System.Int32): 
+        WizardWrx.MoreMath.Remainder(System.Int32,System.Int32): 
+    - id: WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int64,System.Int64)
+      commentId: M:WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int64,System.Int64)
+      language: CSharp
+      name:
+        CSharp: IsEvenlyDivisibleByAnyInteger(Int64, Int64)
+        VB: IsEvenlyDivisibleByAnyInteger(Int64, Int64)
+      nameWithType:
+        CSharp: MoreMath.IsEvenlyDivisibleByAnyInteger(Int64, Int64)
+        VB: MoreMath.IsEvenlyDivisibleByAnyInteger(Int64, Int64)
+      qualifiedName:
+        CSharp: WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int64, System.Int64)
+        VB: WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int64, System.Int64)
+      type: Method
+      assemblies:
+      - WizardWrx.MoreMath
+      namespace: WizardWrx
+      source:
+        remote:
+          path: MoreMath/MoreMath.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API.git
+        id: IsEvenlyDivisibleByAnyInteger
+        path: ../MoreMath/MoreMath.cs
+        startLine: 654
+      summary: "\nEvaluate whether long integer <code data-dev-comment-type=\"paramref\" class=\"paramref\">plngDividend</code> is\nevenly divisible by long integer <code data-dev-comment-type=\"paramref\" class=\"paramref\">plngDivisor</code>.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public static bool IsEvenlyDivisibleByAnyInteger(long plngDividend, long plngDivisor)
+          VB: Public Shared Function IsEvenlyDivisibleByAnyInteger(plngDividend As Long, plngDivisor As Long) As Boolean
+        parameters:
+        - id: plngDividend
+          type: System.Int64
+          description: "\nSpecify the long integer to evaluate for even divisibility against\n<code data-dev-comment-type=\"paramref\" class=\"paramref\">plngDivisor</code>.\n"
+        - id: plngDivisor
+          type: System.Int64
+          description: "\nSpecify the long integer to determine whether long integer\n<code data-dev-comment-type=\"paramref\" class=\"paramref\">plngDividend</code> is evenly divisible.\n"
+        return:
+          type: System.Boolean
+          description: "\nReturn TRUE if long integer <code data-dev-comment-type=\"paramref\" class=\"paramref\">plngDividend</code> is\nevenly divisible by <code data-dev-comment-type=\"paramref\" class=\"paramref\">plngDivisor</code>. therwise, return\nFALSE.\n"
+      overload: WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger*
+      seealso:
+      - linkId: WizardWrx.MoreMath.Mod(System.Int64,System.Int64)
+        commentId: M:WizardWrx.MoreMath.Mod(System.Int64,System.Int64)
+      - linkId: WizardWrx.MoreMath.Remainder(System.Int64,System.Int64)
+        commentId: M:WizardWrx.MoreMath.Remainder(System.Int64,System.Int64)
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+      references:
+        WizardWrx.MoreMath.Mod(System.Int64,System.Int64): 
+        WizardWrx.MoreMath.Remainder(System.Int64,System.Int64): 
+    - id: WizardWrx.MoreMath.IsGregorianLeapYear(System.Int32,System.Boolean)
+      commentId: M:WizardWrx.MoreMath.IsGregorianLeapYear(System.Int32,System.Boolean)
+      language: CSharp
+      name:
+        CSharp: IsGregorianLeapYear(Int32, Boolean)
+        VB: IsGregorianLeapYear(Int32, Boolean)
+      nameWithType:
+        CSharp: MoreMath.IsGregorianLeapYear(Int32, Boolean)
+        VB: MoreMath.IsGregorianLeapYear(Int32, Boolean)
+      qualifiedName:
+        CSharp: WizardWrx.MoreMath.IsGregorianLeapYear(System.Int32, System.Boolean)
+        VB: WizardWrx.MoreMath.IsGregorianLeapYear(System.Int32, System.Boolean)
+      type: Method
+      assemblies:
+      - WizardWrx.MoreMath
+      namespace: WizardWrx
+      source:
+        remote:
+          path: MoreMath/MoreMath.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API.git
+        id: IsGregorianLeapYear
+        path: ../MoreMath/MoreMath.cs
+        startLine: 706
+      summary: "\nGiven a valid year, return True if the year is a leap year, else\nreturn False.\n\nIf the input year is invalid, an ArgumentOutOfRange exception is\nthrown.\n\nAccording to the first reference cited below, the Grgorian\ncalendar was adopted in 1582. Hence, this formula is invalid for\nyears before 1583. Consequently, any year before 1583 is treated\nas invalid, and an ArgumentOutOfRange exception is thrown, which is\nenforced by the IsValidGregorianYear method.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public static bool IsGregorianLeapYear(int pintYear, bool pfThrowError = null)
+          VB: Public Shared Function IsGregorianLeapYear(pintYear As Integer, pfThrowError As Boolean = Nothing) As Boolean
+        parameters:
+        - id: pintYear
+          type: System.Int32
+          description: "\nGregorian year number, greater than 1582, to evaluate\n"
+        - id: pfThrowError
+          type: System.Boolean
+          description: "\nSpecify FALSE_ON_INVALID_INPUT to suppress the default behavior,\nwhich is for IsValidGregorianYear, when called upon to validate\n<code data-dev-comment-type=\"paramref\" class=\"paramref\">pintYear</code>, to throw an ArgumentOutOfRangeException\nexception. The default value is EXCEPTION_ON_INVALID_INPUT (true).\n"
+        return:
+          type: System.Boolean
+          description: "\nTRUE if <code data-dev-comment-type=\"paramref\" class=\"paramref\">pintYear</code> is a leap year, else FALSE.\n"
+      overload: WizardWrx.MoreMath.IsGregorianLeapYear*
+      see:
+      - linkType: HRef
+        linkId: https://www.tondering.dk/claus/cal/christian.php
+        altText: https://www.tondering.dk/claus/cal/christian.php
+      - linkType: HRef
+        linkId: https://support.microsoft.com/en-us/help/214019/method-to-determine-whether-a-year-is-a-leap-year
+        altText: https://support.microsoft.com/en-us/help/214019/method-to-determine-whether-a-year-is-a-leap-year
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+    - id: WizardWrx.MoreMath.IsValidGregorianYear(System.Int32,System.Boolean)
+      commentId: M:WizardWrx.MoreMath.IsValidGregorianYear(System.Int32,System.Boolean)
+      language: CSharp
+      name:
+        CSharp: IsValidGregorianYear(Int32, Boolean)
+        VB: IsValidGregorianYear(Int32, Boolean)
+      nameWithType:
+        CSharp: MoreMath.IsValidGregorianYear(Int32, Boolean)
+        VB: MoreMath.IsValidGregorianYear(Int32, Boolean)
+      qualifiedName:
+        CSharp: WizardWrx.MoreMath.IsValidGregorianYear(System.Int32, System.Boolean)
+        VB: WizardWrx.MoreMath.IsValidGregorianYear(System.Int32, System.Boolean)
+      type: Method
+      assemblies:
+      - WizardWrx.MoreMath
+      namespace: WizardWrx
+      source:
+        remote:
+          path: MoreMath/MoreMath.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API.git
+        id: IsValidGregorianYear
+        path: ../MoreMath/MoreMath.cs
+        startLine: 789
+      summary: "\nThis method returns True if the year is valid for the Gregorian\ncalendar.\n\nThe lower limit is exposed as a public constant,\nGRGORIAN_CALENDAR_ADOPTION_YEAR.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public static bool IsValidGregorianYear(int pintYear, bool pfThrowError)
+          VB: Public Shared Function IsValidGregorianYear(pintYear As Integer, pfThrowError As Boolean) As Boolean
+        parameters:
+        - id: pintYear
+          type: System.Int32
+          description: "\nGregorian year number, greater than 1582, to evaluate\n"
+        - id: pfThrowError
+          type: System.Boolean
+          description: "\nTRUE if caller wants an invalid input to provoke an exception.\n\nTo inprove the quality of your internal documentation, You may use\npublic constant EXCEPTION_ON_INVALID_INPUT in lieu of TRUE, and\nRETURN_ON_INVALID_INPUT in lieu of FALSE.\n"
+        return:
+          type: System.Boolean
+          description: "\nTRUE if the input is a valid Gregorian year.\n"
+      overload: WizardWrx.MoreMath.IsValidGregorianYear*
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+    - id: WizardWrx.MoreMath.Mod(System.Int32,System.Int32)
+      commentId: M:WizardWrx.MoreMath.Mod(System.Int32,System.Int32)
+      language: CSharp
+      name:
+        CSharp: Mod(Int32, Int32)
+        VB: Mod(Int32, Int32)
+      nameWithType:
+        CSharp: MoreMath.Mod(Int32, Int32)
+        VB: MoreMath.Mod(Int32, Int32)
+      qualifiedName:
+        CSharp: WizardWrx.MoreMath.Mod(System.Int32, System.Int32)
+        VB: WizardWrx.MoreMath.Mod(System.Int32, System.Int32)
+      type: Method
+      assemblies:
+      - WizardWrx.MoreMath
+      namespace: WizardWrx
+      source:
+        remote:
+          path: MoreMath/MoreMath.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API.git
+        id: Mod
+        path: ../MoreMath/MoreMath.cs
+        startLine: 839
+      summary: "\nReturn the modulus, which is the remainder from dividing one integer\nby another.\n"
+      remarks: "\nThe Mod and Remainder methods are synonymns. Their simplicity lends\nthem to inline implementation.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public static int Mod(int pintDividend, int pintDivisor)
+          VB: Public Shared Function Mod(pintDividend As Integer, pintDivisor As Integer) As Integer
+        parameters:
+        - id: pintDividend
+          type: System.Int32
+          description: "\nSpecify the number into which <code data-dev-comment-type=\"paramref\" class=\"paramref\">pintDivisor</code> should\nbe divided to obtain a remainder.\n"
+        - id: pintDivisor
+          type: System.Int32
+          description: "\nSpecify the number by which <code data-dev-comment-type=\"paramref\" class=\"paramref\">pintDividend</code> should\nbe divided to obtain a remainder.\n"
+        return:
+          type: System.Int32
+          description: "\nThe return value is the integer result of dividing\n<code data-dev-comment-type=\"paramref\" class=\"paramref\">pintDividend</code> by <code data-dev-comment-type=\"paramref\" class=\"paramref\">pintDivisor</code>.\n"
+      overload: WizardWrx.MoreMath.Mod*
+      seealso:
+      - linkId: WizardWrx.MoreMath.Remainder(System.Int32,System.Int32)
+        commentId: M:WizardWrx.MoreMath.Remainder(System.Int32,System.Int32)
+      - linkId: WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int32,System.Int32)
+        commentId: M:WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int32,System.Int32)
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+      references:
+        WizardWrx.MoreMath.Remainder(System.Int32,System.Int32): 
+        WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int32,System.Int32): 
+    - id: WizardWrx.MoreMath.Mod(System.Int64,System.Int64)
+      commentId: M:WizardWrx.MoreMath.Mod(System.Int64,System.Int64)
+      language: CSharp
+      name:
+        CSharp: Mod(Int64, Int64)
+        VB: Mod(Int64, Int64)
+      nameWithType:
+        CSharp: MoreMath.Mod(Int64, Int64)
+        VB: MoreMath.Mod(Int64, Int64)
+      qualifiedName:
+        CSharp: WizardWrx.MoreMath.Mod(System.Int64, System.Int64)
+        VB: WizardWrx.MoreMath.Mod(System.Int64, System.Int64)
+      type: Method
+      assemblies:
+      - WizardWrx.MoreMath
+      namespace: WizardWrx
+      source:
+        remote:
+          path: MoreMath/MoreMath.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API.git
+        id: Mod
+        path: ../MoreMath/MoreMath.cs
+        startLine: 888
+      summary: "\nReturn the modulus, which is the remainder from dividing one integer\nby another.\n"
+      remarks: "\nThe Mod and Remainder methods are synonymns. Their simplicity lends\nthem to inline implementation.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public static long Mod(long plngDividend, long plngDivisor)
+          VB: Public Shared Function Mod(plngDividend As Long, plngDivisor As Long) As Long
+        parameters:
+        - id: plngDividend
+          type: System.Int64
+          description: "\nSpecify the number into which <code data-dev-comment-type=\"paramref\" class=\"paramref\">plngDivisor</code> should\nbe divided to obtain a remainder.\n"
+        - id: plngDivisor
+          type: System.Int64
+          description: "\nSpecify the number by which <code data-dev-comment-type=\"paramref\" class=\"paramref\">plngDividend</code> should\nbe divided to obtain a remainder.\n"
+        return:
+          type: System.Int64
+          description: "\nThe return value is the long integer result of dividing\n<code data-dev-comment-type=\"paramref\" class=\"paramref\">plngDividend</code> by <code data-dev-comment-type=\"paramref\" class=\"paramref\">plngDivisor</code>.\n"
+      overload: WizardWrx.MoreMath.Mod*
+      seealso:
+      - linkId: WizardWrx.MoreMath.Remainder(System.Int64,System.Int64)
+        commentId: M:WizardWrx.MoreMath.Remainder(System.Int64,System.Int64)
+      - linkId: WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int32,System.Int32)
+        commentId: M:WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int32,System.Int32)
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+      references:
+        WizardWrx.MoreMath.Remainder(System.Int64,System.Int64): 
+        WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int32,System.Int32): 
+    - id: WizardWrx.MoreMath.Remainder(System.Int32,System.Int32)
+      commentId: M:WizardWrx.MoreMath.Remainder(System.Int32,System.Int32)
+      language: CSharp
+      name:
+        CSharp: Remainder(Int32, Int32)
+        VB: Remainder(Int32, Int32)
+      nameWithType:
+        CSharp: MoreMath.Remainder(Int32, Int32)
+        VB: MoreMath.Remainder(Int32, Int32)
+      qualifiedName:
+        CSharp: WizardWrx.MoreMath.Remainder(System.Int32, System.Int32)
+        VB: WizardWrx.MoreMath.Remainder(System.Int32, System.Int32)
+      type: Method
+      assemblies:
+      - WizardWrx.MoreMath
+      namespace: WizardWrx
+      source:
+        remote:
+          path: MoreMath/MoreMath.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API.git
+        id: Remainder
+        path: ../MoreMath/MoreMath.cs
+        startLine: 937
+      summary: "\nReturn the modulus, which is the remainder from dividing one integer\nby another.\n"
+      remarks: "\nThe Mod and Remainder methods are synonymns. Their simplicity lends\nthem to inline implementation.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public static int Remainder(int pintDividend, int pintDivisor)
+          VB: Public Shared Function Remainder(pintDividend As Integer, pintDivisor As Integer) As Integer
+        parameters:
+        - id: pintDividend
+          type: System.Int32
+          description: "\nSpecify the number into which <code data-dev-comment-type=\"paramref\" class=\"paramref\">pintDivisor</code> should\nbe divided to obtain a remainder.\n"
+        - id: pintDivisor
+          type: System.Int32
+          description: "\nSpecify the number by which <code data-dev-comment-type=\"paramref\" class=\"paramref\">pintDividend</code> should\nbe divided to obtain a remainder.\n"
+        return:
+          type: System.Int32
+          description: "\nThe return value is the integer result of dividing\n<code data-dev-comment-type=\"paramref\" class=\"paramref\">pintDividend</code> by <code data-dev-comment-type=\"paramref\" class=\"paramref\">pintDivisor</code>.\n"
+      overload: WizardWrx.MoreMath.Remainder*
+      seealso:
+      - linkId: WizardWrx.MoreMath.Mod(System.Int32,System.Int32)
+        commentId: M:WizardWrx.MoreMath.Mod(System.Int32,System.Int32)
+      - linkId: WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int32,System.Int32)
+        commentId: M:WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int32,System.Int32)
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+      references:
+        WizardWrx.MoreMath.Mod(System.Int32,System.Int32): 
+        WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int32,System.Int32): 
+    - id: WizardWrx.MoreMath.Remainder(System.Int64,System.Int64)
+      commentId: M:WizardWrx.MoreMath.Remainder(System.Int64,System.Int64)
+      language: CSharp
+      name:
+        CSharp: Remainder(Int64, Int64)
+        VB: Remainder(Int64, Int64)
+      nameWithType:
+        CSharp: MoreMath.Remainder(Int64, Int64)
+        VB: MoreMath.Remainder(Int64, Int64)
+      qualifiedName:
+        CSharp: WizardWrx.MoreMath.Remainder(System.Int64, System.Int64)
+        VB: WizardWrx.MoreMath.Remainder(System.Int64, System.Int64)
+      type: Method
+      assemblies:
+      - WizardWrx.MoreMath
+      namespace: WizardWrx
+      source:
+        remote:
+          path: MoreMath/MoreMath.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API.git
+        id: Remainder
+        path: ../MoreMath/MoreMath.cs
+        startLine: 986
+      summary: "\nReturn the modulus, which is the remainder from dividing one integer\nby another.\n"
+      remarks: "\nThe Mod and Remainder methods are synonymns. Their simplicity lends\nthem to inline implementation.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public static long Remainder(long plngDividend, long plngDivisor)
+          VB: Public Shared Function Remainder(plngDividend As Long, plngDivisor As Long) As Long
+        parameters:
+        - id: plngDividend
+          type: System.Int64
+          description: "\nSpecify the number into which <code data-dev-comment-type=\"paramref\" class=\"paramref\">plngDivisor</code> should\nbe divided to obtain a remainder.\n"
+        - id: plngDivisor
+          type: System.Int64
+          description: "\nSpecify the number by which <code data-dev-comment-type=\"paramref\" class=\"paramref\">plngDividend</code> should\nbe divided to obtain a remainder.\n"
+        return:
+          type: System.Int64
+          description: "\nThe return value is the integer result of dividing\n<code data-dev-comment-type=\"paramref\" class=\"paramref\">plngDividend</code> by <code data-dev-comment-type=\"paramref\" class=\"paramref\">plngDivisor</code>.\n"
+      overload: WizardWrx.MoreMath.Remainder*
+      seealso:
+      - linkId: WizardWrx.MoreMath.Mod(System.Int64,System.Int64)
+        commentId: M:WizardWrx.MoreMath.Mod(System.Int64,System.Int64)
+      - linkId: WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int64,System.Int64)
+        commentId: M:WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int64,System.Int64)
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+      references:
+        WizardWrx.MoreMath.Mod(System.Int64,System.Int64): 
+        WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int64,System.Int64): 
+    - id: WizardWrx.MoreMath.IncrementAndReturnNewValue(System.Int32@)
+      commentId: M:WizardWrx.MoreMath.IncrementAndReturnNewValue(System.Int32@)
+      language: CSharp
+      name:
+        CSharp: IncrementAndReturnNewValue(ref Int32)
+        VB: IncrementAndReturnNewValue(ByRef Int32)
+      nameWithType:
+        CSharp: MoreMath.IncrementAndReturnNewValue(ref Int32)
+        VB: MoreMath.IncrementAndReturnNewValue(ByRef Int32)
+      qualifiedName:
+        CSharp: WizardWrx.MoreMath.IncrementAndReturnNewValue(ref System.Int32)
+        VB: WizardWrx.MoreMath.IncrementAndReturnNewValue(ByRef System.Int32)
+      type: Method
+      assemblies:
+      - WizardWrx.MoreMath
+      namespace: WizardWrx
+      source:
+        remote:
+          path: MoreMath/MoreMath.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API.git
+        id: IncrementAndReturnNewValue
+        path: ../MoreMath/MoreMath.cs
+        startLine: 1020
+      summary: "\nIncrement a static (shared in Visual Basic) value, returning the\nincremented value.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public static int IncrementAndReturnNewValue(ref int IncrementThisValue)
+          VB: Public Shared Function IncrementAndReturnNewValue(ByRef IncrementThisValue As Integer) As Integer
+        parameters:
+        - id: IncrementThisValue
+          type: System.Int32
+          description: "\nPass in a reference to the shared value to increment and return.\n<p>Since the value is incremented, it must be passed explicitly\nby reference.\n</p>\n"
+        return:
+          type: System.Int32
+          description: "\nThe return value is the initial value of\n<code data-dev-comment-type=\"paramref\" class=\"paramref\">IncrementThisValue</code> plus one, which also becomes\nthe new value of <code data-dev-comment-type=\"paramref\" class=\"paramref\">IncrementThisValue</code>.\n"
+      overload: WizardWrx.MoreMath.IncrementAndReturnNewValue*
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+    - id: WizardWrx.MoreMath.IncrementAndReturnNewValue(System.Int64@)
+      commentId: M:WizardWrx.MoreMath.IncrementAndReturnNewValue(System.Int64@)
+      language: CSharp
+      name:
+        CSharp: IncrementAndReturnNewValue(ref Int64)
+        VB: IncrementAndReturnNewValue(ByRef Int64)
+      nameWithType:
+        CSharp: MoreMath.IncrementAndReturnNewValue(ref Int64)
+        VB: MoreMath.IncrementAndReturnNewValue(ByRef Int64)
+      qualifiedName:
+        CSharp: WizardWrx.MoreMath.IncrementAndReturnNewValue(ref System.Int64)
+        VB: WizardWrx.MoreMath.IncrementAndReturnNewValue(ByRef System.Int64)
+      type: Method
+      assemblies:
+      - WizardWrx.MoreMath
+      namespace: WizardWrx
+      source:
+        remote:
+          path: MoreMath/MoreMath.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API.git
+        id: IncrementAndReturnNewValue
+        path: ../MoreMath/MoreMath.cs
+        startLine: 1042
+      summary: "\nIncrement a static (shared in Visual Basic) value, returning the\nincremented value.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public static long IncrementAndReturnNewValue(ref long IncrementThisValue)
+          VB: Public Shared Function IncrementAndReturnNewValue(ByRef IncrementThisValue As Long) As Long
+        parameters:
+        - id: IncrementThisValue
+          type: System.Int64
+          description: "\nPass in a reference to the shared value to increment and return.\n<p>Since the value is incremented, it must be passed explicitly\nby reference.\n</p>\n"
+        return:
+          type: System.Int64
+          description: "\nThe return value is the initial value of\n<code data-dev-comment-type=\"paramref\" class=\"paramref\">IncrementThisValue</code> plus one, which also becomes\nthe new value of <code data-dev-comment-type=\"paramref\" class=\"paramref\">IncrementThisValue</code>.\n"
+      overload: WizardWrx.MoreMath.IncrementAndReturnNewValue*
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+    - id: WizardWrx.MoreMath.IncrementAndReturnNewValue(System.UInt32@)
+      commentId: M:WizardWrx.MoreMath.IncrementAndReturnNewValue(System.UInt32@)
+      language: CSharp
+      name:
+        CSharp: IncrementAndReturnNewValue(ref UInt32)
+        VB: IncrementAndReturnNewValue(ByRef UInt32)
+      nameWithType:
+        CSharp: MoreMath.IncrementAndReturnNewValue(ref UInt32)
+        VB: MoreMath.IncrementAndReturnNewValue(ByRef UInt32)
+      qualifiedName:
+        CSharp: WizardWrx.MoreMath.IncrementAndReturnNewValue(ref System.UInt32)
+        VB: WizardWrx.MoreMath.IncrementAndReturnNewValue(ByRef System.UInt32)
+      type: Method
+      assemblies:
+      - WizardWrx.MoreMath
+      namespace: WizardWrx
+      source:
+        remote:
+          path: MoreMath/MoreMath.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API.git
+        id: IncrementAndReturnNewValue
+        path: ../MoreMath/MoreMath.cs
+        startLine: 1064
+      summary: "\nIncrement a static (shared in Visual Basic) value, returning the\nincremented value.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public static uint IncrementAndReturnNewValue(ref uint IncrementThisValue)
+          VB: Public Shared Function IncrementAndReturnNewValue(ByRef IncrementThisValue As UInteger) As UInteger
+        parameters:
+        - id: IncrementThisValue
+          type: System.UInt32
+          description: "\nPass in a reference to the shared value to increment and return.\n<p>Since the value is incremented, it must be passed explicitly\nby reference.\n</p>\n"
+        return:
+          type: System.UInt32
+          description: "\nThe return value is the initial value of\n<code data-dev-comment-type=\"paramref\" class=\"paramref\">IncrementThisValue</code> plus one, which also becomes\nthe new value of <code data-dev-comment-type=\"paramref\" class=\"paramref\">IncrementThisValue</code>.\n"
+      overload: WizardWrx.MoreMath.IncrementAndReturnNewValue*
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+    - id: WizardWrx.MoreMath.IncrementAndReturnNewValue(System.UInt64@)
+      commentId: M:WizardWrx.MoreMath.IncrementAndReturnNewValue(System.UInt64@)
+      language: CSharp
+      name:
+        CSharp: IncrementAndReturnNewValue(ref UInt64)
+        VB: IncrementAndReturnNewValue(ByRef UInt64)
+      nameWithType:
+        CSharp: MoreMath.IncrementAndReturnNewValue(ref UInt64)
+        VB: MoreMath.IncrementAndReturnNewValue(ByRef UInt64)
+      qualifiedName:
+        CSharp: WizardWrx.MoreMath.IncrementAndReturnNewValue(ref System.UInt64)
+        VB: WizardWrx.MoreMath.IncrementAndReturnNewValue(ByRef System.UInt64)
+      type: Method
+      assemblies:
+      - WizardWrx.MoreMath
+      namespace: WizardWrx
+      source:
+        remote:
+          path: MoreMath/MoreMath.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API.git
+        id: IncrementAndReturnNewValue
+        path: ../MoreMath/MoreMath.cs
+        startLine: 1086
+      summary: "\nIncrement a static (shared in Visual Basic) value, returning the\nincremented value.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public static ulong IncrementAndReturnNewValue(ref ulong IncrementThisValue)
+          VB: Public Shared Function IncrementAndReturnNewValue(ByRef IncrementThisValue As ULong) As ULong
+        parameters:
+        - id: IncrementThisValue
+          type: System.UInt64
+          description: "\nPass in a reference to the shared value to increment and return.\n<p>Since the value is incremented, it must be passed explicitly\nby reference.\n</p>\n"
+        return:
+          type: System.UInt64
+          description: "\nThe return value is the initial value of\n<code data-dev-comment-type=\"paramref\" class=\"paramref\">IncrementThisValue</code> plus one, which also becomes\nthe new value of <code data-dev-comment-type=\"paramref\" class=\"paramref\">IncrementThisValue</code>.\n"
+      overload: WizardWrx.MoreMath.IncrementAndReturnNewValue*
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+references:
+  System.Boolean:
+    name:
+      CSharp:
+      - id: System.Boolean
+        name: Boolean
+        nameWithType: Boolean
+        qualifiedName: System.Boolean
+        isExternal: true
+      VB:
+      - id: System.Boolean
+        name: Boolean
+        nameWithType: Boolean
+        qualifiedName: System.Boolean
+        isExternal: true
+    isDefinition: true
+  System.Int32:
+    name:
+      CSharp:
+      - id: System.Int32
+        name: Int32
+        nameWithType: Int32
+        qualifiedName: System.Int32
+        isExternal: true
+      VB:
+      - id: System.Int32
+        name: Int32
+        nameWithType: Int32
+        qualifiedName: System.Int32
+        isExternal: true
+    isDefinition: true
+  WizardWrx.MoreMath.DecimalShiftLeft*:
+    name:
+      CSharp:
+      - id: WizardWrx.MoreMath.DecimalShiftLeft*
+        name: DecimalShiftLeft
+        nameWithType: MoreMath.DecimalShiftLeft
+        qualifiedName: WizardWrx.MoreMath.DecimalShiftLeft
+      VB:
+      - id: WizardWrx.MoreMath.DecimalShiftLeft*
+        name: DecimalShiftLeft
+        nameWithType: MoreMath.DecimalShiftLeft
+        qualifiedName: WizardWrx.MoreMath.DecimalShiftLeft
+    isDefinition: true
+    commentId: Overload:WizardWrx.MoreMath.DecimalShiftLeft
+  System.Int64:
+    name:
+      CSharp:
+      - id: System.Int64
+        name: Int64
+        nameWithType: Int64
+        qualifiedName: System.Int64
+        isExternal: true
+      VB:
+      - id: System.Int64
+        name: Int64
+        nameWithType: Int64
+        qualifiedName: System.Int64
+        isExternal: true
+    isDefinition: true
+  System.UInt32:
+    name:
+      CSharp:
+      - id: System.UInt32
+        name: UInt32
+        nameWithType: UInt32
+        qualifiedName: System.UInt32
+        isExternal: true
+      VB:
+      - id: System.UInt32
+        name: UInt32
+        nameWithType: UInt32
+        qualifiedName: System.UInt32
+        isExternal: true
+    isDefinition: true
+  System.UInt64:
+    name:
+      CSharp:
+      - id: System.UInt64
+        name: UInt64
+        nameWithType: UInt64
+        qualifiedName: System.UInt64
+        isExternal: true
+      VB:
+      - id: System.UInt64
+        name: UInt64
+        nameWithType: UInt64
+        qualifiedName: System.UInt64
+        isExternal: true
+    isDefinition: true
+  WizardWrx.MoreMath.DecimalShiftRight*:
+    name:
+      CSharp:
+      - id: WizardWrx.MoreMath.DecimalShiftRight*
+        name: DecimalShiftRight
+        nameWithType: MoreMath.DecimalShiftRight
+        qualifiedName: WizardWrx.MoreMath.DecimalShiftRight
+      VB:
+      - id: WizardWrx.MoreMath.DecimalShiftRight*
+        name: DecimalShiftRight
+        nameWithType: MoreMath.DecimalShiftRight
+        qualifiedName: WizardWrx.MoreMath.DecimalShiftRight
+    isDefinition: true
+    commentId: Overload:WizardWrx.MoreMath.DecimalShiftRight
+  System.Single:
+    name:
+      CSharp:
+      - id: System.Single
+        name: Single
+        nameWithType: Single
+        qualifiedName: System.Single
+        isExternal: true
+      VB:
+      - id: System.Single
+        name: Single
+        nameWithType: Single
+        qualifiedName: System.Single
+        isExternal: true
+    isDefinition: true
+  System.Decimal:
+    name:
+      CSharp:
+      - id: System.Decimal
+        name: Decimal
+        nameWithType: Decimal
+        qualifiedName: System.Decimal
+        isExternal: true
+      VB:
+      - id: System.Decimal
+        name: Decimal
+        nameWithType: Decimal
+        qualifiedName: System.Decimal
+        isExternal: true
+    isDefinition: true
+  System.Double:
+    name:
+      CSharp:
+      - id: System.Double
+        name: Double
+        nameWithType: Double
+        qualifiedName: System.Double
+        isExternal: true
+      VB:
+      - id: System.Double
+        name: Double
+        nameWithType: Double
+        qualifiedName: System.Double
+        isExternal: true
+    isDefinition: true
+  WizardWrx.MoreMath.Mod(System.Int32,System.Int32):
+    commentId: M:WizardWrx.MoreMath.Mod(System.Int32,System.Int32)
+  WizardWrx.MoreMath.Remainder(System.Int32,System.Int32):
+    commentId: M:WizardWrx.MoreMath.Remainder(System.Int32,System.Int32)
+  WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger*:
+    name:
+      CSharp:
+      - id: WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger*
+        name: IsEvenlyDivisibleByAnyInteger
+        nameWithType: MoreMath.IsEvenlyDivisibleByAnyInteger
+        qualifiedName: WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger
+      VB:
+      - id: WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger*
+        name: IsEvenlyDivisibleByAnyInteger
+        nameWithType: MoreMath.IsEvenlyDivisibleByAnyInteger
+        qualifiedName: WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger
+    isDefinition: true
+    commentId: Overload:WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger
+  WizardWrx.MoreMath.Mod(System.Int64,System.Int64):
+    commentId: M:WizardWrx.MoreMath.Mod(System.Int64,System.Int64)
+  WizardWrx.MoreMath.Remainder(System.Int64,System.Int64):
+    commentId: M:WizardWrx.MoreMath.Remainder(System.Int64,System.Int64)
+  WizardWrx.MoreMath.IsGregorianLeapYear*:
+    name:
+      CSharp:
+      - id: WizardWrx.MoreMath.IsGregorianLeapYear*
+        name: IsGregorianLeapYear
+        nameWithType: MoreMath.IsGregorianLeapYear
+        qualifiedName: WizardWrx.MoreMath.IsGregorianLeapYear
+      VB:
+      - id: WizardWrx.MoreMath.IsGregorianLeapYear*
+        name: IsGregorianLeapYear
+        nameWithType: MoreMath.IsGregorianLeapYear
+        qualifiedName: WizardWrx.MoreMath.IsGregorianLeapYear
+    isDefinition: true
+    commentId: Overload:WizardWrx.MoreMath.IsGregorianLeapYear
+  WizardWrx.MoreMath.IsValidGregorianYear*:
+    name:
+      CSharp:
+      - id: WizardWrx.MoreMath.IsValidGregorianYear*
+        name: IsValidGregorianYear
+        nameWithType: MoreMath.IsValidGregorianYear
+        qualifiedName: WizardWrx.MoreMath.IsValidGregorianYear
+      VB:
+      - id: WizardWrx.MoreMath.IsValidGregorianYear*
+        name: IsValidGregorianYear
+        nameWithType: MoreMath.IsValidGregorianYear
+        qualifiedName: WizardWrx.MoreMath.IsValidGregorianYear
+    isDefinition: true
+    commentId: Overload:WizardWrx.MoreMath.IsValidGregorianYear
+  WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int32,System.Int32):
+    commentId: M:WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int32,System.Int32)
+  WizardWrx.MoreMath.Mod*:
+    name:
+      CSharp:
+      - id: WizardWrx.MoreMath.Mod*
+        name: Mod
+        nameWithType: MoreMath.Mod
+        qualifiedName: WizardWrx.MoreMath.Mod
+      VB:
+      - id: WizardWrx.MoreMath.Mod*
+        name: Mod
+        nameWithType: MoreMath.Mod
+        qualifiedName: WizardWrx.MoreMath.Mod
+    isDefinition: true
+    commentId: Overload:WizardWrx.MoreMath.Mod
+  WizardWrx.MoreMath.Remainder*:
+    name:
+      CSharp:
+      - id: WizardWrx.MoreMath.Remainder*
+        name: Remainder
+        nameWithType: MoreMath.Remainder
+        qualifiedName: WizardWrx.MoreMath.Remainder
+      VB:
+      - id: WizardWrx.MoreMath.Remainder*
+        name: Remainder
+        nameWithType: MoreMath.Remainder
+        qualifiedName: WizardWrx.MoreMath.Remainder
+    isDefinition: true
+    commentId: Overload:WizardWrx.MoreMath.Remainder
+  WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int64,System.Int64):
+    commentId: M:WizardWrx.MoreMath.IsEvenlyDivisibleByAnyInteger(System.Int64,System.Int64)
+  WizardWrx.MoreMath.IncrementAndReturnNewValue*:
+    name:
+      CSharp:
+      - id: WizardWrx.MoreMath.IncrementAndReturnNewValue*
+        name: IncrementAndReturnNewValue
+        nameWithType: MoreMath.IncrementAndReturnNewValue
+        qualifiedName: WizardWrx.MoreMath.IncrementAndReturnNewValue
+      VB:
+      - id: WizardWrx.MoreMath.IncrementAndReturnNewValue*
+        name: IncrementAndReturnNewValue
+        nameWithType: MoreMath.IncrementAndReturnNewValue
+        qualifiedName: WizardWrx.MoreMath.IncrementAndReturnNewValue
+    isDefinition: true
+    commentId: Overload:WizardWrx.MoreMath.IncrementAndReturnNewValue
+  WizardWrx.MoreMath:
+    name:
+      CSharp:
+      - id: WizardWrx.MoreMath
+        name: MoreMath
+        nameWithType: MoreMath
+        qualifiedName: WizardWrx.MoreMath
+      VB:
+      - id: WizardWrx.MoreMath
+        name: MoreMath
+        nameWithType: MoreMath
+        qualifiedName: WizardWrx.MoreMath
+    isDefinition: true
+    commentId: T:WizardWrx.MoreMath
+  WizardWrx:
+    name:
+      CSharp:
+      - name: WizardWrx
+        nameWithType: WizardWrx
+        qualifiedName: WizardWrx
+      VB:
+      - name: WizardWrx
+        nameWithType: WizardWrx
+        qualifiedName: WizardWrx
+    isDefinition: true
+    commentId: N:WizardWrx

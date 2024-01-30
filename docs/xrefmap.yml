@@ -168,6 +168,19 @@ references:
   isSpec: "True"
   fullName: DLLServices2TestStand.Properties.Resources.CMDARG_EXERCISE_TRUNCATEVALUETOONELINE
   nameWithType: Resources.CMDARG_EXERCISE_TRUNCATEVALUETOONELINE
+- uid: DLLServices2TestStand.Properties.Resources.CMDARG_EXTRACT_BOUNDED_SUBSTRINGS
+  name: CMDARG_EXTRACT_BOUNDED_SUBSTRINGS
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_CMDARG_EXTRACT_BOUNDED_SUBSTRINGS
+  commentId: P:DLLServices2TestStand.Properties.Resources.CMDARG_EXTRACT_BOUNDED_SUBSTRINGS
+  fullName: DLLServices2TestStand.Properties.Resources.CMDARG_EXTRACT_BOUNDED_SUBSTRINGS
+  nameWithType: Resources.CMDARG_EXTRACT_BOUNDED_SUBSTRINGS
+- uid: DLLServices2TestStand.Properties.Resources.CMDARG_EXTRACT_BOUNDED_SUBSTRINGS*
+  name: CMDARG_EXTRACT_BOUNDED_SUBSTRINGS
+  href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_CMDARG_EXTRACT_BOUNDED_SUBSTRINGS_
+  commentId: Overload:DLLServices2TestStand.Properties.Resources.CMDARG_EXTRACT_BOUNDED_SUBSTRINGS
+  isSpec: "True"
+  fullName: DLLServices2TestStand.Properties.Resources.CMDARG_EXTRACT_BOUNDED_SUBSTRINGS
+  nameWithType: Resources.CMDARG_EXTRACT_BOUNDED_SUBSTRINGS
 - uid: DLLServices2TestStand.Properties.Resources.CMDARG_FILE_NAME_TRICKS
   name: CMDARG_FILE_NAME_TRICKS
   href: api/DLLServices2TestStand.Properties.Resources.html#DLLServices2TestStand_Properties_Resources_CMDARG_FILE_NAME_TRICKS

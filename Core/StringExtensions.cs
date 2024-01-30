@@ -143,6 +143,9 @@
 
                            2) ChopNBSP is a new method that confinse itself to
                               chopping the nonbreaking space character.
+
+    2024/01/30 9.0.355 DAG In string extension method ExtractBoundedSubstrings, 
+                           substitute IsNullOrWhiteSpace for IsNullOrEmpty.
     ============================================================================
 */
 
@@ -1310,13 +1313,13 @@ namespace WizardWrx
             string pstrLeftBound ,
             string pstrRightBound )
         {
-            if ( string.IsNullOrEmpty ( pstrWholeString ) )
+            if ( string.IsNullOrWhiteSpace ( pstrWholeString ) )
                 return SpecialStrings.EMPTY_STRING;
 
-            if ( string.IsNullOrEmpty ( pstrLeftBound ) )
+            if ( string.IsNullOrWhiteSpace ( pstrLeftBound ) )
                 return SpecialStrings.EMPTY_STRING;
 
-            if ( string.IsNullOrEmpty ( pstrRightBound ) )
+            if ( string.IsNullOrWhiteSpace ( pstrRightBound ) )
                 return SpecialStrings.EMPTY_STRING;
 
             int intPosLeftEnd = pstrWholeString.IndexOf ( pstrLeftBound );
