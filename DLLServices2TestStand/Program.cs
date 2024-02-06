@@ -330,6 +330,9 @@
 
     2023/01/30 9.0.1575 DAG Exercise the ExtractBoundedSubstrings String 
                             Extension method.
+
+    2024/02/05 9.0.1580 DAG Exercise the new GetAssemblyGUID and 
+                            GetAssemblyTargetFramework methods.
     ============================================================================
 */
 
@@ -1893,7 +1896,7 @@ namespace DLLServices2TestStand
                       intJ++ )
             {
                 Console.WriteLine (
-                    @"    Entry Assembly {0} = {1}" ,                               // Format Control String
+                    @"    Entry Assembly {0} = {1}" ,                           // Format Control String
                     s_aenmAttributeFriendlyName [ intJ ] ,                      // Format Item 0: Entry Assembly {0}
                     AssemblyAttributeHelpers.GetAssemblyVersionInfo (           // Format Item 1:  = {1}
                         s_aenmAttributeFriendlyName [ intJ ] ,                  // AttributeFriendlyName penmAttributeFriendlyName
@@ -1915,7 +1918,7 @@ namespace DLLServices2TestStand
                       intJ++ )
             {
                 Console.WriteLine (
-                    @"    CSVParseEngine Assembly {0} = {1}" ,                      // Format Control String
+                    @"    CSVParseEngine Assembly {0} = {1}" ,                  // Format Control String
                     s_aenmAttributeFriendlyName [ intJ ] ,                      // Format Item 0: Entry Assembly {0}
                     AssemblyAttributeHelpers.GetAssemblyVersionInfo (           // Format Item 1:  = {1}
                         s_aenmAttributeFriendlyName [ intJ ] ,                  // AttributeFriendlyName penmAttributeFriendlyName
@@ -1927,26 +1930,34 @@ namespace DLLServices2TestStand
                 Environment.NewLine );
 
             Console.WriteLine (
-                @"    Entry Assembly Company Name = {0}" ,                      // Format Control String
+                @"    Entry Assembly Company Name            = {0}" ,           // Format Control String
                 AssemblyAttributeHelpers.GetAssemblyVersionInfo (               // Format Item 0: Assembly Company Name = {0}
                     AssemblyAttributeHelpers.AttributeFriendlyName.Company ,    // AttributeFriendlyName penmAttributeFriendlyName
                     null ) );                                                   // Assembly              pasm                       = null
             Console.WriteLine (
-                @"    Entry Assembly Company Path = {0}{1}" ,                   // Format Control String
+                @"    Entry Assembly Company Path            = {0}{1}" ,        // Format Control String
                 AssemblyAttributeHelpers.GetAssemblyCompanyNameSnakeCased (     // Format Item 0: Assembly Company Path = {0}
                     null ) ,                                                    // Assembly              pasm                       = null
                 Environment.NewLine );                                          // Format Item 1: Platform-dependent newline
 
             Console.WriteLine (
-                @"    CSVParseEngine Assembly Company Name = {0}" ,             // Format Control String
+                @"    CSVParseEngine Assembly Company Name   = {0}" ,           // Format Control String
                 AssemblyAttributeHelpers.GetAssemblyVersionInfo (               // Format Item 0: Assembly Company Name = {0}
                     AssemblyAttributeHelpers.AttributeFriendlyName.Company ,    // AttributeFriendlyName penmAttributeFriendlyName
                     assemblyThis ) );                                           // Assembly              pasm                       = null
             Console.WriteLine (
-                @"    CSVParseEngine Assembly Company Path = {0}{1}" ,          // Format Control String
+                @"    CSVParseEngine Assembly Company Path   = {0}{1}" ,        // Format Control String
                 AssemblyAttributeHelpers.GetAssemblyCompanyNameSnakeCased (     // Format Item 0: Assembly Company Path = {0}
                     assemblyThis ) ,                                            // Assembly              pasm                       = null
                 Environment.NewLine );                                          // Format Item 1: Platform-dependent newline
+            Console.WriteLine (
+                @"    CSVParseEngine AssemblyGUID            = {0}{1}" ,
+                AssemblyAttributeHelpers.GetAssemblyGUID ( assemblyThis ).Value ,
+                Environment.NewLine );
+            Console.WriteLine (
+                @"    CSVParseEngine AssemblyTargetFramework = {0}{1}" ,
+                AssemblyAttributeHelpers.GetAssemblyTargetFramework ( assemblyThis ).FrameworkDisplayName ,
+                Environment.NewLine );
 
             string strAssemblyAppDataDirName = AssemblyAttributeHelpers.GetAssemblyAppDataDirectoryName ( false );
 

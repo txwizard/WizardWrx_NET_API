@@ -1,5 +1,17 @@
 ﻿# WizardWrx .NET API Change Log
 
+## 2024/02/05
+
+### WizardWrx.AssemblyUtils 9.0.275
+
+Implement two new methods, `GetAssemblyGUID` and `GetAssemblyTargetFramework`,
+which return assembly attributes that are applied during the build process, and
+are somewhat obtuse to extract.
+
+Of the two, `GetAssemblyTargetFramework` is almost certainly the most useful
+because it identifies the Microsost .NET Framework against which it was built,
+known also as its Target Framework.
+
 ## 2024/01/30
 
 ### WizardWrx.Core 9.0.355

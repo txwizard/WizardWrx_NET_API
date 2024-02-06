@@ -71,6 +71,9 @@
 
 	2021/05/19 8.0.167 DAG    New Methods: GetAssemblyCompanyNameSnakeCased
                                            GetAssemblyAppDataDirectoryName
+
+    2024/02/05 9.0.275 DAG    New Methods: GetAssemblyGUID
+                                           GetAssemblyTargetFramework
     ============================================================================
 */
 
@@ -247,6 +250,92 @@ namespace WizardWrx.AssemblyUtils
 
 
         /// <summary>
+        /// Call this method to get the AssemblyGUID that is embedded in the
+        /// assembly's metadata (See its AssemblyInfo.cs.).
+        /// </summary>
+        /// <param name="pasm">
+        /// Specify a reference to the System.Reflection.Assembly object, which
+        /// must be loaded "for real" as opposed to ReflectionOnly.
+        /// </param>
+        /// <returns>
+        /// The return value is the System.Runtime.InteropServices.GuidAttribute
+        /// assembly attribute applied to the assembly via its AssemblyInfo.cs.
+        /// </returns>
+        public static System.Runtime.InteropServices.GuidAttribute GetAssemblyGUID ( Assembly pasm )
+        {
+            if ( pasm != null )
+            {
+                object [ ] objAttribs = pasm.GetCustomAttributes (
+                    typeof (System.Runtime.InteropServices.GuidAttribute) ,
+                    false );
+
+                if ( objAttribs.Length > ArrayInfo.ARRAY_IS_EMPTY )
+                {
+                    return (System.Runtime.InteropServices.GuidAttribute) objAttribs [ ArrayInfo.ARRAY_FIRST_ELEMENT ];
+                }   // TRUE (anticipated outcome) block, if ( objAttribs.Length > ArrayInfo.ARRAY_IS_EMPTY )
+                else
+                {
+                    return null;
+                }   // FALSE (unanticipated outcome) block, if ( objAttribs.Length > ArrayInfo.ARRAY_IS_EMPTY )
+            }   // TRUE (anticipated outcome) block, if ( pasm != null )
+            else
+            {
+                return null;
+            }   // FALSE (unanticipated outcome) block, if ( pasm != null )
+        }   // public static GuidAttribute GetAssemblyGUID method
+
+
+        /// <summary>
+        /// Get the Target Framework attribute from the <paramref name="pasm"/>
+        /// assembly.
+        /// </summary>
+        /// <param name="pasm">
+        /// Specify a reference to the System.Reflection.Assembly object, which
+        /// must be loaded "for real" as opposed to ReflectionOnly.
+        /// </param>
+        /// <returns>
+        /// The return value is the System.Runtime.Versioning.TargetFrameworkAttribute
+        /// attribute applied to the assembly by the build engine.
+        /// </returns>
+        /// <remarks>
+        /// Be advised that this routine truly supports only target frameworks 
+        /// 4.0 and above. Versions 2.5, 3.0, and 3.5 are reported as version
+        /// 2.5, and versions 1.0 and 1.1 will return a null reference.
+        /// </remarks>
+        public static System.Runtime.Versioning.TargetFrameworkAttribute GetAssemblyTargetFramework ( Assembly pasm )
+        {
+            if ( pasm != null )
+            {
+                if ( pasm.ImageRuntimeVersion == @"v2.0.50727" )
+                {   // Since the TargetFrameworkAttribute first appeared on version 4.0 assemblies, previous verions must adapt.
+                    System.Runtime.Versioning.TargetFrameworkAttribute targetFrameworkAttribute = new System.Runtime.Versioning.TargetFrameworkAttribute ( pasm.ImageRuntimeVersion );
+                    targetFrameworkAttribute.FrameworkDisplayName = @".NET Framework 2.5";
+                    return targetFrameworkAttribute;
+                }   // TRUE (The target framework version is older than 4.0.) block, if ( pasm.ImageRuntimeVersion == @"v2.0.50727" )
+                else
+                {
+                    object [ ] objAttribs = pasm.GetCustomAttributes (
+                        typeof ( System.Runtime.Versioning.TargetFrameworkAttribute ) ,
+                        false );
+
+                    if ( objAttribs.Length > ArrayInfo.ARRAY_IS_EMPTY )
+                    {
+                        return ( System.Runtime.Versioning.TargetFrameworkAttribute ) objAttribs [ ArrayInfo.ARRAY_FIRST_ELEMENT ];
+                    }   // TRUE (anticipated outcome) block, if ( objAttribs.Length > ArrayInfo.ARRAY_IS_EMPTY )
+                    else
+                    {
+                        return null;
+                    }   // FALSE (unanticipated outcome) block, if ( objAttribs.Length > ArrayInfo.ARRAY_IS_EMPTY )
+                }   // FALSE (The target framework is applied to the assembly as an attribute.) block, if ( pasm.ImageRuntimeVersion == @"v2.0.50727" )
+            }   // TRUE (anticipated outcome) block, if ( pasm != null )
+            else
+            {
+                return null;
+            }   // FALSE (unanticipated outcome) block, if ( pasm != null )
+        }   // public static TargetFrameworkAttribute GetAssemblyTargetFramework
+
+
+        /// <summary>
         /// Get the AssemblyCompany property, which usually contains spaces, and
         /// often commas and other invalid characters, and either remove them or
         /// replace them with underscores.
@@ -368,9 +457,13 @@ namespace WizardWrx.AssemblyUtils
             }   // foreach ( object attrib in attribs )
 
             return rdctMatchedAttributes;
-        }   // NameValueCollection GetAssemblyAttribs
+        }   // private static Dictionary<string , string> GetAssemblyAttribs
 
 
+        /// <summary>
+        /// This private static read-only array of StringFixups objects is used
+        /// by public static method GetAssemblyCompanyNameSnakeCased.
+        /// </summary>
         private static readonly StringFixups.StringFixup [ ] s_fixups =
         {
             new StringFixups.StringFixup (

@@ -24,7 +24,7 @@
           "hash": "FCVNhCiVT6f6UQeDVBT8Ig=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -36,7 +36,7 @@
           "hash": "Uhrws/p4RvRmn89NuGXf0w=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -141,10 +141,10 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.html",
-          "hash": "g6uAzVK+vUAxoxFMHJQTng=="
+          "hash": "YgevAKVSHshC2FwlBiaIOg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -153,10 +153,10 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.html",
-          "hash": "HFPSMesRIELYy+7XDCKEWQ=="
+          "hash": "Ao9JsTqfsyalV12xlE/uqw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -252,7 +252,7 @@
           "hash": "8HaYWnrWqgtyuuA0FGbg9A=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -1416,7 +1416,7 @@
           "hash": "T8BUqtfiiYOIckKe0VPZNw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1488,7 +1488,7 @@
           "hash": "+fKJedvd2jtgOvYQrcy7Ng=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {

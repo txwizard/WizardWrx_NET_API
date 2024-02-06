@@ -2794,6 +2794,32 @@ references:
   isSpec: "True"
   fullName: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyCompanyNameSnakeCased
   nameWithType: AssemblyAttributeHelpers.GetAssemblyCompanyNameSnakeCased
+- uid: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyGUID(Assembly)
+  name: GetAssemblyGUID(Assembly)
+  href: api/WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.html#WizardWrx_AssemblyUtils_AssemblyAttributeHelpers_GetAssemblyGUID_Assembly_
+  commentId: M:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyGUID(Assembly)
+  fullName: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyGUID(Assembly)
+  nameWithType: AssemblyAttributeHelpers.GetAssemblyGUID(Assembly)
+- uid: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyGUID*
+  name: GetAssemblyGUID
+  href: api/WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.html#WizardWrx_AssemblyUtils_AssemblyAttributeHelpers_GetAssemblyGUID_
+  commentId: Overload:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyGUID
+  isSpec: "True"
+  fullName: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyGUID
+  nameWithType: AssemblyAttributeHelpers.GetAssemblyGUID
+- uid: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyTargetFramework(Assembly)
+  name: GetAssemblyTargetFramework(Assembly)
+  href: api/WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.html#WizardWrx_AssemblyUtils_AssemblyAttributeHelpers_GetAssemblyTargetFramework_Assembly_
+  commentId: M:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyTargetFramework(Assembly)
+  fullName: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyTargetFramework(Assembly)
+  nameWithType: AssemblyAttributeHelpers.GetAssemblyTargetFramework(Assembly)
+- uid: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyTargetFramework*
+  name: GetAssemblyTargetFramework
+  href: api/WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.html#WizardWrx_AssemblyUtils_AssemblyAttributeHelpers_GetAssemblyTargetFramework_
+  commentId: Overload:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyTargetFramework
+  isSpec: "True"
+  fullName: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyTargetFramework
+  nameWithType: AssemblyAttributeHelpers.GetAssemblyTargetFramework
 - uid: WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyVersionInfo(WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName,Assembly)
   name: GetAssemblyVersionInfo(AssemblyAttributeHelpers.AttributeFriendlyName, Assembly)
   href: api/WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.html#WizardWrx_AssemblyUtils_AssemblyAttributeHelpers_GetAssemblyVersionInfo_WizardWrx_AssemblyUtils_AssemblyAttributeHelpers_AttributeFriendlyName_Assembly_

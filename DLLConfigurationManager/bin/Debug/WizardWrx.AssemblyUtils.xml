@@ -120,6 +120,39 @@
             existence is not guaranteed.
             </returns>
         </member>
+        <member name="M:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyGUID(System.Reflection.Assembly)">
+            <summary>
+            Call this method to get the AssemblyGUID that is embedded in the
+            assembly's metadata (See its AssemblyInfo.cs.).
+            </summary>
+            <param name="pasm">
+            Specify a reference to the System.Reflection.Assembly object, which
+            must be loaded "for real" as opposed to ReflectionOnly.
+            </param>
+            <returns>
+            The return value is the System.Runtime.InteropServices.GuidAttribute
+            assembly attribute applied to the assembly via its AssemblyInfo.cs.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyTargetFramework(System.Reflection.Assembly)">
+            <summary>
+            Get the Target Framework attribute from the <paramref name="pasm"/>
+            assembly.
+            </summary>
+            <param name="pasm">
+            Specify a reference to the System.Reflection.Assembly object, which
+            must be loaded "for real" as opposed to ReflectionOnly.
+            </param>
+            <returns>
+            The return value is the System.Runtime.Versioning.TargetFrameworkAttribute
+            attribute applied to the assembly by the build engine.
+            </returns>
+            <remarks>
+            Be advised that this routine truly supports only target frameworks 
+            4.0 and above. Versions 2.5, 3.0, and 3.5 are reported as version
+            2.5, and versions 1.0 and 1.1 will return a null reference.
+            </remarks>
+        </member>
         <member name="M:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.GetAssemblyCompanyNameSnakeCased(System.Reflection.Assembly)">
             <summary>
             Get the AssemblyCompany property, which usually contains spaces, and
@@ -150,6 +183,12 @@
             NameValueCollection, keyed by friendly names, of the "custom"
             attributes bound to the assembly specified by <paramref name="pasm"/>.
             </returns>
+        </member>
+        <member name="F:WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.s_fixups">
+            <summary>
+            This private static read-only array of StringFixups objects is used
+            by public static method GetAssemblyCompanyNameSnakeCased.
+            </summary>
         </member>
         <member name="T:WizardWrx.AssemblyUtils.AssemblyContainer">
             <summary>
