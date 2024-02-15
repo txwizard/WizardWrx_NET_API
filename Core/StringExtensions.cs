@@ -146,6 +146,22 @@
 
     2024/01/30 9.0.355 DAG In string extension method ExtractBoundedSubstrings, 
                            substitute IsNullOrWhiteSpace for IsNullOrEmpty.
+
+    2024/02/14 9.0.357 DAG Correct a logic error in the ExtractBetweenIndexOfs
+                           overload that takes into account the length of the
+                           substring that marks the left boundary of the
+                           substring to extract by adding its length to the
+                           specified left boundary position. 
+                           
+                           The eror took the form of a nonsensical test that
+                           caused it to assume that the bounds were invalid. The
+                           objective of the invalid test was to prevent the
+                           native SubString method from throwing because of one
+                           or more invalid charaacter positions.
+
+                           This correction resolves the puzzling issue that
+                           prompted the harmless change introduced into the
+                           version of ExtractBoundedSubstrings in build 9.0.355.
     ============================================================================
 */
 
@@ -1157,11 +1173,10 @@ namespace WizardWrx
             int intToDiscard = pstrLeftMarker.Length;
 
             if ( pintPosBegin > MagicNumbers.STRING_INDEXOF_NOT_FOUND )
-                if ( pintPosEnd > pintPosBegin )
-                    if ( pintPosEnd < pstrWholeString.Length - intToDiscard )
-                        return pstrWholeString.Substring (
-                            pintPosBegin + intToDiscard ,
-                            ( pintPosEnd - pintPosBegin ) - intToDiscard );
+                if ( pintPosEnd > pintPosBegin + intToDiscard )
+                    return pstrWholeString.Substring (
+                        pintPosBegin + intToDiscard ,
+                        ( pintPosEnd - pintPosBegin ) - intToDiscard );
 
             return SpecialStrings.EMPTY_STRING;
         }   // static string ExtractBetweenIndexOfs (2 of 2)

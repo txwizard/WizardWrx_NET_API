@@ -333,6 +333,9 @@
 
     2024/02/05 9.0.1580 DAG Exercise the new GetAssemblyGUID and 
                             GetAssemblyTargetFramework methods.
+
+    2024/02/14 9.0.1583 DAG Exercise the ExtractBoundedSubstrings String 
+                            Extension method.
     ============================================================================
 */
 
@@ -1814,13 +1817,33 @@ namespace DLLServices2TestStand
             string [ ] astrInputText = EmbeddedTextFileReaders.LoadTextFileFromCallingAssembly ( TEXTFORBOUNDEDSUBSTRINGSTEST );
             Console.WriteLine ( $"TEXTFORBOUNDEDSUBSTRINGSTEST                           = {TEXTFORBOUNDEDSUBSTRINGSTEST}" );
             Console.WriteLine ( $"CALL_ID_PREFIX                                         = {CALL_ID_PREFIX}" );
-            Console.WriteLine ( $"CALL_ID_PREFIX                                         = {CALL_ID_PREFIX}" );
+            Console.WriteLine ( $"CALL_ID_SUFFIX                                         = {CALL_ID_SUFFIX}" );
             Console.WriteLine ( $"astrInputText [ ArrayInfo.ARRAY_FIRST_ELEMENT ] Length = {astrInputText [ ArrayInfo.ARRAY_FIRST_ELEMENT ].Length}{Environment.NewLine}" );
             Console.WriteLine ( $"astrInputText [ ArrayInfo.ARRAY_FIRST_ELEMENT ] Value  = {astrInputText [ ArrayInfo.ARRAY_FIRST_ELEMENT ]}{Environment.NewLine}" );
             string strCallId = astrInputText [ ArrayInfo.ARRAY_FIRST_ELEMENT ].ExtractBoundedSubstrings ( CALL_ID_PREFIX , CALL_ID_SUFFIX );
             Console.WriteLine ( $"strCallId                                              = {strCallId}" );
+            Console.WriteLine ( Exercise_ExtractBoundedSubStrings2 ( ) );
             Console.WriteLine ( $"{Environment.NewLine}Exercise_ExtractBoundedSubStrings DONE{Environment.NewLine}" );
         }   // private static void Exercise_ExtractBoundedSubStrings
+
+
+        private static string Exercise_ExtractBoundedSubStrings2 ( )
+        {
+            const string TEST_STRING = @"HarveyWatt (ID=1000)";
+            const string TEST_LEFT_BOUND = @"(ID=";
+            const string TEST_RIGHT_BOUND = SpecialStrings.PARENTHESIS_RIGHT;
+
+            string strSubstring = TEST_STRING.ExtractBoundedSubstrings ( TEST_LEFT_BOUND , TEST_RIGHT_BOUND );
+            System.Text.StringBuilder sb = new System.Text.StringBuilder ( MagicNumbers.CAPACITY_01KB );
+
+            sb.AppendLine ( $"{Environment.NewLine}Begin ExtractBoundedSubstrings test 2:{Environment.NewLine}" );
+            sb.AppendLine ( $"Test string TEST_STRING                                = {TEST_STRING}" );
+            sb.AppendLine ( $"Test left bound TEST_LEFT_BOUND                        = {TEST_LEFT_BOUND}" );
+            sb.AppendLine ( $"Test right bound TEST_RIGHT_BOUND                      = {TEST_RIGHT_BOUND}" );
+            sb.AppendLine ( $"{Environment.NewLine}Test outcome strSubstring                              = {strSubstring}{Environment.NewLine}" );
+
+            return sb.ToString ( );
+        }   // private static string Exercise_ExtractBoundedSubStrings2
 
 
         private static void ExerciseEnvTokenExpander ( )

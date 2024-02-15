@@ -144,7 +144,7 @@
           "hash": "YgevAKVSHshC2FwlBiaIOg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -156,7 +156,7 @@
           "hash": "Ao9JsTqfsyalV12xlE/uqw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -252,7 +252,7 @@
           "hash": "8HaYWnrWqgtyuuA0FGbg9A=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -1413,10 +1413,10 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.StringExtensions.html",
-          "hash": "T8BUqtfiiYOIckKe0VPZNw=="
+          "hash": "6Wk1Jk9mD9GKPdU71pZgdg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -1488,7 +1488,7 @@
           "hash": "+fKJedvd2jtgOvYQrcy7Ng=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -1583,7 +1583,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 124,
-          "skipped_file_count": 122
+          "skipped_file_count": 123
         },
         "TocDocumentProcessor": {
           "can_incremental": false,

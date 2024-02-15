@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-		<releaseNotes>In string extension method ExtractBoundedSubstrings, substitute IsNullOrWhiteSpace for IsNullOrEmpty.</releaseNotes>
+		<releaseNotes>Correct a logic error in the ExtractBetweenIndexOfs string extension method overload that takes into account the length of the substring that marks the left boundary of the substring to extract by adding its length to the specified left boundary position. See the ChangeLog for more detail.</releaseNotes>
 		<copyright>$copyright$</copyright>
     	<tags>Constants Arrays RegExp FileInfo Strings Singleton</tags>
 	</metadata>
