@@ -19,7 +19,7 @@
 
     Author:             David A. Gray
 
-    License:            Copyright (C) 2011-2022, David A. Gray. 
+    License:            Copyright (C) 2011-2024, David A. Gray. 
                         All rights reserved.
 
                         Redistribution and use in source and binary forms, with
@@ -198,6 +198,9 @@
                             namespace WizardWrx.
 
     2023/11/02 9.0.1565 DAG Exercise the new Replace method on String objects.
+
+    2024/03/18 9.0.1588 DAG Exercise the new CSVSafe4EmbeddedDoubleQuote and
+                            SQLafe4EmbeddedSingleQuote extension methods.
     ============================================================================
 */
 
@@ -228,6 +231,18 @@ namespace DLLServices2TestStand
             TEST_STRING_3 ,
             TEST_STRING_4
         };  // s_astrTestStrings array
+
+        static readonly string [ ] s_astrCSVFieeldValues =
+        { 
+            $"Ante Quote {SpecialCharacters.DOUBLE_QUOTE} Post Quote" ,
+            @"Plain String Devoid of Quotes"
+        };  // s_astrCSVFieeldValuess
+
+        static readonly string [ ] s_astrSQLColumnOrParamValues =
+        {
+            $"Ante First Single Quote{SpecialCharacters.SINGLE_QUOTE}Ante Second Single Quote{SpecialCharacters.SINGLE_QUOTE}PostAllQuotes" ,
+            @"Parameteer Devoid of Quotes"
+        };  // s_astrSQLColumnOrParamValues
 
         static readonly string [ ] s_astrStringsToCapitalize =
         {
@@ -322,17 +337,17 @@ namespace DLLServices2TestStand
                 System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,
                 ref pintTestNumber );
 
-            Console.WriteLine ( "    Public  Constant ArrayInfo.ARRAY_FIRST_ELEMENT       = {0}" , ArrayInfo.ARRAY_FIRST_ELEMENT );
-            Console.WriteLine ( "    Public  Constant ArrayInfo.ARRAY_IS_EMPTY            = {0}" , ArrayInfo.ARRAY_IS_EMPTY );
-            Console.WriteLine ( "    Public  Constant ArrayInfo.ARRAY_INVALID_INDEX       = {0}" , ArrayInfo.ARRAY_INVALID_INDEX );
-            Console.WriteLine ( "    Public  Constant ArrayInfo.INDEX_FROM_ORDINAL        = {0}" , ArrayInfo.INDEX_FROM_ORDINAL );
-            Console.WriteLine ( "    Public  Constant ArrayInfo.ARRAY_SECOND_ELEMENT      = {0}" , ArrayInfo.ARRAY_SECOND_ELEMENT );
-            Console.WriteLine ( "    Public  Constant ArrayInfo.MSO_COLLECTION_FIRST_ITEM = {0}" , ArrayInfo.MSO_COLLECTION_FIRST_ITEM );
-            Console.WriteLine ( "    Public  Constant ArrayInfo.NEXT_INDEX                = {0}" , ArrayInfo.NEXT_INDEX );
-            Console.WriteLine ( "    Public  Constant ArrayInfo.ORDINAL_FROM_INDEX        = {0}{1}" , ArrayInfo.ORDINAL_FROM_INDEX , Environment.NewLine );
+            Console.WriteLine ( @"    Public  Constant ArrayInfo.ARRAY_FIRST_ELEMENT       = {0}" , ArrayInfo.ARRAY_FIRST_ELEMENT );
+            Console.WriteLine ( @"    Public  Constant ArrayInfo.ARRAY_IS_EMPTY            = {0}" , ArrayInfo.ARRAY_IS_EMPTY );
+            Console.WriteLine ( @"    Public  Constant ArrayInfo.ARRAY_INVALID_INDEX       = {0}" , ArrayInfo.ARRAY_INVALID_INDEX );
+            Console.WriteLine ( @"    Public  Constant ArrayInfo.INDEX_FROM_ORDINAL        = {0}" , ArrayInfo.INDEX_FROM_ORDINAL );
+            Console.WriteLine ( @"    Public  Constant ArrayInfo.ARRAY_SECOND_ELEMENT      = {0}" , ArrayInfo.ARRAY_SECOND_ELEMENT );
+            Console.WriteLine ( @"    Public  Constant ArrayInfo.MSO_COLLECTION_FIRST_ITEM = {0}" , ArrayInfo.MSO_COLLECTION_FIRST_ITEM );
+            Console.WriteLine ( @"    Public  Constant ArrayInfo.NEXT_INDEX                = {0}" , ArrayInfo.NEXT_INDEX );
+            Console.WriteLine ( @"    Public  Constant ArrayInfo.ORDINAL_FROM_INDEX        = {0}{1}" , ArrayInfo.ORDINAL_FROM_INDEX , Environment.NewLine );
 
-            Console.WriteLine ( "    Public method ArrayInfo.IndexFromOrdinal             = {0,2:N0} , for pintOrdinal = {1,2:N0}" , ArrayInfo.IndexFromOrdinal ( TEST_INDEX ) , TEST_INDEX );
-            Console.WriteLine ( "    Public method ArrayInfo.OrdinalFromIndex             = {0,2:N0} , for pintIndex   = {1,2:N0}" , ArrayInfo.OrdinalFromIndex ( TEST_INDEX ) , TEST_INDEX );
+            Console.WriteLine ( @"    Public method ArrayInfo.IndexFromOrdinal             = {0,2:N0} , for pintOrdinal = {1,2:N0}" , ArrayInfo.IndexFromOrdinal ( TEST_INDEX ) , TEST_INDEX );
+            Console.WriteLine ( @"    Public method ArrayInfo.OrdinalFromIndex             = {0,2:N0} , for pintIndex   = {1,2:N0}" , ArrayInfo.OrdinalFromIndex ( TEST_INDEX ) , TEST_INDEX );
 
             return TestDone (
                 MagicNumbers.ERROR_SUCCESS ,
@@ -361,6 +376,57 @@ namespace DLLServices2TestStand
                 MagicNumbers.ERROR_SUCCESS ,
                 pintTestNumber );
         }   // CapitalizeWordsExercises method
+
+
+        internal static int StringEscapes ( ref int pintTestNumber )
+        {
+            BeginTest (
+                System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,        // string  pstrMethodName
+                ref pintTestNumber ,                                            // ref int pintTestNumber
+                true );                                                         // bool    pfIgnoreClassTestMap = false
+
+            //  ----------------------------------------------------------------
+            //  Start with CSVSafe4EmbeddedDoubleQuote.
+            //  ----------------------------------------------------------------
+
+            Console.WriteLine ( $"{Environment.NewLine}    Exercising CSVSafe4EmbeddedDoubleQuote with {s_astrCSVFieeldValues.Length} strings:{Environment.NewLine}" );
+            
+            for ( int intI = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+                      intI < s_astrCSVFieeldValues.Length ;
+                      intI++ )
+            {
+                {
+                    string strIn = s_astrCSVFieeldValues [ intI ];
+                    string strOut = strIn.CSVSafe4EmbeddedDoubleQuote ( );
+                    Console.WriteLine ( $"        Test {ArrayInfo.OrdinalFromIndex ( intI )} of {s_astrCSVFieeldValues.Length}: Input String = {strIn}, Output String = {strOut}" );
+                }
+            }   // for ( int intI = ArrayInfo.ARRAY_FIRST_ELEMENT ; intI < s_astrCSVFieeldValuess.Length ; intI++ )
+
+            Console.WriteLine ( $"{Environment.NewLine}    Finished Exercising CSVSafe4EmbeddedDoubleQuote{Environment.NewLine}" );
+
+            //  ----------------------------------------------------------------
+            //  Next, exercise SQLafe4EmbeddedSingleQuote.
+            //  ----------------------------------------------------------------
+
+            Console.WriteLine ( $"{Environment.NewLine}    Exercising SQLafe4EmbeddedSingleQuote with {s_astrSQLColumnOrParamValues.Length} strings:{Environment.NewLine}" );
+
+            for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+                      intJ < s_astrSQLColumnOrParamValues.Length ;
+                      intJ++ )
+            {
+                {
+                    string strIn = s_astrSQLColumnOrParamValues [ intJ ];
+                    string strOut = strIn.SQLafe4EmbeddedSingleQuote ( );
+                    Console.WriteLine ( $"        Test {ArrayInfo.OrdinalFromIndex ( intJ )} of {s_astrSQLColumnOrParamValues.Length}: Input String = {strIn}, Output String = {strOut}" );
+                }
+            }   // for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ; intJ < s_astrSQLColumnOrParamValues.Length ; intJ++ )
+
+            Console.WriteLine ( $"{Environment.NewLine}    Finished Exercising SQLafe4EmbeddedSingleQuote{Environment.NewLine}" );
+
+            return TestDone (
+                MagicNumbers.ERROR_SUCCESS ,
+                pintTestNumber );
+        }   // StringEscapes method
 
 
         internal static int ChopChop ( ref int pintTestNumber )
@@ -413,7 +479,7 @@ namespace DLLServices2TestStand
 
             {	// Test the null string degenerate case.
                 #if USE_STRING_EXTENSION_METHODS
-                    string strChopped = "Since there is no object to extend, the null reference case is meaningless for an extension method.";
+                    string strChopped = @"Since there is no object to extend, the null reference case is meaningless for an extension method.";
                 #else
                     string strChopped = StringTricks.Chop ( null );
                 #endif	// #if USE_STRING_EXTENSION_METHODS
@@ -472,7 +538,7 @@ namespace DLLServices2TestStand
         internal static int DisplayFormatsExercises ( ref int pintTestNumber )
         {
             const int SAMPLE_INTEGER = 65533;               // 65,535 = (2 ^^ 16) - 3
-            const double SAMPLE_FIXED_POINT = 0.997;     // 99.7%
+            const double SAMPLE_FIXED_POINT = 0.997;        // 99.7%
 
             BeginTest (
                 System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,
@@ -865,78 +931,78 @@ namespace DLLServices2TestStand
             //  Initial capacities for lists, dictionaries, and such:
             //  ----------------------------------------------------------------
 
-            Console.WriteLine ( "    MagicNumbers.CAPACITY_4                        = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_4 , MagicNumbers.CAPACITY_4.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_4.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.CAPACITY_8                        = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_8 , MagicNumbers.CAPACITY_8.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_8.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.CAPACITY_10                       = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_10 , MagicNumbers.CAPACITY_10.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_10.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.CAPACITY_16                       = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_16 , MagicNumbers.CAPACITY_16.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_16.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.CAPACITY_128                      = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_128 , MagicNumbers.CAPACITY_128.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_128.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.CAPACITY_255                      = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_255 , MagicNumbers.CAPACITY_255.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_255.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.CAPACITY_256                      = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_256 , MagicNumbers.CAPACITY_256.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_256.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.CAPACITY_4                        = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_4 , MagicNumbers.CAPACITY_4.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_4.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.CAPACITY_8                        = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_8 , MagicNumbers.CAPACITY_8.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_8.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.CAPACITY_10                       = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_10 , MagicNumbers.CAPACITY_10.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_10.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.CAPACITY_16                       = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_16 , MagicNumbers.CAPACITY_16.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_16.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.CAPACITY_128                      = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_128 , MagicNumbers.CAPACITY_128.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_128.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.CAPACITY_255                      = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_255 , MagicNumbers.CAPACITY_255.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_255.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.CAPACITY_256                      = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_256 , MagicNumbers.CAPACITY_256.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_256.ToString ( NumericFormats.HEXADECIMAL_8 ) );
 
             //  ----------------------------------------------------------------
             //  Capacities for file I/O and other buffers:
             //  ----------------------------------------------------------------
 
-            Console.WriteLine ( "    MagicNumbers.CAPACITY_01KB                     = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_01KB , MagicNumbers.CAPACITY_01KB.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_01KB.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.CAPACITY_02KB                     = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_02KB , MagicNumbers.CAPACITY_02KB.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_02KB.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.CAPACITY_04KB                     = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_04KB , MagicNumbers.CAPACITY_04KB.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_04KB.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.CAPACITY_08KB                     = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_08KB , MagicNumbers.CAPACITY_08KB.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_08KB.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.CAPACITY_16KB                     = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_16KB , MagicNumbers.CAPACITY_16KB.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_16KB.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.CAPACITY_32KB                     = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_32KB , MagicNumbers.CAPACITY_32KB.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_32KB.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.CAPACITY_64KB                     = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_64KB , MagicNumbers.CAPACITY_64KB.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_64KB.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.CAPACITY_MAX_PATH                 = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_MAX_PATH , MagicNumbers.CAPACITY_MAX_PATH.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_MAX_PATH.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.CAPACITY_01KB                     = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_01KB , MagicNumbers.CAPACITY_01KB.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_01KB.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.CAPACITY_02KB                     = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_02KB , MagicNumbers.CAPACITY_02KB.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_02KB.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.CAPACITY_04KB                     = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_04KB , MagicNumbers.CAPACITY_04KB.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_04KB.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.CAPACITY_08KB                     = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_08KB , MagicNumbers.CAPACITY_08KB.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_08KB.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.CAPACITY_16KB                     = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_16KB , MagicNumbers.CAPACITY_16KB.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_16KB.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.CAPACITY_32KB                     = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_32KB , MagicNumbers.CAPACITY_32KB.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_32KB.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.CAPACITY_64KB                     = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_64KB , MagicNumbers.CAPACITY_64KB.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_64KB.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.CAPACITY_MAX_PATH                 = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.CAPACITY_MAX_PATH , MagicNumbers.CAPACITY_MAX_PATH.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.CAPACITY_MAX_PATH.ToString ( NumericFormats.HEXADECIMAL_8 ) );
 
             //  ----------------------------------------------------------------
             //  Assorted commonly used magic numbers:
             //  ----------------------------------------------------------------
 
-            Console.WriteLine ( "    MagicNumbers.EMPTY_STRING_LENGTH               = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.EMPTY_STRING_LENGTH , MagicNumbers.EMPTY_STRING_LENGTH.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.EMPTY_STRING_LENGTH.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.ERROR_INVALID_CMD_LNE_ARGS        = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.ERROR_INVALID_CMD_LNE_ARGS , MagicNumbers.ERROR_INVALID_CMD_LNE_ARGS.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.ERROR_INVALID_CMD_LNE_ARGS.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.ERROR_RUNTIME                     = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.ERROR_RUNTIME , MagicNumbers.ERROR_RUNTIME.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.ERROR_RUNTIME.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.ERROR_SUCCESS                     = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.ERROR_SUCCESS , MagicNumbers.ERROR_SUCCESS.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.ERROR_SUCCESS.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.EVENLY_DIVISIBLE                  = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.EVENLY_DIVISIBLE , MagicNumbers.EVENLY_DIVISIBLE.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.EVENLY_DIVISIBLE.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.EXACTLY_TEN                       = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.EXACTLY_TEN , MagicNumbers.EXACTLY_TEN.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.EXACTLY_TEN.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.EXACTLY_ONE_HUNDRED               = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.EXACTLY_ONE_HUNDRED , MagicNumbers.EXACTLY_ONE_HUNDRED.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.EXACTLY_ONE_HUNDRED.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.EXACTLY_ONE_THOUSAND              = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.EXACTLY_ONE_THOUSAND , MagicNumbers.EXACTLY_ONE_THOUSAND.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.EXACTLY_ONE_THOUSAND.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.EXACTLY_TEN_THOUSAND              = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.EXACTLY_TEN_THOUSAND , MagicNumbers.EXACTLY_TEN_THOUSAND.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.EXACTLY_TEN_THOUSAND.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.EXACTLY_ONE_HUNDRED_THOUSAND      = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.EXACTLY_TEN_THOUSAND , MagicNumbers.EXACTLY_ONE_HUNDRED_THOUSAND.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.EXACTLY_ONE_HUNDRED_THOUSAND.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.EXACTLY_ONE_MILLION               = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.EXACTLY_ONE_MILLION , MagicNumbers.EXACTLY_ONE_MILLION.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.EXACTLY_ONE_MILLION.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION       = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION , MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION_LONG  = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION_LONG , MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION_LONG.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION_LONG.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.EXACTLY_ONE_BILLION               = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.EXACTLY_ONE_BILLION , MagicNumbers.EXACTLY_ONE_BILLION.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.EXACTLY_ONE_BILLION.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.MILLISECONDS_PER_SECOND           = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.MILLISECONDS_PER_SECOND , MagicNumbers.MILLISECONDS_PER_SECOND.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.MILLISECONDS_PER_SECOND.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.MINUS_ONE                         = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.MINUS_ONE , MagicNumbers.MINUS_ONE.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.MINUS_ONE.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.MSO_COLLECTION_FIRST_ITEM         = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.MSO_COLLECTION_FIRST_ITEM , MagicNumbers.MSO_COLLECTION_FIRST_ITEM.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.MSO_COLLECTION_FIRST_ITEM.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.NUMBER_BASE_DECIMAL               = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.NUMBER_BASE_DECIMAL , MagicNumbers.NUMBER_BASE_DECIMAL.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.NUMBER_BASE_DECIMAL.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.NUMBER_BASE_HEXADECIMAL           = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.NUMBER_BASE_HEXADECIMAL , MagicNumbers.NUMBER_BASE_HEXADECIMAL.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.NUMBER_BASE_HEXADECIMAL.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.PLUS_ONE                          = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.PLUS_ONE , MagicNumbers.PLUS_ONE.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.PLUS_ONE.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.PLUS_TWO                          = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.PLUS_TWO , MagicNumbers.PLUS_TWO.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.PLUS_TWO.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.PLUS_THREE                        = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.PLUS_THREE , MagicNumbers.PLUS_THREE.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.PLUS_THREE.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.PLUS_FOUR                         = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.PLUS_FOUR , MagicNumbers.PLUS_FOUR.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.PLUS_FOUR.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.PLUS_FIVE                         = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.PLUS_FIVE , MagicNumbers.PLUS_FIVE.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.PLUS_FIVE.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.PLUS_SIX                          = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.PLUS_SIX , MagicNumbers.PLUS_SIX.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.PLUS_SIX.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.PLUS_SEVEN                        = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.PLUS_SEVEN , MagicNumbers.PLUS_SEVEN.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.PLUS_SEVEN.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.PLUS_EIGHT                        = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.PLUS_EIGHT , MagicNumbers.PLUS_EIGHT.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.PLUS_EIGHT.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.PLUS_NINE                        = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.PLUS_NINE , MagicNumbers.PLUS_NINE.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.PLUS_NINE.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.EMPTY_STRING_LENGTH               = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.EMPTY_STRING_LENGTH , MagicNumbers.EMPTY_STRING_LENGTH.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.EMPTY_STRING_LENGTH.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.ERROR_INVALID_CMD_LNE_ARGS        = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.ERROR_INVALID_CMD_LNE_ARGS , MagicNumbers.ERROR_INVALID_CMD_LNE_ARGS.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.ERROR_INVALID_CMD_LNE_ARGS.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.ERROR_RUNTIME                     = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.ERROR_RUNTIME , MagicNumbers.ERROR_RUNTIME.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.ERROR_RUNTIME.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.ERROR_SUCCESS                     = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.ERROR_SUCCESS , MagicNumbers.ERROR_SUCCESS.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.ERROR_SUCCESS.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.EVENLY_DIVISIBLE                  = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.EVENLY_DIVISIBLE , MagicNumbers.EVENLY_DIVISIBLE.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.EVENLY_DIVISIBLE.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.EXACTLY_TEN                       = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.EXACTLY_TEN , MagicNumbers.EXACTLY_TEN.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.EXACTLY_TEN.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.EXACTLY_ONE_HUNDRED               = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.EXACTLY_ONE_HUNDRED , MagicNumbers.EXACTLY_ONE_HUNDRED.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.EXACTLY_ONE_HUNDRED.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.EXACTLY_ONE_THOUSAND              = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.EXACTLY_ONE_THOUSAND , MagicNumbers.EXACTLY_ONE_THOUSAND.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.EXACTLY_ONE_THOUSAND.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.EXACTLY_TEN_THOUSAND              = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.EXACTLY_TEN_THOUSAND , MagicNumbers.EXACTLY_TEN_THOUSAND.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.EXACTLY_TEN_THOUSAND.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.EXACTLY_ONE_HUNDRED_THOUSAND      = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.EXACTLY_TEN_THOUSAND , MagicNumbers.EXACTLY_ONE_HUNDRED_THOUSAND.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.EXACTLY_ONE_HUNDRED_THOUSAND.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.EXACTLY_ONE_MILLION               = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.EXACTLY_ONE_MILLION , MagicNumbers.EXACTLY_ONE_MILLION.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.EXACTLY_ONE_MILLION.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION       = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION , MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION_LONG  = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION_LONG , MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION_LONG.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.EXACTLY_ONE_HUNDRED_MILLION_LONG.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.EXACTLY_ONE_BILLION               = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.EXACTLY_ONE_BILLION , MagicNumbers.EXACTLY_ONE_BILLION.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.EXACTLY_ONE_BILLION.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.MILLISECONDS_PER_SECOND           = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.MILLISECONDS_PER_SECOND , MagicNumbers.MILLISECONDS_PER_SECOND.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.MILLISECONDS_PER_SECOND.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.MINUS_ONE                         = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.MINUS_ONE , MagicNumbers.MINUS_ONE.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.MINUS_ONE.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.MSO_COLLECTION_FIRST_ITEM         = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.MSO_COLLECTION_FIRST_ITEM , MagicNumbers.MSO_COLLECTION_FIRST_ITEM.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.MSO_COLLECTION_FIRST_ITEM.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.NUMBER_BASE_DECIMAL               = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.NUMBER_BASE_DECIMAL , MagicNumbers.NUMBER_BASE_DECIMAL.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.NUMBER_BASE_DECIMAL.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.NUMBER_BASE_HEXADECIMAL           = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.NUMBER_BASE_HEXADECIMAL , MagicNumbers.NUMBER_BASE_HEXADECIMAL.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.NUMBER_BASE_HEXADECIMAL.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.PLUS_ONE                          = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.PLUS_ONE , MagicNumbers.PLUS_ONE.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.PLUS_ONE.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.PLUS_TWO                          = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.PLUS_TWO , MagicNumbers.PLUS_TWO.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.PLUS_TWO.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.PLUS_THREE                        = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.PLUS_THREE , MagicNumbers.PLUS_THREE.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.PLUS_THREE.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.PLUS_FOUR                         = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.PLUS_FOUR , MagicNumbers.PLUS_FOUR.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.PLUS_FOUR.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.PLUS_FIVE                         = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.PLUS_FIVE , MagicNumbers.PLUS_FIVE.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.PLUS_FIVE.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.PLUS_SIX                          = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.PLUS_SIX , MagicNumbers.PLUS_SIX.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.PLUS_SIX.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.PLUS_SEVEN                        = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.PLUS_SEVEN , MagicNumbers.PLUS_SEVEN.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.PLUS_SEVEN.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.PLUS_EIGHT                        = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.PLUS_EIGHT , MagicNumbers.PLUS_EIGHT.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.PLUS_EIGHT.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.PLUS_NINE                        = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.PLUS_NINE , MagicNumbers.PLUS_NINE.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.PLUS_NINE.ToString ( NumericFormats.HEXADECIMAL_8 ) );
 
-            Console.WriteLine ( "    MagicNumbers.STRING_INDEXOF_NOT_FOUND          = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.STRING_INDEXOF_NOT_FOUND , MagicNumbers.STRING_INDEXOF_NOT_FOUND.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.STRING_INDEXOF_NOT_FOUND.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.STRING_SUBSTR_BEGINNING           = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.STRING_SUBSTR_BEGINNING , MagicNumbers.STRING_SUBSTR_BEGINNING.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.STRING_SUBSTR_BEGINNING.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.TICKS_PER_SECOND                  = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.TICKS_PER_SECOND , MagicNumbers.TICKS_PER_SECOND.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.TICKS_PER_SECOND.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.STRING_INDEXOF_NOT_FOUND          = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.STRING_INDEXOF_NOT_FOUND , MagicNumbers.STRING_INDEXOF_NOT_FOUND.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.STRING_INDEXOF_NOT_FOUND.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.STRING_SUBSTR_BEGINNING           = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.STRING_SUBSTR_BEGINNING , MagicNumbers.STRING_SUBSTR_BEGINNING.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.STRING_SUBSTR_BEGINNING.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.TICKS_PER_SECOND                  = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.TICKS_PER_SECOND , MagicNumbers.TICKS_PER_SECOND.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.TICKS_PER_SECOND.ToString ( NumericFormats.HEXADECIMAL_8 ) );
 
-            Console.WriteLine ( "    MagicNumbers.TICKS_PER_1_WEEK                  = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.TICKS_PER_1_WEEK , MagicNumbers.TICKS_PER_1_WEEK.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.TICKS_PER_1_WEEK.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.TICKS_PER_1_DAY                   = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.TICKS_PER_1_DAY , MagicNumbers.TICKS_PER_1_DAY.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.TICKS_PER_1_DAY.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.TICKS_PER_23_59_59                = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.TICKS_PER_23_59_59 , MagicNumbers.TICKS_PER_23_59_59.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.TICKS_PER_23_59_59.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.TICKS_PER_23_59_00                = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.TICKS_PER_23_59_00 , MagicNumbers.TICKS_PER_23_59_00.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.TICKS_PER_23_59_00.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.TICKS_PER_1_HOUR                  = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.TICKS_PER_1_HOUR , MagicNumbers.TICKS_PER_1_HOUR.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.TICKS_PER_1_HOUR.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.TICKS_PER_1_MINUTE                = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.TICKS_PER_1_MINUTE , MagicNumbers.TICKS_PER_1_MINUTE.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.TICKS_PER_1_MINUTE.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.TICKS_PER_1_SECOND                = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.TICKS_PER_1_SECOND , MagicNumbers.TICKS_PER_1_SECOND.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.TICKS_PER_1_SECOND.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.TICKS_PER_1_MILLISECOND           = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.TICKS_PER_1_MILLISECOND , MagicNumbers.TICKS_PER_1_MILLISECOND.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.TICKS_PER_1_MILLISECOND.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.TICKS_PER_1_WEEK                  = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.TICKS_PER_1_WEEK , MagicNumbers.TICKS_PER_1_WEEK.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.TICKS_PER_1_WEEK.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.TICKS_PER_1_DAY                   = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.TICKS_PER_1_DAY , MagicNumbers.TICKS_PER_1_DAY.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.TICKS_PER_1_DAY.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.TICKS_PER_23_59_59                = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.TICKS_PER_23_59_59 , MagicNumbers.TICKS_PER_23_59_59.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.TICKS_PER_23_59_59.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.TICKS_PER_23_59_00                = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.TICKS_PER_23_59_00 , MagicNumbers.TICKS_PER_23_59_00.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.TICKS_PER_23_59_00.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.TICKS_PER_1_HOUR                  = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.TICKS_PER_1_HOUR , MagicNumbers.TICKS_PER_1_HOUR.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.TICKS_PER_1_HOUR.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.TICKS_PER_1_MINUTE                = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.TICKS_PER_1_MINUTE , MagicNumbers.TICKS_PER_1_MINUTE.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.TICKS_PER_1_MINUTE.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.TICKS_PER_1_SECOND                = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.TICKS_PER_1_SECOND , MagicNumbers.TICKS_PER_1_SECOND.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.TICKS_PER_1_SECOND.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.TICKS_PER_1_MILLISECOND           = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.TICKS_PER_1_MILLISECOND , MagicNumbers.TICKS_PER_1_MILLISECOND.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.TICKS_PER_1_MILLISECOND.ToString ( NumericFormats.HEXADECIMAL_8 ) );
 
-            Console.WriteLine ( "    MagicNumbers.UNC_PREFIX_START_POS              = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.UNC_PREFIX_START_POS , MagicNumbers.UNC_PREFIX_START_POS.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.UNC_PREFIX_START_POS.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.UNC_PREFIX_START_LEN              = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.UNC_PREFIX_START_LEN , MagicNumbers.UNC_PREFIX_START_LEN.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.UNC_PREFIX_START_LEN.ToString ( NumericFormats.HEXADECIMAL_8 ) );
-            Console.WriteLine ( "    MagicNumbers.ZERO                              = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.ZERO , MagicNumbers.ZERO.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.ZERO.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.UNC_PREFIX_START_POS              = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.UNC_PREFIX_START_POS , MagicNumbers.UNC_PREFIX_START_POS.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.UNC_PREFIX_START_POS.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.UNC_PREFIX_START_LEN              = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.UNC_PREFIX_START_LEN , MagicNumbers.UNC_PREFIX_START_LEN.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.UNC_PREFIX_START_LEN.ToString ( NumericFormats.HEXADECIMAL_8 ) );
+            Console.WriteLine ( @"    MagicNumbers.ZERO                              = {0} (Formatted: {1}, Hexadecimal: 0x{2})" , MagicNumbers.ZERO , MagicNumbers.ZERO.ToString ( NumericFormats.INTEGER_PER_REG_SETTINGS ) , MagicNumbers.ZERO.ToString ( NumericFormats.HEXADECIMAL_8 ) );
 
-            Console.WriteLine ( "{0}MagicNumbers Constants enumerated!{0}" , Environment.NewLine );
+            Console.WriteLine ( @"{0}MagicNumbers Constants enumerated!{0}" , Environment.NewLine );
         }   // DisplayFormatsExercises method
 
 
@@ -1103,7 +1169,7 @@ namespace DLLServices2TestStand
             int intTotalCases = s_enmFormatFlags.Length;
 
             Console.WriteLine (
-                "{2}Thoroughly exercise the IntegerToHexStr method in class NumericFormats.{2}{2}    All {0} test cases use the same integer, {1:n0}.{2}" ,
+                @"{2}Thoroughly exercise the IntegerToHexStr method in class NumericFormats.{2}{2}    All {0} test cases use the same integer, {1:n0}.{2}" ,
                 intTotalCases ,			// Format Item 0 = Total test cases, read from Length property of the array of test cases
                 TEST_INTEGER ,			// Format Item 1 = Integer used for all tests
                 Environment.NewLine );	// Format Item 2 = Embedded newline
@@ -1114,7 +1180,7 @@ namespace DLLServices2TestStand
             {
                 int intScenarioOrdinal = ArrayInfo.OrdinalFromIndex ( intCurrentCase );
                 Console.WriteLine (
-                    "    Scenario {0,2} of {1,2}: HexFormatDecoration = {2} (as integer = {3}):{4}" ,   // Format control string
+                    @"    Scenario {0,2} of {1,2}: HexFormatDecoration = {2} (as integer = {3}):{4}" ,   // Format control string
                     new object [ ]
                     {
                         intScenarioOrdinal ,														    // Format Item 0 = Scenario number
@@ -1129,7 +1195,7 @@ namespace DLLServices2TestStand
                           intMinDigits++ )
                 {
                     Console.WriteLine (
-                        "    Test case {0}: HexFormatDecoration = {1,-12} Minimum Digits = {2} Result = {3}" ,
+                        @"    Test case {0}: HexFormatDecoration = {1,-12} Minimum Digits = {2} Result = {3}" ,
                         new object [ ]
                             {
                                 intScenarioOrdinal ,												// Format Item 0 = Ordinal test case number derived from array subscript
@@ -1150,9 +1216,9 @@ namespace DLLServices2TestStand
 
             try
             {
-                Console.WriteLine ( "    Scenario {0} deliberately throws, because the input is non-integral." , intTotalCases++ );
+                Console.WriteLine ( @"    Scenario {0} deliberately throws, because the input is non-integral." , intTotalCases++ );
                 Console.WriteLine (
-                    "    Test case {0}: HexFormatDecoration = {1,-12} Minimum Digits = {2} Result = {3}" ,
+                    @"    Test case {0}: HexFormatDecoration = {1,-12} Minimum Digits = {2} Result = {3}" ,
                     new object [ ]
                             {
                                 intTotalCases ,														// Format Item 0 = Ordinal test case number derived from array subscript
@@ -1171,7 +1237,7 @@ namespace DLLServices2TestStand
             finally
             {
                 Console.WriteLine (
-                    "{0}IntegerToHexStr method exercised.{0}" ,
+                    @"{0}IntegerToHexStr method exercised.{0}" ,
                     Environment.NewLine );
             }		// IntegerToHexStrExercises
         }	// IntegerToHexStrExercises method
@@ -1190,20 +1256,20 @@ namespace DLLServices2TestStand
                 System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,
                 ref pintTestNumber );
 
-            Console.WriteLine ( "    Public Constant ListInfo.BEGINNING_OF_BUFFER       = {0}" , ListInfo.BEGINNING_OF_BUFFER );
-            Console.WriteLine ( "    Public Constant ListInfo.BINARY_SEARCH_NOT_FOUND   = {0}" , ListInfo.BINARY_SEARCH_NOT_FOUND );
-            Console.WriteLine ( "    Public Constant ListInfo.EMPTY_STRING_LENGTH       = {0}" , ListInfo.EMPTY_STRING_LENGTH );
-            Console.WriteLine ( "    Public Constant ListInfo.INDEXOF_NOT_FOUND         = {0}" , ListInfo.INDEXOF_NOT_FOUND );
-            Console.WriteLine ( "    Public Constant ListInfo.LIST_IS_EMPTY             = {0}" , ListInfo.LIST_IS_EMPTY );
-            Console.WriteLine ( "    Public Constant ListInfo.SUBSTR_BEGINNING          = {0}" , ListInfo.SUBSTR_BEGINNING );
-            Console.WriteLine ( "    Public Constant ListInfo.SUBSTR_SECOND_CHAR        = {0}" , ListInfo.SUBSTR_SECOND_CHAR );
+            Console.WriteLine ( @"    Public Constant ListInfo.BEGINNING_OF_BUFFER       = {0}" , ListInfo.BEGINNING_OF_BUFFER );
+            Console.WriteLine ( @"    Public Constant ListInfo.BINARY_SEARCH_NOT_FOUND   = {0}" , ListInfo.BINARY_SEARCH_NOT_FOUND );
+            Console.WriteLine ( @"    Public Constant ListInfo.EMPTY_STRING_LENGTH       = {0}" , ListInfo.EMPTY_STRING_LENGTH );
+            Console.WriteLine ( @"    Public Constant ListInfo.INDEXOF_NOT_FOUND         = {0}" , ListInfo.INDEXOF_NOT_FOUND );
+            Console.WriteLine ( @"    Public Constant ListInfo.LIST_IS_EMPTY             = {0}" , ListInfo.LIST_IS_EMPTY );
+            Console.WriteLine ( @"    Public Constant ListInfo.SUBSTR_BEGINNING          = {0}" , ListInfo.SUBSTR_BEGINNING );
+            Console.WriteLine ( @"    Public Constant ListInfo.SUBSTR_SECOND_CHAR        = {0}" , ListInfo.SUBSTR_SECOND_CHAR );
 
-            Console.WriteLine ( "{1}Input Sample for the following Public Method tests = {0}{1}" , SAMPLE_1 , Environment.NewLine );
-            Console.WriteLine ( "    Public Method ListInfo.FirstCharOfString           = {0}" , ListInfo.FirstCharOfString ( SAMPLE_1 ) );
-            Console.WriteLine ( "    Public Method ListInfo.LastCharacterOfString       = {0}" , ListInfo.LastCharacterOfString ( SAMPLE_1 ) );
+            Console.WriteLine ( @"{1}Input Sample for the following Public Method tests = {0}{1}" , SAMPLE_1 , Environment.NewLine );
+            Console.WriteLine ( @"    Public Method ListInfo.FirstCharOfString           = {0}" , ListInfo.FirstCharOfString ( SAMPLE_1 ) );
+            Console.WriteLine ( @"    Public Method ListInfo.LastCharacterOfString       = {0}" , ListInfo.LastCharacterOfString ( SAMPLE_1 ) );
 
-            Console.WriteLine ( "    Public Method ListInfo.NthCharacterOfString        = {0}, where N = {1}" , ListInfo.NthCharacterOfString ( SAMPLE_1 , NTH_1 ) , NTH_1 );
-            Console.WriteLine ( "    Public Method ListInfo.NthCharacterOfString        = {0}, where N = {1}" , ListInfo.NthCharacterOfString ( SAMPLE_1 , NTH_2 ) , NTH_2 );
+            Console.WriteLine ( @"    Public Method ListInfo.NthCharacterOfString        = {0}, where N = {1}" , ListInfo.NthCharacterOfString ( SAMPLE_1 , NTH_1 ) , NTH_1 );
+            Console.WriteLine ( @"    Public Method ListInfo.NthCharacterOfString        = {0}, where N = {1}" , ListInfo.NthCharacterOfString ( SAMPLE_1 , NTH_2 ) , NTH_2 );
 
             //  ----------------------------------------------------------------
             //  Since the null character returned for the error doesn't print,
@@ -1213,11 +1279,11 @@ namespace DLLServices2TestStand
             //  a character (char).
             //  ----------------------------------------------------------------
 
-            Console.WriteLine ( "    Public Method ListInfo.PenultimateCharactrOfString = {0}" , ListInfo.PenultimateCharactrOfString ( SAMPLE_1 ) != SpecialCharacters.NULL_CHAR ? ListInfo.PenultimateCharactrOfString ( SAMPLE_1 ).ToString ( ) : NULL_CHAR );
-            Console.WriteLine ( "    Public Method ListInfo.PenultimateCharactrOfString = {0}" , ListInfo.PenultimateCharactrOfString ( SAMPLE_2 ) != SpecialCharacters.NULL_CHAR ? ListInfo.PenultimateCharactrOfString ( SAMPLE_2 ).ToString ( ) : NULL_CHAR );
+            Console.WriteLine ( @"    Public Method ListInfo.PenultimateCharactrOfString = {0}" , ListInfo.PenultimateCharactrOfString ( SAMPLE_1 ) != SpecialCharacters.NULL_CHAR ? ListInfo.PenultimateCharactrOfString ( SAMPLE_1 ).ToString ( ) : NULL_CHAR );
+            Console.WriteLine ( @"    Public Method ListInfo.PenultimateCharactrOfString = {0}" , ListInfo.PenultimateCharactrOfString ( SAMPLE_2 ) != SpecialCharacters.NULL_CHAR ? ListInfo.PenultimateCharactrOfString ( SAMPLE_2 ).ToString ( ) : NULL_CHAR );
 
-            Console.WriteLine ( "    Public Method ListInfo.SecondCharacterOfString     = {0}" , ListInfo.SecondCharacterOfString ( SAMPLE_1 ) != SpecialCharacters.NULL_CHAR ? ListInfo.SecondCharacterOfString ( SAMPLE_1 ).ToString ( ) : NULL_CHAR );
-            Console.WriteLine ( "    Public Method ListInfo.SecondCharacterOfString     = {0}" , ListInfo.SecondCharacterOfString ( SAMPLE_2 ) != SpecialCharacters.NULL_CHAR ? ListInfo.SecondCharacterOfString ( SAMPLE_2 ).ToString ( ) : NULL_CHAR );
+            Console.WriteLine ( @"    Public Method ListInfo.SecondCharacterOfString     = {0}" , ListInfo.SecondCharacterOfString ( SAMPLE_1 ) != SpecialCharacters.NULL_CHAR ? ListInfo.SecondCharacterOfString ( SAMPLE_1 ).ToString ( ) : NULL_CHAR );
+            Console.WriteLine ( @"    Public Method ListInfo.SecondCharacterOfString     = {0}" , ListInfo.SecondCharacterOfString ( SAMPLE_2 ) != SpecialCharacters.NULL_CHAR ? ListInfo.SecondCharacterOfString ( SAMPLE_2 ).ToString ( ) : NULL_CHAR );
 
             return TestDone (
                 MagicNumbers.ERROR_SUCCESS ,
@@ -1235,46 +1301,46 @@ namespace DLLServices2TestStand
             const long TEST_LONG = ( long ) TEST_INTEGER_16_BITS * ( long ) TEST_INTEGER_16_BITS;
 
             Console.WriteLine (
-                "{0}Exercising the WizardWrx.NumberFormatters Class:{0}" ,
+                @"{0}Exercising the WizardWrx.NumberFormatters Class:{0}" ,
                 Environment.NewLine );
 
             Console.WriteLine (
-                "    TEST_DOLLARS_FLOAT: raw = {0}; formatted by NumberFormatters.DollarsAndCents = {1}" ,
+                @"    TEST_DOLLARS_FLOAT: raw = {0}; formatted by NumberFormatters.DollarsAndCents = {1}" ,
                 TEST_DOLLARS_FLOAT ,
                 NumberFormatters.DollarsAndCents ( TEST_DOLLARS_FLOAT ) );
             Console.WriteLine (
-                "    TEST_DOLLARS_DOUBLE: raw = {0}; formatted by NumberFormatters.DollarsAndCents = {1}" ,
+                @"    TEST_DOLLARS_DOUBLE: raw = {0}; formatted by NumberFormatters.DollarsAndCents = {1}" ,
                 TEST_DOLLARS_FLOAT ,
                 NumberFormatters.DollarsAndCents ( TEST_DOLLARS_DOUBLE ) );
 
             Console.WriteLine (
-                "    TEST_INTEGER_16_BITS: raw = {0}; formatted by NumberFormatters.Integer = {1}" ,
+                @"    TEST_INTEGER_16_BITS: raw = {0}; formatted by NumberFormatters.Integer = {1}" ,
                 TEST_INTEGER_16_BITS ,
                 NumberFormatters.Integer ( TEST_INTEGER_16_BITS ) );
             Console.WriteLine (
-                "    TEST_LONG: raw = {0}; formatted by NumberFormatters.Integer = {1}" ,
+                @"    TEST_LONG: raw = {0}; formatted by NumberFormatters.Integer = {1}" ,
                 TEST_INTEGER_16_BITS ,
                 NumberFormatters.Integer ( TEST_LONG ) );
 
             Console.WriteLine (
-                "    TEST_INTEGER_4_BITS: raw = {0}; formatted by NumberFormatters.Hexadecimal2 = {1}" ,
+                @"    TEST_INTEGER_4_BITS: raw = {0}; formatted by NumberFormatters.Hexadecimal2 = {1}" ,
                 TEST_INTEGER_4_BITS ,
                 NumberFormatters.Hexadecimal2 ( TEST_INTEGER_16_BITS ) );
             Console.WriteLine (
-                "    TEST_INTEGER_16_BITS: raw = {0}; formatted by NumberFormatters.Hexadecimal4 = {1}" ,
+                @"    TEST_INTEGER_16_BITS: raw = {0}; formatted by NumberFormatters.Hexadecimal4 = {1}" ,
                 TEST_INTEGER_16_BITS ,
                 NumberFormatters.Hexadecimal4 ( TEST_INTEGER_16_BITS ) );
             Console.WriteLine (
-                "    TEST_INTEGER_16_BITS: raw = {0}; formatted by NumberFormatters.Hexadecimal8 = {1}" ,
+                @"    TEST_INTEGER_16_BITS: raw = {0}; formatted by NumberFormatters.Hexadecimal8 = {1}" ,
                 TEST_INTEGER_16_BITS ,
                 NumberFormatters.Hexadecimal8 ( TEST_INTEGER_16_BITS ) );
             Console.WriteLine (
-                "    TEST_LONG: raw = {0}; formatted by NumberFormatters.Hexadecimal16 = {1}" ,
+                @"    TEST_LONG: raw = {0}; formatted by NumberFormatters.Hexadecimal16 = {1}" ,
                 TEST_LONG ,
                 NumberFormatters.Hexadecimal16 ( TEST_LONG ) );
 
             Console.WriteLine (
-                "{0}End of WizardWrx.NumberFormatters Class Exercises{0}" ,
+                @"{0}End of WizardWrx.NumberFormatters Class Exercises{0}" ,
                 Environment.NewLine );
         }	// NumericFormatterExercises method
 
@@ -1285,11 +1351,11 @@ namespace DLLServices2TestStand
                 System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,
                 ref pintTestNumber );
 
-            Console.WriteLine ( "    Public Constant PathPositions.FQFN_PREFIX_START_POS   = {0}" , PathPositions.FQFN_PREFIX_START_POS );
-            Console.WriteLine ( "    Public Constant PathPositions.FQFN_PREFIX_START_LEN   = {0}" , PathPositions.FQFN_PREFIX_START_LEN );
-            Console.WriteLine ( "    Public Constant PathPositions.MAX_PATH                = {0}" , PathPositions.MAX_PATH );
-            Console.WriteLine ( "    Public Constant PathPositions.UNC_HOSTNAME_PREFIX_POS = {0}" , PathPositions.UNC_HOSTNAME_PREFIX_POS );
-            Console.WriteLine ( "    Public Constant PathPositions.UNC_HOSTNAME_START_POS  = {0}" , PathPositions.UNC_HOSTNAME_START_POS );
+            Console.WriteLine ( @"    Public Constant PathPositions.FQFN_PREFIX_START_POS   = {0}" , PathPositions.FQFN_PREFIX_START_POS );
+            Console.WriteLine ( @"    Public Constant PathPositions.FQFN_PREFIX_START_LEN   = {0}" , PathPositions.FQFN_PREFIX_START_LEN );
+            Console.WriteLine ( @"    Public Constant PathPositions.MAX_PATH                = {0}" , PathPositions.MAX_PATH );
+            Console.WriteLine ( @"    Public Constant PathPositions.UNC_HOSTNAME_PREFIX_POS = {0}" , PathPositions.UNC_HOSTNAME_PREFIX_POS );
+            Console.WriteLine ( @"    Public Constant PathPositions.UNC_HOSTNAME_START_POS  = {0}" , PathPositions.UNC_HOSTNAME_START_POS );
 
             return TestDone (
                 MagicNumbers.ERROR_SUCCESS ,
@@ -1303,70 +1369,70 @@ namespace DLLServices2TestStand
                 System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,
                 ref pintTestNumber );
 
-            Console.WriteLine ( "    Public Constant SpecialCharacters.CARRIAGE_RETURN       = [CR] (ASCII code = {0,2:N0} (0x{1}){2}" , ( int ) SpecialCharacters.CARRIAGE_RETURN , ( ( int ) SpecialCharacters.CARRIAGE_RETURN ).ToString ( DisplayFormats.HEXADECIMAL_2 ) , Environment.NewLine );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.LINEFEED              = [LF] (ASCII code = {0,2:N0} (0x{1}){2}" , ( int ) SpecialCharacters.LINEFEED , ( ( int ) SpecialCharacters.LINEFEED ).ToString ( DisplayFormats.HEXADECIMAL_2 ) , Environment.NewLine );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.CARRIAGE_RETURN       = [CR] (ASCII code = {0,2:N0} (0x{1}){2}" , ( int ) SpecialCharacters.CARRIAGE_RETURN , ( ( int ) SpecialCharacters.CARRIAGE_RETURN ).ToString ( DisplayFormats.HEXADECIMAL_2 ) , Environment.NewLine );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.LINEFEED              = [LF] (ASCII code = {0,2:N0} (0x{1}){2}" , ( int ) SpecialCharacters.LINEFEED , ( ( int ) SpecialCharacters.LINEFEED ).ToString ( DisplayFormats.HEXADECIMAL_2 ) , Environment.NewLine );
 
-            Console.WriteLine ( "    Public Constant SpecialCharacters.NUL_CHAR              = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.NULL_CHAR , ( int ) SpecialCharacters.NULL_CHAR , ( ( int ) SpecialCharacters.NULL_CHAR ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.NONBREAKING_SPACE     = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.NONBREAKING_SPACE_CHAR , ( int ) SpecialCharacters.NONBREAKING_SPACE_CHAR , ( ( int ) SpecialCharacters.NONBREAKING_SPACE_CHAR ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.CHECK_MARK_CHAR       = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.CHECK_MARK_CHAR , ( int ) SpecialCharacters.CHECK_MARK_CHAR , ( ( int ) SpecialCharacters.CHECK_MARK_CHAR ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.LAST_ASCII_CHAR       = {0} (ASCII code = {1,2:N0} (0x{2}){3}" , SpecialCharacters.LAST_ASCII_CHAR , ( int ) SpecialCharacters.LAST_ASCII_CHAR , ( ( int ) SpecialCharacters.LAST_ASCII_CHAR ).ToString ( DisplayFormats.HEXADECIMAL_2 ) , Environment.NewLine );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.NUL_CHAR              = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.NULL_CHAR , ( int ) SpecialCharacters.NULL_CHAR , ( ( int ) SpecialCharacters.NULL_CHAR ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.NONBREAKING_SPACE     = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.NONBREAKING_SPACE_CHAR , ( int ) SpecialCharacters.NONBREAKING_SPACE_CHAR , ( ( int ) SpecialCharacters.NONBREAKING_SPACE_CHAR ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.CHECK_MARK_CHAR       = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.CHECK_MARK_CHAR , ( int ) SpecialCharacters.CHECK_MARK_CHAR , ( ( int ) SpecialCharacters.CHECK_MARK_CHAR ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.LAST_ASCII_CHAR       = {0} (ASCII code = {1,2:N0} (0x{2}){3}" , SpecialCharacters.LAST_ASCII_CHAR , ( int ) SpecialCharacters.LAST_ASCII_CHAR , ( ( int ) SpecialCharacters.LAST_ASCII_CHAR ).ToString ( DisplayFormats.HEXADECIMAL_2 ) , Environment.NewLine );
 
-            Console.WriteLine ( "    Public Constant SpecialCharacters.ALARM                 = {0} (ASCII code = {1,2:N0} (0x{2}){3}" , SpecialCharacters.ALARM , ( int ) SpecialCharacters.ALARM , ( ( int ) SpecialCharacters.ALARM ).ToString ( DisplayFormats.HEXADECIMAL_2 ) , Environment.NewLine );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.BEL                   = {0} (ASCII code = {1,2:N0} (0x{2}){3}" , SpecialCharacters.BEL , ( int ) SpecialCharacters.BEL , ( ( int ) SpecialCharacters.BEL ).ToString ( DisplayFormats.HEXADECIMAL_2 ) , Environment.NewLine );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.BELL                  = {0} (ASCII code = {1,2:N0} (0x{2}){3}" , SpecialCharacters.BELL , ( int ) SpecialCharacters.BELL , ( ( int ) SpecialCharacters.BELL ).ToString ( DisplayFormats.HEXADECIMAL_2 ) , Environment.NewLine );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.ALARM                 = {0} (ASCII code = {1,2:N0} (0x{2}){3}" , SpecialCharacters.ALARM , ( int ) SpecialCharacters.ALARM , ( ( int ) SpecialCharacters.ALARM ).ToString ( DisplayFormats.HEXADECIMAL_2 ) , Environment.NewLine );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.BEL                   = {0} (ASCII code = {1,2:N0} (0x{2}){3}" , SpecialCharacters.BEL , ( int ) SpecialCharacters.BEL , ( ( int ) SpecialCharacters.BEL ).ToString ( DisplayFormats.HEXADECIMAL_2 ) , Environment.NewLine );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.BELL                  = {0} (ASCII code = {1,2:N0} (0x{2}){3}" , SpecialCharacters.BELL , ( int ) SpecialCharacters.BELL , ( ( int ) SpecialCharacters.BELL ).ToString ( DisplayFormats.HEXADECIMAL_2 ) , Environment.NewLine );
 
-            Console.WriteLine ( "    Public Constant SpecialCharacters.BACKSPACE             = {0} (ASCII code = {1,2:N0} (0x{2}){3}" , SpecialCharacters.BACKSPACE , ( int ) SpecialCharacters.BACKSPACE , ( ( int ) SpecialCharacters.BACKSPACE ).ToString ( DisplayFormats.HEXADECIMAL_2 ) , Environment.NewLine );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.END_OF_FILE           = {0} (ASCII code = {1,2:N0} (0x{2}){3}" , SpecialCharacters.END_OF_FILE , ( int ) SpecialCharacters.END_OF_FILE , ( ( int ) SpecialCharacters.END_OF_FILE ).ToString ( DisplayFormats.HEXADECIMAL_2 ) , Environment.NewLine );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.EOF                   = {0} (ASCII code = {1,2:N0} (0x{2}){3}" , SpecialCharacters.EOF , ( int ) SpecialCharacters.EOF , ( ( int ) SpecialCharacters.EOF ).ToString ( DisplayFormats.HEXADECIMAL_2 ) , Environment.NewLine );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.ESCAPE_CHAR           = {0} (ASCII code = {1,2:N0} (0x{2}){3}" , SpecialCharacters.ESCAPE_CHAR , ( int ) SpecialCharacters.ESCAPE_CHAR , ( ( int ) SpecialCharacters.ESCAPE_CHAR ).ToString ( DisplayFormats.HEXADECIMAL_2 ) , Environment.NewLine );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.BACKSPACE             = {0} (ASCII code = {1,2:N0} (0x{2}){3}" , SpecialCharacters.BACKSPACE , ( int ) SpecialCharacters.BACKSPACE , ( ( int ) SpecialCharacters.BACKSPACE ).ToString ( DisplayFormats.HEXADECIMAL_2 ) , Environment.NewLine );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.END_OF_FILE           = {0} (ASCII code = {1,2:N0} (0x{2}){3}" , SpecialCharacters.END_OF_FILE , ( int ) SpecialCharacters.END_OF_FILE , ( ( int ) SpecialCharacters.END_OF_FILE ).ToString ( DisplayFormats.HEXADECIMAL_2 ) , Environment.NewLine );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.EOF                   = {0} (ASCII code = {1,2:N0} (0x{2}){3}" , SpecialCharacters.EOF , ( int ) SpecialCharacters.EOF , ( ( int ) SpecialCharacters.EOF ).ToString ( DisplayFormats.HEXADECIMAL_2 ) , Environment.NewLine );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.ESCAPE_CHAR           = {0} (ASCII code = {1,2:N0} (0x{2}){3}" , SpecialCharacters.ESCAPE_CHAR , ( int ) SpecialCharacters.ESCAPE_CHAR , ( ( int ) SpecialCharacters.ESCAPE_CHAR ).ToString ( DisplayFormats.HEXADECIMAL_2 ) , Environment.NewLine );
 
-            Console.WriteLine ( "    Public Constant SpecialCharacters.CHAR_LC_I             = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.CHAR_LC_I , ( int ) SpecialCharacters.CHAR_LC_I , ( ( int ) SpecialCharacters.CHAR_LC_I ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.CHAR_LC_L             = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.CHAR_LC_L , ( int ) SpecialCharacters.CHAR_LC_L , ( ( int ) SpecialCharacters.CHAR_LC_L ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.CHAR_LC_O             = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.CHAR_LC_O , ( int ) SpecialCharacters.CHAR_LC_O , ( ( int ) SpecialCharacters.CHAR_LC_O ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.CHAR_LC_Z             = {0} (ASCII code = {1,2:N0} (0x{2}){3}" , SpecialCharacters.CHAR_LC_Z , ( int ) SpecialCharacters.CHAR_LC_Z , ( ( int ) SpecialCharacters.CHAR_LC_Z ).ToString ( DisplayFormats.HEXADECIMAL_2 ) , Environment.NewLine );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.CHAR_LC_I             = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.CHAR_LC_I , ( int ) SpecialCharacters.CHAR_LC_I , ( ( int ) SpecialCharacters.CHAR_LC_I ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.CHAR_LC_L             = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.CHAR_LC_L , ( int ) SpecialCharacters.CHAR_LC_L , ( ( int ) SpecialCharacters.CHAR_LC_L ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.CHAR_LC_O             = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.CHAR_LC_O , ( int ) SpecialCharacters.CHAR_LC_O , ( ( int ) SpecialCharacters.CHAR_LC_O ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.CHAR_LC_Z             = {0} (ASCII code = {1,2:N0} (0x{2}){3}" , SpecialCharacters.CHAR_LC_Z , ( int ) SpecialCharacters.CHAR_LC_Z , ( ( int ) SpecialCharacters.CHAR_LC_Z ).ToString ( DisplayFormats.HEXADECIMAL_2 ) , Environment.NewLine );
 
-            Console.WriteLine ( "    Public Constant SpecialCharacters.CHAR_UC_I             = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.CHAR_UC_I , ( int ) SpecialCharacters.CHAR_UC_I , ( ( int ) SpecialCharacters.CHAR_UC_I ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.CHAR_UC_L             = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.CHAR_UC_L , ( int ) SpecialCharacters.CHAR_UC_L , ( ( int ) SpecialCharacters.CHAR_UC_L ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.CHAR_UC_O             = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.CHAR_UC_O , ( int ) SpecialCharacters.CHAR_UC_O , ( ( int ) SpecialCharacters.CHAR_UC_O ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.CHAR_UC_Z             = {0} (ASCII code = {1,2:N0} (0x{2}){3}" , SpecialCharacters.CHAR_UC_Z , ( int ) SpecialCharacters.CHAR_UC_Z , ( ( int ) SpecialCharacters.CHAR_UC_Z ).ToString ( DisplayFormats.HEXADECIMAL_2 ) , Environment.NewLine );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.CHAR_UC_I             = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.CHAR_UC_I , ( int ) SpecialCharacters.CHAR_UC_I , ( ( int ) SpecialCharacters.CHAR_UC_I ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.CHAR_UC_L             = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.CHAR_UC_L , ( int ) SpecialCharacters.CHAR_UC_L , ( ( int ) SpecialCharacters.CHAR_UC_L ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.CHAR_UC_O             = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.CHAR_UC_O , ( int ) SpecialCharacters.CHAR_UC_O , ( ( int ) SpecialCharacters.CHAR_UC_O ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.CHAR_UC_Z             = {0} (ASCII code = {1,2:N0} (0x{2}){3}" , SpecialCharacters.CHAR_UC_Z , ( int ) SpecialCharacters.CHAR_UC_Z , ( ( int ) SpecialCharacters.CHAR_UC_Z ).ToString ( DisplayFormats.HEXADECIMAL_2 ) , Environment.NewLine );
 
-            Console.WriteLine ( "    Public Constant SpecialCharacters.CHAR_NUMERAL_0        = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.CHAR_NUMERAL_0 , ( int ) SpecialCharacters.CHAR_NUMERAL_0 , ( ( int ) SpecialCharacters.CHAR_NUMERAL_0 ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.CHAR_NUMERAL_1        = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.CHAR_NUMERAL_1 , ( int ) SpecialCharacters.CHAR_NUMERAL_1 , ( ( int ) SpecialCharacters.CHAR_NUMERAL_1 ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.CHAR_NUMERAL_2        = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.CHAR_NUMERAL_2 , ( int ) SpecialCharacters.CHAR_NUMERAL_2 , ( ( int ) SpecialCharacters.CHAR_NUMERAL_2 ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.CHAR_NUMERAL_7        = {0} (ASCII code = {1,2:N0} (0x{2}){3}" , SpecialCharacters.CHAR_NUMERAL_7 , ( int ) SpecialCharacters.CHAR_NUMERAL_7 , ( ( int ) SpecialCharacters.CHAR_NUMERAL_7 ).ToString ( DisplayFormats.HEXADECIMAL_2 ) , Environment.NewLine );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.CHAR_NUMERAL_0        = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.CHAR_NUMERAL_0 , ( int ) SpecialCharacters.CHAR_NUMERAL_0 , ( ( int ) SpecialCharacters.CHAR_NUMERAL_0 ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.CHAR_NUMERAL_1        = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.CHAR_NUMERAL_1 , ( int ) SpecialCharacters.CHAR_NUMERAL_1 , ( ( int ) SpecialCharacters.CHAR_NUMERAL_1 ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.CHAR_NUMERAL_2        = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.CHAR_NUMERAL_2 , ( int ) SpecialCharacters.CHAR_NUMERAL_2 , ( ( int ) SpecialCharacters.CHAR_NUMERAL_2 ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.CHAR_NUMERAL_7        = {0} (ASCII code = {1,2:N0} (0x{2}){3}" , SpecialCharacters.CHAR_NUMERAL_7 , ( int ) SpecialCharacters.CHAR_NUMERAL_7 , ( ( int ) SpecialCharacters.CHAR_NUMERAL_7 ).ToString ( DisplayFormats.HEXADECIMAL_2 ) , Environment.NewLine );
 
-            Console.WriteLine ( "    Public Constant SpecialCharacters.AMPERSAND             = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.AMPERSAND , ( int ) SpecialCharacters.AMPERSAND , ( ( int ) SpecialCharacters.AMPERSAND ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.ASTERISK              = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.ASTERISK , ( int ) SpecialCharacters.ASTERISK , ( ( int ) SpecialCharacters.ASTERISK ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.ASTERISK_CHAR         = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.ASTERISK_CHAR , ( int ) SpecialCharacters.ASTERISK_CHAR , ( ( int ) SpecialCharacters.ASTERISK_CHAR ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.AT_CHAR               = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.AT_CHAR , ( int ) SpecialCharacters.AT_CHAR , ( ( int ) SpecialCharacters.AT_CHAR ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.AT_SIGN               = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.AT_SIGN , ( int ) SpecialCharacters.AT_SIGN , ( ( int ) SpecialCharacters.AT_SIGN ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.BRACE_LEFT            = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.BRACE_LEFT , ( int ) SpecialCharacters.BRACE_LEFT , ( ( int ) SpecialCharacters.BRACE_LEFT ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.BRACE_RIGHT           = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.BRACE_RIGHT , ( int ) SpecialCharacters.BRACE_RIGHT , ( ( int ) SpecialCharacters.BRACE_RIGHT ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.BRACKET_LEFT          = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.BRACKET_LEFT , ( int ) SpecialCharacters.BRACKET_LEFT , ( ( int ) SpecialCharacters.BRACKET_LEFT ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.BRACKET_RIGHT         = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.BRACKET_RIGHT , ( int ) SpecialCharacters.BRACKET_RIGHT , ( ( int ) SpecialCharacters.BRACKET_RIGHT ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.DLM_FORMAT_ITEM_BEGIN = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.DLM_FORMAT_ITEM_BEGIN , ( int ) SpecialCharacters.DLM_FORMAT_ITEM_BEGIN , ( ( int ) SpecialCharacters.DLM_FORMAT_ITEM_BEGIN ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.COLON                 = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.COLON , ( int ) SpecialCharacters.COLON , ( ( int ) SpecialCharacters.COLON ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.COMMA                 = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.COMMA , ( int ) SpecialCharacters.COMMA , ( ( int ) SpecialCharacters.COMMA ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.DOUBLE_QUOTE          = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.DOUBLE_QUOTE , ( int ) SpecialCharacters.DOUBLE_QUOTE , ( ( int ) SpecialCharacters.DOUBLE_QUOTE ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.ENV_STR_DLM           = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.ENV_STR_DLM , ( int ) SpecialCharacters.ENV_STR_DLM , ( ( int ) SpecialCharacters.ENV_STR_DLM ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.EQUALS_SIGN           = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.EQUALS_SIGN , ( int ) SpecialCharacters.EQUALS_SIGN , ( ( int ) SpecialCharacters.EQUALS_SIGN ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.FULL_STOP             = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.FULL_STOP , ( int ) SpecialCharacters.FULL_STOP , ( ( int ) SpecialCharacters.FULL_STOP ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.HASH_TAG              = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.HASH_TAG , ( int ) SpecialCharacters.HASH_TAG , ( ( int ) SpecialCharacters.HASH_TAG ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.HYPHEN                = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.HYPHEN , ( int ) SpecialCharacters.HYPHEN , ( ( int ) SpecialCharacters.HYPHEN ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.AMPERSAND             = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.AMPERSAND , ( int ) SpecialCharacters.AMPERSAND , ( ( int ) SpecialCharacters.AMPERSAND ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.ASTERISK              = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.ASTERISK , ( int ) SpecialCharacters.ASTERISK , ( ( int ) SpecialCharacters.ASTERISK ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.ASTERISK_CHAR         = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.ASTERISK_CHAR , ( int ) SpecialCharacters.ASTERISK_CHAR , ( ( int ) SpecialCharacters.ASTERISK_CHAR ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.AT_CHAR               = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.AT_CHAR , ( int ) SpecialCharacters.AT_CHAR , ( ( int ) SpecialCharacters.AT_CHAR ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.AT_SIGN               = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.AT_SIGN , ( int ) SpecialCharacters.AT_SIGN , ( ( int ) SpecialCharacters.AT_SIGN ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.BRACE_LEFT            = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.BRACE_LEFT , ( int ) SpecialCharacters.BRACE_LEFT , ( ( int ) SpecialCharacters.BRACE_LEFT ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.BRACE_RIGHT           = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.BRACE_RIGHT , ( int ) SpecialCharacters.BRACE_RIGHT , ( ( int ) SpecialCharacters.BRACE_RIGHT ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.BRACKET_LEFT          = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.BRACKET_LEFT , ( int ) SpecialCharacters.BRACKET_LEFT , ( ( int ) SpecialCharacters.BRACKET_LEFT ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.BRACKET_RIGHT         = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.BRACKET_RIGHT , ( int ) SpecialCharacters.BRACKET_RIGHT , ( ( int ) SpecialCharacters.BRACKET_RIGHT ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.DLM_FORMAT_ITEM_BEGIN = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.DLM_FORMAT_ITEM_BEGIN , ( int ) SpecialCharacters.DLM_FORMAT_ITEM_BEGIN , ( ( int ) SpecialCharacters.DLM_FORMAT_ITEM_BEGIN ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.COLON                 = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.COLON , ( int ) SpecialCharacters.COLON , ( ( int ) SpecialCharacters.COLON ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.COMMA                 = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.COMMA , ( int ) SpecialCharacters.COMMA , ( ( int ) SpecialCharacters.COMMA ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.DOUBLE_QUOTE          = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.DOUBLE_QUOTE , ( int ) SpecialCharacters.DOUBLE_QUOTE , ( ( int ) SpecialCharacters.DOUBLE_QUOTE ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.ENV_STR_DLM           = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.ENV_STR_DLM , ( int ) SpecialCharacters.ENV_STR_DLM , ( ( int ) SpecialCharacters.ENV_STR_DLM ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.EQUALS_SIGN           = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.EQUALS_SIGN , ( int ) SpecialCharacters.EQUALS_SIGN , ( ( int ) SpecialCharacters.EQUALS_SIGN ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.FULL_STOP             = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.FULL_STOP , ( int ) SpecialCharacters.FULL_STOP , ( ( int ) SpecialCharacters.FULL_STOP ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.HASH_TAG              = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.HASH_TAG , ( int ) SpecialCharacters.HASH_TAG , ( ( int ) SpecialCharacters.HASH_TAG ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.HYPHEN                = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.HYPHEN , ( int ) SpecialCharacters.HYPHEN , ( ( int ) SpecialCharacters.HYPHEN ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
 
-            Console.WriteLine ( "    Public Constant SpecialCharacters.MINUS                 = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.MINUS , ( int ) SpecialCharacters.MINUS , ( ( int ) SpecialCharacters.MINUS ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.PLUS                  = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.PLUS , ( int ) SpecialCharacters.PLUS , ( ( int ) SpecialCharacters.PLUS ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.MINUS                 = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.MINUS , ( int ) SpecialCharacters.MINUS , ( ( int ) SpecialCharacters.MINUS ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.PLUS                  = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.PLUS , ( int ) SpecialCharacters.PLUS , ( ( int ) SpecialCharacters.PLUS ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
 
-            Console.WriteLine ( "    Public Constant SpecialCharacters.PARENTHESIS_LEFT      = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.PARENTHESIS_LEFT , ( int ) SpecialCharacters.PARENTHESIS_LEFT , ( ( int ) SpecialCharacters.PARENTHESIS_LEFT ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.PARENTHESIS_RIGHT     = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.PARENTHESIS_RIGHT , ( int ) SpecialCharacters.PARENTHESIS_RIGHT , ( ( int ) SpecialCharacters.PARENTHESIS_RIGHT ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );			
-            Console.WriteLine ( "    Public Constant SpecialCharacters.PERCENT_SIGN          = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.PERCENT_SIGN , ( int ) SpecialCharacters.PERCENT_SIGN , ( ( int ) SpecialCharacters.PERCENT_SIGN ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.PIPE_CHAR             = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.PIPE_CHAR , ( int ) SpecialCharacters.PIPE_CHAR , ( ( int ) SpecialCharacters.PIPE_CHAR ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.QUESTION_MARK         = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.QUESTION_MARK , ( int ) SpecialCharacters.QUESTION_MARK , ( ( int ) SpecialCharacters.QUESTION_MARK ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.SEMICOLON             = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.SEMICOLON , ( int ) SpecialCharacters.SEMICOLON , ( ( int ) SpecialCharacters.SEMICOLON ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.SINGLE_QUOTE          = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.SINGLE_QUOTE , ( int ) SpecialCharacters.SINGLE_QUOTE , ( ( int ) SpecialCharacters.SINGLE_QUOTE ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.SPACE                 = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.SPACE_CHAR , ( int ) SpecialCharacters.SPACE_CHAR , ( ( int ) SpecialCharacters.SPACE_CHAR ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.TAB                   = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.TAB_CHAR , ( int ) SpecialCharacters.TAB_CHAR , ( ( int ) SpecialCharacters.TAB_CHAR ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
-            Console.WriteLine ( "    Public Constant SpecialCharacters.UNDERSCORE_CHAR       = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.UNDERSCORE_CHAR , ( int ) SpecialCharacters.UNDERSCORE_CHAR , ( ( int ) SpecialCharacters.UNDERSCORE_CHAR ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.PARENTHESIS_LEFT      = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.PARENTHESIS_LEFT , ( int ) SpecialCharacters.PARENTHESIS_LEFT , ( ( int ) SpecialCharacters.PARENTHESIS_LEFT ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.PARENTHESIS_RIGHT     = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.PARENTHESIS_RIGHT , ( int ) SpecialCharacters.PARENTHESIS_RIGHT , ( ( int ) SpecialCharacters.PARENTHESIS_RIGHT ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );			
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.PERCENT_SIGN          = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.PERCENT_SIGN , ( int ) SpecialCharacters.PERCENT_SIGN , ( ( int ) SpecialCharacters.PERCENT_SIGN ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.PIPE_CHAR             = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.PIPE_CHAR , ( int ) SpecialCharacters.PIPE_CHAR , ( ( int ) SpecialCharacters.PIPE_CHAR ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.QUESTION_MARK         = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.QUESTION_MARK , ( int ) SpecialCharacters.QUESTION_MARK , ( ( int ) SpecialCharacters.QUESTION_MARK ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.SEMICOLON             = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.SEMICOLON , ( int ) SpecialCharacters.SEMICOLON , ( ( int ) SpecialCharacters.SEMICOLON ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.SINGLE_QUOTE          = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.SINGLE_QUOTE , ( int ) SpecialCharacters.SINGLE_QUOTE , ( ( int ) SpecialCharacters.SINGLE_QUOTE ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.SPACE                 = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.SPACE_CHAR , ( int ) SpecialCharacters.SPACE_CHAR , ( ( int ) SpecialCharacters.SPACE_CHAR ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.TAB                   = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.TAB_CHAR , ( int ) SpecialCharacters.TAB_CHAR , ( ( int ) SpecialCharacters.TAB_CHAR ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
+            Console.WriteLine ( @"    Public Constant SpecialCharacters.UNDERSCORE_CHAR       = {0} (ASCII code = {1,2:N0} (0x{2})" , SpecialCharacters.UNDERSCORE_CHAR , ( int ) SpecialCharacters.UNDERSCORE_CHAR , ( ( int ) SpecialCharacters.UNDERSCORE_CHAR ).ToString ( DisplayFormats.HEXADECIMAL_2 ) );
 
             return TestDone (
                 MagicNumbers.ERROR_SUCCESS ,
@@ -1453,7 +1519,7 @@ namespace DLLServices2TestStand
             //  ----------------------------------------------------------------
 
 #if NET35
-            Console.WriteLine ( "{2}Implicit Full Current Local Time Zone for Machine {0} = {1}{2}" ,   // Message Template
+            Console.WriteLine ( @"{2}Implicit Full Current Local Time Zone for Machine {0} = {1}{2}" ,  // Message Template
                 Environment.MachineName ,                                                               // Format Item 0 = Machine Name
                 SysDateFormatters.GetDisplayTimeZone (                                                  // Format Item 1 = Time Zone
                     DateTime.Now ,                                                                      // DateTime pdtmTestDate = Current time from clock
@@ -2173,14 +2239,14 @@ namespace DLLServices2TestStand
                             if ( s_dctClassTestMap.ContainsKey ( astrFields [ FIELD_ROUTINE_NAME ] ) )
                             {   // Croak on duplicate record.
                                 throw new Exception ( string.Format (
-                                    ERRMSG_DUPLICATE_CLASS_MAP_KEY ,   // Message template                    
+                                    ERRMSG_DUPLICATE_CLASS_MAP_KEY ,            // Message template                    
                                     new object [ ]
                                 {
-                                    CLASS_MAP_TABLE_NAME ,              // Format Item 0 = Table File Name (per constant)
-                                    intIndex ,                          // Format Item 1 = Record number
-                                    astrFields [ FIELD_ROUTINE_NAME ] , // Format Item 2 = Reported routine name
-                                    astrFields [ FIELD_CLASS_NAME ] ,   // Format Item 3 = Expected class name
-                                    Environment.NewLine                 // Format Item 4 = Newline
+                                    CLASS_MAP_TABLE_NAME ,                      // Format Item 0 = Table File Name (per constant)
+                                    intIndex ,                                  // Format Item 1 = Record number
+                                    astrFields [ FIELD_ROUTINE_NAME ] ,         // Format Item 2 = Reported routine name
+                                    astrFields [ FIELD_CLASS_NAME ] ,           // Format Item 3 = Expected class name
+                                    Environment.NewLine                         // Format Item 4 = Newline
                                 } ) );
                             }   // TRUE (UNexpected outcome) block, if ( s_dctClassTestMap.ContainsKey ( astrFields [ FIELD_ROUTINE_NAME ] ) )
                             else
@@ -2193,14 +2259,14 @@ namespace DLLServices2TestStand
                         else
                         {   // Field count differs from specification.
                             throw new Exception ( string.Format (
-                                ERRMSG_INVALID_CLASS_MAP_RECORD ,   // Message template                    
+                                ERRMSG_INVALID_CLASS_MAP_RECORD ,               // Message template                    
                                 new object [ ]
                                 {
-                                    CLASS_MAP_TABLE_NAME ,          // Format Item 0 = Table File Name (per constant)
-                                    intIndex ,                      // Format Item 1 = Record number
-                                    astrFields.Length ,             // Format Item 2 = Reported field count
-                                    FIELD_EXPECTED_COUNT ,          // Format Item 3 = Expected field count
-                                    Environment.NewLine             // Format Item 4 = Newline
+                                    CLASS_MAP_TABLE_NAME ,                      // Format Item 0 = Table File Name (per constant)
+                                    intIndex ,                                  // Format Item 1 = Record number
+                                    astrFields.Length ,                         // Format Item 2 = Reported field count
+                                    FIELD_EXPECTED_COUNT ,                      // Format Item 3 = Expected field count
+                                    Environment.NewLine                         // Format Item 4 = Newline
                                 } ) );
                         }   // FALSE (UNexpected outcome) block, if ( astrFields.Length == FIELD_EXPECTED_COUNT )
                     }   // for ( int intIndex = CSVFileInfo.FIRST_RECORD ; intIndex <= intNRecs ; intIndex++ )

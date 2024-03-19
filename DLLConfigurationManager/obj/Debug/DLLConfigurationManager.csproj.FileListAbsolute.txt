@@ -30,6 +30,6 @@ D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLConfig
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLConfigurationManager\bin\Debug\WizardWrx.ASCIIInfo.pdb
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLConfigurationManager\bin\Debug\WizardWrx.ASCIIInfo.xml
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLConfigurationManager\bin\Debug\WizardWrx.AnyCSV.xml
-D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLConfigurationManager\obj\Debug\DLLConfigurationManager.csproj.CopyComplete
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLConfigurationManager\obj\Debug\WizardWrx.DLLConfigurationManager.dll
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLConfigurationManager\obj\Debug\WizardWrx.DLLConfigurationManager.pdb
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLConfigurationManager\obj\Debug\DLLConfi.D491A287.Up2Date

@@ -10,6 +10,6 @@ D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Diagnosti
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DiagnosticInfo\bin\Debug\WizardWrx.Common.pdb
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DiagnosticInfo\bin\Debug\WizardWrx.Common.xml
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DiagnosticInfo\bin\Debug\WizardWrx.BitMath.xml
-D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DiagnosticInfo\obj\Debug\DiagnosticInfo.csproj.CopyComplete
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DiagnosticInfo\obj\Debug\WizardWrx.DiagnosticInfo.dll
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DiagnosticInfo\obj\Debug\WizardWrx.DiagnosticInfo.pdb
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DiagnosticInfo\obj\Debug\Diagnost.69E534CE.Up2Date

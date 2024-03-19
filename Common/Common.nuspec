@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-		<releaseNotes>Upgrade the target framework from 3.5 to 4.8.</releaseNotes>
+		<releaseNotes>Defin 2 new string constants, CSV_ESCAPED_DOUBLE_QUOTE (ASCII code 0x22) and SQL_ESCAPED_SINGLE_QUOTE (ASCII code 0x27). See the ChangeLog for more detail.</releaseNotes>
 		<copyright>$copyright$</copyright>
     	<tags>Constants Arrays RegExp</tags>
 	</metadata>

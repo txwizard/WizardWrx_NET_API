@@ -13,6 +13,6 @@ D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\bin\Debug\WizardWrx.DiagnosticInfo.pdb
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\bin\Debug\WizardWrx.DiagnosticInfo.xml
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\bin\Debug\WizardWrx.BitMath.xml
-D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\obj\Debug\MoreMath.csproj.CopyComplete
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\obj\Debug\WizardWrx.MoreMath.dll
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\obj\Debug\WizardWrx.MoreMath.pdb
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\MoreMath\obj\Debug\MoreMath.csproj.Up2Date

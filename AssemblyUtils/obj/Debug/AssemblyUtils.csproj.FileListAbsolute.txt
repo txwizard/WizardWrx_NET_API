@@ -23,6 +23,6 @@ D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyU
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyUtils\bin\Debug\WizardWrx.ASCIIInfo.pdb
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyUtils\bin\Debug\WizardWrx.ASCIIInfo.xml
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyUtils\bin\Debug\WizardWrx.AnyCSV.xml
-D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyUtils\obj\Debug\AssemblyUtils.csproj.CopyComplete
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyUtils\obj\Debug\WizardWrx.AssemblyUtils.dll
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyUtils\obj\Debug\WizardWrx.AssemblyUtils.pdb
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyUtils\obj\Debug\Assembly.D3BF4044.Up2Date

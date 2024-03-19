@@ -22,6 +22,6 @@ D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ConsoleSt
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ConsoleStreams\obj\Release\WizardWrx.ConsoleStreams.Properties.Resources.resources
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ConsoleStreams\obj\Release\ConsoleStreams.csproj.GenerateResource.cache
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ConsoleStreams\obj\Release\ConsoleStreams.csproj.CoreCompileInputs.cache
-D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ConsoleStreams\obj\Release\ConsoleStreams.csproj.CopyComplete
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ConsoleStreams\obj\Release\WizardWrx.ConsoleStreams.dll
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ConsoleStreams\obj\Release\WizardWrx.ConsoleStreams.pdb
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\ConsoleStreams\obj\Release\ConsoleS.D0A5AFEF.Up2Date

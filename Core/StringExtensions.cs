@@ -162,6 +162,9 @@
                            This correction resolves the puzzling issue that
                            prompted the harmless change introduced into the
                            version of ExtractBoundedSubstrings in build 9.0.355.
+
+    2024/03/18 9.0.359 DAG Define new extensions CSVSafe4EmbeddedDoubleQuote and
+                           SQLafe4EmbeddedSingleQuote.
     ============================================================================
 */
 
@@ -306,7 +309,7 @@ namespace WizardWrx
         #endregion // ArrayOfOne Methods
 
 
-        #region CapitalizeWords Methods
+        #region CapitalizeWords Method
         /// <summary>
         /// Return the input string with each word capitalized.
         /// </summary>
@@ -356,7 +359,7 @@ namespace WizardWrx
                 return rsb.ToString ( );
             }   // FALSE (anticipated outcome) block, if ( string.IsNullOrEmpty ( pstr ) )
         }   // public static string CapitalizeWords
-        #endregion // CapitalizeWords methods
+        #endregion // CapitalizeWords method
 
 
         #region Chop Methods
@@ -377,13 +380,22 @@ namespace WizardWrx
         /// </para>
         /// </param>
         /// <returns>
+        /// <para>
         /// The chopped string is returned, minus its newline if it contained
         /// one. This method treats all newlines equally, meaning that any of
         /// the following items is treated as a newline.
-        /// 
-        /// 1) Environment.Newline
-        /// 2) SpecialStrings.STRING_SPLIT_CARRIAGE_RETURN, a bare carriage return (0x0D)
-        /// 3) SpecialStrings.STRING_SPLIT_LINEFEED, a bare line feed (0x0A)
+        /// </para>
+        /// <list type="number">
+        /// <item>
+        /// Environment.Newline
+        /// </item>
+        /// <item>
+        /// SpecialStrings.STRING_SPLIT_CARRIAGE_RETURN, a bare carriage return (0x0D)
+        /// </item>
+        /// <item>
+        /// </item>
+        /// SpecialStrings.STRING_SPLIT_LINEFEED, a bare line feed (0x0A)
+        /// </list>
         /// </returns>
         /// <see cref="SpecialStrings.STRING_SPLIT_CARRIAGE_RETURN"/>
         /// <see cref="SpecialStrings.STRING_SPLIT_LINEFEED "/>
@@ -489,13 +501,17 @@ namespace WizardWrx
         /// that missing method.
         /// </summary>
         /// <param name="pstrSource">
+        /// <para>
         /// Specify the string in which to count occurrences of substring 
         /// pstrToCount.
-        ///
+        /// </para>
+        ///<para>
         /// If pstrSource is null or empty, the method returns zero.
-        /// 
+        ///</para>
+        /// <para>
         /// Since this is an extension method, pstrIn is supplied by the BCL
         /// when it binds this method to an instance of System.string.
+        /// </para>
         /// </param>
         /// <param name="pchrToCount">
         /// Specify the substring to count in string pstrSource. An empty string
@@ -509,15 +525,18 @@ namespace WizardWrx
         /// null reference or empty the empty string.
         /// </returns>
         /// <remarks>
+        /// <para>
         /// This method implements the only overload of the string.IndexOf
         /// method that takes a character as its second argument for which I
         /// have yet to make use. There is currently no implementation of the
         /// overload that stops looking after scanning count characters, nor do
         /// I have immediate plans to implement one, though it wouldn't be hard.
-        /// 
+        /// </para>
+        /// <para>
         /// This method uses the same algorithm as CountSubstrings, except that
         /// its second argument is a single character, which CANNOT be the NULL
         /// character.
+        /// </para>
         /// </remarks>
         public static int CountCharacterOccurrences (
             this string pstrSource ,
@@ -566,13 +585,17 @@ namespace WizardWrx
         /// count substrings within a string. This is that missing method.
         /// </summary>
         /// <param name="pstrSource">
+        /// <para>
         /// Specify the string in which to count occurrences of substring 
         /// pstrToCount.
-        ///
+        /// </para>
+        ///<para>
         /// If pstrSource is null or empty, the method returns zero.
-        /// 
+        ///</para>
+        /// <para>
         /// Since this is an extension method, pstrIn is supplied by the BCL
         /// when it binds this method to an instance of System.string.
+        ///</para>
         /// </param>
         /// <param name="pstrToCount">
         /// Specify the substring to count in string pstrSource. An empty string
@@ -586,16 +609,19 @@ namespace WizardWrx
         /// null reference or empty the empty string.
         /// </returns>
         /// <remarks>
+        /// <para>
         /// This method implements the only overloads of the string.IndexOf
         /// method that takes a string as its second argument for which I
         /// have yet to make use. There is currently no implementation of the
         /// overloads that stops looking after scanning count characters, nor do
         /// I have immediate plans to implement one, though it wouldn't be hard.
-        /// 
+        ///</para>
+        /// <para>
         /// This method is implemented by calling the second overload, which has
         /// an additional argument through which to specify a string comparison
         /// algorithm, since the algorithms required to implement both are
         /// otherwise identical.
+        ///</para>
         /// </remarks>
         public static int CountSubstrings (
             this string pstrSource ,
@@ -612,19 +638,26 @@ namespace WizardWrx
         /// count substrings within a string. This is that missing method.
         /// </summary>
         /// <param name="pstrSource">
+        /// <para>
         /// Specify the string in which to count occurrences of substring
         /// pstrToCount.
-        ///
+        ///</para>
+        ///<para>
         /// If pstrSource is null or empty, the method returns zero.
-        /// 
+        ///</para>
+        /// <para>
         /// Since this is an extension method, pstrIn is supplied by the BCL
         /// when it binds this method to an instance of System.string.
+        ///</para>
         /// </param>
         /// <param name="pstrToCount">
+        /// <para>
         /// Specify the substring to count in string pstrSource.
-        /// 
+        ///</para>
+        /// <para>
         /// The empty string causes the method to return 
         /// MagicNumbers.STRING_INDEXOF_NOT_FOUND, or -1.
+        ///</para>
         /// </param>
         /// <param name="penmComparisonType">
         /// Specify a member of the System.StringComparison enumeration, which
@@ -742,19 +775,26 @@ namespace WizardWrx
         /// <paramref name="pstrToCount"/> in string <paramref name="pstrSource"/>.
         /// </summary>
         /// <param name="pstrSource">
+        /// <para>
         /// Specify the string in which to count occurrences of substring
         /// pstrToCount.
-        ///
+        ///</para>
+        ///<para>
         /// If pstrSource is null or empty, the method returns zero.
-        /// 
+        ///</para>
+        /// <para>
         /// Since this is an extension method, pstrIn is supplied by the BCL
         /// when it binds this method to an instance of System.string.
+        ///</para>
         /// </param>
         /// <param name="pstrToCount">
+        /// <para>
         /// Specify the substring to count in string pstrSource.
-        /// 
+        ///</para>
+        /// <para>
         /// The empty string causes the method to return 
         /// MagicNumbers.STRING_INDEXOF_NOT_FOUND, or -1.
+        ///</para>
         /// </param>
         /// <returns>
         /// When the method succeeds, its return value is an array of integers,
@@ -784,19 +824,26 @@ namespace WizardWrx
         /// <paramref name="pstrToCount"/> in string <paramref name="pstrSource"/>.
         /// </summary>
         /// <param name="pstrSource">
+        /// <para>
         /// Specify the string in which to count occurrences of substring
         /// pstrToCount.
-        ///
+        ///</para>
+        ///<para>
         /// If pstrSource is null or empty, the method returns zero.
-        /// 
+        ///</para>
+        /// <para>
         /// Since this is an extension method, pstrIn is supplied by the BCL
         /// when it binds this method to an instance of System.string.
+        ///</para>
         /// </param>
         /// <param name="pstrToCount">
+        /// <para>
         /// Specify the substring to count in string pstrSource.
-        /// 
+        ///</para>
+        /// <para>
         /// The empty string causes the method to return 
         /// MagicNumbers.STRING_INDEXOF_NOT_FOUND, or -1.
+        ///</para>
         /// </param>
         /// <param name="penmComparisonType">
         /// Specify a member of the System.StringComparison enumeration, which
@@ -891,17 +938,45 @@ namespace WizardWrx
         #endregion  // CountUnresolvedEnvironmentStrings Methods
 
 
-        #region EncloseInChar Methods
+        #region CSVSafe4EmbeddedDoubleQuote Methods
+        /// <summary>
+        /// Replace double quotation marks embedded in a field that is about to
+        /// be inserted into a CSV string with pairs of double quotation marks.
+        /// </summary>
+        /// <param name="pstrIn">
+        /// <para>
+        /// Specify the string to evaluate, which may, or may not, have embedded
+        /// double quotation marks.
+        /// </para>
+        /// <para>
+        /// Since this is an extension method, pstrIn is supplied by the BCL
+        /// when it binds this method to an instance of System.string.
+        /// </para>
+        /// </param>
+        /// <returns>
+        /// The return value is a copy of the string in which embedded double
+        /// quotation marks are replaced by pairs of double quotation marks, as
+        /// specified in RFC-4180.
+        /// </returns>
+        /// <see href="https://datatracker.ietf.org/doc/html/rfc4180"/>
+        public static string CSVSafe4EmbeddedDoubleQuote ( this string pstrIn ) => pstrIn.Replace ( SpecialStrings.DOUBLE_QUOTE , SpecialStrings.CSV_ESCAPED_DOUBLE_QUOTE );
+        #endregion  // CSVSafe4EmbeddedDoubleQuote Methods
+
+
+        #region EncloseInChar Method
         /// <summary>
         /// Append a specified character to both ends of a string, unless it is
         /// already present.
         /// </summary>
         /// <param name="pstrIn">
+        /// <para>
         /// Specify the string to evaluate, which may, or may not, end with the
         /// character specified in pchrEnd.
-        /// 
+        /// </para>
+        /// <para>
         /// Since this is an extension method, pstrIn is supplied by the BCL
         /// when it binds this method to an instance of System.string.
+        /// </para>
         /// </param>
         /// <param name="pchrEnd">
         /// Specify the character to append, if absent.
@@ -930,10 +1005,10 @@ namespace WizardWrx
             else
                 return strEndChar + pstrIn + strEndChar;
         }   // EncloseInChar
-        #endregion // EncloseInChar Methods
+        #endregion // EncloseInChar Method
 
 
-        #region EnsureFirstCharIs Methods
+        #region EnsureFirstCharIs Method
         /// <summary>
         /// Return a string that is guaranteed to start with a specified character.
         /// </summary>
@@ -965,10 +1040,10 @@ namespace WizardWrx
                 throw new ArgumentNullException ( "pchrMustBeFirst" );
             }   // FALSE (unanticipated outcome) block, if ( pchrMustBeFirst != SpecialCharacters.NULL_CHAR )
         }   // EnsureFirstCharIs
-        #endregion // EnsureFirstCharIs Methods
+        #endregion // EnsureFirstCharIs Method
 
 
-        #region EnsureLastCharIs Methods
+        #region EnsureLastCharIs Method
         /// <summary>
         /// Return a string that is guaranteed to end with a specified character.
         /// </summary>
@@ -1004,10 +1079,10 @@ namespace WizardWrx
                 throw new ArgumentNullException ( "pchrMustBeLast" );
             }   // FALSE (unanticipated outcome) block, if ( pchrMustBeFirst != SpecialCharacters.NULL_CHAR )
         }   // EnsureLastCharIs
-        #endregion // EnsureLastCharIs Methods
+        #endregion // EnsureLastCharIs Method
 
 
-        #region EnumFromString Methods
+        #region EnumFromString Method
         /// <summary>
         /// Convert a string to the equivalent instance of a specified
         /// enumeration type.
@@ -1079,7 +1154,7 @@ namespace WizardWrx
                     exFormatException );
             }   // catch ( FormatException formatException )
         }   // public static T EnumFromString<T>
-        #endregion  // EnumFromString Methods
+        #endregion  // EnumFromString Method
 
 
         #region ExtractBetweenIndexOfs Methods
@@ -1087,10 +1162,13 @@ namespace WizardWrx
         /// Extract the substring bounded by the characters at either end of it.
         /// </summary>
         /// <param name="pstrWholeString">
+        /// <para>
         /// Specify the string from which to extract the substring.
-        /// 
+        ///</para>
+        /// <para>
         /// Since this is an extension method, the CLR supplies this argument
         /// when it binds the method to an instance of the System.string class.
+        ///</para>
         /// </param>
         /// <param name="pintPosBegin">
         /// Specify the position, as it would be reported by IndexOf, of the 
@@ -1130,10 +1208,13 @@ namespace WizardWrx
         /// Extract the substring bounded by the characters at either end of it.
         /// </summary>
         /// <param name="pstrWholeString">
+        /// <para>
         /// Specify the string from which to extract the substring.
-        /// 
+        /// </para>
+        /// <para>
         /// Since this is an extension method, the CLR supplies this argument
         /// when it binds the method to an instance of the System.string class.
+        ///</para>
         /// </param>
         /// <param name="pstrLeftMarker">
         /// This overload handles the case where the left boundary is bounded by
@@ -1150,13 +1231,16 @@ namespace WizardWrx
         /// that bounds the right end of the desired substring.
         /// </param>
         /// <returns>
+        /// <para>
         /// The returned substring begins with the character immediately to the
         /// right of the left hand bounding character, and ending with the last
         /// character before the right hand bounding character.
-        ///
+        ///</para>
+        ///<para>
         /// Inputs and computed values are thoroughly sanity checked to prevent
         /// run-time exceptions. If anything is out of order, an empty string is
         /// returned.
+        ///</para>
         /// </returns>
         public static string ExtractBetweenIndexOfs (
             this string pstrWholeString ,
@@ -1198,13 +1282,16 @@ namespace WizardWrx
         /// characters. See Remarks.
         /// </returns>
         /// <remarks>
+        /// <para>
         /// The left and right ends must be bounded by the same character. To
         /// extract a string bounded on each end by a different character, use
         /// the next overload.
-        ///
+        /// </para>
+        ///<para>
         /// Inputs and computed values are thoroughly sanity checked to prevent
         /// run-time exceptions. If anything is out of order, an empty string is
         /// returned.
+        ///</para>
         /// </remarks>
         public static string ExtractBoundedSubstrings (
             this string pstrWholeString ,
@@ -1254,13 +1341,16 @@ namespace WizardWrx
         /// character before the right hand bounding substring.
         /// </returns>
         /// <remarks>
+        /// <para>
         /// The left and right ends are expected to be bounded by different
         /// characters. To  extract a string bounded on each end by the same
         /// character, use the previous overload.
-        ///
+        ///</para>
+        ///<para>
         /// Inputs and computed values are thoroughly sanity checked to prevent
         /// run-time exceptions. If anything is out of order, the empty string
         /// is returned.
+        ///</para>
         /// </remarks>
         public static string ExtractBoundedSubstrings (
             this string pstrWholeString ,
@@ -1315,13 +1405,16 @@ namespace WizardWrx
         /// character before the right hand bounding substring.
         /// </returns>
         /// <remarks>
+        /// <para>
         /// The left and right ends are expected to be bounded by different
         /// substrings. To  extract a string bounded on each end by the same
         /// substring, use the same value for the second and third arguments.
-        ///
+        ///</para>
+        ///<para>
         /// Inputs and computed values are thoroughly sanity checked to prevent
         /// run-time exceptions. If anything is out of order, an empty string is
         /// returned.
+        ///</para>
         /// </remarks>
         public static string ExtractBoundedSubstrings (
             this string pstrWholeString ,
@@ -1361,7 +1454,7 @@ namespace WizardWrx
         #endregion // ExtractBoundedSubstrings Methods
 
 
-        #region GuardStringIfNeeded Methods
+        #region GuardStringIfNeeded Method
         /// <summary>
         /// Return a new string that is enclosed in a specified quoting
         /// character, defaulting to a double quote, if the input string
@@ -1420,7 +1513,8 @@ namespace WizardWrx
                 }   // FALSE (degenerate case 2 of 2) block, if ( pstrThisString.IndexOf ( pchrDelimiter ) == ListInfo.INDEXOF_NOT_FOUND )
             }   // FALSE (degenerate case 1 of 2) block, if ( string.IsNullOrEmpty ( pstrThisString ) )
         }   // public static string GuardStringIfNeeded
-        #endregion  // GuardStringIfNeeded Methods
+        #endregion  // GuardStringIfNeeded Method
+
 
         #region LeftPadNChars Extension Methods
         /// <summary>
@@ -1435,20 +1529,26 @@ namespace WizardWrx
         /// string. Please see the Remarks for important details.
         /// </param>
         /// <returns>
+        /// <para>
         /// The input string is padded on the left with the specified number of
         /// space characters.
-        /// 
+        /// </para>
+        /// <para>
         /// Please see the Remarks for important details.
+        /// </para>
         /// </returns>
         /// <remarks>
+        /// <para>
         /// These methods compensate for the completely logical, if unexpected,
         /// behavior of the native PadLeft and PadRight methods on the
         /// System.string class. Their objective is to guarantee that the new
         /// string is truly padded with a specific number of characters.
-        /// 
+        /// </para>
+        /// <para>
         /// The names of the visible arguments differ from my usual Hungarian
         /// naming convention so that they conform to the naming convention of
         /// the Base Class Library methods that they wrap.
+        /// </para>
         /// </remarks>
         public static string LeftPadNChars (
             this string pstrPadThisString ,
@@ -1477,20 +1577,26 @@ namespace WizardWrx
         /// Specify the arbitrary character with which the string is to be padded.
         /// </param>
         /// <returns>
+        /// <para>
         /// The input string is padded on the left with the specified number of
         /// the specified arbitrary character.
-        /// 
+        /// </para>
+        /// <para>
         /// Please see the Remarks for important details.
+        /// </para>
         /// </returns>
         /// <remarks>
+        /// <para>
         /// These methods compensate for the completely logical, if unexpected,
         /// behavior of the native PadLeft and PadRight methods on the
         /// System.string class. Their objective is to guarantee that the new
         /// string is truly padded with a specific number of characters.
-        /// 
+        /// </para>
+        /// <para>
         /// The names of the visible arguments differ from my usual Hungarian
         /// naming convention so that they conform to the naming convention of
         /// the Base Class Library methods that they wrap.
+        /// </para>
         /// </remarks>
         public static string LeftPadNChars (
             this string pstrPadThisString ,
@@ -1519,10 +1625,13 @@ namespace WizardWrx
         /// holder. See Remarks.
         /// </returns>
         /// <remarks>
+        /// <para>
         /// The string is constructed by appending a standard token delimiter,
         /// which is a pair of dollar signs, to each end of the string.
-        ///
+        /// </para>
+        ///<para>
         /// The token is exposed as a static property, DEFAULT_TOKEN_DELM.
+        ///</para>
         /// </remarks>
         public static string MakeToken ( this string pstrFieldName )
         {
@@ -1804,41 +1913,55 @@ namespace WizardWrx
         /// null referencr or omit the parameter to use the default string.
         /// </param>
         /// <param name="pstrFormatString">
+        /// <para>
         /// Use this optional string parameter to override the default format of
         /// the value returned by the instance ToString method.
-        /// 
+        /// </para>
+        /// <para>
         /// Please see the Remarks.
+        /// </para>
         /// </param>
         /// <param name="pformatProvider">
+        /// <para>
         /// Use this optional parameter to override the default format provider
         /// used by the instance ToString method.
-        /// 
+        /// </para>
+        /// <para>
         /// Please see the Remarks.
+        /// </para>
         /// </param>
         /// <returns>
+        /// <para>
         /// If <paramref name="pgenericObject"/> is a null reference, return
         /// Common.Properties.Resources.MSG_OBJECT_REFERENCE_IS_NULL if
         /// <paramref name="pstrValueIfNull"/> is also a null reference.
-        /// 
+        /// </para>
+        /// <para>
         /// If <paramref name="pgenericObject"/> is a null reference and 
         /// <paramref name="pstrValueIfNull"/> is not, return
         /// <paramref name="pstrValueIfNull"/>.
-        /// 
+        /// </para>
+        /// <para>
         /// Finally, if <paramref name="pgenericObject"/> is not null, call its
         /// ToString method.
-        /// 
+        /// </para>
+        /// <para>
         /// Please see the Remarks.
+        /// </para>
         /// </returns>
         /// <remarks>
+        /// <para>
         /// Because this method is generic, it can call the ToString override on
         /// any object that explicitly implements the IFormattable interface, so
         /// you derive the benefits of any such override.
-        /// 
+        /// </para>
+        /// <para>
         /// The optional <paramref name="pstrFormatString"/> and 
         /// <paramref name="pformatProvider"/> arguments work in
         /// tandem with the override on the instance ToString method. To use it
         /// and the default null reference representation, pass a null reference
         /// as the value of <paramref name="pstrValueIfNull"/>.
+        /// </para>
         /// </remarks>
         public static string RenderEvenWhenNull<T> (
             this T pgenericObject ,
@@ -1945,10 +2068,18 @@ namespace WizardWrx
 
         #region ReplaceEscapedTabsInStringFromResX Method
         /// <summary>
-        /// 
+        /// Replace TAB characters, escaped as they must be for embedding in the
+        /// string of a RESX resource, with real TAB characters.
         /// </summary>
-        /// <param name="pstrStringFromResX"></param>
-        /// <returns></returns>
+        /// <param name="pstrStringFromResX">
+        /// The input is expected to be a string that was read from a string
+        /// resource defined in a .RESX file, which may contain specially coded
+        /// TAB characters that aree unusable as returned.
+        /// </param>
+        /// <returns>
+        /// The return value is a copy of the resource string in which embedded
+        /// (escaped) TAB characters are replaced with undecordated TABs.
+        /// </returns>
         public static string ReplaceEscapedTabsInStringFromResX ( this string pstrStringFromResX )
         {
             return pstrStringFromResX.Replace (
@@ -2361,11 +2492,16 @@ namespace WizardWrx
         /// Environment.Exit.
         /// </returns>
         /// <remarks>
+        /// <para>
         /// After the count is written onto the standard error stream, control
         /// returns to its caller, which may take subsequent actions based upon
         /// the return value.
-        /// 
-        /// Most of the 
+        /// </para>
+        /// <para>
+        /// When this situation arises, it is usually because an expected
+        /// environment string is undefined, and the solution MAY be its
+        /// removal from the string.
+        /// </para>
         /// </remarks>
         /// <see cref="CountUnresolvedEnvironmentStrings"/>
         public static uint ReportUnresolvedEnvironmentStrings (
@@ -2450,7 +2586,7 @@ namespace WizardWrx
         #endregion // ReportUnresolvedEnvironmentStrings Method
 
 
-        #region RightPadNChars Extension Method
+        #region RightPadNChars Extension Methods
         /// <summary>
         /// Right pad the string with a specified number of spaces.
         /// </summary>
@@ -2459,26 +2595,35 @@ namespace WizardWrx
         /// to an instance of the System.String class.
         /// </param>
         /// <param name="paddingCharacterCount">
+        /// <para>
         /// Specify the number of space characters to add on the right end of
         /// the string.
-        /// 
+        /// </para>
+        /// <para>
         /// Please see the Remarks for important details.
+        /// </para>
         /// </param>
         /// <returns>
+        /// <para>
         /// The input string is padded on the right with the specified number of
         /// space characters.
-        /// 
+        /// </para>
+        /// <para>
         /// Please see the Remarks for important details.
+        /// </para>
         /// </returns>
         /// <remarks>
+        /// <para>
         /// These methods compensate for the completely logical, if unexpected,
         /// behavior of the native PadLeft and PadRight methods on the
         /// System.string class. Their objective is to guarantee that the new
         /// string is truly padded with a specific number of characters.
-        /// 
+        /// </para>
+        /// <para>
         /// The names of the visible arguments differ from my usual Hungarian
         /// naming convention so that they conform to the naming convention of
         /// the Base Class Library methods that they wrap.
+        /// </para>
         /// </remarks>
         public static string RightPadNChars (
             this string pstrPadThisString ,
@@ -2489,6 +2634,7 @@ namespace WizardWrx
                     pstrPadThisString ,
                     paddingCharacterCount ) );
         }   // public static string RightPadNChars (1 of 2)
+
 
         /// <summary>
         /// Left pad the string with a specified number of some arbitrary
@@ -2512,14 +2658,17 @@ namespace WizardWrx
         /// Please see the Remarks for important details.
         /// </returns>
         /// <remarks>
+        /// <para>
         /// These methods compensate for the completely logical, if unexpected,
         /// behavior of the native PadLeft and PadRight methods on the
         /// System.string class. Their objective is to guarantee that the new
         /// string is truly padded with a specific number of characters.
-        /// 
+        /// </para>
+        /// <para>
         /// The names of the visible arguments differ from my usual Hungarian
         /// naming convention so that they conform to the naming convention of
         /// the Base Class Library methods that they wrap.
+        /// </para>
         /// </remarks>
         public static string RightPadNChars (
             this string pstrPadThisString ,
@@ -2532,7 +2681,31 @@ namespace WizardWrx
                     paddingCharacterCount ) ,
                 paddingChar );
         }   // public static string RightPadNChars (2 of 2)
-        #endregion // RightPadNChars Extension Method
+        #endregion // RightPadNChars Extension Methods
+
+
+        #region SQLafe4EmbeddedSingleQuote
+        /// <summary>
+        /// Replace single quotation marks in a field that is intended to be the
+        /// value of a column or filter parameter in a SQL string.
+        /// </summary>
+        /// <param name="pstrIn">
+        /// <para>
+        /// Specify the string to evaluate, which may, or may not, have embedded
+        /// single quotation marks.
+        /// </para>
+        /// <para>
+        /// Since this is an extension method, pstrIn is supplied by the BCL
+        /// when it binds this method to an instance of System.string.
+        /// </para>
+        /// </param>
+        /// <returns>
+        /// The return value is an escaped string suitable for inclusion as the
+        /// value of a column, filter parameter, or storeed procedure parameteer
+        /// in a SQL string.
+        /// </returns>
+        public static string SQLafe4EmbeddedSingleQuote ( this string pstrIn ) => pstrIn.Replace ( SpecialStrings.SINGLE_QUOTE , SpecialStrings.SQL_ESCAPED_SINGLE_QUOTE );
+        #endregion  // SQLafe4EmbeddedSingleQuote
 
 
         #region Truncate Method
@@ -2540,26 +2713,36 @@ namespace WizardWrx
         /// Supply the missing Truncate function to members of the String class.
         /// </summary>
         /// <param name="pstrSource">
+        /// <para>
         /// String to truncate, if it is longer than pintMaxLength.
-        ///
+        /// </para>
+        ///<para>
         /// A null string is treated as an empty string, and the return value
         /// for either is an empty string.
+        /// </para>
         /// </param>
         /// <param name="pintMaxLength">
+        /// <para>
         /// Desired maximum length of the returned string. If pstrSource is
         /// longer than pintMaxLength characters, the first pintMaxLength are
         /// returned. Otherwise, the whole string is returned.
-        ///
+        /// </para>
+        ///<para>
         /// If pintMaxLength is less than or equal to zero, an empty string is
         /// returned.
+        /// </para>
         /// </param>
         /// <returns>
+        /// <para>
         /// If the string length is less than or equal to the specified maximum
         /// length, the whole string is returned.
-        ///
+        /// </para>
+        ///<para>
         /// Otherwise, the first pintMaxLength characters are returned.
-        ///
+        /// </para>
+        ///<para>
         /// Regardless, the return value is a new System.String object.
+        /// </para>
         /// </returns>
         public static string Truncate (
             this string pstrSource ,

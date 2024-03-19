@@ -30,6 +30,6 @@ D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLConfig
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLConfigurationManager\obj\Release\WizardWrx.DLLConfigurationManager.Properties.Resources.resources
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLConfigurationManager\obj\Release\DLLConfigurationManager.csproj.GenerateResource.cache
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLConfigurationManager\obj\Release\DLLConfigurationManager.csproj.CoreCompileInputs.cache
-D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLConfigurationManager\obj\Release\DLLConfigurationManager.csproj.CopyComplete
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLConfigurationManager\obj\Release\WizardWrx.DLLConfigurationManager.dll
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLConfigurationManager\obj\Release\WizardWrx.DLLConfigurationManager.pdb
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLConfigurationManager\obj\Release\DLLConfi.D491A287.Up2Date

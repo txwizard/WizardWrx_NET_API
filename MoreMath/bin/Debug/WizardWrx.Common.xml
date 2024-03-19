@@ -4921,6 +4921,15 @@
             </summary>
             <seealso cref="F:WizardWrx.SpecialCharacters.COMMA"/>
         </member>
+        <member name="F:WizardWrx.SpecialStrings.CSV_ESCAPED_DOUBLE_QUOTE">
+            <summary>
+            Use this as the second of two argument so the Replace method on a
+            String, along with DOUBLE_QUOTE as tthe first argument, when the
+            double quotation mark must be embeddded in the value of a field in a
+            CSV file.
+            </summary>
+            <see cref="F:WizardWrx.SpecialStrings.DOUBLE_QUOTE"/>
+        </member>
         <member name="F:WizardWrx.SpecialStrings.DOUBLE_QUOTE">
             <summary>
             This is one of many single characters that are frequently needed as
@@ -5248,6 +5257,15 @@
             </summary>
             <seealso cref="F:WizardWrx.SpecialStrings.SQL_DATETIME_FORMAT_FULL"/>
             <seealso cref="F:WizardWrx.SpecialStrings.SQL_DATETIME_FORMAT_PRECISE"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.SQL_ESCAPED_SINGLE_QUOTE">
+            <summary>
+            Use this as the second of two argument so the Replace method on a
+            String, along with SINGLE_QUOTE as tthe first argument, to replace
+            single quotation marks that appear in the value of a column or a
+            stored procedure parameter appears in a SQL script.
+            </summary>
+            <see cref="F:WizardWrx.SpecialStrings.SINGLE_QUOTE"/>
         </member>
         <member name="F:WizardWrx.SpecialStrings.STRING_SPLIT_CARRIAGE_RETURN">
             <summary>

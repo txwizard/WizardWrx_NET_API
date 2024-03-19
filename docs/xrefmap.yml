@@ -16005,6 +16005,12 @@ references:
   commentId: F:WizardWrx.SpecialStrings.COMMA
   fullName: WizardWrx.SpecialStrings.COMMA
   nameWithType: SpecialStrings.COMMA
+- uid: WizardWrx.SpecialStrings.CSV_ESCAPED_DOUBLE_QUOTE
+  name: CSV_ESCAPED_DOUBLE_QUOTE
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_CSV_ESCAPED_DOUBLE_QUOTE
+  commentId: F:WizardWrx.SpecialStrings.CSV_ESCAPED_DOUBLE_QUOTE
+  fullName: WizardWrx.SpecialStrings.CSV_ESCAPED_DOUBLE_QUOTE
+  nameWithType: SpecialStrings.CSV_ESCAPED_DOUBLE_QUOTE
 - uid: WizardWrx.SpecialStrings.DOUBLE_QUOTE
   name: DOUBLE_QUOTE
   href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_DOUBLE_QUOTE
@@ -16251,6 +16257,12 @@ references:
   commentId: F:WizardWrx.SpecialStrings.SQL_DATETIME_FORMAT_PRECISE
   fullName: WizardWrx.SpecialStrings.SQL_DATETIME_FORMAT_PRECISE
   nameWithType: SpecialStrings.SQL_DATETIME_FORMAT_PRECISE
+- uid: WizardWrx.SpecialStrings.SQL_ESCAPED_SINGLE_QUOTE
+  name: SQL_ESCAPED_SINGLE_QUOTE
+  href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_SQL_ESCAPED_SINGLE_QUOTE
+  commentId: F:WizardWrx.SpecialStrings.SQL_ESCAPED_SINGLE_QUOTE
+  fullName: WizardWrx.SpecialStrings.SQL_ESCAPED_SINGLE_QUOTE
+  nameWithType: SpecialStrings.SQL_ESCAPED_SINGLE_QUOTE
 - uid: WizardWrx.SpecialStrings.STRING_SPLIT_CARRIAGE_RETURN
   name: STRING_SPLIT_CARRIAGE_RETURN
   href: api/WizardWrx.SpecialStrings.html#WizardWrx_SpecialStrings_STRING_SPLIT_CARRIAGE_RETURN
@@ -16425,6 +16437,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.StringExtensions.CountUnresolvedEnvironmentStrings
   nameWithType: StringExtensions.CountUnresolvedEnvironmentStrings
+- uid: WizardWrx.StringExtensions.CSVSafe4EmbeddedDoubleQuote(System.String)
+  name: CSVSafe4EmbeddedDoubleQuote(String)
+  href: api/WizardWrx.StringExtensions.html#WizardWrx_StringExtensions_CSVSafe4EmbeddedDoubleQuote_System_String_
+  commentId: M:WizardWrx.StringExtensions.CSVSafe4EmbeddedDoubleQuote(System.String)
+  fullName: WizardWrx.StringExtensions.CSVSafe4EmbeddedDoubleQuote(System.String)
+  nameWithType: StringExtensions.CSVSafe4EmbeddedDoubleQuote(String)
+- uid: WizardWrx.StringExtensions.CSVSafe4EmbeddedDoubleQuote*
+  name: CSVSafe4EmbeddedDoubleQuote
+  href: api/WizardWrx.StringExtensions.html#WizardWrx_StringExtensions_CSVSafe4EmbeddedDoubleQuote_
+  commentId: Overload:WizardWrx.StringExtensions.CSVSafe4EmbeddedDoubleQuote
+  isSpec: "True"
+  fullName: WizardWrx.StringExtensions.CSVSafe4EmbeddedDoubleQuote
+  nameWithType: StringExtensions.CSVSafe4EmbeddedDoubleQuote
 - uid: WizardWrx.StringExtensions.DEFAULT_TOKEN_DELM
   name: DEFAULT_TOKEN_DELM
   href: api/WizardWrx.StringExtensions.html#WizardWrx_StringExtensions_DEFAULT_TOKEN_DELM
@@ -16800,6 +16825,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.StringExtensions.RightPadNChars
   nameWithType: StringExtensions.RightPadNChars
+- uid: WizardWrx.StringExtensions.SQLafe4EmbeddedSingleQuote(System.String)
+  name: SQLafe4EmbeddedSingleQuote(String)
+  href: api/WizardWrx.StringExtensions.html#WizardWrx_StringExtensions_SQLafe4EmbeddedSingleQuote_System_String_
+  commentId: M:WizardWrx.StringExtensions.SQLafe4EmbeddedSingleQuote(System.String)
+  fullName: WizardWrx.StringExtensions.SQLafe4EmbeddedSingleQuote(System.String)
+  nameWithType: StringExtensions.SQLafe4EmbeddedSingleQuote(String)
+- uid: WizardWrx.StringExtensions.SQLafe4EmbeddedSingleQuote*
+  name: SQLafe4EmbeddedSingleQuote
+  href: api/WizardWrx.StringExtensions.html#WizardWrx_StringExtensions_SQLafe4EmbeddedSingleQuote_
+  commentId: Overload:WizardWrx.StringExtensions.SQLafe4EmbeddedSingleQuote
+  isSpec: "True"
+  fullName: WizardWrx.StringExtensions.SQLafe4EmbeddedSingleQuote
+  nameWithType: StringExtensions.SQLafe4EmbeddedSingleQuote
 - uid: WizardWrx.StringExtensions.Truncate(System.String,System.Int32)
   name: Truncate(String, Int32)
   href: api/WizardWrx.StringExtensions.html#WizardWrx_StringExtensions_Truncate_System_String_System_Int32_

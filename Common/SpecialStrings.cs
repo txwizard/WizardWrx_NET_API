@@ -217,9 +217,12 @@
                               the same reason the PIPE_CHAR amd others exist in
                               both formats and classes.
 
-	2022/11/22 9.0.253 DAG   Move DOUBLE_SPACE, EMBEDDED_TAB and OUTPUT_TAB from
+	2023/11/23 9.0.253 DAG   Move DOUBLE_SPACE, EMBEDDED_TAB and OUTPUT_TAB from
                              class ReportHelpers, which is also moving to this
                              library.
+
+	2024/03/18 9.0.268 DAG   Add CSV_ESCAPED_DOUBLE_QUOTE (ASCII code 0x22)
+                             and SQL_ESCAPED_SINGLE_QUOTE (ASCII code 0x27).
     ============================================================================
 */
 
@@ -509,7 +512,16 @@ namespace WizardWrx
         /// </summary>
         /// <seealso cref="SpecialCharacters.COMMA"/>
         public const string COMMA = ",";
-        
+
+        /// <summary>
+        /// Use this as the second of two argument so the Replace method on a
+        /// String, along with DOUBLE_QUOTE as tthe first argument, when the
+		/// double quotation mark must be embeddded in the value of a field in a
+		/// CSV file.
+        /// </summary>
+		/// <see cref="DOUBLE_QUOTE"/>
+        public const string CSV_ESCAPED_DOUBLE_QUOTE = DOUBLE_QUOTE + DOUBLE_QUOTE;
+
         /// <summary>
         /// This is one of many single characters that are frequently needed as
         /// single-character string constants.
@@ -839,16 +851,25 @@ namespace WizardWrx
 		/// <seealso cref="SQL_DATETIME_FORMAT_PRECISE"/>
 		public const string SQL_DATE_FORMAT = @"MM-dd-yyyy";
 
-		/// <summary>
-		/// Use this string as the solitary element of an array of strings to
-		/// split a string that contains text from a file of lines delimited by
-		/// carriage returns only.
-		/// </summary>
-		/// <seealso cref="SpecialCharacters.CARRIAGE_RETURN"/>
-		/// <seealso cref="SpecialCharacters.LINEFEED"/>
-		/// <seealso cref="STRING_SPLIT_LINEFEED"/>
-		/// <seealso cref="STRING_SPLIT_NEWLINE"/>
-		public const string STRING_SPLIT_CARRIAGE_RETURN = "\r";
+        /// <summary>
+        /// Use this as the second of two argument so the Replace method on a
+        /// String, along with SINGLE_QUOTE as tthe first argument, to replace
+		/// single quotation marks that appear in the value of a column or a
+		/// stored procedure parameter appears in a SQL script.
+        /// </summary>
+		/// <see cref="SINGLE_QUOTE"/>
+        public const string SQL_ESCAPED_SINGLE_QUOTE = SINGLE_QUOTE + SINGLE_QUOTE;
+
+        /// <summary>
+        /// Use this string as the solitary element of an array of strings to
+        /// split a string that contains text from a file of lines delimited by
+        /// carriage returns only.
+        /// </summary>
+        /// <seealso cref="SpecialCharacters.CARRIAGE_RETURN"/>
+        /// <seealso cref="SpecialCharacters.LINEFEED"/>
+        /// <seealso cref="STRING_SPLIT_LINEFEED"/>
+        /// <seealso cref="STRING_SPLIT_NEWLINE"/>
+        public const string STRING_SPLIT_CARRIAGE_RETURN = "\r";
 
 		/// <summary>
 		/// Use this string as the solitary element of an array of strings to

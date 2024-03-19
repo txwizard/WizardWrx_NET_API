@@ -16,6 +16,6 @@ D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStr
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\obj\Release\WizardWrx.FormatStringEngine.Properties.Resources.resources
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\obj\Release\FormatStringEngine.csproj.GenerateResource.cache
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\obj\Release\FormatStringEngine.csproj.CoreCompileInputs.cache
-D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\obj\Release\FormatStringEngine.csproj.CopyComplete
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\obj\Release\WizardWrx.FormatStringEngine.dll
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\obj\Release\WizardWrx.FormatStringEngine.pdb
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\FormatStringEngine\obj\Release\FormatSt.BA3FFA81.Up2Date

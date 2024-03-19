@@ -22,7 +22,7 @@
 
     Author:				David A. Gray
 
-    License:            Copyright (C) 2011-2022, David A. Gray.
+    License:            Copyright (C) 2011-2024, David A. Gray.
                         All rights reserved.
 
                         Redistribution and use in source and binary forms, with
@@ -336,6 +336,9 @@
 
     2024/02/14 9.0.1583 DAG Exercise the ExtractBoundedSubstrings String 
                             Extension method.
+
+    2024/03/18 9.0.1588 DAG Exercise the new CSVSafe4EmbeddedDoubleQuote and
+                            SQLafe4EmbeddedSingleQuote extension methods.
     ============================================================================
 */
 
@@ -1082,6 +1085,24 @@ namespace DLLServices2TestStand
                                 @"CSVFileInfoExercises" ,
                                 intRetCode ) );
                     }   // if ( ( intRetCode = NewClassTests_20140914.CSVFileInfoExercises ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
+
+                    if ( ( intRetCode = NewClassTests_20140914.StringEscapes ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
+                    {
+                        PauseForPictures (
+                            OMIT_LINEFEED ,
+                            @"StringEscapes for WizardWrx.Core.dll" );
+                    }
+                    else
+                    {
+                        s_smTheApp.AppExceptionLogger.ErrorMessageColors.WriteLine (
+                            @"Exception thrown following {0}" ,
+                            Properties.Resources.CMDARG_LIST_COMMON_STRINGS );
+                        throw new Exception (
+                            string.Format (
+                                Properties.Resources.ERRMSG_NEW_CLASS_TESTS_20140914 ,
+                                Properties.Resources.CMDARG_LIST_COMMON_STRINGS ,
+                                intRetCode ) );
+                    }   // if ( ( intRetCode = NewClassTests_20140914.EnumerateStringResourcesInAssembly (
 
                     if ( ( intRetCode = NewClassTests_20140914.EnumerateStringResourcesInAssembly (
                         ref intTestNumber ,

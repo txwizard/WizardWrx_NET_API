@@ -23,6 +23,6 @@ D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyU
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyUtils\obj\Release\WizardWrx.AssemblyUtils.Properties.Resources.resources
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyUtils\obj\Release\AssemblyUtils.csproj.GenerateResource.cache
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyUtils\obj\Release\AssemblyUtils.csproj.CoreCompileInputs.cache
-D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyUtils\obj\Release\AssemblyUtils.csproj.CopyComplete
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyUtils\obj\Release\WizardWrx.AssemblyUtils.dll
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyUtils\obj\Release\WizardWrx.AssemblyUtils.pdb
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\AssemblyUtils\obj\Release\Assembly.D3BF4044.Up2Date

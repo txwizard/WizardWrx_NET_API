@@ -2,6 +2,22 @@
 
 ## 2024/02/05
 
+### WizardWrx.Common 9.0.268
+
+Define `CSV_ESCAPED_DOUBLE_QUOTE` (ASCII code 0x22) and `SQL_ESCAPED_SINGLE_QUOTE`
+(ASCII code 0x27), intended for escaping ocurrnces of the character described
+by name and mentioned by its ASCII code, which happens also to be its Unicode
+code point. These strings may be used alone with the standard `string.Replace`
+method or with string extension methods `CSVSafe4EmbeddedDoubleQuote` and
+`SQLafe4EmbeddedSingleQuote`, both implemented in `WizardWrx.Core` 9.0.359.
+
+### WizardWrx.Core 9.0.359
+
+Define new string extension method `CSVSafe4EmbeddedDoubleQuote` and
+`SQLafe4EmbeddedSingleQuote`.
+
+## 2024/02/05
+
 ### WizardWrx.Core 9.0.357
 
 Correct a logic error in the `ExtractBetweenIndexOfs` string extension method
