@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-		<releaseNotes>Implement 2 new string extension methodCSVSafe4EmbeddedDoubleQuote and SQLafe4EmbeddedSingleQuote. See the ChangeLog for more detail.</releaseNotes>
+		<releaseNotes>Correct the spelling of string extension method SQLafe4EmbeddedSingleQuote to SQLEscapeEmbeddedSingleQuote. See the ChangeLog for more detail.</releaseNotes>
 		<copyright>$copyright$</copyright>
     	<tags>Constants Arrays RegExp FileInfo Strings Singleton</tags>
 	</metadata>

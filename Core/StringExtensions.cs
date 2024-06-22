@@ -2704,8 +2704,8 @@ namespace WizardWrx
         /// value of a column, filter parameter, or storeed procedure parameteer
         /// in a SQL string.
         /// </returns>
-        public static string SQLafe4EmbeddedSingleQuote ( this string pstrIn ) => pstrIn.Replace ( SpecialStrings.SINGLE_QUOTE , SpecialStrings.SQL_ESCAPED_SINGLE_QUOTE );
-        #endregion  // SQLafe4EmbeddedSingleQuote
+        public static string SQLEscapeEmbeddedSingleQuote ( this string pstrIn ) => pstrIn.Replace ( SpecialStrings.SINGLE_QUOTE , SpecialStrings.SQL_ESCAPED_SINGLE_QUOTE );
+        #endregion  // SQLEscapeEmbeddedSingleQuote
 
 
         #region Truncate Method

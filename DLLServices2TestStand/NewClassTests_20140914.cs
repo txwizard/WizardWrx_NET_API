@@ -416,7 +416,7 @@ namespace DLLServices2TestStand
             {
                 {
                     string strIn = s_astrSQLColumnOrParamValues [ intJ ];
-                    string strOut = strIn.SQLafe4EmbeddedSingleQuote ( );
+                    string strOut = strIn.SQLEscapeEmbeddedSingleQuote ( );
                     Console.WriteLine ( $"        Test {ArrayInfo.OrdinalFromIndex ( intJ )} of {s_astrSQLColumnOrParamValues.Length}: Input String = {strIn}, Output String = {strOut}" );
                 }
             }   // for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ; intJ < s_astrSQLColumnOrParamValues.Length ; intJ++ )

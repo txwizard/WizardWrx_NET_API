@@ -9081,7 +9081,7 @@
             </para>
             </remarks>
         </member>
-        <member name="M:WizardWrx.StringExtensions.SQLafe4EmbeddedSingleQuote(System.String)">
+        <member name="M:WizardWrx.StringExtensions.SQLEscapeEmbeddedSingleQuote(System.String)">
             <summary>
             Replace single quotation marks in a field that is intended to be the
             value of a column or filter parameter in a SQL string.

@@ -1,5 +1,13 @@
 ﻿# WizardWrx .NET API Change Log
 
+
+## 2024/06/22
+
+### WizardWrx.Core 9.0.361
+
+Correct the spelling of string extension method `SQLafe4EmbeddedSingleQuote` to 
+`SQLEscapeEmbeddedSingleQuote`.
+
 ## 2024/02/05
 
 ### WizardWrx.Common 9.0.268
