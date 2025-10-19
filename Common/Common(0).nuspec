@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package >
+	<metadata>
+    	<id>$id$</id>
+	    <version>$version$</version>
+    	<title>$title$</title>
+	    <authors>$author$</authors>
+    	<owners>$author$</owners>
+	    <license type="expression">BSD-3-Clause</license>
+    	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
+	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    	<description>$description$</description>
+		<releaseNotes>See changelog.md for details.</releaseNotes>
+		<copyright>$copyright$</copyright>
+    	<tags>Constants Arrays RegExp</tags>
+	</metadata>
+	<files>
+   		<file src="readme.md"                    target=""    />
+   		<file src="..\ChangeLog.md"              target=""    />
+   		<file src="bin\$configuration$\$id$.pdb" target="lib" />
+   		<file src="bin\$configuration$\$id$.xml" target="lib" />
+	</files>
+</package>

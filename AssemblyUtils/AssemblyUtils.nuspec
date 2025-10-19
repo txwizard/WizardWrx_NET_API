@@ -14,9 +14,9 @@
         <tags>Assemblies Dependenciess Resources Enumerators</tags>
 	</metadata>
 	<files>
-   		<file src="readme.md"                           target=""    />
-   		<file src="..\ChangeLog.md"                     target=""    />
-   		<file src="bin\$configuration$\$id$.pdb"        target="lib" />
+		<file src="..\changelog.md"                     target=""    />
+		<file src="..\readme.md"                        target=""    />
+		<file src="bin\$configuration$\$id$.pdb"        target="lib" />
    		<file src="bin\$configuration$\$id$.xml"        target="lib" />
    		<file src="bin\$configuration$\$id$.dll.config" target="lib" />
 	</files>
