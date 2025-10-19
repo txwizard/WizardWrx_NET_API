@@ -10,6 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
+		<readme>readme.md</readme>
 		<releaseNotes>See changelog.md for details.</releaseNotes>
 		<copyright>$copyright$</copyright>
     	<tags>STDOUT STDERR Errors Console Colors ConsoleColors</tags>

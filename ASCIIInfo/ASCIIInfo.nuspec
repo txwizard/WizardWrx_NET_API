@@ -11,7 +11,8 @@
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
 		<releaseNotes>See changelog.md for details.</releaseNotes>
-        <copyright>$copyright$</copyright>
+		<readme>readme.md</readme>
+		<copyright>$copyright$</copyright>
 	    <tags>ASCII Metadata Table</tags>
   	</metadata>
 	<files>
