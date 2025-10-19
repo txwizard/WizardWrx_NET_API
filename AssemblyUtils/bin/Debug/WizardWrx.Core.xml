@@ -4655,9 +4655,10 @@
              character string of hexadecimal digits.
              </summary>
              <param name="pstrFileName">
-             String containing the name of the file to be digested. See Remarks
-             for important information about the internal implementation.
-             
+             <para>
+             String containing the name of the file to be digested.
+             </para>
+             <para>
              iMPORTANT: Since files are read in binary, they are loaded directly
              into the hash algorithm as byte arrays. This means that the digest
              of a file of ASCII characters and the hash of the file contents read
@@ -4665,6 +4666,7 @@
              will differ. The reason for this is that the string of Unicode 
              characters yields a different byte stream than the byte stream that
              came from reading the file in binary mode.
+             </para>
              </param>
              <returns>
              The message digest, consisting of a string of 32 hexadecimal
@@ -4673,25 +4675,33 @@
              credited with inventing the MD5 digest algorithm.
              </returns>
             <remarks>
+            <para>
              Since the internal hashing implementations expect byte arrays, the
              input string must be converted. The Encoding.Default.GetBytes method
              is called upon to convert the string into a byte array.
-             
+            </para>
+            <para>
              A slightly modified version of the Rivest code, written in ANSI C,
              is the engine in my MD5WIN stand-alone program and my MD5Digest
              Windows Dynamic Link Library.
-             
+            </para>
+            <para>
              However, this function uses a MD5CryptoServiceProvider object, which
              provides a managed interface to the Cryptographic Service Provider
              in the host's installation of Microsoft Windows. I chose this over
              the 100% managed implementation for two reasons.
-             
-             1) The CSP implementation uses native machine code for the
-             computation, and should outperform managed code on large plain-texts.
-             
-             2) By using the native implementation, the CLR is eliminated as a
+            </para>
+            <list>
+            <item>
+             The CSP implementation uses native machine code for the computation,
+             and should outperform managed code on large plain-texts.
+            </item>
+            <item>
+             By using the native implementation, the CLR is eliminated as a 
              potential point of failure due to a weakness in the implementation
              of the algorithm.
+            </item>
+            </list>
             </remarks>
         </member>
         <member name="M:WizardWrx.Cryptography.DigestFile.SHA1Hash(System.String)">
@@ -4700,8 +4710,10 @@
             character string of hexadecimal digits.
             </summary>
             <param name="pstrFileName">
+            <para>
             String containing the name of the file to be digested.
-            
+            </para>
+            <para>
             iMPORTANT: Since files are read in binary, they are loaded directly
             into the hash algorithm as byte arrays. This means that the digest
             of a file of ASCII characters and the hash of the file contents read
@@ -4709,6 +4721,7 @@
             will differ. The reason for this is that the string of Unicode 
             characters yields a different byte stream than the byte stream that
             came from reading the file in binary mode.
+            </para>
             </param>
             <returns>
             The message digest, consisting of a string of 40 hexadecimal
@@ -4721,8 +4734,10 @@
             character string of hexadecimal digits.
             </summary>
             <param name="pstrFileName">
+            <para>
             String containing the name of the file to be digested.
-            
+            </para>
+            <para>
             iMPORTANT: Since files are read in binary, they are loaded directly
             into the hash algorithm as byte arrays. This means that the digest
             of a file of ASCII characters and the hash of the file contents read
@@ -4730,6 +4745,7 @@
             will differ. The reason for this is that the string of Unicode 
             characters yields a different byte stream than the byte stream that
             came from reading the file in binary mode.
+            </para>
             </param>
             <returns>
             The message digest, consisting of a string of 64 hexadecimal
@@ -4742,8 +4758,10 @@
             character string of hexadecimal digits.
             </summary>
             <param name="pstrFileName">
+            <para>
             String containing the name of the file to be digested.
-            
+            </para>
+            <para>
             iMPORTANT: Since files are read in binary, they are loaded directly
             into the hash algorithm as byte arrays. This means that the digest
             of a file of ASCII characters and the hash of the file contents read
@@ -4751,6 +4769,7 @@
             will differ. The reason for this is that the string of Unicode 
             characters yields a different byte stream than the byte stream that
             came from reading the file in binary mode.
+            </para>
             </param>
             <returns>
             The message digest, consisting of a string of 64 hexadecimal
@@ -4763,8 +4782,10 @@
             character string of hexadecimal digits.
             </summary>
             <param name="pstrFileName">
+            <para>
             String containing the name of the file to be digested.
-            
+            </para>
+            <para>
             iMPORTANT: Since files are read in binary, they are loaded directly
             into the hash algorithm as byte arrays. This means that the digest
             of a file of ASCII characters and the hash of the file contents read
@@ -4772,6 +4793,7 @@
             will differ. The reason for this is that the string of Unicode 
             characters yields a different byte stream than the byte stream that
             came from reading the file in binary mode.
+            </para>
             </param>
             <returns>
             The message digest, consisting of a string of 64 hexadecimal

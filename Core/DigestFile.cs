@@ -106,6 +106,17 @@
 
     2017/08/03 7.0     DAG    Move this class from WizardWrx.SharedUtl4.dll into
                               WizardWrx.Core.dll.
+
+	2025/10/19 9.0.365 DAG    To resolve a file contention that caused the hash
+                              routine to prevent another routine from gaining
+                              access to a file that it was asked to process, the
+                              FileStream object that feeds data to all message
+                              digest algorithms is moved out of the method call,
+                              and the stream is instead owned by the using block
+                              that wraps the message digest object, which was
+                              already in a using block of its own, thus ensuring
+                              that the stream is properly closed and releases
+                              its unmanaged resources including its file handle.
     ============================================================================
 */
 
@@ -135,233 +146,211 @@ namespace WizardWrx.Cryptography
     {
         const int BUFSIZE = 8192;
 
-        /// <summary>
-        /// Given the name of a file, return its MD5 message digest as a 32 
-        /// character string of hexadecimal digits.
-        /// </summary>
-        /// <param name="pstrFileName">
-        /// String containing the name of the file to be digested. See Remarks
-        /// for important information about the internal implementation.
-        /// 
-        /// iMPORTANT: Since files are read in binary, they are loaded directly
-        /// into the hash algorithm as byte arrays. This means that the digest
-        /// of a file of ASCII characters and the hash of the file contents read
-        /// into a CLR string object, which is a string of Unicode characters,
-        /// will differ. The reason for this is that the string of Unicode 
-        /// characters yields a different byte stream than the byte stream that
-        /// came from reading the file in binary mode.
-        /// </param>
-        /// <returns>
-        /// The message digest, consisting of a string of 32 hexadecimal
-        /// characters. This string is identical with the strings returned by
-        /// the reference implementation, published by Dr. Ronald Rivest, who is
-        /// credited with inventing the MD5 digest algorithm.
-        /// </returns>
-        ///<remarks>
-        /// Since the internal hashing implementations expect byte arrays, the
-        /// input string must be converted. The Encoding.Default.GetBytes method
-        /// is called upon to convert the string into a byte array.
-        /// 
-        /// A slightly modified version of the Rivest code, written in ANSI C,
-        /// is the engine in my MD5WIN stand-alone program and my MD5Digest
-        /// Windows Dynamic Link Library.
-        /// 
-        /// However, this function uses a MD5CryptoServiceProvider object, which
-        /// provides a managed interface to the Cryptographic Service Provider
-        /// in the host's installation of Microsoft Windows. I chose this over
-        /// the 100% managed implementation for two reasons.
-        /// 
-        /// 1) The CSP implementation uses native machine code for the
-        /// computation, and should outperform managed code on large plain-texts.
-        /// 
-        /// 2) By using the native implementation, the CLR is eliminated as a
-        /// potential point of failure due to a weakness in the implementation
-        /// of the algorithm.
-        ///</remarks>
-        [Obsolete ( "This algorithm is classified as broken and unsafe. Use SHA256Hash, SHA384Hash, or SHA512Hash." )]
+		/// <summary>
+		/// Given the name of a file, return its MD5 message digest as a 32 
+		/// character string of hexadecimal digits.
+		/// </summary>
+		/// <param name="pstrFileName">
+		/// <para>
+		/// String containing the name of the file to be digested.
+		/// </para>
+		/// <para>
+		/// iMPORTANT: Since files are read in binary, they are loaded directly
+		/// into the hash algorithm as byte arrays. This means that the digest
+		/// of a file of ASCII characters and the hash of the file contents read
+		/// into a CLR string object, which is a string of Unicode characters,
+		/// will differ. The reason for this is that the string of Unicode 
+		/// characters yields a different byte stream than the byte stream that
+		/// came from reading the file in binary mode.
+		/// </para>
+		/// </param>
+		/// <returns>
+		/// The message digest, consisting of a string of 32 hexadecimal
+		/// characters. This string is identical with the strings returned by
+		/// the reference implementation, published by Dr. Ronald Rivest, who is
+		/// credited with inventing the MD5 digest algorithm.
+		/// </returns>
+		///<remarks>
+		///<para>
+		/// Since the internal hashing implementations expect byte arrays, the
+		/// input string must be converted. The Encoding.Default.GetBytes method
+		/// is called upon to convert the string into a byte array.
+		///</para>
+		///<para>
+		/// A slightly modified version of the Rivest code, written in ANSI C,
+		/// is the engine in my MD5WIN stand-alone program and my MD5Digest
+		/// Windows Dynamic Link Library.
+		///</para>
+		///<para>
+		/// However, this function uses a MD5CryptoServiceProvider object, which
+		/// provides a managed interface to the Cryptographic Service Provider
+		/// in the host's installation of Microsoft Windows. I chose this over
+		/// the 100% managed implementation for two reasons.
+		///</para>
+		///<list>
+		///<item>
+		/// The CSP implementation uses native machine code for the computation,
+		/// and should outperform managed code on large plain-texts.
+		///</item>
+		///<item>
+		/// By using the native implementation, the CLR is eliminated as a 
+		/// potential point of failure due to a weakness in the implementation
+		/// of the algorithm.
+		///</item>
+		///</list>
+		///</remarks>
+		[Obsolete ( "This algorithm is classified as broken and unsafe. Use SHA256Hash, SHA384Hash, or SHA512Hash." )]
         public static string MD5Hash ( string pstrFileName )
         {
-            MD5 md5Hasher = new MD5CryptoServiceProvider ( );
-
-            using ( md5Hasher )
+            using ( FileStream fsInput = new FileStream ( pstrFileName , FileMode.Open , FileAccess.Read , FileShare.Read , BUFSIZE , FileOptions.SequentialScan | FileOptions.Asynchronous ) )
             {
-                //byte [ ] bytInputData = ProcessFile (
-                //    pstrFileName ,
-                //    md5Hasher );
-
-                byte [ ] bytInputData = md5Hasher.ComputeHash (
-                    new FileStream (
-                        pstrFileName ,
-                        FileMode.Open ,
-                        FileAccess.Read ,
-                        FileShare.Read ,
-                        BUFSIZE ,
-                        FileOptions.SequentialScan
-                        | FileOptions.Asynchronous ) );
-
-				return Core.ByteArrayFormatters.ByteArrayToHexDigitString ( bytInputData );
-            }	// using ( md5Hasher )
-        }   // public static string MD5Hash
+                using ( MD5 md5Hasher = new MD5CryptoServiceProvider ( ) )
+                {
+                    byte [ ] bytInputData = md5Hasher.ComputeHash ( fsInput );
+                    return Core.ByteArrayFormatters.ByteArrayToHexDigitString ( bytInputData );
+				}   // using ( MD5 md5Hasher = new MD5CryptoServiceProvider ( ) )
+			}   // using ( FileStream fsInput = new FileStream ( pstrFileName , FileMode.Open , FileAccess.Read , FileShare.Read , BUFSIZE , FileOptions.SequentialScan | FileOptions.Asynchronous ) )
+		}   // public static string MD5Hash
 
 
-        /// <summary>
-        /// Given the name of a file, return its SHA-1 message digest as a 32
-        /// character string of hexadecimal digits.
-        /// </summary>
-        /// <param name="pstrFileName">
-        /// String containing the name of the file to be digested.
-        /// 
-        /// iMPORTANT: Since files are read in binary, they are loaded directly
-        /// into the hash algorithm as byte arrays. This means that the digest
-        /// of a file of ASCII characters and the hash of the file contents read
-        /// into a CLR string object, which is a string of Unicode characters,
-        /// will differ. The reason for this is that the string of Unicode 
-        /// characters yields a different byte stream than the byte stream that
-        /// came from reading the file in binary mode.
-        /// </param>
-        /// <returns>
-        /// The message digest, consisting of a string of 40 hexadecimal
-        /// characters.
-        /// </returns>
-        [Obsolete ( "This algorithm is classified as broken and unsafe. Use SHA256Hash, SHA384Hash, or SHA512Hash." )]
+		/// <summary>
+		/// Given the name of a file, return its SHA-1 message digest as a 32
+		/// character string of hexadecimal digits.
+		/// </summary>
+		/// <param name="pstrFileName">
+		/// <para>
+		/// String containing the name of the file to be digested.
+		/// </para>
+		/// <para>
+		/// iMPORTANT: Since files are read in binary, they are loaded directly
+		/// into the hash algorithm as byte arrays. This means that the digest
+		/// of a file of ASCII characters and the hash of the file contents read
+		/// into a CLR string object, which is a string of Unicode characters,
+		/// will differ. The reason for this is that the string of Unicode 
+		/// characters yields a different byte stream than the byte stream that
+		/// came from reading the file in binary mode.
+		/// </para>
+		/// </param>
+		/// <returns>
+		/// The message digest, consisting of a string of 40 hexadecimal
+		/// characters.
+		/// </returns>
+		[Obsolete ( "This algorithm is classified as broken and unsafe. Use SHA256Hash, SHA384Hash, or SHA512Hash." )]
         public static string SHA1Hash ( string pstrFileName )
         {
-            SHA1 SHA1Hasher = new SHA1CryptoServiceProvider ( );
-
-            using ( SHA1Hasher )
+            using ( FileStream fsInput = new FileStream ( pstrFileName , FileMode.Open , FileAccess.Read , FileShare.Read , BUFSIZE , FileOptions.SequentialScan | FileOptions.Asynchronous ) )
             {
-                byte [ ] bytInputData = SHA1Hasher.ComputeHash (
-                    new FileStream (
-                        pstrFileName ,
-                        FileMode.Open ,
-                        FileAccess.Read ,
-                        FileShare.Read ,
-                        BUFSIZE ,
-                        FileOptions.SequentialScan 
-                        | FileOptions.Asynchronous ) );
-
-				return Core.ByteArrayFormatters.ByteArrayToHexDigitString ( bytInputData );
-            }	// using ( SHA1Hasher )
-        }   // public static string SHA1Hash
+                using ( SHA1 SHA1Hasher = new SHA1CryptoServiceProvider ( ) )
+                {
+                    byte [ ] bytInputData = SHA1Hasher.ComputeHash ( fsInput );
+                    return Core.ByteArrayFormatters.ByteArrayToHexDigitString ( bytInputData );
+				}   // using ( SHA1 SHA1Hasher = new SHA1CryptoServiceProvider ( ) )
+			}   // using ( FileStream fsInput = new FileStream ( pstrFileName , FileMode.Open , FileAccess.Read , FileShare.Read , BUFSIZE , FileOptions.SequentialScan | FileOptions.Asynchronous ) )
+		}   // public static string SHA1Hash
 
 
-        /// <summary>
-        /// Given the name of a file, return its SHA-256 message digest as a 64
-        /// character string of hexadecimal digits.
-        /// </summary>
-        /// <param name="pstrFileName">
-        /// String containing the name of the file to be digested.
-        /// 
-        /// iMPORTANT: Since files are read in binary, they are loaded directly
-        /// into the hash algorithm as byte arrays. This means that the digest
-        /// of a file of ASCII characters and the hash of the file contents read
-        /// into a CLR string object, which is a string of Unicode characters,
-        /// will differ. The reason for this is that the string of Unicode 
-        /// characters yields a different byte stream than the byte stream that
-        /// came from reading the file in binary mode.
-        /// </param>
-        /// <returns>
-        /// The message digest, consisting of a string of 64 hexadecimal
-        /// characters.
-        /// </returns>
-        public static string SHA256Hash ( string pstrFileName )
+		/// <summary>
+		/// Given the name of a file, return its SHA-256 message digest as a 64
+		/// character string of hexadecimal digits.
+		/// </summary>
+		/// <param name="pstrFileName">
+		/// <para>
+		/// String containing the name of the file to be digested.
+		/// </para>
+		/// <para>
+		/// iMPORTANT: Since files are read in binary, they are loaded directly
+		/// into the hash algorithm as byte arrays. This means that the digest
+		/// of a file of ASCII characters and the hash of the file contents read
+		/// into a CLR string object, which is a string of Unicode characters,
+		/// will differ. The reason for this is that the string of Unicode 
+		/// characters yields a different byte stream than the byte stream that
+		/// came from reading the file in binary mode.
+		/// </para>
+		/// </param>
+		/// <returns>
+		/// The message digest, consisting of a string of 64 hexadecimal
+		/// characters.
+		/// </returns>
+		public static string SHA256Hash ( string pstrFileName )
         {
-            SHA256 SHA256Hasher = new SHA256Managed ( );
-
-            using ( SHA256Hasher )
+            using ( FileStream fsInput = new FileStream ( pstrFileName , FileMode.Open , FileAccess.Read , FileShare.Read , BUFSIZE , FileOptions.SequentialScan | FileOptions.Asynchronous ) )
             {
-                byte [ ] bytInputData = SHA256Hasher.ComputeHash (
-                    new FileStream (
-                        pstrFileName ,
-                        FileMode.Open ,
-                        FileAccess.Read ,
-                        FileShare.Read ,
-                        BUFSIZE ,
-                        FileOptions.SequentialScan
-                        | FileOptions.Asynchronous ) );
-
-				return Core.ByteArrayFormatters.ByteArrayToHexDigitString ( bytInputData );
-            }	// using ( SHA256Hasher )
-        }   // public static string SHA256Hash
+                using ( SHA256 SHA256Hasher = new SHA256Managed ( ) )
+                {
+                    byte [ ] bytInputData = SHA256Hasher.ComputeHash ( fsInput );
+                    return Core.ByteArrayFormatters.ByteArrayToHexDigitString ( bytInputData );
+				}   // using ( SHA256 SHA256Hasher = new SHA256Managed ( ) )
+			}   // using ( FileStream fsInput = new FileStream ( pstrFileName , FileMode.Open , FileAccess.Read , FileShare.Read , BUFSIZE , FileOptions.SequentialScan | FileOptions.Asynchronous ) )
+		}   // public static string SHA256Hash
 
 
-        /// <summary>
-        /// Given the name of a file, return its SHA-384 message digest as a 96
-        /// character string of hexadecimal digits.
-        /// </summary>
-        /// <param name="pstrFileName">
-        /// String containing the name of the file to be digested.
-        /// 
-        /// iMPORTANT: Since files are read in binary, they are loaded directly
-        /// into the hash algorithm as byte arrays. This means that the digest
-        /// of a file of ASCII characters and the hash of the file contents read
-        /// into a CLR string object, which is a string of Unicode characters,
-        /// will differ. The reason for this is that the string of Unicode 
-        /// characters yields a different byte stream than the byte stream that
-        /// came from reading the file in binary mode.
-        /// </param>
-        /// <returns>
-        /// The message digest, consisting of a string of 64 hexadecimal
-        /// characters.
-        /// </returns>
-        public static string SHA384Hash ( string pstrFileName )
+		/// <summary>
+		/// Given the name of a file, return its SHA-384 message digest as a 96
+		/// character string of hexadecimal digits.
+		/// </summary>
+		/// <param name="pstrFileName">
+		/// <para>
+		/// String containing the name of the file to be digested.
+		/// </para>
+		/// <para>
+		/// iMPORTANT: Since files are read in binary, they are loaded directly
+		/// into the hash algorithm as byte arrays. This means that the digest
+		/// of a file of ASCII characters and the hash of the file contents read
+		/// into a CLR string object, which is a string of Unicode characters,
+		/// will differ. The reason for this is that the string of Unicode 
+		/// characters yields a different byte stream than the byte stream that
+		/// came from reading the file in binary mode.
+		/// </para>
+		/// </param>
+		/// <returns>
+		/// The message digest, consisting of a string of 64 hexadecimal
+		/// characters.
+		/// </returns>
+		public static string SHA384Hash ( string pstrFileName )
         {
-            SHA384 SHA384Hasher = new SHA384Managed ( );
-
-            using ( SHA384Hasher )
+            using ( FileStream fsInput = new FileStream ( pstrFileName , FileMode.Open , FileAccess.Read , FileShare.Read , BUFSIZE , FileOptions.SequentialScan | FileOptions.Asynchronous ) )
             {
-                byte [ ] bytInputData = SHA384Hasher.ComputeHash (
-                    new FileStream (
-                        pstrFileName ,
-                        FileMode.Open ,
-                        FileAccess.Read ,
-                        FileShare.Read ,
-                        BUFSIZE ,
-                        FileOptions.SequentialScan
-                        | FileOptions.Asynchronous ) );
-
-				return Core.ByteArrayFormatters.ByteArrayToHexDigitString ( bytInputData );
-            }	// using ( SHA384Hasher )
-        }   // public static string SHA384Hash
+                using ( SHA384 SHA384Hasher = new SHA384Managed ( ) )
+                {
+                    byte [ ] bytInputData = SHA384Hasher.ComputeHash ( fsInput );
+                    return Core.ByteArrayFormatters.ByteArrayToHexDigitString ( bytInputData );
+				}   // using ( SHA384 SHA384Hasher = new SHA384Managed ( ) )
+			}   // using ( FileStream fsInput = new FileStream ( pstrFileName , FileMode.Open , FileAccess.Read , FileShare.Read , BUFSIZE , FileOptions.SequentialScan | FileOptions.Asynchronous ) )
+		}   // public static string SHA384Hash
 
 
-        /// <summary>
-        /// Given the name of a file, return its SHA-512 message digest as a 128
-        /// character string of hexadecimal digits.
-        /// </summary>
-        /// <param name="pstrFileName">
-        /// String containing the name of the file to be digested.
-        /// 
-        /// iMPORTANT: Since files are read in binary, they are loaded directly
-        /// into the hash algorithm as byte arrays. This means that the digest
-        /// of a file of ASCII characters and the hash of the file contents read
-        /// into a CLR string object, which is a string of Unicode characters,
-        /// will differ. The reason for this is that the string of Unicode 
-        /// characters yields a different byte stream than the byte stream that
-        /// came from reading the file in binary mode.
-        /// </param>
-        /// <returns>
-        /// The message digest, consisting of a string of 64 hexadecimal
-        /// characters.
-        /// </returns>
-        public static string SHA512Hash ( string pstrFileName )
+		/// <summary>
+		/// Given the name of a file, return its SHA-512 message digest as a 128
+		/// character string of hexadecimal digits.
+		/// </summary>
+		/// <param name="pstrFileName">
+		/// <para>
+		/// String containing the name of the file to be digested.
+		/// </para>
+		/// <para>
+		/// iMPORTANT: Since files are read in binary, they are loaded directly
+		/// into the hash algorithm as byte arrays. This means that the digest
+		/// of a file of ASCII characters and the hash of the file contents read
+		/// into a CLR string object, which is a string of Unicode characters,
+		/// will differ. The reason for this is that the string of Unicode 
+		/// characters yields a different byte stream than the byte stream that
+		/// came from reading the file in binary mode.
+		/// </para>
+		/// </param>
+		/// <returns>
+		/// The message digest, consisting of a string of 64 hexadecimal
+		/// characters.
+		/// </returns>
+		public static string SHA512Hash ( string pstrFileName )
         {
-            SHA512 SHA512Hasher = new SHA512Managed ( );
-
-            using ( SHA512Hasher )
+            using ( FileStream fsInput = new FileStream ( pstrFileName , FileMode.Open , FileAccess.Read , FileShare.Read , BUFSIZE , FileOptions.SequentialScan | FileOptions.Asynchronous ) )
             {
-                byte [ ] bytInputData = SHA512Hasher.ComputeHash (
-                    new FileStream (
-                        pstrFileName ,
-                        FileMode.Open ,
-                        FileAccess.Read ,
-                        FileShare.Read ,
-                        BUFSIZE ,
-                        FileOptions.SequentialScan
-                        | FileOptions.Asynchronous ) );
-
-				return Core.ByteArrayFormatters.ByteArrayToHexDigitString ( bytInputData );
-            }	// using ( SHA512Hasher )
-        }   // public static string SHA512Hash
+                using ( SHA512 SHA512Hasher = new SHA512Managed ( ) )
+                {
+                    byte [ ] bytInputData = SHA512Hasher.ComputeHash ( fsInput );
+                    return Core.ByteArrayFormatters.ByteArrayToHexDigitString ( bytInputData );
+				}   //  using ( SHA512 SHA512Hasher = new SHA512Managed ( ) )
+			}   // using ( FileStream fsInput = new FileStream ( pstrFileName , FileMode.Open , FileAccess.Read , FileShare.Read , BUFSIZE , FileOptions.SequentialScan | FileOptions.Asynchronous ) )
+		}   // public static string SHA512Hash
     }   // class public static class
 }   // partial namespace WizardWrx.Cryptography

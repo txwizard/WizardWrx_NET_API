@@ -37,3 +37,4 @@ D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\GUITestSt
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\GUITestStand\obj\Debug\GUITestStand.exe
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\GUITestStand\obj\Debug\GUITestStand.pdb
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\GUITestStand\obj\Debug\GUITestS.D2B95D7C.Up2Date
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\GUITestStand\obj\Debug\GUITestStand.exe.config

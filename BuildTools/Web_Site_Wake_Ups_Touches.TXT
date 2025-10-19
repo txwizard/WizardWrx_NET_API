@@ -1,0 +1,9 @@
+C:\inetpub\Webhooks
+C:\inetpub\SalesTalk\Clients\AFS
+C:\inetpub\SalesTalk\Clients\HarveyWatt
+C:\inetpub\salestalk\InsuranceDB
+C:\inetpub\LeadLifeG2\Clients\Nurturama
+C:\inetpub\SalesTalk\Clients\S7
+C:\inetpub\SalesTalk\Clients\SalesAcceleration
+C:\inetpub\staging.salestalktech.com
+C:\inetpub\SalesTalk\SalesTalkPurl

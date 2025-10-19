@@ -4636,6 +4636,22 @@
             <seealso cref="F:WizardWrx.SpecialCharacters.TAB_CHAR"/>
             <seealso cref="F:WizardWrx.SpecialStrings.UNDERSCORE_CHAR"/>
         </member>
+        <member name="F:WizardWrx.SpecialCharacters.URL_PATH_DELIMITER">
+            <summary>
+            Use this in place of 'System.IO.Path.AltDirectorySeparatorChar`, which
+            lacks const semantics, when you need a true constant.
+            </summary>
+            <see cref="F:System.IO.Path.AltDirectorySeparatorChar"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.WINDOWS_PATH_DELIMITER"/>
+        </member>
+        <member name="F:WizardWrx.SpecialCharacters.WINDOWS_PATH_DELIMITER">
+            <summary>
+            Use this in place of 'System.IO.Path.DirectorySeparatorChar`, which
+            lacks const semantics, when you need a true constant.
+            </summary>
+            <see cref="F:System.IO.Path.DirectorySeparatorChar"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.URL_PATH_DELIMITER"/>
+        </member>
         <member name="T:WizardWrx.SpecialStrings">
             <summary>
             This class defines special purpose strings that are either difficult to
@@ -5321,6 +5337,26 @@
             single-character string constants.
             </summary>
             <seealso cref="F:WizardWrx.SpecialCharacters.UNDERSCORE_CHAR"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.URL_PATH_DELIMITER">
+            <summary>
+            Use this in place of 'System.IO.Path.AltDirectorySeparatorChar`, which
+            lacks const semantics, when you need a true constant.
+            </summary>
+            <see cref="F:System.IO.Path.AltDirectorySeparatorChar"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.WINDOWS_PATH_DELIMITER"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.URL_PATH_DELIMITER"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.WINDOWS_PATH_DELIMITER"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.WINDOWS_PATH_DELIMITER">
+            <summary>
+            Use this in place of 'System.IO.Path.DirectorySeparatorChar`, which
+            lacks const semantics, when you need a true constant.
+            </summary>
+            <see cref="F:System.IO.Path.DirectorySeparatorChar"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.URL_PATH_DELIMITER"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.URL_PATH_DELIMITER"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.WINDOWS_PATH_DELIMITER"/>
         </member>
         <member name="T:WizardWrx.StringTricks">
             <summary>

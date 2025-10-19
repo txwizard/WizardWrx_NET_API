@@ -69,6 +69,8 @@
                               the correct display time zone as either the
                               appropriate instance property or the extended
                               abbreviated property.
+
+    2025/09/25 9.0.362 DAG    Correct logic error in AbbreviateAnyTZName.
     ============================================================================
 */
 
@@ -198,95 +200,98 @@ namespace WizardWrx
                 }   // FALSE (The caller wants the regular time zone name.) block, if ( pfAbbreviate )
             }   // FALSE (The current time is in the Standard Time portion of the year in the current time zone.) block, if ( ptzi.IsDaylightSavingTime ( pdtmDateTime ) )
         }   // public static string GetCurrentTimeZoneName
-        #endregion  // Public Extension Method
+		#endregion  // Public Extension Method
 
 
-        #region Private Helper Methods
-        /// <summary>
-        /// Construct the abbreviated time zone name.
-        /// </summary>
-        /// <param name="pstrTimeZoneName">
-        /// This string specifies one of the three time zone name properties on
-        /// the TimeZoneInfo object that was passed into the method that called
-        /// it.
-        /// </param>
-        /// <returns>
-        /// <para>
-        /// The abbreviated name is constructed from the name specified on the
-        /// StandardName property on the TimeZoneInfo object by extracting from
-        /// it the first letter of each word.
-        /// </para>
-        /// <para>
-        /// Two special cases exist.
-        /// </para>
-        /// <list type="number">
-        /// <item>
-        /// Regional time zones (e .g., Mexico) display the region in
-        /// parentheses. The abbreviations enclose the first character of the
-        /// region name in parentheses.
-        /// </item>
-        /// <item>
-        /// Time zones that are known only by their UTC offsets have names like
-        /// "UTC+11" that are abbreviated as "U+11" by taking the plus character
-        /// and everything that follows it.
-        /// </item>
-        /// </list>
-        /// </returns>
-        private static string AbbreviateAnyTZName ( string pstrTimeZoneName )
-        {
-            int intNameLength = pstrTimeZoneName.Length;
-            bool fIsFirstCharacterOfWord = true;
-            bool fTakeRemainingCharacters = false;
+		#region Private Helper Methods
+		/// <summary>
+		/// Construct the abbreviated time zone name.
+		/// </summary>
+		/// <param name="pstrTimeZoneName">
+		/// This string specifies one of the three time zone name properties on
+		/// the TimeZoneInfo object that was passed into the method that called
+		/// it.
+		/// </param>
+		/// <returns>
+		/// <para>
+		/// The abbreviated name is constructed from the name specified on the
+		/// StandardName property on the TimeZoneInfo object by extracting from
+		/// it the first letter of each word.
+		/// </para>
+		/// <para>
+		/// Two special cases exist.
+		/// </para>
+		/// <list type="number">
+		/// <item>
+		/// Regional time zones (e .g., Mexico) display the region in
+		/// parentheses. The abbreviations enclose the first character of the
+		/// region name in parentheses.
+		/// </item>
+		/// <item>
+		/// Time zones that are known only by their UTC offsets have names like
+		/// "UTC+11" that are abbreviated as "U+11" by taking the plus character
+		/// and everything that follows it.
+		/// </item>
+		/// </list>
+		/// </returns>
+		private static string AbbreviateAnyTZName ( string pstrTimeZoneName )
+		{
+			const char MINUS = '-';
+			const char PLUS = '+';
 
-            StringBuilder rsbAbbreviatedName = new StringBuilder ( intNameLength );
+			int intNameLength = pstrTimeZoneName.Length;
+			bool fIsFirstCharacterOfWord = true;
+			bool fTakeRemainingCharacters = false;
 
-            for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ;
-                      intJ < intNameLength ;
-                      intJ++ )
-            {
-                char chrCurrent = pstrTimeZoneName [ intJ ];
+			StringBuilder rsbAbbreviatedName = new StringBuilder ( intNameLength );
 
-                if ( fTakeRemainingCharacters )
-                {
-                    rsbAbbreviatedName.Append ( chrCurrent );
-                }
-                else if ( chrCurrent == SpecialCharacters.SPACE_CHAR )
-                {
-                    fIsFirstCharacterOfWord = true;
-                }   // TRUE block, if ( chrCurrent == SpecialCharacters.SPACE_CHAR )
-                else
-                {
-                    if ( fIsFirstCharacterOfWord )
-                    {
-                        rsbAbbreviatedName.Append ( chrCurrent );
+			for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+					  intJ < intNameLength ;
+					  intJ++ )
+			{
+				char chrCurrent = pstrTimeZoneName [ intJ ];
 
-                        if ( chrCurrent == SpecialCharacters.PARENTHESIS_LEFT )
-                        {
-                            //  Do nothing.
-                        }
-                        else if ( chrCurrent == SpecialCharacters.PARENTHESIS_RIGHT )
-                        {
-                            rsbAbbreviatedName.Append ( chrCurrent );
-                        }
-                        else
-                        {
-                            fIsFirstCharacterOfWord = false;
-                        }
-                    }   // TRUE block, if ( fIsFirstCharacterOfWord )
-                    else if ( chrCurrent == SpecialCharacters.PARENTHESIS_RIGHT )
-                    {
-                        rsbAbbreviatedName.Append ( chrCurrent );
-                    }   // FALSE block, if ( fIsFirstCharacterOfWord )
-                    else if ( chrCurrent == SpecialCharacters.MINUS || chrCurrent == SpecialCharacters.PLUS )
-                    {
-                        rsbAbbreviatedName.Append ( chrCurrent );
-                        fTakeRemainingCharacters = true;
-                    }   // FALSE block, else if ( chrCurrent == SpecialCharacters.PARENTHESIS_RIGHT )
-                }   // FALSE block, if ( chrCurrent == SpecialCharacters.SPACE_CHAR )
-            }   // for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ; intJ < intNameLength ; intJ++ )
+				if ( fTakeRemainingCharacters )
+				{
+					rsbAbbreviatedName.Append ( chrCurrent );
+				}
+				else if ( chrCurrent == SpecialCharacters.SPACE_CHAR )
+				{
+					fIsFirstCharacterOfWord = true;
+				}   // TRUE block, if ( chrCurrent == SpecialCharacters.SPACE_CHAR )
+				else
+				{
+					if ( fIsFirstCharacterOfWord )
+					{
+						rsbAbbreviatedName.Append ( chrCurrent );
 
-            return rsbAbbreviatedName.ToString ( );
-        }   // private static string AbbreviateAnyTZName
-        #endregion  // Private Helper Methods
-    }   // public static class TimeZoneInfoExtensions
+						if ( chrCurrent == SpecialCharacters.PARENTHESIS_LEFT )
+						{
+							//  Do nothing.
+						}
+						else if ( chrCurrent == SpecialCharacters.PARENTHESIS_RIGHT )
+						{
+							rsbAbbreviatedName.Append ( chrCurrent );
+						}
+						else
+						{
+							fIsFirstCharacterOfWord = false;
+						}
+					}   // TRUE block, if ( fIsFirstCharacterOfWord )
+					else if ( chrCurrent == SpecialCharacters.PARENTHESIS_RIGHT )
+					{
+						rsbAbbreviatedName.Append ( chrCurrent );
+					}   // FALSE block, if ( fIsFirstCharacterOfWord )
+					else if ( chrCurrent == MINUS || chrCurrent == PLUS )
+					{
+						rsbAbbreviatedName.Append ( chrCurrent );
+						fTakeRemainingCharacters = true;
+					}   // FALSE block, else if ( chrCurrent == SpecialCharacters.PARENTHESIS_RIGHT )
+				}   // FALSE block, if ( chrCurrent == SpecialCharacters.SPACE_CHAR )
+			}   // for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ; intJ < intNameLength ; intJ++ )
+
+			return rsbAbbreviatedName.ToString ( );
+		}   // private static string AbbreviateAnyTZName
+		#endregion  // Private Helper Methods
+	}   // public static class TimeZoneInfoExtensions
 }   // partial namespace WizardWrx

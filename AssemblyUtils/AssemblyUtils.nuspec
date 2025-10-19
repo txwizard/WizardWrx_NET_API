@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-        <releaseNotes>Implement two new methods, GetAssemblyGUID and GetAssemblyTargetFramework, which return assembly attributes that are applied during the build process, and are somewhat obtuse to extract. Of the two, `GetAssemblyTargetFramework` is almost certainly the most useful because it identifies the Microsost .NET Framework against which it was built, known also as its Target Framework.</releaseNotes>
+		<releaseNotes>See changelog.md for details.</releaseNotes>
         <tags>Assemblies Dependenciess Resources Enumerators</tags>
 	</metadata>
 	<files>

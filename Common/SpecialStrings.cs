@@ -223,6 +223,11 @@
 
 	2024/03/18 9.0.268 DAG   Add CSV_ESCAPED_DOUBLE_QUOTE (ASCII code 0x22)
                              and SQL_ESCAPED_SINGLE_QUOTE (ASCII code 0x27).
+
+	2025/10/19 9.0.270 DAG   Add: EMPTY_JSON_ARRAY (@"[]")
+                                  EMPTY_JSON_OBJECT (@"{}")
+                                  URL_PATH_DELIMITER ('/') 
+                                  WINDOWS_PATH_DELIMITER ('\')
     ============================================================================
 */
 
@@ -544,6 +549,20 @@ namespace WizardWrx
 		/// used.
 		/// </summary>
 		public const string OUTPUT_TAB = "\t";
+
+		/// <summary>
+		/// Use this string to evaluate whether the string returned from a REST 
+		/// API call is an empty JavaScript array.
+		/// </summary>
+		/// <seealso cref="EMPTY_JSON_OBJECT"/>
+		public const string EMPTY_JSON_ARRAY = @"[]";
+
+		/// <summary>
+		/// Use this string to evaluate whether the string returned from a REST
+		/// API call is an empty JavaScript object.
+		/// </summary>
+		/// <seealso cref="EMPTY_JSON_ARRAY"/>
+		public const string EMPTY_JSON_OBJECT = @"{}";
 
 		/// <summary>
 		/// I like having a way to initialize a constant to the empty string.
@@ -914,5 +933,25 @@ namespace WizardWrx
         /// </summary>
         /// <seealso cref="SpecialCharacters.UNDERSCORE_CHAR"/>
         public const string UNDERSCORE_CHAR = @"_";
-    }	// public sealed class SpecialStrings
+
+		/// <summary>
+		/// Use this in place of 'System.IO.Path.AltDirectorySeparatorChar`, which
+		/// lacks const semantics, when you need a true constant.
+		/// </summary>
+		/// <see cref="System.IO.Path.AltDirectorySeparatorChar"/>
+		/// <seealso cref="WINDOWS_PATH_DELIMITER"/>
+		/// <seealso cref="SpecialCharacters.URL_PATH_DELIMITER"/>
+		/// <seealso cref="SpecialCharacters.WINDOWS_PATH_DELIMITER"/>
+		public const string URL_PATH_DELIMITER = "/";
+
+		/// <summary>
+		/// Use this in place of 'System.IO.Path.DirectorySeparatorChar`, which
+		/// lacks const semantics, when you need a true constant.
+		/// </summary>
+		/// <see cref="System.IO.Path.DirectorySeparatorChar"/>
+		/// <seealso cref="URL_PATH_DELIMITER"/>
+		/// <seealso cref="SpecialCharacters.URL_PATH_DELIMITER"/>
+		/// <seealso cref="SpecialCharacters.WINDOWS_PATH_DELIMITER"/>
+		public const string WINDOWS_PATH_DELIMITER = @"\";
+	}   // public sealed class SpecialStrings
 }	// partial namespace WizardWrx

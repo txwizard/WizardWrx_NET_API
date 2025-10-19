@@ -151,6 +151,9 @@
 	
 	2022/09/17 9.0.239 DAG    LOGICAL_NEGATE supersedes my long-time favoorite,
                               PIPE_CHAR, as my preferred text delimiter.
+
+	2025/10/19 9.0.270 DAG   Add: URL_PATH_DELIMITER ('\x002f')
+		                          WINDOWS_PATH_DELIMITER ('\x005c')
     ============================================================================
 */
 
@@ -713,5 +716,21 @@ namespace WizardWrx
 		/// <seealso cref="TAB_CHAR"/>
         /// <seealso cref="SpecialStrings.UNDERSCORE_CHAR"/>
 		public const char UNDERSCORE_CHAR = '_';
+
+		/// <summary>
+		/// Use this in place of 'System.IO.Path.AltDirectorySeparatorChar`, which
+		/// lacks const semantics, when you need a true constant.
+		/// </summary>
+		/// <see cref="System.IO.Path.AltDirectorySeparatorChar"/>
+		/// <seealso cref="WINDOWS_PATH_DELIMITER"/>
+		public const char URL_PATH_DELIMITER = '\x002f';
+
+		/// <summary>
+		/// Use this in place of 'System.IO.Path.DirectorySeparatorChar`, which
+		/// lacks const semantics, when you need a true constant.
+		/// </summary>
+		/// <see cref="System.IO.Path.DirectorySeparatorChar"/>
+		/// <seealso cref="URL_PATH_DELIMITER"/>
+		public const char WINDOWS_PATH_DELIMITER = '\x005c';
 	}   // public static class SpecialCharacters
 }   // partial namespace WizardWrx

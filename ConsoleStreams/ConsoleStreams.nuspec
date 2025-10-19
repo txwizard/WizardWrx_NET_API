@@ -10,7 +10,7 @@
     	<projectUrl>https://github.com/txwizard/WizardWrx_NET_API</projectUrl>
 	    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     	<description>$description$</description>
-		<releaseNotes>Upgrade the target framework from 3.5 to 4.8.</releaseNotes>
+		<releaseNotes>See changelog.md for details.</releaseNotes>
 		<copyright>$copyright$</copyright>
     	<tags>STDOUT STDERR Errors Console Colors ConsoleColors</tags>
 	</metadata>

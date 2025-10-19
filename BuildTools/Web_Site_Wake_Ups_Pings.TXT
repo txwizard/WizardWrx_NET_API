@@ -1,0 +1,9 @@
+Ping_Home
+WakeUp_AFS
+WakeUp_HarveyWattG2
+WakeUp_InsuranceDB
+WakeUp_nurturama
+WakeUp_S7
+WakeUp_SalesAcceleration
+WakeUp_SalesTalkDev
+WakeUp_PURL

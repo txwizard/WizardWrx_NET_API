@@ -1,5 +1,37 @@
 ﻿# WizardWrx .NET API Change Log
 
+## 2025/10/19 
+
+### WizardWrx.Common 9.0.270 
+
+Add string constants EMPTY_JSON_ARRAY (@"[]") and EMPTY_JSON_OBJECT (@"{}").
+
+Add character and string constants URL_PATH_DELIMITER ('/') and WINDOWS_PATH_DELIMITER ('\').
+
+### WizardWrx.Core 9.0.365
+
+To resolve a file contention that caused the hash routine to prevent another
+routine from gaining access to a file that it was asked to process, the 
+`FileStream` object that feeds data to all message digest algorithms is moved
+out of the method call, and the stream is instead owned by the `using` block
+that wraps the message digest object, which was already in a `using` block of
+its own, thus ensuring that the stream is properly closed and releases its
+unmanaged resources including its file handle.
+
+In addition to the foregoing changes, an architectural change in the deployment
+flow that makes the `ReadMe.md` and `ChangeLog.md` files visible to the NuGet
+Gallery affects all libraries. Libraries that are impacted only by the deployment
+workflow improvement are listed in the table below.
+
+|Assembly (Project) Name|Version |
++-----------------------+--------+
+|ASCIIInfo              |9.0.220 |
+|AssemblyUtils          |9.0.279 |
+|ConsoleStreams         |9.0.326 |
+|DiagnosticInfo         |9.0.110 |
+|DLLConfigurationManager|9.0.355 |
+|FormatStringEngine     |9.0.302 |
+|MoreMath               |9.0.109 |
 
 ## 2024/06/22
 
