@@ -5067,6 +5067,12 @@
             <seealso cref="F:WizardWrx.SpecialStrings.HTML_COMMENT_PREFIX_SP"/>
             <seealso cref="F:WizardWrx.SpecialStrings.HTML_COMMENT_SUFFIX"/>
         </member>
+        <member name="F:WizardWrx.SpecialStrings.HTML_ENTITY_SPACE_CHARACTER">
+            <summary>
+            Use this string to indicate unambiguously that the intended entity
+            is the HTML encoded entity for a space character.
+            </summary>
+        </member>
         <member name="F:WizardWrx.SpecialStrings.HTML_LINE_BREAK_LC">
             <summary>
             HTML line break (Break) tag, rendered as lower case characters.

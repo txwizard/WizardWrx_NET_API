@@ -2,6 +2,10 @@
 
 ## 2025/10/19 
 
+### WizardWrx.Common 0.274
+
+Add string constant HTML_ENTITY_SPACE_CHARACTER (@"%20").
+
 ### WizardWrx.Common 9.0.270 
 
 Add string constants EMPTY_JSON_ARRAY (@"[]") and EMPTY_JSON_OBJECT (@"{}").

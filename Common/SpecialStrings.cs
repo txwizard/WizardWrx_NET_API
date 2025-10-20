@@ -225,9 +225,11 @@
                              and SQL_ESCAPED_SINGLE_QUOTE (ASCII code 0x27).
 
 	2025/10/19 9.0.270 DAG   Add: EMPTY_JSON_ARRAY (@"[]")
-                                  EMPTY_JSON_OBJECT (@"{}")
+                                  EMPTY_JSON_OBJECT (@"{}")                                  
                                   URL_PATH_DELIMITER ('/') 
                                   WINDOWS_PATH_DELIMITER ('\')
+
+	2025/10/19 9.0.274 DAG   Add constant HTML_ENTITY_SPACE_CHARACTER (@"%20").
     ============================================================================
 */
 
@@ -647,6 +649,12 @@ namespace WizardWrx
 		/// <seealso cref="HTML_COMMENT_PREFIX_SP"/>
 		/// <seealso cref="HTML_COMMENT_SUFFIX"/>
 		public const string HTML_COMMENT_SUFFIX_SP = @" -->";
+
+		/// <summary>
+		/// Use this string to indicate unambiguously that the intended entity
+		/// is the HTML encoded entity for a space character.
+		/// </summary>
+		public const string HTML_ENTITY_SPACE_CHARACTER = @"%20";
 
 		/// <summary>
 		/// HTML line break (Break) tag, rendered as lower case characters.
