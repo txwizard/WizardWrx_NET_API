@@ -4929,12 +4929,43 @@
             single-character string constants.
             </summary>
             <seealso cref="F:WizardWrx.SpecialCharacters.COLON"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.COLON_SPACE"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.COLON_SPACE">
+            <summary>
+            <para>
+            This is a companion to <see cref="F:WizardWrx.SpecialStrings.COLON"/> that follows it with a
+            single space character, represented by <see cref="F:WizardWrx.SpecialStrings.SPACE_CHAR"/>.
+            </para>
+            <para>
+            This short string constant is one of a set that covers cases where a
+            colon, comma, semicolon, or full stop must be immediately followed
+            by a space character.
+            </para>
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.COLON"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.COLON"/>
         </member>
         <member name="F:WizardWrx.SpecialStrings.COMMA">
             <summary>
             This is one of many single characters that are frequently needed as
             single-character string constants.
             </summary>
+            <seealso cref="F:WizardWrx.SpecialCharacters.COMMA"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.COMMA_SPACE">
+            <summary>
+            <para>
+            This is a companion to <see cref="F:WizardWrx.SpecialStrings.COMMA"/> that follows it with a
+            single space character, represented by <see cref="F:WizardWrx.SpecialStrings.SPACE_CHAR"/>.
+            </para>
+            <para>
+            This short string constant is one of a set that covers cases where a
+            colon, comma, semicolon, or full stop must be immediately followed
+            by a space character.
+            </para>
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.COLON"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.COMMA"/>
         </member>
         <member name="F:WizardWrx.SpecialStrings.CSV_ESCAPED_DOUBLE_QUOTE">
@@ -4952,6 +4983,38 @@
             single-character string constants.
             </summary>
             <seealso cref="F:WizardWrx.SpecialCharacters.DOUBLE_QUOTE"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.DOUBLE_QUOTE_SPACE">
+            <summary>
+            <para>
+            This is a companion to <see cref="F:WizardWrx.SpecialStrings.DOUBLE_QUOTE"/> that follows it
+            with a single space character, represented by <see cref="F:WizardWrx.SpecialStrings.SPACE_CHAR"/>.
+            </para>
+            <para>
+            This short string constant is one of a set that covers cases where a
+            colon, comma, semicolon, or full stop must be immediately followed
+            by a space character.
+            </para>
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.DOUBLE_QUOTE"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.DOUBLE_QUOTE"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.SPACE_DOUBLE_QUOTE"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.SPACE_DOUBLE_QUOTE">
+            <summary>
+            <para>
+            This is a companion to <see cref="F:WizardWrx.SpecialStrings.DOUBLE_QUOTE"/> that follows it
+            with a single space character, represented by <see cref="F:WizardWrx.SpecialStrings.SPACE_CHAR"/>.
+            </para>
+            <para>
+            This short string constant is one of a set that covers cases where a
+            colon, comma, semicolon, or full stop must be immediately followed
+            by a space character.
+            </para>
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.DOUBLE_QUOTE"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.DOUBLE_QUOTE"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.DOUBLE_QUOTE_SPACE"/>
         </member>
         <member name="F:WizardWrx.SpecialStrings.DOUBLE_SPACE">
             <summary>
@@ -5023,11 +5086,43 @@
             <seealso cref="F:WizardWrx.SpecialStrings.HASH_TAG"/>
             <seealso cref="F:WizardWrx.SpecialStrings.UNDERSCORE_CHAR"/>
         </member>
+        <member name="F:WizardWrx.SpecialStrings.SPACE_BOUNDED_EQUALS_SIGN">
+            <summary>
+            <para>
+            This is a companion to <see cref="F:WizardWrx.SpecialStrings.EQUALS_SIGN"/> that surrounds it
+            with a single space character, represented by <see cref="F:WizardWrx.SpecialStrings.SPACE_CHAR"/>
+            on each side..
+            </para>
+            <para>
+            This short string constant is one of a set that covers cases where a
+            colon, comma, semicolon, or full stop must be immediately followed
+            by a space character.
+            </para>
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.EQUALS_SIGN"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.EQUALS_SIGN"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.DOUBLE_QUOTE_SPACE"/>
+        </member>
         <member name="F:WizardWrx.SpecialStrings.FULL_STOP">
             <summary>
             This is one of many single characters that are frequently needed as
             single-character string constants.
             </summary>
+            <seealso cref="F:WizardWrx.SpecialCharacters.FULL_STOP"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.FULL_STOP_SPACE">
+            <summary>
+            <para>
+            This is a companion to <see cref="F:WizardWrx.SpecialStrings.FULL_STOP"/> that follows it with
+            a single space character, represented by <see cref="F:WizardWrx.SpecialStrings.SPACE_CHAR"/>.
+            </para>
+            <para>
+            This short string constant is one of a set that covers cases where a
+            colon, comma, semicolon, or full stop must be immediately followed
+            by a space character.
+            </para>
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.FULL_STOP"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.FULL_STOP"/>
         </member>
         <member name="F:WizardWrx.SpecialStrings.HASH_TAG">
@@ -5066,6 +5161,12 @@
             <seealso cref="F:WizardWrx.SpecialStrings.HTML_COMMENT_PREFIX"/>
             <seealso cref="F:WizardWrx.SpecialStrings.HTML_COMMENT_PREFIX_SP"/>
             <seealso cref="F:WizardWrx.SpecialStrings.HTML_COMMENT_SUFFIX"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.HTML_ENTITY_SPACE_CHARACTER">
+            <summary>
+            Use this string to indicate unambiguously that the intended entity
+            is the HTML encoded entity for a space character.
+            </summary>
         </member>
         <member name="F:WizardWrx.SpecialStrings.HTML_LINE_BREAK_LC">
             <summary>
@@ -5186,6 +5287,38 @@
             <seealso cref="F:WizardWrx.SpecialStrings.BRACE_LEFT"/>
             <seealso cref="F:WizardWrx.SpecialStrings.BRACKET_LEFT"/>
         </member>
+        <member name="F:WizardWrx.SpecialStrings.SPACE_PARENTHESIS_LEFT">
+            <summary>
+            <para>
+            This is a companion to <see cref="F:WizardWrx.SpecialStrings.PARENTHESIS_LEFT"/> that is
+            preceded by a single space character, represented by
+            <see cref="F:WizardWrx.SpecialStrings.SPACE_CHAR"/>.
+            </para>
+            <para>
+            This short string constant is one of a set that covers cases where a
+            colon, comma, semicolon, or full stop must be immediately followed
+            by a space character.
+            </para>
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.PARENTHESIS_LEFT"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.PARENTHESIS_LEFT"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.SPACE_BOUNDED_PARENTHESIS_LEFT">
+            <summary>
+            <para>
+            This is a companion to <see cref="F:WizardWrx.SpecialStrings.PARENTHESIS_LEFT"/> that is
+            bounded on both sides by a single space character, represented by a
+            <see cref="F:WizardWrx.SpecialStrings.SPACE_CHAR"/>.
+            </para>
+            <para>
+            This short string constant is one of a set that covers cases where a
+            colon, comma, semicolon, or full stop must be immediately followed
+            by a space character.
+            </para>
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.PARENTHESIS_LEFT"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.PARENTHESIS_LEFT"/>
+        </member>
         <member name="F:WizardWrx.SpecialStrings.PARENTHESIS_RIGHT">
             <summary>
             Use this in your code to specify a right parenthesis, also called a
@@ -5194,6 +5327,38 @@
             <seealso cref="F:WizardWrx.SpecialStrings.PARENTHESIS_LEFT"/>
             <seealso cref="F:WizardWrx.SpecialStrings.BRACE_RIGHT"/>
             <seealso cref="F:WizardWrx.SpecialStrings.BRACKET_RIGHT"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.SPACE_PARENTHESIS_RIGHT">
+            <summary>
+            <para>
+            This is a companion to <see cref="F:WizardWrx.SpecialStrings.PARENTHESIS_RIGHT"/> that is
+            followed by a single space character, represented by
+            <see cref="F:WizardWrx.SpecialStrings.SPACE_CHAR"/>.
+            </para>
+            <para>
+            This short string constant is one of a set that covers cases where a
+            colon, comma, semicolon, or full stop must be immediately followed
+            by a space character.
+            </para>
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.PARENTHESIS_RIGHT"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.PARENTHESIS_LEFT"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.SPACE_BOUNDED_PARENTHESIS_RIGHT">
+            <summary>
+            <para>
+            This is a companion to <see cref="F:WizardWrx.SpecialStrings.PARENTHESIS_RIGHT"/> that is
+            bounded on both sides by a single space character, represented by
+            <see cref="F:WizardWrx.SpecialStrings.SPACE_CHAR"/>.
+            </para>
+            <para>
+            This short string constant is one of a set that covers cases where a
+            colon, comma, semicolon, or full stop must be immediately followed
+            by a space character.
+            </para>
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.SPACE_PARENTHESIS_LEFT"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.PARENTHESIS_RIGHT"/>
         </member>
         <member name="F:WizardWrx.SpecialStrings.PERCENT_SIGN">
             <summary>
@@ -5229,6 +5394,22 @@
             This is one of many single characters that are frequently needed as
             single-character string constants.
             </summary>
+            <seealso cref="F:WizardWrx.SpecialCharacters.SEMICOLON"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.SEMICOLON_SPACE">
+            <summary>
+            <para>
+            This is a companion to <see cref="F:WizardWrx.SpecialStrings.SEMICOLON"/> that is
+            bounded on both sides by a single space character, represented by
+            <see cref="F:WizardWrx.SpecialStrings.SPACE_CHAR"/>.
+            </para>
+            <para>
+            This short string constant is one of a set that covers cases where a
+            colon, comma, semicolon, or full stop must be immediately followed
+            by a space character.
+            </para>
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.SEMICOLON"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.SEMICOLON"/>
         </member>
         <member name="F:WizardWrx.SpecialStrings.SINGLE_QUOTE">

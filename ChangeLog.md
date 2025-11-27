@@ -1,8 +1,99 @@
 ﻿# WizardWrx .NET API Change Log
 
+## 2025/11/27
+
+### WizardWrx.Common 9.0.274
+
+#### ✨ New Separator and Bounded‑Character Constants
+
+To improve clarity and enforce uniformity in string construction, the following constants have been added to `SpecialStrings`. Each constant makes invisible characters (like spaces) explicit, ensuring log messages and joins are unambiguous.
+
+| Constant Name                     | Value   | Description                            |
+|-----------------------------------|---------|----------------------------------------|
+| `COLON_SPACE`                     | `": "`  | Colon followed by a space              |
+| `COMMA_SPACE`                     | `", "`  | Comma followed by a space              |
+| `DOUBLE_QUOTE_SPACE`              | `"\" "` | Double quote followed by a space       |
+| `SPACE_DOUBLE_QUOTE`              | `" \""` | Space followed by a double quote       |
+| `SPACE_BOUNDED_EQUALS_SIGN`       | `" = "` | Equals sign bounded by spaces          |
+| `FULL_STOP_SPACE`                 | `". "`  | Period (full stop) followed by a space |
+| `SPACE_PARENTHESIS_LEFT`          | `" ("`  | Space followed by left parenthesis     |
+| `SPACE_BOUNDED_PARENTHESIS_LEFT`  | `" ( "` | Left parenthesis bounded by spaces     |
+| `SPACE_PARENTHESIS_RIGHT`         | `") "`  | Right parenthesis followed by a space  |
+| `SPACE_BOUNDED_PARENTHESIS_RIGHT` | `" ) "` | Right parenthesis bounded by spaces    |
+| `SEMICOLON_SPACE`                 | `"; "`  | Semicolon followed by a space          |
+
+##### 📝 Motivation
+
+Invisible characters such as spaces often hide in plain sight, making code and logs harder to read, maintain, and debug. A literal like `", "` or `" = "` may look obvious in isolation, but in diffs, reviews, or long concatenations, the presence of the space can be overlooked. This has historically led to subtle formatting inconsistencies and ambiguity in log output.
+
+By introducing explicit constants, the WizardWrx API makes these invisible details visible. Each constant is a **defensive design choice**:  
+- Prevents ambiguity by naming the separator in a way that reveals its exact composition.  
+- Enforces uniformity across the codebase, ensuring joins, logs, and diagnostic strings follow the same convention.  
+- Future‑proofs the API, since new bounded characters can be added once and reused everywhere without relying on fragile literals.
+
+##### 📖 Usage Examples
+
+###### Example 1: Joining with `COMMA_SPACE`
+
+```csharp
+string[] items = { "Alpha", "Beta", "Gamma" };
+
+// Using constant
+string joined = string.Join(SpecialStrings.COMMA_SPACE, items);
+```
+
+**Output:**
+
+```
+Alpha, Beta, Gamma
+```
+
+###### Example 2: Key/Value Formatting with `SPACE_BOUNDED_EQUALS_SIGN`
+
+```csharp
+string kv = key + SpecialStrings.SPACE_BOUNDED_EQUALS_SIGN + value;
+```
+
+**Output:**
+
+```
+Timeout = 30
+```
+
+###### Example 3: Logging with Parentheses
+
+```csharp
+string log = message 
+           + SpecialStrings.SPACE_PARENTHESIS_LEFT 
+           + count 
+           + SpecialStrings.SPACE_PARENTHESIS_RIGHT;
+```
+
+**Output:**
+
+```
+Processing (42)
+```
+
+##### 🔄 Before vs. After Comparison
+
+| Scenario   | Before (literal)                | After (constant)                                                                                    |
+|------------|---------------------------------|-----------------------------------------------------------------------------------------------------|
+| Join items | `string.Join(", ", items);`     | `string.Join(SpecialStrings.COMMA_SPACE, items);`                                                   |
+| Key/value  | `key + " = " + value;`          | `key + SpecialStrings.SPACE_BOUNDED_EQUALS_SIGN + value;`                                           |
+| Logging    | `message + " (" + count + ")";` | `message + SpecialStrings.SPACE_PARENTHESIS_LEFT + count + SpecialStrings.SPACE_PARENTHESIS_RIGHT;` |
+
+##### 🎯 Impact
+
+These constants improve developer experience by making invisible formatting explicit, reduce subtle bugs caused by overlooked spaces, and ensure logs and diagnostics remain consistent across the codebase. This change embodies the library’s philosophy of **intention‑revealing, defensive design**: every separator is named, every space is accounted for, and every maintainer can see exactly what was intended.
+
+##### 📚 See Also
+
+For the full set of constants and their definitions, refer to the **`SpecialStrings`** class in *WizardWrx.Common*. This class centralizes all separator and bounded‑character constants, ensuring they can be reused consistently across the codebase. Note that this class is part of the root **`WizardWrx`** namespace for easy access.
+
 ## 2025/10/19 
 
-### WizardWrx.Common 0.274
+### WizardWrx.Common 9.0.274
 
 Add string constant HTML_ENTITY_SPACE_CHARACTER (@"%20").
 

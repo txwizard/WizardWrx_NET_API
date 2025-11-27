@@ -230,6 +230,24 @@
                                   WINDOWS_PATH_DELIMITER ('\')
 
 	2025/10/19 9.0.274 DAG   Add constant HTML_ENTITY_SPACE_CHARACTER (@"%20").
+
+	2025/11/27 9.0.278 DAG   Add the following symbolic constants.
+
+								COLON_SPACE
+								COMMA_SPACE
+								DOUBLE_QUOTE_SPACE
+								SPACE_DOUBLE_QUOTE
+								SPACE_BOUNDED_EQUALS_SIGN
+								FULL_STOP_SPACE
+								SPACE_PARENTHESIS_LEFT
+								SPACE_BOUNDED_PARENTHESIS_LEFT
+								SPACE_PARENTHESIS_RIGHT
+								SPACE_BOUNDED_PARENTHESIS_RIGHT
+								SEMICOLON_SPACE
+
+                             The meanings of the foregoing names should be self
+                             evident. Nevertheless, they are set forth in the
+                             ChangeLog entry dated 2025/11/27.
     ============================================================================
 */
 
@@ -511,7 +529,23 @@ namespace WizardWrx
 		/// single-character string constants.
 		/// </summary>
 		/// <seealso cref="SpecialCharacters.COLON"/>
+		/// <seealso cref="COLON_SPACE"/>
 		public const string COLON = ":";
+
+		/// <summary>
+		/// <para>
+		/// This is a companion to <see cref="COLON"/> that follows it with a
+		/// single space character, represented by <see cref="SPACE_CHAR"/>.
+		/// </para>
+		/// <para>
+		/// This short string constant is one of a set that covers cases where a
+		/// colon, comma, semicolon, or full stop must be immediately followed
+		/// by a space character.
+		/// </para>
+		/// </summary>
+		/// <seealso cref="COLON"/>
+		/// <seealso cref="SpecialCharacters.COLON"/>
+		public const string COLON_SPACE = COLON + SPACE_CHAR;
 
         /// <summary>
         /// This is one of many single characters that are frequently needed as
@@ -519,6 +553,21 @@ namespace WizardWrx
         /// </summary>
         /// <seealso cref="SpecialCharacters.COMMA"/>
         public const string COMMA = ",";
+
+		/// <summary>
+		/// <para>
+		/// This is a companion to <see cref="COMMA"/> that follows it with a
+		/// single space character, represented by <see cref="SPACE_CHAR"/>.
+		/// </para>
+		/// <para>
+		/// This short string constant is one of a set that covers cases where a
+		/// colon, comma, semicolon, or full stop must be immediately followed
+		/// by a space character.
+		/// </para>
+		/// </summary>
+		/// <seealso cref="COLON"/>
+		/// <seealso cref="SpecialCharacters.COMMA"/>
+		public const string COMMA_SPACE = COMMA + SPACE_CHAR;
 
         /// <summary>
         /// Use this as the second of two argument so the Replace method on a
@@ -535,6 +584,38 @@ namespace WizardWrx
         /// </summary>
         /// <seealso cref="SpecialCharacters.DOUBLE_QUOTE"/>
         public const string DOUBLE_QUOTE = "\"";
+
+		/// <summary>
+		/// <para>
+		/// This is a companion to <see cref="DOUBLE_QUOTE"/> that follows it
+		/// with a single space character, represented by <see cref="SPACE_CHAR"/>.
+		/// </para>
+		/// <para>
+		/// This short string constant is one of a set that covers cases where a
+		/// colon, comma, semicolon, or full stop must be immediately followed
+		/// by a space character.
+		/// </para>
+		/// </summary>
+		/// <seealso cref="DOUBLE_QUOTE"/>
+		/// <seealso cref="SpecialCharacters.DOUBLE_QUOTE"/>
+		/// <seealso cref="SPACE_DOUBLE_QUOTE"/>
+		public const string DOUBLE_QUOTE_SPACE = DOUBLE_QUOTE + SPACE_CHAR;
+
+		/// <summary>
+		/// <para>
+		/// This is a companion to <see cref="DOUBLE_QUOTE"/> that follows it
+		/// with a single space character, represented by <see cref="SPACE_CHAR"/>.
+		/// </para>
+		/// <para>
+		/// This short string constant is one of a set that covers cases where a
+		/// colon, comma, semicolon, or full stop must be immediately followed
+		/// by a space character.
+		/// </para>
+		/// </summary>
+		/// <seealso cref="DOUBLE_QUOTE"/>
+		/// <seealso cref="SpecialCharacters.DOUBLE_QUOTE"/>
+		/// <seealso cref="DOUBLE_QUOTE_SPACE"/>
+		public const string SPACE_DOUBLE_QUOTE = SPACE_CHAR + DOUBLE_QUOTE;
 
 		/// <summary>
 		/// Overlooked constant - two consecutive spaces.
@@ -607,11 +688,43 @@ namespace WizardWrx
 		public const string EQUALS_SIGN = @"=";
 
 		/// <summary>
+		/// <para>
+		/// This is a companion to <see cref="EQUALS_SIGN"/> that surrounds it
+		/// with a single space character, represented by <see cref="SPACE_CHAR"/>
+		/// on each side..
+		/// </para>
+		/// <para>
+		/// This short string constant is one of a set that covers cases where a
+		/// colon, comma, semicolon, or full stop must be immediately followed
+		/// by a space character.
+		/// </para>
+		/// </summary>
+		/// <seealso cref="EQUALS_SIGN"/>
+		/// <seealso cref="SpecialCharacters.EQUALS_SIGN"/>
+		/// <seealso cref="DOUBLE_QUOTE_SPACE"/>
+		public const string SPACE_BOUNDED_EQUALS_SIGN = SPACE_CHAR + EQUALS_SIGN + SPACE_CHAR;
+
+		/// <summary>
 		/// This is one of many single characters that are frequently needed as
 		/// single-character string constants.
 		/// </summary>
 		/// <seealso cref="SpecialCharacters.FULL_STOP"/>
 		public const string FULL_STOP = ".";
+
+		/// <summary>
+		/// <para>
+		/// This is a companion to <see cref="FULL_STOP"/> that follows it with
+		/// a single space character, represented by <see cref="SPACE_CHAR"/>.
+		/// </para>
+		/// <para>
+		/// This short string constant is one of a set that covers cases where a
+		/// colon, comma, semicolon, or full stop must be immediately followed
+		/// by a space character.
+		/// </para>
+		/// </summary>
+		/// <seealso cref="FULL_STOP"/>
+		/// <seealso cref="SpecialCharacters.FULL_STOP"/>
+		public const string FULL_STOP_SPACE = FULL_STOP + SPACE_CHAR;
 
 		/// <summary>
 		/// Use this constant to specify a hash-tag literal character
@@ -777,6 +890,38 @@ namespace WizardWrx
 		public const string PARENTHESIS_LEFT = @"(";
 
 		/// <summary>
+		/// <para>
+		/// This is a companion to <see cref="PARENTHESIS_LEFT"/> that is
+		/// preceded by a single space character, represented by
+		/// <see cref="SPACE_CHAR"/>.
+		/// </para>
+		/// <para>
+		/// This short string constant is one of a set that covers cases where a
+		/// colon, comma, semicolon, or full stop must be immediately followed
+		/// by a space character.
+		/// </para>
+		/// </summary>
+		/// <seealso cref="PARENTHESIS_LEFT"/>
+		/// <seealso cref="SpecialCharacters.PARENTHESIS_LEFT"/>
+		public const string SPACE_PARENTHESIS_LEFT = SPACE_CHAR + PARENTHESIS_LEFT;
+
+		/// <summary>
+		/// <para>
+		/// This is a companion to <see cref="PARENTHESIS_LEFT"/> that is
+		/// bounded on both sides by a single space character, represented by a
+		/// <see cref="SPACE_CHAR"/>.
+		/// </para>
+		/// <para>
+		/// This short string constant is one of a set that covers cases where a
+		/// colon, comma, semicolon, or full stop must be immediately followed
+		/// by a space character.
+		/// </para>
+		/// </summary>
+		/// <seealso cref="PARENTHESIS_LEFT"/>
+		/// <seealso cref="SpecialCharacters.PARENTHESIS_LEFT"/>
+		public const string SPACE_BOUNDED_PARENTHESIS_LEFT = SPACE_CHAR + PARENTHESIS_LEFT + SPACE_CHAR;
+
+		/// <summary>
 		/// Use this in your code to specify a right parenthesis, also called a
 		/// closing parenthesis, as a character literal.
 		/// </summary>
@@ -784,6 +929,38 @@ namespace WizardWrx
 		/// <seealso cref="BRACE_RIGHT"/>
 		/// <seealso cref="BRACKET_RIGHT"/>
 		public const string PARENTHESIS_RIGHT = @")";
+
+		/// <summary>
+		/// <para>
+		/// This is a companion to <see cref="PARENTHESIS_RIGHT"/> that is
+		/// followed by a single space character, represented by
+		/// <see cref="SPACE_CHAR"/>.
+		/// </para>
+		/// <para>
+		/// This short string constant is one of a set that covers cases where a
+		/// colon, comma, semicolon, or full stop must be immediately followed
+		/// by a space character.
+		/// </para>
+		/// </summary>
+		/// <seealso cref="PARENTHESIS_RIGHT"/>
+		/// <seealso cref="SpecialCharacters.PARENTHESIS_LEFT"/>
+		public const string SPACE_PARENTHESIS_RIGHT = PARENTHESIS_LEFT + SPACE_CHAR;
+
+		/// <summary>
+		/// <para>
+		/// This is a companion to <see cref="PARENTHESIS_RIGHT"/> that is
+		/// bounded on both sides by a single space character, represented by
+		/// <see cref="SPACE_CHAR"/>.
+		/// </para>
+		/// <para>
+		/// This short string constant is one of a set that covers cases where a
+		/// colon, comma, semicolon, or full stop must be immediately followed
+		/// by a space character.
+		/// </para>
+		/// </summary>
+		/// <seealso cref="SPACE_PARENTHESIS_LEFT"/>
+		/// <seealso cref="SpecialCharacters.PARENTHESIS_RIGHT"/>
+		public const string SPACE_BOUNDED_PARENTHESIS_RIGHT = SPACE_CHAR + PARENTHESIS_RIGHT + SPACE_CHAR;
 
 		/// <summary>
 		/// Use this when you need to remove or replace ampersand literals in a
@@ -821,12 +998,28 @@ namespace WizardWrx
 		/// <seealso cref="SpecialCharacters.SEMICOLON"/>
 		public const string SEMICOLON = @";";
 
-        /// <summary>
-        /// This is one of many single characters that are frequently needed as
-        /// single-character string constants.
-        /// </summary>
-        /// <seealso cref="SpecialCharacters.SINGLE_QUOTE"/>
-        public const string SINGLE_QUOTE = @"'";
+		/// <summary>
+		/// <para>
+		/// This is a companion to <see cref="SEMICOLON"/> that is
+		/// bounded on both sides by a single space character, represented by
+		/// <see cref="SPACE_CHAR"/>.
+		/// </para>
+		/// <para>
+		/// This short string constant is one of a set that covers cases where a
+		/// colon, comma, semicolon, or full stop must be immediately followed
+		/// by a space character.
+		/// </para>
+		/// </summary>
+		/// <seealso cref="SEMICOLON"/>
+		/// <seealso cref="SpecialCharacters.SEMICOLON"/>
+		public const string SEMICOLON_SPACE = SEMICOLON + SPACE_CHAR;
+
+		/// <summary>
+		/// This is one of many single characters that are frequently needed as
+		/// single-character string constants.
+		/// </summary>
+		/// <seealso cref="SpecialCharacters.SINGLE_QUOTE"/>
+		public const string SINGLE_QUOTE = @"'";
  
 		/// <summary>
 		/// Use this when you need a space character in a context that requires
