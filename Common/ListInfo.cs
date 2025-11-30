@@ -82,6 +82,8 @@
 						      This module moved into WizardWrx.Common.dll, a new
                               dynamic-link library, but stays in the WizardWrx
                               root namespace.
+
+	2025/11/28 9.0.281 DAG   Add overlooked constant EXACTLY_ONE_ITEM.
     ============================================================================
 */
 
@@ -126,13 +128,21 @@ namespace WizardWrx
 		public const int EMPTY_STRING_LENGTH = MagicNumbers.ZERO;
 
         /// <summary>
-        /// This constant defines the value returned by the IndexOf method on a
-        /// string to indicate that the search character or substring is not
-        /// found.
-        /// 
-        /// Coincidentally, this happens to be ArrayInfo.ARRAY_INVALID_INDEX.
+        /// Almost as common as testing for the empty list is testing for the
+        /// singleton list. For instance, when a SQL UPDATE is issued to update
+        /// values in a single row, the @@ROWCOUNT is expected to be exactly one
+        /// if its WHERE clause is coded correctly.
         /// </summary>
-        public const int INDEXOF_NOT_FOUND = ArrayInfo.ARRAY_INVALID_INDEX;
+        public const int EXACTLY_ONE_ITEM = MagicNumbers.PLUS_ONE;
+
+		/// <summary>
+		/// This constant defines the value returned by the IndexOf method on a
+		/// string to indicate that the search character or substring is not
+		/// found.
+		/// 
+		/// Coincidentally, this happens to be ArrayInfo.ARRAY_INVALID_INDEX.
+		/// </summary>
+		public const int INDEXOF_NOT_FOUND = ArrayInfo.ARRAY_INVALID_INDEX;
 
         /// <summary>
         /// The Count property of a list returns a value of zero (LIST_IS_EMPTY)

@@ -111,6 +111,7 @@
     </Compile>
     <Compile Include="ArrayInfo.cs" />
     <Compile Include="ByteOrderMark.cs" />
+    <Compile Include="ConsoleSymbols.cs" />
     <Compile Include="CSVFileInfo.cs" />
     <Compile Include="DisplayFormats.cs" />
     <Compile Include="FileIOFlags.cs" />

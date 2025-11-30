@@ -1134,7 +1134,23 @@ namespace DLLServices2TestStand
                         typeof ( Program ) ,
                         Properties.Settings.Default.Startup_Assembly_Strings_Report_FileName );
 
-                    if ( ( intRetCode = NewClassTests_20140914.DisplayFormatsExercises ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
+					if ( ( intRetCode = Excercise_ReflectionInvoker ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
+					{
+						PauseForPictures (
+							OMIT_LINEFEED ,
+							@"ReflectionInvokerExercises" );
+					}
+					else
+					{
+						s_smTheApp.AppExceptionLogger.ErrorMessageColors.WriteLine ( @"Exception thrown following Excercise_ReflectionInvoker" );
+						throw new Exception (
+							string.Format (
+								Properties.Resources.ERRMSG_NEW_CLASS_TESTS_20140914 ,
+								@"ReflectionInvoker" ,
+								intRetCode ) );
+					}   // if ( ( intRetCode = Excercise_ReflectionInvoker ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
+
+					if ( ( intRetCode = NewClassTests_20140914.DisplayFormatsExercises ( ref intTestNumber ) ) == MagicNumbers.ERROR_SUCCESS )
                     {
                         PauseForPictures (
                             OMIT_LINEFEED ,
@@ -1369,8 +1385,8 @@ namespace DLLServices2TestStand
         }   // static void Main
 
 
-        #region Local Test Implementations
-        private static void CallTraceToStreamWriter ( )
+		#region Local Test Implementations
+		private static void CallTraceToStreamWriter ( )
         {
             string strAbsoluteTraceLogFileName = AbsolutePathStringFromSettings ( Properties.Settings.Default.TraceWriteTests );
             Console.WriteLine ( $"{Environment.NewLine}Begin CallTraceToStreamWriter with output file {strAbsoluteTraceLogFileName}{Environment.NewLine}" );
@@ -2049,8 +2065,63 @@ namespace DLLServices2TestStand
                 Environment.NewLine );
         }   // ExerciseGetAssemblyVersionInfo
 
+		private static int Excercise_ReflectionInvoker ( ref int pintTestNumber )
+		{
+            const string LOGGER_PREFIX = @"Excercise_ReflectionInvoker";
 
-        private static void Exercise_RemoveAtArrayExtensionMethod ( )
+            NewClassTests_20140914.BeginTest (
+                System.Reflection.MethodBase.GetCurrentMethod ( ).Name ,        // string pstrMethodName
+				ref pintTestNumber ,                                            // ref int pintTestNumber
+				true );                                                         // bool pfIgnoreClassTestMap = false
+
+			string strAnyCSVRelativePath = @"..\AnyCSV\AnyCSV\bin\Release\WizardWrx.AnyCSV.dll";
+            string strAnyCSVClassName = @"WizardWrx.AnyCSV.Parser";
+            string strAnyCSVStaticParseMethodName = @"Parse";
+			string strCSVString = @"Alpha,Beta,Gamma,Delta,Epsilon";
+
+			Console.WriteLine ( $"{LOGGER_PREFIX} Begin:" );
+
+            Console.WriteLine ( $"{LOGGER_PREFIX} Inputs: {nameof ( strAnyCSVRelativePath )}             = {strAnyCSVRelativePath}" );
+			Console.WriteLine ( $"{new string ( SpecialCharacters.SPACE_CHAR , LOGGER_PREFIX.Length )}         {nameof ( strAnyCSVClassName )}                = {strAnyCSVClassName}" );
+			Console.WriteLine ( $"{new string ( SpecialCharacters.SPACE_CHAR , LOGGER_PREFIX.Length )}         {nameof ( strAnyCSVStaticParseMethodName )}    = {strAnyCSVStaticParseMethodName}" );
+			Console.WriteLine ( $"{new string ( SpecialCharacters.SPACE_CHAR , LOGGER_PREFIX.Length )}         {nameof ( strCSVString )}                      = {strCSVString}" );
+
+            try
+            {
+                string [ ] astrSubStrings = WizardWrx.Core.ReflectionInvoker.InvokeStaticMethod< string [ ]> (
+                    strAnyCSVRelativePath ,                     // string pstrAbsoluteDLLPath
+                    strAnyCSVClassName ,                        // string pstrFullyQualifiedTypeName
+                    strAnyCSVStaticParseMethodName ,            // string pstrMethodName
+                    new object [ ] { strCSVString } );
+
+                if ( astrSubStrings != null )
+                {
+                    Console.WriteLine ( $"{LOGGER_PREFIX} Outputs: Array of Strings, String Count = {astrSubStrings.Length}{Environment.NewLine}" );
+
+                    for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+                              intJ < astrSubStrings.Length ;
+                              intJ++ )
+                    {
+                        Console.WriteLine ( $"{new string ( SpecialCharacters.SPACE_CHAR , LOGGER_PREFIX.Length )}         Item {ArrayInfo.OrdinalFromIndex ( intJ )} of {astrSubStrings.Length}: {astrSubStrings [ intJ ]}" );
+					}   // for ( int intJ = ArrayInfo.ARRAY_FIRST_ELEMENT ; intJ < astrSubStrings.Length ; intJ++ )
+				}   // true (anticipated outcome) block, if ( astrSubStrings != null )
+				else
+                {
+                    Console.WriteLine ( $"{LOGGER_PREFIX} Outputs: Returned array is NULL." );
+				}   // FALSE (unanticipated outcome) block, if ( astrSubStrings != null )
+			}
+            catch ( Exception ex )
+            {
+                s_smTheApp.AppExceptionLogger.ReportException ( ex );
+            }
+
+			Console.WriteLine ( $"{LOGGER_PREFIX} Done!" );
+
+			return pintTestNumber;
+		}
+
+
+		private static void Exercise_RemoveAtArrayExtensionMethod ( )
         {
             const int REMOVE_INDEX = 4;
 

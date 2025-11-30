@@ -154,21 +154,37 @@
 
 	2025/10/19 9.0.270 DAG   Add: URL_PATH_DELIMITER ('\x002f')
 		                          WINDOWS_PATH_DELIMITER ('\x005c')
+
+	2025/11/28 9.0.281 DAG   Add Unicode code points: BULLET
+                                                      CHECK_MARK
+                                                      CROSS_MARK
+                                                      RIGHT_ARROW
     ============================================================================
 */
 
 
 namespace WizardWrx
 {
-    /// <summary>
-    /// Use these constants when you want or need your listings to be crystal
-    /// clear about certain ambiguous literals.
+	/// <summary>
+	/// Use these constants when you want or need your listings to be crystal
+	/// clear about certain ambiguous literals.
 	/// 
 	/// Since static classes are implicitly sealed, this class cannot be inherited.
 	/// </summary>
 	/// <remarks>
+	/// <para>
+	/// In character-mode (console) applications that use them, the Unicode
+	/// glyphs, BULLET, CHECK_MARK, CROSS_MARK, and RIGHT_ARROW, require a
+	/// console that supports UTF-8. Use <see cref="ConsoleSymbols.Initialize"/>
+	/// to coerce the console to use a UTF-8 code page that supports them.
+	/// Additionally, to properly display these glyphs, your console must render
+	/// in a font face that supports these Unicode glyphs. Examples are Consolas,
+	/// Cascadia Code, and Segoe UI Emoji.
+	/// </para>
+	/// <para>
 	/// For ease of access, I promoted the classes that expose only constants to
 	/// the root of the WizardWrx namespace.
+	/// </para>
 	/// </remarks>
 	/// <seealso cref="ArrayInfo"/>
 	/// <seealso cref="MagicNumbers"/>
@@ -314,6 +330,13 @@ namespace WizardWrx
 		public const char BRACKET_RIGHT = ']';
 
 		/// <summary>
+		/// Unicode bullet (•), U+2022.
+		/// See ChangeLog.md glyph table and GlyphConstantsHarness for validation.
+		/// </summary>
+		/// <seealso cref="SpecialStrings.BULLET"/>
+		public const char BULLET = '\u2022';
+
+		/// <summary>
 		/// Use this character anywhere in your code that requires a bare
 		/// carriage return character.
 		/// </summary>
@@ -424,9 +447,21 @@ namespace WizardWrx
 		public const char CHAR_UC_Z = 'Z';
 
 		/// <summary>
+		/// Unicode check mark (✔), U+2714.
+		/// See ChangeLog.md glyph table and GlyphConstantsHarness for validation.
+		/// </summary>
+		/// <seealso cref="CHECK_MARK_CHAR"/>
+		/// <seealso cref="SpecialStrings.CHECK_MARK"/>
+		/// <seealso cref="SpecialStrings.CHECK_MARK_CHAR"/>
+		public const char CHECK_MARK = '\u2714';
+
+		/// <summary>
 		/// The check-mark character prints as such only in selected Windows
 		/// fonts.
 		/// </summary>
+		/// <seealso cref="CHECK_MARK"/>
+		/// <seealso cref="SpecialStrings.CHECK_MARK"/>
+		/// <seealso cref="SpecialStrings.CHECK_MARK_CHAR"/>
 		public const char CHECK_MARK_CHAR = '\xFB';
 
 		/// <summary>
@@ -458,6 +493,13 @@ namespace WizardWrx
 		/// <seealso cref="UNDERSCORE_CHAR"/>
         /// <seealso cref="SpecialStrings.COMMA"/>
 		public const char COMMA = ',';
+
+		/// <summary>
+		/// Unicode cross mark (✘), U+2718.
+		/// See ChangeLog.md glyph table and GlyphConstantsHarness for validation.
+		/// </summary>
+		/// <seealso cref="SpecialStrings.CROSS_MARK"/>
+		public const char CROSS_MARK = '\u2718';
 
 		/// <summary>
 		/// Use this when you code requires  a Left French Brace literal, such
@@ -651,10 +693,17 @@ namespace WizardWrx
 		/// </summary>
 		public const char QUESTION_MARK = '?';
 
-        /// <summary>
-        /// Use this when your code requires a semicolon literal, when you want
-        /// the listing to be crystal clear about what it is.
-        /// </summary>
+		/// <summary>
+		/// Unicode right arrow (→), U+2192.
+		/// See ChangeLog.md glyph table and GlyphConstantsHarness for validation.
+		/// </summary>
+		/// <seealso cref="SpecialStrings.RIGHT_ARROW"/>
+		public const char RIGHT_ARROW = '\u2192';
+
+		/// <summary>
+		/// Use this when your code requires a semicolon literal, when you want
+		/// the listing to be crystal clear about what it is.
+		/// </summary>
 		/// <seealso cref="AMPERSAND"/>
 		/// <seealso cref="COMMA"/>
 		/// <seealso cref="COLON"/>
@@ -663,7 +712,7 @@ namespace WizardWrx
 		/// <seealso cref="PIPE_CHAR"/>
 		/// <seealso cref="TAB_CHAR"/>
 		/// <seealso cref="UNDERSCORE_CHAR"/>
-        /// <seealso cref="SpecialStrings.SEMICOLON"/>
+		/// <seealso cref="SpecialStrings.SEMICOLON"/>
 		public const char SEMICOLON = ';';
 
         /// <summary>

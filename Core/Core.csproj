@@ -131,6 +131,7 @@
     <Compile Include="NumberFormatters.cs" />
     <Compile Include="PropertyDefaults.cs" />
     <Compile Include="RecoveredException.cs" />
+    <Compile Include="ReflectionInvoker.cs" />
     <Compile Include="RegistryValues.cs" />
     <Compile Include="ReportDetail.cs" />
     <Compile Include="ReportDetails.cs" />

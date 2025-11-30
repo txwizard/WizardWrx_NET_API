@@ -1,0 +1,1478 @@
+﻿# WizardWrx .NET API Change Log
+
+## 2025/11/27
+
+### WizardWrx.Common 9.0.274
+
+#### ✨ New Separator and Bounded‑Character Constants
+
+To improve clarity and enforce uniformity in string construction, the following constants have been added to `SpecialStrings`. Each constant makes invisible characters (like spaces) explicit, ensuring log messages and joins are unambiguous.
+
+| Constant Name                     | Value   | Description                            |
+|-----------------------------------|---------|----------------------------------------|
+| `COLON_SPACE`                     | `": "`  | Colon followed by a space              |
+| `COMMA_SPACE`                     | `", "`  | Comma followed by a space              |
+| `DOUBLE_QUOTE_SPACE`              | `"\" "` | Double quote followed by a space       |
+| `SPACE_DOUBLE_QUOTE`              | `" \""` | Space followed by a double quote       |
+| `SPACE_BOUNDED_EQUALS_SIGN`       | `" = "` | Equals sign bounded by spaces          |
+| `FULL_STOP_SPACE`                 | `". "`  | Period (full stop) followed by a space |
+| `SPACE_PARENTHESIS_LEFT`          | `" ("`  | Space followed by left parenthesis     |
+| `SPACE_BOUNDED_PARENTHESIS_LEFT`  | `" ( "` | Left parenthesis bounded by spaces     |
+| `SPACE_PARENTHESIS_RIGHT`         | `") "`  | Right parenthesis followed by a space  |
+| `SPACE_BOUNDED_PARENTHESIS_RIGHT` | `" ) "` | Right parenthesis bounded by spaces    |
+| `SEMICOLON_SPACE`                 | `"; "`  | Semicolon followed by a space          |
+
+##### 📝 Motivation
+
+Invisible characters such as spaces often hide in plain sight, making code and logs harder to read, maintain, and debug. A literal like `", "` or `" = "` may look obvious in isolation, but in diffs, reviews, or long concatenations, the presence of the space can be overlooked. This has historically led to subtle formatting inconsistencies and ambiguity in log output.
+
+By introducing explicit constants, the WizardWrx API makes these invisible details visible. Each constant is a **defensive design choice**:  
+- Prevents ambiguity by naming the separator in a way that reveals its exact composition.  
+- Enforces uniformity across the codebase, ensuring joins, logs, and diagnostic strings follow the same convention.  
+- Future‑proofs the API, since new bounded characters can be added once and reused everywhere without relying on fragile literals.
+
+##### 📖 Usage Examples
+
+###### Example 1: Joining with `COMMA_SPACE`
+
+```csharp
+string[] items = { "Alpha", "Beta", "Gamma" };
+
+// Using constant
+string joined = string.Join(SpecialStrings.COMMA_SPACE, items);
+```
+
+**Output:**
+
+```
+Alpha, Beta, Gamma
+```
+
+###### Example 2: Key/Value Formatting with `SPACE_BOUNDED_EQUALS_SIGN`
+
+```csharp
+string kv = key + SpecialStrings.SPACE_BOUNDED_EQUALS_SIGN + value;
+```
+
+**Output:**
+
+```
+Timeout = 30
+```
+
+###### Example 3: Logging with Parentheses
+
+```csharp
+string log = message 
+           + SpecialStrings.SPACE_PARENTHESIS_LEFT 
+           + count 
+           + SpecialStrings.SPACE_PARENTHESIS_RIGHT;
+```
+
+**Output:**
+
+```
+Processing (42)
+```
+
+##### 🔄 Before vs. After Comparison
+
+| Scenario   | Before (literal)                | After (constant)                                                                                    |
+|------------|---------------------------------|-----------------------------------------------------------------------------------------------------|
+| Join items | `string.Join(", ", items);`     | `string.Join(SpecialStrings.COMMA_SPACE, items);`                                                   |
+| Key/value  | `key + " = " + value;`          | `key + SpecialStrings.SPACE_BOUNDED_EQUALS_SIGN + value;`                                           |
+| Logging    | `message + " (" + count + ")";` | `message + SpecialStrings.SPACE_PARENTHESIS_LEFT + count + SpecialStrings.SPACE_PARENTHESIS_RIGHT;` |
+
+##### 🎯 Impact
+
+These constants improve developer experience by making invisible formatting explicit, reduce subtle bugs caused by overlooked spaces, and ensure logs and diagnostics remain consistent across the codebase. This change embodies the library’s philosophy of **intention‑revealing, defensive design**: every separator is named, every space is accounted for, and every maintainer can see exactly what was intended.
+
+##### 📚 See Also
+
+For the full set of constants and their definitions, refer to the **`SpecialStrings`** class in *WizardWrx.Common*. This class centralizes all separator and bounded‑character constants, ensuring they can be reused consistently across the codebase. Note that this class is part of the root **`WizardWrx`** namespace for easy access.
+
+### WizardWrx.Core 9.0.370
+
+A new static class, `ReflectionInvoker`, was added to the `WizardWrx.Core` namespace.  
+This class provides helper methods for invoking methods dynamically via reflection:
+
+- `InvokeStaticMethod`   — Invokes static methods on types loaded from external assemblies.
+- `InvokeInstanceMethod` — Invokes instance methods, with optional constructor arguments.
+- `InvokeGenericMethod`  — Invokes generic methods by applying supplied type arguments.
+
+These helpers centralize reflection logic, reduce duplication, and make dynamic invocation
+intention‑revealing and maintainable. They complement existing utilities in `WizardWrx.Core.dll`.
+
+## 2025/10/19 
+
+### WizardWrx.Common 9.0.274
+
+Add string constant HTML_ENTITY_SPACE_CHARACTER (@"%20").
+
+### WizardWrx.Common 9.0.270 
+
+Add string constants EMPTY_JSON_ARRAY (@"[]") and EMPTY_JSON_OBJECT (@"{}").
+
+Add character and string constants URL_PATH_DELIMITER ('/') and WINDOWS_PATH_DELIMITER ('\').
+
+### WizardWrx.Core 9.0.365
+
+To resolve a file contention that caused the hash routine to prevent another
+routine from gaining access to a file that it was asked to process, the 
+`FileStream` object that feeds data to all message digest algorithms is moved
+out of the method call, and the stream is instead owned by the `using` block
+that wraps the message digest object, which was already in a `using` block of
+its own, thus ensuring that the stream is properly closed and releases its
+unmanaged resources including its file handle.
+
+In addition to the foregoing changes, an architectural change in the deployment
+flow that makes the `ReadMe.md` and `ChangeLog.md` files visible to the NuGet
+Gallery affects all libraries. Libraries that are impacted only by the deployment
+workflow improvement are listed in the table below.
+
+|Assembly (Project) Name|Version |
++-----------------------+--------+
+|ASCIIInfo              |9.0.220 |
+|AssemblyUtils          |9.0.279 |
+|ConsoleStreams         |9.0.326 |
+|DiagnosticInfo         |9.0.110 |
+|DLLConfigurationManager|9.0.355 |
+|FormatStringEngine     |9.0.302 |
+|MoreMath               |9.0.109 |
+
+## 2024/06/22
+
+### WizardWrx.Core 9.0.361
+
+Correct the spelling of string extension method `SQLafe4EmbeddedSingleQuote` to 
+`SQLEscapeEmbeddedSingleQuote`.
+
+## 2024/02/05
+
+### WizardWrx.Common 9.0.268
+
+Define `CSV_ESCAPED_DOUBLE_QUOTE` (ASCII code 0x22) and `SQL_ESCAPED_SINGLE_QUOTE`
+(ASCII code 0x27), intended for escaping ocurrnces of the character described
+by name and mentioned by its ASCII code, which happens also to be its Unicode
+code point. These strings may be used alone with the standard `string.Replace`
+method or with string extension methods `CSVSafe4EmbeddedDoubleQuote` and
+`SQLafe4EmbeddedSingleQuote`, both implemented in `WizardWrx.Core` 9.0.359.
+
+### WizardWrx.Core 9.0.359
+
+Define new string extension method `CSVSafe4EmbeddedDoubleQuote` and
+`SQLafe4EmbeddedSingleQuote`.
+
+## 2024/02/05
+
+### WizardWrx.Core 9.0.357
+
+Correct a logic error in the `ExtractBetweenIndexOfs` string extension method
+overload that takes into account the length of the substring that marks the
+left boundary of the substring to extract by adding its length to the specified
+left boundary position. 
+
+The eror took the form of a nonsensical test that caused it to assume that the
+bounds were invalid. The objective of the invalid test was to prevent the native
+SubString method from throwing because of one or more invalid charaacter
+positions.
+
+This correction resolves the puzzling issue that prompted the harmless change
+introduced into the version of ExtractBoundedSubstrings in build 9.0.355.
+
+## 2024/02/05
+
+### WizardWrx.AssemblyUtils 9.0.275
+
+Implement two new methods, `GetAssemblyGUID` and `GetAssemblyTargetFramework`,
+which return assembly attributes that are applied during the build process, and
+are somewhat obtuse to extract.
+
+Of the two, `GetAssemblyTargetFramework` is almost certainly the most useful
+because it identifies the Microsost .NET Framework against which it was built,
+known also as its Target Framework.
+
+## 2024/01/30
+
+### WizardWrx.Core 9.0.355
+
+In string extension method `ExtractBoundedSubstrings`, substitute
+`IsNullOrWhiteSpace` for `IsNullOrEmpty`.
+
+### All Other Assemblies
+
+Everything else gets rebuilt because I changed the copyright year in the master
+AssemblyInfo.
+
+## 2023/11/02
+
+### WizardWrx.Core 9.0.339
+
+Implement a new `Replace` string extension method that takes a `StringComparison`
+enumeration value as its third argument, so that it can perform case insensitive
+replacements.
+
+## 2022/07/16
+
+Upgrading my development platform from Visual Studio 2019 to Visual Studio 2022
+prompted an overdue upgrade of target frameworks all around. The following table
+lists the old target frameworks and the version included in this release.
+
+This release supersedes the build number two less than that shown in the Version
+column of the table below. The calumn labeled **TF** shows the Target Framework
+of the previous version. The target framework of all current releases is 4.8.
+
+Unless your project targets a lower framework, upgrading should have no effect
+on your application code; it should just work. If your project targets a lower
+version of the Microsoft .NET Framework and you cannot upgrade your target
+framework, your version of these libraries is effectively frozen. All previous
+versions of the libraries will remain in the NuGet Gallery, and their source
+code will remain in previous commits on GitHub.
+
+|Assembly (Project) Name|TF   |Version |
+|-----------------------|-----|--------|
+|ASCIIInfo              |3.5  |9.0.212 |
+|AssemblyUtils          |3.5  |9.0.268 |
+|Common                 |3.5  |9.0.257 |
+|ConsoleStreams         |3.5  |9.0.320 |
+|Core                   |3.5  |9.0.329 |
+|DiagnosticInfo         |4.5  |9.0.103 |
+|DLLConfigurationManager|3.5  |9.0.348 |
+|DLLServices2TestStand  |4.5.2|9.0.1554|
+|FormatStringEngine     |3.5  |9.0.290 |
+|GUITestStand           |4.7.2|9.0.133 |
+|MoreMath               |4.5  |9.0.102 |
+
+Other than the target framework upgrades, this release is the same as the code
+that was released at the end of 2022.
+
+## 2022/12/08
+
+### WizardWrx.AssemblyUtils 9.0.266
+
+This build is forced to align the constraints specified in the generated NUSPEC
+with the latest published version of dependency package WizardWrx.Core.
+
+Otherwise, there are no changes.
+
+### WizardWrx.Core 9.0.327
+
+This is a forced build to update the published package from 9.0.319 to 9.0.326.
+
+The code is otherwise unchanged.
+
+## 2022/11/24
+
+### WizardWrx.Common 9.0.253
+
+Completing work included in the last release, `SortableManagedResourceItem` has
+been completely moved into this library so that the copy in its original home,
+`WizardWrx.AssemblyUtils`, can be (and has been) completely removed.
+
+### WizardWrx.AssemblyUtils 9.0.258
+
+Class `SortableManagedResourceItem` has moved completely to `WizardWrx.Common`,
+and been promoted to the root namespace, `WizardWrx`.
+
+Apart from removing `AssemblyUtils` from absolutely qualified method calls, this
+change has no effect on code that consumes this library because it brings with
+it a reference to its new home, `WizardWrx.Common`.
+
+## 2022/11/23
+
+### WizardWrx.ASCIIInfo 9.0.210
+
+Replace the local copy of the Readers class that I copied from 
+`WizardWrx.EmbeddedTextFile` with a renamed `EmbeddedTextFileReaders` class,
+moved from the same place before the entire project was deleted from the
+constellation.
+
+### WizardWrx.Common 9.0.246
+
+1. New string constants: `LOGICAL_NEGATE` mirrors an existing like-named
+character constant, while `SQL_DATETIME_FORMAT_PRECISE`,
+`SQL_DATETIME_FORMAT_FULL`, and `SQL_DATE_FORMAT` support formatting dates to be
+interpolated into Microsoft SQL Server scripts. 
+
+2. Classes `ByteOrderMark` and `Readers`, renamed `EmbeddedTextFileReaders`,
+moved from `WizardWrx.EmbeededTextFile`, which is being deprecated and retired
+from the constellation, anabling redundant copies of both to be removed from
+`WizardWrx.ASCIIInfo`.
+
+## 2022/09/17
+
+This release corrects a deficiency in the procedure that led to the release of
+AssemblyVersion 9.0.0.0, which prevented publication of subsequent updates.
+
+Otherwise, except as noted below, this is a no-change release.
+
+### WizardWrx.Common 9.0.239
+
+LOGICAL_NEGATE is a new character constant, which supersedes my long-time
+favorite, PIPE_CHAR.
+
+I owe this transition to my esteemed colleague, Bud Pass, Software Development
+Director of [SalesTalk Technologies, LLC](https://salesrelevance.com/), the
+company that has had the lion's share of my attention since the middle of 2019.
+
+## 2022-06-25, AssemblyVersion 9.0.0.0
+
+Today's release is a full set of libraries, made necessary by further refinement
+of the build pipeline designed to furthe reduce churn by preventing libraries
+from having their build numbers incremented unless library code changed.
+
+In the process of doing so, I discovered that I split the AssemblyInfo.cs file
+incorrectly, so that the AssemblyInfo was updated with every build, while the
+AssemblyFileVersion, which the build system ignores, remained unchanged.
+
+To rectify this problem, the AssemblyVersion and the AssemblyFileVersion had to
+trade places, so that the AssemblyVersion is set in ProductAssemblyInfo.cs,
+which has solution scope, and is included in every project, while the
+AssemblyFileVersion is defined in the individual AssemblyInfo.cs file that
+belongs to each project.
+
+Since every build created since the assembly attributes were split between the
+two files got its AssemblyVersion from its AssemblyInfo.cs, swapping them means
+that AssemblyVersion must be increased by a full increment, to ensure that every
+assembly appears to the .NET runtime binder as newer than any like-named
+assembly that is currently installed into an application that consumes it.
+
+This update completes the task that began with the release of 2022-04-24. It is
+otherwise a no-change release.
+
+## 2022-05-19
+
+### WizardWrx.Common, Version 8.0.205
+
+The static `SpecialStrings` class gets a new constant,`BACK2BACK_NEWLINES`, a
+specialized string for use by methods that return string representations of
+reports that were intended for display on a console.
+
+### WizardWrx.DiagnosticInfo, Version 8.0.83
+
+Static class ObjectPropertyEnumerators gets two new methods.
+
+1. `ListObjectPropertyTypesAndValues2String` returns the same report produced by
+`ListObjectPropertyTypesAndValues` as one long string that can be logged.
+
+2. `ListObjectProperties2String` returns the same report produced by
+`ListObjectProperties` as one long string that can be logged.
+
+The new string constant, `BACK2BACK_NEWLINES`, is used by both new methods so that
+they can use the same format control string as their respective ancestors.
+
+## 2022-04-24
+
+### WizardWrx.Core, Version 8.0.300
+
+Static class `TraceLogger` gets a new method, ForceAutoFlush, that forces the
+underlying stream into `AutoFlush` mode. All methods on this class call this
+method under the hood when supplied with a StreamWriter object.
+
+## 2022-04-24
+
+### WizardWrx.Common, Version 8.0.198
+
+`WizardWrx.RegExpSupport.ExtractTextBetweenMatches` is a new static method that
+returns the text between two matches or, in the case of the last match, the end
+of the string.
+
+The `SpecialStrings` collection gets the following eight new string entities, of
+which one, `HTML_NONBREAKING_SPACE_LC`, was technically already present under
+another name, `HTML_NONBREAKING_SPACE`.
+
+HTML_LINE_BREAK_LC
+HTML_LINE_BREAK_UC
+
+HTML_NONBREAKING_SPACE_LC
+HTML_NOLBREAKING_SPACE_UC
+
+HTML_PARAGRAPH_OPEN_TAG_LC
+HTML_PARAGRAPH_OPEN_TAG_UC
+
+HTML_PARAGRAPH_CLOSE_TAG_LC
+HTML_PARAGRAPH_CLOSE_TAG_UC
+
+### WizardWrx.Core, Version 8.0.295
+
+The static `StringExtensions` class gets two new methods.
+
+1. `Chop` has a new optioanl Boolean parameter, `pfIncludeNBSP`, that adds the
+nonbreaking space character to the list of things that it chops.
+
+2. `ChopNBSP` is a new method that confinse itself to chopping the nonbreaking
+space character.
+
+Since the `StringExtensions` class lives in the root namespace, you need not add
+an extra `using` directive to make it accessible, though you will need a library
+reference.
+
+## 2022-04-24
+
+Today marks the beginning of a new era in which a package that belongs to the
+WizardWrx .NET API will be published only where it incorporates new code to
+implement a new feature or fix a bug. Since most developers rely upon automated
+CI/CD pipelines, this will reduce churn caused by update that were limited to
+refreshing the dependency graph of a package. If your NuGet configuration file
+has a `dependencyVersion` key with its value set to `Highest`, your pipeline will
+keep your projects up to date.
+
+The table below lists every version that is included in this update. In all
+cases, the only change is the release note announcing the new operating plan
+just described.
+
+|Name                             |Version|
+|---------------------------------|-------|
+|WizardWrx.ASCIIInfo              |8.0.175|
+|WizardWrx.AssemblyUtils          |8.0.232|
+|WizardWrx.Common                 |8.0.196|
+|WizardWrx.ConsoleStreams         |8.0.292|
+|WizardWrx.Core                   |8.0.293|
+|WizardWrx.DiagnosticInfo         |8.0.74 |
+|WizardWrx.DLLConfigurationManager|8.0.320|
+|WizardWrx.FormatStringEngine     |8.0.262|
+|WizardWrx.MoreMath               |8.0.73 |
+|WizardWrx.EmbeddedTextFile       |8.0.199|
+
+## 2022-04-19
+
+### WizardWrx.Core, Version 8.0.282
+
+The four static methods on the `TraceLogger` get a set of analogues having names
+that end with `WithPassThrough` that return the message so that the calling
+routine can easily put it to other uses.
+
+Breaking with past practice, this is the only package being released today. This
+is my plan forward, to reduce churn that is best avoided by leveraging existing
+mechanisms in NuGet package managers.
+
+## 2022-04-18
+
+### WizardWrx.Core, Version 8.0.280
+
+The four static methods on the `TraceLogger` get an optional StreamWriter that,
+when included in the argument list, takes the place of the trace listener,
+allowing the class to use ordinary text files as output destinations without the
+overhead of the trace listener mechanism.
+
+## 2022-04-07
+
+### WizardWrx.Core, Version 8.0.277
+
+`PathMakeRelative`: Amend to cover the case where the absolute path, `pstrFQPath`,
+starts with the directory to which it is to be made relative, `pstrDirectoryRelativeTo`.
+
+## 2022-03-24
+
+### WizardWrx.Core, Version=8.0.270
+
+This release extends static class TimeZoneInfoExtensions, which implements
+extension methods on the sealed TimeZoneInfo class that generate the correct
+abbreviation of the display name that corresponds to the part of the year
+(Standard versus Daylight) represented by a given System.DateTime object.
+The new method, GetCurrentTimeZoneName, takes a System.DateTime object that is
+expected to represent the local time for which the Time Zone Name string is
+needed and a boolean that is set to True to cause the abbreviated time to be
+computed from the display names by passing the appropriate full name string to
+either AbbreviateDaylightName or AbbreviatedStandardName, depending on whether
+Daylight Saving Time is in force at the indicated time.
+
+Furthermore, overlooked unit tests for the TimeZoneInfoExtensions class are
+included in the included unit test program.
+
+## 2022-03-08
+
+### WizardWrx.Core, Version 8.0.266
+
+This release incorporates a new extension method for the `System.DateTime` type,
+`DateOfMostRecentWeekday`, which returns the most recent previous date for which
+the weekday matches its input criterion. Versions exist that accept the weekday
+as a `DayOfWeek` enumeration member or as the corresponding integer (0-6) value.
+
+## 2021-12-19
+
+### WizardWrx.Core.dll, Version 8.0.263.0
+
+This release incorporates a new string extension method, GuardStringIfNeeded. It
+returns a new string that is enclosed in a specified quoting character, defaulting
+to a double quote, if the input string contains a specified delimiter character,
+defaulting to a comma.
+
+## 2021-12-09
+
+### WizardWrx.Common.dll, Version 8.0.174
+
+Define two new strings, TWO_SPACES, a compile-time constant, and
+ERRMSG_STRING_CONTAINS_ONLY_WHITESPACE, a string resource.
+
+## 2021-10-19
+
+### WizardWrx.Core.dll, Version 8.0.259.0
+
+This release incorporates a new static class, EnvTokenExpander, which
+implements expansion of environment string tokens.
+
+## 2021-10-13
+
+### WizardWrx.Common.dll, Version 8.0.170
+
+This release incorporates two new character constants, SpecialCharacters.PLUS
+and SpecialCharacters.MINUS.
+
+### WizardWrx.Core.dll, Version 8.0.252
+
+This release incorporates a new static class, TimeZoneInfoExtensions, which
+implements extension methods on the sealed TimeZoneInfo class that generate
+abbreviations from the display names.
+
+## 2021-08-01
+
+### WizardWrx.Core.dll, Version 8.0.250
+
+This release incorporates documentation updates of class `GenericSingletonBase`.
+The closest this comes to actual code changes is relocation of the definition of
+constant `PRIVATE_CTOR_OK` to the private constructor in which it has its one and
+only use. Also, two unused `using` directives vanish. None of the above changes
+affects the generated IL, let alone the native code generated by NGen.
+
+The documentation change replaces the citation of the article that inspired its
+creation with a newer article that covers the same ground, but uses the Lazy&lt;T&gt;
+constructor that is added by the next major version of the Microsoft .NET Framework.
+
+I took the opportunity to document why this class dispenses with the double-checked
+locking that most consider the gold standard of lazy singleton initialization.
+
+## 2021-07-11
+
+### WizardWrx.Core.dll, Version 8.0.247
+
+This release incorporates a new static class, `ByteArrayBase64Converters`, that
+exposes static methods to efficiently convert files and byte arrays to and from
+__Base64__.
+
+|Name                      |Class                      |
+|--------------------------|---------------------------|
+|Base64EncodeBinaryFile    |Read an input file into a  |
+|                          |byte array of Base64       |
+|                          |encoded characters that    |
+|                          |represents its contents in |
+|                          |a form that can be included|
+|                          |in a MIME encoded email    |
+|                          |message.                   |
+|Base64DecodeByteArray2File|Decode a byte array and    |
+|                          |write the decoded bytes    |
+|                          |into a binary file.        |
+|Base64DecodeByteArray     |Decode a byte array that   |
+|                          |represents a set of Base64 |
+|                          |encoded characters,        |
+|                          |returning a new byte array |
+|                          |containing their decoded   |
+|                          |representation.            |
+
+## 2021-07-04
+
+### WizardWrx.Common.dll, Version 8.0.163
+
+`ArrayInfo.RemoveAt` is a new extension method that removes the element at a
+specified index in an array. Since arrays are immutable objects, it accomplishes
+this feat by returning a new array with the element at the specified index
+removed from it.
+
+Since it uses LINQ, this addition requires the target framework version to be
+raised from 2.0 to 3.5 Client Profile. Since these have been published as a unit
+for many years, you should be unaffected by this change.
+
+### WizardWrx.ASCIIInfo.dll, Version 8.0.191
+
+Since this library is dependent upon WizardWrx.Common.dll, Version 8.0.163,
+which had to be upgraded to implement LINQ and extension methods, and the
+libraries above it already target Microsoft .NET Framework 3.5 Client Profile,
+it was upgraded to prevent obscure build errors caused by mismatched target
+frameworks.
+
+### WizardWrx.FormatStringEngine 8.0.226
+
+Since this library is dependent upon WizardWrx.Common.dll, Version 8.0.163,
+which had to be upgraded to implement LINQ and extension methods, and the
+libraries above it already target Microsoft .NET Framework 3.5 Client Profile,
+it was upgraded to prevent obscure build errors caused by mismatched target
+frameworks.
+
+## 06/29/2021
+
+### WizardWrx.DiagnosticInfo.dll, Version 8.0.44
+
+`ObjectPropertyEnumerators.ListObjectPropertyTypesAndValues` is identical to
+its sibling, `ObjectPropertyEnumerators.ListObjectProperties`, except that it
+lists the property type in parentheses between the property name and its value.
+
+## 06/21/2021
+
+### WizardWrx.AssemblyUtils.dll, Version 8.0.187
+
+`WizardWrx.AssemblyUtils`, Version 8.0.187, adds a new read-only property,
+`NamesOfDependentAssemblies`, that exposes the list of dependent assemblies that
+it keeps.
+
+## 06/18/2021
+
+### WizardWrx.Common.dll, Version 8.0.156
+
+Define a new `TruncateValueToOneLine` method in the static `StringTricks` class.
+Unlike its sibling `Trucate` method, this method checks for line breaks,
+eliminating all but the first line, and truncating to a specfied maximum length,
+which is 132 characters by default.
+
+### WizardWrx.DiagnosticInfo.dll, Version 8.0.38
+
+`ListObjectProperties` now right-aligns the property numbers in the listing, and
+limits property strings to one line of fewer than 133 characters.
+
+## 2021-06-09
+
+### WizardWrx.Common.dll, Version 8.0.148.0
+
+`StringTricks.StrFill` is a new static method that returns a string filled with
+a specified number of a character.
+
+### WizardWrx.DiagnosticInfo.dll version = 8.0.28.0
+
+`ObjectPropertyEnumerators.ListObjectProperties` is a new static method that
+lists the public properties of an object, along with the string representations
+of their values, on the console.
+
+## 2021-05-19
+
+`WizardWrx.AssemblyUtils`, Version 8.0.167, adds two newr static methods that
+build on `GetAssemblyVersionInfo`, added to version 8.0.156, to render the
+`AssemblyCompany` string as something suitable for use in a path string, such
+that the path is devoid of embedded spaces, and can be freely used without
+quoting it.
+
+The new methods are:
+
+1. `GetAssemblyCompanyNameSnakeCased` gets the `AssemblyCompany` attribute of an
+assemly (by default, the entry assembly), replaces embedded commas, periods,
+single quote marks, hyphens, and spaces with underscores, then makes another
+pass to replace consecutive underscores with one of them.
+
+2. `GetAssemblyAppDataDirectoryName` gets the name of the directory in the
+user's APPDATA directory that corresponds to its company name, optionally
+creating the directory unless it exists.
+
+## 05/02/2021 03:53:04
+
+The NuGet packages of all libraries now include a copy of this change log.
+
+`WizardWrx.AssemblyInfo` gets a copy of its DLL configuration file, which
+includes a binding redirect that you might need for WizardWrx.AnyCSV, which has
+a strong name because it is exposed to COM.
+
+Finally, `WizardWrx.DLLConfigurationManager` also has a DLL configuration file,
+but its NuSpec had an error that prevented its deployment.
+
+## 2021-04-18
+
+### WizardWrx.EmbeddedTextFile, version 8.0.129
+
+Static class `Readers` gets a new method, `NameValueCollectionFromEmbbededList`,
+that returns a `System.Collections.Specialized.NameValueCollection` populated
+from an embedded binary resource consisting of a tab-delimited text file.
+
+In addition to the foregoing classes that incorporate new features, everything else
+gets a general refresh, in which all libraries are built against the latest versions
+of their dependents. Likewise, the corresponding NuGet packages are kept current with
+respect to their dependencies.
+
+## 2021-03-22
+
+The libraries are unchanged. The only change in this release is that the unit
+test and demonstration assembly, DLLServices2TestStand.exe version 8.0.1388.0,
+fully covers the last batch of constants defined in `WizardWrx.Common.dll`,
+Version 7.24.128.
+
+Since I updated ProductAssemblyInfo.cs, every library got a refresh with a build
+number increment or three.
+
+## 2021-02-06
+
+In addition to the following classes that incorporate new features, everything else
+gets a general refresh, in which all libraries are built against the latest versions
+of their dependents. Likewise, the corresponding NuGet packages are kept current with
+respect to their dependencies.
+
+### WizardWrx.ASCIIInfo.dll, Version 8.0.113
+
+The ASCII table entries expose many new properties, of which the most significant
+are:
+
+1. `DisplayText`, which always offers a presentable rendering of the character
+2. `HTMLName`, which returns a HTML entity string
+3. `URLEncoding`, which returns a value that can be used to URL encode any character
+
+### WizardWrx.AssemblyUtils, Version 8.0.156
+
+This release adds a single static class, `AssemblyAttributeHelpers`, which exposes
+one equally static method, `GetAssemblyVersionInfo`, that queries any assembly for
+its major Custom Attribute values, most of which revolve around versioning and
+identification.
+
+## 2021-01-30
+
+This release updates the product version number for the next major version, 8.0.
+Hence, 7.24 becomes 8.0.
+
+Going forward, the AssemblyFileVersion shall remain unchanged unless the API
+undergoes another major revision, which seems unlikely.
+
+However, the AssemblyVersion attribute of each library shall continue to inch
+upwards. Build numbers will increment from the last values they had in the
+previous major version, and each release will include each library, regardless
+of whether the build includes relevant changes.
+
+If README.MD and the NuGet package file are unchanged, you are safe in assuming
+that the code is unchanged, and the new library is backwards compatible with its
+predecessors.
+
+## 2020-12-31
+
+Now that I again have a working API key, the NuGet packages are up to date!
+
+I wish a happy New Year to everyone.
+
+### WizardWrx.Common.dll, Version 7.24.128, Released 2020-12-23
+
+This release adds more overlooked symbolic constants that I use from time to
+time. The character constants are great for use in switch blocks, which the C#
+compiler transforms into very efficient jump tables, as do the optimizing C and
+C++ compilers.
+
+|Name                      |Value |Class               |
+|--------------------------|------|--------------------|
+|MSO_COLLECTION_FIRST_ITEM |     1|ArrayInfo           |
+|ALARM                     |     7|SpecialCharacters   |
+|BEL                       |     7|SpecialCharacters   |
+|BELL                      |     7|SpecialCharacters   |
+|BACKSPACE                 |     8|SpecialCharacters   |
+|END_OF_FILE               |    26|SpecialCharacters   |
+|EOF                       |    26|SpecialCharacters   |
+|ESCAPE_CHAR               |    27|SpecialCharacters   |
+
+At present, the special characters have no counterparts in the SpecialStrings
+list.
+
+### WizardWrx.Core.dll, Version 7.24.185.0, Released 2020-12-21
+
+This update corrects some internal issues that surfaced when dependent library
+`WizardWrx.DLLConfigurationManager.dll` was called upon for the first time to
+use a completely populated configuration file. The result was an uninitialized
+dictionary owned by the `PropertyDefaults` class exposed by the core library.
+
+Since virtually everything else depends on this library, this is a complete
+release, although the only other change, also internal and of no significance to
+most users, affects the `ExceptionLogger` singleton exposed by
+`WizardWrx.DLLConfigurationManager.dll`.
+
+Whether or not it depends on `WizardWrx.Core.dll` (which all but 3 do),
+everything got a minor version bump and a build bump.
+
+### WizardWrx.Common.dll, Version 7.24.127, Released 2020-12-20
+
+This release adds some overlooked symbolic constants that I use regularly.
+
+|Name                      |Value |Class               |
+|--------------------------|------|--------------------|
+|CAPACITY_4                |     4|MagicNumbers        |
+|CAPACITY_8                |     8|MagicNumbers        |
+|CAPACITY_10               |    10|MagicNumbers        |
+|CAPACITY_16               |    16|MagicNumbers        |
+|CAPACITY_128              |   128|MagicNumbers        |
+|CAPACITY_255              |   255|MagicNumbers        |
+|CAPACITY_256              |   256|MagicNumbers        |
+|PLUS_THREE                |     3|MagicNumbers        |
+|PLUS_FOUR                 |     4|MagicNumbers        |
+|PLUS_FIVE                 |     5|MagicNumbers        |
+|PLUS_SIX                  |     6|MagicNumbers        |
+|PLUS_SEVEN                |     7|MagicNumbers        |
+|PLUS_EIGHT                |     8|MagicNumbers        |
+|PLUS_NINE                 |     9|MagicNumbers        |
+|MSO_COLLECTION_FIRST_ITEM |     1|MagicNumbers        |
+|ARRAY_NEXT_INDEX          |     1|ArrayInfo           |
+
+### WizardWrx.Common.dll, Version 7.24.126, Released 2020-11-02
+
+This update adds a handful of new locale-sensitive string constants and another
+handful of string representations of character constants that are frequently
+needed as strings, too.
+
+|String Name                      |String Value          |Class               |
+|---------------------------------|----------------------|--------------------|
+|MSG_DUMMY                        |Dummy                 |Properties.Resources|
+|MSG_DUMMY_VALUE                  |DummyValue            |Properties.Resources|
+|ASTERISK                         |*                     |SpecialStrings      |
+|BRACE_LEFT                       |{                     |SpecialStrings      |
+|BRACE_RIGHT                      |}                     |SpecialStrings      |
+|BRACKET_LEFT                     |\[                    |SpecialStrings      |
+|BRACKET_RIGHT                    |\]                    |SpecialStrings      |
+|ASTERISK_CHAR                    |*                     |SpecialStrings      |
+|AT_SIGN                          |@                     |SpecialStrings      |
+|CARRIAGE_RETURN                  |\r                    |SpecialStrings      |
+|CHAR_NUMERAL_0                   |0                     |SpecialStrings      |
+|CHAR_NUMERAL_1                   |1                     |SpecialStrings      |
+|CHAR_NUMERAL_2                   |2                     |SpecialStrings      |
+|CHAR_NUMERAL_7                   |7                     |SpecialStrings      |
+|CHAR_LC_I                        |i                     |SpecialStrings      |
+|CHAR_UC_I                        |I                     |SpecialStrings      |
+|CHAR_LC_L                        |l                     |SpecialStrings      |
+|CHAR_UC_L                        |L                     |SpecialStrings      |
+|CHAR_LC_O                        |o                     |SpecialStrings      |
+|CHAR_UC_O                        |O                     |SpecialStrings      |
+|CHAR_LC_Z                        |z                     |SpecialStrings      |
+|CHAR_UC_Z                        |Z                     |SpecialStrings      |
+|CHECK_MARK_CHAR                  |\xFB                  |SpecialStrings      |
+|EQUALS_SIGN                      |=                     |SpecialStrings      |
+|HASH_TAG                         |#                     |SpecialStrings      |
+|LAST_ASCII_CHAR                  |\xFF                  |SpecialStrings      |
+|LINEFEED                         |\n                    |SpecialStrings      |
+|NONBREAKING_SPACE_CHAR           |\0xA0                 |SpecialStrings      |
+|PARENTHESIS_LEFT                 |(                     |SpecialStrings      |
+|PARENTHESIS_RIGHT                |)                     |SpecialStrings      |
+|PIPE_CHAR                        |\|                    |SpecialStrings      |
+|QUESTION_MARK                    |?                     |SpecialStrings      |
+
+As of this version, essentially everything that has a character representation
+has an analogous string representation.
+
+### WizardWrx.AssemblyUtils 7.23.121, Released 2019/12/25
+
+This release corrects an omission from the overloaded `DependentAssemblies`
+constructor that rendered it inoperable.
+
+### WizardWrx.AssemblyUtils 7.23.119, Released 2019/12/17
+
+This release adds a new instance method, `GetDependentAssemblyInfos`, to class
+`DependentAssemblies`, which returns a sorted list of dependent assemblies.
+Though this could be implemted as a read-only property, I chose to implement it
+as a method.
+
+### WizardWrx.Core 7.23.182, Released 2019/12/16
+
+This update adopts the generally accepted SemVer version numbering scheme.
+
+The code is otherwise unchanged from the previous release.
+
+### WizardWrx.Common.dll, Version 7.23.123, Released 2019/12/15
+
+This update adds static method FormatIntegerLeftPadded to the NumericFormats
+class. This update also adopts the generally accepted SemVer version numbering
+scheme.
+
+### WizardWrx.ASCIIInfo 7.23.84, Released 2019/12/15
+
+This update adopts the generally accepted SemVer version numbering scheme.
+
+The code is otherwise unchanged from the previous release.
+
+### WizardWrx.FormatStringEngine 7.23.167, Released 2019/12/15
+
+This update adopts the generally accepted SemVer version numbering scheme.
+
+The code is otherwise unchanged from the previous release.
+
+## WizardWrx.DiagnosticInfo.dll, version 7.22.5, Released 2019/10/06
+
+This release corrects a typographical error found when I skimmed its ReadMe.md
+file following a dogfood run that incorporated it into a package that is under
+active development, initially for internal use. The only reason for the build is
+to satisfy the NuGet package publishing engine.
+
+## WizardWrx Common.dll, version 7.22.122, Released 2019/10/02
+
+The public string resource set has the 18 new strings listed in the following
+table.
+
+|String Name                      |String Value          |
+|---------------------------------|----------------------|
+|ANSWER_IS_FALSE                  |false                 |
+|ANSWER_IS_NO                     |no                    |
+|ANSWER_IS_TRUE                   |true                  |
+|ANSWER_IS_YES                    |yes                   |
+|MSG_BLANK_CAPS                   |BLANK                 |
+|MSG_INTEGER_EVENLY_DIVISIBLE_BY  |is evenly divisible by|
+|MSG_INTEGER_IS_EVEN              |is even               |
+|MSG_INTEGER_IS_ODD               |is odd                |
+|MSG_OBJECT_DOES_NOT_EXIST        |does not exist        |
+|MSG_IS                           |is                    |
+|MSG_IS_NOT                       |is not                |
+|MSG_OBJECT_EXISTS                |exists                |
+|MSG_OBJECT_IS_ABSENT             |is absent             |
+|MSG_OBJECT_IS_MISSING            |is missing            |
+|MSG_OBJECT_IS_PRESENT            |is present            |
+|MSG_OBJECT_REFERENCE_IS_NULL_CAPS|NULL                  |
+|MSG_VALUE_IS_FALSE               |false                 |
+|MSG_VALUE_IS_TRUE                |true                  |
+
+Since the meaning and use of these strings is self-evident, I dispensed with
+comments in the .RESX source file and herein.
+
+All other libraries in this constellation are unchanged.
+
+## WizardWrx Common.dll, version 7.21.121, Released 2019/07/18
+
+The public string resource set has the new strings listed in the following table.
+
+|String Name                   |String Value                                            |Source Code Comment in the .RESX File                                                                                                                                                                                                                        |
+|------------------------------|--------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|ERRMSG_ARRAY_IS_EMPTY         |Array {0} ie empty; it exists, but contains no elements.|Use this message to report that an array argument or program variable exists, but is empty. Use ERRMSG_REFERENCE_IS_NULL to report a null reference. Use the nameof() pseudo-function to identify the array by name.                                         |
+|ERRMSG_REFERENCE_IS_NULL      |Object {0} is a null reference.                         |Use this message to report a null reference. Unlike its predecessor, ERRMSG_ARG_IS_NULL, this string has a substitution token through which to report the object name. Use the nameof() pseudo-function to get the name of the argument or internal variable.|
+|MSG_STRING_IS_EMPTY           |\[empty\]                                               |Use this token to represent the empty string as the word "empty" in brackets.                                                                                                                                                                                |
+|MSG_BLANK_STRING              |\[blank\]                                               |Use this token to represent the empty string as the word "blank" in brackets.                                                                                                                                                                                |
+
+Many other strings get improved comments, which can presently be seen only by
+viewing the .RESX file in an editor.
+
+## WizardWrx.MoreMath, version 7.21.3, Released 2019/07/18
+
+`IncrementAndReturnNewValue` methods, with four overloads, covering the four
+generic integral types (int, uint, long, ulong), increment the value of the
+integer to which the reference points, returning the incremented value as
+their own return value.. All four take a reference to an integer and increment
+it, returning the new value. The goal is to maintain a static (Shared in Visual
+Basic) integer, while making the new value available for local use with a single
+method call.
+
+__Note:__ Testing the `IncrementAndReturnNewValue` methods exposed a coding
+error caused by moving the report output directory up a level in the directory
+tree that prevented the automated test scripts from covering every unit test.
+
+## WizardWrx Common.dll, version 7.21.117, Released 2019/07/09
+
+The public string resources has a new string, `STACK_TRACE_ENTRY_PREFIX`.
+
+## WizardWrx Common.dll version 7.20.116, Released 2019/07/04
+
+The public string resources have two sets of new strings, named
+`REGISTRY\_VALUE\_TYPE\_*` and `VERSION\_STRING\_PART\_*` listed in the following
+table.
+
+|String Name                   |String Value |
+|------------------------------|-------------|
+|REGISTRY_VALUE_TYPE_BINARY    |REG_BINARY   |
+|REGISTRY_VALUE_TYPE_DWORD     |REG_DWORD    |
+|REGISTRY_VALUE_TYPE_EXPAND    |REG_EXPAND_SZ|
+|REGISTRY_VALUE_TYPE_MULTI     |REG_MULTI_SZ |
+|REGISTRY_VALUE_TYPE_QWORD     |REG_QWORD    |
+|VERSION_STRING_PART_BUILD_ABBR|Bld.         |
+|VERSION_STRING_PART_BUILD_LONG|Build Number |
+|VERSION_STRING_PART_BUILD_SHORT|Build       |
+|VERSION_STRING_PART_MAJOR_ABBR|Maj.         |
+|VERSION_STRING_PART_MAJOR_LONG|Major Version|
+|VERSION_STRING_PART_MAJOR_SHORT|Major       |
+|VERSION_STRING_PART_MINOR_ABBR|Min.         |
+|VERSION_STRING_PART_MINOR_LONG|Minor Version|
+|VERSION_STRING_PART_MINOR_SHORT|Minor       |
+|VERSION_STRING_PART_REVNO_ABBR|Rev.         |
+|VERSION_STRING_PART_REVNO_LONG|Revision     |
+|VERSION_STRING_PART_REVNO_SHORT|Revision    |
+
+### Other Libraries
+
+New builds of the libraries listed in the following table address diamond
+dependencies on libraries WizardWrx.AnyCSV.dll and WizardWrx.Common.dll. In this
+case, the diamond dependencies are harmless, but their resolution paves the way
+for a forthcoming version numbering rationalization exercise.
+
+|Library Name                    |NuGet Package Name          |
+|--------------------------------|----------------------------|
+|WizardWrx.DiagnosticInfo.dll    |WizardWrx.DiagnosticInfo    |
+|WizardWrx.FormatStringEngine.dll|WizardWrx.FormatStringEngine|
+
+## Release Notes, 2019/06/11, WizardWrx AssemblyUtils.dll, Version 7.20.117
+
+This build is a bug fix. I discovered that the iten number written into the
+optional tab-delimited output file generated by
+`SortableManagedResourceItem.ListResourcesInAssemblyByName` was always the
+total item count, rather than the actual item number.
+
+Although MSBuild created a new version of the test stand assembly, its code is
+unchanged.
+
+## Version 7.20
+
+Only two of the ten libraries in this constellation have changes in this minor
+update that was driven primarily by the need to fix a bug.
+
+### WizardWrx.Core
+
+The static class that defines the `FileInfo` extension methods is the beneficiary
+of the bug fix.
+
+`ShowFileDetails`: Previous testing overlooked the case when the specified
+file does not exist. This is an issue because I overlooked the fact that the
+`Length` property on the `FileInfo` object throws a `FileNotFoundException`
+Exception when the associated file does not exist, although other properties
+return values of some kind, regardless of whether the file is present or
+absent. Size zero is a legitimate, and fairly commonplace, length (size) of a
+file, this method reports -1, which is not. This is consistent with the behavior
+of the time stamp properties, which report 1600/01/01 00:00:00 when the file is
+absent.
+
+Everything else in the library is unchanged, since no other issues have
+surfaced in daily development use.
+
+### WizardWrx AssemblyUtils
+
+* `SortableManagedResourceItem.ListResourcesInAssemblyByName` gets an optional
+`StreamWriter` argument that causes it to create a tab delimited list of the
+managed string resources in an assembly.
+
+* `ReportGenerators.ListKeyAssemblyPropertiess` had lost the summary paragraph
+of its XML documentation, which is restored.
+
+## Version 7.19
+
+This upgrade affects only one library, `WizardWrx.Core.dll`; although others
+are updated with the new product version number, they remain otherwise
+unchanged. The changes in this library are confined to the `StringExtensions`
+class, and consist of the following three new methods.
+
+|Method Name        |Method Goal                                     |
+|-------------------|------------------------------------------------|
+|UnixLineEndings    |Replace CR/LF pairs and bare CRs with bare LFs. |
+|WindowsLineEndings |Replace bare LFs with CR/LF pairs.              |
+|OldMacLineEndings  |Replace CR/LF pairs and bare LFs with bare CRs. |
+
+There are literally no other changes in this update.
+
+## Version 7.18
+
+Version 7.18 is a maintenance release, which affects only one library,
+`WizardWrx.Core.dll`, which got rushed into production without sufficient
+testing. This release got the substantially more careful testing that I prefer
+to give to everything. The companion NuGet package went out when I built the
+release configuration of the whole library set.
+
+## Version 7.17
+
+With this release, the two most actively updated libraries, `WizardWrx.Core.dll`
+and `WizardWrx.Common.dll`, automatically update their respective NuGet packages
+when a new release build is created. Other libraries will eventually get the
+same treatment, but these two went first, because I needed to update them and
+immediately pull both into another project, and they receive by far the most
+frequent updates. At present, these are the only two projects that have NuGet
+package generation and publication built into their `.csproj` files.
+
+### Class WizardWrx.AssemblyUtils.ReportGenerators (defined in WizardWrx.AssemblyUtils.dll)
+
+Since its inception, this class has always listed the file version reported by
+the FileVersion object in the System.Diagnostics namespace. Beginning with this
+version, the assembly version reported by the Assembly class in the
+System.Reflection namespace is also given, and each is labeled with its source.
+
+### Class WizardWrx.StringFixups (defined in WizardWrx.Core.dll)
+
+Override the default `ToString` method, so that it returns a formatted string
+containing the values of its two members (properties), so that they appear in a
+watch window without requring the object to be expanded.
+
+### Class WizardWrx.StringExtensions (defined in WizardWrx.Core.dll)
+
+A new `ReplaceEscapedTabsInResourceString` extension method undoes the escaped TAB
+characters that go into a string that contains TAB characters when it is pasted
+into the string resource editor to become part of a .resx file.
+
+### Class WizardWrx.FileInfoExtensionMethods (defined in WizardWrx.Core.dll)
+
+`ShowFileDetails` is a new FileInfo extension method that returns a formatted
+string containing user-selected properties of a file.
+
+### Class WizardWrx.ReportHelpers (defined in WizardWrx.Core.dll)
+
+Significantly simplify `CreateFormatString` and `CreateLastToken` by way of a much
+more efficient algorithm that consumes much less memory and CPU time.
+
+### Class WizardWrx.NumericFormats (defined in WizardWrx.Common.dll)
+
+The XML comments attached to integer constant `DECIMAL_DIGITS_DEFAULT` contained
+a plain ASCII table that caused it to display incorrectly in the DocFX page that
+was generated from it. Though this change affected the source code, forcing a
+new build, the generated assembly is otherwise identical to its predecessor.
+
+## Version 7.16
+
+The additions revolve around a new method to apply pairs of strings, each
+composed of an original and a replacement value, to a string. Two versions
+exist, one which provides a place to stash the array, while the other is an
+extension method on the System.String class. The two new resource strings are
+incidental, though both are employed in the unlikely event that you feed an
+invalid array to the new methods.
+
+### Class WizardWrx.Common.Properties.Resources (defined in WizardWrx.Common.dll)
+
+Since they are intended to be used everywhere, the string resources are marked
+as Public. This release demonstrates the value of that, with additions as
+follows.
+
+|Name                   |Value   |Comment                                                            |
+|-----------------------|--------|-------------------------------------------------------------------|
+|MSG_VALUE_IS_INVALID   |invalid |Use this string to report that the value of a variable is invalid. |
+|MSG_VALUE_IS_VALID     |valid   |Use this string to report that the value of a variable is valid.   |
+
+### Class WizardWrx.Core.StringFixups (defined in WizardWrx.Core.dll)
+
+This new class exposes one method, `ApplyFixups`, which applies pairs of strings
+comprised of an original and its replacement to a string. The array of string
+pairs is stored in the instance for reuse.
+
+### Class WizardWrx.StringExtensions.cs (defined in WizardWrx.Core.dll)
+
+This established string extension class gets a new method, `ApplyFixups`, which
+applies pairs of strings comprised of an original and its replacement to a
+string. Unlike the StringFixups class, which has a place to store them, this
+method takes the array as its argument.
+
+## 2019/05/03
+
+Only the __product__ build number changed, from 210 to 211, to account for the
+migration of all subsidiary projects to NuGet packages.
+
+Each of the 10 libraries is in its own like-named NuGet package. For example,
+the Nuget package that contains `WizardWrx.Core.dll` is `WizardWrx.Core`. The
+following table lists the packages, along with their version numbers.
+
+|Library                               |Package Name                       |Version        |
+|--------------------------------------|-----------------------------------|---------------|
+|WizardWrx.ASCIIInfo.dll               |WizardWrx.ASCIIInfo                |7.1.83.29298   |
+|WizardWrx.Common.dll                  |WizardWrx.Common                   |7.15.102.41891 |
+|WizardWrx.FormatStringEngine.dll      |WizardWrx.FormatStringEngine       |7.15.162.826   |
+|WizardWrx.Core.dll                    |WizardWrx.Core                     |7.15.153.2428  |
+|WizardWrx.AssemblyUtils.dll           |WizardWrx.AssemblyUtils            |7.15.114.34743 |
+|WizardWrx.DiagnosticInfo.dll          |WizardWrx.DiagnosticInfo           |7.15.1         |
+|WizardWrx.MoreMath.dll                |WizardWrx.MoreMath                 |7.15.1.36803   |
+|WizardWrx.ConsoleStreams.dll          |WizardWrx.ConsoleStreams           |7.15.191.37663 |
+|WizardWrx.EmbeddedTextFile.dll        |WizardWrx.EmbeddedTextFile         |7.15.90.42197  |
+|WizardWrx.DLLConfigurationManager.dll |WizardWrx.DLLConfigurationManager  |7.15.211       |
+
+In addition to substituting NuGet packages throughout, a handful of errata in
+the XML documentation got fixed. Otherwise, the code is unchanged from the code
+that was first marked as version 7.15.
+
+## Version 7.15
+
+Following is a summary of changes made in version __7.15__, released Sunday, __28 April 2019__.
+
+### Class WizardWrx.SpecialStrings (defined in WizardWrx.Common.dll)
+
+Define the following single-character strings:
+
+| Name           | Value |
+|----------------|-------|
+|COLON           | ":"   |
+|COMMA           | ","   |
+|DOUBLE_QUOTE    | "\""  |
+|FULL_STOP       | "."   |
+|HYPHEN          | "-"   |
+|SEMICOLON       | ";"   |
+|SINGLE_QUOTE    | "'"   |
+|TAB_CHAR        | "\t"  |
+|UNDERSCORE_CHAR | "\_"  |
+
+These are for constructing string constants. Though equivalent character
+constants were defined in `WizardWrx.SpecialCharacters` long ago, they are useless
+for constructing a string constant, which must be composed entirely of other
+string constants. Constants cannot derive their values by calling the `ToString`
+method on a character constant.
+
+### Class WizardWrx.SpecialCharacters (defined in WizardWrx.Common.dll)
+
+XML comments attached to the character constants that correspond to the new
+string constants listed above get new cross references to the corresponding
+string constant. There are no new constants.
+
+### Class WizardWrx.ConsoleStreams.DefaultErrorMessageColors (defined in WizardWrx.ConsoleStreams.dll)
+
+Supplement the `PropsSetFromConfig` property with a `PropsLeftAtDefault` property.
+
+This class also benefits from changes made in its base class,
+`WizardWrx.AssemblyLocatorBase`, defined in `WizardWrx.Core.dll`.
+
+### Class WizardWrx.Core.AssemblyLocatorBase (defined in WizardWrx.Core.dll)
+
+1) Replace the `ConfigMessage` string property with the
+`RecoveredConfigurationExceptions` list.
+
+2) Replace the properties collection enumeration with the much more efficient
+dictionary lookup.
+
+Though it is omitted from the change log, a significant benefit is that these
+changes, along with others deeper in the code, eliminated a harmless null
+reference exception that was being silently thrown, caught, and handled. That
+exception is addressed by adding an overlooked null reference test that prevents
+the code that would have executed from doing so.
+
+### Class WizardWrx.Core.PropertyDefaults (defined in WizardWrx.Core.dll)
+
+`EnumerateMissingConfigurationValues` is an instance method that reports
+configuration values that are defined, but are missing from the configuration
+file. All such properties have hard coded default values. The report is returned
+as a formatted string that can be logged to the system console or the event log,
+or displayed on a message box.
+
+This class also benefits from changes made in its base class,
+`WizardWrx.AssemblyLocatorBase`, defined in `WizardWrx.Core.dll`.
+
+### Class WizardWrx.RecoveredException (defined in WizardWrx.Core.dll)
+
+This new class, derived from `System.Exception`, provides a mechanism for
+recording an exception without actually throwing it. The recorded exception is a
+reasonbly faithful reproduction of the System.Exception that you would get if
+you reported it by throwing.
+
+## WizardWrx.Core.UnconfiguredDLLSettings (defined in WizardWrx.Core.dll)
+
+The UnconfiguredDLLSettings class implements the Singleton pattern, because its
+operation relies on there being exactly one instance. It uses a generic
+Dictionary keyed by a concatenation of the configuration file name and
+configuration key name to store a complete list of configuration settings that
+have their hard coded default values, because there are no explicit settings in
+the configuration file.
+
+Each `UnconfiguredSetting` object stores the name of the configuration file, the
+name of the configuration setting, and its value in three string properties, of
+which the first two comprise the index.
+
+The design is not quite ideal, since the key relies on the `ToString` method
+override, since there is no separately named computer property to expose it. I
+anticipate resolving this inefficiency soon. Meanwhile, it functions correctly,
+and correcting this deficiency can be accomplished without breaking anything.
+
+## WizardWrx.DLLConfigurationManager.ExceptionLogger (defined in WizardWrx.DLLConfigurationManager.dll)
+
+Define `s_strSettingsOmittedFromConfigFile` as a static string property that
+returns a message that lists the properties that are absent from the DLL
+configuration file, along with their hard coded default values.
+
+## Unit Test/Usage Demonstration Program DLLServices2TestStand.exe
+
+As always, the test program has been amended to demonstrate the new features,
+including the new string constants and the improved plumbing.
+
+## Version 7.14
+
+Following is a summary of changes made in version __7.14__, released Monday, __24 December 2018__.
+
+### Class WizardWrx.MagicNumbers (defined in WizardWrx.Common.dll)
+
+Define the constants listed in the following table.
+
+| Name                    |             Value |
+|-------------------------|-------------------|
+| TICKS_PER_1_WEEK        | 6,048,000,000,000 |
+| TICKS_PER_1_DAY         |   864,000,000,000 |
+| TICKS_PER_23_59_59      |   863,990,000,000 |
+| TICKS_PER_23_59_00      |   863,400,000,000 |
+| TICKS_PER_1_HOUR        |    36,000,000,000 |
+| TICKS_PER_1_MINUTE      |       600,000,000 |
+| TICKS_PER_1_SECOND      |        10,000,000 |
+| TICKS_PER_1_MILLISECOND |            10,000 |
+
+__BREAKING CHANGE__ `TICKS_PER_SECOND` is correctly described in the XML
+comment, but its numerical value was off by a factor of one thousand. This is
+corrected by making its value equal to `TICKS_PER_1_SECOND`.
+
+These tick values were computed by a custom class in a lab project that I use to
+test ideas and algorithms, and the constants were derived therefrom by Excel
+worksheet formulas.
+
+### Class WizardWrx.DLLConfigurationManager (defined in WizardWrx.DLLConfigurationManager.dll)
+
+Add a new `GetTheSingleInstance` overload that takes only the `OptionFlags`
+parameter.
+
+### Class WizardWrx.ClassAndMethodDiagnosticInfo (defined in WizardWrx.ClassAndMethodDiagnosticInfo.dll)
+
+This is a new class and a new library that leverages new features in the version
+of `System.Runtime.CompilerServices` that ships with version __4.5__ of the Microsoft
+.NET Framework to return the name of the calling method without resorting to
+Reflection.
+
+For ease of access, the single class, `ClassAndMethodDiagnosticInfo`, is in the
+`WizardWrx` namespace. Since it requires a higher version of the framework
+than almost everything else, it went into a dedicated library, so that the others
+can retain their original target, version __3.5 Client Profile__.
+
+### Class WizardWrx.MoreMath (defined in WizardWrx.MoreMath.dll)
+
+This class is relocated from `WizardWrx.Core.dll` to a dedicated library for two reasons.
+
+1   Since it uses `ClassAndMethodDiagnosticInfo` methods in its exception reports,
+its target framework must be at least 4.5.
+
+2   Since its methods perform mathematical operations that can cause arithmetic
+overflows that should be caught and reported, it must be compiled with arithmetic
+checking enabled.
+
+New functions in this version are a set of `DecimalShift` routines that perform
+left and right decimal shift operations. While the required math is technically
+trivial, it is easy to get wrong. Hence, in the same spirit that motivated the
+`WizardWrx.BitMath` classes, a recent need for a decimal shift motivated creation
+of these decimal shift routines.
+
+## Version 7.13
+
+Following is a summary of changes made in version __7.13__, released Monday, __10 December 2018__.
+
+Define `EXACTLY_ONE_HUNDRED_MILLION_LONG`, to meet an immediate requirement, along
+with `EXACTLY_ONE_HUNDRED_THOUSAND` and `EXACTLY_ONE_HUNDRED_MILLION`, to more or
+less complete the set of powers of ten from two to 9. All powers of ten in that
+range sove one (ten million), for which there is no immediate need, are now
+covered.
+
+__Change Under Conideration__  Earlier today, I discovered that multiplying a
+pair of regular integers (type `System.Int32`) that you expect to yield a long
+that is too big to fit in a `System.Int32` yields a large negative number, rather
+than throwing an exception. While enabling arithmetic overflow checking in the
+advanced compiler settings might elicit exceptions, such an exception would be
+an unaacceptable outcome. However, if one of the operands is a long integer (a
+`System.Int64`), the compiler generates code that causes the operation to be
+performed with long integer operands, yielding the desired outcome. Since
+neither outcome of using 32-bit integers in multiplications that yield a 64-bit
+product is optimal, it may be worthwhile to define these constants as
+long integers, although doing so would almost certainly force arithmatic
+operations that would not otherwise be implemented as 64-bit math operations to
+be implemented as long integer operations. While this makes little difference in
+a 64-bit execution environment, it adds unnecessary complexity to operations
+that take place in a 32-bit context. Regardless, scratch storage requirments,
+most likely occupying space on the stack, would essentially double for all math
+operations that used these constants, and all 64-bit math operations that run in
+a 32-bit logical machine require many extra machine instructions, even for the
+simplest operations.
+
+For the time being, there are two constants, `EXACTLY_ONE_HUNDRED_MILLION_LONG`
+and `EXACTLY_ONE_HUNDRED_MILLION`, which differ only with respect to their types.
+
+## Version 7.12
+
+Following is a summary of changes made in version __7.12__, released Friday, __23 November 2018__.
+
+### Class WizardWrx.MoreMath (defined in WizardWrx.Core.dll)
+
+This class gets a refinement of one of its initial methods, plus two new ones
+that are closely related to it.
+
+- `IsEvenlyDivisibleByAnyInteger` prevents the `DivideByZeroException` that would
+otherwise arise when a divisor of zero is fed to the second operand of the
+modulus operator. To preent it, the divisor is tested, and an `ArugmentException`
+exception takes its place. Since the `ArugmentException` arises in user code, the
+exception message displays the dividend that was fed into the failed method, to
+aid consumers in identifying the source of the exception when the calling code
+discards the stack trace.
+
+- `Mod` is the logical companion to `IsEvenlyDivisibleByAnyInteger`, offered as
+syntactic sugar, and `Remainder`, analogous to the `IEEERemainder` Math method,
+are synonymns.
+
+All three methods share a common message template, which went into the embedded
+string resources in the library to facilitate localization.
+
+## Version 7.11
+
+Following is a summary of changes made in version __7.11__, released Saturday, __17 November 2018__.
+
+### Class WizardWrx.MagicNumbers (defined in WizardWrx.Common)
+
+- BREAKING CHANGE  Rename `EXACTLY_ONE_NUNDRED` to `EXACTLY_ONE_HUNDRED` to correct a
+misspelling that prevented me finding it.
+
+- Correct the value of `EXACTLY_TEN_THOUSAND`, which I discovered was returning
+_one million_.
+
+- Define overlooked constants `EXACTLY_TEN` (10) and `EVENLY_DIVISIBLE` (0), the
+latter handy for use with the modulus operator.
+
+### Class WizardWrx.NumericFormats (defined in WizardWrx.Common)
+
+- Define `IntegerToHexStr` overloads that omit the second and third arguments,
+substituting common defaults for the missing arguments.
+
+- Change `FormatStatusCode` to use the simplified first overload, shortening its
+stack frame and call setup requirments.
+
+### Class WizardWrx.MoreMath (defined in WizardWrx.Core.dll)
+
+This class makes its debut, with the following static methods.
+
+- `IsEvenlyDivisibleByAnyInteger`, defined twice, to accept integer and long
+inputs.
+
+- `IsGregorianLeapYear` implements the Gregorian leap year algorithm correctly.
+
+- `IsValidGregorianYear` returns TRUE when given a number is a valid year in the
+Gregorian calendar.
+
+### Class WizardWrx.tringExtensions (defined in WizardWrx.Core.dll)
+
+- `RenderEvenWhenNull` represents a null reference as a localizable string literal,
+`MSG_OBJECT_REFERENCE_IS_NULL`, defined in `Wizardwrx.Common.Properties.Resources`.
+
+- `EnumFromString` is a generic method that attempts to convert a string to a
+member of any enumeration. The enumeration type is inferred from the return
+type specified in the method call.
+
+## Namespace  WizardWrx.EmbeddedTextFile (defined in WizardWrx.EmbeddedTextFile.dll)
+
+The documentation of this library is re-phrased so that everything is in active
+voice. The code is unchanged.
+
+## Version 7.1
+
+Following is a list of changes made in version __7.1__, released Sunday, __07 October 2018__.
+
+### Class WizardWrx.StringExtensions (defined in WizardWrx.Core.dll)
+
+Incorporate `CapitalizeWords`, which I created and tested as part of the Great
+Eastern Energy DataFarmer application.
+
+### Class SpecialStrings (defined in WizardWrx.Common)
+
+Define `SPACE_CHAR` for use when only a string will do, and cross reference the
+new constant to its antecedent, `SpecialCharacters.SPACE_CHAR`.
+
+### Class ASCIICharacterDisplayInfo (defined in WizardWrx.ASCIIInfo.dll)
+
+Override `ToString` to render all three representations (printable string,
+hexadecimal, then decimal, in that order), and define static method
+`DisplayCharacterInfo` to provide that service for an arbitrary character
+without instantiating `ASCII_Character_Display_Table`.
+
+## Other Changed Files
+
+Incidental changes included in this commit are as follows.
+
+- __SpecialCharacters.cs__ got a cross reference to `SpecialStrings.SPACE_CHAR`.
+
+- __ProductAssemblyInfo.cs__ reflects the new library version number, 7.1.
+
+- __AssemblyInfo.cs__ in all individual libraries reflects the new library
+version number and a build number increment.
+
+- __Resources.resx in DLLServicesTestStand__ has the following new strings
+`IDS_ASCII_CHARACTER_INFO`, `IDS_ASCII_TABLE_CHARACTER_PROPERTIES`, and
+`IDS_ASCII_TABLE_ENUMERATION`.
+
+- __ClassTestMap.TXT in DLLServicesTestStand__ defines two new unit test method
+mappings. Note, too, that the terminal newline is gone. This is by design, to
+eliminate 4 bytes from the embedded resource that contribute nothing to its
+usability.
+
+- __FormatStringParsing_Drills.cs in DLLServicesTestStand__, which also
+exercises `WizardWrx.ASCIIInfo.dll`, which was developed and deployed
+concurrently, exercises the new static method for displaying a printable version
+of any ASCII character, along with its numerical value, expressed in both
+decimal and hexadecimal notation.
+
+- __NewClassTests_20140914.cs in DLLServicesTestStand__ incorporates overlooked
+unit tests of the entire `SpecialStrings` class.
+
+- __Program.cs in DLLServicesTestStand__ calls the new methods that went into
+class `NewClassTests_20140914`.

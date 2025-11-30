@@ -248,21 +248,41 @@
                              The meanings of the foregoing names should be self
                              evident. Nevertheless, they are set forth in the
                              ChangeLog entry dated 2025/11/27.
+
+	2025/11/28 9.0.281 DAG   Add Unicode code points: BULLET
+                                                      CHECK_MARK
+                                                      CROSS_MARK
+                                                      RIGHT_ARROW
     ============================================================================
 */
 
 namespace WizardWrx
 {
 	/// <summary>
+	/// <para>
 	/// This class defines special purpose strings that are either difficult to
-	/// get right in the first place, or display ambiguously in text editors and
-	/// printed source code listings.
-	/// 
+	/// get right in the first place, display ambiguously in text editors and
+	/// printed source code listings, or are in other ways either ambiguous or
+	/// special.
+	/// </para>
+	/// <para>
 	/// Since static classes are implicitly sealed, this class cannot be inherited.
+	/// </para>
 	/// </summary>
 	/// <remarks>
+	/// <para>
+	/// In character-mode (console) applications that use them, the Unicode
+	/// glyphs, BULLET, CHECK_MARK, CROSS_MARK, and RIGHT_ARROW, require a
+	/// console that supports UTF-8. Use <see cref="ConsoleSymbols.Initialize"/>
+	/// to coerce the console to use a UTF-8 code page that supports them.
+	/// Additionally, to properly display these glyphs, your console must render
+	/// in a font face that supports these Unicode glyphs. Examples are Consolas,
+	/// Cascadia Code, and Segoe UI Emoji.
+	/// </para>
+	/// <para>
 	/// For ease of access, I promoted the classes that expose only constants to
 	/// the root of the WizardWrx namespace.
+	/// </para>
 	/// </remarks>
 	/// <seealso cref="ArrayInfo"/>
 	/// <seealso cref="MagicNumbers"/>
@@ -409,6 +429,13 @@ namespace WizardWrx
 		public const string AT_SIGN = AT_CHAR;
 
 		/// <summary>
+		/// Unicode bullet (•), U+2022.
+		/// See ChangeLog.md glyph table and GlyphConstantsHarness for validation.
+		/// </summary>
+		/// <seealso cref="SpecialCharacters.BULLET"/>
+		public const string BULLET = "\u2022";
+
+		/// <summary>
 		/// Use this character anywhere in your code that requires a bare
 		/// carriage return character.
 		/// </summary>
@@ -519,9 +546,21 @@ namespace WizardWrx
 		public const string CHAR_UC_Z = @"Z";
 
 		/// <summary>
+		/// Unicode check mark (✔), U+2714.
+		/// See ChangeLog.md glyph table and GlyphConstantsHarness for validation.
+		/// </summary>
+		/// <seealso cref="CHECK_MARK_CHAR"/>
+		/// <seealso cref="SpecialCharacters.CHECK_MARK"/>
+		/// <seealso cref="SpecialCharacters.CHECK_MARK_CHAR"/>
+		public const string CHECK_MARK = "\u2714";
+
+		/// <summary>
 		/// The check-mark character prints as such only in selected Windows
 		/// fonts.
 		/// </summary>
+		/// <seealso cref="CHECK_MARK"/>
+		/// <seealso cref="SpecialCharacters.CHECK_MARK"/>
+		/// <seealso cref="SpecialCharacters.CHECK_MARK_CHAR"/>
 		public const string CHECK_MARK_CHAR = "\xFB";
 
 		/// <summary>
@@ -569,14 +608,21 @@ namespace WizardWrx
 		/// <seealso cref="SpecialCharacters.COMMA"/>
 		public const string COMMA_SPACE = COMMA + SPACE_CHAR;
 
-        /// <summary>
-        /// Use this as the second of two argument so the Replace method on a
-        /// String, along with DOUBLE_QUOTE as tthe first argument, when the
+		/// <summary>
+		/// Unicode cross mark (✘), U+2718.
+		/// See ChangeLog.md glyph table and GlyphConstantsHarness for validation.
+		/// </summary>
+		/// <seealso cref="SpecialCharacters.CROSS_MARK"/>
+		public const string CROSS_MARK = "\u2718";
+
+		/// <summary>
+		/// Use this as the second of two argument so the Replace method on a
+		/// String, along with DOUBLE_QUOTE as tthe first argument, when the
 		/// double quotation mark must be embeddded in the value of a field in a
 		/// CSV file.
-        /// </summary>
+		/// </summary>
 		/// <see cref="DOUBLE_QUOTE"/>
-        public const string CSV_ESCAPED_DOUBLE_QUOTE = DOUBLE_QUOTE + DOUBLE_QUOTE;
+		public const string CSV_ESCAPED_DOUBLE_QUOTE = DOUBLE_QUOTE + DOUBLE_QUOTE;
 
         /// <summary>
         /// This is one of many single characters that are frequently needed as
@@ -970,13 +1016,6 @@ namespace WizardWrx
 		public const string PERCENT_SIGN = @"%";
 
 		/// <summary>
-		/// The question mark is another special character that is frequently
-		/// used as an operator; use this to differentiate such use from that of
-		/// an operand.
-		/// </summary>
-		public const string QUESTION_MARK = @"?";
-
-		/// <summary>
 		/// How have I got on this long without my faithful field separator?
 		/// </summary>
 		/// <seealso cref="AMPERSAND"/>
@@ -990,6 +1029,20 @@ namespace WizardWrx
 		/// <seealso cref="UNDERSCORE_CHAR"/>
 		/// <seealso cref="SpecialCharacters.PIPE_CHAR"/>
 		public const string PIPE_CHAR = @"|";
+
+		/// <summary>
+		/// The question mark is another special character that is frequently
+		/// used as an operator; use this to differentiate such use from that of
+		/// an operand.
+		/// </summary>
+		public const string QUESTION_MARK = @"?";
+
+		/// <summary>
+		/// Unicode right arrow (→), U+2192.
+		/// See ChangeLog.md glyph table and GlyphConstantsHarness for validation.
+		/// </summary>
+		/// <seealso cref="SpecialCharacters.RIGHT_ARROW"/>
+		public const string RIGHT_ARROW = "\u2192";
 
 		/// <summary>
 		/// This is one of many single characters that are frequently needed as

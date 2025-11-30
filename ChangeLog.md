@@ -1,5 +1,16 @@
 ﻿# WizardWrx .NET API Change Log
 
+## 2025-11-30
+
+### WizardWrx.Common [9.0.283-alpha], Pre-release
+
+- Introduce EXACTLY_ONE_ITEM constant in `ListInfo`.
+
+- Published as a pre-release build for internal validation.
+
+- Superseded by [9.0.283] stable release; consumers should prefer the stable
+  version.
+
 ## 2025/11/27
 
 ### WizardWrx.Common 9.0.274
@@ -26,9 +37,9 @@ To improve clarity and enforce uniformity in string construction, the following 
 
 Invisible characters such as spaces often hide in plain sight, making code and logs harder to read, maintain, and debug. A literal like `", "` or `" = "` may look obvious in isolation, but in diffs, reviews, or long concatenations, the presence of the space can be overlooked. This has historically led to subtle formatting inconsistencies and ambiguity in log output.
 
-By introducing explicit constants, the WizardWrx API makes these invisible details visible. Each constant is a **defensive design choice**:  
-- Prevents ambiguity by naming the separator in a way that reveals its exact composition.  
-- Enforces uniformity across the codebase, ensuring joins, logs, and diagnostic strings follow the same convention.  
+By introducing explicit constants, the WizardWrx API makes these invisible details visible. Each constant is a **defensive design choice**:
+- Prevents ambiguity by naming the separator in a way that reveals its exact composition.
+- Enforces uniformity across the codebase, ensuring joins, logs, and diagnostic strings follow the same convention.
 - Future‑proofs the API, since new bounded characters can be added once and reused everywhere without relying on fragile literals.
 
 ##### 📖 Usage Examples
@@ -63,9 +74,9 @@ Timeout = 30
 ###### Example 3: Logging with Parentheses
 
 ```csharp
-string log = message 
-           + SpecialStrings.SPACE_PARENTHESIS_LEFT 
-           + count 
+string log = message
+           + SpecialStrings.SPACE_PARENTHESIS_LEFT
+           + count
            + SpecialStrings.SPACE_PARENTHESIS_RIGHT;
 ```
 
@@ -91,13 +102,25 @@ These constants improve developer experience by making invisible formatting expl
 
 For the full set of constants and their definitions, refer to the **`SpecialStrings`** class in *WizardWrx.Common*. This class centralizes all separator and bounded‑character constants, ensuring they can be reused consistently across the codebase. Note that this class is part of the root **`WizardWrx`** namespace for easy access.
 
-## 2025/10/19 
+### WizardWrx.Core 9.0.370
+
+A new static class, `ReflectionInvoker`, was added to the `WizardWrx.Core` namespace.
+This class provides helper methods for invoking methods dynamically via reflection:
+
+- `InvokeStaticMethod`   — Invokes static methods on types loaded from external assemblies.
+- `InvokeInstanceMethod` — Invokes instance methods, with optional constructor arguments.
+- `InvokeGenericMethod`  — Invokes generic methods by applying supplied type arguments.
+
+These helpers centralize reflection logic, reduce duplication, and make dynamic invocation
+intention‑revealing and maintainable. They complement existing utilities in `WizardWrx.Core.dll`.
+
+## 2025/10/19
 
 ### WizardWrx.Common 9.0.274
 
 Add string constant HTML_ENTITY_SPACE_CHARACTER (@"%20").
 
-### WizardWrx.Common 9.0.270 
+### WizardWrx.Common 9.0.270
 
 Add string constants EMPTY_JSON_ARRAY (@"[]") and EMPTY_JSON_OBJECT (@"{}").
 
@@ -106,7 +129,7 @@ Add character and string constants URL_PATH_DELIMITER ('/') and WINDOWS_PATH_DEL
 ### WizardWrx.Core 9.0.365
 
 To resolve a file contention that caused the hash routine to prevent another
-routine from gaining access to a file that it was asked to process, the 
+routine from gaining access to a file that it was asked to process, the
 `FileStream` object that feeds data to all message digest algorithms is moved
 out of the method call, and the stream is instead owned by the `using` block
 that wraps the message digest object, which was already in a `using` block of
@@ -132,7 +155,7 @@ workflow improvement are listed in the table below.
 
 ### WizardWrx.Core 9.0.361
 
-Correct the spelling of string extension method `SQLafe4EmbeddedSingleQuote` to 
+Correct the spelling of string extension method `SQLafe4EmbeddedSingleQuote` to
 `SQLEscapeEmbeddedSingleQuote`.
 
 ## 2024/02/05
@@ -158,7 +181,7 @@ Define new string extension method `CSVSafe4EmbeddedDoubleQuote` and
 Correct a logic error in the `ExtractBetweenIndexOfs` string extension method
 overload that takes into account the length of the substring that marks the
 left boundary of the substring to extract by adding its length to the specified
-left boundary position. 
+left boundary position.
 
 The eror took the form of a nonsensical test that caused it to assume that the
 bounds were invalid. The objective of the invalid test was to prevent the native
@@ -270,7 +293,7 @@ it a reference to its new home, `WizardWrx.Common`.
 
 ### WizardWrx.ASCIIInfo 9.0.210
 
-Replace the local copy of the Readers class that I copied from 
+Replace the local copy of the Readers class that I copied from
 `WizardWrx.EmbeddedTextFile` with a renamed `EmbeddedTextFileReaders` class,
 moved from the same place before the entire project was deleted from the
 constellation.
@@ -280,7 +303,7 @@ constellation.
 1. New string constants: `LOGICAL_NEGATE` mirrors an existing like-named
 character constant, while `SQL_DATETIME_FORMAT_PRECISE`,
 `SQL_DATETIME_FORMAT_FULL`, and `SQL_DATE_FORMAT` support formatting dates to be
-interpolated into Microsoft SQL Server scripts. 
+interpolated into Microsoft SQL Server scripts.
 
 2. Classes `ByteOrderMark` and `Readers`, renamed `EmbeddedTextFileReaders`,
 moved from `WizardWrx.EmbeededTextFile`, which is being deprecated and retired
