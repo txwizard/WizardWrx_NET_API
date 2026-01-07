@@ -339,6 +339,8 @@
 
     2024/03/18 9.0.1588 DAG Exercise the new CSVSafe4EmbeddedDoubleQuote and
                             SQLafe4EmbeddedSingleQuote extension methods.
+
+    2026/01/07 9.0.1607 DAG Exercise the new ConsoleSymbols by displaying them.
     ============================================================================
 */
 
@@ -596,7 +598,9 @@ namespace DLLServices2TestStand
 
             try
             {
-                Console.WriteLine (
+                ConsoleSymbols.Initialize ( );
+
+				Console.WriteLine (
                     Properties.Resources.BOJ_MSG_TPL ,
                     new string [ ]
                     {
@@ -612,12 +616,20 @@ namespace DLLServices2TestStand
                         s_smTheApp.AppRootAssemblyFileBaseName ) );
                 s_smTheApp.LoadErrorMessageTable ( s_astrErrorMessagres );
 
-                //	------------------------------------------------------------
-                //	Replace the equals sign and its surrounding spaces with more
-                //	spaces, to align the data with the items that follow it.
-                //	------------------------------------------------------------
+				//	------------------------------------------------------------
+                //  Evaluate the check mark and cross symbols before anything
+                //  else prints.
+				//	------------------------------------------------------------
 
-                Console.WriteLine (
+				Console.WriteLine ( $"Check Mark = {WizardWrx.ConsoleSymbols.Check}" );
+				Console.WriteLine ( $"Cross Mark = {WizardWrx.ConsoleSymbols.Cross}{Environment.NewLine}" );
+
+				//	------------------------------------------------------------
+				//	Replace the equals sign and its surrounding spaces with more
+				//	spaces, to align the data with the items that follow it.
+				//	------------------------------------------------------------
+
+				Console.WriteLine (
                     BasicSystemInfoDisplayMessages.DisplayProcessorArchitecture ( ).Replace (
                         ARCH_EQUALS ,
                         PADDED_EQUALS ) );
@@ -641,12 +653,12 @@ namespace DLLServices2TestStand
                     s_smTheApp.AppRootAssemblyFileName ,
                     Environment.NewLine );
 
-                //	------------------------------------------------------------
-                //  Use GetAssemblyVersionInfo to display version details about
-                //  the entry assembly and one of its dependents.
-                //	------------------------------------------------------------
+				//	------------------------------------------------------------
+				//  Use GetAssemblyVersionInfo to display version details about
+				//  the entry assembly and one of its dependents.
+				//	------------------------------------------------------------
 
-                ExerciseGetAssemblyVersionInfo ( );
+				ExerciseGetAssemblyVersionInfo ( );
 
                 //	------------------------------------------------------------
                 //	DisplayDefaultAppDomainProperties is the improved method

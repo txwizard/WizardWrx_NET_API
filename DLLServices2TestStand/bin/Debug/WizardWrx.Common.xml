@@ -345,6 +345,11 @@
             Unicode cross mark (✘) or ASCII fallback ("[X]").
             </summary>
         </member>
+        <member name="P:WizardWrx.ConsoleSymbols.IsInitialized">
+            <summary>
+            The static constructor sets this method to True.
+            </summary>
+        </member>
         <member name="M:WizardWrx.ConsoleSymbols.#cctor">
             <summary>
             Initializes static fields by testing console encoding.

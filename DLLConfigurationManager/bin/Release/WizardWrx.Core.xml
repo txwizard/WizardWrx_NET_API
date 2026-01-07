@@ -3054,6 +3054,50 @@
             configuration file.
             </returns>
         </member>
+        <member name="T:WizardWrx.Core.ReflectionInvoker">
+            <summary>
+            Provides generic, overload-resolving reflection helpers for invoking
+            static and instance methods with defensive error handling.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.Core.ReflectionInvoker.InvokeStaticMethod``1(System.String,System.String,System.String,System.Object[],System.Reflection.BindingFlags)">
+            <summary>
+            Invoke a static method by name, resolving overloads based on argument types,
+            and return its result as the specified generic type.
+            </summary>
+            <typeparam name="T">Expected return type.</typeparam>
+            <param name="pstrAssemblyPath">Absolute path to the DLL containing the type.</param>
+            <param name="pstrFullyQualifiedTypeName">Namespace-qualified type name.</param>
+            <param name="pstrMethodName">Name of the static method to invoke.</param>
+            <param name="paobjParameters">Arguments to pass to the method.</param>
+            <param name="penmFlagsBitMask">Binding penmFlagsBitMask (defaults to Public | Static | BindingFlags.FlattenHierarchy).</param>
+            <returns>Result of the method call, cast to <typeparamref name="T"/>.</returns>
+        </member>
+        <member name="M:WizardWrx.Core.ReflectionInvoker.InvokeInstanceMethod``1(System.String,System.String,System.String,System.Object,System.Object[],System.Reflection.BindingFlags)">
+            <summary>
+            Invoke an instance method by name, resolving overloads based on argument types,
+            and return its result as the specified generic type.
+            </summary>
+            <typeparam name="T">Expected return type.</typeparam>
+            <param name="pstrAssemblyPath">Absolute path to the DLL containing the type.</param>
+            <param name="pstrFullyQualifiedTypeName">Namespace-qualified type name.</param>
+            <param name="pstrMethodName">Name of the instance method to invoke.</param>
+            <param name="instance">Instance of the type on which to invoke the method.</param>
+            <param name="paobjParameters">Arguments to pass to the method.</param>
+            <param name="penmFlagsBitMask">Binding penmFlagsBitMask (defaults to Public | Instance).</param>
+            <returns>Result of the method call, cast to <typeparamref name="T"/>.</returns>
+        </member>
+        <member name="M:WizardWrx.Core.ReflectionInvoker.InvokeMethodInternal(System.String,System.String,System.String,System.Object[],System.Reflection.BindingFlags,System.Object)">
+            <summary>
+            Internal overload resolver that selects the best matching method
+            based on argument types and invokes it.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.Core.ReflectionInvoker.ParametersMatch(System.Reflection.ParameterInfo[],System.Type[])">
+            <summary>
+            Determines whether the supplied argument types are assignable to the given paobjParameters.
+            </summary>
+        </member>
         <member name="T:WizardWrx.Core.RegistryValues">
             <summary>
             This sealed class exposes static methods for efficiently testing for the

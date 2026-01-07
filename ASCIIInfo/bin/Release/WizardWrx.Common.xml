@@ -314,6 +314,53 @@
             is never subsequently repeated for the lifetime of the instance.
             </summary>
         </member>
+        <member name="T:WizardWrx.ConsoleSymbols">
+            <summary>
+            Provides standardized symbols for console output,
+            with automatic fallback to ASCII if Unicode is unsupported.
+            </summary>
+            <remarks>
+            <para>
+            In character-mode (console) applications that use them, the Unicode
+            glyphs, BULLET, CHECK_MARK, CROSS_MARK, and RIGHT_ARROW, require a
+            console that supports UTF-8. Use <see cref="M:WizardWrx.ConsoleSymbols.Initialize"/>
+            to coerce the console to use a UTF-8 code page that supports them.
+            Additionally, to properly display these glyphs, your console must render
+            in a font face that supports these Unicode glyphs. Examples are Consolas,
+            Cascadia Code, and Segoe UI Emoji.
+            </para>
+            <para>
+            For ease of access, I promoted the classes that expose only constants to
+            the root of the WizardWrx namespace.
+            </para>
+            </remarks>
+        </member>
+        <member name="F:WizardWrx.ConsoleSymbols.Check">
+            <summary>
+            Unicode check mark (✔) or ASCII fallback ("[OK]").
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ConsoleSymbols.Cross">
+            <summary>
+            Unicode cross mark (✘) or ASCII fallback ("[X]").
+            </summary>
+        </member>
+        <member name="P:WizardWrx.ConsoleSymbols.IsInitialized">
+            <summary>
+            The static constructor sets this method to True.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.ConsoleSymbols.#cctor">
+            <summary>
+            Initializes static fields by testing console encoding.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.ConsoleSymbols.Initialize">
+            <summary>
+            Forces static constructor execution early,
+            ensuring encoding is set before first output.
+            </summary>
+        </member>
         <member name="T:WizardWrx.CSVFileInfo">
             <summary>
             Use these constants and service routines to simplify working with CSV
@@ -745,6 +792,14 @@
             <summary>
             The Length property of a string returns a value of zero
             (EMPTY_STRING_LENGTH) when the string is empty.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ListInfo.EXACTLY_ONE_ITEM">
+            <summary>
+            Almost as common as testing for the empty list is testing for the
+            singleton list. For instance, when a SQL UPDATE is issued to update
+            values in a single row, the @@ROWCOUNT is expected to be exactly one
+            if its WHERE clause is coded correctly.
             </summary>
         </member>
         <member name="F:WizardWrx.ListInfo.INDEXOF_NOT_FOUND">
@@ -4087,8 +4142,19 @@
             Since static classes are implicitly sealed, this class cannot be inherited.
             </summary>
             <remarks>
+            <para>
+            In character-mode (console) applications that use them, the Unicode
+            glyphs, BULLET, CHECK_MARK, CROSS_MARK, and RIGHT_ARROW, require a
+            console that supports UTF-8. Use <see cref="M:WizardWrx.ConsoleSymbols.Initialize"/>
+            to coerce the console to use a UTF-8 code page that supports them.
+            Additionally, to properly display these glyphs, your console must render
+            in a font face that supports these Unicode glyphs. Examples are Consolas,
+            Cascadia Code, and Segoe UI Emoji.
+            </para>
+            <para>
             For ease of access, I promoted the classes that expose only constants to
             the root of the WizardWrx namespace.
+            </para>
             </remarks>
             <seealso cref="T:WizardWrx.ArrayInfo"/>
             <seealso cref="T:WizardWrx.MagicNumbers"/>
@@ -4233,6 +4299,13 @@
             <seealso cref="F:WizardWrx.SpecialCharacters.BRACKET_LEFT"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.BRACE_RIGHT"/>
         </member>
+        <member name="F:WizardWrx.SpecialCharacters.BULLET">
+            <summary>
+            Unicode bullet (•), U+2022.
+            See ChangeLog.md glyph table and GlyphConstantsHarness for validation.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.BULLET"/>
+        </member>
         <member name="F:WizardWrx.SpecialCharacters.CARRIAGE_RETURN">
             <summary>
             Use this character anywhere in your code that requires a bare
@@ -4343,11 +4416,23 @@
             <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_NUMERAL_2"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_NUMERAL_7"/>
         </member>
+        <member name="F:WizardWrx.SpecialCharacters.CHECK_MARK">
+            <summary>
+            Unicode check mark (✔), U+2714.
+            See ChangeLog.md glyph table and GlyphConstantsHarness for validation.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHECK_MARK_CHAR"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.CHECK_MARK"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.CHECK_MARK_CHAR"/>
+        </member>
         <member name="F:WizardWrx.SpecialCharacters.CHECK_MARK_CHAR">
             <summary>
             The check-mark character prints as such only in selected Windows
             fonts.
             </summary>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHECK_MARK"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.CHECK_MARK"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.CHECK_MARK_CHAR"/>
         </member>
         <member name="F:WizardWrx.SpecialCharacters.COLON">
             <summary>
@@ -4378,6 +4463,13 @@
             <seealso cref="F:WizardWrx.SpecialCharacters.TAB_CHAR"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.UNDERSCORE_CHAR"/>
             <seealso cref="F:WizardWrx.SpecialStrings.COMMA"/>
+        </member>
+        <member name="F:WizardWrx.SpecialCharacters.CROSS_MARK">
+            <summary>
+            Unicode cross mark (✘), U+2718.
+            See ChangeLog.md glyph table and GlyphConstantsHarness for validation.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.CROSS_MARK"/>
         </member>
         <member name="F:WizardWrx.SpecialCharacters.DLM_FORMAT_ITEM_BEGIN">
             <summary>
@@ -4570,6 +4662,13 @@
             an operand.
             </summary>
         </member>
+        <member name="F:WizardWrx.SpecialCharacters.RIGHT_ARROW">
+            <summary>
+            Unicode right arrow (→), U+2192.
+            See ChangeLog.md glyph table and GlyphConstantsHarness for validation.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.RIGHT_ARROW"/>
+        </member>
         <member name="F:WizardWrx.SpecialCharacters.SEMICOLON">
             <summary>
             Use this when your code requires a semicolon literal, when you want
@@ -4654,15 +4753,30 @@
         </member>
         <member name="T:WizardWrx.SpecialStrings">
             <summary>
+            <para>
             This class defines special purpose strings that are either difficult to
-            get right in the first place, or display ambiguously in text editors and
-            printed source code listings.
-            
+            get right in the first place, display ambiguously in text editors and
+            printed source code listings, or are in other ways either ambiguous or
+            special.
+            </para>
+            <para>
             Since static classes are implicitly sealed, this class cannot be inherited.
+            </para>
             </summary>
             <remarks>
+            <para>
+            In character-mode (console) applications that use them, the Unicode
+            glyphs, BULLET, CHECK_MARK, CROSS_MARK, and RIGHT_ARROW, require a
+            console that supports UTF-8. Use <see cref="M:WizardWrx.ConsoleSymbols.Initialize"/>
+            to coerce the console to use a UTF-8 code page that supports them.
+            Additionally, to properly display these glyphs, your console must render
+            in a font face that supports these Unicode glyphs. Examples are Consolas,
+            Cascadia Code, and Segoe UI Emoji.
+            </para>
+            <para>
             For ease of access, I promoted the classes that expose only constants to
             the root of the WizardWrx namespace.
+            </para>
             </remarks>
             <seealso cref="T:WizardWrx.ArrayInfo"/>
             <seealso cref="T:WizardWrx.MagicNumbers"/>
@@ -4807,6 +4921,13 @@
             <seealso cref="F:WizardWrx.SpecialStrings.TAB_CHAR"/>
             <seealso cref="F:WizardWrx.SpecialStrings.UNDERSCORE_CHAR"/>
         </member>
+        <member name="F:WizardWrx.SpecialStrings.BULLET">
+            <summary>
+            Unicode bullet (•), U+2022.
+            See ChangeLog.md glyph table and GlyphConstantsHarness for validation.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialCharacters.BULLET"/>
+        </member>
         <member name="F:WizardWrx.SpecialStrings.CARRIAGE_RETURN">
             <summary>
             Use this character anywhere in your code that requires a bare
@@ -4917,11 +5038,23 @@
             <seealso cref="F:WizardWrx.SpecialStrings.CHAR_NUMERAL_2"/>
             <seealso cref="F:WizardWrx.SpecialStrings.CHAR_NUMERAL_7"/>
         </member>
+        <member name="F:WizardWrx.SpecialStrings.CHECK_MARK">
+            <summary>
+            Unicode check mark (✔), U+2714.
+            See ChangeLog.md glyph table and GlyphConstantsHarness for validation.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.CHECK_MARK_CHAR"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHECK_MARK"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHECK_MARK_CHAR"/>
+        </member>
         <member name="F:WizardWrx.SpecialStrings.CHECK_MARK_CHAR">
             <summary>
             The check-mark character prints as such only in selected Windows
             fonts.
             </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.CHECK_MARK"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHECK_MARK"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHECK_MARK_CHAR"/>
         </member>
         <member name="F:WizardWrx.SpecialStrings.COLON">
             <summary>
@@ -4967,6 +5100,13 @@
             </summary>
             <seealso cref="F:WizardWrx.SpecialStrings.COLON"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.COMMA"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.CROSS_MARK">
+            <summary>
+            Unicode cross mark (✘), U+2718.
+            See ChangeLog.md glyph table and GlyphConstantsHarness for validation.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CROSS_MARK"/>
         </member>
         <member name="F:WizardWrx.SpecialStrings.CSV_ESCAPED_DOUBLE_QUOTE">
             <summary>
@@ -5367,13 +5507,6 @@
             </summary>
             <seealso cref="F:WizardWrx.SpecialCharacters.PERCENT_SIGN"/>
         </member>
-        <member name="F:WizardWrx.SpecialStrings.QUESTION_MARK">
-            <summary>
-            The question mark is another special character that is frequently
-            used as an operator; use this to differentiate such use from that of
-            an operand.
-            </summary>
-        </member>
         <member name="F:WizardWrx.SpecialStrings.PIPE_CHAR">
             <summary>
             How have I got on this long without my faithful field separator?
@@ -5388,6 +5521,20 @@
             <seealso cref="F:WizardWrx.SpecialStrings.TAB_CHAR"/>
             <seealso cref="F:WizardWrx.SpecialStrings.UNDERSCORE_CHAR"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.PIPE_CHAR"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.QUESTION_MARK">
+            <summary>
+            The question mark is another special character that is frequently
+            used as an operator; use this to differentiate such use from that of
+            an operand.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.RIGHT_ARROW">
+            <summary>
+            Unicode right arrow (→), U+2192.
+            See ChangeLog.md glyph table and GlyphConstantsHarness for validation.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialCharacters.RIGHT_ARROW"/>
         </member>
         <member name="F:WizardWrx.SpecialStrings.SEMICOLON">
             <summary>

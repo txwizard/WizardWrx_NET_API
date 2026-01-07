@@ -29,10 +29,18 @@ namespace WizardWrx
 		/// </summary>
 		public static readonly string Check;
 
+
 		/// <summary>
 		/// Unicode cross mark (✘) or ASCII fallback ("[X]").
 		/// </summary>
 		public static readonly string Cross;
+
+
+		/// <summary>
+		/// The static constructor sets this method to True.
+		/// </summary>
+		public static bool IsInitialized { get; }
+
 
 		/// <summary>
 		/// Initializes static fields by testing console encoding.
@@ -62,6 +70,10 @@ namespace WizardWrx
 				// Defensive fallback if encoding assignment fails
 				Check = "[OK]";
 				Cross = "[X]";
+			}
+			finally
+			{
+				IsInitialized = true;
 			}
 		}   // static ConsoleSymbols constructor
 

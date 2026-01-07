@@ -3070,7 +3070,7 @@
             <param name="pstrFullyQualifiedTypeName">Namespace-qualified type name.</param>
             <param name="pstrMethodName">Name of the static method to invoke.</param>
             <param name="paobjParameters">Arguments to pass to the method.</param>
-            <param name="penmFlagsBitMask">Binding penmFlagsBitMask (defaults to Public | Static).</param>
+            <param name="penmFlagsBitMask">Binding penmFlagsBitMask (defaults to Public | Static | BindingFlags.FlattenHierarchy).</param>
             <returns>Result of the method call, cast to <typeparamref name="T"/>.</returns>
         </member>
         <member name="M:WizardWrx.Core.ReflectionInvoker.InvokeInstanceMethod``1(System.String,System.String,System.String,System.Object,System.Object[],System.Reflection.BindingFlags)">
