@@ -43,3 +43,8 @@ D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServic
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServices2TestStand\obj\x86\Debug\DLLServi.A2351425.Up2Date
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServices2TestStand\obj\x86\Debug\DLLServices2TestStand.exe
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServices2TestStand\obj\x86\Debug\DLLServices2TestStand.pdb
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServices2TestStand\bin\Debug\Newtonsoft.Json.dll
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServices2TestStand\bin\Debug\Newtonsoft.Json.xml
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServices2TestStand\bin\Debug\WizardWrx.HTTP.dll
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServices2TestStand\bin\Debug\WizardWrx.HTTP.pdb
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServices2TestStand\bin\Debug\WizardWrx.HTTP.xml

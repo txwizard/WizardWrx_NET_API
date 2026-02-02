@@ -142,6 +142,14 @@ goto SKIPREM
 ::  2025/10/08 DG Make the file name expressions in subroutine IS_NEWER case
 ::                INsensitive and add an expression to look for the new
 ::                Agent_Recent_Phone_Calls.html HTML form.
+::  2026/01/19 DG Make a backup of the SubResource Integrity digest string files
+::                in a directory that is visible to both the BuildTools and
+::                the Git repository, and is INCLUDED in Git commits.
+::  2026/01/22 DG Move the backup of the SubResource Integrity digest files into
+::                the block that calls STT_VideoPlayer_Promoted_Fixup.exe.
+::  2026/01/30 DG Make the command that invokes 7UP.CMD a `CALL`, and replace
+::                all instances of `pushd` with `cd /d`, followed by undecorated
+::                cd commands to display the result.
 ::  ============================================================================
 
 :GET_SRI
@@ -163,7 +171,8 @@ goto SKIPREM
     )
 
     set _SRI_Absolute_FileName_=%TEMP%\%~n1%_SRI_Suffix_%.TMP
-    pushd %OpenSSL_Exe_Path%
+    cd /d %OpenSSL_Exe_Path%
+    cd
     openssl dgst -sha384 -binary "%~1" | openssl base64 -A > %_SRI_Absolute_FileName_%
     popd
     echo.
@@ -351,7 +360,8 @@ goto SKIPREM
     echo ---------------------------------------------------------------------
     echo.
 
-    pushd "%~dp0"
+    cd /d "%~dp0"
+	cd
 
     set _fCallFromScript_=Y
     set _NO_PAUSE_=NO_PAUSE
@@ -424,7 +434,8 @@ goto SKIPREM
     echo ---------------------------------------------------------------------
     echo.
 
-    pushd ..\LeadLife.Web\Scripts\STAGING
+    cd /d ..\LeadLife.Web\Scripts\STAGING
+    cd
     call ShredDocumentBackups
     popd
 
@@ -442,7 +453,8 @@ goto SKIPREM
     echo ---------------------------------------------------------------------
     echo.
 
-    pushd ..\PURL_COMMON\STAGING
+    cd /d ..\PURL_COMMON\STAGING
+	cd
     call ShredDocumentBackups
     popd
 
@@ -476,16 +488,55 @@ goto SKIPREM
     echo ---------------------------------------------------------------------
     echo.
 
-    pushd ..\PURL_COMMON
+    cd /d ..\PURL_COMMON
+    cd
     call ShredDocumentBackups ALL
     popd
 
 :PROMOTE
 
+    echo.
+    echo ---------------------------------------------------------------------
+    echo Info: Create new versions as needed of the production HTML documents
+    echo       from the STAGING versions.
+    echo ---------------------------------------------------------------------
+    echo.
+
     if "%_Promoted_Fixup_%" equ "Y" (
-        pushd "%~dp0"
+        cd /d "%~dp0"
+	    echo.
+    	echo ---------------------------------------------------------------------
+        echo CURRENT DIRectory Name:
+        cd
+	    echo ---------------------------------------------------------------------
+
+        echo.
+        echo ---------------------------------------------------------------------
+        echo Info: Process the HTML document files.
+        echo ---------------------------------------------------------------------
+        echo.
         STT_VideoPlayer_Promoted_Fixup.exe
-        popd
+
+	    echo.
+    	echo ---------------------------------------------------------------------
+        echo CURRENT DIRectory Name after STT_VideoPlayer_Promoted_Fixup:
+        cd
+	    echo ---------------------------------------------------------------------
+	    echo.
+        echo.
+        echo ---------------------------------------------------------------------
+        echo Info: Make a backup of the SubResource Integrity digest files.
+        echo ---------------------------------------------------------------------
+        echo.
+        cd /d "%~dp0"
+	    echo.
+    	echo ---------------------------------------------------------------------
+        echo CURRENT DIRectory Name:
+        cd
+	    echo ---------------------------------------------------------------------
+	    echo.
+
+        call 7UP ..\PURL_COMMON\SubResource_Integrity_String_Backups\SRI_Digests.7z %TEMP%\*_SRI_*SHA???.TMP
     ) else (
         echo.
         echo ---------------------------------------------------------------------

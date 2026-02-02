@@ -187,6 +187,15 @@ namespace DLLServices2TestStand.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to HTTP_Drills.
+        /// </summary>
+        public static string CMDARG_HTTP_DRILLS {
+            get {
+                return ResourceManager.GetString("CMDARG_HTTP_DRILLS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to EnumerateStringResourcesInAssembly.
         /// </summary>
         public static string CMDARG_LIST_COMMON_STRINGS {

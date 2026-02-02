@@ -1,5 +1,66 @@
 ﻿# WizardWrx .NET API Change Log
 
+## 2026-02-02
+
+### WizardWrx.HTTP [9.0.42]
+
+This is a **new** library that exposes three classes and two methods.
+
+| Object Name                      | Object Type                            | Notes                                                                                                                                                                              |
+|----------------------------------|----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| RequestEngine                    | Class with Methods                     | This class is the heart of the library.                                                                                                                                            |
+| RequestOptions                   | POCO Class                             | This very simple class has read-only properties and two constructors, of which the second initializes all properties. Instances are attached to RequestEngine objects.             |
+| JSON_Deserialized_Object         | POCO Class                             | This class is a wafer-thin wrapper around a standard String. Its constructor verifies that the string starts and ends with valid opening and closing characters for a JSON string. |
+| CallWebApiAndProcessResultASync  | Instance Method on RequestEngine Class | This single method is the main reason for the library, and is its primary public entry point.                                                                                      |
+| ParseQueryToDictionary           | Instance Method on RequestEngine Class | This utility method parses a query string from a URI into a dictionary in which the keys are the names of the keywords and the values are the values of each.                      |
+
+Following are two examples, both taken verbatim from `/DLLServices2TestStand/Program.cs`, of which the first is a simple HTTP GET, while the second is a HTTP POST that sends a small JSON payload, which the PostMan Echo service returns as its own response.
+
+The test JSON payload file for the second test is in the repository `Test_Data` directory, and the URI for the first test is public, and is free to use, as any call to it behaves as a ping (wake-up) for the SalesTalk Software-As-A-Service application.
+
+```csharp
+		private static void Exercise_HTTP_Engine ( )
+		{
+            const string LOGGER_PREFIX = @"Exercise_HTTP_Engine";
+
+			const string TEST_URL_1 = @"https://salestalktech.com/SalesAcceleration/Open/WakeUp?TimeNow={0} UTC&Origin={1}";
+            const string TEST_URL_2 = @"https://postman-echo.com/post";
+            const string TEST_JSON_FQFN = @"D:\Source_Code\Visual_Studio\Projects\SalesTalk\Source\salestalk\LeadLife\_NOTES\Activity_Hub\Click2NoteGetPickLis_20260124_230917.JSON";
+
+            string strTestUrl1 = string.Format (
+                TEST_URL_1 ,                                // Format Control String
+                DateTime.UtcNow.ToString (                  // Format Item 0 = ?TimeNow={0} UTC
+					@"yyyy/yyyy/MM/dd HH:mm:ss.fff" ) ,     // Format template for UTC time to nearest millisecond
+				LOGGER_PREFIX );                            // Format Item 1 = &Origin={1}
+			Console.WriteLine ( $"Begin {LOGGER_PREFIX} Drill 1 with test URL = {strTestUrl1}" );
+            WizardWrx.HTTP.RequestEngine requestEngine = new WizardWrx.HTTP.RequestEngine ( new WizardWrx.HTTP.RequestOptions ( s_smTheApp.AppExceptionLogger , null , null ) );
+            object objWebResult = requestEngine.CallWebApiAndProcessResultASync (
+                strTestUrl1 ,                               // string                   pstrWebApiUrl
+                null ,                                      // Action<JObject>          pfunProcessResultCallback = null
+                null ,                                      // JSON_Deserialized_Object pjSON_Deserialized        = null
+                WizardWrx.HTTP.RequestEngine.HttpVerb.GET , // HttpVerb                 penmVerb                  = HttpVerb.POST
+                false );                                    // bool                     pfExpectJSON              = true
+			Console.WriteLine ( $"{Environment.NewLine}requestEngine.CallWebApiAndProcessResultASync Return Value:{Environment.NewLine}{Environment.NewLine}{objWebResult}{Environment.NewLine}" );
+            Console.WriteLine ( $"{LOGGER_PREFIX} Drill 1 Done!" );
+
+
+
+			string strJONDocument = File.ReadAllText ( TEST_JSON_FQFN );
+			Console.WriteLine ( $"Begin {LOGGER_PREFIX} Drill 2: Test URL        = {TEST_URL_2}" );
+			Console.WriteLine ( $"                                    JSON Input File = {TEST_JSON_FQFN}" );
+            Console.WriteLine ( $"                                    JSON Data:{Environment.NewLine}{Environment.NewLine}{strJONDocument}{Environment.NewLine}" );
+            WizardWrx.HTTP.JSON_Deserialized_Object jSON = new WizardWrx.HTTP.JSON_Deserialized_Object ( strJONDocument );
+            objWebResult = requestEngine.CallWebApiAndProcessResultASync (
+				TEST_URL_2 ,                                // string                   pstrWebApiUrl
+				null ,                                      // Action<JObject>          pfunProcessResultCallback = null
+				jSON ,                                      // JSON_Deserialized_Object pjSON_Deserialized        = null
+				WizardWrx.HTTP.RequestEngine.HttpVerb.POST ,// HttpVerb                 penmVerb                  = HttpVerb.POST
+				false );                                    // bool                     pfExpectJSON              = true
+			Console.WriteLine ( $"{Environment.NewLine}requestEngine.CallWebApiAndProcessResultASync Return Value:{Environment.NewLine}{Environment.NewLine}{objWebResult}{Environment.NewLine}" );
+			Console.WriteLine ( $"{LOGGER_PREFIX} Drill 2 Done!" );
+		}   // private static void Exercise_HTTP_Engine
+```
+
 ## 2025-11-30
 
 ### WizardWrx.Common [9.0.283-alpha], Pre-release

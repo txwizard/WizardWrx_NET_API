@@ -3082,7 +3082,7 @@
             <param name="pstrAssemblyPath">Absolute path to the DLL containing the type.</param>
             <param name="pstrFullyQualifiedTypeName">Namespace-qualified type name.</param>
             <param name="pstrMethodName">Name of the instance method to invoke.</param>
-            <param name="instance">Instance of the type on which to invoke the method.</param>
+            <param name="pobjInstance">Instance of the type on which to invoke the method.</param>
             <param name="paobjParameters">Arguments to pass to the method.</param>
             <param name="penmFlagsBitMask">Binding penmFlagsBitMask (defaults to Public | Instance).</param>
             <returns>Result of the method call, cast to <typeparamref name="T"/>.</returns>
@@ -3092,6 +3092,32 @@
             Internal overload resolver that selects the best matching method
             based on argument types and invokes it.
             </summary>
+        </member>
+        <member name="M:WizardWrx.Core.ReflectionInvoker.InvokeMethod(System.Object,System.String,System.Reflection.BindingFlags,System.Object[])">
+            <summary>
+            Invokes a method (virtual, non-virtual, or overridden) on the given target object.
+            </summary>
+            <param name="pobjTarget">
+            This required generic object represents the instance on which to invoke
+            method <paramref name="pstrMethodName"/>
+            </param>
+            <param name="pstrMethodName">
+            This string represents the name of the method on object
+            <paramref name="pobjTarget"/> to invoke.
+            </param>
+            <param name="penmBindingFlagsBitMask">
+            This bit mask represents one or more members of the BindingFlags
+            enumeration.
+            </param>
+            <param name="paobjParameters">
+            This optional array of generic objects is the parameters for the
+            method, if any. Since it is a parameter array, this argument is, and
+            must be, last.
+            </param>
+            <returns>
+            This generic object is the return value of the method, or null if the
+            method returns void.
+            </returns>
         </member>
         <member name="M:WizardWrx.Core.ReflectionInvoker.ParametersMatch(System.Reflection.ParameterInfo[],System.Type[])">
             <summary>

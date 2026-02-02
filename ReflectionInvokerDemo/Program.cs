@@ -30,34 +30,40 @@ class ReflectionInvokerDemo
 		Console.WriteLine ( );
 
 		string strAnyCSVRelativePath = @"..\AnyCSV\AnyCSV\bin\Release\WizardWrx.AnyCSV.dll";
-		string strTypeName = @"WizardWrx.AnyCSV.Parser";
+		string strTypeName = @"WizardWrx.AnyCSV.ICSVParser";
 		string strMethodName = @"Parse";
 		string strTestCSV = @"alpha,beta,gamma,delta";
 
 		Assembly asm = Assembly.LoadFrom ( strAnyCSVRelativePath );
 		Type engineType = asm.GetType ( strTypeName , throwOnError: true );
+		string [ ] astrParsed = ReflectionInvoker.InvokeInstanceMethod<string [ ]> (
+			strAnyCSVRelativePath ,                         // string pstrAssemblyPath
+			strTypeName ,                                   // string pstrFullyQualifiedTypeName
+			strMethodName ,                                 // string pstrMethodName
+			engineType ,                                    // object pobjInstance
+			new object [ ] { strTestCSV } );				// object [ ] paobjParameters
 
 		// Static overloads live on the abstract base class.
-		var staticOverloads = engineType.BaseType
-			.GetMethods ( BindingFlags.Public | BindingFlags.Static )
-			.Where ( m => m.Name == strMethodName )
-			.ToArray ( );
+		//var staticOverloads = engineType.BaseType
+		//	.GetMethods ( BindingFlags.Public | BindingFlags.Static )
+		//	.Where ( m => m.Name == strMethodName )
+		//	.ToArray ( );
 
-		// Instance overloads are inherited into Parser.
-		var instanceOverloads = engineType
-			.GetMethods ( BindingFlags.Public | BindingFlags.Instance )
-			.Where ( m => m.Name == strMethodName )
-			.ToArray ( );
+		//// Instance overloads are inherited into Parser.
+		//var instanceOverloads = engineType
+		//	.GetMethods ( BindingFlags.Public | BindingFlags.Instance )
+		//	.Where ( m => m.Name == strMethodName )
+		//	.ToArray ( );
 
-		foreach ( var mi in staticOverloads )
-		{
-			ProcessOverload ( mi , strAnyCSVRelativePath , engineType.BaseType.FullName , strMethodName , strTestCSV , isStatic: true );
-		}
+		//foreach ( var mi in staticOverloads )
+		//{
+		//	ProcessOverload ( mi , strAnyCSVRelativePath , engineType.BaseType.FullName , strMethodName , strTestCSV , isStatic: true );
+		//}
 
-		foreach ( var mi in instanceOverloads )
-		{
-			ProcessOverload ( mi , strAnyCSVRelativePath , strTypeName , strMethodName , strTestCSV , isStatic: false );
-		}
+		//foreach ( var mi in instanceOverloads )
+		//{
+		//	ProcessOverload ( mi , strAnyCSVRelativePath , strTypeName , strMethodName , strTestCSV , isStatic: false );
+		//}
 	}   // static void Main
 
 
@@ -77,11 +83,14 @@ class ReflectionInvokerDemo
 
 		Console.WriteLine ( $"Candidate overload: {mi}" );
 		Console.WriteLine ( "  Argument types:" );
-		for ( int i = 0 ; i < argTypes.Length ; i++ )
+		
+		for ( int i = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+			      i < argTypes.Length ;
+				  i++ )
 		{
 			string typeNameDisplay = argTypes [ i ] == null ? "[null]" : argTypes [ i ].FullName;
 			Console.WriteLine ( $"    Arg {i + 1} of {argTypes.Length}: {typeNameDisplay}" );
-		}
+		}   // for ( int i = ArrayInfo.ARRAY_FIRST_ELEMENT ; i < argTypes.Length ; i++ )
 
 		Console.WriteLine ( $"  Specificity score: {score}" );
 		Console.WriteLine ( $"  Match result: {( match ? ConsoleSymbols.Check + " Match" : ConsoleSymbols.Cross + " No match" )}" );
@@ -91,17 +100,25 @@ class ReflectionInvokerDemo
 			try
 			{
 				object result;
+				
 				if ( isStatic )
 				{
 					result = ReflectionInvoker.InvokeStaticMethod<object> (
-						strAnyCSVRelativePath , strTypeName , strMethodName , args );
-				}
+						strAnyCSVRelativePath ,
+						strTypeName ,
+						strMethodName ,
+						args );
+				}   // TRUE (The matched method is marked as static.) block, if ( isStatic )
 				else
 				{
 					object instance = Activator.CreateInstance ( mi.DeclaringType );
 					result = ReflectionInvoker.InvokeInstanceMethod<object> (
-						strAnyCSVRelativePath , strTypeName , strMethodName , instance , args );
-				}
+						strAnyCSVRelativePath ,
+						strTypeName ,
+						strMethodName ,
+						instance ,
+						args );
+				}   // FALSE (The matched method is marked as instance.) block, if ( isStatic )
 
 				if ( result is string [ ] arr )
 				{
@@ -142,6 +159,8 @@ class ReflectionInvokerDemo
 				  intParamIndex++ )
 		{
 			Type pt = ps [ intParamIndex ].ParameterType;
+			bool fHasDefaultValue = ps [ intParamIndex ].HasDefaultValue;
+			object objDefaultValue = ps [ intParamIndex ].DefaultValue;
 
 			if ( pt == typeof ( string ) )
 			{
@@ -149,15 +168,15 @@ class ReflectionInvokerDemo
 			}
 			else if ( pt == typeof ( char ) )
 			{
-				args [ intParamIndex ] = SpecialCharacters.COMMA;				// default CSV delimiter
+				args [ intParamIndex ] = fHasDefaultValue ? objDefaultValue : null;
 			}
 			else if ( pt == typeof ( bool ) )
 			{
-				args [ intParamIndex ] = true;
+				args [ intParamIndex ] = fHasDefaultValue ? objDefaultValue : null;
 			}
 			else
 			{
-				args [ intParamIndex ] = null;									// fallback
+				args [ intParamIndex ] = fHasDefaultValue ? objDefaultValue : null;
 			}
 		}   // for ( int intParamIndex = ArrayInfo.ARRAY_FIRST_ELEMENT ; intParamIndex < ps.Length ; intParamIndex++ )
 

@@ -341,6 +341,8 @@
                             SQLafe4EmbeddedSingleQuote extension methods.
 
     2026/01/07 9.0.1607 DAG Exercise the new ConsoleSymbols by displaying them.
+
+    2026/01/31 9.0.1616 DAG Exercise the new HTTP library.
     ============================================================================
 */
 
@@ -676,7 +678,11 @@ namespace DLLServices2TestStand
 
                 ExerciseTimeZoneInfoExtensions ( );
 
-                if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_EXTRACT_BOUNDED_SUBSTRINGS )
+				if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_HTTP_DRILLS )
+                {
+                    Exercise_HTTP_Engine ( );
+                }
+                else if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_EXTRACT_BOUNDED_SUBSTRINGS )
                 {
                     Exercise_ExtractBoundedSubStrings ( );
                 }
@@ -967,18 +973,18 @@ namespace DLLServices2TestStand
                         Environment.NewLine );
 
                     Console.WriteLine (
-                        Properties.Resources.MSG_SHOWING_LIBRARY_INFO ,		// This is the message template.
-                        Environment.NewLine );                              // This token adds newlines my way.
+                        Properties.Resources.MSG_SHOWING_LIBRARY_INFO ,		    // This is the message template.
+                        Environment.NewLine );                                  // This token adds newlines my way.
 
                     PauseForPictures (
                         OMIT_LINEFEED ,
-                        @"EvaluateConsoleHandleStates" );                   // SKIPPED
+                        @"EvaluateConsoleHandleStates" );                       // SKIPPED
 
                     ShowCurrentDefaultErrorMessageColors ( Properties.Resources.MSG_SHOWING_CONFIGURED_COLORS );
 
                     PauseForPictures (
                         APPEND_LINEFEED ,
-                        @"ShowCurrentDefaultErrorMessageColors" );          // SKIPPED
+                        @"ShowCurrentDefaultErrorMessageColors" );              // SKIPPED
 
                     Console.WriteLine (
                         @"{1}The following message is the value of the static ExceptionLogger.s_strSettingsOmittedFromConfigFile property:{1}{1}{0}" ,
@@ -1018,7 +1024,7 @@ namespace DLLServices2TestStand
 
                     PauseForPictures (
                         APPEND_LINEFEED ,
-                        @"ShowCurrentDefaultErrorMessageColors" );          // SKIPPED
+                        @"ShowCurrentDefaultErrorMessageColors" );              // SKIPPED
 
                     s_smTheApp.AppExceptionLogger.RestoreSavedColors ( );
 
@@ -1398,6 +1404,48 @@ namespace DLLServices2TestStand
 
 
 		#region Local Test Implementations
+		private static void Exercise_HTTP_Engine ( )
+		{
+            const string LOGGER_PREFIX = @"Exercise_HTTP_Engine";
+
+			const string TEST_URL_1 = @"https://salestalktech.com/SalesAcceleration/Open/WakeUp?TimeNow={0} UTC&Origin={1}";
+            const string TEST_URL_2 = @"https://postman-echo.com/post";
+            const string TEST_JSON_FQFN = @"Test_Data\Click2NoteGetPickLis_20260124_230917.JSON";
+
+            string strTestUrl1 = string.Format (
+                TEST_URL_1 ,                                // Format Control String
+                DateTime.UtcNow.ToString (                  // Format Item 0 = ?TimeNow={0} UTC
+					@"yyyy/yyyy/MM/dd HH:mm:ss.fff" ) ,     // Format template for UTC time to nearest millisecond
+				LOGGER_PREFIX );                            // Format Item 1 = &Origin={1}
+			Console.WriteLine ( $"Begin {LOGGER_PREFIX} Drill 1 with test URL = {strTestUrl1}" );
+            WizardWrx.HTTP.RequestEngine requestEngine = new WizardWrx.HTTP.RequestEngine ( new WizardWrx.HTTP.RequestOptions ( s_smTheApp.AppExceptionLogger , null , null ) );
+            object objWebResult = requestEngine.CallWebApiAndProcessResultASync (
+                strTestUrl1 ,                               // string                   pstrWebApiUrl
+                null ,                                      // Action<JObject>          pfunProcessResultCallback = null
+                null ,                                      // JSON_Deserialized_Object pjSON_Deserialized        = null
+                WizardWrx.HTTP.RequestEngine.HttpVerb.GET , // HttpVerb                 penmVerb                  = HttpVerb.POST
+                false );                                    // bool                     pfExpectJSON              = true
+			Console.WriteLine ( $"{Environment.NewLine}requestEngine.CallWebApiAndProcessResultASync Return Value:{Environment.NewLine}{Environment.NewLine}{objWebResult}{Environment.NewLine}" );
+            Console.WriteLine ( $"{LOGGER_PREFIX} Drill 1 Done!" );
+
+
+
+			string strJONDocument = File.ReadAllText ( TEST_JSON_FQFN );
+			Console.WriteLine ( $"Begin {LOGGER_PREFIX} Drill 2: Test URL        = {TEST_URL_2}" );
+			Console.WriteLine ( $"                                    JSON Input File = {TEST_JSON_FQFN}" );
+            Console.WriteLine ( $"                                    JSON Data:{Environment.NewLine}{Environment.NewLine}{strJONDocument}{Environment.NewLine}" );
+            WizardWrx.HTTP.JSON_Deserialized_Object jSON = new WizardWrx.HTTP.JSON_Deserialized_Object ( strJONDocument );
+            objWebResult = requestEngine.CallWebApiAndProcessResultASync (
+				TEST_URL_2 ,                                // string                   pstrWebApiUrl
+				null ,                                      // Action<JObject>          pfunProcessResultCallback = null
+				jSON ,                                      // JSON_Deserialized_Object pjSON_Deserialized        = null
+				WizardWrx.HTTP.RequestEngine.HttpVerb.POST ,// HttpVerb                 penmVerb                  = HttpVerb.POST
+				false );                                    // bool                     pfExpectJSON              = true
+			Console.WriteLine ( $"{Environment.NewLine}requestEngine.CallWebApiAndProcessResultASync Return Value:{Environment.NewLine}{Environment.NewLine}{objWebResult}{Environment.NewLine}" );
+			Console.WriteLine ( $"{LOGGER_PREFIX} Drill 2 Done!" );
+		}   // private static void Exercise_HTTP_Engine
+
+
 		private static void CallTraceToStreamWriter ( )
         {
             string strAbsoluteTraceLogFileName = AbsolutePathStringFromSettings ( Properties.Settings.Default.TraceWriteTests );

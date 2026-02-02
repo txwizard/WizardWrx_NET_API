@@ -73,10 +73,13 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.XML" />
-    <Reference Include="WizardWrx.AnyCSV, Version=7.2.145.0, Culture=neutral, PublicKeyToken=39f6551a21db420a, processorArchitecture=MSIL">
-      <HintPath>..\packages\WizardWrx.AnyCSV.7.2.145\lib\net20\WizardWrx.AnyCSV.dll</HintPath>
+    <Reference Include="WizardWrx.AnyCSV, Version=9.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WizardWrx.AnyCSV.9.0.157\lib\net48\WizardWrx.AnyCSV.dll</HintPath>
     </Reference>
     <Reference Include="WizardWrx.BitMath, Version=4.3.125.29248, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\WizardWrx.BitMath.4.3.125.29248\lib\net20\WizardWrx.BitMath.dll</HintPath>
@@ -177,6 +180,10 @@
     <ProjectReference Include="..\FormatStringEngine\FormatStringEngine.csproj">
       <Project>{4d82458f-864f-494e-a537-1e89d6c8073c}</Project>
       <Name>FormatStringEngine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HTTP\HTTP.csproj">
+      <Project>{86f74181-f845-46d2-8766-6c2037e13a1f}</Project>
+      <Name>HTTP</Name>
     </ProjectReference>
     <ProjectReference Include="..\MoreMath\MoreMath.csproj">
       <Project>{a9512fcd-3f59-4ce9-8923-367aed4511a8}</Project>

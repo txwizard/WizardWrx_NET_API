@@ -1,0 +1,415 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WizardWrx.HTTP</name>
+    </assembly>
+    <members>
+        <member name="T:WizardWrx.HTTP.JSON_Deserialized_Object">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WizardWrx.HTTP.JSON_Deserialized_Object.#ctor">
+            <summary>
+            The default constructor is hidden to enforce instatiation of only
+            fully initialized objects.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.HTTP.JSON_Deserialized_Object.#ctor(System.String)">
+            <summary>
+            The public constructor sets the solitary property of this class, an
+            ordinary string that is expected to contain valid JSON.
+            </summary>
+            <param name="pstrJSON"></param>
+        </member>
+        <member name="M:WizardWrx.HTTP.JSON_Deserialized_Object.MustBeValid(System.String)">
+            <summary>
+            Rather than throwing, this lambda expression permits the constructor
+            to leave its value null, allowing it to appear to succeed when the
+            input is invalid, while leaving the property value null.
+            </summary>
+            <param name="pstrJSON">
+            This requirrd string parameter is the JSON string candidate to
+            evaluate.
+            </param>
+            <returns>
+            Input parameter <paramref name="pstrJSON"/> cannot be null or the
+            empty string, AND its first character must be a left brace OR a left
+            bracket, and its last character must be a right brace OR a right
+            bracket.
+            </returns>
+        </member>
+        <member name="P:WizardWrx.HTTP.JSON_Deserialized_Object.JSON">
+            <summary>
+            The solitary property of this class is the string that stores the
+            text returned by a JSON serializer.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.HTTP.JSON_Deserialized_Object.MaybeValid">
+            <summary>
+            Evaluate whether the string stored in the JSON property is
+            superficially valid.
+            </summary>
+            <returns>
+            Return True when the string has at least 4 characters, starting with
+            the defined prefix and ending with the defined suffix.
+            </returns>
+        </member>
+        <member name="T:WizardWrx.HTTP.RequestEngine">
+            <summary>
+            Instances of this class export a single method that supports all five
+            HTTP Request verbs.
+            </summary>
+        </member>
+        <member name="T:WizardWrx.HTTP.RequestEngine.HttpVerb">
+            <summary>
+            The HttpVerb enumeration identifies the HTTP verbs supported by the
+            HttpClient object, and establishes which HttpClienti instance method
+            CallWebApiAndProcessResultASync invokes.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.HTTP.RequestEngine.HttpVerb.GET">
+            <summary>
+            This value maps to the most basic verb, GET.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.HTTP.RequestEngine.HttpVerb.PATCH">
+            <summary>
+            This value maps to the increasingly popular PATCH verb, usually used to
+            update selected columns of a row in a database table.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.HTTP.RequestEngine.HttpVerb.POST">
+            <summary>
+            This value maps to the most commonly used verb after GET.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.HTTP.RequestEngine.HttpVerb.PUT">
+            <summary>
+            This value maps to the infrequently used PUT verb, usually used
+            to update selected columns of a row in a database table.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.HTTP.RequestEngine.HttpVerb.DELETE">
+            <summary>
+            This value maps to the dangerous DELETE verb, and is usually 
+            sent without a payload.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.HTTP.RequestEngine.Options">
+            <summary>
+            This immutable reference to a RequestOptions object is a concise way
+            to attach options such as an OAuth access token and a method to get
+            a new token, along with a robust exception logging object that has
+            many configurable settings that determine how much detail it reports
+            and how its reports are delivered.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.HTTP.RequestEngine.#ctor">
+            <summary>
+            The default constructor leaves the Options property null, which is
+            OK for most use cases.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.HTTP.RequestEngine.#ctor(WizardWrx.HTTP.RequestOptions)">
+            <summary>
+            This constructor initializes the Options property, which is not
+            strictly required for most use cases, and can be passed in as a
+            RequestOptions constructor call, since the RequestOptions object is
+            a POCO that doesn't even need System; its only reference is to the
+            WizardWrx.DLLConfigurationManager namespace, where the 
+            ExceptionLogger lives.
+            </summary>
+            <param name="pobjRequestOptions">
+            When supplied, the RequestOptions object reference is stored in the
+            Options property, providing a read-only reference to everything but
+            the OAuth Access Token, which must, of course, be updateable because
+            access tokens are short-lived.
+            </param>
+        </member>
+        <member name="M:WizardWrx.HTTP.RequestEngine.CallWebApiAndProcessResultASync(System.String,System.Action{Newtonsoft.Json.Linq.JObject},WizardWrx.HTTP.JSON_Deserialized_Object,WizardWrx.HTTP.RequestEngine.HttpVerb,System.Boolean)">
+            <summary>
+            Calls the protected web API and processes the result
+            </summary>
+            <param name="pstrWebApiUrl">
+            URL of the web API to call (supposed to return Json)
+            </param>
+            <param name="pfunProcessResultCallback">
+            <para>
+            This optional Action JObject reference points to the callback used
+            to process the result of the call to the web API. This was intended
+            for processing JSON objects of assorted arbitrary shapes returned by
+            various Microsoft Graph endpoints.
+            </para>
+            <para>
+            Now that the routine is evolving to meet additional needs, it seemed
+            wiser to abandon the void return type in favor of returning the
+            result in a more conventional fashion.
+            </para>
+            <para>
+            Though it now returns in a more "natural" way, the callback remains
+            relevant for the Graph API because it allows a single entry point to
+            process 
+            </para>
+            </param>
+            <param name="pjSON_Deserialized">
+            <para>
+            When present, the optional JSON_Deserialized_Object object is
+            syntactic sugar sprinkled over a standard string that is expected to
+            have passed a very cursory validity check.
+            </para>
+            <para>
+            This string is the payload required of all POST nad PUT requests.
+            </para>
+            <para>
+            When this value is null, unless <paramref name="penmVerb"/> happens
+            to be DELETE, the verb is coerced to GET, the only other verb that
+            dispenses with a payload.
+            </para>
+            </param>
+            <param name="penmVerb">
+            <para>
+            This optional member of the HttpVerb enumeration identifies the HTT
+            verb to emit for the request. For backwards compatibility, its value
+            defaults to POST.
+            </para>
+            <para>
+            When <paramref name="pjSON_Deserialized"/> is null, unless this value
+            is DELETE, the verb is coerced to GET, the only other verb that can
+            function without a payload.
+            </para>
+            </param>
+            <param name="pfExpectJSON">
+            By default, we expect the returned string to be JSON, and use the
+            JsonConvert.DeserializeObject method to return it as a JObject.
+            Otherwise, the raw string is returned as is.
+            </param>
+            <returns>
+            <para>
+            This routine was originally intended for use as part of a library
+            that interacts with the Microsoft Graph API and expects to return an
+            arbitrarily shaped object as a JObject, which it passed to the
+            callback routine <paramref name="pfunProcessResultCallback"/>.
+            </para>
+            <para>
+            Since it is being pulled out of that class library so that it can be
+            applied elsewhere, it is changed so that it returns whichever object
+            it has, either JSON or an ordinary string. Hence, altough the return
+            type is specified as object, in practice, it is either a JObject or
+            a garden variety String.
+            </para>
+            </returns>
+            <exception cref="T:System.Exception">
+            Two distinct circumstances can give rise to an Exception exception.
+            <list type="number">
+            <item>
+            The OAuth token expired and a replacement cannot be obtained from
+            the Microsoft Azure identity server.
+            </item>
+            <item>
+            Another type of exception arose while processing a request against
+            the Microsoft Graph API endpoints.
+            </item>
+            </list>
+            </exception>
+            <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+            An InvalidEnumArgumentException Exception arises when the value of
+            optional argument <paramref name="penmVerb"/> is invalid, ordinarily
+            due to a programming error, since it is reasonbly safe to assume
+            that the verb is always hard coded per toe API.
+            </exception>
+        </member>
+        <member name="M:WizardWrx.HTTP.RequestEngine.ParseQueryToDictionary(System.Uri)">
+            <summary>
+            Extract the Query from any URI into an IDictionary of name-value
+            pairs that can be URL encoded properly.
+            </summary>
+            <param name="puriToParse">
+            Pass in a reference to the System.Uri to process.
+            </param>
+            <returns>
+            The return value is the IDictionary populated with keys for each
+            named value in the Query of <paramref name="puriToParse"/>. If the query is
+            empty or absent, the returned dictionary is empty.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.HTTP.RequestEngine.ApplyHeaders(System.Net.Http.HttpRequestMessage,System.String,System.Boolean)">
+            <summary>
+            Instance method CallWebApiAndProcessResultASyn invokes this routine
+            on each iteration of its retry loop to attach HTTP headers directly
+            to the HttpRequestMessage specified by <paramref name="phttpRequest"/>
+            so that the request always provides its own set of request headers.
+            </summary>
+            <param name="phttpRequest">
+            This HttpRequestMessage parameter is a reference to the new Request
+            object that is created on each iteration of the request retry loop.
+            </param>
+            <param name="pstrBearerToken">
+            This string represents the optional OAuth Bearer Access Token, which
+            goes into the AuthenticationHeaderValue that becomes the value of
+            the Authorization header that is appended to the collection of HTTP
+            headers.
+            </param>
+            <param name="pfAcceptJson">
+            When its value is True, the MediaTypeWithQualityHeaderValue header
+            that represents the JSON MIME type is appended to the headers.
+            </param>
+        </member>
+        <member name="F:WizardWrx.HTTP.RequestEngine.s_HttpClient">
+            <summary>
+            The constructor stashes a reference to the HTTPClient in a protected
+            location.
+            </summary>
+        </member>
+        <member name="T:WizardWrx.HTTP.RequestOptions">
+            <summary>
+            Instances of this object represent options for configuring request
+            behavior, including provision of exception logging tooling and OAuth
+            token retrieval methods.
+            </summary>
+        </member>
+        <member name="T:WizardWrx.HTTP.RequestOptions.OAuthTokenGetter">
+            <summary>
+            This delegate signature represents a method that attempts to obtain an
+            OAuth token and return it through an output parameter, along with the
+            existing true/false outcome.
+            </summary>
+            <param name="token">
+            When this method returns, contains the retrieved OAuth token if
+            successful; otherwise, null.
+            </param>
+            <param name="logger">
+            This represents the optional logger object for recording exceptions
+            that arise during token retrieval.
+            </param>
+            <returns>
+            The delegated function returns true if the token was successfully
+            obtained; otherwise, it returns false and the <paramref name="token"/>
+            value is undefined. The supplied copy of the access token is for use
+            by the HTTP access method; the object that exposes the OAuth Access
+            Token Getter is responsible for stashing a copy in protectd storage.
+            </returns>
+        </member>
+        <member name="P:WizardWrx.HTTP.RequestOptions.Logger">
+            <summary>
+            This read-only property returns an instance of ExceptionLogger for
+            logging exceptions encountered during the processing of HTTP
+            requests.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.HTTP.RequestOptions.TokenGetter">
+            <summary>
+            This read-only property returns a delegate that retrieves OAuth Bearer
+            tokens for inclusion in the Authorization header of HTTP requests.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.HTTP.RequestOptions.CurrentOAuthToken">
+            <summary>
+            This read-only string property gets the current OAuth token,
+            retrieving and caching it if necessary.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.HTTP.RequestOptions.#ctor(WizardWrx.DLLConfigurationManager.ExceptionLogger,WizardWrx.HTTP.RequestOptions.OAuthTokenGetter,System.String)">
+            <summary>
+            The public constructor initializes both read-only properties of this
+            class, so that consumers of this class must make their choices about
+            these properties explicit.
+            </summary>
+            <param name="plogger">
+            The ExceptionLogger instance to be used for logging Exceptions is
+            optional; if no object is supplied, no Exception logging happens
+            inside the other methods exposed by this library.
+            </param>
+            <param name="ptokenGetter">
+            The delegate that retrieves OAuth Bearer tokens for inclusion in the
+            Authorization header of HTTP requests is optional; if no delegate is
+            provided, requests proceed without Authorization headers.
+            </param>
+            <param name="pstrInitialOAuthToken">
+            This optional parameter allows the caller to supply an initial OAuth
+            token that the class caches for future use. If this parameter is 
+            null and <paramref name="ptokenGetter"/> is not null, the class 
+            attempts to obtain a token the first time the property value is
+            queried.
+            </param>
+        </member>
+        <member name="M:WizardWrx.HTTP.RequestOptions.#ctor">
+            <summary>
+            The default constructor is hidden to enforce instatiation of only
+            explicitly initialized instances.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.HTTP.RequestOptions._currentOAuthToken">
+            <summary>
+            This private field caches the current OAuth token. Provision of this
+            private property supports lazy loading of the token.
+            </summary>
+        </member>
+        <member name="T:WizardWrx.HTTP.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.HTTP.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.HTTP.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.HTTP.Properties.Resources.ERRMSG_TOKEN_REFRESH_FAIL">
+            <summary>
+              Looks up a localized string similar to Request for a new OAuth token to replace an expired token failed..
+            </summary>
+        </member>
+        <member name="P:WizardWrx.HTTP.Properties.Resources.HTTP_HDR_IMMUTABLE_ID">
+            <summary>
+              Looks up a localized string similar to IdType=&quot;ImmutableId&quot;.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.HTTP.Properties.Resources.HTTP_HDR_PREFER">
+            <summary>
+              Looks up a localized string similar to Prefer.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.HTTP.Properties.Resources.JSON_ARRAY_PREFIX">
+            <summary>
+              Looks up a localized string similar to [.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.HTTP.Properties.Resources.JSON_ARRAY_SUFFIX">
+            <summary>
+              Looks up a localized string similar to ].
+            </summary>
+        </member>
+        <member name="P:WizardWrx.HTTP.Properties.Resources.JSON_EMPTY_ARRAY">
+            <summary>
+              Looks up a localized string similar to [].
+            </summary>
+        </member>
+        <member name="P:WizardWrx.HTTP.Properties.Resources.JSON_EMPTY_OBJECT">
+            <summary>
+              Looks up a localized string similar to {}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.HTTP.Properties.Resources.JSON_OBJECT_PREFIX">
+            <summary>
+              Looks up a localized string similar to {&quot;.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.HTTP.Properties.Resources.JSON_OBJECT_SUFFIX">
+            <summary>
+              Looks up a localized string similar to }.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.HTTP.Properties.Resources.MESSAGES_ENDPOINT">
+            <summary>
+              Looks up a localized string similar to /messages.
+            </summary>
+        </member>
+    </members>
+</doc>
