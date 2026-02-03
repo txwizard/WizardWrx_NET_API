@@ -1,5 +1,11 @@
 ﻿# WizardWrx .NET API Change Log
 
+## 2026-02-03
+
+### WizardWrx.Core 9.0.384
+
+A new `AppDomainSyncRootRegistry` exposes three overloaded methods, all called `GetSyncRoot`, that dispense labeled `WizardWrx.SyncRoot` instances tied to the name of the requesting method and the declaring type of its class.
+
 ## 2026-02-02
 
 ### WizardWrx.HTTP [9.0.42]

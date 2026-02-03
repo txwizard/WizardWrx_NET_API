@@ -55,156 +55,6 @@
             the defined prefix and ending with the defined suffix.
             </returns>
         </member>
-        <member name="T:WizardWrx.HTTP.Properties.Resources">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:WizardWrx.HTTP.Properties.Resources.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:WizardWrx.HTTP.Properties.Resources.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="P:WizardWrx.HTTP.Properties.Resources.ERRMSG_TOKEN_REFRESH_FAIL">
-            <summary>
-              Looks up a localized string similar to Request for a new OAuth token to replace an expired token failed..
-            </summary>
-        </member>
-        <member name="P:WizardWrx.HTTP.Properties.Resources.HTTP_HDR_IMMUTABLE_ID">
-            <summary>
-              Looks up a localized string similar to IdType=&quot;ImmutableId&quot;.
-            </summary>
-        </member>
-        <member name="P:WizardWrx.HTTP.Properties.Resources.HTTP_HDR_PREFER">
-            <summary>
-              Looks up a localized string similar to Prefer.
-            </summary>
-        </member>
-        <member name="P:WizardWrx.HTTP.Properties.Resources.JSON_ARRAY_PREFIX">
-            <summary>
-              Looks up a localized string similar to [.
-            </summary>
-        </member>
-        <member name="P:WizardWrx.HTTP.Properties.Resources.JSON_ARRAY_SUFFIX">
-            <summary>
-              Looks up a localized string similar to ].
-            </summary>
-        </member>
-        <member name="P:WizardWrx.HTTP.Properties.Resources.JSON_EMPTY_ARRAY">
-            <summary>
-              Looks up a localized string similar to [].
-            </summary>
-        </member>
-        <member name="P:WizardWrx.HTTP.Properties.Resources.JSON_EMPTY_OBJECT">
-            <summary>
-              Looks up a localized string similar to {}.
-            </summary>
-        </member>
-        <member name="P:WizardWrx.HTTP.Properties.Resources.JSON_OBJECT_PREFIX">
-            <summary>
-              Looks up a localized string similar to {&quot;.
-            </summary>
-        </member>
-        <member name="P:WizardWrx.HTTP.Properties.Resources.JSON_OBJECT_SUFFIX">
-            <summary>
-              Looks up a localized string similar to }.
-            </summary>
-        </member>
-        <member name="P:WizardWrx.HTTP.Properties.Resources.MESSAGES_ENDPOINT">
-            <summary>
-              Looks up a localized string similar to /messages.
-            </summary>
-        </member>
-        <member name="T:WizardWrx.HTTP.RequestOptions">
-            <summary>
-            Instances of this object represent options for configuring request
-            behavior, including provision of exception logging tooling and OAuth
-            token retrieval methods.
-            </summary>
-        </member>
-        <member name="T:WizardWrx.HTTP.RequestOptions.OAuthTokenGetter">
-            <summary>
-            This delegate signature represents a method that attempts to obtain an
-            OAuth token and return it through an output parameter, along with the
-            existing true/false outcome.
-            </summary>
-            <param name="token">
-            When this method returns, contains the retrieved OAuth token if
-            successful; otherwise, null.
-            </param>
-            <param name="logger">
-            This represents the optional logger object for recording exceptions
-            that arise during token retrieval.
-            </param>
-            <returns>
-            The delegated function returns true if the token was successfully
-            obtained; otherwise, it returns false and the <paramref name="token"/>
-            value is undefined. The supplied copy of the access token is for use
-            by the HTTP access method; the object that exposes the OAuth Access
-            Token Getter is responsible for stashing a copy in protectd storage.
-            </returns>
-        </member>
-        <member name="P:WizardWrx.HTTP.RequestOptions.Logger">
-            <summary>
-            This read-only property returns an instance of ExceptionLogger for
-            logging exceptions encountered during the processing of HTTP
-            requests.
-            </summary>
-        </member>
-        <member name="P:WizardWrx.HTTP.RequestOptions.TokenGetter">
-            <summary>
-            This read-only property returns a delegate that retrieves OAuth Bearer
-            tokens for inclusion in the Authorization header of HTTP requests.
-            </summary>
-        </member>
-        <member name="P:WizardWrx.HTTP.RequestOptions.CurrentOAuthToken">
-            <summary>
-            This read-only string property gets the current OAuth token,
-            retrieving and caching it if necessary.
-            </summary>
-        </member>
-        <member name="M:WizardWrx.HTTP.RequestOptions.#ctor(WizardWrx.DLLConfigurationManager.ExceptionLogger,WizardWrx.HTTP.RequestOptions.OAuthTokenGetter,System.String)">
-            <summary>
-            The public constructor initializes both read-only properties of this
-            class, so that consumers of this class must make their choices about
-            these properties explicit.
-            </summary>
-            <param name="plogger">
-            The ExceptionLogger instance to be used for logging Exceptions is
-            optional; if no object is supplied, no Exception logging happens
-            inside the other methods exposed by this library.
-            </param>
-            <param name="ptokenGetter">
-            The delegate that retrieves OAuth Bearer tokens for inclusion in the
-            Authorization header of HTTP requests is optional; if no delegate is
-            provided, requests proceed without Authorization headers.
-            </param>
-            <param name="pstrInitialOAuthToken">
-            This optional parameter allows the caller to supply an initial OAuth
-            token that the class caches for future use. If this parameter is 
-            null and <paramref name="ptokenGetter"/> is not null, the class 
-            attempts to obtain a token the first time the property value is
-            queried.
-            </param>
-        </member>
-        <member name="M:WizardWrx.HTTP.RequestOptions.#ctor">
-            <summary>
-            The default constructor is hidden to enforce instatiation of only
-            explicitly initialized instances.
-            </summary>
-        </member>
-        <member name="F:WizardWrx.HTTP.RequestOptions._currentOAuthToken">
-            <summary>
-            This private field caches the current OAuth token. Provision of this
-            private property supports lazy loading of the token.
-            </summary>
-        </member>
         <member name="T:WizardWrx.HTTP.RequestEngine">
             <summary>
             Instances of this class export a single method that supports all five
@@ -409,6 +259,156 @@
             <summary>
             The constructor stashes a reference to the HTTPClient in a protected
             location.
+            </summary>
+        </member>
+        <member name="T:WizardWrx.HTTP.RequestOptions">
+            <summary>
+            Instances of this object represent options for configuring request
+            behavior, including provision of exception logging tooling and OAuth
+            token retrieval methods.
+            </summary>
+        </member>
+        <member name="T:WizardWrx.HTTP.RequestOptions.OAuthTokenGetter">
+            <summary>
+            This delegate signature represents a method that attempts to obtain an
+            OAuth token and return it through an output parameter, along with the
+            existing true/false outcome.
+            </summary>
+            <param name="token">
+            When this method returns, contains the retrieved OAuth token if
+            successful; otherwise, null.
+            </param>
+            <param name="logger">
+            This represents the optional logger object for recording exceptions
+            that arise during token retrieval.
+            </param>
+            <returns>
+            The delegated function returns true if the token was successfully
+            obtained; otherwise, it returns false and the <paramref name="token"/>
+            value is undefined. The supplied copy of the access token is for use
+            by the HTTP access method; the object that exposes the OAuth Access
+            Token Getter is responsible for stashing a copy in protectd storage.
+            </returns>
+        </member>
+        <member name="P:WizardWrx.HTTP.RequestOptions.Logger">
+            <summary>
+            This read-only property returns an instance of ExceptionLogger for
+            logging exceptions encountered during the processing of HTTP
+            requests.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.HTTP.RequestOptions.TokenGetter">
+            <summary>
+            This read-only property returns a delegate that retrieves OAuth Bearer
+            tokens for inclusion in the Authorization header of HTTP requests.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.HTTP.RequestOptions.CurrentOAuthToken">
+            <summary>
+            This read-only string property gets the current OAuth token,
+            retrieving and caching it if necessary.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.HTTP.RequestOptions.#ctor(WizardWrx.DLLConfigurationManager.ExceptionLogger,WizardWrx.HTTP.RequestOptions.OAuthTokenGetter,System.String)">
+            <summary>
+            The public constructor initializes both read-only properties of this
+            class, so that consumers of this class must make their choices about
+            these properties explicit.
+            </summary>
+            <param name="plogger">
+            The ExceptionLogger instance to be used for logging Exceptions is
+            optional; if no object is supplied, no Exception logging happens
+            inside the other methods exposed by this library.
+            </param>
+            <param name="ptokenGetter">
+            The delegate that retrieves OAuth Bearer tokens for inclusion in the
+            Authorization header of HTTP requests is optional; if no delegate is
+            provided, requests proceed without Authorization headers.
+            </param>
+            <param name="pstrInitialOAuthToken">
+            This optional parameter allows the caller to supply an initial OAuth
+            token that the class caches for future use. If this parameter is 
+            null and <paramref name="ptokenGetter"/> is not null, the class 
+            attempts to obtain a token the first time the property value is
+            queried.
+            </param>
+        </member>
+        <member name="M:WizardWrx.HTTP.RequestOptions.#ctor">
+            <summary>
+            The default constructor is hidden to enforce instatiation of only
+            explicitly initialized instances.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.HTTP.RequestOptions._currentOAuthToken">
+            <summary>
+            This private field caches the current OAuth token. Provision of this
+            private property supports lazy loading of the token.
+            </summary>
+        </member>
+        <member name="T:WizardWrx.HTTP.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.HTTP.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.HTTP.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.HTTP.Properties.Resources.ERRMSG_TOKEN_REFRESH_FAIL">
+            <summary>
+              Looks up a localized string similar to Request for a new OAuth token to replace an expired token failed..
+            </summary>
+        </member>
+        <member name="P:WizardWrx.HTTP.Properties.Resources.HTTP_HDR_IMMUTABLE_ID">
+            <summary>
+              Looks up a localized string similar to IdType=&quot;ImmutableId&quot;.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.HTTP.Properties.Resources.HTTP_HDR_PREFER">
+            <summary>
+              Looks up a localized string similar to Prefer.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.HTTP.Properties.Resources.JSON_ARRAY_PREFIX">
+            <summary>
+              Looks up a localized string similar to [.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.HTTP.Properties.Resources.JSON_ARRAY_SUFFIX">
+            <summary>
+              Looks up a localized string similar to ].
+            </summary>
+        </member>
+        <member name="P:WizardWrx.HTTP.Properties.Resources.JSON_EMPTY_ARRAY">
+            <summary>
+              Looks up a localized string similar to [].
+            </summary>
+        </member>
+        <member name="P:WizardWrx.HTTP.Properties.Resources.JSON_EMPTY_OBJECT">
+            <summary>
+              Looks up a localized string similar to {}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.HTTP.Properties.Resources.JSON_OBJECT_PREFIX">
+            <summary>
+              Looks up a localized string similar to {&quot;.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.HTTP.Properties.Resources.JSON_OBJECT_SUFFIX">
+            <summary>
+              Looks up a localized string similar to }.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.HTTP.Properties.Resources.MESSAGES_ENDPOINT">
+            <summary>
+              Looks up a localized string similar to /messages.
             </summary>
         </member>
     </members>

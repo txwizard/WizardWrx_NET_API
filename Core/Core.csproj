@@ -113,6 +113,7 @@
     </Compile>
     <Compile Include="AgedFileInfo.cs" />
     <Compile Include="AgedFileInfoCollection.cs" />
+    <Compile Include="AppDomainSyncRootRegistry.cs" />
     <Compile Include="AssemblyLocatorBase.cs" />
     <Compile Include="BasicSystemInfoDisplayMessages.cs" />
     <Compile Include="ByteArrayBase64Converters.cs" />

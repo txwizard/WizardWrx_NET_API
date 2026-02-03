@@ -4626,6 +4626,160 @@
               Looks up a localized string similar to &quot;                                                                                                InnerException                 = [null].
             </summary>
         </member>
+        <member name="T:WizardWrx.AppDomainSyncRootRegistry">
+             <summary>
+             Provides a centralized, thread-safe registry of <see cref="T:WizardWrx.SyncRoot"/>
+             objects keyed by symbolic names. Each key maps to exactly one
+             synchronization object for the lifetime of the application domain.
+             </summary>
+             <remarks>
+             The canonical key format for typed overloads is:
+             
+               {AssemblyQualifiedTypeName}.{MethodName}
+            
+             Use the typed overloads to get strict metadata validation. The raw-key
+             overload is provided for advanced scenarios where the caller constructs
+             a collision-proof key manually.
+             </remarks>
+        </member>
+        <member name="T:WizardWrx.AppDomainSyncRootRegistry.SyncRootEntry">
+            <summary>
+            Internal entry that associates a <see cref="T:WizardWrx.SyncRoot"/> with the
+            metadata used to construct its key.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.AppDomainSyncRootRegistry.SyncRootEntry.LockableObject">
+            <summary>
+            This read-only WizardWrx.SyncRoot object reference holds a
+            reference to the synchronization object itself.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.AppDomainSyncRootRegistry.SyncRootEntry.DeclaringType">
+            <summary>
+            This read-only System.Type object reference holds a reference to
+            the Type information supplied in the request to dispense a
+            SyncRoot object against which to hold a lock.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.AppDomainSyncRootRegistry.SyncRootEntry.MethodName">
+            <summary>
+            This read-only System.String holds a reference to the name of
+            the method that made the request for a SyncRoot object.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.AppDomainSyncRootRegistry.SyncRootEntry.#ctor">
+            <summary>
+            The default constructor is explicitly defined and marked as
+            private to document that all objects must be created fully
+            initialized.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.AppDomainSyncRootRegistry.SyncRootEntry.#ctor(WizardWrx.SyncRoot,System.Type,System.String)">
+            <summary>
+            The one and only public constructor creates a fully initialized
+            instance from the three supplied parameters, which corespond to
+            its three read-only properties.
+            </summary>
+            <param name="pobjSyncRoot">
+            This WizardWrx.SyncRoot object holds a reference to the SyncRoot
+            object that goes into the current instance.
+            </param>
+            <param name="ptypDeclaringType">
+            This System.Type object holds the declaring type information
+            that accompanied the request.
+            </param>
+            <param name="pstrMethodName">
+            This System.String represents the name of the method that made
+            the request.
+            </param>
+        </member>
+        <member name="F:WizardWrx.AppDomainSyncRootRegistry.s_syncRoot">
+            <summary>
+            This class keeps its own private synchronization object for use by
+            its methods, so that access to them is serialized.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.AppDomainSyncRootRegistry.s_syncRoots">
+            <summary>
+            Internal store of synchronization objects, keyed by name.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.AppDomainSyncRootRegistry.GetSyncRoot(System.String)">
+            <summary>
+            Retrieve the <see cref="T:WizardWrx.SyncRoot"/> associated with the specified
+            raw key. This overload does not associate explicit type/method
+            metadata with the key; it is the caller's responsibility to ensure
+            that the key is collision-free and intention-revealing.
+            </summary>
+            <param name="pstrRawKey">
+            This System.String represents a stable, unique identifier for the 
+            lock. No metadata validation is performed for this overload.
+            </param>
+            <returns>
+            A reference to the <see cref="T:WizardWrx.SyncRoot"/> associated with the
+            specified key.
+            </returns>
+            <exception cref="T:System.ArgumentException">
+            Thrown if <paramref name="pstrRawKey"/> is null, empty, or whitespace.
+            </exception>
+        </member>
+        <member name="M:WizardWrx.AppDomainSyncRootRegistry.GetSyncRoot(System.Type,System.String)">
+            <summary>
+            Construct a canonical synchronization key from a type and method
+            name, then retrieve the associated <see cref="T:WizardWrx.SyncRoot"/>. This
+            overload enforces strict metadata consistency for the key.
+            </summary>
+            <param name="ptypDeclaringType">
+            The declaring <see cref="T:System.Type"/> for the method being synchronized.
+            </param>
+            <param name="pstrMethodName">
+            This System.String represents the name of the method whose execution
+            must be serialized.
+            </param>
+            <returns>
+            If it succeeds, the return value is a reference to the 
+            <see cref="T:WizardWrx.SyncRoot"/> associated with the constructed key.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            An ArgumentNullException Exception is thrown if 
+            <paramref name="ptypDeclaringType"/> is null.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            An ArgumentException Exception is thrown if
+            <paramref name="pstrMethodName"/> is null, empty, or whitespace.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            An InvalidOperationException Exception is thrown if the constructed
+            key is already associated with a different type or method name than
+            the one supplied.
+            </exception>
+        </member>
+        <member name="M:WizardWrx.AppDomainSyncRootRegistry.GetSyncRoot``1(System.String)">
+            <summary>
+            Convenience overload that infers the declaring type from the
+            generic type parameter and the method name from the caller context.
+            </summary>
+            <typeparam name="T">
+            The declaring type for the method being synchronized.
+            </typeparam>
+            <param name="pstrCallerMemberName">
+            The name of the calling member, supplied automatically by the
+            compiler.
+            </param>
+            <returns>
+            A reference to the <see cref="T:WizardWrx.SyncRoot"/> associated with the
+            constructed key.
+            </returns>
+        </member>
+        <member name="P:WizardWrx.AppDomainSyncRootRegistry.RegisteredSyncRoots">
+            <summary>
+            Enumerate all registered synchronization roots and their keys.
+            </summary>
+            <remarks>
+            The returned dictionary is a snapshot view of the current registry
+            contents. It is intended for diagnostics, logging, and debugging.
+            </remarks>
+        </member>
         <member name="T:WizardWrx.DateTimeExtensions">
             <summary>
             This class implements two overloads of DateOfMostRecentWeekdayDay, a

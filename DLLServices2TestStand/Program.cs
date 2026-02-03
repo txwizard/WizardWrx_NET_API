@@ -343,6 +343,8 @@
     2026/01/07 9.0.1607 DAG Exercise the new ConsoleSymbols by displaying them.
 
     2026/01/31 9.0.1616 DAG Exercise the new HTTP library.
+
+    2026/02/03 9.0.1655 DAG Exercise the new AppDomainSyncRootRegistry class.
     ============================================================================
 */
 
@@ -1412,37 +1414,38 @@ namespace DLLServices2TestStand
             const string TEST_URL_2 = @"https://postman-echo.com/post";
             const string TEST_JSON_FQFN = @"Test_Data\Click2NoteGetPickLis_20260124_230917.JSON";
 
-            string strTestUrl1 = string.Format (
-                TEST_URL_1 ,                                // Format Control String
-                DateTime.UtcNow.ToString (                  // Format Item 0 = ?TimeNow={0} UTC
-					@"yyyy/yyyy/MM/dd HH:mm:ss.fff" ) ,     // Format template for UTC time to nearest millisecond
-				LOGGER_PREFIX );                            // Format Item 1 = &Origin={1}
-			Console.WriteLine ( $"Begin {LOGGER_PREFIX} Drill 1 with test URL = {strTestUrl1}" );
-            WizardWrx.HTTP.RequestEngine requestEngine = new WizardWrx.HTTP.RequestEngine ( new WizardWrx.HTTP.RequestOptions ( s_smTheApp.AppExceptionLogger , null , null ) );
-            object objWebResult = requestEngine.CallWebApiAndProcessResultASync (
-                strTestUrl1 ,                               // string                   pstrWebApiUrl
-                null ,                                      // Action<JObject>          pfunProcessResultCallback = null
-                null ,                                      // JSON_Deserialized_Object pjSON_Deserialized        = null
-                WizardWrx.HTTP.RequestEngine.HttpVerb.GET , // HttpVerb                 penmVerb                  = HttpVerb.POST
-                false );                                    // bool                     pfExpectJSON              = true
-			Console.WriteLine ( $"{Environment.NewLine}requestEngine.CallWebApiAndProcessResultASync Return Value:{Environment.NewLine}{Environment.NewLine}{objWebResult}{Environment.NewLine}" );
-            Console.WriteLine ( $"{LOGGER_PREFIX} Drill 1 Done!" );
+            lock ( AppDomainSyncRootRegistry.GetSyncRoot<Program> ( ) )
+            {
+                string strTestUrl1 = string.Format (
+                    TEST_URL_1 ,                                // Format Control String
+                    DateTime.UtcNow.ToString (                  // Format Item 0 = ?TimeNow={0} UTC
+                        @"yyyy/yyyy/MM/dd HH:mm:ss.fff" ) ,     // Format template for UTC time to nearest millisecond
+                    LOGGER_PREFIX );                            // Format Item 1 = &Origin={1}
+                Console.WriteLine ( $"Begin {LOGGER_PREFIX} Drill 1 with test URL = {strTestUrl1}" );
+                WizardWrx.HTTP.RequestEngine requestEngine = new WizardWrx.HTTP.RequestEngine ( new WizardWrx.HTTP.RequestOptions ( s_smTheApp.AppExceptionLogger , null , null ) );
+                object objWebResult = requestEngine.CallWebApiAndProcessResultASync (
+                    strTestUrl1 ,                               // string                   pstrWebApiUrl
+                    null ,                                      // Action<JObject>          pfunProcessResultCallback = null
+                    null ,                                      // JSON_Deserialized_Object pjSON_Deserialized        = null
+                    WizardWrx.HTTP.RequestEngine.HttpVerb.GET , // HttpVerb                 penmVerb                  = HttpVerb.POST
+                    false );                                    // bool                     pfExpectJSON              = true
+                Console.WriteLine ( $"{Environment.NewLine}requestEngine.CallWebApiAndProcessResultASync Return Value:{Environment.NewLine}{Environment.NewLine}{objWebResult}{Environment.NewLine}" );
+                Console.WriteLine ( $"{LOGGER_PREFIX} Drill 1 Done!" );
 
-
-
-			string strJONDocument = File.ReadAllText ( TEST_JSON_FQFN );
-			Console.WriteLine ( $"Begin {LOGGER_PREFIX} Drill 2: Test URL        = {TEST_URL_2}" );
-			Console.WriteLine ( $"                                    JSON Input File = {TEST_JSON_FQFN}" );
-            Console.WriteLine ( $"                                    JSON Data:{Environment.NewLine}{Environment.NewLine}{strJONDocument}{Environment.NewLine}" );
-            WizardWrx.HTTP.JSON_Deserialized_Object jSON = new WizardWrx.HTTP.JSON_Deserialized_Object ( strJONDocument );
-            objWebResult = requestEngine.CallWebApiAndProcessResultASync (
-				TEST_URL_2 ,                                // string                   pstrWebApiUrl
-				null ,                                      // Action<JObject>          pfunProcessResultCallback = null
-				jSON ,                                      // JSON_Deserialized_Object pjSON_Deserialized        = null
-				WizardWrx.HTTP.RequestEngine.HttpVerb.POST ,// HttpVerb                 penmVerb                  = HttpVerb.POST
-				false );                                    // bool                     pfExpectJSON              = true
-			Console.WriteLine ( $"{Environment.NewLine}requestEngine.CallWebApiAndProcessResultASync Return Value:{Environment.NewLine}{Environment.NewLine}{objWebResult}{Environment.NewLine}" );
-			Console.WriteLine ( $"{LOGGER_PREFIX} Drill 2 Done!" );
+                string strJONDocument = File.ReadAllText ( TEST_JSON_FQFN );
+                Console.WriteLine ( $"Begin {LOGGER_PREFIX} Drill 2: Test URL        = {TEST_URL_2}" );
+                Console.WriteLine ( $"                                    JSON Input File = {TEST_JSON_FQFN}" );
+                Console.WriteLine ( $"                                    JSON Data:{Environment.NewLine}{Environment.NewLine}{strJONDocument}{Environment.NewLine}" );
+                WizardWrx.HTTP.JSON_Deserialized_Object jSON = new WizardWrx.HTTP.JSON_Deserialized_Object ( strJONDocument );
+                objWebResult = requestEngine.CallWebApiAndProcessResultASync (
+                    TEST_URL_2 ,                                // string                   pstrWebApiUrl
+                    null ,                                      // Action<JObject>          pfunProcessResultCallback = null
+                    jSON ,                                      // JSON_Deserialized_Object pjSON_Deserialized        = null
+                    WizardWrx.HTTP.RequestEngine.HttpVerb.POST ,// HttpVerb                 penmVerb                  = HttpVerb.POST
+                    false );                                    // bool                     pfExpectJSON              = true
+                Console.WriteLine ( $"{Environment.NewLine}requestEngine.CallWebApiAndProcessResultASync Return Value:{Environment.NewLine}{Environment.NewLine}{objWebResult}{Environment.NewLine}" );
+                Console.WriteLine ( $"{LOGGER_PREFIX} Drill 2 Done!" );
+            }
 		}   // private static void Exercise_HTTP_Engine
 
 
