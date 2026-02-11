@@ -61,6 +61,20 @@
             HTTP Request verbs.
             </summary>
         </member>
+        <member name="F:WizardWrx.HTTP.RequestEngine.REQUEST_EXPECTS_JSON_RESPONSE">
+            <summary>
+            Use this constant to explicitly assert the default value of the last
+            parameter to <see cref="M:WizardWrx.HTTP.RequestEngine.CallWebApiAndProcessResultASync(System.String,System.Action{Newtonsoft.Json.Linq.JObject},WizardWrx.HTTP.JSON_Deserialized_Object,WizardWrx.HTTP.RequestEngine.HttpVerb,System.Boolean)"/>,
+            <c>pfExpectJSON</c>.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.HTTP.RequestEngine.REQUEST_EXPECTS_OTHER_RESPONSE">
+            <summary>
+            Use this constant to override the default value of the last
+            parameter to <see cref="M:WizardWrx.HTTP.RequestEngine.CallWebApiAndProcessResultASync(System.String,System.Action{Newtonsoft.Json.Linq.JObject},WizardWrx.HTTP.JSON_Deserialized_Object,WizardWrx.HTTP.RequestEngine.HttpVerb,System.Boolean)"/>,
+            <c>pfExpectJSON</c>.
+            </summary>
+        </member>
         <member name="T:WizardWrx.HTTP.RequestEngine.HttpVerb">
             <summary>
             The HttpVerb enumeration identifies the HTTP verbs supported by the

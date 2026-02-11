@@ -1,10 +1,25 @@
 ﻿# WizardWrx .NET API Change Log
 
+## 2026-02-11
+
+### WizardWrx.HTTP [9.0.50]
+
+This update resolves a Null Reference Exception that arises when the
+`RequestEngine` constructor is called without an initialized `RequestOptions`
+object reference.
+
+As a bonus, it adds two public symbolic constants,
+`REQUEST_EXPECTS_JSON_RESPONSE` (true) and `REQUEST_EXPECTS_OTHER_RESPONSE`
+(false) for asserting and overriding, respectively, the `pfExpectJSON` parameter
+of `RequestEngine` method `CallWebApiAndProcessResultASync`.
+
 ## 2026-02-03
 
 ### WizardWrx.Core 9.0.384
 
-A new `AppDomainSyncRootRegistry` exposes three overloaded methods, all called `GetSyncRoot`, that dispense labeled `WizardWrx.SyncRoot` instances tied to the name of the requesting method and the declaring type of its class.
+A new `AppDomainSyncRootRegistry` exposes three overloaded methods, all called
+`GetSyncRoot`, that dispense labeled `WizardWrx.SyncRoot` instances tied to the
+name of the requesting method and the declaring type of its class.
 
 ## 2026-02-02
 

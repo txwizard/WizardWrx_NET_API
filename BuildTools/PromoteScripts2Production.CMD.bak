@@ -150,7 +150,6 @@ goto SKIPREM
 ::  2026/01/30 DG Make the command that invokes 7UP.CMD a `CALL`, and replace
 ::                all instances of `pushd` with `cd /d`, followed by undecorated
 ::                cd commands to display the result.
-::  2026/02/05 DG Add UploadFile.js to the list of JavaScript scripts.
 ::  ============================================================================
 
 :GET_SRI
@@ -419,7 +418,6 @@ goto SKIPREM
     call :IS_NEWER ..\LeadLife.Web\Scripts\Agent_Recent_Phone_Calls.js      ..\LeadLife.Web\Scripts\STAGING\Agent_Recent_Phone_Calls_DEV.js
     call :IS_NEWER ..\LeadLife.Web\Scripts\BootBoxtLaboratory.js            ..\LeadLife.Web\Scripts\STAGING\BootBoxtLaboratory_DEV.js
     call :IS_NEWER ..\LeadLife.Web\Scripts\CallMapGrid.js                   ..\LeadLife.Web\Scripts\STAGING\CallMapGrid_DEV.js
-    call :IS_NEWER ..\LeadLife.Web\Scripts\UploadFile.js                    ..\LeadLife.Web\Scripts\STAGING\UploadFile_DEV.js
     call :IS_NEWER ..\LeadLife.Web\Scripts\KeywordHighlighter.js            ..\LeadLife.Web\Scripts\STAGING\KeywordHighlighter_DEV.js
     call :IS_NEWER ..\LeadLife.Web\Scripts\LeadLifeJSHelpersGlobals.js      ..\LeadLife.Web\Scripts\STAGING\LeadLifeJSHelpersGlobals_DEV.js
     call :IS_NEWER ..\LeadLife.Web\Scripts\LeadLifeJSHelpersLib.js          ..\LeadLife.Web\Scripts\STAGING\LeadLifeJSHelpersLib_DEV.js

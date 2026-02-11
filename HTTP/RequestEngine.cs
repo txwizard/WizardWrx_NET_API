@@ -53,6 +53,22 @@ namespace WizardWrx.HTTP
 	public class RequestEngine
 	{
 		/// <summary>
+		/// Use this constant to explicitly assert the default value of the last
+		/// parameter to <see cref="CallWebApiAndProcessResultASync"/>,
+		/// <c>pfExpectJSON</c>.
+		/// </summary>
+		public const bool REQUEST_EXPECTS_JSON_RESPONSE = true;
+
+
+		/// <summary>
+		/// Use this constant to override the default value of the last
+		/// parameter to <see cref="CallWebApiAndProcessResultASync"/>,
+		/// <c>pfExpectJSON</c>.
+		/// </summary>
+		public const bool REQUEST_EXPECTS_OTHER_RESPONSE = false;
+
+
+		/// <summary>
 		/// The HttpVerb enumeration identifies the HTTP verbs supported by the
 		/// HttpClient object, and establishes which HttpClienti instance method
 		/// CallWebApiAndProcessResultASync invokes.
@@ -231,10 +247,14 @@ namespace WizardWrx.HTTP
 			{
 				using ( HttpRequestMessage httpRequest = new HttpRequestMessage ( s_dctVerbMap [ penmVerb ] , uriAsInput ) )
 				{
-					ApplyHeaders (
-						httpRequest ,                       // HttpRequestMessage phttpRequest
-						Options.CurrentOAuthToken );        // string pstrBearerToken = null
-															// bool pfAcceptJson = true
+					if ( ( Options != null ) && ( !string.IsNullOrEmpty ( Options.CurrentOAuthToken ) ) )
+					{
+						ApplyHeaders (
+							httpRequest ,                   // HttpRequestMessage   phttpRequest
+							Options.CurrentOAuthToken );    // string               pstrBearerToken = null
+															// bool                 pfAcceptJson    = true
+					}   // if ( ( Options != null ) && ( !string.IsNullOrEmpty ( Options.CurrentOAuthToken ) ) )
+
 					httpRequest.Content = pjSON_Deserialized == null ? null : new StringContent (
 						pjSON_Deserialized.JSON ,           // string               content (the JSON string)
 						Encoding.UTF8 ,                     // System.Text.Encoding encoding
