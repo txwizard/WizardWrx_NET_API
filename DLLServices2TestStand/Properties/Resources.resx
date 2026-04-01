@@ -724,4 +724,8 @@
     <value>HTTP_Drills</value>
     <comment>Select this one-off task to exercise the all-purpose HTTP Request Engine.</comment>
   </data>
+  <data name="CMDARG_SRI_DRILLS" xml:space="preserve">
+    <value>SRI_Drills</value>
+    <comment>SubResourcee Integrity Drills</comment>
+  </data>
 </root>

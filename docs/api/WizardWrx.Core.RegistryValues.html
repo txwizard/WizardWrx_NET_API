@@ -86,11 +86,35 @@ appropriate native type.</p>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">RegistryValues</span></div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="WizardWrx.Core.html">WizardWrx.Core</a></h6>
   <h6><strong>Assembly</strong>: WizardWrx.Core.dll</h6>
   <h5 id="WizardWrx_Core_RegistryValues_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class RegistryValues : object</code></pre>
+    <pre><code class="lang-csharp hljs">public static class RegistryValues</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -109,7 +133,7 @@ is absent or the wrong type.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const bool REG_BIANRY_EMPTY_ARRAY_FOR_ABSENT = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const bool REG_BIANRY_EMPTY_ARRAY_FOR_ABSENT = false</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -141,7 +165,7 @@ or the wrong type.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const bool REG_BINARY_NULL_FOR_ABSENT = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const bool REG_BINARY_NULL_FOR_ABSENT = true</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -162,13 +186,13 @@ or the wrong type.</p>
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_RegistryValues_RegQueryValue_RegistryKey_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.RegistryValues.RegQueryValue(RegistryKey%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_RegistryValues_RegQueryValue_Microsoft_Win32_RegistryKey_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.RegistryValues.RegQueryValue(Microsoft.Win32.RegistryKey%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/RegistryValues.cs/#L366">View Source</a>
   </span>
   <a id="WizardWrx_Core_RegistryValues_RegQueryValue_" data-uid="WizardWrx.Core.RegistryValues.RegQueryValue*"></a>
-  <h4 id="WizardWrx_Core_RegistryValues_RegQueryValue_RegistryKey_System_String_" data-uid="WizardWrx.Core.RegistryValues.RegQueryValue(RegistryKey,System.String)">RegQueryValue(RegistryKey, String)</h4>
+  <h4 id="WizardWrx_Core_RegistryValues_RegQueryValue_Microsoft_Win32_RegistryKey_System_String_" data-uid="WizardWrx.Core.RegistryValues.RegQueryValue(Microsoft.Win32.RegistryKey,System.String)">RegQueryValue(RegistryKey, String)</h4>
   <div class="markdown level1 summary"><p>Return the multiple values stored in a REG_MULTI_SZ Registry value.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -187,7 +211,7 @@ or the wrong type.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">RegistryKey</span></td>
+        <td><span class="xref">Microsoft.Win32.RegistryKey</span></td>
         <td><span class="parametername">phRegKey</span></td>
         <td><p>Pass in a handle to the Registry sub-key that is supposed to contain
 the required REG_MULTI_SZ value.</p>
@@ -226,15 +250,35 @@ one element if the value is either REG_SZ or REG_EXPAND_SZ.</p>
       </tr>
     </tbody>
   </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p>If phRegKey is a null reference (Nothing in Visual Basic), when this
+method calls companion method ValueExists to query the Registry for
+the specified value, that method throws an ArgumentNullException
+exception, listing this method as its calling method in its stack
+trace.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_RegistryValues_RegQueryValue_RegistryKey_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.RegistryValues.RegQueryValue(RegistryKey%2CSystem.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_RegistryValues_RegQueryValue_Microsoft_Win32_RegistryKey_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.RegistryValues.RegQueryValue(Microsoft.Win32.RegistryKey%2CSystem.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/RegistryValues.cs/#L150">View Source</a>
   </span>
   <a id="WizardWrx_Core_RegistryValues_RegQueryValue_" data-uid="WizardWrx.Core.RegistryValues.RegQueryValue*"></a>
-  <h4 id="WizardWrx_Core_RegistryValues_RegQueryValue_RegistryKey_System_String_System_Boolean_" data-uid="WizardWrx.Core.RegistryValues.RegQueryValue(RegistryKey,System.String,System.Boolean)">RegQueryValue(RegistryKey, String, Boolean)</h4>
+  <h4 id="WizardWrx_Core_RegistryValues_RegQueryValue_Microsoft_Win32_RegistryKey_System_String_System_Boolean_" data-uid="WizardWrx.Core.RegistryValues.RegQueryValue(Microsoft.Win32.RegistryKey,System.String,System.Boolean)">RegQueryValue(RegistryKey, String, Boolean)</h4>
   <div class="markdown level1 summary"><p>Get a REG_BINARY value from the Windows Registry.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -253,7 +297,7 @@ one element if the value is either REG_SZ or REG_EXPAND_SZ.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">RegistryKey</span></td>
+        <td><span class="xref">Microsoft.Win32.RegistryKey</span></td>
         <td><span class="parametername">phRegKey</span></td>
         <td><p>Specify the handle of the Registry key where the value is expected
 to exist. This must be the key that holds the value, since neither
@@ -298,15 +342,35 @@ Otherwise, the return value is null (Nothing in Visual Basic).</p>
       </tr>
     </tbody>
   </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p>If phRegKey is a null reference (Nothing in Visual Basic), when this
+method calls companion method ValueExists to query the Registry for
+the specified value, that method throws an ArgumentNullException
+exception, listing this method as its calling method in its stack
+trace.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_RegistryValues_RegQueryValue_RegistryKey_System_String_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.RegistryValues.RegQueryValue(RegistryKey%2CSystem.String%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_RegistryValues_RegQueryValue_Microsoft_Win32_RegistryKey_System_String_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.RegistryValues.RegQueryValue(Microsoft.Win32.RegistryKey%2CSystem.String%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/RegistryValues.cs/#L204">View Source</a>
   </span>
   <a id="WizardWrx_Core_RegistryValues_RegQueryValue_" data-uid="WizardWrx.Core.RegistryValues.RegQueryValue*"></a>
-  <h4 id="WizardWrx_Core_RegistryValues_RegQueryValue_RegistryKey_System_String_System_Int32_" data-uid="WizardWrx.Core.RegistryValues.RegQueryValue(RegistryKey,System.String,System.Int32)">RegQueryValue(RegistryKey, String, Int32)</h4>
+  <h4 id="WizardWrx_Core_RegistryValues_RegQueryValue_Microsoft_Win32_RegistryKey_System_String_System_Int32_" data-uid="WizardWrx.Core.RegistryValues.RegQueryValue(Microsoft.Win32.RegistryKey,System.String,System.Int32)">RegQueryValue(RegistryKey, String, Int32)</h4>
   <div class="markdown level1 summary"><p>Get a REG_DWORD value from the Windows Registry.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -325,7 +389,7 @@ Otherwise, the return value is null (Nothing in Visual Basic).</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">RegistryKey</span></td>
+        <td><span class="xref">Microsoft.Win32.RegistryKey</span></td>
         <td><span class="parametername">phRegKey</span></td>
         <td><p>Specify the handle of the Registry key where the value is expected
 to exist. This must be the key that holds the value, since neither
@@ -369,15 +433,35 @@ specified in pintDefault is returned.</p>
       </tr>
     </tbody>
   </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p>If phRegKey is a null reference (Nothing in Visual Basic), when this
+method calls companion method ValueExists to query the Registry for
+the specified value, that method throws an ArgumentNullException
+exception, listing this method as its calling method in its stack
+trace.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_RegistryValues_RegQueryValue_RegistryKey_System_String_System_Int64_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.RegistryValues.RegQueryValue(RegistryKey%2CSystem.String%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_RegistryValues_RegQueryValue_Microsoft_Win32_RegistryKey_System_String_System_Int64_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.RegistryValues.RegQueryValue(Microsoft.Win32.RegistryKey%2CSystem.String%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/RegistryValues.cs/#L255">View Source</a>
   </span>
   <a id="WizardWrx_Core_RegistryValues_RegQueryValue_" data-uid="WizardWrx.Core.RegistryValues.RegQueryValue*"></a>
-  <h4 id="WizardWrx_Core_RegistryValues_RegQueryValue_RegistryKey_System_String_System_Int64_" data-uid="WizardWrx.Core.RegistryValues.RegQueryValue(RegistryKey,System.String,System.Int64)">RegQueryValue(RegistryKey, String, Int64)</h4>
+  <h4 id="WizardWrx_Core_RegistryValues_RegQueryValue_Microsoft_Win32_RegistryKey_System_String_System_Int64_" data-uid="WizardWrx.Core.RegistryValues.RegQueryValue(Microsoft.Win32.RegistryKey,System.String,System.Int64)">RegQueryValue(RegistryKey, String, Int64)</h4>
   <div class="markdown level1 summary"><p>Get a REG_QWORD value from the Windows Registry.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -396,7 +480,7 @@ specified in pintDefault is returned.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">RegistryKey</span></td>
+        <td><span class="xref">Microsoft.Win32.RegistryKey</span></td>
         <td><span class="parametername">phRegKey</span></td>
         <td><p>Specify the handle of the Registry key where the value is expected
 to exist. This must be the key that holds the value, since neither
@@ -440,15 +524,32 @@ value specified in plngDefault is returned.</p>
       </tr>
     </tbody>
   </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p>If phRegKey is a null reference (Nothing in Visual Basic), this
+method throws an ArgumentNullException exception.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_RegistryValues_RegQueryValue_RegistryKey_System_String_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.RegistryValues.RegQueryValue(RegistryKey%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_RegistryValues_RegQueryValue_Microsoft_Win32_RegistryKey_System_String_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.RegistryValues.RegQueryValue(Microsoft.Win32.RegistryKey%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/RegistryValues.cs/#L311">View Source</a>
   </span>
   <a id="WizardWrx_Core_RegistryValues_RegQueryValue_" data-uid="WizardWrx.Core.RegistryValues.RegQueryValue*"></a>
-  <h4 id="WizardWrx_Core_RegistryValues_RegQueryValue_RegistryKey_System_String_System_String_" data-uid="WizardWrx.Core.RegistryValues.RegQueryValue(RegistryKey,System.String,System.String)">RegQueryValue(RegistryKey, String, String)</h4>
+  <h4 id="WizardWrx_Core_RegistryValues_RegQueryValue_Microsoft_Win32_RegistryKey_System_String_System_String_" data-uid="WizardWrx.Core.RegistryValues.RegQueryValue(Microsoft.Win32.RegistryKey,System.String,System.String)">RegQueryValue(RegistryKey, String, String)</h4>
   <div class="markdown level1 summary"><p>Return the single string representation of a REG_SZ or
 REG_EXPAND_SZ Registry value.</p>
 </div>
@@ -468,7 +569,7 @@ REG_EXPAND_SZ Registry value.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">RegistryKey</span></td>
+        <td><span class="xref">Microsoft.Win32.RegistryKey</span></td>
         <td><span class="parametername">phRegKey</span></td>
         <td><p>Pass in a handle to the Registry sub-key that is supposed to contain
 the required REG_SZ or REG_EXPAND_SZ value.</p>
@@ -511,15 +612,35 @@ REG_EXPAND_SZ, the return value is pstrDefault.</p>
       </tr>
     </tbody>
   </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p>If phRegKey is a null reference (Nothing in Visual Basic), when this
+method calls companion method ValueExists to query the Registry for
+the specified value, that method throws an ArgumentNullException
+exception, listing this method as its calling method in its stack
+trace.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_RegistryValues_ValueExists_RegistryKey_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.RegistryValues.ValueExists(RegistryKey%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_RegistryValues_ValueExists_Microsoft_Win32_RegistryKey_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.RegistryValues.ValueExists(Microsoft.Win32.RegistryKey%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/RegistryValues.cs/#L416">View Source</a>
   </span>
   <a id="WizardWrx_Core_RegistryValues_ValueExists_" data-uid="WizardWrx.Core.RegistryValues.ValueExists*"></a>
-  <h4 id="WizardWrx_Core_RegistryValues_ValueExists_RegistryKey_System_String_" data-uid="WizardWrx.Core.RegistryValues.ValueExists(RegistryKey,System.String)">ValueExists(RegistryKey, String)</h4>
+  <h4 id="WizardWrx_Core_RegistryValues_ValueExists_Microsoft_Win32_RegistryKey_System_String_" data-uid="WizardWrx.Core.RegistryValues.ValueExists(Microsoft.Win32.RegistryKey,System.String)">ValueExists(RegistryKey, String)</h4>
   <div class="markdown level1 summary"><p>Return TRUE if a specified value exists on a specified key of the
 Windows Registry.</p>
 </div>
@@ -539,7 +660,7 @@ Windows Registry.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">RegistryKey</span></td>
+        <td><span class="xref">Microsoft.Win32.RegistryKey</span></td>
         <td><span class="parametername">phRegKey</span></td>
         <td><p>Pass in a handle to the Registry sub-key that is supposed to contain
 the desired value.</p>
@@ -574,11 +695,28 @@ false.</p>
       </tr>
     </tbody>
   </table>
-  <h5 id="WizardWrx_Core_RegistryValues_ValueExists_RegistryKey_System_String__remarks">Remarks</h5>
+  <h5 id="WizardWrx_Core_RegistryValues_ValueExists_Microsoft_Win32_RegistryKey_System_String__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>This was written as a service routine for companion methods
 GetRegDwordValue and GetRegMultiStringValue. However, since it is
 almost certain to find use on its own, I marked it public.</p>
 </div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p>If phRegKey is a null reference, an ArgumentNullException exception
+is thrown.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
 </article>
           </div>
           

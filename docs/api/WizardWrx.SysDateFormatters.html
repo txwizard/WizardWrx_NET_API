@@ -86,11 +86,35 @@ development.</p>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">SysDateFormatters</span></div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="WizardWrx.html">WizardWrx</a></h6>
   <h6><strong>Assembly</strong>: WizardWrx.Core.dll</h6>
   <h5 id="WizardWrx_SysDateFormatters_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class SysDateFormatters : object</code></pre>
+    <pre><code class="lang-csharp hljs">public static class SysDateFormatters</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -112,7 +136,7 @@ and the month and day have leading zeros if either is less than 10.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string RFD_DD_MM_YYYY = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string RFD_DD_MM_YYYY = &quot;^DD/^MM/^YYYY&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -149,7 +173,7 @@ zeros if either is less than 10.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string RFD_HH_MM = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string RFD_HH_MM = &quot;^hh:^mm&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -186,7 +210,7 @@ leading zeros if any of them is less than 10.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string RFD_HH_MM_SS = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string RFD_HH_MM_SS = &quot;^hh:^mm:^ss&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -226,7 +250,7 @@ leading zeros if any of them is less than 10.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string RFD_HH_MM_SS_TTT = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string RFD_HH_MM_SS_TTT = &quot;^hh:^mm:^ss.^ttt&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -259,7 +283,7 @@ the month and day have leading zeros if either is less than 10.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string RFD_MM_DD_YY = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string RFD_MM_DD_YY = &quot;^MM/^DD/^YY&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -292,7 +316,7 @@ and the month and day have leading zeros if either is less than 10.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string RFD_MM_DD_YYYY = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string RFD_MM_DD_YYYY = &quot;^MM/^DD/^YYYY&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -332,7 +356,7 @@ and the month and day have leading zeros if either is less than 10.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string RFD_WW_DD_MM_YYYY = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string RFD_WW_DD_MM_YYYY = &quot;^WW ^DD/^MM/^YYYY&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -370,7 +394,7 @@ and the month and day have leading zeros if either is less than 10.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string RFD_WW_MM_DD_YYYY = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string RFD_WW_MM_DD_YYYY = &quot;^WW ^MM/^DD/^YYYY&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -409,7 +433,7 @@ and the month and day have leading zeros if either is less than 10.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string RFD_WWW_DD_MM_YYYY = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string RFD_WWW_DD_MM_YYYY = &quot;^WWW ^DD/^MM/^YYYY&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -446,7 +470,7 @@ and the month and day have leading zeros if either is less than 10.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string RFD_WWW_MM_DD_YYYY = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string RFD_WWW_MM_DD_YYYY = &quot;^WWW ^MM/^DD/^YYYY&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -485,7 +509,7 @@ and the month and day have leading zeros if either is less than 10.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string RFD_WWWW_DD_MM_YYYY = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string RFD_WWWW_DD_MM_YYYY = &quot;^WWWW, ^DD/^MM/^YYYY&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -522,7 +546,7 @@ and the month and day have leading zeros if either is less than 10.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string RFD_WWWW_MM_DD_YYYY = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string RFD_WWWW_MM_DD_YYYY = &quot;^WWWW, ^MM/^DD/^YYYY&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -556,7 +580,7 @@ and the month and day have leading zeros if either is less than 10.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string RFD_YYYY_MM_DD = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string RFD_YYYY_MM_DD = &quot;^YYYY/^MM/^DD&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -592,7 +616,7 @@ of them is less than 10.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string RFD_YYYY_MM_DD_HH_MM_SS = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string RFD_YYYY_MM_DD_HH_MM_SS = &quot;^YYYY/^MM/^DD ^hh:^mm:^ss&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -630,7 +654,7 @@ of them is less than 10.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string RFD_YYYY_MM_DD_HH_MM_SS_TTT = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string RFD_YYYY_MM_DD_HH_MM_SS_TTT = &quot;^YYYY/^MM/^DD ^hh:^mm:^ss.^ttt&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -666,7 +690,7 @@ less than 10.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string RFDHHMMSS = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string RFDHHMMSS = &quot;^hh^mm^ss&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -701,7 +725,7 @@ representation.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string RFDYYYYMMDD = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string RFDYYYYMMDD = &quot;^YYYY^MM^DD&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -737,7 +761,7 @@ of them is less than 10.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string RFDYYYYMMDD_HHMMSS = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string RFDYYYYMMDD_HHMMSS = &quot;^YYYY^MM^DD_^hh^mm^ss&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -802,7 +826,7 @@ with ToString.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string STANDARD_DISPLAY_DATE_FORMAT = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string STANDARD_DISPLAY_DATE_FORMAT = &quot;^YYYY/^MM/^DD&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -839,7 +863,7 @@ with ToString.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string STANDARD_DISPLAY_DATE_TIME_FORMAT = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string STANDARD_DISPLAY_DATE_TIME_FORMAT = &quot;^YYYY/^MM/^DD ^hh:^mm:^ss&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -876,7 +900,7 @@ with ToString.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string STANDARD_DISPLAY_TIME_FORMAT = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string STANDARD_DISPLAY_TIME_FORMAT = &quot;^hh:^mm:^ss&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -908,7 +932,7 @@ with ToString.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const bool TZ_NAME_ABBR = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const bool TZ_NAME_ABBR = true</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -941,7 +965,7 @@ name.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const bool TZ_NAME_FULL = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const bool TZ_NAME_FULL = false</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -962,13 +986,13 @@ name.</p>
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_FormatDateForShow_DateTime_.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.FormatDateForShow(DateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_FormatDateForShow_System_DateTime_.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.FormatDateForShow(System.DateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/SysDateFormatters.cs/#L696">View Source</a>
   </span>
   <a id="WizardWrx_SysDateFormatters_FormatDateForShow_" data-uid="WizardWrx.SysDateFormatters.FormatDateForShow*"></a>
-  <h4 id="WizardWrx_SysDateFormatters_FormatDateForShow_DateTime_" data-uid="WizardWrx.SysDateFormatters.FormatDateForShow(DateTime)">FormatDateForShow(DateTime)</h4>
+  <h4 id="WizardWrx_SysDateFormatters_FormatDateForShow_System_DateTime_" data-uid="WizardWrx.SysDateFormatters.FormatDateForShow(System.DateTime)">FormatDateForShow(DateTime)</h4>
   <div class="markdown level1 summary"><p>Use my standard format string for displaying date stamps in
 reports, to format a DateTime structure.</p>
 </div>
@@ -988,7 +1012,7 @@ reports, to format a DateTime structure.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">DateTime</span></td>
+        <td><span class="xref">System.DateTime</span></td>
         <td><span class="parametername">pdtmTestDate</span></td>
         <td><p>Specify the populated DateTime to be formatted. Since only the date
 goes into the format, the time component MAY be uninitialized.</p>
@@ -1015,13 +1039,13 @@ rendered according to constant STANDARD_DISPLAY_TIME_FORMAT.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_FormatDateTimeForShow_DateTime_.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.FormatDateTimeForShow(DateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_FormatDateTimeForShow_System_DateTime_.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.FormatDateTimeForShow(System.DateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/SysDateFormatters.cs/#L717">View Source</a>
   </span>
   <a id="WizardWrx_SysDateFormatters_FormatDateTimeForShow_" data-uid="WizardWrx.SysDateFormatters.FormatDateTimeForShow*"></a>
-  <h4 id="WizardWrx_SysDateFormatters_FormatDateTimeForShow_DateTime_" data-uid="WizardWrx.SysDateFormatters.FormatDateTimeForShow(DateTime)">FormatDateTimeForShow(DateTime)</h4>
+  <h4 id="WizardWrx_SysDateFormatters_FormatDateTimeForShow_System_DateTime_" data-uid="WizardWrx.SysDateFormatters.FormatDateTimeForShow(System.DateTime)">FormatDateTimeForShow(DateTime)</h4>
   <div class="markdown level1 summary"><p>Use my standard format string for displaying date/time stamps in
 reports, to format a DateTime structure.</p>
 </div>
@@ -1041,7 +1065,7 @@ reports, to format a DateTime structure.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">DateTime</span></td>
+        <td><span class="xref">System.DateTime</span></td>
         <td><span class="parametername">pdtmTestDate</span></td>
         <td><p>Specify the populated DateTime to be formatted. Since the date and
 time go into the output string, the entire structure must be
@@ -1069,13 +1093,13 @@ rendered according to constant STANDARD_DISPLAY_DATE_TIME_FORMAT.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_FormatTimeForShow_DateTime_.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.FormatTimeForShow(DateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_FormatTimeForShow_System_DateTime_.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.FormatTimeForShow(System.DateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/SysDateFormatters.cs/#L737">View Source</a>
   </span>
   <a id="WizardWrx_SysDateFormatters_FormatTimeForShow_" data-uid="WizardWrx.SysDateFormatters.FormatTimeForShow*"></a>
-  <h4 id="WizardWrx_SysDateFormatters_FormatTimeForShow_DateTime_" data-uid="WizardWrx.SysDateFormatters.FormatTimeForShow(DateTime)">FormatTimeForShow(DateTime)</h4>
+  <h4 id="WizardWrx_SysDateFormatters_FormatTimeForShow_System_DateTime_" data-uid="WizardWrx.SysDateFormatters.FormatTimeForShow(System.DateTime)">FormatTimeForShow(DateTime)</h4>
   <div class="markdown level1 summary"><p>Use my standard format string for displaying time stamps in reports,
 to format a DateTime structure.</p>
 </div>
@@ -1095,7 +1119,7 @@ to format a DateTime structure.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">DateTime</span></td>
+        <td><span class="xref">System.DateTime</span></td>
         <td><span class="parametername">pdtmTestDate</span></td>
         <td><p>Specify the populated DateTime to be formatted. Since only the time
 goes into the format, the date component MAY be uninitialized.</p>
@@ -1122,13 +1146,13 @@ rendered according to constant STANDARD_DISPLAY_TIME_FORMAT.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_GetDisplayTimeZone_DateTime_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.GetDisplayTimeZone(DateTime%2CSystem.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_GetDisplayTimeZone_System_DateTime_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.GetDisplayTimeZone(System.DateTime%2CSystem.String%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/SysDateFormatters.cs/#L789">View Source</a>
   </span>
   <a id="WizardWrx_SysDateFormatters_GetDisplayTimeZone_" data-uid="WizardWrx.SysDateFormatters.GetDisplayTimeZone*"></a>
-  <h4 id="WizardWrx_SysDateFormatters_GetDisplayTimeZone_DateTime_System_String_System_Boolean_" data-uid="WizardWrx.SysDateFormatters.GetDisplayTimeZone(DateTime,System.String,System.Boolean)">GetDisplayTimeZone(DateTime, String, Boolean)</h4>
+  <h4 id="WizardWrx_SysDateFormatters_GetDisplayTimeZone_System_DateTime_System_String_System_Boolean_" data-uid="WizardWrx.SysDateFormatters.GetDisplayTimeZone(System.DateTime,System.String,System.Boolean)">GetDisplayTimeZone(DateTime, String, Boolean)</h4>
   <div class="markdown level1 summary"><p>Given a DateTime and a system time zone ID string, return the
 appropriate text to display, depending on whether the specified time
 is standard or Daylight Saving Time.</p>
@@ -1149,7 +1173,7 @@ is standard or Daylight Saving Time.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">DateTime</span></td>
+        <td><span class="xref">System.DateTime</span></td>
         <td><span class="parametername">pdtmTestDate</span></td>
         <td><p>Specify the Syatem.DateTime for which the appropriate time zone
 string is required. Both DateTime.MinValue and DateTime.MaxValue are
@@ -1202,7 +1226,7 @@ specified time zone ID string is invalid.</p>
       </tr>
     </tbody>
   </table>
-  <h5 id="WizardWrx_SysDateFormatters_GetDisplayTimeZone_DateTime_System_String_System_Boolean__remarks">Remarks</h5>
+  <h5 id="WizardWrx_SysDateFormatters_GetDisplayTimeZone_System_DateTime_System_String_System_Boolean__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>if in doubt, use TimeZoneInfo.GetSystemTimeZones to enumerate the
 time zones installed on the local machine. Invalid time zone strings
 always give rise to one of a number of exceptions, all of which are
@@ -1263,7 +1287,7 @@ testing.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">TimeZoneInfo</span></td>
+        <td><span class="xref">System.TimeZoneInfo</span></td>
         <td><p>If the function succeeds, the return value is a TimeZoneInfo object,
 populated from the Windows Registry. Otherwise, one of the
 exceptions listed and described below is thrown.</p>
@@ -1275,6 +1299,53 @@ exceptions listed and described below is thrown.</p>
   <div class="markdown level1 remarks"><p>if in doubt, use TimeZoneInfo.GetSystemTimeZones to enumerate the
 time zones installed on the local machine.</p>
 </div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.OutOfMemoryException</span></td>
+        <td><p>You should restart Windows if this happens.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p>Contact the author of the program. This is something that he or she
+must address.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.TimeZoneNotFoundException</span></td>
+        <td><p>Contact the author of the program. This is something that he or she
+must address.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Security.SecurityException</span></td>
+        <td><p>Contact your system administrator to inquire about why your program
+is forbidden to read the regional settings from the Windows
+Registry.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.InvalidTimeZoneException</span></td>
+        <td><p>Contact your system support group. A corrupted Windows Registry is a
+rare, but serious matter.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Exception</span></td>
+        <td><p>Start with your system support group, who may need to request the
+assistance of the author of the program.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_ReformatNow_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.ReformatNow(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -1334,13 +1405,13 @@ pstrFormat.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_ReformatSysDate_DateTime_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.ReformatSysDate(DateTime%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_SysDateFormatters_ReformatSysDate_System_DateTime_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.SysDateFormatters.ReformatSysDate(System.DateTime%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/SysDateFormatters.cs/#L984">View Source</a>
   </span>
   <a id="WizardWrx_SysDateFormatters_ReformatSysDate_" data-uid="WizardWrx.SysDateFormatters.ReformatSysDate*"></a>
-  <h4 id="WizardWrx_SysDateFormatters_ReformatSysDate_DateTime_System_String_" data-uid="WizardWrx.SysDateFormatters.ReformatSysDate(DateTime,System.String)">ReformatSysDate(DateTime, String)</h4>
+  <h4 id="WizardWrx_SysDateFormatters_ReformatSysDate_System_DateTime_System_String_" data-uid="WizardWrx.SysDateFormatters.ReformatSysDate(System.DateTime,System.String)">ReformatSysDate(DateTime, String)</h4>
   <div class="markdown level1 summary"><p>ReformatSysDate is the core function of the constellation of
 routines that grew from the original WIL script. Substitution tokens
 drive construction of a formatted date string.</p>
@@ -1361,7 +1432,7 @@ drive construction of a formatted date string.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">DateTime</span></td>
+        <td><span class="xref">System.DateTime</span></td>
         <td><span class="parametername">pdtmToFormat</span></td>
         <td><p>This System.DateTime is the time to be formatted.</p>
 </td>
@@ -1450,7 +1521,7 @@ pstrFormat.</p>
   </table>
   <h3 id="seealso">See Also</h3>
   <div class="seealso">
-      <div><a class="xref" href="WizardWrx.DisplayFormats.html">DisplayFormats</a></div>
+      <div><span class="xref">WizardWrx.DisplayFormats</span></div>
       <div><a class="xref" href="WizardWrx.Core.TimeDisplayFormatter.html">TimeDisplayFormatter</a></div>
   </div>
 </article>

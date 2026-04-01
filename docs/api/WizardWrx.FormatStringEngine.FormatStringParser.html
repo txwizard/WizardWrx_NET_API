@@ -85,11 +85,35 @@ parser.</p>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">FormatStringParser</span></div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="WizardWrx.FormatStringEngine.html">WizardWrx.FormatStringEngine</a></h6>
   <h6><strong>Assembly</strong>: WizardWrx.FormatStringEngine.dll</h6>
   <h5 id="WizardWrx_FormatStringEngine_FormatStringParser_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class FormatStringParser : object</code></pre>
+    <pre><code class="lang-csharp hljs">public class FormatStringParser</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -164,7 +188,7 @@ appear.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string ESCAPED_ITEM_BEGIN = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string ESCAPED_ITEM_BEGIN = &quot;{{&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -197,7 +221,7 @@ appear.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string ESCAPED_ITEM_END = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string ESCAPED_ITEM_END = &quot;}}&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -228,7 +252,7 @@ item.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const char ITEM_BEGIN = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const char ITEM_BEGIN = '{'</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -262,7 +286,7 @@ appear in the output, use a ESCAPED_ITEM_BEGIN string.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const char ITEM_END = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const char ITEM_END = '}'</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -299,7 +323,7 @@ Alignment component.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const char ITEM_HAS_ALIGNMENT_ATTRIBUTE = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const char ITEM_HAS_ALIGNMENT_ATTRIBUTE = ','</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -332,7 +356,7 @@ component.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const char ITEM_HAS_FORMAT_STRING_ATTRIBUTE = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const char ITEM_HAS_FORMAT_STRING_ATTRIBUTE = ':'</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -363,7 +387,7 @@ minus sign immediately following the comma acts as a switch.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const char ITEM_IS_LEFT_ALIGNED = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const char ITEM_IS_LEFT_ALIGNED = '-'</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -394,7 +418,7 @@ plus sign immediately following the comma acts as a dummy switch.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const char ITEM_IS_RIGHT_ALIGNED = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const char ITEM_IS_RIGHT_ALIGNED = '+'</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -426,7 +450,7 @@ unless at least one error is found in the string.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const int NO_ERRORS = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const int NO_ERRORS = 0</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -570,7 +594,7 @@ string.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">List</span>&lt;<a class="xref" href="WizardWrx.FormatStringEngine.FormatStringError.html">FormatStringError</a>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="WizardWrx.FormatStringEngine.FormatStringError.html">FormatStringError</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>

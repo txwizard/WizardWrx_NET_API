@@ -80,7 +80,8 @@
   <h6><strong>Assembly</strong>: WizardWrx.ConsoleStreams.dll</h6>
   <h5 id="WizardWrx_ConsoleStreams_StandardHandleInfo_ConsoleModes_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public enum ConsoleModes : int</code></pre>
+    <pre><code class="lang-csharp hljs">[Flags]
+public enum ConsoleModes</code></pre>
   </div>
   <h5 id="WizardWrx_ConsoleStreams_StandardHandleInfo_ConsoleModes_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>In wincon.h, these are defined as symbolic constants, although there
@@ -179,6 +180,10 @@ those using ReadFile or ReadConsole.</p>
       </tr>
     </tbody>
   </thead></thead></table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="WizardWrx.StringExtensions.html#WizardWrx_StringExtensions_RenderEvenWhenNull__1___0_System_String_System_String_System_IFormatProvider_">StringExtensions.RenderEvenWhenNull&lt;StandardHandleInfo.ConsoleModes&gt;(String, String, IFormatProvider)</a>
+  </div>
 </article>
           </div>
           

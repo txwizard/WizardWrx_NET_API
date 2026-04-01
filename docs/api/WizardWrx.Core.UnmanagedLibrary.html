@@ -81,6 +81,34 @@
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">UnmanagedLibrary</span></div>
   </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.IDisposable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="WizardWrx.Core.html">WizardWrx.Core</a></h6>
   <h6><strong>Assembly</strong>: WizardWrx.Core.dll</h6>
   <h5 id="WizardWrx_Core_UnmanagedLibrary_syntax">Syntax</h5>
@@ -136,6 +164,22 @@ as private.</p>
   <div class="markdown level1 remarks"><p>Throws exceptions on failure. Most common failure would be file-not-found, or
 that the file is not a loadable image.</p>
 </div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.FileNotFoundException</span></td>
+        <td><p>if fileName cannot be found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
@@ -176,7 +220,6 @@ from those functions (which may have an implementation in the DLL).</p>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public TDelegate GetUnmanagedFunction&lt;TDelegate&gt;(string functionName)
-
     where TDelegate : class</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -253,6 +296,10 @@ code looks in %SystemRoot%\SysWOW64, while Win64 code looks in
 initially confusing scheme was to make porting code to 64 bits as
 painless as possible.</p>
 </div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
 </article>
           </div>
           

@@ -149,8 +149,14 @@ goto SKIPREM
 ::                the block that calls STT_VideoPlayer_Promoted_Fixup.exe.
 ::  2026/01/30 DG Make the command that invokes 7UP.CMD a `CALL`, and replace
 ::                all instances of `pushd` with `cd /d`, followed by undecorated
-::                cd commands to display the result.
+::                CD commands to display the result.
 ::  2026/02/05 DG Add UploadFile.js to the list of JavaScript scripts.
+::  2026/02/11 DG Add a `cd /d` back to the script diectory. Since we've changed
+::                from pushd to cd, they are necessary becuse there is no longer
+::                a stack from which to pop paths.
+::  2026/03/30 DG Replace local subroutine IS_NEWER with independent tested
+::                shell script IsNewer.CMD, and add dp0ConsoleLib.CMD to provide
+::                VT color coding.
 ::  ============================================================================
 
 :GET_SRI
@@ -194,154 +200,6 @@ goto SKIPREM
     goto :EOF
 
 
-:IS_NEWER
-
-::  ----------------------------------------------------------------------------
-::  Though environment variable _Promoted_Fixup_ has script scope because the
-::  main script declares and initializes it, _PerformCopy_ has subroutine scope
-::  because it is declared and initialized immediately following the setlocal
-::  statement that is the first executable statement in this subroutine.
-::
-::  HOWEVER, since SETLOCAL creates copies the environment block, a matching
-::  ENDLOCAL causes it to be destroyed, including changes applied to variables
-::  that have script scope. Therefore, you cannot expect new values assigned to
-::  script scoped variables to survive.
-::
-::  A corollary of this is that ALL environment variables declared and used in a
-::  subroutine MUST be initialized to a known good initial value on EVERY call.
-::  ----------------------------------------------------------------------------
-
-    set _PerformCopy_=FALSE
-    WWIsFileNewer.exe "%~1" "%~2"
-
-    if errorlevel 110 (
-        echo Info: File %2 is MISSING - Exit Code = 110.
-        echo       File %1 will be preserved.
-        goto :EOF
-    )
-
-    if errorlevel 109 (
-        echo Info: File %1 is MISSING - Exit Code = 109.
-        echo       File %2 will be copied to %1.
-        set _PerformCopy_=TRUE
-    )
-
-    if errorlevel   4 (
-        echo Info: WWIsFileNewer UNANTICIPATED status code = %errorlevel%
-        goto :EOF
-    )
-
-    if errorlevel   3 (
-        echo Info: %2 is NEWER than %1 - Exit Code = 3.
-        echo       File %2 will be copied to %1.
-        set _PerformCopy_=TRUE
-    )
-
-::  ----------------------------------------------------------------------------
-::  The file at the location specified by argument 2 is copied to the location
-::  specified by argument 1 when the exit code returned by WWIsFileNewer.exe is
-::  either 110, indicating that the location specified by argument 1 is vacant,
-::  or 3, indicating that the file at the location specified by argument 1 is
-::  older than the file at the location specified by argument 2.
-::
-::  Since Windows NT command scripts lack support for complex expressions, a new
-::  locally scoped environment variable is initialized to FALSE on entry to this
-::  subroutine, and is set to TRUE when either of the above-described conditions
-::  is true. Testing the value of that environment variable substitutes for the
-::  missing complex expression capability.
-::
-::  When the value of script environment variable _Promoted_Fixup_ is set to Y,
-::  file copying is omitted because the input file must be TRANSFORMED, which is
-::  handled by calling STT_VideoPlayer_Promoted_Fixup.exe in the last task of
-::  this shell script.
-::  ----------------------------------------------------------------------------
-
-    if /I "%_PerformCopy_%" equ "TRUE" (
-        if /I "%~nx2" equ "STT_VideoPlayer.html" (
-            echo Info: Since the STAGING version of STT_VideoPlayer.html is newer, enable the _Promoted_Fixup_ flag.
-            set _Promoted_Fixup_=Y
-        ) else (
-            if /I "%~nx2" equ "Words2Actions_Form_TEMPLATE.HTML" (
-                echo Info: Since the STAGING version of Words2Actions_Form_TEMPLATE.HTML is newer, enable the _Promoted_Fixup_ flag.
-                set _Promoted_Fixup_=Y
-            ) else (
-                if /I "%~nx2" equ "NotesSearch_Domain_Wide.HTML" (
-                    echo Info: Since the STAGING version of NotesSearch_Domain_Wide.HTML is newer, enable the _Promoted_Fixup_ flag.
-                    set _Promoted_Fixup_=Y
-
-                ) else (
-                    if /I "%~nx2" equ "Agent_Recent_Phone_Calls.html" (
-                        echo Info: Since the STAGING version of Agent_Recent_Phone_Calls.html is newer, enable the _Promoted_Fixup_ flag.
-                        set _Promoted_Fixup_=Y
-                    ) else (
-                        if /I "%~x2" equ ".JS" (
-                            echo Info: Since the STAGING version of this JavaScript is newer, compute its SubResource Integrity Digest and enable the _Promoted_Fixup_ flag.
-                            set _Promoted_Fixup_=Y
-                            echo.
-                            echo Script Home Directory Name = %~dp0
-                            echo.
-                            call XCopyF %2 %1 /f /r /v /y
-                            call :GET_SRI %~dp0%1
-                        ) else (
-                            if /I "%~x2" equ ".CSS" (
-                                echo Info: Since the STAGING version of this Cascading Style Sheet is newer, compute its SubResource Integrity Digest and enable the _Promoted_Fixup_ flag.
-                                set _Promoted_Fixup_=Y
-                                call XCopyF %2 %1 /f /r /v /y
-                                call :GET_SRI %~dp0%1
-                            ) else (
-                                echo Info: This file is presently exempt from SubResource Integrity.
-                                call XCopyF %2 %1 /f /r /v /y
-                            )
-                        )
-                    )
-                )
-            )
-        )
-
-        goto :EOF
-    )
-
-    if errorlevel   2 (
-        echo Info: %2 is SAME AGE as %1 - Exit Code = 2.
-
-        if /I "%~x2" equ ".JS" (
-            echo Info: Though the source file is unchanged, a JavaScript file requires a SubResource Integrity digest.
-            call :GET_SRI %~dp0%1
-        ) else (
-            if /I "%~x2" equ ".CSS" (
-                echo Info: Though the source file is unchanged, a JavaScript file requires a SubResource Integrity digest.
-                call :GET_SRI %~dp0%1
-            ) else (
-                echo Info: This file is presently exempt from SubResource Integrity.
-            )
-        )
-
-        goto :EOF
-    )
-
-    if errorlevel   1 (
-        echo Info: %2 is OLDER than %1 - Exit Code = 1.
-
-        if /I "%~x2" equ ".JS" (
-            echo Info: Though the source file is unchanged, a JavaScript file requires a SubResource Integrity digest.
-            call :GET_SRI %~dp0%1
-        ) else (
-            if /I "%~x2" equ ".CSS" (
-                echo Info: Though the source file is unchanged, a JavaScript file requires a SubResource Integrity digest.
-                call :GET_SRI %~dp0%1
-            ) else (
-                echo Info: This file is presently exempt from SubResource Integrity.
-            )
-        )
-
-        goto :EOF
-    ) else (
-        echo Info: WWIsFileNewer UNANTICIPATED status code = %errorlevel%
-    )
-
-    goto :EOF
-
-
 :SKIPREM
 
     setlocal
@@ -351,6 +209,8 @@ goto SKIPREM
     echo.
 
     ShowTime.exe
+
+    call "%~dp0ConsoleLib.CMD"
 
     echo.
     echo Script Home Directory Name = %~dp0
@@ -362,7 +222,7 @@ goto SKIPREM
     echo.
 
     cd /d "%~dp0"
-	cd
+    cd
 
     set _fCallFromScript_=Y
     set _NO_PAUSE_=NO_PAUSE
@@ -416,19 +276,19 @@ goto SKIPREM
     echo ---------------------------------------------------------------------
     echo.
 
-    call :IS_NEWER ..\LeadLife.Web\Scripts\Agent_Recent_Phone_Calls.js      ..\LeadLife.Web\Scripts\STAGING\Agent_Recent_Phone_Calls_DEV.js
-    call :IS_NEWER ..\LeadLife.Web\Scripts\BootBoxtLaboratory.js            ..\LeadLife.Web\Scripts\STAGING\BootBoxtLaboratory_DEV.js
-    call :IS_NEWER ..\LeadLife.Web\Scripts\CallMapGrid.js                   ..\LeadLife.Web\Scripts\STAGING\CallMapGrid_DEV.js
-    call :IS_NEWER ..\LeadLife.Web\Scripts\UploadFile.js                    ..\LeadLife.Web\Scripts\STAGING\UploadFile_DEV.js
-    call :IS_NEWER ..\LeadLife.Web\Scripts\KeywordHighlighter.js            ..\LeadLife.Web\Scripts\STAGING\KeywordHighlighter_DEV.js
-    call :IS_NEWER ..\LeadLife.Web\Scripts\LeadLifeJSHelpersGlobals.js      ..\LeadLife.Web\Scripts\STAGING\LeadLifeJSHelpersGlobals_DEV.js
-    call :IS_NEWER ..\LeadLife.Web\Scripts\LeadLifeJSHelpersLib.js          ..\LeadLife.Web\Scripts\STAGING\LeadLifeJSHelpersLib_DEV.js
-    call :IS_NEWER ..\LeadLife.Web\Scripts\LeadLife_InputMask_Engine.js     ..\LeadLife.Web\Scripts\STAGING\LeadLife_InputMask_Engine_DEV.js
-    call :IS_NEWER ..\LeadLife.Web\Scripts\LLCommon.js                      ..\LeadLife.Web\Scripts\STAGING\LLCommon_DEV.js
-    call :IS_NEWER ..\LeadLife.Web\Scripts\Mobile_Index.js                  ..\LeadLife.Web\Scripts\STAGING\Mobile_Index_DEV.js
-    call :IS_NEWER ..\LeadLife.Web\Scripts\STT_VideoPlayer.js               ..\LeadLife.Web\Scripts\STAGING\STT_VideoPlayer_DEV.js
-    call :IS_NEWER ..\LeadLife.Web\Scripts\Webinar_Followup_Request_Form.js ..\LeadLife.Web\Scripts\STAGING\Webinar_Followup_Request_Form_DEV.js
-    call :IS_NEWER ..\LeadLife.Web\Scripts\Words2Actions_Recorder_Forms.js  ..\LeadLife.Web\Scripts\STAGING\Words2Actions_Recorder_Forms_DEV.js
+    call "%~dp0IsNewer.CMD" ..\LeadLife.Web\Scripts\Agent_Recent_Phone_Calls.js      ..\LeadLife.Web\Scripts\STAGING\Agent_Recent_Phone_Calls_DEV.js
+    call "%~dp0IsNewer.CMD" ..\LeadLife.Web\Scripts\BootBoxtLaboratory.js            ..\LeadLife.Web\Scripts\STAGING\BootBoxtLaboratory_DEV.js
+    call "%~dp0IsNewer.CMD" ..\LeadLife.Web\Scripts\CallMapGrid.js                   ..\LeadLife.Web\Scripts\STAGING\CallMapGrid_DEV.js
+    call "%~dp0IsNewer.CMD" ..\LeadLife.Web\Scripts\UploadFile.js                    ..\LeadLife.Web\Scripts\STAGING\UploadFile_DEV.js
+    call "%~dp0IsNewer.CMD" ..\LeadLife.Web\Scripts\KeywordHighlighter.js            ..\LeadLife.Web\Scripts\STAGING\KeywordHighlighter_DEV.js
+    call "%~dp0IsNewer.CMD" ..\LeadLife.Web\Scripts\LeadLifeJSHelpersGlobals.js      ..\LeadLife.Web\Scripts\STAGING\LeadLifeJSHelpersGlobals_DEV.js
+    call "%~dp0IsNewer.CMD" ..\LeadLife.Web\Scripts\LeadLifeJSHelpersLib.js          ..\LeadLife.Web\Scripts\STAGING\LeadLifeJSHelpersLib_DEV.js
+    call "%~dp0IsNewer.CMD" ..\LeadLife.Web\Scripts\LeadLife_InputMask_Engine.js     ..\LeadLife.Web\Scripts\STAGING\LeadLife_InputMask_Engine_DEV.js
+    call "%~dp0IsNewer.CMD" ..\LeadLife.Web\Scripts\LLCommon.js                      ..\LeadLife.Web\Scripts\STAGING\LLCommon_DEV.js
+    call "%~dp0IsNewer.CMD" ..\LeadLife.Web\Scripts\Mobile_Index.js                  ..\LeadLife.Web\Scripts\STAGING\Mobile_Index_DEV.js
+    call "%~dp0IsNewer.CMD" ..\LeadLife.Web\Scripts\STT_VideoPlayer.js               ..\LeadLife.Web\Scripts\STAGING\STT_VideoPlayer_DEV.js
+    call "%~dp0IsNewer.CMD" ..\LeadLife.Web\Scripts\Webinar_Followup_Request_Form.js ..\LeadLife.Web\Scripts\STAGING\Webinar_Followup_Request_Form_DEV.js
+    call "%~dp0IsNewer.CMD" ..\LeadLife.Web\Scripts\Words2Actions_Recorder_Forms.js  ..\LeadLife.Web\Scripts\STAGING\Words2Actions_Recorder_Forms_DEV.js
 
     echo.
     echo ---------------------------------------------------------------------
@@ -439,7 +299,9 @@ goto SKIPREM
     cd /d ..\LeadLife.Web\Scripts\STAGING
     cd
     call ShredDocumentBackups
-    popd
+
+    cd /d "%~dp0"
+    cd
 
     echo.
     echo ---------------------------------------------------------------------
@@ -447,7 +309,7 @@ goto SKIPREM
     echo ---------------------------------------------------------------------
     echo.
 
-    call :IS_NEWER ..\PURL_COMMON\STT_VideoPlayer.html ..\PURL_COMMON\STAGING\STT_VideoPlayer.html
+    call "%~dp0IsNewer.CMD" ..\PURL_COMMON\STT_VideoPlayer.html ..\PURL_COMMON\STAGING\STT_VideoPlayer.html
 
     echo.
     echo ---------------------------------------------------------------------
@@ -456,9 +318,11 @@ goto SKIPREM
     echo.
 
     cd /d ..\PURL_COMMON\STAGING
-	cd
+    cd
     call ShredDocumentBackups
-    popd
+
+    cd /d "%~dp0"
+    cd
 
     echo.
     echo ---------------------------------------------------------------------
@@ -466,7 +330,7 @@ goto SKIPREM
     echo ---------------------------------------------------------------------
     echo.
 
-    call :IS_NEWER ..\PURL_COMMON\Words2Actions_Form_TEMPLATE.HTML ..\PURL_COMMON\STAGING\Words2Actions_Form_TEMPLATE.HTML
+    call "%~dp0IsNewer.CMD" ..\PURL_COMMON\Words2Actions_Form_TEMPLATE.HTML ..\PURL_COMMON\STAGING\Words2Actions_Form_TEMPLATE.HTML
 
     echo.
     echo ---------------------------------------------------------------------
@@ -474,7 +338,7 @@ goto SKIPREM
     echo ---------------------------------------------------------------------
     echo.
 
-    call :IS_NEWER ..\PURL_COMMON\NotesSearch_Domain_Wide.HTML ..\PURL_COMMON\STAGING\NotesSearch_Domain_Wide.HTML
+    call "%~dp0IsNewer.CMD" ..\PURL_COMMON\NotesSearch_Domain_Wide.HTML ..\PURL_COMMON\STAGING\NotesSearch_Domain_Wide.HTML
 
     echo.
     echo ---------------------------------------------------------------------
@@ -482,7 +346,7 @@ goto SKIPREM
     echo ---------------------------------------------------------------------
     echo.
 
-    call :IS_NEWER ..\PURL_COMMON\Agent_Recent_Phone_Calls.html ..\PURL_COMMON\STAGING\Agent_Recent_Phone_Calls.html
+    call "%~dp0IsNewer.CMD" ..\PURL_COMMON\Agent_Recent_Phone_Calls.html ..\PURL_COMMON\STAGING\Agent_Recent_Phone_Calls.html
 
     echo.
     echo ---------------------------------------------------------------------
@@ -493,9 +357,11 @@ goto SKIPREM
     cd /d ..\PURL_COMMON
     cd
     call ShredDocumentBackups ALL
-    popd
 
 :PROMOTE
+
+    cd /d "%~dp0"
+    cd
 
     echo.
     echo ---------------------------------------------------------------------
@@ -506,11 +372,11 @@ goto SKIPREM
 
     if "%_Promoted_Fixup_%" equ "Y" (
         cd /d "%~dp0"
-	    echo.
-    	echo ---------------------------------------------------------------------
+        echo.
+        echo ---------------------------------------------------------------------
         echo CURRENT DIRectory Name:
         cd
-	    echo ---------------------------------------------------------------------
+        echo ---------------------------------------------------------------------
 
         echo.
         echo ---------------------------------------------------------------------
@@ -519,24 +385,24 @@ goto SKIPREM
         echo.
         STT_VideoPlayer_Promoted_Fixup.exe
 
-	    echo.
-    	echo ---------------------------------------------------------------------
+        echo.
+        echo ---------------------------------------------------------------------
         echo CURRENT DIRectory Name after STT_VideoPlayer_Promoted_Fixup:
         cd
-	    echo ---------------------------------------------------------------------
-	    echo.
+        echo ---------------------------------------------------------------------
+        echo.
         echo.
         echo ---------------------------------------------------------------------
         echo Info: Make a backup of the SubResource Integrity digest files.
         echo ---------------------------------------------------------------------
         echo.
         cd /d "%~dp0"
-	    echo.
-    	echo ---------------------------------------------------------------------
+        echo.
+        echo ---------------------------------------------------------------------
         echo CURRENT DIRectory Name:
         cd
-	    echo ---------------------------------------------------------------------
-	    echo.
+        echo ---------------------------------------------------------------------
+        echo.
 
         call 7UP ..\PURL_COMMON\SubResource_Integrity_String_Backups\SRI_Digests.7z %TEMP%\*_SRI_*SHA???.TMP
     ) else (

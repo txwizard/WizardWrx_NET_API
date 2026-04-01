@@ -82,7 +82,8 @@ callers to override the behavior dictated by its properties.</p>
   <h6><strong>Assembly</strong>: WizardWrx.DLLConfigurationManager.dll</h6>
   <h5 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ErrorExitOptions_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public enum ErrorExitOptions : byte</code></pre>
+    <pre><code class="lang-csharp hljs">[Flags]
+public enum ErrorExitOptions : byte</code></pre>
   </div>
   <h5 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ErrorExitOptions_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>The correspondence between the naming and numbering of the members
@@ -129,6 +130,10 @@ the table of error messages.</p>
   <h5 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ErrorExitOptions_seealso">See Also</h5>
   <div class="seealso">
       <div><a class="xref" href="WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions.html">ExceptionLogger.OutputOptions</a></div>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="WizardWrx.StringExtensions.html#WizardWrx_StringExtensions_RenderEvenWhenNull__1___0_System_String_System_String_System_IFormatProvider_">StringExtensions.RenderEvenWhenNull&lt;ExceptionLogger.ErrorExitOptions&gt;(String, String, IFormatProvider)</a>
   </div>
 </article>
           </div>

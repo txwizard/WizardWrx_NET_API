@@ -97,11 +97,35 @@ GetSwitchByName.</p>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">CmdLneArgsBasic</span></div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="WizardWrx.Core.html">WizardWrx.Core</a></h6>
   <h6><strong>Assembly</strong>: WizardWrx.Core.dll</h6>
   <h5 id="WizardWrx_Core_CmdLneArgsBasic_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class CmdLneArgsBasic : object</code></pre>
+    <pre><code class="lang-csharp hljs">public class CmdLneArgsBasic</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -122,973 +146,6 @@ arguments.</p>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public CmdLneArgsBasic()</code></pre>
   </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_CmdLneArgsBasic__ctor_Dictionary_System_Char_System_String__.md&amp;value=---%0Auid%3A%20WizardWrx.Core.CmdLneArgsBasic.%23ctor(Dictionary%7BSystem.Char%2CSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/CmdLneArgsBasic.cs/#L562">View Source</a>
-  </span>
-  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
-  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_Dictionary_System_Char_System_String__" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(Dictionary{System.Char,System.String})">CmdLneArgsBasic(Dictionary&lt;Char, String&gt;)</h4>
-  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, each having
-the value specified in the corresponding item in pdctValidSwitches.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;char, string&gt; pdctValidSwitches)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Dictionary</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.String</span>&gt;</td>
-        <td><span class="parametername">pdctValidSwitches</span></td>
-        <td><p>Dictionary, keyed by switch name, a character, containing its desired
-default value, a string.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_CmdLneArgsBasic__ctor_Dictionary_System_Char_System_String__Dictionary_System_String_System_String__.md&amp;value=---%0Auid%3A%20WizardWrx.Core.CmdLneArgsBasic.%23ctor(Dictionary%7BSystem.Char%2CSystem.String%7D%2CDictionary%7BSystem.String%2CSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/CmdLneArgsBasic.cs/#L600">View Source</a>
-  </span>
-  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
-  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_Dictionary_System_Char_System_String__Dictionary_System_String_System_String__" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(Dictionary{System.Char,System.String},Dictionary{System.String,System.String})">CmdLneArgsBasic(Dictionary&lt;Char, String&gt;, Dictionary&lt;String, String&gt;)</h4>
-  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, each having
-the default value specified in the corresponding item in
-pdctValidSwitches, and a separate list of valid named arguments,
-defined in the same manner.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;char, string&gt; pdctValidSwitches, Dictionary&lt;string, string&gt; pdctValidNamedArgs)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Dictionary</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.String</span>&gt;</td>
-        <td><span class="parametername">pdctValidSwitches</span></td>
-        <td><p>Dictionary, keyed by switch name, a character, containing its desired
-default value, a string.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
-        <td><span class="parametername">pdctValidNamedArgs</span></td>
-        <td><p>Dictionary, keyed by argument name, a string, containing its desired
-default value, also a string.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_CmdLneArgsBasic__ctor_Dictionary_System_Char_System_String__Dictionary_System_String_System_String__System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.CmdLneArgsBasic.%23ctor(Dictionary%7BSystem.Char%2CSystem.String%7D%2CDictionary%7BSystem.String%2CSystem.String%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/CmdLneArgsBasic.cs/#L1145">View Source</a>
-  </span>
-  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
-  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_Dictionary_System_Char_System_String__Dictionary_System_String_System_String__System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(Dictionary{System.Char,System.String},Dictionary{System.String,System.String},System.Int32)">CmdLneArgsBasic(Dictionary&lt;Char, String&gt;, Dictionary&lt;String, String&gt;, Int32)</h4>
-  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, each having
-the default value specified in the corresponding item in
-pdctValidSwitches, and a separate list of valid named arguments,
-defined in the same manner.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;char, string&gt; pdctValidSwitches, Dictionary&lt;string, string&gt; pdctValidNamedArgs, int pintPositionalArgCountLimit)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Dictionary</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.String</span>&gt;</td>
-        <td><span class="parametername">pdctValidSwitches</span></td>
-        <td><p>Dictionary, keyed by switch name, a character, containing its desired
-default value, a string.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
-        <td><span class="parametername">pdctValidNamedArgs</span></td>
-        <td><p>Dictionary, keyed by argument name, a string, containing its desired
-default value, also a string.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Int32</span></td>
-        <td><span class="parametername">pintPositionalArgCountLimit</span></td>
-        <td><p>The default limit on the number of positional arguments is
-POSITIONAL_ARGS_COUNT_LIMIT, which is currently set to 9. Use this
-argument to set a lower or higher limit.</p>
-<p>A pintPositionalArgCountLimit value of less than zero is discarded
-silently, and the default limit remains in force.</p>
-<p>Please see Remarks for important security considerations.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="WizardWrx_Core_CmdLneArgsBasic__ctor_Dictionary_System_Char_System_String__Dictionary_System_String_System_String__System_Int32__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>SECURITY NOTE</p>
-<p>All constructors in this class enforce a limit on the number of
-positional arguments permitted. The default limit is 9, which is
-defined as a public constant, POSITIONAL_ARGS_COUNT_LIMIT.</p>
-<p>This limit is imposed to protect your program from being fed an
-excessively long command line, in an attempt to cause a denial of
-service. Although few applications require more than nine positional
-command line arguments, the level is made adjustable, to meet that
-once per career need for more than nine arguments.</p>
-<p>While objects of this class cannot do anything about the number of
-characters in the command line (That is the responsibility of the
-Common Language Runtime.), they can, and do, limit the amount of
-memory allowed to be consumed to hold arguments parsed from it.</p>
-<p>No such limits are imposed on switches and named arguments, because
-the number of valid arguments (hence, the upper limit on memory
-consumed by them) is under programmer control, and unlikely to be an
-issue, since invalid arguments are discarded.</p>
-<p>WHY NINE?</p>
-<p>I chose the number nine mostly for historical reasons. Starting with
-MS-DOS 1.0, the number of positional parameters supported by batch
-files (without resorting to tricks with SHIFT) is 9.</p>
-<p>This limit has been carried forward into modern command processors,
-including CMD.EXE, the default console mode command processor of
-Windows NT, 2000, XP, Vista, etc.</p>
-</div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_CmdLneArgsBasic__ctor_Dictionary_System_Char_System_String__Dictionary_System_String_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.CmdLneArgsBasic.%23ctor(Dictionary%7BSystem.Char%2CSystem.String%7D%2CDictionary%7BSystem.String%2CSystem.String%7D%2CWizardWrx.Core.CmdLneArgsBasic.ArgMatching)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/CmdLneArgsBasic.cs/#L754">View Source</a>
-  </span>
-  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
-  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_Dictionary_System_Char_System_String__Dictionary_System_String_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(Dictionary{System.Char,System.String},Dictionary{System.String,System.String},WizardWrx.Core.CmdLneArgsBasic.ArgMatching)">CmdLneArgsBasic(Dictionary&lt;Char, String&gt;, Dictionary&lt;String, String&gt;, CmdLneArgsBasic.ArgMatching)</h4>
-  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, each having
-the default value specified in the corresponding item in
-pdctValidSwitches, and a separate list of valid named arguments,
-defined in the same manner.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;char, string&gt; pdctValidSwitches, Dictionary&lt;string, string&gt; pdctValidNamedArgs, CmdLneArgsBasic.ArgMatching penmArgMatching)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Dictionary</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.String</span>&gt;</td>
-        <td><span class="parametername">pdctValidSwitches</span></td>
-        <td><p>Dictionary, keyed by switch name, a character, containing its desired
-default value, a string.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
-        <td><span class="parametername">pdctValidNamedArgs</span></td>
-        <td><p>Dictionary, keyed by argument name, a string, containing its desired
-default value, also a string.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="WizardWrx.Core.CmdLneArgsBasic.ArgMatching.html">CmdLneArgsBasic.ArgMatching</a></td>
-        <td><span class="parametername">penmArgMatching</span></td>
-        <td><p>Use this member of the CmdLneArgs.ArgMatching enumeration to set the
-argument matching rules. At present, two rules are defined. See the
-IntelliSense documentation of any CmdLneArgs argument for details.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_CmdLneArgsBasic__ctor_Dictionary_System_Char_System_String__Dictionary_System_String_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.CmdLneArgsBasic.%23ctor(Dictionary%7BSystem.Char%2CSystem.String%7D%2CDictionary%7BSystem.String%2CSystem.String%7D%2CWizardWrx.Core.CmdLneArgsBasic.ArgMatching%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/CmdLneArgsBasic.cs/#L1581">View Source</a>
-  </span>
-  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
-  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_Dictionary_System_Char_System_String__Dictionary_System_String_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(Dictionary{System.Char,System.String},Dictionary{System.String,System.String},WizardWrx.Core.CmdLneArgsBasic.ArgMatching,System.Int32)">CmdLneArgsBasic(Dictionary&lt;Char, String&gt;, Dictionary&lt;String, String&gt;, CmdLneArgsBasic.ArgMatching, Int32)</h4>
-  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, each having
-the default value specified in the corresponding item in
-pdctValidSwitches, and a separate list of valid named arguments,
-defined in the same manner.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;char, string&gt; pdctValidSwitches, Dictionary&lt;string, string&gt; pdctValidNamedArgs, CmdLneArgsBasic.ArgMatching penmArgMatching, int pintPositionalArgCountLimit)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Dictionary</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.String</span>&gt;</td>
-        <td><span class="parametername">pdctValidSwitches</span></td>
-        <td><p>Dictionary, keyed by switch name, a character, containing its desired
-default value, a string.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
-        <td><span class="parametername">pdctValidNamedArgs</span></td>
-        <td><p>Dictionary, keyed by argument name, a string, containing its desired
-default value, also a string.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="WizardWrx.Core.CmdLneArgsBasic.ArgMatching.html">CmdLneArgsBasic.ArgMatching</a></td>
-        <td><span class="parametername">penmArgMatching</span></td>
-        <td><p>Use this member of the CmdLneArgs.ArgMatching enumeration to set the
-argument matching rules. At present, two rules are defined. See the
-IntelliSense documentation of any CmdLneArgs argument for details.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Int32</span></td>
-        <td><span class="parametername">pintPositionalArgCountLimit</span></td>
-        <td><p>The default limit on the number of positional arguments is
-POSITIONAL_ARGS_COUNT_LIMIT, which is currently set to 9. Use this
-argument to set a lower or higher limit.</p>
-<p>A pintPositionalArgCountLimit value of less than zero is discarded
-silently, and the default limit remains in force.</p>
-<p>Please see Remarks for important security considerations.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="WizardWrx_Core_CmdLneArgsBasic__ctor_Dictionary_System_Char_System_String__Dictionary_System_String_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>SECURITY NOTE</p>
-<p>All constructors in this class enforce a limit on the number of
-positional arguments permitted. The default limit is 9, which is
-defined as a public constant, POSITIONAL_ARGS_COUNT_LIMIT.</p>
-<p>This limit is imposed to protect your program from being fed an
-excessively long command line, in an attempt to cause a denial of
-service. Although few applications require more than nine positional
-command line arguments, the level is made adjustable, to meet that
-once per career need for more than nine arguments.</p>
-<p>While objects of this class cannot do anything about the number of
-characters in the command line (That is the responsibility of the
-Common Language Runtime.), they can, and do, limit the amount of
-memory allowed to be consumed to hold arguments parsed from it.</p>
-<p>No such limits are imposed on switches and named arguments, because
-the number of valid arguments (hence, the upper limit on memory
-consumed by them) is under programmer control, and unlikely to be an
-issue, since invalid arguments are discarded.</p>
-<p>WHY NINE?</p>
-<p>I chose the number nine mostly for historical reasons. Starting with
-MS-DOS 1.0, the number of positional parameters supported by batch
-files (without resorting to tricks with SHIFT) is 9.</p>
-<p>This limit has been carried forward into modern command processors,
-including CMD.EXE, the default console mode command processor of
-Windows NT, 2000, XP, Vista, etc.</p>
-</div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_CmdLneArgsBasic__ctor_Dictionary_System_Char_System_String__System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.CmdLneArgsBasic.%23ctor(Dictionary%7BSystem.Char%2CSystem.String%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/CmdLneArgsBasic.cs/#L1012">View Source</a>
-  </span>
-  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
-  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_Dictionary_System_Char_System_String__System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(Dictionary{System.Char,System.String},System.Int32)">CmdLneArgsBasic(Dictionary&lt;Char, String&gt;, Int32)</h4>
-  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, each having
-the value specified in the corresponding item in pdctValidSwitches.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;char, string&gt; pdctValidSwitches, int pintPositionalArgCountLimit)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Dictionary</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.String</span>&gt;</td>
-        <td><span class="parametername">pdctValidSwitches</span></td>
-        <td><p>Dictionary, keyed by switch name, a character, containing its desired
-default value, a string.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Int32</span></td>
-        <td><span class="parametername">pintPositionalArgCountLimit</span></td>
-        <td><p>The default limit on the number of positional arguments is
-POSITIONAL_ARGS_COUNT_LIMIT, which is currently set to 9. Use this
-argument to set a lower or higher limit.</p>
-<p>A pintPositionalArgCountLimit value of less than zero is discarded
-silently, and the default limit remains in force.</p>
-<p>Please see Remarks for important security considerations.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="WizardWrx_Core_CmdLneArgsBasic__ctor_Dictionary_System_Char_System_String__System_Int32__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>SECURITY NOTE</p>
-<p>All constructors in this class enforce a limit on the number of
-positional arguments permitted. The default limit is 9, which is
-defined as a public constant, POSITIONAL_ARGS_COUNT_LIMIT.</p>
-<p>This limit is imposed to protect your program from being fed an
-excessively long command line, in an attempt to cause a denial of
-service. Although few applications require more than nine positional
-command line arguments, the level is made adjustable, to meet that
-once per career need for more than nine arguments.</p>
-<p>While objects of this class cannot do anything about the number of
-characters in the command line (That is the responsibility of the
-Common Language Runtime.), they can, and do, limit the amount of
-memory allowed to be consumed to hold arguments parsed from it.</p>
-<p>No such limits are imposed on switches and named arguments, because
-the number of valid arguments (hence, the upper limit on memory
-consumed by them) is under programmer control, and unlikely to be an
-issue, since invalid arguments are discarded.</p>
-<p>WHY NINE?</p>
-<p>I chose the number nine mostly for historical reasons. Starting with
-MS-DOS 1.0, the number of positional parameters supported by batch
-files (without resorting to tricks with SHIFT) is 9.</p>
-<p>This limit has been carried forward into modern command processors,
-including CMD.EXE, the default console mode command processor of
-Windows NT, 2000, XP, Vista, etc.</p>
-</div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_CmdLneArgsBasic__ctor_Dictionary_System_Char_System_String__System_String___System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.CmdLneArgsBasic.%23ctor(Dictionary%7BSystem.Char%2CSystem.String%7D%2CSystem.String%5B%5D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/CmdLneArgsBasic.cs/#L1972">View Source</a>
-  </span>
-  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
-  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_Dictionary_System_Char_System_String__System_String___System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(Dictionary{System.Char,System.String},System.String[],System.Int32)">CmdLneArgsBasic(Dictionary&lt;Char, String&gt;, String[], Int32)</h4>
-  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, each having
-its default value defined by the value member of a DictionaryItem,
-and a separate list of valid named arguments, defined in an array of
-strings, with the default value supplied by the class.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;char, string&gt; pdctValidSwitches, string[] pastrValidNamedArgs, int pintPositionalArgCountLimit)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Dictionary</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.String</span>&gt;</td>
-        <td><span class="parametername">pdctValidSwitches</span></td>
-        <td><p>Dictionary, keyed by switch name, a character, containing its desired
-default value, a string.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span>[]</td>
-        <td><span class="parametername">pastrValidNamedArgs</span></td>
-        <td><p>Array of strings, each of which is a valid (supported) argument
-name. All arguments are initialized to VALUE_NOT_SET.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Int32</span></td>
-        <td><span class="parametername">pintPositionalArgCountLimit</span></td>
-        <td><p>The default limit on the number of positional arguments is
-POSITIONAL_ARGS_COUNT_LIMIT, which is currently set to 9. Use this
-argument to set a lower or higher limit.</p>
-<p>A pintPositionalArgCountLimit value of less than zero is discarded
-silently, and the default limit remains in force.</p>
-<p>Please see Remarks for important security considerations.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="WizardWrx_Core_CmdLneArgsBasic__ctor_Dictionary_System_Char_System_String__System_String___System_Int32__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>SECURITY NOTE</p>
-<p>All constructors in this class enforce a limit on the number of
-positional arguments permitted. The default limit is 9, which is
-defined as a public constant, POSITIONAL_ARGS_COUNT_LIMIT.</p>
-<p>This limit is imposed to protect your program from being fed an
-excessively long command line, in an attempt to cause a denial of
-service. Although few applications require more than nine positional
-command line arguments, the level is made adjustable, to meet that
-once per career need for more than nine arguments.</p>
-<p>While objects of this class cannot do anything about the number of
-characters in the command line (That is the responsibility of the
-Common Language Runtime.), they can, and do, limit the amount of
-memory allowed to be consumed to hold arguments parsed from it.</p>
-<p>No such limits are imposed on switches and named arguments, because
-the number of valid arguments (hence, the upper limit on memory
-consumed by them) is under programmer control, and unlikely to be an
-issue, since invalid arguments are discarded.</p>
-<p>WHY NINE?</p>
-<p>I chose the number nine mostly for historical reasons. Starting with
-MS-DOS 1.0, the number of positional parameters supported by batch
-files (without resorting to tricks with SHIFT) is 9.</p>
-<p>This limit has been carried forward into modern command processors,
-including CMD.EXE, the default console mode command processor of
-Windows NT, 2000, XP, Vista, etc.</p>
-</div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_CmdLneArgsBasic__ctor_Dictionary_System_Char_System_String__System_String___WizardWrx_Core_CmdLneArgsBasic_ArgMatching_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.CmdLneArgsBasic.%23ctor(Dictionary%7BSystem.Char%2CSystem.String%7D%2CSystem.String%5B%5D%2CWizardWrx.Core.CmdLneArgsBasic.ArgMatching)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/CmdLneArgsBasic.cs/#L1617">View Source</a>
-  </span>
-  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
-  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_Dictionary_System_Char_System_String__System_String___WizardWrx_Core_CmdLneArgsBasic_ArgMatching_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(Dictionary{System.Char,System.String},System.String[],WizardWrx.Core.CmdLneArgsBasic.ArgMatching)">CmdLneArgsBasic(Dictionary&lt;Char, String&gt;, String[], CmdLneArgsBasic.ArgMatching)</h4>
-  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, each having
-the default value specified in the corresponding item in
-pdctValidSwitches, and a separate list of valid named arguments, in
-an array of strings, with the class supplying a standard default.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;char, string&gt; pdctValidSwitches, string[] pastrValidNamedArgs, CmdLneArgsBasic.ArgMatching penmArgMatching)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Dictionary</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.String</span>&gt;</td>
-        <td><span class="parametername">pdctValidSwitches</span></td>
-        <td><p>Dictionary, keyed by switch name, a character, containing its desired
-default value, a string.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span>[]</td>
-        <td><span class="parametername">pastrValidNamedArgs</span></td>
-        <td><p>Array of strings, each of which is a valid (supported) argument
-name. All arguments are initialized to VALUE_NOT_SET.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="WizardWrx.Core.CmdLneArgsBasic.ArgMatching.html">CmdLneArgsBasic.ArgMatching</a></td>
-        <td><span class="parametername">penmArgMatching</span></td>
-        <td><p>Use this member of the CmdLneArgs.ArgMatching enumeration to set the
-argument matching rules. At present, two rules are defined. See the
-IntelliSense documentation of any CmdLneArgs argument for details.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_CmdLneArgsBasic__ctor_Dictionary_System_Char_System_String__System_String___WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.CmdLneArgsBasic.%23ctor(Dictionary%7BSystem.Char%2CSystem.String%7D%2CSystem.String%5B%5D%2CWizardWrx.Core.CmdLneArgsBasic.ArgMatching%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/CmdLneArgsBasic.cs/#L1827">View Source</a>
-  </span>
-  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
-  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_Dictionary_System_Char_System_String__System_String___WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(Dictionary{System.Char,System.String},System.String[],WizardWrx.Core.CmdLneArgsBasic.ArgMatching,System.Int32)">CmdLneArgsBasic(Dictionary&lt;Char, String&gt;, String[], CmdLneArgsBasic.ArgMatching, Int32)</h4>
-  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, each having
-its default value defined by the value member of a DictionaryItem,
-and a separate list of valid named arguments, each defined as a
-DictionaryItem, with its default value given in the value member.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;char, string&gt; pdctValidSwitches, string[] pastrValidNamedArgs, CmdLneArgsBasic.ArgMatching penmArgMatching, int pintPositionalArgCountLimit)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Dictionary</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.String</span>&gt;</td>
-        <td><span class="parametername">pdctValidSwitches</span></td>
-        <td><p>Dictionary, keyed by switch name, a character, containing its desired
-default value, a string.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span>[]</td>
-        <td><span class="parametername">pastrValidNamedArgs</span></td>
-        <td><p>Array of strings, each of which is a valid (supported) argument
-name. All arguments are initialized to VALUE_NOT_SET.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="WizardWrx.Core.CmdLneArgsBasic.ArgMatching.html">CmdLneArgsBasic.ArgMatching</a></td>
-        <td><span class="parametername">penmArgMatching</span></td>
-        <td><p>Use this member of the CmdLneArgs.ArgMatching enumeration to set the
-argument matching rules. At present, two rules are defined. See the
-IntelliSense documentation of any CmdLneArgs argument for details.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Int32</span></td>
-        <td><span class="parametername">pintPositionalArgCountLimit</span></td>
-        <td><p>The default limit on the number of positional arguments is
-POSITIONAL_ARGS_COUNT_LIMIT, which is currently set to 9. Use this
-argument to set a lower or higher limit.</p>
-<p>A pintPositionalArgCountLimit value of less than zero is discarded
-silently, and the default limit remains in force.</p>
-<p>Please see Remarks for important security considerations.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="WizardWrx_Core_CmdLneArgsBasic__ctor_Dictionary_System_Char_System_String__System_String___WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>SECURITY NOTE</p>
-<p>All constructors in this class enforce a limit on the number of
-positional arguments permitted. The default limit is 9, which is
-defined as a public constant, POSITIONAL_ARGS_COUNT_LIMIT.</p>
-<p>This limit is imposed to protect your program from being fed an
-excessively long command line, in an attempt to cause a denial of
-service. Although few applications require more than nine positional
-command line arguments, the level is made adjustable, to meet that
-once per career need for more than nine arguments.</p>
-<p>While objects of this class cannot do anything about the number of
-characters in the command line (That is the responsibility of the
-Common Language Runtime.), they can, and do, limit the amount of
-memory allowed to be consumed to hold arguments parsed from it.</p>
-<p>No such limits are imposed on switches and named arguments, because
-the number of valid arguments (hence, the upper limit on memory
-consumed by them) is under programmer control, and unlikely to be an
-issue, since invalid arguments are discarded.</p>
-<p>WHY NINE?</p>
-<p>I chose the number nine mostly for historical reasons. Starting with
-MS-DOS 1.0, the number of positional parameters supported by batch
-files (without resorting to tricks with SHIFT) is 9.</p>
-<p>This limit has been carried forward into modern command processors,
-including CMD.EXE, the default console mode command processor of
-Windows NT, 2000, XP, Vista, etc.</p>
-</div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_CmdLneArgsBasic__ctor_Dictionary_System_Char_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.CmdLneArgsBasic.%23ctor(Dictionary%7BSystem.Char%2CSystem.String%7D%2CWizardWrx.Core.CmdLneArgsBasic.ArgMatching)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/CmdLneArgsBasic.cs/#L699">View Source</a>
-  </span>
-  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
-  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_Dictionary_System_Char_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(Dictionary{System.Char,System.String},WizardWrx.Core.CmdLneArgsBasic.ArgMatching)">CmdLneArgsBasic(Dictionary&lt;Char, String&gt;, CmdLneArgsBasic.ArgMatching)</h4>
-  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, each having
-the value specified in the corresponding item in pdctValidSwitches.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;char, string&gt; pdctValidSwitches, CmdLneArgsBasic.ArgMatching penmArgMatching)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Dictionary</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.String</span>&gt;</td>
-        <td><span class="parametername">pdctValidSwitches</span></td>
-        <td><p>Dictionary, keyed by switch name, a character, containing its desired
-default value, a string.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="WizardWrx.Core.CmdLneArgsBasic.ArgMatching.html">CmdLneArgsBasic.ArgMatching</a></td>
-        <td><span class="parametername">penmArgMatching</span></td>
-        <td><p>Use this member of the CmdLneArgs.ArgMatching enumeration to set the
-argument matching rules. At present, two rules are defined. See the
-IntelliSense documentation of any CmdLneArgs argument for details.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_CmdLneArgsBasic__ctor_Dictionary_System_Char_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.CmdLneArgsBasic.%23ctor(Dictionary%7BSystem.Char%2CSystem.String%7D%2CWizardWrx.Core.CmdLneArgsBasic.ArgMatching%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/CmdLneArgsBasic.cs/#L1432">View Source</a>
-  </span>
-  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
-  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_Dictionary_System_Char_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(Dictionary{System.Char,System.String},WizardWrx.Core.CmdLneArgsBasic.ArgMatching,System.Int32)">CmdLneArgsBasic(Dictionary&lt;Char, String&gt;, CmdLneArgsBasic.ArgMatching, Int32)</h4>
-  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, each having
-the value specified in the corresponding item in pdctValidSwitches.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;char, string&gt; pdctValidSwitches, CmdLneArgsBasic.ArgMatching penmArgMatching, int pintPositionalArgCountLimit)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Dictionary</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.String</span>&gt;</td>
-        <td><span class="parametername">pdctValidSwitches</span></td>
-        <td><p>Dictionary, keyed by switch name, a character, containing its desired
-default value, a string.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="WizardWrx.Core.CmdLneArgsBasic.ArgMatching.html">CmdLneArgsBasic.ArgMatching</a></td>
-        <td><span class="parametername">penmArgMatching</span></td>
-        <td><p>Use this member of the CmdLneArgs.ArgMatching enumeration to set the
-argument matching rules. At present, two rules are defined. See the
-IntelliSense documentation of any CmdLneArgs argument for details.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Int32</span></td>
-        <td><span class="parametername">pintPositionalArgCountLimit</span></td>
-        <td><p>The default limit on the number of positional arguments is
-POSITIONAL_ARGS_COUNT_LIMIT, which is currently set to 9. Use this
-argument to set a lower or higher limit.</p>
-<p>A pintPositionalArgCountLimit value of less than zero is discarded
-silently, and the default limit remains in force.</p>
-<p>Please see Remarks for important security considerations.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="WizardWrx_Core_CmdLneArgsBasic__ctor_Dictionary_System_Char_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>SECURITY NOTE</p>
-<p>All constructors in this class enforce a limit on the number of
-positional arguments permitted. The default limit is 9, which is
-defined as a public constant, POSITIONAL_ARGS_COUNT_LIMIT.</p>
-<p>This limit is imposed to protect your program from being fed an
-excessively long command line, in an attempt to cause a denial of
-service. Although few applications require more than nine positional
-command line arguments, the level is made adjustable, to meet that
-once per career need for more than nine arguments.</p>
-<p>While objects of this class cannot do anything about the number of
-characters in the command line (That is the responsibility of the
-Common Language Runtime.), they can, and do, limit the amount of
-memory allowed to be consumed to hold arguments parsed from it.</p>
-<p>No such limits are imposed on switches and named arguments, because
-the number of valid arguments (hence, the upper limit on memory
-consumed by them) is under programmer control, and unlikely to be an
-issue, since invalid arguments are discarded.</p>
-<p>WHY NINE?</p>
-<p>I chose the number nine mostly for historical reasons. Starting with
-MS-DOS 1.0, the number of positional parameters supported by batch
-files (without resorting to tricks with SHIFT) is 9.</p>
-<p>This limit has been carried forward into modern command processors,
-including CMD.EXE, the default console mode command processor of
-Windows NT, 2000, XP, Vista, etc.</p>
-</div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_CmdLneArgsBasic__ctor_Dictionary_System_String_System_String__.md&amp;value=---%0Auid%3A%20WizardWrx.Core.CmdLneArgsBasic.%23ctor(Dictionary%7BSystem.String%2CSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/CmdLneArgsBasic.cs/#L578">View Source</a>
-  </span>
-  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
-  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_Dictionary_System_String_System_String__" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(Dictionary{System.String,System.String})">CmdLneArgsBasic(Dictionary&lt;String, String&gt;)</h4>
-  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid named arguments, each
-having the default value specified in the corresponding item in
-pdctValidNamedArgs.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;string, string&gt; pdctValidNamedArgs)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
-        <td><span class="parametername">pdctValidNamedArgs</span></td>
-        <td><p>Dictionary, keyed by argument name, a string, containing its desired
-default value, also a string.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_CmdLneArgsBasic__ctor_Dictionary_System_String_System_String__System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.CmdLneArgsBasic.%23ctor(Dictionary%7BSystem.String%2CSystem.String%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/CmdLneArgsBasic.cs/#L1076">View Source</a>
-  </span>
-  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
-  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_Dictionary_System_String_System_String__System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(Dictionary{System.String,System.String},System.Int32)">CmdLneArgsBasic(Dictionary&lt;String, String&gt;, Int32)</h4>
-  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid named arguments, each
-having the default value specified in the corresponding item in
-pdctValidNamedArgs.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;string, string&gt; pdctValidNamedArgs, int pintPositionalArgCountLimit)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
-        <td><span class="parametername">pdctValidNamedArgs</span></td>
-        <td><p>Dictionary, keyed by argument name, a string, containing its desired
-default value, also a string.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Int32</span></td>
-        <td><span class="parametername">pintPositionalArgCountLimit</span></td>
-        <td><p>The default limit on the number of positional arguments is
-POSITIONAL_ARGS_COUNT_LIMIT, which is currently set to 9. Use this
-argument to set a lower or higher limit.</p>
-<p>A pintPositionalArgCountLimit value of less than zero is discarded
-silently, and the default limit remains in force.</p>
-<p>Please see Remarks for important security considerations.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="WizardWrx_Core_CmdLneArgsBasic__ctor_Dictionary_System_String_System_String__System_Int32__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>SECURITY NOTE</p>
-<p>All constructors in this class enforce a limit on the number of
-positional arguments permitted. The default limit is 9, which is
-defined as a public constant, POSITIONAL_ARGS_COUNT_LIMIT.</p>
-<p>This limit is imposed to protect your program from being fed an
-excessively long command line, in an attempt to cause a denial of
-service. Although few applications require more than nine positional
-command line arguments, the level is made adjustable, to meet that
-once per career need for more than nine arguments.</p>
-<p>While objects of this class cannot do anything about the number of
-characters in the command line (That is the responsibility of the
-Common Language Runtime.), they can, and do, limit the amount of
-memory allowed to be consumed to hold arguments parsed from it.</p>
-<p>No such limits are imposed on switches and named arguments, because
-the number of valid arguments (hence, the upper limit on memory
-consumed by them) is under programmer control, and unlikely to be an
-issue, since invalid arguments are discarded.</p>
-<p>WHY NINE?</p>
-<p>I chose the number nine mostly for historical reasons. Starting with
-MS-DOS 1.0, the number of positional parameters supported by batch
-files (without resorting to tricks with SHIFT) is 9.</p>
-<p>This limit has been carried forward into modern command processors,
-including CMD.EXE, the default console mode command processor of
-Windows NT, 2000, XP, Vista, etc.</p>
-</div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_CmdLneArgsBasic__ctor_Dictionary_System_String_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.CmdLneArgsBasic.%23ctor(Dictionary%7BSystem.String%2CSystem.String%7D%2CWizardWrx.Core.CmdLneArgsBasic.ArgMatching)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/CmdLneArgsBasic.cs/#L724">View Source</a>
-  </span>
-  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
-  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_Dictionary_System_String_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(Dictionary{System.String,System.String},WizardWrx.Core.CmdLneArgsBasic.ArgMatching)">CmdLneArgsBasic(Dictionary&lt;String, String&gt;, CmdLneArgsBasic.ArgMatching)</h4>
-  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid named arguments, each
-having the default value specified in the corresponding item in
-pdctValidNamedArgs.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;string, string&gt; pdctValidNamedArgs, CmdLneArgsBasic.ArgMatching penmArgMatching)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
-        <td><span class="parametername">pdctValidNamedArgs</span></td>
-        <td><p>Dictionary, keyed by argument name, a string, containing its desired
-default value, also a string.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="WizardWrx.Core.CmdLneArgsBasic.ArgMatching.html">CmdLneArgsBasic.ArgMatching</a></td>
-        <td><span class="parametername">penmArgMatching</span></td>
-        <td><p>Use this member of the CmdLneArgs.ArgMatching enumeration to set the
-argument matching rules. At present, two rules are defined. See the
-IntelliSense documentation of any CmdLneArgs argument for details.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_CmdLneArgsBasic__ctor_Dictionary_System_String_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.CmdLneArgsBasic.%23ctor(Dictionary%7BSystem.String%2CSystem.String%7D%2CWizardWrx.Core.CmdLneArgsBasic.ArgMatching%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/CmdLneArgsBasic.cs/#L1504">View Source</a>
-  </span>
-  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
-  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_Dictionary_System_String_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(Dictionary{System.String,System.String},WizardWrx.Core.CmdLneArgsBasic.ArgMatching,System.Int32)">CmdLneArgsBasic(Dictionary&lt;String, String&gt;, CmdLneArgsBasic.ArgMatching, Int32)</h4>
-  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid named arguments, each
-having the default value specified in the corresponding item in
-pdctValidNamedArgs.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;string, string&gt; pdctValidNamedArgs, CmdLneArgsBasic.ArgMatching penmArgMatching, int pintPositionalArgCountLimit)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
-        <td><span class="parametername">pdctValidNamedArgs</span></td>
-        <td><p>Dictionary, keyed by argument name, a string, containing its desired
-default value, also a string.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="WizardWrx.Core.CmdLneArgsBasic.ArgMatching.html">CmdLneArgsBasic.ArgMatching</a></td>
-        <td><span class="parametername">penmArgMatching</span></td>
-        <td><p>Use this member of the CmdLneArgs.ArgMatching enumeration to set the
-argument matching rules. At present, two rules are defined. See the
-IntelliSense documentation of any CmdLneArgs argument for details.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Int32</span></td>
-        <td><span class="parametername">pintPositionalArgCountLimit</span></td>
-        <td><p>The default limit on the number of positional arguments is
-POSITIONAL_ARGS_COUNT_LIMIT, which is currently set to 9. Use this
-argument to set a lower or higher limit.</p>
-<p>A pintPositionalArgCountLimit value of less than zero is discarded
-silently, and the default limit remains in force.</p>
-<p>Please see Remarks for important security considerations.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="WizardWrx_Core_CmdLneArgsBasic__ctor_Dictionary_System_String_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>SECURITY NOTE</p>
-<p>All constructors in this class enforce a limit on the number of
-positional arguments permitted. The default limit is 9, which is
-defined as a public constant, POSITIONAL_ARGS_COUNT_LIMIT.</p>
-<p>This limit is imposed to protect your program from being fed an
-excessively long command line, in an attempt to cause a denial of
-service. Although few applications require more than nine positional
-command line arguments, the level is made adjustable, to meet that
-once per career need for more than nine arguments.</p>
-<p>While objects of this class cannot do anything about the number of
-characters in the command line (That is the responsibility of the
-Common Language Runtime.), they can, and do, limit the amount of
-memory allowed to be consumed to hold arguments parsed from it.</p>
-<p>No such limits are imposed on switches and named arguments, because
-the number of valid arguments (hence, the upper limit on memory
-consumed by them) is under programmer control, and unlikely to be an
-issue, since invalid arguments are discarded.</p>
-<p>WHY NINE?</p>
-<p>I chose the number nine mostly for historical reasons. Starting with
-MS-DOS 1.0, the number of positional parameters supported by batch
-files (without resorting to tricks with SHIFT) is 9.</p>
-<p>This limit has been carried forward into modern command processors,
-including CMD.EXE, the default console mode command processor of
-Windows NT, 2000, XP, Vista, etc.</p>
-</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_CmdLneArgsBasic__ctor_System_Char___.md&amp;value=---%0Auid%3A%20WizardWrx.Core.CmdLneArgsBasic.%23ctor(System.Char%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -1127,13 +184,13 @@ All switches are initialized to Properties.Resources.SWITCH_IS_OFF.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_CmdLneArgsBasic__ctor_System_Char___Dictionary_System_String_System_String__.md&amp;value=---%0Auid%3A%20WizardWrx.Core.CmdLneArgsBasic.%23ctor(System.Char%5B%5D%2CDictionary%7BSystem.String%2CSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_CmdLneArgsBasic__ctor_System_Char___System_Collections_Generic_Dictionary_System_String_System_String__.md&amp;value=---%0Auid%3A%20WizardWrx.Core.CmdLneArgsBasic.%23ctor(System.Char%5B%5D%2CSystem.Collections.Generic.Dictionary%7BSystem.String%2CSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/CmdLneArgsBasic.cs/#L1676">View Source</a>
   </span>
   <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
-  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Char___Dictionary_System_String_System_String__" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Char[],Dictionary{System.String,System.String})">CmdLneArgsBasic(Char[], Dictionary&lt;String, String&gt;)</h4>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Char___System_Collections_Generic_Dictionary_System_String_System_String__" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Char[],System.Collections.Generic.Dictionary{System.String,System.String})">CmdLneArgsBasic(Char[], Dictionary&lt;String, String&gt;)</h4>
   <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, each having
 the default value defined by the class, and a separate list of valid
 named arguments, each defined as a DictionaryItem, with its default
@@ -1162,7 +219,7 @@ All switches are initialized to Properties.Resources.SWITCH_IS_OFF.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
         <td><span class="parametername">pdctValidNamedArgs</span></td>
         <td><p>Dictionary, keyed by argument name, a string, containing its desired
 default value, also a string.</p>
@@ -1172,13 +229,13 @@ default value, also a string.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_CmdLneArgsBasic__ctor_System_Char___Dictionary_System_String_System_String__System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.CmdLneArgsBasic.%23ctor(System.Char%5B%5D%2CDictionary%7BSystem.String%2CSystem.String%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_CmdLneArgsBasic__ctor_System_Char___System_Collections_Generic_Dictionary_System_String_System_String__System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.CmdLneArgsBasic.%23ctor(System.Char%5B%5D%2CSystem.Collections.Generic.Dictionary%7BSystem.String%2CSystem.String%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/CmdLneArgsBasic.cs/#L1901">View Source</a>
   </span>
   <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
-  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Char___Dictionary_System_String_System_String__System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Char[],Dictionary{System.String,System.String},System.Int32)">CmdLneArgsBasic(Char[], Dictionary&lt;String, String&gt;, Int32)</h4>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Char___System_Collections_Generic_Dictionary_System_String_System_String__System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Char[],System.Collections.Generic.Dictionary{System.String,System.String},System.Int32)">CmdLneArgsBasic(Char[], Dictionary&lt;String, String&gt;, Int32)</h4>
   <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, each having
 the default value defined by the class, and a separate list of valid
 named arguments, each defined as a DictionaryItem, with its default
@@ -1207,7 +264,7 @@ All switches are initialized to Properties.Resources.SWITCH_IS_OFF.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
         <td><span class="parametername">pdctValidNamedArgs</span></td>
         <td><p>Dictionary, keyed by argument name, a string, containing its desired
 default value, also a string.</p>
@@ -1226,7 +283,7 @@ silently, and the default limit remains in force.</p>
       </tr>
     </tbody>
   </table>
-  <h5 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Char___Dictionary_System_String_System_String__System_Int32__remarks">Remarks</h5>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Char___System_Collections_Generic_Dictionary_System_String_System_String__System_Int32__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>SECURITY NOTE</p>
 <p>All constructors in this class enforce a limit on the number of
 positional arguments permitted. The default limit is 9, which is
@@ -1254,13 +311,13 @@ Windows NT, 2000, XP, Vista, etc.</p>
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_CmdLneArgsBasic__ctor_System_Char___Dictionary_System_String_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.CmdLneArgsBasic.%23ctor(System.Char%5B%5D%2CDictionary%7BSystem.String%2CSystem.String%7D%2CWizardWrx.Core.CmdLneArgsBasic.ArgMatching)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_CmdLneArgsBasic__ctor_System_Char___System_Collections_Generic_Dictionary_System_String_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.CmdLneArgsBasic.%23ctor(System.Char%5B%5D%2CSystem.Collections.Generic.Dictionary%7BSystem.String%2CSystem.String%7D%2CWizardWrx.Core.CmdLneArgsBasic.ArgMatching)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/CmdLneArgsBasic.cs/#L1649">View Source</a>
   </span>
   <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
-  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Char___Dictionary_System_String_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Char[],Dictionary{System.String,System.String},WizardWrx.Core.CmdLneArgsBasic.ArgMatching)">CmdLneArgsBasic(Char[], Dictionary&lt;String, String&gt;, CmdLneArgsBasic.ArgMatching)</h4>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Char___System_Collections_Generic_Dictionary_System_String_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Char[],System.Collections.Generic.Dictionary{System.String,System.String},WizardWrx.Core.CmdLneArgsBasic.ArgMatching)">CmdLneArgsBasic(Char[], Dictionary&lt;String, String&gt;, CmdLneArgsBasic.ArgMatching)</h4>
   <div class="markdown level1 summary"><p>Initialize the instance with a list of valid named arguments, in
 a dictionary strings, where each value is the corresponding default,
 and a list of valid switches in an array of characters, with their
@@ -1289,7 +346,7 @@ All switches are initialized to Properties.Resources.SWITCH_IS_OFF.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
         <td><span class="parametername">pdctValidNamedArgs</span></td>
         <td><p>Dictionary, keyed by argument name, a string, containing its desired
 default value, also a string.</p>
@@ -1307,13 +364,13 @@ IntelliSense documentation of any CmdLneArgs argument for details.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_CmdLneArgsBasic__ctor_System_Char___Dictionary_System_String_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.CmdLneArgsBasic.%23ctor(System.Char%5B%5D%2CDictionary%7BSystem.String%2CSystem.String%7D%2CWizardWrx.Core.CmdLneArgsBasic.ArgMatching%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_CmdLneArgsBasic__ctor_System_Char___System_Collections_Generic_Dictionary_System_String_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.CmdLneArgsBasic.%23ctor(System.Char%5B%5D%2CSystem.Collections.Generic.Dictionary%7BSystem.String%2CSystem.String%7D%2CWizardWrx.Core.CmdLneArgsBasic.ArgMatching%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/CmdLneArgsBasic.cs/#L1748">View Source</a>
   </span>
   <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
-  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Char___Dictionary_System_String_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Char[],Dictionary{System.String,System.String},WizardWrx.Core.CmdLneArgsBasic.ArgMatching,System.Int32)">CmdLneArgsBasic(Char[], Dictionary&lt;String, String&gt;, CmdLneArgsBasic.ArgMatching, Int32)</h4>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Char___System_Collections_Generic_Dictionary_System_String_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Char[],System.Collections.Generic.Dictionary{System.String,System.String},WizardWrx.Core.CmdLneArgsBasic.ArgMatching,System.Int32)">CmdLneArgsBasic(Char[], Dictionary&lt;String, String&gt;, CmdLneArgsBasic.ArgMatching, Int32)</h4>
   <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, each having
 the default value defined by the class, and a separate list of valid
 named arguments, each defined as a DictionaryItem, with its default
@@ -1342,7 +399,7 @@ All switches are initialized to Properties.Resources.SWITCH_IS_OFF.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
         <td><span class="parametername">pdctValidNamedArgs</span></td>
         <td><p>Dictionary, keyed by argument name, a string, containing its desired
 default value, also a string.</p>
@@ -1369,7 +426,7 @@ silently, and the default limit remains in force.</p>
       </tr>
     </tbody>
   </table>
-  <h5 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Char___Dictionary_System_String_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32__remarks">Remarks</h5>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Char___System_Collections_Generic_Dictionary_System_String_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>SECURITY NOTE</p>
 <p>All constructors in this class enforce a limit on the number of
 positional arguments permitted. The default limit is 9, which is
@@ -1853,6 +910,973 @@ Windows NT, 2000, XP, Vista, etc.</p>
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__.md&amp;value=---%0Auid%3A%20WizardWrx.Core.CmdLneArgsBasic.%23ctor(System.Collections.Generic.Dictionary%7BSystem.Char%2CSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/CmdLneArgsBasic.cs/#L562">View Source</a>
+  </span>
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Collections.Generic.Dictionary{System.Char,System.String})">CmdLneArgsBasic(Dictionary&lt;Char, String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, each having
+the value specified in the corresponding item in pdctValidSwitches.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;char, string&gt; pdctValidSwitches)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidSwitches</span></td>
+        <td><p>Dictionary, keyed by switch name, a character, containing its desired
+default value, a string.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__System_Collections_Generic_Dictionary_System_String_System_String__.md&amp;value=---%0Auid%3A%20WizardWrx.Core.CmdLneArgsBasic.%23ctor(System.Collections.Generic.Dictionary%7BSystem.Char%2CSystem.String%7D%2CSystem.Collections.Generic.Dictionary%7BSystem.String%2CSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/CmdLneArgsBasic.cs/#L600">View Source</a>
+  </span>
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__System_Collections_Generic_Dictionary_System_String_System_String__" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Collections.Generic.Dictionary{System.Char,System.String},System.Collections.Generic.Dictionary{System.String,System.String})">CmdLneArgsBasic(Dictionary&lt;Char, String&gt;, Dictionary&lt;String, String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, each having
+the default value specified in the corresponding item in
+pdctValidSwitches, and a separate list of valid named arguments,
+defined in the same manner.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;char, string&gt; pdctValidSwitches, Dictionary&lt;string, string&gt; pdctValidNamedArgs)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidSwitches</span></td>
+        <td><p>Dictionary, keyed by switch name, a character, containing its desired
+default value, a string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidNamedArgs</span></td>
+        <td><p>Dictionary, keyed by argument name, a string, containing its desired
+default value, also a string.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__System_Collections_Generic_Dictionary_System_String_System_String__System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.CmdLneArgsBasic.%23ctor(System.Collections.Generic.Dictionary%7BSystem.Char%2CSystem.String%7D%2CSystem.Collections.Generic.Dictionary%7BSystem.String%2CSystem.String%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/CmdLneArgsBasic.cs/#L1145">View Source</a>
+  </span>
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__System_Collections_Generic_Dictionary_System_String_System_String__System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Collections.Generic.Dictionary{System.Char,System.String},System.Collections.Generic.Dictionary{System.String,System.String},System.Int32)">CmdLneArgsBasic(Dictionary&lt;Char, String&gt;, Dictionary&lt;String, String&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, each having
+the default value specified in the corresponding item in
+pdctValidSwitches, and a separate list of valid named arguments,
+defined in the same manner.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;char, string&gt; pdctValidSwitches, Dictionary&lt;string, string&gt; pdctValidNamedArgs, int pintPositionalArgCountLimit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidSwitches</span></td>
+        <td><p>Dictionary, keyed by switch name, a character, containing its desired
+default value, a string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidNamedArgs</span></td>
+        <td><p>Dictionary, keyed by argument name, a string, containing its desired
+default value, also a string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintPositionalArgCountLimit</span></td>
+        <td><p>The default limit on the number of positional arguments is
+POSITIONAL_ARGS_COUNT_LIMIT, which is currently set to 9. Use this
+argument to set a lower or higher limit.</p>
+<p>A pintPositionalArgCountLimit value of less than zero is discarded
+silently, and the default limit remains in force.</p>
+<p>Please see Remarks for important security considerations.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__System_Collections_Generic_Dictionary_System_String_System_String__System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>SECURITY NOTE</p>
+<p>All constructors in this class enforce a limit on the number of
+positional arguments permitted. The default limit is 9, which is
+defined as a public constant, POSITIONAL_ARGS_COUNT_LIMIT.</p>
+<p>This limit is imposed to protect your program from being fed an
+excessively long command line, in an attempt to cause a denial of
+service. Although few applications require more than nine positional
+command line arguments, the level is made adjustable, to meet that
+once per career need for more than nine arguments.</p>
+<p>While objects of this class cannot do anything about the number of
+characters in the command line (That is the responsibility of the
+Common Language Runtime.), they can, and do, limit the amount of
+memory allowed to be consumed to hold arguments parsed from it.</p>
+<p>No such limits are imposed on switches and named arguments, because
+the number of valid arguments (hence, the upper limit on memory
+consumed by them) is under programmer control, and unlikely to be an
+issue, since invalid arguments are discarded.</p>
+<p>WHY NINE?</p>
+<p>I chose the number nine mostly for historical reasons. Starting with
+MS-DOS 1.0, the number of positional parameters supported by batch
+files (without resorting to tricks with SHIFT) is 9.</p>
+<p>This limit has been carried forward into modern command processors,
+including CMD.EXE, the default console mode command processor of
+Windows NT, 2000, XP, Vista, etc.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__System_Collections_Generic_Dictionary_System_String_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.CmdLneArgsBasic.%23ctor(System.Collections.Generic.Dictionary%7BSystem.Char%2CSystem.String%7D%2CSystem.Collections.Generic.Dictionary%7BSystem.String%2CSystem.String%7D%2CWizardWrx.Core.CmdLneArgsBasic.ArgMatching)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/CmdLneArgsBasic.cs/#L754">View Source</a>
+  </span>
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__System_Collections_Generic_Dictionary_System_String_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Collections.Generic.Dictionary{System.Char,System.String},System.Collections.Generic.Dictionary{System.String,System.String},WizardWrx.Core.CmdLneArgsBasic.ArgMatching)">CmdLneArgsBasic(Dictionary&lt;Char, String&gt;, Dictionary&lt;String, String&gt;, CmdLneArgsBasic.ArgMatching)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, each having
+the default value specified in the corresponding item in
+pdctValidSwitches, and a separate list of valid named arguments,
+defined in the same manner.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;char, string&gt; pdctValidSwitches, Dictionary&lt;string, string&gt; pdctValidNamedArgs, CmdLneArgsBasic.ArgMatching penmArgMatching)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidSwitches</span></td>
+        <td><p>Dictionary, keyed by switch name, a character, containing its desired
+default value, a string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidNamedArgs</span></td>
+        <td><p>Dictionary, keyed by argument name, a string, containing its desired
+default value, also a string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.Core.CmdLneArgsBasic.ArgMatching.html">CmdLneArgsBasic.ArgMatching</a></td>
+        <td><span class="parametername">penmArgMatching</span></td>
+        <td><p>Use this member of the CmdLneArgs.ArgMatching enumeration to set the
+argument matching rules. At present, two rules are defined. See the
+IntelliSense documentation of any CmdLneArgs argument for details.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__System_Collections_Generic_Dictionary_System_String_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.CmdLneArgsBasic.%23ctor(System.Collections.Generic.Dictionary%7BSystem.Char%2CSystem.String%7D%2CSystem.Collections.Generic.Dictionary%7BSystem.String%2CSystem.String%7D%2CWizardWrx.Core.CmdLneArgsBasic.ArgMatching%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/CmdLneArgsBasic.cs/#L1581">View Source</a>
+  </span>
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__System_Collections_Generic_Dictionary_System_String_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Collections.Generic.Dictionary{System.Char,System.String},System.Collections.Generic.Dictionary{System.String,System.String},WizardWrx.Core.CmdLneArgsBasic.ArgMatching,System.Int32)">CmdLneArgsBasic(Dictionary&lt;Char, String&gt;, Dictionary&lt;String, String&gt;, CmdLneArgsBasic.ArgMatching, Int32)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, each having
+the default value specified in the corresponding item in
+pdctValidSwitches, and a separate list of valid named arguments,
+defined in the same manner.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;char, string&gt; pdctValidSwitches, Dictionary&lt;string, string&gt; pdctValidNamedArgs, CmdLneArgsBasic.ArgMatching penmArgMatching, int pintPositionalArgCountLimit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidSwitches</span></td>
+        <td><p>Dictionary, keyed by switch name, a character, containing its desired
+default value, a string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidNamedArgs</span></td>
+        <td><p>Dictionary, keyed by argument name, a string, containing its desired
+default value, also a string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.Core.CmdLneArgsBasic.ArgMatching.html">CmdLneArgsBasic.ArgMatching</a></td>
+        <td><span class="parametername">penmArgMatching</span></td>
+        <td><p>Use this member of the CmdLneArgs.ArgMatching enumeration to set the
+argument matching rules. At present, two rules are defined. See the
+IntelliSense documentation of any CmdLneArgs argument for details.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintPositionalArgCountLimit</span></td>
+        <td><p>The default limit on the number of positional arguments is
+POSITIONAL_ARGS_COUNT_LIMIT, which is currently set to 9. Use this
+argument to set a lower or higher limit.</p>
+<p>A pintPositionalArgCountLimit value of less than zero is discarded
+silently, and the default limit remains in force.</p>
+<p>Please see Remarks for important security considerations.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__System_Collections_Generic_Dictionary_System_String_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>SECURITY NOTE</p>
+<p>All constructors in this class enforce a limit on the number of
+positional arguments permitted. The default limit is 9, which is
+defined as a public constant, POSITIONAL_ARGS_COUNT_LIMIT.</p>
+<p>This limit is imposed to protect your program from being fed an
+excessively long command line, in an attempt to cause a denial of
+service. Although few applications require more than nine positional
+command line arguments, the level is made adjustable, to meet that
+once per career need for more than nine arguments.</p>
+<p>While objects of this class cannot do anything about the number of
+characters in the command line (That is the responsibility of the
+Common Language Runtime.), they can, and do, limit the amount of
+memory allowed to be consumed to hold arguments parsed from it.</p>
+<p>No such limits are imposed on switches and named arguments, because
+the number of valid arguments (hence, the upper limit on memory
+consumed by them) is under programmer control, and unlikely to be an
+issue, since invalid arguments are discarded.</p>
+<p>WHY NINE?</p>
+<p>I chose the number nine mostly for historical reasons. Starting with
+MS-DOS 1.0, the number of positional parameters supported by batch
+files (without resorting to tricks with SHIFT) is 9.</p>
+<p>This limit has been carried forward into modern command processors,
+including CMD.EXE, the default console mode command processor of
+Windows NT, 2000, XP, Vista, etc.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.CmdLneArgsBasic.%23ctor(System.Collections.Generic.Dictionary%7BSystem.Char%2CSystem.String%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/CmdLneArgsBasic.cs/#L1012">View Source</a>
+  </span>
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Collections.Generic.Dictionary{System.Char,System.String},System.Int32)">CmdLneArgsBasic(Dictionary&lt;Char, String&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, each having
+the value specified in the corresponding item in pdctValidSwitches.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;char, string&gt; pdctValidSwitches, int pintPositionalArgCountLimit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidSwitches</span></td>
+        <td><p>Dictionary, keyed by switch name, a character, containing its desired
+default value, a string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintPositionalArgCountLimit</span></td>
+        <td><p>The default limit on the number of positional arguments is
+POSITIONAL_ARGS_COUNT_LIMIT, which is currently set to 9. Use this
+argument to set a lower or higher limit.</p>
+<p>A pintPositionalArgCountLimit value of less than zero is discarded
+silently, and the default limit remains in force.</p>
+<p>Please see Remarks for important security considerations.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>SECURITY NOTE</p>
+<p>All constructors in this class enforce a limit on the number of
+positional arguments permitted. The default limit is 9, which is
+defined as a public constant, POSITIONAL_ARGS_COUNT_LIMIT.</p>
+<p>This limit is imposed to protect your program from being fed an
+excessively long command line, in an attempt to cause a denial of
+service. Although few applications require more than nine positional
+command line arguments, the level is made adjustable, to meet that
+once per career need for more than nine arguments.</p>
+<p>While objects of this class cannot do anything about the number of
+characters in the command line (That is the responsibility of the
+Common Language Runtime.), they can, and do, limit the amount of
+memory allowed to be consumed to hold arguments parsed from it.</p>
+<p>No such limits are imposed on switches and named arguments, because
+the number of valid arguments (hence, the upper limit on memory
+consumed by them) is under programmer control, and unlikely to be an
+issue, since invalid arguments are discarded.</p>
+<p>WHY NINE?</p>
+<p>I chose the number nine mostly for historical reasons. Starting with
+MS-DOS 1.0, the number of positional parameters supported by batch
+files (without resorting to tricks with SHIFT) is 9.</p>
+<p>This limit has been carried forward into modern command processors,
+including CMD.EXE, the default console mode command processor of
+Windows NT, 2000, XP, Vista, etc.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__System_String___System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.CmdLneArgsBasic.%23ctor(System.Collections.Generic.Dictionary%7BSystem.Char%2CSystem.String%7D%2CSystem.String%5B%5D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/CmdLneArgsBasic.cs/#L1972">View Source</a>
+  </span>
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__System_String___System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Collections.Generic.Dictionary{System.Char,System.String},System.String[],System.Int32)">CmdLneArgsBasic(Dictionary&lt;Char, String&gt;, String[], Int32)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, each having
+its default value defined by the value member of a DictionaryItem,
+and a separate list of valid named arguments, defined in an array of
+strings, with the default value supplied by the class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;char, string&gt; pdctValidSwitches, string[] pastrValidNamedArgs, int pintPositionalArgCountLimit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidSwitches</span></td>
+        <td><p>Dictionary, keyed by switch name, a character, containing its desired
+default value, a string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">pastrValidNamedArgs</span></td>
+        <td><p>Array of strings, each of which is a valid (supported) argument
+name. All arguments are initialized to VALUE_NOT_SET.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintPositionalArgCountLimit</span></td>
+        <td><p>The default limit on the number of positional arguments is
+POSITIONAL_ARGS_COUNT_LIMIT, which is currently set to 9. Use this
+argument to set a lower or higher limit.</p>
+<p>A pintPositionalArgCountLimit value of less than zero is discarded
+silently, and the default limit remains in force.</p>
+<p>Please see Remarks for important security considerations.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__System_String___System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>SECURITY NOTE</p>
+<p>All constructors in this class enforce a limit on the number of
+positional arguments permitted. The default limit is 9, which is
+defined as a public constant, POSITIONAL_ARGS_COUNT_LIMIT.</p>
+<p>This limit is imposed to protect your program from being fed an
+excessively long command line, in an attempt to cause a denial of
+service. Although few applications require more than nine positional
+command line arguments, the level is made adjustable, to meet that
+once per career need for more than nine arguments.</p>
+<p>While objects of this class cannot do anything about the number of
+characters in the command line (That is the responsibility of the
+Common Language Runtime.), they can, and do, limit the amount of
+memory allowed to be consumed to hold arguments parsed from it.</p>
+<p>No such limits are imposed on switches and named arguments, because
+the number of valid arguments (hence, the upper limit on memory
+consumed by them) is under programmer control, and unlikely to be an
+issue, since invalid arguments are discarded.</p>
+<p>WHY NINE?</p>
+<p>I chose the number nine mostly for historical reasons. Starting with
+MS-DOS 1.0, the number of positional parameters supported by batch
+files (without resorting to tricks with SHIFT) is 9.</p>
+<p>This limit has been carried forward into modern command processors,
+including CMD.EXE, the default console mode command processor of
+Windows NT, 2000, XP, Vista, etc.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__System_String___WizardWrx_Core_CmdLneArgsBasic_ArgMatching_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.CmdLneArgsBasic.%23ctor(System.Collections.Generic.Dictionary%7BSystem.Char%2CSystem.String%7D%2CSystem.String%5B%5D%2CWizardWrx.Core.CmdLneArgsBasic.ArgMatching)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/CmdLneArgsBasic.cs/#L1617">View Source</a>
+  </span>
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__System_String___WizardWrx_Core_CmdLneArgsBasic_ArgMatching_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Collections.Generic.Dictionary{System.Char,System.String},System.String[],WizardWrx.Core.CmdLneArgsBasic.ArgMatching)">CmdLneArgsBasic(Dictionary&lt;Char, String&gt;, String[], CmdLneArgsBasic.ArgMatching)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, each having
+the default value specified in the corresponding item in
+pdctValidSwitches, and a separate list of valid named arguments, in
+an array of strings, with the class supplying a standard default.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;char, string&gt; pdctValidSwitches, string[] pastrValidNamedArgs, CmdLneArgsBasic.ArgMatching penmArgMatching)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidSwitches</span></td>
+        <td><p>Dictionary, keyed by switch name, a character, containing its desired
+default value, a string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">pastrValidNamedArgs</span></td>
+        <td><p>Array of strings, each of which is a valid (supported) argument
+name. All arguments are initialized to VALUE_NOT_SET.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.Core.CmdLneArgsBasic.ArgMatching.html">CmdLneArgsBasic.ArgMatching</a></td>
+        <td><span class="parametername">penmArgMatching</span></td>
+        <td><p>Use this member of the CmdLneArgs.ArgMatching enumeration to set the
+argument matching rules. At present, two rules are defined. See the
+IntelliSense documentation of any CmdLneArgs argument for details.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__System_String___WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.CmdLneArgsBasic.%23ctor(System.Collections.Generic.Dictionary%7BSystem.Char%2CSystem.String%7D%2CSystem.String%5B%5D%2CWizardWrx.Core.CmdLneArgsBasic.ArgMatching%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/CmdLneArgsBasic.cs/#L1827">View Source</a>
+  </span>
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__System_String___WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Collections.Generic.Dictionary{System.Char,System.String},System.String[],WizardWrx.Core.CmdLneArgsBasic.ArgMatching,System.Int32)">CmdLneArgsBasic(Dictionary&lt;Char, String&gt;, String[], CmdLneArgsBasic.ArgMatching, Int32)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, each having
+its default value defined by the value member of a DictionaryItem,
+and a separate list of valid named arguments, each defined as a
+DictionaryItem, with its default value given in the value member.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;char, string&gt; pdctValidSwitches, string[] pastrValidNamedArgs, CmdLneArgsBasic.ArgMatching penmArgMatching, int pintPositionalArgCountLimit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidSwitches</span></td>
+        <td><p>Dictionary, keyed by switch name, a character, containing its desired
+default value, a string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">pastrValidNamedArgs</span></td>
+        <td><p>Array of strings, each of which is a valid (supported) argument
+name. All arguments are initialized to VALUE_NOT_SET.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.Core.CmdLneArgsBasic.ArgMatching.html">CmdLneArgsBasic.ArgMatching</a></td>
+        <td><span class="parametername">penmArgMatching</span></td>
+        <td><p>Use this member of the CmdLneArgs.ArgMatching enumeration to set the
+argument matching rules. At present, two rules are defined. See the
+IntelliSense documentation of any CmdLneArgs argument for details.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintPositionalArgCountLimit</span></td>
+        <td><p>The default limit on the number of positional arguments is
+POSITIONAL_ARGS_COUNT_LIMIT, which is currently set to 9. Use this
+argument to set a lower or higher limit.</p>
+<p>A pintPositionalArgCountLimit value of less than zero is discarded
+silently, and the default limit remains in force.</p>
+<p>Please see Remarks for important security considerations.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__System_String___WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>SECURITY NOTE</p>
+<p>All constructors in this class enforce a limit on the number of
+positional arguments permitted. The default limit is 9, which is
+defined as a public constant, POSITIONAL_ARGS_COUNT_LIMIT.</p>
+<p>This limit is imposed to protect your program from being fed an
+excessively long command line, in an attempt to cause a denial of
+service. Although few applications require more than nine positional
+command line arguments, the level is made adjustable, to meet that
+once per career need for more than nine arguments.</p>
+<p>While objects of this class cannot do anything about the number of
+characters in the command line (That is the responsibility of the
+Common Language Runtime.), they can, and do, limit the amount of
+memory allowed to be consumed to hold arguments parsed from it.</p>
+<p>No such limits are imposed on switches and named arguments, because
+the number of valid arguments (hence, the upper limit on memory
+consumed by them) is under programmer control, and unlikely to be an
+issue, since invalid arguments are discarded.</p>
+<p>WHY NINE?</p>
+<p>I chose the number nine mostly for historical reasons. Starting with
+MS-DOS 1.0, the number of positional parameters supported by batch
+files (without resorting to tricks with SHIFT) is 9.</p>
+<p>This limit has been carried forward into modern command processors,
+including CMD.EXE, the default console mode command processor of
+Windows NT, 2000, XP, Vista, etc.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.CmdLneArgsBasic.%23ctor(System.Collections.Generic.Dictionary%7BSystem.Char%2CSystem.String%7D%2CWizardWrx.Core.CmdLneArgsBasic.ArgMatching)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/CmdLneArgsBasic.cs/#L699">View Source</a>
+  </span>
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Collections.Generic.Dictionary{System.Char,System.String},WizardWrx.Core.CmdLneArgsBasic.ArgMatching)">CmdLneArgsBasic(Dictionary&lt;Char, String&gt;, CmdLneArgsBasic.ArgMatching)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, each having
+the value specified in the corresponding item in pdctValidSwitches.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;char, string&gt; pdctValidSwitches, CmdLneArgsBasic.ArgMatching penmArgMatching)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidSwitches</span></td>
+        <td><p>Dictionary, keyed by switch name, a character, containing its desired
+default value, a string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.Core.CmdLneArgsBasic.ArgMatching.html">CmdLneArgsBasic.ArgMatching</a></td>
+        <td><span class="parametername">penmArgMatching</span></td>
+        <td><p>Use this member of the CmdLneArgs.ArgMatching enumeration to set the
+argument matching rules. At present, two rules are defined. See the
+IntelliSense documentation of any CmdLneArgs argument for details.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.CmdLneArgsBasic.%23ctor(System.Collections.Generic.Dictionary%7BSystem.Char%2CSystem.String%7D%2CWizardWrx.Core.CmdLneArgsBasic.ArgMatching%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/CmdLneArgsBasic.cs/#L1432">View Source</a>
+  </span>
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Collections.Generic.Dictionary{System.Char,System.String},WizardWrx.Core.CmdLneArgsBasic.ArgMatching,System.Int32)">CmdLneArgsBasic(Dictionary&lt;Char, String&gt;, CmdLneArgsBasic.ArgMatching, Int32)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid switches, each having
+the value specified in the corresponding item in pdctValidSwitches.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;char, string&gt; pdctValidSwitches, CmdLneArgsBasic.ArgMatching penmArgMatching, int pintPositionalArgCountLimit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.Char</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidSwitches</span></td>
+        <td><p>Dictionary, keyed by switch name, a character, containing its desired
+default value, a string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.Core.CmdLneArgsBasic.ArgMatching.html">CmdLneArgsBasic.ArgMatching</a></td>
+        <td><span class="parametername">penmArgMatching</span></td>
+        <td><p>Use this member of the CmdLneArgs.ArgMatching enumeration to set the
+argument matching rules. At present, two rules are defined. See the
+IntelliSense documentation of any CmdLneArgs argument for details.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintPositionalArgCountLimit</span></td>
+        <td><p>The default limit on the number of positional arguments is
+POSITIONAL_ARGS_COUNT_LIMIT, which is currently set to 9. Use this
+argument to set a lower or higher limit.</p>
+<p>A pintPositionalArgCountLimit value of less than zero is discarded
+silently, and the default limit remains in force.</p>
+<p>Please see Remarks for important security considerations.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_Char_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>SECURITY NOTE</p>
+<p>All constructors in this class enforce a limit on the number of
+positional arguments permitted. The default limit is 9, which is
+defined as a public constant, POSITIONAL_ARGS_COUNT_LIMIT.</p>
+<p>This limit is imposed to protect your program from being fed an
+excessively long command line, in an attempt to cause a denial of
+service. Although few applications require more than nine positional
+command line arguments, the level is made adjustable, to meet that
+once per career need for more than nine arguments.</p>
+<p>While objects of this class cannot do anything about the number of
+characters in the command line (That is the responsibility of the
+Common Language Runtime.), they can, and do, limit the amount of
+memory allowed to be consumed to hold arguments parsed from it.</p>
+<p>No such limits are imposed on switches and named arguments, because
+the number of valid arguments (hence, the upper limit on memory
+consumed by them) is under programmer control, and unlikely to be an
+issue, since invalid arguments are discarded.</p>
+<p>WHY NINE?</p>
+<p>I chose the number nine mostly for historical reasons. Starting with
+MS-DOS 1.0, the number of positional parameters supported by batch
+files (without resorting to tricks with SHIFT) is 9.</p>
+<p>This limit has been carried forward into modern command processors,
+including CMD.EXE, the default console mode command processor of
+Windows NT, 2000, XP, Vista, etc.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_String_System_String__.md&amp;value=---%0Auid%3A%20WizardWrx.Core.CmdLneArgsBasic.%23ctor(System.Collections.Generic.Dictionary%7BSystem.String%2CSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/CmdLneArgsBasic.cs/#L578">View Source</a>
+  </span>
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_String_System_String__" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Collections.Generic.Dictionary{System.String,System.String})">CmdLneArgsBasic(Dictionary&lt;String, String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid named arguments, each
+having the default value specified in the corresponding item in
+pdctValidNamedArgs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;string, string&gt; pdctValidNamedArgs)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidNamedArgs</span></td>
+        <td><p>Dictionary, keyed by argument name, a string, containing its desired
+default value, also a string.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_String_System_String__System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.CmdLneArgsBasic.%23ctor(System.Collections.Generic.Dictionary%7BSystem.String%2CSystem.String%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/CmdLneArgsBasic.cs/#L1076">View Source</a>
+  </span>
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_String_System_String__System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Collections.Generic.Dictionary{System.String,System.String},System.Int32)">CmdLneArgsBasic(Dictionary&lt;String, String&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid named arguments, each
+having the default value specified in the corresponding item in
+pdctValidNamedArgs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;string, string&gt; pdctValidNamedArgs, int pintPositionalArgCountLimit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidNamedArgs</span></td>
+        <td><p>Dictionary, keyed by argument name, a string, containing its desired
+default value, also a string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintPositionalArgCountLimit</span></td>
+        <td><p>The default limit on the number of positional arguments is
+POSITIONAL_ARGS_COUNT_LIMIT, which is currently set to 9. Use this
+argument to set a lower or higher limit.</p>
+<p>A pintPositionalArgCountLimit value of less than zero is discarded
+silently, and the default limit remains in force.</p>
+<p>Please see Remarks for important security considerations.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_String_System_String__System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>SECURITY NOTE</p>
+<p>All constructors in this class enforce a limit on the number of
+positional arguments permitted. The default limit is 9, which is
+defined as a public constant, POSITIONAL_ARGS_COUNT_LIMIT.</p>
+<p>This limit is imposed to protect your program from being fed an
+excessively long command line, in an attempt to cause a denial of
+service. Although few applications require more than nine positional
+command line arguments, the level is made adjustable, to meet that
+once per career need for more than nine arguments.</p>
+<p>While objects of this class cannot do anything about the number of
+characters in the command line (That is the responsibility of the
+Common Language Runtime.), they can, and do, limit the amount of
+memory allowed to be consumed to hold arguments parsed from it.</p>
+<p>No such limits are imposed on switches and named arguments, because
+the number of valid arguments (hence, the upper limit on memory
+consumed by them) is under programmer control, and unlikely to be an
+issue, since invalid arguments are discarded.</p>
+<p>WHY NINE?</p>
+<p>I chose the number nine mostly for historical reasons. Starting with
+MS-DOS 1.0, the number of positional parameters supported by batch
+files (without resorting to tricks with SHIFT) is 9.</p>
+<p>This limit has been carried forward into modern command processors,
+including CMD.EXE, the default console mode command processor of
+Windows NT, 2000, XP, Vista, etc.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_String_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.CmdLneArgsBasic.%23ctor(System.Collections.Generic.Dictionary%7BSystem.String%2CSystem.String%7D%2CWizardWrx.Core.CmdLneArgsBasic.ArgMatching)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/CmdLneArgsBasic.cs/#L724">View Source</a>
+  </span>
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_String_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Collections.Generic.Dictionary{System.String,System.String},WizardWrx.Core.CmdLneArgsBasic.ArgMatching)">CmdLneArgsBasic(Dictionary&lt;String, String&gt;, CmdLneArgsBasic.ArgMatching)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid named arguments, each
+having the default value specified in the corresponding item in
+pdctValidNamedArgs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;string, string&gt; pdctValidNamedArgs, CmdLneArgsBasic.ArgMatching penmArgMatching)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidNamedArgs</span></td>
+        <td><p>Dictionary, keyed by argument name, a string, containing its desired
+default value, also a string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.Core.CmdLneArgsBasic.ArgMatching.html">CmdLneArgsBasic.ArgMatching</a></td>
+        <td><span class="parametername">penmArgMatching</span></td>
+        <td><p>Use this member of the CmdLneArgs.ArgMatching enumeration to set the
+argument matching rules. At present, two rules are defined. See the
+IntelliSense documentation of any CmdLneArgs argument for details.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_String_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.CmdLneArgsBasic.%23ctor(System.Collections.Generic.Dictionary%7BSystem.String%2CSystem.String%7D%2CWizardWrx.Core.CmdLneArgsBasic.ArgMatching%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/CmdLneArgsBasic.cs/#L1504">View Source</a>
+  </span>
+  <a id="WizardWrx_Core_CmdLneArgsBasic__ctor_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor*"></a>
+  <h4 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_String_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32_" data-uid="WizardWrx.Core.CmdLneArgsBasic.#ctor(System.Collections.Generic.Dictionary{System.String,System.String},WizardWrx.Core.CmdLneArgsBasic.ArgMatching,System.Int32)">CmdLneArgsBasic(Dictionary&lt;String, String&gt;, CmdLneArgsBasic.ArgMatching, Int32)</h4>
+  <div class="markdown level1 summary"><p>Initialize the instance with a list of valid named arguments, each
+having the default value specified in the corresponding item in
+pdctValidNamedArgs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CmdLneArgsBasic(Dictionary&lt;string, string&gt; pdctValidNamedArgs, CmdLneArgsBasic.ArgMatching penmArgMatching, int pintPositionalArgCountLimit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pdctValidNamedArgs</span></td>
+        <td><p>Dictionary, keyed by argument name, a string, containing its desired
+default value, also a string.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.Core.CmdLneArgsBasic.ArgMatching.html">CmdLneArgsBasic.ArgMatching</a></td>
+        <td><span class="parametername">penmArgMatching</span></td>
+        <td><p>Use this member of the CmdLneArgs.ArgMatching enumeration to set the
+argument matching rules. At present, two rules are defined. See the
+IntelliSense documentation of any CmdLneArgs argument for details.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintPositionalArgCountLimit</span></td>
+        <td><p>The default limit on the number of positional arguments is
+POSITIONAL_ARGS_COUNT_LIMIT, which is currently set to 9. Use this
+argument to set a lower or higher limit.</p>
+<p>A pintPositionalArgCountLimit value of less than zero is discarded
+silently, and the default limit remains in force.</p>
+<p>Please see Remarks for important security considerations.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_Core_CmdLneArgsBasic__ctor_System_Collections_Generic_Dictionary_System_String_System_String__WizardWrx_Core_CmdLneArgsBasic_ArgMatching_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>SECURITY NOTE</p>
+<p>All constructors in this class enforce a limit on the number of
+positional arguments permitted. The default limit is 9, which is
+defined as a public constant, POSITIONAL_ARGS_COUNT_LIMIT.</p>
+<p>This limit is imposed to protect your program from being fed an
+excessively long command line, in an attempt to cause a denial of
+service. Although few applications require more than nine positional
+command line arguments, the level is made adjustable, to meet that
+once per career need for more than nine arguments.</p>
+<p>While objects of this class cannot do anything about the number of
+characters in the command line (That is the responsibility of the
+Common Language Runtime.), they can, and do, limit the amount of
+memory allowed to be consumed to hold arguments parsed from it.</p>
+<p>No such limits are imposed on switches and named arguments, because
+the number of valid arguments (hence, the upper limit on memory
+consumed by them) is under programmer control, and unlikely to be an
+issue, since invalid arguments are discarded.</p>
+<p>WHY NINE?</p>
+<p>I chose the number nine mostly for historical reasons. Starting with
+MS-DOS 1.0, the number of positional parameters supported by batch
+files (without resorting to tricks with SHIFT) is 9.</p>
+<p>This limit has been carried forward into modern command processors,
+including CMD.EXE, the default console mode command processor of
+Windows NT, 2000, XP, Vista, etc.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_CmdLneArgsBasic__ctor_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.CmdLneArgsBasic.%23ctor(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -2169,7 +2193,7 @@ contains at least one argument. See Remarks.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const bool ARG_LIST_HAS_ARGS = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const bool ARG_LIST_HAS_ARGS = false</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2206,7 +2230,7 @@ empty, consisting solely of the name of the executing assembly.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const bool ARG_LIST_IS_EMPTY = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const bool ARG_LIST_IS_EMPTY = true</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2239,7 +2263,7 @@ for complete details.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const bool BLANK_AS_DEFAULT_ALLOWED = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const bool BLANK_AS_DEFAULT_ALLOWED = true</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2272,7 +2296,7 @@ for complete details.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const bool BLANK_AS_DEFAULT_FORBIDDEN = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const bool BLANK_AS_DEFAULT_FORBIDDEN = false</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2304,7 +2328,7 @@ positional arguments.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const int FIRST_POSITIONAL_ARG = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const int FIRST_POSITIONAL_ARG = 1</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2335,7 +2359,7 @@ value of named arguments.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const char NAME_VALUE_DELIMITER = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const char NAME_VALUE_DELIMITER = '='</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2366,7 +2390,7 @@ simplifies coding well-documented tests.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const int NONE = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const int NONE = 0</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2397,7 +2421,7 @@ that instances of this class will capture.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const int POSITIONAL_ARGS_COUNT_LIMIT = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const int POSITIONAL_ARGS_COUNT_LIMIT = 9</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2429,7 +2453,7 @@ command line.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string VALUE_NOT_SET = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string VALUE_NOT_SET = &quot;&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3093,6 +3117,24 @@ value type.</p>
         <td><span class="xref">System.Char</span></td>
         <td><p>The return value is the first character of string pstrIn, as a
 scalar value type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td><p>If the input string, pstrIn, is null or empty, an ArgumentException
+is thrown. See the next overload for an alternative that doesn't
+throw exceptions.</p>
 </td>
       </tr>
     </tbody>

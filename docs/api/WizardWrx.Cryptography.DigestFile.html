@@ -89,30 +89,55 @@ came from reading the file in binary mode.</p>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">DigestFile</span></div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="WizardWrx.Cryptography.html">WizardWrx.Cryptography</a></h6>
   <h6><strong>Assembly</strong>: WizardWrx.Core.dll</h6>
   <h5 id="WizardWrx_Cryptography_DigestFile_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class DigestFile : object</code></pre>
+    <pre><code class="lang-csharp hljs">public static class DigestFile</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Cryptography_DigestFile_MD5Hash_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.Cryptography.DigestFile.MD5Hash(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Cryptography_DigestFile_MD5Hash_System_String_WizardWrx_Cryptography_DigestFile_OuutputFormat_.md&amp;value=---%0Auid%3A%20WizardWrx.Cryptography.DigestFile.MD5Hash(System.String%2CWizardWrx.Cryptography.DigestFile.OuutputFormat)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/DigestFile.cs/#L181">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/DigestFile.cs/#L303">View Source</a>
   </span>
   <a id="WizardWrx_Cryptography_DigestFile_MD5Hash_" data-uid="WizardWrx.Cryptography.DigestFile.MD5Hash*"></a>
-  <h4 id="WizardWrx_Cryptography_DigestFile_MD5Hash_System_String_" data-uid="WizardWrx.Cryptography.DigestFile.MD5Hash(System.String)">MD5Hash(String)</h4>
+  <h4 id="WizardWrx_Cryptography_DigestFile_MD5Hash_System_String_WizardWrx_Cryptography_DigestFile_OuutputFormat_" data-uid="WizardWrx.Cryptography.DigestFile.MD5Hash(System.String,WizardWrx.Cryptography.DigestFile.OuutputFormat)">MD5Hash(String, DigestFile.OuutputFormat)</h4>
   <div class="markdown level1 summary"><p>Given the name of a file, return its MD5 message digest as a 32
 character string of hexadecimal digits.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string MD5Hash(string pstrFileName)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This algorithm is classified as broken and unsafe. Use SHA256Hash, SHA384Hash, or SHA512Hash.&quot;)]
+public static string MD5Hash(string pstrFileName, DigestFile.OuutputFormat penmOutputFormat = DigestFile.OuutputFormat.HexadecimalDigits)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -127,15 +152,35 @@ character string of hexadecimal digits.</p>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">pstrFileName</span></td>
-        <td><p>String containing the name of the file to be digested. See Remarks
-for important information about the internal implementation.</p>
-<p>iMPORTANT: Since files are read in binary, they are loaded directly
+        <td><p>This string represents the name of the file to process, which may be
+a relative or absolute path. The file must exist, and the caller
+must have permission to read it, or an exception will be thrown.</p>
+<p>
+iMPORTANT: Since files are read in binary, they are loaded directly
 into the hash algorithm as byte arrays. This means that the digest
 of a file of ASCII characters and the hash of the file contents read
 into a CLR string object, which is a string of Unicode characters,
-will differ. The reason for this is that the string of Unicode
+will differ. The reason for this is that the string of Unicode 
 characters yields a different byte stream than the byte stream that
-came from reading the file in binary mode.</p>
+came from reading the file in binary mode.
+</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.Cryptography.DigestFile.OuutputFormat.html">DigestFile.OuutputFormat</a></td>
+        <td><span class="parametername">penmOutputFormat</span></td>
+        <td><p>This optional parameter specifies the output format of the message
+digest. If omitted, the default is OuutputFormat.HexadecimalDigits,
+which outputs the digest as a string of hexadecimal digits. The
+other options are OuutputFormat.Base64String, which outputs the
+digest as a Base64 encoded string, and
+OuutputFormat.PrefixedBase64String, which outputs a Base64 encoded
+string that includes a prefix that identifies the hashing algorithm
+used to generate the digest. The prefix is derived from the name of
+the hashing algorithm, and is followed by an underscore character.
+For example, the 16-byte MD5 digest is represented by a string of 26
+characters, beginning with &quot;MD5_&quot;, and the 64-byte SHA-512 digest is
+represented by a string of 92 characters, beginning with &quot;SHA512_&quot;.</p>
 </td>
       </tr>
     </tbody>
@@ -159,43 +204,30 @@ credited with inventing the MD5 digest algorithm.</p>
       </tr>
     </tbody>
   </table>
-  <h5 id="WizardWrx_Cryptography_DigestFile_MD5Hash_System_String__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>Since the internal hashing implementations expect byte arrays, the
-input string must be converted. The Encoding.Default.GetBytes method
-is called upon to convert the string into a byte array.</p>
-<p>A slightly modified version of the Rivest code, written in ANSI C,
-is the engine in my MD5WIN stand-alone program and my MD5Digest
-Windows Dynamic Link Library.</p>
-<p>However, this function uses a MD5CryptoServiceProvider object, which
-provides a managed interface to the Cryptographic Service Provider
-in the host's installation of Microsoft Windows. I chose this over
-the 100% managed implementation for two reasons.</p>
-<ol>
-<li><p>The CSP implementation uses native machine code for the
-computation, and should outperform managed code on large plain-texts.</p>
-</li>
-<li><p>By using the native implementation, the CLR is eliminated as a
-potential point of failure due to a weakness in the implementation
-of the algorithm.</p>
-</li>
-</ol>
+  <h5 id="WizardWrx_Cryptography_DigestFile_MD5Hash_System_String_WizardWrx_Cryptography_DigestFile_OuutputFormat__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+ Since the internal hashing implementations expect byte arrays, the
+ input string must be converted. The Encoding.Default.GetBytes method
+ is called upon to convert the string into a byte array.
+</p>
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Cryptography_DigestFile_SHA1Hash_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.Cryptography.DigestFile.SHA1Hash(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Cryptography_DigestFile_SHA1Hash_System_String_WizardWrx_Cryptography_DigestFile_OuutputFormat_.md&amp;value=---%0Auid%3A%20WizardWrx.Cryptography.DigestFile.SHA1Hash(System.String%2CWizardWrx.Cryptography.DigestFile.OuutputFormat)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/DigestFile.cs/#L226">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/DigestFile.cs/#L355">View Source</a>
   </span>
   <a id="WizardWrx_Cryptography_DigestFile_SHA1Hash_" data-uid="WizardWrx.Cryptography.DigestFile.SHA1Hash*"></a>
-  <h4 id="WizardWrx_Cryptography_DigestFile_SHA1Hash_System_String_" data-uid="WizardWrx.Cryptography.DigestFile.SHA1Hash(System.String)">SHA1Hash(String)</h4>
+  <h4 id="WizardWrx_Cryptography_DigestFile_SHA1Hash_System_String_WizardWrx_Cryptography_DigestFile_OuutputFormat_" data-uid="WizardWrx.Cryptography.DigestFile.SHA1Hash(System.String,WizardWrx.Cryptography.DigestFile.OuutputFormat)">SHA1Hash(String, DigestFile.OuutputFormat)</h4>
   <div class="markdown level1 summary"><p>Given the name of a file, return its SHA-1 message digest as a 32
 character string of hexadecimal digits.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string SHA1Hash(string pstrFileName)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This algorithm is classified as broken and unsafe. Use SHA256Hash, SHA384Hash, or SHA512Hash.&quot;)]
+public static string SHA1Hash(string pstrFileName, DigestFile.OuutputFormat penmOutputFormat = DigestFile.OuutputFormat.HexadecimalDigits)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -210,14 +242,35 @@ character string of hexadecimal digits.</p>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">pstrFileName</span></td>
-        <td><p>String containing the name of the file to be digested.</p>
-<p>iMPORTANT: Since files are read in binary, they are loaded directly
+        <td><p>This string represents the name of the file to process, which may be
+a relative or absolute path. The file must exist, and the caller
+must have permission to read it, or an exception will be thrown.</p>
+<p>
+iMPORTANT: Since files are read in binary, they are loaded directly
 into the hash algorithm as byte arrays. This means that the digest
 of a file of ASCII characters and the hash of the file contents read
 into a CLR string object, which is a string of Unicode characters,
-will differ. The reason for this is that the string of Unicode
+will differ. The reason for this is that the string of Unicode 
 characters yields a different byte stream than the byte stream that
-came from reading the file in binary mode.</p>
+came from reading the file in binary mode.
+</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.Cryptography.DigestFile.OuutputFormat.html">DigestFile.OuutputFormat</a></td>
+        <td><span class="parametername">penmOutputFormat</span></td>
+        <td><p>This optional parameter specifies the output format of the message
+digest. If omitted, the default is OuutputFormat.HexadecimalDigits,
+which outputs the digest as a string of hexadecimal digits. The
+other options are OuutputFormat.Base64String, which outputs the
+digest as a Base64 encoded string, and
+OuutputFormat.PrefixedBase64String, which outputs a Base64 encoded
+string that includes a prefix that identifies the hashing algorithm
+used to generate the digest. The prefix is derived from the name of
+the hashing algorithm, and is followed by an underscore character.
+For example, the 16-byte MD5 digest is represented by a string of 26
+characters, beginning with &quot;MD5_&quot;, and the 64-byte SHA-512 digest is
+represented by a string of 92 characters, beginning with &quot;SHA512_&quot;.</p>
 </td>
       </tr>
     </tbody>
@@ -241,20 +294,20 @@ characters.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Cryptography_DigestFile_SHA256Hash_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.Cryptography.DigestFile.SHA256Hash(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Cryptography_DigestFile_SHA256Hash_System_String_WizardWrx_Cryptography_DigestFile_OuutputFormat_.md&amp;value=---%0Auid%3A%20WizardWrx.Cryptography.DigestFile.SHA256Hash(System.String%2CWizardWrx.Cryptography.DigestFile.OuutputFormat)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/DigestFile.cs/#L267">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/DigestFile.cs/#L407">View Source</a>
   </span>
   <a id="WizardWrx_Cryptography_DigestFile_SHA256Hash_" data-uid="WizardWrx.Cryptography.DigestFile.SHA256Hash*"></a>
-  <h4 id="WizardWrx_Cryptography_DigestFile_SHA256Hash_System_String_" data-uid="WizardWrx.Cryptography.DigestFile.SHA256Hash(System.String)">SHA256Hash(String)</h4>
+  <h4 id="WizardWrx_Cryptography_DigestFile_SHA256Hash_System_String_WizardWrx_Cryptography_DigestFile_OuutputFormat_" data-uid="WizardWrx.Cryptography.DigestFile.SHA256Hash(System.String,WizardWrx.Cryptography.DigestFile.OuutputFormat)">SHA256Hash(String, DigestFile.OuutputFormat)</h4>
   <div class="markdown level1 summary"><p>Given the name of a file, return its SHA-256 message digest as a 64
 character string of hexadecimal digits.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string SHA256Hash(string pstrFileName)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string SHA256Hash(string pstrFileName, DigestFile.OuutputFormat penmOutputFormat = DigestFile.OuutputFormat.HexadecimalDigits)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -269,14 +322,35 @@ character string of hexadecimal digits.</p>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">pstrFileName</span></td>
-        <td><p>String containing the name of the file to be digested.</p>
-<p>iMPORTANT: Since files are read in binary, they are loaded directly
+        <td><p>This string represents the name of the file to process, which may be
+a relative or absolute path. The file must exist, and the caller
+must have permission to read it, or an exception will be thrown.</p>
+<p>
+iMPORTANT: Since files are read in binary, they are loaded directly
 into the hash algorithm as byte arrays. This means that the digest
 of a file of ASCII characters and the hash of the file contents read
 into a CLR string object, which is a string of Unicode characters,
-will differ. The reason for this is that the string of Unicode
+will differ. The reason for this is that the string of Unicode 
 characters yields a different byte stream than the byte stream that
-came from reading the file in binary mode.</p>
+came from reading the file in binary mode.
+</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.Cryptography.DigestFile.OuutputFormat.html">DigestFile.OuutputFormat</a></td>
+        <td><span class="parametername">penmOutputFormat</span></td>
+        <td><p>This optional parameter specifies the output format of the message
+digest. If omitted, the default is OuutputFormat.HexadecimalDigits,
+which outputs the digest as a string of hexadecimal digits. The
+other options are OuutputFormat.Base64String, which outputs the
+digest as a Base64 encoded string, and
+OuutputFormat.PrefixedBase64String, which outputs a Base64 encoded
+string that includes a prefix that identifies the hashing algorithm
+used to generate the digest. The prefix is derived from the name of
+the hashing algorithm, and is followed by an underscore character.
+For example, the 16-byte MD5 digest is represented by a string of 26
+characters, beginning with &quot;MD5_&quot;, and the 64-byte SHA-512 digest is
+represented by a string of 92 characters, beginning with &quot;SHA512_&quot;.</p>
 </td>
       </tr>
     </tbody>
@@ -300,20 +374,20 @@ characters.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Cryptography_DigestFile_SHA384Hash_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.Cryptography.DigestFile.SHA384Hash(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Cryptography_DigestFile_SHA384Hash_System_String_WizardWrx_Cryptography_DigestFile_OuutputFormat_.md&amp;value=---%0Auid%3A%20WizardWrx.Cryptography.DigestFile.SHA384Hash(System.String%2CWizardWrx.Cryptography.DigestFile.OuutputFormat)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/DigestFile.cs/#L307">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/DigestFile.cs/#L458">View Source</a>
   </span>
   <a id="WizardWrx_Cryptography_DigestFile_SHA384Hash_" data-uid="WizardWrx.Cryptography.DigestFile.SHA384Hash*"></a>
-  <h4 id="WizardWrx_Cryptography_DigestFile_SHA384Hash_System_String_" data-uid="WizardWrx.Cryptography.DigestFile.SHA384Hash(System.String)">SHA384Hash(String)</h4>
+  <h4 id="WizardWrx_Cryptography_DigestFile_SHA384Hash_System_String_WizardWrx_Cryptography_DigestFile_OuutputFormat_" data-uid="WizardWrx.Cryptography.DigestFile.SHA384Hash(System.String,WizardWrx.Cryptography.DigestFile.OuutputFormat)">SHA384Hash(String, DigestFile.OuutputFormat)</h4>
   <div class="markdown level1 summary"><p>Given the name of a file, return its SHA-384 message digest as a 96
 character string of hexadecimal digits.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string SHA384Hash(string pstrFileName)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string SHA384Hash(string pstrFileName, DigestFile.OuutputFormat penmOutputFormat = DigestFile.OuutputFormat.HexadecimalDigits)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -328,14 +402,35 @@ character string of hexadecimal digits.</p>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">pstrFileName</span></td>
-        <td><p>String containing the name of the file to be digested.</p>
-<p>iMPORTANT: Since files are read in binary, they are loaded directly
+        <td><p>This string represents the name of the file to process, which may be
+a relative or absolute path. The file must exist, and the caller
+must have permission to read it, or an exception will be thrown.</p>
+<p>
+iMPORTANT: Since files are read in binary, they are loaded directly
 into the hash algorithm as byte arrays. This means that the digest
 of a file of ASCII characters and the hash of the file contents read
 into a CLR string object, which is a string of Unicode characters,
-will differ. The reason for this is that the string of Unicode
+will differ. The reason for this is that the string of Unicode 
 characters yields a different byte stream than the byte stream that
-came from reading the file in binary mode.</p>
+came from reading the file in binary mode.
+</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.Cryptography.DigestFile.OuutputFormat.html">DigestFile.OuutputFormat</a></td>
+        <td><span class="parametername">penmOutputFormat</span></td>
+        <td><p>This optional parameter specifies the output format of the message
+digest. If omitted, the default is OuutputFormat.HexadecimalDigits,
+which outputs the digest as a string of hexadecimal digits. The
+other options are OuutputFormat.Base64String, which outputs the
+digest as a Base64 encoded string, and
+OuutputFormat.PrefixedBase64String, which outputs a Base64 encoded
+string that includes a prefix that identifies the hashing algorithm
+used to generate the digest. The prefix is derived from the name of
+the hashing algorithm, and is followed by an underscore character.
+For example, the 16-byte MD5 digest is represented by a string of 26
+characters, beginning with &quot;MD5_&quot;, and the 64-byte SHA-512 digest is
+represented by a string of 92 characters, beginning with &quot;SHA512_&quot;.</p>
 </td>
       </tr>
     </tbody>
@@ -359,20 +454,20 @@ characters.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Cryptography_DigestFile_SHA512Hash_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.Cryptography.DigestFile.SHA512Hash(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Cryptography_DigestFile_SHA512Hash_System_String_WizardWrx_Cryptography_DigestFile_OuutputFormat_.md&amp;value=---%0Auid%3A%20WizardWrx.Cryptography.DigestFile.SHA512Hash(System.String%2CWizardWrx.Cryptography.DigestFile.OuutputFormat)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/DigestFile.cs/#L347">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/DigestFile.cs/#L510">View Source</a>
   </span>
   <a id="WizardWrx_Cryptography_DigestFile_SHA512Hash_" data-uid="WizardWrx.Cryptography.DigestFile.SHA512Hash*"></a>
-  <h4 id="WizardWrx_Cryptography_DigestFile_SHA512Hash_System_String_" data-uid="WizardWrx.Cryptography.DigestFile.SHA512Hash(System.String)">SHA512Hash(String)</h4>
+  <h4 id="WizardWrx_Cryptography_DigestFile_SHA512Hash_System_String_WizardWrx_Cryptography_DigestFile_OuutputFormat_" data-uid="WizardWrx.Cryptography.DigestFile.SHA512Hash(System.String,WizardWrx.Cryptography.DigestFile.OuutputFormat)">SHA512Hash(String, DigestFile.OuutputFormat)</h4>
   <div class="markdown level1 summary"><p>Given the name of a file, return its SHA-512 message digest as a 128
 character string of hexadecimal digits.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string SHA512Hash(string pstrFileName)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string SHA512Hash(string pstrFileName, DigestFile.OuutputFormat penmOutputFormat = DigestFile.OuutputFormat.HexadecimalDigits)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -387,14 +482,35 @@ character string of hexadecimal digits.</p>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">pstrFileName</span></td>
-        <td><p>String containing the name of the file to be digested.</p>
-<p>iMPORTANT: Since files are read in binary, they are loaded directly
+        <td><p>This string represents the name of the file to process, which may be
+a relative or absolute path. The file must exist, and the caller
+must have permission to read it, or an exception will be thrown.</p>
+<p>
+iMPORTANT: Since files are read in binary, they are loaded directly
 into the hash algorithm as byte arrays. This means that the digest
 of a file of ASCII characters and the hash of the file contents read
 into a CLR string object, which is a string of Unicode characters,
-will differ. The reason for this is that the string of Unicode
+will differ. The reason for this is that the string of Unicode 
 characters yields a different byte stream than the byte stream that
-came from reading the file in binary mode.</p>
+came from reading the file in binary mode.
+</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.Cryptography.DigestFile.OuutputFormat.html">DigestFile.OuutputFormat</a></td>
+        <td><span class="parametername">penmOutputFormat</span></td>
+        <td><p>This optional parameter specifies the output format of the message
+digest. If omitted, the default is OuutputFormat.HexadecimalDigits,
+which outputs the digest as a string of hexadecimal digits. The
+other options are OuutputFormat.Base64String, which outputs the
+digest as a Base64 encoded string, and
+OuutputFormat.PrefixedBase64String, which outputs a Base64 encoded
+string that includes a prefix that identifies the hashing algorithm
+used to generate the digest. The prefix is derived from the name of
+the hashing algorithm, and is followed by an underscore character.
+For example, the 16-byte MD5 digest is represented by a string of 26
+characters, beginning with &quot;MD5_&quot;, and the 64-byte SHA-512 digest is
+represented by a string of 92 characters, beginning with &quot;SHA512_&quot;.</p>
 </td>
       </tr>
     </tbody>
@@ -427,7 +543,7 @@ characters.</p>
                     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Cryptography_DigestFile.md&amp;value=---%0Auid%3A%20WizardWrx.Cryptography.DigestFile%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/DigestFile.cs/#L134" class="contribution-link">View Source</a>
+                    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/DigestFile.cs/#L173" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

@@ -91,11 +91,35 @@ space between the longest label and the numbers.</p>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">FormatItem</span></div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="WizardWrx.FormatStringEngine.html">WizardWrx.FormatStringEngine</a></h6>
   <h6><strong>Assembly</strong>: WizardWrx.FormatStringEngine.dll</h6>
   <h5 id="WizardWrx_FormatStringEngine_FormatItem_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class FormatItem : object</code></pre>
+    <pre><code class="lang-csharp hljs">public class FormatItem</code></pre>
   </div>
   <h5 id="WizardWrx_FormatStringEngine_FormatItem_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>While the class, itself, is marked Public, everything else about it is
@@ -120,7 +144,7 @@ property is uninitialized.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const uint APPEARANCE_ORDER_NOT_SET = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const uint APPEARANCE_ORDER_NOT_SET = 0U</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -150,7 +174,7 @@ property is uninitialized.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string INTEGER_PER_REG_SETTINGS = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string INTEGER_PER_REG_SETTINGS = &quot;N0&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -180,7 +204,7 @@ property is uninitialized.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const int INVALID_INDEX = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const int INVALID_INDEX = -1</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -210,7 +234,7 @@ property is uninitialized.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const int INVALID_OFFSET = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const int INVALID_OFFSET = -1</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -241,7 +265,7 @@ consumers.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const int INVALID_RAW_LENGTH = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const int INVALID_RAW_LENGTH = 0</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -272,7 +296,7 @@ consumers.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const int INVALID_WIDTH = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const int INVALID_WIDTH = 0</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -302,7 +326,7 @@ consumers.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const int MINIMUM_VALID_FORMAT_ITEM_INDEX = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const int MINIMUM_VALID_FORMAT_ITEM_INDEX = 0</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1304,9 +1328,9 @@ the decimal point.</p>
   <h5 id="WizardWrx_FormatStringEngine_FormatItem_IntegerPerRegSettings_seealso">See Also</h5>
   <div class="seealso">
       <div><span><a href="https://msdn.microsoft.com/en-us/library/dwhawy9k(v=vs.100).aspx">https://msdn.microsoft.com/en-us/library/dwhawy9k(v=vs.100).aspx</a></span></div>
-      <div><a class="xref" href="WizardWrx.NumericFormats.html#WizardWrx_NumericFormats_NUMBER_PER_REG_SETTINGS_0D">NUMBER_PER_REG_SETTINGS_0D</a></div>
-      <div><a class="xref" href="WizardWrx.NumericFormats.html#WizardWrx_NumericFormats_NUMBER_PER_REG_SETTINGS_2D">NUMBER_PER_REG_SETTINGS_2D</a></div>
-      <div><a class="xref" href="WizardWrx.NumericFormats.html#WizardWrx_NumericFormats_NUMBER_PER_REG_SETTINGS_3D">NUMBER_PER_REG_SETTINGS_3D</a></div>
+      <div><span class="xref">WizardWrx.NumericFormats.NUMBER_PER_REG_SETTINGS_0D</span></div>
+      <div><span class="xref">WizardWrx.NumericFormats.NUMBER_PER_REG_SETTINGS_2D</span></div>
+      <div><span class="xref">WizardWrx.NumericFormats.NUMBER_PER_REG_SETTINGS_3D</span></div>
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
@@ -1556,13 +1580,13 @@ read into the program from a configuration file.</p>
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_FormatStringEngine_FormatItem_UpgradeFormatItem_System_String_System_UInt32_WizardWrx_FormatStringEngine_FormatItem_Alignment_System_String_List_System_String__.md&amp;value=---%0Auid%3A%20WizardWrx.FormatStringEngine.FormatItem.UpgradeFormatItem(System.String%2CSystem.UInt32%2CWizardWrx.FormatStringEngine.FormatItem.Alignment%2CSystem.String%2CList%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_FormatStringEngine_FormatItem_UpgradeFormatItem_System_String_System_UInt32_WizardWrx_FormatStringEngine_FormatItem_Alignment_System_String_System_Collections_Generic_List_System_String__.md&amp;value=---%0Auid%3A%20WizardWrx.FormatStringEngine.FormatItem.UpgradeFormatItem(System.String%2CSystem.UInt32%2CWizardWrx.FormatStringEngine.FormatItem.Alignment%2CSystem.String%2CSystem.Collections.Generic.List%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/FormatStringEngine/FormatItem.cs/#L1140">View Source</a>
   </span>
   <a id="WizardWrx_FormatStringEngine_FormatItem_UpgradeFormatItem_" data-uid="WizardWrx.FormatStringEngine.FormatItem.UpgradeFormatItem*"></a>
-  <h4 id="WizardWrx_FormatStringEngine_FormatItem_UpgradeFormatItem_System_String_System_UInt32_WizardWrx_FormatStringEngine_FormatItem_Alignment_System_String_List_System_String__" data-uid="WizardWrx.FormatStringEngine.FormatItem.UpgradeFormatItem(System.String,System.UInt32,WizardWrx.FormatStringEngine.FormatItem.Alignment,System.String,List{System.String})">UpgradeFormatItem(String, UInt32, FormatItem.Alignment, String, List&lt;String&gt;)</h4>
+  <h4 id="WizardWrx_FormatStringEngine_FormatItem_UpgradeFormatItem_System_String_System_UInt32_WizardWrx_FormatStringEngine_FormatItem_Alignment_System_String_System_Collections_Generic_List_System_String__" data-uid="WizardWrx.FormatStringEngine.FormatItem.UpgradeFormatItem(System.String,System.UInt32,WizardWrx.FormatStringEngine.FormatItem.Alignment,System.String,System.Collections.Generic.List{System.String})">UpgradeFormatItem(String, UInt32, FormatItem.Alignment, String, List&lt;String&gt;)</h4>
   <div class="markdown level1 summary"><p>Upgrade a plain vanilla format item of the form {n}, where n is the
 number of a format item that exists somewhere in a format string to
 a composite string that specifies a width that is computed at run
@@ -1614,7 +1638,7 @@ entire format item, ready for substitution.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
         <td><span class="parametername">pastrValueArray</span></td>
         <td><p>Specify an array of strings, all of which are values intended to be
 formatted by the upgraded format item. This routine determines the

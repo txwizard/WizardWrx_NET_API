@@ -81,7 +81,8 @@ are handled.</p>
   <h6><strong>Assembly</strong>: WizardWrx.ConsoleStreams.dll</h6>
   <h5 id="WizardWrx_ConsoleStreams_StandardHandleInfo_ConsoleOutputModes_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public enum ConsoleOutputModes : int</code></pre>
+    <pre><code class="lang-csharp hljs">[Flags]
+public enum ConsoleOutputModes</code></pre>
   </div>
   <h5 id="WizardWrx_ConsoleStreams_StandardHandleInfo_ConsoleOutputModes_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>In wincon.h, these are defined as symbolic constants, although there
@@ -130,6 +131,10 @@ characters.</p>
       </tr>
     </tbody>
   </thead></thead></table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="WizardWrx.StringExtensions.html#WizardWrx_StringExtensions_RenderEvenWhenNull__1___0_System_String_System_String_System_IFormatProvider_">StringExtensions.RenderEvenWhenNull&lt;StandardHandleInfo.ConsoleOutputModes&gt;(String, String, IFormatProvider)</a>
+  </div>
 </article>
           </div>
           

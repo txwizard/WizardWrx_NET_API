@@ -680,6 +680,12 @@ namespace DLLServices2TestStand
 
                 ExerciseTimeZoneInfoExtensions ( );
 
+                if ( pastrArgs.Length>CmdLneArgsBasic.NONE && pastrArgs [ArrayInfo.ARRAY_FIRST_ELEMENT] == Properties.Resources.CMDARG_SRI_DRILLS )
+                {
+					DigestTestCases.Exercise_SRI_Drills ( );
+				}   // TRUE block, if ( pastrArgs.Length>CmdLneArgsBasic.NONE && pastrArgs [ArrayInfo.ARRAY_FIRST_ELEMENT] == Properties.Resources.CMDARG_SRI_DRILLS )
+
+
 				if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_HTTP_DRILLS )
                 {
                     Exercise_HTTP_Engine ( );

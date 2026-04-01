@@ -1,13 +1,26 @@
 @echo OFF
-::  echo on
 goto SKIPREM
 
 ::  ============================================================================
 ::
 ::  Name:               XCOPYF.CMD
 ::
-::  Synopsis:           Use the XCOPY system utility program to copy a file into
-::                      a directory, giving it a new name.
+::  Synopsis:           Hardened, colorized, multi-file-aware XCOPY wrapper that
+::                      uses the XCOPY system utility program to copy files into
+::                      a directory named in its second argument.
+::
+::  Behavior:           * Answers XCOPY "file or directory?" prompt via
+::                        XcopyDestIsFile.TXT
+::                      * Detects XCOPY filename normalization (e.g.,
+::                        foo.exe.config --> foo.config)
+::                      * Handles wildcard source masks (multi?file)
+::                      * Emits loud, colorized, structured diagnostics when a
+::                        configuration file is silently renamed
+::                      * Returns XCOPY’s exit code unchanged
+::
+::  Color:              * Optional VT variables: FG_YELLOW, FG_RED, FG_CYAN,
+::                        ANSI_RESET
+::                      * If undefined, output remains readable.
 ::
 ::  See Also:           XCOPYD.CMD            This is the companion script that
 ::                                            tells XCOPY that the destination
@@ -94,23 +107,120 @@ goto SKIPREM
 ::  2014/08/16 DAG 2.00    Return the exit code to the caller.
 ::  2014/11/23 DAG 3.00    Substitute a clear, actionable message for the bland
 ::                         message, "The system cannot find the file specified."
+::  2026/03/21 DAG 4.00    Adapt to warn loudly when legacy xcopy file renaming
+::                         causes the configuration file that sits alongside an
+::                         EXE to be surreptitiously renamed.
+::  2026/03/24 DAG 4.01    Implement VT colors by calling ConsoleLib.CMD and add
+::                         an audible alarm.
 ::  ============================================================================
 
 :SKIPREM
 
-    if exist "%~dp0XcopyDestIsFile.TXT" (
-        xcopy %1 %2 %3 %4 %5 %6 %7 %8 %9 < "%~dp0XcopyDestIsFile.TXT"
-        exit /b %ERRORLEVEL%
-    ) else (
-        echo.
-        echo -------------------------------------------------------------------
-        echo ERROR: Response file %~dp0XcopyDestIsFile.TXT is missing.
-        echo.
-        echo A copy must always accompany this script file,
-        echo %0.
-        echo -------------------------------------------------------------------
-        echo.
+	call "%~dp0ConsoleLib.CMD"
 
+:: -----------------------------------------------------------------------------
+:: Validate response file.
+:: -----------------------------------------------------------------------------
+
+    if not exist "%~dp0XcopyDestIsFile.TXT" (
+        echo.
+        echo -------------------------------------------------------------------
+        echo %FG_RED%ERROR:%ANSI_RESET% Response file %~dp0XcopyDestIsFile.TXT is missing.
+        echo A copy must always accompany this script file, %0.
+        echo -------------------------------------------------------------------
+        echo.
         WWPause
         exit /b 99
     )
+
+:: -----------------------------------------------------------------------------
+:: Prepare temp files.
+:: -----------------------------------------------------------------------------
+
+    set "_XC_BEFORE=%TEMP%\xcopy_before_%RANDOM%.lst"
+    set "_XC_AFTER=%TEMP%\xcopy_after_%RANDOM%.lst"
+    set "_XC_DELTA=%TEMP%\xcopy_delta_%RANDOM%.lst"
+    set "_XC_SRCNAMES=%TEMP%\xcopy_srcnames_%RANDOM%.lst"
+
+:: -----------------------------------------------------------------------------
+:: Make both path strings short (8.3).
+:: -----------------------------------------------------------------------------
+
+    for %%F in ("%_XC_BEFORE%") do set "_XC_BEFORE_S=%%~sfF"
+    for %%F in ("%_XC_AFTER%")  do set "_XC_AFTER_S=%%~sfF"
+
+:: -----------------------------------------------------------------------------
+:: Snapshot destination BEFORE copy.
+:: -----------------------------------------------------------------------------
+
+    dir /b "%~2" > "%_XC_BEFORE%" 2>NUL
+
+:: -----------------------------------------------------------------------------
+:: Snapshot source filenames matched by wildcard.
+:: -----------------------------------------------------------------------------
+
+    dir /b %1 > "%_XC_SRCNAMES%" 2>NUL
+
+:: -----------------------------------------------------------------------------
+:: Perform the XCOPY operation.
+:: -----------------------------------------------------------------------------
+
+    xcopy %1 %2 %3 %4 %5 %6 %7 %8 %9 < "%~dp0XcopyDestIsFile.TXT"
+    set "_XCOPY_RC=%ERRORLEVEL%"
+
+:: -----------------------------------------------------------------------------
+:: Snapshot destination AFTER copy.
+:: -----------------------------------------------------------------------------
+
+    dir /b "%~2" > "%_XC_AFTER%" 2>NUL
+
+:: -----------------------------------------------------------------------------
+:: Compute delta: files created by XCOPY.
+:: -----------------------------------------------------------------------------
+
+ListDelta "%_XC_BEFORE%" "%_XC_AFTER%" "%_XC_DELTA%"
+
+:: -----------------------------------------------------------------------------
+:: Compare delta filenames to source filenames.
+:: -----------------------------------------------------------------------------
+
+    for /f "usebackq delims=" %%D in ("%_XC_DELTA%") do call :XCOPYF_HandleDelta "%%D"
+
+    goto :XCOPYF_AfterLoop
+
+:XCOPYF_HandleDelta
+
+    set "_XC_NEWFILE=%~1"
+
+:: Check if this new file name appears in the source list
+
+    findstr /i /x "%_XC_NEWFILE%" "%_XC_SRCNAMES%" >NUL
+    if errorlevel 1 (
+        echo.
+        echo %FG_YELLOW%[XCopyF] WARNING:%ANSI_RESET% XCOPY filename normalization detected
+        echo     %FG_CYAN%Source mask:%ANSI_RESET% %1
+        echo     %FG_CYAN%Destination:%ANSI_RESET% %2
+        echo     %FG_CYAN%Created:%ANSI_RESET%     %_XC_NEWFILE%
+        echo     %FG_CYAN%Cause:%ANSI_RESET%       XCOPY wildcard normalization
+        echo.
+        echo     %FG_YELLOW%This does NOT stop the operation, but the destination%ANSI_RESET%
+        echo     %FG_YELLOW%may not match the expected file layout.%ANSI_RESET%
+        echo.
+        BeepBeep
+    )
+
+    goto :eof
+
+:XCOPYF_AfterLoop
+
+:: -----------------------------------------------------------------------------
+:: Pack out your trash.
+:: -----------------------------------------------------------------------------
+
+
+::  del "%_XC_BEFORE%"   2>NUL
+::  del "%_XC_AFTER%"    2>NUL
+::  del "%_XC_DELTA%"    2>NUL
+::  del "%_XC_SRCNAMES%" 2>NUL
+
+    exit /b %_XCOPY_RC%

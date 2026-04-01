@@ -83,11 +83,35 @@ need a real file object. All work on strings that represent file names.</p>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">FileNameTricks</span></div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="WizardWrx.html">WizardWrx</a></h6>
   <h6><strong>Assembly</strong>: WizardWrx.Core.dll</h6>
   <h5 id="WizardWrx_FileNameTricks_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class FileNameTricks : object</code></pre>
+    <pre><code class="lang-csharp hljs">public static class FileNameTricks</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -107,7 +131,7 @@ although such a construction wouldn't qualify as a constant.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string OS_DRIVE_PATH_DELIMITER = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string OS_DRIVE_PATH_DELIMITER = &quot;:\\&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -145,7 +169,7 @@ since there seems to be nothing in the System.IO namespace.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const char OS_EXTENSION_DELIM = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const char OS_EXTENSION_DELIM = '.'</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -184,7 +208,7 @@ since there seems to be nothing in the System.IO namespace.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const char OS_WILD_CARD_MULTIPLE = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const char OS_WILD_CARD_MULTIPLE = '*'</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -226,7 +250,7 @@ Windows or Unix file name mask.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const char OS_WILD_CARD_SINGLE = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const char OS_WILD_CARD_SINGLE = '?'</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -267,7 +291,7 @@ in the System.IO namespace.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string UNC_SERVER_DELIM = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string UNC_SERVER_DELIM = &quot;\\\\&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">

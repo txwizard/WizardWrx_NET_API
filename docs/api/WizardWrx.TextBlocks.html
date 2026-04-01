@@ -81,11 +81,35 @@
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">TextBlocks</span></div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="WizardWrx.html">WizardWrx</a></h6>
   <h6><strong>Assembly</strong>: WizardWrx.Core.dll</h6>
   <h5 id="WizardWrx_TextBlocks_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class TextBlocks : object</code></pre>
+    <pre><code class="lang-csharp hljs">public class TextBlocks</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -200,7 +224,7 @@ constructed. Also sets the MarkerText property.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string BLOCK_BEGIN_TEXT = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string BLOCK_BEGIN_TEXT = &quot;_Begin&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -230,7 +254,7 @@ constructed. Also sets the MarkerText property.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string BLOCK_END_TEXT = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string BLOCK_END_TEXT = &quot;_End&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -788,13 +812,13 @@ empty strings.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_TextBlocks_StringOfLinesToArray_System_String_StringSplitOptions_.md&amp;value=---%0Auid%3A%20WizardWrx.TextBlocks.StringOfLinesToArray(System.String%2CStringSplitOptions)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_TextBlocks_StringOfLinesToArray_System_String_System_StringSplitOptions_.md&amp;value=---%0Auid%3A%20WizardWrx.TextBlocks.StringOfLinesToArray(System.String%2CSystem.StringSplitOptions)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/TextBlocks.cs/#L485">View Source</a>
   </span>
   <a id="WizardWrx_TextBlocks_StringOfLinesToArray_" data-uid="WizardWrx.TextBlocks.StringOfLinesToArray*"></a>
-  <h4 id="WizardWrx_TextBlocks_StringOfLinesToArray_System_String_StringSplitOptions_" data-uid="WizardWrx.TextBlocks.StringOfLinesToArray(System.String,StringSplitOptions)">StringOfLinesToArray(String, StringSplitOptions)</h4>
+  <h4 id="WizardWrx_TextBlocks_StringOfLinesToArray_System_String_System_StringSplitOptions_" data-uid="WizardWrx.TextBlocks.StringOfLinesToArray(System.String,System.StringSplitOptions)">StringOfLinesToArray(String, StringSplitOptions)</h4>
   <div class="markdown level1 summary"><p>Split a string containing lines of text into an array of strings,
 as modified by the StringSplitOptions flag.</p>
 </div>
@@ -820,7 +844,7 @@ as modified by the StringSplitOptions flag.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">StringSplitOptions</span></td>
+        <td><span class="xref">System.StringSplitOptions</span></td>
         <td><span class="parametername">penmStringSplitOptions</span></td>
         <td><p>A member of the StringSplitOptions enumeration, presumably other
 than StringSplitOptions.None, which is assumed by the first
@@ -848,7 +872,7 @@ as is most likely to be the case.</p>
       </tr>
     </tbody>
   </table>
-  <h5 id="WizardWrx_TextBlocks_StringOfLinesToArray_System_String_StringSplitOptions__remarks">Remarks</h5>
+  <h5 id="WizardWrx_TextBlocks_StringOfLinesToArray_System_String_System_StringSplitOptions__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>Use this overload to convert a string, discarding blank lines.</p>
 </div>
   <span class="small pull-right mobile-hide">

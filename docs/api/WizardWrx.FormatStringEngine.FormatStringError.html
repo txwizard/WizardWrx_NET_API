@@ -82,11 +82,32 @@ in its current format string.</p>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">FormatStringError</span></div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="WizardWrx.FormatStringEngine.html">WizardWrx.FormatStringEngine</a></h6>
   <h6><strong>Assembly</strong>: WizardWrx.FormatStringEngine.dll</h6>
   <h5 id="WizardWrx_FormatStringEngine_FormatStringError_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class FormatStringError : object</code></pre>
+    <pre><code class="lang-csharp hljs">public class FormatStringError</code></pre>
   </div>
   <h5 id="WizardWrx_FormatStringEngine_FormatStringError_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>The only property that has any use outside the defining assembly is the
@@ -112,7 +133,7 @@ string in double quotation marks before it is appended.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const char COMMA_GUARD = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const char COMMA_GUARD = '&quot;'</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -142,7 +163,7 @@ string in double quotation marks before it is appended.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const char FIELD_DELIMITER = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const char FIELD_DELIMITER = ','</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -172,7 +193,7 @@ string in double quotation marks before it is appended.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const char LABEL_VALUE_DELIMITER = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const char LABEL_VALUE_DELIMITER = '='</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -273,6 +294,8 @@ used as is or processed by the Split method on this instance.</p>
       </tr>
     </tbody>
   </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Object.ToString()</span></div>
   <h5 id="WizardWrx_FormatStringEngine_FormatStringError_ToString_remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>The standard string.Split method cannot split this string correctly,
 because it treats commas embedded in its strings as delimiters, thus

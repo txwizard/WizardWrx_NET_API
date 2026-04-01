@@ -90,21 +90,22 @@ using System.Reflection;
 using System.IO;
 
 using WizardWrx;
+using WizardWrx.Cryptography;
 
 
 namespace DLLServices2TestStand
 {
     internal class DigestTestCases
     {
-        public struct CaseRecord
+		internal struct CaseRecord
         {
             public string strFileName;
             public string strDigest;
-        };  // public struct CaseRecord
+        };  // internal struct CaseRecord
 
-        private List<CaseRecord> _lstCaseRecords;
+		private List<CaseRecord> _lstCaseRecords;
 
-        public DigestTestCases ( )        
+        internal DigestTestCases ( )        
         {
             const int LABEL_ROW = 1;
             const int FIELD_FILE_NAME = ArrayInfo.ARRAY_FIRST_ELEMENT;
@@ -123,7 +124,9 @@ namespace DLLServices2TestStand
                 {   // File contains detail records.
                     _lstCaseRecords = new List<CaseRecord> ( intNRecords - LABEL_ROW );
 
-                    for ( int intRecordNumber = LABEL_ROW ; intRecordNumber < intNRecords ; intRecordNumber++ )
+                    for ( int intRecordNumber = LABEL_ROW ;
+                              intRecordNumber < intNRecords ;
+                              intRecordNumber++ )
                     {   // Skipping the label row, which is for human consumption, populate the list from the data records.
                         string [ ] astrFields = astrCases [ intRecordNumber ].Split ( new char [ ] { SpecialCharacters.TAB_CHAR } );
 
@@ -156,10 +159,65 @@ namespace DLLServices2TestStand
             {
                 throw;
             }
-        }   // public DigestTestCases
+		}   // internal DigestTestCases
 
-        public List<CaseRecord> Cases { get { return _lstCaseRecords; } }
+
+		internal static void Exercise_SRI_Drills ( )
+        {
+            Console.WriteLine ( $"{Environment.NewLine}Exercise_SRI_Drills: Begin{Environment.NewLine}" );
+
+			try
+            {
+                DirectoryInfo di = new DirectoryInfo ( Path.Combine ( Environment.CurrentDirectory , @"Test_Data" ) );
+
+                if ( di.Exists )
+                {
+                    FileInfo [ ] fiJavaScripts = di.GetFiles ( "*.JS" );
+
+                    if ( fiJavaScripts.Length > ListInfo.LIST_IS_EMPTY)
+                    {
+                        for ( int intFileNumber = ArrayInfo.ARRAY_FIRST_ELEMENT ;
+                                  intFileNumber < fiJavaScripts.Length ;
+                                  intFileNumber++ )
+						{
+                            FileInfo fi = fiJavaScripts [ intFileNumber ];
+							Console.WriteLine ( $"Exercise_SRI_Drills: File {ArrayInfo.OrdinalFromIndex(intFileNumber),2} of {fiJavaScripts.Length,2}: Name = {fi.FullName}, Size = {fi.Length}, Created = {fi.CreationTimeUtc}" );
+                            string strDigest = DigestFile.SHA384Hash (
+                                fi.FullName ,
+                                DigestFile.OuutputFormat.Base64String );
+                            Console.WriteLine ( $"                                    SHA-384 Digest = {strDigest}{Environment.NewLine}" );
+
+                            string strSRIReferenceFileName = $"{Path.GetFileNameWithoutExtension ( fi.Name )}_SRI_JS_SHA384.TMP";
+                            string strSRIReferenceDigest = File.ReadAllText ( Path.Combine ( di.FullName , strSRIReferenceFileName ) );
+                            bool fSRIReferenceMatches = string.Equals ( strDigest , strSRIReferenceDigest , StringComparison.InvariantCulture );
+
+							Console.WriteLine ( $"                                    SHA-384 Reference Digest FileName = {strSRIReferenceFileName}" );
+							Console.WriteLine ( $"                                    SHA-384 Reference Digest Value    = {strSRIReferenceDigest}" );
+							Console.WriteLine ( $"                                    SHA-384 Reference Matches         = {fSRIReferenceMatches}{Environment.NewLine}" );
+						}   // foreach ( FileInfo fi in fiJavaScripts )
+					}   // TRUE (anticipated outcome) block, if ( fiJavaScripts.Length > ListInfo.LIST_IS_EMPTY)
+					else
+                    {
+                        Console.WriteLine ( $"Exercise_SRI_Drills: No JavaScript files found in directory: {di.FullName}" );
+					}   // FALSE (unanticipated outcome) block, if ( fiJavaScripts.Length > ListInfo.LIST_IS_EMPTY)
+				}   // TRUE (Anticipated outcome: the directory of test cases exists.) block, if ( di.Exists )
+				else
+                {
+                    Console.WriteLine ( $"Exercise_SRI_Drills: Directory not found: {di.FullName}" );
+                }   // FALSE (Unanticipated outcome: the directory of test cases cannot be found.) block, if ( di.Exists )
+			}
+            catch
+            {
+                throw;
+			}
+            finally
+            {
+				Console.WriteLine ( $"{Environment.NewLine}Exercise_SRI_Drills: Done!{Environment.NewLine}" );
+			}
+		}   // internal static void Exercise_SRI_Drills
+
+		public List<CaseRecord> Cases { get { return _lstCaseRecords; } }
 
         public int NCases { get { return _lstCaseRecords.Count; } }
-    }   // class DigestTestCases
+	}   // class DigestTestCases
 }   // partial namespace DLLServices2TestStand

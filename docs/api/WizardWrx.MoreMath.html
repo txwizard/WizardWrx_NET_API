@@ -83,11 +83,35 @@ computations.</p>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">MoreMath</span></div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="WizardWrx.html">WizardWrx</a></h6>
   <h6><strong>Assembly</strong>: WizardWrx.MoreMath.dll</h6>
   <h5 id="WizardWrx_MoreMath_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class MoreMath : object</code></pre>
+    <pre><code class="lang-csharp hljs">public static class MoreMath</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -106,7 +130,7 @@ rather than return FALSE.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const bool EXCEPTION_ON_INVALID_INPUT = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const bool EXCEPTION_ON_INVALID_INPUT = true</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -138,7 +162,7 @@ invalid Gregorian year; instead, both return FALSE.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const bool FALSE_ON_INVALID_INPUT = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const bool FALSE_ON_INVALID_INPUT = false</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -174,7 +198,7 @@ calendar that was in use before 1583.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const int GRGORIAN_CALENDAR_ADOPTION_YEAR = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const int GRGORIAN_CALENDAR_ADOPTION_YEAR = 1582</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -958,6 +982,29 @@ divisible by <code data-dev-comment-type="paramref" class="paramref">pintDivisor
       </tr>
     </tbody>
   </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td><p>An ArgumentException exception arises when
+<code data-dev-comment-type="paramref" class="paramref">pintDivisor</code> is equal to zero, an illegal value,
+since the modulus operator is implemented as an integer division,
+and division by zero is an illegal operation, which raises an
+DivideByZeroException exception. Rather than report the unhelpful
+DivideByZeroException exception, <code data-dev-comment-type="paramref" class="paramref">pintDivisor</code> is
+evaluated, and the ArgumentException is raised in its place, so that
+the dividend passed into the method can be reported.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <h5 id="WizardWrx_MoreMath_IsEvenlyDivisibleByAnyInteger_System_Int32_System_Int32__seealso">See Also</h5>
   <div class="seealso">
       <div><a class="xref" href="WizardWrx.MoreMath.html#WizardWrx_MoreMath_Mod_System_Int32_System_Int32_">Mod(Int32, Int32)</a></div>
@@ -1024,6 +1071,29 @@ FALSE.</p>
       </tr>
     </tbody>
   </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td><p>An ArgumentException exception arises when
+<code data-dev-comment-type="paramref" class="paramref">plngDivisor</code> is equal to zero, an illegal value,
+since the modulus operator is implemented as an integer division,
+and division by zero is an illegal operation, which raises an
+DivideByZeroException exception. Rather than report the unhelpful
+DivideByZeroException exception, <code data-dev-comment-type="paramref" class="paramref">plngDivisor</code> is
+evaluated, and the ArgumentException is raised in its place, so that
+the dividend passed into the method can be reported.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <h5 id="WizardWrx_MoreMath_IsEvenlyDivisibleByAnyInteger_System_Int64_System_Int64__seealso">See Also</h5>
   <div class="seealso">
       <div><a class="xref" href="WizardWrx.MoreMath.html#WizardWrx_MoreMath_Mod_System_Int64_System_Int64_">Mod(Int64, Int64)</a></div>
@@ -1051,7 +1121,7 @@ enforced by the IsValidGregorianYear method.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool IsGregorianLeapYear(int pintYear, bool pfThrowError = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool IsGregorianLeapYear(int pintYear, bool pfThrowError = true)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1092,6 +1162,25 @@ exception. The default value is EXCEPTION_ON_INVALID_INPUT (true).</p>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
         <td><p>TRUE if <code data-dev-comment-type="paramref" class="paramref">pintYear</code> is a leap year, else FALSE.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentOutOfRangeException</span></td>
+        <td><p>An ArgumentOutOfRangeException exception arises when
+<code data-dev-comment-type="paramref" class="paramref">pintYear</code> is an invalid Gregorian year, unless
+<code data-dev-comment-type="paramref" class="paramref">pfThrowError</code> is EXCEPTION_ON_INVALID_INPUT
+(false), in which case, the method return FALSE.</p>
 </td>
       </tr>
     </tbody>
@@ -1222,6 +1311,29 @@ be divided to obtain a remainder.</p>
   <div class="markdown level1 remarks"><p>The Mod and Remainder methods are synonymns. Their simplicity lends
 them to inline implementation.</p>
 </div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td><p>An ArgumentException exception arises when
+<code data-dev-comment-type="paramref" class="paramref">pintDivisor</code> is equal to zero, an illegal value,
+since the modulus operator is implemented as an integer division,
+and division by zero is an illegal operation, which raises an
+DivideByZeroException exception. Rather than report the unhelpful
+DivideByZeroException exception, <code data-dev-comment-type="paramref" class="paramref">pintDivisor</code> is
+evaluated, and the ArgumentException is raised in its place, so that
+the dividend passed into the method can be reported.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <h5 id="WizardWrx_MoreMath_Mod_System_Int32_System_Int32__seealso">See Also</h5>
   <div class="seealso">
       <div><a class="xref" href="WizardWrx.MoreMath.html#WizardWrx_MoreMath_Remainder_System_Int32_System_Int32_">Remainder(Int32, Int32)</a></div>
@@ -1291,6 +1403,29 @@ be divided to obtain a remainder.</p>
   <div class="markdown level1 remarks"><p>The Mod and Remainder methods are synonymns. Their simplicity lends
 them to inline implementation.</p>
 </div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td><p>An ArgumentException exception arises when
+<code data-dev-comment-type="paramref" class="paramref">plngDivisor</code> is equal to zero, an illegal value,
+since the modulus operator is implemented as an integer division,
+and division by zero is an illegal operation, which raises an
+DivideByZeroException exception. Rather than report the unhelpful
+DivideByZeroException exception, <code data-dev-comment-type="paramref" class="paramref">plngDivisor</code> is
+evaluated, and the ArgumentException is raised in its place, so that
+the dividend passed into the method can be reported.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <h5 id="WizardWrx_MoreMath_Mod_System_Int64_System_Int64__seealso">See Also</h5>
   <div class="seealso">
       <div><a class="xref" href="WizardWrx.MoreMath.html#WizardWrx_MoreMath_Remainder_System_Int64_System_Int64_">Remainder(Int64, Int64)</a></div>
@@ -1360,6 +1495,29 @@ be divided to obtain a remainder.</p>
   <div class="markdown level1 remarks"><p>The Mod and Remainder methods are synonymns. Their simplicity lends
 them to inline implementation.</p>
 </div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td><p>An ArgumentException exception arises when
+<code data-dev-comment-type="paramref" class="paramref">pintDivisor</code> is equal to zero, an illegal value,
+since the modulus operator is implemented as an integer division,
+and division by zero is an illegal operation, which raises an
+DivideByZeroException exception. Rather than report the unhelpful
+DivideByZeroException exception, <code data-dev-comment-type="paramref" class="paramref">pintDivisor</code> is
+evaluated, and the ArgumentException is raised in its place, so that
+the dividend passed into the method can be reported.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <h5 id="WizardWrx_MoreMath_Remainder_System_Int32_System_Int32__seealso">See Also</h5>
   <div class="seealso">
       <div><a class="xref" href="WizardWrx.MoreMath.html#WizardWrx_MoreMath_Mod_System_Int32_System_Int32_">Mod(Int32, Int32)</a></div>
@@ -1429,6 +1587,29 @@ be divided to obtain a remainder.</p>
   <div class="markdown level1 remarks"><p>The Mod and Remainder methods are synonymns. Their simplicity lends
 them to inline implementation.</p>
 </div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td><p>An ArgumentException exception arises when
+<code data-dev-comment-type="paramref" class="paramref">plngDivisor</code> is equal to zero, an illegal value,
+since the modulus operator is implemented as an integer division,
+and division by zero is an illegal operation, which raises an
+DivideByZeroException exception. Rather than report the unhelpful
+DivideByZeroException exception, <code data-dev-comment-type="paramref" class="paramref">plngDivisor</code> is
+evaluated, and the ArgumentException is raised in its place, so that
+the dividend passed into the method can be reported.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <h5 id="WizardWrx_MoreMath_Remainder_System_Int64_System_Int64__seealso">See Also</h5>
   <div class="seealso">
       <div><a class="xref" href="WizardWrx.MoreMath.html#WizardWrx_MoreMath_Mod_System_Int64_System_Int64_">Mod(Int64, Int64)</a></div>

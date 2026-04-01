@@ -82,11 +82,34 @@ living color.</p>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">ErrorMessagesInColor</span></div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="WizardWrx.ConsoleStreams.html">WizardWrx.ConsoleStreams</a></h6>
   <h6><strong>Assembly</strong>: WizardWrx.ConsoleStreams.dll</h6>
   <h5 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ErrorMessagesInColor : object</code></pre>
+    <pre><code class="lang-csharp hljs">[TypeConverter(typeof(ErrorMessagesInColorConverter))]
+[SettingsSerializeAs(SettingsSerializeAs.String)]
+public class ErrorMessagesInColor</code></pre>
   </div>
   <h5 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>There are two identical sets of methods.</p>
@@ -135,13 +158,13 @@ allows for a future version of this class to be exposed to COM.</p>
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor__ctor_ConsoleColor_ConsoleColor_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.%23ctor(ConsoleColor%2CConsoleColor)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor__ctor_System_ConsoleColor_System_ConsoleColor_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.%23ctor(System.ConsoleColor%2CSystem.ConsoleColor)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ConsoleStreams/ErrorMessagesInColor.cs/#L391">View Source</a>
   </span>
   <a id="WizardWrx_ConsoleStreams_ErrorMessagesInColor__ctor_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.#ctor*"></a>
-  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor__ctor_ConsoleColor_ConsoleColor_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.#ctor(ConsoleColor,ConsoleColor)">ErrorMessagesInColor(ConsoleColor, ConsoleColor)</h4>
+  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor__ctor_System_ConsoleColor_System_ConsoleColor_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.#ctor(System.ConsoleColor,System.ConsoleColor)">ErrorMessagesInColor(ConsoleColor, ConsoleColor)</h4>
   <div class="markdown level1 summary"><p>This constructor creates an instance with its foreground and
 background colors properties set to the specified ConsoleColor
 values, which presumably differ from the initial foreground and
@@ -163,14 +186,14 @@ background colors.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrTextForeColor</span></td>
         <td><p>Specify the ConsoleColor property to use as the text (foreground)
 color in generated messages.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrTextBackColor</span></td>
         <td><p>Specify the ConsoleColor property to use as the background color in
 generated messages.</p>
@@ -208,7 +231,7 @@ that is intended to be treated as a background color.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -241,7 +264,7 @@ that is intended to be treated as a foreground (text) color.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -273,7 +296,7 @@ generated by the instance Write and WriteLine methods.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -305,7 +328,7 @@ generated by the instance Write and WriteLine methods.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -337,7 +360,7 @@ was constructed.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -369,7 +392,7 @@ was constructed.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -403,7 +426,7 @@ that is intended to be treated as a background color.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -437,7 +460,7 @@ that is intended to be treated as a foreground (text) color.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -561,7 +584,7 @@ console stream.</p>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ConsoleStreams/ErrorMessagesInColor.cs/#L292">View Source</a>
   </span>
   <a id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_InitializeDefaultPropertiesFromDllConfogurationFile_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.InitializeDefaultPropertiesFromDllConfogurationFile*"></a>
-  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_InitializeDefaultPropertiesFromDllConfogurationFile_System_Reflection_Assembly_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.InitializeDefaultPropertiesFromDllConfogurationFile(System.Reflection.Assembly)">InitializeDefaultPropertiesFromDllConfogurationFile(System.Reflection.Assembly)</h4>
+  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_InitializeDefaultPropertiesFromDllConfogurationFile_System_Reflection_Assembly_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.InitializeDefaultPropertiesFromDllConfogurationFile(System.Reflection.Assembly)">InitializeDefaultPropertiesFromDllConfogurationFile(Assembly)</h4>
   <div class="markdown level1 summary"><p>Call this static method to cause the configuration file linked to
 another DLL to be the source from which default properties are read.</p>
 <p>To have the intended effect, a call to this method must be the first
@@ -570,7 +593,7 @@ reference to this class.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void InitializeDefaultPropertiesFromDllConfogurationFile(System.Reflection.Assembly pasmLinkedAssembly)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void InitializeDefaultPropertiesFromDllConfogurationFile(Assembly pasmLinkedAssembly)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -593,13 +616,13 @@ linked.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_ConsoleColor_ConsoleColor_System_Boolean_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(ConsoleColor%2CConsoleColor%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_System_ConsoleColor_System_ConsoleColor_System_Boolean_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(System.ConsoleColor%2CSystem.ConsoleColor%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ConsoleStreams/ErrorMessagesInColor.cs/#L1777">View Source</a>
   </span>
   <a id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite*"></a>
-  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_ConsoleColor_ConsoleColor_System_Boolean_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(ConsoleColor,ConsoleColor,System.Boolean)">RGBWrite(ConsoleColor, ConsoleColor, Boolean)</h4>
+  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_System_ConsoleColor_System_ConsoleColor_System_Boolean_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(System.ConsoleColor,System.ConsoleColor,System.Boolean)">RGBWrite(ConsoleColor, ConsoleColor, Boolean)</h4>
   <div class="markdown level1 summary"><p>Write the string representation of a bool (Boolean) variable.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -618,13 +641,13 @@ linked.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrForeColor</span></td>
         <td><p>Specify the ConsoleColor to use for the foreground (text).</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrBackColor</span></td>
         <td><p>Specify the ConsoleColor to use for the background.</p>
 </td>
@@ -639,13 +662,13 @@ linked.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_ConsoleColor_ConsoleColor_System_Char_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(ConsoleColor%2CConsoleColor%2CSystem.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_System_ConsoleColor_System_ConsoleColor_System_Char_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(System.ConsoleColor%2CSystem.ConsoleColor%2CSystem.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ConsoleStreams/ErrorMessagesInColor.cs/#L1800">View Source</a>
   </span>
   <a id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite*"></a>
-  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_ConsoleColor_ConsoleColor_System_Char_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(ConsoleColor,ConsoleColor,System.Char)">RGBWrite(ConsoleColor, ConsoleColor, Char)</h4>
+  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_System_ConsoleColor_System_ConsoleColor_System_Char_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(System.ConsoleColor,System.ConsoleColor,System.Char)">RGBWrite(ConsoleColor, ConsoleColor, Char)</h4>
   <div class="markdown level1 summary"><p>Write the string representation of a char (a Unicode character).</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -664,13 +687,13 @@ linked.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrForeColor</span></td>
         <td><p>Specify the ConsoleColor to use for the foreground (text).</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrBackColor</span></td>
         <td><p>Specify the ConsoleColor to use for the background.</p>
 </td>
@@ -685,13 +708,13 @@ linked.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_ConsoleColor_ConsoleColor_System_Char___.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(ConsoleColor%2CConsoleColor%2CSystem.Char%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_System_ConsoleColor_System_ConsoleColor_System_Char___.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(System.ConsoleColor%2CSystem.ConsoleColor%2CSystem.Char%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ConsoleStreams/ErrorMessagesInColor.cs/#L1823">View Source</a>
   </span>
   <a id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite*"></a>
-  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_ConsoleColor_ConsoleColor_System_Char___" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(ConsoleColor,ConsoleColor,System.Char[])">RGBWrite(ConsoleColor, ConsoleColor, Char[])</h4>
+  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_System_ConsoleColor_System_ConsoleColor_System_Char___" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(System.ConsoleColor,System.ConsoleColor,System.Char[])">RGBWrite(ConsoleColor, ConsoleColor, Char[])</h4>
   <div class="markdown level1 summary"><p>Write the string representation of a character array.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -710,13 +733,13 @@ linked.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrForeColor</span></td>
         <td><p>Specify the ConsoleColor to use for the foreground (text).</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrBackColor</span></td>
         <td><p>Specify the ConsoleColor to use for the background.</p>
 </td>
@@ -731,13 +754,13 @@ linked.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_ConsoleColor_ConsoleColor_System_Char___System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(ConsoleColor%2CConsoleColor%2CSystem.Char%5B%5D%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_System_ConsoleColor_System_ConsoleColor_System_Char___System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(System.ConsoleColor%2CSystem.ConsoleColor%2CSystem.Char%5B%5D%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ConsoleStreams/ErrorMessagesInColor.cs/#L2125">View Source</a>
   </span>
   <a id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite*"></a>
-  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_ConsoleColor_ConsoleColor_System_Char___System_Int32_System_Int32_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(ConsoleColor,ConsoleColor,System.Char[],System.Int32,System.Int32)">RGBWrite(ConsoleColor, ConsoleColor, Char[], Int32, Int32)</h4>
+  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_System_ConsoleColor_System_ConsoleColor_System_Char___System_Int32_System_Int32_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(System.ConsoleColor,System.ConsoleColor,System.Char[],System.Int32,System.Int32)">RGBWrite(ConsoleColor, ConsoleColor, Char[], Int32, Int32)</h4>
   <div class="markdown level1 summary"><p>Write a formatted message that includes a range of characters taken
 from an array of Unicode characters.</p>
 </div>
@@ -757,13 +780,13 @@ from an array of Unicode characters.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrForeColor</span></td>
         <td><p>Specify the ConsoleColor to use for the foreground (text).</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrBackColor</span></td>
         <td><p>Specify the ConsoleColor to use for the background.</p>
 </td>
@@ -791,13 +814,13 @@ must contain at least count - 1 substitution tokens.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_ConsoleColor_ConsoleColor_System_Decimal_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(ConsoleColor%2CConsoleColor%2CSystem.Decimal)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_System_ConsoleColor_System_ConsoleColor_System_Decimal_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(System.ConsoleColor%2CSystem.ConsoleColor%2CSystem.Decimal)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ConsoleStreams/ErrorMessagesInColor.cs/#L1846">View Source</a>
   </span>
   <a id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite*"></a>
-  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_ConsoleColor_ConsoleColor_System_Decimal_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(ConsoleColor,ConsoleColor,System.Decimal)">RGBWrite(ConsoleColor, ConsoleColor, Decimal)</h4>
+  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_System_ConsoleColor_System_ConsoleColor_System_Decimal_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(System.ConsoleColor,System.ConsoleColor,System.Decimal)">RGBWrite(ConsoleColor, ConsoleColor, Decimal)</h4>
   <div class="markdown level1 summary"><p>Write the string representation of a decimal variable.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -816,13 +839,13 @@ must contain at least count - 1 substitution tokens.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrForeColor</span></td>
         <td><p>Specify the ConsoleColor to use for the foreground (text).</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrBackColor</span></td>
         <td><p>Specify the ConsoleColor to use for the background.</p>
 </td>
@@ -837,13 +860,13 @@ must contain at least count - 1 substitution tokens.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_ConsoleColor_ConsoleColor_System_Double_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(ConsoleColor%2CConsoleColor%2CSystem.Double)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_System_ConsoleColor_System_ConsoleColor_System_Double_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(System.ConsoleColor%2CSystem.ConsoleColor%2CSystem.Double)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ConsoleStreams/ErrorMessagesInColor.cs/#L1869">View Source</a>
   </span>
   <a id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite*"></a>
-  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_ConsoleColor_ConsoleColor_System_Double_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(ConsoleColor,ConsoleColor,System.Double)">RGBWrite(ConsoleColor, ConsoleColor, Double)</h4>
+  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_System_ConsoleColor_System_ConsoleColor_System_Double_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(System.ConsoleColor,System.ConsoleColor,System.Double)">RGBWrite(ConsoleColor, ConsoleColor, Double)</h4>
   <div class="markdown level1 summary"><p>Write the string representation of a double precision variable.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -862,13 +885,13 @@ must contain at least count - 1 substitution tokens.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrForeColor</span></td>
         <td><p>Specify the ConsoleColor to use for the foreground (text).</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrBackColor</span></td>
         <td><p>Specify the ConsoleColor to use for the background.</p>
 </td>
@@ -883,13 +906,13 @@ must contain at least count - 1 substitution tokens.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_ConsoleColor_ConsoleColor_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(ConsoleColor%2CConsoleColor%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_System_ConsoleColor_System_ConsoleColor_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(System.ConsoleColor%2CSystem.ConsoleColor%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ConsoleStreams/ErrorMessagesInColor.cs/#L1915">View Source</a>
   </span>
   <a id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite*"></a>
-  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_ConsoleColor_ConsoleColor_System_Int32_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(ConsoleColor,ConsoleColor,System.Int32)">RGBWrite(ConsoleColor, ConsoleColor, Int32)</h4>
+  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_System_ConsoleColor_System_ConsoleColor_System_Int32_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(System.ConsoleColor,System.ConsoleColor,System.Int32)">RGBWrite(ConsoleColor, ConsoleColor, Int32)</h4>
   <div class="markdown level1 summary"><p>Write the string representation of an integer variable.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -908,13 +931,13 @@ must contain at least count - 1 substitution tokens.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrForeColor</span></td>
         <td><p>Specify the ConsoleColor to use for the foreground (text).</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrBackColor</span></td>
         <td><p>Specify the ConsoleColor to use for the background.</p>
 </td>
@@ -929,13 +952,13 @@ must contain at least count - 1 substitution tokens.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_ConsoleColor_ConsoleColor_System_Int64_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(ConsoleColor%2CConsoleColor%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_System_ConsoleColor_System_ConsoleColor_System_Int64_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(System.ConsoleColor%2CSystem.ConsoleColor%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ConsoleStreams/ErrorMessagesInColor.cs/#L1938">View Source</a>
   </span>
   <a id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite*"></a>
-  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_ConsoleColor_ConsoleColor_System_Int64_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(ConsoleColor,ConsoleColor,System.Int64)">RGBWrite(ConsoleColor, ConsoleColor, Int64)</h4>
+  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_System_ConsoleColor_System_ConsoleColor_System_Int64_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(System.ConsoleColor,System.ConsoleColor,System.Int64)">RGBWrite(ConsoleColor, ConsoleColor, Int64)</h4>
   <div class="markdown level1 summary"><p>Write the string representation of a long integer variable.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -954,13 +977,13 @@ must contain at least count - 1 substitution tokens.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrForeColor</span></td>
         <td><p>Specify the ConsoleColor to use for the foreground (text).</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrBackColor</span></td>
         <td><p>Specify the ConsoleColor to use for the background.</p>
 </td>
@@ -975,13 +998,13 @@ must contain at least count - 1 substitution tokens.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_ConsoleColor_ConsoleColor_System_Object_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(ConsoleColor%2CConsoleColor%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_System_ConsoleColor_System_ConsoleColor_System_Object_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(System.ConsoleColor%2CSystem.ConsoleColor%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ConsoleStreams/ErrorMessagesInColor.cs/#L1961">View Source</a>
   </span>
   <a id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite*"></a>
-  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_ConsoleColor_ConsoleColor_System_Object_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(ConsoleColor,ConsoleColor,System.Object)">RGBWrite(ConsoleColor, ConsoleColor, Object)</h4>
+  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_System_ConsoleColor_System_ConsoleColor_System_Object_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(System.ConsoleColor,System.ConsoleColor,System.Object)">RGBWrite(ConsoleColor, ConsoleColor, Object)</h4>
   <div class="markdown level1 summary"><p>Write the string representation of a generic Object variable.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1000,13 +1023,13 @@ must contain at least count - 1 substitution tokens.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrForeColor</span></td>
         <td><p>Specify the ConsoleColor to use for the foreground (text).</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrBackColor</span></td>
         <td><p>Specify the ConsoleColor to use for the background.</p>
 </td>
@@ -1021,13 +1044,13 @@ must contain at least count - 1 substitution tokens.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_ConsoleColor_ConsoleColor_System_Single_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(ConsoleColor%2CConsoleColor%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_System_ConsoleColor_System_ConsoleColor_System_Single_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(System.ConsoleColor%2CSystem.ConsoleColor%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ConsoleStreams/ErrorMessagesInColor.cs/#L1892">View Source</a>
   </span>
   <a id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite*"></a>
-  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_ConsoleColor_ConsoleColor_System_Single_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(ConsoleColor,ConsoleColor,System.Single)">RGBWrite(ConsoleColor, ConsoleColor, Single)</h4>
+  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_System_ConsoleColor_System_ConsoleColor_System_Single_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(System.ConsoleColor,System.ConsoleColor,System.Single)">RGBWrite(ConsoleColor, ConsoleColor, Single)</h4>
   <div class="markdown level1 summary"><p>Write the string representation of a floating point variable.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1046,13 +1069,13 @@ must contain at least count - 1 substitution tokens.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrForeColor</span></td>
         <td><p>Specify the ConsoleColor to use for the foreground (text).</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrBackColor</span></td>
         <td><p>Specify the ConsoleColor to use for the background.</p>
 </td>
@@ -1067,13 +1090,13 @@ must contain at least count - 1 substitution tokens.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_ConsoleColor_ConsoleColor_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(ConsoleColor%2CConsoleColor%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_System_ConsoleColor_System_ConsoleColor_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(System.ConsoleColor%2CSystem.ConsoleColor%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ConsoleStreams/ErrorMessagesInColor.cs/#L1984">View Source</a>
   </span>
   <a id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite*"></a>
-  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_ConsoleColor_ConsoleColor_System_String_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(ConsoleColor,ConsoleColor,System.String)">RGBWrite(ConsoleColor, ConsoleColor, String)</h4>
+  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_System_ConsoleColor_System_ConsoleColor_System_String_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(System.ConsoleColor,System.ConsoleColor,System.String)">RGBWrite(ConsoleColor, ConsoleColor, String)</h4>
   <div class="markdown level1 summary"><p>Write a string variable.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1092,13 +1115,13 @@ must contain at least count - 1 substitution tokens.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrForeColor</span></td>
         <td><p>Specify the ConsoleColor to use for the foreground (text).</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrBackColor</span></td>
         <td><p>Specify the ConsoleColor to use for the background.</p>
 </td>
@@ -1113,13 +1136,13 @@ must contain at least count - 1 substitution tokens.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_ConsoleColor_ConsoleColor_System_String_System_Object_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(ConsoleColor%2CConsoleColor%2CSystem.String%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_System_ConsoleColor_System_ConsoleColor_System_String_System_Object_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(System.ConsoleColor%2CSystem.ConsoleColor%2CSystem.String%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ConsoleStreams/ErrorMessagesInColor.cs/#L2061">View Source</a>
   </span>
   <a id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite*"></a>
-  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_ConsoleColor_ConsoleColor_System_String_System_Object_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(ConsoleColor,ConsoleColor,System.String,System.Object)">RGBWrite(ConsoleColor, ConsoleColor, String, Object)</h4>
+  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_System_ConsoleColor_System_ConsoleColor_System_String_System_Object_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(System.ConsoleColor,System.ConsoleColor,System.String,System.Object)">RGBWrite(ConsoleColor, ConsoleColor, String, Object)</h4>
   <div class="markdown level1 summary"><p>Write a formatted message that includes the string representation of
 an generic object variable.</p>
 </div>
@@ -1139,13 +1162,13 @@ an generic object variable.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrForeColor</span></td>
         <td><p>Specify the ConsoleColor to use for the foreground (text).</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrBackColor</span></td>
         <td><p>Specify the ConsoleColor to use for the background.</p>
 </td>
@@ -1168,13 +1191,13 @@ generic object.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_ConsoleColor_ConsoleColor_System_String_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(ConsoleColor%2CConsoleColor%2CSystem.String%2CSystem.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_System_ConsoleColor_System_ConsoleColor_System_String_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(System.ConsoleColor%2CSystem.ConsoleColor%2CSystem.String%2CSystem.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ConsoleStreams/ErrorMessagesInColor.cs/#L2160">View Source</a>
   </span>
   <a id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite*"></a>
-  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_ConsoleColor_ConsoleColor_System_String_System_Object_System_Object_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(ConsoleColor,ConsoleColor,System.String,System.Object,System.Object)">RGBWrite(ConsoleColor, ConsoleColor, String, Object, Object)</h4>
+  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_System_ConsoleColor_System_ConsoleColor_System_String_System_Object_System_Object_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(System.ConsoleColor,System.ConsoleColor,System.String,System.Object,System.Object)">RGBWrite(ConsoleColor, ConsoleColor, String, Object, Object)</h4>
   <div class="markdown level1 summary"><p>Write a formatted message that includes up to two substitution
 tokens.</p>
 </div>
@@ -1194,13 +1217,13 @@ tokens.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrForeColor</span></td>
         <td><p>Specify the ConsoleColor to use for the foreground (text).</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrBackColor</span></td>
         <td><p>Specify the ConsoleColor to use for the background.</p>
 </td>
@@ -1230,13 +1253,13 @@ substituted into format for token {1}.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_ConsoleColor_ConsoleColor_System_String_System_Object_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(ConsoleColor%2CConsoleColor%2CSystem.String%2CSystem.Object%2CSystem.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_System_ConsoleColor_System_ConsoleColor_System_String_System_Object_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(System.ConsoleColor%2CSystem.ConsoleColor%2CSystem.String%2CSystem.Object%2CSystem.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ConsoleStreams/ErrorMessagesInColor.cs/#L2199">View Source</a>
   </span>
   <a id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite*"></a>
-  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_ConsoleColor_ConsoleColor_System_String_System_Object_System_Object_System_Object_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(ConsoleColor,ConsoleColor,System.String,System.Object,System.Object,System.Object)">RGBWrite(ConsoleColor, ConsoleColor, String, Object, Object, Object)</h4>
+  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_System_ConsoleColor_System_ConsoleColor_System_String_System_Object_System_Object_System_Object_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(System.ConsoleColor,System.ConsoleColor,System.String,System.Object,System.Object,System.Object)">RGBWrite(ConsoleColor, ConsoleColor, String, Object, Object, Object)</h4>
   <div class="markdown level1 summary"><p>Write a formatted message that includes up to three substitution
 tokens.</p>
 </div>
@@ -1256,13 +1279,13 @@ tokens.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrForeColor</span></td>
         <td><p>Specify the ConsoleColor to use for the foreground (text).</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrBackColor</span></td>
         <td><p>Specify the ConsoleColor to use for the background.</p>
 </td>
@@ -1299,13 +1322,13 @@ substituted into format for token {2}.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_ConsoleColor_ConsoleColor_System_String_System_Object_System_Object_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(ConsoleColor%2CConsoleColor%2CSystem.String%2CSystem.Object%2CSystem.Object%2CSystem.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_System_ConsoleColor_System_ConsoleColor_System_String_System_Object_System_Object_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(System.ConsoleColor%2CSystem.ConsoleColor%2CSystem.String%2CSystem.Object%2CSystem.Object%2CSystem.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ConsoleStreams/ErrorMessagesInColor.cs/#L2243">View Source</a>
   </span>
   <a id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite*"></a>
-  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_ConsoleColor_ConsoleColor_System_String_System_Object_System_Object_System_Object_System_Object_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(ConsoleColor,ConsoleColor,System.String,System.Object,System.Object,System.Object,System.Object)">RGBWrite(ConsoleColor, ConsoleColor, String, Object, Object, Object, Object)</h4>
+  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_System_ConsoleColor_System_ConsoleColor_System_String_System_Object_System_Object_System_Object_System_Object_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(System.ConsoleColor,System.ConsoleColor,System.String,System.Object,System.Object,System.Object,System.Object)">RGBWrite(ConsoleColor, ConsoleColor, String, Object, Object, Object, Object)</h4>
   <div class="markdown level1 summary"><p>Write a formatted message that includes up to four substitution
 tokens.</p>
 </div>
@@ -1325,13 +1348,13 @@ tokens.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrForeColor</span></td>
         <td><p>Specify the ConsoleColor to use for the foreground (text).</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrBackColor</span></td>
         <td><p>Specify the ConsoleColor to use for the background.</p>
 </td>
@@ -1375,13 +1398,13 @@ substituted into format for token {3}.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_ConsoleColor_ConsoleColor_System_String_System_Object___.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(ConsoleColor%2CConsoleColor%2CSystem.String%2CSystem.Object%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_System_ConsoleColor_System_ConsoleColor_System_String_System_Object___.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(System.ConsoleColor%2CSystem.ConsoleColor%2CSystem.String%2CSystem.Object%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ConsoleStreams/ErrorMessagesInColor.cs/#L2093">View Source</a>
   </span>
   <a id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite*"></a>
-  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_ConsoleColor_ConsoleColor_System_String_System_Object___" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(ConsoleColor,ConsoleColor,System.String,System.Object[])">RGBWrite(ConsoleColor, ConsoleColor, String, Object[])</h4>
+  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_System_ConsoleColor_System_ConsoleColor_System_String_System_Object___" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(System.ConsoleColor,System.ConsoleColor,System.String,System.Object[])">RGBWrite(ConsoleColor, ConsoleColor, String, Object[])</h4>
   <div class="markdown level1 summary"><p>Write a formatted message that includes the string representation of
 an generic object variable.</p>
 </div>
@@ -1401,13 +1424,13 @@ an generic object variable.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrForeColor</span></td>
         <td><p>Specify the ConsoleColor to use for the foreground (text).</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrBackColor</span></td>
         <td><p>Specify the ConsoleColor to use for the background.</p>
 </td>
@@ -1432,13 +1455,13 @@ is the number within its brackets.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_ConsoleColor_ConsoleColor_System_UInt32_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(ConsoleColor%2CConsoleColor%2CSystem.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_System_ConsoleColor_System_ConsoleColor_System_UInt32_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(System.ConsoleColor%2CSystem.ConsoleColor%2CSystem.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ConsoleStreams/ErrorMessagesInColor.cs/#L2008">View Source</a>
   </span>
   <a id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite*"></a>
-  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_ConsoleColor_ConsoleColor_System_UInt32_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(ConsoleColor,ConsoleColor,System.UInt32)">RGBWrite(ConsoleColor, ConsoleColor, UInt32)</h4>
+  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_System_ConsoleColor_System_ConsoleColor_System_UInt32_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(System.ConsoleColor,System.ConsoleColor,System.UInt32)">RGBWrite(ConsoleColor, ConsoleColor, UInt32)</h4>
   <div class="markdown level1 summary"><p>Write the string representation of a uint (unsigned integer)
 variable.</p>
 </div>
@@ -1458,13 +1481,13 @@ variable.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrForeColor</span></td>
         <td><p>Specify the ConsoleColor to use for the foreground (text).</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrBackColor</span></td>
         <td><p>Specify the ConsoleColor to use for the background.</p>
 </td>
@@ -1479,13 +1502,13 @@ variable.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_ConsoleColor_ConsoleColor_System_UInt64_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(ConsoleColor%2CConsoleColor%2CSystem.UInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_System_ConsoleColor_System_ConsoleColor_System_UInt64_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(System.ConsoleColor%2CSystem.ConsoleColor%2CSystem.UInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ConsoleStreams/ErrorMessagesInColor.cs/#L2032">View Source</a>
   </span>
   <a id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite*"></a>
-  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_ConsoleColor_ConsoleColor_System_UInt64_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(ConsoleColor,ConsoleColor,System.UInt64)">RGBWrite(ConsoleColor, ConsoleColor, UInt64)</h4>
+  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWrite_System_ConsoleColor_System_ConsoleColor_System_UInt64_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWrite(System.ConsoleColor,System.ConsoleColor,System.UInt64)">RGBWrite(ConsoleColor, ConsoleColor, UInt64)</h4>
   <div class="markdown level1 summary"><p>Write the string representation of a ulong (unsigned long integer)
 variable.</p>
 </div>
@@ -1505,13 +1528,13 @@ variable.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrForeColor</span></td>
         <td><p>Specify the ConsoleColor to use for the foreground (text).</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrBackColor</span></td>
         <td><p>Specify the ConsoleColor to use for the background.</p>
 </td>
@@ -1526,13 +1549,13 @@ variable.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_ConsoleColor_ConsoleColor_System_Boolean_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(ConsoleColor%2CConsoleColor%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_System_ConsoleColor_System_ConsoleColor_System_Boolean_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(System.ConsoleColor%2CSystem.ConsoleColor%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ConsoleStreams/ErrorMessagesInColor.cs/#L1264">View Source</a>
   </span>
   <a id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine*"></a>
-  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_ConsoleColor_ConsoleColor_System_Boolean_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(ConsoleColor,ConsoleColor,System.Boolean)">RGBWriteLine(ConsoleColor, ConsoleColor, Boolean)</h4>
+  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_System_ConsoleColor_System_ConsoleColor_System_Boolean_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(System.ConsoleColor,System.ConsoleColor,System.Boolean)">RGBWriteLine(ConsoleColor, ConsoleColor, Boolean)</h4>
   <div class="markdown level1 summary"><p>Write the string representation of a bool (Boolean) variable.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1551,13 +1574,13 @@ variable.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrForeColor</span></td>
         <td><p>Specify the ConsoleColor to use for the foreground (text).</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrBackColor</span></td>
         <td><p>Specify the ConsoleColor to use for the background.</p>
 </td>
@@ -1572,13 +1595,13 @@ variable.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_ConsoleColor_ConsoleColor_System_Char_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(ConsoleColor%2CConsoleColor%2CSystem.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_System_ConsoleColor_System_ConsoleColor_System_Char_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(System.ConsoleColor%2CSystem.ConsoleColor%2CSystem.Char)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ConsoleStreams/ErrorMessagesInColor.cs/#L1288">View Source</a>
   </span>
   <a id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine*"></a>
-  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_ConsoleColor_ConsoleColor_System_Char_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(ConsoleColor,ConsoleColor,System.Char)">RGBWriteLine(ConsoleColor, ConsoleColor, Char)</h4>
+  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_System_ConsoleColor_System_ConsoleColor_System_Char_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(System.ConsoleColor,System.ConsoleColor,System.Char)">RGBWriteLine(ConsoleColor, ConsoleColor, Char)</h4>
   <div class="markdown level1 summary"><p>Write the string representation of a char (a Unicode character).</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1597,13 +1620,13 @@ variable.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrForeColor</span></td>
         <td><p>Specify the ConsoleColor to use for the foreground (text).</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrBackColor</span></td>
         <td><p>Specify the ConsoleColor to use for the background.</p>
 </td>
@@ -1618,13 +1641,13 @@ variable.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_ConsoleColor_ConsoleColor_System_Char___.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(ConsoleColor%2CConsoleColor%2CSystem.Char%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_System_ConsoleColor_System_ConsoleColor_System_Char___.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(System.ConsoleColor%2CSystem.ConsoleColor%2CSystem.Char%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ConsoleStreams/ErrorMessagesInColor.cs/#L1312">View Source</a>
   </span>
   <a id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine*"></a>
-  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_ConsoleColor_ConsoleColor_System_Char___" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(ConsoleColor,ConsoleColor,System.Char[])">RGBWriteLine(ConsoleColor, ConsoleColor, Char[])</h4>
+  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_System_ConsoleColor_System_ConsoleColor_System_Char___" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(System.ConsoleColor,System.ConsoleColor,System.Char[])">RGBWriteLine(ConsoleColor, ConsoleColor, Char[])</h4>
   <div class="markdown level1 summary"><p>Write the string representation of a character array.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1643,13 +1666,13 @@ variable.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrForeColor</span></td>
         <td><p>Specify the ConsoleColor to use for the foreground (text).</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrBackColor</span></td>
         <td><p>Specify the ConsoleColor to use for the background.</p>
 </td>
@@ -1664,13 +1687,13 @@ variable.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_ConsoleColor_ConsoleColor_System_Char___System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(ConsoleColor%2CConsoleColor%2CSystem.Char%5B%5D%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_System_ConsoleColor_System_ConsoleColor_System_Char___System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(System.ConsoleColor%2CSystem.ConsoleColor%2CSystem.Char%5B%5D%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ConsoleStreams/ErrorMessagesInColor.cs/#L1626">View Source</a>
   </span>
   <a id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine*"></a>
-  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_ConsoleColor_ConsoleColor_System_Char___System_Int32_System_Int32_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(ConsoleColor,ConsoleColor,System.Char[],System.Int32,System.Int32)">RGBWriteLine(ConsoleColor, ConsoleColor, Char[], Int32, Int32)</h4>
+  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_System_ConsoleColor_System_ConsoleColor_System_Char___System_Int32_System_Int32_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(System.ConsoleColor,System.ConsoleColor,System.Char[],System.Int32,System.Int32)">RGBWriteLine(ConsoleColor, ConsoleColor, Char[], Int32, Int32)</h4>
   <div class="markdown level1 summary"><p>Write a formatted message that includes a range of characters taken
 from an array of Unicode characters.</p>
 </div>
@@ -1690,13 +1713,13 @@ from an array of Unicode characters.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrForeColor</span></td>
         <td><p>Specify the ConsoleColor to use for the foreground (text).</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrBackColor</span></td>
         <td><p>Specify the ConsoleColor to use for the background.</p>
 </td>
@@ -1724,13 +1747,13 @@ must contain at least count - 1 substitution tokens.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_ConsoleColor_ConsoleColor_System_Decimal_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(ConsoleColor%2CConsoleColor%2CSystem.Decimal)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_System_ConsoleColor_System_ConsoleColor_System_Decimal_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(System.ConsoleColor%2CSystem.ConsoleColor%2CSystem.Decimal)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ConsoleStreams/ErrorMessagesInColor.cs/#L1336">View Source</a>
   </span>
   <a id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine*"></a>
-  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_ConsoleColor_ConsoleColor_System_Decimal_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(ConsoleColor,ConsoleColor,System.Decimal)">RGBWriteLine(ConsoleColor, ConsoleColor, Decimal)</h4>
+  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_System_ConsoleColor_System_ConsoleColor_System_Decimal_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(System.ConsoleColor,System.ConsoleColor,System.Decimal)">RGBWriteLine(ConsoleColor, ConsoleColor, Decimal)</h4>
   <div class="markdown level1 summary"><p>Write the string representation of a decimal variable.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1749,13 +1772,13 @@ must contain at least count - 1 substitution tokens.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrForeColor</span></td>
         <td><p>Specify the ConsoleColor to use for the foreground (text).</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrBackColor</span></td>
         <td><p>Specify the ConsoleColor to use for the background.</p>
 </td>
@@ -1770,13 +1793,13 @@ must contain at least count - 1 substitution tokens.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_ConsoleColor_ConsoleColor_System_Double_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(ConsoleColor%2CConsoleColor%2CSystem.Double)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_System_ConsoleColor_System_ConsoleColor_System_Double_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(System.ConsoleColor%2CSystem.ConsoleColor%2CSystem.Double)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ConsoleStreams/ErrorMessagesInColor.cs/#L1360">View Source</a>
   </span>
   <a id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine*"></a>
-  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_ConsoleColor_ConsoleColor_System_Double_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(ConsoleColor,ConsoleColor,System.Double)">RGBWriteLine(ConsoleColor, ConsoleColor, Double)</h4>
+  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_System_ConsoleColor_System_ConsoleColor_System_Double_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(System.ConsoleColor,System.ConsoleColor,System.Double)">RGBWriteLine(ConsoleColor, ConsoleColor, Double)</h4>
   <div class="markdown level1 summary"><p>Write the string representation of a double precision variable.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1795,13 +1818,13 @@ must contain at least count - 1 substitution tokens.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrForeColor</span></td>
         <td><p>Specify the ConsoleColor to use for the foreground (text).</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrBackColor</span></td>
         <td><p>Specify the ConsoleColor to use for the background.</p>
 </td>
@@ -1816,13 +1839,13 @@ must contain at least count - 1 substitution tokens.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_ConsoleColor_ConsoleColor_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(ConsoleColor%2CConsoleColor%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_System_ConsoleColor_System_ConsoleColor_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(System.ConsoleColor%2CSystem.ConsoleColor%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ConsoleStreams/ErrorMessagesInColor.cs/#L1408">View Source</a>
   </span>
   <a id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine*"></a>
-  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_ConsoleColor_ConsoleColor_System_Int32_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(ConsoleColor,ConsoleColor,System.Int32)">RGBWriteLine(ConsoleColor, ConsoleColor, Int32)</h4>
+  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_System_ConsoleColor_System_ConsoleColor_System_Int32_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(System.ConsoleColor,System.ConsoleColor,System.Int32)">RGBWriteLine(ConsoleColor, ConsoleColor, Int32)</h4>
   <div class="markdown level1 summary"><p>Write the string representation of an integer variable.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1841,13 +1864,13 @@ must contain at least count - 1 substitution tokens.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrForeColor</span></td>
         <td><p>Specify the ConsoleColor to use for the foreground (text).</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrBackColor</span></td>
         <td><p>Specify the ConsoleColor to use for the background.</p>
 </td>
@@ -1862,13 +1885,13 @@ must contain at least count - 1 substitution tokens.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_ConsoleColor_ConsoleColor_System_Int64_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(ConsoleColor%2CConsoleColor%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_System_ConsoleColor_System_ConsoleColor_System_Int64_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(System.ConsoleColor%2CSystem.ConsoleColor%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ConsoleStreams/ErrorMessagesInColor.cs/#L1432">View Source</a>
   </span>
   <a id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine*"></a>
-  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_ConsoleColor_ConsoleColor_System_Int64_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(ConsoleColor,ConsoleColor,System.Int64)">RGBWriteLine(ConsoleColor, ConsoleColor, Int64)</h4>
+  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_System_ConsoleColor_System_ConsoleColor_System_Int64_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(System.ConsoleColor,System.ConsoleColor,System.Int64)">RGBWriteLine(ConsoleColor, ConsoleColor, Int64)</h4>
   <div class="markdown level1 summary"><p>Write the string representation of a long integer variable.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1887,13 +1910,13 @@ must contain at least count - 1 substitution tokens.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrForeColor</span></td>
         <td><p>Specify the ConsoleColor to use for the foreground (text).</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrBackColor</span></td>
         <td><p>Specify the ConsoleColor to use for the background.</p>
 </td>
@@ -1908,13 +1931,13 @@ must contain at least count - 1 substitution tokens.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_ConsoleColor_ConsoleColor_System_Object_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(ConsoleColor%2CConsoleColor%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_System_ConsoleColor_System_ConsoleColor_System_Object_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(System.ConsoleColor%2CSystem.ConsoleColor%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ConsoleStreams/ErrorMessagesInColor.cs/#L1456">View Source</a>
   </span>
   <a id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine*"></a>
-  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_ConsoleColor_ConsoleColor_System_Object_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(ConsoleColor,ConsoleColor,System.Object)">RGBWriteLine(ConsoleColor, ConsoleColor, Object)</h4>
+  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_System_ConsoleColor_System_ConsoleColor_System_Object_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(System.ConsoleColor,System.ConsoleColor,System.Object)">RGBWriteLine(ConsoleColor, ConsoleColor, Object)</h4>
   <div class="markdown level1 summary"><p>Write the string representation of a generic Object variable.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1933,13 +1956,13 @@ must contain at least count - 1 substitution tokens.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrForeColor</span></td>
         <td><p>Specify the ConsoleColor to use for the foreground (text).</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrBackColor</span></td>
         <td><p>Specify the ConsoleColor to use for the background.</p>
 </td>
@@ -1954,13 +1977,13 @@ must contain at least count - 1 substitution tokens.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_ConsoleColor_ConsoleColor_System_Single_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(ConsoleColor%2CConsoleColor%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_System_ConsoleColor_System_ConsoleColor_System_Single_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(System.ConsoleColor%2CSystem.ConsoleColor%2CSystem.Single)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ConsoleStreams/ErrorMessagesInColor.cs/#L1384">View Source</a>
   </span>
   <a id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine*"></a>
-  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_ConsoleColor_ConsoleColor_System_Single_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(ConsoleColor,ConsoleColor,System.Single)">RGBWriteLine(ConsoleColor, ConsoleColor, Single)</h4>
+  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_System_ConsoleColor_System_ConsoleColor_System_Single_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(System.ConsoleColor,System.ConsoleColor,System.Single)">RGBWriteLine(ConsoleColor, ConsoleColor, Single)</h4>
   <div class="markdown level1 summary"><p>Write the string representation of a floating point variable.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1979,13 +2002,13 @@ must contain at least count - 1 substitution tokens.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrForeColor</span></td>
         <td><p>Specify the ConsoleColor to use for the foreground (text).</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrBackColor</span></td>
         <td><p>Specify the ConsoleColor to use for the background.</p>
 </td>
@@ -2000,13 +2023,13 @@ must contain at least count - 1 substitution tokens.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_ConsoleColor_ConsoleColor_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(ConsoleColor%2CConsoleColor%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_System_ConsoleColor_System_ConsoleColor_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(System.ConsoleColor%2CSystem.ConsoleColor%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ConsoleStreams/ErrorMessagesInColor.cs/#L1480">View Source</a>
   </span>
   <a id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine*"></a>
-  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_ConsoleColor_ConsoleColor_System_String_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(ConsoleColor,ConsoleColor,System.String)">RGBWriteLine(ConsoleColor, ConsoleColor, String)</h4>
+  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_System_ConsoleColor_System_ConsoleColor_System_String_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(System.ConsoleColor,System.ConsoleColor,System.String)">RGBWriteLine(ConsoleColor, ConsoleColor, String)</h4>
   <div class="markdown level1 summary"><p>Write a string variable.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -2025,13 +2048,13 @@ must contain at least count - 1 substitution tokens.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrForeColor</span></td>
         <td><p>Specify the ConsoleColor to use for the foreground (text).</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrBackColor</span></td>
         <td><p>Specify the ConsoleColor to use for the background.</p>
 </td>
@@ -2046,13 +2069,13 @@ must contain at least count - 1 substitution tokens.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_ConsoleColor_ConsoleColor_System_String_System_Object_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(ConsoleColor%2CConsoleColor%2CSystem.String%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_System_ConsoleColor_System_ConsoleColor_System_String_System_Object_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(System.ConsoleColor%2CSystem.ConsoleColor%2CSystem.String%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ConsoleStreams/ErrorMessagesInColor.cs/#L1560">View Source</a>
   </span>
   <a id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine*"></a>
-  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_ConsoleColor_ConsoleColor_System_String_System_Object_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(ConsoleColor,ConsoleColor,System.String,System.Object)">RGBWriteLine(ConsoleColor, ConsoleColor, String, Object)</h4>
+  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_System_ConsoleColor_System_ConsoleColor_System_String_System_Object_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(System.ConsoleColor,System.ConsoleColor,System.String,System.Object)">RGBWriteLine(ConsoleColor, ConsoleColor, String, Object)</h4>
   <div class="markdown level1 summary"><p>Write a formatted message that includes the string representation of
 an generic object variable.</p>
 </div>
@@ -2072,13 +2095,13 @@ an generic object variable.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrForeColor</span></td>
         <td><p>Specify the ConsoleColor to use for the foreground (text).</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrBackColor</span></td>
         <td><p>Specify the ConsoleColor to use for the background.</p>
 </td>
@@ -2101,13 +2124,13 @@ generic object.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_ConsoleColor_ConsoleColor_System_String_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(ConsoleColor%2CConsoleColor%2CSystem.String%2CSystem.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_System_ConsoleColor_System_ConsoleColor_System_String_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(System.ConsoleColor%2CSystem.ConsoleColor%2CSystem.String%2CSystem.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ConsoleStreams/ErrorMessagesInColor.cs/#L1662">View Source</a>
   </span>
   <a id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine*"></a>
-  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_ConsoleColor_ConsoleColor_System_String_System_Object_System_Object_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(ConsoleColor,ConsoleColor,System.String,System.Object,System.Object)">RGBWriteLine(ConsoleColor, ConsoleColor, String, Object, Object)</h4>
+  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_System_ConsoleColor_System_ConsoleColor_System_String_System_Object_System_Object_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(System.ConsoleColor,System.ConsoleColor,System.String,System.Object,System.Object)">RGBWriteLine(ConsoleColor, ConsoleColor, String, Object, Object)</h4>
   <div class="markdown level1 summary"><p>Write a formatted message that includes up to two substitution
 tokens.</p>
 </div>
@@ -2127,13 +2150,13 @@ tokens.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrForeColor</span></td>
         <td><p>Specify the ConsoleColor to use for the foreground (text).</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrBackColor</span></td>
         <td><p>Specify the ConsoleColor to use for the background.</p>
 </td>
@@ -2163,13 +2186,13 @@ substituted into format for token {1}.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_ConsoleColor_ConsoleColor_System_String_System_Object_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(ConsoleColor%2CConsoleColor%2CSystem.String%2CSystem.Object%2CSystem.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_System_ConsoleColor_System_ConsoleColor_System_String_System_Object_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(System.ConsoleColor%2CSystem.ConsoleColor%2CSystem.String%2CSystem.Object%2CSystem.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ConsoleStreams/ErrorMessagesInColor.cs/#L1702">View Source</a>
   </span>
   <a id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine*"></a>
-  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_ConsoleColor_ConsoleColor_System_String_System_Object_System_Object_System_Object_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(ConsoleColor,ConsoleColor,System.String,System.Object,System.Object,System.Object)">RGBWriteLine(ConsoleColor, ConsoleColor, String, Object, Object, Object)</h4>
+  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_System_ConsoleColor_System_ConsoleColor_System_String_System_Object_System_Object_System_Object_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(System.ConsoleColor,System.ConsoleColor,System.String,System.Object,System.Object,System.Object)">RGBWriteLine(ConsoleColor, ConsoleColor, String, Object, Object, Object)</h4>
   <div class="markdown level1 summary"><p>Write a formatted message that includes up to three substitution
 tokens.</p>
 </div>
@@ -2189,13 +2212,13 @@ tokens.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrForeColor</span></td>
         <td><p>Specify the ConsoleColor to use for the foreground (text).</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrBackColor</span></td>
         <td><p>Specify the ConsoleColor to use for the background.</p>
 </td>
@@ -2232,13 +2255,13 @@ substituted into format for token {2}.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_ConsoleColor_ConsoleColor_System_String_System_Object_System_Object_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(ConsoleColor%2CConsoleColor%2CSystem.String%2CSystem.Object%2CSystem.Object%2CSystem.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_System_ConsoleColor_System_ConsoleColor_System_String_System_Object_System_Object_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(System.ConsoleColor%2CSystem.ConsoleColor%2CSystem.String%2CSystem.Object%2CSystem.Object%2CSystem.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ConsoleStreams/ErrorMessagesInColor.cs/#L1747">View Source</a>
   </span>
   <a id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine*"></a>
-  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_ConsoleColor_ConsoleColor_System_String_System_Object_System_Object_System_Object_System_Object_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(ConsoleColor,ConsoleColor,System.String,System.Object,System.Object,System.Object,System.Object)">RGBWriteLine(ConsoleColor, ConsoleColor, String, Object, Object, Object, Object)</h4>
+  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_System_ConsoleColor_System_ConsoleColor_System_String_System_Object_System_Object_System_Object_System_Object_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(System.ConsoleColor,System.ConsoleColor,System.String,System.Object,System.Object,System.Object,System.Object)">RGBWriteLine(ConsoleColor, ConsoleColor, String, Object, Object, Object, Object)</h4>
   <div class="markdown level1 summary"><p>Write a formatted message that includes up to four substitution
 tokens.</p>
 </div>
@@ -2258,13 +2281,13 @@ tokens.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrForeColor</span></td>
         <td><p>Specify the ConsoleColor to use for the foreground (text).</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrBackColor</span></td>
         <td><p>Specify the ConsoleColor to use for the background.</p>
 </td>
@@ -2308,13 +2331,13 @@ substituted into format for token {3}.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_ConsoleColor_ConsoleColor_System_String_System_Object___.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(ConsoleColor%2CConsoleColor%2CSystem.String%2CSystem.Object%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_System_ConsoleColor_System_ConsoleColor_System_String_System_Object___.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(System.ConsoleColor%2CSystem.ConsoleColor%2CSystem.String%2CSystem.Object%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ConsoleStreams/ErrorMessagesInColor.cs/#L1593">View Source</a>
   </span>
   <a id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine*"></a>
-  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_ConsoleColor_ConsoleColor_System_String_System_Object___" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(ConsoleColor,ConsoleColor,System.String,System.Object[])">RGBWriteLine(ConsoleColor, ConsoleColor, String, Object[])</h4>
+  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_System_ConsoleColor_System_ConsoleColor_System_String_System_Object___" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(System.ConsoleColor,System.ConsoleColor,System.String,System.Object[])">RGBWriteLine(ConsoleColor, ConsoleColor, String, Object[])</h4>
   <div class="markdown level1 summary"><p>Write a formatted message that includes the string representation of
 an generic object variable.</p>
 </div>
@@ -2334,13 +2357,13 @@ an generic object variable.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrForeColor</span></td>
         <td><p>Specify the ConsoleColor to use for the foreground (text).</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrBackColor</span></td>
         <td><p>Specify the ConsoleColor to use for the background.</p>
 </td>
@@ -2365,13 +2388,13 @@ is the number within its brackets.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_ConsoleColor_ConsoleColor_System_UInt32_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(ConsoleColor%2CConsoleColor%2CSystem.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_System_ConsoleColor_System_ConsoleColor_System_UInt32_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(System.ConsoleColor%2CSystem.ConsoleColor%2CSystem.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ConsoleStreams/ErrorMessagesInColor.cs/#L1505">View Source</a>
   </span>
   <a id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine*"></a>
-  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_ConsoleColor_ConsoleColor_System_UInt32_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(ConsoleColor,ConsoleColor,System.UInt32)">RGBWriteLine(ConsoleColor, ConsoleColor, UInt32)</h4>
+  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_System_ConsoleColor_System_ConsoleColor_System_UInt32_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(System.ConsoleColor,System.ConsoleColor,System.UInt32)">RGBWriteLine(ConsoleColor, ConsoleColor, UInt32)</h4>
   <div class="markdown level1 summary"><p>Write the string representation of a uint (unsigned integer)
 variable.</p>
 </div>
@@ -2391,13 +2414,13 @@ variable.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrForeColor</span></td>
         <td><p>Specify the ConsoleColor to use for the foreground (text).</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrBackColor</span></td>
         <td><p>Specify the ConsoleColor to use for the background.</p>
 </td>
@@ -2412,13 +2435,13 @@ variable.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_ConsoleColor_ConsoleColor_System_UInt64_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(ConsoleColor%2CConsoleColor%2CSystem.UInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_System_ConsoleColor_System_ConsoleColor_System_UInt64_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(System.ConsoleColor%2CSystem.ConsoleColor%2CSystem.UInt64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ConsoleStreams/ErrorMessagesInColor.cs/#L1530">View Source</a>
   </span>
   <a id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine*"></a>
-  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_ConsoleColor_ConsoleColor_System_UInt64_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(ConsoleColor,ConsoleColor,System.UInt64)">RGBWriteLine(ConsoleColor, ConsoleColor, UInt64)</h4>
+  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_RGBWriteLine_System_ConsoleColor_System_ConsoleColor_System_UInt64_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.RGBWriteLine(System.ConsoleColor,System.ConsoleColor,System.UInt64)">RGBWriteLine(ConsoleColor, ConsoleColor, UInt64)</h4>
   <div class="markdown level1 summary"><p>Write the string representation of a ulong (unsigned long integer)
 variable.</p>
 </div>
@@ -2438,13 +2461,13 @@ variable.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrForeColor</span></td>
         <td><p>Specify the ConsoleColor to use for the foreground (text).</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrBackColor</span></td>
         <td><p>Specify the ConsoleColor to use for the background.</p>
 </td>
@@ -2459,13 +2482,13 @@ variable.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_SetDefaultErrorMessageColors_WizardWrx_ConsoleStreams_ErrorMessagesInColor_ErrorSeverity_ConsoleColor_ConsoleColor_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.SetDefaultErrorMessageColors(WizardWrx.ConsoleStreams.ErrorMessagesInColor.ErrorSeverity%2CConsoleColor%2CConsoleColor)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_ConsoleStreams_ErrorMessagesInColor_SetDefaultErrorMessageColors_WizardWrx_ConsoleStreams_ErrorMessagesInColor_ErrorSeverity_System_ConsoleColor_System_ConsoleColor_.md&amp;value=---%0Auid%3A%20WizardWrx.ConsoleStreams.ErrorMessagesInColor.SetDefaultErrorMessageColors(WizardWrx.ConsoleStreams.ErrorMessagesInColor.ErrorSeverity%2CSystem.ConsoleColor%2CSystem.ConsoleColor)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/ConsoleStreams/ErrorMessagesInColor.cs/#L2350">View Source</a>
   </span>
   <a id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_SetDefaultErrorMessageColors_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.SetDefaultErrorMessageColors*"></a>
-  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_SetDefaultErrorMessageColors_WizardWrx_ConsoleStreams_ErrorMessagesInColor_ErrorSeverity_ConsoleColor_ConsoleColor_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.SetDefaultErrorMessageColors(WizardWrx.ConsoleStreams.ErrorMessagesInColor.ErrorSeverity,ConsoleColor,ConsoleColor)">SetDefaultErrorMessageColors(ErrorMessagesInColor.ErrorSeverity, ConsoleColor, ConsoleColor)</h4>
+  <h4 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_SetDefaultErrorMessageColors_WizardWrx_ConsoleStreams_ErrorMessagesInColor_ErrorSeverity_System_ConsoleColor_System_ConsoleColor_" data-uid="WizardWrx.ConsoleStreams.ErrorMessagesInColor.SetDefaultErrorMessageColors(WizardWrx.ConsoleStreams.ErrorMessagesInColor.ErrorSeverity,System.ConsoleColor,System.ConsoleColor)">SetDefaultErrorMessageColors(ErrorMessagesInColor.ErrorSeverity, ConsoleColor, ConsoleColor)</h4>
   <div class="markdown level1 summary"><p>Simultaneously override the default text and background colors that
 are read into four static ConsoleColor properties when the library
 initializes. This can also be accomplished by setting the text and
@@ -2495,14 +2518,14 @@ of the two default color schemes is wanted.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrTextForeColor</span></td>
         <td><p>Specify the ConsoleColor property to use as the text (foreground)
 color in generated messages.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ConsoleColor</span></td>
+        <td><span class="xref">System.ConsoleColor</span></td>
         <td><span class="parametername">pclrTextBackColor</span></td>
         <td><p>Specify the ConsoleColor property to use as the background color in
 generated messages.</p>
@@ -2546,6 +2569,8 @@ by the fully qualified type name.</p>
       </tr>
     </tbody>
   </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Object.ToString()</span></div>
   <h5 id="WizardWrx_ConsoleStreams_ErrorMessagesInColor_ToString_remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>Though this method could have easily been implemented inline, using
 the shared message template, moving the implementation out of line

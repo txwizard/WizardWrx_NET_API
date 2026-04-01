@@ -81,7 +81,8 @@ bit-mapped enumeration.</p>
   <h6><strong>Assembly</strong>: WizardWrx.DLLConfigurationManager.dll</h6>
   <h5 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ScrollUpResult_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public enum ScrollUpResult : int</code></pre>
+    <pre><code class="lang-csharp hljs">[Flags]
+public enum ScrollUpResult</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -119,6 +120,10 @@ unsupported, though not treated as an outright failure.</p>
       </tr>
     </tbody>
   </thead></thead></table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="WizardWrx.StringExtensions.html#WizardWrx_StringExtensions_RenderEvenWhenNull__1___0_System_String_System_String_System_IFormatProvider_">StringExtensions.RenderEvenWhenNull&lt;ExceptionLogger.ScrollUpResult&gt;(String, String, IFormatProvider)</a>
+  </div>
 </article>
           </div>
           

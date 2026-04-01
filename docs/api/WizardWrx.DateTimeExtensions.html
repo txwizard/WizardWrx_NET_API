@@ -84,23 +84,47 @@ either a DayOfWeek enumeration member or its integral value.</p>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">DateTimeExtensions</span></div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="WizardWrx.html">WizardWrx</a></h6>
   <h6><strong>Assembly</strong>: WizardWrx.Core.dll</h6>
   <h5 id="WizardWrx_DateTimeExtensions_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class DateTimeExtensions : object</code></pre>
+    <pre><code class="lang-csharp hljs">public static class DateTimeExtensions</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DateTimeExtensions_DateOfMostRecentWeekday_DateTime_DayOfWeek_.md&amp;value=---%0Auid%3A%20WizardWrx.DateTimeExtensions.DateOfMostRecentWeekday(DateTime%2CDayOfWeek)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DateTimeExtensions_DateOfMostRecentWeekday_System_DateTime_System_DayOfWeek_.md&amp;value=---%0Auid%3A%20WizardWrx.DateTimeExtensions.DateOfMostRecentWeekday(System.DateTime%2CSystem.DayOfWeek)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/DateTimeExtensions.cs/#L115">View Source</a>
   </span>
   <a id="WizardWrx_DateTimeExtensions_DateOfMostRecentWeekday_" data-uid="WizardWrx.DateTimeExtensions.DateOfMostRecentWeekday*"></a>
-  <h4 id="WizardWrx_DateTimeExtensions_DateOfMostRecentWeekday_DateTime_DayOfWeek_" data-uid="WizardWrx.DateTimeExtensions.DateOfMostRecentWeekday(DateTime,DayOfWeek)">DateOfMostRecentWeekday(DateTime, DayOfWeek)</h4>
+  <h4 id="WizardWrx_DateTimeExtensions_DateOfMostRecentWeekday_System_DateTime_System_DayOfWeek_" data-uid="WizardWrx.DateTimeExtensions.DateOfMostRecentWeekday(System.DateTime,System.DayOfWeek)">DateOfMostRecentWeekday(DateTime, DayOfWeek)</h4>
   <div class="markdown level1 summary"><p>Given a date and a day of the week, return the date of the most
 recent instance of the specified day of the week.</p>
 </div>
@@ -120,14 +144,14 @@ recent instance of the specified day of the week.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">DateTime</span></td>
+        <td><span class="xref">System.DateTime</span></td>
         <td><span class="parametername">pdtmThisDate</span></td>
         <td><p>Specify the DateTime to serve as the reference point against which
 calculate the most recent weekday given by <code data-dev-comment-type="paramref" class="paramref">penmDayOfWeek</code>.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">DayOfWeek</span></td>
+        <td><span class="xref">System.DayOfWeek</span></td>
         <td><span class="parametername">penmDayOfWeek</span></td>
         <td><p>Specify the weekday in terms of the DayOfWeek enumeration for which the
 weekday nearest to <code data-dev-comment-type="paramref" class="paramref">pdtmThisDate</code> is desired.</p>
@@ -145,7 +169,7 @@ weekday nearest to <code data-dev-comment-type="paramref" class="paramref">pdtmT
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">DateTime</span></td>
+        <td><span class="xref">System.DateTime</span></td>
         <td><p>The return value is the date, represented as a DateTime object, for
 which the DayOfWeek property is the value specified by
 <code data-dev-comment-type="paramref" class="paramref">penmDayOfWeek</code> that is the most recent instance of
@@ -155,7 +179,7 @@ the specified weekday that is on or before the date specified by
       </tr>
     </tbody>
   </table>
-  <h5 id="WizardWrx_DateTimeExtensions_DateOfMostRecentWeekday_DateTime_DayOfWeek__remarks">Remarks</h5>
+  <h5 id="WizardWrx_DateTimeExtensions_DateOfMostRecentWeekday_System_DateTime_System_DayOfWeek__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>Since enumerated types can be freely converted to and from integers,
 and a program stands a fair chance of having the weekday specified
 in terms of either, two versions of this method are offered. Since
@@ -164,20 +188,20 @@ integer representation of the weekday implements both; the overload
 that takes the enumeration casts it to integer and calls the other
 overload, through which it returns.</p>
 </div>
-  <h5 id="WizardWrx_DateTimeExtensions_DateOfMostRecentWeekday_DateTime_DayOfWeek__examples">Examples</h5>
+  <h5 id="WizardWrx_DateTimeExtensions_DateOfMostRecentWeekday_System_DateTime_System_DayOfWeek__examples">Examples</h5>
   <p>When <code data-dev-comment-type="paramref" class="paramref">pdtmThisDate</code> is 03/08/2022 and
 <code data-dev-comment-type="paramref" class="paramref">penmDayOfWeek</code> is Sunday, the return value is
 Sunday, 03/06/2022.</p>
 
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DateTimeExtensions_DateOfMostRecentWeekday_DateTime_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.DateTimeExtensions.DateOfMostRecentWeekday(DateTime%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DateTimeExtensions_DateOfMostRecentWeekday_System_DateTime_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.DateTimeExtensions.DateOfMostRecentWeekday(System.DateTime%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/DateTimeExtensions.cs/#L159">View Source</a>
   </span>
   <a id="WizardWrx_DateTimeExtensions_DateOfMostRecentWeekday_" data-uid="WizardWrx.DateTimeExtensions.DateOfMostRecentWeekday*"></a>
-  <h4 id="WizardWrx_DateTimeExtensions_DateOfMostRecentWeekday_DateTime_System_Int32_" data-uid="WizardWrx.DateTimeExtensions.DateOfMostRecentWeekday(DateTime,System.Int32)">DateOfMostRecentWeekday(DateTime, Int32)</h4>
+  <h4 id="WizardWrx_DateTimeExtensions_DateOfMostRecentWeekday_System_DateTime_System_Int32_" data-uid="WizardWrx.DateTimeExtensions.DateOfMostRecentWeekday(System.DateTime,System.Int32)">DateOfMostRecentWeekday(DateTime, Int32)</h4>
   <div class="markdown level1 summary"><p>Given a date and a day of the week, return the date of the most
 recent instance of the specified day of the week.</p>
 </div>
@@ -197,7 +221,7 @@ recent instance of the specified day of the week.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">DateTime</span></td>
+        <td><span class="xref">System.DateTime</span></td>
         <td><span class="parametername">pdtmThisDate</span></td>
         <td><p>Specify the DateTime to serve as the reference point against which
 calculate the most recent weekday given by <code data-dev-comment-type="paramref" class="paramref">pintDayOfWeekIndex</code>.</p>
@@ -223,7 +247,7 @@ DayOfWeek enumeration value for which the weekday nearest to
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">DateTime</span></td>
+        <td><span class="xref">System.DateTime</span></td>
         <td><p>The return value is the date, represented as a DateTime object, for
 which the DayOfWeek property is the value specified as integer
 <code data-dev-comment-type="paramref" class="paramref">pintDayOfWeekIndex</code> that is the most recent instance of
@@ -233,7 +257,7 @@ the specified weekday that is on or before the date specified by
       </tr>
     </tbody>
   </table>
-  <h5 id="WizardWrx_DateTimeExtensions_DateOfMostRecentWeekday_DateTime_System_Int32__remarks">Remarks</h5>
+  <h5 id="WizardWrx_DateTimeExtensions_DateOfMostRecentWeekday_System_DateTime_System_Int32__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>Since enumerated types can be freely converted to and from integers,
 and a program stands a fair chance of having the weekday specified
 in terms of either, two versions of this method are offered. Since
@@ -242,7 +266,7 @@ integer representation of the weekday implements both; the overload
 that takes the enumeration casts it to integer and calls the other
 overload, through which it returns.</p>
 </div>
-  <h5 id="WizardWrx_DateTimeExtensions_DateOfMostRecentWeekday_DateTime_System_Int32__examples">Examples</h5>
+  <h5 id="WizardWrx_DateTimeExtensions_DateOfMostRecentWeekday_System_DateTime_System_Int32__examples">Examples</h5>
   <p>When <code data-dev-comment-type="paramref" class="paramref">pdtmThisDate</code> is 03/08/2022 and
 <code data-dev-comment-type="paramref" class="paramref">pintDayOfWeekIndex</code> is Sunday, the return value is
 Sunday, 03/06/2022.</p>

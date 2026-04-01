@@ -1,5 +1,29 @@
 ﻿# WizardWrx .NET API Change Log
 
+## 2026-03-31
+
+### WizardWrx.Core 9.0.386
+
+This update extends output formats of all File Message Digest methods to include
+Base64 encoded strings, with or without a prefix that identifies the hashing
+algorithm used to generate the digest. The prefix is derived from the name of
+the hashing algorithm, and is followed by an underscore character. For example,
+a 16-byte MD5 digest would be represented by a string of 26 characters, begin-
+ning with "MD5_", and a 64-byte SHA-512 digest would be represented by a string
+of 92 characters, beginning with "SHA512_". The output format is specified by an
+optional parameter of type OuutputFormat, which is an enumeration that defines
+the supported output formats for the digest. The method uses a switch statement
+to determine how to format the digest based on the specified output format.
+
+Though the immediate need for the additional formats is confined to SHA-384, all
+hashing algorithms, including the two (MD5 and SHA-1) that are deprecated,  are
+updated to support the new output formats, and the new output formats are added
+to the documentation for all hashing algorithms, and the file I/O is moved into
+a private nethod, which is called by all hashing algorithms, eliminating the
+file I/O code from the hashing algorithm methods, and centralizing it in a
+single method that can be easily maintained and updated as needed, and making
+the code slightly more compact.
+
 ## 2026-02-11
 
 ### WizardWrx.HTTP [9.0.50]

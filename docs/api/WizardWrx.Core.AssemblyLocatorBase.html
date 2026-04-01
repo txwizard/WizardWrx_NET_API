@@ -84,11 +84,35 @@ was loaded. See Remarks.</p>
     <div class="level1"><span class="xref">AssemblyLocatorBase</span></div>
       <div class="level2"><a class="xref" href="WizardWrx.Core.PropertyDefaults.html">PropertyDefaults</a></div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="WizardWrx.Core.html">WizardWrx.Core</a></h6>
   <h6><strong>Assembly</strong>: WizardWrx.Core.dll</h6>
   <h5 id="WizardWrx_Core_AssemblyLocatorBase_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class AssemblyLocatorBase : object</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class AssemblyLocatorBase</code></pre>
   </div>
   <h5 id="WizardWrx_Core_AssemblyLocatorBase_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>Given the location from which an assembly was loaded, you can learn
@@ -127,13 +151,13 @@ directory.</p>
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_AssemblyLocatorBase__ctor_Assembly_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.AssemblyLocatorBase.%23ctor(Assembly)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_AssemblyLocatorBase__ctor_System_Reflection_Assembly_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.AssemblyLocatorBase.%23ctor(System.Reflection.Assembly)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AssemblyLocatorBase.cs/#L382">View Source</a>
   </span>
   <a id="WizardWrx_Core_AssemblyLocatorBase__ctor_" data-uid="WizardWrx.Core.AssemblyLocatorBase.#ctor*"></a>
-  <h4 id="WizardWrx_Core_AssemblyLocatorBase__ctor_Assembly_" data-uid="WizardWrx.Core.AssemblyLocatorBase.#ctor(Assembly)">AssemblyLocatorBase(Assembly)</h4>
+  <h4 id="WizardWrx_Core_AssemblyLocatorBase__ctor_System_Reflection_Assembly_" data-uid="WizardWrx.Core.AssemblyLocatorBase.#ctor(System.Reflection.Assembly)">AssemblyLocatorBase(Assembly)</h4>
   <div class="markdown level1 summary"><p>Initialize the one and only property of this class, which holds the
 fully qualified path from which the containing assembly was loaded.</p>
 <p>Use this constructor to link the configuration file to the assembly
@@ -155,7 +179,7 @@ that defines this class.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Assembly</span></td>
+        <td><span class="xref">System.Reflection.Assembly</span></td>
         <td><span class="parametername">pasmLinkedAssembly</span></td>
         <td><p>Pass in a reference to the assembly to which the configuration file
 is linked. For example, you can use the executing assembly of the
@@ -164,7 +188,7 @@ object at the top of the inheritance tree.</p>
       </tr>
     </tbody>
   </table>
-  <h5 id="WizardWrx_Core_AssemblyLocatorBase__ctor_Assembly__remarks">Remarks</h5>
+  <h5 id="WizardWrx_Core_AssemblyLocatorBase__ctor_System_Reflection_Assembly__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>IMPORTANT: If the assembly loads from the Global Assembly Cache, its
 configuration file must be stored in the application directory. Be
 aware that if an assembly exists in the Global Assembly Cache, it
@@ -221,7 +245,7 @@ application directory.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string ASSEMBLYDATAPATH_TOKEN = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string ASSEMBLYDATAPATH_TOKEN = &quot;$$AssemblyDataPath$$&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -342,7 +366,7 @@ assembly in which the derived class is defined.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Configuration</span></td>
+        <td><span class="xref">System.Configuration.Configuration</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -373,7 +397,7 @@ assembly in which the derived class is defined.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">KeyValueConfigurationCollection</span></td>
+        <td><span class="xref">System.Configuration.KeyValueConfigurationCollection</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -405,7 +429,7 @@ the assembly in which the derived class is defined.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">AppSettingsSection</span></td>
+        <td><span class="xref">System.Configuration.AppSettingsSection</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -464,7 +488,7 @@ silently recovered, so that they can be reported for investigation.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public System.Collections.Generic.List&lt;RecoveredException&gt; RecoveredConfigurationExceptions { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public List&lt;RecoveredException&gt; RecoveredConfigurationExceptions { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -490,13 +514,13 @@ traces.</p>
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_AssemblyLocatorBase_GetAssemblyBuildDate_DateTimeKind_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.AssemblyLocatorBase.GetAssemblyBuildDate(DateTimeKind)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_AssemblyLocatorBase_GetAssemblyBuildDate_System_DateTimeKind_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.AssemblyLocatorBase.GetAssemblyBuildDate(System.DateTimeKind)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AssemblyLocatorBase.cs/#L615">View Source</a>
   </span>
   <a id="WizardWrx_Core_AssemblyLocatorBase_GetAssemblyBuildDate_" data-uid="WizardWrx.Core.AssemblyLocatorBase.GetAssemblyBuildDate*"></a>
-  <h4 id="WizardWrx_Core_AssemblyLocatorBase_GetAssemblyBuildDate_DateTimeKind_" data-uid="WizardWrx.Core.AssemblyLocatorBase.GetAssemblyBuildDate(DateTimeKind)">GetAssemblyBuildDate(DateTimeKind)</h4>
+  <h4 id="WizardWrx_Core_AssemblyLocatorBase_GetAssemblyBuildDate_System_DateTimeKind_" data-uid="WizardWrx.Core.AssemblyLocatorBase.GetAssemblyBuildDate(System.DateTimeKind)">GetAssemblyBuildDate(DateTimeKind)</h4>
   <div class="markdown level1 summary"><p>Return the LastWriteTime of the file that contains the executing
 assembly. For all practical purposes, that is the date on which the
 assembly was built.</p>
@@ -517,7 +541,7 @@ assembly was built.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">DateTimeKind</span></td>
+        <td><span class="xref">System.DateTimeKind</span></td>
         <td><span class="parametername">pdtmKind</span></td>
         <td><p>This DateTimeKind enumeration member specifies whether to report the
 LastWriteTime or the LastWriteTimeUtc.</p>
@@ -535,7 +559,7 @@ LastWriteTime or the LastWriteTimeUtc.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">DateTime</span></td>
+        <td><span class="xref">System.DateTime</span></td>
         <td><p>The return value is a fully initialized DateTime structure, which
 contains the requested LastWriteTime (Local or UTC) of the file that
 contains the code of the executing assembly.</p>
@@ -569,7 +593,7 @@ contains the code of the executing assembly.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Version</span></td>
+        <td><span class="xref">System.Version</span></td>
         <td><p>The return value is the version component of the fully qualified
 assembly name.</p>
 </td>
@@ -662,13 +686,13 @@ the named key.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_AssemblyLocatorBase_SetPropertiesFromDLLConfiguration_Type_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.AssemblyLocatorBase.SetPropertiesFromDLLConfiguration(Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_Core_AssemblyLocatorBase_SetPropertiesFromDLLConfiguration_System_Type_.md&amp;value=---%0Auid%3A%20WizardWrx.Core.AssemblyLocatorBase.SetPropertiesFromDLLConfiguration(System.Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/AssemblyLocatorBase.cs/#L698">View Source</a>
   </span>
   <a id="WizardWrx_Core_AssemblyLocatorBase_SetPropertiesFromDLLConfiguration_" data-uid="WizardWrx.Core.AssemblyLocatorBase.SetPropertiesFromDLLConfiguration*"></a>
-  <h4 id="WizardWrx_Core_AssemblyLocatorBase_SetPropertiesFromDLLConfiguration_Type_" data-uid="WizardWrx.Core.AssemblyLocatorBase.SetPropertiesFromDLLConfiguration(Type)">SetPropertiesFromDLLConfiguration(Type)</h4>
+  <h4 id="WizardWrx_Core_AssemblyLocatorBase_SetPropertiesFromDLLConfiguration_System_Type_" data-uid="WizardWrx.Core.AssemblyLocatorBase.SetPropertiesFromDLLConfiguration(System.Type)">SetPropertiesFromDLLConfiguration(Type)</h4>
   <div class="markdown level1 summary"><p>Set the like named properties from the linked configuration file.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -687,7 +711,7 @@ the named key.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Type</span></td>
+        <td><span class="xref">System.Type</span></td>
         <td><span class="parametername">pderivedType</span></td>
         <td><p>When the derived class constructor calls this method, it must pass in a
 reference to its own Type property.</p>
@@ -711,7 +735,7 @@ reference to its own Type property.</p>
       </tr>
     </tbody>
   </table>
-  <h5 id="WizardWrx_Core_AssemblyLocatorBase_SetPropertiesFromDLLConfiguration_Type__remarks">Remarks</h5>
+  <h5 id="WizardWrx_Core_AssemblyLocatorBase_SetPropertiesFromDLLConfiguration_System_Type__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>This can almost certainly be simplified by enumerating the settings,
 but either way risks a NOT FOUND exception.</p>
 <p>This method uses some fairly tricky Reflection gymnastics to map the

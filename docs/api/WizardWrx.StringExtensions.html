@@ -90,11 +90,35 @@ generic method.</p>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">StringExtensions</span></div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="WizardWrx.html">WizardWrx</a></h6>
   <h6><strong>Assembly</strong>: WizardWrx.Core.dll</h6>
   <h5 id="WizardWrx_StringExtensions_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class StringExtensions : object</code></pre>
+    <pre><code class="lang-csharp hljs">public static class StringExtensions</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -112,7 +136,7 @@ method, MakeToken, which takes one argument.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string DEFAULT_TOKEN_DELM = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string DEFAULT_TOKEN_DELM = &quot;$$&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -709,13 +733,13 @@ otherwise identical.
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_CountSubstrings_System_String_System_String_StringComparison_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.CountSubstrings(System.String%2CSystem.String%2CStringComparison)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_CountSubstrings_System_String_System_String_System_StringComparison_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.CountSubstrings(System.String%2CSystem.String%2CSystem.StringComparison)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L680">View Source</a>
   </span>
   <a id="WizardWrx_StringExtensions_CountSubstrings_" data-uid="WizardWrx.StringExtensions.CountSubstrings*"></a>
-  <h4 id="WizardWrx_StringExtensions_CountSubstrings_System_String_System_String_StringComparison_" data-uid="WizardWrx.StringExtensions.CountSubstrings(System.String,System.String,StringComparison)">CountSubstrings(String, String, StringComparison)</h4>
+  <h4 id="WizardWrx_StringExtensions_CountSubstrings_System_String_System_String_System_StringComparison_" data-uid="WizardWrx.StringExtensions.CountSubstrings(System.String,System.String,System.StringComparison)">CountSubstrings(String, String, StringComparison)</h4>
   <div class="markdown level1 summary"><p>Strangely, the String class is missing an important static method to
 count substrings within a string. This is that missing method.</p>
 </div>
@@ -763,7 +787,7 @@ MagicNumbers.STRING_INDEXOF_NOT_FOUND, or -1.
 </td>
       </tr>
       <tr>
-        <td><span class="xref">StringComparison</span></td>
+        <td><span class="xref">System.StringComparison</span></td>
         <td><span class="parametername">penmComparisonType</span></td>
         <td><p>Specify a member of the System.StringComparison enumeration, which
 defines the rules for performing the comparison.</p>
@@ -791,7 +815,7 @@ a null reference or the empty string.</p>
       </tr>
     </tbody>
   </table>
-  <h5 id="WizardWrx_StringExtensions_CountSubstrings_System_String_System_String_StringComparison__remarks">Remarks</h5>
+  <h5 id="WizardWrx_StringExtensions_CountSubstrings_System_String_System_String_System_StringComparison__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>This method implements the only overloads of the string.IndexOf
 method that takes a string as its second argument for which I
 have yet to make use. There is currently no implementation of the
@@ -1189,13 +1213,13 @@ the return value is an empty array.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_EnumerateSubstringPositions_System_String_System_String_StringComparison_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.EnumerateSubstringPositions(System.String%2CSystem.String%2CStringComparison)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_EnumerateSubstringPositions_System_String_System_String_System_StringComparison_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.EnumerateSubstringPositions(System.String%2CSystem.String%2CSystem.StringComparison)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L865">View Source</a>
   </span>
   <a id="WizardWrx_StringExtensions_EnumerateSubstringPositions_" data-uid="WizardWrx.StringExtensions.EnumerateSubstringPositions*"></a>
-  <h4 id="WizardWrx_StringExtensions_EnumerateSubstringPositions_System_String_System_String_StringComparison_" data-uid="WizardWrx.StringExtensions.EnumerateSubstringPositions(System.String,System.String,StringComparison)">EnumerateSubstringPositions(String, String, StringComparison)</h4>
+  <h4 id="WizardWrx_StringExtensions_EnumerateSubstringPositions_System_String_System_String_System_StringComparison_" data-uid="WizardWrx.StringExtensions.EnumerateSubstringPositions(System.String,System.String,System.StringComparison)">EnumerateSubstringPositions(String, String, StringComparison)</h4>
   <div class="markdown level1 summary"><p>Return an array of integers, each a position of substring
 <code data-dev-comment-type="paramref" class="paramref">pstrToCount</code> in string <code data-dev-comment-type="paramref" class="paramref">pstrSource</code>.</p>
 </div>
@@ -1243,7 +1267,7 @@ MagicNumbers.STRING_INDEXOF_NOT_FOUND, or -1.
 </td>
       </tr>
       <tr>
-        <td><span class="xref">StringComparison</span></td>
+        <td><span class="xref">System.StringComparison</span></td>
         <td><span class="parametername">penmComparisonType</span></td>
         <td><p>Specify a member of the System.StringComparison enumeration, which
 defines the rules for performing the comparison.</p>
@@ -1293,7 +1317,6 @@ enumeration type.</p>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static T EnumFromString&lt;T&gt;(this string pstrEnumAsString)
-
     where T : Enum</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1353,6 +1376,26 @@ name in the invocation.</p>
   <div class="markdown level1 remarks"><p>This method requires version 7.3 or later of the C# compiler, for
 which the project configuration contains a setting.</p>
 </div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.InvalidOperationException</span></td>
+        <td><p>An InvalidOperationException exception arises when the input string
+cannot be converted. The message specifies the expected type and the
+failing input value, along with the Message property on the original
+FormatException excetpion, which is preserved as the InnerException
+property on the thrown InvalidOperationException.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_ExtractBetweenIndexOfs_System_String_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.ExtractBetweenIndexOfs(System.String%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -1755,7 +1798,7 @@ contains a specified delimiter character, defaulting to a comma.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string GuardStringIfNeeded(this string pstrThisString, char pchrDelimiter = null, char pchrGuard = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string GuardStringIfNeeded(this string pstrThisString, char pchrDelimiter = ',', char pchrGuard = '&quot;')</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2196,7 +2239,7 @@ or the string is null or empty, the returned collection is empty.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">NameValueCollection</span></td>
+        <td><span class="xref">System.Collections.Specialized.NameValueCollection</span></td>
         <td><p>A NameValueCollection of parameter names and values, which may be
 empty, but is guaranteed to be returned, empty or not.</p>
 </td>
@@ -2382,13 +2425,13 @@ removed. Otherwise, a copy of the original string is returned.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_RenderEvenWhenNull__1___0_System_String_System_String_IFormatProvider_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.RenderEvenWhenNull%60%601(%60%600%2CSystem.String%2CSystem.String%2CIFormatProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_RenderEvenWhenNull__1___0_System_String_System_String_System_IFormatProvider_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.RenderEvenWhenNull%60%601(%60%600%2CSystem.String%2CSystem.String%2CSystem.IFormatProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L1966">View Source</a>
   </span>
   <a id="WizardWrx_StringExtensions_RenderEvenWhenNull_" data-uid="WizardWrx.StringExtensions.RenderEvenWhenNull*"></a>
-  <h4 id="WizardWrx_StringExtensions_RenderEvenWhenNull__1___0_System_String_System_String_IFormatProvider_" data-uid="WizardWrx.StringExtensions.RenderEvenWhenNull``1(``0,System.String,System.String,IFormatProvider)">RenderEvenWhenNull&lt;T&gt;(T, String, String, IFormatProvider)</h4>
+  <h4 id="WizardWrx_StringExtensions_RenderEvenWhenNull__1___0_System_String_System_String_System_IFormatProvider_" data-uid="WizardWrx.StringExtensions.RenderEvenWhenNull``1(``0,System.String,System.String,System.IFormatProvider)">RenderEvenWhenNull&lt;T&gt;(T, String, String, IFormatProvider)</h4>
   <div class="markdown level1 summary"><p>For any object of generic type T, return result from calling the
 ToString method on it, unless the instance is a null reference of
 type T. In that case, return either the supplied string or the
@@ -2399,7 +2442,6 @@ WizardWrx.Common library.</p>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static string RenderEvenWhenNull&lt;T&gt;(this T pgenericObject, string pstrValueIfNull = null, string pstrFormatString = null, IFormatProvider pformatProvider = null)
-
     where T : IFormattable</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -2440,7 +2482,7 @@ Please see the Remarks.
 </td>
       </tr>
       <tr>
-        <td><span class="xref">IFormatProvider</span></td>
+        <td><span class="xref">System.IFormatProvider</span></td>
         <td><span class="parametername">pformatProvider</span></td>
         <td><p>
 Use this optional parameter to override the default format provider
@@ -2501,7 +2543,7 @@ Please see the Remarks.
       </tr>
     </tbody>
   </table>
-  <h5 id="WizardWrx_StringExtensions_RenderEvenWhenNull__1___0_System_String_System_String_IFormatProvider__remarks">Remarks</h5>
+  <h5 id="WizardWrx_StringExtensions_RenderEvenWhenNull__1___0_System_String_System_String_System_IFormatProvider__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>
 Because this method is generic, it can call the ToString override on
 any object that explicitly implements the IFormattable interface, so
@@ -2517,13 +2559,13 @@ as the value of <code data-dev-comment-type="paramref" class="paramref">pstrValu
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_Replace_System_String_System_String_System_String_StringComparison_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.Replace(System.String%2CSystem.String%2CSystem.String%2CStringComparison)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_Replace_System_String_System_String_System_String_System_StringComparison_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.Replace(System.String%2CSystem.String%2CSystem.String%2CSystem.StringComparison)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L2021">View Source</a>
   </span>
   <a id="WizardWrx_StringExtensions_Replace_" data-uid="WizardWrx.StringExtensions.Replace*"></a>
-  <h4 id="WizardWrx_StringExtensions_Replace_System_String_System_String_System_String_StringComparison_" data-uid="WizardWrx.StringExtensions.Replace(System.String,System.String,System.String,StringComparison)">Replace(String, String, String, StringComparison)</h4>
+  <h4 id="WizardWrx_StringExtensions_Replace_System_String_System_String_System_String_System_StringComparison_" data-uid="WizardWrx.StringExtensions.Replace(System.String,System.String,System.String,System.StringComparison)">Replace(String, String, String, StringComparison)</h4>
   <div class="markdown level1 summary"><p>This overload of the standard Replace method implements a third
 argumeent, <code data-dev-comment-type="paramref" class="paramref">comparisonType</code> that brings a
 StringComparison object to the standard find and replace task.</p>
@@ -2563,7 +2605,7 @@ StringComparison object to the standard find and replace task.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">StringComparison</span></td>
+        <td><span class="xref">System.StringComparison</span></td>
         <td><span class="parametername">comparisonType</span></td>
         <td><p>This enumeration type specifies the culture, case, and sort rules to
 be used by certain overloads of the Compare(String, String) and
@@ -2647,13 +2689,13 @@ TAB characters that aree unusable as returned.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_ReplaceTokensFromList_System_String_Dictionary_System_String_System_Object__.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.ReplaceTokensFromList(System.String%2CDictionary%7BSystem.String%2CSystem.Object%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_ReplaceTokensFromList_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.ReplaceTokensFromList(System.String%2CSystem.Collections.Generic.Dictionary%7BSystem.String%2CSystem.Object%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L2232">View Source</a>
   </span>
   <a id="WizardWrx_StringExtensions_ReplaceTokensFromList_" data-uid="WizardWrx.StringExtensions.ReplaceTokensFromList*"></a>
-  <h4 id="WizardWrx_StringExtensions_ReplaceTokensFromList_System_String_Dictionary_System_String_System_Object__" data-uid="WizardWrx.StringExtensions.ReplaceTokensFromList(System.String,Dictionary{System.String,System.Object})">ReplaceTokensFromList(String, Dictionary&lt;String, Object&gt;)</h4>
+  <h4 id="WizardWrx_StringExtensions_ReplaceTokensFromList_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="WizardWrx.StringExtensions.ReplaceTokensFromList(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">ReplaceTokensFromList(String, Dictionary&lt;String, Object&gt;)</h4>
   <div class="markdown level1 summary"><p>Given a string containing tokens of the form &quot;^^ListKeyValue^^&quot;
 where ListKeyValue is the value of a key in the pnvcList collection,
 which may or may not exist in the collection, replace all such
@@ -2681,7 +2723,7 @@ tokens with the contents of the like named value in the collection.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.Object</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.Object</span>&gt;</td>
         <td><span class="parametername">pdctList</span></td>
         <td><p>A Dictionary, in which each key represents a token, and its value
 represents the value to be substituted for it.</p>
@@ -2712,13 +2754,13 @@ object in the pnvcList collection preserved.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_ReplaceTokensFromList_System_String_Dictionary_System_String_System_Object__Dictionary_System_String_System_Object__.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.ReplaceTokensFromList(System.String%2CDictionary%7BSystem.String%2CSystem.Object%7D%2CDictionary%7BSystem.String%2CSystem.Object%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_ReplaceTokensFromList_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__System_Collections_Generic_Dictionary_System_String_System_Object__.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.ReplaceTokensFromList(System.String%2CSystem.Collections.Generic.Dictionary%7BSystem.String%2CSystem.Object%7D%2CSystem.Collections.Generic.Dictionary%7BSystem.String%2CSystem.Object%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L2288">View Source</a>
   </span>
   <a id="WizardWrx_StringExtensions_ReplaceTokensFromList_" data-uid="WizardWrx.StringExtensions.ReplaceTokensFromList*"></a>
-  <h4 id="WizardWrx_StringExtensions_ReplaceTokensFromList_System_String_Dictionary_System_String_System_Object__Dictionary_System_String_System_Object__" data-uid="WizardWrx.StringExtensions.ReplaceTokensFromList(System.String,Dictionary{System.String,System.Object},Dictionary{System.String,System.Object})">ReplaceTokensFromList(String, Dictionary&lt;String, Object&gt;, Dictionary&lt;String, Object&gt;)</h4>
+  <h4 id="WizardWrx_StringExtensions_ReplaceTokensFromList_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__System_Collections_Generic_Dictionary_System_String_System_Object__" data-uid="WizardWrx.StringExtensions.ReplaceTokensFromList(System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object})">ReplaceTokensFromList(String, Dictionary&lt;String, Object&gt;, Dictionary&lt;String, Object&gt;)</h4>
   <div class="markdown level1 summary"><p>Given a string containing tokens of the form &quot;^^ListKeyValue^^&quot;
 where ListKeyValue is the value of a key in the pnvcList collection,
 which may or may not exist in the collection, replace all such
@@ -2746,7 +2788,7 @@ tokens with the contents of the like named value in the collection.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.Object</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.Object</span>&gt;</td>
         <td><span class="parametername">pdctList</span></td>
         <td><p>A Dictionary, in which each key represents a token, and its value
 represents the value to be substituted for it.</p>
@@ -2757,7 +2799,7 @@ will be applied to each Object, in turn, use the next overload.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.Object</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.Object</span>&gt;</td>
         <td><span class="parametername">pdctDefaults</span></td>
         <td><p>A Dictionary, in which each key represents a token, and its value
 represents the default value to be substituted for it, if there is
@@ -2789,13 +2831,13 @@ object in the pnvcList OR the pdctDefaults collection preserved.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_ReplaceTokensFromList_System_String_Dictionary_System_String_System_Object__Dictionary_System_String_System_Object__System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.ReplaceTokensFromList(System.String%2CDictionary%7BSystem.String%2CSystem.Object%7D%2CDictionary%7BSystem.String%2CSystem.Object%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_ReplaceTokensFromList_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__System_Collections_Generic_Dictionary_System_String_System_Object__System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.ReplaceTokensFromList(System.String%2CSystem.Collections.Generic.Dictionary%7BSystem.String%2CSystem.Object%7D%2CSystem.Collections.Generic.Dictionary%7BSystem.String%2CSystem.Object%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L2425">View Source</a>
   </span>
   <a id="WizardWrx_StringExtensions_ReplaceTokensFromList_" data-uid="WizardWrx.StringExtensions.ReplaceTokensFromList*"></a>
-  <h4 id="WizardWrx_StringExtensions_ReplaceTokensFromList_System_String_Dictionary_System_String_System_Object__Dictionary_System_String_System_Object__System_String_" data-uid="WizardWrx.StringExtensions.ReplaceTokensFromList(System.String,Dictionary{System.String,System.Object},Dictionary{System.String,System.Object},System.String)">ReplaceTokensFromList(String, Dictionary&lt;String, Object&gt;, Dictionary&lt;String, Object&gt;, String)</h4>
+  <h4 id="WizardWrx_StringExtensions_ReplaceTokensFromList_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__System_Collections_Generic_Dictionary_System_String_System_Object__System_String_" data-uid="WizardWrx.StringExtensions.ReplaceTokensFromList(System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object},System.String)">ReplaceTokensFromList(String, Dictionary&lt;String, Object&gt;, Dictionary&lt;String, Object&gt;, String)</h4>
   <div class="markdown level1 summary"><p>Given a string containing tokens of the form &quot;^^ListKeyValue^^&quot;
 where ListKeyValue is the value of a key in the pnvcList collection,
 which may or may not exist in the collection, replace all such
@@ -2823,7 +2865,7 @@ tokens with the contents of the like named session object.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.Object</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.Object</span>&gt;</td>
         <td><span class="parametername">pdctList</span></td>
         <td><p>A Dictionary, in which each key represents a token, and its value
 represents the value to be substituted for it.</p>
@@ -2834,7 +2876,7 @@ will be applied to each Object, in turn, use the next overload.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.Object</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.Object</span>&gt;</td>
         <td><span class="parametername">pdctDefaults</span></td>
         <td><p>A Dictionary, in which each key represents a token, and its value
 represents the default value to be substituted for it, if there is
@@ -2876,13 +2918,13 @@ object in the pnvcList OR the pdctDefaults collection preserved.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_ReplaceTokensFromList_System_String_Dictionary_System_String_System_Object__System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.ReplaceTokensFromList(System.String%2CDictionary%7BSystem.String%2CSystem.Object%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_ReplaceTokensFromList_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.ReplaceTokensFromList(System.String%2CSystem.Collections.Generic.Dictionary%7BSystem.String%2CSystem.Object%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L2355">View Source</a>
   </span>
   <a id="WizardWrx_StringExtensions_ReplaceTokensFromList_" data-uid="WizardWrx.StringExtensions.ReplaceTokensFromList*"></a>
-  <h4 id="WizardWrx_StringExtensions_ReplaceTokensFromList_System_String_Dictionary_System_String_System_Object__System_String_" data-uid="WizardWrx.StringExtensions.ReplaceTokensFromList(System.String,Dictionary{System.String,System.Object},System.String)">ReplaceTokensFromList(String, Dictionary&lt;String, Object&gt;, String)</h4>
+  <h4 id="WizardWrx_StringExtensions_ReplaceTokensFromList_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__System_String_" data-uid="WizardWrx.StringExtensions.ReplaceTokensFromList(System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.String)">ReplaceTokensFromList(String, Dictionary&lt;String, Object&gt;, String)</h4>
   <div class="markdown level1 summary"><p>Given a string containing tokens of the form &quot;^^ListKeyValue^^&quot;
 where ListKeyValue is the value of a key in the pnvcList collection,
 which may or may not exist in the collection, replace all such
@@ -2910,7 +2952,7 @@ tokens with the contents o object.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.Object</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.Object</span>&gt;</td>
         <td><span class="parametername">pdctList</span></td>
         <td><p>A Dictionary, in which each key represents a token, and its value
 represents the value to be substituted for it.</p>
@@ -2951,13 +2993,13 @@ object in the pnvcList collection preserved.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_ReplaceTokensFromList_System_String_NameValueCollection_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.ReplaceTokensFromList(System.String%2CNameValueCollection)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_ReplaceTokensFromList_System_String_System_Collections_Specialized_NameValueCollection_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.ReplaceTokensFromList(System.String%2CSystem.Collections.Specialized.NameValueCollection)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L2110">View Source</a>
   </span>
   <a id="WizardWrx_StringExtensions_ReplaceTokensFromList_" data-uid="WizardWrx.StringExtensions.ReplaceTokensFromList*"></a>
-  <h4 id="WizardWrx_StringExtensions_ReplaceTokensFromList_System_String_NameValueCollection_" data-uid="WizardWrx.StringExtensions.ReplaceTokensFromList(System.String,NameValueCollection)">ReplaceTokensFromList(String, NameValueCollection)</h4>
+  <h4 id="WizardWrx_StringExtensions_ReplaceTokensFromList_System_String_System_Collections_Specialized_NameValueCollection_" data-uid="WizardWrx.StringExtensions.ReplaceTokensFromList(System.String,System.Collections.Specialized.NameValueCollection)">ReplaceTokensFromList(String, NameValueCollection)</h4>
   <div class="markdown level1 summary"><p>Given a string containing tokens of the form &quot;^^ListKeyValue^^&quot;
 where ListKeyValue is the value of a key in the pnvcList collection,
 which may or may not exist in the collection, replace all such
@@ -2985,7 +3027,7 @@ tokens with the contents of the like named value in the collection.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">NameValueCollection</span></td>
+        <td><span class="xref">System.Collections.Specialized.NameValueCollection</span></td>
         <td><span class="parametername">pnvcList</span></td>
         <td><p>A NameValueCollection, in which each key represents a token, and its
 value represents the value to be substituted for it.</p>
@@ -3012,13 +3054,13 @@ object in the pnvcList collection preserved.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_ReplaceTokensFromList_System_String_NameValueCollection_NameValueCollection_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.ReplaceTokensFromList(System.String%2CNameValueCollection%2CNameValueCollection)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_ReplaceTokensFromList_System_String_System_Collections_Specialized_NameValueCollection_System_Collections_Specialized_NameValueCollection_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.ReplaceTokensFromList(System.String%2CSystem.Collections.Specialized.NameValueCollection%2CSystem.Collections.Specialized.NameValueCollection)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L2160">View Source</a>
   </span>
   <a id="WizardWrx_StringExtensions_ReplaceTokensFromList_" data-uid="WizardWrx.StringExtensions.ReplaceTokensFromList*"></a>
-  <h4 id="WizardWrx_StringExtensions_ReplaceTokensFromList_System_String_NameValueCollection_NameValueCollection_" data-uid="WizardWrx.StringExtensions.ReplaceTokensFromList(System.String,NameValueCollection,NameValueCollection)">ReplaceTokensFromList(String, NameValueCollection, NameValueCollection)</h4>
+  <h4 id="WizardWrx_StringExtensions_ReplaceTokensFromList_System_String_System_Collections_Specialized_NameValueCollection_System_Collections_Specialized_NameValueCollection_" data-uid="WizardWrx.StringExtensions.ReplaceTokensFromList(System.String,System.Collections.Specialized.NameValueCollection,System.Collections.Specialized.NameValueCollection)">ReplaceTokensFromList(String, NameValueCollection, NameValueCollection)</h4>
   <div class="markdown level1 summary"><p>Replace place holders (markers) with the value of the corresponding
 form control (field), or a default value, if the field is empty and
 a default is designated.</p>
@@ -3045,13 +3087,13 @@ a default is designated.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">NameValueCollection</span></td>
+        <td><span class="xref">System.Collections.Specialized.NameValueCollection</span></td>
         <td><span class="parametername">pnvcFields</span></td>
         <td><p>NameValueCollection containing the form control (field) values.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">NameValueCollection</span></td>
+        <td><span class="xref">System.Collections.Specialized.NameValueCollection</span></td>
         <td><span class="parametername">pnvcDefaults</span></td>
         <td><p>NameValueCollection containing the form control (field) or token
 default values.</p>
@@ -3387,20 +3429,20 @@ the Base Class Library methods that they wrap.
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_SQLafe4EmbeddedSingleQuote_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.SQLafe4EmbeddedSingleQuote(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_StringExtensions_SQLEscapeEmbeddedSingleQuote_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.StringExtensions.SQLEscapeEmbeddedSingleQuote(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/Core/StringExtensions.cs/#L2707">View Source</a>
   </span>
-  <a id="WizardWrx_StringExtensions_SQLafe4EmbeddedSingleQuote_" data-uid="WizardWrx.StringExtensions.SQLafe4EmbeddedSingleQuote*"></a>
-  <h4 id="WizardWrx_StringExtensions_SQLafe4EmbeddedSingleQuote_System_String_" data-uid="WizardWrx.StringExtensions.SQLafe4EmbeddedSingleQuote(System.String)">SQLafe4EmbeddedSingleQuote(String)</h4>
+  <a id="WizardWrx_StringExtensions_SQLEscapeEmbeddedSingleQuote_" data-uid="WizardWrx.StringExtensions.SQLEscapeEmbeddedSingleQuote*"></a>
+  <h4 id="WizardWrx_StringExtensions_SQLEscapeEmbeddedSingleQuote_System_String_" data-uid="WizardWrx.StringExtensions.SQLEscapeEmbeddedSingleQuote(System.String)">SQLEscapeEmbeddedSingleQuote(String)</h4>
   <div class="markdown level1 summary"><p>Replace single quotation marks in a field that is intended to be the
 value of a column or filter parameter in a SQL string.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string SQLafe4EmbeddedSingleQuote(this string pstrIn)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string SQLEscapeEmbeddedSingleQuote(this string pstrIn)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">

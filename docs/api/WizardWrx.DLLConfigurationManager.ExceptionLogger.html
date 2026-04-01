@@ -97,6 +97,27 @@ inherited.</p>
     <div>
       <a class="xref" href="WizardWrx.GenericSingletonBase-1.html#WizardWrx_GenericSingletonBase_1_TheOnlyInstance">GenericSingletonBase&lt;ExceptionLogger&gt;.TheOnlyInstance</a>
     </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="WizardWrx.DLLConfigurationManager.html">WizardWrx.DLLConfigurationManager</a></h6>
   <h6><strong>Assembly</strong>: WizardWrx.DLLConfigurationManager.dll</h6>
@@ -152,7 +173,7 @@ register on behalf of my own applications.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string WIZARDWRX_EVENT_SOURCE_ID = null</code></pre>
+    <pre><code class="lang-csharp hljs">public const string WIZARDWRX_EVENT_SOURCE_ID = &quot;WizardWrx&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -655,7 +676,8 @@ property.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static ExceptionLogger GetTheSingleInstance(PESubsystemInfo.PESubsystemID penmProcessSubsystem)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Using the property on the StateManager instance makes this use case redundant.&quot;)]
+public static ExceptionLogger GetTheSingleInstance(PESubsystemInfo.PESubsystemID penmProcessSubsystem)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1049,13 +1071,13 @@ is organized as a bit mask.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_ArgumentException_.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(ArgumentException)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_System_ArgumentException_.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(System.ArgumentException)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L1491">View Source</a>
   </span>
   <a id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException*"></a>
-  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_ArgumentException_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(ArgumentException)">ReportException(ArgumentException)</h4>
+  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_System_ArgumentException_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(System.ArgumentException)">ReportException(ArgumentException)</h4>
   <div class="markdown level1 summary"><p>Format and report the properties of an ArgumentException exception on
 a console in a thread-safe manner.</p>
 </div>
@@ -1075,7 +1097,7 @@ a console in a thread-safe manner.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ArgumentException</span></td>
+        <td><span class="xref">System.ArgumentException</span></td>
         <td><span class="parametername">perrBadArg</span></td>
         <td><p>The instance of the ArgumentException exception to process. See
 Remarks.</p>
@@ -1106,7 +1128,7 @@ or,</p>
       </tr>
     </tbody>
   </table>
-  <h5 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_ArgumentException__remarks">Remarks</h5>
+  <h5 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_System_ArgumentException__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>Although this method can process objects of ANY class which derives
 from ArgumentException, other methods of this class specialize in
 processing objects of the commonly used ArgumentOutOfRangeException
@@ -1116,13 +1138,13 @@ is the name of the method in which the exception was thrown.</p>
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_ArgumentNullException_.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(ArgumentNullException)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_System_ArgumentNullException_.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(System.ArgumentNullException)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L1613">View Source</a>
   </span>
   <a id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException*"></a>
-  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_ArgumentNullException_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(ArgumentNullException)">ReportException(ArgumentNullException)</h4>
+  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_System_ArgumentNullException_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(System.ArgumentNullException)">ReportException(ArgumentNullException)</h4>
   <div class="markdown level1 summary"><p>Format and report the properties of an ArgumentNullException
 exception on a console in a thread-safe manner. See Remarks.</p>
 </div>
@@ -1142,7 +1164,7 @@ exception on a console in a thread-safe manner. See Remarks.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ArgumentNullException</span></td>
+        <td><span class="xref">System.ArgumentNullException</span></td>
         <td><span class="parametername">perrNullArg</span></td>
         <td><p>The instance of an ArgumentNullException exception to process.</p>
 </td>
@@ -1172,19 +1194,19 @@ or,</p>
       </tr>
     </tbody>
   </table>
-  <h5 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_ArgumentNullException__remarks">Remarks</h5>
+  <h5 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_System_ArgumentNullException__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>The TargetSite property, exposed by descendants of System.Exception,
 is the name of the method in which the exception was thrown.</p>
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_ArgumentOutOfRangeException_.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(ArgumentOutOfRangeException)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_System_ArgumentOutOfRangeException_.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(System.ArgumentOutOfRangeException)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L1548">View Source</a>
   </span>
   <a id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException*"></a>
-  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_ArgumentOutOfRangeException_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(ArgumentOutOfRangeException)">ReportException(ArgumentOutOfRangeException)</h4>
+  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_System_ArgumentOutOfRangeException_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(System.ArgumentOutOfRangeException)">ReportException(ArgumentOutOfRangeException)</h4>
   <div class="markdown level1 summary"><p>Format and report the properties of an ArgumentOutOfRangeException
 exception on a console in a thread-safe manner.</p>
 </div>
@@ -1204,7 +1226,7 @@ exception on a console in a thread-safe manner.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ArgumentOutOfRangeException</span></td>
+        <td><span class="xref">System.ArgumentOutOfRangeException</span></td>
         <td><span class="parametername">perrBadArg</span></td>
         <td><p>The instance of the ArgumentOutOfRangeException class to process.</p>
 </td>
@@ -1234,19 +1256,19 @@ or,</p>
       </tr>
     </tbody>
   </table>
-  <h5 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_ArgumentOutOfRangeException__remarks">Remarks</h5>
+  <h5 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_System_ArgumentOutOfRangeException__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>The TargetSite property, exposed by descendants of System.Exception,
 is the name of the method in which the exception was thrown.</p>
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_Exception_.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(Exception)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_System_Exception_.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(System.Exception)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L1438">View Source</a>
   </span>
   <a id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException*"></a>
-  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_Exception_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(Exception)">ReportException(Exception)</h4>
+  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_System_Exception_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(System.Exception)">ReportException(Exception)</h4>
   <div class="markdown level1 summary"><p>Format and report the properties of a generic Exception on a console
 in a thread-safe manner.</p>
 </div>
@@ -1266,7 +1288,7 @@ in a thread-safe manner.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Exception</span></td>
+        <td><span class="xref">System.Exception</span></td>
         <td><span class="parametername">perrAny</span></td>
         <td><p>The instance of the base Exception class to process. See Remarks.</p>
 </td>
@@ -1296,7 +1318,7 @@ or,</p>
       </tr>
     </tbody>
   </table>
-  <h5 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_Exception__remarks">Remarks</h5>
+  <h5 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_System_Exception__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>This can be ANY exception type, although the intent is to limit its
 use to reporting exceptions thrown by the base class,
 System.Exception.</p>
@@ -1307,13 +1329,13 @@ is the name of the method in which the exception was thrown.</p>
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_FormatException_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(FormatException%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_System_FormatException_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(System.FormatException%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L1820">View Source</a>
   </span>
   <a id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException*"></a>
-  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_FormatException_System_String_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(FormatException,System.String)">ReportException(FormatException, String)</h4>
+  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_System_FormatException_System_String_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(System.FormatException,System.String)">ReportException(FormatException, String)</h4>
   <div class="markdown level1 summary"><p>Format and report the properties of an FormatException exception on
 a console in a thread-safe manner.</p>
 </div>
@@ -1333,7 +1355,7 @@ a console in a thread-safe manner.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">FormatException</span></td>
+        <td><span class="xref">System.FormatException</span></td>
         <td><span class="parametername">perrrBadFormat</span></td>
         <td><p>The instance of the FormatException class to process.</p>
 </td>
@@ -1371,19 +1393,19 @@ or,</p>
       </tr>
     </tbody>
   </table>
-  <h5 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_FormatException_System_String__remarks">Remarks</h5>
+  <h5 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_System_FormatException_System_String__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>The TargetSite property, exposed by descendants of System.Exception,
 is the name of the method in which the exception was thrown.</p>
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_IOException_FileInfo_.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(IOException%2CFileInfo)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_System_IO_IOException_System_IO_FileInfo_.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(System.IO.IOException%2CSystem.IO.FileInfo)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L1741">View Source</a>
   </span>
   <a id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException*"></a>
-  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_IOException_FileInfo_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(IOException,FileInfo)">ReportException(IOException, FileInfo)</h4>
+  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_System_IO_IOException_System_IO_FileInfo_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(System.IO.IOException,System.IO.FileInfo)">ReportException(IOException, FileInfo)</h4>
   <div class="markdown level1 summary"><p>Format and report the properties of an IOException exception on a
 console in a thread-safe manner.</p>
 </div>
@@ -1403,13 +1425,13 @@ console in a thread-safe manner.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IOException</span></td>
+        <td><span class="xref">System.IO.IOException</span></td>
         <td><span class="parametername">perrIOError</span></td>
         <td><p>The instance of the IOException class to process. See Remarks.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">FileInfo</span></td>
+        <td><span class="xref">System.IO.FileInfo</span></td>
         <td><span class="parametername">pfi</span></td>
         <td><p>The FileInfo object makes available much more than the file name,
 allowing for the possibility of an override to deliver more detailed
@@ -1440,7 +1462,7 @@ line, you must follow this call with an empty Console.WriteLine</p>
       </tr>
     </tbody>
   </table>
-  <h5 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_IOException_FileInfo__remarks">Remarks</h5>
+  <h5 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_System_IO_IOException_System_IO_FileInfo__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>This routine processes ANY exception of the IOException class and
 its derivatives. Methods for parsing published derived classes are
 somewhere on my ToDo list.</p>
@@ -1449,13 +1471,13 @@ is the name of the method in which the exception was thrown.</p>
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_ObjectDisposedException_.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(ObjectDisposedException)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_System_ObjectDisposedException_.md&amp;value=---%0Auid%3A%20WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(System.ObjectDisposedException)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/DLLConfigurationManager/ExceptionLogger.cs/#L1676">View Source</a>
   </span>
   <a id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException*"></a>
-  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_ObjectDisposedException_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(ObjectDisposedException)">ReportException(ObjectDisposedException)</h4>
+  <h4 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_System_ObjectDisposedException_" data-uid="WizardWrx.DLLConfigurationManager.ExceptionLogger.ReportException(System.ObjectDisposedException)">ReportException(ObjectDisposedException)</h4>
   <div class="markdown level1 summary"><p>Format and report the properties of an ObjectDisposedException
 exception on a console in a thread-safe manner. See Remarks.</p>
 </div>
@@ -1475,7 +1497,7 @@ exception on a console in a thread-safe manner. See Remarks.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ObjectDisposedException</span></td>
+        <td><span class="xref">System.ObjectDisposedException</span></td>
         <td><span class="parametername">perrDisposed</span></td>
         <td><p>The instance of the ObjectDisposedException Exception class to
 process.</p>
@@ -1506,7 +1528,7 @@ or,</p>
       </tr>
     </tbody>
   </table>
-  <h5 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_ObjectDisposedException__remarks">Remarks</h5>
+  <h5 id="WizardWrx_DLLConfigurationManager_ExceptionLogger_ReportException_System_ObjectDisposedException__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>Any process that throws an ObjectDisposedException exception is in
 serious trouble, and deserves to crash, and be investigated, because
 this type of exception is almost invariably caused by a programming

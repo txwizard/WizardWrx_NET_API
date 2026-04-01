@@ -241,6 +241,15 @@ namespace DLLServices2TestStand.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to SRI_Drills.
+        /// </summary>
+        public static string CMDARG_SRI_DRILLS {
+            get {
+                return ResourceManager.GetString("CMDARG_SRI_DRILLS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to StringFixups.
         /// </summary>
         public static string CMDARG_STRING_FIXUPS {
