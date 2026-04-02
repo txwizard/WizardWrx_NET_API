@@ -15,11 +15,6 @@
           "cwd": "../"
         }
       ],
-      "references": [
-        {
-          "files": [ "C:/bin/DocFX/TransitiveDependencies/*.dll" ]
-        }
-      ],
       "dest": "api",
       "filter": "filterConfig.yml",
       "disableGitFeatures": false,
