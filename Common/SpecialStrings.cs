@@ -253,6 +253,16 @@
                                                       CHECK_MARK
                                                       CROSS_MARK
                                                       RIGHT_ARROW
+
+	2026/04/09 9.0.287 DAG   Add the following aliases for existing strings, for
+                             the sake of clarity in source code listings.
+
+                                 JSON_ARRAY_PREFIX = BRACKET_LEFT      `[`
+							     JSON_ARRAY_SUFFIX = BRACKET_RIGHT     `]`
+                                 JSON_PREFIX       = BRACE_LEFT        `{`
+								 JSON_SUFFIX       = BRACE_RIGHT       `}`
+                                 JSON_OBJECT_EMPTY = EMPTY_JSON_OBJECT `{}`
+                                 JSON_ARRAY_EMPTY  = EMPTY_JSON_ARRAY  `[]`
     ============================================================================
 */
 
@@ -883,6 +893,43 @@ namespace WizardWrx
 		/// </summary>
 		/// <seealso cref="SpecialCharacters.HYPHEN"/>
 		public const string HYPHEN = @"-";
+
+		/// <summary>
+		/// This is one of four constants that are useful for evaluating the results
+		/// of REST API calls that return JSON objects and arrays. Between them, they
+		/// test for valid starting and ending characters of JSON objects and arrays,
+		/// respectively. Evaluating for anything more specific is pointless due to
+		/// the fact that JSON objects and arrays can contain whitespace, and that the
+		/// content of either can be anything, including nested objects and arrays.
+		/// The only way to evaluate the content of a JSON object or array is to parse
+		/// it, which is what the JSON parser in your language of choice does.
+		/// </summary>
+		public const string JSON_ARRAY_PREFIX = BRACKET_LEFT;
+
+		/// <summary>
+		/// See the remarks for <see cref="JSON_ARRAY_PREFIX"/>.
+		/// </summary>
+		public const string JSON_ARRAY_SUFFIX = BRACKET_RIGHT;
+
+		/// <summary>
+		/// See the remarks for <see cref="JSON_ARRAY_PREFIX"/>.
+		/// </summary>
+		public const string JSON_PREFIX = BRACE_LEFT;
+
+		/// <summary>
+		/// See the remarks for <see cref="JSON_ARRAY_PREFIX"/>.
+		/// </summary>
+		public const string JSON_SUFFIX = BRACE_RIGHT;
+
+		/// <summary>
+		/// See the remarks for <see cref="JSON_PREFIX"/>.
+		/// </summary>
+		public const string JSON_OBJECT_EMPTY = EMPTY_JSON_OBJECT;
+
+		/// <summary>
+		/// See the remarks for <see cref="JSON_ARRAY_PREFIX"/>.
+		/// </summary>
+		public const string JSON_ARRAY_EMPTY = EMPTY_JSON_ARRAY;
 
 		/// <summary>
 		/// The highest integer that can represent any ASCII character is 255,

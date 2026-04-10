@@ -82,6 +82,12 @@
 objects keyed by symbolic names. Each key maps to exactly one
 synchronization object for the lifetime of the application domain.</p>
 </section>
+      <h4><a class="xref" href="WizardWrx.ArrayInfo.html">ArrayInfo</a></h4>
+      <section><p>This class organizes constants and routines for working with arrays. The
+constants are mostly synonyms for constants that exist in other classes
+and assemblies.</p>
+<p>Since static classes are implicitly sealed, this class cannot be inherited.</p>
+</section>
       <h4><a class="xref" href="WizardWrx.ASCII_Character_Display_Table.html">ASCII_Character_Display_Table</a></h4>
       <section><p>Provide read only access to a table of ASCII characters and text to
 display for selected special characters.</p>
@@ -92,16 +98,44 @@ NUL character is defined, and occupies the first element, the numeric
 code that corresponds to a character maps directly to the corresponding
 element in this array.</p>
 </section>
+      <h4><a class="xref" href="WizardWrx.ByteOrderMark.html">ByteOrderMark</a></h4>
+      <section><p>Use this class to evaluate arbitrary byte arrays for the presence of a Byte Order Mark.</p>
+</section>
       <h4><a class="xref" href="WizardWrx.ClassAndMethodDiagnosticInfo.html">ClassAndMethodDiagnosticInfo</a></h4>
       <section><p>The static methods in this class expose the internal name, source code
 file name, and source file line number from which calls to them
 originated.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.ConsoleSymbols.html">ConsoleSymbols</a></h4>
+      <section><p>Provides standardized symbols for console output,
+with automatic fallback to ASCII if Unicode is unsupported.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.CSVFileInfo.html">CSVFileInfo</a></h4>
+      <section><p>Use these constants and service routines to simplify working with CSV
+type files.</p>
 </section>
       <h4><a class="xref" href="WizardWrx.DateTimeExtensions.html">DateTimeExtensions</a></h4>
       <section><p>This class implements two overloads of DateOfMostRecentWeekdayDay, a
 static method, implemented as an extension method on the System.DateTime
 type. The two overloads accept their one externally visible argment as
 either a DayOfWeek enumeration member or its integral value.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.DisplayFormats.html">DisplayFormats</a></h4>
+      <section><p>Pass these constants to the ToString method on an object of the
+appropriate type to render the object for printing.</p>
+<p>The comment associated with each constant identifies the types for
+which it is appropriate.</p>
+<p>There are service methods to facilitate using the Date/Time formatting
+constants, which cannot be fed to ToString, except, perhaps, with a
+custom formatting engine. Use these service methods, or call the
+ReformatSysDate function, which also belongs to this library, directly.</p>
+<p>NOTE: The time formatting strings and routines in this class are time
+zone agnostic. If you want or need the time zone, use the companion
+method, GetDisplayTimeZone, defined in sibling class Util.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.EmbeddedTextFileReaders.html">EmbeddedTextFileReaders</a></h4>
+      <section><p>This static class exposes methods for loading text from custom resources
+that are embedded in an assembly.</p>
 </section>
       <h4><a class="xref" href="WizardWrx.FileInfoExtension.html">FileInfoExtension</a></h4>
       <section><p>Extend the System.IO.FileInfo class with methods for testing, setting,
@@ -112,6 +146,9 @@ restore flags to their initial states.</p>
       <section><p>The new extension methods that supersede the instance methods on the
 companion FileInfoExtension class go into a dedicated class, because a
 static class must expose them.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.FileIOFlags.html">FileIOFlags</a></h4>
+      <section><p>Use these flags to document stream I/O method calls.</p>
 </section>
       <h4><a class="xref" href="WizardWrx.FileNameTricks.html">FileNameTricks</a></h4>
       <section><p>This class exposes numerous static methods for manipulating file names.
@@ -128,9 +165,28 @@ Framework. Please see the Remarks for further details.</p>
 simplify working with the values returned through the IComparable
 interface.</p>
 </section>
+      <h4><a class="xref" href="WizardWrx.ListInfo.html">ListInfo</a></h4>
+      <section><p>This static class exposes handy constants for working with buffers,
+lists, and substrings.</p>
+<p>Since static classes are implicitly sealed, this class cannot be inherited.</p>
+</section>
       <h4><a class="xref" href="WizardWrx.Logic.html">Logic</a></h4>
       <section><p>This sealed class exposes methods that encapsulate many common, tricky
 loop state tests.</p>
+<p>Since static classes are implicitly sealed, this class cannot be inherited.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.MagicBooleans.html">MagicBooleans</a></h4>
+      <section><p>This class defines frequently used Boolean values whose correct values
+are easier to remember with the help of a mnemonic.</p>
+<p>This class is one of a constellation of static classes that define a
+wide variety of symbolic constants that I use to make my code easier to
+understand when I need a refresher or am about to change it.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.MagicNumbers.html">MagicNumbers</a></h4>
+      <section><p>This class defines constants for commonly used magic numbers. Others are
+defined in companion class ArrayInfo, while SpecialCharacters defines
+character representations of the visually ambiguous numbers and letters,
+for use in place of literals.</p>
 <p>Since static classes are implicitly sealed, this class cannot be inherited.</p>
 </section>
       <h4><a class="xref" href="WizardWrx.MoreMath.html">MoreMath</a></h4>
@@ -145,12 +201,24 @@ precision real numbers. For integers, these methods cover both decimal
 and the most frequently used hexadecimal representations, spanning from
 two through sixteen hexadecimal glyphs.</p>
 </section>
+      <h4><a class="xref" href="WizardWrx.NumericFormats.html">NumericFormats</a></h4>
+      <section><p>This class defines standard numeric format strings, for use with the
+string.format method and its derivatives and relatives.</p>
+</section>
       <h4><a class="xref" href="WizardWrx.ObjectPropertyEnumerators.html">ObjectPropertyEnumerators</a></h4>
       <section><p>This class exposes static methods for enumerating properties of objects.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.PathPositions.html">PathPositions</a></h4>
+      <section><p>Use these constants to document path string parsing.</p>
+<p>Since static classes are implicitly sealed, this class cannot be inherited.</p>
 </section>
       <h4><a class="xref" href="WizardWrx.RecoveredException.html">RecoveredException</a></h4>
       <section><p>Override the Exception class, so that the Source, StackTrace, and
 TargetSite properties can be directly initialized.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.RegExpSupport.html">RegExpSupport</a></h4>
+      <section><p>Constants, some built from others by static methods, to expedite common
+tasks that use regular expressions.</p>
 </section>
       <h4><a class="xref" href="WizardWrx.ReportDetail.html">ReportDetail</a></h4>
       <section><p>Instances of this class are generic report details, with labels and
@@ -163,6 +231,29 @@ formats for printing them.</p>
       <section><p>This class holds the details for a report. Static object locks are used
 throughout to ensure synchronized access.</p>
 </section>
+      <h4><a class="xref" href="WizardWrx.ReportHelpers.html">ReportHelpers</a></h4>
+      <section><p>This static class exposes methods to help prepare strings for use on
+reports.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.SortableManagedResourceItem.html">SortableManagedResourceItem</a></h4>
+      <section><p>Instances of this class represent arbitrary managed resource items.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.SpecialCharacters.html">SpecialCharacters</a></h4>
+      <section><p>Use these constants when you want or need your listings to be crystal
+clear about certain ambiguous literals.</p>
+<p>Since static classes are implicitly sealed, this class cannot be inherited.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.SpecialStrings.html">SpecialStrings</a></h4>
+      <section><p>
+This class defines special purpose strings that are either difficult to
+get right in the first place, display ambiguously in text editors and
+printed source code listings, or are in other ways either ambiguous or
+special.
+</p>
+<p>
+Since static classes are implicitly sealed, this class cannot be inherited.
+</p>
+</section>
       <h4><a class="xref" href="WizardWrx.StringExtensions.html">StringExtensions</a></h4>
       <section><p>This is a class of extension methods for performing common tasks not
 provided by the System.String class. All but the four Pad methods are
@@ -174,6 +265,12 @@ instance of System.string.</p>
 <p>Rather than create ane entirely new class to support one small method, I
 extended this class to cover RenderEvenWhenNull, even though it is a
 generic method.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.StringTricks.html">StringTricks</a></h4>
+      <section><p>This is a class of static methods (functions) for performing common
+tasks not provided by the System.String class. Most, but not all, have
+become obsolete, and are being retired in favor of the StringExtensions
+class in the WizardWrx.Core namespace.</p>
 </section>
       <h4><a class="xref" href="WizardWrx.SyncRoot.html">SyncRoot</a></h4>
       <section><p>Use instances of this class to provide classes that must be made
@@ -214,6 +311,10 @@ categories.</p>
       <section><p>This enumeration maps the CharType strings to fast, efficient, safe
 integer values that correspond to three broad groups of characters.</p>
 </section>
+      <h4><a class="xref" href="WizardWrx.ByteOrderMark.BOMType.html">ByteOrderMark.BOMType</a></h4>
+      <section><p>Members of this enumeration report the type of byte order mark, if
+any, present at its beginning.</p>
+</section>
       <h4><a class="xref" href="WizardWrx.FileInfoExtension.enmInitialStatus.html">FileInfoExtension.enmInitialStatus</a></h4>
       <section><p>Define the three possible initial states.</p>
 </section>
@@ -230,8 +331,17 @@ backslash.</p>
 providing for the CompareTo method of the IComparable interface that
 it encapsulates with a tad of syntactic sugar.</p>
 </section>
+      <h4><a class="xref" href="WizardWrx.NumericFormats.HexFormatDecoration.html">NumericFormats.HexFormatDecoration</a></h4>
+      <section><p>Use this enumeration with the third argument to the fourth
+(coprehensive) overload of IntegerToHexStr or the second argument to
+its second overload.</p>
+</section>
       <h4><a class="xref" href="WizardWrx.ReportDetail.State.html">ReportDetail.State</a></h4>
       <section><p>This enumeration keeps track of the state of the instance.</p>
+</section>
+      <h4><a class="xref" href="WizardWrx.ReportHelpers.Alignment.html">ReportHelpers.Alignment</a></h4>
+      <section><p>Set the penmAlignment argument of the AdjustToMaximumWidth method to
+a member of this enumeration.</p>
 </section>
 </article>
           </div>

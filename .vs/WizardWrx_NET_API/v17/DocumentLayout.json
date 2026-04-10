@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{70FCF204-A3E1-43E2-8D12-38C6C30763D8}|Solution Items{70FCF204-A3E1-43E2-8D12-38C6C30763D8}|D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\ChangeLog.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{70FCF204-A3E1-43E2-8D12-38C6C30763D8}|Solution Items{70FCF204-A3E1-43E2-8D12-38C6C30763D8}|solutionrelative:ChangeLog.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{86F74181-F845-46D2-8766-6C2037E13A1F}|HTTP\\HTTP.csproj|d:\\source_code\\visual_studio\\projects\\wizardwrx_libs\\wizardwrx_net_api\\http\\json_deserialized_object.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{86F74181-F845-46D2-8766-6C2037E13A1F}|HTTP\\HTTP.csproj|solutionrelative:http\\json_deserialized_object.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1FB48D6-4A54-4424-BCA1-4777F3AAE2DF}|Common\\Common.csproj|d:\\source_code\\visual_studio\\projects\\wizardwrx_libs\\wizardwrx_net_api\\common\\specialstrings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C1FB48D6-4A54-4424-BCA1-4777F3AAE2DF}|Common\\Common.csproj|solutionrelative:common\\specialstrings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0F6C2CD-6DF3-48C8-BF8D-9C4B1510E5A4}|DLLServices2TestStand\\DLLServices2TestStand.csproj|d:\\source_code\\visual_studio\\projects\\wizardwrx_libs\\wizardwrx_net_api\\dllservices2teststand\\jsonfieldaccessortests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0F6C2CD-6DF3-48C8-BF8D-9C4B1510E5A4}|DLLServices2TestStand\\DLLServices2TestStand.csproj|solutionrelative:dllservices2teststand\\jsonfieldaccessortests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A0F6C2CD-6DF3-48C8-BF8D-9C4B1510E5A4}|DLLServices2TestStand\\DLLServices2TestStand.csproj|D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\dllservices2teststand\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A0F6C2CD-6DF3-48C8-BF8D-9C4B1510E5A4}|DLLServices2TestStand\\DLLServices2TestStand.csproj|solutionrelative:dllservices2teststand\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -13,14 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A0F6C2CD-6DF3-48C8-BF8D-9C4B1510E5A4}|DLLServices2TestStand\\DLLServices2TestStand.csproj|D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\dllservices2teststand\\digesttestcases.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A0F6C2CD-6DF3-48C8-BF8D-9C4B1510E5A4}|DLLServices2TestStand\\DLLServices2TestStand.csproj|solutionrelative:dllservices2teststand\\digesttestcases.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A0F6C2CD-6DF3-48C8-BF8D-9C4B1510E5A4}|DLLServices2TestStand\\DLLServices2TestStand.csproj|D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\dllservices2teststand\\newclasstests_20140914.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A0F6C2CD-6DF3-48C8-BF8D-9C4B1510E5A4}|DLLServices2TestStand\\DLLServices2TestStand.csproj|solutionrelative:dllservices2teststand\\newclasstests_20140914.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{70FCF204-A3E1-43E2-8D12-38C6C30763D8}|Solution Items{70FCF204-A3E1-43E2-8D12-38C6C30763D8}|D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\ChangeLog.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
-      "RelativeMoniker": "D:0:0:{70FCF204-A3E1-43E2-8D12-38C6C30763D8}|Solution Items{70FCF204-A3E1-43E2-8D12-38C6C30763D8}|solutionrelative:ChangeLog.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{86F74181-F845-46D2-8766-6C2037E13A1F}|HTTP\\HTTP.csproj|D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\http\\requestengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -44,19 +52,6 @@
           "DockedWidth": 200,
           "SelectedChildIndex": 12,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "NewClassTests_20140914.cs",
-              "DocumentMoniker": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\DLLServices2TestStand\\NewClassTests_20140914.cs",
-              "RelativeDocumentMoniker": "DLLServices2TestStand\\NewClassTests_20140914.cs",
-              "ToolTip": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\DLLServices2TestStand\\NewClassTests_20140914.cs [Read Only]",
-              "RelativeToolTip": "DLLServices2TestStand\\NewClassTests_20140914.cs [Read Only]",
-              "ViewState": "AgIAAKIIAAAAAAAAAIBZwKcIAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-19T01:49:00.123Z",
-              "IsPinned": true
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:139:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -83,19 +78,59 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ChangeLog.md",
-              "DocumentMoniker": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\changelog.md",
-              "RelativeDocumentMoniker": "changelog.md",
-              "ToolTip": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\changelog.md",
-              "RelativeToolTip": "changelog.md",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2026-02-03T08:29:36.728Z"
+              "DocumentIndex": 2,
+              "Title": "SpecialStrings.cs",
+              "DocumentMoniker": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Common\\SpecialStrings.cs",
+              "RelativeDocumentMoniker": "Common\\SpecialStrings.cs",
+              "ToolTip": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Common\\SpecialStrings.cs",
+              "RelativeToolTip": "Common\\SpecialStrings.cs",
+              "ViewState": "AgIAAPMAAAAAAAAAAADgvwgBAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T21:44:47.075Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "JSON_Deserialized_Object.cs",
+              "DocumentMoniker": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\HTTP\\JSON_Deserialized_Object.cs",
+              "RelativeDocumentMoniker": "HTTP\\JSON_Deserialized_Object.cs",
+              "ToolTip": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\HTTP\\JSON_Deserialized_Object.cs",
+              "RelativeToolTip": "HTTP\\JSON_Deserialized_Object.cs",
+              "ViewState": "AgIAALAAAAAAAAAAAAAAAMUAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T21:35:45.502Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DigestTestCases.cs",
+              "DocumentMoniker": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\DLLServices2TestStand\\DigestTestCases.cs",
+              "RelativeDocumentMoniker": "DLLServices2TestStand\\DigestTestCases.cs",
+              "ToolTip": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\DLLServices2TestStand\\DigestTestCases.cs",
+              "RelativeToolTip": "DLLServices2TestStand\\DigestTestCases.cs",
+              "ViewState": "AgIAAMwAAAAAAAAAAAAAANcAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T08:05:17.077Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\DLLServices2TestStand\\Program.cs",
+              "RelativeDocumentMoniker": "DLLServices2TestStand\\Program.cs",
+              "ToolTip": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\DLLServices2TestStand\\Program.cs",
+              "RelativeToolTip": "DLLServices2TestStand\\Program.cs",
+              "ViewState": "AgIAAKkCAAAAAAAAAAAAALICAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-19T02:11:04.914Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "DigestFile.cs",
               "DocumentMoniker": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Core\\DigestFile.cs",
               "RelativeDocumentMoniker": "Core\\DigestFile.cs",
@@ -107,19 +142,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DigestTestCases.cs",
-              "DocumentMoniker": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\DLLServices2TestStand\\DigestTestCases.cs",
-              "RelativeDocumentMoniker": "DLLServices2TestStand\\DigestTestCases.cs",
-              "ToolTip": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\DLLServices2TestStand\\DigestTestCases.cs",
-              "RelativeToolTip": "DLLServices2TestStand\\DigestTestCases.cs",
-              "ViewState": "AgIAAMwAAAAAAAAAAAAAANcAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-31T08:05:17.077Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "RequestEngine.cs",
               "DocumentMoniker": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\HTTP\\RequestEngine.cs",
               "RelativeDocumentMoniker": "HTTP\\RequestEngine.cs",
@@ -127,11 +150,38 @@
               "RelativeToolTip": "HTTP\\RequestEngine.cs",
               "ViewState": "AgIAACkAAAAAAAAAAAAAADgAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T09:30:27.77Z"
+              "WhenOpened": "2026-02-03T09:30:27.77Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
+              "Title": "ChangeLog.md",
+              "DocumentMoniker": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\changelog.md",
+              "RelativeDocumentMoniker": "changelog.md",
+              "ToolTip": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\changelog.md",
+              "RelativeToolTip": "changelog.md",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAACkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-02-03T08:29:36.728Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "JsonFieldAccessorTests.cs",
+              "DocumentMoniker": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\DLLServices2TestStand\\JsonFieldAccessorTests.cs",
+              "RelativeDocumentMoniker": "DLLServices2TestStand\\JsonFieldAccessorTests.cs",
+              "ToolTip": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\DLLServices2TestStand\\JsonFieldAccessorTests.cs",
+              "RelativeToolTip": "DLLServices2TestStand\\JsonFieldAccessorTests.cs",
+              "ViewState": "AgIAAFUBAAAAAAAAAAAAAF4BAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T05:44:41.705Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "AppDomainSyncRootRegistry.cs",
               "DocumentMoniker": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Core\\AppDomainSyncRootRegistry.cs",
               "RelativeDocumentMoniker": "Core\\AppDomainSyncRootRegistry.cs",
@@ -143,20 +193,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\DLLServices2TestStand\\Program.cs",
-              "RelativeDocumentMoniker": "DLLServices2TestStand\\Program.cs",
-              "ToolTip": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\DLLServices2TestStand\\Program.cs",
-              "RelativeToolTip": "DLLServices2TestStand\\Program.cs",
-              "ViewState": "AgIAAJ8CAAAAAAAAAAAAAKgCAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-19T02:11:04.914Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\ReflectionInvokerDemo\\Program.cs",
               "RelativeDocumentMoniker": "ReflectionInvokerDemo\\Program.cs",
@@ -164,7 +201,8 @@
               "RelativeToolTip": "ReflectionInvokerDemo\\Program.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAiwCYAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-28T16:21:30.904Z"
+              "WhenOpened": "2025-11-28T16:21:30.904Z",
+              "EditorCaption": ""
             }
           ]
         }

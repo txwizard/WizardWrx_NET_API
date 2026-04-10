@@ -1,5 +1,49 @@
 ﻿# WizardWrx .NET API Change Log
 
+
+## 2026-03-10
+
+### WizardWrx.Common [9.0.287]
+
+Add the following aliases for existing strings, for the sake of clarity in
+source code listings.
+
+|Constant Name      | Alias For         | Value   |
+|-------------------|-------------------|---------|
+|JSON_ARRAY_PREFIX  | BRACKET_LEFT      |    `[`  |
+|JJSON_ARRAY_SUFFIX | BRACKET_RIGHT     |    `]`  |
+|JSON_PREFIX        | BRACE_LEFT        |    `{`  |
+|JSON_SUFFIX        | BRACE_RIGHT       |    `}`  |
+|JSON_OBJECT_EMPTY  | EMPTY_JSON_OBJECT |    `{}` |
+|JSON_ARRAY_EMPTY   | EMPTY_JSON_ARRAY  |    `[]` |
+
+### WizardWrx.HTTP [9.0.65]
+
+#### JSON_Deserialized_Object Improvements
+
+Implement a new constructor that supports **schema‑aware** and **JSON‑only**
+modes, in wich schema-aware means that it enforces the presence of required fields, 
+while JSON-only means that it only checks for valid JSON structure.
+
+Both modes support extracting field values by name from the dictionary that maps
+property names to their values, and both modes cache the dictionary for efficient
+access.
+
+Reworked superficial JSON validation to treat **all whitespace (including CR/LF)**
+as ignorable when locating the first meaningful character.
+
+- Consolidated parsing logic:  
+  - `EnsureParsed()` builds and caches the case‑insensitive property dictionary once.
+  - `Validate()` uses the cached dictionary.
+
+- Added robust typed accessors:
+  - `GetFieldValueAsInt` handles **Int64 → Int32 overflow** safely and returns `null` instead of throwing.
+  - All accessors follow a consistent, non‑throwing, deterministic pattern, and cover the most commonly used data types.
+
+- Implemented comprehensive test harnesses for:
+  - Typed accessors (17 tests, all passing)
+  - Required‑field validation (correct handling of missing, empty, and case‑variant fields)
+
 ## 2026-03-31
 
 ### WizardWrx.Core 9.0.386

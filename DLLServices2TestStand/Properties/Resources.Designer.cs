@@ -196,6 +196,15 @@ namespace DLLServices2TestStand.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to JSON_Deserialized_Object.
+        /// </summary>
+        public static string CMDARG_JSON_DESERIALIZED_OBJECT {
+            get {
+                return ResourceManager.GetString("CMDARG_JSON_DESERIALIZED_OBJECT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to EnumerateStringResourcesInAssembly.
         /// </summary>
         public static string CMDARG_LIST_COMMON_STRINGS {
@@ -1515,15 +1524,6 @@ namespace DLLServices2TestStand.Properties {
         public static string REGEXP_TEST_LAST {
             get {
                 return ResourceManager.GetString("REGEXP_TEST_LAST", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        public static string String1 {
-            get {
-                return ResourceManager.GetString("String1", resourceCulture);
             }
         }
         

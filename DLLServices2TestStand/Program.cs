@@ -680,11 +680,21 @@ namespace DLLServices2TestStand
 
                 ExerciseTimeZoneInfoExtensions ( );
 
-                if ( pastrArgs.Length>CmdLneArgsBasic.NONE && pastrArgs [ArrayInfo.ARRAY_FIRST_ELEMENT] == Properties.Resources.CMDARG_SRI_DRILLS )
+                if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_SRI_DRILLS )
                 {
-					DigestTestCases.Exercise_SRI_Drills ( );
-				}   // TRUE block, if ( pastrArgs.Length>CmdLneArgsBasic.NONE && pastrArgs [ArrayInfo.ARRAY_FIRST_ELEMENT] == Properties.Resources.CMDARG_SRI_DRILLS )
+                    DigestTestCases.Exercise_SRI_Drills ( );
+                }   // TRUE block, if ( pastrArgs.Length>CmdLneArgsBasic.NONE && pastrArgs [ArrayInfo.ARRAY_FIRST_ELEMENT] == Properties.Resources.CMDARG_SRI_DRILLS )
 
+				if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_JSON_DESERIALIZED_OBJECT )
+				{
+                    JsonFieldAccessorTests jsonFieldAccessorTests = new JsonFieldAccessorTests ( );
+					jsonFieldAccessorTests.Execute ( );
+				}   // TRUE block, if ( pastrArgs.Length>CmdLneArgsBasic.NONE && pastrArgs [ArrayInfo.ARRAY_FIRST_ELEMENT] == Properties.Resources.CMDARG_JSON_DESERIALIZED_OBJECT )
+
+				if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_FILE_NAME_TRICKS )
+                {
+                    FileNameTricks_Exerciser.Drill ( );
+				}   // TRUE block, if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_FILE_NAME_TRICKS )
 
 				if ( pastrArgs.Length > CmdLneArgsBasic.NONE && pastrArgs [ ArrayInfo.ARRAY_FIRST_ELEMENT ] == Properties.Resources.CMDARG_HTTP_DRILLS )
                 {

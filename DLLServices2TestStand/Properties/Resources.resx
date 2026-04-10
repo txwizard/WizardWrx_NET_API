@@ -694,8 +694,9 @@
     <value>FindLastOcurrenceOfWeekday</value>
     <comment>Select this one-off task to execute static method TestFindingMostRecentWeekday, which puts DateTime extension method DateOfMostRecentWeekdayDay through its paces.</comment>
   </data>
-  <data name="String1" xml:space="preserve">
-    <value />
+  <data name="CMDARG_JSON_DESERIALIZED_OBJECT" xml:space="preserve">
+    <value>JSON_Deserialized_Object</value>
+    <comment>Use this command line argument to engage the routine  that exercises the JSON_Deserialized_Object class.</comment>
   </data>
   <data name="CMDARG_FILE_NAME_TRICKS" xml:space="preserve">
     <value>FileNameTricks_Exercises</value>

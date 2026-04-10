@@ -89,6 +89,7 @@
     <Compile Include="..\ProductAssemblyInfo.cs">
       <Link>Properties\ProductAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="JsonFieldAccessorTests.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="AppDomainDetails.cs" />
     <Compile Include="Base64RoundTripExperiments.cs" />

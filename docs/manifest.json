@@ -65,6 +65,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.ArrayInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.ArrayInfo.html",
+          "hash": "IJ4QlteMmhNqz6GiEnAYAQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.yml",
       "output": {
         ".html": {
@@ -185,11 +197,71 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.ByteOrderMark.BOMType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.ByteOrderMark.BOMType.html",
+          "hash": "NfNGBEyOTzOTy7WsYo18iA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.ByteOrderMark.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.ByteOrderMark.html",
+          "hash": "sn/4S+tUYW/6AIYr5twpPg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.CSVFileInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.CSVFileInfo.html",
+          "hash": "JAD7MTiLJs/MYzuIx07jrQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/WizardWrx.ClassAndMethodDiagnosticInfo.yml",
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.ClassAndMethodDiagnosticInfo.html",
           "hash": "wPYNI3eQ1x70CvZXJs5rYg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Common.Properties.Resources.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Common.Properties.Resources.html",
+          "hash": "wYjfqc6uM0VGaw7Oc42wGQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Common.Properties.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Common.Properties.html",
+          "hash": "WRYsDyJptlHw5fjQzp8Owg=="
         }
       },
       "is_incremental": false,
@@ -334,6 +406,18 @@
         ".html": {
           "relative_path": "api/WizardWrx.ConsoleStreams.html",
           "hash": "RLoOUqIPZmicSR2xRrHoJA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.ConsoleSymbols.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.ConsoleSymbols.html",
+          "hash": "nHKqW1CjMj3QEoY/1sNiUg=="
         }
       },
       "is_incremental": false,
@@ -573,7 +657,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.Core.TimeDisplayFormatter.html",
-          "hash": "SpMAz3VJ4ihuXTb/EQk87g=="
+          "hash": "eedGhMnfWAYXAcARaf7cVQ=="
         }
       },
       "is_incremental": false,
@@ -821,6 +905,42 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.DisplayFormats.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.DisplayFormats.html",
+          "hash": "AKGneT5YJnzA2b4gBlbNJg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.EmbeddedTextFileReaders.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.EmbeddedTextFileReaders.html",
+          "hash": "ME2eDvVYkeRhrzURRqTmUw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.FileIOFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.FileIOFlags.html",
+          "hash": "4dxoNJ3MUj+uJU8UPcgxTg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/WizardWrx.FileInfoExtension.enmInitialStatus.yml",
       "output": {
         ".html": {
@@ -909,7 +1029,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.FormatStringEngine.FormatItem.html",
-          "hash": "Cm2PA/ALVxMQ/5Xa3hJQkA=="
+          "hash": "rP8qsQ5mCCnWTQwD1DLKsg=="
         }
       },
       "is_incremental": false,
@@ -981,7 +1101,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.HTTP.JSON_Deserialized_Object.html",
-          "hash": "6iU8gXw6bw13ynfQnWBLvg=="
+          "hash": "Zamx0M9bF9MaEYcdqXiQ5A=="
         }
       },
       "is_incremental": false,
@@ -1041,7 +1161,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.HTTP.html",
-          "hash": "D5q3kSXoh5dJCTp2/Mdq0A=="
+          "hash": "jQfYw+NJwIE87wFhKcsC8Q=="
         }
       },
       "is_incremental": false,
@@ -1073,11 +1193,47 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.ListInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.ListInfo.html",
+          "hash": "zI9PKGOtcJHlOnYTUb78Cg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/WizardWrx.Logic.yml",
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.Logic.html",
           "hash": "Gn6xUxe+RxWm1b8ExVj/ig=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.MagicBooleans.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.MagicBooleans.html",
+          "hash": "y0DWqwLX9I0q0JLDLA+JSQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.MagicNumbers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.MagicNumbers.html",
+          "hash": "qT+RR3VsAIFRjtS95WQi7Q=="
         }
       },
       "is_incremental": false,
@@ -1109,6 +1265,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.NumericFormats.HexFormatDecoration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.NumericFormats.HexFormatDecoration.html",
+          "hash": "pdAwcOYjZykBaPZniXkw6w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.NumericFormats.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.NumericFormats.html",
+          "hash": "mH0oFyQVxHP4PiQp/TrX0w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/WizardWrx.ObjectPropertyEnumerators.yml",
       "output": {
         ".html": {
@@ -1121,11 +1301,35 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.PathPositions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.PathPositions.html",
+          "hash": "5S/6AbdJWOYo2oHInbn73g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/WizardWrx.RecoveredException.yml",
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.RecoveredException.html",
           "hash": "4C4FUv3p2lriTDe3cDkaZA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.RegExpSupport.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.RegExpSupport.html",
+          "hash": "Mv8Ec31W00ZKeFCVncUmzg=="
         }
       },
       "is_incremental": false,
@@ -1193,11 +1397,83 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.ReportHelpers.Alignment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.ReportHelpers.Alignment.html",
+          "hash": "u2WaCgiFcS58nRq0ojj59w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.ReportHelpers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.ReportHelpers.html",
+          "hash": "/pkVwYKc57M+y/W81W04kg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.SortableManagedResourceItem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.SortableManagedResourceItem.html",
+          "hash": "BzhFZGV0IgLd6xmeQ1+IBQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.SpecialCharacters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.SpecialCharacters.html",
+          "hash": "NiW4X5KcoeSX2/7WN0T5XA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.SpecialStrings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.SpecialStrings.html",
+          "hash": "/gZu0KJOv7fCpP3nQ43XrA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/WizardWrx.StringExtensions.yml",
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.StringExtensions.html",
           "hash": "H7b0gUTmga3mO7QzcYnVnA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.StringTricks.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.StringTricks.html",
+          "hash": "6hvsSSqPq36J6K8vyIpsDg=="
         }
       },
       "is_incremental": false,
@@ -1221,7 +1497,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.SysDateFormatters.html",
-          "hash": "xpJm6uTS9V5pwyY0XXrf6A=="
+          "hash": "AgInp0VZHNz4gH4pgC5R+w=="
         }
       },
       "is_incremental": false,
@@ -1257,7 +1533,7 @@
       "output": {
         ".html": {
           "relative_path": "api/WizardWrx.html",
-          "hash": "d0SOYkd/U86fwYOMGb7z3A=="
+          "hash": "1jr3XWrze6u7IJJCnRBwmQ=="
         }
       },
       "is_incremental": false,
@@ -1281,7 +1557,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "acwSmitAJLD7gr30mhxO6w=="
+          "hash": "wpUp/kAZxZwNxAmucpUAlw=="
         }
       },
       "is_incremental": false,
@@ -1354,8 +1630,8 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 105,
-          "skipped_file_count": 3
+          "total_file_count": 128,
+          "skipped_file_count": 101
         },
         "TocDocumentProcessor": {
           "can_incremental": false,

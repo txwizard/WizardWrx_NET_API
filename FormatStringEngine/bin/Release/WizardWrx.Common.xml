@@ -5377,6 +5377,43 @@
             </summary>
             <seealso cref="F:WizardWrx.SpecialCharacters.HYPHEN"/>
         </member>
+        <member name="F:WizardWrx.SpecialStrings.JSON_ARRAY_PREFIX">
+            <summary>
+            This is one of four constants that are useful for evaluating the results
+            of REST API calls that return JSON objects and arrays. Between them, they
+            test for valid starting and ending characters of JSON objects and arrays,
+            respectively. Evaluating for anything more specific is pointless due to
+            the fact that JSON objects and arrays can contain whitespace, and that the
+            content of either can be anything, including nested objects and arrays.
+            The only way to evaluate the content of a JSON object or array is to parse
+            it, which is what the JSON parser in your language of choice does.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.JSON_ARRAY_SUFFIX">
+            <summary>
+            See the remarks for <see cref="F:WizardWrx.SpecialStrings.JSON_ARRAY_PREFIX"/>.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.JSON_PREFIX">
+            <summary>
+            See the remarks for <see cref="F:WizardWrx.SpecialStrings.JSON_ARRAY_PREFIX"/>.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.JSON_SUFFIX">
+            <summary>
+            See the remarks for <see cref="F:WizardWrx.SpecialStrings.JSON_ARRAY_PREFIX"/>.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.JSON_OBJECT_EMPTY">
+            <summary>
+            See the remarks for <see cref="F:WizardWrx.SpecialStrings.JSON_PREFIX"/>.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.JSON_ARRAY_EMPTY">
+            <summary>
+            See the remarks for <see cref="F:WizardWrx.SpecialStrings.JSON_ARRAY_PREFIX"/>.
+            </summary>
+        </member>
         <member name="F:WizardWrx.SpecialStrings.LAST_ASCII_CHAR">
             <summary>
             The highest integer that can represent any ASCII character is 255,
