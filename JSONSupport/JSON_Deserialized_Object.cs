@@ -32,17 +32,18 @@
     ============================================================================
 */
 
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+
 using System;
 
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text.RegularExpressions;
 
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
-
-namespace WizardWrx.HTTP
+namespace WizardWrx.JsonSupport
 {
 	/// <summary>
 	/// Instances of this class provide a lightweight, schema-aware façade over
@@ -797,4 +798,4 @@ namespace WizardWrx.HTTP
 
 		private JObject _parsedJObject;
 	}   // public class JSON_Deserialized_Object
-}   // partial namespace WizardWrx.HTTP
+}   // partial namespace WizardWrx.JSONSupport

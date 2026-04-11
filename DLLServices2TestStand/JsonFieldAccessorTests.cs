@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 
 using WizardWrx;
-using WizardWrx.HTTP;
+using WizardWrx.JsonSupport;
 
 namespace DLLServices2TestStand
 {
@@ -215,15 +215,15 @@ namespace DLLServices2TestStand
 			Console.WriteLine ( "=== Test Summary ===" );
 
 			Console.ForegroundColor = ConsoleColor.Cyan;
-			Console.WriteLine ( $"Total Tests:   {_tests}" );
+			Console.WriteLine ( $"Total Tests:   {_tests,2}" );
 			Console.ResetColor ( );
 
 			Console.ForegroundColor = ConsoleColor.Green;
-			Console.WriteLine ( $"Passed:        {_passed}" );
+			Console.WriteLine ( $"Passed:        {_passed,2}" );
 			Console.ResetColor ( );
 
 			Console.ForegroundColor = ConsoleColor.Red;
-			Console.WriteLine ( $"Failed:        {_failed}" );
+			Console.WriteLine ( $"Failed:        {_failed,2}" );
 			Console.ResetColor ( );
 
 			Console.WriteLine ( "{0}===================={0}" , Environment.NewLine );
@@ -382,8 +382,9 @@ namespace DLLServices2TestStand
 
 			// Recap
 			Console.WriteLine ( $"{FG_CYAN}=== TEST RECAP ==={RESET}" );
-			Console.WriteLine ( $"{FG_GREEN}Validation PASS: {intValidationPass}{RESET}" );
-			Console.WriteLine ( $"{FG_RED}Validation FAIL: {intValidationFail}{RESET}" );
+			Console.WriteLine ( $"{FG_CYAN}Total Test Cases: {lstTests.Count}{RESET}" );
+			Console.WriteLine ( $"{FG_GREEN}Validation PASS:  {intValidationPass}{RESET}" );
+			Console.WriteLine ( $"{FG_RED}Validation FAIL:  {intValidationFail}{RESET}" );
 			Console.WriteLine ( $"{FG_GREEN}Correctness PASS: {intCorrectnessPass}{RESET}" );
 			Console.WriteLine ( $"{FG_RED}Correctness FAIL: {intCorrectnessFail}{RESET}" );
 		}   // private static void Exercise_JsonFieldValidator

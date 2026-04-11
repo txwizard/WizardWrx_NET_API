@@ -186,6 +186,10 @@
       <Project>{86f74181-f845-46d2-8766-6c2037e13a1f}</Project>
       <Name>HTTP</Name>
     </ProjectReference>
+    <ProjectReference Include="..\JSONSupport\JSONSupport.csproj">
+      <Project>{2fa6c7d2-59a5-4902-9bf3-12c01a702519}</Project>
+      <Name>JSONSupport</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MoreMath\MoreMath.csproj">
       <Project>{a9512fcd-3f59-4ce9-8923-367aed4511a8}</Project>
       <Name>MoreMath</Name>

@@ -10523,235 +10523,6 @@ references:
   commentId: N:WizardWrx.HTTP
   fullName: WizardWrx.HTTP
   nameWithType: WizardWrx.HTTP
-- uid: WizardWrx.HTTP.JSON_Deserialized_Object
-  name: JSON_Deserialized_Object
-  href: api/WizardWrx.HTTP.JSON_Deserialized_Object.html
-  commentId: T:WizardWrx.HTTP.JSON_Deserialized_Object
-  fullName: WizardWrx.HTTP.JSON_Deserialized_Object
-  nameWithType: JSON_Deserialized_Object
-- uid: WizardWrx.HTTP.JSON_Deserialized_Object.#ctor(System.String)
-  name: JSON_Deserialized_Object(String)
-  href: api/WizardWrx.HTTP.JSON_Deserialized_Object.html#WizardWrx_HTTP_JSON_Deserialized_Object__ctor_System_String_
-  commentId: M:WizardWrx.HTTP.JSON_Deserialized_Object.#ctor(System.String)
-  fullName: WizardWrx.HTTP.JSON_Deserialized_Object.JSON_Deserialized_Object(System.String)
-  nameWithType: JSON_Deserialized_Object.JSON_Deserialized_Object(String)
-- uid: WizardWrx.HTTP.JSON_Deserialized_Object.#ctor(System.String,System.String[],System.Boolean,System.Boolean)
-  name: JSON_Deserialized_Object(String, String[], Boolean, Boolean)
-  href: api/WizardWrx.HTTP.JSON_Deserialized_Object.html#WizardWrx_HTTP_JSON_Deserialized_Object__ctor_System_String_System_String___System_Boolean_System_Boolean_
-  commentId: M:WizardWrx.HTTP.JSON_Deserialized_Object.#ctor(System.String,System.String[],System.Boolean,System.Boolean)
-  name.vb: JSON_Deserialized_Object(String, String(), Boolean, Boolean)
-  fullName: WizardWrx.HTTP.JSON_Deserialized_Object.JSON_Deserialized_Object(System.String, System.String[], System.Boolean, System.Boolean)
-  fullName.vb: WizardWrx.HTTP.JSON_Deserialized_Object.JSON_Deserialized_Object(System.String, System.String(), System.Boolean, System.Boolean)
-  nameWithType: JSON_Deserialized_Object.JSON_Deserialized_Object(String, String[], Boolean, Boolean)
-  nameWithType.vb: JSON_Deserialized_Object.JSON_Deserialized_Object(String, String(), Boolean, Boolean)
-- uid: WizardWrx.HTTP.JSON_Deserialized_Object.#ctor*
-  name: JSON_Deserialized_Object
-  href: api/WizardWrx.HTTP.JSON_Deserialized_Object.html#WizardWrx_HTTP_JSON_Deserialized_Object__ctor_
-  commentId: Overload:WizardWrx.HTTP.JSON_Deserialized_Object.#ctor
-  isSpec: "True"
-  fullName: WizardWrx.HTTP.JSON_Deserialized_Object.JSON_Deserialized_Object
-  nameWithType: JSON_Deserialized_Object.JSON_Deserialized_Object
-- uid: WizardWrx.HTTP.JSON_Deserialized_Object.AsJObject
-  name: AsJObject()
-  href: api/WizardWrx.HTTP.JSON_Deserialized_Object.html#WizardWrx_HTTP_JSON_Deserialized_Object_AsJObject
-  commentId: M:WizardWrx.HTTP.JSON_Deserialized_Object.AsJObject
-  fullName: WizardWrx.HTTP.JSON_Deserialized_Object.AsJObject()
-  nameWithType: JSON_Deserialized_Object.AsJObject()
-- uid: WizardWrx.HTTP.JSON_Deserialized_Object.AsJObject*
-  name: AsJObject
-  href: api/WizardWrx.HTTP.JSON_Deserialized_Object.html#WizardWrx_HTTP_JSON_Deserialized_Object_AsJObject_
-  commentId: Overload:WizardWrx.HTTP.JSON_Deserialized_Object.AsJObject
-  isSpec: "True"
-  fullName: WizardWrx.HTTP.JSON_Deserialized_Object.AsJObject
-  nameWithType: JSON_Deserialized_Object.AsJObject
-- uid: WizardWrx.HTTP.JSON_Deserialized_Object.GetFieldValueAsBoolean(System.String)
-  name: GetFieldValueAsBoolean(String)
-  href: api/WizardWrx.HTTP.JSON_Deserialized_Object.html#WizardWrx_HTTP_JSON_Deserialized_Object_GetFieldValueAsBoolean_System_String_
-  commentId: M:WizardWrx.HTTP.JSON_Deserialized_Object.GetFieldValueAsBoolean(System.String)
-  fullName: WizardWrx.HTTP.JSON_Deserialized_Object.GetFieldValueAsBoolean(System.String)
-  nameWithType: JSON_Deserialized_Object.GetFieldValueAsBoolean(String)
-- uid: WizardWrx.HTTP.JSON_Deserialized_Object.GetFieldValueAsBoolean*
-  name: GetFieldValueAsBoolean
-  href: api/WizardWrx.HTTP.JSON_Deserialized_Object.html#WizardWrx_HTTP_JSON_Deserialized_Object_GetFieldValueAsBoolean_
-  commentId: Overload:WizardWrx.HTTP.JSON_Deserialized_Object.GetFieldValueAsBoolean
-  isSpec: "True"
-  fullName: WizardWrx.HTTP.JSON_Deserialized_Object.GetFieldValueAsBoolean
-  nameWithType: JSON_Deserialized_Object.GetFieldValueAsBoolean
-- uid: WizardWrx.HTTP.JSON_Deserialized_Object.GetFieldValueAsDateTime(System.String)
-  name: GetFieldValueAsDateTime(String)
-  href: api/WizardWrx.HTTP.JSON_Deserialized_Object.html#WizardWrx_HTTP_JSON_Deserialized_Object_GetFieldValueAsDateTime_System_String_
-  commentId: M:WizardWrx.HTTP.JSON_Deserialized_Object.GetFieldValueAsDateTime(System.String)
-  fullName: WizardWrx.HTTP.JSON_Deserialized_Object.GetFieldValueAsDateTime(System.String)
-  nameWithType: JSON_Deserialized_Object.GetFieldValueAsDateTime(String)
-- uid: WizardWrx.HTTP.JSON_Deserialized_Object.GetFieldValueAsDateTime*
-  name: GetFieldValueAsDateTime
-  href: api/WizardWrx.HTTP.JSON_Deserialized_Object.html#WizardWrx_HTTP_JSON_Deserialized_Object_GetFieldValueAsDateTime_
-  commentId: Overload:WizardWrx.HTTP.JSON_Deserialized_Object.GetFieldValueAsDateTime
-  isSpec: "True"
-  fullName: WizardWrx.HTTP.JSON_Deserialized_Object.GetFieldValueAsDateTime
-  nameWithType: JSON_Deserialized_Object.GetFieldValueAsDateTime
-- uid: WizardWrx.HTTP.JSON_Deserialized_Object.GetFieldValueAsDouble(System.String)
-  name: GetFieldValueAsDouble(String)
-  href: api/WizardWrx.HTTP.JSON_Deserialized_Object.html#WizardWrx_HTTP_JSON_Deserialized_Object_GetFieldValueAsDouble_System_String_
-  commentId: M:WizardWrx.HTTP.JSON_Deserialized_Object.GetFieldValueAsDouble(System.String)
-  fullName: WizardWrx.HTTP.JSON_Deserialized_Object.GetFieldValueAsDouble(System.String)
-  nameWithType: JSON_Deserialized_Object.GetFieldValueAsDouble(String)
-- uid: WizardWrx.HTTP.JSON_Deserialized_Object.GetFieldValueAsDouble*
-  name: GetFieldValueAsDouble
-  href: api/WizardWrx.HTTP.JSON_Deserialized_Object.html#WizardWrx_HTTP_JSON_Deserialized_Object_GetFieldValueAsDouble_
-  commentId: Overload:WizardWrx.HTTP.JSON_Deserialized_Object.GetFieldValueAsDouble
-  isSpec: "True"
-  fullName: WizardWrx.HTTP.JSON_Deserialized_Object.GetFieldValueAsDouble
-  nameWithType: JSON_Deserialized_Object.GetFieldValueAsDouble
-- uid: WizardWrx.HTTP.JSON_Deserialized_Object.GetFieldValueAsGuid(System.String)
-  name: GetFieldValueAsGuid(String)
-  href: api/WizardWrx.HTTP.JSON_Deserialized_Object.html#WizardWrx_HTTP_JSON_Deserialized_Object_GetFieldValueAsGuid_System_String_
-  commentId: M:WizardWrx.HTTP.JSON_Deserialized_Object.GetFieldValueAsGuid(System.String)
-  fullName: WizardWrx.HTTP.JSON_Deserialized_Object.GetFieldValueAsGuid(System.String)
-  nameWithType: JSON_Deserialized_Object.GetFieldValueAsGuid(String)
-- uid: WizardWrx.HTTP.JSON_Deserialized_Object.GetFieldValueAsGuid*
-  name: GetFieldValueAsGuid
-  href: api/WizardWrx.HTTP.JSON_Deserialized_Object.html#WizardWrx_HTTP_JSON_Deserialized_Object_GetFieldValueAsGuid_
-  commentId: Overload:WizardWrx.HTTP.JSON_Deserialized_Object.GetFieldValueAsGuid
-  isSpec: "True"
-  fullName: WizardWrx.HTTP.JSON_Deserialized_Object.GetFieldValueAsGuid
-  nameWithType: JSON_Deserialized_Object.GetFieldValueAsGuid
-- uid: WizardWrx.HTTP.JSON_Deserialized_Object.GetFieldValueAsInt(System.String)
-  name: GetFieldValueAsInt(String)
-  href: api/WizardWrx.HTTP.JSON_Deserialized_Object.html#WizardWrx_HTTP_JSON_Deserialized_Object_GetFieldValueAsInt_System_String_
-  commentId: M:WizardWrx.HTTP.JSON_Deserialized_Object.GetFieldValueAsInt(System.String)
-  fullName: WizardWrx.HTTP.JSON_Deserialized_Object.GetFieldValueAsInt(System.String)
-  nameWithType: JSON_Deserialized_Object.GetFieldValueAsInt(String)
-- uid: WizardWrx.HTTP.JSON_Deserialized_Object.GetFieldValueAsInt*
-  name: GetFieldValueAsInt
-  href: api/WizardWrx.HTTP.JSON_Deserialized_Object.html#WizardWrx_HTTP_JSON_Deserialized_Object_GetFieldValueAsInt_
-  commentId: Overload:WizardWrx.HTTP.JSON_Deserialized_Object.GetFieldValueAsInt
-  isSpec: "True"
-  fullName: WizardWrx.HTTP.JSON_Deserialized_Object.GetFieldValueAsInt
-  nameWithType: JSON_Deserialized_Object.GetFieldValueAsInt
-- uid: WizardWrx.HTTP.JSON_Deserialized_Object.GetFieldValueAsString(System.String)
-  name: GetFieldValueAsString(String)
-  href: api/WizardWrx.HTTP.JSON_Deserialized_Object.html#WizardWrx_HTTP_JSON_Deserialized_Object_GetFieldValueAsString_System_String_
-  commentId: M:WizardWrx.HTTP.JSON_Deserialized_Object.GetFieldValueAsString(System.String)
-  fullName: WizardWrx.HTTP.JSON_Deserialized_Object.GetFieldValueAsString(System.String)
-  nameWithType: JSON_Deserialized_Object.GetFieldValueAsString(String)
-- uid: WizardWrx.HTTP.JSON_Deserialized_Object.GetFieldValueAsString*
-  name: GetFieldValueAsString
-  href: api/WizardWrx.HTTP.JSON_Deserialized_Object.html#WizardWrx_HTTP_JSON_Deserialized_Object_GetFieldValueAsString_
-  commentId: Overload:WizardWrx.HTTP.JSON_Deserialized_Object.GetFieldValueAsString
-  isSpec: "True"
-  fullName: WizardWrx.HTTP.JSON_Deserialized_Object.GetFieldValueAsString
-  nameWithType: JSON_Deserialized_Object.GetFieldValueAsString
-- uid: WizardWrx.HTTP.JSON_Deserialized_Object.HasField(System.String)
-  name: HasField(String)
-  href: api/WizardWrx.HTTP.JSON_Deserialized_Object.html#WizardWrx_HTTP_JSON_Deserialized_Object_HasField_System_String_
-  commentId: M:WizardWrx.HTTP.JSON_Deserialized_Object.HasField(System.String)
-  fullName: WizardWrx.HTTP.JSON_Deserialized_Object.HasField(System.String)
-  nameWithType: JSON_Deserialized_Object.HasField(String)
-- uid: WizardWrx.HTTP.JSON_Deserialized_Object.HasField*
-  name: HasField
-  href: api/WizardWrx.HTTP.JSON_Deserialized_Object.html#WizardWrx_HTTP_JSON_Deserialized_Object_HasField_
-  commentId: Overload:WizardWrx.HTTP.JSON_Deserialized_Object.HasField
-  isSpec: "True"
-  fullName: WizardWrx.HTTP.JSON_Deserialized_Object.HasField
-  nameWithType: JSON_Deserialized_Object.HasField
-- uid: WizardWrx.HTTP.JSON_Deserialized_Object.JSON
-  name: JSON
-  href: api/WizardWrx.HTTP.JSON_Deserialized_Object.html#WizardWrx_HTTP_JSON_Deserialized_Object_JSON
-  commentId: P:WizardWrx.HTTP.JSON_Deserialized_Object.JSON
-  fullName: WizardWrx.HTTP.JSON_Deserialized_Object.JSON
-  nameWithType: JSON_Deserialized_Object.JSON
-- uid: WizardWrx.HTTP.JSON_Deserialized_Object.JSON*
-  name: JSON
-  href: api/WizardWrx.HTTP.JSON_Deserialized_Object.html#WizardWrx_HTTP_JSON_Deserialized_Object_JSON_
-  commentId: Overload:WizardWrx.HTTP.JSON_Deserialized_Object.JSON
-  isSpec: "True"
-  fullName: WizardWrx.HTTP.JSON_Deserialized_Object.JSON
-  nameWithType: JSON_Deserialized_Object.JSON
-- uid: WizardWrx.HTTP.JSON_Deserialized_Object.MaybeValid
-  name: MaybeValid()
-  href: api/WizardWrx.HTTP.JSON_Deserialized_Object.html#WizardWrx_HTTP_JSON_Deserialized_Object_MaybeValid
-  commentId: M:WizardWrx.HTTP.JSON_Deserialized_Object.MaybeValid
-  fullName: WizardWrx.HTTP.JSON_Deserialized_Object.MaybeValid()
-  nameWithType: JSON_Deserialized_Object.MaybeValid()
-- uid: WizardWrx.HTTP.JSON_Deserialized_Object.MaybeValid*
-  name: MaybeValid
-  href: api/WizardWrx.HTTP.JSON_Deserialized_Object.html#WizardWrx_HTTP_JSON_Deserialized_Object_MaybeValid_
-  commentId: Overload:WizardWrx.HTTP.JSON_Deserialized_Object.MaybeValid
-  isSpec: "True"
-  fullName: WizardWrx.HTTP.JSON_Deserialized_Object.MaybeValid
-  nameWithType: JSON_Deserialized_Object.MaybeValid
-- uid: WizardWrx.HTTP.JSON_Deserialized_Object.ParseTo*
-  name: ParseTo
-  href: api/WizardWrx.HTTP.JSON_Deserialized_Object.html#WizardWrx_HTTP_JSON_Deserialized_Object_ParseTo_
-  commentId: Overload:WizardWrx.HTTP.JSON_Deserialized_Object.ParseTo
-  isSpec: "True"
-  fullName: WizardWrx.HTTP.JSON_Deserialized_Object.ParseTo
-  nameWithType: JSON_Deserialized_Object.ParseTo
-- uid: WizardWrx.HTTP.JSON_Deserialized_Object.ParseTo``1
-  name: ParseTo<T>()
-  href: api/WizardWrx.HTTP.JSON_Deserialized_Object.html#WizardWrx_HTTP_JSON_Deserialized_Object_ParseTo__1
-  commentId: M:WizardWrx.HTTP.JSON_Deserialized_Object.ParseTo``1
-  name.vb: ParseTo(Of T)()
-  fullName: WizardWrx.HTTP.JSON_Deserialized_Object.ParseTo<T>()
-  fullName.vb: WizardWrx.HTTP.JSON_Deserialized_Object.ParseTo(Of T)()
-  nameWithType: JSON_Deserialized_Object.ParseTo<T>()
-  nameWithType.vb: JSON_Deserialized_Object.ParseTo(Of T)()
-- uid: WizardWrx.HTTP.JSON_Deserialized_Object.RequiredFields
-  name: RequiredFields
-  href: api/WizardWrx.HTTP.JSON_Deserialized_Object.html#WizardWrx_HTTP_JSON_Deserialized_Object_RequiredFields
-  commentId: P:WizardWrx.HTTP.JSON_Deserialized_Object.RequiredFields
-  fullName: WizardWrx.HTTP.JSON_Deserialized_Object.RequiredFields
-  nameWithType: JSON_Deserialized_Object.RequiredFields
-- uid: WizardWrx.HTTP.JSON_Deserialized_Object.RequiredFields*
-  name: RequiredFields
-  href: api/WizardWrx.HTTP.JSON_Deserialized_Object.html#WizardWrx_HTTP_JSON_Deserialized_Object_RequiredFields_
-  commentId: Overload:WizardWrx.HTTP.JSON_Deserialized_Object.RequiredFields
-  isSpec: "True"
-  fullName: WizardWrx.HTTP.JSON_Deserialized_Object.RequiredFields
-  nameWithType: JSON_Deserialized_Object.RequiredFields
-- uid: WizardWrx.HTTP.JSON_Deserialized_Object.Sanitize
-  name: Sanitize()
-  href: api/WizardWrx.HTTP.JSON_Deserialized_Object.html#WizardWrx_HTTP_JSON_Deserialized_Object_Sanitize
-  commentId: M:WizardWrx.HTTP.JSON_Deserialized_Object.Sanitize
-  fullName: WizardWrx.HTTP.JSON_Deserialized_Object.Sanitize()
-  nameWithType: JSON_Deserialized_Object.Sanitize()
-- uid: WizardWrx.HTTP.JSON_Deserialized_Object.Sanitize*
-  name: Sanitize
-  href: api/WizardWrx.HTTP.JSON_Deserialized_Object.html#WizardWrx_HTTP_JSON_Deserialized_Object_Sanitize_
-  commentId: Overload:WizardWrx.HTTP.JSON_Deserialized_Object.Sanitize
-  isSpec: "True"
-  fullName: WizardWrx.HTTP.JSON_Deserialized_Object.Sanitize
-  nameWithType: JSON_Deserialized_Object.Sanitize
-- uid: WizardWrx.HTTP.JSON_Deserialized_Object.TryGetRaw(System.String,System.String@)
-  name: TryGetRaw(String, out String)
-  href: api/WizardWrx.HTTP.JSON_Deserialized_Object.html#WizardWrx_HTTP_JSON_Deserialized_Object_TryGetRaw_System_String_System_String__
-  commentId: M:WizardWrx.HTTP.JSON_Deserialized_Object.TryGetRaw(System.String,System.String@)
-  name.vb: TryGetRaw(String, ByRef String)
-  fullName: WizardWrx.HTTP.JSON_Deserialized_Object.TryGetRaw(System.String, out System.String)
-  fullName.vb: WizardWrx.HTTP.JSON_Deserialized_Object.TryGetRaw(System.String, ByRef System.String)
-  nameWithType: JSON_Deserialized_Object.TryGetRaw(String, out String)
-  nameWithType.vb: JSON_Deserialized_Object.TryGetRaw(String, ByRef String)
-- uid: WizardWrx.HTTP.JSON_Deserialized_Object.TryGetRaw*
-  name: TryGetRaw
-  href: api/WizardWrx.HTTP.JSON_Deserialized_Object.html#WizardWrx_HTTP_JSON_Deserialized_Object_TryGetRaw_
-  commentId: Overload:WizardWrx.HTTP.JSON_Deserialized_Object.TryGetRaw
-  isSpec: "True"
-  fullName: WizardWrx.HTTP.JSON_Deserialized_Object.TryGetRaw
-  nameWithType: JSON_Deserialized_Object.TryGetRaw
-- uid: WizardWrx.HTTP.JSON_Deserialized_Object.Validate(System.Boolean)
-  name: Validate(Boolean)
-  href: api/WizardWrx.HTTP.JSON_Deserialized_Object.html#WizardWrx_HTTP_JSON_Deserialized_Object_Validate_System_Boolean_
-  commentId: M:WizardWrx.HTTP.JSON_Deserialized_Object.Validate(System.Boolean)
-  fullName: WizardWrx.HTTP.JSON_Deserialized_Object.Validate(System.Boolean)
-  nameWithType: JSON_Deserialized_Object.Validate(Boolean)
-- uid: WizardWrx.HTTP.JSON_Deserialized_Object.Validate*
-  name: Validate
-  href: api/WizardWrx.HTTP.JSON_Deserialized_Object.html#WizardWrx_HTTP_JSON_Deserialized_Object_Validate_
-  commentId: Overload:WizardWrx.HTTP.JSON_Deserialized_Object.Validate
-  isSpec: "True"
-  fullName: WizardWrx.HTTP.JSON_Deserialized_Object.Validate
-  nameWithType: JSON_Deserialized_Object.Validate
 - uid: WizardWrx.HTTP.RequestEngine
   name: RequestEngine
   href: api/WizardWrx.HTTP.RequestEngine.html
@@ -10777,13 +10548,13 @@ references:
   isSpec: "True"
   fullName: WizardWrx.HTTP.RequestEngine.RequestEngine
   nameWithType: RequestEngine.RequestEngine
-- uid: WizardWrx.HTTP.RequestEngine.CallWebApiAndProcessResultASync(System.String,System.Action{Newtonsoft.Json.Linq.JObject},WizardWrx.HTTP.JSON_Deserialized_Object,WizardWrx.HTTP.RequestEngine.HttpVerb,System.Boolean)
+- uid: WizardWrx.HTTP.RequestEngine.CallWebApiAndProcessResultASync(System.String,System.Action{Newtonsoft.Json.Linq.JObject},WizardWrx.JsonSupport.JSON_Deserialized_Object,WizardWrx.HTTP.RequestEngine.HttpVerb,System.Boolean)
   name: CallWebApiAndProcessResultASync(String, Action<JObject>, JSON_Deserialized_Object, RequestEngine.HttpVerb, Boolean)
-  href: api/WizardWrx.HTTP.RequestEngine.html#WizardWrx_HTTP_RequestEngine_CallWebApiAndProcessResultASync_System_String_System_Action_Newtonsoft_Json_Linq_JObject__WizardWrx_HTTP_JSON_Deserialized_Object_WizardWrx_HTTP_RequestEngine_HttpVerb_System_Boolean_
-  commentId: M:WizardWrx.HTTP.RequestEngine.CallWebApiAndProcessResultASync(System.String,System.Action{Newtonsoft.Json.Linq.JObject},WizardWrx.HTTP.JSON_Deserialized_Object,WizardWrx.HTTP.RequestEngine.HttpVerb,System.Boolean)
+  href: api/WizardWrx.HTTP.RequestEngine.html#WizardWrx_HTTP_RequestEngine_CallWebApiAndProcessResultASync_System_String_System_Action_Newtonsoft_Json_Linq_JObject__WizardWrx_JsonSupport_JSON_Deserialized_Object_WizardWrx_HTTP_RequestEngine_HttpVerb_System_Boolean_
+  commentId: M:WizardWrx.HTTP.RequestEngine.CallWebApiAndProcessResultASync(System.String,System.Action{Newtonsoft.Json.Linq.JObject},WizardWrx.JsonSupport.JSON_Deserialized_Object,WizardWrx.HTTP.RequestEngine.HttpVerb,System.Boolean)
   name.vb: CallWebApiAndProcessResultASync(String, Action(Of JObject), JSON_Deserialized_Object, RequestEngine.HttpVerb, Boolean)
-  fullName: WizardWrx.HTTP.RequestEngine.CallWebApiAndProcessResultASync(System.String, System.Action<Newtonsoft.Json.Linq.JObject>, WizardWrx.HTTP.JSON_Deserialized_Object, WizardWrx.HTTP.RequestEngine.HttpVerb, System.Boolean)
-  fullName.vb: WizardWrx.HTTP.RequestEngine.CallWebApiAndProcessResultASync(System.String, System.Action(Of Newtonsoft.Json.Linq.JObject), WizardWrx.HTTP.JSON_Deserialized_Object, WizardWrx.HTTP.RequestEngine.HttpVerb, System.Boolean)
+  fullName: WizardWrx.HTTP.RequestEngine.CallWebApiAndProcessResultASync(System.String, System.Action<Newtonsoft.Json.Linq.JObject>, WizardWrx.JsonSupport.JSON_Deserialized_Object, WizardWrx.HTTP.RequestEngine.HttpVerb, System.Boolean)
+  fullName.vb: WizardWrx.HTTP.RequestEngine.CallWebApiAndProcessResultASync(System.String, System.Action(Of Newtonsoft.Json.Linq.JObject), WizardWrx.JsonSupport.JSON_Deserialized_Object, WizardWrx.HTTP.RequestEngine.HttpVerb, System.Boolean)
   nameWithType: RequestEngine.CallWebApiAndProcessResultASync(String, Action<JObject>, JSON_Deserialized_Object, RequestEngine.HttpVerb, Boolean)
   nameWithType.vb: RequestEngine.CallWebApiAndProcessResultASync(String, Action(Of JObject), JSON_Deserialized_Object, RequestEngine.HttpVerb, Boolean)
 - uid: WizardWrx.HTTP.RequestEngine.CallWebApiAndProcessResultASync*
@@ -10931,6 +10702,241 @@ references:
   isSpec: "True"
   fullName: WizardWrx.HTTP.RequestOptions.TokenGetter
   nameWithType: RequestOptions.TokenGetter
+- uid: WizardWrx.JsonSupport
+  name: WizardWrx.JsonSupport
+  href: api/WizardWrx.JsonSupport.html
+  commentId: N:WizardWrx.JsonSupport
+  fullName: WizardWrx.JsonSupport
+  nameWithType: WizardWrx.JsonSupport
+- uid: WizardWrx.JsonSupport.JSON_Deserialized_Object
+  name: JSON_Deserialized_Object
+  href: api/WizardWrx.JsonSupport.JSON_Deserialized_Object.html
+  commentId: T:WizardWrx.JsonSupport.JSON_Deserialized_Object
+  fullName: WizardWrx.JsonSupport.JSON_Deserialized_Object
+  nameWithType: JSON_Deserialized_Object
+- uid: WizardWrx.JsonSupport.JSON_Deserialized_Object.#ctor(System.String)
+  name: JSON_Deserialized_Object(String)
+  href: api/WizardWrx.JsonSupport.JSON_Deserialized_Object.html#WizardWrx_JsonSupport_JSON_Deserialized_Object__ctor_System_String_
+  commentId: M:WizardWrx.JsonSupport.JSON_Deserialized_Object.#ctor(System.String)
+  fullName: WizardWrx.JsonSupport.JSON_Deserialized_Object.JSON_Deserialized_Object(System.String)
+  nameWithType: JSON_Deserialized_Object.JSON_Deserialized_Object(String)
+- uid: WizardWrx.JsonSupport.JSON_Deserialized_Object.#ctor(System.String,System.String[],System.Boolean,System.Boolean)
+  name: JSON_Deserialized_Object(String, String[], Boolean, Boolean)
+  href: api/WizardWrx.JsonSupport.JSON_Deserialized_Object.html#WizardWrx_JsonSupport_JSON_Deserialized_Object__ctor_System_String_System_String___System_Boolean_System_Boolean_
+  commentId: M:WizardWrx.JsonSupport.JSON_Deserialized_Object.#ctor(System.String,System.String[],System.Boolean,System.Boolean)
+  name.vb: JSON_Deserialized_Object(String, String(), Boolean, Boolean)
+  fullName: WizardWrx.JsonSupport.JSON_Deserialized_Object.JSON_Deserialized_Object(System.String, System.String[], System.Boolean, System.Boolean)
+  fullName.vb: WizardWrx.JsonSupport.JSON_Deserialized_Object.JSON_Deserialized_Object(System.String, System.String(), System.Boolean, System.Boolean)
+  nameWithType: JSON_Deserialized_Object.JSON_Deserialized_Object(String, String[], Boolean, Boolean)
+  nameWithType.vb: JSON_Deserialized_Object.JSON_Deserialized_Object(String, String(), Boolean, Boolean)
+- uid: WizardWrx.JsonSupport.JSON_Deserialized_Object.#ctor*
+  name: JSON_Deserialized_Object
+  href: api/WizardWrx.JsonSupport.JSON_Deserialized_Object.html#WizardWrx_JsonSupport_JSON_Deserialized_Object__ctor_
+  commentId: Overload:WizardWrx.JsonSupport.JSON_Deserialized_Object.#ctor
+  isSpec: "True"
+  fullName: WizardWrx.JsonSupport.JSON_Deserialized_Object.JSON_Deserialized_Object
+  nameWithType: JSON_Deserialized_Object.JSON_Deserialized_Object
+- uid: WizardWrx.JsonSupport.JSON_Deserialized_Object.AsJObject
+  name: AsJObject()
+  href: api/WizardWrx.JsonSupport.JSON_Deserialized_Object.html#WizardWrx_JsonSupport_JSON_Deserialized_Object_AsJObject
+  commentId: M:WizardWrx.JsonSupport.JSON_Deserialized_Object.AsJObject
+  fullName: WizardWrx.JsonSupport.JSON_Deserialized_Object.AsJObject()
+  nameWithType: JSON_Deserialized_Object.AsJObject()
+- uid: WizardWrx.JsonSupport.JSON_Deserialized_Object.AsJObject*
+  name: AsJObject
+  href: api/WizardWrx.JsonSupport.JSON_Deserialized_Object.html#WizardWrx_JsonSupport_JSON_Deserialized_Object_AsJObject_
+  commentId: Overload:WizardWrx.JsonSupport.JSON_Deserialized_Object.AsJObject
+  isSpec: "True"
+  fullName: WizardWrx.JsonSupport.JSON_Deserialized_Object.AsJObject
+  nameWithType: JSON_Deserialized_Object.AsJObject
+- uid: WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsBoolean(System.String)
+  name: GetFieldValueAsBoolean(String)
+  href: api/WizardWrx.JsonSupport.JSON_Deserialized_Object.html#WizardWrx_JsonSupport_JSON_Deserialized_Object_GetFieldValueAsBoolean_System_String_
+  commentId: M:WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsBoolean(System.String)
+  fullName: WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsBoolean(System.String)
+  nameWithType: JSON_Deserialized_Object.GetFieldValueAsBoolean(String)
+- uid: WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsBoolean*
+  name: GetFieldValueAsBoolean
+  href: api/WizardWrx.JsonSupport.JSON_Deserialized_Object.html#WizardWrx_JsonSupport_JSON_Deserialized_Object_GetFieldValueAsBoolean_
+  commentId: Overload:WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsBoolean
+  isSpec: "True"
+  fullName: WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsBoolean
+  nameWithType: JSON_Deserialized_Object.GetFieldValueAsBoolean
+- uid: WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsDateTime(System.String)
+  name: GetFieldValueAsDateTime(String)
+  href: api/WizardWrx.JsonSupport.JSON_Deserialized_Object.html#WizardWrx_JsonSupport_JSON_Deserialized_Object_GetFieldValueAsDateTime_System_String_
+  commentId: M:WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsDateTime(System.String)
+  fullName: WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsDateTime(System.String)
+  nameWithType: JSON_Deserialized_Object.GetFieldValueAsDateTime(String)
+- uid: WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsDateTime*
+  name: GetFieldValueAsDateTime
+  href: api/WizardWrx.JsonSupport.JSON_Deserialized_Object.html#WizardWrx_JsonSupport_JSON_Deserialized_Object_GetFieldValueAsDateTime_
+  commentId: Overload:WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsDateTime
+  isSpec: "True"
+  fullName: WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsDateTime
+  nameWithType: JSON_Deserialized_Object.GetFieldValueAsDateTime
+- uid: WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsDouble(System.String)
+  name: GetFieldValueAsDouble(String)
+  href: api/WizardWrx.JsonSupport.JSON_Deserialized_Object.html#WizardWrx_JsonSupport_JSON_Deserialized_Object_GetFieldValueAsDouble_System_String_
+  commentId: M:WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsDouble(System.String)
+  fullName: WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsDouble(System.String)
+  nameWithType: JSON_Deserialized_Object.GetFieldValueAsDouble(String)
+- uid: WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsDouble*
+  name: GetFieldValueAsDouble
+  href: api/WizardWrx.JsonSupport.JSON_Deserialized_Object.html#WizardWrx_JsonSupport_JSON_Deserialized_Object_GetFieldValueAsDouble_
+  commentId: Overload:WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsDouble
+  isSpec: "True"
+  fullName: WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsDouble
+  nameWithType: JSON_Deserialized_Object.GetFieldValueAsDouble
+- uid: WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsGuid(System.String)
+  name: GetFieldValueAsGuid(String)
+  href: api/WizardWrx.JsonSupport.JSON_Deserialized_Object.html#WizardWrx_JsonSupport_JSON_Deserialized_Object_GetFieldValueAsGuid_System_String_
+  commentId: M:WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsGuid(System.String)
+  fullName: WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsGuid(System.String)
+  nameWithType: JSON_Deserialized_Object.GetFieldValueAsGuid(String)
+- uid: WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsGuid*
+  name: GetFieldValueAsGuid
+  href: api/WizardWrx.JsonSupport.JSON_Deserialized_Object.html#WizardWrx_JsonSupport_JSON_Deserialized_Object_GetFieldValueAsGuid_
+  commentId: Overload:WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsGuid
+  isSpec: "True"
+  fullName: WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsGuid
+  nameWithType: JSON_Deserialized_Object.GetFieldValueAsGuid
+- uid: WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsInt(System.String)
+  name: GetFieldValueAsInt(String)
+  href: api/WizardWrx.JsonSupport.JSON_Deserialized_Object.html#WizardWrx_JsonSupport_JSON_Deserialized_Object_GetFieldValueAsInt_System_String_
+  commentId: M:WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsInt(System.String)
+  fullName: WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsInt(System.String)
+  nameWithType: JSON_Deserialized_Object.GetFieldValueAsInt(String)
+- uid: WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsInt*
+  name: GetFieldValueAsInt
+  href: api/WizardWrx.JsonSupport.JSON_Deserialized_Object.html#WizardWrx_JsonSupport_JSON_Deserialized_Object_GetFieldValueAsInt_
+  commentId: Overload:WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsInt
+  isSpec: "True"
+  fullName: WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsInt
+  nameWithType: JSON_Deserialized_Object.GetFieldValueAsInt
+- uid: WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsString(System.String)
+  name: GetFieldValueAsString(String)
+  href: api/WizardWrx.JsonSupport.JSON_Deserialized_Object.html#WizardWrx_JsonSupport_JSON_Deserialized_Object_GetFieldValueAsString_System_String_
+  commentId: M:WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsString(System.String)
+  fullName: WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsString(System.String)
+  nameWithType: JSON_Deserialized_Object.GetFieldValueAsString(String)
+- uid: WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsString*
+  name: GetFieldValueAsString
+  href: api/WizardWrx.JsonSupport.JSON_Deserialized_Object.html#WizardWrx_JsonSupport_JSON_Deserialized_Object_GetFieldValueAsString_
+  commentId: Overload:WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsString
+  isSpec: "True"
+  fullName: WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsString
+  nameWithType: JSON_Deserialized_Object.GetFieldValueAsString
+- uid: WizardWrx.JsonSupport.JSON_Deserialized_Object.HasField(System.String)
+  name: HasField(String)
+  href: api/WizardWrx.JsonSupport.JSON_Deserialized_Object.html#WizardWrx_JsonSupport_JSON_Deserialized_Object_HasField_System_String_
+  commentId: M:WizardWrx.JsonSupport.JSON_Deserialized_Object.HasField(System.String)
+  fullName: WizardWrx.JsonSupport.JSON_Deserialized_Object.HasField(System.String)
+  nameWithType: JSON_Deserialized_Object.HasField(String)
+- uid: WizardWrx.JsonSupport.JSON_Deserialized_Object.HasField*
+  name: HasField
+  href: api/WizardWrx.JsonSupport.JSON_Deserialized_Object.html#WizardWrx_JsonSupport_JSON_Deserialized_Object_HasField_
+  commentId: Overload:WizardWrx.JsonSupport.JSON_Deserialized_Object.HasField
+  isSpec: "True"
+  fullName: WizardWrx.JsonSupport.JSON_Deserialized_Object.HasField
+  nameWithType: JSON_Deserialized_Object.HasField
+- uid: WizardWrx.JsonSupport.JSON_Deserialized_Object.JSON
+  name: JSON
+  href: api/WizardWrx.JsonSupport.JSON_Deserialized_Object.html#WizardWrx_JsonSupport_JSON_Deserialized_Object_JSON
+  commentId: P:WizardWrx.JsonSupport.JSON_Deserialized_Object.JSON
+  fullName: WizardWrx.JsonSupport.JSON_Deserialized_Object.JSON
+  nameWithType: JSON_Deserialized_Object.JSON
+- uid: WizardWrx.JsonSupport.JSON_Deserialized_Object.JSON*
+  name: JSON
+  href: api/WizardWrx.JsonSupport.JSON_Deserialized_Object.html#WizardWrx_JsonSupport_JSON_Deserialized_Object_JSON_
+  commentId: Overload:WizardWrx.JsonSupport.JSON_Deserialized_Object.JSON
+  isSpec: "True"
+  fullName: WizardWrx.JsonSupport.JSON_Deserialized_Object.JSON
+  nameWithType: JSON_Deserialized_Object.JSON
+- uid: WizardWrx.JsonSupport.JSON_Deserialized_Object.MaybeValid
+  name: MaybeValid()
+  href: api/WizardWrx.JsonSupport.JSON_Deserialized_Object.html#WizardWrx_JsonSupport_JSON_Deserialized_Object_MaybeValid
+  commentId: M:WizardWrx.JsonSupport.JSON_Deserialized_Object.MaybeValid
+  fullName: WizardWrx.JsonSupport.JSON_Deserialized_Object.MaybeValid()
+  nameWithType: JSON_Deserialized_Object.MaybeValid()
+- uid: WizardWrx.JsonSupport.JSON_Deserialized_Object.MaybeValid*
+  name: MaybeValid
+  href: api/WizardWrx.JsonSupport.JSON_Deserialized_Object.html#WizardWrx_JsonSupport_JSON_Deserialized_Object_MaybeValid_
+  commentId: Overload:WizardWrx.JsonSupport.JSON_Deserialized_Object.MaybeValid
+  isSpec: "True"
+  fullName: WizardWrx.JsonSupport.JSON_Deserialized_Object.MaybeValid
+  nameWithType: JSON_Deserialized_Object.MaybeValid
+- uid: WizardWrx.JsonSupport.JSON_Deserialized_Object.ParseTo*
+  name: ParseTo
+  href: api/WizardWrx.JsonSupport.JSON_Deserialized_Object.html#WizardWrx_JsonSupport_JSON_Deserialized_Object_ParseTo_
+  commentId: Overload:WizardWrx.JsonSupport.JSON_Deserialized_Object.ParseTo
+  isSpec: "True"
+  fullName: WizardWrx.JsonSupport.JSON_Deserialized_Object.ParseTo
+  nameWithType: JSON_Deserialized_Object.ParseTo
+- uid: WizardWrx.JsonSupport.JSON_Deserialized_Object.ParseTo``1
+  name: ParseTo<T>()
+  href: api/WizardWrx.JsonSupport.JSON_Deserialized_Object.html#WizardWrx_JsonSupport_JSON_Deserialized_Object_ParseTo__1
+  commentId: M:WizardWrx.JsonSupport.JSON_Deserialized_Object.ParseTo``1
+  name.vb: ParseTo(Of T)()
+  fullName: WizardWrx.JsonSupport.JSON_Deserialized_Object.ParseTo<T>()
+  fullName.vb: WizardWrx.JsonSupport.JSON_Deserialized_Object.ParseTo(Of T)()
+  nameWithType: JSON_Deserialized_Object.ParseTo<T>()
+  nameWithType.vb: JSON_Deserialized_Object.ParseTo(Of T)()
+- uid: WizardWrx.JsonSupport.JSON_Deserialized_Object.RequiredFields
+  name: RequiredFields
+  href: api/WizardWrx.JsonSupport.JSON_Deserialized_Object.html#WizardWrx_JsonSupport_JSON_Deserialized_Object_RequiredFields
+  commentId: P:WizardWrx.JsonSupport.JSON_Deserialized_Object.RequiredFields
+  fullName: WizardWrx.JsonSupport.JSON_Deserialized_Object.RequiredFields
+  nameWithType: JSON_Deserialized_Object.RequiredFields
+- uid: WizardWrx.JsonSupport.JSON_Deserialized_Object.RequiredFields*
+  name: RequiredFields
+  href: api/WizardWrx.JsonSupport.JSON_Deserialized_Object.html#WizardWrx_JsonSupport_JSON_Deserialized_Object_RequiredFields_
+  commentId: Overload:WizardWrx.JsonSupport.JSON_Deserialized_Object.RequiredFields
+  isSpec: "True"
+  fullName: WizardWrx.JsonSupport.JSON_Deserialized_Object.RequiredFields
+  nameWithType: JSON_Deserialized_Object.RequiredFields
+- uid: WizardWrx.JsonSupport.JSON_Deserialized_Object.Sanitize
+  name: Sanitize()
+  href: api/WizardWrx.JsonSupport.JSON_Deserialized_Object.html#WizardWrx_JsonSupport_JSON_Deserialized_Object_Sanitize
+  commentId: M:WizardWrx.JsonSupport.JSON_Deserialized_Object.Sanitize
+  fullName: WizardWrx.JsonSupport.JSON_Deserialized_Object.Sanitize()
+  nameWithType: JSON_Deserialized_Object.Sanitize()
+- uid: WizardWrx.JsonSupport.JSON_Deserialized_Object.Sanitize*
+  name: Sanitize
+  href: api/WizardWrx.JsonSupport.JSON_Deserialized_Object.html#WizardWrx_JsonSupport_JSON_Deserialized_Object_Sanitize_
+  commentId: Overload:WizardWrx.JsonSupport.JSON_Deserialized_Object.Sanitize
+  isSpec: "True"
+  fullName: WizardWrx.JsonSupport.JSON_Deserialized_Object.Sanitize
+  nameWithType: JSON_Deserialized_Object.Sanitize
+- uid: WizardWrx.JsonSupport.JSON_Deserialized_Object.TryGetRaw(System.String,System.String@)
+  name: TryGetRaw(String, out String)
+  href: api/WizardWrx.JsonSupport.JSON_Deserialized_Object.html#WizardWrx_JsonSupport_JSON_Deserialized_Object_TryGetRaw_System_String_System_String__
+  commentId: M:WizardWrx.JsonSupport.JSON_Deserialized_Object.TryGetRaw(System.String,System.String@)
+  name.vb: TryGetRaw(String, ByRef String)
+  fullName: WizardWrx.JsonSupport.JSON_Deserialized_Object.TryGetRaw(System.String, out System.String)
+  fullName.vb: WizardWrx.JsonSupport.JSON_Deserialized_Object.TryGetRaw(System.String, ByRef System.String)
+  nameWithType: JSON_Deserialized_Object.TryGetRaw(String, out String)
+  nameWithType.vb: JSON_Deserialized_Object.TryGetRaw(String, ByRef String)
+- uid: WizardWrx.JsonSupport.JSON_Deserialized_Object.TryGetRaw*
+  name: TryGetRaw
+  href: api/WizardWrx.JsonSupport.JSON_Deserialized_Object.html#WizardWrx_JsonSupport_JSON_Deserialized_Object_TryGetRaw_
+  commentId: Overload:WizardWrx.JsonSupport.JSON_Deserialized_Object.TryGetRaw
+  isSpec: "True"
+  fullName: WizardWrx.JsonSupport.JSON_Deserialized_Object.TryGetRaw
+  nameWithType: JSON_Deserialized_Object.TryGetRaw
+- uid: WizardWrx.JsonSupport.JSON_Deserialized_Object.Validate(System.Boolean)
+  name: Validate(Boolean)
+  href: api/WizardWrx.JsonSupport.JSON_Deserialized_Object.html#WizardWrx_JsonSupport_JSON_Deserialized_Object_Validate_System_Boolean_
+  commentId: M:WizardWrx.JsonSupport.JSON_Deserialized_Object.Validate(System.Boolean)
+  fullName: WizardWrx.JsonSupport.JSON_Deserialized_Object.Validate(System.Boolean)
+  nameWithType: JSON_Deserialized_Object.Validate(Boolean)
+- uid: WizardWrx.JsonSupport.JSON_Deserialized_Object.Validate*
+  name: Validate
+  href: api/WizardWrx.JsonSupport.JSON_Deserialized_Object.html#WizardWrx_JsonSupport_JSON_Deserialized_Object_Validate_
+  commentId: Overload:WizardWrx.JsonSupport.JSON_Deserialized_Object.Validate
+  isSpec: "True"
+  fullName: WizardWrx.JsonSupport.JSON_Deserialized_Object.Validate
+  nameWithType: JSON_Deserialized_Object.Validate
 - uid: WizardWrx.ListHelpers
   name: ListHelpers
   href: api/WizardWrx.ListHelpers.html

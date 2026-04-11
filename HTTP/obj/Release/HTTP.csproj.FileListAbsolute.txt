@@ -38,3 +38,6 @@ D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\HTTP\obj\
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\HTTP\obj\Release\WizardWrx.HTTP.dll
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\HTTP\obj\Release\WizardWrx.HTTP.pdb
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\HTTP\bin\Release\Wizardwrx.HTTP.XML
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\HTTP\bin\Release\JSONSupport.dll
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\HTTP\bin\Release\JSONSupport.pdb
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\HTTP\bin\Release\JSONSupport.xml

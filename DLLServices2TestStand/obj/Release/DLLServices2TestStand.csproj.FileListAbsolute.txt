@@ -48,3 +48,6 @@ D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServic
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServices2TestStand\bin\Release\WizardWrx.HTTP.pdb
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServices2TestStand\bin\Release\Newtonsoft.Json.xml
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServices2TestStand\bin\Release\WizardWrx.HTTP.xml
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServices2TestStand\bin\Release\JSONSupport.dll
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServices2TestStand\bin\Release\JSONSupport.pdb
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\DLLServices2TestStand\bin\Release\JSONSupport.xml

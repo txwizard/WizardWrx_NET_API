@@ -345,6 +345,9 @@
     2026/01/31 9.0.1616 DAG Exercise the new HTTP library.
 
     2026/02/03 9.0.1655 DAG Exercise the new AppDomainSyncRootRegistry class.
+
+    2026/04/11 9.0.1696 DAG Account for relocation of JSON_Deserialized_Object
+                            to its own class.
     ============================================================================
 */
 
@@ -1452,7 +1455,7 @@ namespace DLLServices2TestStand
                 Console.WriteLine ( $"Begin {LOGGER_PREFIX} Drill 2: Test URL        = {TEST_URL_2}" );
                 Console.WriteLine ( $"                                    JSON Input File = {TEST_JSON_FQFN}" );
                 Console.WriteLine ( $"                                    JSON Data:{Environment.NewLine}{Environment.NewLine}{strJONDocument}{Environment.NewLine}" );
-                WizardWrx.HTTP.JSON_Deserialized_Object jSON = new WizardWrx.HTTP.JSON_Deserialized_Object ( strJONDocument );
+                WizardWrx.JsonSupport.JSON_Deserialized_Object jSON = new WizardWrx.JsonSupport.JSON_Deserialized_Object ( strJONDocument );
                 objWebResult = requestEngine.CallWebApiAndProcessResultASync (
                     TEST_URL_2 ,                                // string                   pstrWebApiUrl
                     null ,                                      // Action<JObject>          pfunProcessResultCallback = null

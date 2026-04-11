@@ -1,7 +1,21 @@
 ﻿# WizardWrx .NET API Change Log
 
 
-## 2026-03-10
+## 2026-04-11
+
+### WizardWrx.HTTP [9.0.72]
+
+Move JSON_Deserialized_Object class out of this project. It is now in its own library. 
+The new library is called WizardWrx.JSONSupport, and its version is 9.0.2.
+
+### WizardWrx.JSONSupport[9.0.2]
+
+This is a new library that exposes a single class, JSON_Deserialized_Object, which has
+matured into a robust wrapper around a JSON string that provides schema-aware validation
+and typed accessors for common data types. It is designed to be used with the WizardWrx.HTTP
+library, but can be used independently as well, and that's why it moved into its own DLL.
+
+## 2026-04-10
 
 ### WizardWrx.Common [9.0.287]
 

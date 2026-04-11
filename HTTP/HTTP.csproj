@@ -42,6 +42,9 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
@@ -50,9 +53,6 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
       <Private>True</Private>
@@ -83,7 +83,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="JSON_Deserialized_Object.cs" />
     <Compile Include="RequestEngine.cs" />
     <Compile Include="RequestOptions.cs" />
     <Compile Include="..\ProductAssemblyInfo.cs">
@@ -114,6 +113,10 @@
     <ProjectReference Include="..\DLLConfigurationManager\DLLConfigurationManager.csproj">
       <Project>{6cffb889-9457-4bfa-9efb-614118885760}</Project>
       <Name>DLLConfigurationManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JSONSupport\JSONSupport.csproj">
+      <Project>{2fa6c7d2-59a5-4902-9bf3-12c01a702519}</Project>
+      <Name>JSONSupport</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

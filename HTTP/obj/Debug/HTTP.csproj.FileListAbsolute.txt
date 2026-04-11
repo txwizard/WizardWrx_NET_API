@@ -38,3 +38,5 @@ D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\HTTP\obj\
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\HTTP\obj\Debug\HTTP.csproj.Up2Date
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\HTTP\obj\Debug\WizardWrx.HTTP.dll
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\HTTP\obj\Debug\WizardWrx.HTTP.pdb
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\HTTP\bin\Debug\JSONSupport.dll
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\HTTP\bin\Debug\JSONSupport.pdb

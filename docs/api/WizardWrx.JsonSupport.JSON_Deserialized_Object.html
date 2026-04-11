@@ -1,0 +1,1174 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class JSON_Deserialized_Object
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class JSON_Deserialized_Object
+   ">
+    <meta name="generator" content="docfx 2.56.3.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="WizardWrx.JsonSupport.JSON_Deserialized_Object">
+  
+  
+  <h1 id="WizardWrx_JsonSupport_JSON_Deserialized_Object" data-uid="WizardWrx.JsonSupport.JSON_Deserialized_Object" class="text-break">Class JSON_Deserialized_Object
+  </h1>
+  <div class="markdown level0 summary"><p>Instances of this class provide a lightweight, schema-aware façade over
+a JSON payload. The class optionally sanitizes the input, validates
+required fields, and exposes a minimal set of typed accessors so callers
+can retrieve field values without depending directly on JSON.NET, working
+with JToken instances, or needing to expend the effort to parse the JSON
+into a strongly-typed model when only a few fields are needed.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">JSON_Deserialized_Object</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="WizardWrx.JsonSupport.html">WizardWrx.JsonSupport</a></h6>
+  <h6><strong>Assembly</strong>: JSONSupport.dll</h6>
+  <h5 id="WizardWrx_JsonSupport_JSON_Deserialized_Object_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class JSON_Deserialized_Object</code></pre>
+  </div>
+  <h5 id="WizardWrx_JsonSupport_JSON_Deserialized_Object_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>
+The typed getters intentionally cover only the canonical .NET types
+that map cleanly and unambiguously to JSON: string, Boolean, 32-bit
+integer, double-precision floating point, Guid, and DateTime. JSON does
+not define numeric widths, temporal subtypes, or alternative Boolean
+representations, so additional getters (such as byte, short, long,
+float, DateOnly, DateTimeOffset, or truthy/falsy coercions) would not
+provide meaningful additional capability. Callers who require more
+specialized interpretations can retrieve the raw string value and apply
+domain-specific parsing rules.
+</p>
+<p>
+This design keeps the API surface minimal, deterministic, and
+intention-revealing, while insulating callers from JSON.NET and
+preserving the ability to evolve the internal representation in the
+future.
+</p>
+</div>
+  <h5 id="WizardWrx_JsonSupport_JSON_Deserialized_Object_examples"><strong>Examples</strong></h5>
+  <p>
+The following example shows a typical usage pattern for this class:
+</p>
+<pre><code>// Raw JSON received from an external source.
+string json = @&quot;
+{
+    &quot;id&quot;: &quot;c0a8012e-5f3c-4b8f-9b7a-2f4f0e9c1a12&quot;,
+    &quot;name&quot;: &quot;Alice&quot;,
+    &quot;age&quot;: 42,
+    &quot;active&quot;: true,
+    &quot;created&quot;: &quot;2024-10-12T14:30:00Z&quot;
+}&quot;;
+
+// Define the fields that must be present.
+var required = new[] { &quot;id&quot;, &quot;name&quot;, &quot;active&quot; };
+
+// Create the wrapper.
+var wrapper = new JsonFieldAccessor(json, required);
+
+// Validate the payload.
+var missing = wrapper.Validate(requireNonEmptyValues: true);
+if (missing.Count > 0)
+{
+    Console.WriteLine(&quot;Missing or invalid fields:&quot;);
+    foreach (var field in missing)
+        Console.WriteLine(&quot;  &quot; + field);
+    return;
+}
+
+// Retrieve typed values.
+Guid? id = wrapper.GetFieldValueAsGuid(&quot;id&quot;);
+string name = wrapper.GetFieldValueAsString(&quot;name&quot;);
+int? age = wrapper.GetFieldValueAsInt(&quot;age&quot;);
+bool? active = wrapper.GetFieldValueAsBoolean(&quot;active&quot;);
+DateTime? created = wrapper.GetFieldValueAsDateTime(&quot;created&quot;);
+
+Console.WriteLine($&quot;User {name} ({id})&quot;);
+Console.WriteLine($&quot;Age: {age}&quot;);
+Console.WriteLine($&quot;Active: {active}&quot;);
+Console.WriteLine($&quot;Created: {created:u}&quot;);</code></pre>
+<p>
+This example demonstrates validation, typed field retrieval, and the
+absence of any dependency on JSON.NET in the calling code.
+</p>
+<p>
+The following example demonstrates how to handle optional fields:
+</p>
+<pre><code>string json = @&quot;
+{
+    &quot;username&quot;: &quot;bob&quot;,
+    &quot;email&quot;: &quot;bob@example.com&quot;,
+    &quot;age&quot;: &quot;not-a-number&quot;,
+    &quot;lastLogin&quot;: null
+}&quot;;
+
+var required = new[] { &quot;username&quot; };
+var wrapper = new JsonFieldAccessor(json, required);
+
+// Validate required fields only.
+var missing = wrapper.Validate(requireNonEmptyValues: true);
+if (missing.Count > 0)
+    throw new InvalidOperationException(&quot;Required fields missing.&quot;);
+
+// Optional fields: callers decide how to interpret nulls.
+string email = wrapper.GetFieldValueAsString(&quot;email&quot;);   // &quot;bob@example.com&quot;
+int? age = wrapper.GetFieldValueAsInt(&quot;age&quot;);            // null (invalid integer)
+DateTime? lastLogin = wrapper.GetFieldValueAsDateTime(&quot;lastLogin&quot;); // null
+
+Console.WriteLine($&quot;User: {email}, Age: {age}, Last Login: {lastLogin}&quot;);</code></pre>
+<p>
+This example shows how optional fields naturally map to nullable return
+values, allowing callers to apply their own fallback or defaulting logic.
+</p>
+<p>
+The following example shows how callers can apply domain-specific parsing
+rules when the built-in typed accessors intentionally avoid coercions:
+</p>
+<pre><code>string json = @&quot;
+{
+    &quot;enabled&quot;: &quot;yes&quot;,
+    &quot;expires&quot;: &quot;2024-10-12T14:30:00-05:00&quot;,
+    &quot;priority&quot;: &quot;high&quot;
+}&quot;;
+
+var wrapper = new JsonFieldAccessor(json, Array.Empty&lt;string>());
+
+// Built-in Boolean accessor returns null because &quot;yes&quot; is not a JSON Boolean.
+bool? enabled = wrapper.GetFieldValueAsBoolean(&quot;enabled&quot;);   // null
+
+// Domain-specific truthy/falsy parsing.
+string rawEnabled = wrapper.GetFieldValueAsString(&quot;enabled&quot;);
+bool enabledFlag = rawEnabled?.Equals(&quot;yes&quot;, StringComparison.OrdinalIgnoreCase) == true;
+
+// Built-in DateTime accessor parses the timestamp but normalizes the offset.
+DateTime? expires = wrapper.GetFieldValueAsDateTime(&quot;expires&quot;);
+
+// Domain-specific offset-preserving parsing.
+string rawExpires = wrapper.GetFieldValueAsString(&quot;expires&quot;);
+DateTimeOffset dto = DateTimeOffset.Parse(rawExpires);
+
+Console.WriteLine($&quot;Enabled: {enabledFlag}&quot;);
+Console.WriteLine($&quot;Expires (DateTime): {expires}&quot;);
+Console.WriteLine($&quot;Expires (DateTimeOffset): {dto}&quot;);</code></pre>
+<p>
+This example illustrates how callers can retrieve the raw string when they
+need to apply custom Boolean rules, preserve timezone offsets, or interpret
+values according to domain-specific semantics.
+</p>
+
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_JsonSupport_JSON_Deserialized_Object__ctor_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.JsonSupport.JSON_Deserialized_Object.%23ctor(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/JSONSupport/JSON_Deserialized_Object.cs/#L229">View Source</a>
+  </span>
+  <a id="WizardWrx_JsonSupport_JSON_Deserialized_Object__ctor_" data-uid="WizardWrx.JsonSupport.JSON_Deserialized_Object.#ctor*"></a>
+  <h4 id="WizardWrx_JsonSupport_JSON_Deserialized_Object__ctor_System_String_" data-uid="WizardWrx.JsonSupport.JSON_Deserialized_Object.#ctor(System.String)">JSON_Deserialized_Object(String)</h4>
+  <div class="markdown level1 summary"><p>Construct with JSON only; no schema, no sanitizer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JSON_Deserialized_Object(string pstrJSON)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrJSON</span></td>
+        <td><p>This string represents the JSON to be encapsulated by this instance.
+No validation or sanitization is performed on this string by this
+constructor; it is stored as-is. If the caller intends to perform
+schema-aware sanitization, it should use the other constructor and
+pass the appropriate parameters to enable that behavior.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_JsonSupport_JSON_Deserialized_Object__ctor_System_String_System_String___System_Boolean_System_Boolean_.md&amp;value=---%0Auid%3A%20WizardWrx.JsonSupport.JSON_Deserialized_Object.%23ctor(System.String%2CSystem.String%5B%5D%2CSystem.Boolean%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/JSONSupport/JSON_Deserialized_Object.cs/#L250">View Source</a>
+  </span>
+  <a id="WizardWrx_JsonSupport_JSON_Deserialized_Object__ctor_" data-uid="WizardWrx.JsonSupport.JSON_Deserialized_Object.#ctor*"></a>
+  <h4 id="WizardWrx_JsonSupport_JSON_Deserialized_Object__ctor_System_String_System_String___System_Boolean_System_Boolean_" data-uid="WizardWrx.JsonSupport.JSON_Deserialized_Object.#ctor(System.String,System.String[],System.Boolean,System.Boolean)">JSON_Deserialized_Object(String, String[], Boolean, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Construct with JSON and an optional schema; optionally sanitize immediately.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JSON_Deserialized_Object(string pstrJSON, string[] pastrRequiredFields, bool pfSanitize = false, bool pfSkipRequiredFieldCheck = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrJSON</span></td>
+        <td><p>JSON text as received (possibly malformed).</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">pastrRequiredFields</span></td>
+        <td><p>Optional list of field names that must be JSON strings and may need repair.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">pfSanitize</span></td>
+        <td><p>When true, applies the schema-aware sanitizer immediately and parses eagerly.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">pfSkipRequiredFieldCheck</span></td>
+        <td><p>When true, causes the constructor to skip the check for required fields.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_JsonSupport_JSON_Deserialized_Object_JSON.md&amp;value=---%0Auid%3A%20WizardWrx.JsonSupport.JSON_Deserialized_Object.JSON%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/JSONSupport/JSON_Deserialized_Object.cs/#L204">View Source</a>
+  </span>
+  <a id="WizardWrx_JsonSupport_JSON_Deserialized_Object_JSON_" data-uid="WizardWrx.JsonSupport.JSON_Deserialized_Object.JSON*"></a>
+  <h4 id="WizardWrx_JsonSupport_JSON_Deserialized_Object_JSON" data-uid="WizardWrx.JsonSupport.JSON_Deserialized_Object.JSON">JSON</h4>
+  <div class="markdown level1 summary"><p>The raw (or sanitized) JSON text associated with this instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string JSON { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_JsonSupport_JSON_Deserialized_Object_RequiredFields.md&amp;value=---%0Auid%3A%20WizardWrx.JsonSupport.JSON_Deserialized_Object.RequiredFields%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/JSONSupport/JSON_Deserialized_Object.cs/#L210">View Source</a>
+  </span>
+  <a id="WizardWrx_JsonSupport_JSON_Deserialized_Object_RequiredFields_" data-uid="WizardWrx.JsonSupport.JSON_Deserialized_Object.RequiredFields*"></a>
+  <h4 id="WizardWrx_JsonSupport_JSON_Deserialized_Object_RequiredFields" data-uid="WizardWrx.JsonSupport.JSON_Deserialized_Object.RequiredFields">RequiredFields</h4>
+  <div class="markdown level1 summary"><p>Optional per-instance schema: field names that must be JSON strings
+and are eligible for repair if unquoted.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string[] RequiredFields { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_JsonSupport_JSON_Deserialized_Object_AsJObject.md&amp;value=---%0Auid%3A%20WizardWrx.JsonSupport.JSON_Deserialized_Object.AsJObject%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/JSONSupport/JSON_Deserialized_Object.cs/#L286">View Source</a>
+  </span>
+  <a id="WizardWrx_JsonSupport_JSON_Deserialized_Object_AsJObject_" data-uid="WizardWrx.JsonSupport.JSON_Deserialized_Object.AsJObject*"></a>
+  <h4 id="WizardWrx_JsonSupport_JSON_Deserialized_Object_AsJObject" data-uid="WizardWrx.JsonSupport.JSON_Deserialized_Object.AsJObject">AsJObject()</h4>
+  <div class="markdown level1 summary"><p>Returns the JSON as a JObject, parsing lazily if needed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JObject AsJObject()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Newtonsoft.Json.Linq.JObject</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_JsonSupport_JSON_Deserialized_Object_GetFieldValueAsBoolean_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsBoolean(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/JSONSupport/JSON_Deserialized_Object.cs/#L316">View Source</a>
+  </span>
+  <a id="WizardWrx_JsonSupport_JSON_Deserialized_Object_GetFieldValueAsBoolean_" data-uid="WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsBoolean*"></a>
+  <h4 id="WizardWrx_JsonSupport_JSON_Deserialized_Object_GetFieldValueAsBoolean_System_String_" data-uid="WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsBoolean(System.String)">GetFieldValueAsBoolean(String)</h4>
+  <div class="markdown level1 summary"><p>Query the JSON object for a specific field and attempt to parse it
+as a Boolean.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? GetFieldValueAsBoolean(string pstrFieldName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrFieldName</span></td>
+        <td><p>This string represents the name of the field for which to check.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><p>The return value is a nullable Boolean representing the value of the
+field, or null if the field does not exist or cannot be parsed as a
+Boolean.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_JsonSupport_JSON_Deserialized_Object_GetFieldValueAsBoolean_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>JSON has a native Boolean type, and JSON.NET preserves it directly, so this
+accessor returns true or false only when the underlying token is a JSON
+Boolean or a string that .NET recognizes as a Boolean literal (“true” or
+“false”, case-insensitive). JSON.NET does not coerce other string values
+to Boolean, and the .NET framework does not define truthy/falsy semantics
+for values such as “yes”, “no”, “0”, or “1”. Callers who require more
+flexible Boolean interpretation should retrieve the raw string and apply
+domain-specific rules.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_JsonSupport_JSON_Deserialized_Object_GetFieldValueAsDateTime_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsDateTime(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/JSONSupport/JSON_Deserialized_Object.cs/#L367">View Source</a>
+  </span>
+  <a id="WizardWrx_JsonSupport_JSON_Deserialized_Object_GetFieldValueAsDateTime_" data-uid="WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsDateTime*"></a>
+  <h4 id="WizardWrx_JsonSupport_JSON_Deserialized_Object_GetFieldValueAsDateTime_System_String_" data-uid="WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsDateTime(System.String)">GetFieldValueAsDateTime(String)</h4>
+  <div class="markdown level1 summary"><p>Query the JSON object for a specific field and attempt to parse it
+as a DateTime.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DateTime? GetFieldValueAsDateTime(string pstrFieldName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrFieldName</span></td>
+        <td><p>This string represents the name of the field for which to check.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.DateTime</span>&gt;</td>
+        <td><p>The return value is a nullable DateTime representing the value of
+the field, or null if the field does not exist or cannot be parsed
+as a DateTime.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_JsonSupport_JSON_Deserialized_Object_GetFieldValueAsDateTime_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+This method provides the canonical double precision floating point
+number accessor for this class.
+</p>
+<p>
+This method retrieves the field value as a DateTime. Since JSON has
+no native date or time type, and date values are represented as
+strings. This method parses those strings using 
+<span class="xref">System.DateTime.TryParse(System.String,System.DateTime@)</span>, which is 
+sufficient for ingestion scenarios where the exact original offset
+is not required and the primary goal is to obtain a usable DateTime
+value.
+</p>
+<p>
+A DateTimeOffset getter is intentionally omitted because JSON does not
+guarantee the presence or meaning of timezone offsets, and callers who
+require offset-preserving semantics can parse the raw string explicitly
+using <span class="xref">System.DateTimeOffset.Parse(System.String)</span>.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_JsonSupport_JSON_Deserialized_Object_GetFieldValueAsDouble_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsDouble(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/JSONSupport/JSON_Deserialized_Object.cs/#L407">View Source</a>
+  </span>
+  <a id="WizardWrx_JsonSupport_JSON_Deserialized_Object_GetFieldValueAsDouble_" data-uid="WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsDouble*"></a>
+  <h4 id="WizardWrx_JsonSupport_JSON_Deserialized_Object_GetFieldValueAsDouble_System_String_" data-uid="WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsDouble(System.String)">GetFieldValueAsDouble(String)</h4>
+  <div class="markdown level1 summary"><p>Query the JSON object for a specific field and returns its value as
+a double, or null if the field does not exist or cannot be parsed as
+a double.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double? GetFieldValueAsDouble(string pstrFieldName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrFieldName</span></td>
+        <td><p>This string represents the name of the field for which to get the
+value. The method will attempt to parse the value of this field as a
+double.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Double</span>&gt;</td>
+        <td><p>The return value is a nullable double representing the value of the field,
+or null if the field does not exist or cannot be parsed as a double.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_JsonSupport_JSON_Deserialized_Object_GetFieldValueAsDouble_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+This method provides the canonical double precision floating point
+number accessor for this class.
+</p>
+<p>
+JSON numeric values are represented internally as doubles, and every
+valid float value is also representable as a double. Because double is
+strictly a superset of float in both range and precision, there is no
+scenario where a separate GetFieldValueAsFloat method would return a
+meaningful result that this method cannot.
+</p>
+<p>
+Callers who require a float can cast the returned double value.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_JsonSupport_JSON_Deserialized_Object_GetFieldValueAsGuid_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsGuid(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/JSONSupport/JSON_Deserialized_Object.cs/#L452">View Source</a>
+  </span>
+  <a id="WizardWrx_JsonSupport_JSON_Deserialized_Object_GetFieldValueAsGuid_" data-uid="WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsGuid*"></a>
+  <h4 id="WizardWrx_JsonSupport_JSON_Deserialized_Object_GetFieldValueAsGuid_System_String_" data-uid="WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsGuid(System.String)">GetFieldValueAsGuid(String)</h4>
+  <div class="markdown level1 summary"><p>Query the JSON object for a specific field and attempt to parse it
+as a Guid.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Guid? GetFieldValueAsGuid(string pstrFieldName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrFieldName</span></td>
+        <td><p>This string represents the name of the field for which to get the
+value. The method will attempt to parse the value of this field as a
+Guid.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Guid</span>&gt;</td>
+        <td><p>The return value is a nullable Guid representing the value of the field,
+or null if the field does not exist or cannot be parsed as a Guid.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_JsonSupport_JSON_Deserialized_Object_GetFieldValueAsGuid_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+This method retrieves the field value as a Guid, which is a common
+representation for identifiers in many JSON-based systems. JSON has no
+native Guid type, so values are stored as strings and parsed here using
+<span class="xref">System.Guid.TryParse(System.String,System.Guid@)</span>.
+</p>
+<p>
+Additional identifier getters (such as UInt64 or custom ID formats)
+are intentionally omitted, since callers with domain-specific
+identifier requirements should interpret the raw string according to
+their own rules.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_JsonSupport_JSON_Deserialized_Object_GetFieldValueAsInt_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsInt(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/JSONSupport/JSON_Deserialized_Object.cs/#L493">View Source</a>
+  </span>
+  <a id="WizardWrx_JsonSupport_JSON_Deserialized_Object_GetFieldValueAsInt_" data-uid="WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsInt*"></a>
+  <h4 id="WizardWrx_JsonSupport_JSON_Deserialized_Object_GetFieldValueAsInt_System_String_" data-uid="WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsInt(System.String)">GetFieldValueAsInt(String)</h4>
+  <div class="markdown level1 summary"><p>Query the JSON object for a specific field and return its value as
+an integer, or null if the field does not exist or cannot be parsed
+as a 32-bit signed integer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? GetFieldValueAsInt(string pstrFieldName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrFieldName</span></td>
+        <td><p>This string represents the name of the field for which to check.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td><p>The return value is a nullable integer representing the value of the field,
+or null if the field does not exist or cannot be parsed as an integer.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_JsonSupport_JSON_Deserialized_Object_GetFieldValueAsInt_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+This method provides the canonical integer accessor for this class.
+</p>
+<p>
+This method retrieves the field value as a 32-bit integer. JSON does
+not define distinct numeric widths, and JSON.NET represents all
+integer tokens internally as Int64. This method returns the value
+only when it fits safely within the range of Int32. Smaller integer
+types (byte, short) are subsets of Int32 and do not require separate
+getters, since callers who need them can cast the returned value. 
+</p>
+<p>
+A 64-bit integer getter is intentionally omitted because JSON does
+not guarantee that numeric values fall within the precise range of
+Int64. Callers who require 64-bit semantics should parse the raw
+string explicitly, using <span class="xref">System.Int64.Parse(System.String)</span>.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_JsonSupport_JSON_Deserialized_Object_GetFieldValueAsString_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsString(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/JSONSupport/JSON_Deserialized_Object.cs/#L550">View Source</a>
+  </span>
+  <a id="WizardWrx_JsonSupport_JSON_Deserialized_Object_GetFieldValueAsString_" data-uid="WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsString*"></a>
+  <h4 id="WizardWrx_JsonSupport_JSON_Deserialized_Object_GetFieldValueAsString_System_String_" data-uid="WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsString(System.String)">GetFieldValueAsString(String)</h4>
+  <div class="markdown level1 summary"><p>Query the JSON object for a specific field and returns its value as
+a string, or null if the field does not exist or is not a string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetFieldValueAsString(string pstrFieldName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrFieldName</span></td>
+        <td><p>This string represents the name of the field for which to check.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The return value is a string representing the value of the field,
+or null if the field does not exist or is not a string.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_JsonSupport_JSON_Deserialized_Object_GetFieldValueAsString_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+This method provides the canonical string accessor for this class.
+</p>
+<p>
+JSON string tokens map directly to .NET strings, and JSON does not
+distinguish between different textual subtypes (such as char, multiline
+text, or encoded binary). Additional getters for narrower textual types
+would not add meaningful capability, since callers who require a more
+specific representation can interpret or validate the returned string
+as needed.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_JsonSupport_JSON_Deserialized_Object_HasField_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.JsonSupport.JSON_Deserialized_Object.HasField(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/JSONSupport/JSON_Deserialized_Object.cs/#L568">View Source</a>
+  </span>
+  <a id="WizardWrx_JsonSupport_JSON_Deserialized_Object_HasField_" data-uid="WizardWrx.JsonSupport.JSON_Deserialized_Object.HasField*"></a>
+  <h4 id="WizardWrx_JsonSupport_JSON_Deserialized_Object_HasField_System_String_" data-uid="WizardWrx.JsonSupport.JSON_Deserialized_Object.HasField(System.String)">HasField(String)</h4>
+  <div class="markdown level1 summary"><p>Checks whether the JSON object contains a specific field.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasField(string pstrFieldName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrFieldName</span></td>
+        <td><p>This string represents the name of the field for which to check.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>The return value is True if the field exists; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_JsonSupport_JSON_Deserialized_Object_MaybeValid.md&amp;value=---%0Auid%3A%20WizardWrx.JsonSupport.JSON_Deserialized_Object.MaybeValid%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/JSONSupport/JSON_Deserialized_Object.cs/#L591">View Source</a>
+  </span>
+  <a id="WizardWrx_JsonSupport_JSON_Deserialized_Object_MaybeValid_" data-uid="WizardWrx.JsonSupport.JSON_Deserialized_Object.MaybeValid*"></a>
+  <h4 id="WizardWrx_JsonSupport_JSON_Deserialized_Object_MaybeValid" data-uid="WizardWrx.JsonSupport.JSON_Deserialized_Object.MaybeValid">MaybeValid()</h4>
+  <div class="markdown level1 summary"><p>Superficial structural check: non-empty and starts/ends with
+expected delimiters.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool MaybeValid()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="WizardWrx_JsonSupport_JSON_Deserialized_Object_MaybeValid_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+This method performs a superficial structural check on the JSON text.
+It verifies that the JSON is non-empty and starts/ends with the expected
+delimiters for either a JSON object or a JSON array.
+</p>
+<p>
+Since the primary purpose of this class is to ensure that the JsonConvert method 
+can safely parse the JSON, this check is intentionally superficial and does not
+guarantee full JSON validity.
+</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_JsonSupport_JSON_Deserialized_Object_ParseTo__1.md&amp;value=---%0Auid%3A%20WizardWrx.JsonSupport.JSON_Deserialized_Object.ParseTo%60%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/JSONSupport/JSON_Deserialized_Object.cs/#L624">View Source</a>
+  </span>
+  <a id="WizardWrx_JsonSupport_JSON_Deserialized_Object_ParseTo_" data-uid="WizardWrx.JsonSupport.JSON_Deserialized_Object.ParseTo*"></a>
+  <h4 id="WizardWrx_JsonSupport_JSON_Deserialized_Object_ParseTo__1" data-uid="WizardWrx.JsonSupport.JSON_Deserialized_Object.ParseTo``1">ParseTo&lt;T&gt;()</h4>
+  <div class="markdown level1 summary"><p>Deserializes the JSON into a strongly-typed model.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T ParseTo&lt;T&gt;()
+    where T : class</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>If the method succeeds, it returns an instance of type T populated
+with data from the JSON.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Generic type parameter T identifies the strongly typed model against
+which to parse the JObject.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_JsonSupport_JSON_Deserialized_Object_Sanitize.md&amp;value=---%0Auid%3A%20WizardWrx.JsonSupport.JSON_Deserialized_Object.Sanitize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/JSONSupport/JSON_Deserialized_Object.cs/#L657">View Source</a>
+  </span>
+  <a id="WizardWrx_JsonSupport_JSON_Deserialized_Object_Sanitize_" data-uid="WizardWrx.JsonSupport.JSON_Deserialized_Object.Sanitize*"></a>
+  <h4 id="WizardWrx_JsonSupport_JSON_Deserialized_Object_Sanitize" data-uid="WizardWrx.JsonSupport.JSON_Deserialized_Object.Sanitize">Sanitize()</h4>
+  <div class="markdown level1 summary"><p>Applies the schema-aware sanitizer to repair unquoted string values
+for this instance's RequiredFields, mutating the JSON property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Sanitize()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_JsonSupport_JSON_Deserialized_Object_TryGetRaw_System_String_System_String__.md&amp;value=---%0Auid%3A%20WizardWrx.JsonSupport.JSON_Deserialized_Object.TryGetRaw(System.String%2CSystem.String%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/JSONSupport/JSON_Deserialized_Object.cs/#L637">View Source</a>
+  </span>
+  <a id="WizardWrx_JsonSupport_JSON_Deserialized_Object_TryGetRaw_" data-uid="WizardWrx.JsonSupport.JSON_Deserialized_Object.TryGetRaw*"></a>
+  <h4 id="WizardWrx_JsonSupport_JSON_Deserialized_Object_TryGetRaw_System_String_System_String__" data-uid="WizardWrx.JsonSupport.JSON_Deserialized_Object.TryGetRaw(System.String,System.String@)">TryGetRaw(String, out String)</h4>
+  <div class="markdown level1 summary"><p>Attempts to retrieve the raw JSON value for a specific field.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetRaw(string pstrFieldName, out string pstrRawJson)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrFieldName</span></td>
+        <td><p>The name of the field to retrieve.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrRawJson</span></td>
+        <td><p>The raw JSON value of the field, if found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>True if the field exists; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_JsonSupport_JSON_Deserialized_Object_Validate_System_Boolean_.md&amp;value=---%0Auid%3A%20WizardWrx.JsonSupport.JSON_Deserialized_Object.Validate(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/JSONSupport/JSON_Deserialized_Object.cs/#L695">View Source</a>
+  </span>
+  <a id="WizardWrx_JsonSupport_JSON_Deserialized_Object_Validate_" data-uid="WizardWrx.JsonSupport.JSON_Deserialized_Object.Validate*"></a>
+  <h4 id="WizardWrx_JsonSupport_JSON_Deserialized_Object_Validate_System_Boolean_" data-uid="WizardWrx.JsonSupport.JSON_Deserialized_Object.Validate(System.Boolean)">Validate(Boolean)</h4>
+  <div class="markdown level1 summary"><p>
+Validate that the JSON object contains all required fields.
+</p>
+<p>
+Optionally enforces that the values are non-empty (non-null, non-
+whitespace).
+</p>
+<p>
+Field name matching is case-insensitive.
+</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt; Validate(bool pfRequireNonEmptyValues)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">pfRequireNonEmptyValues</span></td>
+        <td><p>This flag indicates whether to enforce that the required fields have non-
+empty values. If <code>true</code>, then any required field that is either null
+or a string consisting only of whitespace will be considered missing.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><p>This method returns a list of missing required fields. If the JSON
+document is invalid, the list will contain a single entry &quot;<strong>Invalid
+JSON</strong>&quot;. If all required fields are present (and non-empty when
+required), the returned list is empty.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_JsonSupport_JSON_Deserialized_Object.md&amp;value=---%0Auid%3A%20WizardWrx.JsonSupport.JSON_Deserialized_Object%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/JSONSupport/JSON_Deserialized_Object.cs/#L199" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

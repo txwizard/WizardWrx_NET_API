@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2FA6C7D2-59A5-4902-9BF3-12C01A702519}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JSONSupport</RootNamespace>
+    <AssemblyName>JSONSupport</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <!-- 2026/04/10 20:41:50 - DAG - The following were added on the indicated dates to all projects that produce NuGet packages. -->
+    <!-- 2019/05/18 16:54:22 - DAG - Added for NuGet package builder -->
+    <PackageDir>$(ProjectDir)Package</PackageDir>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>.pdb$;(AllowedOutputExtensionsInPackageBuildOutputFolder)</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <!-- 2019/12/16 00:14:10 - DAG - Define SolutionPackageDir, which points to the local NuGet package directory shared by the entire solution. -->
+    <SolutionPackageDir>$(ProjectDir)..\packages</SolutionPackageDir>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\JSONSupport.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\JSONSupport.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="JSON_Deserialized_Object.cs" />
+    <Compile Include="ProductAssemblyInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="JSONSupport.nuspec" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{c1fb48d6-4a54-4424-bca1-4777f3aae2df}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- 2026/04/10 20:44:45 - DAG - The following PropertyGroup and imported custom MSBuild targets support building and publishing NuGet packages with self-maintaining SemVer package versioning. -->
+  <PropertyGroup>
+    <PreBuildEvent>AssemblyInfoUtil.exe $(ProjectDir)Properties\AssemblyInfo.cs -inc:3 -fv -cy -onlywhenmodified</PreBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(Custom_MSBuild_Targets)\WizardWrx_NuGet_Packages.TARGETS" Condition="Exists('$(Custom_MSBuild_Targets)\WizardWrx_NuGet_Packages.TARGETS')" />
+</Project>
