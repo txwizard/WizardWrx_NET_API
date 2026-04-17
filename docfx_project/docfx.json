@@ -11,6 +11,7 @@
             "**/GUITestStand/*.csproj",
             "**/DLLServices2TestStand/*.csproj",
             "**/ReflectionInvokerDemo/*.csproj"
+            "**/HttpRequestEngineTestStand/*.csproj"
           ],
           "cwd": "../"
         }
