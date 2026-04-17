@@ -13,14 +13,14 @@
         <member name="F:WizardWrx.HTTP.RequestEngine.REQUEST_EXPECTS_JSON_RESPONSE">
             <summary>
             Use this constant to explicitly assert the default value of the last
-            parameter to <see cref="M:WizardWrx.HTTP.RequestEngine.CallWebApiAndProcessResultASync(System.String,System.Action{Newtonsoft.Json.Linq.JObject},WizardWrx.JsonSupport.JSON_Deserialized_Object,WizardWrx.HTTP.RequestEngine.HttpVerb,System.Boolean)"/>,
+            parameter to <see cref="M:WizardWrx.HTTP.RequestEngine.SendRequest``1(System.String,System.Action{Newtonsoft.Json.Linq.JObject},WizardWrx.JsonSupport.JSON_Deserialized_Object,WizardWrx.HTTP.RequestEngine.HttpVerb,System.Boolean)"/>,
             <c>pfExpectJSON</c>.
             </summary>
         </member>
         <member name="F:WizardWrx.HTTP.RequestEngine.REQUEST_EXPECTS_OTHER_RESPONSE">
             <summary>
             Use this constant to override the default value of the last
-            parameter to <see cref="M:WizardWrx.HTTP.RequestEngine.CallWebApiAndProcessResultASync(System.String,System.Action{Newtonsoft.Json.Linq.JObject},WizardWrx.JsonSupport.JSON_Deserialized_Object,WizardWrx.HTTP.RequestEngine.HttpVerb,System.Boolean)"/>,
+            parameter to <see cref="M:WizardWrx.HTTP.RequestEngine.SendRequest``1(System.String,System.Action{Newtonsoft.Json.Linq.JObject},WizardWrx.JsonSupport.JSON_Deserialized_Object,WizardWrx.HTTP.RequestEngine.HttpVerb,System.Boolean)"/>,
             <c>pfExpectJSON</c>.
             </summary>
         </member>
@@ -55,7 +55,7 @@
         </member>
         <member name="F:WizardWrx.HTTP.RequestEngine.HttpVerb.DELETE">
             <summary>
-            This value maps to the dangerous DELETE verb, and is usually 
+            This value maps to the dangerous DELETE verb, which is usually
             sent without a payload.
             </summary>
         </member>
@@ -66,6 +66,12 @@
             a new token, along with a robust exception logging object that has
             many configurable settings that determine how much detail it reports
             and how its reports are delivered.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.HTTP.RequestEngine._httpClient">
+            <summary>
+            Each instance must construct and use its own HttoClient to prevent
+            recycling HTTP request headers.
             </summary>
         </member>
         <member name="M:WizardWrx.HTTP.RequestEngine.#ctor">
@@ -90,12 +96,58 @@
             access tokens are short-lived.
             </param>
         </member>
-        <member name="M:WizardWrx.HTTP.RequestEngine.CallWebApiAndProcessResultASync(System.String,System.Action{Newtonsoft.Json.Linq.JObject},WizardWrx.JsonSupport.JSON_Deserialized_Object,WizardWrx.HTTP.RequestEngine.HttpVerb,System.Boolean)">
+        <member name="M:WizardWrx.HTTP.RequestEngine.GetDiagnosticHeadersDump(System.Uri,System.Boolean)">
             <summary>
-            Calls the protected web API and processes the result
+            Get a formatted list of the HTTP headers attached to the request.
             </summary>
+            <param name="requestUri">
+            Specify the URL that will accompany the actual request when you call
+            SendRequest.
+            </param>
+            <param name="pfExpectJson">
+            Specify the Boolean ExpectJSON flag that will accomapny the actual
+            request when you call SendRequest.
+            </param>
+            <returns>
+            The return value is a human-readable list of the HTTP headers that
+            will be attached to the actual request.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.HTTP.RequestEngine.SendRequest``1(System.String,System.Action{Newtonsoft.Json.Linq.JObject},WizardWrx.JsonSupport.JSON_Deserialized_Object,WizardWrx.HTTP.RequestEngine.HttpVerb,System.Boolean)">
+            <summary>
+            Call the web API and process the result.
+            </summary>
+            <typeparam name="T">
+            <para>
+            Specifies the expected return type of the Web API call.
+            </para>
+            <para>
+            When pfExpectJSON is true, T must be either JObject or a type
+            that can be deserialized from the JSON response body.
+            </para>
+            <para>
+            When pfExpectJSON is false, T may be:
+            </para>
+            <list type="bullet">
+            <item>
+            string  — for plain text responses
+            </item>
+            <item>
+            byte[]  — for binary responses such as audio files
+            </item>
+            <item>
+            any other type for which the caller provides its own interpretation
+            of the raw response body.
+            </item>
+            </list>
+            <para>
+            The method does not attempt to infer the correct type; the caller is
+            responsible for specifying a T that matches the expected response format.
+            </para>
+            </typeparam>
             <param name="pstrWebApiUrl">
-            URL of the web API to call (supposed to return Json)
+            URL of the web API to call (presumeed to return Json unless
+            indicated otherwise)
             </param>
             <param name="pfunProcessResultCallback">
             <para>
@@ -162,24 +214,21 @@
             a garden variety String.
             </para>
             </returns>
-            <exception cref="T:System.Exception">
-            Two distinct circumstances can give rise to an Exception exception.
-            <list type="number">
-            <item>
-            The OAuth token expired and a replacement cannot be obtained from
-            the Microsoft Azure identity server.
-            </item>
-            <item>
-            Another type of exception arose while processing a request against
-            the Microsoft Graph API endpoints.
-            </item>
-            </list>
+            <exception cref="T:Newtonsoft.Json.JsonException">
+            Thrown when pfExpectJSON is true but the response body cannot be
+            deserialized into the requested type T or is not valid JSON.
             </exception>
-            <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
-            An InvalidEnumArgumentException Exception arises when the value of
-            optional argument <paramref name="penmVerb"/> is invalid, ordinarily
-            due to a programming error, since it is reasonbly safe to assume
-            that the verb is always hard coded per toe API.
+            <exception cref="T:System.InvalidOperationException">
+            Thrown when pfExpectJSON is false and T is incompatible with the
+            non‑JSON response mode. For example, this occurs when T is not
+            string or byte[] and the method has no defined conversion for the
+            returned content.
+            </exception>
+            <exception cref="T:System.Exception">
+            Thrown when the Web API returns an error status code other than
+            Unauthorized, or when token refresh fails after receiving a 401
+            Unauthorized response. The exception message includes the HTTP
+            status code and the response content for diagnostic purposes.
             </exception>
         </member>
         <member name="M:WizardWrx.HTTP.RequestEngine.ParseQueryToDictionary(System.Uri)">
@@ -196,7 +245,23 @@
             empty or absent, the returned dictionary is empty.
             </returns>
         </member>
-        <member name="M:WizardWrx.HTTP.RequestEngine.ApplyHeaders(System.Net.Http.HttpRequestMessage,System.String,System.Boolean)">
+        <member name="M:WizardWrx.HTTP.RequestEngine.CreateHttpClient(WizardWrx.HTTP.RequestOptions)">
+            <summary>
+            This private factory method initializes the private HttpClient
+            used by the instance.
+            </summary>
+            <param name="options">
+            The RequestOptions object is technically optional, and, when so, the
+            Automatic Decompression for GZip and Deflate is left off.
+            </param>
+            <returns>
+            A reference to the  returned HTTPClient goes into the private
+            instance member that is set aside for that purpose. Each
+            constructor, including the default constructor, calls it with or
+            without an Options object reference.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.HTTP.RequestEngine.ApplyHeaders(System.Net.Http.HttpRequestMessage,System.Boolean)">
             <summary>
             Instance method CallWebApiAndProcessResultASyn invokes this routine
             on each iteration of its retry loop to attach HTTP headers directly
@@ -207,21 +272,36 @@
             This HttpRequestMessage parameter is a reference to the new Request
             object that is created on each iteration of the request retry loop.
             </param>
-            <param name="pstrBearerToken">
-            This string represents the optional OAuth Bearer Access Token, which
-            goes into the AuthenticationHeaderValue that becomes the value of
-            the Authorization header that is appended to the collection of HTTP
-            headers.
-            </param>
             <param name="pfAcceptJson">
             When its value is True, the MediaTypeWithQualityHeaderValue header
             that represents the JSON MIME type is appended to the headers.
             </param>
         </member>
-        <member name="F:WizardWrx.HTTP.RequestEngine.s_HttpClient">
+        <member name="F:WizardWrx.HTTP.RequestEngine.s_PatchMethod">
             <summary>
-            The constructor stashes a reference to the HTTPClient in a protected
-            location.
+            Since the built-in HttpMethod object omits the seldom-used `PATCH`
+            method, it is implemented as a static property so that it is created
+            once only, when the class is first referenced.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.HTTP.RequestEngine.s_dctVerbMap">
+            <summary>
+            Since the built-in HttpMethod object omits the seldom-used `PATCH`
+            method, this IReadOnlyDictionary maps a complete set of HTTP verbs
+            to the corresponding HttpMethod object, including the `PATCH` method
+            that is defined and initialized when the class is first referenced,
+            as is this dictionary.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.HTTP.RequestEngine.JSON_MIME_TYPE">
+            <summary>
+            We define our own string for the commonly required JSON MIME type.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.HTTP.RequestEngine.OAUTH_TOKEN_TYPE">
+            <summary>
+            We define our own string for the standard prefix used with most
+            authorization tokens.
             </summary>
         </member>
         <member name="T:WizardWrx.HTTP.RequestOptions">
@@ -229,6 +309,23 @@
             Instances of this object represent options for configuring request
             behavior, including provision of exception logging tooling and OAuth
             token retrieval methods.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.HTTP.RequestOptions.HTTP_ACCEPT_WILDCARD">
+            <summary>
+            Let's be really clear about the shape of the default Accept HTTP header.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.HTTP.RequestOptions.HTTP_NEVER_CACHE_ANYTHING">
+            <summary>
+            Let's also document for posterity the Cache-Control directive that
+            says "don't."
+            </summary>
+        </member>
+        <member name="F:WizardWrx.HTTP.RequestOptions.HTTP_SUPPORTED_COMPRESSION">
+            <summary>
+            The Microsoft .NET Framework supports only two of the common compression
+            formats, gzip and deflate.
             </summary>
         </member>
         <member name="T:WizardWrx.HTTP.RequestOptions.OAuthTokenGetter">
@@ -266,13 +363,31 @@
             tokens for inclusion in the Authorization header of HTTP requests.
             </summary>
         </member>
+        <member name="P:WizardWrx.HTTP.RequestOptions.AcceptHeaderValue">
+            <summary>
+            When specified (not null), this string represents the value to 
+            specify as the Accept HTTP header value.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.HTTP.RequestOptions.AcceptEncodingValue">
+            <summary>
+            When specified (not null), this string represents the value to 
+            specify as the Accept-Encoding HTTP header value.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.HTTP.RequestOptions.CacheControlValue">
+            <summary>
+            When specified (not null), this string represents the value to 
+            specify as the Cache-Control HTTP header value.
+            </summary>
+        </member>
         <member name="P:WizardWrx.HTTP.RequestOptions.CurrentOAuthToken">
             <summary>
             This read-only string property gets the current OAuth token,
             retrieving and caching it if necessary.
             </summary>
         </member>
-        <member name="M:WizardWrx.HTTP.RequestOptions.#ctor(WizardWrx.DLLConfigurationManager.ExceptionLogger,WizardWrx.HTTP.RequestOptions.OAuthTokenGetter,System.String)">
+        <member name="M:WizardWrx.HTTP.RequestOptions.#ctor(WizardWrx.DLLConfigurationManager.ExceptionLogger,WizardWrx.HTTP.RequestOptions.OAuthTokenGetter,System.String,System.String,System.String,System.String)">
             <summary>
             The public constructor initializes both read-only properties of this
             class, so that consumers of this class must make their choices about
@@ -294,6 +409,19 @@
             null and <paramref name="ptokenGetter"/> is not null, the class 
             attempts to obtain a token the first time the property value is
             queried.
+            </param>
+            <param name="pstrAcceptHeaderValue">
+            When specified, thiis string represents the value to include as the
+            Accept HTTP header value. By default, the null value, "/", is added.
+            </param>
+            <param name="pstrAcceptEncodingValue">
+            When specified, this string represents the value to include as the
+            Accept-Encoding HTTP header value. By default, this value is null,
+            and is, therefore, omitted.
+            </param>
+            <param name="pstrCacheControlValue">
+            When specified, this string represents the value to include as the
+            Cache-Control HTTP header value. The default  value is "no-cache".
             </param>
         </member>
         <member name="M:WizardWrx.HTTP.RequestOptions.#ctor">

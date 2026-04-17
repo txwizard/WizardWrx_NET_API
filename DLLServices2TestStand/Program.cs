@@ -1442,7 +1442,7 @@ namespace DLLServices2TestStand
                     LOGGER_PREFIX );                            // Format Item 1 = &Origin={1}
                 Console.WriteLine ( $"Begin {LOGGER_PREFIX} Drill 1 with test URL = {strTestUrl1}" );
                 WizardWrx.HTTP.RequestEngine requestEngine = new WizardWrx.HTTP.RequestEngine ( new WizardWrx.HTTP.RequestOptions ( s_smTheApp.AppExceptionLogger , null , null ) );
-                object objWebResult = requestEngine.CallWebApiAndProcessResultASync (
+                object objWebResult = requestEngine.SendRequest<string> (
                     strTestUrl1 ,                               // string                   pstrWebApiUrl
                     null ,                                      // Action<JObject>          pfunProcessResultCallback = null
                     null ,                                      // JSON_Deserialized_Object pjSON_Deserialized        = null
@@ -1456,7 +1456,7 @@ namespace DLLServices2TestStand
                 Console.WriteLine ( $"                                    JSON Input File = {TEST_JSON_FQFN}" );
                 Console.WriteLine ( $"                                    JSON Data:{Environment.NewLine}{Environment.NewLine}{strJONDocument}{Environment.NewLine}" );
                 WizardWrx.JsonSupport.JSON_Deserialized_Object jSON = new WizardWrx.JsonSupport.JSON_Deserialized_Object ( strJONDocument );
-                objWebResult = requestEngine.CallWebApiAndProcessResultASync (
+                objWebResult = requestEngine.SendRequest<string> (
                     TEST_URL_2 ,                                // string                   pstrWebApiUrl
                     null ,                                      // Action<JObject>          pfunProcessResultCallback = null
                     jSON ,                                      // JSON_Deserialized_Object pjSON_Deserialized        = null

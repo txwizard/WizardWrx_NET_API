@@ -10548,22 +10548,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.HTTP.RequestEngine.RequestEngine
   nameWithType: RequestEngine.RequestEngine
-- uid: WizardWrx.HTTP.RequestEngine.CallWebApiAndProcessResultASync(System.String,System.Action{Newtonsoft.Json.Linq.JObject},WizardWrx.JsonSupport.JSON_Deserialized_Object,WizardWrx.HTTP.RequestEngine.HttpVerb,System.Boolean)
-  name: CallWebApiAndProcessResultASync(String, Action<JObject>, JSON_Deserialized_Object, RequestEngine.HttpVerb, Boolean)
-  href: api/WizardWrx.HTTP.RequestEngine.html#WizardWrx_HTTP_RequestEngine_CallWebApiAndProcessResultASync_System_String_System_Action_Newtonsoft_Json_Linq_JObject__WizardWrx_JsonSupport_JSON_Deserialized_Object_WizardWrx_HTTP_RequestEngine_HttpVerb_System_Boolean_
-  commentId: M:WizardWrx.HTTP.RequestEngine.CallWebApiAndProcessResultASync(System.String,System.Action{Newtonsoft.Json.Linq.JObject},WizardWrx.JsonSupport.JSON_Deserialized_Object,WizardWrx.HTTP.RequestEngine.HttpVerb,System.Boolean)
-  name.vb: CallWebApiAndProcessResultASync(String, Action(Of JObject), JSON_Deserialized_Object, RequestEngine.HttpVerb, Boolean)
-  fullName: WizardWrx.HTTP.RequestEngine.CallWebApiAndProcessResultASync(System.String, System.Action<Newtonsoft.Json.Linq.JObject>, WizardWrx.JsonSupport.JSON_Deserialized_Object, WizardWrx.HTTP.RequestEngine.HttpVerb, System.Boolean)
-  fullName.vb: WizardWrx.HTTP.RequestEngine.CallWebApiAndProcessResultASync(System.String, System.Action(Of Newtonsoft.Json.Linq.JObject), WizardWrx.JsonSupport.JSON_Deserialized_Object, WizardWrx.HTTP.RequestEngine.HttpVerb, System.Boolean)
-  nameWithType: RequestEngine.CallWebApiAndProcessResultASync(String, Action<JObject>, JSON_Deserialized_Object, RequestEngine.HttpVerb, Boolean)
-  nameWithType.vb: RequestEngine.CallWebApiAndProcessResultASync(String, Action(Of JObject), JSON_Deserialized_Object, RequestEngine.HttpVerb, Boolean)
-- uid: WizardWrx.HTTP.RequestEngine.CallWebApiAndProcessResultASync*
-  name: CallWebApiAndProcessResultASync
-  href: api/WizardWrx.HTTP.RequestEngine.html#WizardWrx_HTTP_RequestEngine_CallWebApiAndProcessResultASync_
-  commentId: Overload:WizardWrx.HTTP.RequestEngine.CallWebApiAndProcessResultASync
+- uid: WizardWrx.HTTP.RequestEngine.GetDiagnosticHeadersDump(System.Uri,System.Boolean)
+  name: GetDiagnosticHeadersDump(Uri, Boolean)
+  href: api/WizardWrx.HTTP.RequestEngine.html#WizardWrx_HTTP_RequestEngine_GetDiagnosticHeadersDump_System_Uri_System_Boolean_
+  commentId: M:WizardWrx.HTTP.RequestEngine.GetDiagnosticHeadersDump(System.Uri,System.Boolean)
+  fullName: WizardWrx.HTTP.RequestEngine.GetDiagnosticHeadersDump(System.Uri, System.Boolean)
+  nameWithType: RequestEngine.GetDiagnosticHeadersDump(Uri, Boolean)
+- uid: WizardWrx.HTTP.RequestEngine.GetDiagnosticHeadersDump*
+  name: GetDiagnosticHeadersDump
+  href: api/WizardWrx.HTTP.RequestEngine.html#WizardWrx_HTTP_RequestEngine_GetDiagnosticHeadersDump_
+  commentId: Overload:WizardWrx.HTTP.RequestEngine.GetDiagnosticHeadersDump
   isSpec: "True"
-  fullName: WizardWrx.HTTP.RequestEngine.CallWebApiAndProcessResultASync
-  nameWithType: RequestEngine.CallWebApiAndProcessResultASync
+  fullName: WizardWrx.HTTP.RequestEngine.GetDiagnosticHeadersDump
+  nameWithType: RequestEngine.GetDiagnosticHeadersDump
 - uid: WizardWrx.HTTP.RequestEngine.HttpVerb
   name: RequestEngine.HttpVerb
   href: api/WizardWrx.HTTP.RequestEngine.HttpVerb.html
@@ -10638,18 +10635,34 @@ references:
   commentId: F:WizardWrx.HTTP.RequestEngine.REQUEST_EXPECTS_OTHER_RESPONSE
   fullName: WizardWrx.HTTP.RequestEngine.REQUEST_EXPECTS_OTHER_RESPONSE
   nameWithType: RequestEngine.REQUEST_EXPECTS_OTHER_RESPONSE
+- uid: WizardWrx.HTTP.RequestEngine.SendRequest*
+  name: SendRequest
+  href: api/WizardWrx.HTTP.RequestEngine.html#WizardWrx_HTTP_RequestEngine_SendRequest_
+  commentId: Overload:WizardWrx.HTTP.RequestEngine.SendRequest
+  isSpec: "True"
+  fullName: WizardWrx.HTTP.RequestEngine.SendRequest
+  nameWithType: RequestEngine.SendRequest
+- uid: WizardWrx.HTTP.RequestEngine.SendRequest``1(System.String,System.Action{Newtonsoft.Json.Linq.JObject},WizardWrx.JsonSupport.JSON_Deserialized_Object,WizardWrx.HTTP.RequestEngine.HttpVerb,System.Boolean)
+  name: SendRequest<T>(String, Action<JObject>, JSON_Deserialized_Object, RequestEngine.HttpVerb, Boolean)
+  href: api/WizardWrx.HTTP.RequestEngine.html#WizardWrx_HTTP_RequestEngine_SendRequest__1_System_String_System_Action_Newtonsoft_Json_Linq_JObject__WizardWrx_JsonSupport_JSON_Deserialized_Object_WizardWrx_HTTP_RequestEngine_HttpVerb_System_Boolean_
+  commentId: M:WizardWrx.HTTP.RequestEngine.SendRequest``1(System.String,System.Action{Newtonsoft.Json.Linq.JObject},WizardWrx.JsonSupport.JSON_Deserialized_Object,WizardWrx.HTTP.RequestEngine.HttpVerb,System.Boolean)
+  name.vb: SendRequest(Of T)(String, Action(Of JObject), JSON_Deserialized_Object, RequestEngine.HttpVerb, Boolean)
+  fullName: WizardWrx.HTTP.RequestEngine.SendRequest<T>(System.String, System.Action<Newtonsoft.Json.Linq.JObject>, WizardWrx.JsonSupport.JSON_Deserialized_Object, WizardWrx.HTTP.RequestEngine.HttpVerb, System.Boolean)
+  fullName.vb: WizardWrx.HTTP.RequestEngine.SendRequest(Of T)(System.String, System.Action(Of Newtonsoft.Json.Linq.JObject), WizardWrx.JsonSupport.JSON_Deserialized_Object, WizardWrx.HTTP.RequestEngine.HttpVerb, System.Boolean)
+  nameWithType: RequestEngine.SendRequest<T>(String, Action<JObject>, JSON_Deserialized_Object, RequestEngine.HttpVerb, Boolean)
+  nameWithType.vb: RequestEngine.SendRequest(Of T)(String, Action(Of JObject), JSON_Deserialized_Object, RequestEngine.HttpVerb, Boolean)
 - uid: WizardWrx.HTTP.RequestOptions
   name: RequestOptions
   href: api/WizardWrx.HTTP.RequestOptions.html
   commentId: T:WizardWrx.HTTP.RequestOptions
   fullName: WizardWrx.HTTP.RequestOptions
   nameWithType: RequestOptions
-- uid: WizardWrx.HTTP.RequestOptions.#ctor(WizardWrx.DLLConfigurationManager.ExceptionLogger,WizardWrx.HTTP.RequestOptions.OAuthTokenGetter,System.String)
-  name: RequestOptions(ExceptionLogger, RequestOptions.OAuthTokenGetter, String)
-  href: api/WizardWrx.HTTP.RequestOptions.html#WizardWrx_HTTP_RequestOptions__ctor_WizardWrx_DLLConfigurationManager_ExceptionLogger_WizardWrx_HTTP_RequestOptions_OAuthTokenGetter_System_String_
-  commentId: M:WizardWrx.HTTP.RequestOptions.#ctor(WizardWrx.DLLConfigurationManager.ExceptionLogger,WizardWrx.HTTP.RequestOptions.OAuthTokenGetter,System.String)
-  fullName: WizardWrx.HTTP.RequestOptions.RequestOptions(WizardWrx.DLLConfigurationManager.ExceptionLogger, WizardWrx.HTTP.RequestOptions.OAuthTokenGetter, System.String)
-  nameWithType: RequestOptions.RequestOptions(ExceptionLogger, RequestOptions.OAuthTokenGetter, String)
+- uid: WizardWrx.HTTP.RequestOptions.#ctor(WizardWrx.DLLConfigurationManager.ExceptionLogger,WizardWrx.HTTP.RequestOptions.OAuthTokenGetter,System.String,System.String,System.String,System.String)
+  name: RequestOptions(ExceptionLogger, RequestOptions.OAuthTokenGetter, String, String, String, String)
+  href: api/WizardWrx.HTTP.RequestOptions.html#WizardWrx_HTTP_RequestOptions__ctor_WizardWrx_DLLConfigurationManager_ExceptionLogger_WizardWrx_HTTP_RequestOptions_OAuthTokenGetter_System_String_System_String_System_String_System_String_
+  commentId: M:WizardWrx.HTTP.RequestOptions.#ctor(WizardWrx.DLLConfigurationManager.ExceptionLogger,WizardWrx.HTTP.RequestOptions.OAuthTokenGetter,System.String,System.String,System.String,System.String)
+  fullName: WizardWrx.HTTP.RequestOptions.RequestOptions(WizardWrx.DLLConfigurationManager.ExceptionLogger, WizardWrx.HTTP.RequestOptions.OAuthTokenGetter, System.String, System.String, System.String, System.String)
+  nameWithType: RequestOptions.RequestOptions(ExceptionLogger, RequestOptions.OAuthTokenGetter, String, String, String, String)
 - uid: WizardWrx.HTTP.RequestOptions.#ctor*
   name: RequestOptions
   href: api/WizardWrx.HTTP.RequestOptions.html#WizardWrx_HTTP_RequestOptions__ctor_
@@ -10657,6 +10670,45 @@ references:
   isSpec: "True"
   fullName: WizardWrx.HTTP.RequestOptions.RequestOptions
   nameWithType: RequestOptions.RequestOptions
+- uid: WizardWrx.HTTP.RequestOptions.AcceptEncodingValue
+  name: AcceptEncodingValue
+  href: api/WizardWrx.HTTP.RequestOptions.html#WizardWrx_HTTP_RequestOptions_AcceptEncodingValue
+  commentId: P:WizardWrx.HTTP.RequestOptions.AcceptEncodingValue
+  fullName: WizardWrx.HTTP.RequestOptions.AcceptEncodingValue
+  nameWithType: RequestOptions.AcceptEncodingValue
+- uid: WizardWrx.HTTP.RequestOptions.AcceptEncodingValue*
+  name: AcceptEncodingValue
+  href: api/WizardWrx.HTTP.RequestOptions.html#WizardWrx_HTTP_RequestOptions_AcceptEncodingValue_
+  commentId: Overload:WizardWrx.HTTP.RequestOptions.AcceptEncodingValue
+  isSpec: "True"
+  fullName: WizardWrx.HTTP.RequestOptions.AcceptEncodingValue
+  nameWithType: RequestOptions.AcceptEncodingValue
+- uid: WizardWrx.HTTP.RequestOptions.AcceptHeaderValue
+  name: AcceptHeaderValue
+  href: api/WizardWrx.HTTP.RequestOptions.html#WizardWrx_HTTP_RequestOptions_AcceptHeaderValue
+  commentId: P:WizardWrx.HTTP.RequestOptions.AcceptHeaderValue
+  fullName: WizardWrx.HTTP.RequestOptions.AcceptHeaderValue
+  nameWithType: RequestOptions.AcceptHeaderValue
+- uid: WizardWrx.HTTP.RequestOptions.AcceptHeaderValue*
+  name: AcceptHeaderValue
+  href: api/WizardWrx.HTTP.RequestOptions.html#WizardWrx_HTTP_RequestOptions_AcceptHeaderValue_
+  commentId: Overload:WizardWrx.HTTP.RequestOptions.AcceptHeaderValue
+  isSpec: "True"
+  fullName: WizardWrx.HTTP.RequestOptions.AcceptHeaderValue
+  nameWithType: RequestOptions.AcceptHeaderValue
+- uid: WizardWrx.HTTP.RequestOptions.CacheControlValue
+  name: CacheControlValue
+  href: api/WizardWrx.HTTP.RequestOptions.html#WizardWrx_HTTP_RequestOptions_CacheControlValue
+  commentId: P:WizardWrx.HTTP.RequestOptions.CacheControlValue
+  fullName: WizardWrx.HTTP.RequestOptions.CacheControlValue
+  nameWithType: RequestOptions.CacheControlValue
+- uid: WizardWrx.HTTP.RequestOptions.CacheControlValue*
+  name: CacheControlValue
+  href: api/WizardWrx.HTTP.RequestOptions.html#WizardWrx_HTTP_RequestOptions_CacheControlValue_
+  commentId: Overload:WizardWrx.HTTP.RequestOptions.CacheControlValue
+  isSpec: "True"
+  fullName: WizardWrx.HTTP.RequestOptions.CacheControlValue
+  nameWithType: RequestOptions.CacheControlValue
 - uid: WizardWrx.HTTP.RequestOptions.CurrentOAuthToken
   name: CurrentOAuthToken
   href: api/WizardWrx.HTTP.RequestOptions.html#WizardWrx_HTTP_RequestOptions_CurrentOAuthToken
@@ -10670,6 +10722,24 @@ references:
   isSpec: "True"
   fullName: WizardWrx.HTTP.RequestOptions.CurrentOAuthToken
   nameWithType: RequestOptions.CurrentOAuthToken
+- uid: WizardWrx.HTTP.RequestOptions.HTTP_ACCEPT_WILDCARD
+  name: HTTP_ACCEPT_WILDCARD
+  href: api/WizardWrx.HTTP.RequestOptions.html#WizardWrx_HTTP_RequestOptions_HTTP_ACCEPT_WILDCARD
+  commentId: F:WizardWrx.HTTP.RequestOptions.HTTP_ACCEPT_WILDCARD
+  fullName: WizardWrx.HTTP.RequestOptions.HTTP_ACCEPT_WILDCARD
+  nameWithType: RequestOptions.HTTP_ACCEPT_WILDCARD
+- uid: WizardWrx.HTTP.RequestOptions.HTTP_NEVER_CACHE_ANYTHING
+  name: HTTP_NEVER_CACHE_ANYTHING
+  href: api/WizardWrx.HTTP.RequestOptions.html#WizardWrx_HTTP_RequestOptions_HTTP_NEVER_CACHE_ANYTHING
+  commentId: F:WizardWrx.HTTP.RequestOptions.HTTP_NEVER_CACHE_ANYTHING
+  fullName: WizardWrx.HTTP.RequestOptions.HTTP_NEVER_CACHE_ANYTHING
+  nameWithType: RequestOptions.HTTP_NEVER_CACHE_ANYTHING
+- uid: WizardWrx.HTTP.RequestOptions.HTTP_SUPPORTED_COMPRESSION
+  name: HTTP_SUPPORTED_COMPRESSION
+  href: api/WizardWrx.HTTP.RequestOptions.html#WizardWrx_HTTP_RequestOptions_HTTP_SUPPORTED_COMPRESSION
+  commentId: F:WizardWrx.HTTP.RequestOptions.HTTP_SUPPORTED_COMPRESSION
+  fullName: WizardWrx.HTTP.RequestOptions.HTTP_SUPPORTED_COMPRESSION
+  nameWithType: RequestOptions.HTTP_SUPPORTED_COMPRESSION
 - uid: WizardWrx.HTTP.RequestOptions.Logger
   name: Logger
   href: api/WizardWrx.HTTP.RequestOptions.html#WizardWrx_HTTP_RequestOptions_Logger

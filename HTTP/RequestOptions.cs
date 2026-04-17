@@ -11,6 +11,26 @@ namespace WizardWrx.HTTP
 	public sealed class RequestOptions
 	{
 		/// <summary>
+		/// Let's be really clear about the shape of the default Accept HTTP header.
+		/// </summary>
+		public const string HTTP_ACCEPT_WILDCARD = @"*/*";
+
+
+		/// <summary>
+		/// Let's also document for posterity the Cache-Control directive that
+		/// says "don't."
+		/// </summary>
+		public const string HTTP_NEVER_CACHE_ANYTHING = @"no-cache";
+
+
+		/// <summary>
+		/// The Microsoft .NET Framework supports only two of the common compression
+		/// formats, gzip and deflate.
+		/// </summary>
+		public const string HTTP_SUPPORTED_COMPRESSION = @"gzip, deflate";
+
+
+		/// <summary>
 		/// This delegate signature represents a method that attempts to obtain an
 		/// OAuth token and return it through an output parameter, along with the
 		/// existing true/false outcome.
@@ -49,6 +69,26 @@ namespace WizardWrx.HTTP
 		/// </summary>
 		public OAuthTokenGetter TokenGetter { get; }
 
+
+		/// <summary>
+		/// When specified (not null), this string represents the value to 
+		/// specify as the Accept HTTP header value.
+		/// </summary>
+		public string AcceptHeaderValue { get; }
+
+
+		/// <summary>
+		/// When specified (not null), this string represents the value to 
+		/// specify as the Accept-Encoding HTTP header value.
+		/// </summary>
+		public string AcceptEncodingValue { get; }
+
+
+		/// <summary>
+		/// When specified (not null), this string represents the value to 
+		/// specify as the Cache-Control HTTP header value.
+		/// </summary>
+		public string CacheControlValue { get; }
 
 		/// <summary>
 		/// This read-only string property gets the current OAuth token,
@@ -105,16 +145,27 @@ namespace WizardWrx.HTTP
 		/// attempts to obtain a token the first time the property value is
 		/// queried.
 		/// </param>
-		public RequestOptions
-		(
-			ExceptionLogger plogger ,
-			OAuthTokenGetter ptokenGetter,
-			string pstrInitialOAuthToken = null
-		)
+		/// <param name="pstrAcceptHeaderValue">
+		/// When specified, thiis string represents the value to include as the
+		/// Accept HTTP header value. By default, the null value, "/", is added.
+		/// </param>
+		/// <param name="pstrAcceptEncodingValue">
+		/// When specified, this string represents the value to include as the
+		/// Accept-Encoding HTTP header value. By default, this value is null,
+		/// and is, therefore, omitted.
+		/// </param>
+		/// <param name="pstrCacheControlValue">
+		/// When specified, this string represents the value to include as the
+		/// Cache-Control HTTP header value. The default  value is "no-cache".
+		/// </param>
+		public RequestOptions ( ExceptionLogger plogger , OAuthTokenGetter ptokenGetter , string pstrInitialOAuthToken = null , string pstrAcceptHeaderValue = HTTP_ACCEPT_WILDCARD , string pstrAcceptEncodingValue = null , string pstrCacheControlValue = HTTP_NEVER_CACHE_ANYTHING )
 		{
 			Logger = plogger;
 			TokenGetter = ptokenGetter;
 			_currentOAuthToken = pstrInitialOAuthToken;
+			AcceptHeaderValue = pstrAcceptHeaderValue;
+			AcceptEncodingValue = pstrAcceptEncodingValue;
+			CacheControlValue = pstrCacheControlValue;
 		}   // public RequestOptions
 
 

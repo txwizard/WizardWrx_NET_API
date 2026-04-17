@@ -1,5 +1,23 @@
 ﻿# WizardWrx .NET API Change Log
 
+## 2026-04-17
+
+### WizardWrx.HTTP [9.0.103]
+
+Nethod `CallWebApiAndProcessResultASync` has a new, shorter name, `SendRequest<T>`,
+that reflects that its public surface is fully synchronous. Although it performs
+async operations under the covers, its public API is fully synchronous. This
+means, of course, that it blocks until the request finished and the fact that it
+returns strongly typed values including byte arrays and JObjects in addition to
+ordinary strings.
+
+A new `GetDiagnosticHeadersDump` method returns a list of headers that will
+accompany a request.
+
+The `RequestOptions` constructor has additional arguments, **all** optional,
+that allow values for the `Accept`, `Accept-Encoding`, and `CacheControl` HTTP
+request headers to be specified. Implementing these on a separate object makes
+creating presets dead simple.
 
 ## 2026-04-11
 

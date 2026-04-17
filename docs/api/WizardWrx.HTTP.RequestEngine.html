@@ -119,7 +119,7 @@ HTTP Request verbs.</p>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_HTTP_RequestEngine__ctor.md&amp;value=---%0Auid%3A%20WizardWrx.HTTP.RequestEngine.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestEngine.cs/#L123">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestEngine.cs/#L130">View Source</a>
   </span>
   <a id="WizardWrx_HTTP_RequestEngine__ctor_" data-uid="WizardWrx.HTTP.RequestEngine.#ctor*"></a>
   <h4 id="WizardWrx_HTTP_RequestEngine__ctor" data-uid="WizardWrx.HTTP.RequestEngine.#ctor">RequestEngine()</h4>
@@ -136,7 +136,7 @@ OK for most use cases.</p>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_HTTP_RequestEngine__ctor_WizardWrx_HTTP_RequestOptions_.md&amp;value=---%0Auid%3A%20WizardWrx.HTTP.RequestEngine.%23ctor(WizardWrx.HTTP.RequestOptions)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestEngine.cs/#L140">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestEngine.cs/#L150">View Source</a>
   </span>
   <a id="WizardWrx_HTTP_RequestEngine__ctor_" data-uid="WizardWrx.HTTP.RequestEngine.#ctor*"></a>
   <h4 id="WizardWrx_HTTP_RequestEngine__ctor_WizardWrx_HTTP_RequestOptions_" data-uid="WizardWrx.HTTP.RequestEngine.#ctor(WizardWrx.HTTP.RequestOptions)">RequestEngine(RequestOptions)</h4>
@@ -184,7 +184,7 @@ access tokens are short-lived.</p>
   </span>
   <h4 id="WizardWrx_HTTP_RequestEngine_REQUEST_EXPECTS_JSON_RESPONSE" data-uid="WizardWrx.HTTP.RequestEngine.REQUEST_EXPECTS_JSON_RESPONSE">REQUEST_EXPECTS_JSON_RESPONSE</h4>
   <div class="markdown level1 summary"><p>Use this constant to explicitly assert the default value of the last
-parameter to <a class="xref" href="WizardWrx.HTTP.RequestEngine.html#WizardWrx_HTTP_RequestEngine_CallWebApiAndProcessResultASync_System_String_System_Action_Newtonsoft_Json_Linq_JObject__WizardWrx_JsonSupport_JSON_Deserialized_Object_WizardWrx_HTTP_RequestEngine_HttpVerb_System_Boolean_">CallWebApiAndProcessResultASync(String, Action&lt;JObject&gt;, JSON_Deserialized_Object, RequestEngine.HttpVerb, Boolean)</a>,
+parameter to <a class="xref" href="WizardWrx.HTTP.RequestEngine.html#WizardWrx_HTTP_RequestEngine_SendRequest__1_System_String_System_Action_Newtonsoft_Json_Linq_JObject__WizardWrx_JsonSupport_JSON_Deserialized_Object_WizardWrx_HTTP_RequestEngine_HttpVerb_System_Boolean_">SendRequest&lt;T&gt;(String, Action&lt;JObject&gt;, JSON_Deserialized_Object, RequestEngine.HttpVerb, Boolean)</a>,
 <code>pfExpectJSON</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -216,7 +216,7 @@ parameter to <a class="xref" href="WizardWrx.HTTP.RequestEngine.html#WizardWrx_H
   </span>
   <h4 id="WizardWrx_HTTP_RequestEngine_REQUEST_EXPECTS_OTHER_RESPONSE" data-uid="WizardWrx.HTTP.RequestEngine.REQUEST_EXPECTS_OTHER_RESPONSE">REQUEST_EXPECTS_OTHER_RESPONSE</h4>
   <div class="markdown level1 summary"><p>Use this constant to override the default value of the last
-parameter to <a class="xref" href="WizardWrx.HTTP.RequestEngine.html#WizardWrx_HTTP_RequestEngine_CallWebApiAndProcessResultASync_System_String_System_Action_Newtonsoft_Json_Linq_JObject__WizardWrx_JsonSupport_JSON_Deserialized_Object_WizardWrx_HTTP_RequestEngine_HttpVerb_System_Boolean_">CallWebApiAndProcessResultASync(String, Action&lt;JObject&gt;, JSON_Deserialized_Object, RequestEngine.HttpVerb, Boolean)</a>,
+parameter to <a class="xref" href="WizardWrx.HTTP.RequestEngine.html#WizardWrx_HTTP_RequestEngine_SendRequest__1_System_String_System_Action_Newtonsoft_Json_Linq_JObject__WizardWrx_JsonSupport_JSON_Deserialized_Object_WizardWrx_HTTP_RequestEngine_HttpVerb_System_Boolean_">SendRequest&lt;T&gt;(String, Action&lt;JObject&gt;, JSON_Deserialized_Object, RequestEngine.HttpVerb, Boolean)</a>,
 <code>pfExpectJSON</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -280,19 +280,131 @@ and how its reports are delivered.</p>
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_HTTP_RequestEngine_CallWebApiAndProcessResultASync_System_String_System_Action_Newtonsoft_Json_Linq_JObject__WizardWrx_JsonSupport_JSON_Deserialized_Object_WizardWrx_HTTP_RequestEngine_HttpVerb_System_Boolean_.md&amp;value=---%0Auid%3A%20WizardWrx.HTTP.RequestEngine.CallWebApiAndProcessResultASync(System.String%2CSystem.Action%7BNewtonsoft.Json.Linq.JObject%7D%2CWizardWrx.JsonSupport.JSON_Deserialized_Object%2CWizardWrx.HTTP.RequestEngine.HttpVerb%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_HTTP_RequestEngine_GetDiagnosticHeadersDump_System_Uri_System_Boolean_.md&amp;value=---%0Auid%3A%20WizardWrx.HTTP.RequestEngine.GetDiagnosticHeadersDump(System.Uri%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestEngine.cs/#L236">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestEngine.cs/#L172">View Source</a>
   </span>
-  <a id="WizardWrx_HTTP_RequestEngine_CallWebApiAndProcessResultASync_" data-uid="WizardWrx.HTTP.RequestEngine.CallWebApiAndProcessResultASync*"></a>
-  <h4 id="WizardWrx_HTTP_RequestEngine_CallWebApiAndProcessResultASync_System_String_System_Action_Newtonsoft_Json_Linq_JObject__WizardWrx_JsonSupport_JSON_Deserialized_Object_WizardWrx_HTTP_RequestEngine_HttpVerb_System_Boolean_" data-uid="WizardWrx.HTTP.RequestEngine.CallWebApiAndProcessResultASync(System.String,System.Action{Newtonsoft.Json.Linq.JObject},WizardWrx.JsonSupport.JSON_Deserialized_Object,WizardWrx.HTTP.RequestEngine.HttpVerb,System.Boolean)">CallWebApiAndProcessResultASync(String, Action&lt;JObject&gt;, JSON_Deserialized_Object, RequestEngine.HttpVerb, Boolean)</h4>
-  <div class="markdown level1 summary"><p>Calls the protected web API and processes the result</p>
+  <a id="WizardWrx_HTTP_RequestEngine_GetDiagnosticHeadersDump_" data-uid="WizardWrx.HTTP.RequestEngine.GetDiagnosticHeadersDump*"></a>
+  <h4 id="WizardWrx_HTTP_RequestEngine_GetDiagnosticHeadersDump_System_Uri_System_Boolean_" data-uid="WizardWrx.HTTP.RequestEngine.GetDiagnosticHeadersDump(System.Uri,System.Boolean)">GetDiagnosticHeadersDump(Uri, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Get a formatted list of the HTTP headers attached to the request.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public object CallWebApiAndProcessResultASync(string pstrWebApiUrl, Action&lt;JObject&gt; pfunProcessResultCallback = null, JSON_Deserialized_Object pjSON_Deserialized = null, RequestEngine.HttpVerb penmVerb = RequestEngine.HttpVerb.POST, bool pfExpectJSON = true)</code></pre>
+    <pre><code class="lang-csharp hljs">public string GetDiagnosticHeadersDump(Uri requestUri, bool pfExpectJson)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">requestUri</span></td>
+        <td><p>Specify the URL that will accompany the actual request when you call
+SendRequest.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">pfExpectJson</span></td>
+        <td><p>Specify the Boolean ExpectJSON flag that will accomapny the actual
+request when you call SendRequest.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The return value is a human-readable list of the HTTP headers that
+will be attached to the actual request.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_HTTP_RequestEngine_ParseQueryToDictionary_System_Uri_.md&amp;value=---%0Auid%3A%20WizardWrx.HTTP.RequestEngine.ParseQueryToDictionary(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestEngine.cs/#L487">View Source</a>
+  </span>
+  <a id="WizardWrx_HTTP_RequestEngine_ParseQueryToDictionary_" data-uid="WizardWrx.HTTP.RequestEngine.ParseQueryToDictionary*"></a>
+  <h4 id="WizardWrx_HTTP_RequestEngine_ParseQueryToDictionary_System_Uri_" data-uid="WizardWrx.HTTP.RequestEngine.ParseQueryToDictionary(System.Uri)">ParseQueryToDictionary(Uri)</h4>
+  <div class="markdown level1 summary"><p>Extract the Query from any URI into an IDictionary of name-value
+pairs that can be URL encoded properly.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IDictionary&lt;string, string&gt; ParseQueryToDictionary(Uri puriToParse)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">puriToParse</span></td>
+        <td><p>Pass in a reference to the System.Uri to process.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IDictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><p>The return value is the IDictionary populated with keys for each
+named value in the Query of <code data-dev-comment-type="paramref" class="paramref">puriToParse</code>. If the query is
+empty or absent, the returned dictionary is empty.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_HTTP_RequestEngine_SendRequest__1_System_String_System_Action_Newtonsoft_Json_Linq_JObject__WizardWrx_JsonSupport_JSON_Deserialized_Object_WizardWrx_HTTP_RequestEngine_HttpVerb_System_Boolean_.md&amp;value=---%0Auid%3A%20WizardWrx.HTTP.RequestEngine.SendRequest%60%601(System.String%2CSystem.Action%7BNewtonsoft.Json.Linq.JObject%7D%2CWizardWrx.JsonSupport.JSON_Deserialized_Object%2CWizardWrx.HTTP.RequestEngine.HttpVerb%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestEngine.cs/#L330">View Source</a>
+  </span>
+  <a id="WizardWrx_HTTP_RequestEngine_SendRequest_" data-uid="WizardWrx.HTTP.RequestEngine.SendRequest*"></a>
+  <h4 id="WizardWrx_HTTP_RequestEngine_SendRequest__1_System_String_System_Action_Newtonsoft_Json_Linq_JObject__WizardWrx_JsonSupport_JSON_Deserialized_Object_WizardWrx_HTTP_RequestEngine_HttpVerb_System_Boolean_" data-uid="WizardWrx.HTTP.RequestEngine.SendRequest``1(System.String,System.Action{Newtonsoft.Json.Linq.JObject},WizardWrx.JsonSupport.JSON_Deserialized_Object,WizardWrx.HTTP.RequestEngine.HttpVerb,System.Boolean)">SendRequest&lt;T&gt;(String, Action&lt;JObject&gt;, JSON_Deserialized_Object, RequestEngine.HttpVerb, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Call the web API and process the result.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T SendRequest&lt;T&gt;(string pstrWebApiUrl, Action&lt;JObject&gt; pfunProcessResultCallback = null, JSON_Deserialized_Object pjSON_Deserialized = null, RequestEngine.HttpVerb penmVerb = RequestEngine.HttpVerb.POST, bool pfExpectJSON = true)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -307,7 +419,8 @@ and how its reports are delivered.</p>
       <tr>
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">pstrWebApiUrl</span></td>
-        <td><p>URL of the web API to call (supposed to return Json)</p>
+        <td><p>URL of the web API to call (presumeed to return Json unless
+indicated otherwise)</p>
 </td>
       </tr>
       <tr>
@@ -384,7 +497,7 @@ Otherwise, the raw string is returned as is.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Object</span></td>
+        <td><span class="xref">T</span></td>
         <td><p>
 This routine was originally intended for use as part of a library
 that interacts with the Microsoft Graph API and expects to return an
@@ -402,6 +515,36 @@ a garden variety String.
       </tr>
     </tbody>
   </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>
+Specifies the expected return type of the Web API call.
+</p>
+<p>
+When pfExpectJSON is true, T must be either JObject or a type
+that can be deserialized from the JSON response body.
+</p>
+<p>
+When pfExpectJSON is false, T may be:
+</p>
+<ul><li></li><li></li><li></li></ul>
+<p>
+The method does not attempt to infer the correct type; the caller is
+responsible for specifying a T that matches the expected response format.
+</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <h5 class="exceptions">Exceptions</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -412,70 +555,25 @@ a garden variety String.
     </thead>
     <tbody>
       <tr>
+        <td><span class="xref">Newtonsoft.Json.JsonException</span></td>
+        <td><p>Thrown when pfExpectJSON is true but the response body cannot be
+deserialized into the requested type T or is not valid JSON.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.InvalidOperationException</span></td>
+        <td><p>Thrown when pfExpectJSON is false and T is incompatible with the
+non‑JSON response mode. For example, this occurs when T is not
+string or byte[] and the method has no defined conversion for the
+returned content.</p>
+</td>
+      </tr>
+      <tr>
         <td><span class="xref">System.Exception</span></td>
-        <td><p>Two distinct circumstances can give rise to an Exception exception.</p>
-<ol><li></li><li></li></ol>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.ComponentModel.InvalidEnumArgumentException</span></td>
-        <td><p>An InvalidEnumArgumentException Exception arises when the value of
-optional argument <code data-dev-comment-type="paramref" class="paramref">penmVerb</code> is invalid, ordinarily
-due to a programming error, since it is reasonbly safe to assume
-that the verb is always hard coded per toe API.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_HTTP_RequestEngine_ParseQueryToDictionary_System_Uri_.md&amp;value=---%0Auid%3A%20WizardWrx.HTTP.RequestEngine.ParseQueryToDictionary(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestEngine.cs/#L361">View Source</a>
-  </span>
-  <a id="WizardWrx_HTTP_RequestEngine_ParseQueryToDictionary_" data-uid="WizardWrx.HTTP.RequestEngine.ParseQueryToDictionary*"></a>
-  <h4 id="WizardWrx_HTTP_RequestEngine_ParseQueryToDictionary_System_Uri_" data-uid="WizardWrx.HTTP.RequestEngine.ParseQueryToDictionary(System.Uri)">ParseQueryToDictionary(Uri)</h4>
-  <div class="markdown level1 summary"><p>Extract the Query from any URI into an IDictionary of name-value
-pairs that can be URL encoded properly.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IDictionary&lt;string, string&gt; ParseQueryToDictionary(Uri puriToParse)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Uri</span></td>
-        <td><span class="parametername">puriToParse</span></td>
-        <td><p>Pass in a reference to the System.Uri to process.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Collections.Generic.IDictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
-        <td><p>The return value is the IDictionary populated with keys for each
-named value in the Query of <code data-dev-comment-type="paramref" class="paramref">puriToParse</code>. If the query is
-empty or absent, the returned dictionary is empty.</p>
+        <td><p>Thrown when the Web API returns an error status code other than
+Unauthorized, or when token refresh fails after receiving a 401
+Unauthorized response. The exception message includes the HTTP
+status code and the response content for diagnostic purposes.</p>
 </td>
       </tr>
     </tbody>

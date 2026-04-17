@@ -7,17 +7,7 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 [assembly: AssemblyTitle ( "ReflectionInvokerDemo" )]
 [assembly: AssemblyDescription ( "Thorough demonstration of the WizardWrx.Core.ReflectionInvoker class" )]
-[assembly: AssemblyConfiguration ( "" )]
-[assembly: AssemblyCompany ( "David A. Gray" )]
-[assembly: AssemblyProduct ( "ReflectionInvokerDemo" )]
-[assembly: AssemblyCopyright ( "Copyright © David A. Gray 2025" )]
-[assembly: AssemblyTrademark ( "" )]
 [assembly: AssemblyCulture ( "" )]
-
-// Setting ComVisible to false makes the types in this assembly not visible
-// to COM components.  If you need to access a type in this assembly from
-// COM, set the ComVisible attribute to true on that type.
-[assembly: ComVisible ( false )]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid ( "36d0fb4a-cfd5-4def-973e-f8f5cd3550e0" )]
@@ -29,6 +19,5 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion ( "1.0.0.0" )]
 [assembly: AssemblyFileVersion ( "1.0.23.0" )]
 [assembly: AssemblyInformationalVersion ( "1.0.23" )]

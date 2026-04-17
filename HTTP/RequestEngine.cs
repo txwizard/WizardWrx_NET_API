@@ -27,6 +27,9 @@
     ---------- ------- ------ -------------------------------------------------
     2021/07/05 1.0     DAGray Initial implementation
     2026/02/01 9.0     DAGray Brought over intact from Sweeper365_DAL
+	2026/04/16 9.0.81  DAGray Correct a bug in ApplyHeaders that caused the
+                              Accept header to go into the default collection
+                              instead of the local collection.
     ============================================================================
 */
 
@@ -34,14 +37,11 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 using System;
-
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
-using System.Threading.Tasks;
 
 using WizardWrx.JsonSupport;
 
@@ -55,7 +55,7 @@ namespace WizardWrx.HTTP
 	{
 		/// <summary>
 		/// Use this constant to explicitly assert the default value of the last
-		/// parameter to <see cref="CallWebApiAndProcessResultASync"/>,
+		/// parameter to <see cref="SendRequest"/>,
 		/// <c>pfExpectJSON</c>.
 		/// </summary>
 		public const bool REQUEST_EXPECTS_JSON_RESPONSE = true;
@@ -63,7 +63,7 @@ namespace WizardWrx.HTTP
 
 		/// <summary>
 		/// Use this constant to override the default value of the last
-		/// parameter to <see cref="CallWebApiAndProcessResultASync"/>,
+		/// parameter to <see cref="SendRequest"/>,
 		/// <c>pfExpectJSON</c>.
 		/// </summary>
 		public const bool REQUEST_EXPECTS_OTHER_RESPONSE = false;
@@ -99,7 +99,7 @@ namespace WizardWrx.HTTP
 			PUT,
 
 			/// <summary>
-			/// This value maps to the dangerous DELETE verb, and is usually 
+			/// This value maps to the dangerous DELETE verb, which is usually
 			/// sent without a payload.
 			/// </summary>
 			DELETE
@@ -117,10 +117,20 @@ namespace WizardWrx.HTTP
 
 
 		/// <summary>
+		/// Each instance must construct and use its own HttoClient to prevent
+		/// recycling HTTP request headers.
+		/// </summary>
+		private readonly HttpClient _httpClient;
+
+
+		/// <summary>
 		/// The default constructor leaves the Options property null, which is
 		/// OK for most use cases.
 		/// </summary>
-		public RequestEngine ( ) { }   // public RequestEngine constructor (1 of 2)
+		public RequestEngine ( )
+		{
+			_httpClient = CreateHttpClient ( );
+		}   // public RequestEngine constructor (1 of 2)
 
 
 		/// <summary>
@@ -140,14 +150,101 @@ namespace WizardWrx.HTTP
 		public RequestEngine ( RequestOptions pobjRequestOptions )
 		{
 			Options = pobjRequestOptions;
-		}   // public RequestEngine constructor (2 of 2)
+			_httpClient = CreateHttpClient ( Options );
+		}   // public RequestEngine constructor (1 of 2)
 
 
 		/// <summary>
-		/// Calls the protected web API and processes the result
+		/// Get a formatted list of the HTTP headers attached to the request.
 		/// </summary>
+		/// <param name="requestUri">
+		/// Specify the URL that will accompany the actual request when you call
+		/// SendRequest.
+		/// </param>
+		/// <param name="pfExpectJson">
+		/// Specify the Boolean ExpectJSON flag that will accomapny the actual
+		/// request when you call SendRequest.
+		/// </param>
+		/// <returns>
+		/// The return value is a human-readable list of the HTTP headers that
+		/// will be attached to the actual request.
+		/// </returns>
+		public string GetDiagnosticHeadersDump ( Uri requestUri , bool pfExpectJson )
+		{
+			HttpRequestMessage temp = new HttpRequestMessage ( HttpMethod.Get , requestUri );
+
+			//	----------------------------------------------------------------
+			//	Apply headers exactly as a real request would.
+			//	----------------------------------------------------------------
+
+			ApplyHeaders ( temp , pfExpectJson );
+
+			StringBuilder sb = new StringBuilder ( 512 );
+
+			sb.AppendLine ( $"Request URI     = {requestUri}" );
+			sb.AppendLine ( $"ExpectJSON Flag = {pfExpectJson}" );
+			sb.AppendLine ( $"{Environment.NewLine}Headers applied:{Environment.NewLine}" );
+			sb.AppendLine ( "----------------------------------------" );
+
+			foreach ( var header in temp.Headers )
+			{
+				foreach ( var value in header.Value )
+				{
+					sb.AppendLine ( header.Key + ": " + value );
+				}   // foreach ( var value in header.Value )
+			}   // foreach ( var header in temp.Headers )
+
+			if ( temp.Content != null )
+			{
+				foreach ( var header in temp.Content.Headers )
+				{
+					foreach ( var value in header.Value )
+					{
+						sb.AppendLine ( header.Key + ": " + value );
+					}   // foreach ( var value in header.Value )
+				}   // foreach ( var header in temp.Content.Headers )
+			}   // if ( temp.Content != null )
+
+			sb.AppendLine ($"{Environment.NewLine}----------------------------------------{Environment.NewLine}" );
+
+			return sb.ToString ( );
+		}   // public string GetDiagnosticHeadersDump
+
+
+		/// <summary>
+		/// Call the web API and process the result.
+		/// </summary>
+		/// <typeparam name="T">
+		/// <para>
+		/// Specifies the expected return type of the Web API call.
+		/// </para>
+		/// <para>
+		/// When pfExpectJSON is true, T must be either JObject or a type
+		/// that can be deserialized from the JSON response body.
+		/// </para>
+		/// <para>
+		/// When pfExpectJSON is false, T may be:
+		/// </para>
+		/// <list type="bullet">
+		/// <item>
+		/// string  — for plain text responses
+		/// </item>
+		/// <item>
+		/// byte[]  — for binary responses such as audio files
+		/// </item>
+		/// <item>
+		/// any other type for which the caller provides its own interpretation
+		/// of the raw response body.
+		/// </item>
+		/// </list>
+		/// <para>
+		/// The method does not attempt to infer the correct type; the caller is
+		/// responsible for specifying a T that matches the expected response format.
+		/// </para>
+		/// </typeparam>
 		/// <param name="pstrWebApiUrl">
-		/// URL of the web API to call (supposed to return Json)
+		/// URL of the web API to call (presumeed to return Json unless
+		/// indicated otherwise)
 		/// </param>
 		/// <param name="pfunProcessResultCallback">
 		/// <para>
@@ -214,136 +311,165 @@ namespace WizardWrx.HTTP
 		/// a garden variety String.
 		/// </para>
 		/// </returns>
+		/// <exception cref="JsonException">
+		/// Thrown when pfExpectJSON is true but the response body cannot be
+		/// deserialized into the requested type T or is not valid JSON.
+		/// </exception>
+		/// <exception cref="InvalidOperationException">
+		/// Thrown when pfExpectJSON is false and T is incompatible with the
+		/// non‑JSON response mode. For example, this occurs when T is not
+		/// string or byte[] and the method has no defined conversion for the
+		/// returned content.
+		/// </exception>
 		/// <exception cref="Exception">
-		/// Two distinct circumstances can give rise to an Exception exception.
-		/// <list type="number">
-		/// <item>
-		/// The OAuth token expired and a replacement cannot be obtained from
-		/// the Microsoft Azure identity server.
-		/// </item>
-		/// <item>
-		/// Another type of exception arose while processing a request against
-		/// the Microsoft Graph API endpoints.
-		/// </item>
-		/// </list>
+		/// Thrown when the Web API returns an error status code other than
+		/// Unauthorized, or when token refresh fails after receiving a 401
+		/// Unauthorized response. The exception message includes the HTTP
+		/// status code and the response content for diagnostic purposes.
 		/// </exception>
-		/// <exception cref="System.ComponentModel.InvalidEnumArgumentException">
-		/// An InvalidEnumArgumentException Exception arises when the value of
-		/// optional argument <paramref name="penmVerb"/> is invalid, ordinarily
-		/// due to a programming error, since it is reasonbly safe to assume
-		/// that the verb is always hard coded per toe API.
-		/// </exception>
-		public object CallWebApiAndProcessResultASync (
+		public T SendRequest<T> (
 			string pstrWebApiUrl ,
 			Action<JObject> pfunProcessResultCallback = null ,
 			JSON_Deserialized_Object pjSON_Deserialized = null ,
 			HttpVerb penmVerb = HttpVerb.POST ,
 			bool pfExpectJSON = true )
 		{
-			Uri uriAsInput = new Uri ( pstrWebApiUrl );			
+			Uri uriAsInput = new Uri ( pstrWebApiUrl );
 			bool fTry = true;
 			HttpVerb enmRealVerb = ( ( pjSON_Deserialized == null ) && ( penmVerb != HttpVerb.DELETE ) ) ? HttpVerb.GET : penmVerb;
 
 			while ( fTry )
 			{
-				using ( HttpRequestMessage httpRequest = new HttpRequestMessage ( s_dctVerbMap [ penmVerb ] , uriAsInput ) )
+				using ( HttpRequestMessage httpRequest = new HttpRequestMessage ( s_dctVerbMap [ enmRealVerb ] , uriAsInput ) )
 				{
 					if ( ( Options != null ) && ( !string.IsNullOrEmpty ( Options.CurrentOAuthToken ) ) )
 					{
 						ApplyHeaders (
 							httpRequest ,                   // HttpRequestMessage   phttpRequest
-							Options.CurrentOAuthToken );    // string               pstrBearerToken = null
-															// bool                 pfAcceptJson    = true
+							pfExpectJSON );					// bool                 pfAcceptJson    = true
 					}   // if ( ( Options != null ) && ( !string.IsNullOrEmpty ( Options.CurrentOAuthToken ) ) )
 
-					httpRequest.Content = pjSON_Deserialized == null ? null : new StringContent (
-						pjSON_Deserialized.JSON ,           // string               content (the JSON string)
-						Encoding.UTF8 ,                     // System.Text.Encoding encoding
-						JSON_MIME_TYPE );                   // string               mediatype (MIME type)
-
-					using ( Task<HttpResponseMessage> httpTask1 = s_HttpClient.SendAsync ( httpRequest ) )
+					if ( pjSON_Deserialized != null )
 					{
-						httpTask1.Wait ( );
+						httpRequest.Content = new StringContent (
+							pjSON_Deserialized.JSON ,       // string               content (the JSON string)
+							Encoding.UTF8 ,                 // System.Text.Encoding encoding
+							JSON_MIME_TYPE );               // string               mediatype (MIME type)
+					}   // if ( pjSON_Deserialized != null )
 
-						using ( HttpResponseMessage response = httpTask1.Result )
-						{   // HttpResponseMessage is Disposable.
-							if ( response.IsSuccessStatusCode )
-							{   // Satisfy the condition of the enclosing While loop.
-								fTry = false;
+					HttpResponseMessage response = _httpClient
+						.SendAsync ( httpRequest )
+						.ConfigureAwait ( false )
+						.GetAwaiter ( )
+						.GetResult ( );
 
-								Task<string> httpTask2 = response.Content.ReadAsStringAsync ( );
-								httpTask2.Wait ( );
-								string strResult = httpTask2.Result;
+					using ( response )
+					{
+						if ( response.IsSuccessStatusCode )
+						{   // Satisfy the condition of the enclosing While loop.
+							fTry = false;
 
-								if ( pfExpectJSON )
+							string strResult = response.Content
+								.ReadAsStringAsync ( )
+								.ConfigureAwait ( false )
+								.GetAwaiter ( )
+								.GetResult ( );
+
+							if ( pfExpectJSON )
+							{
+								JObject jstrResult = JsonConvert.DeserializeObject ( strResult ) as JObject;
+
+								if ( jstrResult == null )
 								{
-									JObject jstrResult = JsonConvert.DeserializeObject ( strResult ) as JObject;
+									throw new JsonException ( @"Expected a JSON object but got something else." );
+								}
 
-									if ( pfunProcessResultCallback != null )
-									{   // Unused for POST requests.
-										pfunProcessResultCallback ( jstrResult );
-									}   // if ( pfunProcessResultCallback != null )
+								if ( pfunProcessResultCallback != null )
+								{   // Unused for POST requests.
+									pfunProcessResultCallback ( jstrResult );
+								}   // if ( pfunProcessResultCallback != null )
 
-									return jstrResult;
-								}   // TRUE (outcome given default value for pfExpectJSON) block, if ( pfExpectJSON )
-								else
+								// If T is JObject, return it directly.
+								if ( typeof ( T ) == typeof ( JObject ) )
 								{
-									return strResult;
-								}   // FALSE (outcome given overridden value for pfExpectJSON) block, if ( pfExpectJSON ) 
-							}   // TRUE (anticipated outcome) block, if ( response.IsSuccessStatusCode ) 
+									return ( T ) ( object ) jstrResult;
+								}
+
+								// Otherwise, deserialize to T.
+								T typedResult = JsonConvert.DeserializeObject<T> ( strResult );
+								return typedResult;
+							}   // TRUE (outcome given default value for pfExpectJSON) block, if ( pfExpectJSON )
 							else
-							{   // Check for an expired token.
-								if ( response.StatusCode == HttpStatusCode.Unauthorized )
+							{
+								if ( typeof ( T ) == typeof ( byte [ ] ) )
 								{
-									string strNewOAuthToken = null;
+									byte [ ] bytes = response.Content
+										.ReadAsByteArrayAsync ( )
+										.ConfigureAwait ( false )
+										.GetAwaiter ( )
+										.GetResult ( );
 
-									if ( Options.TokenGetter != null && Options.TokenGetter ( out strNewOAuthToken , Options.Logger ) )
-									{
-										fTry = false;
-									}
-									else
-									{   // Request denied. Throw up our hands and bug out.
-										if ( httpTask1 != null )
-										{   // The Task<HttpResponseMessage> doesn't lend itself to a Using block.
-											httpTask1.Dispose ( );
-										}   // if ( httpTask1 != null )
+									return ( T ) ( object ) bytes;
+								}   // if ( typeof ( T ) == typeof ( byte [ ] ) )
 
-										throw new Exception ( Properties.Resources.ERRMSG_TOKEN_REFRESH_FAIL );
-									}   // FALSE (unanticipated outcome) block, if ( _clientApplication_Adapter.GetOAuthToken ( ) )
-								}   // TRUE (anticipated outcome) block, if ( response.StatusCode == System.Net.HttpStatusCode.Unauthorized )
+								if ( typeof ( T ) == typeof ( string ) )
+								{
+									return ( T ) ( object ) strResult;
+								}   // if ( typeof ( T ) == typeof ( string ) )
+
+								throw new InvalidOperationException ( $"pfExpectJSON is false, but the requested return type ({typeof(T)}) is not string." );
+							}   // FALSE (outcome given overridden value for pfExpectJSON) block, if ( pfExpectJSON )
+						}   // TRUE (anticipated outcome) block, if ( response.IsSuccessStatusCode )
+						else
+						{   // Check for an expired token.
+							if ( response.StatusCode == HttpStatusCode.Unauthorized )
+							{
+								string strNewOAuthToken = null;
+
+								if ( Options != null &&
+									 Options.TokenGetter != null &&
+									 Options.TokenGetter ( out strNewOAuthToken , Options.Logger ) &&
+									 !string.IsNullOrEmpty ( strNewOAuthToken ) )
+								{
+									Options.CurrentOAuthToken = strNewOAuthToken;
+									continue;   // Retry with new token.
+								}
 								else
-								{
-									StringBuilder builder = new StringBuilder ( MagicNumbers.CAPACITY_01KB );
-									builder.AppendLine ( $"Web API Call failed: {response.StatusCode}\n" );
+								{   // Request denied. Throw up our hands and bug out.
+									throw new Exception ( Properties.Resources.ERRMSG_TOKEN_REFRESH_FAIL );
+								}   // FALSE (unanticipated outcome) block, if ( _clientApplication_Adapter.GetOAuthToken ( ) )
+							}   // TRUE (anticipated outcome) block, if ( response.StatusCode == System.Net.HttpStatusCode.Unauthorized )
+							else
+							{
+								string strResultContent = response.Content
+									.ReadAsStringAsync ( )
+									.ConfigureAwait ( false )
+									.GetAwaiter ( )
+									.GetResult ( );
 
-									using ( Task<string> httpTask2 = response.Content.ReadAsStringAsync ( ) )
-									{
-										httpTask2.Wait ( );
-										string strResultContent = httpTask2.Result;
+								//  ----------------------------------------
+								//  When calling the Microsoft Graph API,
+								//  note that if you got reponse.Code == 403
+								//  and reponse.content.code ==
+								//  "Authorization_RequestDenied" that this
+								//  is because the tenant admin  has not
+								//  granted consent for the application to
+								//  call the Web API.
+								//  ----------------------------------------
 
-										//  ----------------------------------------
-										//	When calling the Microsoft Graph API,
-										//  note that if you got reponse.Code == 403
-										//  and reponse.content.code ==
-										//  "Authorization_RequestDenied" that this
-										//  is because the tenant admin  has not
-										//  granted consent for the application to
-										//  call the Web API.
-										//  ----------------------------------------
+								StringBuilder builder = new StringBuilder ( MagicNumbers.CAPACITY_01KB );
+								builder.AppendLine ( $"Web API Call failed: {response.StatusCode}\n" );
+								builder.AppendLine ( $"Content: {strResultContent}" );
 
-										builder.AppendLine ( $"Content: {strResultContent}" );
-
-										throw new Exception ( builder.ToString ( ) );
-									}   // using ( Task<string> httpTask2 = response.Content.ReadAsStringAsync ( ) )
-								}   // FALSE (unanticipated outcome) block, if ( response.StatusCode == System.Net.HttpStatusCode.Unauthorized )
-							}   // FALSE (unanticipated outcome) block, if ( response.IsSuccessStatusCode ) 
-						}   // using ( HttpResponseMessage response = httpTask1.Result )
-					}   // using ( Task<HttpResponseMessage> httpTask1 = s_HttpClient.SendAsync ( httpRequest ) )
-				}   // using ( HttpRequestMessage httpRequest = new HttpRequestMessage ( s_dctVerbMap [ penmVerb ] , uriAsInput ) )
+								throw new Exception ( builder.ToString ( ) );
+							}   // FALSE (unanticipated outcome) block, if ( response.StatusCode == System.Net.HttpStatusCode.Unauthorized )
+						}   // FALSE (unanticipated outcome) block, if ( response.IsSuccessStatusCode )
+					}   // using ( response )
+				}   // using ( HttpRequestMessage httpRequest = new HttpRequestMessage ( s_dctVerbMap [ enmRealVerb ] , uriAsInput ) )
 			}   // while ( fTry )
 
 			throw new InvalidOperationException ( @"This Exception should never happen because the code should return from one of two exit points inside the while loop." );
-		}   // public void CallWebApiAndProcessResultASyn
+		}   // public T SendRequest<T>
 
 
 		/// <summary>
@@ -382,10 +508,14 @@ namespace WizardWrx.HTTP
 				{
 					if ( !string.IsNullOrWhiteSpace ( astrPairs [ intCurrentPair ] ) )
 					{
-						string [ ] astrKeyAndValue = astrPairs [ intCurrentPair ].Split ( new [ ] { SpecialCharacters.EQUALS_SIGN } , MagicNumbers.PLUS_TWO );
+						string [ ] astrKeyAndValue = astrPairs [ intCurrentPair ].Split (
+							new [ ] { SpecialCharacters.EQUALS_SIGN } ,
+							MagicNumbers.PLUS_TWO );
 
 						string strKey = astrKeyAndValue [ ArrayInfo.ARRAY_FIRST_ELEMENT ];
-						string strValue = astrKeyAndValue.Length > ListInfo.EXACTLY_ONE_ITEM ? astrKeyAndValue [ ArrayInfo.ARRAY_SECOND_ELEMENT ] : SpecialStrings.EMPTY_STRING;
+						string strValue = astrKeyAndValue.Length > ListInfo.EXACTLY_ONE_ITEM
+							? astrKeyAndValue [ ArrayInfo.ARRAY_SECOND_ELEMENT ]
+							: SpecialStrings.EMPTY_STRING;
 
 						// Do NOT decode here — keep raw values.
 						dctQueryValues [ strKey ] = strValue;
@@ -395,6 +525,36 @@ namespace WizardWrx.HTTP
 
 			return dctQueryValues;
 		}   // public static IDictionary<string , string> ParseQueryToDictionary
+
+
+
+		/// <summary>
+		/// This private factory method initializes the private HttpClient
+		/// used by the instance.
+		/// </summary>
+		/// <param name="options">
+		/// The RequestOptions object is technically optional, and, when so, the
+		/// Automatic Decompression for GZip and Deflate is left off.
+		/// </param>
+		/// <returns>
+		/// A reference to the  returned HTTPClient goes into the private
+		/// instance member that is set aside for that purpose. Each
+		/// constructor, including the default constructor, calls it with or
+		/// without an Options object reference.
+		/// </returns>
+		private static HttpClient CreateHttpClient ( RequestOptions options = null )
+		{
+			HttpClientHandler handler = new HttpClientHandler ( );
+
+			if ( !string.IsNullOrEmpty ( options?.AcceptEncodingValue ) )
+			{
+				handler.AutomaticDecompression =
+					DecompressionMethods.GZip |
+					DecompressionMethods.Deflate;
+			}   // if ( !string.IsNullOrEmpty ( options?.AcceptEncodingValue ) )
+
+			return new HttpClient ( handler , disposeHandler: true );
+		}   // private static HttpClient CreateHttpClient
 
 
 		/// <summary>
@@ -407,68 +567,146 @@ namespace WizardWrx.HTTP
 		/// This HttpRequestMessage parameter is a reference to the new Request
 		/// object that is created on each iteration of the request retry loop.
 		/// </param>
-		/// <param name="pstrBearerToken">
-		/// This string represents the optional OAuth Bearer Access Token, which
-		/// goes into the AuthenticationHeaderValue that becomes the value of
-		/// the Authorization header that is appended to the collection of HTTP
-		/// headers.
-		/// </param>
 		/// <param name="pfAcceptJson">
 		/// When its value is True, the MediaTypeWithQualityHeaderValue header
 		/// that represents the JSON MIME type is appended to the headers.
 		/// </param>
-		private static void ApplyHeaders (
-			HttpRequestMessage phttpRequest ,
-			string pstrBearerToken = null ,
-			bool pfAcceptJson = true )
+		private void ApplyHeaders ( HttpRequestMessage phttpRequest , bool pfAcceptJson )
 		{
-			if ( phttpRequest.Headers.Accept == null || !phttpRequest.Headers.Accept.Any ( m => m.MediaType == JSON_MIME_TYPE ) )
-			{   // Add the JSON MIME type to the list of acceptable response format types.
-				s_HttpClient.DefaultRequestHeaders.Accept.Add (
-					new MediaTypeWithQualityHeaderValue (               // T     item
-						JSON_MIME_TYPE ) );                             // string mediaType
-			}   // if ( defaultRequestHeaders.Accept == null || !defaultRequestHeaders.Accept.Any ( m => m.MediaType == JSON_MIME_TYPE ) )
+			// ------------------------------------------------------------
+			// Apply Accept header preset (overrides JSON Accept fallback).
+			// ------------------------------------------------------------
 
-			if ( phttpRequest.RequestUri.AbsolutePath.IndexOf ( Properties.Resources.MESSAGES_ENDPOINT ) > ListInfo.INDEXOF_NOT_FOUND )
-			{   // This heading is added when the URI represents a call to the Microsoft Graph Messages endpoint.
-				phttpRequest.Headers.Add (
-					Properties.Resources.HTTP_HDR_PREFER ,              // string name
-					Properties.Resources.HTTP_HDR_IMMUTABLE_ID );       // string value
-			}   // if ( pstrWebApiUrl.IndexOf ( Properties.Resources.MESSAGES_ENDPOINT ) > ListInfo.INDEXOF_NOT_FOUND )
-
-			if ( pfAcceptJson )
+			if ( !string.IsNullOrEmpty ( Options?.AcceptHeaderValue ) )
 			{
+				phttpRequest.Headers.Accept.Clear ( );
 				phttpRequest.Headers.Accept.Add (
-					new MediaTypeWithQualityHeaderValue (
-						JSON_MIME_TYPE ) );
-			}   // if ( pfAcceptJson )
+					new MediaTypeWithQualityHeaderValue ( Options.AcceptHeaderValue ) );
+			}   // if ( !string.IsNullOrEmpty ( Options?.AcceptHeaderValue ) )
 
-			if ( !string.IsNullOrEmpty ( pstrBearerToken ) )
+			// ------------------------------------------------------------
+			// Apply Accept-Encoding preset.
+			// ------------------------------------------------------------
+
+			if ( !string.IsNullOrEmpty ( Options?.AcceptEncodingValue ) )
 			{
-				phttpRequest.Headers.Authorization = new AuthenticationHeaderValue (
-					OAUTH_TOKEN_TYPE ,
-					pstrBearerToken );
-			}   // if ( !string.IsNullOrEmpty ( bearerToken ) )
-		}   // private static void ApplyHeaders
+				if ( !string.IsNullOrEmpty ( Options?.AcceptEncodingValue ) )
+				{
+					phttpRequest.Headers.AcceptEncoding.Clear ( );
+
+					string [ ] astrEncodings = Options.AcceptEncodingValue.Split ( SpecialCharacters.COMMA );
+
+					foreach ( string strEncodingToken in astrEncodings )
+					{
+						string strTrimmedEncodingToken = strEncodingToken.Trim ( );
+						
+						if ( strTrimmedEncodingToken.Length > ListInfo.EMPTY_STRING_LENGTH )
+						{
+							phttpRequest.Headers.AcceptEncoding.Add (
+								new StringWithQualityHeaderValue ( strTrimmedEncodingToken ) );
+						}   // if ( strTrimmedEncodingToken.Length > ListInfo.EMPTY_STRING_LENGTH )
+					}   // foreach ( string strEncodingToken in astrEncodings )
+				}   // if ( !string.IsNullOrEmpty ( Options?.AcceptEncodingValue ) )
+			}   // if ( !string.IsNullOrEmpty ( Options?.AcceptEncodingValue ) )
+
+			// ------------------------------------------------------------
+			// Apply Cache-Control preset.
+			// ------------------------------------------------------------
+
+			if ( !string.IsNullOrEmpty ( Options?.CacheControlValue ) )
+			{
+				phttpRequest.Headers.CacheControl =
+					CacheControlHeaderValue.Parse ( Options.CacheControlValue );
+			}   // if ( !string.IsNullOrEmpty ( Options?.CacheControlValue ) )
+
+			// ------------------------------------------------------------
+			// Apply JSON Accept fallback ONLY if:
+			//   1. pfAcceptJson == true
+			//   2. No Accept preset was supplied
+			// ------------------------------------------------------------
+
+			if ( pfAcceptJson && string.IsNullOrEmpty ( Options?.AcceptHeaderValue ) )
+			{
+				bool hasJson = false;
+
+				foreach ( MediaTypeWithQualityHeaderValue mt in phttpRequest.Headers.Accept )
+				{
+					if ( string.Equals ( mt.MediaType , JSON_MIME_TYPE , StringComparison.Ordinal ) )
+					{
+						hasJson = true;
+						break;
+					}   // if ( string.Equals ( mt.MediaType , JSON_MIME_TYPE , StringComparison.Ordinal ) )
+				}   // foreach ( MediaTypeWithQualityHeaderValue mt in request.Headers.Accept )
+
+				if ( !hasJson )
+				{
+					phttpRequest.Headers.Accept.Add (
+						new MediaTypeWithQualityHeaderValue ( JSON_MIME_TYPE ) );
+				}   // if ( !hasJson )
+			}   // if ( pfAcceptJson && string.IsNullOrEmpty ( Options?.AcceptHeaderValue ) )
+
+			// ------------------------------------------------------------
+			// Apply Prefer header for Microsoft Graph Messages endpoint.
+			// ------------------------------------------------------------
+
+			if ( phttpRequest.RequestUri.AbsolutePath.IndexOf (
+					Properties.Resources.MESSAGES_ENDPOINT ,
+					StringComparison.OrdinalIgnoreCase ) > ListInfo.INDEXOF_NOT_FOUND )
+			{
+				phttpRequest.Headers.Add (
+					Properties.Resources.HTTP_HDR_PREFER ,
+					Properties.Resources.HTTP_HDR_IMMUTABLE_ID );
+			}   // if ( request.RequestUri.AbsolutePath.IndexOf ( Properties.Resources.MESSAGES_ENDPOINT , StringComparison.OrdinalIgnoreCase ) > ListInfo.INDEXOF_NOT_FOUND )
+
+			// ------------------------------------------------------------
+			// Apply Authorization header (Bearer token).
+			// ------------------------------------------------------------
+
+			if ( !string.IsNullOrEmpty ( Options?.CurrentOAuthToken ) )
+			{
+				phttpRequest.Headers.Authorization =
+					new AuthenticationHeaderValue (
+						OAUTH_TOKEN_TYPE ,
+						Options.CurrentOAuthToken );
+			}   // if ( !string.IsNullOrEmpty ( Options?.CurrentOAuthToken ) )
+		}   // private void ApplyHeaders
 
 
 		/// <summary>
-		/// The constructor stashes a reference to the HTTPClient in a protected
-		/// location.
+		/// Since the built-in HttpMethod object omits the seldom-used `PATCH`
+		/// method, it is implemented as a static property so that it is created
+		/// once only, when the class is first referenced.
 		/// </summary>
-		private static HttpClient s_HttpClient = new HttpClient ( );
+		private static readonly HttpMethod s_PatchMethod = new HttpMethod ( @"PATCH" );
 
 
+		/// <summary>
+		/// Since the built-in HttpMethod object omits the seldom-used `PATCH`
+		/// method, this IReadOnlyDictionary maps a complete set of HTTP verbs
+		/// to the corresponding HttpMethod object, including the `PATCH` method
+		/// that is defined and initialized when the class is first referenced,
+		/// as is this dictionary.
+		/// </summary>
 		private static readonly IReadOnlyDictionary<HttpVerb , HttpMethod> s_dctVerbMap =
 			new Dictionary<HttpVerb , HttpMethod>
 			{
 				{ HttpVerb.GET,    HttpMethod.Get },
-				{ HttpVerb.PATCH,  new HttpMethod ( @"PATCH" ) },
+				{ HttpVerb.PATCH,  s_PatchMethod },
 				{ HttpVerb.POST,   HttpMethod.Post },
 				{ HttpVerb.PUT,    HttpMethod.Put },
 				{ HttpVerb.DELETE, HttpMethod.Delete }
 			};
+
+		/// <summary>
+		/// We define our own string for the commonly required JSON MIME type.
+		/// </summary>
 		const string JSON_MIME_TYPE = @"application/json";
+
+
+		/// <summary>
+		/// We define our own string for the standard prefix used with most
+		/// authorization tokens.
+		/// </summary>
 		const string OAUTH_TOKEN_TYPE = @"Bearer";
 	}   // public class RequestEngine
 }   // partial namespace WizardWrx.HTTP

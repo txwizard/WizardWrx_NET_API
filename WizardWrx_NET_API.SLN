@@ -82,6 +82,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTTP", "HTTP\HTTP.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JSONSupport", "JSONSupport\JSONSupport.csproj", "{2FA6C7D2-59A5-4902-9BF3-12C01A702519}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpRequestEngineTestStand", "HttpRequestEngineTestStand\HttpRequestEngineTestStand.csproj", "{86525F97-C9A1-480F-AFA0-3F735D4724BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -246,6 +248,18 @@ Global
 		{2FA6C7D2-59A5-4902-9BF3-12C01A702519}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{2FA6C7D2-59A5-4902-9BF3-12C01A702519}.Release|x86.ActiveCfg = Release|Any CPU
 		{2FA6C7D2-59A5-4902-9BF3-12C01A702519}.Release|x86.Build.0 = Release|Any CPU
+		{86525F97-C9A1-480F-AFA0-3F735D4724BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86525F97-C9A1-480F-AFA0-3F735D4724BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86525F97-C9A1-480F-AFA0-3F735D4724BE}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{86525F97-C9A1-480F-AFA0-3F735D4724BE}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{86525F97-C9A1-480F-AFA0-3F735D4724BE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{86525F97-C9A1-480F-AFA0-3F735D4724BE}.Debug|x86.Build.0 = Debug|Any CPU
+		{86525F97-C9A1-480F-AFA0-3F735D4724BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86525F97-C9A1-480F-AFA0-3F735D4724BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86525F97-C9A1-480F-AFA0-3F735D4724BE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{86525F97-C9A1-480F-AFA0-3F735D4724BE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{86525F97-C9A1-480F-AFA0-3F735D4724BE}.Release|x86.ActiveCfg = Release|Any CPU
+		{86525F97-C9A1-480F-AFA0-3F735D4724BE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

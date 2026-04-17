@@ -117,13 +117,13 @@ token retrieval methods.</p>
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_HTTP_RequestOptions__ctor_WizardWrx_DLLConfigurationManager_ExceptionLogger_WizardWrx_HTTP_RequestOptions_OAuthTokenGetter_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.HTTP.RequestOptions.%23ctor(WizardWrx.DLLConfigurationManager.ExceptionLogger%2CWizardWrx.HTTP.RequestOptions.OAuthTokenGetter%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_HTTP_RequestOptions__ctor_WizardWrx_DLLConfigurationManager_ExceptionLogger_WizardWrx_HTTP_RequestOptions_OAuthTokenGetter_System_String_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.HTTP.RequestOptions.%23ctor(WizardWrx.DLLConfigurationManager.ExceptionLogger%2CWizardWrx.HTTP.RequestOptions.OAuthTokenGetter%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L108">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L161">View Source</a>
   </span>
   <a id="WizardWrx_HTTP_RequestOptions__ctor_" data-uid="WizardWrx.HTTP.RequestOptions.#ctor*"></a>
-  <h4 id="WizardWrx_HTTP_RequestOptions__ctor_WizardWrx_DLLConfigurationManager_ExceptionLogger_WizardWrx_HTTP_RequestOptions_OAuthTokenGetter_System_String_" data-uid="WizardWrx.HTTP.RequestOptions.#ctor(WizardWrx.DLLConfigurationManager.ExceptionLogger,WizardWrx.HTTP.RequestOptions.OAuthTokenGetter,System.String)">RequestOptions(ExceptionLogger, RequestOptions.OAuthTokenGetter, String)</h4>
+  <h4 id="WizardWrx_HTTP_RequestOptions__ctor_WizardWrx_DLLConfigurationManager_ExceptionLogger_WizardWrx_HTTP_RequestOptions_OAuthTokenGetter_System_String_System_String_System_String_System_String_" data-uid="WizardWrx.HTTP.RequestOptions.#ctor(WizardWrx.DLLConfigurationManager.ExceptionLogger,WizardWrx.HTTP.RequestOptions.OAuthTokenGetter,System.String,System.String,System.String,System.String)">RequestOptions(ExceptionLogger, RequestOptions.OAuthTokenGetter, String, String, String, String)</h4>
   <div class="markdown level1 summary"><p>The public constructor initializes both read-only properties of this
 class, so that consumers of this class must make their choices about
 these properties explicit.</p>
@@ -131,7 +131,7 @@ these properties explicit.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public RequestOptions(ExceptionLogger plogger, RequestOptions.OAuthTokenGetter ptokenGetter, string pstrInitialOAuthToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public RequestOptions(ExceptionLogger plogger, RequestOptions.OAuthTokenGetter ptokenGetter, string pstrInitialOAuthToken = null, string pstrAcceptHeaderValue = &quot;*/*&quot;, string pstrAcceptEncodingValue = null, string pstrCacheControlValue = &quot;no-cache&quot;)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -169,16 +169,228 @@ attempts to obtain a token the first time the property value is
 queried.</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrAcceptHeaderValue</span></td>
+        <td><p>When specified, thiis string represents the value to include as the
+Accept HTTP header value. By default, the null value, &quot;/&quot;, is added.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrAcceptEncodingValue</span></td>
+        <td><p>When specified, this string represents the value to include as the
+Accept-Encoding HTTP header value. By default, this value is null,
+and is, therefore, omitted.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrCacheControlValue</span></td>
+        <td><p>When specified, this string represents the value to include as the
+Cache-Control HTTP header value. The default  value is &quot;no-cache&quot;.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_HTTP_RequestOptions_HTTP_ACCEPT_WILDCARD.md&amp;value=---%0Auid%3A%20WizardWrx.HTTP.RequestOptions.HTTP_ACCEPT_WILDCARD%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L16">View Source</a>
+  </span>
+  <h4 id="WizardWrx_HTTP_RequestOptions_HTTP_ACCEPT_WILDCARD" data-uid="WizardWrx.HTTP.RequestOptions.HTTP_ACCEPT_WILDCARD">HTTP_ACCEPT_WILDCARD</h4>
+  <div class="markdown level1 summary"><p>Let's be really clear about the shape of the default Accept HTTP header.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string HTTP_ACCEPT_WILDCARD = &quot;*/*&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_HTTP_RequestOptions_HTTP_NEVER_CACHE_ANYTHING.md&amp;value=---%0Auid%3A%20WizardWrx.HTTP.RequestOptions.HTTP_NEVER_CACHE_ANYTHING%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L23">View Source</a>
+  </span>
+  <h4 id="WizardWrx_HTTP_RequestOptions_HTTP_NEVER_CACHE_ANYTHING" data-uid="WizardWrx.HTTP.RequestOptions.HTTP_NEVER_CACHE_ANYTHING">HTTP_NEVER_CACHE_ANYTHING</h4>
+  <div class="markdown level1 summary"><p>Let's also document for posterity the Cache-Control directive that
+says &quot;don't.&quot;</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string HTTP_NEVER_CACHE_ANYTHING = &quot;no-cache&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_HTTP_RequestOptions_HTTP_SUPPORTED_COMPRESSION.md&amp;value=---%0Auid%3A%20WizardWrx.HTTP.RequestOptions.HTTP_SUPPORTED_COMPRESSION%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L30">View Source</a>
+  </span>
+  <h4 id="WizardWrx_HTTP_RequestOptions_HTTP_SUPPORTED_COMPRESSION" data-uid="WizardWrx.HTTP.RequestOptions.HTTP_SUPPORTED_COMPRESSION">HTTP_SUPPORTED_COMPRESSION</h4>
+  <div class="markdown level1 summary"><p>The Microsoft .NET Framework supports only two of the common compression
+formats, gzip and deflate.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string HTTP_SUPPORTED_COMPRESSION = &quot;gzip, deflate&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
     </tbody>
   </table>
   <h3 id="properties">Properties
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_HTTP_RequestOptions_AcceptEncodingValue.md&amp;value=---%0Auid%3A%20WizardWrx.HTTP.RequestOptions.AcceptEncodingValue%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L84">View Source</a>
+  </span>
+  <a id="WizardWrx_HTTP_RequestOptions_AcceptEncodingValue_" data-uid="WizardWrx.HTTP.RequestOptions.AcceptEncodingValue*"></a>
+  <h4 id="WizardWrx_HTTP_RequestOptions_AcceptEncodingValue" data-uid="WizardWrx.HTTP.RequestOptions.AcceptEncodingValue">AcceptEncodingValue</h4>
+  <div class="markdown level1 summary"><p>When specified (not null), this string represents the value to
+specify as the Accept-Encoding HTTP header value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string AcceptEncodingValue { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_HTTP_RequestOptions_AcceptHeaderValue.md&amp;value=---%0Auid%3A%20WizardWrx.HTTP.RequestOptions.AcceptHeaderValue%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L77">View Source</a>
+  </span>
+  <a id="WizardWrx_HTTP_RequestOptions_AcceptHeaderValue_" data-uid="WizardWrx.HTTP.RequestOptions.AcceptHeaderValue*"></a>
+  <h4 id="WizardWrx_HTTP_RequestOptions_AcceptHeaderValue" data-uid="WizardWrx.HTTP.RequestOptions.AcceptHeaderValue">AcceptHeaderValue</h4>
+  <div class="markdown level1 summary"><p>When specified (not null), this string represents the value to
+specify as the Accept HTTP header value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string AcceptHeaderValue { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_HTTP_RequestOptions_CacheControlValue.md&amp;value=---%0Auid%3A%20WizardWrx.HTTP.RequestOptions.CacheControlValue%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L91">View Source</a>
+  </span>
+  <a id="WizardWrx_HTTP_RequestOptions_CacheControlValue_" data-uid="WizardWrx.HTTP.RequestOptions.CacheControlValue*"></a>
+  <h4 id="WizardWrx_HTTP_RequestOptions_CacheControlValue" data-uid="WizardWrx.HTTP.RequestOptions.CacheControlValue">CacheControlValue</h4>
+  <div class="markdown level1 summary"><p>When specified (not null), this string represents the value to
+specify as the Cache-Control HTTP header value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string CacheControlValue { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_HTTP_RequestOptions_CurrentOAuthToken.md&amp;value=---%0Auid%3A%20WizardWrx.HTTP.RequestOptions.CurrentOAuthToken%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L57">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L97">View Source</a>
   </span>
   <a id="WizardWrx_HTTP_RequestOptions_CurrentOAuthToken_" data-uid="WizardWrx.HTTP.RequestOptions.CurrentOAuthToken*"></a>
   <h4 id="WizardWrx_HTTP_RequestOptions_CurrentOAuthToken" data-uid="WizardWrx.HTTP.RequestOptions.CurrentOAuthToken">CurrentOAuthToken</h4>
@@ -210,7 +422,7 @@ retrieving and caching it if necessary.</p>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_HTTP_RequestOptions_Logger.md&amp;value=---%0Auid%3A%20WizardWrx.HTTP.RequestOptions.Logger%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L43">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L63">View Source</a>
   </span>
   <a id="WizardWrx_HTTP_RequestOptions_Logger_" data-uid="WizardWrx.HTTP.RequestOptions.Logger*"></a>
   <h4 id="WizardWrx_HTTP_RequestOptions_Logger" data-uid="WizardWrx.HTTP.RequestOptions.Logger">Logger</h4>
@@ -243,7 +455,7 @@ requests.</p>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_HTTP_RequestOptions_TokenGetter.md&amp;value=---%0Auid%3A%20WizardWrx.HTTP.RequestOptions.TokenGetter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L50">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L70">View Source</a>
   </span>
   <a id="WizardWrx_HTTP_RequestOptions_TokenGetter_" data-uid="WizardWrx.HTTP.RequestOptions.TokenGetter*"></a>
   <h4 id="WizardWrx_HTTP_RequestOptions_TokenGetter" data-uid="WizardWrx.HTTP.RequestOptions.TokenGetter">TokenGetter</h4>

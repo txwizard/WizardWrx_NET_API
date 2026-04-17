@@ -47,8 +47,10 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\ProductAssemblyInfo.cs">
+      <Link>ProductAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="JSON_Deserialized_Object.cs" />
-    <Compile Include="ProductAssemblyInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

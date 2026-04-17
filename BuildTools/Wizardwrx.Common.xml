@@ -314,6 +314,53 @@
             is never subsequently repeated for the lifetime of the instance.
             </summary>
         </member>
+        <member name="T:WizardWrx.ConsoleSymbols">
+            <summary>
+            Provides standardized symbols for console output,
+            with automatic fallback to ASCII if Unicode is unsupported.
+            </summary>
+            <remarks>
+            <para>
+            In character-mode (console) applications that use them, the Unicode
+            glyphs, BULLET, CHECK_MARK, CROSS_MARK, and RIGHT_ARROW, require a
+            console that supports UTF-8. Use <see cref="M:WizardWrx.ConsoleSymbols.Initialize"/>
+            to coerce the console to use a UTF-8 code page that supports them.
+            Additionally, to properly display these glyphs, your console must render
+            in a font face that supports these Unicode glyphs. Examples are Consolas,
+            Cascadia Code, and Segoe UI Emoji.
+            </para>
+            <para>
+            For ease of access, I promoted the classes that expose only constants to
+            the root of the WizardWrx namespace.
+            </para>
+            </remarks>
+        </member>
+        <member name="F:WizardWrx.ConsoleSymbols.Check">
+            <summary>
+            Unicode check mark (✔) or ASCII fallback ("[OK]").
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ConsoleSymbols.Cross">
+            <summary>
+            Unicode cross mark (✘) or ASCII fallback ("[X]").
+            </summary>
+        </member>
+        <member name="P:WizardWrx.ConsoleSymbols.IsInitialized">
+            <summary>
+            The static constructor sets this method to True.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.ConsoleSymbols.#cctor">
+            <summary>
+            Initializes static fields by testing console encoding.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.ConsoleSymbols.Initialize">
+            <summary>
+            Forces static constructor execution early,
+            ensuring encoding is set before first output.
+            </summary>
+        </member>
         <member name="T:WizardWrx.CSVFileInfo">
             <summary>
             Use these constants and service routines to simplify working with CSV
@@ -745,6 +792,14 @@
             <summary>
             The Length property of a string returns a value of zero
             (EMPTY_STRING_LENGTH) when the string is empty.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ListInfo.EXACTLY_ONE_ITEM">
+            <summary>
+            Almost as common as testing for the empty list is testing for the
+            singleton list. For instance, when a SQL UPDATE is issued to update
+            values in a single row, the @@ROWCOUNT is expected to be exactly one
+            if its WHERE clause is coded correctly.
             </summary>
         </member>
         <member name="F:WizardWrx.ListInfo.INDEXOF_NOT_FOUND">
@@ -4087,8 +4142,19 @@
             Since static classes are implicitly sealed, this class cannot be inherited.
             </summary>
             <remarks>
+            <para>
+            In character-mode (console) applications that use them, the Unicode
+            glyphs, BULLET, CHECK_MARK, CROSS_MARK, and RIGHT_ARROW, require a
+            console that supports UTF-8. Use <see cref="M:WizardWrx.ConsoleSymbols.Initialize"/>
+            to coerce the console to use a UTF-8 code page that supports them.
+            Additionally, to properly display these glyphs, your console must render
+            in a font face that supports these Unicode glyphs. Examples are Consolas,
+            Cascadia Code, and Segoe UI Emoji.
+            </para>
+            <para>
             For ease of access, I promoted the classes that expose only constants to
             the root of the WizardWrx namespace.
+            </para>
             </remarks>
             <seealso cref="T:WizardWrx.ArrayInfo"/>
             <seealso cref="T:WizardWrx.MagicNumbers"/>
@@ -4233,6 +4299,13 @@
             <seealso cref="F:WizardWrx.SpecialCharacters.BRACKET_LEFT"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.BRACE_RIGHT"/>
         </member>
+        <member name="F:WizardWrx.SpecialCharacters.BULLET">
+            <summary>
+            Unicode bullet (•), U+2022.
+            See ChangeLog.md glyph table and GlyphConstantsHarness for validation.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.BULLET"/>
+        </member>
         <member name="F:WizardWrx.SpecialCharacters.CARRIAGE_RETURN">
             <summary>
             Use this character anywhere in your code that requires a bare
@@ -4343,11 +4416,23 @@
             <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_NUMERAL_2"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.CHAR_NUMERAL_7"/>
         </member>
+        <member name="F:WizardWrx.SpecialCharacters.CHECK_MARK">
+            <summary>
+            Unicode check mark (✔), U+2714.
+            See ChangeLog.md glyph table and GlyphConstantsHarness for validation.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHECK_MARK_CHAR"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.CHECK_MARK"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.CHECK_MARK_CHAR"/>
+        </member>
         <member name="F:WizardWrx.SpecialCharacters.CHECK_MARK_CHAR">
             <summary>
             The check-mark character prints as such only in selected Windows
             fonts.
             </summary>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHECK_MARK"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.CHECK_MARK"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.CHECK_MARK_CHAR"/>
         </member>
         <member name="F:WizardWrx.SpecialCharacters.COLON">
             <summary>
@@ -4378,6 +4463,13 @@
             <seealso cref="F:WizardWrx.SpecialCharacters.TAB_CHAR"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.UNDERSCORE_CHAR"/>
             <seealso cref="F:WizardWrx.SpecialStrings.COMMA"/>
+        </member>
+        <member name="F:WizardWrx.SpecialCharacters.CROSS_MARK">
+            <summary>
+            Unicode cross mark (✘), U+2718.
+            See ChangeLog.md glyph table and GlyphConstantsHarness for validation.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.CROSS_MARK"/>
         </member>
         <member name="F:WizardWrx.SpecialCharacters.DLM_FORMAT_ITEM_BEGIN">
             <summary>
@@ -4570,6 +4662,13 @@
             an operand.
             </summary>
         </member>
+        <member name="F:WizardWrx.SpecialCharacters.RIGHT_ARROW">
+            <summary>
+            Unicode right arrow (→), U+2192.
+            See ChangeLog.md glyph table and GlyphConstantsHarness for validation.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.RIGHT_ARROW"/>
+        </member>
         <member name="F:WizardWrx.SpecialCharacters.SEMICOLON">
             <summary>
             Use this when your code requires a semicolon literal, when you want
@@ -4636,17 +4735,48 @@
             <seealso cref="F:WizardWrx.SpecialCharacters.TAB_CHAR"/>
             <seealso cref="F:WizardWrx.SpecialStrings.UNDERSCORE_CHAR"/>
         </member>
+        <member name="F:WizardWrx.SpecialCharacters.URL_PATH_DELIMITER">
+            <summary>
+            Use this in place of 'System.IO.Path.AltDirectorySeparatorChar`, which
+            lacks const semantics, when you need a true constant.
+            </summary>
+            <see cref="F:System.IO.Path.AltDirectorySeparatorChar"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.WINDOWS_PATH_DELIMITER"/>
+        </member>
+        <member name="F:WizardWrx.SpecialCharacters.WINDOWS_PATH_DELIMITER">
+            <summary>
+            Use this in place of 'System.IO.Path.DirectorySeparatorChar`, which
+            lacks const semantics, when you need a true constant.
+            </summary>
+            <see cref="F:System.IO.Path.DirectorySeparatorChar"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.URL_PATH_DELIMITER"/>
+        </member>
         <member name="T:WizardWrx.SpecialStrings">
             <summary>
+            <para>
             This class defines special purpose strings that are either difficult to
-            get right in the first place, or display ambiguously in text editors and
-            printed source code listings.
-            
+            get right in the first place, display ambiguously in text editors and
+            printed source code listings, or are in other ways either ambiguous or
+            special.
+            </para>
+            <para>
             Since static classes are implicitly sealed, this class cannot be inherited.
+            </para>
             </summary>
             <remarks>
+            <para>
+            In character-mode (console) applications that use them, the Unicode
+            glyphs, BULLET, CHECK_MARK, CROSS_MARK, and RIGHT_ARROW, require a
+            console that supports UTF-8. Use <see cref="M:WizardWrx.ConsoleSymbols.Initialize"/>
+            to coerce the console to use a UTF-8 code page that supports them.
+            Additionally, to properly display these glyphs, your console must render
+            in a font face that supports these Unicode glyphs. Examples are Consolas,
+            Cascadia Code, and Segoe UI Emoji.
+            </para>
+            <para>
             For ease of access, I promoted the classes that expose only constants to
             the root of the WizardWrx namespace.
+            </para>
             </remarks>
             <seealso cref="T:WizardWrx.ArrayInfo"/>
             <seealso cref="T:WizardWrx.MagicNumbers"/>
@@ -4791,6 +4921,13 @@
             <seealso cref="F:WizardWrx.SpecialStrings.TAB_CHAR"/>
             <seealso cref="F:WizardWrx.SpecialStrings.UNDERSCORE_CHAR"/>
         </member>
+        <member name="F:WizardWrx.SpecialStrings.BULLET">
+            <summary>
+            Unicode bullet (•), U+2022.
+            See ChangeLog.md glyph table and GlyphConstantsHarness for validation.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialCharacters.BULLET"/>
+        </member>
         <member name="F:WizardWrx.SpecialStrings.CARRIAGE_RETURN">
             <summary>
             Use this character anywhere in your code that requires a bare
@@ -4901,17 +5038,45 @@
             <seealso cref="F:WizardWrx.SpecialStrings.CHAR_NUMERAL_2"/>
             <seealso cref="F:WizardWrx.SpecialStrings.CHAR_NUMERAL_7"/>
         </member>
+        <member name="F:WizardWrx.SpecialStrings.CHECK_MARK">
+            <summary>
+            Unicode check mark (✔), U+2714.
+            See ChangeLog.md glyph table and GlyphConstantsHarness for validation.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.CHECK_MARK_CHAR"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHECK_MARK"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHECK_MARK_CHAR"/>
+        </member>
         <member name="F:WizardWrx.SpecialStrings.CHECK_MARK_CHAR">
             <summary>
             The check-mark character prints as such only in selected Windows
             fonts.
             </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.CHECK_MARK"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHECK_MARK"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CHECK_MARK_CHAR"/>
         </member>
         <member name="F:WizardWrx.SpecialStrings.COLON">
             <summary>
             This is one of many single characters that are frequently needed as
             single-character string constants.
             </summary>
+            <seealso cref="F:WizardWrx.SpecialCharacters.COLON"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.COLON_SPACE"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.COLON_SPACE">
+            <summary>
+            <para>
+            This is a companion to <see cref="F:WizardWrx.SpecialStrings.COLON"/> that follows it with a
+            single space character, represented by <see cref="F:WizardWrx.SpecialStrings.SPACE_CHAR"/>.
+            </para>
+            <para>
+            This short string constant is one of a set that covers cases where a
+            colon, comma, semicolon, or full stop must be immediately followed
+            by a space character.
+            </para>
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.COLON"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.COLON"/>
         </member>
         <member name="F:WizardWrx.SpecialStrings.COMMA">
@@ -4920,6 +5085,28 @@
             single-character string constants.
             </summary>
             <seealso cref="F:WizardWrx.SpecialCharacters.COMMA"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.COMMA_SPACE">
+            <summary>
+            <para>
+            This is a companion to <see cref="F:WizardWrx.SpecialStrings.COMMA"/> that follows it with a
+            single space character, represented by <see cref="F:WizardWrx.SpecialStrings.SPACE_CHAR"/>.
+            </para>
+            <para>
+            This short string constant is one of a set that covers cases where a
+            colon, comma, semicolon, or full stop must be immediately followed
+            by a space character.
+            </para>
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.COLON"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.COMMA"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.CROSS_MARK">
+            <summary>
+            Unicode cross mark (✘), U+2718.
+            See ChangeLog.md glyph table and GlyphConstantsHarness for validation.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialCharacters.CROSS_MARK"/>
         </member>
         <member name="F:WizardWrx.SpecialStrings.CSV_ESCAPED_DOUBLE_QUOTE">
             <summary>
@@ -4937,6 +5124,38 @@
             </summary>
             <seealso cref="F:WizardWrx.SpecialCharacters.DOUBLE_QUOTE"/>
         </member>
+        <member name="F:WizardWrx.SpecialStrings.DOUBLE_QUOTE_SPACE">
+            <summary>
+            <para>
+            This is a companion to <see cref="F:WizardWrx.SpecialStrings.DOUBLE_QUOTE"/> that follows it
+            with a single space character, represented by <see cref="F:WizardWrx.SpecialStrings.SPACE_CHAR"/>.
+            </para>
+            <para>
+            This short string constant is one of a set that covers cases where a
+            colon, comma, semicolon, or full stop must be immediately followed
+            by a space character.
+            </para>
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.DOUBLE_QUOTE"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.DOUBLE_QUOTE"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.SPACE_DOUBLE_QUOTE"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.SPACE_DOUBLE_QUOTE">
+            <summary>
+            <para>
+            This is a companion to <see cref="F:WizardWrx.SpecialStrings.DOUBLE_QUOTE"/> that follows it
+            with a single space character, represented by <see cref="F:WizardWrx.SpecialStrings.SPACE_CHAR"/>.
+            </para>
+            <para>
+            This short string constant is one of a set that covers cases where a
+            colon, comma, semicolon, or full stop must be immediately followed
+            by a space character.
+            </para>
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.DOUBLE_QUOTE"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.DOUBLE_QUOTE"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.DOUBLE_QUOTE_SPACE"/>
+        </member>
         <member name="F:WizardWrx.SpecialStrings.DOUBLE_SPACE">
             <summary>
             Overlooked constant - two consecutive spaces.
@@ -4952,6 +5171,20 @@
             Tab characters, as they must appear in the string before it can be
             used.
             </summary>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.EMPTY_JSON_ARRAY">
+            <summary>
+            Use this string to evaluate whether the string returned from a REST 
+            API call is an empty JavaScript array.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.EMPTY_JSON_OBJECT"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.EMPTY_JSON_OBJECT">
+            <summary>
+            Use this string to evaluate whether the string returned from a REST
+            API call is an empty JavaScript object.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.EMPTY_JSON_ARRAY"/>
         </member>
         <member name="F:WizardWrx.SpecialStrings.EMPTY_STRING">
             <summary>
@@ -4993,11 +5226,43 @@
             <seealso cref="F:WizardWrx.SpecialStrings.HASH_TAG"/>
             <seealso cref="F:WizardWrx.SpecialStrings.UNDERSCORE_CHAR"/>
         </member>
+        <member name="F:WizardWrx.SpecialStrings.SPACE_BOUNDED_EQUALS_SIGN">
+            <summary>
+            <para>
+            This is a companion to <see cref="F:WizardWrx.SpecialStrings.EQUALS_SIGN"/> that surrounds it
+            with a single space character, represented by <see cref="F:WizardWrx.SpecialStrings.SPACE_CHAR"/>
+            on each side..
+            </para>
+            <para>
+            This short string constant is one of a set that covers cases where a
+            colon, comma, semicolon, or full stop must be immediately followed
+            by a space character.
+            </para>
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.EQUALS_SIGN"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.EQUALS_SIGN"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.DOUBLE_QUOTE_SPACE"/>
+        </member>
         <member name="F:WizardWrx.SpecialStrings.FULL_STOP">
             <summary>
             This is one of many single characters that are frequently needed as
             single-character string constants.
             </summary>
+            <seealso cref="F:WizardWrx.SpecialCharacters.FULL_STOP"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.FULL_STOP_SPACE">
+            <summary>
+            <para>
+            This is a companion to <see cref="F:WizardWrx.SpecialStrings.FULL_STOP"/> that follows it with
+            a single space character, represented by <see cref="F:WizardWrx.SpecialStrings.SPACE_CHAR"/>.
+            </para>
+            <para>
+            This short string constant is one of a set that covers cases where a
+            colon, comma, semicolon, or full stop must be immediately followed
+            by a space character.
+            </para>
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.FULL_STOP"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.FULL_STOP"/>
         </member>
         <member name="F:WizardWrx.SpecialStrings.HASH_TAG">
@@ -5036,6 +5301,12 @@
             <seealso cref="F:WizardWrx.SpecialStrings.HTML_COMMENT_PREFIX"/>
             <seealso cref="F:WizardWrx.SpecialStrings.HTML_COMMENT_PREFIX_SP"/>
             <seealso cref="F:WizardWrx.SpecialStrings.HTML_COMMENT_SUFFIX"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.HTML_ENTITY_SPACE_CHARACTER">
+            <summary>
+            Use this string to indicate unambiguously that the intended entity
+            is the HTML encoded entity for a space character.
+            </summary>
         </member>
         <member name="F:WizardWrx.SpecialStrings.HTML_LINE_BREAK_LC">
             <summary>
@@ -5106,6 +5377,43 @@
             </summary>
             <seealso cref="F:WizardWrx.SpecialCharacters.HYPHEN"/>
         </member>
+        <member name="F:WizardWrx.SpecialStrings.JSON_ARRAY_PREFIX">
+            <summary>
+            This is one of four constants that are useful for evaluating the results
+            of REST API calls that return JSON objects and arrays. Between them, they
+            test for valid starting and ending characters of JSON objects and arrays,
+            respectively. Evaluating for anything more specific is pointless due to
+            the fact that JSON objects and arrays can contain whitespace, and that the
+            content of either can be anything, including nested objects and arrays.
+            The only way to evaluate the content of a JSON object or array is to parse
+            it, which is what the JSON parser in your language of choice does.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.JSON_ARRAY_SUFFIX">
+            <summary>
+            See the remarks for <see cref="F:WizardWrx.SpecialStrings.JSON_ARRAY_PREFIX"/>.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.JSON_PREFIX">
+            <summary>
+            See the remarks for <see cref="F:WizardWrx.SpecialStrings.JSON_ARRAY_PREFIX"/>.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.JSON_SUFFIX">
+            <summary>
+            See the remarks for <see cref="F:WizardWrx.SpecialStrings.JSON_ARRAY_PREFIX"/>.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.JSON_OBJECT_EMPTY">
+            <summary>
+            See the remarks for <see cref="F:WizardWrx.SpecialStrings.JSON_PREFIX"/>.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.JSON_ARRAY_EMPTY">
+            <summary>
+            See the remarks for <see cref="F:WizardWrx.SpecialStrings.JSON_ARRAY_PREFIX"/>.
+            </summary>
+        </member>
         <member name="F:WizardWrx.SpecialStrings.LAST_ASCII_CHAR">
             <summary>
             The highest integer that can represent any ASCII character is 255,
@@ -5156,6 +5464,38 @@
             <seealso cref="F:WizardWrx.SpecialStrings.BRACE_LEFT"/>
             <seealso cref="F:WizardWrx.SpecialStrings.BRACKET_LEFT"/>
         </member>
+        <member name="F:WizardWrx.SpecialStrings.SPACE_PARENTHESIS_LEFT">
+            <summary>
+            <para>
+            This is a companion to <see cref="F:WizardWrx.SpecialStrings.PARENTHESIS_LEFT"/> that is
+            preceded by a single space character, represented by
+            <see cref="F:WizardWrx.SpecialStrings.SPACE_CHAR"/>.
+            </para>
+            <para>
+            This short string constant is one of a set that covers cases where a
+            colon, comma, semicolon, or full stop must be immediately followed
+            by a space character.
+            </para>
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.PARENTHESIS_LEFT"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.PARENTHESIS_LEFT"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.SPACE_BOUNDED_PARENTHESIS_LEFT">
+            <summary>
+            <para>
+            This is a companion to <see cref="F:WizardWrx.SpecialStrings.PARENTHESIS_LEFT"/> that is
+            bounded on both sides by a single space character, represented by a
+            <see cref="F:WizardWrx.SpecialStrings.SPACE_CHAR"/>.
+            </para>
+            <para>
+            This short string constant is one of a set that covers cases where a
+            colon, comma, semicolon, or full stop must be immediately followed
+            by a space character.
+            </para>
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.PARENTHESIS_LEFT"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.PARENTHESIS_LEFT"/>
+        </member>
         <member name="F:WizardWrx.SpecialStrings.PARENTHESIS_RIGHT">
             <summary>
             Use this in your code to specify a right parenthesis, also called a
@@ -5165,19 +5505,44 @@
             <seealso cref="F:WizardWrx.SpecialStrings.BRACE_RIGHT"/>
             <seealso cref="F:WizardWrx.SpecialStrings.BRACKET_RIGHT"/>
         </member>
+        <member name="F:WizardWrx.SpecialStrings.SPACE_PARENTHESIS_RIGHT">
+            <summary>
+            <para>
+            This is a companion to <see cref="F:WizardWrx.SpecialStrings.PARENTHESIS_RIGHT"/> that is
+            followed by a single space character, represented by
+            <see cref="F:WizardWrx.SpecialStrings.SPACE_CHAR"/>.
+            </para>
+            <para>
+            This short string constant is one of a set that covers cases where a
+            colon, comma, semicolon, or full stop must be immediately followed
+            by a space character.
+            </para>
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.PARENTHESIS_RIGHT"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.PARENTHESIS_LEFT"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.SPACE_BOUNDED_PARENTHESIS_RIGHT">
+            <summary>
+            <para>
+            This is a companion to <see cref="F:WizardWrx.SpecialStrings.PARENTHESIS_RIGHT"/> that is
+            bounded on both sides by a single space character, represented by
+            <see cref="F:WizardWrx.SpecialStrings.SPACE_CHAR"/>.
+            </para>
+            <para>
+            This short string constant is one of a set that covers cases where a
+            colon, comma, semicolon, or full stop must be immediately followed
+            by a space character.
+            </para>
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.SPACE_PARENTHESIS_LEFT"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.PARENTHESIS_RIGHT"/>
+        </member>
         <member name="F:WizardWrx.SpecialStrings.PERCENT_SIGN">
             <summary>
             Use this when you need to remove or replace ampersand literals in a
             string.
             </summary>
             <seealso cref="F:WizardWrx.SpecialCharacters.PERCENT_SIGN"/>
-        </member>
-        <member name="F:WizardWrx.SpecialStrings.QUESTION_MARK">
-            <summary>
-            The question mark is another special character that is frequently
-            used as an operator; use this to differentiate such use from that of
-            an operand.
-            </summary>
         </member>
         <member name="F:WizardWrx.SpecialStrings.PIPE_CHAR">
             <summary>
@@ -5194,11 +5559,41 @@
             <seealso cref="F:WizardWrx.SpecialStrings.UNDERSCORE_CHAR"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.PIPE_CHAR"/>
         </member>
+        <member name="F:WizardWrx.SpecialStrings.QUESTION_MARK">
+            <summary>
+            The question mark is another special character that is frequently
+            used as an operator; use this to differentiate such use from that of
+            an operand.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.RIGHT_ARROW">
+            <summary>
+            Unicode right arrow (→), U+2192.
+            See ChangeLog.md glyph table and GlyphConstantsHarness for validation.
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialCharacters.RIGHT_ARROW"/>
+        </member>
         <member name="F:WizardWrx.SpecialStrings.SEMICOLON">
             <summary>
             This is one of many single characters that are frequently needed as
             single-character string constants.
             </summary>
+            <seealso cref="F:WizardWrx.SpecialCharacters.SEMICOLON"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.SEMICOLON_SPACE">
+            <summary>
+            <para>
+            This is a companion to <see cref="F:WizardWrx.SpecialStrings.SEMICOLON"/> that is
+            bounded on both sides by a single space character, represented by
+            <see cref="F:WizardWrx.SpecialStrings.SPACE_CHAR"/>.
+            </para>
+            <para>
+            This short string constant is one of a set that covers cases where a
+            colon, comma, semicolon, or full stop must be immediately followed
+            by a space character.
+            </para>
+            </summary>
+            <seealso cref="F:WizardWrx.SpecialStrings.SEMICOLON"/>
             <seealso cref="F:WizardWrx.SpecialCharacters.SEMICOLON"/>
         </member>
         <member name="F:WizardWrx.SpecialStrings.SINGLE_QUOTE">
@@ -5321,6 +5716,26 @@
             single-character string constants.
             </summary>
             <seealso cref="F:WizardWrx.SpecialCharacters.UNDERSCORE_CHAR"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.URL_PATH_DELIMITER">
+            <summary>
+            Use this in place of 'System.IO.Path.AltDirectorySeparatorChar`, which
+            lacks const semantics, when you need a true constant.
+            </summary>
+            <see cref="F:System.IO.Path.AltDirectorySeparatorChar"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.WINDOWS_PATH_DELIMITER"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.URL_PATH_DELIMITER"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.WINDOWS_PATH_DELIMITER"/>
+        </member>
+        <member name="F:WizardWrx.SpecialStrings.WINDOWS_PATH_DELIMITER">
+            <summary>
+            Use this in place of 'System.IO.Path.DirectorySeparatorChar`, which
+            lacks const semantics, when you need a true constant.
+            </summary>
+            <see cref="F:System.IO.Path.DirectorySeparatorChar"/>
+            <seealso cref="F:WizardWrx.SpecialStrings.URL_PATH_DELIMITER"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.URL_PATH_DELIMITER"/>
+            <seealso cref="F:WizardWrx.SpecialCharacters.WINDOWS_PATH_DELIMITER"/>
         </member>
         <member name="T:WizardWrx.StringTricks">
             <summary>
