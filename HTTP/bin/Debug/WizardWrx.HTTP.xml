@@ -13,14 +13,14 @@
         <member name="F:WizardWrx.HTTP.RequestEngine.REQUEST_EXPECTS_JSON_RESPONSE">
             <summary>
             Use this constant to explicitly assert the default value of the last
-            parameter to <see cref="M:WizardWrx.HTTP.RequestEngine.SendRequest``1(System.String,System.Action{Newtonsoft.Json.Linq.JObject},WizardWrx.JsonSupport.JSON_Deserialized_Object,WizardWrx.HTTP.RequestEngine.HttpVerb,System.Boolean)"/>,
+            parameter to <see cref="M:WizardWrx.HTTP.RequestEngine.SendRequest``1(System.String,System.Action{Newtonsoft.Json.Linq.JObject},WizardWrx.JsonSupport.JSON_Deserialized_Object,WizardWrx.HTTP.RequestEngine.HttpVerb,System.Boolean,System.String,System.String,System.Int32)"/>,
             <c>pfExpectJSON</c>.
             </summary>
         </member>
         <member name="F:WizardWrx.HTTP.RequestEngine.REQUEST_EXPECTS_OTHER_RESPONSE">
             <summary>
             Use this constant to override the default value of the last
-            parameter to <see cref="M:WizardWrx.HTTP.RequestEngine.SendRequest``1(System.String,System.Action{Newtonsoft.Json.Linq.JObject},WizardWrx.JsonSupport.JSON_Deserialized_Object,WizardWrx.HTTP.RequestEngine.HttpVerb,System.Boolean)"/>,
+            parameter to <see cref="M:WizardWrx.HTTP.RequestEngine.SendRequest``1(System.String,System.Action{Newtonsoft.Json.Linq.JObject},WizardWrx.JsonSupport.JSON_Deserialized_Object,WizardWrx.HTTP.RequestEngine.HttpVerb,System.Boolean,System.String,System.String,System.Int32)"/>,
             <c>pfExpectJSON</c>.
             </summary>
         </member>
@@ -74,13 +74,13 @@
             recycling HTTP request headers.
             </summary>
         </member>
-        <member name="M:WizardWrx.HTTP.RequestEngine.#ctor">
+        <member name="M:WizardWrx.HTTP.RequestEngine.#ctor(System.String,System.String,System.Int32)">
             <summary>
             The default constructor leaves the Options property null, which is
             OK for most use cases.
             </summary>
         </member>
-        <member name="M:WizardWrx.HTTP.RequestEngine.#ctor(WizardWrx.HTTP.RequestOptions)">
+        <member name="M:WizardWrx.HTTP.RequestEngine.#ctor(WizardWrx.HTTP.RequestOptions,System.String,System.String,System.Int32)">
             <summary>
             This constructor initializes the Options property, which is not
             strictly required for most use cases, and can be passed in as a
@@ -113,7 +113,7 @@
             will be attached to the actual request.
             </returns>
         </member>
-        <member name="M:WizardWrx.HTTP.RequestEngine.SendRequest``1(System.String,System.Action{Newtonsoft.Json.Linq.JObject},WizardWrx.JsonSupport.JSON_Deserialized_Object,WizardWrx.HTTP.RequestEngine.HttpVerb,System.Boolean)">
+        <member name="M:WizardWrx.HTTP.RequestEngine.SendRequest``1(System.String,System.Action{Newtonsoft.Json.Linq.JObject},WizardWrx.JsonSupport.JSON_Deserialized_Object,WizardWrx.HTTP.RequestEngine.HttpVerb,System.Boolean,System.String,System.String,System.Int32)">
             <summary>
             Call the web API and process the result.
             </summary>
@@ -177,7 +177,7 @@
             This string is the payload required of all POST nad PUT requests.
             </para>
             <para>
-            When this value is null, unless <paramref name="penmVerb"/> happens
+            When this value is null, unless <paramref name="penmVerb" /> happens
             to be DELETE, the verb is coerced to GET, the only other verb that
             dispenses with a payload.
             </para>
@@ -189,7 +189,7 @@
             defaults to POST.
             </para>
             <para>
-            When <paramref name="pjSON_Deserialized"/> is null, unless this value
+            When <paramref name="pjSON_Deserialized" /> is null, unless this value
             is DELETE, the verb is coerced to GET, the only other verb that can
             function without a payload.
             </para>
@@ -199,12 +199,25 @@
             JsonConvert.DeserializeObject method to return it as a JObject.
             Otherwise, the raw string is returned as is.
             </param>
+            <param name="memberName">
+        The name of the calling method or property. Automatically supplied
+        by the compiler when decorated with
+        <see cref="T:System.Runtime.CompilerServices.CallerMemberNameAttribute" />.
+      </param><param name="sourceFilePath">
+        The full path of the source file that contains the calling member.
+        Automatically supplied by the compiler when decorated with
+        <see cref="T:System.Runtime.CompilerServices.CallerFilePathAttribute" />.
+      </param><param name="sourceLineNumber">
+        The line number in the source file at which this routine was invoked.
+        Automatically supplied by the compiler when decorated with
+        <see cref="T:System.Runtime.CompilerServices.CallerLineNumberAttribute" />.
+      </param>
             <returns>
             <para>
             This routine was originally intended for use as part of a library
             that interacts with the Microsoft Graph API and expects to return an
             arbitrarily shaped object as a JObject, which it passed to the
-            callback routine <paramref name="pfunProcessResultCallback"/>.
+            callback routine <paramref name="pfunProcessResultCallback" />.
             </para>
             <para>
             Since it is being pulled out of that class library so that it can be
@@ -245,27 +258,40 @@
             empty or absent, the returned dictionary is empty.
             </returns>
         </member>
-        <member name="M:WizardWrx.HTTP.RequestEngine.CreateHttpClient(WizardWrx.HTTP.RequestOptions)">
+        <member name="M:WizardWrx.HTTP.RequestEngine.CreateHttpClient(WizardWrx.HTTP.RequestOptions,System.String,System.String,System.Int32)">
             <summary>
             This private factory method initializes the private HttpClient
             used by the instance.
             </summary>
-            <param name="options">
+            <param name="pobjPresets">
             The RequestOptions object is technically optional, and, when so, the
             Automatic Decompression for GZip and Deflate is left off.
             </param>
+            <param name="memberName">
+        The name of the calling method or property. Automatically supplied
+        by the compiler when decorated with
+        <see cref="T:System.Runtime.CompilerServices.CallerMemberNameAttribute" />.
+      </param><param name="sourceFilePath">
+        The full path of the source file that contains the calling member.
+        Automatically supplied by the compiler when decorated with
+        <see cref="T:System.Runtime.CompilerServices.CallerFilePathAttribute" />.
+      </param><param name="sourceLineNumber">
+        The line number in the source file at which this routine was invoked.
+        Automatically supplied by the compiler when decorated with
+        <see cref="T:System.Runtime.CompilerServices.CallerLineNumberAttribute" />.
+      </param>
             <returns>
-            A reference to the  returned HTTPClient goes into the private
+            A reference to the returned HTTPClient goes into the private
             instance member that is set aside for that purpose. Each
-            constructor, including the default constructor, calls it with or
-            without an Options object reference.
+            constructor, including the default constructor, calls this routiner
+            with or without an Options object reference.
             </returns>
         </member>
-        <member name="M:WizardWrx.HTTP.RequestEngine.ApplyHeaders(System.Net.Http.HttpRequestMessage,System.Boolean)">
+        <member name="M:WizardWrx.HTTP.RequestEngine.ApplyHeaders(System.Net.Http.HttpRequestMessage,System.Boolean,System.String,System.String,System.Int32)">
             <summary>
             Instance method CallWebApiAndProcessResultASyn invokes this routine
             on each iteration of its retry loop to attach HTTP headers directly
-            to the HttpRequestMessage specified by <paramref name="phttpRequest"/>
+            to the HttpRequestMessage specified by <paramref name="phttpRequest" />
             so that the request always provides its own set of request headers.
             </summary>
             <param name="phttpRequest">
@@ -276,6 +302,19 @@
             When its value is True, the MediaTypeWithQualityHeaderValue header
             that represents the JSON MIME type is appended to the headers.
             </param>
+            <param name="memberName">
+        The name of the calling method or property. Automatically supplied
+        by the compiler when decorated with
+        <see cref="T:System.Runtime.CompilerServices.CallerMemberNameAttribute" />.
+      </param><param name="sourceFilePath">
+        The full path of the source file that contains the calling member.
+        Automatically supplied by the compiler when decorated with
+        <see cref="T:System.Runtime.CompilerServices.CallerFilePathAttribute" />.
+      </param><param name="sourceLineNumber">
+        The line number in the source file at which this routine was invoked.
+        Automatically supplied by the compiler when decorated with
+        <see cref="T:System.Runtime.CompilerServices.CallerLineNumberAttribute" />.
+      </param>
         </member>
         <member name="F:WizardWrx.HTTP.RequestEngine.s_PatchMethod">
             <summary>
@@ -311,18 +350,111 @@
             token retrieval methods.
             </summary>
         </member>
+        <member name="T:WizardWrx.HTTP.RequestOptions.HttpEngineLogCallback">
+            <summary>
+            This property represents the delegate signature for the
+            <C>optional</C> callback method that receives log messages from the
+            HTTP Request engine to which this instance is attached. The callback
+            method is expected to handle the log message appropriately, such as
+            by writing it to a log file, displaying it in a console, or sending
+            it to a logging service. The additional parameters provide context
+            about the source of the log message, including the member name,
+            source file path, and line number where the log message was
+            generated. This information can be useful for debugging and tracing
+            the flow of execution in the HTTP engine, allowing developers to
+            identify the specific location in the code where the log message
+            originated. The use of CallerMemberName, CallerFilePath, and
+            CallerLineNumber attributes allows the HTTP engine to automatically
+            capture this contextual information without requiring the caller to
+            explicitly provide it, making it easier to implement logging
+            throughout the codebase. Overall, this delegate provides a flexible
+            and powerful mechanism for logging messages from the HTTP engine
+            while also capturing important contextual information for debugging
+            purposes.
+            </summary>
+            <summary>
+        Captures caller‑site metadata (member name, source file path, and
+        line number) using compiler‑supplied Caller Info attributes. This
+        pattern allows a routine to record the exact call site without
+        requiring the caller to provide this information explicitly. It is
+        useful for diagnostics, logging, tracing, and any scenario where
+        precise call‑site provenance enhances maintainability or debugging.
+      </summary>
+            <param name="pstrLogMessage">
+            <para>
+            This string represents the log message generated by the HTTP engine.
+            The content of the message can vary widely depending on the specific
+            events and actions taking place within the engine, such as the
+            initiation of a request, the receipt of a response, the occurrence
+            of an error, or any other significant event that the engine deems
+            worthy of logging. The message can include details about the request
+            being processed, the response received, any exceptions encountered,
+            or any other relevant information that can help developers under-
+            stand the behavior of the HTTP engine and diagnose issues that may
+            arise during its operation. 
+            </para>
+            <para>
+            The log message can be formatted in a way that is consistent with
+            the logging conventions used throughout the codebase, and may
+            include timestamps, log levels, or other metadata to provide
+            additional context for the message. Overall, the log message
+            parameter serves as a crucial means of communication between the
+            HTTP engine and the logging system, allowing developers to gain
+            insights into the inner workings of the engine and troubleshoot any
+            issues that may arise during its execution.
+            </para>
+            <para>
+            All messages begin with a prefix that identifies the call site of
+            the constructor or other method that reported it, so that log 
+            entries can be easily traced back to their origin.
+            </para>
+            <para>
+            The additional parameters, including memberName 
+            (<paramref name="pstrMemberName" />), sourceFilePath
+            (<paramref name="pstrSourceFilePath" />), and sourceLineNumber 
+            (<paramref name="pintSourceLineNumber" />), provide valuable context
+            about the source of the log message. The memberName parameter
+            indicates the name of the method or property where the log message
+            was generated within the HTTP engine, allowing developers to
+            pinpoint the specific location in the code that is responsible for
+            the log message. The sourceFilePath parameter provides the file path
+            of the source code file where the log message originated, which can
+            be helpful for navigating to the relevant code when investigating
+            issues. The sourceLineNumber parameter indicates the line number
+            within the source code file where the log message was generated,
+            providing precise information about the location where the message
+            originated. Together, these parameters enable developers to quickly
+            and efficiently trace the flow of execution within the HTTP engine
+            and identify any potential issues or areas for improvement based on
+            the logged messages.
+            </para>
+            </param>
+            <param name="memberName">
+        The name of the calling method or property. Automatically supplied
+        by the compiler when decorated with
+        <see cref="T:System.Runtime.CompilerServices.CallerMemberNameAttribute" />.
+      </param><param name="sourceFilePath">
+        The full path of the source file that contains the calling member.
+        Automatically supplied by the compiler when decorated with
+        <see cref="T:System.Runtime.CompilerServices.CallerFilePathAttribute" />.
+      </param><param name="sourceLineNumber">
+        The line number in the source file at which this routine was invoked.
+        Automatically supplied by the compiler when decorated with
+        <see cref="T:System.Runtime.CompilerServices.CallerLineNumberAttribute" />.
+      </param>
+        </member>
         <member name="F:WizardWrx.HTTP.RequestOptions.HTTP_ACCEPT_WILDCARD">
             <summary>
             Let's be really clear about the shape of the default Accept HTTP header.
             </summary>
         </member>
-        <member name="F:WizardWrx.HTTP.RequestOptions.HTTP_NEVER_CACHE_ANYTHING">
+        <member name="F:WizardWrx.HTTP.RequestOptions.HTTP_NEVER_CACHE">
             <summary>
             Let's also document for posterity the Cache-Control directive that
             says "don't."
             </summary>
         </member>
-        <member name="F:WizardWrx.HTTP.RequestOptions.HTTP_SUPPORTED_COMPRESSION">
+        <member name="F:WizardWrx.HTTP.RequestOptions.HTTP_COMPRESSION_ALGS">
             <summary>
             The Microsoft .NET Framework supports only two of the common compression
             formats, gzip and deflate.
@@ -357,6 +489,27 @@
             requests.
             </summary>
         </member>
+        <member name="P:WizardWrx.HTTP.RequestOptions.LogCallback">
+            <summary>
+            This read-only property returns a delegate that processes log
+            messages generated by the HTTP engine. The delegate is expected to
+            handle the log messages appropriately, such as by writing them to a
+            log file, displaying them in a console, or sending them to a logging
+            service. The additional parameters provide context about the source
+            of the log message, including the member name, source file path, and
+            line number where the log message was generated. This information can
+            be useful for debugging and tracing the flow of execution in the HTTP
+            engine, allowing developers to identify the specific location in the
+            code where the log message originated. The use of CallerMemberName,
+            CallerFilePath, and CallerLineNumber attributes allows the HTTP
+            engine to automatically capture this contextual information without
+            requiring the caller to explicitly provide it, making it easier to
+            implement logging throughout the codebase. Overall, this delegate
+            provides a flexible and powerful mechanism for logging messages from
+            the HTTP engine while also capturing important contextual
+            information for debugging purposes.
+            </summary>
+        </member>
         <member name="P:WizardWrx.HTTP.RequestOptions.TokenGetter">
             <summary>
             This read-only property returns a delegate that retrieves OAuth Bearer
@@ -387,7 +540,68 @@
             retrieving and caching it if necessary.
             </summary>
         </member>
-        <member name="M:WizardWrx.HTTP.RequestOptions.#ctor(WizardWrx.DLLConfigurationManager.ExceptionLogger,WizardWrx.HTTP.RequestOptions.OAuthTokenGetter,System.String,System.String,System.String,System.String)">
+        <member name="P:WizardWrx.HTTP.RequestOptions.LoggerCallback">
+            <summary>
+            <para>
+            This read-only property returns a delegate that receives log
+            messages from the HTTP engine to which this instance is attached.
+            </para>
+            <para>
+            The callback method is expected to handle the log messages
+            appropriately, such as by writing them to a log file, displaying
+            them in a console, or sending them to a logging service. The
+            additional parameters provide context about the source of the
+            log message, including the member name, source file path, and
+            line number where the log message was generated. This information
+            can be useful for debugging and tracing the flow of execution in the
+            HTTP engine, allowing developers to identify the specific location
+            in the code where the log message originated. The use of
+            CallerMemberName, CallerFilePath, and CallerLineNumber attributes
+            allows the HTTP engine to automatically capture this contextual
+            information without requiring the caller to explicitly provide it,
+            making it easier to implement logging throughout the codebase.
+            </para>
+            <para>
+            This delegate provides a flexible and powerful mechanism for
+            logging messages from the HTTP engine while also capturing
+            important contextual information for debugging purposes.
+            </para>
+            </summary>
+        </member>
+        <member name="P:WizardWrx.HTTP.RequestOptions.RetryDelay">
+            <summary>
+            This read-only integer property specifies the delay, <c>in
+            seconds</c>, between retry attempts for a request that fails due to
+            a transient error. The default value is <c>10</c>, which means that
+            the HTTP engine will wait for 10 seconds before attempting to retry
+            a failed request. This parameter allows developers to control the
+            timing of retry attempts, providing a mechanism for introducing a
+            delay between retries to avoid overwhelming the server or network
+            with rapid-fire requests. By adjusting the retry delay, developers
+            can optimize the balance between retrying failed requests and
+            avoiding excessive delays in the overall request processing.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.HTTP.RequestOptions.RetryLimit">
+            <summary>
+            This read-only integer property specifies the maximum number of times
+            to retry a request that fails due to a transient error, such as a
+            network issue or a server error. The default value is 10, which
+            means that the HTTP engine will attempt to retry a failed request up
+            to 10 times before giving up and returning an error to the caller.
+            This parameter allows developers to control the behavior of the HTTP
+            engine in the face of transient errors, providing a mechanism for
+            automatically retrying requests that may succeed on subsequent
+            attempts.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.HTTP.RequestOptions.#ctor">
+            <summary>
+            The default constructor is hidden to enforce instatiation of only
+            explicitly initialized instances.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.HTTP.RequestOptions.#ctor(WizardWrx.DLLConfigurationManager.ExceptionLogger,WizardWrx.HTTP.RequestOptions.OAuthTokenGetter,System.String,System.String,System.String,System.String,System.Int32,System.Int32,WizardWrx.HTTP.RequestOptions.HttpEngineLogCallback)">
             <summary>
             The public constructor initializes both read-only properties of this
             class, so that consumers of this class must make their choices about
@@ -423,12 +637,114 @@
             When specified, this string represents the value to include as the
             Cache-Control HTTP header value. The default  value is "no-cache".
             </param>
+            <param name="pintRetryLimit">
+            This integer specifies the maximum number of times to retry a
+            request that fails due to a transient error, such as a network issue
+            or a server error. The default value is 10, which means that the HTTP
+            engine will attempt to retry a failed request up to 10 times before
+            giving up and returning an error to the caller. This parameter allows
+            developers to control the behavior of the HTTP engine in the face of
+            transient errors, providing a mechanism for automatically retrying
+            requests that may succeed on subsequent attempts.
+            </param>
+            <param name="pintRetryDelay">
+            This integer specifies the delay, <c>in seconds</c>, between retry
+            attempts for a request that fails due to a transient error. The
+            default value is <c>10</c>, which means that the HTTP engine will wait for
+            10 seconds before attempting to retry a failed request. This
+            parameter allows developers to control the timing of retry attempts,
+            providing a mechanism for introducing a delay between retries to
+            avoid overwhelming the server or network with rapid-fire requests.
+            By adjusting the retry delay, developers can optimize the balance
+            between retrying failed requests and avoiding excessive delays in
+            the overall request processing.
+            </param>
+            <param name="pdiLogCallback">
+            <para>
+            This delegate is called to log messages from the HTTP engine. It is
+            optional; if no delegate is provided, no logging occurs. 
+            </para>
+            <para>
+            If logging is enabled, the delegate is expected to handle the log
+            messages appropriately, such as by writing them to a log file,
+            displaying them in a console, or sending them to a logging service.
+            The additional parameters provide context about the source of the
+            log message, including the member name, source file path, and line
+            number where the log message was generated. This information can be
+            useful for debugging and tracing the flow of execution in the HTTP
+            engine, allowing developers to identify the specific location in the
+            code where the log message originated. The use of CallerMemberName,
+            Caller FilePath, and CallerLineNumber attributes allows the HTTP
+            engine to automatically capture this contextual information without
+            requiring the caller to explicitly provide it, making it easier to
+            implement logging throughout the codebase. Overall, this delegate
+            provides a flexible and powerful mechanism for logging messages from
+            the HTTP engine while also capturing important contextual
+            information for debugging purposes.
+            </para>
+            </param>
         </member>
-        <member name="M:WizardWrx.HTTP.RequestOptions.#ctor">
+        <member name="M:WizardWrx.HTTP.RequestOptions.ToString">
             <summary>
-            The default constructor is hidden to enforce instatiation of only
-            explicitly initialized instances.
+            This override of the ToString method provides a string
+            representation of the RequestOptions instance, including the values
+            of its properties. The string is formatted in a way that allows
+            developers to easily understand the configuration of the
+            RequestOptions instance, making it easier to debug and troubleshoot
+            issues related to HTTP requests. The method uses helper functions to
+            format the injected object reference and delegate information,
+            ensuring that the output is clear and informative. Overall, this
+            ToString override provides a valuable tool for developers to gain
+            insights into the state of the RequestOptions instance and
+            understand how it is configured for use with the HTTP engine.
             </summary>
+            <returns>
+            See the summary for details on the content and format of the
+            returned string.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.HTTP.RequestOptions.FormatDelegate(System.Delegate)">
+            <summary>
+            Create a string reprsentation of the supplied delegate, including
+            the declaring type and method name, as well as the type of the
+            target object (or "static" if the delegate represents a static
+            method). This method is used to provide informative output in the
+            ToString override, allowing developers to understand the
+            configuration of the RequestOptions instance and the delegates it
+            contains. If the supplied delegate is null, the method returns the
+            string "null" to indicate that no delegate is assigned. Otherwise,
+            the method constructs a string that includes the full name of the
+            declaring type, the method name, and the type of the target object,
+            providing a clear and concise representation of the delegate's
+            configuration. Overall, this method serves as a valuable tool for
+            developers to gain insights into the delegates used within the
+            RequestOptions instance and understand how they are configured for
+            use with the HTTP engine.
+            </summary>
+            <param name="delSig">
+            This parameter represents the delegate for which to create a string
+            representation. If the delegate is null, the method returns the
+            string "[null]" to indicate that no delegate is assigned. Otherwise,
+            the method constructs a string that includes the full name of the
+            declaring type, the method name, and the type of the target object.
+            </param>
+            <returns>
+            A string representation of the delegate, including the full name of the
+            declaring type, the method name, and the type of the target object.
+            If the delegate is null, the method returns the string "null".
+            </returns>
+        </member>
+        <member name="M:WizardWrx.HTTP.RequestOptions.FormatInjectedObjectReference(WizardWrx.DLLConfigurationManager.ExceptionLogger)">
+            <summary>
+            Return a string representation of the supplied ExceptionLogger
+            instance's BCL Type.
+            </summary>
+            <param name="el">
+            The ExceptionLogger instance to format.
+            </param>
+            <returns>
+            A string representation of the ExceptionLogger instance's BCL Type.
+            </returns>
         </member>
         <member name="F:WizardWrx.HTTP.RequestOptions._currentOAuthToken">
             <summary>

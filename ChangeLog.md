@@ -4,6 +4,23 @@
 
 ### WizardWrx.HTTP [9.0.103]
 
+The `RequestOptions` class gets a new constructor mow accepts a new logging
+delegate parameter, `pdiLogCallback`, that allows the caller to specify a method
+that will be called with a string argument containing a log message for each 
+request made by the `RequestEngine` class. This allows the caller to capture and
+log request details such as the URL, HTTP verb, headers, and payload, which can
+be useful for debugging and monitoring purposes.
+
+Moreover, the logging delegate accepts the three compiler-magic parameters that
+provide the caller with contextual information about the source of the log message,
+including the member name, source file path, and line number where the log message
+was generated. This allows for more informative and traceable logs, making it 
+easier to identify the origin of each request and diagnose issues effectively.
+
+## 2026-04-17
+
+### WizardWrx.HTTP [9.0.103]
+
 Nethod `CallWebApiAndProcessResultASync` has a new, shorter name, `SendRequest<T>`,
 that reflects that its public surface is fully synchronous. Although it performs
 async operations under the covers, its public API is fully synchronous. This

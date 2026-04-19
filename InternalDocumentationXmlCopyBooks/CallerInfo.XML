@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+
+    <!-- Reusable summary block -->
+
+    <member name="CallerInfoSummary">
+      <summary>
+        Captures caller‑site metadata (member name, source file path, and
+        line number) using compiler‑supplied Caller Info attributes. This
+        pattern allows a routine to record the exact call site without
+        requiring the caller to provide this information explicitly. It is
+        useful for diagnostics, logging, tracing, and any scenario where
+        precise call‑site provenance enhances maintainability or debugging.
+      </summary>
+    </member>
+
+    <!-- Reusable parameter documentation block -->
+
+    <member name="CallerInfoParameters">
+      <param name="memberName">
+        The name of the calling method or property. Automatically supplied
+        by the compiler when decorated with
+        <see cref="System.Runtime.CompilerServices.CallerMemberNameAttribute"/>.
+      </param>
+      <param name="sourceFilePath">
+        The full path of the source file that contains the calling member.
+        Automatically supplied by the compiler when decorated with
+        <see cref="System.Runtime.CompilerServices.CallerFilePathAttribute"/>.
+      </param>
+      <param name="sourceLineNumber">
+        The line number in the source file at which this routine was invoked.
+        Automatically supplied by the compiler when decorated with
+        <see cref="System.Runtime.CompilerServices.CallerLineNumberAttribute"/>.
+      </param>
+    </member>
+  </members>
+</doc>

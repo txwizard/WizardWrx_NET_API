@@ -200,7 +200,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>AssemblyInfoUtil.exe $(ProjectDir)Properties\AssemblyInfo.cs -inc:3 -fv -cy -onlywhenmodified</PreBuildEvent>
+    <PreBuildEvent>$(SolutionDir)BuildTools\AssemblyInfoUtil.exe $(ProjectDir)Properties\AssemblyInfo.cs -inc:3 -fv -cy -onlywhenmodified</PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PostBuildEvent>if exist       "$(SolutionDir)$(SolutionName)_Binaries_$(ConfigurationName).7z" sdelete -r "$(SolutionDir)$(SolutionName)_Binaries_$(ConfigurationName).7z"

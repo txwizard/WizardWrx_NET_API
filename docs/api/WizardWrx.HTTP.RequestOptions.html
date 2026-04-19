@@ -86,9 +86,6 @@ token retrieval methods.</p>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
-    <div>
       <span class="xref">System.Object.Equals(System.Object)</span>
     </div>
     <div>
@@ -117,13 +114,13 @@ token retrieval methods.</p>
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_HTTP_RequestOptions__ctor_WizardWrx_DLLConfigurationManager_ExceptionLogger_WizardWrx_HTTP_RequestOptions_OAuthTokenGetter_System_String_System_String_System_String_System_String_.md&amp;value=---%0Auid%3A%20WizardWrx.HTTP.RequestOptions.%23ctor(WizardWrx.DLLConfigurationManager.ExceptionLogger%2CWizardWrx.HTTP.RequestOptions.OAuthTokenGetter%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_HTTP_RequestOptions__ctor_WizardWrx_DLLConfigurationManager_ExceptionLogger_WizardWrx_HTTP_RequestOptions_OAuthTokenGetter_System_String_System_String_System_String_System_String_System_Int32_System_Int32_WizardWrx_HTTP_RequestOptions_HttpEngineLogCallback_.md&amp;value=---%0Auid%3A%20WizardWrx.HTTP.RequestOptions.%23ctor(WizardWrx.DLLConfigurationManager.ExceptionLogger%2CWizardWrx.HTTP.RequestOptions.OAuthTokenGetter%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.Int32%2CSystem.Int32%2CWizardWrx.HTTP.RequestOptions.HttpEngineLogCallback)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L161">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L381">View Source</a>
   </span>
   <a id="WizardWrx_HTTP_RequestOptions__ctor_" data-uid="WizardWrx.HTTP.RequestOptions.#ctor*"></a>
-  <h4 id="WizardWrx_HTTP_RequestOptions__ctor_WizardWrx_DLLConfigurationManager_ExceptionLogger_WizardWrx_HTTP_RequestOptions_OAuthTokenGetter_System_String_System_String_System_String_System_String_" data-uid="WizardWrx.HTTP.RequestOptions.#ctor(WizardWrx.DLLConfigurationManager.ExceptionLogger,WizardWrx.HTTP.RequestOptions.OAuthTokenGetter,System.String,System.String,System.String,System.String)">RequestOptions(ExceptionLogger, RequestOptions.OAuthTokenGetter, String, String, String, String)</h4>
+  <h4 id="WizardWrx_HTTP_RequestOptions__ctor_WizardWrx_DLLConfigurationManager_ExceptionLogger_WizardWrx_HTTP_RequestOptions_OAuthTokenGetter_System_String_System_String_System_String_System_String_System_Int32_System_Int32_WizardWrx_HTTP_RequestOptions_HttpEngineLogCallback_" data-uid="WizardWrx.HTTP.RequestOptions.#ctor(WizardWrx.DLLConfigurationManager.ExceptionLogger,WizardWrx.HTTP.RequestOptions.OAuthTokenGetter,System.String,System.String,System.String,System.String,System.Int32,System.Int32,WizardWrx.HTTP.RequestOptions.HttpEngineLogCallback)">RequestOptions(ExceptionLogger, RequestOptions.OAuthTokenGetter, String, String, String, String, Int32, Int32, RequestOptions.HttpEngineLogCallback)</h4>
   <div class="markdown level1 summary"><p>The public constructor initializes both read-only properties of this
 class, so that consumers of this class must make their choices about
 these properties explicit.</p>
@@ -131,7 +128,7 @@ these properties explicit.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public RequestOptions(ExceptionLogger plogger, RequestOptions.OAuthTokenGetter ptokenGetter, string pstrInitialOAuthToken = null, string pstrAcceptHeaderValue = &quot;*/*&quot;, string pstrAcceptEncodingValue = null, string pstrCacheControlValue = &quot;no-cache&quot;)</code></pre>
+    <pre><code class="lang-csharp hljs">public RequestOptions(ExceptionLogger plogger = null, RequestOptions.OAuthTokenGetter ptokenGetter = null, string pstrInitialOAuthToken = null, string pstrAcceptHeaderValue = &quot;*/*&quot;, string pstrAcceptEncodingValue = null, string pstrCacheControlValue = &quot;no-cache&quot;, int pintRetryLimit = 10, int pintRetryDelay = 10, RequestOptions.HttpEngineLogCallback pdiLogCallback = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -191,6 +188,61 @@ and is, therefore, omitted.</p>
 Cache-Control HTTP header value. The default  value is &quot;no-cache&quot;.</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintRetryLimit</span></td>
+        <td><p>This integer specifies the maximum number of times to retry a
+request that fails due to a transient error, such as a network issue
+or a server error. The default value is 10, which means that the HTTP
+engine will attempt to retry a failed request up to 10 times before
+giving up and returning an error to the caller. This parameter allows
+developers to control the behavior of the HTTP engine in the face of
+transient errors, providing a mechanism for automatically retrying
+requests that may succeed on subsequent attempts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">pintRetryDelay</span></td>
+        <td><p>This integer specifies the delay, <code>in seconds</code>, between retry
+attempts for a request that fails due to a transient error. The
+default value is <code>10</code>, which means that the HTTP engine will wait for
+10 seconds before attempting to retry a failed request. This
+parameter allows developers to control the timing of retry attempts,
+providing a mechanism for introducing a delay between retries to
+avoid overwhelming the server or network with rapid-fire requests.
+By adjusting the retry delay, developers can optimize the balance
+between retrying failed requests and avoiding excessive delays in
+the overall request processing.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="WizardWrx.HTTP.RequestOptions.HttpEngineLogCallback.html">RequestOptions.HttpEngineLogCallback</a></td>
+        <td><span class="parametername">pdiLogCallback</span></td>
+        <td><p>
+This delegate is called to log messages from the HTTP engine. It is
+optional; if no delegate is provided, no logging occurs. 
+</p>
+<p>
+If logging is enabled, the delegate is expected to handle the log
+messages appropriately, such as by writing them to a log file,
+displaying them in a console, or sending them to a logging service.
+The additional parameters provide context about the source of the
+log message, including the member name, source file path, and line
+number where the log message was generated. This information can be
+useful for debugging and tracing the flow of execution in the HTTP
+engine, allowing developers to identify the specific location in the
+code where the log message originated. The use of CallerMemberName,
+Caller FilePath, and CallerLineNumber attributes allows the HTTP
+engine to automatically capture this contextual information without
+requiring the caller to explicitly provide it, making it easier to
+implement logging throughout the codebase. Overall, this delegate
+provides a flexible and powerful mechanism for logging messages from
+the HTTP engine while also capturing important contextual
+information for debugging purposes.
+</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h3 id="fields">Fields
@@ -200,7 +252,7 @@ Cache-Control HTTP header value. The default  value is &quot;no-cache&quot;.</p>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_HTTP_RequestOptions_HTTP_ACCEPT_WILDCARD.md&amp;value=---%0Auid%3A%20WizardWrx.HTTP.RequestOptions.HTTP_ACCEPT_WILDCARD%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L16">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L101">View Source</a>
   </span>
   <h4 id="WizardWrx_HTTP_RequestOptions_HTTP_ACCEPT_WILDCARD" data-uid="WizardWrx.HTTP.RequestOptions.HTTP_ACCEPT_WILDCARD">HTTP_ACCEPT_WILDCARD</h4>
   <div class="markdown level1 summary"><p>Let's be really clear about the shape of the default Accept HTTP header.</p>
@@ -227,19 +279,19 @@ Cache-Control HTTP header value. The default  value is &quot;no-cache&quot;.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_HTTP_RequestOptions_HTTP_NEVER_CACHE_ANYTHING.md&amp;value=---%0Auid%3A%20WizardWrx.HTTP.RequestOptions.HTTP_NEVER_CACHE_ANYTHING%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_HTTP_RequestOptions_HTTP_COMPRESSION_ALGS.md&amp;value=---%0Auid%3A%20WizardWrx.HTTP.RequestOptions.HTTP_COMPRESSION_ALGS%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L23">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L115">View Source</a>
   </span>
-  <h4 id="WizardWrx_HTTP_RequestOptions_HTTP_NEVER_CACHE_ANYTHING" data-uid="WizardWrx.HTTP.RequestOptions.HTTP_NEVER_CACHE_ANYTHING">HTTP_NEVER_CACHE_ANYTHING</h4>
-  <div class="markdown level1 summary"><p>Let's also document for posterity the Cache-Control directive that
-says &quot;don't.&quot;</p>
+  <h4 id="WizardWrx_HTTP_RequestOptions_HTTP_COMPRESSION_ALGS" data-uid="WizardWrx.HTTP.RequestOptions.HTTP_COMPRESSION_ALGS">HTTP_COMPRESSION_ALGS</h4>
+  <div class="markdown level1 summary"><p>The Microsoft .NET Framework supports only two of the common compression
+formats, gzip and deflate.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string HTTP_NEVER_CACHE_ANYTHING = &quot;no-cache&quot;</code></pre>
+    <pre><code class="lang-csharp hljs">public const string HTTP_COMPRESSION_ALGS = &quot;gzip, deflate&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -258,19 +310,19 @@ says &quot;don't.&quot;</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_HTTP_RequestOptions_HTTP_SUPPORTED_COMPRESSION.md&amp;value=---%0Auid%3A%20WizardWrx.HTTP.RequestOptions.HTTP_SUPPORTED_COMPRESSION%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_HTTP_RequestOptions_HTTP_NEVER_CACHE.md&amp;value=---%0Auid%3A%20WizardWrx.HTTP.RequestOptions.HTTP_NEVER_CACHE%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L30">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L108">View Source</a>
   </span>
-  <h4 id="WizardWrx_HTTP_RequestOptions_HTTP_SUPPORTED_COMPRESSION" data-uid="WizardWrx.HTTP.RequestOptions.HTTP_SUPPORTED_COMPRESSION">HTTP_SUPPORTED_COMPRESSION</h4>
-  <div class="markdown level1 summary"><p>The Microsoft .NET Framework supports only two of the common compression
-formats, gzip and deflate.</p>
+  <h4 id="WizardWrx_HTTP_RequestOptions_HTTP_NEVER_CACHE" data-uid="WizardWrx.HTTP.RequestOptions.HTTP_NEVER_CACHE">HTTP_NEVER_CACHE</h4>
+  <div class="markdown level1 summary"><p>Let's also document for posterity the Cache-Control directive that
+says &quot;don't.&quot;</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string HTTP_SUPPORTED_COMPRESSION = &quot;gzip, deflate&quot;</code></pre>
+    <pre><code class="lang-csharp hljs">public const string HTTP_NEVER_CACHE = &quot;no-cache&quot;</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -294,7 +346,7 @@ formats, gzip and deflate.</p>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_HTTP_RequestOptions_AcceptEncodingValue.md&amp;value=---%0Auid%3A%20WizardWrx.HTTP.RequestOptions.AcceptEncodingValue%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L84">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L192">View Source</a>
   </span>
   <a id="WizardWrx_HTTP_RequestOptions_AcceptEncodingValue_" data-uid="WizardWrx.HTTP.RequestOptions.AcceptEncodingValue*"></a>
   <h4 id="WizardWrx_HTTP_RequestOptions_AcceptEncodingValue" data-uid="WizardWrx.HTTP.RequestOptions.AcceptEncodingValue">AcceptEncodingValue</h4>
@@ -326,7 +378,7 @@ specify as the Accept-Encoding HTTP header value.</p>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_HTTP_RequestOptions_AcceptHeaderValue.md&amp;value=---%0Auid%3A%20WizardWrx.HTTP.RequestOptions.AcceptHeaderValue%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L77">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L185">View Source</a>
   </span>
   <a id="WizardWrx_HTTP_RequestOptions_AcceptHeaderValue_" data-uid="WizardWrx.HTTP.RequestOptions.AcceptHeaderValue*"></a>
   <h4 id="WizardWrx_HTTP_RequestOptions_AcceptHeaderValue" data-uid="WizardWrx.HTTP.RequestOptions.AcceptHeaderValue">AcceptHeaderValue</h4>
@@ -358,7 +410,7 @@ specify as the Accept HTTP header value.</p>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_HTTP_RequestOptions_CacheControlValue.md&amp;value=---%0Auid%3A%20WizardWrx.HTTP.RequestOptions.CacheControlValue%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L91">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L199">View Source</a>
   </span>
   <a id="WizardWrx_HTTP_RequestOptions_CacheControlValue_" data-uid="WizardWrx.HTTP.RequestOptions.CacheControlValue*"></a>
   <h4 id="WizardWrx_HTTP_RequestOptions_CacheControlValue" data-uid="WizardWrx.HTTP.RequestOptions.CacheControlValue">CacheControlValue</h4>
@@ -390,7 +442,7 @@ specify as the Cache-Control HTTP header value.</p>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_HTTP_RequestOptions_CurrentOAuthToken.md&amp;value=---%0Auid%3A%20WizardWrx.HTTP.RequestOptions.CurrentOAuthToken%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L97">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L206">View Source</a>
   </span>
   <a id="WizardWrx_HTTP_RequestOptions_CurrentOAuthToken_" data-uid="WizardWrx.HTTP.RequestOptions.CurrentOAuthToken*"></a>
   <h4 id="WizardWrx_HTTP_RequestOptions_CurrentOAuthToken" data-uid="WizardWrx.HTTP.RequestOptions.CurrentOAuthToken">CurrentOAuthToken</h4>
@@ -419,10 +471,57 @@ retrieving and caching it if necessary.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_HTTP_RequestOptions_LogCallback.md&amp;value=---%0Auid%3A%20WizardWrx.HTTP.RequestOptions.LogCallback%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L171">View Source</a>
+  </span>
+  <a id="WizardWrx_HTTP_RequestOptions_LogCallback_" data-uid="WizardWrx.HTTP.RequestOptions.LogCallback*"></a>
+  <h4 id="WizardWrx_HTTP_RequestOptions_LogCallback" data-uid="WizardWrx.HTTP.RequestOptions.LogCallback">LogCallback</h4>
+  <div class="markdown level1 summary"><p>This read-only property returns a delegate that processes log
+messages generated by the HTTP engine. The delegate is expected to
+handle the log messages appropriately, such as by writing them to a
+log file, displaying them in a console, or sending them to a logging
+service. The additional parameters provide context about the source
+of the log message, including the member name, source file path, and
+line number where the log message was generated. This information can
+be useful for debugging and tracing the flow of execution in the HTTP
+engine, allowing developers to identify the specific location in the
+code where the log message originated. The use of CallerMemberName,
+CallerFilePath, and CallerLineNumber attributes allows the HTTP
+engine to automatically capture this contextual information without
+requiring the caller to explicitly provide it, making it easier to
+implement logging throughout the codebase. Overall, this delegate
+provides a flexible and powerful mechanism for logging messages from
+the HTTP engine while also capturing important contextual
+information for debugging purposes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RequestOptions.HttpEngineLogCallback LogCallback { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.HTTP.RequestOptions.HttpEngineLogCallback.html">RequestOptions.HttpEngineLogCallback</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_HTTP_RequestOptions_Logger.md&amp;value=---%0Auid%3A%20WizardWrx.HTTP.RequestOptions.Logger%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L63">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L149">View Source</a>
   </span>
   <a id="WizardWrx_HTTP_RequestOptions_Logger_" data-uid="WizardWrx.HTTP.RequestOptions.Logger*"></a>
   <h4 id="WizardWrx_HTTP_RequestOptions_Logger" data-uid="WizardWrx.HTTP.RequestOptions.Logger">Logger</h4>
@@ -452,10 +551,143 @@ requests.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_HTTP_RequestOptions_LoggerCallback.md&amp;value=---%0Auid%3A%20WizardWrx.HTTP.RequestOptions.LoggerCallback%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L261">View Source</a>
+  </span>
+  <a id="WizardWrx_HTTP_RequestOptions_LoggerCallback_" data-uid="WizardWrx.HTTP.RequestOptions.LoggerCallback*"></a>
+  <h4 id="WizardWrx_HTTP_RequestOptions_LoggerCallback" data-uid="WizardWrx.HTTP.RequestOptions.LoggerCallback">LoggerCallback</h4>
+  <div class="markdown level1 summary"><p>
+This read-only property returns a delegate that receives log
+messages from the HTTP engine to which this instance is attached.
+</p>
+<p>
+The callback method is expected to handle the log messages
+appropriately, such as by writing them to a log file, displaying
+them in a console, or sending them to a logging service. The
+additional parameters provide context about the source of the
+log message, including the member name, source file path, and
+line number where the log message was generated. This information
+can be useful for debugging and tracing the flow of execution in the
+HTTP engine, allowing developers to identify the specific location
+in the code where the log message originated. The use of
+CallerMemberName, CallerFilePath, and CallerLineNumber attributes
+allows the HTTP engine to automatically capture this contextual
+information without requiring the caller to explicitly provide it,
+making it easier to implement logging throughout the codebase.
+</p>
+<p>
+This delegate provides a flexible and powerful mechanism for
+logging messages from the HTTP engine while also capturing
+important contextual information for debugging purposes.
+</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RequestOptions.HttpEngineLogCallback LoggerCallback { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="WizardWrx.HTTP.RequestOptions.HttpEngineLogCallback.html">RequestOptions.HttpEngineLogCallback</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_HTTP_RequestOptions_RetryDelay.md&amp;value=---%0Auid%3A%20WizardWrx.HTTP.RequestOptions.RetryDelay%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L276">View Source</a>
+  </span>
+  <a id="WizardWrx_HTTP_RequestOptions_RetryDelay_" data-uid="WizardWrx.HTTP.RequestOptions.RetryDelay*"></a>
+  <h4 id="WizardWrx_HTTP_RequestOptions_RetryDelay" data-uid="WizardWrx.HTTP.RequestOptions.RetryDelay">RetryDelay</h4>
+  <div class="markdown level1 summary"><p>This read-only integer property specifies the delay, <code>in
+seconds</code>, between retry attempts for a request that fails due to
+a transient error. The default value is <code>10</code>, which means that
+the HTTP engine will wait for 10 seconds before attempting to retry
+a failed request. This parameter allows developers to control the
+timing of retry attempts, providing a mechanism for introducing a
+delay between retries to avoid overwhelming the server or network
+with rapid-fire requests. By adjusting the retry delay, developers
+can optimize the balance between retrying failed requests and
+avoiding excessive delays in the overall request processing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int RetryDelay { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_HTTP_RequestOptions_RetryLimit.md&amp;value=---%0Auid%3A%20WizardWrx.HTTP.RequestOptions.RetryLimit%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L290">View Source</a>
+  </span>
+  <a id="WizardWrx_HTTP_RequestOptions_RetryLimit_" data-uid="WizardWrx.HTTP.RequestOptions.RetryLimit*"></a>
+  <h4 id="WizardWrx_HTTP_RequestOptions_RetryLimit" data-uid="WizardWrx.HTTP.RequestOptions.RetryLimit">RetryLimit</h4>
+  <div class="markdown level1 summary"><p>This read-only integer property specifies the maximum number of times
+to retry a request that fails due to a transient error, such as a
+network issue or a server error. The default value is 10, which
+means that the HTTP engine will attempt to retry a failed request up
+to 10 times before giving up and returning an error to the caller.
+This parameter allows developers to control the behavior of the HTTP
+engine in the face of transient errors, providing a mechanism for
+automatically retrying requests that may succeed on subsequent
+attempts.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int RetryLimit { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_HTTP_RequestOptions_TokenGetter.md&amp;value=---%0Auid%3A%20WizardWrx.HTTP.RequestOptions.TokenGetter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L70">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L178">View Source</a>
   </span>
   <a id="WizardWrx_HTTP_RequestOptions_TokenGetter_" data-uid="WizardWrx.HTTP.RequestOptions.TokenGetter*"></a>
   <h4 id="WizardWrx_HTTP_RequestOptions_TokenGetter" data-uid="WizardWrx.HTTP.RequestOptions.TokenGetter">TokenGetter</h4>
@@ -482,6 +714,53 @@ tokens for inclusion in the Authorization header of HTTP requests.</p>
       </tr>
     </tbody>
   </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_HTTP_RequestOptions_ToString.md&amp;value=---%0Auid%3A%20WizardWrx.HTTP.RequestOptions.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L413">View Source</a>
+  </span>
+  <a id="WizardWrx_HTTP_RequestOptions_ToString_" data-uid="WizardWrx.HTTP.RequestOptions.ToString*"></a>
+  <h4 id="WizardWrx_HTTP_RequestOptions_ToString" data-uid="WizardWrx.HTTP.RequestOptions.ToString">ToString()</h4>
+  <div class="markdown level1 summary"><p>This override of the ToString method provides a string
+representation of the RequestOptions instance, including the values
+of its properties. The string is formatted in a way that allows
+developers to easily understand the configuration of the
+RequestOptions instance, making it easier to debug and troubleshoot
+issues related to HTTP requests. The method uses helper functions to
+format the injected object reference and delegate information,
+ensuring that the output is clear and informative. Overall, this
+ToString override provides a valuable tool for developers to gain
+insights into the state of the RequestOptions instance and
+understand how it is configured for use with the HTTP engine.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>See the summary for details on the content and format of the
+returned string.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Object.ToString()</span></div>
 </article>
           </div>
           
@@ -493,7 +772,7 @@ tokens for inclusion in the Authorization header of HTTP requests.</p>
                     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_HTTP_RequestOptions.md&amp;value=---%0Auid%3A%20WizardWrx.HTTP.RequestOptions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L11" class="contribution-link">View Source</a>
+                    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/HTTP/RequestOptions.cs/#L15" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

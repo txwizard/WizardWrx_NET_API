@@ -183,6 +183,34 @@
             The return value is a SemVer string.
             </returns>
         </member>
+        <member name="M:AssemblyInfoUtil.Program.SkipThisDirectory(System.String,System.Collections.Generic.HashSet{System.String})">
+            <summary>
+            Return true if any member of string HashSet 
+            <paramref name="phsDirectories2Skip"/>, bounded by backslash
+            characters, occurs in the absolute (fully qualified) file name
+            represented by <paramref name="pstrFullName"/>.
+            </summary>
+            <param name="pstrFullName">
+            This string represents the absolute (fully qualified) name of a file
+            in the parent of the directory in which the specified AssemblyInfo
+            file is located or one of its children.
+            </param>
+            <param name="phsDirectories2Skip">
+            This HashSet of strings is the list of directory names to ignore
+            because they are either build artifacts or other excluded
+            directories.
+            </param>
+            <returns>
+            If a directory fragment of the absolute (fully qualified) file name
+            given by <paramref name="phsDirectories2Skip"/> is in the list of
+            excluded directories given by <paramref name="phsDirectories2Skip"/>,
+            return True, otherwise, return False.
+            </returns>
+            <remarks>
+            To ensure that only directories are included, each directory name in
+            the HashSet is wrapped in backslash characters.
+            </remarks>
+        </member>
         <member name="M:AssemblyInfoUtil.Utl.AwaitCarbonUnit">
             <summary>
             Prompt the user to press the RETURN key to end the program, allowing

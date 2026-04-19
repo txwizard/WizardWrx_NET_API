@@ -95,6 +95,27 @@ CallWebApiAndProcessResultASync invokes.</p>
 </section>
     <h3 id="delegates">Delegates
   </h3>
+      <h4><a class="xref" href="WizardWrx.HTTP.RequestOptions.HttpEngineLogCallback.html">RequestOptions.HttpEngineLogCallback</a></h4>
+      <section><p>This property represents the delegate signature for the
+<c>optional</c> callback method that receives log messages from the
+HTTP Request engine to which this instance is attached. The callback
+method is expected to handle the log message appropriately, such as
+by writing it to a log file, displaying it in a console, or sending
+it to a logging service. The additional parameters provide context
+about the source of the log message, including the member name,
+source file path, and line number where the log message was
+generated. This information can be useful for debugging and tracing
+the flow of execution in the HTTP engine, allowing developers to
+identify the specific location in the code where the log message
+originated. The use of CallerMemberName, CallerFilePath, and
+CallerLineNumber attributes allows the HTTP engine to automatically
+capture this contextual information without requiring the caller to
+explicitly provide it, making it easier to implement logging
+throughout the codebase. Overall, this delegate provides a flexible
+and powerful mechanism for logging messages from the HTTP engine
+while also capturing important contextual information for debugging
+purposes.</p>
+</section>
       <h4><a class="xref" href="WizardWrx.HTTP.RequestOptions.OAuthTokenGetter.html">RequestOptions.OAuthTokenGetter</a></h4>
       <section><p>This delegate signature represents a method that attempts to obtain an
 OAuth token and return it through an output parameter, along with the

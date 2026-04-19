@@ -110,6 +110,10 @@
       <Project>{c1fb48d6-4a54-4424-bca1-4777f3aae2df}</Project>
       <Name>Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{B5282E82-D211-4BEA-BEBD-B2CC6E45BF5C}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DLLConfigurationManager\DLLConfigurationManager.csproj">
       <Project>{6cffb889-9457-4bfa-9efb-614118885760}</Project>
       <Name>DLLConfigurationManager</Name>
@@ -121,7 +125,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>AssemblyInfoUtil.exe $(ProjectDir)Properties\AssemblyInfo.cs -inc:3 -fv -cy -onlywhenmodified</PreBuildEvent>
+    <PreBuildEvent>$(SolutionDir)BuildTools\AssemblyInfoUtil.exe $(ProjectDir)Properties\AssemblyInfo.cs -inc:3 -fv -cy -onlywhenmodified</PreBuildEvent>
   </PropertyGroup>
   <Import Project="$(Custom_MSBuild_Targets)\WizardWrx_NuGet_Packages.TARGETS" Condition="Exists('$(Custom_MSBuild_Targets)\WizardWrx_NuGet_Packages.TARGETS')" />
 </Project>

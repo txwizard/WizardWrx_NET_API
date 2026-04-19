@@ -1,21 +1,27 @@
 {
   "metadata": [
     {
-      "src": [
-        {
-          "files": [
-            "/**.csproj"
-          ],
-          "exclude": [
-            "**/UnitTestProject1/*.csproj",
-            "**/GUITestStand/*.csproj",
-            "**/DLLServices2TestStand/*.csproj",
-            "**/ReflectionInvokerDemo/*.csproj"
-            "**/HttpRequestEngineTestStand/*.csproj"
-          ],
-          "cwd": "../"
-        }
-      ],
+	"src": [
+	  {
+	    "files": [ "/**.csproj" ],
+	    "exclude": [
+	      "**/UnitTestProject1/*.csproj",
+	      "**/GUITestStand/*.csproj",
+	      "**/DLLServices2TestStand/*.csproj",
+	      "**/ReflectionInvokerDemo/*.csproj",
+	      "**/HttpRequestEngineTestStand/*.csproj"
+	    ],
+	    "cwd": "../"
+	  },
+	  {
+	    "files": [ "**/*.cs" ],
+	    "cwd": "../"
+	  },
+	  {
+	    "files": [ "InternalDocumentationXmlCopyBooks/*.xml" ],
+	    "cwd": "../"
+	  }
+	],
       "dest": "api",
       "filter": "filterConfig.yml",
       "disableGitFeatures": false,

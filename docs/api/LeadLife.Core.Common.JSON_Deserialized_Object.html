@@ -1,0 +1,453 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class JSON_Deserialized_Object
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class JSON_Deserialized_Object
+   ">
+    <meta name="generator" content="docfx 2.56.3.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="LeadLife.Core.Common.JSON_Deserialized_Object">
+  
+  
+  <h1 id="LeadLife_Core_Common_JSON_Deserialized_Object" data-uid="LeadLife.Core.Common.JSON_Deserialized_Object" class="text-break">Class JSON_Deserialized_Object
+  </h1>
+  <div class="markdown level0 summary"><p>Wrapper for JSON text that can optionally sanitize and parse
+according to a schema-aware set of required fields.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">JSON_Deserialized_Object</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="LeadLife.Core.Common.html">LeadLife.Core.Common</a></h6>
+  <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
+  <h5 id="LeadLife_Core_Common_JSON_Deserialized_Object_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class JSON_Deserialized_Object</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="LeadLife_Core_Common_JSON_Deserialized_Object__ctor_" data-uid="LeadLife.Core.Common.JSON_Deserialized_Object.#ctor*"></a>
+  <h4 id="LeadLife_Core_Common_JSON_Deserialized_Object__ctor_System_String_" data-uid="LeadLife.Core.Common.JSON_Deserialized_Object.#ctor(System.String)">JSON_Deserialized_Object(String)</h4>
+  <div class="markdown level1 summary"><p>Construct with JSON only; no schema, no sanitizer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JSON_Deserialized_Object(string pstrJSON)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrJSON</span></td>
+        <td><p>This string represents the JSON to be encapsulated by this instance.
+No validation or sanitization is performed on this string by this
+constructor; it is stored as-is. If the caller intends to perform
+schema-aware sanitization, it should use the other constructor and
+pass the appropriate parameters to enable that behavior.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="LeadLife_Core_Common_JSON_Deserialized_Object__ctor_" data-uid="LeadLife.Core.Common.JSON_Deserialized_Object.#ctor*"></a>
+  <h4 id="LeadLife_Core_Common_JSON_Deserialized_Object__ctor_System_String_System_String___System_Boolean_" data-uid="LeadLife.Core.Common.JSON_Deserialized_Object.#ctor(System.String,System.String[],System.Boolean)">JSON_Deserialized_Object(String, String[], Boolean)</h4>
+  <div class="markdown level1 summary"><p>Construct with JSON and an optional schema; optionally sanitize immediately.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JSON_Deserialized_Object(string pstrJSON, string[] pastrRequiredFields, bool pfSanitize = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pstrJSON</span></td>
+        <td><p>JSON text as received (possibly malformed).</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">pastrRequiredFields</span></td>
+        <td><p>Optional list of field names that must be JSON strings and may need repair.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">pfSanitize</span></td>
+        <td><p>When true, applies the schema-aware sanitizer immediately and parses eagerly.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="LeadLife_Core_Common_JSON_Deserialized_Object_JSON_" data-uid="LeadLife.Core.Common.JSON_Deserialized_Object.JSON*"></a>
+  <h4 id="LeadLife_Core_Common_JSON_Deserialized_Object_JSON" data-uid="LeadLife.Core.Common.JSON_Deserialized_Object.JSON">JSON</h4>
+  <div class="markdown level1 summary"><p>The raw (or sanitized) JSON text associated with this instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string JSON { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="LeadLife_Core_Common_JSON_Deserialized_Object_RequiredFields_" data-uid="LeadLife.Core.Common.JSON_Deserialized_Object.RequiredFields*"></a>
+  <h4 id="LeadLife_Core_Common_JSON_Deserialized_Object_RequiredFields" data-uid="LeadLife.Core.Common.JSON_Deserialized_Object.RequiredFields">RequiredFields</h4>
+  <div class="markdown level1 summary"><p>Optional per-instance schema: field names that must be JSON strings
+and are eligible for repair if unquoted.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string[] RequiredFields { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="LeadLife_Core_Common_JSON_Deserialized_Object_AsJObject_" data-uid="LeadLife.Core.Common.JSON_Deserialized_Object.AsJObject*"></a>
+  <h4 id="LeadLife_Core_Common_JSON_Deserialized_Object_AsJObject" data-uid="LeadLife.Core.Common.JSON_Deserialized_Object.AsJObject">AsJObject()</h4>
+  <div class="markdown level1 summary"><p>Returns the JSON as a JObject, parsing lazily if needed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JObject AsJObject()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JObject</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="LeadLife_Core_Common_JSON_Deserialized_Object_MaybeValid_" data-uid="LeadLife.Core.Common.JSON_Deserialized_Object.MaybeValid*"></a>
+  <h4 id="LeadLife_Core_Common_JSON_Deserialized_Object_MaybeValid" data-uid="LeadLife.Core.Common.JSON_Deserialized_Object.MaybeValid">MaybeValid()</h4>
+  <div class="markdown level1 summary"><p>Superficial structural check: non-empty and starts/ends with
+expected delimiters.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool MaybeValid()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="LeadLife_Core_Common_JSON_Deserialized_Object_ParseTo_" data-uid="LeadLife.Core.Common.JSON_Deserialized_Object.ParseTo*"></a>
+  <h4 id="LeadLife_Core_Common_JSON_Deserialized_Object_ParseTo__1" data-uid="LeadLife.Core.Common.JSON_Deserialized_Object.ParseTo``1">ParseTo&lt;T&gt;()</h4>
+  <div class="markdown level1 summary"><p>Deserializes the JSON into a strongly-typed model.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T ParseTo&lt;T&gt;()
+    where T : class</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>If the method succeeds, it returns an instance of type T populated
+with data from the JSON.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Generic type parameter T identifies the strongly typed model against
+which to parse the JObject.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="LeadLife_Core_Common_JSON_Deserialized_Object_Sanitize_" data-uid="LeadLife.Core.Common.JSON_Deserialized_Object.Sanitize*"></a>
+  <h4 id="LeadLife_Core_Common_JSON_Deserialized_Object_Sanitize" data-uid="LeadLife.Core.Common.JSON_Deserialized_Object.Sanitize">Sanitize()</h4>
+  <div class="markdown level1 summary"><p>Applies the schema-aware sanitizer to repair unquoted string values
+for this instance's RequiredFields, mutating the JSON property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Sanitize()</code></pre>
+  </div>
+  
+  
+  <a id="LeadLife_Core_Common_JSON_Deserialized_Object_Validate_" data-uid="LeadLife.Core.Common.JSON_Deserialized_Object.Validate*"></a>
+  <h4 id="LeadLife_Core_Common_JSON_Deserialized_Object_Validate_System_Boolean_" data-uid="LeadLife.Core.Common.JSON_Deserialized_Object.Validate(System.Boolean)">Validate(Boolean)</h4>
+  <div class="markdown level1 summary"><p>
+Validate that the JSON object contains all required fields.
+</p>
+<p>
+Optionally enforces that the values are non-empty (non-null, non-
+whitespace).
+</p>
+<p>
+Field name matching is case-insensitive.
+</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;string&gt; Validate(bool pfRequireNonEmptyValues)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">pfRequireNonEmptyValues</span></td>
+        <td><p>This flag indicates whether to enforce that the required fields have non-
+empty values. If <code>true</code>, then any required field that is either null
+or a string consisting only of whitespace will be considered missing.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><p>This method returns a list of missing required fields. If the JSON
+document is invalid, the list will contain a single entry &quot;<strong>Invalid
+JSON</strong>&quot;. If all required fields are present (and non-empty when
+required), the returned list is empty.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
