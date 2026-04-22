@@ -2,14 +2,26 @@
 
 ## 2026-04-17
 
+### WizardWrx.HTTP [9.0.110]
+
+The `RequestOptions` class constructor now accepts a new optional parameter, 
+`pintTimeout`, that allows the caller to establish a timeout for the request in
+whole seconds. This parameter provides a way to prevent requests from hanging
+indefinitely by specifying a maximum duration for the request to complete. If
+the request takes longer than the specified timeout, it will be aborted, and an
+exception will be thrown, allowing the caller to handle the timeout scenario
+gracefully. Since the paramet is optional, it has a default value of 120 seconds
+(2 minutes), which is a reasonable default for most HTTP requests. Infinite
+timeouts are prohibited.
+
 ### WizardWrx.HTTP [9.0.103]
 
-The `RequestOptions` class gets a new constructor mow accepts a new logging
-delegate parameter, `pdiLogCallback`, that allows the caller to specify a method
-that will be called with a string argument containing a log message for each 
-request made by the `RequestEngine` class. This allows the caller to capture and
-log request details such as the URL, HTTP verb, headers, and payload, which can
-be useful for debugging and monitoring purposes.
+The `RequestOptions` class constructor mow accepts a new logging delegate
+parameter, `pdiLogCallback`, that allows the caller to specify a method that
+will be called with a string argument containing a log message for each request
+made by the `RequestEngine` class. This allows the caller to capture and log
+request details such as the URL, HTTP verb, headers, and payload, which can be
+useful for debugging and monitoring purposes.
 
 Moreover, the logging delegate accepts the three compiler-magic parameters that
 provide the caller with contextual information about the source of the log message,

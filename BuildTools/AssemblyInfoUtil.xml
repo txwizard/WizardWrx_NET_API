@@ -47,6 +47,20 @@
             operating system.
             </param>
         </member>
+        <member name="M:AssemblyInfoUtil.Program.GetSingleCopyrightYear(System.String)">
+            <summary>
+            When the copyright year is a single year, this method determines
+            whether the year is out of date, in which case it returns TRUE, or
+            is current, in which case it returns FALSE.
+            </summary>
+            <param name="strOldCopyrightYear">
+            This string is the entire line that contains the AssemblyCopyright.
+            </param>
+            <returns>
+            The return value is the single copyright year if it is present and valid,
+            and -1 otherwise.
+            </returns>
+        </member>
         <member name="M:AssemblyInfoUtil.Program.HandleAssemblyInformationalVersion(System.Collections.Generic.List{System.String})">
             <summary>
             <para>
@@ -380,6 +394,11 @@
               Looks up a localized string similar to Done!.
             </summary>
         </member>
+        <member name="P:AssemblyInfoUtil.Properties.Resources.MSG_SINGLE_COPYRIGHT_YEAR">
+            <summary>
+              Looks up a localized string similar to {1}The copyright year is a single year: {0}{1}.
+            </summary>
+        </member>
         <member name="P:AssemblyInfoUtil.Properties.Resources.MSG_SOURCE_UNCHANGED">
             <summary>
               Looks up a localized string similar to {0}Since the project is unchanged, AssemblyInfo.cs remains unchanged and unexamined.{0}.
@@ -387,7 +406,7 @@
         </member>
         <member name="P:AssemblyInfoUtil.Properties.Resources.MSG_START">
             <summary>
-              Looks up a localized string similar to {0}, version {1}.{2},{5}{3} ({4} UTC){5}.
+              Looks up a localized string similar to {0}, version {1}{4}{2} ({3} UTC){4}.
             </summary>
         </member>
         <member name="P:AssemblyInfoUtil.Properties.Resources.MSG_STOP">

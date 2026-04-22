@@ -1475,7 +1475,7 @@ namespace DLLServices2TestStand
 
             using ( StreamWriter swOutputDocument = new StreamWriter (
                 strAbsoluteTraceLogFileName ,                                   // path       String
-                WizardWrx.FileIOFlags.FILE_OUT_CREATE ,                         // append     Boolean
+                FileIOFlags.FILE_OUT_CREATE ,                                   // append     Boolean
                 System.Text.Encoding.UTF8 ,                                     // encoding   Encoding
                 MagicNumbers.CAPACITY_08KB ) )                                  // buffersize Int32
             {

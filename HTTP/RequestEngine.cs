@@ -145,12 +145,16 @@ namespace WizardWrx.HTTP
 		/// WizardWrx.DLLConfigurationManager namespace, where the 
 		/// ExceptionLogger lives.
 		/// </summary>
+		/// <include file="../InternalDocumentationXmlCopyBooks/CallerInfo.XML"
+		///          path="doc/members/member[@name='CallerInfoSummary']/*" />
 		/// <param name="pobjRequestOptions">
 		/// When supplied, the RequestOptions object reference is stored in the
 		/// Options property, providing a read-only reference to everything but
 		/// the OAuth Access Token, which must, of course, be updateable because
 		/// access tokens are short-lived.
 		/// </param>
+		/// <include file="../InternalDocumentationXmlCopyBooks/CallerInfo.XML"
+		///          path="doc/members/member[@name='CallerInfoParameters']/*" />
 		public RequestEngine (
 			RequestOptions pobjRequestOptions ,
 			[System.Runtime.CompilerServices.CallerMemberName] string memberName = SpecialStrings.EMPTY_STRING ,
@@ -160,6 +164,23 @@ namespace WizardWrx.HTTP
 		{
 			Options = pobjRequestOptions;
 			_httpClient = CreateHttpClient ( Options , memberName , sourceFilePath , sourceLineNumber );
+
+			if ( Options != null )
+			{
+				if ( Options.Timeout > 0 )
+				{
+					_httpClient.Timeout = TimeSpan.FromSeconds ( Options.Timeout );
+				}   // if ( Options != null && Options.Timeout > 0 )
+
+				if ( Options.LoggerCallback != null )
+				{
+					Options.LoggerCallback (
+						$"RequestEngine constructor: RequestOptions supplied properties as follows: {Options}" ,
+						memberName ,
+						sourceFilePath ,
+						sourceLineNumber );
+				}   // if ( Options.LoggerCallback != null )
+			}
 		}   // public RequestEngine constructor (2 of 2)
 
 
@@ -174,11 +195,18 @@ namespace WizardWrx.HTTP
 		/// Specify the Boolean ExpectJSON flag that will accomapny the actual
 		/// request when you call SendRequest.
 		/// </param>
+		/// <include file="../InternalDocumentationXmlCopyBooks/CallerInfo.XML"
+		///          path="doc/members/member[@name='CallerInfoParameters']/*" />
 		/// <returns>
 		/// The return value is a human-readable list of the HTTP headers that
 		/// will be attached to the actual request.
 		/// </returns>
-		public string GetDiagnosticHeadersDump ( Uri requestUri , bool pfExpectJson )
+		public string GetDiagnosticHeadersDump (
+			Uri requestUri ,
+			bool pfExpectJson ,
+			[System.Runtime.CompilerServices.CallerMemberName] string memberName = SpecialStrings.EMPTY_STRING ,
+			[System.Runtime.CompilerServices.CallerFilePath] string sourceFilePath = SpecialStrings.EMPTY_STRING ,
+			[System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = MagicNumbers.ZERO )
 		{
 			HttpRequestMessage temp = new HttpRequestMessage ( HttpMethod.Get , requestUri );
 
@@ -599,9 +627,16 @@ namespace WizardWrx.HTTP
 		/// </param>
 		/// <returns>
 		/// The return value is the IDictionary populated with keys for each
-		/// named value in the Query of <paramref name="puriToParse"/>. If the query is
-		/// empty or absent, the returned dictionary is empty.
+		/// named value in the Query of <paramref name="puriToParse"/>. If the
+		/// query is empty or absent, the returned dictionary is empty.
 		/// </returns>
+		/// <remarks>
+		/// Since this method performs no logging, it is not necessary to pass
+		/// in caller info parameters, and, in fact, they are not supported. If
+		/// you need to log the query values, call this method from a wrapper
+		/// that does support caller info parameters and logs the returned
+		/// dictionary.
+		/// </remarks>
 		public static IDictionary<string , string> ParseQueryToDictionary ( Uri puriToParse )
 		{
 			Dictionary<string , string> dctQueryValues = new Dictionary<string , string> ( StringComparer.OrdinalIgnoreCase );

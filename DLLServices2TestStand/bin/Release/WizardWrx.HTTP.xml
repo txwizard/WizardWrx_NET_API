@@ -89,14 +89,35 @@
             WizardWrx.DLLConfigurationManager namespace, where the 
             ExceptionLogger lives.
             </summary>
+            <summary>
+        Captures caller‑site metadata (member name, source file path, and
+        line number) using compiler‑supplied Caller Info attributes. This
+        pattern allows a routine to record the exact call site without
+        requiring the caller to provide this information explicitly. It is
+        useful for diagnostics, logging, tracing, and any scenario where
+        precise call‑site provenance enhances maintainability or debugging.
+      </summary>
             <param name="pobjRequestOptions">
             When supplied, the RequestOptions object reference is stored in the
             Options property, providing a read-only reference to everything but
             the OAuth Access Token, which must, of course, be updateable because
             access tokens are short-lived.
             </param>
+            <param name="memberName">
+        The name of the calling method or property. Automatically supplied
+        by the compiler when decorated with
+        <see cref="T:System.Runtime.CompilerServices.CallerMemberNameAttribute" />.
+      </param><param name="sourceFilePath">
+        The full path of the source file that contains the calling member.
+        Automatically supplied by the compiler when decorated with
+        <see cref="T:System.Runtime.CompilerServices.CallerFilePathAttribute" />.
+      </param><param name="sourceLineNumber">
+        The line number in the source file at which this routine was invoked.
+        Automatically supplied by the compiler when decorated with
+        <see cref="T:System.Runtime.CompilerServices.CallerLineNumberAttribute" />.
+      </param>
         </member>
-        <member name="M:WizardWrx.HTTP.RequestEngine.GetDiagnosticHeadersDump(System.Uri,System.Boolean)">
+        <member name="M:WizardWrx.HTTP.RequestEngine.GetDiagnosticHeadersDump(System.Uri,System.Boolean,System.String,System.String,System.Int32)">
             <summary>
             Get a formatted list of the HTTP headers attached to the request.
             </summary>
@@ -108,6 +129,19 @@
             Specify the Boolean ExpectJSON flag that will accomapny the actual
             request when you call SendRequest.
             </param>
+            <param name="memberName">
+        The name of the calling method or property. Automatically supplied
+        by the compiler when decorated with
+        <see cref="T:System.Runtime.CompilerServices.CallerMemberNameAttribute" />.
+      </param><param name="sourceFilePath">
+        The full path of the source file that contains the calling member.
+        Automatically supplied by the compiler when decorated with
+        <see cref="T:System.Runtime.CompilerServices.CallerFilePathAttribute" />.
+      </param><param name="sourceLineNumber">
+        The line number in the source file at which this routine was invoked.
+        Automatically supplied by the compiler when decorated with
+        <see cref="T:System.Runtime.CompilerServices.CallerLineNumberAttribute" />.
+      </param>
             <returns>
             The return value is a human-readable list of the HTTP headers that
             will be attached to the actual request.
@@ -254,9 +288,16 @@
             </param>
             <returns>
             The return value is the IDictionary populated with keys for each
-            named value in the Query of <paramref name="puriToParse"/>. If the query is
-            empty or absent, the returned dictionary is empty.
+            named value in the Query of <paramref name="puriToParse"/>. If the
+            query is empty or absent, the returned dictionary is empty.
             </returns>
+            <remarks>
+            Since this method performs no logging, it is not necessary to pass
+            in caller info parameters, and, in fact, they are not supported. If
+            you need to log the query values, call this method from a wrapper
+            that does support caller info parameters and logs the returned
+            dictionary.
+            </remarks>
         </member>
         <member name="M:WizardWrx.HTTP.RequestEngine.CreateHttpClient(WizardWrx.HTTP.RequestOptions,System.String,System.String,System.Int32)">
             <summary>
@@ -595,13 +636,34 @@
             attempts.
             </summary>
         </member>
+        <member name="P:WizardWrx.HTTP.RequestOptions.Timeout">
+            <summary>
+            <para>
+            This integer specifies the Timeout in <c>seconds</c>.
+            </para>
+            <para>
+            The default value is 100,000 milliseconds (100 seconds).
+            The documentation for HttpClient.Timeout states that the default 
+            value is 100 seconds, and that the property is of type TimeSpan.
+            </para>
+            <para>
+            When unitialized, the Timeout property behaves as if it had been set
+            to the default value of 100 seconds, which is equivalent to 100,000
+            milliseconds.
+            </para>
+            Though the Timeout property supports setting an infinite timeout by
+            setting the property value to InfiniteTimeSpan, we do not support
+            that feature in this library, as it is generally not advisable to
+            allow requests to hang indefinitely.
+            </summary>
+        </member>
         <member name="M:WizardWrx.HTTP.RequestOptions.#ctor">
             <summary>
             The default constructor is hidden to enforce instatiation of only
             explicitly initialized instances.
             </summary>
         </member>
-        <member name="M:WizardWrx.HTTP.RequestOptions.#ctor(WizardWrx.DLLConfigurationManager.ExceptionLogger,WizardWrx.HTTP.RequestOptions.OAuthTokenGetter,System.String,System.String,System.String,System.String,System.Int32,System.Int32,WizardWrx.HTTP.RequestOptions.HttpEngineLogCallback)">
+        <member name="M:WizardWrx.HTTP.RequestOptions.#ctor(WizardWrx.DLLConfigurationManager.ExceptionLogger,WizardWrx.HTTP.RequestOptions.OAuthTokenGetter,System.String,System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,WizardWrx.HTTP.RequestOptions.HttpEngineLogCallback)">
             <summary>
             The public constructor initializes both read-only properties of this
             class, so that consumers of this class must make their choices about
@@ -658,6 +720,23 @@
             By adjusting the retry delay, developers can optimize the balance
             between retrying failed requests and avoiding excessive delays in
             the overall request processing.
+            </param>
+            <param name="pintTimeout">
+            This integer specifies the timeout in <c>seconds</c> for HTTP
+            requests. The default value is 120, which means that the HTTP
+            engine will wait for 120 seconds before timing out a request and 
+            returning an error to the caller. This parameter allows developers
+            to control the maximum amount of time that the HTTP engine will wait
+            for a response before giving up and returning an error. By adjusting
+            the timeout value, developers can optimize the balance between
+            allowing sufficient time for requests to complete and avoiding
+            excessive delays in the overall request processing. Since it is
+            generally inadvisable to set the timeout to an infinite value, as
+            this can lead to requests hanging indefinitely and potentially
+            causing issues with resource management and application performance,
+            this library does not support setting an infinite timeout and instead
+            enforces a finite timeout value to ensure that requests are handled
+            in a timely manner.
             </param>
             <param name="pdiLogCallback">
             <para>

@@ -291,6 +291,28 @@ namespace WizardWrx.HTTP
 
 
 		/// <summary>
+		/// <para>
+		/// This integer specifies the Timeout in <c>seconds</c>.
+		/// </para>
+		/// <para>
+		/// The default value is 100,000 milliseconds (100 seconds).
+		/// The documentation for HttpClient.Timeout states that the default 
+		/// value is 100 seconds, and that the property is of type TimeSpan.
+		/// </para>
+		/// <para>
+		/// When unitialized, the Timeout property behaves as if it had been set
+		/// to the default value of 100 seconds, which is equivalent to 100,000
+		/// milliseconds.
+		/// </para>
+		/// Though the Timeout property supports setting an infinite timeout by
+		/// setting the property value to InfiniteTimeSpan, we do not support
+		/// that feature in this library, as it is generally not advisable to
+		/// allow requests to hang indefinitely.
+		/// </summary>
+		public int Timeout { get; }
+
+
+		/// <summary>
 		/// The default constructor is hidden to enforce instatiation of only
 		/// explicitly initialized instances.
 		/// </summary>
@@ -354,6 +376,23 @@ namespace WizardWrx.HTTP
 		/// between retrying failed requests and avoiding excessive delays in
 		/// the overall request processing.
 		/// </param>
+		/// <param name="pintTimeout">
+		/// This integer specifies the timeout in <c>seconds</c> for HTTP
+		/// requests. The default value is 120, which means that the HTTP
+		/// engine will wait for 120 seconds before timing out a request and 
+		/// returning an error to the caller. This parameter allows developers
+		/// to control the maximum amount of time that the HTTP engine will wait
+		/// for a response before giving up and returning an error. By adjusting
+		/// the timeout value, developers can optimize the balance between
+		/// allowing sufficient time for requests to complete and avoiding
+		/// excessive delays in the overall request processing. Since it is
+		/// generally inadvisable to set the timeout to an infinite value, as
+		/// this can lead to requests hanging indefinitely and potentially
+		/// causing issues with resource management and application performance,
+		/// this library does not support setting an infinite timeout and instead
+		/// enforces a finite timeout value to ensure that requests are handled
+		/// in a timely manner.
+		/// </param>
 		/// <param name="pdiLogCallback">
 		/// <para>
 		/// This delegate is called to log messages from the HTTP engine. It is
@@ -378,7 +417,7 @@ namespace WizardWrx.HTTP
 		/// information for debugging purposes.
 		/// </para>
 		/// </param>
-		public RequestOptions ( ExceptionLogger plogger = null , OAuthTokenGetter ptokenGetter = null , string pstrInitialOAuthToken = null , string pstrAcceptHeaderValue = HTTP_ACCEPT_WILDCARD , string pstrAcceptEncodingValue = null , string pstrCacheControlValue = HTTP_NEVER_CACHE , int pintRetryLimit = 10 , int pintRetryDelay = 10 , HttpEngineLogCallback pdiLogCallback = null )
+		public RequestOptions ( ExceptionLogger plogger = null , OAuthTokenGetter ptokenGetter = null , string pstrInitialOAuthToken = null , string pstrAcceptHeaderValue = HTTP_ACCEPT_WILDCARD , string pstrAcceptEncodingValue = null , string pstrCacheControlValue = HTTP_NEVER_CACHE , int pintRetryLimit = 10 , int pintRetryDelay = 10 , int pintTimeout = 120 , HttpEngineLogCallback pdiLogCallback = null )
 		{
 			Logger = plogger;
 			TokenGetter = ptokenGetter;
@@ -388,6 +427,7 @@ namespace WizardWrx.HTTP
 			CacheControlValue = pstrCacheControlValue;
 			RetryLimit = pintRetryLimit;
 			RetryDelay = pintRetryDelay;
+			Timeout = pintTimeout;
 			LoggerCallback = pdiLogCallback;
 		}   // public RequestOptions
 
@@ -417,13 +457,14 @@ namespace WizardWrx.HTTP
 				"Logger=" , FormatInjectedObjectReference ( this.Logger ) , "; " ,
 				"LogCallback=" , FormatDelegate ( this.LogCallback ) , "; " ,
 				"TokenGetter=" , FormatDelegate ( this.TokenGetter ) , "; " ,
+				"LoggerCallback=" , FormatDelegate ( this.LoggerCallback ) , "; " ,
 				"AcceptHeaderValue=" , ( this.AcceptHeaderValue ?? "null" ) , "; " ,
 				"AcceptEncodingValue=" , ( this.AcceptEncodingValue ?? "null" ) , "; " ,
 				"CacheControlValue=" , ( this.CacheControlValue ?? "null" ) , "; " ,
 				"CurrentOAuthToken=" , ( this.CurrentOAuthToken != null ? "<redacted>" : "null" ) , "; " ,
-				"LoggerCallback=" , FormatDelegate ( this.LoggerCallback ) , "; " ,
 				"RetryDelay=" , this.RetryDelay.ToString ( ) , "; " ,
-				"RetryLimit=" , this.RetryLimit.ToString ( )
+				"RetryLimit=" , this.RetryLimit.ToString ( ) , "; " ,
+				"Timeout=" , this.Timeout.ToString ( )
 			);
 		}   // public override string ToString
 
