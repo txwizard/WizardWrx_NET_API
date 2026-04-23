@@ -13307,12 +13307,12 @@ references:
   commentId: T:WizardWrx.HTTP.RequestOptions
   fullName: WizardWrx.HTTP.RequestOptions
   nameWithType: RequestOptions
-- uid: WizardWrx.HTTP.RequestOptions.#ctor(WizardWrx.DLLConfigurationManager.ExceptionLogger,WizardWrx.HTTP.RequestOptions.OAuthTokenGetter,System.String,System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,WizardWrx.HTTP.RequestOptions.HttpEngineLogCallback)
-  name: RequestOptions(ExceptionLogger, RequestOptions.OAuthTokenGetter, String, String, String, String, Int32, Int32, Int32, RequestOptions.HttpEngineLogCallback)
-  href: api/WizardWrx.HTTP.RequestOptions.html#WizardWrx_HTTP_RequestOptions__ctor_WizardWrx_DLLConfigurationManager_ExceptionLogger_WizardWrx_HTTP_RequestOptions_OAuthTokenGetter_System_String_System_String_System_String_System_String_System_Int32_System_Int32_System_Int32_WizardWrx_HTTP_RequestOptions_HttpEngineLogCallback_
-  commentId: M:WizardWrx.HTTP.RequestOptions.#ctor(WizardWrx.DLLConfigurationManager.ExceptionLogger,WizardWrx.HTTP.RequestOptions.OAuthTokenGetter,System.String,System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,WizardWrx.HTTP.RequestOptions.HttpEngineLogCallback)
-  fullName: WizardWrx.HTTP.RequestOptions.RequestOptions(WizardWrx.DLLConfigurationManager.ExceptionLogger, WizardWrx.HTTP.RequestOptions.OAuthTokenGetter, System.String, System.String, System.String, System.String, System.Int32, System.Int32, System.Int32, WizardWrx.HTTP.RequestOptions.HttpEngineLogCallback)
-  nameWithType: RequestOptions.RequestOptions(ExceptionLogger, RequestOptions.OAuthTokenGetter, String, String, String, String, Int32, Int32, Int32, RequestOptions.HttpEngineLogCallback)
+- uid: WizardWrx.HTTP.RequestOptions.#ctor(WizardWrx.DLLConfigurationManager.ExceptionLogger,WizardWrx.HTTP.RequestOptions.OAuthTokenGetter,System.String,System.String,System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,WizardWrx.HTTP.RequestOptions.HttpEngineLogCallback)
+  name: RequestOptions(ExceptionLogger, RequestOptions.OAuthTokenGetter, String, String, String, String, String, Int32, Int32, Int32, RequestOptions.HttpEngineLogCallback)
+  href: api/WizardWrx.HTTP.RequestOptions.html#WizardWrx_HTTP_RequestOptions__ctor_WizardWrx_DLLConfigurationManager_ExceptionLogger_WizardWrx_HTTP_RequestOptions_OAuthTokenGetter_System_String_System_String_System_String_System_String_System_String_System_Int32_System_Int32_System_Int32_WizardWrx_HTTP_RequestOptions_HttpEngineLogCallback_
+  commentId: M:WizardWrx.HTTP.RequestOptions.#ctor(WizardWrx.DLLConfigurationManager.ExceptionLogger,WizardWrx.HTTP.RequestOptions.OAuthTokenGetter,System.String,System.String,System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,WizardWrx.HTTP.RequestOptions.HttpEngineLogCallback)
+  fullName: WizardWrx.HTTP.RequestOptions.RequestOptions(WizardWrx.DLLConfigurationManager.ExceptionLogger, WizardWrx.HTTP.RequestOptions.OAuthTokenGetter, System.String, System.String, System.String, System.String, System.String, System.Int32, System.Int32, System.Int32, WizardWrx.HTTP.RequestOptions.HttpEngineLogCallback)
+  nameWithType: RequestOptions.RequestOptions(ExceptionLogger, RequestOptions.OAuthTokenGetter, String, String, String, String, String, Int32, Int32, Int32, RequestOptions.HttpEngineLogCallback)
 - uid: WizardWrx.HTTP.RequestOptions.#ctor*
   name: RequestOptions
   href: api/WizardWrx.HTTP.RequestOptions.html#WizardWrx_HTTP_RequestOptions__ctor_
@@ -13359,6 +13359,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.HTTP.RequestOptions.CacheControlValue
   nameWithType: RequestOptions.CacheControlValue
+- uid: WizardWrx.HTTP.RequestOptions.ContentType
+  name: ContentType
+  href: api/WizardWrx.HTTP.RequestOptions.html#WizardWrx_HTTP_RequestOptions_ContentType
+  commentId: P:WizardWrx.HTTP.RequestOptions.ContentType
+  fullName: WizardWrx.HTTP.RequestOptions.ContentType
+  nameWithType: RequestOptions.ContentType
+- uid: WizardWrx.HTTP.RequestOptions.ContentType*
+  name: ContentType
+  href: api/WizardWrx.HTTP.RequestOptions.html#WizardWrx_HTTP_RequestOptions_ContentType_
+  commentId: Overload:WizardWrx.HTTP.RequestOptions.ContentType
+  isSpec: "True"
+  fullName: WizardWrx.HTTP.RequestOptions.ContentType
+  nameWithType: RequestOptions.ContentType
 - uid: WizardWrx.HTTP.RequestOptions.CurrentOAuthToken
   name: CurrentOAuthToken
   href: api/WizardWrx.HTTP.RequestOptions.html#WizardWrx_HTTP_RequestOptions_CurrentOAuthToken
@@ -13384,6 +13397,12 @@ references:
   commentId: F:WizardWrx.HTTP.RequestOptions.HTTP_COMPRESSION_ALGS
   fullName: WizardWrx.HTTP.RequestOptions.HTTP_COMPRESSION_ALGS
   nameWithType: RequestOptions.HTTP_COMPRESSION_ALGS
+- uid: WizardWrx.HTTP.RequestOptions.HTTP_CONTENT_TYPE_JSON
+  name: HTTP_CONTENT_TYPE_JSON
+  href: api/WizardWrx.HTTP.RequestOptions.html#WizardWrx_HTTP_RequestOptions_HTTP_CONTENT_TYPE_JSON
+  commentId: F:WizardWrx.HTTP.RequestOptions.HTTP_CONTENT_TYPE_JSON
+  fullName: WizardWrx.HTTP.RequestOptions.HTTP_CONTENT_TYPE_JSON
+  nameWithType: RequestOptions.HTTP_CONTENT_TYPE_JSON
 - uid: WizardWrx.HTTP.RequestOptions.HTTP_NEVER_CACHE
   name: HTTP_NEVER_CACHE
   href: api/WizardWrx.HTTP.RequestOptions.html#WizardWrx_HTTP_RequestOptions_HTTP_NEVER_CACHE

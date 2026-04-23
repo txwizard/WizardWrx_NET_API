@@ -523,6 +523,18 @@
             Token Getter is responsible for stashing a copy in protectd storage.
             </returns>
         </member>
+        <member name="P:WizardWrx.HTTP.RequestOptions.ContentType">
+            <summary>
+            This read-only string property represents the value to specify as 
+            the Content-Type HTTP header value. By default, this value is null,
+            and the Content-Type header is omitted from requests. If a value is
+            specified for this property, it will be included as the Content-Type
+            header in HTTP requests made using the associated HTTP engine,
+            allowing developers to indicate the media type of the request body
+            and ensure that the server can correctly interpret the data being
+            sent.
+            </summary>
+        </member>
         <member name="P:WizardWrx.HTTP.RequestOptions.Logger">
             <summary>
             This read-only property returns an instance of ExceptionLogger for
@@ -663,7 +675,7 @@
             explicitly initialized instances.
             </summary>
         </member>
-        <member name="M:WizardWrx.HTTP.RequestOptions.#ctor(WizardWrx.DLLConfigurationManager.ExceptionLogger,WizardWrx.HTTP.RequestOptions.OAuthTokenGetter,System.String,System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,WizardWrx.HTTP.RequestOptions.HttpEngineLogCallback)">
+        <member name="M:WizardWrx.HTTP.RequestOptions.#ctor(WizardWrx.DLLConfigurationManager.ExceptionLogger,WizardWrx.HTTP.RequestOptions.OAuthTokenGetter,System.String,System.String,System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,WizardWrx.HTTP.RequestOptions.HttpEngineLogCallback)">
             <summary>
             The public constructor initializes both read-only properties of this
             class, so that consumers of this class must make their choices about
@@ -685,6 +697,17 @@
             null and <paramref name="ptokenGetter"/> is not null, the class 
             attempts to obtain a token the first time the property value is
             queried.
+            </param>
+            <param name="pstrContentType">
+            This optional string parameter sets the Content-Type HTTP header
+            value for requests made using the associated HTTP engine. If this
+            parameter is null, the Content-Type header is omitted from requests
+            By specifying a value for this parameter, developers can indicate
+            the media type of the request body, ensuring that the server can
+            correctly interpret the data being sent. This allows for greater
+            flexibility in handling different types of request payloads and can
+            help prevent issues related to content negotiation between the
+            client and server.
             </param>
             <param name="pstrAcceptHeaderValue">
             When specified, thiis string represents the value to include as the

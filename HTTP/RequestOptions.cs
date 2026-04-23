@@ -94,7 +94,7 @@ namespace WizardWrx.HTTP
 			[CallerFilePath] string sourceFilePath = SpecialStrings.EMPTY_STRING ,
 			[CallerLineNumber] int sourceLineNumber	 = MagicNumbers.ZERO );
 
-
+		public const string HTTP_CONTENT_TYPE_JSON = @"application/json";
 		/// <summary>
 		/// Let's be really clear about the shape of the default Accept HTTP header.
 		/// </summary>
@@ -139,6 +139,19 @@ namespace WizardWrx.HTTP
 			out string token ,
 			ExceptionLogger logger = null
 		);
+
+
+		/// <summary>
+		/// This read-only string property represents the value to specify as 
+		/// the Content-Type HTTP header value. By default, this value is null,
+		/// and the Content-Type header is omitted from requests. If a value is
+		/// specified for this property, it will be included as the Content-Type
+		/// header in HTTP requests made using the associated HTTP engine,
+		/// allowing developers to indicate the media type of the request body
+		/// and ensure that the server can correctly interpret the data being
+		/// sent.
+		/// </summary>
+		public string ContentType { get; }
 
 
 		/// <summary>
@@ -341,6 +354,17 @@ namespace WizardWrx.HTTP
 		/// attempts to obtain a token the first time the property value is
 		/// queried.
 		/// </param>
+		/// <param name="pstrContentType">
+		/// This optional string parameter sets the Content-Type HTTP header
+		/// value for requests made using the associated HTTP engine. If this
+		/// parameter is null, the Content-Type header is omitted from requests
+		/// By specifying a value for this parameter, developers can indicate
+		/// the media type of the request body, ensuring that the server can
+		/// correctly interpret the data being sent. This allows for greater
+		/// flexibility in handling different types of request payloads and can
+		/// help prevent issues related to content negotiation between the
+		/// client and server.
+		/// </param>
 		/// <param name="pstrAcceptHeaderValue">
 		/// When specified, thiis string represents the value to include as the
 		/// Accept HTTP header value. By default, the null value, "/", is added.
@@ -417,11 +441,12 @@ namespace WizardWrx.HTTP
 		/// information for debugging purposes.
 		/// </para>
 		/// </param>
-		public RequestOptions ( ExceptionLogger plogger = null , OAuthTokenGetter ptokenGetter = null , string pstrInitialOAuthToken = null , string pstrAcceptHeaderValue = HTTP_ACCEPT_WILDCARD , string pstrAcceptEncodingValue = null , string pstrCacheControlValue = HTTP_NEVER_CACHE , int pintRetryLimit = 10 , int pintRetryDelay = 10 , int pintTimeout = 120 , HttpEngineLogCallback pdiLogCallback = null )
+		public RequestOptions ( ExceptionLogger plogger = null , OAuthTokenGetter ptokenGetter = null , string pstrInitialOAuthToken = null , string pstrContentType=null , string pstrAcceptHeaderValue = HTTP_ACCEPT_WILDCARD , string pstrAcceptEncodingValue = null , string pstrCacheControlValue = HTTP_NEVER_CACHE , int pintRetryLimit = 10 , int pintRetryDelay = 10 , int pintTimeout = 120 , HttpEngineLogCallback pdiLogCallback = null )
 		{
 			Logger = plogger;
 			TokenGetter = ptokenGetter;
 			_currentOAuthToken = pstrInitialOAuthToken;
+			ContentType = pstrContentType;
 			AcceptHeaderValue = pstrAcceptHeaderValue;
 			AcceptEncodingValue = pstrAcceptEncodingValue;
 			CacheControlValue = pstrCacheControlValue;
@@ -458,10 +483,11 @@ namespace WizardWrx.HTTP
 				"LogCallback=" , FormatDelegate ( this.LogCallback ) , "; " ,
 				"TokenGetter=" , FormatDelegate ( this.TokenGetter ) , "; " ,
 				"LoggerCallback=" , FormatDelegate ( this.LoggerCallback ) , "; " ,
-				"AcceptHeaderValue=" , ( this.AcceptHeaderValue ?? "null" ) , "; " ,
-				"AcceptEncodingValue=" , ( this.AcceptEncodingValue ?? "null" ) , "; " ,
-				"CacheControlValue=" , ( this.CacheControlValue ?? "null" ) , "; " ,
-				"CurrentOAuthToken=" , ( this.CurrentOAuthToken != null ? "<redacted>" : "null" ) , "; " ,
+				"ContentType=" , ( this.ContentType ?? Common.Properties.Resources.VALUE_IS_NULL ) , "; " ,
+				"AcceptHeaderValue=" , ( this.AcceptHeaderValue ?? Common.Properties.Resources.VALUE_IS_NULL ) , "; " ,
+				"AcceptEncodingValue=" , ( this.AcceptEncodingValue ?? Common.Properties.Resources.VALUE_IS_NULL ) , "; " ,
+				"CacheControlValue=" , ( this.CacheControlValue ?? Common.Properties.Resources.VALUE_IS_NULL ) , "; " ,
+				"CurrentOAuthToken=" , ( this.CurrentOAuthToken != null ? "<redacted>" : Common.Properties.Resources.VALUE_IS_NULL ) , "; " ,
 				"RetryDelay=" , this.RetryDelay.ToString ( ) , "; " ,
 				"RetryLimit=" , this.RetryLimit.ToString ( ) , "; " ,
 				"Timeout=" , this.Timeout.ToString ( )

@@ -1,8 +1,17 @@
 ﻿# WizardWrx .NET API Change Log
 
-## 2026-04-17
+## 2026-04-23
 
 ### WizardWrx.HTTP [9.0.110]
+
+The `RequestEngine` class now includes a new `ContentType` property and 
+constructor parameter, accompanied by a new constant, `HTTP_CONTENT_TYPE_JSON`,
+which is set to the string value `"application/json"`. This constant can be used
+to specify the content type of a request when JSON document strings.
+
+## 2026-04-22
+
+### WizardWrx.HTTP [9.0.109]
 
 The `RequestOptions` class constructor now accepts a new optional parameter, 
 `pintTimeout`, that allows the caller to establish a timeout for the request in
@@ -13,6 +22,8 @@ exception will be thrown, allowing the caller to handle the timeout scenario
 gracefully. Since the paramet is optional, it has a default value of 120 seconds
 (2 minutes), which is a reasonable default for most HTTP requests. Infinite
 timeouts are prohibited.
+
+## 2026-04-17
 
 ### WizardWrx.HTTP [9.0.103]
 
