@@ -451,9 +451,9 @@
             </para>
             <para>
             The additional parameters, including memberName 
-            (<paramref name="pstrMemberName" />), sourceFilePath
-            (<paramref name="pstrSourceFilePath" />), and sourceLineNumber 
-            (<paramref name="pintSourceLineNumber" />), provide valuable context
+            (<paramref name="memberName" />), sourceFilePath
+            (<paramref name="sourceFilePath" />), and sourceLineNumber 
+            (<paramref name="sourceLineNumber" />), provide valuable context
             about the source of the log message. The memberName parameter
             indicates the name of the method or property where the log message
             was generated within the HTTP engine, allowing developers to
@@ -483,6 +483,11 @@
         Automatically supplied by the compiler when decorated with
         <see cref="T:System.Runtime.CompilerServices.CallerLineNumberAttribute" />.
       </param>
+        </member>
+        <member name="F:WizardWrx.HTTP.RequestOptions.HTTP_CONTENT_TYPE_JSON">
+            <summary>
+            This string constant specifies the HTTP content type for JSON payloads.
+            </summary>
         </member>
         <member name="F:WizardWrx.HTTP.RequestOptions.HTTP_ACCEPT_WILDCARD">
             <summary>

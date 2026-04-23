@@ -741,7 +741,12 @@ namespace WizardWrx.HTTP
 		/// </param>
 		/// <include file="../InternalDocumentationXmlCopyBooks/CallerInfo.XML"
 		///          path="doc/members/member[@name='CallerInfoParameters']/*" />
-		private void ApplyHeaders ( HttpRequestMessage phttpRequest , bool pfAcceptJson , string memberName = SpecialStrings.EMPTY_STRING , string sourceFilePath = SpecialStrings.EMPTY_STRING , int sourceLineNumber = MagicNumbers.ZERO )
+		private void ApplyHeaders ( 
+			HttpRequestMessage phttpRequest , 
+			bool pfAcceptJson ,
+			[System.Runtime.CompilerServices.CallerMemberName] string memberName = SpecialStrings.EMPTY_STRING ,
+			[System.Runtime.CompilerServices.CallerFilePath] string sourceFilePath = SpecialStrings.EMPTY_STRING ,
+			[System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = MagicNumbers.ZERO )
 		{
 			const string LOGGER_PREFIX = @"RequestEngine.ApplyHeaders: ";
 

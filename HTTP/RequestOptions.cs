@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 
 using WizardWrx.DLLConfigurationManager;
 
@@ -67,9 +66,9 @@ namespace WizardWrx.HTTP
 		/// </para>
 		/// <para>
 		/// The additional parameters, including memberName 
-		/// (<paramref name="pstrMemberName"/>), sourceFilePath
-		/// (<paramref name="pstrSourceFilePath"/>), and sourceLineNumber 
-		/// (<paramref name="pintSourceLineNumber"/>), provide valuable context
+		/// (<paramref name="memberName"/>), sourceFilePath
+		/// (<paramref name="sourceFilePath"/>), and sourceLineNumber 
+		/// (<paramref name="sourceLineNumber"/>), provide valuable context
 		/// about the source of the log message. The memberName parameter
 		/// indicates the name of the method or property where the log message
 		/// was generated within the HTTP engine, allowing developers to
@@ -90,11 +89,17 @@ namespace WizardWrx.HTTP
 		///          path="doc/members/member[@name='CallerInfoParameters']/*" />
 		public delegate void HttpEngineLogCallback (
 			string pstrLogMessage ,
-			[CallerMemberName] string memberName = SpecialStrings.EMPTY_STRING ,
-			[CallerFilePath] string sourceFilePath = SpecialStrings.EMPTY_STRING ,
-			[CallerLineNumber] int sourceLineNumber	 = MagicNumbers.ZERO );
+			[System.Runtime.CompilerServices.CallerMemberName] string memberName = SpecialStrings.EMPTY_STRING ,
+			[System.Runtime.CompilerServices.CallerFilePath] string sourceFilePath = SpecialStrings.EMPTY_STRING ,
+			[System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = MagicNumbers.ZERO );
 
+
+		/// <summary>
+		/// This string constant specifies the HTTP content type for JSON payloads.
+		/// </summary>
 		public const string HTTP_CONTENT_TYPE_JSON = @"application/json";
+
+
 		/// <summary>
 		/// Let's be really clear about the shape of the default Accept HTTP header.
 		/// </summary>
@@ -441,7 +446,7 @@ namespace WizardWrx.HTTP
 		/// information for debugging purposes.
 		/// </para>
 		/// </param>
-		public RequestOptions ( ExceptionLogger plogger = null , OAuthTokenGetter ptokenGetter = null , string pstrInitialOAuthToken = null , string pstrContentType=null , string pstrAcceptHeaderValue = HTTP_ACCEPT_WILDCARD , string pstrAcceptEncodingValue = null , string pstrCacheControlValue = HTTP_NEVER_CACHE , int pintRetryLimit = 10 , int pintRetryDelay = 10 , int pintTimeout = 120 , HttpEngineLogCallback pdiLogCallback = null )
+		public RequestOptions ( ExceptionLogger plogger = null , OAuthTokenGetter ptokenGetter = null , string pstrInitialOAuthToken = null , string pstrContentType = null , string pstrAcceptHeaderValue = HTTP_ACCEPT_WILDCARD , string pstrAcceptEncodingValue = null , string pstrCacheControlValue = HTTP_NEVER_CACHE , int pintRetryLimit = 10 , int pintRetryDelay = 10 , int pintTimeout = 120 , HttpEngineLogCallback pdiLogCallback = null )
 		{
 			Logger = plogger;
 			TokenGetter = ptokenGetter;
