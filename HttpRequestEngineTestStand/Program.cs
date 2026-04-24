@@ -28,7 +28,7 @@ namespace HttpRequestEngineTestStand
 			Console.WriteLine ( "RequestEngine Test Stand" );
 			Console.WriteLine ( HORIZONTAL_RULE );
 
-			TestResult [ ] results = new TestResult [ 7 ];
+			TestResult [ ] results = new TestResult [ 8 ];
 
 			results [ 0 ] = RunTest ( "JSON as JObject" , TestJsonAsJObject );
 			results [ 1 ] = RunTest ( "JSON as POCO" , TestJsonAsPoco );
@@ -37,6 +37,7 @@ namespace HttpRequestEngineTestStand
 			results [ 4 ] = RunTest ( "Header presets" , TestHeaderPresets );
 			results [ 5 ] = RunTest ( "Gzip decompression" , TestGzipDecompression );
 			results [ 6 ] = RunTest ( "Get M2C Call Recording" , TestM2CCallRecordingGetter );
+			results [ 7 ] = RunTest ( "Invoke M2C Dialer Invoker" , TestM2CDialerInvoker );
 
 			Console.WriteLine ( );
 			Console.WriteLine ( $"{Environment.NewLine}{HORIZONTAL_RULE}" );
@@ -59,6 +60,41 @@ namespace HttpRequestEngineTestStand
 			s_theApp.DisplayEOJMessage ( );
 		}
 
+		private static void TestM2CDialerInvoker ( )
+		{
+			const string API_KEY = @"YLa0hkDaVzkfQOYaptPfe1zp1zPaaGKOY915a4MxRinCYiNGXxNhPn0m0YSSIlPsiEyPtXPl41qHtlCYOy70y4eVSuvjAqDSK0rxsVF6IVBGfetMT9Jbz0mYYFuVeVvzrpz/r3rJKS0vCCV1eEzdAoFII9nPAn0nBAbq7D+EX1tkpxoc4sTbK8TCv8wwepcEaBK3PmaEtyhA5vbkAiCIbDmKfAKJNkRU94evX67w0zo=";
+			const string PAYLOAD = "{ \"Destination\" : \"17704834570\", \"UserIdentifier\" : \"budp @salesrelevance.com\", \"CurrentCallerID\": \"14805691477\", \"SendCLI\":\"14805691477\", \"ExternalId\": \"4523\" }";
+			Console.WriteLine ( $"{Environment.NewLine}TEST 8: M2C Dialer{Environment.NewLine}" );
+			Console.WriteLine ( HORIZONTAL_RULE );
+
+			// public RequestOptions ( ExceptionLogger plogger = null , OAuthTokenGetter ptokenGetter = null , string pstrInitialOAuthToken = null , string pstrAcceptHeaderValue = HTTP_ACCEPT_WILDCARD , string pstrAcceptEncodingValue = null , string pstrCacheControlValue = HTTP_NEVER_CACHE_ANYTHING , int pintRetryLimit = 10 , int pintRetryDelay = 10 , HttpEngineLogCallback pdiLogCallback = null )
+			RequestOptions requestOptions = new RequestOptions (
+				plogger: null ,                                                 // ExceptionLogger       plogger                 = null
+				ptokenGetter: null ,                                            // OAuthTokenGetter      ptokenGetter            = null
+				pstrInitialOAuthToken: API_KEY ,                                // string                pstrInitialOAuthToken   = null
+				pstrAcceptHeaderValue: RequestOptions.HTTP_ACCEPT_WILDCARD ,    // string                pstrAcceptHeaderValue   = HTTP_ACCEPT_WILDCARD
+				pstrAcceptEncodingValue: RequestOptions.HTTP_COMPRESSION_ALGS , // string                pstrAcceptEncodingValue = null
+				pstrCacheControlValue: RequestOptions.HTTP_NEVER_CACHE ,        // string                pstrCacheControlValue   = HTTP_NEVER_CACHE_ANYTHING
+																				// int                   pintRetryLimit          = 10
+																				// int                   pintRetryDelay          = 10
+				pdiLogCallback: LogIt ,                                         // HttpEngineLogCallback pdiLogCallback          = null
+				pstrContentType: RequestOptions.HTTP_CONTENT_TYPE_JSON );       // string                pstrContentType         = HTTP_CONTENT_TYPE_JSON
+
+			RequestEngine engine = new RequestEngine ( requestOptions );
+
+			// The sample Call Recording created by Bud's test.
+			string url = "https://api.spikko.com/api/Call/InitiateOutgoingCallRequestForOrg/";
+			Console.WriteLine ( engine.GetDiagnosticHeadersDump ( new Uri ( url ) , false ) );
+
+			(string strResult,string strStatusMessage) = engine.SendRequest<string> (
+				url ,                                                           // string                   pstrWebApiUrl
+				null ,                                                          // Action<JObject>          pfunProcessResultCallback = null
+				new WizardWrx.JsonSupport.JSON_Deserialized_Object ( PAYLOAD ) ,// JSON_Deserialized_Object pjSON_Deserialized        = null
+				RequestEngine.HttpVerb.POST ,                                   // HttpVerb                 penmVerb                  = HttpVerb.POST
+				pfExpectJSON: false );                                          // bool                     pfExpectJSON              = true
+			Console.WriteLine ( $"Response String Value   = {strStatusMessage}" );
+			Console.WriteLine ( $"Response status Message = {strStatusMessage}" );
+		}   // private static void TestM2CDialerInvoker
 
 		private sealed class TestResult
 		{
@@ -110,7 +146,7 @@ namespace HttpRequestEngineTestStand
 
 			string url = "https://httpbin.org/gzip";
 
-			JObject result = engine.SendRequest<JObject> (
+			(JObject result, string strStatusMessage) = engine.SendRequest<JObject> (
 				url ,
 				null ,
 				null ,
@@ -119,6 +155,7 @@ namespace HttpRequestEngineTestStand
 
 			Console.WriteLine ( "Result JSON:" );
 			Console.WriteLine ( result.ToString ( ) );
+			Console.WriteLine ( $"{Environment.NewLine}Response status Message = {strStatusMessage}{Environment.NewLine}" );
 
 			// httpbin returns: { "gzipped": true, ... }
 			if ( !result.ContainsKey ( "gzipped" ) )
@@ -173,7 +210,7 @@ namespace HttpRequestEngineTestStand
 			// Postman Echo returns JSON describing your request.
 			string url = "https://postman-echo.com/get?foo=bar";
 
-			JObject result = engine.SendRequest<JObject> (
+			(JObject result, string strStatusMessage) = engine.SendRequest<JObject> (
 				url ,
 				null ,
 				null ,
@@ -182,6 +219,7 @@ namespace HttpRequestEngineTestStand
 
 			Console.WriteLine ( "Result type: " + result.GetType ( ).FullName );
 			Console.WriteLine ( "JSON keys:   " + string.Join ( ", " , result.Properties ( ) ) );
+			Console.WriteLine ( $"{Environment.NewLine}Response status Message = {strStatusMessage}{Environment.NewLine}" );
 		}   // private static void TestJsonAsJObject
 
 
@@ -196,7 +234,7 @@ namespace HttpRequestEngineTestStand
 
 			// Define a simple POCO that matches the JSON structure.
 			// Postman Echo returns: { "args": { "alpha": "beta" }, ... }
-			EchoResponse poco = engine.SendRequest<EchoResponse> (
+			(EchoResponse poco, string strStatusMessage) = engine.SendRequest<EchoResponse> (
 				url ,
 				null ,
 				null ,
@@ -205,6 +243,7 @@ namespace HttpRequestEngineTestStand
 
 			Console.WriteLine ( "POCO type: " + poco.GetType ( ).FullName );
 			Console.WriteLine ( "args.alpha = " + poco.args.alpha );
+			Console.WriteLine ( $"{Environment.NewLine}Response status Message = {strStatusMessage}{Environment.NewLine}" );
 		}   // private static void TestJsonAsPoco
 
 
@@ -218,7 +257,7 @@ namespace HttpRequestEngineTestStand
 			// This endpoint returns plain text.
 			string url = "https://www.example.com/";
 
-			string text = engine.SendRequest<string> (
+			(string text, string strStatusMessage) = engine.SendRequest<string> (
 				url ,
 				null ,
 				null ,
@@ -228,6 +267,7 @@ namespace HttpRequestEngineTestStand
 			Console.WriteLine ( "Returned string length: " + text.Length );
 			Console.WriteLine ( "First 80 chars:" );
 			Console.WriteLine ( text.Substring ( 0 , Math.Min ( 80 , text.Length ) ) );
+			Console.WriteLine ( $"{Environment.NewLine}Response status Message = {strStatusMessage}{Environment.NewLine}" );
 		}   // private static void TestPlainText
 
 
@@ -243,7 +283,7 @@ namespace HttpRequestEngineTestStand
 			string url =
 				"https://raw.githubusercontent.com/github/explore/main/topics/csharp/csharp.png";
 
-			byte [ ] bytes = engine.SendRequest<byte [ ]> (
+			(byte [ ] bytes, string strStatusMessage) = engine.SendRequest<byte [ ]> (
 				url ,
 				null ,
 				null ,
@@ -257,6 +297,7 @@ namespace HttpRequestEngineTestStand
 			File.WriteAllBytes ( outFile , bytes );
 
 			Console.WriteLine ( "Saved file: " + outFile );
+			Console.WriteLine ( $"{Environment.NewLine}Response status Message = {strStatusMessage}{Environment.NewLine}" );
 		}   // private static void TestBinaryDownload
 
 
@@ -282,9 +323,9 @@ namespace HttpRequestEngineTestStand
 			RequestEngine engine = new RequestEngine ( requestOptions );
 
 			// The sample Call Recording created by Bud's test.
-			string url = "https://secure.spikko.com/api/Media/Play/1776279624.665137.mp3";
+			string url = "https://secure.spikko.com/api/Media/Play/1776989670.671340.mp3";
 			Console.WriteLine ( engine.GetDiagnosticHeadersDump ( new Uri ( url ) , false ) );
-			byte [ ] bytes = engine.SendRequest<byte [ ]> (
+			(byte [ ] bytes, string strStatusMessage) = engine.SendRequest<byte [ ]> (
 				url ,
 				null ,
 				null ,
@@ -298,6 +339,7 @@ namespace HttpRequestEngineTestStand
 			File.WriteAllBytes ( outFile , bytes );
 
 			Console.WriteLine ( $"Saved file: {outFile}" );
+			Console.WriteLine ( $"{Environment.NewLine}Response status Message = {strStatusMessage}{Environment.NewLine}" );
 		}   // private static void TestM2CCallRecordingGetter
 
 		public static void LogIt ( string message ,

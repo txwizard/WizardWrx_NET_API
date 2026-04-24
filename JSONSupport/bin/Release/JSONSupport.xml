@@ -423,6 +423,12 @@
             with data from the JSON.
             </returns>
         </member>
+        <member name="M:WizardWrx.JsonSupport.JSON_Deserialized_Object.Sanitize">
+            <summary>
+            Applies the schema-aware sanitizer to repair unquoted string values
+            for this instance's RequiredFields, mutating the JSON property.
+            </summary>
+        </member>
         <member name="M:WizardWrx.JsonSupport.JSON_Deserialized_Object.TryGetRaw(System.String,System.String@)">
             <summary>
             Attempts to retrieve the raw JSON value for a specific field.
@@ -430,12 +436,6 @@
             <param name="pstrFieldName">The name of the field to retrieve.</param>
             <param name="pstrRawJson">The raw JSON value of the field, if found.</param>
             <returns>True if the field exists; otherwise, false.</returns>
-        </member>
-        <member name="M:WizardWrx.JsonSupport.JSON_Deserialized_Object.Sanitize">
-            <summary>
-            Applies the schema-aware sanitizer to repair unquoted string values
-            for this instance's RequiredFields, mutating the JSON property.
-            </summary>
         </member>
         <member name="M:WizardWrx.JsonSupport.JSON_Deserialized_Object.Validate(System.Boolean)">
             <summary>
@@ -460,6 +460,16 @@
             document is invalid, the list will contain a single entry "**Invalid
             JSON**". If all required fields are present (and non-empty when
             required), the returned list is empty.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.JsonSupport.JSON_Deserialized_Object.ToString">
+            <summary>
+            This override of ToString returns the JSON text, or a placeholder if
+            the JSON is null or the empty string.
+            </summary>
+            <returns>
+            The return value is the JSON text, or a placeholder if the JSON is
+            null or the empty string.
             </returns>
         </member>
         <member name="M:WizardWrx.JsonSupport.JSON_Deserialized_Object.EnsureParsed">

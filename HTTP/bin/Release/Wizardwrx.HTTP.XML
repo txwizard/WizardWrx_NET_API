@@ -272,10 +272,22 @@
             returned content.
             </exception>
             <exception cref="T:System.Exception">
+            <para>
             Thrown when the Web API returns an error status code other than
             Unauthorized, or when token refresh fails after receiving a 401
-            Unauthorized response. The exception message includes the HTTP
-            status code and the response content for diagnostic purposes.
+            Unauthorized response, and possibly other circumstances. The 
+            exception message MAY include the HTTP status code and the response
+            content for diagnostic purposes. This information is also made
+            available in due course via the LoggerCallback, if supplied in the
+            RequestOptions.
+            </para>
+            <para>
+            Callers are strongly encouraged to wrap this method in its own
+            try/catch block and be prepared to catch and handle the exceptions
+            it may throw, especially if the caller is a long‑running process
+            that needs to be resilient in the face of transient errors and token
+            expiration.
+            </para>
             </exception>
         </member>
         <member name="M:WizardWrx.HTTP.RequestEngine.ParseQueryToDictionary(System.Uri)">
@@ -873,6 +885,11 @@
             <summary>
               Overrides the current thread's CurrentUICulture property for all
               resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.HTTP.Properties.Resources.ERRMSG_NO_TOKEN_REFRESH_GETTER">
+            <summary>
+              Looks up a localized string similar to No Taken Refresh getter routine was provided. Request must be abandoned..
             </summary>
         </member>
         <member name="P:WizardWrx.HTTP.Properties.Resources.ERRMSG_TOKEN_REFRESH_FAIL">

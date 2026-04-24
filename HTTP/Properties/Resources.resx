@@ -117,9 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ERRMSG_NO_TOKEN_REFRESH_GETTER" xml:space="preserve">
+    <value>No Taken Refresh getter routine was provided. Request must be abandoned.</value>
+    <comment>Method SendRequest uses this message to report that no token refresh callback routine was provided.</comment>
+  </data>
   <data name="ERRMSG_TOKEN_REFRESH_FAIL" xml:space="preserve">
     <value>Request for a new OAuth token to replace an expired token failed.</value>
-    <comment>Method CallWebApiAndProcessResultASync uses this message to report that it was unable to refresh the token.</comment>
+    <comment>Method SendRequest uses this message to report that it was unable to refresh the token.</comment>
   </data>
   <data name="HTTP_HDR_IMMUTABLE_ID" xml:space="preserve">
     <value>IdType="ImmutableId"</value>

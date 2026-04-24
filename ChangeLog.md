@@ -1,6 +1,17 @@
 ﻿# WizardWrx .NET API Change Log
 
-## 2026-04-23
+## 2026-04-24
+
+### WizardWrx.HTTP [9.0.119]
+
+### JSON_Deserialized_Object [9.0.54]
+
+The `JSON_Deserialized_Object` class now includes a `ToString` override that
+leaves the original JSON string intact, so that it can be used for logging and
+debugging purposes without the need to re-serialize the object back to a JSON
+string. This change ensures that the original formatting and structure of the
+JSON data is preserved when the object is converted to a string, providing a
+more accurate representation of the data for diagnostic purposes.
 
 ### WizardWrx.HTTP [9.0.114]
 

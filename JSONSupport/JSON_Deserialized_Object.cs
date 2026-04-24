@@ -29,6 +29,11 @@
     2021/07/05 1.0     DAGray Initial implementation
     2026/02/01 9.0.51  DAGray Brought over intact from Sweeper365_DAL
     2026/04/10 9.0.53  DAGray Extend with limited validation of the JSON string.
+	2026/04/23 9.0.54  DAGray Add typed getters for common JSON value types, and
+                              a method to retrieve the raw JSON value for a
+                              named field. Add XML documentation and usage
+                              examples and a ToString override to simplify
+                              logging via interpolated strings.
     ============================================================================
 */
 
@@ -629,6 +634,25 @@ namespace WizardWrx.JsonSupport
 
 
 		/// <summary>
+		/// Applies the schema-aware sanitizer to repair unquoted string values
+		/// for this instance's RequiredFields, mutating the JSON property.
+		/// </summary>
+		public void Sanitize ( )
+		{
+			if ( _repairRegex == null )
+				return;    // No schema => nothing to repair.
+
+			JSON = _repairRegex.Replace (
+				JSON ,
+				"\"$1\": " + SpecialCharacters.DOUBLE_QUOTE + "$2" + SpecialCharacters.DOUBLE_QUOTE
+			);
+
+			// Invalidate any previously parsed representation.
+			_parsedJObject = null;
+		}   // public void Sanitize
+
+
+		/// <summary>
 		/// Attempts to retrieve the raw JSON value for a specific field.
 		/// </summary>
 		/// <param name="pstrFieldName">The name of the field to retrieve.</param>
@@ -648,25 +672,6 @@ namespace WizardWrx.JsonSupport
 				return false;
 			}   // FALSE (unanticipated outcome) block, if ( _dctObjectProperties.TryGetValue ( pstrFieldName , out var token ) )
 		}   // public bool TryGetRaw
-
-
-		/// <summary>
-		/// Applies the schema-aware sanitizer to repair unquoted string values
-		/// for this instance's RequiredFields, mutating the JSON property.
-		/// </summary>
-		public void Sanitize ( )
-		{
-			if ( _repairRegex == null )
-				return;    // No schema => nothing to repair.
-
-			JSON = _repairRegex.Replace (
-				JSON ,
-				"\"$1\": " + SpecialCharacters.DOUBLE_QUOTE + "$2" + SpecialCharacters.DOUBLE_QUOTE
-			);
-
-			// Invalidate any previously parsed representation.
-			_parsedJObject = null;
-		}   // public void Sanitize
 
 
 		/// <summary>
@@ -731,6 +736,22 @@ namespace WizardWrx.JsonSupport
 
 			return rlstMissingFields;
 		}   // public List<string> Validate
+
+
+		/// <summary>
+		/// This override of ToString returns the JSON text, or a placeholder if
+		/// the JSON is null or the empty string.
+		/// </summary>
+		/// <returns>
+		/// The return value is the JSON text, or a placeholder if the JSON is
+		/// null or the empty string.
+		/// </returns>
+		public override string ToString ( ) =>
+			JSON is null
+				? Common.Properties.Resources.VALUE_IS_NULL
+				: JSON.Length == ListInfo.EMPTY_STRING_LENGTH
+					? Common.Properties.Resources.MSG_STRING_IS_EMPTY
+					: JSON;
 
 
 		/// <summary>

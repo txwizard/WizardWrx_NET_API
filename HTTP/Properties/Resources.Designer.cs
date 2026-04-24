@@ -61,6 +61,15 @@ namespace WizardWrx.HTTP.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No Taken Refresh getter routine was provided. Request must be abandoned..
+        /// </summary>
+        internal static string ERRMSG_NO_TOKEN_REFRESH_GETTER {
+            get {
+                return ResourceManager.GetString("ERRMSG_NO_TOKEN_REFRESH_GETTER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Request for a new OAuth token to replace an expired token failed..
         /// </summary>
         internal static string ERRMSG_TOKEN_REFRESH_FAIL {

@@ -159,8 +159,7 @@ namespace WizardWrx.HTTP
 			RequestOptions pobjRequestOptions ,
 			[System.Runtime.CompilerServices.CallerMemberName] string memberName = SpecialStrings.EMPTY_STRING ,
 			[System.Runtime.CompilerServices.CallerFilePath] string sourceFilePath = SpecialStrings.EMPTY_STRING ,
-			[System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = MagicNumbers.ZERO
-			)
+			[System.Runtime.CompilerServices.CallerLineNumber] int sourceLineNumber = MagicNumbers.ZERO )
 		{
 			Options = pobjRequestOptions;
 			_httpClient = CreateHttpClient ( Options , memberName , sourceFilePath , sourceLineNumber );
@@ -180,7 +179,7 @@ namespace WizardWrx.HTTP
 						sourceFilePath ,
 						sourceLineNumber );
 				}   // if ( Options.LoggerCallback != null )
-			}
+			}   // if ( Options != null )
 		}   // public RequestEngine constructor (2 of 2)
 
 
@@ -361,12 +360,24 @@ namespace WizardWrx.HTTP
 		/// returned content.
 		/// </exception>
 		/// <exception cref="Exception">
+		/// <para>
 		/// Thrown when the Web API returns an error status code other than
 		/// Unauthorized, or when token refresh fails after receiving a 401
-		/// Unauthorized response. The exception message includes the HTTP
-		/// status code and the response content for diagnostic purposes.
+		/// Unauthorized response, and possibly other circumstances. The 
+		/// exception message MAY include the HTTP status code and the response
+		/// content for diagnostic purposes. This information is also made
+		/// available in due course via the LoggerCallback, if supplied in the
+		/// RequestOptions.
+		/// </para>
+		/// <para>
+		/// Callers are strongly encouraged to wrap this method in its own
+		/// try/catch block and be prepared to catch and handle the exceptions
+		/// it may throw, especially if the caller is a long‑running process
+		/// that needs to be resilient in the face of transient errors and token
+		/// expiration.
+		/// </para>
 		/// </exception>
-		public T SendRequest<T> (
+		public (T tResult, string strStatus) SendRequest<T> (
 			string pstrWebApiUrl ,
 			Action<JObject> pfunProcessResultCallback = null ,
 			JSON_Deserialized_Object pjSON_Deserialized = null ,
@@ -379,242 +390,350 @@ namespace WizardWrx.HTTP
 			const string LOGGER_PREFIX = @"RequestEngine.CreateHttpClient ";
 			const int MAX_STRING_LENGTH_FOR_LOGGING = 40;
 
-			string strLogPrefix = $"{LOGGER_PREFIX}[{memberName} in {System.IO.Path.GetFileName ( sourceFilePath )} at line {sourceLineNumber}] ";
+			string strLogPrefix = $"{LOGGER_PREFIX}[{memberName} in {sourceFilePath} at line {sourceLineNumber}] ";
+			string rstrStatus = SpecialStrings.EMPTY_STRING;
 
 			if ( Options?.LoggerCallback != null )
 			{
-				Options.LoggerCallback ( $"{strLogPrefix}Arguments: {nameof ( pstrWebApiUrl )} = {pstrWebApiUrl} , {nameof ( pjSON_Deserialized )} = {( pjSON_Deserialized != null ? "Provided" : "Null" )} , {nameof ( penmVerb )} = {penmVerb} , {nameof ( pfExpectJSON )} = {pfExpectJSON}" );
+				Options.LoggerCallback ( $"{strLogPrefix}******** {LOGGER_PREFIX} BEGIN ******** Arguments: {nameof ( pstrWebApiUrl )} = {pstrWebApiUrl} , {nameof ( pjSON_Deserialized )} = {( pjSON_Deserialized != null ? $"{pjSON_Deserialized}" : Common.Properties.Resources.VALUE_IS_NULL )}, {nameof ( penmVerb )} = {penmVerb}, {nameof ( pfExpectJSON )} = {pfExpectJSON}" );
+				Options.LoggerCallback ( $"{strLogPrefix}Options supplied properties as follows: {Options}" );
 			}   // if ( Options?.LoggerCallback != null )
 
-			Uri uriAsInput = new Uri ( pstrWebApiUrl );
-			bool fTry = true;
-			HttpVerb enmRealVerb = ( ( pjSON_Deserialized == null ) && ( penmVerb != HttpVerb.DELETE ) ) ? HttpVerb.GET : penmVerb;
-
-			if ( Options?.LoggerCallback != null )
+			try
 			{
-				Options.LoggerCallback ( $"{strLogPrefix}Verb = {enmRealVerb}" );
-			}   // if ( Options?.LoggerCallback != null )
+				Uri uriAsInput = new Uri ( pstrWebApiUrl );
+				bool fTry = true;
+				HttpVerb enmRealVerb = ( ( pjSON_Deserialized == null ) && ( penmVerb != HttpVerb.DELETE ) ) ? HttpVerb.GET : penmVerb;
 
-			while ( fTry )
-			{
 				if ( Options?.LoggerCallback != null )
 				{
-					Options.LoggerCallback ( $"{strLogPrefix}Entering Try Loop" );
+					Options.LoggerCallback ( $"{strLogPrefix}Resolved HTTP Verb = {enmRealVerb}" );
 				}   // if ( Options?.LoggerCallback != null )
 
-				using ( HttpRequestMessage httpRequest = new HttpRequestMessage ( s_dctVerbMap [ enmRealVerb ] , uriAsInput ) )
+				while ( fTry )
 				{
-					if ( ( Options != null ) )
+					rstrStatus = SpecialStrings.EMPTY_STRING;
+
+					if ( Options?.LoggerCallback != null )
 					{
-						if ( Options?.LoggerCallback != null )
-						{
-							Options.LoggerCallback ( $"{strLogPrefix}Applying headers" );
-						}   // if ( Options?.LoggerCallback != null )
+						Options.LoggerCallback ( $"{strLogPrefix}Entering Try Loop" );
+					}   // if ( Options?.LoggerCallback != null )
 
-						ApplyHeaders (
-							httpRequest ,                   // HttpRequestMessage   phttpRequest
-							pfExpectJSON );                 // bool                 pfAcceptJson    = true
-					}   // f ( ( Options != null ) )
-
-					if ( pjSON_Deserialized != null )
+					using ( HttpRequestMessage httpRequest = new HttpRequestMessage ( s_dctVerbMap [ enmRealVerb ] , uriAsInput ) )
 					{
-						httpRequest.Content = new StringContent (
-							pjSON_Deserialized.JSON ,       // string               content (the JSON string)
-							Encoding.UTF8 ,                 // System.Text.Encoding encoding
-							JSON_MIME_TYPE );               // string               mediatype (MIME type)
-
-						if ( Options?.LoggerCallback != null )
-						{
-							Options.LoggerCallback ( $"{strLogPrefix}Request content set = {pjSON_Deserialized.JSON}" );
-						}   // if ( Options?.LoggerCallback != null )
-					}   // if ( pjSON_Deserialized != null )
-
-					HttpResponseMessage response = _httpClient
-						.SendAsync ( httpRequest )
-						.ConfigureAwait ( false )
-						.GetAwaiter ( )
-						.GetResult ( );
-
-					using ( response )
-					{
-						if ( response.IsSuccessStatusCode )
-						{   // Satisfy the condition of the enclosing While loop.
-							fTry = false;
-
-							string strResult = response.Content
-								.ReadAsStringAsync ( )
-								.ConfigureAwait ( false )
-								.GetAwaiter ( )
-								.GetResult ( );
-
-							if ( Options?.LoggerCallback != null )
-							{
-								Options.LoggerCallback ( $"{strLogPrefix}Request Succeeded, Response String = {strResult}" );
-							}   // if ( Options?.LoggerCallback != null )
-
-							if ( pfExpectJSON )
-							{
-								if ( Options?.LoggerCallback != null )
-								{
-									Options.LoggerCallback ( $"{strLogPrefix}Expecting JSON response" );
-								}   // if ( Options?.LoggerCallback != null )
-
-								JObject jstrResult = JsonConvert.DeserializeObject ( strResult ) as JObject;
-
-								if ( jstrResult == null )
-								{
-									if ( Options?.LoggerCallback != null )
-									{
-										Options.LoggerCallback ( $"{strLogPrefix}Throwing because expected a JSON object but got something else: {strResult}" );
-									}   // if ( Options?.LoggerCallback != null )
-
-									throw new JsonException ( @"Expected a JSON object but got something else." );
-								}   // if ( jstrResult == null )
-
-								if ( pfunProcessResultCallback != null )
-								{   // Unused for POST requests.
-									if ( Options?.LoggerCallback != null )
-									{
-										Options.LoggerCallback ( $"{strLogPrefix}Passing request as JObject to callback = {RequestOptions.FormatDelegate ( pfunProcessResultCallback )}" );
-									}   // if ( Options?.LoggerCallback != null )
-
-									pfunProcessResultCallback ( jstrResult );
-								}   // if ( pfunProcessResultCallback != null )
-
-								// If T is JObject, return it directly.
-								if ( typeof ( T ) == typeof ( JObject ) )
-								{
-									if ( Options?.LoggerCallback != null )
-									{
-										Options.LoggerCallback ( $"{strLogPrefix}Returning JObject = {jstrResult}" );
-									}   // if ( Options?.LoggerCallback != null )
-
-									return ( T ) ( object ) jstrResult;
-								}   // if ( typeof ( T ) == typeof ( JObject ) )
-
-								// Otherwise, deserialize to T.
-								T typedResult = JsonConvert.DeserializeObject<T> ( strResult );
-
-								if ( Options?.LoggerCallback != null )
-								{
-									Options.LoggerCallback ( $"{strLogPrefix}Returning deserialized object of type {typeof ( T )} = {typedResult}" );
-								}   // if ( Options?.LoggerCallback != null )
-
-								return typedResult;
-							}   // TRUE (outcome given default value for pfExpectJSON) block, if ( pfExpectJSON )
-							else
-							{
-								if ( Options?.LoggerCallback != null )
-								{
-									Options.LoggerCallback ( $"{strLogPrefix}Expecting something other than JSON" );
-								}   // if ( Options?.LoggerCallback != null )
-
-								if ( typeof ( T ) == typeof ( byte [ ] ) )
-								{
-									byte [ ] bytes = response.Content
-										.ReadAsByteArrayAsync ( )
-										.ConfigureAwait ( false )
-										.GetAwaiter ( )
-										.GetResult ( );
-
-									if ( Options?.LoggerCallback != null )
-									{
-										Options.LoggerCallback ( $"{strLogPrefix}Returning byte array, byte count = {bytes.LongLength}" );
-									}   // if ( Options?.LoggerCallback != null )
-
-									return ( T ) ( object ) bytes;
-								}   // if ( typeof ( T ) == typeof ( byte [ ] ) )
-
-								if ( typeof ( T ) == typeof ( string ) )
-								{
-									if ( Options?.LoggerCallback != null )
-									{
-										string strPrefix = string.IsNullOrEmpty ( strResult ) ? "Returning empty string" : strResult.Length >= MAX_STRING_LENGTH_FOR_LOGGING ? $"first {MAX_STRING_LENGTH_FOR_LOGGING} characters = {strResult.Substring ( ListInfo.SUBSTR_BEGINNING , MAX_STRING_LENGTH_FOR_LOGGING )}" : $"whole string: {strResult}";
-										Options.LoggerCallback ( $"{strLogPrefix}Returning string, length = {strResult.Length}, {strPrefix}" );
-									}   // if ( Options?.LoggerCallback != null )
-
-									return ( T ) ( object ) strResult;
-								}   // if ( typeof ( T ) == typeof ( string ) )
-
-								throw new InvalidOperationException ( $"pfExpectJSON is false, but the requested return type ({typeof ( T )}) is not string." );
-							}   // FALSE (outcome given overridden value for pfExpectJSON) block, if ( pfExpectJSON )
-						}   // TRUE (anticipated outcome) block, if ( response.IsSuccessStatusCode )
-						else
+						if ( ( Options != null ) )
 						{
 							if ( Options?.LoggerCallback != null )
 							{
-								Options.LoggerCallback ( $"{strLogPrefix}Response Status Code = {response.StatusCode}" );
+								Options.LoggerCallback ( $"{strLogPrefix}Applying HTTP Headers" );
 							}   // if ( Options?.LoggerCallback != null )
 
-							// Check for an expired token.
+							ApplyHeaders (
+								httpRequest ,                   // HttpRequestMessage   phttpRequest
+								pfExpectJSON );                 // bool                 pfAcceptJson    = true
+						}   // f ( ( Options != null ) )
+						if ( Options?.LoggerCallback != null )
+						{
+							Options.LoggerCallback ( $"{strLogPrefix}HTTP Headers Applied" );
+						}   // if ( Options?.LoggerCallback != null )
 
-							if ( response.StatusCode == HttpStatusCode.Unauthorized )
+						if ( pjSON_Deserialized != null )
+						{
+							httpRequest.Content = new StringContent (
+								pjSON_Deserialized.JSON ,       // string               content (the JSON string)
+								Encoding.UTF8 ,                 // System.Text.Encoding encoding
+								JSON_MIME_TYPE );               // string               mediatype (MIME type)
+
+							if ( Options?.LoggerCallback != null )
 							{
-								string strNewOAuthToken = null;
+								Options.LoggerCallback ( $"{strLogPrefix}Request content set = {pjSON_Deserialized.JSON}, ContentType = {httpRequest.Content.Headers.ContentType}, ContentEncoding = {httpRequest.Content.Headers.ContentEncoding}, Content Expires = {httpRequest.Content.Headers.Expires}, Content MD5 = {httpRequest.Content.Headers.ContentMD5}, ContentDisposition = {httpRequest.Content.Headers.ContentDisposition}" );
+							}   // if ( Options?.LoggerCallback != null )
+						}   // if ( pjSON_Deserialized != null )
 
-								if ( Options != null &&
-									 Options.TokenGetter != null &&
-									 Options.TokenGetter ( out strNewOAuthToken , Options.Logger ) &&
-									 !string.IsNullOrEmpty ( strNewOAuthToken ) )
-								{
-									if ( Options?.LoggerCallback != null )
-									{
-										Options.LoggerCallback ( $"{strLogPrefix}Got new OAuth Token" );
-									}   // if ( Options?.LoggerCallback != null )
+						HttpResponseMessage response = _httpClient
+							.SendAsync ( httpRequest )
+							.ConfigureAwait ( false )
+							.GetAwaiter ( )
+							.GetResult ( );
 
-									Options.CurrentOAuthToken = strNewOAuthToken;
-									continue;   // Retry with new token.
-								}
-								else
-								{   // Request denied. Throw up our hands and bug out.
-									if ( Options?.LoggerCallback != null )
-									{
-										Options.LoggerCallback ( $"{strLogPrefix}Failed to get new OAuth Token: throwing" );
-									}   // if ( Options?.LoggerCallback != null )
-
-									throw new Exception ( Properties.Resources.ERRMSG_TOKEN_REFRESH_FAIL );
-								}   // FALSE (unanticipated outcome) block, if ( _clientApplication_Adapter.GetOAuthToken ( ) )
-							}   // TRUE (anticipated outcome) block, if ( response.StatusCode == System.Net.HttpStatusCode.Unauthorized )
-							else
+						using ( response )
+						{
+							if ( Options?.LoggerCallback != null )
 							{
-								string strResultContent = response.Content
+								Options.LoggerCallback ( $"{strLogPrefix}Response Code = {response.StatusCode}: {response.ReasonPhrase}, IsSuccessStatusCode = {response.IsSuccessStatusCode}" );
+							}   // if ( Options?.LoggerCallback != null )
+
+							if ( response.IsSuccessStatusCode )
+							{   // Satisfy the condition of the enclosing While loop.
+								fTry = false;
+
+								string strResult = response.Content
 									.ReadAsStringAsync ( )
 									.ConfigureAwait ( false )
 									.GetAwaiter ( )
 									.GetResult ( );
 
-								//  ----------------------------------------
-								//  When calling the Microsoft Graph API,
-								//  note that if you got reponse.Code == 403
-								//  and reponse.content.code ==
-								//  "Authorization_RequestDenied" that this
-								//  is because the tenant admin  has not
-								//  granted consent for the application to
-								//  call the Web API.
-								//  ----------------------------------------
+								if ( Options?.LoggerCallback != null )
+								{
+									if ( typeof ( T ) == typeof ( byte [ ] ) )
+									{
+										string strResponseSample = string.IsNullOrEmpty ( strResult )
+											? "Response is empty string"
+											: strResult.Length >= MAX_STRING_LENGTH_FOR_LOGGING
+												? $"first {MAX_STRING_LENGTH_FOR_LOGGING} characters = {strResult.Substring ( ListInfo.SUBSTR_BEGINNING , MAX_STRING_LENGTH_FOR_LOGGING )}"
+												: $"whole string: {strResult}";
+										Options.LoggerCallback ( $"{strLogPrefix}******** Request SUCCEEDED, Expected Response is Byte Array. Length of String Representation = {strResult.Length}, {strResponseSample}" );
+									}   // TRUE (Don't reproduce a whole byte array.) block, if ( typeof ( T ) == typeof ( byte [ ] ) )
+									else
+									{
+										Options.LoggerCallback ( $"{strLogPrefix}******** Request SUCCEEDED, Expected Response Type = {typeof ( T )}, Whole Response String = {strResult}" );
+									}   // FALSE (Reproduce whole string, which is more appropriate for non-byte-array responses.) block, if ( typeof ( T ) == typeof ( byte [ ] ) )
+								}   // if ( Options?.LoggerCallback != null )
 
-								StringBuilder builder = new StringBuilder ( MagicNumbers.CAPACITY_01KB );
-								builder.AppendLine ( $"Web API Call failed: {response.StatusCode}\n" );
-								builder.AppendLine ( $"Content: {strResultContent}" );
+								if ( pfExpectJSON )
+								{
+									if ( Options?.LoggerCallback != null )
+									{
+										Options.LoggerCallback ( $"{strLogPrefix}Expecting JSON response" );
+									}   // if ( Options?.LoggerCallback != null )
+
+									JObject jstrResult = JsonConvert.DeserializeObject ( strResult ) as JObject;
+
+									if ( jstrResult == null )
+									{
+										if ( Options?.LoggerCallback != null )
+										{
+											Options.LoggerCallback ( $"{strLogPrefix}Throwing because expected a JSON object but got something else: {strResult}" );
+										}   // if ( Options?.LoggerCallback != null )
+
+										throw new JsonException ( @"Expected a JSON object but got something else." );
+									}   // if ( jstrResult == null )
+
+									if ( pfunProcessResultCallback != null )
+									{   // Unused for POST requests.
+										if ( Options?.LoggerCallback != null )
+										{
+											Options.LoggerCallback ( $"{strLogPrefix}Passing request as JObject to callback = {RequestOptions.FormatDelegate ( pfunProcessResultCallback )}" );
+										}   // if ( Options?.LoggerCallback != null )
+
+										pfunProcessResultCallback ( jstrResult );
+
+										if ( Options?.LoggerCallback != null )
+										{
+											Options.LoggerCallback ( $"{strLogPrefix}RETURNED from Callback = {RequestOptions.FormatDelegate ( pfunProcessResultCallback )}" );
+										}   // if ( Options?.LoggerCallback != null )
+									}   // if ( pfunProcessResultCallback != null )
+
+									//	--------------------------------------------
+									//	If T is JObject, return it directly.
+									//	--------------------------------------------
+
+									if ( typeof ( T ) == typeof ( JObject ) )
+									{
+										if ( Options?.LoggerCallback != null )
+										{
+											Options.LoggerCallback ( $"{strLogPrefix}Generic type of request is JObject, Returning JObject = {jstrResult}" );
+										}   // if ( Options?.LoggerCallback != null )
+
+										return (( T ) ( object ) jstrResult, rstrStatus);
+									}   // if ( typeof ( T ) == typeof ( JObject ) )
+
+									//	--------------------------------------------
+									//	Otherwise, deserialize to T.
+									//	--------------------------------------------
+
+									T typedResult = JsonConvert.DeserializeObject<T> ( strResult );
+
+									if ( Options?.LoggerCallback != null )
+									{
+										Options.LoggerCallback ( $"{strLogPrefix}Returning deserialized object of type {typeof ( T )} = {typedResult}" );
+									}   // if ( Options?.LoggerCallback != null )
+
+									return (typedResult, rstrStatus);
+								}   // TRUE (outcome given default value for pfExpectJSON) block, if ( pfExpectJSON )
+								else
+								{
+									if ( Options?.LoggerCallback != null )
+									{
+										Options.LoggerCallback ( $"{strLogPrefix}Expecting something other than JSON" );
+									}   // if ( Options?.LoggerCallback != null )
+
+									if ( typeof ( T ) == typeof ( byte [ ] ) )
+									{
+										if ( Options?.LoggerCallback != null )
+										{
+											Options.LoggerCallback ( $"{strLogPrefix}Specifically, expecting a byte array" );
+										}   // if ( Options?.LoggerCallback != null )
+
+										byte [ ] bytes = response.Content
+											.ReadAsByteArrayAsync ( )
+											.ConfigureAwait ( false )
+											.GetAwaiter ( )
+											.GetResult ( );
+
+										if ( Options?.LoggerCallback != null )
+										{
+											Options.LoggerCallback ( $"{strLogPrefix}Returning byte array, byte count = {bytes.LongLength}" );
+										}   // if ( Options?.LoggerCallback != null )
+
+										return (( T ) ( object ) bytes, rstrStatus);
+									}   // if ( typeof ( T ) == typeof ( byte [ ] ) )
+
+									if ( typeof ( T ) == typeof ( string ) )
+									{
+										if ( Options?.LoggerCallback != null )
+										{
+											string strPrefix = string.IsNullOrEmpty ( strResult )
+												? "Returning empty string"
+												: strResult.Length >= MAX_STRING_LENGTH_FOR_LOGGING
+													? $"first {MAX_STRING_LENGTH_FOR_LOGGING} characters = {strResult.Substring ( ListInfo.SUBSTR_BEGINNING , MAX_STRING_LENGTH_FOR_LOGGING )}"
+													: $"whole string: {strResult}";
+											Options.LoggerCallback ( $"{strLogPrefix}Returning string, length = {strResult.Length}, {strPrefix}" );
+										}   // if ( Options?.LoggerCallback != null )
+
+										return (( T ) ( object ) strResult, rstrStatus);
+									}   // if ( typeof ( T ) == typeof ( string ) )
+
+									throw new InvalidOperationException ( $"pfExpectJSON is false, but the requested return type ({typeof ( T )}) is not string." );
+								}   // FALSE (outcome given overridden value for pfExpectJSON) block, if ( pfExpectJSON )
+							}   // TRUE (anticipated outcome) block, if ( response.IsSuccessStatusCode )
+							else
+							{
+								//	--------------------------------------------
+								//	ALL request failures start here, and the
+								//	first thing we do is log the status code and
+								//	reason phrase for diagnostic purposes.
+								//	--------------------------------------------
 
 								if ( Options?.LoggerCallback != null )
 								{
-									Options.LoggerCallback ( $"{strLogPrefix}Other Failure: throwing because {builder}" );
+									Options.LoggerCallback ( $"{strLogPrefix}******** Response FAILED: Status Code = {response.StatusCode} : {response.ReasonPhrase}" );
 								}   // if ( Options?.LoggerCallback != null )
 
-								throw new Exception ( builder.ToString ( ) );
-							}   // FALSE (unanticipated outcome) block, if ( response.StatusCode == System.Net.HttpStatusCode.Unauthorized )
-						}   // FALSE (unanticipated outcome) block, if ( response.IsSuccessStatusCode )
-					}   // using ( response )
-				}   // using ( HttpRequestMessage httpRequest = new HttpRequestMessage ( s_dctVerbMap [ enmRealVerb ] , uriAsInput ) )
-			}   // while ( fTry )
+								//	--------------------------------------------
+								//	Check for an expired token.
+								//	--------------------------------------------
 
-			if ( Options?.LoggerCallback != null )
+								if ( response.StatusCode == HttpStatusCode.Unauthorized )
+								{
+									if ( Options?.LoggerCallback != null )
+									{
+										Options.LoggerCallback ( $"{strLogPrefix}Token is Unauthorized; try to get a new OAuth Token" );
+									}   // if ( Options?.LoggerCallback != null )
+
+									if ( Options != null &&	Options.TokenGetter != null )
+									{
+										if ( Options?.LoggerCallback != null )
+										{
+											Options.LoggerCallback ( $"{strLogPrefix}OAuth Token Getter defined. Current OAuth Token: {Options.CurrentOAuthToken}" );
+										}   // if ( Options?.LoggerCallback != null )
+
+										string strNewOAuthToken = null;
+
+										if ( Options.TokenGetter ( out strNewOAuthToken , Options.Logger )
+											&& ( !string.IsNullOrEmpty ( strNewOAuthToken ) ) )
+										{
+											if ( Options?.LoggerCallback != null )
+											{
+												Options.LoggerCallback ( $"{strLogPrefix}Got new OAuth Token: {strNewOAuthToken}" );
+											}   // if ( Options?.LoggerCallback != null )
+
+											Options.CurrentOAuthToken = strNewOAuthToken;
+
+											if ( Options?.LoggerCallback != null )
+											{
+												Options.LoggerCallback ( $"{strLogPrefix}Going around with new token" );
+											}   // if ( Options?.LoggerCallback != null )
+
+											continue;   // Retry with new token.
+										}   // TRUE (anticipated outcome) block, if ( Options.TokenGetter ( out strNewOAuthToken , Options.Logger ) && ( !string.IsNullOrEmpty ( strNewOAuthToken ) ) )
+										else
+										{   // Request denied. Throw up our hands and bug out.
+											if ( Options?.LoggerCallback != null )
+											{
+												Options.LoggerCallback ( $"{strLogPrefix}Failed to get new OAuth Token: throwing" );
+											}   // if ( Options?.LoggerCallback != null )
+
+											throw new Exception ( Properties.Resources.ERRMSG_TOKEN_REFRESH_FAIL );
+										}   // FALSE (uanticipated outcome) block, if ( Options.TokenGetter ( out strNewOAuthToken , Options.Logger ) && ( !string.IsNullOrEmpty ( strNewOAuthToken ) ) )
+									}   // TRUE (anticipated outcome) block, if ( Options != null && Options.TokenGetter != null )
+									else
+									{   // No way to get a new token. Throw up our hands and bug out.
+										if ( Options?.LoggerCallback != null )
+										{
+											Options.LoggerCallback ( $"{strLogPrefix}No Token Getter defined in Options: throwing" );
+										}   // if ( Options?.LoggerCallback != null )
+
+										throw new Exception ( Properties.Resources.ERRMSG_NO_TOKEN_REFRESH_GETTER );
+									}   // FALSE (unanticipated outcome) block, if ( Options != null && Options.TokenGetter != null )
+								}   // TRUE (Token expired or invalid, request refresh) block, if ( response.StatusCode == System.Net.HttpStatusCode.Unauthorized )
+								else
+								{
+									string strResultContent = response.Content
+										.ReadAsStringAsync ( )
+										.ConfigureAwait ( false )
+										.GetAwaiter ( )
+										.GetResult ( );
+
+									//  ----------------------------------------
+									//  When calling the Microsoft Graph API,
+									//  note that if you got reponse.Code == 403
+									//  and reponse.content.code ==
+									//  "Authorization_RequestDenied" that this
+									//  is because the tenant admin has not
+									//  granted consent for the application to
+									//  call the Web API.
+									//  ----------------------------------------
+
+									StringBuilder builder = new StringBuilder ( MagicNumbers.CAPACITY_01KB );
+									builder.AppendLine ( $"Web API Call failed, Status Code = {response.StatusCode}: {response.ReasonPhrase}\n" );
+									builder.AppendLine ( $"Content: {strResultContent}" );
+
+									//  ----------------------------------------
+									//	The response content may contain useful
+									//	information about the failure, so it
+									//	goes into the log and the returned
+									//	string, which is accompanied by the
+									//	default value for the specified generic
+									//	type T. In this way, most request errors
+									//	are processed in the normal flow.
+									//  ----------------------------------------
+
+									if ( Options?.LoggerCallback != null )
+									{
+										Options.LoggerCallback ( $"{strLogPrefix}Other Failure: RETURNING because {builder}" );
+									}   // if ( Options?.LoggerCallback != null )
+
+									return (default ( T ), builder.ToString ( ) );
+								}   // FALSE (Response is the result of some other kind of failure.) block, if ( response.StatusCode == System.Net.HttpStatusCode.Unauthorized )
+							}   // FALSE (unanticipated outcome) block, if ( response.IsSuccessStatusCode )
+						}   // using ( response )
+					}   // using ( HttpRequestMessage httpRequest = new HttpRequestMessage ( s_dctVerbMap [ enmRealVerb ] , uriAsInput ) )
+				}   // while ( fTry )
+
+				if ( Options?.LoggerCallback != null )
+				{
+					Options.LoggerCallback ( $"{strLogPrefix}Fell off end of SendRequest: throwing" );
+				}   // if ( Options?.LoggerCallback != null )
+
+				throw new InvalidOperationException ( @"This Exception should never happen because the code should return from one of two exit points inside the while loop." );
+			}
+			catch ( Exception ex )
 			{
-				Options.LoggerCallback ( $"{strLogPrefix}Fell off end of SendRequest: throwing" );
-			}   // if ( Options?.LoggerCallback != null )
+				if ( Options?.LoggerCallback != null )
+				{
+					Options.LoggerCallback ( $"{strLogPrefix}Exception in SendRequest: {ex}" );
+				}   // if ( Options?.LoggerCallback != null )
 
-			throw new InvalidOperationException ( @"This Exception should never happen because the code should return from one of two exit points inside the while loop." );
+				throw;   // Rethrow to preserve stack trace for use by callers.
+			}
+			finally
+			{
+				if ( Options?.LoggerCallback != null )
+				{
+					Options.LoggerCallback ( $"{strLogPrefix}******** {LOGGER_PREFIX} END ********" );
+				}   // if ( Options?.LoggerCallback != null )
+			}   // finally
 		}   // public T SendRequest<T>
 
 
@@ -700,7 +819,7 @@ namespace WizardWrx.HTTP
 		{
 			const string LOGGER_PREFIX = @"RequestEngine.CreateHttpClient: ";
 
-			string strLogPrefix = $"{LOGGER_PREFIX}[{memberName} in {System.IO.Path.GetFileName ( sourceFilePath )} at line {sourceLineNumber}] ";
+			string strLogPrefix = $"{LOGGER_PREFIX}[{memberName} in {sourceFilePath} at line {sourceLineNumber}] ";
 
 			if ( pobjPresets?.LoggerCallback != null )
 			{
@@ -750,7 +869,7 @@ namespace WizardWrx.HTTP
 		{
 			const string LOGGER_PREFIX = @"RequestEngine.ApplyHeaders: ";
 
-			string strLogPrefix = $"{LOGGER_PREFIX}[{memberName} in {System.IO.Path.GetFileName ( sourceFilePath )} at line {sourceLineNumber}] ";
+			string strLogPrefix = $"{LOGGER_PREFIX}[{memberName} in {sourceFilePath} at line {sourceLineNumber}] ";
 
 			if ( Options?.LoggerCallback != null )
 			{
@@ -783,7 +902,7 @@ namespace WizardWrx.HTTP
 				{
 					if ( Options?.LoggerCallback != null )
 					{
-						Options.LoggerCallback ( $"{strLogPrefix} Applying Accept-Encoding header preset: {Options.AcceptEncodingValue}" );
+						Options.LoggerCallback ( $"{strLogPrefix}Applying Accept-Encoding header preset: {Options.AcceptEncodingValue}" );
 					}   // if ( Options?.LoggerCallback != null )
 
 					phttpRequest.Headers.AcceptEncoding.Clear ( );
@@ -811,7 +930,7 @@ namespace WizardWrx.HTTP
 			{
 				if ( Options?.LoggerCallback != null )
 				{
-					Options.LoggerCallback ( $"{strLogPrefix} Applying Accept-Encoding header preset: {Options.AcceptEncodingValue}" );
+					Options.LoggerCallback ( $"{strLogPrefix}Applying Accept-Encoding header preset: {Options.AcceptEncodingValue}" );
 				}   // if ( Options?.LoggerCallback != null )
 
 				phttpRequest.Headers.CacheControl =
@@ -836,7 +955,7 @@ namespace WizardWrx.HTTP
 
 						if ( Options?.LoggerCallback != null )
 						{
-							Options.LoggerCallback ( $"{strLogPrefix} Applying JSON Accept fallback	{JSON_MIME_TYPE} is already present." );
+							Options.LoggerCallback ( $"{strLogPrefix}Applying JSON Accept fallback	{JSON_MIME_TYPE} is already present." );
 						}   // if ( Options?.LoggerCallback != null )
 
 						break;
@@ -847,7 +966,7 @@ namespace WizardWrx.HTTP
 				{
 					if ( Options?.LoggerCallback != null )
 					{
-						Options.LoggerCallback ( $"{strLogPrefix} Applying JSON Accept fallback: {JSON_MIME_TYPE}" );
+						Options.LoggerCallback ( $"{strLogPrefix}Applying JSON Accept fallback: {JSON_MIME_TYPE}" );
 					}   // if ( Options?.LoggerCallback != null )
 
 					phttpRequest.Headers.Accept.Add (
@@ -865,7 +984,7 @@ namespace WizardWrx.HTTP
 			{
 				if ( Options?.LoggerCallback != null )
 				{
-					Options.LoggerCallback ( $"{strLogPrefix} Applying Prefer header for Microsoft Graph Messages endpoint ({Properties.Resources.MESSAGES_ENDPOINT}= {Properties.Resources.HTTP_HDR_IMMUTABLE_ID})" );
+					Options.LoggerCallback ( $"{strLogPrefix}Applying Prefer header for Microsoft Graph Messages endpoint ({Properties.Resources.MESSAGES_ENDPOINT}= {Properties.Resources.HTTP_HDR_IMMUTABLE_ID})" );
 				}   // if ( Options?.LoggerCallback != null )
 
 				phttpRequest.Headers.Add (
@@ -881,7 +1000,7 @@ namespace WizardWrx.HTTP
 			{
 				if ( Options?.LoggerCallback != null )
 				{
-					Options.LoggerCallback ( $"{strLogPrefix} Applying Authorization header (Bearer token) = {Options.CurrentOAuthToken}." );
+					Options.LoggerCallback ( $"{strLogPrefix}Applying Authorization header (Bearer token) = {Options.CurrentOAuthToken}." );
 				}   // if ( Options?.LoggerCallback != null )
 
 				phttpRequest.Headers.Authorization =
