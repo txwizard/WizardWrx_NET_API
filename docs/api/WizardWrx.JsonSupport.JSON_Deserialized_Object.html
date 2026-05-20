@@ -108,7 +108,7 @@ into a strongly-typed model when only a few fields are needed.</p>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="WizardWrx.JsonSupport.html">WizardWrx.JsonSupport</a></h6>
-  <h6><strong>Assembly</strong>: JSONSupport.dll</h6>
+  <h6><strong>Assembly</strong>: WizardWrx.JSONSupport.dll</h6>
   <h5 id="WizardWrx_JsonSupport_JSON_Deserialized_Object_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class JSON_Deserialized_Object</code></pre>
@@ -331,6 +331,44 @@ pass the appropriate parameters to enable that behavior.</p>
         <td><span class="parametername">pfSkipRequiredFieldCheck</span></td>
         <td><p>When true, causes the constructor to skip the check for required fields.</p>
 </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_JsonSupport_JSON_Deserialized_Object_GracefulNullAndMissingSettings.md&amp;value=---%0Auid%3A%20WizardWrx.JsonSupport.JSON_Deserialized_Object.GracefulNullAndMissingSettings%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/JSONSupport/JSON_Deserialized_Object.cs/#L751">View Source</a>
+  </span>
+  <h4 id="WizardWrx_JsonSupport_JSON_Deserialized_Object_GracefulNullAndMissingSettings" data-uid="WizardWrx.JsonSupport.JSON_Deserialized_Object.GracefulNullAndMissingSettings">GracefulNullAndMissingSettings</h4>
+  <div class="markdown level1 summary"><p>This static JsonSerializerSettings instance is configured to ignore
+null values and missing members during deserialization, while
+preserving default values and avoiding overwriting existing
+collections. This configuration allows for graceful handling of JSON
+payloads that may have nulls or missing fields without throwing
+exceptions, while still maintaining the integrity of the
+deserialized objects.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly JsonSerializerSettings GracefulNullAndMissingSettings</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Newtonsoft.Json.JsonSerializerSettings</span></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -1012,7 +1050,7 @@ for this instance's RequiredFields, mutating the JSON property.</p>
     <a href="https://github.com/txwizard/WizardWrx_NET_API/new/master/apiSpec/new?filename=WizardWrx_JsonSupport_JSON_Deserialized_Object_ToString.md&amp;value=---%0Auid%3A%20WizardWrx.JsonSupport.JSON_Deserialized_Object.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/JSONSupport/JSON_Deserialized_Object.cs/#L749">View Source</a>
+    <a href="https://github.com/txwizard/WizardWrx_NET_API/blob/master/JSONSupport/JSON_Deserialized_Object.cs/#L768">View Source</a>
   </span>
   <a id="WizardWrx_JsonSupport_JSON_Deserialized_Object_ToString_" data-uid="WizardWrx.JsonSupport.JSON_Deserialized_Object.ToString*"></a>
   <h4 id="WizardWrx_JsonSupport_JSON_Deserialized_Object_ToString" data-uid="WizardWrx.JsonSupport.JSON_Deserialized_Object.ToString">ToString()</h4>

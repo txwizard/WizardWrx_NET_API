@@ -1,5 +1,3 @@
-D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\JSONSupport\bin\Release\JSONSupport.dll
-D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\JSONSupport\bin\Release\JSONSupport.pdb
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\JSONSupport\bin\Release\Newtonsoft.Json.dll
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\JSONSupport\bin\Release\WizardWrx.Common.dll
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\JSONSupport\bin\Release\WizardWrx.BitMath.dll
@@ -10,6 +8,8 @@ D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\JSONSuppo
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\JSONSupport\obj\Release\JSONSupport.csproj.AssemblyReference.cache
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\JSONSupport\obj\Release\JSONSupport.csproj.CoreCompileInputs.cache
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\JSONSupport\obj\Release\JSONSupp.41CE0529.Up2Date
-D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\JSONSupport\obj\Release\JSONSupport.dll
-D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\JSONSupport\obj\Release\JSONSupport.pdb
-D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\JSONSupport\bin\Release\JSONSupport.xml
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\JSONSupport\bin\Release\WizardWrx.JSONSupport.xml
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\JSONSupport\bin\Release\WizardWrx.JSONSupport.dll
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\JSONSupport\bin\Release\WizardWrx.JSONSupport.pdb
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\JSONSupport\obj\Release\WizardWrx.JSONSupport.dll
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\JSONSupport\obj\Release\WizardWrx.JSONSupport.pdb

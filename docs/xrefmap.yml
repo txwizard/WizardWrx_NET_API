@@ -13650,6 +13650,12 @@ references:
   isSpec: "True"
   fullName: WizardWrx.JsonSupport.JSON_Deserialized_Object.GetFieldValueAsString
   nameWithType: JSON_Deserialized_Object.GetFieldValueAsString
+- uid: WizardWrx.JsonSupport.JSON_Deserialized_Object.GracefulNullAndMissingSettings
+  name: GracefulNullAndMissingSettings
+  href: api/WizardWrx.JsonSupport.JSON_Deserialized_Object.html#WizardWrx_JsonSupport_JSON_Deserialized_Object_GracefulNullAndMissingSettings
+  commentId: F:WizardWrx.JsonSupport.JSON_Deserialized_Object.GracefulNullAndMissingSettings
+  fullName: WizardWrx.JsonSupport.JSON_Deserialized_Object.GracefulNullAndMissingSettings
+  nameWithType: JSON_Deserialized_Object.GracefulNullAndMissingSettings
 - uid: WizardWrx.JsonSupport.JSON_Deserialized_Object.HasField(System.String)
   name: HasField(String)
   href: api/WizardWrx.JsonSupport.JSON_Deserialized_Object.html#WizardWrx_JsonSupport_JSON_Deserialized_Object_HasField_System_String_

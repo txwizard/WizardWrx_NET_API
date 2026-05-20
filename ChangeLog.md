@@ -1,5 +1,13 @@
 ﻿# WizardWrx .NET API Change Log
 
+## 2026‑05‑19 — WizardWrx.HTTP Deprecated
+
+The `WizardWrx.HTTP` library has been formally deprecated.
+
+Its source code remains available in this repository in its final, frozen state
+for the benefit of existing consumers. No further development or NuGet releases
+are planned. For details, see `WizardWrx.HTTP/DEPRECATED.md`.
+
 ## 2026-04-24
 
 ### WizardWrx.HTTP [9.0.119]

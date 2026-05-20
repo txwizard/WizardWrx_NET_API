@@ -5,6 +5,14 @@ libraries that comprise the __WizardWrx .NET API__. A companion document,
 `ChangeLog.md`, gives a much more thorough accounting of the improvements and
 bug fixes incorporated in each release.
 
+## **2026?05?19 - WizardWrx.HTTP Deprecated**
+
+The `WizardWrx.HTTP` library has been formally deprecated.
+
+Its source code remains available in this repository in its final, frozen state
+for the benefit of existing consumers. No further development or NuGet releases
+are planned. For details, see `WizardWrx.HTTP/DEPRECATED.md`.
+
 ## Release Notes, 2020-10-18 10:56:24, Entire Library
 
 This release completes alignment of the library collection with the SemVer

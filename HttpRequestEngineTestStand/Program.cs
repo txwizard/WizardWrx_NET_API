@@ -28,7 +28,7 @@ namespace HttpRequestEngineTestStand
 			Console.WriteLine ( "RequestEngine Test Stand" );
 			Console.WriteLine ( HORIZONTAL_RULE );
 
-			TestResult [ ] results = new TestResult [ 8 ];
+			TestResult [ ] results = new TestResult [ 9 ];
 
 			results [ 0 ] = RunTest ( "JSON as JObject" , TestJsonAsJObject );
 			results [ 1 ] = RunTest ( "JSON as POCO" , TestJsonAsPoco );
@@ -38,6 +38,7 @@ namespace HttpRequestEngineTestStand
 			results [ 5 ] = RunTest ( "Gzip decompression" , TestGzipDecompression );
 			results [ 6 ] = RunTest ( "Get M2C Call Recording" , TestM2CCallRecordingGetter );
 			results [ 7 ] = RunTest ( "Invoke M2C Dialer Invoker" , TestM2CDialerInvoker );
+			results [ 8 ] = RunTest ( "Exercise JSON_Deserialized_Object" , TestJsonDeserializedObject );
 
 			Console.WriteLine ( );
 			Console.WriteLine ( $"{Environment.NewLine}{HORIZONTAL_RULE}" );
@@ -59,6 +60,7 @@ namespace HttpRequestEngineTestStand
 			Console.WriteLine ( HORIZONTAL_RULE );
 			s_theApp.DisplayEOJMessage ( );
 		}
+
 
 		private static void TestM2CDialerInvoker ( )
 		{
@@ -95,6 +97,33 @@ namespace HttpRequestEngineTestStand
 			Console.WriteLine ( $"Response String Value   = {strStatusMessage}" );
 			Console.WriteLine ( $"Response status Message = {strStatusMessage}" );
 		}   // private static void TestM2CDialerInvoker
+
+		private static void TestJsonDeserializedObject ( )
+		{
+			const string JSON_1 = @"{ ""name"": ""Alice"", ""age"": 30 }";
+			const string JSON_2 = "{\"RequestId\":70488,\"CallbackServer\":null,\"SourceACK\":\"17703172068\",\"CallType\":\"Callback\",\"ROD\":\"False\",\"Error\":\"\"}";
+
+			Console.WriteLine ( $"{Environment.NewLine}TEST 9: Exercise JSON_Deserialized_Object{Environment.NewLine}" );
+			Console.WriteLine ( $"{HORIZONTAL_RULE}{Environment.NewLine}" );
+			Console.WriteLine ( $"Testing JSON_Deserialized_Object with JSON: {JSON_1}" );
+			WizardWrx.JsonSupport.JSON_Deserialized_Object deserialized1 = new WizardWrx.JsonSupport.JSON_Deserialized_Object ( JSON_1 );
+			if ( deserialized1.GetType ( ).FullName != "WizardWrx.JsonSupport.JSON_Deserialized_Object" )
+				throw new Exception ( "Deserialization did not produce expected type." );
+			if ( deserialized1.GetFieldValueAsString ( "name" ) != "Alice" )
+				throw new Exception ( "Deserialized value for 'name' is incorrect." );
+			if ( deserialized1.GetFieldValueAsInt ( "age" ) != 30 )
+				throw new Exception ( "Deserialized value for 'age' is incorrect." );
+			Console.WriteLine ( $"Testing JSON_Deserialized_Object with JSON = {JSON_1} SUCCEEDED!{Environment.NewLine}" );
+
+			Console.WriteLine ( $"Testing JSON_Deserialized_Object with JSON: {JSON_2}" );
+			WizardWrx.JsonSupport.JSON_Deserialized_Object deserialized2 = new WizardWrx.JsonSupport.JSON_Deserialized_Object ( JSON_2 );
+			if ( deserialized2.GetType ( ).FullName != "WizardWrx.JsonSupport.JSON_Deserialized_Object" )
+				throw new Exception ( "Deserialization did not produce expected type." );
+			if ( deserialized2.JSON != JSON_2 )
+				throw new Exception ( "JSON property does not match original JSON string." );
+			Console.WriteLine ( $"Testing JSON_Deserialized_Object with JSON = {JSON_1} SUCCEEDED!{Environment.NewLine}" );
+		}   // private static void TestJsonDeserializedObject
+
 
 		private sealed class TestResult
 		{

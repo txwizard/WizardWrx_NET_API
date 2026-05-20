@@ -2,7 +2,6 @@ D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\HttpReque
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\HttpRequestEngineTestStand\bin\Debug\HttpRequestEngineTestStand.exe.config
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\HttpRequestEngineTestStand\bin\Debug\HttpRequestEngineTestStand.exe
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\HttpRequestEngineTestStand\bin\Debug\HttpRequestEngineTestStand.pdb
-D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\HttpRequestEngineTestStand\bin\Debug\JSONSupport.dll
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\HttpRequestEngineTestStand\bin\Debug\Newtonsoft.Json.dll
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\HttpRequestEngineTestStand\bin\Debug\WizardWrx.AnyCSV.dll
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\HttpRequestEngineTestStand\bin\Debug\WizardWrx.ASCIIInfo.dll
@@ -17,8 +16,6 @@ D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\HttpReque
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\HttpRequestEngineTestStand\bin\Debug\WizardWrx.HTTP.dll
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\HttpRequestEngineTestStand\bin\Debug\WizardWrx.HTTP.pdb
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\HttpRequestEngineTestStand\bin\Debug\WizardWrx.HTTP.xml
-D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\HttpRequestEngineTestStand\bin\Debug\JSONSupport.pdb
-D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\HttpRequestEngineTestStand\bin\Debug\JSONSupport.xml
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\HttpRequestEngineTestStand\bin\Debug\Newtonsoft.Json.xml
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\HttpRequestEngineTestStand\bin\Debug\WizardWrx.AnyCSV.xml
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\HttpRequestEngineTestStand\bin\Debug\WizardWrx.ASCIIInfo.xml
@@ -35,4 +32,7 @@ D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\HttpReque
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\HttpRequestEngineTestStand\obj\Debug\HttpRequ.8EBF0CB9.Up2Date
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\HttpRequestEngineTestStand\obj\Debug\HttpRequestEngineTestStand.exe
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\HttpRequestEngineTestStand\obj\Debug\HttpRequestEngineTestStand.pdb
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\HttpRequestEngineTestStand\bin\Debug\WizardWrx.JSONSupport.dll
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\HttpRequestEngineTestStand\bin\Debug\WizardWrx.JSONSupport.pdb
+D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\HttpRequestEngineTestStand\bin\Debug\WizardWrx.JSONSupport.xml
 D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\HttpRequestEngineTestStand\obj\Debug\HttpRequestEngineTestStand.exe.config

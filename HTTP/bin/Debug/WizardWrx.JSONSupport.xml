@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>JSONSupport</name>
+        <name>WizardWrx.JSONSupport</name>
     </assembly>
     <members>
         <member name="T:WizardWrx.JsonSupport.JSON_Deserialized_Object">
@@ -461,6 +461,17 @@
             JSON**". If all required fields are present (and non-empty when
             required), the returned list is empty.
             </returns>
+        </member>
+        <member name="F:WizardWrx.JsonSupport.JSON_Deserialized_Object.GracefulNullAndMissingSettings">
+            <summary>
+            This static JsonSerializerSettings instance is configured to ignore
+            null values and missing members during deserialization, while
+            preserving default values and avoiding overwriting existing
+            collections. This configuration allows for graceful handling of JSON
+            payloads that may have nulls or missing fields without throwing
+            exceptions, while still maintaining the integrity of the
+            deserialized objects.
+            </summary>
         </member>
         <member name="M:WizardWrx.JsonSupport.JSON_Deserialized_Object.ToString">
             <summary>

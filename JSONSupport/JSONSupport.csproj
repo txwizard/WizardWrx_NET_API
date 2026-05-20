@@ -7,8 +7,8 @@
     <ProjectGuid>{2FA6C7D2-59A5-4902-9BF3-12C01A702519}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>JSONSupport</RootNamespace>
-    <AssemblyName>JSONSupport</AssemblyName>
+    <RootNamespace>WizardWrx.JSONSupport</RootNamespace>
+    <AssemblyName>WizardWrx.JSONSupport</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -27,7 +27,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\JSONSupport.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\WizardWrx.JSONSupport.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -36,7 +36,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\JSONSupport.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\WizardWrx.JSONSupport.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">

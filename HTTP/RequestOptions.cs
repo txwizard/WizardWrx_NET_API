@@ -1,6 +1,19 @@
 ﻿using System;
 using System.Reflection;
 
+//	----------------------------------------------------------------------------
+//	This reference is to resolve the ExceptionLogger type used in the
+//	RequestOptions class. The ExceptionLogger class is part of the
+//	WizardWrx.DLLConfigurationManager namespace, which provides tools for
+//	managing configuration settings and logging exceptions in .NET applications.
+//	By including this using directive, the RequestOptions class can utilize the
+//	ExceptionLogger type to log exceptions that may occur during the processing
+//	of HTTP requests, allowing developers to gain insights into any issues that
+//	arise and troubleshoot them effectively. The ExceptionLogger can be used to
+//	capture and log details about exceptions, such as the message, stack trace,
+//	and any inner exceptions, providing valuable information for diagnosing and
+//	resolving issues in the HTTP engine.
+//	----------------------------------------------------------------------------
 using WizardWrx.DLLConfigurationManager;
 
 

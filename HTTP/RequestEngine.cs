@@ -497,7 +497,7 @@ namespace WizardWrx.HTTP
 										Options.LoggerCallback ( $"{strLogPrefix}Expecting JSON response" );
 									}   // if ( Options?.LoggerCallback != null )
 
-									JObject jstrResult = JsonConvert.DeserializeObject ( strResult ) as JObject;
+									JObject jstrResult = ( JObject ) JsonConvert.DeserializeObject ( strResult,JSON_Deserialized_Object.GracefulNullAndMissingSettings );
 
 									if ( jstrResult == null )
 									{

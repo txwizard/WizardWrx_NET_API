@@ -738,6 +738,25 @@ namespace WizardWrx.JsonSupport
 		}   // public List<string> Validate
 
 
+
+		/// <summary>
+		/// This static JsonSerializerSettings instance is configured to ignore
+		/// null values and missing members during deserialization, while
+		/// preserving default values and avoiding overwriting existing
+		/// collections. This configuration allows for graceful handling of JSON
+		/// payloads that may have nulls or missing fields without throwing
+		/// exceptions, while still maintaining the integrity of the
+		/// deserialized objects.
+		/// </summary>
+		public static readonly JsonSerializerSettings GracefulNullAndMissingSettings = new JsonSerializerSettings
+		{
+			NullValueHandling = NullValueHandling.Ignore ,						// Treat "prop": null as missing
+			MissingMemberHandling = MissingMemberHandling.Ignore ,				// Ignore extra JSON fields
+			DefaultValueHandling = DefaultValueHandling.Include ,				// Preserve defaults
+			ObjectCreationHandling = ObjectCreationHandling.Auto				// Do not overwrite existing collections
+		};
+
+
 		/// <summary>
 		/// This override of ToString returns the JSON text, or a placeholder if
 		/// the JSON is null or the empty string.
