@@ -1,0 +1,785 @@
+﻿/*
+    ============================================================================
+
+    Namespace:          WizardWrx
+
+    Class Name:         SpecialCharacters
+
+    File Name:          SpecialCharacters.cs
+
+    Synopsis:           Define a handful of frequently used characters that can
+                        be difficult to correctly differentiate in a source code
+                        listing, either in print or in a text editor window.
+
+	Remarks:            This class is one of a constellation of static classes
+						that define a wide variety of symbolic constants that I
+						use to make my code easier to understand when I need a
+						refresher or am about to change it.
+
+						This class implements a subset of the characters defined
+                        in WizardWrx.MagicNumbers. Some of those constants,
+                        especially those intended mainly for use with arrays and
+                        lists, have moved into sibling classes in this library.
+
+    Author:             David A. Gray
+
+    License:            Copyright (C) 2014-2021, David A. Gray 
+						All rights reserved
+
+                        Redistribution and use in source and binary forms, with
+                        or without modification, are permitted provided that the
+                        following conditions are met:
+
+                        *   Redistributions of source code must retain the above
+                            copyright notice, this list of conditions and the
+                            following disclaimer.
+
+                        *   Redistributions in binary form must reproduce the
+                            above copyright notice, this list of conditions and
+                            the following disclaimer in the documentation and/or
+                            other materials provided with the distribution.
+
+                        *   Neither the name of David A. Gray, nor the names of
+                            his contributors may be used to endorse or promote
+                            products derived from this software without specific
+                            prior written permission.
+
+                        THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+                        CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
+                        WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+                        WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+                        PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
+                        David A. Gray BE LIABLE FOR ANY DIRECT, INDIRECT,
+                        INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+                        (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+                        SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+                        PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+                        ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+                        LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+                        ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+                        IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+    Created:            Sunday, 14 September 2014
+
+    ----------------------------------------------------------------------------
+    Revision History
+    ----------------------------------------------------------------------------
+
+    Date       Version Author Description
+    ---------- ------- ------ --------------------------------------------------
+    2014/09/14 1.0     DAG    Initial implementation.
+
+	2015/06/06 5.4     DAG    Break completely free from WizardWrx.SharedUtl2.
+
+	2015/06/20 5.5     DAG    Relocate to WizardWrx class library, 
+                              promote to the root WizardWrx namespace, add
+                              special characters that I originally defined in
+                              class WizardWrx.SharedUt2.MagicNumbers, and
+                              cross reference related constants defined in other
+                              classes.
+
+    2015/08/31 5.6     DAG    Add a couple of overlooked special characters.
+
+    2016/04/06 6.0     DAG    Add a full-stop character that I discovered was
+                              overlooked in the last review.
+
+    2016/06/07 6.3     DAG    Adjust the internal documentation to correct a few
+                              inconsistencies uncovered while preparing this
+							  library for publication on GetHub.
+
+	2017/02/28 7.0     DAG    Break this library apart, so that smaller subsets
+	                          of classes can be distributed and consumed
+                              independently.
+
+						      This module moved into WizardWrx.Common.dll, while
+                              remaining a part of the root WizardWrx namespace.
+ 
+	2017/06/29 7.0     DAG    Define the ASTERISK and QUESTION_MARK constants.
+
+	2017/07/15 7.0     DAG    Define the DLM_FORMAT_ITEM_BEGIN, BRACE_LEFT, and
+                              BRACE_RIGHT symbolic constants. BRACE_LEFT is the
+                              antecedent of DLM_FORMAT_ITEM_BEGIN, and
+                              BRACE_RIGHT matches its left handed twin.
+
+	2017/08/26 7.0     DAG    Complete the constellation of parenthetical pairs,
+                              adding BRACKET_* and PARENTHESIS_*, along with
+                              ENV_STR_DLM, which motivated this edit, and the
+                              long overdue HASH_TAG.
+
+	2017/09/03 7.0     DAG    Correct XML documentation errors found during the
+                              last otherwise successful build, and define a few
+                              more special characters: NOLBREAKING_SPACE,
+                              CHECK_MARK_CHAR, LAST_ASCII_CHAR.
+
+	2018/10/07 7.1     DAG    Cross reference the new SpecialStrings.SPACE_CHAR,
+	                          and put the out-of-order constants into alphabetic
+							  order by name.
+
+	2019/04/27 7.15    DAG    Cross reference the following single-character
+                              strings that I just added to the SpecialStrings
+                              class.
+
+                                   COLON
+                                   COMMA
+                                   DOUBLE_QUOTE
+                                   FULL_STOP
+                                   HYPHEN
+                                   SEMICOLON
+                                   SINGLE_QUOTE
+                                   TAB_CHAR
+                                   UNDERSCORE_CHAR
+
+	2020/12/23 7.24    DAG    Add the following special characters that I need
+                              to exist as constants so that their values can be
+                              ussed in switch statements.
+
+									ALARM       = ASCII character code 7
+									BEL         = Synonymn for ALARM
+									BELL        = Synonymn for ALARM
+                                    BACKSPACE   = Also called Non-Destructive BS
+									END_OF_FILE = The MS-DOS End of File
+									EOF			= Synonymn for END_OF_FILE
+									ESCAPE_CHAR = The MS-DOS Escape character
+
+						      At the moment, there are no analogoue string
+                              representations of these characters, nor do I see
+                              a need for them.
+
+	2021/10/13 8.0.170 DAG    This release incorporates two new character
+                              constants, SpecialCharacters.PLUS and
+                              SpecialCharacters.MINUS.
+	
+	2022/09/17 9.0.239 DAG    LOGICAL_NEGATE supersedes my long-time favoorite,
+                              PIPE_CHAR, as my preferred text delimiter.
+
+	2025/10/19 9.0.270 DAG   Add: URL_PATH_DELIMITER ('\x002f')
+		                          WINDOWS_PATH_DELIMITER ('\x005c')
+
+	2025/11/28 9.0.281 DAG   Add Unicode code points: BULLET
+                                                      CHECK_MARK
+                                                      CROSS_MARK
+                                                      RIGHT_ARROW
+    ============================================================================
+*/
+
+
+namespace WizardWrx
+{
+	/// <summary>
+	/// Use these constants when you want or need your listings to be crystal
+	/// clear about certain ambiguous literals.
+	/// 
+	/// Since static classes are implicitly sealed, this class cannot be inherited.
+	/// </summary>
+	/// <remarks>
+	/// <para>
+	/// In character-mode (console) applications that use them, the Unicode
+	/// glyphs, BULLET, CHECK_MARK, CROSS_MARK, and RIGHT_ARROW, require a
+	/// console that supports UTF-8. Use <see cref="ConsoleSymbols.Initialize"/>
+	/// to coerce the console to use a UTF-8 code page that supports them.
+	/// Additionally, to properly display these glyphs, your console must render
+	/// in a font face that supports these Unicode glyphs. Examples are Consolas,
+	/// Cascadia Code, and Segoe UI Emoji.
+	/// </para>
+	/// <para>
+	/// For ease of access, I promoted the classes that expose only constants to
+	/// the root of the WizardWrx namespace.
+	/// </para>
+	/// </remarks>
+	/// <seealso cref="ArrayInfo"/>
+	/// <seealso cref="MagicNumbers"/>
+	/// <seealso cref="SpecialStrings"/>
+	public static class SpecialCharacters
+    {
+		/// <summary>
+		/// The Alarm (bell or BEL) character must often be stripped from strings.
+		/// </summary>
+		/// <seealso cref="BEL"/>
+		/// <seealso cref="BELL"/>
+		public const char ALARM = '\a';
+
+		/// <summary>
+		/// Use this when your code requires a ampersand literal, when you want the
+		/// listing to be crystal clear about what it is.
+		/// </summary>
+		/// <seealso cref="SpecialStrings.AMPERSAND"/>
+		/// <seealso cref="COMMA"/>
+		/// <seealso cref="HASH_TAG"/>
+		/// <seealso cref="PERCENT_SIGN"/>
+		/// <seealso cref="PIPE_CHAR"/>
+		/// <seealso cref="SEMICOLON"/>
+		/// <seealso cref="TAB_CHAR"/>
+		/// <seealso cref="UNDERSCORE_CHAR"/>
+		public const char AMPERSAND = '&';
+
+		/// <summary>
+		/// Asterisks are everywhere; use this constant to make asterisks that
+		/// are intended to be treated as characters unambiguous.
+		/// </summary>
+		/// <seealso cref="AMPERSAND"/>
+		/// <seealso cref="COLON"/>
+		/// <seealso cref="HASH_TAG"/>
+		/// <seealso cref="PERCENT_SIGN"/>
+		/// <seealso cref="PIPE_CHAR"/>
+		/// <seealso cref="SEMICOLON"/>
+		/// <seealso cref="TAB_CHAR"/>
+		/// <seealso cref="UNDERSCORE_CHAR"/>
+		public const char ASTERISK = '*';
+
+		/// <summary>
+		/// Use this when your code requires the AT character literal, when you
+		/// want the listing to be crystal clear about what it is.
+		/// </summary>
+		/// <seealso cref="AT_SIGN"/>
+		/// <seealso cref="COMMA"/>
+		/// <seealso cref="HASH_TAG"/>
+		/// <seealso cref="PERCENT_SIGN"/>
+		/// <seealso cref="PIPE_CHAR"/>
+		/// <seealso cref="SEMICOLON"/>
+		/// <seealso cref="TAB_CHAR"/>
+		/// <seealso cref="UNDERSCORE_CHAR"/>
+		public const char AT_CHAR = '@';
+
+		/// <summary>
+		/// Both ASTERISK_CHAR and ASTERISK resolve to the same character.
+		/// </summary>
+		/// <seealso cref="AMPERSAND"/>
+		/// <seealso cref="COLON"/>
+		/// <seealso cref="HASH_TAG"/>
+		/// <seealso cref="PERCENT_SIGN"/>
+		/// <seealso cref="PIPE_CHAR"/>
+		/// <seealso cref="SEMICOLON"/>
+		/// <seealso cref="TAB_CHAR"/>
+		/// <seealso cref="UNDERSCORE_CHAR"/>
+		public const char ASTERISK_CHAR = ASTERISK;
+
+		/// <summary>
+		/// Both AT_SIGH and AT_CHAR resolve to the same character.
+		/// </summary>
+		/// <remarks>
+		/// The '@' character has many uses in computing circles, mostly obscure
+		/// ones, such as their use in many command line tools to denote that a
+		/// specified file is not, itself, the object of interest, but is a list
+		/// of files or other entities that are.
+		/// </remarks>
+		/// <see cref="AT_CHAR"/>
+		/// <seealso cref="AMPERSAND"/>
+		/// <seealso cref="COLON"/>
+		/// <seealso cref="HASH_TAG"/>
+		/// <seealso cref="PERCENT_SIGN"/>
+		/// <seealso cref="PIPE_CHAR"/>
+		/// <seealso cref="SEMICOLON"/>
+		/// <seealso cref="TAB_CHAR"/>
+		/// <seealso cref="UNDERSCORE_CHAR"/>
+		public const char AT_SIGN = AT_CHAR;
+
+		/// <summary>
+		/// The backspace character is sometimes also cited as the non-destructive
+		/// backspace because it moves the cursor backwards without destroying the
+		/// character at that positon.
+		/// </summary>
+		/// <see href="ttps://www.quora.com/Whats-the-use-of-b-in-C"/>
+		public const char BACKSPACE = '\b';
+
+		/// <summary>
+		/// The Alarm (bell or BEL) character must often be stripped from strings.
+		/// </summary>
+		/// <seealso cref="ALARM"/>
+		/// <seealso cref="BELL"/>
+		public const char BEL = ALARM;
+
+		/// <summary>
+		/// The Alarm (bell or BEL) character must often be stripped from strings.
+		/// </summary>
+		/// <seealso cref="ALARM"/>
+		/// <seealso cref="BEL"/>
+		public const char BELL = ALARM;
+		/// <summary>
+		/// Use this in your code to specify a left French brace, also called a
+		/// left brace or opening brace, as a character literal.
+		/// </summary>
+		/// <remarks>
+		/// In addition to implementing DLM_FORMAT_ITEM_BEGIN for a specific use
+		/// case, I implemented the generic use case and its twin, BRACE_RIGHT.
+		/// </remarks>
+		/// <seealso cref="DLM_FORMAT_ITEM_BEGIN"/>
+		/// <seealso cref="BRACE_RIGHT"/>
+		public const char BRACE_LEFT = '{';
+
+		/// <summary>
+		/// Use this in your code to specify a right French brace, also called a
+		/// right brace or closing brace, as a character literal.
+		/// </summary>
+		/// <seealso cref="BRACE_LEFT"/>
+		public const char BRACE_RIGHT = '}';
+
+		/// <summary>
+		/// Use this in your code to specify a left square bracket, also called
+		/// an opening bracket, as a character literal.
+		/// </summary>
+		/// <seealso cref="BRACKET_RIGHT"/>
+		/// <seealso cref="BRACE_LEFT"/>
+		public const char BRACKET_LEFT = '[';
+
+		/// <summary>
+		/// Use this in your code to specify a right square bracket, also called
+		/// a closing bracket, as a character literal.
+		/// </summary>
+		/// <seealso cref="BRACKET_LEFT"/>
+		/// <seealso cref="BRACE_RIGHT"/>
+		public const char BRACKET_RIGHT = ']';
+
+		/// <summary>
+		/// Unicode bullet (•), U+2022.
+		/// See ChangeLog.md glyph table and GlyphConstantsHarness for validation.
+		/// </summary>
+		/// <seealso cref="SpecialStrings.BULLET"/>
+		public const char BULLET = '\u2022';
+
+		/// <summary>
+		/// Use this character anywhere in your code that requires a bare
+		/// carriage return character.
+		/// </summary>
+		/// <seealso cref="LINEFEED"/>
+		/// <seealso cref="SpecialStrings.STRING_SPLIT_CARRIAGE_RETURN"/>
+		/// <seealso cref="SpecialStrings.STRING_SPLIT_LINEFEED"/>
+		/// <seealso cref="SpecialStrings.STRING_SPLIT_NEWLINE"/>
+		public const char CARRIAGE_RETURN = '\r';
+
+		/// <summary>
+		/// Numeric character 0, for use in code where it might be mistaken for
+		/// a letter O.
+		/// </summary>
+		/// <seealso cref="CHAR_LC_O"/>
+		/// <seealso cref="CHAR_UC_O"/>
+		public const char CHAR_NUMERAL_0 = '0';
+
+		/// <summary>
+		/// Numeric character 1, for use in code where it might be mistaken for
+		/// a lower case l or an upper case I.
+		/// </summary>
+		/// <seealso cref="CHAR_UC_I"/>
+		/// <seealso cref="CHAR_LC_L"/>
+		public const char CHAR_NUMERAL_1 = '1';
+
+		/// <summary>
+		/// Numeric character 2, for use in code where it might be mistaken for
+		/// a letter Z or a numeral 7.
+		/// </summary>
+		/// <seealso cref="CHAR_LC_Z"/>
+		/// <seealso cref="CHAR_UC_Z"/>
+		/// <seealso cref="CHAR_NUMERAL_7"/>
+		public const char CHAR_NUMERAL_2 = '2';
+
+		/// <summary>
+		/// Numeric character 2, for use in code where it might be mistaken for
+		/// a letter Z or a numeral 7.
+		/// </summary>
+		/// <seealso cref="CHAR_LC_Z"/>
+		/// <seealso cref="CHAR_UC_Z"/>
+		/// <seealso cref="CHAR_NUMERAL_2"/>
+		public const char CHAR_NUMERAL_7 = '7';
+
+		/// <summary>
+		/// Lower case I, for use in code, where it might be easily mistaken for
+		/// a number 1 or a letter L.
+		/// </summary>
+		public const char CHAR_LC_I = 'i';
+
+		/// <summary>
+		/// Upper case I, for use in code, where it might be easily mistaken for
+		/// a number 1 or a letter L.
+		/// </summary>
+		/// <seealso cref="CHAR_LC_L"/>
+		/// <seealso cref="CHAR_NUMERAL_1"/>
+		public const char CHAR_UC_I = 'I';
+
+		/// <summary>
+		/// Lower case L, for use in code, where it might be easily mistaken for
+		/// a number 1 or a letter I.
+		/// </summary>
+		/// <seealso cref="CHAR_UC_I"/>
+		/// <seealso cref="CHAR_NUMERAL_1"/>
+		public const char CHAR_LC_L = 'l';
+
+		/// <summary>
+		/// Upper case L, for use in code, where it might be easily mistaken for
+		/// a number 1 or a letter I.
+		/// </summary>
+		/// <seealso cref="CHAR_LC_L"/>
+		/// <seealso cref="CHAR_NUMERAL_1"/>
+		public const char CHAR_UC_L = 'L';
+
+		/// <summary>
+		/// Lower case O, for use in code where it might be easily mistaken for
+		/// a number zero. 
+		/// </summary>
+		/// <seealso cref="CHAR_LC_O"/>
+		/// <seealso cref="CHAR_UC_O"/>
+		/// <seealso cref="CHAR_NUMERAL_0"/>
+		public const char CHAR_LC_O = 'o';
+
+		/// <summary>
+		/// Upper case O, for use in code where it might be easily mistaken for
+		/// a number zero.
+		/// </summary>
+		/// <seealso cref="CHAR_LC_O"/>
+		/// <seealso cref="CHAR_UC_O"/>
+		/// <seealso cref="CHAR_NUMERAL_0"/>
+		public const char CHAR_UC_O = 'O';
+
+		/// <summary>
+		/// Lower case Z, for use in code where it might be easily mistaken for
+		/// a numeric character 2 or 7.
+		/// </summary>
+		/// <seealso cref="CHAR_UC_Z"/>
+		/// <seealso cref="CHAR_NUMERAL_2"/>
+		/// <seealso cref="CHAR_NUMERAL_7"/>
+		public const char CHAR_LC_Z = 'z';
+
+		/// <summary>
+		/// Upper case Z, for use in code where it might be easily mistaken for
+		/// a numeric character 2 or 7.
+		/// </summary>
+		/// <seealso cref="CHAR_LC_Z"/>
+		/// <seealso cref="CHAR_NUMERAL_2"/>
+		/// <seealso cref="CHAR_NUMERAL_7"/>
+		public const char CHAR_UC_Z = 'Z';
+
+		/// <summary>
+		/// Unicode check mark (✔), U+2714.
+		/// See ChangeLog.md glyph table and GlyphConstantsHarness for validation.
+		/// </summary>
+		/// <seealso cref="CHECK_MARK_CHAR"/>
+		/// <seealso cref="SpecialStrings.CHECK_MARK"/>
+		/// <seealso cref="SpecialStrings.CHECK_MARK_CHAR"/>
+		public const char CHECK_MARK = '\u2714';
+
+		/// <summary>
+		/// The check-mark character prints as such only in selected Windows
+		/// fonts.
+		/// </summary>
+		/// <seealso cref="CHECK_MARK"/>
+		/// <seealso cref="SpecialStrings.CHECK_MARK"/>
+		/// <seealso cref="SpecialStrings.CHECK_MARK_CHAR"/>
+		public const char CHECK_MARK_CHAR = '\xFB';
+
+		/// <summary>
+        /// Use this when your code requires a colon literal, when you want the
+        /// listing to be crystal clear about what it is.
+        /// </summary>
+		/// <seealso cref="AMPERSAND"/>
+		/// <seealso cref="COMMA"/>
+		/// <seealso cref="HASH_TAG"/>
+		/// <seealso cref="PERCENT_SIGN"/>
+		/// <seealso cref="PIPE_CHAR"/>
+		/// <seealso cref="SEMICOLON"/>
+		/// <seealso cref="TAB_CHAR"/>
+		/// <seealso cref="UNDERSCORE_CHAR"/>
+        /// <seealso cref="SpecialStrings.COLON"/>
+		public const char COLON = ':';
+
+		/// <summary>
+        /// Use this when your code requires a comma literal, when you want the
+        /// listing to be crystal clear about what it is.
+        /// </summary>
+		/// <seealso cref="AMPERSAND"/>
+		/// <seealso cref="COLON"/>
+		/// <seealso cref="HASH_TAG"/>
+		/// <seealso cref="PERCENT_SIGN"/>
+		/// <seealso cref="PIPE_CHAR"/>
+		/// <seealso cref="SEMICOLON"/>
+		/// <seealso cref="TAB_CHAR"/>
+		/// <seealso cref="UNDERSCORE_CHAR"/>
+        /// <seealso cref="SpecialStrings.COMMA"/>
+		public const char COMMA = ',';
+
+		/// <summary>
+		/// Unicode cross mark (✘), U+2718.
+		/// See ChangeLog.md glyph table and GlyphConstantsHarness for validation.
+		/// </summary>
+		/// <seealso cref="SpecialStrings.CROSS_MARK"/>
+		public const char CROSS_MARK = '\u2718';
+
+		/// <summary>
+		/// Use this when you code requires  a Left French Brace literal, such
+		/// as at the beginning of a Format Item.
+		/// </summary>
+		/// <remarks>
+		/// This constant is copied from WizardWrx.FormatStringEngine.FormatItem,
+		/// in which it is called DLM_ITEM_BEGIN, for use independently of that
+		/// library, which brings with it a chain of otherwise unused dependent
+		/// DLLs.
+		/// 
+		/// It came to this library to fill a need for finding the first format
+		/// item in a format control string, to determine at run time how many
+		/// characters precede a format item that spans two or more lines.
+		/// </remarks>
+		/// <seealso cref="BRACE_LEFT"/>
+		/// <seealso cref="BRACE_RIGHT"/>
+		public const char DLM_FORMAT_ITEM_BEGIN = BRACE_LEFT;
+
+		/// <summary>
+        /// Use this when your code requires a double quotation mark literal, 
+        /// when you want the listing to be crystal clear about what it is.
+        /// </summary>
+		/// <seealso cref="SINGLE_QUOTE"/>
+		/// <seealso cref="SPACE_CHAR"/>
+        /// <seealso cref="SpecialStrings.DOUBLE_QUOTE"/>
+		public const char DOUBLE_QUOTE = '"';
+
+		/// <summary>
+		/// Though seldome encountered today, the MS-DOS End of File (EOF) character
+		/// has, at minimum, historical significance.
+		/// </summary>
+		/// <seealso cref="EOF"/>
+		public const char END_OF_FILE = '\x1A';
+
+		/// <summary>
+		/// Though seldome encountered today, the MS-DOS End of File (EOF) character
+		/// has, at minimum, historical significance.
+		/// </summary>
+		/// <seealso cref="END_OF_FILE"/>
+		public const char EOF = END_OF_FILE;
+
+		/// <summary>
+		/// Environment strings that appear in REG_EXPAND_SZ Registry keys and
+		/// elsewhere are enclosed in pairs of this character.
+		/// </summary>
+		/// <remarks>
+		/// Construct a valid environment string substitution token from the
+		/// name of an environment string by calling the MakeToken extension
+		/// method, which is visible when WizardWrx.Core is imported into your
+		/// module.
+		/// </remarks>
+		/// <see cref="StringTricks.MakeToken(string,string)"/>
+		public const char ENV_STR_DLM = PERCENT_SIGN;
+
+		/// <summary>
+		/// Use this constant when your code requires a literal equals sign.
+		/// </summary>
+		/// <seealso cref="HYPHEN"/>
+		/// <seealso cref="HASH_TAG"/>
+		/// <seealso cref="UNDERSCORE_CHAR"/>
+		public const char EQUALS_SIGN = '=';
+
+
+		/// <summary>
+		/// Another character that is largely of historical interest, yet may appear
+		/// from time to time in a dsta stream is the ASCII ESCape character.
+		/// </summary>
+		public const char ESCAPE_CHAR = '\x1B';
+
+		/// <summary>
+		/// Use this character to unambiguously denote a period character, for
+		/// example, when specifying a delimiter character or appending a full
+		/// stop character to a string.
+		/// </summary>
+		/// <seealso cref="SpecialStrings.FULL_STOP"/>
+		public const char FULL_STOP = '.';
+
+		/// <summary>
+		/// Use this constant to specify a hash-tag literal character
+		/// </summary>
+		public const char HASH_TAG = '#';
+
+		/// <summary>
+		/// Literal hyphens are also easily confused in code, especially with
+		/// minus signs.
+		/// </summary>
+		/// <seealso cref="EQUALS_SIGN"/>
+		/// <seealso cref="HASH_TAG"/>
+		/// <seealso cref="UNDERSCORE_CHAR"/>
+        /// <seealso cref="SpecialStrings.HYPHEN"/>
+		public const char HYPHEN = '-';
+
+		/// <summary>
+		/// The highest integer that can represent any ASCII character is 255,
+		/// which is all 8 bits turned ON.
+		/// </summary>
+		public const char LAST_ASCII_CHAR = '\xFF';
+
+		/// <summary>
+		/// Use this character anywhere in your code that requires a bare
+		/// linefeed character.
+		/// </summary>
+		/// <seealso cref="SpecialStrings.STRING_SPLIT_NEWLINE"/>
+		/// <seealso cref="SpecialStrings.STRING_SPLIT_CARRIAGE_RETURN"/>
+		/// <seealso cref="SpecialStrings.STRING_SPLIT_LINEFEED"/>
+		public const char LINEFEED ='\n';
+
+		/// <summary>
+		/// Thanks to a suggestion from my esteemed colleague Bud Pass, this is my new
+		/// preferred field delimiter character. It supersedes my favorite for many
+		/// years, PIPE_CHAR.
+		/// </summary>
+		/// <seealso cref="PIPE_CHAR"/>
+		public const char LOGICAL_NEGATE = '¬';
+
+		/// <summary>
+		/// Use this character anywhere in your code that requires a plus sign
+		/// that represents that symbol explicitly as a character.
+		/// </summary>
+		public const char MINUS = '-';
+
+		/// <summary>
+		/// The non-breaking space character doesn't print; although the Unicode
+		/// encoding treats it as a white space character, most other encodings,
+		/// including both Unicode and US-ASCII, do not.
+		/// </summary>
+		public const char NONBREAKING_SPACE_CHAR = '\xA0';
+
+		/// <summary>
+        /// Use this when your code requires a literal null character, and you
+        /// want the listing to be crystal clear. This can be especially useful
+		/// to distinguish a null character from a null reference.
+        /// </summary>
+        public const char NULL_CHAR = '\0';
+
+		/// <summary>
+		/// Use this in your code to specify a left parenthesis, also called an
+		/// opening parenthesis, as a character literal.
+		/// </summary>
+		/// <seealso cref="PARENTHESIS_RIGHT"/>
+		/// <seealso cref="BRACE_LEFT"/>
+		/// <seealso cref="BRACKET_LEFT"/>
+		public const char PARENTHESIS_LEFT = '(';
+
+		/// <summary>
+		/// Use this in your code to specify a right parenthesis, also called a
+		/// closing parenthesis, as a character literal.
+		/// </summary>
+		/// <seealso cref="PARENTHESIS_LEFT"/>
+		/// <seealso cref="BRACE_RIGHT"/>
+		/// <seealso cref="BRACKET_RIGHT"/>
+		public const char PARENTHESIS_RIGHT = ')';
+
+		/// <summary>
+		/// Use this when your code requires a ampersand literal, when you want the
+		/// listing to be crystal clear about what it is.
+		/// </summary>
+		/// <seealso cref="AMPERSAND"/>
+		/// <seealso cref="COLON"/>
+		/// <seealso cref="COMMA"/>
+		/// <seealso cref="HASH_TAG"/>
+		/// <seealso cref="SEMICOLON"/>
+		/// <seealso cref="TAB_CHAR"/>
+		/// <seealso cref="UNDERSCORE_CHAR"/>
+		/// <seealso cref="SpecialStrings.PERCENT_SIGN"/>
+		public const char PERCENT_SIGN = '%';
+
+		/// <summary>
+		/// How have I got on this long without my faithful field separator?
+		/// </summary>
+		/// <seealso cref="AMPERSAND"/>
+		/// <seealso cref="COLON"/>
+		/// <seealso cref="COMMA"/>
+		/// <seealso cref="HASH_TAG"/>
+		/// <seealso cref="LOGICAL_NEGATE"/>
+		/// <seealso cref="PERCENT_SIGN"/>
+		/// <seealso cref="SEMICOLON"/>
+		/// <seealso cref="TAB_CHAR"/>
+		/// <seealso cref="UNDERSCORE_CHAR"/>
+		public const char PIPE_CHAR = '|';
+
+		/// Use this character anywhere in your code that requires a minus sign
+		/// that represents that symbol explicitly as a character.
+		public const char PLUS = '+';
+
+		/// <summary>
+		/// The question mark is another special character that is frequently
+		/// used as an operator; use this to differentiate such use from that of
+		/// an operand.
+		/// </summary>
+		public const char QUESTION_MARK = '?';
+
+		/// <summary>
+		/// Unicode right arrow (→), U+2192.
+		/// See ChangeLog.md glyph table and GlyphConstantsHarness for validation.
+		/// </summary>
+		/// <seealso cref="SpecialStrings.RIGHT_ARROW"/>
+		public const char RIGHT_ARROW = '\u2192';
+
+		/// <summary>
+		/// Use this when your code requires a semicolon literal, when you want
+		/// the listing to be crystal clear about what it is.
+		/// </summary>
+		/// <seealso cref="AMPERSAND"/>
+		/// <seealso cref="COMMA"/>
+		/// <seealso cref="COLON"/>
+		/// <seealso cref="HASH_TAG"/>
+		/// <seealso cref="PERCENT_SIGN"/>
+		/// <seealso cref="PIPE_CHAR"/>
+		/// <seealso cref="TAB_CHAR"/>
+		/// <seealso cref="UNDERSCORE_CHAR"/>
+		/// <seealso cref="SpecialStrings.SEMICOLON"/>
+		public const char SEMICOLON = ';';
+
+        /// <summary>
+        /// Use this when your code requires a single quotation mark literal, 
+        /// when you want the listing to be crystal clear about what it is.
+        /// </summary>
+		/// <seealso cref="DOUBLE_QUOTE"/>
+		/// <seealso cref="SPACE_CHAR"/>
+        /// <seealso cref="SpecialStrings.SINGLE_QUOTE"/>
+        public const char SINGLE_QUOTE = '\x0027';
+
+		/// <summary>
+		/// Use this when your code requires a single space when you want the
+		/// listing to be crystal clear about what it is.
+		/// </summary>
+		/// <seealso cref="SpecialStrings.SPACE_CHAR"/>
+		/// <seealso cref="DOUBLE_QUOTE"/>
+		/// <seealso cref="EQUALS_SIGN"/>
+		/// <seealso cref="HASH_TAG"/>
+		/// <seealso cref="SINGLE_QUOTE"/>
+		/// <seealso cref="SPACE_CHAR"/>
+		/// <seealso cref="TAB_CHAR"/>
+		/// <seealso cref="UNDERSCORE_CHAR"/>
+		public const char SPACE_CHAR = ' ';
+
+        /// <summary>
+        /// Use this when your code requires a tab literal, when you want the
+        /// listing to be crystal clear about what it is.
+        /// </summary>
+		/// <seealso cref="AMPERSAND"/>
+		/// <seealso cref="COLON"/>
+		/// <seealso cref="COMMA"/>
+		/// <seealso cref="HASH_TAG"/>
+		/// <seealso cref="PERCENT_SIGN"/>
+		/// <seealso cref="PIPE_CHAR"/>
+		/// <seealso cref="SEMICOLON"/>
+		/// <seealso cref="UNDERSCORE_CHAR"/>
+        /// <seealso cref="SpecialStrings.TAB_CHAR"/>
+		public const char TAB_CHAR = '\t';
+
+		/// <summary>
+		/// Underscores can be really hard to see in code, both on paper and
+		/// on screen.
+		/// </summary>
+		/// <seealso cref="DOUBLE_QUOTE"/>
+		/// <seealso cref="SINGLE_QUOTE"/>
+		/// <seealso cref="SPACE_CHAR"/>
+		/// <seealso cref="EQUALS_SIGN"/>
+		/// <seealso cref="HYPHEN"/>
+		/// <seealso cref="TAB_CHAR"/>
+        /// <seealso cref="SpecialStrings.UNDERSCORE_CHAR"/>
+		public const char UNDERSCORE_CHAR = '_';
+
+		/// <summary>
+		/// Use this in place of 'System.IO.Path.AltDirectorySeparatorChar`, which
+		/// lacks const semantics, when you need a true constant.
+		/// </summary>
+		/// <see cref="System.IO.Path.AltDirectorySeparatorChar"/>
+		/// <seealso cref="WINDOWS_PATH_DELIMITER"/>
+		public const char URL_PATH_DELIMITER = '\x002f';
+
+		/// <summary>
+		/// Use this in place of 'System.IO.Path.DirectorySeparatorChar`, which
+		/// lacks const semantics, when you need a true constant.
+		/// </summary>
+		/// <see cref="System.IO.Path.DirectorySeparatorChar"/>
+		/// <seealso cref="URL_PATH_DELIMITER"/>
+		public const char WINDOWS_PATH_DELIMITER = '\x005c';
+	}   // public static class SpecialCharacters
+}   // partial namespace WizardWrx

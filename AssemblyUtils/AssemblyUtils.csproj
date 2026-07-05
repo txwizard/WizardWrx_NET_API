@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+    ============================================================================
+    Project Name:       AssemblyUtils.csproj
+
+    Project Abstract:   Instances of this class are containers that reflect an
+                        assembly and its immediate dependents.
+
+    Remarks:            This library requires the Microsoft .NET Framework 3.5,
+                        Client Profile, or newer.
+
+                        As it applies to the Roslyn compiler, the Deterministic
+                        switch implements determinism in a very narrow context,
+                        which affects only the versioning of the generated PE
+                        file in which the assembly is stored.
+
+                        This switch is relatively new, and its inclusion in the
+                        default generated project skeleton appears to be recent.
+
+                        For further details, please see the first article cited
+                        in the References section that follows.
+
+    References:         1)  Deterministic builds in Roslyn
+                            http://blog.paranoidcoding.com/2016/04/05/deterministic-builds-in-roslyn.html
+
+                        2)  /deterministic switch for msbuild does not work
+                            https://stackoverflow.com/questions/39657709/deterministic-switch-for-msbuild-does-not-work
+
+    ============================================================================
+    Revision History
+    ============================================================================
+
+    Date       By  Description
+    ========== === =============================================================
+    2019/07/04 DAG Add NuGet package and documentation generation.
+
+    2019/12/17 DAG Define custom task NuGetPackageNameFixup, and add tasks to
+                   build a package that uses SemVer version numbering and push
+                   it to the NuGet repository.
+
+    2020/09/20 DAG Eliminate "\$(Configuration)" from the PackageDir key.
+
+    2020/10/18 DAG Add -Source nuget.org to NuGet Puse command line.
+
+    2021/01/30 DAG Reinstate wwBldNbrMgr.
+
+    2022/04/24 DAG 1) Define a new UsingTask, NuGetPackagePublishDecision, and
+                      use it in a new PublishIfNew target that runs as the
+                      AfterBuild target so that its output can prevent the
+                      Package and Publish targets executing.
+
+                   2) Move everything involved with NuGet package management
+                      into a new WizardWrx_NuGet_Packages Targets file, which
+                      is imported (and processed) last.
+
+    2022/06/25 DAG Replace wwBldNbrMgr with AssemblyInfoUtil.
+
+    2022/07/10 DAG When I replaced wwBldNbrMgr with AssemblyInfoUtil, I put it
+                   in the PostBuildEvent event instead of the PreBuildEvent
+                   target.
+    ============================================================================
+-->
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{147D0AB7-A13A-4374-9011-A5584AE3A533}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WizardWrx.AssemblyUtils</RootNamespace>
+    <AssemblyName>WizardWrx.AssemblyUtils</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <!-- 2019/05/20 23:58:24 - DAG - Added for NuGet package builder -->
+    <PackageDir>Package</PackageDir>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>.pdb$;(AllowedOutputExtensionsInPackageBuildOutputFolder)</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <!-- 2019/12/16 00:14:10 - DAG - Define SolutionPackageDir, which points to the local NuGet package directory shared by the entire solution. -->
+    <SolutionPackageDir>$(ProjectDir)..\packages</SolutionPackageDir>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;DBG_PE_SUBSYSTEM_INFO</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Wizardwrx.AssemblyUtils.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Wizardwrx.AssemblyUtils.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\ProductAssemblyInfo.cs">
+      <Link>Properties\ProductAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="AssemblyAttributeHelpers.cs" />
+    <Compile Include="AssemblyContainer.cs" />
+    <Compile Include="DependentAssemblies.cs" />
+    <Compile Include="DependentAssemblyInfo.cs" />
+    <Compile Include="PESubsystemInfo.cs" />
+    <Compile Include="ReportGenerators.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="AssemblyUtils.nuspec" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{c1fb48d6-4a54-4424-bca1-4777f3aae2df}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{b5282e82-d211-4bea-bebd-b2cc6e45bf5c}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PreBuildEvent></PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(Custom_MSBuild_Targets)\WizardWrx_NuGet_Packages.TARGETS" Condition="Exists('$(Custom_MSBuild_Targets)\WizardWrx_NuGet_Packages.TARGETS')" />
+</Project>
+

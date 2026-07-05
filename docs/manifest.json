@@ -1,0 +1,1974 @@
+{
+  "homepages": [],
+  "source_base_path": "D:/Source_Code/Visual_Studio/Projects/WizardWrx_Libs/WizardWrx_NET_API/docfx_project",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CSharpVitamins.ShortGuid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CSharpVitamins.ShortGuid.html",
+          "hash": "VLsNN+M74U3NHIBGv5HqMQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CSharpVitamins.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CSharpVitamins.html",
+          "hash": "V5HHFdfzTeq4zUJh4Du/gg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DLLServices2TestStand.MoreMath2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DLLServices2TestStand.MoreMath2.html",
+          "hash": "SXtwmth7Ahkd0XkQJbZyRw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DLLServices2TestStand.Properties.Resources.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DLLServices2TestStand.Properties.Resources.html",
+          "hash": "HbDR5MpxQNVhpcbOpFw4Eg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DLLServices2TestStand.Properties.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DLLServices2TestStand.Properties.html",
+          "hash": "Uhrws/p4RvRmn89NuGXf0w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/DLLServices2TestStand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/DLLServices2TestStand.html",
+          "hash": "7/Kj4uEmm/5u7I/mwMqIZA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GUITestStand.frmMain.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GUITestStand.frmMain.html",
+          "hash": "v8PW+zaXJrpp+xWbpPbjmg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GUITestStand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GUITestStand.html",
+          "hash": "WIbfm+OZVVFktiZjazDYEQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LeadLife.Core.Common.JSON_Deserialized_Object.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LeadLife.Core.Common.JSON_Deserialized_Object.html",
+          "hash": "PS+DuPE/u1gPvzkcn4auFw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LeadLife.Core.Common.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LeadLife.Core.Common.html",
+          "hash": "REim+3CAQzXxsvgPE2eMnw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnitTestProject1.UnitTest1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnitTestProject1.UnitTest1.html",
+          "hash": "JnsSbAbaqIftMrN2zu9T7w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnitTestProject1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnitTestProject1.html",
+          "hash": "FJHzPhC+kFZxhWjP1gwPcw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.html",
+          "hash": "qWEVH1eSIRLEtUw10Jz3Gw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.ASCIICharacterDisplayInfo.CharacterType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.ASCIICharacterDisplayInfo.CharacterType.html",
+          "hash": "owN/pqH6VHgTCMKf34XQOg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.ASCIICharacterDisplayInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.ASCIICharacterDisplayInfo.html",
+          "hash": "XwzfqlXppPYSUjEv7xiirA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.ASCII_Character_Display_Table.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.ASCII_Character_Display_Table.html",
+          "hash": "uzDkwy+W/X7RhcxYwMxowg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.AppDomainSyncRootRegistry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.AppDomainSyncRootRegistry.html",
+          "hash": "iJcxaNzm6AzNx6A/2M+5/Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.ArrayInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.ArrayInfo.html",
+          "hash": "IJ4QlteMmhNqz6GiEnAYAQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.AttributeFriendlyName.html",
+          "hash": "Ew7BYde7kgK+DatkO4y2jQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.AssemblyUtils.AssemblyAttributeHelpers.html",
+          "hash": "bL/tYf0xBx6h/9DU1gI3Tw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.AssemblyUtils.AssemblyContainer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.AssemblyUtils.AssemblyContainer.html",
+          "hash": "ET5x5myouzuBeV+N9nYTwQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.AssemblyUtils.DependentAssemblies.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.AssemblyUtils.DependentAssemblies.html",
+          "hash": "24m59cSjwkpZtF55dcAe0g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.AssemblyUtils.DependentAssemblyInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.AssemblyUtils.DependentAssemblyInfo.html",
+          "hash": "6UoZE1+sucEMZKzsrVQl2g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.AssemblyUtils.PESubsystemInfo.PESubsystemID.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.AssemblyUtils.PESubsystemInfo.PESubsystemID.html",
+          "hash": "b8dnSbWspUTpgGsfRYxhTA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.AssemblyUtils.PESubsystemInfo.SubsystemDescription.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.AssemblyUtils.PESubsystemInfo.SubsystemDescription.html",
+          "hash": "JvcfUUdNjXg0IldXkkCi9w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.AssemblyUtils.PESubsystemInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.AssemblyUtils.PESubsystemInfo.html",
+          "hash": "KXIPV6xU7riXAo1LCCbN4g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.AssemblyUtils.ReportGenerators.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.AssemblyUtils.ReportGenerators.html",
+          "hash": "6RBrP0RIFf3K/Trq5Povqw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.AssemblyUtils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.AssemblyUtils.html",
+          "hash": "8HaYWnrWqgtyuuA0FGbg9A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.ByteOrderMark.BOMType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.ByteOrderMark.BOMType.html",
+          "hash": "NfNGBEyOTzOTy7WsYo18iA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.ByteOrderMark.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.ByteOrderMark.html",
+          "hash": "sn/4S+tUYW/6AIYr5twpPg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.CSVFileInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.CSVFileInfo.html",
+          "hash": "JAD7MTiLJs/MYzuIx07jrQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.ClassAndMethodDiagnosticInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.ClassAndMethodDiagnosticInfo.html",
+          "hash": "wPYNI3eQ1x70CvZXJs5rYg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Common.Properties.Resources.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Common.Properties.Resources.html",
+          "hash": "wYjfqc6uM0VGaw7Oc42wGQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Common.Properties.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Common.Properties.html",
+          "hash": "WRYsDyJptlHw5fjQzp8Owg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.ConsoleStreams.DefaultErrorMessageColors.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.ConsoleStreams.DefaultErrorMessageColors.html",
+          "hash": "rbkUY5ppxh+e66wAElxqqg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.ConsoleStreams.ErrorMessagesInColor.ErrorSeverity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.ConsoleStreams.ErrorMessagesInColor.ErrorSeverity.html",
+          "hash": "TfcxLZtx0n8yANJlbF9OfQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.ConsoleStreams.ErrorMessagesInColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.ConsoleStreams.ErrorMessagesInColor.html",
+          "hash": "amj8vgC27XAE37I/X0kR4A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.ConsoleStreams.ErrorMessagesInColorConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.ConsoleStreams.ErrorMessagesInColorConverter.html",
+          "hash": "J1oKzuEefEH9sv9w21IsVA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.ConsoleStreams.MessageInColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.ConsoleStreams.MessageInColor.html",
+          "hash": "Oc734EQ+ZKKajhsBVjwuEQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.ConsoleStreams.MessageInColorConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.ConsoleStreams.MessageInColorConverter.html",
+          "hash": "DhVHO76RYHO5w9Q3QDISJA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.ConsoleStreams.StandardHandleInfo.ConsoleModes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.ConsoleStreams.StandardHandleInfo.ConsoleModes.html",
+          "hash": "TUxFYBr7MjEQ6z3tu4wfmw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.ConsoleStreams.StandardHandleInfo.ConsoleOutputModes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.ConsoleStreams.StandardHandleInfo.ConsoleOutputModes.html",
+          "hash": "w7OQSSLOTGkxbek5bWd52A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.ConsoleStreams.StandardHandleInfo.StandardConsoleHandle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.ConsoleStreams.StandardHandleInfo.StandardConsoleHandle.html",
+          "hash": "jCes7igLO3UQ+ZxoltPcbw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.ConsoleStreams.StandardHandleInfo.StandardHandleState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.ConsoleStreams.StandardHandleInfo.StandardHandleState.html",
+          "hash": "pH6sJqYNUbEh5SCI+te1kA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.ConsoleStreams.StandardHandleInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.ConsoleStreams.StandardHandleInfo.html",
+          "hash": "nnQ2Y+ez6UqjIXibh1vtAQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.ConsoleStreams.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.ConsoleStreams.html",
+          "hash": "RLoOUqIPZmicSR2xRrHoJA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.ConsoleSymbols.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.ConsoleSymbols.html",
+          "hash": "nHKqW1CjMj3QEoY/1sNiUg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Core.AgedFileInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Core.AgedFileInfo.html",
+          "hash": "7mwgP+ACdB2mlAIT4Xnxuw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Core.AgedFileInfoCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Core.AgedFileInfoCollection.html",
+          "hash": "0AdOYNi/aQOASVuuzXulCw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Core.AssemblyLocatorBase.PropertySourceCounts.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Core.AssemblyLocatorBase.PropertySourceCounts.html",
+          "hash": "wrBmebzyJIFYWSYwb1sC2A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Core.AssemblyLocatorBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Core.AssemblyLocatorBase.html",
+          "hash": "/RroNekZs1UuA4Gy+8H+Ug=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Core.BasicSystemInfoDisplayMessages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Core.BasicSystemInfoDisplayMessages.html",
+          "hash": "EQ6+w5YNQGZMiBeB+y+zyA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Core.ByteArrayBase64Converters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Core.ByteArrayBase64Converters.html",
+          "hash": "TBl7BBYNmWqKCV8EB4xFyw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Core.ByteArrayFormatters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Core.ByteArrayFormatters.html",
+          "hash": "U0/fsgOM8L3nl0LCVUY9ig=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Core.CmdLneArgsBasic.ArgMatching.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Core.CmdLneArgsBasic.ArgMatching.html",
+          "hash": "8qpHOmdlaFq+uREN38x8/A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Core.CmdLneArgsBasic.ArgType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Core.CmdLneArgsBasic.ArgType.html",
+          "hash": "KUgyYZZBmoBFEJkBLDkr4g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Core.CmdLneArgsBasic.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Core.CmdLneArgsBasic.html",
+          "hash": "DduAEDoubp7u0CzT62bTSg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Core.EnvTokenExpander.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Core.EnvTokenExpander.html",
+          "hash": "FozkykJ523iLKwGSTcvfqA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Core.FileComparer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Core.FileComparer.html",
+          "hash": "t8A6VoQm8/dfGyPaKki/fA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Core.GitRepositoryNavigation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Core.GitRepositoryNavigation.html",
+          "hash": "sL0i+ZsEBnX/Lw6XYVsJag=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Core.OneOffExceptionReporter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Core.OneOffExceptionReporter.html",
+          "hash": "RL68frntWcfrXRmStYNoTg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Core.PropertyDefaults.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Core.PropertyDefaults.html",
+          "hash": "ZUFExPtFpXZyxAInMAs+fg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Core.ReflectionInvoker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Core.ReflectionInvoker.html",
+          "hash": "/Qa/DSlTM03iaqR+n/g7iQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Core.RegistryValues.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Core.RegistryValues.html",
+          "hash": "07bE4B5Fg1gGTzruXxNWZQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Core.StringFixups.StringFixup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Core.StringFixups.StringFixup.html",
+          "hash": "c/bvMnl8o+IxssieMxV84g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Core.StringFixups.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Core.StringFixups.html",
+          "hash": "BsBUCduNGslayIciJa4vfQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Core.Tests.DigestComparerTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Core.Tests.DigestComparerTests.html",
+          "hash": "IZSRTDLMTxrzeV7Vuld9CQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Core.Tests.DigestEnginesTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Core.Tests.DigestEnginesTests.html",
+          "hash": "JQBFcPfdbnOCRdKsY7VhtA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Core.Tests.FileComparerTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Core.Tests.FileComparerTests.html",
+          "hash": "wbK1+GuLeBKrsrt0BU8hTA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Core.Tests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Core.Tests.html",
+          "hash": "wDe43Xt71CcJvqAU5RHqLQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Core.TimeDisplayFormatter.DateFieldOrder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Core.TimeDisplayFormatter.DateFieldOrder.html",
+          "hash": "xOTz+aKSrd7Jw2McRwJDPg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Core.TimeDisplayFormatter.HoursFormatType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Core.TimeDisplayFormatter.HoursFormatType.html",
+          "hash": "R+JtndaSbrTOVocNnOdqIQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Core.TimeDisplayFormatter.TimePrecisionType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Core.TimeDisplayFormatter.TimePrecisionType.html",
+          "hash": "wkrnjK9liBPysfz61sfAHA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Core.TimeDisplayFormatter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Core.TimeDisplayFormatter.html",
+          "hash": "eedGhMnfWAYXAcARaf7cVQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Core.TraceLogger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Core.TraceLogger.html",
+          "hash": "zvwAYAxHA/Gae1UrtBnq0Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Core.UnconfiguredDLLSettings.UnconfiguredSetting.html",
+          "hash": "GiYh9WgM1m8KbYHZ9+cdAA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Core.UnconfiguredDLLSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Core.UnconfiguredDLLSettings.html",
+          "hash": "KQh/ttJowqaYvk39PUki4g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Core.UnmanagedLibrary.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Core.UnmanagedLibrary.html",
+          "hash": "XoGPptnqRIpjVfEwzWFSPw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Core.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Core.html",
+          "hash": "YQ2t9VHT01ght87CKJkPZQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Cryptography.DigestAlgorithm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Cryptography.DigestAlgorithm.html",
+          "hash": "Mpvx1g2dWs39bbcqid3sbg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Cryptography.DigestComparer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Cryptography.DigestComparer.html",
+          "hash": "mvm1LwFA4czbw7suXx5Zvg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Cryptography.DigestConstants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Cryptography.DigestConstants.html",
+          "hash": "fbURC40NdIVvADgQ0DRZdw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Cryptography.DigestEngines.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Cryptography.DigestEngines.html",
+          "hash": "8ickB+ssw8YpxH7f8Nq6iQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Cryptography.DigestFile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Cryptography.DigestFile.html",
+          "hash": "Sa3JO9Rzo317AaHSquDo0Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Cryptography.DigestFormatters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Cryptography.DigestFormatters.html",
+          "hash": "0s6PwKmDZLPHWFE1BW9CTg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Cryptography.DigestString.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Cryptography.DigestString.html",
+          "hash": "VeHfECD52YuPKRWXnCOdfg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Cryptography.OutputFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Cryptography.OutputFormat.html",
+          "hash": "Tf/Ex2mpqtv8BydpXOH5Ww=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Cryptography.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Cryptography.html",
+          "hash": "0YdUHW2WmSZe3Cj86wP/6Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.DLLConfigurationManager.ExceptionLogger.ErrorExitOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.DLLConfigurationManager.ExceptionLogger.ErrorExitOptions.html",
+          "hash": "guRj44Q7/I90V/oDkD4c+A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.DLLConfigurationManager.ExceptionLogger.OutputOptions.html",
+          "hash": "chLj/JQWWqPKmV+YFDGPZg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.DLLConfigurationManager.ExceptionLogger.ScrollUpResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.DLLConfigurationManager.ExceptionLogger.ScrollUpResult.html",
+          "hash": "iDG57QLAZZ9hQEFN0AcFLg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.DLLConfigurationManager.ExceptionLogger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.DLLConfigurationManager.ExceptionLogger.html",
+          "hash": "EHmDLfpvCZIPpegvd+aXeA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.DLLConfigurationManager.IniFileReader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.DLLConfigurationManager.IniFileReader.html",
+          "hash": "c2GTTK4b7vbA93snZogolw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.DLLConfigurationManager.Properties.Resources.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.DLLConfigurationManager.Properties.Resources.html",
+          "hash": "c/wXthZ8qdP5J/4rmLbzTw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.DLLConfigurationManager.Properties.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.DLLConfigurationManager.Properties.html",
+          "hash": "10WoUPyTDjtJQ6yE7Z5z6Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.DLLConfigurationManager.StateManager.AssemblyVersionRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.DLLConfigurationManager.StateManager.AssemblyVersionRequest.html",
+          "hash": "FZ7JvvifDBTiPwQi5zo/xg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.DLLConfigurationManager.StateManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.DLLConfigurationManager.StateManager.html",
+          "hash": "AWQF0/oAkXyvyD592WtNJw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.DLLConfigurationManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.DLLConfigurationManager.html",
+          "hash": "mjmYDfYW7wnTfHnJEvj7cQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.DateTimeExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.DateTimeExtensions.html",
+          "hash": "QQ8NakFD4bROC/5G0rFu/w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.DisplayFormats.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.DisplayFormats.html",
+          "hash": "AKGneT5YJnzA2b4gBlbNJg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.EmbeddedTextFileReaders.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.EmbeddedTextFileReaders.html",
+          "hash": "ME2eDvVYkeRhrzURRqTmUw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.FileIOFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.FileIOFlags.html",
+          "hash": "4dxoNJ3MUj+uJU8UPcgxTg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.FileInfoExtension.enmInitialStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.FileInfoExtension.enmInitialStatus.html",
+          "hash": "NRR8ybW6GEe8vUte9KLikA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.FileInfoExtension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.FileInfoExtension.html",
+          "hash": "hBbcHcq6sNIEHYDLCu6dLg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.FileInfoExtensionMethods.FileDetailsToShow.html",
+          "hash": "2l8gcya0vkMDtDHHGvadVQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.FileInfoExtensionMethods.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.FileInfoExtensionMethods.html",
+          "hash": "es6Zx3nRkgEbKRLgwHizmw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.FileNameTricks.TerminaBackslash.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.FileNameTricks.TerminaBackslash.html",
+          "hash": "+XtR32TPWgC0DgaNVmrBpQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.FileNameTricks.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.FileNameTricks.html",
+          "hash": "UcXKDMf2qq8NHNiqC+Xi/g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.FormatStringEngine.FormatItem.Alignment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.FormatStringEngine.FormatItem.Alignment.html",
+          "hash": "hZAAjvKO4CZXCek0A6D/bg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.FormatStringEngine.FormatItem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.FormatStringEngine.FormatItem.html",
+          "hash": "rP8qsQ5mCCnWTQwD1DLKsg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.FormatStringEngine.FormatItemsCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.FormatStringEngine.FormatItemsCollection.html",
+          "hash": "XqbbNCxOaJK7eHQ4wSoIHA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.FormatStringEngine.FormatStringError.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.FormatStringEngine.FormatStringError.html",
+          "hash": "d6jmUFxUMwPGdXDJ1wu00g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.FormatStringEngine.FormatStringParser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.FormatStringEngine.FormatStringParser.html",
+          "hash": "V1x+XM5D2N0V/bevDDQlhw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.FormatStringEngine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.FormatStringEngine.html",
+          "hash": "pl6hCEr8IFtJC4PRXlSOHA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.GenericSingletonBase-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.GenericSingletonBase-1.html",
+          "hash": "MlDhk4MGF6uZ8u9S8mpLog=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.HTTP.RequestEngine.HttpVerb.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.HTTP.RequestEngine.HttpVerb.html",
+          "hash": "zW8ty9BUlSg6JLprOUbOgw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.HTTP.RequestEngine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.HTTP.RequestEngine.html",
+          "hash": "9q9z4kpfmi1dKEXh1DFC5A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.HTTP.RequestOptions.HttpEngineLogCallback.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.HTTP.RequestOptions.HttpEngineLogCallback.html",
+          "hash": "M1JyW7hT5JosGYflRHedDA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.HTTP.RequestOptions.OAuthTokenGetter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.HTTP.RequestOptions.OAuthTokenGetter.html",
+          "hash": "c4iVY6wyHODuviSFW8nGUw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.HTTP.RequestOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.HTTP.RequestOptions.html",
+          "hash": "773PfREaeNkOkRuixcUIKA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.HTTP.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.HTTP.html",
+          "hash": "kh9IdnzRuZhTlijUOe6z7Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.JSONSupport.JSON_Deserialized_Object.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.JSONSupport.JSON_Deserialized_Object.html",
+          "hash": "/UW3Xj9ghnBpAJtVoviJoQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.JSONSupport.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.JSONSupport.html",
+          "hash": "Oby/1OkYZIkGqLa2mQw2pg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.ListHelpers.CompareResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.ListHelpers.CompareResult.html",
+          "hash": "eQ8WEzC52nd6EwaNEVSpRw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.ListHelpers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.ListHelpers.html",
+          "hash": "ucx/IoiOUWsToVMb0KoXsg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.ListInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.ListInfo.html",
+          "hash": "zI9PKGOtcJHlOnYTUb78Cg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.Logic.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.Logic.html",
+          "hash": "Gn6xUxe+RxWm1b8ExVj/ig=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.MagicBooleans.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.MagicBooleans.html",
+          "hash": "y0DWqwLX9I0q0JLDLA+JSQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.MagicNumbers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.MagicNumbers.html",
+          "hash": "ZGYkrSExLItnL4DLv3SgXg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.MoreMath.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.MoreMath.html",
+          "hash": "7L8h6gFx7YwQVjm5s7AVsw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.NumberFormatters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.NumberFormatters.html",
+          "hash": "PBCejL44YbIj6JrSwwxphg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.NumericFormats.HexFormatDecoration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.NumericFormats.HexFormatDecoration.html",
+          "hash": "pdAwcOYjZykBaPZniXkw6w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.NumericFormats.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.NumericFormats.html",
+          "hash": "mH0oFyQVxHP4PiQp/TrX0w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.ObjectPropertyEnumerators.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.ObjectPropertyEnumerators.html",
+          "hash": "+CHkazAhXalJOWL8JjRHuw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.PathPositions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.PathPositions.html",
+          "hash": "5S/6AbdJWOYo2oHInbn73g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.RecoveredException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.RecoveredException.html",
+          "hash": "4C4FUv3p2lriTDe3cDkaZA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.RegExpSupport.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.RegExpSupport.html",
+          "hash": "Mv8Ec31W00ZKeFCVncUmzg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.ReportDetail.ItemDisplayOrder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.ReportDetail.ItemDisplayOrder.html",
+          "hash": "cyCaqUCF+W3Ep3GuHwu+Sw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.ReportDetail.LabelChangedEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.ReportDetail.LabelChangedEventArgs.html",
+          "hash": "+BfYGr2d3LkrTfFYCGQgUw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.ReportDetail.State.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.ReportDetail.State.html",
+          "hash": "Q6XL6lcFBFpyp3oS6n90Sg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.ReportDetail.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.ReportDetail.html",
+          "hash": "RtyGgnbL2KwDKWKEHXhBWg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.ReportDetails.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.ReportDetails.html",
+          "hash": "h3IVUCNM6FvfYbxxwE6dgQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.ReportHelpers.Alignment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.ReportHelpers.Alignment.html",
+          "hash": "u2WaCgiFcS58nRq0ojj59w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.ReportHelpers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.ReportHelpers.html",
+          "hash": "/pkVwYKc57M+y/W81W04kg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.SortableManagedResourceItem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.SortableManagedResourceItem.html",
+          "hash": "BzhFZGV0IgLd6xmeQ1+IBQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.SpecialCharacters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.SpecialCharacters.html",
+          "hash": "NiW4X5KcoeSX2/7WN0T5XA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.SpecialStrings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.SpecialStrings.html",
+          "hash": "/gZu0KJOv7fCpP3nQ43XrA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.StringExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.StringExtensions.html",
+          "hash": "W/664G0PvfnDvpPEXVJ4LQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.StringTricks.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.StringTricks.html",
+          "hash": "6hvsSSqPq36J6K8vyIpsDg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.SyncRoot.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.SyncRoot.html",
+          "hash": "//+04tjHKbfzUkfDGPjteQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.SysDateFormatters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.SysDateFormatters.html",
+          "hash": "AgInp0VZHNz4gH4pgC5R+w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.TextBlocks.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.TextBlocks.html",
+          "hash": "Zao+g9/uNRRVyspShMaFPw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.TimeZoneInfoExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.TimeZoneInfoExtensions.html",
+          "hash": "lOoSRZlN8yQgRqjmsghQSw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/WizardWrx.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/WizardWrx.html",
+          "hash": "1jr3XWrze6u7IJJCnRBwmQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "2/ALG61LJRPmAS6nlX0CrQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "LeuWWJOrDDNBbBQJ+tMVpA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "LmsACPKSC908vmyF/ZDQwg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "gB8AESyvNru97tzIZofEEg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "DbvfLOw5+cCZIT7zgJckTg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "G2AoE5T/2VarbHvzLEo4TQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 3,
+          "skipped_file_count": 3
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 154,
+          "skipped_file_count": 129
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

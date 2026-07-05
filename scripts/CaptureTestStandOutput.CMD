@@ -1,0 +1,137 @@
+@echo off
+goto SKIPREM
+
+::  ============================================================================
+::
+::  Name:               CaptureTestStandOutput.CMD
+::
+::  Synopsis:           Exercise DLLServices2TestStand.exe, and document the
+::                      outcome.
+::
+::  Arguments:          This shell script has no arguments.
+::
+::  Dependencies:       DLLServices2TestStand.exe   = This is the program to run
+::                                                    and document the outcome.
+::
+::                      Date2FN.exe                 = This 32-bit character mode
+::                                                    Windows program appends a
+::                                                    formatted string represen-
+::                                                    ting the LastWriteTime of
+::                                                    a file to its base name to
+::                                                    create a name that is
+::                                                    intended to be locally
+::                                                    unique. The optional R
+::                                                    switch instructs it to
+::                                                    mark the file as read only
+::                                                    by setting the read only
+::                                                    attribute in the file
+::                                                    system.
+::
+::                      ExportFromEventLogNDays.CMD = This shell script uses the
+::                                                    SysInternals psloglist.exe
+::                                                    utility to extract records
+::                                                    from a Windows Event Log.
+::                                                    The extracted records go
+::                                                    into a tab delimited ASCII
+::                                                    file that I import into a
+::                                                    Microsoft Excel workbook.
+::
+::                      ShowTime.exe                = This 64-bit C++ utility
+::                                                    supersedes the like-named
+::                                                    shell script, but affords
+::                                                    much greater control over
+::                                                    the display format.
+::
+::                      WWPause.exe                 = This 32-bit character mode
+::                                                    Windows program replaces
+::                                                    the lame intrinsic pause
+::                                                    command implemented by the
+::                                                    command processor. Unlike
+::                                                    Pause, it insists on the
+::                                                    RETURN key being pressed.
+::
+::                      DLLServices2TestStand.exe must be installed into the
+::                      following directory, relative to the directory in which
+::                      this script is installed.
+::
+::                          .\DLLServices2TestStand\bin\%_Confiuration%\DLLServices2TestStand.exe
+::
+::                      All other dependent programs must be installed into a
+::                      directory that is in the Windows PATH list.
+::
+::  Remarks:            This script does the work that was initially implemented
+::                      redundantly in the two scripts that call it:
+::
+::                          1) CaptureTestStandOutput_DEBUG.CMD
+::                          2) CaptureTestStandOutput_RETAIL.CMD
+::
+::                      There being no compelling reason to return, this script
+::                      expects to be called by transfer of control, rather than
+::                      the CALL verb.
+::
+::  ----------------------------------------------------------------------------
+::  Revision History
+::  ----------------------------------------------------------------------------
+::
+::  Date       By  Synopsis
+::  ---------- --- -------------------------------------------------------------
+::  2017/08/28 DAG Create this script from CaptureTestStandOutput_DEBUG.CMD.
+::
+::  2018/08/28 DAG Amend to send output to the new Test_Reports directory off
+::                 the solution root directory.
+::
+::  2019/07/18 DAG Amend to set the current working directory to the parent of
+::                 the script directory, rather than its sibling, _NOTES, which
+::                 also requires the relative paths to be reformulated a bit.
+::  2021/02/21 DAG Replace ShowTime.CMD with ShowTime.exe, a small 64-bit C++
+::                 utility that affords much greater control over the format of
+::                 the time display.
+::  ============================================================================
+
+:SKIPREM
+
+    ECHO Entering script %0, version %~t0
+	ShowTime.exe
+
+    if "%_Confiuration%" == "" (
+        echo.
+        echo -------------------------------------------------------------------
+        echo ERROR: This script must be launched by one of its parents!
+        echo -------------------------------------------------------------------
+    ) else (
+        setlocal
+        echo Script Directory Name = %_ScriptDir%
+        echo.
+        WWPause.exe
+        echo.
+        pushd %_ScriptDir%
+        pushd ..\
+
+        .\DLLServices2TestStand\bin\%_Confiuration%\DLLServices2TestStand.exe > .\Test_Reports\DLLServices2TestStand_Output_%_Confiuration%.LOG
+        echo.
+        echo -------------------------------------------------------------------
+        echo DLLServices2TestStand.exe exit code = %ERRORLEVEL%
+        echo -------------------------------------------------------------------
+        echo.
+
+        Date2FN.exe -r .\Test_Reports\DLLServices2TestStand_Output_%_Confiuration%.LOG
+
+        if exist DLLServices2TestStand_7_0_%_Confiuration%_Trace.LOG (
+            Date2FN.exe -r DLLServices2TestStand_7_0_%_Confiuration%_Trace.LOG
+        ) else (
+            echo.
+            echo -------------------------------------------------------------------
+            echo DLLServices2TestStand_7_0_%_Confiuration%_Trace.LOG does not exist.
+            echo -------------------------------------------------------------------
+            echo.
+        )
+
+        call ExportFromEventLogNDays.CMD Application .\Test_Reports\DLLServices2TestStand_%_Confiuration%_ApplicationEvents.TXT
+        Date2fn.exe -r .\Test_Reports\DLLServices2TestStand_%_Confiuration%_ApplicationEvents.TXT
+
+        echo.
+        echo EOJ %~nx0 for %_Confiuration% configuration
+    )
+
+    echo.
+    WWPause.exe

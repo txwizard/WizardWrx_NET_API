@@ -1,0 +1,10 @@
+id: GUITestStand
+language: CSharp
+name:
+  Default: GUITestStand
+qualifiedName:
+  Default: GUITestStand
+type: Assembly
+modifiers: {}
+items: []
+references: {}

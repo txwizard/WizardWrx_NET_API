@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+	============================================================================
+	Project Name:		Common.csproj
+
+	Project Abstract:	Define groups of general-purpose boolean, integer, and
+						string constants, along with a set of language-neutral
+						managed resource strings.
+
+	============================================================================
+	Revision History
+	============================================================================
+
+	Date       By  Description
+	========== === =============================================================
+	2019/04/28 DAG Add ProductAssemblyInfo.cs the right way, as a link.
+
+	2019/07/05 DAG Add automatic NuGet package publication.
+
+	2019/07/18 DAG Reformat to vertically align clauses in NuGet package tasks.
+
+    2019/12/15 DAG Define custom task NuGetPackageNameFixup, and add tasks to
+                   build a package and push it to the NuGet repository.
+
+    2020/10/18 DAG Add -Source nuget.org to NuGet Puse command line.
+
+    2021/01/30 DAG Reinstate wwBldNbrMgr.
+
+    2022/04/24 DAG 1) Define a new UsingTask, NuGetPackagePublishDecision, and
+                      use it in a new PublishIfNew target that runs as the
+                      AfterBuild target so that its output can prevent the
+                      Package and Publish targets executing.
+
+                   2) Move everything involved with NuGet package management
+                      into a new WizardWrx_NuGet_Packages Targets file, which
+                      is imported (and processed) last.
+
+    2022/06/25 DAG Replace wwBldNbrMgr with AssemblyInfoUtil.
+
+    2022/07/10 DAG When I replaced wwBldNbrMgr with AssemblyInfoUtil, I put it
+                   in the PostBuildEvent event instead of the PreBuildEvent
+                   target.
+
+    2023/07/16 DAG Remove the TargetFrameworkProfile key, which is obsolete with
+                   respect to the new target framework. This change accompanies
+                   an API-wide target framework upgrade in which this library is
+                   upgraded from 3.5 to 4.8.
+	============================================================================
+-->
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C1FB48D6-4A54-4424-BCA1-4777F3AAE2DF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WizardWrx.Common</RootNamespace>
+    <AssemblyName>WizardWrx.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <!-- 07/16/2023 18:19:00 - DAG - Remove the TargetFrameworkProfile key, which is obsolete with respect to the new target framework. -->
+    <!-- 2019/05/18 16:54:22 - DAG - Added for NuGet package builder -->
+    <PackageDir>$(ProjectDir)Package</PackageDir>
+    <SolutionPackageDir>$(ProjectDir)..\packages</SolutionPackageDir>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>.pdb$;(AllowedOutputExtensionsInPackageBuildOutputFolder)</AllowedOutputExtensionsInPackageBuildOutputFolder>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Wizardwrx.Common.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Wizardwrx.Common.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <!--
+  2015/06/09 DAG Add the following, per thread message that begins, "An
+                 alternative that is working for me so far is to add the
+	             following to the project file:"
+
+	             Reference: "Conditional Compilation and Framework Targets," thread at
+                            http://stackoverflow.com/questions/2923210/conditional-compilation-and-framework-targets
+  -->
+  <PropertyGroup>
+    <DefineConstants Condition=" !$(DefineConstants.Contains(';NET')) ">$(DefineConstants);$(TargetFrameworkVersion.Replace("v", "NET").Replace(".", ""))</DefineConstants>
+    <DefineConstants Condition=" $(DefineConstants.Contains(';NET')) ">$(DefineConstants.Remove($(DefineConstants.LastIndexOf(";NET"))));$(TargetFrameworkVersion.Replace("v", "NET").Replace(".", ""))</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="WizardWrx.BitMath, Version=4.3.125.29248, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WizardWrx.BitMath.4.3.125.29248\lib\net20\WizardWrx.BitMath.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\ProductAssemblyInfo.cs">
+      <Link>Properties\ProductAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="ArrayInfo.cs" />
+    <Compile Include="ByteOrderMark.cs" />
+    <Compile Include="ConsoleSymbols.cs" />
+    <Compile Include="CSVFileInfo.cs" />
+    <Compile Include="DisplayFormats.cs" />
+    <Compile Include="FileIOFlags.cs" />
+    <Compile Include="ListInfo.cs" />
+    <Compile Include="MagicBooleans.cs" />
+    <Compile Include="MagicNumbers.cs" />
+    <Compile Include="NumericFormats.cs" />
+    <Compile Include="PathPositions.cs" />
+    <Compile Include="EmbeddedTextFileReaders.cs" />
+    <Compile Include="RegExpSupport.cs" />
+    <Compile Include="ReportHelpers.cs" />
+    <Compile Include="SortableManagedResourceItem.cs" />
+    <Compile Include="SpecialCharacters.cs" />
+    <Compile Include="SpecialStrings.cs" />
+    <Compile Include="StringTricks.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Common.nuspec" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PreBuildEvent></PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(Custom_MSBuild_Targets)\WizardWrx_NuGet_Packages.TARGETS" Condition="Exists('$(Custom_MSBuild_Targets)\WizardWrx_NuGet_Packages.TARGETS')" />
+</Project>
+

@@ -1,0 +1,214 @@
+id: GUITestStand
+language: CSharp
+name:
+  Default: GUITestStand
+qualifiedName:
+  Default: GUITestStand
+type: Assembly
+modifiers: {}
+items:
+- id: GUITestStand
+  commentId: N:GUITestStand
+  language: CSharp
+  name:
+    CSharp: GUITestStand
+    VB: GUITestStand
+  nameWithType:
+    CSharp: GUITestStand
+    VB: GUITestStand
+  qualifiedName:
+    CSharp: GUITestStand
+    VB: GUITestStand
+  type: Namespace
+  assemblies:
+  - GUITestStand
+  modifiers: {}
+  items:
+  - id: GUITestStand.frmMain
+    commentId: T:GUITestStand.frmMain
+    language: CSharp
+    name:
+      CSharp: frmMain
+      VB: frmMain
+    nameWithType:
+      CSharp: frmMain
+      VB: frmMain
+    qualifiedName:
+      CSharp: GUITestStand.frmMain
+      VB: GUITestStand.frmMain
+    type: Class
+    assemblies:
+    - GUITestStand
+    namespace: GUITestStand
+    source:
+      remote:
+        path: GUITestStand/Form1.Designer.cs
+        branch: master
+        repo: https://github.com/txwizard/WizardWrx_NET_API.git
+      id: frmMain
+      path: ../GUITestStand/Form1.Designer.cs
+      startLine: 3
+    syntax:
+      content:
+        CSharp: 'public class frmMain : Form'
+        VB: >-
+          Public Class frmMain
+
+              Inherits Form
+    inheritance:
+    - System.Object
+    modifiers:
+      CSharp:
+      - public
+      - class
+      VB:
+      - Public
+      - Class
+    items:
+    - id: GUITestStand.frmMain.#ctor
+      commentId: M:GUITestStand.frmMain.#ctor
+      language: CSharp
+      name:
+        CSharp: frmMain()
+        VB: frmMain()
+      nameWithType:
+        CSharp: frmMain.frmMain()
+        VB: frmMain.frmMain()
+      qualifiedName:
+        CSharp: GUITestStand.frmMain.frmMain()
+        VB: GUITestStand.frmMain.frmMain()
+      type: Constructor
+      assemblies:
+      - GUITestStand
+      namespace: GUITestStand
+      source:
+        remote:
+          path: GUITestStand/Form1.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API.git
+        id: .ctor
+        path: ../GUITestStand/Form1.cs
+        startLine: 75
+      syntax:
+        content:
+          CSharp: public frmMain()
+          VB: Public Sub New
+      overload: GUITestStand.frmMain.#ctor*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: GUITestStand.frmMain.Dispose(System.Boolean)
+      commentId: M:GUITestStand.frmMain.Dispose(System.Boolean)
+      language: CSharp
+      name:
+        CSharp: Dispose(Boolean)
+        VB: Dispose(Boolean)
+      nameWithType:
+        CSharp: frmMain.Dispose(Boolean)
+        VB: frmMain.Dispose(Boolean)
+      qualifiedName:
+        CSharp: GUITestStand.frmMain.Dispose(System.Boolean)
+        VB: GUITestStand.frmMain.Dispose(System.Boolean)
+      type: Method
+      assemblies:
+      - GUITestStand
+      namespace: GUITestStand
+      source:
+        remote:
+          path: GUITestStand/Form1.Designer.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API.git
+        id: Dispose
+        path: ../GUITestStand/Form1.Designer.cs
+        startLine: 14
+      summary: "\nClean up any resources being used.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: protected override void Dispose(bool disposing)
+          VB: Protected Overrides Sub Dispose(disposing As Boolean)
+        parameters:
+        - id: disposing
+          type: System.Boolean
+          description: true if managed resources should be disposed; otherwise, false.
+      overload: GUITestStand.frmMain.Dispose*
+      modifiers:
+        CSharp:
+        - protected
+        - override
+        VB:
+        - Protected
+        - Overrides
+references:
+  GUITestStand.frmMain.#ctor*:
+    name:
+      CSharp:
+      - id: GUITestStand.frmMain.#ctor*
+        name: frmMain
+        nameWithType: frmMain.frmMain
+        qualifiedName: GUITestStand.frmMain.frmMain
+      VB:
+      - id: GUITestStand.frmMain.#ctor*
+        name: frmMain
+        nameWithType: frmMain.frmMain
+        qualifiedName: GUITestStand.frmMain.frmMain
+    isDefinition: true
+    commentId: Overload:GUITestStand.frmMain.#ctor
+  System.Boolean:
+    name:
+      CSharp:
+      - id: System.Boolean
+        name: Boolean
+        nameWithType: Boolean
+        qualifiedName: System.Boolean
+        isExternal: true
+      VB:
+      - id: System.Boolean
+        name: Boolean
+        nameWithType: Boolean
+        qualifiedName: System.Boolean
+        isExternal: true
+    isDefinition: true
+    commentId: '!:System.Boolean'
+  GUITestStand.frmMain.Dispose*:
+    name:
+      CSharp:
+      - id: GUITestStand.frmMain.Dispose*
+        name: Dispose
+        nameWithType: frmMain.Dispose
+        qualifiedName: GUITestStand.frmMain.Dispose
+      VB:
+      - id: GUITestStand.frmMain.Dispose*
+        name: Dispose
+        nameWithType: frmMain.Dispose
+        qualifiedName: GUITestStand.frmMain.Dispose
+    isDefinition: true
+    commentId: Overload:GUITestStand.frmMain.Dispose
+  GUITestStand.frmMain:
+    name:
+      CSharp:
+      - id: GUITestStand.frmMain
+        name: frmMain
+        nameWithType: frmMain
+        qualifiedName: GUITestStand.frmMain
+      VB:
+      - id: GUITestStand.frmMain
+        name: frmMain
+        nameWithType: frmMain
+        qualifiedName: GUITestStand.frmMain
+    isDefinition: true
+    commentId: T:GUITestStand.frmMain
+  GUITestStand:
+    name:
+      CSharp:
+      - name: GUITestStand
+        nameWithType: GUITestStand
+        qualifiedName: GUITestStand
+      VB:
+      - name: GUITestStand
+        nameWithType: GUITestStand
+        qualifiedName: GUITestStand
+    isDefinition: true
+    commentId: N:GUITestStand

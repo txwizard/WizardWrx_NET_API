@@ -1,0 +1,449 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AGED_FILES_INFO_TOSTRING_TEMPLATE" xml:space="preserve">
+    <value>{{{0} (Per AgedFileInfo Instance: Base Name        = {1},LastWriteTimeUTC = {2} ({3 Ticks}),LastWriteTime    = {4} ({5 Ticks}))}}</value>
+    <comment>The ToString overload on the AgedFileInfo class constructs a message that conveys information that should be pertinent to someone who encounters it in the watch window of a debugger.</comment>
+  </data>
+  <data name="EMPTY_ALIAS_LIST" xml:space="preserve">
+    <value>The list of aliases is empty.</value>
+    <comment>The CmdLneArgsBasic class uses this string to report an internal error.</comment>
+  </data>
+  <data name="ERRMSG_ARRAY_IS_EMPTY" xml:space="preserve">
+    <value>Array cannot be empty.</value>
+    <comment>This is a general-purpose message, intended for use in exception reports.</comment>
+  </data>
+  <data name="ERRMSG_CANNOT_PARSE" xml:space="preserve">
+    <value>ERROR: The CreateFormatString method cannot process the specified format string.{1}    Specified format string = {0}</value>
+    <comment>The CreateFormatString report helper method generates an exception report from this template.</comment>
+  </data>
+  <data name="ERRMSG_COMMA_AND_LITERAL" xml:space="preserve">
+    <value>, and</value>
+    <comment>This substring was created for use with ERRMSG_UNRESLOVED_ENVIRONEMT_STRINGS.</comment>
+  </data>
+  <data name="ERRMSG_COMPARAND_IS_WRONG_TYPE" xml:space="preserve">
+    <value>ERROR: The specified object is a {0}.{2}Type must be {1}.</value>
+    <comment>The ReportDetail class uses this error message in its exception reports.</comment>
+  </data>
+  <data name="ERRMSG_CONFIG_FILE_IS_EMPTY" xml:space="preserve">
+    <value>The specified DLL configuration file, {0}, exists, but is empty.</value>
+    <comment>Classes derived from abstract class AssemblyLocatorBase class emit this message.</comment>
+  </data>
+  <data name="ERRMSG_CONFIG_PROP_NOT_FOUND" xml:space="preserve">
+    <value>An exception occurred while processing the {0} property on a {1} object. Details are as follows: {2}</value>
+    <comment>The SetPropertiesFromDLLConfiguration method constructs an exception report, which it appends to the ConfigMessage string.</comment>
+  </data>
+  <data name="ERRMSG_DETAIL_FORMAT_CANNOT_BE_NULL_OR_BLANK" xml:space="preserve">
+    <value>ERROR: The DetailFormat property cannot be a null reference or empty string.</value>
+    <comment>The ReportDetail class uses this error message in its exception reports.</comment>
+  </data>
+  <data name="ERRMSG_DISPLAY_ORDER_CANNOT_BE_ZERO" xml:space="preserve">
+    <value>ERROR: The DisplayOrder property cannot be set to zero.</value>
+    <comment>The ReportDetail class uses this error message in its exception reports.</comment>
+  </data>
+  <data name="ERRMSG_DUPLICATE_CONFIG_PROP_NAME" xml:space="preserve">
+    <value>Property name {0} in configuration file {1} is a duplicate name.</value>
+    <comment>The PropertyDefaults class constructor uses this string to report when a duplicate name exists in the configuration file it is tasked with processing.</comment>
+  </data>
+  <data name="ERRMSG_DUPLICATE_SWITCH" xml:space="preserve">
+    <value>Switch {0} with a default value of {1} is a duplicate.</value>
+    <comment>Private CmdLneArgsBasic instance method DefineNewSwitch constructs an exception report from this template.</comment>
+  </data>
+  <data name="ERRMSG_ENUMERATION_CONVERSION" xml:space="preserve">
+    <value>{0}{3}    Input Value   = {1}{3}    Expected Type = {2}{3}</value>
+    <comment>The extension method that attempts to convert a string into an enumeration of a specified type uses this string to report when it cannot do so.</comment>
+  </data>
+  <data name="ERRMSG_ENVIRONMENT_TOKEN_UNDEFINED" xml:space="preserve">
+    <value>Environment string, {0}, used in the definition of ErrorLogFile, {1}, is undefined.</value>
+    <comment>Static method ExpandEnvironmentTokens uses this message to report an exception.</comment>
+  </data>
+  <data name="ERRMSG_ENVIRONMENT_UNAVAILABLE" xml:space="preserve">
+    <value>Can't acquire the EnvTokenExpander.</value>
+    <comment>The EnvTokenExpander class uses this message to report a fatal exception.</comment>
+  </data>
+  <data name="ERRMSG_EXCEPTION_IN_DEFINE_NEW_SWITCH" xml:space="preserve">
+    <value>An {0} Exception was caught while attempting to define a switch named {1} with a default value of {2}.</value>
+    <comment>Private CmdLneArgsBasic instance method DefineNewSwitch constructs an exception report from this template.</comment>
+  </data>
+  <data name="ERRMSG_EXCEPTION_NOT_THROWN" xml:space="preserve">
+    <value>Message from Exception Logged without throwing: {0}</value>
+    <comment>Protected methods DLLettingsSection and SetPropertiesFromDLLConfiguration use this message to report when an exception is actually thrown.</comment>
+  </data>
+  <data name="ERRMSG_FROM_THROWN_EXCEPTION" xml:space="preserve">
+    <value>Message from Exception Thrown and Logged: {0}</value>
+    <comment>Protected methods DLLettingsSection and SetPropertiesFromDLLConfiguration use this message to report when an exception is actually thrown.</comment>
+  </data>
+  <data name="ERRMSG_ILLEGAL_METHOD_CALL" xml:space="preserve">
+    <value>ContainsEnvToken method cannot be called twice while the EnvTokenExpander is frozen. Extract the token, or thaw the EnvTokenExpander.</value>
+  </data>
+  <data name="ERRMSG_INPUT_FILE_NOT_FOUND" xml:space="preserve">
+    <value>Input file not found.</value>
+  </data>
+  <data name="ERRMSG_INTERNAL_ERROR_UNSUPP_ALG" xml:space="preserve">
+    <value>An internal error has been detected in routine ReformatSysDate.{2}An unexpected FormattingAlgorithm of {0} has been encountered while processing the following input string:{2}{1}</value>
+    <comment>Static method FormattingAlgorithm formats an exception report from this template.</comment>
+  </data>
+  <data name="ERRMSG_INVALID_GUARD_STRING_PARAMETERS" xml:space="preserve">
+    <value>String extension method GuardStringIfNeeded was invoked with invalid arguments.{3}    String value = {0}{3}    Integer representation of delimiter character = {1}{3}    Integer representation of guard character = {2}</value>
+    <comment>String extension method GuardStringIfNeeded formats an argument exception from this template.</comment>
+  </data>
+  <data name="ERRMSG_INV_TZINFO" xml:space="preserve">
+    <value>CORRUPTED SYSTEM REGISTRY: The GetDisplayTimeZone method found the specified key, but the corresponding Registry key is corrupted.{1}                           Specified ID = {0}</value>
+    <comment>The GetSystemTimeZoneInfo method emits this string as an exception report.</comment>
+  </data>
+  <data name="ERRMSG_MESSAGE_TO_DIGEST_CANNOT_BE_EMPTY" xml:space="preserve">
+    <value>Message digest cannot be computed for an empty byte array or stream.</value>
+    <comment>Public static method ComputeDigest raises an ArgumentException with this message when it receives an empty byte array as its message.</comment>
+  </data>
+  <data name="ERRMSG_MISSING_CONFIG_FILE" xml:space="preserve">
+    <value>There is no valid configuration file for DLL file {0}.</value>
+    <comment>Classes derived from abstract class AssemblyLocatorBase class emit this message.</comment>
+  </data>
+  <data name="ERRMSG_NO_MEMORY" xml:space="preserve">
+    <value>SYSTEM RESOURCE FAMINE: The GetDisplayTimeZone method ran out of memory.</value>
+    <comment>The GetSystemTimeZoneInfo method emits this string as an exception report.</comment>
+  </data>
+  <data name="ERRMSG_NULL_TZ_ID" xml:space="preserve">
+    <value>INTERNAL ERROR: The GetDisplayTimeZone method let a null pstrTimeZoneID through to TimeZoneInfo.FindSystemTimeZoneById.</value>
+    <comment>The GetSystemTimeZoneInfo method emits this string as an exception report.</comment>
+  </data>
+  <data name="ERRMSG_REPORT_ITEM_IS_NULL" xml:space="preserve">
+    <value>ERROR: No value has been assigned to this object.</value>
+    <comment>The ReportDetail class uses this error message in its exception reports.</comment>
+  </data>
+  <data name="ERRMSG_REPORT_ITEM_IS_UNLABELED" xml:space="preserve">
+    <value>ERROR: This detail object is incomplete. It needs a label.</value>
+    <comment>The ReportDetail class uses this error message in its exception reports.</comment>
+  </data>
+  <data name="ERRMSG_SECURITY" xml:space="preserve">
+    <value>ACCESS VIOLATION: The GetDisplayTimeZone method cannot read the Registry keys where the time zone information is kept. The process has insufficient access permissions on that key.</value>
+    <comment>ACCESS VIOLATION: The GetDisplayTimeZone method cannot read the Registry keys where the time zone information is kept. The process has insufficient access permissions on that key.</comment>
+  </data>
+  <data name="ERRMSG_SPECIFIED_LABEL_IS_NULL_OR_BLANK" xml:space="preserve">
+    <value>ERROR: Label property of a ReportDetail cannot be null or blank.</value>
+    <comment>The ReportDetails class uses this string as a template for an exception report.</comment>
+  </data>
+  <data name="ERRMSG_START_CHARACTER" xml:space="preserve">
+    <value>starting at character position {0}{1}{2}</value>
+    <comment>This substring was created for use with ERRMSG_UNRESLOVED_ENVIRONEMT_STRINGS, and it will probably see lots more use, provided that I remember that it's here.</comment>
+  </data>
+  <data name="ERRMSG_STRING_FIXUP_PAIR_IS_INVALID" xml:space="preserve">
+    <value>The InputValue of the fixup pair at ordinal position {0} (subscript = {1}) is a null reference or the empty string.{4}    The OutputValue at that position is {2}, which is {3}.</value>
+    <comment>The public constructor and the sole method of this class construct a message from this template to report when the input value of a fixup pair is invalid.</comment>
+  </data>
+  <data name="ERRMSG_THIS_REPORTITEM_IS_NULL" xml:space="preserve">
+    <value>ERROR: The value of the report item labeled {0} has not been set.</value>
+    <comment>The ReportDetails class uses this string as a template for an exception report.</comment>
+  </data>
+  <data name="ERRMSG_TZ_NOT_FOUND" xml:space="preserve">
+    <value>INTERNAL or DATA ERROR: The GetDisplayTimeZone method let a pstrTimeZoneID that isn't registered on this computer through to TimeZoneInfo.FindSystemTimeZoneById.{1}                        Specified ID = {0}</value>
+    <comment>The GetSystemTimeZoneInfo method emits this string as an exception report.</comment>
+  </data>
+  <data name="ERRMSG_UNLABELED" xml:space="preserve">
+    <value>* UNLABELED *</value>
+    <comment>This should be self-explanatory.</comment>
+  </data>
+  <data name="ERRMSG_UNRESLOVED_ENVIRONEMT_STRINGS" xml:space="preserve">
+    <value>INPUT ERROR: Specified input string {0}{2}             contains {1} unresolved environment variable.{2}</value>
+    <comment>Static method ReportUnresolvedEnvironmentStrings uses this string as a message template. Strings ERRMSG_COMMA_AND_LITERAL, ERRMSG_VARIABLE_LITERAL, and ERRMSG_START_CHARACTER are used with it.</comment>
+  </data>
+  <data name="ERRMSG_VARIABLE_LITERAL" xml:space="preserve">
+    <value>variable</value>
+    <comment>This substring was created for use with ERRMSG_UNRESLOVED_ENVIRONEMT_STRINGS.</comment>
+  </data>
+  <data name="FILE_DETAILS" xml:space="preserve">
+    <value>{9}{0} Absolute Name = {1}{8}{7} Modified Date = {2}{8}{7} Date Created  = {3}{8}{7} Date Accessed = {4}{8}{7} Size in bytes = {5}{8}{7} Attributes    = {6}{10}</value>
+    <comment>FileInfo extension method ShowFileDetails uses this as the template for the message that it returns to its caller.</comment>
+  </data>
+  <data name="FORMAT_SUBSTRINGSTARTANDLENGTH_TOSSTRING" xml:space="preserve">
+    <value>SubstringStart = {0}, SubstringLength = {1}</value>
+    <comment>public SubstringStartAndLength</comment>
+  </data>
+  <data name="IDS_REPOSITORY_ROOT_NOT_FOUND" xml:space="preserve">
+    <value>Repository root not found. No .git directory or file detected in parent chain starting from directory {0}</value>
+  </data>
+  <data name="IMAGE_SUBSYSTEM_EFI_APPLICATION" xml:space="preserve">
+    <value>Image is an EFI Application.</value>
+    <comment>This string corresponds to one of the fourteen image (Portable Executable) subsystem types.</comment>
+  </data>
+  <data name="IMAGE_SUBSYSTEM_EFI_BOOT_SERVICE_DRIVER" xml:space="preserve">
+    <value>Image is a EFI Boot Service Driver.</value>
+    <comment>This string corresponds to one of the fourteen image (Portable Executable) subsystem types.</comment>
+  </data>
+  <data name="IMAGE_SUBSYSTEM_EFI_ROM" xml:space="preserve">
+    <value>Image runs from a EFI ROM.</value>
+    <comment>This string corresponds to one of the fourteen image (Portable Executable) subsystem types.</comment>
+  </data>
+  <data name="IMAGE_SUBSYSTEM_EFI_RUNTIME_DRIVER" xml:space="preserve">
+    <value>Image is a EFI Runtime Driver.</value>
+    <comment>This string corresponds to one of the fourteen image (Portable Executable) subsystem types.</comment>
+  </data>
+  <data name="IMAGE_SUBSYSTEM_NATIVE" xml:space="preserve">
+    <value>Image doesn't require a subsystem.</value>
+    <comment>This string corresponds to one of the fourteen image (Portable Executable) subsystem types.</comment>
+  </data>
+  <data name="IMAGE_SUBSYSTEM_NATIVE_WINDOWS" xml:space="preserve">
+    <value>Image is a native Win9x driver.</value>
+    <comment>This string corresponds to one of the fourteen image (Portable Executable) subsystem types.</comment>
+  </data>
+  <data name="IMAGE_SUBSYSTEM_OS2_CUI" xml:space="preserve">
+    <value>Image runs in the OS/2 character subsystem.</value>
+    <comment>This string corresponds to one of the fourteen image (Portable Executable) subsystem types.</comment>
+  </data>
+  <data name="IMAGE_SUBSYSTEM_POSIX_CUI" xml:space="preserve">
+    <value>Image runs in the Posix character subsystem.</value>
+    <comment>This string corresponds to one of the fourteen image (Portable Executable) subsystem types.</comment>
+  </data>
+  <data name="IMAGE_SUBSYSTEM_UNDEFINED_VALUE" xml:space="preserve">
+    <value>The specified image subsystem ID, {0} is undefined.</value>
+    <comment>This string corresponds to one of the fourteen image (Portable Executable) subsystem types.</comment>
+  </data>
+  <data name="IMAGE_SUBSYSTEM_UNKNOWN" xml:space="preserve">
+    <value>Unknown subsystem.</value>
+    <comment>This string corresponds to one of the fourteen image (Portable Executable) subsystem types.</comment>
+  </data>
+  <data name="IMAGE_SUBSYSTEM_WINDOWS_CE_GUI" xml:space="preserve">
+    <value>Image runs in the Windows CE subsystem.</value>
+    <comment>This string corresponds to one of the fourteen image (Portable Executable) subsystem types.</comment>
+  </data>
+  <data name="IMAGE_SUBSYSTEM_WINDOWS_CUI" xml:space="preserve">
+    <value>Image runs in the Windows character subsystem.</value>
+    <comment>This string corresponds to one of the fourteen image (Portable Executable) subsystem types.</comment>
+  </data>
+  <data name="IMAGE_SUBSYSTEM_WINDOWS_GUI" xml:space="preserve">
+    <value>Image runs in the Windows GUI subsystem.</value>
+    <comment>This string corresponds to one of the fourteen image (Portable Executable) subsystem types.</comment>
+  </data>
+  <data name="IMAGE_SUBSYSTEM_XBOX" xml:space="preserve">
+    <value>Image runs on XBOX.</value>
+    <comment>This string corresponds to one of the fourteen image (Portable Executable) subsystem types.</comment>
+  </data>
+  <data name="INCREMENT_CANNOT_BE_ZERO" xml:space="preserve">
+    <value>Must be greater than zero.</value>
+    <comment>The ReportDetails class uses this string as a value label in a report.</comment>
+  </data>
+  <data name="INCREMENT_PROPERTY_VALUE" xml:space="preserve">
+    <value>Increment Property Value</value>
+    <comment>The ReportDetails class uses this string as a value label in a report.</comment>
+  </data>
+  <data name="LOCAL_AND_UTC_TIME_TEMPLATE" xml:space="preserve">
+    <value>{0} ({1} UTC)</value>
+    <comment>Public static TimeDisplayFormatter.PrepareLocalAndUTCTimes constructs its output from this template and a pair of DateTime structures, the first of which is expected to represent local time, while the second represents UTC time.</comment>
+  </data>
+  <data name="MSG_ACCEPTED_DEFAULT_VALUE" xml:space="preserve">
+    <value>    {0} of {1}: {2} = {3}{4}</value>
+    <comment>Used by EnumerateMissingConfigurationValues method on PropertyDefaults class</comment>
+  </data>
+  <data name="MSG_ACCEPTED_LIST_END" xml:space="preserve">
+    <value>{0}End of list{0}</value>
+    <comment>Used by EnumerateMissingConfigurationValues method on PropertyDefaults class</comment>
+  </data>
+  <data name="MSG_ALL_CONFIG_SETTINGS_COVERED" xml:space="preserve">
+    <value>All {0} configuration settings defined for {1} are covered by its configuration file.</value>
+    <comment>Used by EnumerateMissingConfigurationValues method on PropertyDefaults class</comment>
+  </data>
+  <data name="MSG_DEFAULT_ACCEPTED" xml:space="preserve">
+    <value>{0} property default value of {1} accepted in lieu of value in configuration file, which is absent.</value>
+    <comment>Used by EnumerateMissingConfigurationValues method on PropertyDefaults class</comment>
+  </data>
+  <data name="MSG_SOME_CONFIG_SETTINGS_OMITTED" xml:space="preserve">
+    <value>{0} of {1} configuration settings defined for {2} are missing from its configuration file.{3}{3} Details follow.{3}{3}</value>
+    <comment>Used by EnumerateMissingConfigurationValues method on PropertyDefaults class</comment>
+  </data>
+  <data name="MSG_STACK_TRACE_IS_FROM_ENVIRONMENT" xml:space="preserve">
+    <value>at System.Environment.get_StackTrace()</value>
+    <comment>The RecoveredException object initializer uses this string to discard the irrelevant detail that the stack trace was retrieved from the application environment.</comment>
+  </data>
+  <data name="MSG_STRING_FIXUPS_TOSTRING" xml:space="preserve">
+    <value>InputValue = {0}, OutputValue = {1}</value>
+    <comment>The ToString override on StringFixups (a structure) uses this to display the two structure members.</comment>
+  </data>
+  <data name="PROCESSOR_AND_PROCESS_ARCHITECTURES" xml:space="preserve">
+    <value>{2}Processor Architecture = {0}{2}Process Machine Word   = {1} bits{2}</value>
+    <comment>Method BasicSystemInfoDisplayMessages.ShowArchitectureBits formats its message from this template.</comment>
+  </data>
+  <data name="SWITCH_IS_OFF" xml:space="preserve">
+    <value>OFF</value>
+    <comment>The CmdLneArgsBasic class tests Boolean switch values against this literal, which signifies that the switch state is off (False).</comment>
+  </data>
+  <data name="SWITCH_IS_ON" xml:space="preserve">
+    <value>ON</value>
+    <comment>The CmdLneArgsBasic class tests Boolean switch values against this literal, which signifies that the switch state is on (True).</comment>
+  </data>
+  <data name="SYNCROOT_TOSTRING_TEMPLATE" xml:space="preserve">
+    <value>{{{0} ({1})}}</value>
+    <comment>The first format item is enclosed in brackets, which must be doubled to escape them.</comment>
+  </data>
+  <data name="TDF_INVALID_ARG_VALUE" xml:space="preserve">
+    <value>The value of {1} specified for argument {0} is invalid.</value>
+    <comment>The InvalidEnumArgValueMessage method of class TimeDisplayFormatter constructs an error message from this template.</comment>
+  </data>
+  <data name="TDF_INVALID_ENUM_VALUE" xml:space="preserve">
+    <value>The new value of {1} specified for the {0} property is invalid.{3}The previous value of {2} is retained.</value>
+    <comment>The InvalidEnumValueMessage method of class TimeDisplayFormatter constructs an error message from this template.</comment>
+  </data>
+  <data name="TIME_LABEL_LOCAL_LONG" xml:space="preserve">
+    <value>Local</value>
+    <comment>This string appears in messages that display local times.</comment>
+  </data>
+  <data name="TIME_LABEL_LOCAL_SHORT" xml:space="preserve">
+    <value>LOC</value>
+    <comment>Use this string to keep the character widths of a local and UTC time equal.</comment>
+  </data>
+  <data name="TIME_LABEL_UTC" xml:space="preserve">
+    <value>UTC</value>
+    <comment>This string appears in messages that display UTC times.</comment>
+  </data>
+  <data name="TRACEMSG_EXCEPTION_NOT_THROWN_1" xml:space="preserve">
+    <value>Properties of the Exception object returned by TraceLogger.WriteWithBothTimesLabeledLocalFirst: Message                        = {0}</value>
+    <comment>Protected method SetPropertiesFromDLLConfiguration uses this template to generate a trace log entry for an exception that was handled without throwing an exception.</comment>
+  </data>
+  <data name="TRACEMSG_EXCEPTION_NOT_THROWN_2" xml:space="preserve">
+    <value>Source                         = {0}</value>
+    <comment>Protected method SetPropertiesFromDLLConfiguration uses this template to generate a trace log entry for an exception that was handled without throwing an exception.</comment>
+  </data>
+  <data name="TRACEMSG_EXCEPTION_NOT_THROWN_3" xml:space="preserve">
+    <value>TargetSite.Name                = {0}</value>
+    <comment>Protected method SetPropertiesFromDLLConfiguration uses this template to generate a trace log entry for an exception that was handled without throwing an exception.</comment>
+  </data>
+  <data name="TRACEMSG_EXCEPTION_NOT_THROWN_4" xml:space="preserve">
+    <value>StackTrace                     = {0}</value>
+    <comment>Protected method SetPropertiesFromDLLConfiguration uses this template to generate a trace log entry for an exception that was handled without throwing an exception.</comment>
+  </data>
+  <data name="TRACEMSG_EXCEPTION_NOT_THROWN_5" xml:space="preserve">
+    <value>InnerException.Message         = {0}</value>
+    <comment>Protected method SetPropertiesFromDLLConfiguration uses this template to generate a trace log entry for an exception that was handled without throwing an exception.</comment>
+  </data>
+  <data name="TRACEMSG_EXCEPTION_NOT_THROWN_6" xml:space="preserve">
+    <value>InnerException.Source          = {0}</value>
+    <comment>Protected method SetPropertiesFromDLLConfiguration uses this template to generate a trace log entry for an exception that was handled without throwing an exception.</comment>
+  </data>
+  <data name="TRACEMSG_EXCEPTION_NOT_THROWN_7" xml:space="preserve">
+    <value>InnerException.TargetSite.Name = {0}</value>
+    <comment>Protected method SetPropertiesFromDLLConfiguration uses this template to generate a trace log entry for an exception that was handled without throwing an exception.</comment>
+  </data>
+  <data name="TRACEMSG_EXCEPTION_NOT_THROWN_8" xml:space="preserve">
+    <value>InnerException.StackTrace      = {0}</value>
+    <comment>Protected method SetPropertiesFromDLLConfiguration uses this template to generate a trace log entry for an exception that was handled without throwing an exception.</comment>
+  </data>
+  <data name="TRACEMSG_EXCEPTION_NOT_THROWN_9" xml:space="preserve">
+    <value>"                                                                                                InnerException                 = [null]</value>
+    <comment>Protected method SetPropertiesFromDLLConfiguration uses this template to generate a trace log entry for an exception that was handled without throwing an exception.</comment>
+  </data>
+</root>

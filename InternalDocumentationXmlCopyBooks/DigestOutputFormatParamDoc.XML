@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+
+    <member name="DigestOutputFormatParamDoc">
+      <param name="penmOutputFormat">
+        This optional parameter specifies the output format of the message
+        digest. If omitted, the default is OuutputFormat.HexadecimalDigits,
+        which outputs the digest as a string of hexadecimal digits. The
+        other options are OuutputFormat.Base64String, which outputs the
+        digest as a Base64 encoded string, and
+        OuutputFormat.PrefixedBase64String, which outputs a Base64 encoded
+        string that includes a prefix that identifies the hashing algorithm
+        used to generate the digest. The prefix is derived from the name of
+        the hashing algorithm, and is followed by an underscore character.
+        For example, the 16-byte MD5 digest is represented by a string of 26
+        characters, beginning with "MD5_", and the 64-byte SHA-512 digest is
+        represented by a string of 92 characters, beginning with "SHA512_".
+      </param>
+    </member>
+
+  </members>
+</doc>

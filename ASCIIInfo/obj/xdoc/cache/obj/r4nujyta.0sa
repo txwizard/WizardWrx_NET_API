@@ -1,0 +1,10 @@
+id: ASCIIInfo
+language: CSharp
+name:
+  Default: ASCIIInfo
+qualifiedName:
+  Default: ASCIIInfo
+type: Assembly
+modifiers: {}
+items: []
+references: {}

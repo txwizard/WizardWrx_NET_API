@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+
+    <!-- Reusable digest length table -->
+    <member name="DigestLengthTable">
+      <returns>
+        The returned byte array contains the computed message digest. Its
+        length is determined by the bit length of the digest algorithm, as
+        shown in the following table.
+
+        <list type="table">
+          <listheader>
+            <term>Digest Bits</term>
+            <description>Array Length (bytes)</description>
+          </listheader>
+
+          <item>
+            <term>256</term>
+            <description>32</description>
+          </item>
+
+          <item>
+            <term>384</term>
+            <description>48</description>
+          </item>
+
+          <item>
+            <term>512</term>
+            <description>64</description>
+          </item>
+        </list>
+      </returns>
+    </member>
+
+    <!-- Reusable parameter paragraph: empty input is invalid -->
+    <member name="DigestEmptyInputWarning">
+      <para>
+        Although the cryptography specifications define message digests for
+        the empty array, they are of no practical value in the contexts in
+        which this class is intended to be used, which include comparing and
+        validating strings and files. In such contexts, an empty array or stream
+        is always indicative of an error.
+      </para>
+    </member>
+
+  </members>
+</doc>

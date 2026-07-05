@@ -1,0 +1,481 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WizardWrx.ASCIIInfo</name>
+    </assembly>
+    <members>
+        <member name="T:WizardWrx.ASCIICharacterDisplayInfo">
+            <summary>
+            Instances of this class represent individual ASCII characters. Since the
+            NUL character is defined, and occupies the first element, the numeric 
+            code that corresponds to a character maps directly to the corresponding
+            element in this array.
+            </summary>
+            <example>
+            The ASCII code for a space is 32. ASCIICharacterDisplayInfo[32], for C#,
+            or ASCIICharacterDisplayInfo(32), for Visual Basic, returns the item for
+            the space character.
+            
+            Likewise, the ASCII code for a horizontal TAB character is 9. Hence, the
+            C# expression ASCIICharacterDisplayInfo[9] evaluates to the information
+            about the TAB character. Likewise, ASCIICharacterDisplayInfo(9) does the
+            same thing in Visual Basic.
+            
+            The following example comes from production code in the class library
+            that motivated me to create this library.
+            
+                ASCIICharacterDisplayInfo [ ] asciiCharTbl = ASCII_Character_Display_Table.GetTheSingleInstance ( ).AllASCIICharacters;
+                StringBuilder sbTheBadChar = new StringBuilder ( );
+                sbTheBadChar.Append ( asciiCharTbl [ ( uint ) _chrBad ].DisplayText );
+            
+            Obviously, more things go into the message before it is returned to the
+            calling routine.
+            </example>
+            <see cref="T:WizardWrx.ASCII_Character_Display_Table"/>
+        </member>
+        <member name="T:WizardWrx.ASCIICharacterDisplayInfo.CharacterType">
+            <summary>
+            This enumeration maps the CharType strings to fast, efficient, safe
+            integer values that correspond to three broad groups of characters.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ASCIICharacterDisplayInfo.CharacterType.Undefined">
+            <summary>
+            The value is uninitialized.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ASCIICharacterDisplayInfo.CharacterType.NonPrintable">
+            <summary>
+            The character is of a nonprintable type. Most of these are
+            output device control codes.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ASCIICharacterDisplayInfo.CharacterType.Printable">
+            <summary>
+            These are the characters from which most text is composed.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ASCIICharacterDisplayInfo.CharacterType.Extended">
+            <summary>
+            These are the extended ASCII characters that have code points at
+            or above 128, that require 8 bits to represent in binary coding.
+            </summary>
+        </member>
+        <member name="T:WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype">
+            <summary>
+            This enumeration maps the Subtype strings to fast, efficient, safe
+            integer values that correspond to ten specialized groups of
+            characters. These correspond roughly to the Unicode character
+            categories.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.Undefined">
+            <summary>
+            The value is uninitialized.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.NULL">
+            <summary>
+            There is but one character in this subgroup, the ASCII NULL,
+            sometimes called NUL, which has a numerical value of zero.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.Control">
+            <summary>
+            These are the characters that have code point values between 1
+            and 31, most of which are device control characters that
+            originally drove line printers.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.White_Space">
+            <summary>
+            White space is another tiny subgroup; it contains five code
+            points, 32, the everyday SPACE character, 160, the nonbreaking
+            Space, 8, the destructive backspace, 9, the horizontal tab, and
+            11, the vertical tab, only one of which, the regular space, is
+            considered printable. The nonbreaking space, also printable, is
+            classified as an extended character because its code point is
+            greater than 127, while the rest fall into the group that is
+            comprised otherwise of device control codes. Since that is their
+            primary function, they belong in this group.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.Punctuation">
+            <summary>
+            Characters in this group are generally accepted as punctuation
+            marks, of which one, the inverted question mark, belongs to the
+            Extended group, owing to its high code point, 191.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.Symbol">
+            <summary>
+            Characters in this group are a mixed bag of mathematical and
+            other symbols.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.Numeral">
+            <summary>
+            These characters represent the Arabic numerals zero through nine.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.UC_Latin_1_Letter">
+            <summary>
+            Characters in this group represent the upper case letters of the
+            Latin alphabet.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.LC_Latin_1_Letter">
+            <summary>
+            Characters in this group represent the lower case letters of the
+            Latin alphabet.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.Greek_Letter">
+            <summary>
+            Only a handful of characters, all of which fall into the
+            Extended group, are specifically identified as letters of the
+            Greek alphabet. Others may have been overlooked. If you find one
+            of them, please submit a pull request or open an issue.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype.Other_Letter">
+            <summary>
+            This large group represents latters and joined characters used
+            in other Western alphabets.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.ASCIICharacterDisplayInfo.#ctor">
+            <summary>
+            This constructor satisfies interfaces that require a default
+            constructor. It is marked private because the assembly that owns all
+            instances of this class uses one of the other two constructors.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.ASCIICharacterDisplayInfo.#ctor(System.UInt32)">
+            <summary>
+            Create an instance for a character for which the alternate display
+            is undefined because it is either unnecessary or impractical.
+            </summary>
+            <param name="puintCode">
+            The code is an unsigned integer between zero and 255.
+            </param>
+        </member>
+        <member name="M:WizardWrx.ASCIICharacterDisplayInfo.#ctor(System.UInt32,System.Char,WizardWrx.ASCIICharacterDisplayInfo.CharacterType,WizardWrx.ASCIICharacterDisplayInfo.CharacterSubtype,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            All instances of this class are created by calling this constructor.
+            </summary>
+            <param name="puintCode">
+            The code is an unsigned integer between zero and 255.
+            
+            This argument receives the Code column from the embedded CSV file,
+            which is stored and becomes the subscript (index) of an array.
+            </param>
+            <param name="pchrCharacter">
+            This value is the Unicode representation of the character.
+            
+            This argument receives the CHAR(n) column from the embedded CSV
+            file.
+            </param>
+            <param name="penmCharacterType">
+            This value is the CharacterType enumeration mapping of the
+            character.
+            
+            This argument receives the CharType column from the embedded CSV
+            file.
+            </param>
+            <param name="penmCharacterSubtype">
+            This value is the CharacterSubtype enumeration mapping of the
+            character.
+            
+            This argument receives the Subtype column from the embedded CSV
+            file.
+            </param>
+            <param name="pstrCHAR">
+            This value is the standard two or three character acronymn for the
+            character, including the square brackets that usually enclose it.
+            This value is meaningful only for the Control Characters group. This
+            value is blank for all others.
+            
+            This argument receives the CHAR column from the embedded CSV file. 
+            </param>
+            <param name="pstrDescription">
+            When appropriate, this field returns a short text description of the
+            character.
+            
+            This argument receives the DESCRIPTION column from the embedded CSV
+            file.
+            </param>
+            <param name="pstrHTMLName">
+            This field returns the HTML entity name, when one exists, of the
+            character, its HTML entity string.
+            
+            This argument receives the HTML Name column from the embedded CSV
+            file.
+            </param>
+            <param name="pstrAlternateText">
+            Specify alternate text to display in place of the actual character.
+            
+            This argument receives the Display column from the embedded CSV
+            file.
+            </param>
+            <param name="pstrComment">
+            Specify a comment for optional display on listings.
+            
+            This argument receives the Comment column from the embedded CSV
+            file.
+            </param>
+        </member>
+        <member name="P:WizardWrx.ASCIICharacterDisplayInfo.ASCIICharacter">
+            <summary>
+            Gets the Unicode character represented by the code
+            </summary>
+        </member>
+        <member name="P:WizardWrx.ASCIICharacterDisplayInfo.AlternateText">
+            <summary>
+            Gets an alternative visual representation of certain nonprintable
+            and otherwise ambiguous characters, such as the SPACE character.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.ASCIICharacterDisplayInfo.CHAR">
+            <summary>
+            This value is the standard two or three character acronymn for the
+            character, including the square brackets that usually enclose it.
+            This value is meaningful only for the Control Characters group. This
+            value is blank for all others.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.ASCIICharacterDisplayInfo.CharType">
+            <summary>
+            Gets the CharacterType enumeration mapping of the character
+            </summary>
+        </member>
+        <member name="P:WizardWrx.ASCIICharacterDisplayInfo.CharSubType">
+            <summary>
+            Gets the CharacterSubtype enumeration mapping of the character
+            </summary>
+        </member>
+        <member name="P:WizardWrx.ASCIICharacterDisplayInfo.Code">
+            <summary>
+            Gets the unsigned integer representation of the ASCII code
+            </summary>
+        </member>
+        <member name="P:WizardWrx.ASCIICharacterDisplayInfo.CodeAsDecimal">
+            <summary>
+            Gets a string representation of the raw ASCII code as a decimal
+            number, formatted to always occupy the maximum number of characters
+            needed, three
+            </summary>
+        </member>
+        <member name="P:WizardWrx.ASCIICharacterDisplayInfo.CodeAsHexadecimal">
+            <summary>
+            Gets a string representation of the ASCII code as a hexadecimal
+            number
+            </summary>
+        </member>
+        <member name="P:WizardWrx.ASCIICharacterDisplayInfo.UnicodeCodePoint">
+            <summary>
+            Gets a string representation of the Unicode code point
+            </summary>
+        </member>
+        <member name="P:WizardWrx.ASCIICharacterDisplayInfo.Comment">
+            <summary>
+            Gets the associated comment, if one exists, or returns the empty
+            string.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.ASCIICharacterDisplayInfo.Description">
+            <summary>
+            When appropriate, this field returns a short text description of the
+            character.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.ASCIICharacterDisplayInfo.DisplayText">
+            <summary>
+            Use this property to guarantee that any character will display
+            something useful when the character is presented on its own, out of
+            context, such as in an error message.
+            </summary>
+            <remarks>
+            The objective of this property is to return something that is always
+            acceptable in printed matter, without surprises such as line feeds,
+            line wraps, and page ejects, among other things elicited by some of
+            the control codes.
+            </remarks>
+        </member>
+        <member name="P:WizardWrx.ASCIICharacterDisplayInfo.HTMLName">
+            <summary>
+            This field returns the HTML entity name, when one exists, of the
+            character, its HTML entity string. Otherwise, the return value is
+            the empty string, represented herein by a true constant,
+            SpecialStrings.EMPTY_STRING.
+            </summary>
+            <remarks>
+            If this returns anything besides the empty string, the string
+            returned by this property should probably take its place in HTML
+            text.
+            </remarks>
+        </member>
+        <member name="P:WizardWrx.ASCIICharacterDisplayInfo.URLEncoding">
+            <summary>
+            Gets the URLEncoding value of the character, which is available for
+            ANY character, though it is needed only for punctuation, control
+            codes, white space, and other special characters
+            </summary>
+        </member>
+        <member name="M:WizardWrx.ASCIICharacterDisplayInfo.ToString">
+            <summary>
+            Override ToString to render all three defined formats and most other
+            properties.
+            </summary>
+            <returns>
+            The return value is a string containing a printable representation
+            of the character, followed by its hexadecimal and decimal values,
+            both enclosed in a single pair of parenetheses, then by every
+            conceivable way to represent the character except the URL encoding,
+            which can be inferred from the hexadecimal string inserted as the
+            CodeAsHexadecimal property value.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.ASCIICharacterDisplayInfo.DisplayCharacterInfo(System.Char)">
+            <summary>
+            Create a ASCIICharacterDisplayInfo instance to represent a specified
+            ASCII character, and call its ToString method to return all three
+            representations of it (Printable, Hexadecimal, and Decimal, in that
+            order.
+            </summary>
+            <param name="pchr">
+            Specify the character for which to render the three representations.
+            </param>
+            <returns>
+            Return the output of ToString on the ASCIICharacterDisplayInfo.
+            </returns>
+        </member>
+        <member name="T:WizardWrx.ASCII_Character_Display_Table">
+            <summary>
+            Provide read only access to a table of ASCII characters and text to
+            display for selected special characters.
+            </summary>
+            <example>
+            The ASCII code for a space is 32. ASCIICharacterDisplayInfo[32], for C#,
+            or ASCIICharacterDisplayInfo(32), for Visual Basic, returns the item for
+            the space character.
+            
+            Likewise, the ASCII code for a horizontal TAB character is 9. Hence, the
+            C# expression ASCIICharacterDisplayInfo[9] evaluates to the information
+            about the TAB character. Likewise, ASCIICharacterDisplayInfo(9) does the
+            same thing in Visual Basic.
+            
+            The following example comes from production code in the class library
+            that motivated me to create this library.
+            
+                ASCIICharacterDisplayInfo [ ] asciiCharTbl = ASCII_Character_Display_Table.GetTheSingleInstance ( ).AllASCIICharacters;
+                StringBuilder sbTheBadChar = new StringBuilder ( );
+                sbTheBadChar.Append ( asciiCharTbl [ ( uint ) _chrBad ].DisplayText );
+            
+            Obviously, more things go into the message before it is returned to the
+            calling routine.
+            </example>
+            <seealso cref="T:WizardWrx.ASCIICharacterDisplayInfo"/>
+        </member>
+        <member name="M:WizardWrx.ASCII_Character_Display_Table.GetTheSingleInstance">
+            <summary>
+            Gets a reference to the single ASCII_Character_Display_Table
+            instance.
+            </summary>
+            <returns>
+            The return value is a reference to the single instance of this class
+            that is created in response to the first call to this method. Please
+            see the remarks.
+            </returns>
+            <remarks>
+            The example given under the help topic for this class shows you that
+            you need not actually allocate storage for the instance, since what
+            you really need is a copy of the ASCIICharacterDisplayInfo table,
+            available through the read only AllASCIICharacters property, which
+            can be assigned directly to an AllASCIICharacters array.
+            
+            To preserve its independence, this class uses the archaic Singleton
+            implementation, rather than inherit from the abstract base class in
+            WizardWrx.DllServices2.dll, although I could certainly fix that by
+            linking the source code into this assembly. Since that creates an
+            even more awkward dependency, and I don't want to put an actual copy
+            in this source tree, I'll leave it alone. After all, this class is
+            not exactly a high traffic property.
+            </remarks>
+        </member>
+        <member name="P:WizardWrx.ASCII_Character_Display_Table.AllASCIICharacters">
+            <summary>
+            Gets the populated ASCIICharacterDisplayInfo array that is the sole
+            public property of this class, which exists to ensure that exactly
+            one instance of this table exists.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.ASCII_Character_Display_Table.InitialzeInstance">
+            <summary>
+            Since the class is a singleton, I separated the initializer from the
+            constructor, as has been my custom.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ASCII_Character_Display_Table._asciiTable">
+            <summary>
+            It all comes down to this little array.
+            </summary>
+        </member>
+        <member name="T:WizardWrx.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Properties.Resources.DISPLAY_TEMPLATE">
+            <summary>
+              Looks up a localized string similar to Code = {0} (Hex = {1}), Character Type = {2}, Character Subtype = {3}, Unicode Display {4}, Alternate Display = {5}, HTML Entity Name = {6}, Control Code Acronymn {7}, Description = {8}, Comment = {9}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Properties.Resources.ERRMSG_BAD_DETAIL_ROW">
+            <summary>
+              Looks up a localized string similar to Internal Table Error: Detaill row {0} is invalid.{3}Expected field count = {1}{3}Actaul field count   = {2}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Properties.Resources.ERRMSG_BAD_LABEL_ROW">
+            <summary>
+              Looks up a localized string similar to Internal Table Error: The label row is invalid.{2}Expected label row = {0}{2}Actaul label row   = {1}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Properties.Resources.ERRMSG_CHAR_CODE_OUT_OF_RANGE">
+            <summary>
+              Looks up a localized string similar to Character code {0} is out of range. It must be between {1} and {2}..
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Properties.Resources.ERRMSG_EMBEDDED_RESOURCE_NOT_FOUND">
+            <summary>
+              Looks up a localized string similar to Resource {0} cannot be found in assembly {1}..
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Properties.Resources.ERRMSG_EMBEDDED_RESOURCE_READ_ERROR">
+            <summary>
+              Looks up a localized string similar to An error occurred while reading data from resources embedded in an assembly.{3}Assembly Full Name     = {0}{3}Internal Resource Name = {1}{3}I/O Error Message      = {2}{3}{3}The associated Inner Exception may contain additional clues..
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Properties.Resources.ERRMSG_EMBEDDED_RESOURCE_READ_TRUNCATED">
+            <summary>
+              Looks up a localized string similar to An error occurred while reading a file from resources embedded in an assembly.{3}Internal Name = {0}{3}Expected File Length (bytes) = {1}{3}Bytes successfully read = {2}.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.Properties.Resources.ERRMSG_UNEXPECTED_ROW_COUNT">
+            <summary>
+              Looks up a localized string similar to Internal Table Error: The ASCII Table should contain {0} rows. Instead, it contains {1} rows..
+            </summary>
+        </member>
+    </members>
+</doc>

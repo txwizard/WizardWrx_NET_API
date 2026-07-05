@@ -1,0 +1,1258 @@
+﻿/*
+    ============================================================================
+
+    Namespace:          WizardWrx
+
+    Class Name:         SpecialStrings
+
+    File Name:          SpecialStrings.cs
+
+    Synopsis:           Define a handful of frequently used fixed strings that
+                        have precise contents that are constant irrespective of
+                        culture, and can be challenging to input correctly when
+                        needed.
+
+	Remarks:            This class is one of a constellation of static classes
+						that define a wide variety of symbolic constants that I
+						use to make my code easier to understand when I need a
+						refresher or am about to change it.
+
+						This class implements a subset of the characters defined
+                        in WizardWrx.MagicNumbers. Some of those constants,
+                        especially those intended mainly for use with arrays and
+                        lists, have moved into sibling classes in this library.
+
+						The XML documentation in this class incorporates cross
+						references to classes defined in other modules that are
+						compiled into the same assembly. A couple of hours has
+						yielded the following lessons.
+
+						1)	You can refer to any other class in the assembly, if
+							you fully qualify it with respect to the namespace
+							declared at the top of the same source module.
+
+						2)	All references are subject to the above rule:
+
+								- Argument types used to disambiguate overloads
+								- Method names
+								- Argument types used to disambiguate overloads
+								- Named constants
+
+							Examples:
+
+								These don't work.
+
+									GetReservedErrorMessage(ErrorExitOptions)
+									ExceptionLogger.GetReservedErrorMessage(ErrorExitOptions)
+									ExceptionLogger.GetReservedErrorMessage(ExceptionLogger.ErrorExitOptions)
+									ExceptionLogger.GetReservedErrorMessage(DLLServices2.ExceptionLogger.ErrorExitOptions)
+
+								This works.
+
+									DLLServices2.ExceptionLogger.GetReservedErrorMessage(DLLServices2.ExceptionLogger.ErrorExitOptions)
+
+							Notwithstanding assertions in the documentation that
+							these cross references respect using irectiv4es when
+							resolving, it appears that this courtesy may exclude
+							references to the current assembly (the one being
+							built), which makes sense, upon reflection, since it
+							is in a state of flux, and has yet to be persisted.
+
+						3)	See and SeeAlso XML tags can refer to Web pages, but
+							the correct keyword is not CREF, but HREF.
+
+    Author:             David A. Gray
+
+    License:            Copyright (C) 2014-2018, David A. Gray. 
+						All rights reserved.
+
+                        Redistribution and use in source and binary forms, with
+                        or without modification, are permitted provided that the
+                        following conditions are met:
+
+                        *   Redistributions of source code must retain the above
+                            copyright notice, this list of conditions and the
+                            following disclaimer.
+
+                        *   Redistributions in binary form must reproduce the
+                            above copyright notice, this list of conditions and
+                            the following disclaimer in the documentation and/or
+                            other materials provided with the distribution.
+
+                        *   Neither the name of David A. Gray, nor the names of
+                            his contributors may be used to endorse or promote
+                            products derived from this software without specific
+                            prior written permission.
+
+                        THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+                        CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
+                        WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+                        WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+                        PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
+                        David A. Gray BE LIABLE FOR ANY DIRECT, INDIRECT,
+                        INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+                        (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+                        SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+                        PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+                        ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+                        LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+                        ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+                        IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+    ----------------------------------------------------------------------------
+    Revision History
+    ----------------------------------------------------------------------------
+
+    Date       Version Author Description
+    ---------- ------- ------ --------------------------------------------------
+	2015/06/23 5.5     DAG    Relocate to WizardWrx.DLLServices2 class library, 
+                              promote to the root WizardWrx namespace, add
+                              special characters that I originally defined in
+                              class WizardWrx.SharedUt2.MagicNumbers, and
+                              cross reference related constants defined in other
+                              classes.
+
+    2015/08/31 5.6     DAG    Add a couple of overlooked special strings.
+
+	2016/05/12 6.1     DAG    Add ERRMSG_SUCCESS_PLACEHOLDER and cross reference
+                              related routines in this library and companion
+                              ConsoleAppAids2.
+
+	2016/06/04 6.2     DAG    Resolve ambiguous and unreachable cross references
+							  tags in the XML documentation.
+
+	2017/02/28 7.0     DAG    Break this library apart, so that smaller subsets
+	                          of classes can be distributed and consumed
+                              independently.
+
+						      This module moved into WizardWrx.Common.dll, while
+                              remaining a part of the root WizardWrx namespace.
+
+	2017/06/24 7.0     DAG    Cross reference the managed string resources that
+                              correspond to string constants, which are under
+                              consideration for being marked as deprecated.
+
+	2018/10/07 7.1     DAG    Define SPACE_CHAR for use when only a string will
+	                          do, and cross reference the new constant to its
+							  antecedent, SpecialCharacters.SPACE_CHAR.
+
+	2019/04/27 7.15    DAG    Define the following single-character strings:
+
+                                   COLON
+                                   COMMA
+                                   DOUBLE_QUOTE
+                                   FULL_STOP
+                                   HYPHEN
+                                   SEMICOLON
+                                   SINGLE_QUOTE
+                                   TAB_CHAR
+                                   UNDERSCORE_CHAR
+
+	2019/04/27 7.24    DAG    Define the following single-character strings:
+
+                                   ASTERISK
+                                   BRACE_LEFT
+                                   BRACE_RIGHT
+                                   BRACKET_LEFT
+                                   BRACKET_RIGHT
+                                   ASTERISK_CHAR
+                                   AT_SIGN
+                                   CARRIAGE_RETURN
+                                   CHAR_NUMERAL_0
+                                   CHAR_NUMERAL_1
+                                   CHAR_NUMERAL_2
+                                   CHAR_NUMERAL_7
+                                   CHAR_LC_I
+                                   CHAR_UC_I
+                                   CHAR_LC_L
+                                   CHAR_UC_L
+                                   CHAR_LC_O
+                                   CHAR_UC_O
+                                   CHAR_LC_Z
+                                   CHAR_UC_Z
+                                   CHECK_MARK_CHAR
+                                   EQUALS_SIGN
+                                   HASH_TAG
+                                   LAST_ASCII_CHAR
+                                   LINEFEED
+                                   NONBREAKING_SPACE_CHAR
+                                   PARENTHESIS_LEFT
+                                   PARENTHESIS_RIGHT
+                                   PIPE_CHAR
+                                   QUESTION_MARK
+
+	2021/12/09 8.0.174 DAG 	  Add an overlooked, but often needed TWO_SPACES.
+
+	2022/04/24 8.0.296 DAG    This SpecialStrings collection gets the following 
+							  eight new string entities, of which one, 
+                              HTML_NONBREAKING_SPACE_LC, was technically already
+                              present under another name, HTML_NONBREAKING_SPACE.
+
+								HTML_LINE_BREAK_LC
+								HTML_LINE_BREAK_UC
+
+								HTML_NONBREAKING_SPACE_LC
+								HTML_NOLBREAKING_SPACE_UC
+
+								HTML_PARAGRAPH_OPEN_TAG_LC
+								HTML_PARAGRAPH_OPEN_TAG_UC
+
+								HTML_PARAGRAPH_CLOSE_TAG_LC
+								HTML_PARAGRAPH_CLOSE_TAG_UC
+
+	2022/05/19 8.0.205 DAG    Add BACK2BACK_NEWLINES, a specialized string for
+                              use by methods that return string representations
+                              of reports that were intended for display on a
+                              console.
+
+	2022/11/22 9.0.246 DAG    New format constants:
+
+								LOGICAL_NEGATE
+								SQL_DATETIME_FORMAT_PRECISE
+								SQL_DATETIME_FORMAT_FULL
+								SQL_DATE_FORMAT
+
+							  The first string listed above, LOGICAL_NEGATE, is
+							  paired with a like-named character constant, for
+                              the same reason the PIPE_CHAR amd others exist in
+                              both formats and classes.
+
+	2023/11/23 9.0.253 DAG   Move DOUBLE_SPACE, EMBEDDED_TAB and OUTPUT_TAB from
+                             class ReportHelpers, which is also moving to this
+                             library.
+
+	2024/03/18 9.0.268 DAG   Add CSV_ESCAPED_DOUBLE_QUOTE (ASCII code 0x22)
+                             and SQL_ESCAPED_SINGLE_QUOTE (ASCII code 0x27).
+
+	2025/10/19 9.0.270 DAG   Add: EMPTY_JSON_ARRAY (@"[]")
+                                  EMPTY_JSON_OBJECT (@"{}")                                  
+                                  URL_PATH_DELIMITER ('/') 
+                                  WINDOWS_PATH_DELIMITER ('\')
+
+	2025/10/19 9.0.274 DAG   Add constant HTML_ENTITY_SPACE_CHARACTER (@"%20").
+
+	2025/11/27 9.0.278 DAG   Add the following symbolic constants.
+
+								COLON_SPACE
+								COMMA_SPACE
+								DOUBLE_QUOTE_SPACE
+								SPACE_DOUBLE_QUOTE
+								SPACE_BOUNDED_EQUALS_SIGN
+								FULL_STOP_SPACE
+								SPACE_PARENTHESIS_LEFT
+								SPACE_BOUNDED_PARENTHESIS_LEFT
+								SPACE_PARENTHESIS_RIGHT
+								SPACE_BOUNDED_PARENTHESIS_RIGHT
+								SEMICOLON_SPACE
+
+                             The meanings of the foregoing names should be self
+                             evident. Nevertheless, they are set forth in the
+                             ChangeLog entry dated 2025/11/27.
+
+	2025/11/28 9.0.281 DAG   Add Unicode code points: BULLET
+                                                      CHECK_MARK
+                                                      CROSS_MARK
+                                                      RIGHT_ARROW
+
+	2026/04/09 9.0.287 DAG   Add the following aliases for existing strings, for
+                             the sake of clarity in source code listings.
+
+                                 JSON_ARRAY_PREFIX = BRACKET_LEFT      `[`
+							     JSON_ARRAY_SUFFIX = BRACKET_RIGHT     `]`
+                                 JSON_PREFIX       = BRACE_LEFT        `{`
+								 JSON_SUFFIX       = BRACE_RIGHT       `}`
+                                 JSON_OBJECT_EMPTY = EMPTY_JSON_OBJECT `{}`
+                                 JSON_ARRAY_EMPTY  = EMPTY_JSON_ARRAY  `[]`
+    ============================================================================
+*/
+
+namespace WizardWrx
+{
+	/// <summary>
+	/// <para>
+	/// This class defines special purpose strings that are either difficult to
+	/// get right in the first place, display ambiguously in text editors and
+	/// printed source code listings, or are in other ways either ambiguous or
+	/// special.
+	/// </para>
+	/// <para>
+	/// Since static classes are implicitly sealed, this class cannot be inherited.
+	/// </para>
+	/// </summary>
+	/// <remarks>
+	/// <para>
+	/// In character-mode (console) applications that use them, the Unicode
+	/// glyphs, BULLET, CHECK_MARK, CROSS_MARK, and RIGHT_ARROW, require a
+	/// console that supports UTF-8. Use <see cref="ConsoleSymbols.Initialize"/>
+	/// to coerce the console to use a UTF-8 code page that supports them.
+	/// Additionally, to properly display these glyphs, your console must render
+	/// in a font face that supports these Unicode glyphs. Examples are Consolas,
+	/// Cascadia Code, and Segoe UI Emoji.
+	/// </para>
+	/// <para>
+	/// For ease of access, I promoted the classes that expose only constants to
+	/// the root of the WizardWrx namespace.
+	/// </para>
+	/// </remarks>
+	/// <seealso cref="ArrayInfo"/>
+	/// <seealso cref="MagicNumbers"/>
+	/// <seealso cref="SpecialCharacters"/>
+	public static class SpecialStrings
+	{
+		/// <summary>
+		/// Use this when you need to remove or replace ampersand literals in a string.
+		/// </summary>
+		/// <seealso cref="SpecialCharacters.AMPERSAND"/>
+		public const string AMPERSAND = @"&";
+
+		/// <summary>
+		/// Asterisks are everywhere; use this constant to make asterisks that
+		/// are intended to be treated as characters unambiguous.
+		/// </summary>
+		/// <seealso cref="AMPERSAND"/>
+		/// <seealso cref="COLON"/>
+		/// <seealso cref="HASH_TAG"/>
+		/// <seealso cref="PERCENT_SIGN"/>
+		/// <seealso cref="PIPE_CHAR"/>
+		/// <seealso cref="SEMICOLON"/>
+		/// <seealso cref="TAB_CHAR"/>
+		/// <seealso cref="UNDERSCORE_CHAR"/>
+		public const string ASTERISK = @"*";
+
+		/// <summary>
+		/// Use this when your code requires a string composed of a single AT
+		/// character literal, and you want the listing to be crystal clear
+		/// about what it is.
+		/// </summary>
+		/// <seealso cref="SpecialCharacters.AT_CHAR"/>
+		public const string AT_CHAR = @"@";
+
+		/// <summary>
+		/// A URI that ends with a forward slash calls forth this specially
+		/// named page.
+		/// </summary>
+		/// <seealso cref="ASP_APP_START_PAGE_KEY"/>
+		/// <seealso cref="ASP_RELATIVE_PATH_BEGIN"/>
+		/// <seealso cref="ASP_REL_EXEC_PATH_PREFIX"/>
+		public const string ASP_APP_DIR_DEFAULT_START_PAGE = @"default.aspx";
+
+		/// <summary>
+		/// Key, in web.config, that contains the name of the application's
+		/// start (home) page.
+		/// </summary>
+		/// <seealso cref="ASP_APP_DIR_DEFAULT_START_PAGE"/>
+		/// <seealso cref="ASP_RELATIVE_PATH_BEGIN"/>
+		/// <seealso cref="ASP_REL_EXEC_PATH_PREFIX"/>
+		public const string ASP_APP_START_PAGE_KEY = @"StartPagePath";
+
+		/// <summary>
+		/// Relative path strings returned by the Request object begin with one
+		/// of these.
+		/// </summary>
+		/// <seealso cref="ASP_APP_DIR_DEFAULT_START_PAGE"/>
+		/// <seealso cref="ASP_APP_START_PAGE_KEY"/>
+		/// <seealso cref="ASP_REL_EXEC_PATH_PREFIX"/>
+		public const string ASP_RELATIVE_PATH_BEGIN = @"~/";
+
+		/// <summary>
+		/// Relative path strings returned by the Request object begin with one
+		/// of these.
+		/// </summary>
+		/// <seealso cref="ASP_APP_DIR_DEFAULT_START_PAGE"/>
+		/// <seealso cref="ASP_APP_START_PAGE_KEY"/>
+		/// <seealso cref="ASP_RELATIVE_PATH_BEGIN"/>
+		public const string ASP_REL_EXEC_PATH_PREFIX = @"~/";
+
+		/// <summary>
+		/// Substitute this string for Environment.NewLine in formatted strings
+		/// that were designed for output as console messages when you want or
+		/// need to return them as long strings. The effect is the same as using
+		/// Console.WriteLine in place of StringBuilder.AppendFormat.
+		/// </summary>
+		public const string BACK2BACK_NEWLINES = STRING_SPLIT_NEWLINE + STRING_SPLIT_NEWLINE;
+
+		/// <summary>
+		/// Use this in your code to specify a left French brace, also called a
+		/// left brace or opening brace, as a character literal.
+		/// </summary>
+		/// <remarks>
+		/// In addition to implementing DLM_FORMAT_ITEM_BEGIN for a specific use
+		/// case, I implemented the generic use case and its twin, BRACE_RIGHT.
+		/// </remarks>
+		/// <seealso cref="BRACE_RIGHT"/>
+		public const string BRACE_LEFT = @"{";
+
+		/// <summary>
+		/// Use this in your code to specify a right French brace, also called a
+		/// right brace or closing brace, as a character literal.
+		/// </summary>
+		/// <seealso cref="BRACE_LEFT"/>
+		public const string BRACE_RIGHT = @"}";
+
+		/// <summary>
+		/// Use this in your code to specify a left square bracket, also called
+		/// an opening bracket, as a character literal.
+		/// </summary>
+		/// <seealso cref="BRACKET_RIGHT"/>
+		/// <seealso cref="BRACE_LEFT"/>
+		public const string BRACKET_LEFT = @"[";
+
+		/// <summary>
+		/// Use this in your code to specify a right square bracket, also called
+		/// a closing bracket, as a character literal.
+		/// </summary>
+		/// <seealso cref="BRACKET_LEFT"/>
+		/// <seealso cref="BRACE_RIGHT"/>
+		public const string BRACKET_RIGHT = @"]";
+
+		/// <summary>
+		/// Both ASTERISK_CHAR and ASTERISK resolve to the same character.
+		/// </summary>
+		/// <seealso cref="AMPERSAND"/>
+		/// <seealso cref="COLON"/>
+		/// <seealso cref="HASH_TAG"/>
+		/// <seealso cref="PERCENT_SIGN"/>
+		/// <seealso cref="PIPE_CHAR"/>
+		/// <seealso cref="SEMICOLON"/>
+		/// <seealso cref="TAB_CHAR"/>
+		/// <seealso cref="UNDERSCORE_CHAR"/>
+		public const string ASTERISK_CHAR = ASTERISK;
+
+		/// <summary>
+		/// Both AT_SIGH and AT_CHAR resolve to the same character.
+		/// </summary>
+		/// <remarks>
+		/// The '@' character has many uses in computing circles, mostly obscure
+		/// ones, such as their use in many command line tools to denote that a
+		/// specified file is not, itself, the object of interest, but is a list
+		/// of files or other entities that are.
+		/// </remarks>
+		/// <see cref="AT_CHAR"/>
+		/// <seealso cref="AMPERSAND"/>
+		/// <seealso cref="COLON"/>
+		/// <seealso cref="HASH_TAG"/>
+		/// <seealso cref="PERCENT_SIGN"/>
+		/// <seealso cref="PIPE_CHAR"/>
+		/// <seealso cref="SEMICOLON"/>
+		/// <seealso cref="TAB_CHAR"/>
+		/// <seealso cref="UNDERSCORE_CHAR"/>
+		public const string AT_SIGN = AT_CHAR;
+
+		/// <summary>
+		/// Unicode bullet (•), U+2022.
+		/// See ChangeLog.md glyph table and GlyphConstantsHarness for validation.
+		/// </summary>
+		/// <seealso cref="SpecialCharacters.BULLET"/>
+		public const string BULLET = "\u2022";
+
+		/// <summary>
+		/// Use this character anywhere in your code that requires a bare
+		/// carriage return character.
+		/// </summary>
+		/// <seealso cref="LINEFEED"/>
+		/// <seealso cref="SpecialStrings.STRING_SPLIT_CARRIAGE_RETURN"/>
+		/// <seealso cref="SpecialStrings.STRING_SPLIT_LINEFEED"/>
+		/// <seealso cref="SpecialStrings.STRING_SPLIT_NEWLINE"/>
+		public const string CARRIAGE_RETURN = @"\r";
+
+		/// <summary>
+		/// Numeric character 0, for use in code where it might be mistaken for
+		/// a letter O.
+		/// </summary>
+		/// <seealso cref="CHAR_LC_O"/>
+		/// <seealso cref="CHAR_UC_O"/>
+		public const string CHAR_NUMERAL_0 = @"0";
+
+		/// <summary>
+		/// Numeric character 1, for use in code where it might be mistaken for
+		/// a lower case l or an upper case I.
+		/// </summary>
+		/// <seealso cref="CHAR_UC_I"/>
+		/// <seealso cref="CHAR_LC_L"/>
+		public const string CHAR_NUMERAL_1 = @"1";
+
+		/// <summary>
+		/// Numeric character 2, for use in code where it might be mistaken for
+		/// a letter Z or a numeral 7.
+		/// </summary>
+		/// <seealso cref="CHAR_LC_Z"/>
+		/// <seealso cref="CHAR_UC_Z"/>
+		/// <seealso cref="CHAR_NUMERAL_7"/>
+		public const string CHAR_NUMERAL_2 = @"2";
+
+		/// <summary>
+		/// Numeric character 2, for use in code where it might be mistaken for
+		/// a letter Z or a numeral 7.
+		/// </summary>
+		/// <seealso cref="CHAR_LC_Z"/>
+		/// <seealso cref="CHAR_UC_Z"/>
+		/// <seealso cref="CHAR_NUMERAL_2"/>
+		public const string CHAR_NUMERAL_7 = @"7";
+
+		/// <summary>
+		/// Lower case I, for use in code, where it might be easily mistaken for
+		/// a number 1 or a letter L.
+		/// </summary>
+		public const string CHAR_LC_I = @"i";
+
+		/// <summary>
+		/// Upper case I, for use in code, where it might be easily mistaken for
+		/// a number 1 or a letter L.
+		/// </summary>
+		/// <seealso cref="CHAR_LC_L"/>
+		/// <seealso cref="CHAR_NUMERAL_1"/>
+		public const string CHAR_UC_I = @"I";
+
+		/// <summary>
+		/// Lower case L, for use in code, where it might be easily mistaken for
+		/// a number 1 or a letter I.
+		/// </summary>
+		/// <seealso cref="CHAR_UC_I"/>
+		/// <seealso cref="CHAR_NUMERAL_1"/>
+		public const string CHAR_LC_L = @"l";
+
+		/// <summary>
+		/// Upper case L, for use in code, where it might be easily mistaken for
+		/// a number 1 or a letter I.
+		/// </summary>
+		/// <seealso cref="CHAR_LC_L"/>
+		/// <seealso cref="CHAR_NUMERAL_1"/>
+		public const string CHAR_UC_L = @"L";
+
+		/// <summary>
+		/// Lower case O, for use in code where it might be easily mistaken for
+		/// a number zero. 
+		/// </summary>
+		/// <seealso cref="CHAR_LC_O"/>
+		/// <seealso cref="CHAR_UC_O"/>
+		/// <seealso cref="CHAR_NUMERAL_0"/>
+		public const string CHAR_LC_O = @"o";
+
+		/// <summary>
+		/// Upper case O, for use in code where it might be easily mistaken for
+		/// a number zero.
+		/// </summary>
+		/// <seealso cref="CHAR_LC_O"/>
+		/// <seealso cref="CHAR_UC_O"/>
+		/// <seealso cref="CHAR_NUMERAL_0"/>
+		public const string CHAR_UC_O = @"O";
+
+		/// <summary>
+		/// Lower case Z, for use in code where it might be easily mistaken for
+		/// a numeric character 2 or 7.
+		/// </summary>
+		/// <seealso cref="CHAR_UC_Z"/>
+		/// <seealso cref="CHAR_NUMERAL_2"/>
+		/// <seealso cref="CHAR_NUMERAL_7"/>
+		public const string CHAR_LC_Z = @"z";
+
+		/// <summary>
+		/// Upper case Z, for use in code where it might be easily mistaken for
+		/// a numeric character 2 or 7.
+		/// </summary>
+		/// <seealso cref="CHAR_LC_Z"/>
+		/// <seealso cref="CHAR_NUMERAL_2"/>
+		/// <seealso cref="CHAR_NUMERAL_7"/>
+		public const string CHAR_UC_Z = @"Z";
+
+		/// <summary>
+		/// Unicode check mark (✔), U+2714.
+		/// See ChangeLog.md glyph table and GlyphConstantsHarness for validation.
+		/// </summary>
+		/// <seealso cref="CHECK_MARK_CHAR"/>
+		/// <seealso cref="SpecialCharacters.CHECK_MARK"/>
+		/// <seealso cref="SpecialCharacters.CHECK_MARK_CHAR"/>
+		public const string CHECK_MARK = "\u2714";
+
+		/// <summary>
+		/// The check-mark character prints as such only in selected Windows
+		/// fonts.
+		/// </summary>
+		/// <seealso cref="CHECK_MARK"/>
+		/// <seealso cref="SpecialCharacters.CHECK_MARK"/>
+		/// <seealso cref="SpecialCharacters.CHECK_MARK_CHAR"/>
+		public const string CHECK_MARK_CHAR = "\xFB";
+
+		/// <summary>
+		/// This is one of many single characters that are frequently needed as
+		/// single-character string constants.
+		/// </summary>
+		/// <seealso cref="SpecialCharacters.COLON"/>
+		/// <seealso cref="COLON_SPACE"/>
+		public const string COLON = ":";
+
+		/// <summary>
+		/// <para>
+		/// This is a companion to <see cref="COLON"/> that follows it with a
+		/// single space character, represented by <see cref="SPACE_CHAR"/>.
+		/// </para>
+		/// <para>
+		/// This short string constant is one of a set that covers cases where a
+		/// colon, comma, semicolon, or full stop must be immediately followed
+		/// by a space character.
+		/// </para>
+		/// </summary>
+		/// <seealso cref="COLON"/>
+		/// <seealso cref="SpecialCharacters.COLON"/>
+		public const string COLON_SPACE = COLON + SPACE_CHAR;
+
+        /// <summary>
+        /// This is one of many single characters that are frequently needed as
+        /// single-character string constants.
+        /// </summary>
+        /// <seealso cref="SpecialCharacters.COMMA"/>
+        public const string COMMA = ",";
+
+		/// <summary>
+		/// <para>
+		/// This is a companion to <see cref="COMMA"/> that follows it with a
+		/// single space character, represented by <see cref="SPACE_CHAR"/>.
+		/// </para>
+		/// <para>
+		/// This short string constant is one of a set that covers cases where a
+		/// colon, comma, semicolon, or full stop must be immediately followed
+		/// by a space character.
+		/// </para>
+		/// </summary>
+		/// <seealso cref="COLON"/>
+		/// <seealso cref="SpecialCharacters.COMMA"/>
+		public const string COMMA_SPACE = COMMA + SPACE_CHAR;
+
+		/// <summary>
+		/// Unicode cross mark (✘), U+2718.
+		/// See ChangeLog.md glyph table and GlyphConstantsHarness for validation.
+		/// </summary>
+		/// <seealso cref="SpecialCharacters.CROSS_MARK"/>
+		public const string CROSS_MARK = "\u2718";
+
+		/// <summary>
+		/// Use this as the second of two argument so the Replace method on a
+		/// String, along with DOUBLE_QUOTE as tthe first argument, when the
+		/// double quotation mark must be embeddded in the value of a field in a
+		/// CSV file.
+		/// </summary>
+		/// <see cref="DOUBLE_QUOTE"/>
+		public const string CSV_ESCAPED_DOUBLE_QUOTE = DOUBLE_QUOTE + DOUBLE_QUOTE;
+
+        /// <summary>
+        /// This is one of many single characters that are frequently needed as
+        /// single-character string constants.
+        /// </summary>
+        /// <seealso cref="SpecialCharacters.DOUBLE_QUOTE"/>
+        public const string DOUBLE_QUOTE = "\"";
+
+		/// <summary>
+		/// <para>
+		/// This is a companion to <see cref="DOUBLE_QUOTE"/> that follows it
+		/// with a single space character, represented by <see cref="SPACE_CHAR"/>.
+		/// </para>
+		/// <para>
+		/// This short string constant is one of a set that covers cases where a
+		/// colon, comma, semicolon, or full stop must be immediately followed
+		/// by a space character.
+		/// </para>
+		/// </summary>
+		/// <seealso cref="DOUBLE_QUOTE"/>
+		/// <seealso cref="SpecialCharacters.DOUBLE_QUOTE"/>
+		/// <seealso cref="SPACE_DOUBLE_QUOTE"/>
+		public const string DOUBLE_QUOTE_SPACE = DOUBLE_QUOTE + SPACE_CHAR;
+
+		/// <summary>
+		/// <para>
+		/// This is a companion to <see cref="DOUBLE_QUOTE"/> that follows it
+		/// with a single space character, represented by <see cref="SPACE_CHAR"/>.
+		/// </para>
+		/// <para>
+		/// This short string constant is one of a set that covers cases where a
+		/// colon, comma, semicolon, or full stop must be immediately followed
+		/// by a space character.
+		/// </para>
+		/// </summary>
+		/// <seealso cref="DOUBLE_QUOTE"/>
+		/// <seealso cref="SpecialCharacters.DOUBLE_QUOTE"/>
+		/// <seealso cref="DOUBLE_QUOTE_SPACE"/>
+		public const string SPACE_DOUBLE_QUOTE = SPACE_CHAR + DOUBLE_QUOTE;
+
+		/// <summary>
+		/// Overlooked constant - two consecutive spaces.
+		/// </summary>
+		public const string DOUBLE_SPACE = @"  ";
+
+		/// <summary>
+		/// Tab characters, as they must be entered into resource (.RESX) strings.
+		/// </summary>
+		public const string EMBEDDED_TAB = "\\t";
+
+		/// <summary>
+		/// Tab characters, as they must appear in the string before it can be
+		/// used.
+		/// </summary>
+		public const string OUTPUT_TAB = "\t";
+
+		/// <summary>
+		/// Use this string to evaluate whether the string returned from a REST 
+		/// API call is an empty JavaScript array.
+		/// </summary>
+		/// <seealso cref="EMPTY_JSON_OBJECT"/>
+		public const string EMPTY_JSON_ARRAY = @"[]";
+
+		/// <summary>
+		/// Use this string to evaluate whether the string returned from a REST
+		/// API call is an empty JavaScript object.
+		/// </summary>
+		/// <seealso cref="EMPTY_JSON_ARRAY"/>
+		public const string EMPTY_JSON_OBJECT = @"{}";
+
+		/// <summary>
+		/// I like having a way to initialize a constant to the empty string.
+		/// </summary>
+		/// <seealso cref="ArrayInfo.ARRAY_FIRST_ELEMENT"/>
+		/// <seealso cref="ArrayInfo.ARRAY_IS_EMPTY"/>
+		/// <seealso cref="ArrayInfo.ARRAY_INVALID_INDEX"/>
+		/// <seealso cref="ArrayInfo.ARRAY_SECOND_ELEMENT"/>
+		/// <seealso cref="ArrayInfo.INDEX_FROM_ORDINAL"/>
+		/// <seealso cref="ArrayInfo.NEXT_INDEX"/>
+		/// <seealso cref="ArrayInfo.ORDINAL_FROM_INDEX"/>
+		/// <seealso cref="MagicNumbers.EMPTY_STRING_LENGTH"/>
+		public const string EMPTY_STRING = @"";
+
+		/// <summary>
+		/// Since ErrorExit is never invoked for ERROR_SUCCESS, and the table of
+		/// error messages is indexed by status code, this string holds its spot
+		/// in the table of error messages, but is never rendered. Hence, it can
+		/// be kept out of the managed string resources for applications. This
+		/// string is publicly accessible through a static method exported by
+		/// this library, ExceptionLogger.GetSpecifiedReservedErrorMessage.
+		/// </summary>
+		/// <remarks>
+		/// A related managed string resource, ERRMSG_SUCCESS, is available for
+		/// public consumption; use it in lieu of this string for I18N.
+		/// 
+		/// Two other strings, ERRMSG_RUNTIME and ERRMSG_INVALID_COMMAND_LINE,
+		/// are also defined in this assembly.
+		/// </remarks>
+		/// <see cref="MagicNumbers.ERROR_SUCCESS"/>
+		/// <seealso cref="MagicNumbers.ERROR_RUNTIME"/>
+		public const string ERRMSG_SUCCESS_PLACEHOLDER = @"ERROR_SUCCESS Placeholder";
+
+		/// <summary>
+		/// Use this constant when your code requires a literal equals sign.
+		/// </summary>
+		/// <seealso cref="HYPHEN"/>
+		/// <seealso cref="HASH_TAG"/>
+		/// <seealso cref="UNDERSCORE_CHAR"/>
+		public const string EQUALS_SIGN = @"=";
+
+		/// <summary>
+		/// <para>
+		/// This is a companion to <see cref="EQUALS_SIGN"/> that surrounds it
+		/// with a single space character, represented by <see cref="SPACE_CHAR"/>
+		/// on each side..
+		/// </para>
+		/// <para>
+		/// This short string constant is one of a set that covers cases where a
+		/// colon, comma, semicolon, or full stop must be immediately followed
+		/// by a space character.
+		/// </para>
+		/// </summary>
+		/// <seealso cref="EQUALS_SIGN"/>
+		/// <seealso cref="SpecialCharacters.EQUALS_SIGN"/>
+		/// <seealso cref="DOUBLE_QUOTE_SPACE"/>
+		public const string SPACE_BOUNDED_EQUALS_SIGN = SPACE_CHAR + EQUALS_SIGN + SPACE_CHAR;
+
+		/// <summary>
+		/// This is one of many single characters that are frequently needed as
+		/// single-character string constants.
+		/// </summary>
+		/// <seealso cref="SpecialCharacters.FULL_STOP"/>
+		public const string FULL_STOP = ".";
+
+		/// <summary>
+		/// <para>
+		/// This is a companion to <see cref="FULL_STOP"/> that follows it with
+		/// a single space character, represented by <see cref="SPACE_CHAR"/>.
+		/// </para>
+		/// <para>
+		/// This short string constant is one of a set that covers cases where a
+		/// colon, comma, semicolon, or full stop must be immediately followed
+		/// by a space character.
+		/// </para>
+		/// </summary>
+		/// <seealso cref="FULL_STOP"/>
+		/// <seealso cref="SpecialCharacters.FULL_STOP"/>
+		public const string FULL_STOP_SPACE = FULL_STOP + SPACE_CHAR;
+
+		/// <summary>
+		/// Use this constant to specify a hash-tag literal character
+		/// </summary>
+		public const string HASH_TAG = @"#";
+
+		/// <summary>
+		/// Minimal HTML (and XML) comment prefix string.
+		/// </summary>
+		/// <seealso cref="HTML_COMMENT_PREFIX_SP"/>
+		/// <seealso cref="HTML_COMMENT_SUFFIX"/>
+		/// <seealso cref="HTML_COMMENT_SUFFIX_SP"/>
+		public const string HTML_COMMENT_PREFIX = @"<!--";
+
+		/// <summary>
+		/// HTML (and XML) comment prefix string, followed by a single space.
+		/// </summary>
+		/// <seealso cref="HTML_COMMENT_PREFIX"/>
+		/// <seealso cref="HTML_COMMENT_SUFFIX"/>
+		/// <seealso cref="HTML_COMMENT_SUFFIX_SP"/>
+		public const string HTML_COMMENT_PREFIX_SP = @"<!-- ";
+
+		/// <summary>
+		/// Minimal HTML (and XML) comment suffix string.
+		/// </summary>
+		/// <seealso cref="HTML_COMMENT_PREFIX"/>
+		/// <seealso cref="HTML_COMMENT_PREFIX_SP"/>
+		/// <seealso cref="HTML_COMMENT_SUFFIX_SP"/>
+		public const string HTML_COMMENT_SUFFIX = @"-->";
+
+		/// <summary>
+		/// HTML (and XML) comment suffix string, preceded by a single space.
+		/// </summary>
+		/// <seealso cref="HTML_COMMENT_PREFIX"/>
+		/// <seealso cref="HTML_COMMENT_PREFIX_SP"/>
+		/// <seealso cref="HTML_COMMENT_SUFFIX"/>
+		public const string HTML_COMMENT_SUFFIX_SP = @" -->";
+
+		/// <summary>
+		/// Use this string to indicate unambiguously that the intended entity
+		/// is the HTML encoded entity for a space character.
+		/// </summary>
+		public const string HTML_ENTITY_SPACE_CHARACTER = @"%20";
+
+		/// <summary>
+		/// HTML line break (Break) tag, rendered as lower case characters.
+		/// </summary>
+		/// <seealso cref="HTML_LINE_BREAK_UC"/>
+		public const string HTML_LINE_BREAK_LC = @"<br>";
+
+		/// <summary>
+		/// HTML line break (Break) tag, rendered as upper case characters
+		/// </summary>
+		/// <seealso cref="HTML_LINE_BREAK_LC"/>
+		public const string HTML_LINE_BREAK_UC = @"<BR>";
+
+		/// <summary>
+		/// Web Developers are always needing a non-breaking space, for use as
+		/// filler, especially in dynamically generated tables.
+		/// </summary>
+		/// <seealso cref="HTML_NONBREAKING_SPACE_LC"/>
+		/// <seealso cref="HTML_NOLBREAKING_SPACE_UC"/>
+		public const string HTML_NONBREAKING_SPACE = @"&nbsp;";
+
+		/// <summary>
+		/// HTML nonbreaking space entity, rendered as lower case characters.
+		/// </summary>
+		public const string HTML_NONBREAKING_SPACE_LC = HTML_NONBREAKING_SPACE;
+
+		/// <summary>
+		/// HTML nonbreaking space entity, rendered as upper case characters.
+		/// </summary>
+		public const string HTML_NOLBREAKING_SPACE_UC = @"&NBSP;";
+
+		/// <summary>
+		/// HTML paragraph opening tag, rendered as lower case characters.
+		/// </summary>
+		/// <seealso cref="HTML_PARAGRAPH_OPEN_TAG_UC"/>
+		/// <seealso cref="HTML_PARAGRAPH_CLOSE_TAG_LC"/>
+		/// <seealso cref="HTML_PARAGRAPH_CLOSE_TAG_UC"/>
+		public const string HTML_PARAGRAPH_OPEN_TAG_LC = @"<p>";
+
+		/// <summary>
+		/// HTML paragraph opening tag, rendered as upper case characters.
+		/// </summary>
+		/// <seealso cref="HTML_PARAGRAPH_OPEN_TAG_LC"/>
+		/// <seealso cref="HTML_PARAGRAPH_CLOSE_TAG_LC"/>
+		/// <seealso cref="HTML_PARAGRAPH_CLOSE_TAG_UC"/>
+		public const string HTML_PARAGRAPH_OPEN_TAG_UC = @"<P>";
+
+		/// <summary>
+		/// HTML paragraph closing tag, rendered as lower case characters.
+		/// </summary>
+		/// <seealso cref="HTML_PARAGRAPH_CLOSE_TAG_UC"/>
+		/// <seealso cref="HTML_PARAGRAPH_OPEN_TAG_LC"/>
+		/// <seealso cref="HTML_PARAGRAPH_OPEN_TAG_UC"/>
+		public const string HTML_PARAGRAPH_CLOSE_TAG_LC = @"</p>";
+
+		/// <summary>
+		/// HTML paragraph closing tag, rendered as upper case characters.
+		/// </summary>
+		/// <seealso cref="HTML_PARAGRAPH_CLOSE_TAG_LC"/>
+		/// <seealso cref="HTML_PARAGRAPH_OPEN_TAG_LC"/>
+		/// <seealso cref="HTML_PARAGRAPH_OPEN_TAG_UC"/>
+		public const string HTML_PARAGRAPH_CLOSE_TAG_UC = @"</P>";
+
+		/// <summary>
+		/// This is one of many single characters that are frequently needed as
+		/// single-character string constants.
+		/// </summary>
+		/// <seealso cref="SpecialCharacters.HYPHEN"/>
+		public const string HYPHEN = @"-";
+
+		/// <summary>
+		/// This is one of four constants that are useful for evaluating the results
+		/// of REST API calls that return JSON objects and arrays. Between them, they
+		/// test for valid starting and ending characters of JSON objects and arrays,
+		/// respectively. Evaluating for anything more specific is pointless due to
+		/// the fact that JSON objects and arrays can contain whitespace, and that the
+		/// content of either can be anything, including nested objects and arrays.
+		/// The only way to evaluate the content of a JSON object or array is to parse
+		/// it, which is what the JSON parser in your language of choice does.
+		/// </summary>
+		public const string JSON_ARRAY_PREFIX = BRACKET_LEFT;
+
+		/// <summary>
+		/// See the remarks for <see cref="JSON_ARRAY_PREFIX"/>.
+		/// </summary>
+		public const string JSON_ARRAY_SUFFIX = BRACKET_RIGHT;
+
+		/// <summary>
+		/// See the remarks for <see cref="JSON_ARRAY_PREFIX"/>.
+		/// </summary>
+		public const string JSON_PREFIX = BRACE_LEFT;
+
+		/// <summary>
+		/// See the remarks for <see cref="JSON_ARRAY_PREFIX"/>.
+		/// </summary>
+		public const string JSON_SUFFIX = BRACE_RIGHT;
+
+		/// <summary>
+		/// See the remarks for <see cref="JSON_PREFIX"/>.
+		/// </summary>
+		public const string JSON_OBJECT_EMPTY = EMPTY_JSON_OBJECT;
+
+		/// <summary>
+		/// See the remarks for <see cref="JSON_ARRAY_PREFIX"/>.
+		/// </summary>
+		public const string JSON_ARRAY_EMPTY = EMPTY_JSON_ARRAY;
+
+		/// <summary>
+		/// The highest integer that can represent any ASCII character is 255,
+		/// which is all 8 bits turned ON.
+		/// </summary>
+		public const string LAST_ASCII_CHAR = "\xFF";
+
+		/// <summary>
+		/// The DNS name of the local loop-back is always "localhost".
+		/// </summary>
+		public const string LOCALHOST = @"localhost";
+
+		/// <summary>
+		/// Use this character anywhere in your code that requires a bare
+		/// linefeed character.
+		/// </summary>
+		/// <seealso cref="SpecialStrings.STRING_SPLIT_NEWLINE"/>
+		/// <seealso cref="SpecialStrings.STRING_SPLIT_CARRIAGE_RETURN"/>
+		/// <seealso cref="SpecialStrings.STRING_SPLIT_LINEFEED"/>
+		public const string LINEFEED = "\n";
+
+		/// <summary>
+		/// The local loop-back has the reserved IP address of 127.0.0.1.
+		/// </summary>
+		public const string LOCALHOST_IP_ADDR = @"127.0.0.1";
+
+
+		/// <summary>
+		/// Thanks to a suggestion from my esteemed colleague Bud Pass, this is my new
+		/// preferred field delimiter character. It supersedes my favorite for many
+		/// years, PIPE_CHAR.
+		/// </summary>
+		/// <seealso cref="PIPE_CHAR"/>
+		/// <seealso cref="SpecialCharacters.LOGICAL_NEGATE"/>
+		public const string LOGICAL_NEGATE = @"¬";
+
+		/// <summary>
+		/// The non-breaking space character doesn't print; although the Unicode
+		/// encoding treats it as a white space character, most other encodings,
+		/// including both Unicode and US-ASCII, do not.
+		/// </summary>
+		public const string NONBREAKING_SPACE_CHAR = "\xA0";
+
+		/// <summary>
+		/// Use this in your code to specify a left parenthesis, also called an
+		/// opening parenthesis, as a character literal.
+		/// </summary>
+		/// <seealso cref="PARENTHESIS_RIGHT"/>
+		/// <seealso cref="BRACE_LEFT"/>
+		/// <seealso cref="BRACKET_LEFT"/>
+		public const string PARENTHESIS_LEFT = @"(";
+
+		/// <summary>
+		/// <para>
+		/// This is a companion to <see cref="PARENTHESIS_LEFT"/> that is
+		/// preceded by a single space character, represented by
+		/// <see cref="SPACE_CHAR"/>.
+		/// </para>
+		/// <para>
+		/// This short string constant is one of a set that covers cases where a
+		/// colon, comma, semicolon, or full stop must be immediately followed
+		/// by a space character.
+		/// </para>
+		/// </summary>
+		/// <seealso cref="PARENTHESIS_LEFT"/>
+		/// <seealso cref="SpecialCharacters.PARENTHESIS_LEFT"/>
+		public const string SPACE_PARENTHESIS_LEFT = SPACE_CHAR + PARENTHESIS_LEFT;
+
+		/// <summary>
+		/// <para>
+		/// This is a companion to <see cref="PARENTHESIS_LEFT"/> that is
+		/// bounded on both sides by a single space character, represented by a
+		/// <see cref="SPACE_CHAR"/>.
+		/// </para>
+		/// <para>
+		/// This short string constant is one of a set that covers cases where a
+		/// colon, comma, semicolon, or full stop must be immediately followed
+		/// by a space character.
+		/// </para>
+		/// </summary>
+		/// <seealso cref="PARENTHESIS_LEFT"/>
+		/// <seealso cref="SpecialCharacters.PARENTHESIS_LEFT"/>
+		public const string SPACE_BOUNDED_PARENTHESIS_LEFT = SPACE_CHAR + PARENTHESIS_LEFT + SPACE_CHAR;
+
+		/// <summary>
+		/// Use this in your code to specify a right parenthesis, also called a
+		/// closing parenthesis, as a character literal.
+		/// </summary>
+		/// <seealso cref="PARENTHESIS_LEFT"/>
+		/// <seealso cref="BRACE_RIGHT"/>
+		/// <seealso cref="BRACKET_RIGHT"/>
+		public const string PARENTHESIS_RIGHT = @")";
+
+		/// <summary>
+		/// <para>
+		/// This is a companion to <see cref="PARENTHESIS_RIGHT"/> that is
+		/// followed by a single space character, represented by
+		/// <see cref="SPACE_CHAR"/>.
+		/// </para>
+		/// <para>
+		/// This short string constant is one of a set that covers cases where a
+		/// colon, comma, semicolon, or full stop must be immediately followed
+		/// by a space character.
+		/// </para>
+		/// </summary>
+		/// <seealso cref="PARENTHESIS_RIGHT"/>
+		/// <seealso cref="SpecialCharacters.PARENTHESIS_LEFT"/>
+		public const string SPACE_PARENTHESIS_RIGHT = PARENTHESIS_LEFT + SPACE_CHAR;
+
+		/// <summary>
+		/// <para>
+		/// This is a companion to <see cref="PARENTHESIS_RIGHT"/> that is
+		/// bounded on both sides by a single space character, represented by
+		/// <see cref="SPACE_CHAR"/>.
+		/// </para>
+		/// <para>
+		/// This short string constant is one of a set that covers cases where a
+		/// colon, comma, semicolon, or full stop must be immediately followed
+		/// by a space character.
+		/// </para>
+		/// </summary>
+		/// <seealso cref="SPACE_PARENTHESIS_LEFT"/>
+		/// <seealso cref="SpecialCharacters.PARENTHESIS_RIGHT"/>
+		public const string SPACE_BOUNDED_PARENTHESIS_RIGHT = SPACE_CHAR + PARENTHESIS_RIGHT + SPACE_CHAR;
+
+		/// <summary>
+		/// Use this when you need to remove or replace ampersand literals in a
+		/// string.
+		/// </summary>
+		/// <seealso cref="SpecialCharacters.PERCENT_SIGN"/>
+		public const string PERCENT_SIGN = @"%";
+
+		/// <summary>
+		/// How have I got on this long without my faithful field separator?
+		/// </summary>
+		/// <seealso cref="AMPERSAND"/>
+		/// <seealso cref="COLON"/>
+		/// <seealso cref="COMMA"/>
+		/// <seealso cref="HASH_TAG"/>
+		/// <seealso cref="LOGICAL_NEGATE"/>
+		/// <seealso cref="PERCENT_SIGN"/>
+		/// <seealso cref="SEMICOLON"/>
+		/// <seealso cref="TAB_CHAR"/>
+		/// <seealso cref="UNDERSCORE_CHAR"/>
+		/// <seealso cref="SpecialCharacters.PIPE_CHAR"/>
+		public const string PIPE_CHAR = @"|";
+
+		/// <summary>
+		/// The question mark is another special character that is frequently
+		/// used as an operator; use this to differentiate such use from that of
+		/// an operand.
+		/// </summary>
+		public const string QUESTION_MARK = @"?";
+
+		/// <summary>
+		/// Unicode right arrow (→), U+2192.
+		/// See ChangeLog.md glyph table and GlyphConstantsHarness for validation.
+		/// </summary>
+		/// <seealso cref="SpecialCharacters.RIGHT_ARROW"/>
+		public const string RIGHT_ARROW = "\u2192";
+
+		/// <summary>
+		/// This is one of many single characters that are frequently needed as
+		/// single-character string constants.
+		/// </summary>
+		/// <seealso cref="SpecialCharacters.SEMICOLON"/>
+		public const string SEMICOLON = @";";
+
+		/// <summary>
+		/// <para>
+		/// This is a companion to <see cref="SEMICOLON"/> that is
+		/// bounded on both sides by a single space character, represented by
+		/// <see cref="SPACE_CHAR"/>.
+		/// </para>
+		/// <para>
+		/// This short string constant is one of a set that covers cases where a
+		/// colon, comma, semicolon, or full stop must be immediately followed
+		/// by a space character.
+		/// </para>
+		/// </summary>
+		/// <seealso cref="SEMICOLON"/>
+		/// <seealso cref="SpecialCharacters.SEMICOLON"/>
+		public const string SEMICOLON_SPACE = SEMICOLON + SPACE_CHAR;
+
+		/// <summary>
+		/// This is one of many single characters that are frequently needed as
+		/// single-character string constants.
+		/// </summary>
+		/// <seealso cref="SpecialCharacters.SINGLE_QUOTE"/>
+		public const string SINGLE_QUOTE = @"'";
+ 
+		/// <summary>
+		/// Use this when you need a space character in a context that requires
+		/// a string representation.
+		/// </summary>
+		/// <remarks>
+		/// Heretofore, I have made do with the ToString method on the 
+		/// like-named character, but it annoyed me whenever I did so because I
+		/// wanted th use a real constant.
+		/// </remarks>
+		/// <seealso cref="SpecialCharacters.SPACE_CHAR"/>
+		/// <seealso cref="TWO_SPACES"/>
+		public const string SPACE_CHAR = @" ";
+
+		/// <summary>
+		/// Use this template when you need to either precede or follow a line
+		/// of otherwise static text with a newline.
+		/// </summary>
+		public const string SPACING_TEMPLATE = @"{0}{1}";
+
+		/// <summary>
+		/// This string is the most precise string representation of the format of a
+		/// SQL Server date.
+		/// </summary>
+		/// <remarks>
+		/// Since date literals must be enclosed in single quotation marks, the
+		/// formatted date value must be embedded in a string literal by interpolation
+		/// or by way of a format item token. Regardless, the single quotes must be
+		/// part of the string because including them in the format string invalidates
+		/// it, causing ToString and its friends to render the format string as
+		/// prescribed, rather than replacing it with the date value.
+		/// </remarks>
+		/// <seealso cref="SQL_DATE_FORMAT"/>
+		/// <seealso cref="SQL_DATETIME_FORMAT_FULL"/>
+		public const string SQL_DATETIME_FORMAT_PRECISE = @"MM-dd-yyyy HH:mm:ss.fff";
+
+		/// <summary>
+		/// This string is the standard representation of a date and time to the
+		/// nearest second.
+		/// </summary>
+		/// <seealso cref="SQL_DATE_FORMAT"/>
+		/// <seealso cref="SQL_DATETIME_FORMAT_PRECISE"/>
+		public const string SQL_DATETIME_FORMAT_FULL = @"MM-dd-yyyy HH:mm:ss";
+
+		/// <summary>
+		/// This string is the standard representation of a date by itself.
+		/// </summary>
+		/// <seealso cref="SQL_DATETIME_FORMAT_FULL"/>
+		/// <seealso cref="SQL_DATETIME_FORMAT_PRECISE"/>
+		public const string SQL_DATE_FORMAT = @"MM-dd-yyyy";
+
+        /// <summary>
+        /// Use this as the second of two argument so the Replace method on a
+        /// String, along with SINGLE_QUOTE as tthe first argument, to replace
+		/// single quotation marks that appear in the value of a column or a
+		/// stored procedure parameter appears in a SQL script.
+        /// </summary>
+		/// <see cref="SINGLE_QUOTE"/>
+        public const string SQL_ESCAPED_SINGLE_QUOTE = SINGLE_QUOTE + SINGLE_QUOTE;
+
+        /// <summary>
+        /// Use this string as the solitary element of an array of strings to
+        /// split a string that contains text from a file of lines delimited by
+        /// carriage returns only.
+        /// </summary>
+        /// <seealso cref="SpecialCharacters.CARRIAGE_RETURN"/>
+        /// <seealso cref="SpecialCharacters.LINEFEED"/>
+        /// <seealso cref="STRING_SPLIT_LINEFEED"/>
+        /// <seealso cref="STRING_SPLIT_NEWLINE"/>
+        public const string STRING_SPLIT_CARRIAGE_RETURN = "\r";
+
+		/// <summary>
+		/// Use this string as the solitary element of an array of strings to
+		/// split a string that contains text from a file of lines delimited by
+		/// line feeds only.
+		/// </summary>
+		/// <seealso cref="SpecialCharacters.CARRIAGE_RETURN"/>
+		/// <seealso cref="SpecialCharacters.LINEFEED"/>
+		/// <seealso cref="STRING_SPLIT_CARRIAGE_RETURN"/>
+		/// <seealso cref="STRING_SPLIT_NEWLINE"/>
+		public const string STRING_SPLIT_LINEFEED = "\n";
+
+		/// <summary>
+		/// Use this string as the solitary element of an array of strings to
+		/// split a string that contains text from a file into an array of
+		/// strings, each element of which is a line of text, stripped of its
+		/// line ending, if any.
+		/// </summary>
+		/// <seealso cref="STRING_SPLIT_CARRIAGE_RETURN"/>
+		/// <seealso cref="STRING_SPLIT_LINEFEED"/>
+		/// <seealso cref="SpecialCharacters.CARRIAGE_RETURN"/>
+		/// <seealso cref="SpecialCharacters.LINEFEED"/>
+		/// <seealso cref="STRING_SPLIT_CARRIAGE_RETURN"/>
+		public const string STRING_SPLIT_NEWLINE = "\r\n";
+
+        /// <summary>
+        /// This is one of many single characters that are frequently needed as
+        /// single-character string constants.
+        /// </summary>
+        /// <seealso cref="SpecialCharacters.TAB_CHAR"/>
+        public const string TAB_CHAR = "\t";
+
+		/// <summary>
+		/// Render two back-to-back spaces.
+		/// </summary>
+		/// <seealso cref="SPACE_CHAR"/>
+		public const string TWO_SPACES = @"  ";
+
+        /// <summary>
+        /// This is one of many single characters that are frequently needed as
+        /// single-character string constants.
+        /// </summary>
+        /// <seealso cref="SpecialCharacters.UNDERSCORE_CHAR"/>
+        public const string UNDERSCORE_CHAR = @"_";
+
+		/// <summary>
+		/// Use this in place of 'System.IO.Path.AltDirectorySeparatorChar`, which
+		/// lacks const semantics, when you need a true constant.
+		/// </summary>
+		/// <see cref="System.IO.Path.AltDirectorySeparatorChar"/>
+		/// <seealso cref="WINDOWS_PATH_DELIMITER"/>
+		/// <seealso cref="SpecialCharacters.URL_PATH_DELIMITER"/>
+		/// <seealso cref="SpecialCharacters.WINDOWS_PATH_DELIMITER"/>
+		public const string URL_PATH_DELIMITER = "/";
+
+		/// <summary>
+		/// Use this in place of 'System.IO.Path.DirectorySeparatorChar`, which
+		/// lacks const semantics, when you need a true constant.
+		/// </summary>
+		/// <see cref="System.IO.Path.DirectorySeparatorChar"/>
+		/// <seealso cref="URL_PATH_DELIMITER"/>
+		/// <seealso cref="SpecialCharacters.URL_PATH_DELIMITER"/>
+		/// <seealso cref="SpecialCharacters.WINDOWS_PATH_DELIMITER"/>
+		public const string WINDOWS_PATH_DELIMITER = @"\";
+	}   // public sealed class SpecialStrings
+}	// partial namespace WizardWrx

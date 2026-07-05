@@ -1,0 +1,2 @@
+Key	Value
+50	The value stored in this slot is 50.

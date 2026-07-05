@@ -1,0 +1,2 @@
+﻿This is the second of two small files for the FileComparerTests xUnit test suite.
+This file stands alone.

@@ -1,0 +1,58 @@
+﻿[
+	{
+		"KeyWord": "I want to buy a house",
+		"TalkingPointId": 332347
+	},
+	{
+		"KeyWord": "Call Me",
+		"TalkingPointId": 332347
+	},
+	{
+		"KeyWord": "I want to Talk to you",
+		"TalkingPointId": 332347
+	},
+	{
+		"KeyWord": "looking for",
+		"TalkingPointId": 328145
+	},
+	{
+		"KeyWord": "Want To Purchase",
+		"TalkingPointId": 331545
+	},
+	{
+		"KeyWord": "Want To Sell",
+		"TalkingPointId": 331545
+	},
+	{
+		"KeyWord": "Looking For A Home",
+		"TalkingPointId": 331545
+	},
+	{
+		"KeyWord": "Quickly As I Can",
+		"TalkingPointId": 331545
+	},
+	{
+		"KeyWord": "Moving To Town Next Month",
+		"TalkingPointId": 331545
+	},
+	{
+		"KeyWord": "Could You Find",
+		"TalkingPointId": 331545
+	},
+	{
+		"KeyWord": "The Home I Am Looking For",
+		"TalkingPointId": 331545
+	},
+	{
+		"KeyWord": "Please Call",
+		"TalkingPointId": 331545
+	},
+	{
+		"KeyWord": "i am looking to buy",
+		"TalkingPointId": 331545
+	},
+	{
+		"KeyWord": "want to buy",
+		"TalkingPointId": 331545
+	}
+]

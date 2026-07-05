@@ -1,0 +1,2 @@
+﻿This is the first of two small files for the FileComparerTests xUnit test suite.
+This file will have a twin, SmallFileDuplicate.txt, that is an exact copy.

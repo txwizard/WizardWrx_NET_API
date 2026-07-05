@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+    ============================================================================
+    Project Name:		Core.csproj
+
+    Project Abstract:	These are functions upon which virtually everything else
+                        in the WizardWrx .NET API relies, along with additional
+                        related constants.
+
+    Remarks:			Core functions require Microsoft .NET Framework 3.5,
+                        Client Profile, or newer.
+
+                        As it applies to the Roslyn compiler, the Deterministic
+                        switch implements determinism in a very narrow context,
+                        which affects only the versioning of the generated PE
+                        file in which the assembly is stored.
+
+                        This switch is relatively new, and its inclusion in the
+                        default generated project skeleton appears to be quite
+                        recent.
+
+                        For further details, please see the first article cited
+                        in the References section that follows.
+
+    References:			1)	Deterministic builds in Roslyn
+                            http://blog.paranoidcoding.com/2016/04/05/deterministic-builds-in-roslyn.html
+
+                        2)	/deterministic switch for msbuild does not work
+                            https://stackoverflow.com/questions/39657709/deterministic-switch-for-msbuild-does-not-work
+
+    ============================================================================
+    Revision History
+    ============================================================================
+
+    Date       By  Description
+    ========== === =============================================================
+    2019/07/04 DAG Add NuGet package and documentation generation.
+    2019/12/15 DAG Define custom task NuGetPackageNameFixup, and add tasks to
+                   build a package and push it to the NuGet repository.
+
+    2020/10/18 DAG Add -Source nuget.org to NuGet Puse command line.
+
+    2021/01/30 DAG Reinstate wwBldNbrMgr.
+
+    2021/02/04 DAG Rearrange the references.
+
+    2022/04/24 DAG Define a new UsingTask, NuGetPackagePublishDecision, and use
+                   it in a new PublishIfNew target that runs after the Package
+                   target and before the Publish toarget, so that its output can
+                   prevent the Publish target executing.
+
+    2022/06/25 DAG Replace wwBldNbrMgr with AssemblyInfoUtil.
+
+    2022/07/10 DAG When I replaced wwBldNbrMgr with AssemblyInfoUtil, I put it
+                   in the PostBuildEvent event instead of the PreBuildEvent
+                   target.
+    ============================================================================
+-->
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B5282E82-D211-4BEA-BEBD-B2CC6E45BF5C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WizardWrx.Core</RootNamespace>
+    <AssemblyName>WizardWrx.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <!-- 2019/05/18 16:54:22 - DAG - Added for NuGet package builder -->
+    <PackageDir>$(ProjectDir)Package</PackageDir>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>.pdb$;(AllowedOutputExtensionsInPackageBuildOutputFolder)</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <!-- 2019/12/16 00:14:10 - DAG - Define SolutionPackageDir, which points to the local NuGet package directory shared by the entire solution. -->
+    <SolutionPackageDir>$(ProjectDir)..\packages</SolutionPackageDir>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Wizardwrx.Core.XML</DocumentationFile>
+    <LangVersion>7.3</LangVersion>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Wizardwrx.Core.XML</DocumentationFile>
+    <LangVersion>7.3</LangVersion>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="WizardWrx.BitMath, Version=4.3.125.29248, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WizardWrx.BitMath.4.3.125.29248\lib\net20\WizardWrx.BitMath.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\_COMMON_C#_Source\Common.CS">
+      <Link>Common.CS</Link>
+    </Compile>
+    <Compile Include="..\ProductAssemblyInfo.cs">
+      <Link>Properties\ProductAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="AgedFileInfo.cs" />
+    <Compile Include="AgedFileInfoCollection.cs" />
+    <Compile Include="AppDomainSyncRootRegistry.cs" />
+    <Compile Include="AssemblyLocatorBase.cs" />
+    <Compile Include="BasicSystemInfoDisplayMessages.cs" />
+    <Compile Include="ByteArrayBase64Converters.cs" />
+    <Compile Include="ByteArrayFormatters.cs" />
+    <Compile Include="CmdLneArgsBasic.cs" />
+    <Compile Include="Cryptography\DigestComparer.cs" />
+    <Compile Include="DateTimeExtensions.cs" />
+    <Compile Include="EnvTokenExpander.cs" />
+    <Compile Include="FileComparer.cs" />
+    <Compile Include="FileInfoExtension.cs" />
+    <Compile Include="FileInfoExtensionMethods.cs" />
+    <Compile Include="FileNameTricks.cs" />
+    <Compile Include="GenericSingletonBase.cs" />
+    <Compile Include="ListHelpers.cs" />
+    <Compile Include="Logic.cs" />
+    <Compile Include="NumberFormatters.cs" />
+    <Compile Include="PropertyDefaults.cs" />
+    <Compile Include="RecoveredException.cs" />
+    <Compile Include="ReflectionInvoker.cs" />
+    <Compile Include="RegistryValues.cs" />
+    <Compile Include="ReportDetail.cs" />
+    <Compile Include="ReportDetails.cs" />
+    <Compile Include="GitRepositoryNavigation.cs" />
+    <Compile Include="StringExtensions.cs" />
+    <Compile Include="StringFixups.cs" />
+    <Compile Include="SyncRoot.cs" />
+    <Compile Include="SysDateFormatters.cs" />
+    <Compile Include="TextBlocks.cs" />
+    <Compile Include="TimeDisplayFormatter.cs" />
+    <Compile Include="TimeZoneInfoExtensions.cs" />
+    <Compile Include="TraceLogger.cs" />
+    <Compile Include="UnconfiguredDLLSettings.cs" />
+    <Compile Include="UnmanagedLibrary.cs" />
+    <Compile Include="Cryptography\DigestAlgorithm.cs" />
+    <Compile Include="Cryptography\DigestConstants.cs" />
+    <Compile Include="Cryptography\DigestEngines.cs" />
+    <Compile Include="Cryptography\DigestFormatters.cs" />
+    <Compile Include="Cryptography\DigestFile.cs" />
+    <Compile Include="Cryptography\DigestString.cs" />
+    <Compile Include="Cryptography\DigestOutputFormat.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{c1fb48d6-4a54-4424-bca1-4777f3aae2df}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FormatStringEngine\FormatStringEngine.csproj">
+      <Project>{4d82458f-864f-494e-a537-1e89d6c8073c}</Project>
+      <Name>FormatStringEngine</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core.nuspec" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(Custom_MSBuild_Targets)\WizardWrx_NuGet_Packages.TARGETS" Condition="Exists('$(Custom_MSBuild_Targets)\WizardWrx_NuGet_Packages.TARGETS')" />
+</Project>

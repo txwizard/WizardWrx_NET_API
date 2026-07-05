@@ -1,0 +1,2549 @@
+id: DigestEnginesTests
+language: CSharp
+name:
+  Default: DigestEnginesTests
+qualifiedName:
+  Default: DigestEnginesTests
+type: Assembly
+modifiers: {}
+items:
+- id: WizardWrx.Core.Tests
+  commentId: N:WizardWrx.Core.Tests
+  language: CSharp
+  name:
+    CSharp: WizardWrx.Core.Tests
+    VB: WizardWrx.Core.Tests
+  nameWithType:
+    CSharp: WizardWrx.Core.Tests
+    VB: WizardWrx.Core.Tests
+  qualifiedName:
+    CSharp: WizardWrx.Core.Tests
+    VB: WizardWrx.Core.Tests
+  type: Namespace
+  assemblies:
+  - DigestEnginesTests
+  modifiers: {}
+  items:
+  - id: WizardWrx.Core.Tests.DigestComparerTests
+    commentId: T:WizardWrx.Core.Tests.DigestComparerTests
+    language: CSharp
+    name:
+      CSharp: DigestComparerTests
+      VB: DigestComparerTests
+    nameWithType:
+      CSharp: DigestComparerTests
+      VB: DigestComparerTests
+    qualifiedName:
+      CSharp: WizardWrx.Core.Tests.DigestComparerTests
+      VB: WizardWrx.Core.Tests.DigestComparerTests
+    type: Class
+    assemblies:
+    - DigestEnginesTests
+    namespace: WizardWrx.Core.Tests
+    source:
+      remote:
+        path: DigestEnginesTests/DigestComparerTests.cs
+        branch: master
+        repo: https://github.com/txwizard/WizardWrx_NET_API
+      id: DigestComparerTests
+      path: ../DigestEnginesTests/DigestComparerTests.cs
+      startLine: 13
+    summary: "\nUnit tests for the digest comparer subsystem using the same Test_Data\nfiles used by the FileComparer and DigestEngines test suites.\n"
+    example: []
+    syntax:
+      content:
+        CSharp: public class DigestComparerTests
+        VB: Public Class DigestComparerTests
+    inheritance:
+    - System.Object
+    inheritedMembers:
+    - System.Object.ToString
+    - System.Object.Equals(System.Object)
+    - System.Object.Equals(System.Object,System.Object)
+    - System.Object.ReferenceEquals(System.Object,System.Object)
+    - System.Object.GetHashCode
+    - System.Object.GetType
+    - System.Object.MemberwiseClone
+    modifiers:
+      CSharp:
+      - public
+      - class
+      VB:
+      - Public
+      - Class
+    items:
+    - id: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SmallFiles_Identical_ReturnsTrue
+      commentId: M:WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SmallFiles_Identical_ReturnsTrue
+      language: CSharp
+      name:
+        CSharp: DigestComparer_SmallFiles_Identical_ReturnsTrue()
+        VB: DigestComparer_SmallFiles_Identical_ReturnsTrue()
+      nameWithType:
+        CSharp: DigestComparerTests.DigestComparer_SmallFiles_Identical_ReturnsTrue()
+        VB: DigestComparerTests.DigestComparer_SmallFiles_Identical_ReturnsTrue()
+      qualifiedName:
+        CSharp: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SmallFiles_Identical_ReturnsTrue()
+        VB: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SmallFiles_Identical_ReturnsTrue()
+      type: Method
+      assemblies:
+      - DigestEnginesTests
+      namespace: WizardWrx.Core.Tests
+      source:
+        remote:
+          path: DigestEnginesTests/DigestComparerTests.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: DigestComparer_SmallFiles_Identical_ReturnsTrue
+        path: ../DigestEnginesTests/DigestComparerTests.cs
+        startLine: 35
+      syntax:
+        content:
+          CSharp: >-
+            [Fact]
+
+            public void DigestComparer_SmallFiles_Identical_ReturnsTrue()
+          VB: >-
+            <Fact>
+
+            Public Sub DigestComparer_SmallFiles_Identical_ReturnsTrue
+      overload: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SmallFiles_Identical_ReturnsTrue*
+      attributes:
+      - type: Xunit.FactAttribute
+        ctor: Xunit.FactAttribute.#ctor
+        arguments: []
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SmallFiles_Different_ReturnsFalse
+      commentId: M:WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SmallFiles_Different_ReturnsFalse
+      language: CSharp
+      name:
+        CSharp: DigestComparer_SmallFiles_Different_ReturnsFalse()
+        VB: DigestComparer_SmallFiles_Different_ReturnsFalse()
+      nameWithType:
+        CSharp: DigestComparerTests.DigestComparer_SmallFiles_Different_ReturnsFalse()
+        VB: DigestComparerTests.DigestComparer_SmallFiles_Different_ReturnsFalse()
+      qualifiedName:
+        CSharp: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SmallFiles_Different_ReturnsFalse()
+        VB: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SmallFiles_Different_ReturnsFalse()
+      type: Method
+      assemblies:
+      - DigestEnginesTests
+      namespace: WizardWrx.Core.Tests
+      source:
+        remote:
+          path: DigestEnginesTests/DigestComparerTests.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: DigestComparer_SmallFiles_Different_ReturnsFalse
+        path: ../DigestEnginesTests/DigestComparerTests.cs
+        startLine: 46
+      syntax:
+        content:
+          CSharp: >-
+            [Fact]
+
+            public void DigestComparer_SmallFiles_Different_ReturnsFalse()
+          VB: >-
+            <Fact>
+
+            Public Sub DigestComparer_SmallFiles_Different_ReturnsFalse
+      overload: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SmallFiles_Different_ReturnsFalse*
+      attributes:
+      - type: Xunit.FactAttribute
+        ctor: Xunit.FactAttribute.#ctor
+        arguments: []
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_LargeFiles_Identical_ReturnsTrue
+      commentId: M:WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_LargeFiles_Identical_ReturnsTrue
+      language: CSharp
+      name:
+        CSharp: DigestComparer_LargeFiles_Identical_ReturnsTrue()
+        VB: DigestComparer_LargeFiles_Identical_ReturnsTrue()
+      nameWithType:
+        CSharp: DigestComparerTests.DigestComparer_LargeFiles_Identical_ReturnsTrue()
+        VB: DigestComparerTests.DigestComparer_LargeFiles_Identical_ReturnsTrue()
+      qualifiedName:
+        CSharp: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_LargeFiles_Identical_ReturnsTrue()
+        VB: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_LargeFiles_Identical_ReturnsTrue()
+      type: Method
+      assemblies:
+      - DigestEnginesTests
+      namespace: WizardWrx.Core.Tests
+      source:
+        remote:
+          path: DigestEnginesTests/DigestComparerTests.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: DigestComparer_LargeFiles_Identical_ReturnsTrue
+        path: ../DigestEnginesTests/DigestComparerTests.cs
+        startLine: 61
+      syntax:
+        content:
+          CSharp: >-
+            [Fact]
+
+            public void DigestComparer_LargeFiles_Identical_ReturnsTrue()
+          VB: >-
+            <Fact>
+
+            Public Sub DigestComparer_LargeFiles_Identical_ReturnsTrue
+      overload: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_LargeFiles_Identical_ReturnsTrue*
+      attributes:
+      - type: Xunit.FactAttribute
+        ctor: Xunit.FactAttribute.#ctor
+        arguments: []
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_LargeFiles_Different_ReturnsFalse
+      commentId: M:WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_LargeFiles_Different_ReturnsFalse
+      language: CSharp
+      name:
+        CSharp: DigestComparer_LargeFiles_Different_ReturnsFalse()
+        VB: DigestComparer_LargeFiles_Different_ReturnsFalse()
+      nameWithType:
+        CSharp: DigestComparerTests.DigestComparer_LargeFiles_Different_ReturnsFalse()
+        VB: DigestComparerTests.DigestComparer_LargeFiles_Different_ReturnsFalse()
+      qualifiedName:
+        CSharp: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_LargeFiles_Different_ReturnsFalse()
+        VB: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_LargeFiles_Different_ReturnsFalse()
+      type: Method
+      assemblies:
+      - DigestEnginesTests
+      namespace: WizardWrx.Core.Tests
+      source:
+        remote:
+          path: DigestEnginesTests/DigestComparerTests.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: DigestComparer_LargeFiles_Different_ReturnsFalse
+        path: ../DigestEnginesTests/DigestComparerTests.cs
+        startLine: 72
+      syntax:
+        content:
+          CSharp: >-
+            [Fact]
+
+            public void DigestComparer_LargeFiles_Different_ReturnsFalse()
+          VB: >-
+            <Fact>
+
+            Public Sub DigestComparer_LargeFiles_Different_ReturnsFalse
+      overload: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_LargeFiles_Different_ReturnsFalse*
+      attributes:
+      - type: Xunit.FactAttribute
+        ctor: Xunit.FactAttribute.#ctor
+        arguments: []
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_EmptyFile_ThrowsArgumentException
+      commentId: M:WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_EmptyFile_ThrowsArgumentException
+      language: CSharp
+      name:
+        CSharp: DigestComparer_EmptyFile_ThrowsArgumentException()
+        VB: DigestComparer_EmptyFile_ThrowsArgumentException()
+      nameWithType:
+        CSharp: DigestComparerTests.DigestComparer_EmptyFile_ThrowsArgumentException()
+        VB: DigestComparerTests.DigestComparer_EmptyFile_ThrowsArgumentException()
+      qualifiedName:
+        CSharp: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_EmptyFile_ThrowsArgumentException()
+        VB: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_EmptyFile_ThrowsArgumentException()
+      type: Method
+      assemblies:
+      - DigestEnginesTests
+      namespace: WizardWrx.Core.Tests
+      source:
+        remote:
+          path: DigestEnginesTests/DigestComparerTests.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: DigestComparer_EmptyFile_ThrowsArgumentException
+        path: ../DigestEnginesTests/DigestComparerTests.cs
+        startLine: 87
+      syntax:
+        content:
+          CSharp: >-
+            [Fact]
+
+            public void DigestComparer_EmptyFile_ThrowsArgumentException()
+          VB: >-
+            <Fact>
+
+            Public Sub DigestComparer_EmptyFile_ThrowsArgumentException
+      overload: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_EmptyFile_ThrowsArgumentException*
+      attributes:
+      - type: Xunit.FactAttribute
+        ctor: Xunit.FactAttribute.#ctor
+        arguments: []
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_NonexistentFile_ThrowsFileNotFound
+      commentId: M:WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_NonexistentFile_ThrowsFileNotFound
+      language: CSharp
+      name:
+        CSharp: DigestComparer_NonexistentFile_ThrowsFileNotFound()
+        VB: DigestComparer_NonexistentFile_ThrowsFileNotFound()
+      nameWithType:
+        CSharp: DigestComparerTests.DigestComparer_NonexistentFile_ThrowsFileNotFound()
+        VB: DigestComparerTests.DigestComparer_NonexistentFile_ThrowsFileNotFound()
+      qualifiedName:
+        CSharp: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_NonexistentFile_ThrowsFileNotFound()
+        VB: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_NonexistentFile_ThrowsFileNotFound()
+      type: Method
+      assemblies:
+      - DigestEnginesTests
+      namespace: WizardWrx.Core.Tests
+      source:
+        remote:
+          path: DigestEnginesTests/DigestComparerTests.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: DigestComparer_NonexistentFile_ThrowsFileNotFound
+        path: ../DigestEnginesTests/DigestComparerTests.cs
+        startLine: 101
+      syntax:
+        content:
+          CSharp: >-
+            [Fact]
+
+            public void DigestComparer_NonexistentFile_ThrowsFileNotFound()
+          VB: >-
+            <Fact>
+
+            Public Sub DigestComparer_NonexistentFile_ThrowsFileNotFound
+      overload: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_NonexistentFile_ThrowsFileNotFound*
+      attributes:
+      - type: Xunit.FactAttribute
+        ctor: Xunit.FactAttribute.#ctor
+        arguments: []
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_CrossValidate_FileComparer_AgreeOnIdentity
+      commentId: M:WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_CrossValidate_FileComparer_AgreeOnIdentity
+      language: CSharp
+      name:
+        CSharp: DigestComparer_CrossValidate_FileComparer_AgreeOnIdentity()
+        VB: DigestComparer_CrossValidate_FileComparer_AgreeOnIdentity()
+      nameWithType:
+        CSharp: DigestComparerTests.DigestComparer_CrossValidate_FileComparer_AgreeOnIdentity()
+        VB: DigestComparerTests.DigestComparer_CrossValidate_FileComparer_AgreeOnIdentity()
+      qualifiedName:
+        CSharp: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_CrossValidate_FileComparer_AgreeOnIdentity()
+        VB: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_CrossValidate_FileComparer_AgreeOnIdentity()
+      type: Method
+      assemblies:
+      - DigestEnginesTests
+      namespace: WizardWrx.Core.Tests
+      source:
+        remote:
+          path: DigestEnginesTests/DigestComparerTests.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: DigestComparer_CrossValidate_FileComparer_AgreeOnIdentity
+        path: ../DigestEnginesTests/DigestComparerTests.cs
+        startLine: 115
+      syntax:
+        content:
+          CSharp: >-
+            [Fact]
+
+            public void DigestComparer_CrossValidate_FileComparer_AgreeOnIdentity()
+          VB: >-
+            <Fact>
+
+            Public Sub DigestComparer_CrossValidate_FileComparer_AgreeOnIdentity
+      overload: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_CrossValidate_FileComparer_AgreeOnIdentity*
+      attributes:
+      - type: Xunit.FactAttribute
+        ctor: Xunit.FactAttribute.#ctor
+        arguments: []
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_CrossValidate_FileComparer_AgreeOnDifference
+      commentId: M:WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_CrossValidate_FileComparer_AgreeOnDifference
+      language: CSharp
+      name:
+        CSharp: DigestComparer_CrossValidate_FileComparer_AgreeOnDifference()
+        VB: DigestComparer_CrossValidate_FileComparer_AgreeOnDifference()
+      nameWithType:
+        CSharp: DigestComparerTests.DigestComparer_CrossValidate_FileComparer_AgreeOnDifference()
+        VB: DigestComparerTests.DigestComparer_CrossValidate_FileComparer_AgreeOnDifference()
+      qualifiedName:
+        CSharp: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_CrossValidate_FileComparer_AgreeOnDifference()
+        VB: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_CrossValidate_FileComparer_AgreeOnDifference()
+      type: Method
+      assemblies:
+      - DigestEnginesTests
+      namespace: WizardWrx.Core.Tests
+      source:
+        remote:
+          path: DigestEnginesTests/DigestComparerTests.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: DigestComparer_CrossValidate_FileComparer_AgreeOnDifference
+        path: ../DigestEnginesTests/DigestComparerTests.cs
+        startLine: 131
+      syntax:
+        content:
+          CSharp: >-
+            [Fact]
+
+            public void DigestComparer_CrossValidate_FileComparer_AgreeOnDifference()
+          VB: >-
+            <Fact>
+
+            Public Sub DigestComparer_CrossValidate_FileComparer_AgreeOnDifference
+      overload: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_CrossValidate_FileComparer_AgreeOnDifference*
+      attributes:
+      - type: Xunit.FactAttribute
+        ctor: Xunit.FactAttribute.#ctor
+        arguments: []
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA384_SmallFiles_Identical_ReturnsTrue
+      commentId: M:WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA384_SmallFiles_Identical_ReturnsTrue
+      language: CSharp
+      name:
+        CSharp: DigestComparer_SHA384_SmallFiles_Identical_ReturnsTrue()
+        VB: DigestComparer_SHA384_SmallFiles_Identical_ReturnsTrue()
+      nameWithType:
+        CSharp: DigestComparerTests.DigestComparer_SHA384_SmallFiles_Identical_ReturnsTrue()
+        VB: DigestComparerTests.DigestComparer_SHA384_SmallFiles_Identical_ReturnsTrue()
+      qualifiedName:
+        CSharp: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA384_SmallFiles_Identical_ReturnsTrue()
+        VB: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA384_SmallFiles_Identical_ReturnsTrue()
+      type: Method
+      assemblies:
+      - DigestEnginesTests
+      namespace: WizardWrx.Core.Tests
+      source:
+        remote:
+          path: DigestEnginesTests/DigestComparerTests.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: DigestComparer_SHA384_SmallFiles_Identical_ReturnsTrue
+        path: ../DigestEnginesTests/DigestComparerTests.cs
+        startLine: 165
+      syntax:
+        content:
+          CSharp: >-
+            [Fact]
+
+            public void DigestComparer_SHA384_SmallFiles_Identical_ReturnsTrue()
+          VB: >-
+            <Fact>
+
+            Public Sub DigestComparer_SHA384_SmallFiles_Identical_ReturnsTrue
+      overload: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA384_SmallFiles_Identical_ReturnsTrue*
+      attributes:
+      - type: Xunit.FactAttribute
+        ctor: Xunit.FactAttribute.#ctor
+        arguments: []
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA384_SmallFiles_Different_ReturnsFalse
+      commentId: M:WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA384_SmallFiles_Different_ReturnsFalse
+      language: CSharp
+      name:
+        CSharp: DigestComparer_SHA384_SmallFiles_Different_ReturnsFalse()
+        VB: DigestComparer_SHA384_SmallFiles_Different_ReturnsFalse()
+      nameWithType:
+        CSharp: DigestComparerTests.DigestComparer_SHA384_SmallFiles_Different_ReturnsFalse()
+        VB: DigestComparerTests.DigestComparer_SHA384_SmallFiles_Different_ReturnsFalse()
+      qualifiedName:
+        CSharp: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA384_SmallFiles_Different_ReturnsFalse()
+        VB: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA384_SmallFiles_Different_ReturnsFalse()
+      type: Method
+      assemblies:
+      - DigestEnginesTests
+      namespace: WizardWrx.Core.Tests
+      source:
+        remote:
+          path: DigestEnginesTests/DigestComparerTests.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: DigestComparer_SHA384_SmallFiles_Different_ReturnsFalse
+        path: ../DigestEnginesTests/DigestComparerTests.cs
+        startLine: 176
+      syntax:
+        content:
+          CSharp: >-
+            [Fact]
+
+            public void DigestComparer_SHA384_SmallFiles_Different_ReturnsFalse()
+          VB: >-
+            <Fact>
+
+            Public Sub DigestComparer_SHA384_SmallFiles_Different_ReturnsFalse
+      overload: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA384_SmallFiles_Different_ReturnsFalse*
+      attributes:
+      - type: Xunit.FactAttribute
+        ctor: Xunit.FactAttribute.#ctor
+        arguments: []
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA512_SmallFiles_Identical_ReturnsTrue
+      commentId: M:WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA512_SmallFiles_Identical_ReturnsTrue
+      language: CSharp
+      name:
+        CSharp: DigestComparer_SHA512_SmallFiles_Identical_ReturnsTrue()
+        VB: DigestComparer_SHA512_SmallFiles_Identical_ReturnsTrue()
+      nameWithType:
+        CSharp: DigestComparerTests.DigestComparer_SHA512_SmallFiles_Identical_ReturnsTrue()
+        VB: DigestComparerTests.DigestComparer_SHA512_SmallFiles_Identical_ReturnsTrue()
+      qualifiedName:
+        CSharp: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA512_SmallFiles_Identical_ReturnsTrue()
+        VB: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA512_SmallFiles_Identical_ReturnsTrue()
+      type: Method
+      assemblies:
+      - DigestEnginesTests
+      namespace: WizardWrx.Core.Tests
+      source:
+        remote:
+          path: DigestEnginesTests/DigestComparerTests.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: DigestComparer_SHA512_SmallFiles_Identical_ReturnsTrue
+        path: ../DigestEnginesTests/DigestComparerTests.cs
+        startLine: 187
+      syntax:
+        content:
+          CSharp: >-
+            [Fact]
+
+            public void DigestComparer_SHA512_SmallFiles_Identical_ReturnsTrue()
+          VB: >-
+            <Fact>
+
+            Public Sub DigestComparer_SHA512_SmallFiles_Identical_ReturnsTrue
+      overload: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA512_SmallFiles_Identical_ReturnsTrue*
+      attributes:
+      - type: Xunit.FactAttribute
+        ctor: Xunit.FactAttribute.#ctor
+        arguments: []
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA512_SmallFiles_Different_ReturnsFalse
+      commentId: M:WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA512_SmallFiles_Different_ReturnsFalse
+      language: CSharp
+      name:
+        CSharp: DigestComparer_SHA512_SmallFiles_Different_ReturnsFalse()
+        VB: DigestComparer_SHA512_SmallFiles_Different_ReturnsFalse()
+      nameWithType:
+        CSharp: DigestComparerTests.DigestComparer_SHA512_SmallFiles_Different_ReturnsFalse()
+        VB: DigestComparerTests.DigestComparer_SHA512_SmallFiles_Different_ReturnsFalse()
+      qualifiedName:
+        CSharp: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA512_SmallFiles_Different_ReturnsFalse()
+        VB: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA512_SmallFiles_Different_ReturnsFalse()
+      type: Method
+      assemblies:
+      - DigestEnginesTests
+      namespace: WizardWrx.Core.Tests
+      source:
+        remote:
+          path: DigestEnginesTests/DigestComparerTests.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: DigestComparer_SHA512_SmallFiles_Different_ReturnsFalse
+        path: ../DigestEnginesTests/DigestComparerTests.cs
+        startLine: 198
+      syntax:
+        content:
+          CSharp: >-
+            [Fact]
+
+            public void DigestComparer_SHA512_SmallFiles_Different_ReturnsFalse()
+          VB: >-
+            <Fact>
+
+            Public Sub DigestComparer_SHA512_SmallFiles_Different_ReturnsFalse
+      overload: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA512_SmallFiles_Different_ReturnsFalse*
+      attributes:
+      - type: Xunit.FactAttribute
+        ctor: Xunit.FactAttribute.#ctor
+        arguments: []
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+  - id: WizardWrx.Core.Tests.DigestEnginesTests
+    commentId: T:WizardWrx.Core.Tests.DigestEnginesTests
+    language: CSharp
+    name:
+      CSharp: DigestEnginesTests
+      VB: DigestEnginesTests
+    nameWithType:
+      CSharp: DigestEnginesTests
+      VB: DigestEnginesTests
+    qualifiedName:
+      CSharp: WizardWrx.Core.Tests.DigestEnginesTests
+      VB: WizardWrx.Core.Tests.DigestEnginesTests
+    type: Class
+    assemblies:
+    - DigestEnginesTests
+    namespace: WizardWrx.Core.Tests
+    source:
+      remote:
+        path: DigestEnginesTests/DigestEnginesTests.cs
+        branch: master
+        repo: https://github.com/txwizard/WizardWrx_NET_API
+      id: DigestEnginesTests
+      path: ../DigestEnginesTests/DigestEnginesTests.cs
+      startLine: 15
+    summary: "\nUnit tests for the digest subsystem using the same Test_Data files\nused by the FileComparer test suite. This ensures consistent behavior\nacross both subsystems and validates digest correctness under realistic\nconditions.\n"
+    example: []
+    syntax:
+      content:
+        CSharp: public class DigestEnginesTests
+        VB: Public Class DigestEnginesTests
+    inheritance:
+    - System.Object
+    inheritedMembers:
+    - System.Object.ToString
+    - System.Object.Equals(System.Object)
+    - System.Object.Equals(System.Object,System.Object)
+    - System.Object.ReferenceEquals(System.Object,System.Object)
+    - System.Object.GetHashCode
+    - System.Object.GetType
+    - System.Object.MemberwiseClone
+    modifiers:
+      CSharp:
+      - public
+      - class
+      VB:
+      - Public
+      - Class
+    items:
+    - id: WizardWrx.Core.Tests.DigestEnginesTests.Digest_SmallFiles_Identical_ReturnsSameDigest
+      commentId: M:WizardWrx.Core.Tests.DigestEnginesTests.Digest_SmallFiles_Identical_ReturnsSameDigest
+      language: CSharp
+      name:
+        CSharp: Digest_SmallFiles_Identical_ReturnsSameDigest()
+        VB: Digest_SmallFiles_Identical_ReturnsSameDigest()
+      nameWithType:
+        CSharp: DigestEnginesTests.Digest_SmallFiles_Identical_ReturnsSameDigest()
+        VB: DigestEnginesTests.Digest_SmallFiles_Identical_ReturnsSameDigest()
+      qualifiedName:
+        CSharp: WizardWrx.Core.Tests.DigestEnginesTests.Digest_SmallFiles_Identical_ReturnsSameDigest()
+        VB: WizardWrx.Core.Tests.DigestEnginesTests.Digest_SmallFiles_Identical_ReturnsSameDigest()
+      type: Method
+      assemblies:
+      - DigestEnginesTests
+      namespace: WizardWrx.Core.Tests
+      source:
+        remote:
+          path: DigestEnginesTests/DigestEnginesTests.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: Digest_SmallFiles_Identical_ReturnsSameDigest
+        path: ../DigestEnginesTests/DigestEnginesTests.cs
+        startLine: 40
+      syntax:
+        content:
+          CSharp: >-
+            [Fact]
+
+            public void Digest_SmallFiles_Identical_ReturnsSameDigest()
+          VB: >-
+            <Fact>
+
+            Public Sub Digest_SmallFiles_Identical_ReturnsSameDigest
+      overload: WizardWrx.Core.Tests.DigestEnginesTests.Digest_SmallFiles_Identical_ReturnsSameDigest*
+      attributes:
+      - type: Xunit.FactAttribute
+        ctor: Xunit.FactAttribute.#ctor
+        arguments: []
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: WizardWrx.Core.Tests.DigestEnginesTests.Digest_SmallFiles_Different_ReturnsDifferentDigest
+      commentId: M:WizardWrx.Core.Tests.DigestEnginesTests.Digest_SmallFiles_Different_ReturnsDifferentDigest
+      language: CSharp
+      name:
+        CSharp: Digest_SmallFiles_Different_ReturnsDifferentDigest()
+        VB: Digest_SmallFiles_Different_ReturnsDifferentDigest()
+      nameWithType:
+        CSharp: DigestEnginesTests.Digest_SmallFiles_Different_ReturnsDifferentDigest()
+        VB: DigestEnginesTests.Digest_SmallFiles_Different_ReturnsDifferentDigest()
+      qualifiedName:
+        CSharp: WizardWrx.Core.Tests.DigestEnginesTests.Digest_SmallFiles_Different_ReturnsDifferentDigest()
+        VB: WizardWrx.Core.Tests.DigestEnginesTests.Digest_SmallFiles_Different_ReturnsDifferentDigest()
+      type: Method
+      assemblies:
+      - DigestEnginesTests
+      namespace: WizardWrx.Core.Tests
+      source:
+        remote:
+          path: DigestEnginesTests/DigestEnginesTests.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: Digest_SmallFiles_Different_ReturnsDifferentDigest
+        path: ../DigestEnginesTests/DigestEnginesTests.cs
+        startLine: 50
+      syntax:
+        content:
+          CSharp: >-
+            [Fact]
+
+            public void Digest_SmallFiles_Different_ReturnsDifferentDigest()
+          VB: >-
+            <Fact>
+
+            Public Sub Digest_SmallFiles_Different_ReturnsDifferentDigest
+      overload: WizardWrx.Core.Tests.DigestEnginesTests.Digest_SmallFiles_Different_ReturnsDifferentDigest*
+      attributes:
+      - type: Xunit.FactAttribute
+        ctor: Xunit.FactAttribute.#ctor
+        arguments: []
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: WizardWrx.Core.Tests.DigestEnginesTests.Digest_LargeFiles_Identical_ReturnsSameDigest
+      commentId: M:WizardWrx.Core.Tests.DigestEnginesTests.Digest_LargeFiles_Identical_ReturnsSameDigest
+      language: CSharp
+      name:
+        CSharp: Digest_LargeFiles_Identical_ReturnsSameDigest()
+        VB: Digest_LargeFiles_Identical_ReturnsSameDigest()
+      nameWithType:
+        CSharp: DigestEnginesTests.Digest_LargeFiles_Identical_ReturnsSameDigest()
+        VB: DigestEnginesTests.Digest_LargeFiles_Identical_ReturnsSameDigest()
+      qualifiedName:
+        CSharp: WizardWrx.Core.Tests.DigestEnginesTests.Digest_LargeFiles_Identical_ReturnsSameDigest()
+        VB: WizardWrx.Core.Tests.DigestEnginesTests.Digest_LargeFiles_Identical_ReturnsSameDigest()
+      type: Method
+      assemblies:
+      - DigestEnginesTests
+      namespace: WizardWrx.Core.Tests
+      source:
+        remote:
+          path: DigestEnginesTests/DigestEnginesTests.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: Digest_LargeFiles_Identical_ReturnsSameDigest
+        path: ../DigestEnginesTests/DigestEnginesTests.cs
+        startLine: 64
+      syntax:
+        content:
+          CSharp: >-
+            [Fact]
+
+            public void Digest_LargeFiles_Identical_ReturnsSameDigest()
+          VB: >-
+            <Fact>
+
+            Public Sub Digest_LargeFiles_Identical_ReturnsSameDigest
+      overload: WizardWrx.Core.Tests.DigestEnginesTests.Digest_LargeFiles_Identical_ReturnsSameDigest*
+      attributes:
+      - type: Xunit.FactAttribute
+        ctor: Xunit.FactAttribute.#ctor
+        arguments: []
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: WizardWrx.Core.Tests.DigestEnginesTests.Digest_LargeFiles_Different_ReturnsDifferentDigest
+      commentId: M:WizardWrx.Core.Tests.DigestEnginesTests.Digest_LargeFiles_Different_ReturnsDifferentDigest
+      language: CSharp
+      name:
+        CSharp: Digest_LargeFiles_Different_ReturnsDifferentDigest()
+        VB: Digest_LargeFiles_Different_ReturnsDifferentDigest()
+      nameWithType:
+        CSharp: DigestEnginesTests.Digest_LargeFiles_Different_ReturnsDifferentDigest()
+        VB: DigestEnginesTests.Digest_LargeFiles_Different_ReturnsDifferentDigest()
+      qualifiedName:
+        CSharp: WizardWrx.Core.Tests.DigestEnginesTests.Digest_LargeFiles_Different_ReturnsDifferentDigest()
+        VB: WizardWrx.Core.Tests.DigestEnginesTests.Digest_LargeFiles_Different_ReturnsDifferentDigest()
+      type: Method
+      assemblies:
+      - DigestEnginesTests
+      namespace: WizardWrx.Core.Tests
+      source:
+        remote:
+          path: DigestEnginesTests/DigestEnginesTests.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: Digest_LargeFiles_Different_ReturnsDifferentDigest
+        path: ../DigestEnginesTests/DigestEnginesTests.cs
+        startLine: 74
+      syntax:
+        content:
+          CSharp: >-
+            [Fact]
+
+            public void Digest_LargeFiles_Different_ReturnsDifferentDigest()
+          VB: >-
+            <Fact>
+
+            Public Sub Digest_LargeFiles_Different_ReturnsDifferentDigest
+      overload: WizardWrx.Core.Tests.DigestEnginesTests.Digest_LargeFiles_Different_ReturnsDifferentDigest*
+      attributes:
+      - type: Xunit.FactAttribute
+        ctor: Xunit.FactAttribute.#ctor
+        arguments: []
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: WizardWrx.Core.Tests.DigestEnginesTests.Digest_EmptyFile_ThrowsArgumentException
+      commentId: M:WizardWrx.Core.Tests.DigestEnginesTests.Digest_EmptyFile_ThrowsArgumentException
+      language: CSharp
+      name:
+        CSharp: Digest_EmptyFile_ThrowsArgumentException()
+        VB: Digest_EmptyFile_ThrowsArgumentException()
+      nameWithType:
+        CSharp: DigestEnginesTests.Digest_EmptyFile_ThrowsArgumentException()
+        VB: DigestEnginesTests.Digest_EmptyFile_ThrowsArgumentException()
+      qualifiedName:
+        CSharp: WizardWrx.Core.Tests.DigestEnginesTests.Digest_EmptyFile_ThrowsArgumentException()
+        VB: WizardWrx.Core.Tests.DigestEnginesTests.Digest_EmptyFile_ThrowsArgumentException()
+      type: Method
+      assemblies:
+      - DigestEnginesTests
+      namespace: WizardWrx.Core.Tests
+      source:
+        remote:
+          path: DigestEnginesTests/DigestEnginesTests.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: Digest_EmptyFile_ThrowsArgumentException
+        path: ../DigestEnginesTests/DigestEnginesTests.cs
+        startLine: 88
+      syntax:
+        content:
+          CSharp: >-
+            [Fact]
+
+            public void Digest_EmptyFile_ThrowsArgumentException()
+          VB: >-
+            <Fact>
+
+            Public Sub Digest_EmptyFile_ThrowsArgumentException
+      overload: WizardWrx.Core.Tests.DigestEnginesTests.Digest_EmptyFile_ThrowsArgumentException*
+      attributes:
+      - type: Xunit.FactAttribute
+        ctor: Xunit.FactAttribute.#ctor
+        arguments: []
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: WizardWrx.Core.Tests.DigestEnginesTests.Digest_EmptyFile_CompareFilesThrows
+      commentId: M:WizardWrx.Core.Tests.DigestEnginesTests.Digest_EmptyFile_CompareFilesThrows
+      language: CSharp
+      name:
+        CSharp: Digest_EmptyFile_CompareFilesThrows()
+        VB: Digest_EmptyFile_CompareFilesThrows()
+      nameWithType:
+        CSharp: DigestEnginesTests.Digest_EmptyFile_CompareFilesThrows()
+        VB: DigestEnginesTests.Digest_EmptyFile_CompareFilesThrows()
+      qualifiedName:
+        CSharp: WizardWrx.Core.Tests.DigestEnginesTests.Digest_EmptyFile_CompareFilesThrows()
+        VB: WizardWrx.Core.Tests.DigestEnginesTests.Digest_EmptyFile_CompareFilesThrows()
+      type: Method
+      assemblies:
+      - DigestEnginesTests
+      namespace: WizardWrx.Core.Tests
+      source:
+        remote:
+          path: DigestEnginesTests/DigestEnginesTests.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: Digest_EmptyFile_CompareFilesThrows
+        path: ../DigestEnginesTests/DigestEnginesTests.cs
+        startLine: 95
+      syntax:
+        content:
+          CSharp: >-
+            [Fact]
+
+            public void Digest_EmptyFile_CompareFilesThrows()
+          VB: >-
+            <Fact>
+
+            Public Sub Digest_EmptyFile_CompareFilesThrows
+      overload: WizardWrx.Core.Tests.DigestEnginesTests.Digest_EmptyFile_CompareFilesThrows*
+      attributes:
+      - type: Xunit.FactAttribute
+        ctor: Xunit.FactAttribute.#ctor
+        arguments: []
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: WizardWrx.Core.Tests.DigestEnginesTests.Digest_NonexistentFile_ThrowsFileNotFound
+      commentId: M:WizardWrx.Core.Tests.DigestEnginesTests.Digest_NonexistentFile_ThrowsFileNotFound
+      language: CSharp
+      name:
+        CSharp: Digest_NonexistentFile_ThrowsFileNotFound()
+        VB: Digest_NonexistentFile_ThrowsFileNotFound()
+      nameWithType:
+        CSharp: DigestEnginesTests.Digest_NonexistentFile_ThrowsFileNotFound()
+        VB: DigestEnginesTests.Digest_NonexistentFile_ThrowsFileNotFound()
+      qualifiedName:
+        CSharp: WizardWrx.Core.Tests.DigestEnginesTests.Digest_NonexistentFile_ThrowsFileNotFound()
+        VB: WizardWrx.Core.Tests.DigestEnginesTests.Digest_NonexistentFile_ThrowsFileNotFound()
+      type: Method
+      assemblies:
+      - DigestEnginesTests
+      namespace: WizardWrx.Core.Tests
+      source:
+        remote:
+          path: DigestEnginesTests/DigestEnginesTests.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: Digest_NonexistentFile_ThrowsFileNotFound
+        path: ../DigestEnginesTests/DigestEnginesTests.cs
+        startLine: 106
+      syntax:
+        content:
+          CSharp: >-
+            [Fact]
+
+            public void Digest_NonexistentFile_ThrowsFileNotFound()
+          VB: >-
+            <Fact>
+
+            Public Sub Digest_NonexistentFile_ThrowsFileNotFound
+      overload: WizardWrx.Core.Tests.DigestEnginesTests.Digest_NonexistentFile_ThrowsFileNotFound*
+      attributes:
+      - type: Xunit.FactAttribute
+        ctor: Xunit.FactAttribute.#ctor
+        arguments: []
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: WizardWrx.Core.Tests.DigestEnginesTests.Digest_CrossValidate_FileComparer_AgreeOnIdentity
+      commentId: M:WizardWrx.Core.Tests.DigestEnginesTests.Digest_CrossValidate_FileComparer_AgreeOnIdentity
+      language: CSharp
+      name:
+        CSharp: Digest_CrossValidate_FileComparer_AgreeOnIdentity()
+        VB: Digest_CrossValidate_FileComparer_AgreeOnIdentity()
+      nameWithType:
+        CSharp: DigestEnginesTests.Digest_CrossValidate_FileComparer_AgreeOnIdentity()
+        VB: DigestEnginesTests.Digest_CrossValidate_FileComparer_AgreeOnIdentity()
+      qualifiedName:
+        CSharp: WizardWrx.Core.Tests.DigestEnginesTests.Digest_CrossValidate_FileComparer_AgreeOnIdentity()
+        VB: WizardWrx.Core.Tests.DigestEnginesTests.Digest_CrossValidate_FileComparer_AgreeOnIdentity()
+      type: Method
+      assemblies:
+      - DigestEnginesTests
+      namespace: WizardWrx.Core.Tests
+      source:
+        remote:
+          path: DigestEnginesTests/DigestEnginesTests.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: Digest_CrossValidate_FileComparer_AgreeOnIdentity
+        path: ../DigestEnginesTests/DigestEnginesTests.cs
+        startLine: 131
+      syntax:
+        content:
+          CSharp: >-
+            [Fact]
+
+            public void Digest_CrossValidate_FileComparer_AgreeOnIdentity()
+          VB: >-
+            <Fact>
+
+            Public Sub Digest_CrossValidate_FileComparer_AgreeOnIdentity
+      overload: WizardWrx.Core.Tests.DigestEnginesTests.Digest_CrossValidate_FileComparer_AgreeOnIdentity*
+      attributes:
+      - type: Xunit.FactAttribute
+        ctor: Xunit.FactAttribute.#ctor
+        arguments: []
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: WizardWrx.Core.Tests.DigestEnginesTests.Digest_CrossValidate_FileComparer_AgreeOnDifference
+      commentId: M:WizardWrx.Core.Tests.DigestEnginesTests.Digest_CrossValidate_FileComparer_AgreeOnDifference
+      language: CSharp
+      name:
+        CSharp: Digest_CrossValidate_FileComparer_AgreeOnDifference()
+        VB: Digest_CrossValidate_FileComparer_AgreeOnDifference()
+      nameWithType:
+        CSharp: DigestEnginesTests.Digest_CrossValidate_FileComparer_AgreeOnDifference()
+        VB: DigestEnginesTests.Digest_CrossValidate_FileComparer_AgreeOnDifference()
+      qualifiedName:
+        CSharp: WizardWrx.Core.Tests.DigestEnginesTests.Digest_CrossValidate_FileComparer_AgreeOnDifference()
+        VB: WizardWrx.Core.Tests.DigestEnginesTests.Digest_CrossValidate_FileComparer_AgreeOnDifference()
+      type: Method
+      assemblies:
+      - DigestEnginesTests
+      namespace: WizardWrx.Core.Tests
+      source:
+        remote:
+          path: DigestEnginesTests/DigestEnginesTests.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: Digest_CrossValidate_FileComparer_AgreeOnDifference
+        path: ../DigestEnginesTests/DigestEnginesTests.cs
+        startLine: 142
+      syntax:
+        content:
+          CSharp: >-
+            [Fact]
+
+            public void Digest_CrossValidate_FileComparer_AgreeOnDifference()
+          VB: >-
+            <Fact>
+
+            Public Sub Digest_CrossValidate_FileComparer_AgreeOnDifference
+      overload: WizardWrx.Core.Tests.DigestEnginesTests.Digest_CrossValidate_FileComparer_AgreeOnDifference*
+      attributes:
+      - type: Xunit.FactAttribute
+        ctor: Xunit.FactAttribute.#ctor
+        arguments: []
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+  - id: WizardWrx.Core.Tests.FileComparerTests
+    commentId: T:WizardWrx.Core.Tests.FileComparerTests
+    language: CSharp
+    name:
+      CSharp: FileComparerTests
+      VB: FileComparerTests
+    nameWithType:
+      CSharp: FileComparerTests
+      VB: FileComparerTests
+    qualifiedName:
+      CSharp: WizardWrx.Core.Tests.FileComparerTests
+      VB: WizardWrx.Core.Tests.FileComparerTests
+    type: Class
+    assemblies:
+    - DigestEnginesTests
+    namespace: WizardWrx.Core.Tests
+    source:
+      remote:
+        path: DigestEnginesTests/FileComparerTests.cs
+        branch: master
+        repo: https://github.com/txwizard/WizardWrx_NET_API
+      id: FileComparerTests
+      path: ../DigestEnginesTests/FileComparerTests.cs
+      startLine: 8
+    syntax:
+      content:
+        CSharp: public class FileComparerTests
+        VB: Public Class FileComparerTests
+    inheritance:
+    - System.Object
+    inheritedMembers:
+    - System.Object.ToString
+    - System.Object.Equals(System.Object)
+    - System.Object.Equals(System.Object,System.Object)
+    - System.Object.ReferenceEquals(System.Object,System.Object)
+    - System.Object.GetHashCode
+    - System.Object.GetType
+    - System.Object.MemberwiseClone
+    modifiers:
+      CSharp:
+      - public
+      - class
+      VB:
+      - Public
+      - Class
+    items:
+    - id: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_SmallFiles_Identical_ReturnsTrue
+      commentId: M:WizardWrx.Core.Tests.FileComparerTests.CompareFiles_SmallFiles_Identical_ReturnsTrue
+      language: CSharp
+      name:
+        CSharp: CompareFiles_SmallFiles_Identical_ReturnsTrue()
+        VB: CompareFiles_SmallFiles_Identical_ReturnsTrue()
+      nameWithType:
+        CSharp: FileComparerTests.CompareFiles_SmallFiles_Identical_ReturnsTrue()
+        VB: FileComparerTests.CompareFiles_SmallFiles_Identical_ReturnsTrue()
+      qualifiedName:
+        CSharp: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_SmallFiles_Identical_ReturnsTrue()
+        VB: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_SmallFiles_Identical_ReturnsTrue()
+      type: Method
+      assemblies:
+      - DigestEnginesTests
+      namespace: WizardWrx.Core.Tests
+      source:
+        remote:
+          path: DigestEnginesTests/FileComparerTests.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: CompareFiles_SmallFiles_Identical_ReturnsTrue
+        path: ../DigestEnginesTests/FileComparerTests.cs
+        startLine: 25
+      syntax:
+        content:
+          CSharp: >-
+            [Fact]
+
+            public void CompareFiles_SmallFiles_Identical_ReturnsTrue()
+          VB: >-
+            <Fact>
+
+            Public Sub CompareFiles_SmallFiles_Identical_ReturnsTrue
+      overload: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_SmallFiles_Identical_ReturnsTrue*
+      attributes:
+      - type: Xunit.FactAttribute
+        ctor: Xunit.FactAttribute.#ctor
+        arguments: []
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_SmallFiles_Different_ReturnsFalse
+      commentId: M:WizardWrx.Core.Tests.FileComparerTests.CompareFiles_SmallFiles_Different_ReturnsFalse
+      language: CSharp
+      name:
+        CSharp: CompareFiles_SmallFiles_Different_ReturnsFalse()
+        VB: CompareFiles_SmallFiles_Different_ReturnsFalse()
+      nameWithType:
+        CSharp: FileComparerTests.CompareFiles_SmallFiles_Different_ReturnsFalse()
+        VB: FileComparerTests.CompareFiles_SmallFiles_Different_ReturnsFalse()
+      qualifiedName:
+        CSharp: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_SmallFiles_Different_ReturnsFalse()
+        VB: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_SmallFiles_Different_ReturnsFalse()
+      type: Method
+      assemblies:
+      - DigestEnginesTests
+      namespace: WizardWrx.Core.Tests
+      source:
+        remote:
+          path: DigestEnginesTests/FileComparerTests.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: CompareFiles_SmallFiles_Different_ReturnsFalse
+        path: ../DigestEnginesTests/FileComparerTests.cs
+        startLine: 36
+      syntax:
+        content:
+          CSharp: >-
+            [Fact]
+
+            public void CompareFiles_SmallFiles_Different_ReturnsFalse()
+          VB: >-
+            <Fact>
+
+            Public Sub CompareFiles_SmallFiles_Different_ReturnsFalse
+      overload: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_SmallFiles_Different_ReturnsFalse*
+      attributes:
+      - type: Xunit.FactAttribute
+        ctor: Xunit.FactAttribute.#ctor
+        arguments: []
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_LargeFiles_Identical_ReturnsTrue
+      commentId: M:WizardWrx.Core.Tests.FileComparerTests.CompareFiles_LargeFiles_Identical_ReturnsTrue
+      language: CSharp
+      name:
+        CSharp: CompareFiles_LargeFiles_Identical_ReturnsTrue()
+        VB: CompareFiles_LargeFiles_Identical_ReturnsTrue()
+      nameWithType:
+        CSharp: FileComparerTests.CompareFiles_LargeFiles_Identical_ReturnsTrue()
+        VB: FileComparerTests.CompareFiles_LargeFiles_Identical_ReturnsTrue()
+      qualifiedName:
+        CSharp: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_LargeFiles_Identical_ReturnsTrue()
+        VB: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_LargeFiles_Identical_ReturnsTrue()
+      type: Method
+      assemblies:
+      - DigestEnginesTests
+      namespace: WizardWrx.Core.Tests
+      source:
+        remote:
+          path: DigestEnginesTests/FileComparerTests.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: CompareFiles_LargeFiles_Identical_ReturnsTrue
+        path: ../DigestEnginesTests/FileComparerTests.cs
+        startLine: 47
+      syntax:
+        content:
+          CSharp: >-
+            [Fact]
+
+            public void CompareFiles_LargeFiles_Identical_ReturnsTrue()
+          VB: >-
+            <Fact>
+
+            Public Sub CompareFiles_LargeFiles_Identical_ReturnsTrue
+      overload: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_LargeFiles_Identical_ReturnsTrue*
+      attributes:
+      - type: Xunit.FactAttribute
+        ctor: Xunit.FactAttribute.#ctor
+        arguments: []
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_LargeFiles_Different_ReturnsFalse
+      commentId: M:WizardWrx.Core.Tests.FileComparerTests.CompareFiles_LargeFiles_Different_ReturnsFalse
+      language: CSharp
+      name:
+        CSharp: CompareFiles_LargeFiles_Different_ReturnsFalse()
+        VB: CompareFiles_LargeFiles_Different_ReturnsFalse()
+      nameWithType:
+        CSharp: FileComparerTests.CompareFiles_LargeFiles_Different_ReturnsFalse()
+        VB: FileComparerTests.CompareFiles_LargeFiles_Different_ReturnsFalse()
+      qualifiedName:
+        CSharp: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_LargeFiles_Different_ReturnsFalse()
+        VB: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_LargeFiles_Different_ReturnsFalse()
+      type: Method
+      assemblies:
+      - DigestEnginesTests
+      namespace: WizardWrx.Core.Tests
+      source:
+        remote:
+          path: DigestEnginesTests/FileComparerTests.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: CompareFiles_LargeFiles_Different_ReturnsFalse
+        path: ../DigestEnginesTests/FileComparerTests.cs
+        startLine: 60
+      syntax:
+        content:
+          CSharp: >-
+            [Fact]
+
+            public void CompareFiles_LargeFiles_Different_ReturnsFalse()
+          VB: >-
+            <Fact>
+
+            Public Sub CompareFiles_LargeFiles_Different_ReturnsFalse
+      overload: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_LargeFiles_Different_ReturnsFalse*
+      attributes:
+      - type: Xunit.FactAttribute
+        ctor: Xunit.FactAttribute.#ctor
+        arguments: []
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_FirstFileMissing_Throws
+      commentId: M:WizardWrx.Core.Tests.FileComparerTests.CompareFiles_FirstFileMissing_Throws
+      language: CSharp
+      name:
+        CSharp: CompareFiles_FirstFileMissing_Throws()
+        VB: CompareFiles_FirstFileMissing_Throws()
+      nameWithType:
+        CSharp: FileComparerTests.CompareFiles_FirstFileMissing_Throws()
+        VB: FileComparerTests.CompareFiles_FirstFileMissing_Throws()
+      qualifiedName:
+        CSharp: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_FirstFileMissing_Throws()
+        VB: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_FirstFileMissing_Throws()
+      type: Method
+      assemblies:
+      - DigestEnginesTests
+      namespace: WizardWrx.Core.Tests
+      source:
+        remote:
+          path: DigestEnginesTests/FileComparerTests.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: CompareFiles_FirstFileMissing_Throws
+        path: ../DigestEnginesTests/FileComparerTests.cs
+        startLine: 73
+      syntax:
+        content:
+          CSharp: >-
+            [Fact]
+
+            public void CompareFiles_FirstFileMissing_Throws()
+          VB: >-
+            <Fact>
+
+            Public Sub CompareFiles_FirstFileMissing_Throws
+      overload: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_FirstFileMissing_Throws*
+      attributes:
+      - type: Xunit.FactAttribute
+        ctor: Xunit.FactAttribute.#ctor
+        arguments: []
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_SecondFileMissing_Throws
+      commentId: M:WizardWrx.Core.Tests.FileComparerTests.CompareFiles_SecondFileMissing_Throws
+      language: CSharp
+      name:
+        CSharp: CompareFiles_SecondFileMissing_Throws()
+        VB: CompareFiles_SecondFileMissing_Throws()
+      nameWithType:
+        CSharp: FileComparerTests.CompareFiles_SecondFileMissing_Throws()
+        VB: FileComparerTests.CompareFiles_SecondFileMissing_Throws()
+      qualifiedName:
+        CSharp: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_SecondFileMissing_Throws()
+        VB: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_SecondFileMissing_Throws()
+      type: Method
+      assemblies:
+      - DigestEnginesTests
+      namespace: WizardWrx.Core.Tests
+      source:
+        remote:
+          path: DigestEnginesTests/FileComparerTests.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: CompareFiles_SecondFileMissing_Throws
+        path: ../DigestEnginesTests/FileComparerTests.cs
+        startLine: 83
+      syntax:
+        content:
+          CSharp: >-
+            [Fact]
+
+            public void CompareFiles_SecondFileMissing_Throws()
+          VB: >-
+            <Fact>
+
+            Public Sub CompareFiles_SecondFileMissing_Throws
+      overload: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_SecondFileMissing_Throws*
+      attributes:
+      - type: Xunit.FactAttribute
+        ctor: Xunit.FactAttribute.#ctor
+        arguments: []
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: WizardWrx.Core.Tests.FileComparerTests.TryCompareFiles_FileMissing_ReturnsFalseAndOutputsException
+      commentId: M:WizardWrx.Core.Tests.FileComparerTests.TryCompareFiles_FileMissing_ReturnsFalseAndOutputsException
+      language: CSharp
+      name:
+        CSharp: TryCompareFiles_FileMissing_ReturnsFalseAndOutputsException()
+        VB: TryCompareFiles_FileMissing_ReturnsFalseAndOutputsException()
+      nameWithType:
+        CSharp: FileComparerTests.TryCompareFiles_FileMissing_ReturnsFalseAndOutputsException()
+        VB: FileComparerTests.TryCompareFiles_FileMissing_ReturnsFalseAndOutputsException()
+      qualifiedName:
+        CSharp: WizardWrx.Core.Tests.FileComparerTests.TryCompareFiles_FileMissing_ReturnsFalseAndOutputsException()
+        VB: WizardWrx.Core.Tests.FileComparerTests.TryCompareFiles_FileMissing_ReturnsFalseAndOutputsException()
+      type: Method
+      assemblies:
+      - DigestEnginesTests
+      namespace: WizardWrx.Core.Tests
+      source:
+        remote:
+          path: DigestEnginesTests/FileComparerTests.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: TryCompareFiles_FileMissing_ReturnsFalseAndOutputsException
+        path: ../DigestEnginesTests/FileComparerTests.cs
+        startLine: 93
+      syntax:
+        content:
+          CSharp: >-
+            [Fact]
+
+            public void TryCompareFiles_FileMissing_ReturnsFalseAndOutputsException()
+          VB: >-
+            <Fact>
+
+            Public Sub TryCompareFiles_FileMissing_ReturnsFalseAndOutputsException
+      overload: WizardWrx.Core.Tests.FileComparerTests.TryCompareFiles_FileMissing_ReturnsFalseAndOutputsException*
+      attributes:
+      - type: Xunit.FactAttribute
+        ctor: Xunit.FactAttribute.#ctor
+        arguments: []
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Identical_ReturnsTrue
+      commentId: M:WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Identical_ReturnsTrue
+      language: CSharp
+      name:
+        CSharp: CompareByteArrays_Identical_ReturnsTrue()
+        VB: CompareByteArrays_Identical_ReturnsTrue()
+      nameWithType:
+        CSharp: FileComparerTests.CompareByteArrays_Identical_ReturnsTrue()
+        VB: FileComparerTests.CompareByteArrays_Identical_ReturnsTrue()
+      qualifiedName:
+        CSharp: WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Identical_ReturnsTrue()
+        VB: WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Identical_ReturnsTrue()
+      type: Method
+      assemblies:
+      - DigestEnginesTests
+      namespace: WizardWrx.Core.Tests
+      source:
+        remote:
+          path: DigestEnginesTests/FileComparerTests.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: CompareByteArrays_Identical_ReturnsTrue
+        path: ../DigestEnginesTests/FileComparerTests.cs
+        startLine: 107
+      syntax:
+        content:
+          CSharp: >-
+            [Fact]
+
+            public void CompareByteArrays_Identical_ReturnsTrue()
+          VB: >-
+            <Fact>
+
+            Public Sub CompareByteArrays_Identical_ReturnsTrue
+      overload: WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Identical_ReturnsTrue*
+      attributes:
+      - type: Xunit.FactAttribute
+        ctor: Xunit.FactAttribute.#ctor
+        arguments: []
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Different_ReturnsFalse
+      commentId: M:WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Different_ReturnsFalse
+      language: CSharp
+      name:
+        CSharp: CompareByteArrays_Different_ReturnsFalse()
+        VB: CompareByteArrays_Different_ReturnsFalse()
+      nameWithType:
+        CSharp: FileComparerTests.CompareByteArrays_Different_ReturnsFalse()
+        VB: FileComparerTests.CompareByteArrays_Different_ReturnsFalse()
+      qualifiedName:
+        CSharp: WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Different_ReturnsFalse()
+        VB: WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Different_ReturnsFalse()
+      type: Method
+      assemblies:
+      - DigestEnginesTests
+      namespace: WizardWrx.Core.Tests
+      source:
+        remote:
+          path: DigestEnginesTests/FileComparerTests.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: CompareByteArrays_Different_ReturnsFalse
+        path: ../DigestEnginesTests/FileComparerTests.cs
+        startLine: 117
+      syntax:
+        content:
+          CSharp: >-
+            [Fact]
+
+            public void CompareByteArrays_Different_ReturnsFalse()
+          VB: >-
+            <Fact>
+
+            Public Sub CompareByteArrays_Different_ReturnsFalse
+      overload: WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Different_ReturnsFalse*
+      attributes:
+      - type: Xunit.FactAttribute
+        ctor: Xunit.FactAttribute.#ctor
+        arguments: []
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Empty_Throws
+      commentId: M:WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Empty_Throws
+      language: CSharp
+      name:
+        CSharp: CompareByteArrays_Empty_Throws()
+        VB: CompareByteArrays_Empty_Throws()
+      nameWithType:
+        CSharp: FileComparerTests.CompareByteArrays_Empty_Throws()
+        VB: FileComparerTests.CompareByteArrays_Empty_Throws()
+      qualifiedName:
+        CSharp: WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Empty_Throws()
+        VB: WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Empty_Throws()
+      type: Method
+      assemblies:
+      - DigestEnginesTests
+      namespace: WizardWrx.Core.Tests
+      source:
+        remote:
+          path: DigestEnginesTests/FileComparerTests.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: CompareByteArrays_Empty_Throws
+        path: ../DigestEnginesTests/FileComparerTests.cs
+        startLine: 127
+      syntax:
+        content:
+          CSharp: >-
+            [Fact]
+
+            public void CompareByteArrays_Empty_Throws()
+          VB: >-
+            <Fact>
+
+            Public Sub CompareByteArrays_Empty_Throws
+      overload: WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Empty_Throws*
+      attributes:
+      - type: Xunit.FactAttribute
+        ctor: Xunit.FactAttribute.#ctor
+        arguments: []
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Null_Throws
+      commentId: M:WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Null_Throws
+      language: CSharp
+      name:
+        CSharp: CompareByteArrays_Null_Throws()
+        VB: CompareByteArrays_Null_Throws()
+      nameWithType:
+        CSharp: FileComparerTests.CompareByteArrays_Null_Throws()
+        VB: FileComparerTests.CompareByteArrays_Null_Throws()
+      qualifiedName:
+        CSharp: WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Null_Throws()
+        VB: WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Null_Throws()
+      type: Method
+      assemblies:
+      - DigestEnginesTests
+      namespace: WizardWrx.Core.Tests
+      source:
+        remote:
+          path: DigestEnginesTests/FileComparerTests.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: CompareByteArrays_Null_Throws
+        path: ../DigestEnginesTests/FileComparerTests.cs
+        startLine: 141
+      syntax:
+        content:
+          CSharp: >-
+            [Fact]
+
+            public void CompareByteArrays_Null_Throws()
+          VB: >-
+            <Fact>
+
+            Public Sub CompareByteArrays_Null_Throws
+      overload: WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Null_Throws*
+      attributes:
+      - type: Xunit.FactAttribute
+        ctor: Xunit.FactAttribute.#ctor
+        arguments: []
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_EmptyFiles_ThrowsArgumentException
+      commentId: M:WizardWrx.Core.Tests.FileComparerTests.CompareFiles_EmptyFiles_ThrowsArgumentException
+      language: CSharp
+      name:
+        CSharp: CompareFiles_EmptyFiles_ThrowsArgumentException()
+        VB: CompareFiles_EmptyFiles_ThrowsArgumentException()
+      nameWithType:
+        CSharp: FileComparerTests.CompareFiles_EmptyFiles_ThrowsArgumentException()
+        VB: FileComparerTests.CompareFiles_EmptyFiles_ThrowsArgumentException()
+      qualifiedName:
+        CSharp: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_EmptyFiles_ThrowsArgumentException()
+        VB: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_EmptyFiles_ThrowsArgumentException()
+      type: Method
+      assemblies:
+      - DigestEnginesTests
+      namespace: WizardWrx.Core.Tests
+      source:
+        remote:
+          path: DigestEnginesTests/FileComparerTests.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: CompareFiles_EmptyFiles_ThrowsArgumentException
+        path: ../DigestEnginesTests/FileComparerTests.cs
+        startLine: 154
+      syntax:
+        content:
+          CSharp: >-
+            [Fact]
+
+            public void CompareFiles_EmptyFiles_ThrowsArgumentException()
+          VB: >-
+            <Fact>
+
+            Public Sub CompareFiles_EmptyFiles_ThrowsArgumentException
+      overload: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_EmptyFiles_ThrowsArgumentException*
+      attributes:
+      - type: Xunit.FactAttribute
+        ctor: Xunit.FactAttribute.#ctor
+        arguments: []
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: WizardWrx.Core.Tests.FileComparerTests.TryCompareFiles_EmptyFiles_ReturnsFalseAndOutputsException
+      commentId: M:WizardWrx.Core.Tests.FileComparerTests.TryCompareFiles_EmptyFiles_ReturnsFalseAndOutputsException
+      language: CSharp
+      name:
+        CSharp: TryCompareFiles_EmptyFiles_ReturnsFalseAndOutputsException()
+        VB: TryCompareFiles_EmptyFiles_ReturnsFalseAndOutputsException()
+      nameWithType:
+        CSharp: FileComparerTests.TryCompareFiles_EmptyFiles_ReturnsFalseAndOutputsException()
+        VB: FileComparerTests.TryCompareFiles_EmptyFiles_ReturnsFalseAndOutputsException()
+      qualifiedName:
+        CSharp: WizardWrx.Core.Tests.FileComparerTests.TryCompareFiles_EmptyFiles_ReturnsFalseAndOutputsException()
+        VB: WizardWrx.Core.Tests.FileComparerTests.TryCompareFiles_EmptyFiles_ReturnsFalseAndOutputsException()
+      type: Method
+      assemblies:
+      - DigestEnginesTests
+      namespace: WizardWrx.Core.Tests
+      source:
+        remote:
+          path: DigestEnginesTests/FileComparerTests.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: TryCompareFiles_EmptyFiles_ReturnsFalseAndOutputsException
+        path: ../DigestEnginesTests/FileComparerTests.cs
+        startLine: 164
+      syntax:
+        content:
+          CSharp: >-
+            [Fact]
+
+            public void TryCompareFiles_EmptyFiles_ReturnsFalseAndOutputsException()
+          VB: >-
+            <Fact>
+
+            Public Sub TryCompareFiles_EmptyFiles_ReturnsFalseAndOutputsException
+      overload: WizardWrx.Core.Tests.FileComparerTests.TryCompareFiles_EmptyFiles_ReturnsFalseAndOutputsException*
+      attributes:
+      - type: Xunit.FactAttribute
+        ctor: Xunit.FactAttribute.#ctor
+        arguments: []
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+references:
+  System:
+    name:
+      CSharp:
+      - name: System
+        nameWithType: System
+        qualifiedName: System
+        isExternal: true
+      VB:
+      - name: System
+        nameWithType: System
+        qualifiedName: System
+    isDefinition: true
+    commentId: N:System
+  System.Object:
+    name:
+      CSharp:
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      VB:
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+    isDefinition: true
+    parent: System
+    commentId: T:System.Object
+  System.Object.ToString:
+    name:
+      CSharp:
+      - id: System.Object.ToString
+        name: ToString
+        nameWithType: Object.ToString
+        qualifiedName: System.Object.ToString
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.ToString
+        name: ToString
+        nameWithType: Object.ToString
+        qualifiedName: System.Object.ToString
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.ToString
+  System.Object.Equals(System.Object):
+    name:
+      CSharp:
+      - id: System.Object.Equals(System.Object)
+        name: Equals
+        nameWithType: Object.Equals
+        qualifiedName: System.Object.Equals
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.Equals(System.Object)
+        name: Equals
+        nameWithType: Object.Equals
+        qualifiedName: System.Object.Equals
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.Equals(System.Object)
+  System.Object.Equals(System.Object,System.Object):
+    name:
+      CSharp:
+      - id: System.Object.Equals(System.Object,System.Object)
+        name: Equals
+        nameWithType: Object.Equals
+        qualifiedName: System.Object.Equals
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.Equals(System.Object,System.Object)
+        name: Equals
+        nameWithType: Object.Equals
+        qualifiedName: System.Object.Equals
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.Equals(System.Object,System.Object)
+  System.Object.ReferenceEquals(System.Object,System.Object):
+    name:
+      CSharp:
+      - id: System.Object.ReferenceEquals(System.Object,System.Object)
+        name: ReferenceEquals
+        nameWithType: Object.ReferenceEquals
+        qualifiedName: System.Object.ReferenceEquals
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.ReferenceEquals(System.Object,System.Object)
+        name: ReferenceEquals
+        nameWithType: Object.ReferenceEquals
+        qualifiedName: System.Object.ReferenceEquals
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  System.Object.GetHashCode:
+    name:
+      CSharp:
+      - id: System.Object.GetHashCode
+        name: GetHashCode
+        nameWithType: Object.GetHashCode
+        qualifiedName: System.Object.GetHashCode
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.GetHashCode
+        name: GetHashCode
+        nameWithType: Object.GetHashCode
+        qualifiedName: System.Object.GetHashCode
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.GetHashCode
+  System.Object.GetType:
+    name:
+      CSharp:
+      - id: System.Object.GetType
+        name: GetType
+        nameWithType: Object.GetType
+        qualifiedName: System.Object.GetType
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.GetType
+        name: GetType
+        nameWithType: Object.GetType
+        qualifiedName: System.Object.GetType
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.GetType
+  System.Object.MemberwiseClone:
+    name:
+      CSharp:
+      - id: System.Object.MemberwiseClone
+        name: MemberwiseClone
+        nameWithType: Object.MemberwiseClone
+        qualifiedName: System.Object.MemberwiseClone
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.MemberwiseClone
+        name: MemberwiseClone
+        nameWithType: Object.MemberwiseClone
+        qualifiedName: System.Object.MemberwiseClone
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.MemberwiseClone
+  WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SmallFiles_Identical_ReturnsTrue*:
+    name:
+      CSharp:
+      - id: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SmallFiles_Identical_ReturnsTrue*
+        name: DigestComparer_SmallFiles_Identical_ReturnsTrue
+        nameWithType: DigestComparerTests.DigestComparer_SmallFiles_Identical_ReturnsTrue
+        qualifiedName: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SmallFiles_Identical_ReturnsTrue
+      VB:
+      - id: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SmallFiles_Identical_ReturnsTrue*
+        name: DigestComparer_SmallFiles_Identical_ReturnsTrue
+        nameWithType: DigestComparerTests.DigestComparer_SmallFiles_Identical_ReturnsTrue
+        qualifiedName: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SmallFiles_Identical_ReturnsTrue
+    isDefinition: true
+    commentId: Overload:WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SmallFiles_Identical_ReturnsTrue
+  Xunit:
+    name:
+      CSharp:
+      - name: Xunit
+        nameWithType: Xunit
+        qualifiedName: Xunit
+        isExternal: true
+      VB:
+      - name: Xunit
+        nameWithType: Xunit
+        qualifiedName: Xunit
+    isDefinition: true
+    commentId: N:Xunit
+  Xunit.FactAttribute:
+    name:
+      CSharp:
+      - id: Xunit.FactAttribute
+        name: FactAttribute
+        nameWithType: FactAttribute
+        qualifiedName: Xunit.FactAttribute
+        isExternal: true
+      VB:
+      - id: Xunit.FactAttribute
+        name: FactAttribute
+        nameWithType: FactAttribute
+        qualifiedName: Xunit.FactAttribute
+        isExternal: true
+    isDefinition: true
+    parent: Xunit
+    commentId: T:Xunit.FactAttribute
+  Xunit.FactAttribute.#ctor:
+    name:
+      CSharp:
+      - id: Xunit.FactAttribute.#ctor
+        name: FactAttribute
+        nameWithType: FactAttribute.FactAttribute
+        qualifiedName: Xunit.FactAttribute.FactAttribute
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: Xunit.FactAttribute.#ctor
+        name: FactAttribute
+        nameWithType: FactAttribute.FactAttribute
+        qualifiedName: Xunit.FactAttribute.FactAttribute
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: Xunit.FactAttribute
+    commentId: M:Xunit.FactAttribute.#ctor
+  WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SmallFiles_Different_ReturnsFalse*:
+    name:
+      CSharp:
+      - id: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SmallFiles_Different_ReturnsFalse*
+        name: DigestComparer_SmallFiles_Different_ReturnsFalse
+        nameWithType: DigestComparerTests.DigestComparer_SmallFiles_Different_ReturnsFalse
+        qualifiedName: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SmallFiles_Different_ReturnsFalse
+      VB:
+      - id: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SmallFiles_Different_ReturnsFalse*
+        name: DigestComparer_SmallFiles_Different_ReturnsFalse
+        nameWithType: DigestComparerTests.DigestComparer_SmallFiles_Different_ReturnsFalse
+        qualifiedName: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SmallFiles_Different_ReturnsFalse
+    isDefinition: true
+    commentId: Overload:WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SmallFiles_Different_ReturnsFalse
+  WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_LargeFiles_Identical_ReturnsTrue*:
+    name:
+      CSharp:
+      - id: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_LargeFiles_Identical_ReturnsTrue*
+        name: DigestComparer_LargeFiles_Identical_ReturnsTrue
+        nameWithType: DigestComparerTests.DigestComparer_LargeFiles_Identical_ReturnsTrue
+        qualifiedName: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_LargeFiles_Identical_ReturnsTrue
+      VB:
+      - id: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_LargeFiles_Identical_ReturnsTrue*
+        name: DigestComparer_LargeFiles_Identical_ReturnsTrue
+        nameWithType: DigestComparerTests.DigestComparer_LargeFiles_Identical_ReturnsTrue
+        qualifiedName: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_LargeFiles_Identical_ReturnsTrue
+    isDefinition: true
+    commentId: Overload:WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_LargeFiles_Identical_ReturnsTrue
+  WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_LargeFiles_Different_ReturnsFalse*:
+    name:
+      CSharp:
+      - id: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_LargeFiles_Different_ReturnsFalse*
+        name: DigestComparer_LargeFiles_Different_ReturnsFalse
+        nameWithType: DigestComparerTests.DigestComparer_LargeFiles_Different_ReturnsFalse
+        qualifiedName: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_LargeFiles_Different_ReturnsFalse
+      VB:
+      - id: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_LargeFiles_Different_ReturnsFalse*
+        name: DigestComparer_LargeFiles_Different_ReturnsFalse
+        nameWithType: DigestComparerTests.DigestComparer_LargeFiles_Different_ReturnsFalse
+        qualifiedName: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_LargeFiles_Different_ReturnsFalse
+    isDefinition: true
+    commentId: Overload:WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_LargeFiles_Different_ReturnsFalse
+  WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_EmptyFile_ThrowsArgumentException*:
+    name:
+      CSharp:
+      - id: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_EmptyFile_ThrowsArgumentException*
+        name: DigestComparer_EmptyFile_ThrowsArgumentException
+        nameWithType: DigestComparerTests.DigestComparer_EmptyFile_ThrowsArgumentException
+        qualifiedName: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_EmptyFile_ThrowsArgumentException
+      VB:
+      - id: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_EmptyFile_ThrowsArgumentException*
+        name: DigestComparer_EmptyFile_ThrowsArgumentException
+        nameWithType: DigestComparerTests.DigestComparer_EmptyFile_ThrowsArgumentException
+        qualifiedName: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_EmptyFile_ThrowsArgumentException
+    isDefinition: true
+    commentId: Overload:WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_EmptyFile_ThrowsArgumentException
+  WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_NonexistentFile_ThrowsFileNotFound*:
+    name:
+      CSharp:
+      - id: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_NonexistentFile_ThrowsFileNotFound*
+        name: DigestComparer_NonexistentFile_ThrowsFileNotFound
+        nameWithType: DigestComparerTests.DigestComparer_NonexistentFile_ThrowsFileNotFound
+        qualifiedName: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_NonexistentFile_ThrowsFileNotFound
+      VB:
+      - id: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_NonexistentFile_ThrowsFileNotFound*
+        name: DigestComparer_NonexistentFile_ThrowsFileNotFound
+        nameWithType: DigestComparerTests.DigestComparer_NonexistentFile_ThrowsFileNotFound
+        qualifiedName: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_NonexistentFile_ThrowsFileNotFound
+    isDefinition: true
+    commentId: Overload:WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_NonexistentFile_ThrowsFileNotFound
+  WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_CrossValidate_FileComparer_AgreeOnIdentity*:
+    name:
+      CSharp:
+      - id: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_CrossValidate_FileComparer_AgreeOnIdentity*
+        name: DigestComparer_CrossValidate_FileComparer_AgreeOnIdentity
+        nameWithType: DigestComparerTests.DigestComparer_CrossValidate_FileComparer_AgreeOnIdentity
+        qualifiedName: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_CrossValidate_FileComparer_AgreeOnIdentity
+      VB:
+      - id: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_CrossValidate_FileComparer_AgreeOnIdentity*
+        name: DigestComparer_CrossValidate_FileComparer_AgreeOnIdentity
+        nameWithType: DigestComparerTests.DigestComparer_CrossValidate_FileComparer_AgreeOnIdentity
+        qualifiedName: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_CrossValidate_FileComparer_AgreeOnIdentity
+    isDefinition: true
+    commentId: Overload:WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_CrossValidate_FileComparer_AgreeOnIdentity
+  WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_CrossValidate_FileComparer_AgreeOnDifference*:
+    name:
+      CSharp:
+      - id: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_CrossValidate_FileComparer_AgreeOnDifference*
+        name: DigestComparer_CrossValidate_FileComparer_AgreeOnDifference
+        nameWithType: DigestComparerTests.DigestComparer_CrossValidate_FileComparer_AgreeOnDifference
+        qualifiedName: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_CrossValidate_FileComparer_AgreeOnDifference
+      VB:
+      - id: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_CrossValidate_FileComparer_AgreeOnDifference*
+        name: DigestComparer_CrossValidate_FileComparer_AgreeOnDifference
+        nameWithType: DigestComparerTests.DigestComparer_CrossValidate_FileComparer_AgreeOnDifference
+        qualifiedName: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_CrossValidate_FileComparer_AgreeOnDifference
+    isDefinition: true
+    commentId: Overload:WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_CrossValidate_FileComparer_AgreeOnDifference
+  WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA384_SmallFiles_Identical_ReturnsTrue*:
+    name:
+      CSharp:
+      - id: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA384_SmallFiles_Identical_ReturnsTrue*
+        name: DigestComparer_SHA384_SmallFiles_Identical_ReturnsTrue
+        nameWithType: DigestComparerTests.DigestComparer_SHA384_SmallFiles_Identical_ReturnsTrue
+        qualifiedName: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA384_SmallFiles_Identical_ReturnsTrue
+      VB:
+      - id: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA384_SmallFiles_Identical_ReturnsTrue*
+        name: DigestComparer_SHA384_SmallFiles_Identical_ReturnsTrue
+        nameWithType: DigestComparerTests.DigestComparer_SHA384_SmallFiles_Identical_ReturnsTrue
+        qualifiedName: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA384_SmallFiles_Identical_ReturnsTrue
+    isDefinition: true
+    commentId: Overload:WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA384_SmallFiles_Identical_ReturnsTrue
+  WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA384_SmallFiles_Different_ReturnsFalse*:
+    name:
+      CSharp:
+      - id: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA384_SmallFiles_Different_ReturnsFalse*
+        name: DigestComparer_SHA384_SmallFiles_Different_ReturnsFalse
+        nameWithType: DigestComparerTests.DigestComparer_SHA384_SmallFiles_Different_ReturnsFalse
+        qualifiedName: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA384_SmallFiles_Different_ReturnsFalse
+      VB:
+      - id: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA384_SmallFiles_Different_ReturnsFalse*
+        name: DigestComparer_SHA384_SmallFiles_Different_ReturnsFalse
+        nameWithType: DigestComparerTests.DigestComparer_SHA384_SmallFiles_Different_ReturnsFalse
+        qualifiedName: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA384_SmallFiles_Different_ReturnsFalse
+    isDefinition: true
+    commentId: Overload:WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA384_SmallFiles_Different_ReturnsFalse
+  WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA512_SmallFiles_Identical_ReturnsTrue*:
+    name:
+      CSharp:
+      - id: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA512_SmallFiles_Identical_ReturnsTrue*
+        name: DigestComparer_SHA512_SmallFiles_Identical_ReturnsTrue
+        nameWithType: DigestComparerTests.DigestComparer_SHA512_SmallFiles_Identical_ReturnsTrue
+        qualifiedName: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA512_SmallFiles_Identical_ReturnsTrue
+      VB:
+      - id: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA512_SmallFiles_Identical_ReturnsTrue*
+        name: DigestComparer_SHA512_SmallFiles_Identical_ReturnsTrue
+        nameWithType: DigestComparerTests.DigestComparer_SHA512_SmallFiles_Identical_ReturnsTrue
+        qualifiedName: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA512_SmallFiles_Identical_ReturnsTrue
+    isDefinition: true
+    commentId: Overload:WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA512_SmallFiles_Identical_ReturnsTrue
+  WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA512_SmallFiles_Different_ReturnsFalse*:
+    name:
+      CSharp:
+      - id: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA512_SmallFiles_Different_ReturnsFalse*
+        name: DigestComparer_SHA512_SmallFiles_Different_ReturnsFalse
+        nameWithType: DigestComparerTests.DigestComparer_SHA512_SmallFiles_Different_ReturnsFalse
+        qualifiedName: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA512_SmallFiles_Different_ReturnsFalse
+      VB:
+      - id: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA512_SmallFiles_Different_ReturnsFalse*
+        name: DigestComparer_SHA512_SmallFiles_Different_ReturnsFalse
+        nameWithType: DigestComparerTests.DigestComparer_SHA512_SmallFiles_Different_ReturnsFalse
+        qualifiedName: WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA512_SmallFiles_Different_ReturnsFalse
+    isDefinition: true
+    commentId: Overload:WizardWrx.Core.Tests.DigestComparerTests.DigestComparer_SHA512_SmallFiles_Different_ReturnsFalse
+  WizardWrx.Core.Tests.DigestComparerTests:
+    name:
+      CSharp:
+      - id: WizardWrx.Core.Tests.DigestComparerTests
+        name: DigestComparerTests
+        nameWithType: DigestComparerTests
+        qualifiedName: WizardWrx.Core.Tests.DigestComparerTests
+      VB:
+      - id: WizardWrx.Core.Tests.DigestComparerTests
+        name: DigestComparerTests
+        nameWithType: DigestComparerTests
+        qualifiedName: WizardWrx.Core.Tests.DigestComparerTests
+    isDefinition: true
+    commentId: T:WizardWrx.Core.Tests.DigestComparerTests
+  WizardWrx.Core.Tests.DigestEnginesTests.Digest_SmallFiles_Identical_ReturnsSameDigest*:
+    name:
+      CSharp:
+      - id: WizardWrx.Core.Tests.DigestEnginesTests.Digest_SmallFiles_Identical_ReturnsSameDigest*
+        name: Digest_SmallFiles_Identical_ReturnsSameDigest
+        nameWithType: DigestEnginesTests.Digest_SmallFiles_Identical_ReturnsSameDigest
+        qualifiedName: WizardWrx.Core.Tests.DigestEnginesTests.Digest_SmallFiles_Identical_ReturnsSameDigest
+      VB:
+      - id: WizardWrx.Core.Tests.DigestEnginesTests.Digest_SmallFiles_Identical_ReturnsSameDigest*
+        name: Digest_SmallFiles_Identical_ReturnsSameDigest
+        nameWithType: DigestEnginesTests.Digest_SmallFiles_Identical_ReturnsSameDigest
+        qualifiedName: WizardWrx.Core.Tests.DigestEnginesTests.Digest_SmallFiles_Identical_ReturnsSameDigest
+    isDefinition: true
+    commentId: Overload:WizardWrx.Core.Tests.DigestEnginesTests.Digest_SmallFiles_Identical_ReturnsSameDigest
+  WizardWrx.Core.Tests.DigestEnginesTests.Digest_SmallFiles_Different_ReturnsDifferentDigest*:
+    name:
+      CSharp:
+      - id: WizardWrx.Core.Tests.DigestEnginesTests.Digest_SmallFiles_Different_ReturnsDifferentDigest*
+        name: Digest_SmallFiles_Different_ReturnsDifferentDigest
+        nameWithType: DigestEnginesTests.Digest_SmallFiles_Different_ReturnsDifferentDigest
+        qualifiedName: WizardWrx.Core.Tests.DigestEnginesTests.Digest_SmallFiles_Different_ReturnsDifferentDigest
+      VB:
+      - id: WizardWrx.Core.Tests.DigestEnginesTests.Digest_SmallFiles_Different_ReturnsDifferentDigest*
+        name: Digest_SmallFiles_Different_ReturnsDifferentDigest
+        nameWithType: DigestEnginesTests.Digest_SmallFiles_Different_ReturnsDifferentDigest
+        qualifiedName: WizardWrx.Core.Tests.DigestEnginesTests.Digest_SmallFiles_Different_ReturnsDifferentDigest
+    isDefinition: true
+    commentId: Overload:WizardWrx.Core.Tests.DigestEnginesTests.Digest_SmallFiles_Different_ReturnsDifferentDigest
+  WizardWrx.Core.Tests.DigestEnginesTests.Digest_LargeFiles_Identical_ReturnsSameDigest*:
+    name:
+      CSharp:
+      - id: WizardWrx.Core.Tests.DigestEnginesTests.Digest_LargeFiles_Identical_ReturnsSameDigest*
+        name: Digest_LargeFiles_Identical_ReturnsSameDigest
+        nameWithType: DigestEnginesTests.Digest_LargeFiles_Identical_ReturnsSameDigest
+        qualifiedName: WizardWrx.Core.Tests.DigestEnginesTests.Digest_LargeFiles_Identical_ReturnsSameDigest
+      VB:
+      - id: WizardWrx.Core.Tests.DigestEnginesTests.Digest_LargeFiles_Identical_ReturnsSameDigest*
+        name: Digest_LargeFiles_Identical_ReturnsSameDigest
+        nameWithType: DigestEnginesTests.Digest_LargeFiles_Identical_ReturnsSameDigest
+        qualifiedName: WizardWrx.Core.Tests.DigestEnginesTests.Digest_LargeFiles_Identical_ReturnsSameDigest
+    isDefinition: true
+    commentId: Overload:WizardWrx.Core.Tests.DigestEnginesTests.Digest_LargeFiles_Identical_ReturnsSameDigest
+  WizardWrx.Core.Tests.DigestEnginesTests.Digest_LargeFiles_Different_ReturnsDifferentDigest*:
+    name:
+      CSharp:
+      - id: WizardWrx.Core.Tests.DigestEnginesTests.Digest_LargeFiles_Different_ReturnsDifferentDigest*
+        name: Digest_LargeFiles_Different_ReturnsDifferentDigest
+        nameWithType: DigestEnginesTests.Digest_LargeFiles_Different_ReturnsDifferentDigest
+        qualifiedName: WizardWrx.Core.Tests.DigestEnginesTests.Digest_LargeFiles_Different_ReturnsDifferentDigest
+      VB:
+      - id: WizardWrx.Core.Tests.DigestEnginesTests.Digest_LargeFiles_Different_ReturnsDifferentDigest*
+        name: Digest_LargeFiles_Different_ReturnsDifferentDigest
+        nameWithType: DigestEnginesTests.Digest_LargeFiles_Different_ReturnsDifferentDigest
+        qualifiedName: WizardWrx.Core.Tests.DigestEnginesTests.Digest_LargeFiles_Different_ReturnsDifferentDigest
+    isDefinition: true
+    commentId: Overload:WizardWrx.Core.Tests.DigestEnginesTests.Digest_LargeFiles_Different_ReturnsDifferentDigest
+  WizardWrx.Core.Tests.DigestEnginesTests.Digest_EmptyFile_ThrowsArgumentException*:
+    name:
+      CSharp:
+      - id: WizardWrx.Core.Tests.DigestEnginesTests.Digest_EmptyFile_ThrowsArgumentException*
+        name: Digest_EmptyFile_ThrowsArgumentException
+        nameWithType: DigestEnginesTests.Digest_EmptyFile_ThrowsArgumentException
+        qualifiedName: WizardWrx.Core.Tests.DigestEnginesTests.Digest_EmptyFile_ThrowsArgumentException
+      VB:
+      - id: WizardWrx.Core.Tests.DigestEnginesTests.Digest_EmptyFile_ThrowsArgumentException*
+        name: Digest_EmptyFile_ThrowsArgumentException
+        nameWithType: DigestEnginesTests.Digest_EmptyFile_ThrowsArgumentException
+        qualifiedName: WizardWrx.Core.Tests.DigestEnginesTests.Digest_EmptyFile_ThrowsArgumentException
+    isDefinition: true
+    commentId: Overload:WizardWrx.Core.Tests.DigestEnginesTests.Digest_EmptyFile_ThrowsArgumentException
+  WizardWrx.Core.Tests.DigestEnginesTests.Digest_EmptyFile_CompareFilesThrows*:
+    name:
+      CSharp:
+      - id: WizardWrx.Core.Tests.DigestEnginesTests.Digest_EmptyFile_CompareFilesThrows*
+        name: Digest_EmptyFile_CompareFilesThrows
+        nameWithType: DigestEnginesTests.Digest_EmptyFile_CompareFilesThrows
+        qualifiedName: WizardWrx.Core.Tests.DigestEnginesTests.Digest_EmptyFile_CompareFilesThrows
+      VB:
+      - id: WizardWrx.Core.Tests.DigestEnginesTests.Digest_EmptyFile_CompareFilesThrows*
+        name: Digest_EmptyFile_CompareFilesThrows
+        nameWithType: DigestEnginesTests.Digest_EmptyFile_CompareFilesThrows
+        qualifiedName: WizardWrx.Core.Tests.DigestEnginesTests.Digest_EmptyFile_CompareFilesThrows
+    isDefinition: true
+    commentId: Overload:WizardWrx.Core.Tests.DigestEnginesTests.Digest_EmptyFile_CompareFilesThrows
+  WizardWrx.Core.Tests.DigestEnginesTests.Digest_NonexistentFile_ThrowsFileNotFound*:
+    name:
+      CSharp:
+      - id: WizardWrx.Core.Tests.DigestEnginesTests.Digest_NonexistentFile_ThrowsFileNotFound*
+        name: Digest_NonexistentFile_ThrowsFileNotFound
+        nameWithType: DigestEnginesTests.Digest_NonexistentFile_ThrowsFileNotFound
+        qualifiedName: WizardWrx.Core.Tests.DigestEnginesTests.Digest_NonexistentFile_ThrowsFileNotFound
+      VB:
+      - id: WizardWrx.Core.Tests.DigestEnginesTests.Digest_NonexistentFile_ThrowsFileNotFound*
+        name: Digest_NonexistentFile_ThrowsFileNotFound
+        nameWithType: DigestEnginesTests.Digest_NonexistentFile_ThrowsFileNotFound
+        qualifiedName: WizardWrx.Core.Tests.DigestEnginesTests.Digest_NonexistentFile_ThrowsFileNotFound
+    isDefinition: true
+    commentId: Overload:WizardWrx.Core.Tests.DigestEnginesTests.Digest_NonexistentFile_ThrowsFileNotFound
+  WizardWrx.Core.Tests.DigestEnginesTests.Digest_CrossValidate_FileComparer_AgreeOnIdentity*:
+    name:
+      CSharp:
+      - id: WizardWrx.Core.Tests.DigestEnginesTests.Digest_CrossValidate_FileComparer_AgreeOnIdentity*
+        name: Digest_CrossValidate_FileComparer_AgreeOnIdentity
+        nameWithType: DigestEnginesTests.Digest_CrossValidate_FileComparer_AgreeOnIdentity
+        qualifiedName: WizardWrx.Core.Tests.DigestEnginesTests.Digest_CrossValidate_FileComparer_AgreeOnIdentity
+      VB:
+      - id: WizardWrx.Core.Tests.DigestEnginesTests.Digest_CrossValidate_FileComparer_AgreeOnIdentity*
+        name: Digest_CrossValidate_FileComparer_AgreeOnIdentity
+        nameWithType: DigestEnginesTests.Digest_CrossValidate_FileComparer_AgreeOnIdentity
+        qualifiedName: WizardWrx.Core.Tests.DigestEnginesTests.Digest_CrossValidate_FileComparer_AgreeOnIdentity
+    isDefinition: true
+    commentId: Overload:WizardWrx.Core.Tests.DigestEnginesTests.Digest_CrossValidate_FileComparer_AgreeOnIdentity
+  WizardWrx.Core.Tests.DigestEnginesTests.Digest_CrossValidate_FileComparer_AgreeOnDifference*:
+    name:
+      CSharp:
+      - id: WizardWrx.Core.Tests.DigestEnginesTests.Digest_CrossValidate_FileComparer_AgreeOnDifference*
+        name: Digest_CrossValidate_FileComparer_AgreeOnDifference
+        nameWithType: DigestEnginesTests.Digest_CrossValidate_FileComparer_AgreeOnDifference
+        qualifiedName: WizardWrx.Core.Tests.DigestEnginesTests.Digest_CrossValidate_FileComparer_AgreeOnDifference
+      VB:
+      - id: WizardWrx.Core.Tests.DigestEnginesTests.Digest_CrossValidate_FileComparer_AgreeOnDifference*
+        name: Digest_CrossValidate_FileComparer_AgreeOnDifference
+        nameWithType: DigestEnginesTests.Digest_CrossValidate_FileComparer_AgreeOnDifference
+        qualifiedName: WizardWrx.Core.Tests.DigestEnginesTests.Digest_CrossValidate_FileComparer_AgreeOnDifference
+    isDefinition: true
+    commentId: Overload:WizardWrx.Core.Tests.DigestEnginesTests.Digest_CrossValidate_FileComparer_AgreeOnDifference
+  WizardWrx.Core.Tests.DigestEnginesTests:
+    name:
+      CSharp:
+      - id: WizardWrx.Core.Tests.DigestEnginesTests
+        name: DigestEnginesTests
+        nameWithType: DigestEnginesTests
+        qualifiedName: WizardWrx.Core.Tests.DigestEnginesTests
+      VB:
+      - id: WizardWrx.Core.Tests.DigestEnginesTests
+        name: DigestEnginesTests
+        nameWithType: DigestEnginesTests
+        qualifiedName: WizardWrx.Core.Tests.DigestEnginesTests
+    isDefinition: true
+    commentId: T:WizardWrx.Core.Tests.DigestEnginesTests
+  WizardWrx.Core.Tests.FileComparerTests.CompareFiles_SmallFiles_Identical_ReturnsTrue*:
+    name:
+      CSharp:
+      - id: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_SmallFiles_Identical_ReturnsTrue*
+        name: CompareFiles_SmallFiles_Identical_ReturnsTrue
+        nameWithType: FileComparerTests.CompareFiles_SmallFiles_Identical_ReturnsTrue
+        qualifiedName: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_SmallFiles_Identical_ReturnsTrue
+      VB:
+      - id: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_SmallFiles_Identical_ReturnsTrue*
+        name: CompareFiles_SmallFiles_Identical_ReturnsTrue
+        nameWithType: FileComparerTests.CompareFiles_SmallFiles_Identical_ReturnsTrue
+        qualifiedName: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_SmallFiles_Identical_ReturnsTrue
+    isDefinition: true
+    commentId: Overload:WizardWrx.Core.Tests.FileComparerTests.CompareFiles_SmallFiles_Identical_ReturnsTrue
+  WizardWrx.Core.Tests.FileComparerTests.CompareFiles_SmallFiles_Different_ReturnsFalse*:
+    name:
+      CSharp:
+      - id: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_SmallFiles_Different_ReturnsFalse*
+        name: CompareFiles_SmallFiles_Different_ReturnsFalse
+        nameWithType: FileComparerTests.CompareFiles_SmallFiles_Different_ReturnsFalse
+        qualifiedName: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_SmallFiles_Different_ReturnsFalse
+      VB:
+      - id: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_SmallFiles_Different_ReturnsFalse*
+        name: CompareFiles_SmallFiles_Different_ReturnsFalse
+        nameWithType: FileComparerTests.CompareFiles_SmallFiles_Different_ReturnsFalse
+        qualifiedName: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_SmallFiles_Different_ReturnsFalse
+    isDefinition: true
+    commentId: Overload:WizardWrx.Core.Tests.FileComparerTests.CompareFiles_SmallFiles_Different_ReturnsFalse
+  WizardWrx.Core.Tests.FileComparerTests.CompareFiles_LargeFiles_Identical_ReturnsTrue*:
+    name:
+      CSharp:
+      - id: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_LargeFiles_Identical_ReturnsTrue*
+        name: CompareFiles_LargeFiles_Identical_ReturnsTrue
+        nameWithType: FileComparerTests.CompareFiles_LargeFiles_Identical_ReturnsTrue
+        qualifiedName: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_LargeFiles_Identical_ReturnsTrue
+      VB:
+      - id: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_LargeFiles_Identical_ReturnsTrue*
+        name: CompareFiles_LargeFiles_Identical_ReturnsTrue
+        nameWithType: FileComparerTests.CompareFiles_LargeFiles_Identical_ReturnsTrue
+        qualifiedName: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_LargeFiles_Identical_ReturnsTrue
+    isDefinition: true
+    commentId: Overload:WizardWrx.Core.Tests.FileComparerTests.CompareFiles_LargeFiles_Identical_ReturnsTrue
+  WizardWrx.Core.Tests.FileComparerTests.CompareFiles_LargeFiles_Different_ReturnsFalse*:
+    name:
+      CSharp:
+      - id: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_LargeFiles_Different_ReturnsFalse*
+        name: CompareFiles_LargeFiles_Different_ReturnsFalse
+        nameWithType: FileComparerTests.CompareFiles_LargeFiles_Different_ReturnsFalse
+        qualifiedName: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_LargeFiles_Different_ReturnsFalse
+      VB:
+      - id: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_LargeFiles_Different_ReturnsFalse*
+        name: CompareFiles_LargeFiles_Different_ReturnsFalse
+        nameWithType: FileComparerTests.CompareFiles_LargeFiles_Different_ReturnsFalse
+        qualifiedName: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_LargeFiles_Different_ReturnsFalse
+    isDefinition: true
+    commentId: Overload:WizardWrx.Core.Tests.FileComparerTests.CompareFiles_LargeFiles_Different_ReturnsFalse
+  WizardWrx.Core.Tests.FileComparerTests.CompareFiles_FirstFileMissing_Throws*:
+    name:
+      CSharp:
+      - id: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_FirstFileMissing_Throws*
+        name: CompareFiles_FirstFileMissing_Throws
+        nameWithType: FileComparerTests.CompareFiles_FirstFileMissing_Throws
+        qualifiedName: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_FirstFileMissing_Throws
+      VB:
+      - id: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_FirstFileMissing_Throws*
+        name: CompareFiles_FirstFileMissing_Throws
+        nameWithType: FileComparerTests.CompareFiles_FirstFileMissing_Throws
+        qualifiedName: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_FirstFileMissing_Throws
+    isDefinition: true
+    commentId: Overload:WizardWrx.Core.Tests.FileComparerTests.CompareFiles_FirstFileMissing_Throws
+  WizardWrx.Core.Tests.FileComparerTests.CompareFiles_SecondFileMissing_Throws*:
+    name:
+      CSharp:
+      - id: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_SecondFileMissing_Throws*
+        name: CompareFiles_SecondFileMissing_Throws
+        nameWithType: FileComparerTests.CompareFiles_SecondFileMissing_Throws
+        qualifiedName: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_SecondFileMissing_Throws
+      VB:
+      - id: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_SecondFileMissing_Throws*
+        name: CompareFiles_SecondFileMissing_Throws
+        nameWithType: FileComparerTests.CompareFiles_SecondFileMissing_Throws
+        qualifiedName: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_SecondFileMissing_Throws
+    isDefinition: true
+    commentId: Overload:WizardWrx.Core.Tests.FileComparerTests.CompareFiles_SecondFileMissing_Throws
+  WizardWrx.Core.Tests.FileComparerTests.TryCompareFiles_FileMissing_ReturnsFalseAndOutputsException*:
+    name:
+      CSharp:
+      - id: WizardWrx.Core.Tests.FileComparerTests.TryCompareFiles_FileMissing_ReturnsFalseAndOutputsException*
+        name: TryCompareFiles_FileMissing_ReturnsFalseAndOutputsException
+        nameWithType: FileComparerTests.TryCompareFiles_FileMissing_ReturnsFalseAndOutputsException
+        qualifiedName: WizardWrx.Core.Tests.FileComparerTests.TryCompareFiles_FileMissing_ReturnsFalseAndOutputsException
+      VB:
+      - id: WizardWrx.Core.Tests.FileComparerTests.TryCompareFiles_FileMissing_ReturnsFalseAndOutputsException*
+        name: TryCompareFiles_FileMissing_ReturnsFalseAndOutputsException
+        nameWithType: FileComparerTests.TryCompareFiles_FileMissing_ReturnsFalseAndOutputsException
+        qualifiedName: WizardWrx.Core.Tests.FileComparerTests.TryCompareFiles_FileMissing_ReturnsFalseAndOutputsException
+    isDefinition: true
+    commentId: Overload:WizardWrx.Core.Tests.FileComparerTests.TryCompareFiles_FileMissing_ReturnsFalseAndOutputsException
+  WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Identical_ReturnsTrue*:
+    name:
+      CSharp:
+      - id: WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Identical_ReturnsTrue*
+        name: CompareByteArrays_Identical_ReturnsTrue
+        nameWithType: FileComparerTests.CompareByteArrays_Identical_ReturnsTrue
+        qualifiedName: WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Identical_ReturnsTrue
+      VB:
+      - id: WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Identical_ReturnsTrue*
+        name: CompareByteArrays_Identical_ReturnsTrue
+        nameWithType: FileComparerTests.CompareByteArrays_Identical_ReturnsTrue
+        qualifiedName: WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Identical_ReturnsTrue
+    isDefinition: true
+    commentId: Overload:WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Identical_ReturnsTrue
+  WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Different_ReturnsFalse*:
+    name:
+      CSharp:
+      - id: WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Different_ReturnsFalse*
+        name: CompareByteArrays_Different_ReturnsFalse
+        nameWithType: FileComparerTests.CompareByteArrays_Different_ReturnsFalse
+        qualifiedName: WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Different_ReturnsFalse
+      VB:
+      - id: WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Different_ReturnsFalse*
+        name: CompareByteArrays_Different_ReturnsFalse
+        nameWithType: FileComparerTests.CompareByteArrays_Different_ReturnsFalse
+        qualifiedName: WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Different_ReturnsFalse
+    isDefinition: true
+    commentId: Overload:WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Different_ReturnsFalse
+  WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Empty_Throws*:
+    name:
+      CSharp:
+      - id: WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Empty_Throws*
+        name: CompareByteArrays_Empty_Throws
+        nameWithType: FileComparerTests.CompareByteArrays_Empty_Throws
+        qualifiedName: WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Empty_Throws
+      VB:
+      - id: WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Empty_Throws*
+        name: CompareByteArrays_Empty_Throws
+        nameWithType: FileComparerTests.CompareByteArrays_Empty_Throws
+        qualifiedName: WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Empty_Throws
+    isDefinition: true
+    commentId: Overload:WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Empty_Throws
+  WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Null_Throws*:
+    name:
+      CSharp:
+      - id: WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Null_Throws*
+        name: CompareByteArrays_Null_Throws
+        nameWithType: FileComparerTests.CompareByteArrays_Null_Throws
+        qualifiedName: WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Null_Throws
+      VB:
+      - id: WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Null_Throws*
+        name: CompareByteArrays_Null_Throws
+        nameWithType: FileComparerTests.CompareByteArrays_Null_Throws
+        qualifiedName: WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Null_Throws
+    isDefinition: true
+    commentId: Overload:WizardWrx.Core.Tests.FileComparerTests.CompareByteArrays_Null_Throws
+  WizardWrx.Core.Tests.FileComparerTests.CompareFiles_EmptyFiles_ThrowsArgumentException*:
+    name:
+      CSharp:
+      - id: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_EmptyFiles_ThrowsArgumentException*
+        name: CompareFiles_EmptyFiles_ThrowsArgumentException
+        nameWithType: FileComparerTests.CompareFiles_EmptyFiles_ThrowsArgumentException
+        qualifiedName: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_EmptyFiles_ThrowsArgumentException
+      VB:
+      - id: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_EmptyFiles_ThrowsArgumentException*
+        name: CompareFiles_EmptyFiles_ThrowsArgumentException
+        nameWithType: FileComparerTests.CompareFiles_EmptyFiles_ThrowsArgumentException
+        qualifiedName: WizardWrx.Core.Tests.FileComparerTests.CompareFiles_EmptyFiles_ThrowsArgumentException
+    isDefinition: true
+    commentId: Overload:WizardWrx.Core.Tests.FileComparerTests.CompareFiles_EmptyFiles_ThrowsArgumentException
+  WizardWrx.Core.Tests.FileComparerTests.TryCompareFiles_EmptyFiles_ReturnsFalseAndOutputsException*:
+    name:
+      CSharp:
+      - id: WizardWrx.Core.Tests.FileComparerTests.TryCompareFiles_EmptyFiles_ReturnsFalseAndOutputsException*
+        name: TryCompareFiles_EmptyFiles_ReturnsFalseAndOutputsException
+        nameWithType: FileComparerTests.TryCompareFiles_EmptyFiles_ReturnsFalseAndOutputsException
+        qualifiedName: WizardWrx.Core.Tests.FileComparerTests.TryCompareFiles_EmptyFiles_ReturnsFalseAndOutputsException
+      VB:
+      - id: WizardWrx.Core.Tests.FileComparerTests.TryCompareFiles_EmptyFiles_ReturnsFalseAndOutputsException*
+        name: TryCompareFiles_EmptyFiles_ReturnsFalseAndOutputsException
+        nameWithType: FileComparerTests.TryCompareFiles_EmptyFiles_ReturnsFalseAndOutputsException
+        qualifiedName: WizardWrx.Core.Tests.FileComparerTests.TryCompareFiles_EmptyFiles_ReturnsFalseAndOutputsException
+    isDefinition: true
+    commentId: Overload:WizardWrx.Core.Tests.FileComparerTests.TryCompareFiles_EmptyFiles_ReturnsFalseAndOutputsException
+  WizardWrx.Core.Tests.FileComparerTests:
+    name:
+      CSharp:
+      - id: WizardWrx.Core.Tests.FileComparerTests
+        name: FileComparerTests
+        nameWithType: FileComparerTests
+        qualifiedName: WizardWrx.Core.Tests.FileComparerTests
+      VB:
+      - id: WizardWrx.Core.Tests.FileComparerTests
+        name: FileComparerTests
+        nameWithType: FileComparerTests
+        qualifiedName: WizardWrx.Core.Tests.FileComparerTests
+    isDefinition: true
+    commentId: T:WizardWrx.Core.Tests.FileComparerTests
+  WizardWrx.Core.Tests:
+    name:
+      CSharp:
+      - name: WizardWrx.Core.Tests
+        nameWithType: WizardWrx.Core.Tests
+        qualifiedName: WizardWrx.Core.Tests
+      VB:
+      - name: WizardWrx.Core.Tests
+        nameWithType: WizardWrx.Core.Tests
+        qualifiedName: WizardWrx.Core.Tests
+    isDefinition: true
+    commentId: N:WizardWrx.Core.Tests

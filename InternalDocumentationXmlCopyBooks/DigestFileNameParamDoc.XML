@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <members>
+
+    <member name="FileNameParamDoc">
+      <param name="pstrFileName">
+        This string represents the name of the file to process, which may be
+        a relative or absolute path. The file must exist, and the caller
+        must have permission to read it, or an exception will be thrown.
+      </param>
+      <para>
+        IMPORTANT: Since files are read in binary, they are loaded directly
+        into the hash algorithm as byte arrays. This means that the digest
+        of a file of ASCII characters and the hash of the file contents read
+        into a CLR string object, which is a string of Unicode characters,
+        will differ. The reason for this is that the string of Unicode
+        characters yields a different byte stream than the byte stream that
+        came from reading the file in binary mode.
+      </para>
+    </member>
+
+  </members>
+</doc>

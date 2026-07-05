@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ANSWER_IS_FALSE" xml:space="preserve">
+    <value>false</value>
+    <comment>This is one of 18 strings from which to construct messages that I added to version 7.22.122 of the library.</comment>
+  </data>
+  <data name="ANSWER_IS_NO" xml:space="preserve">
+    <value>no</value>
+    <comment>This is one of 18 strings from which to construct messages that I added to version 7.22.122 of the library.</comment>
+  </data>
+  <data name="ANSWER_IS_TRUE" xml:space="preserve">
+    <value>true</value>
+    <comment>This is one of 18 strings from which to construct messages that I added to version 7.22.122 of the library.</comment>
+  </data>
+  <data name="ANSWER_IS_YES" xml:space="preserve">
+    <value>yes</value>
+    <comment>This is one of 18 strings from which to construct messages that I added to version 7.22.122 of the library.</comment>
+  </data>
+  <data name="DEFAULT_EVENT_SOURCE_ID_STRING" xml:space="preserve">
+    <value>WizardWrx</value>
+    <comment>Stash this for use when the exception logger is out of scope.</comment>
+  </data>
+  <data name="ERRMSG_ARG_IS_NULL" xml:space="preserve">
+    <value>The specified argument is a null reference.</value>
+    <comment>This is a general purpose error message, intended for reporting null reference exceptions. This method works well as the Message argument of an ArgumentNullException exception. Usse ERRMSG_REFERENCE_IS_NULL instead to incorporate the information into the Message property of other Exception types.</comment>
+  </data>
+  <data name="ERRMSG_ARG_IS_NULL_OR_EMPTY" xml:space="preserve">
+    <value>The argument is a null reference or the empty string.</value>
+    <comment>This is a general purpose error message, intended for reporting null reference exceptions via ArgumentNullException exceptions. In other contexts, use ERRMSG_REFERENCE_IS_NULL, which includes a format item, to be filled by the string returned by the nameof() pseudo-function.</comment>
+  </data>
+  <data name="ERRMSG_ARG_OUT_OF_RANGE" xml:space="preserve">
+    <value>Value of {0} is out of range; it must be between {1} and {2}.</value>
+    <comment>Use this template to report that an argument or internal variable is out of range, specifying the upper and lower limits. This method works well as the Message of an ArgumentOutOfRange exception.</comment>
+  </data>
+  <data name="ERRMSG_ARRAY_IS_EMPTY" xml:space="preserve">
+    <value>Array {0} ie empty; it exists, but contains no elements.</value>
+    <comment>Use this message to report that an array argument or program variable exists, but is empty. Use ERRMSG_REFERENCE_IS_NULL to report a null reference. Use the nameof() pseudo-function to identify the array by name.</comment>
+  </data>
+  <data name="ERRMSG_BADSTRING" xml:space="preserve">
+    <value>Unable to process string {0}</value>
+    <comment>Use this template to report a string that cannot be processed. The string is expected to be appended; to that end, there is a single substitution token. If you want it quoted, wrap it in quotes before you pass it into string.Format or one of its cousins. String extension method QuoteString, defined by WizardWrx.Core.dll, works well for this propose, and the nameof() pseudo-function works provides variable names at runtime.</comment>
+  </data>
+  <data name="ERRMSG_BAD_LABEL_ROW" xml:space="preserve">
+    <value>The label row in embedded resource {0} is invalid.{3}Actual Label Row   = {1}{3}Expected Label Row = {2}</value>
+    <comment>This is the template for an error message, used by static method NameValueCollectionFromEmbbededList.</comment>
+  </data>
+  <data name="ERRMSG_BAD_RECORD" xml:space="preserve">
+    <value>The field count in row {1} in embedded resource {0} is incorrect.{5}Actual Field Count   = {2}{5}Expected Field Count = {3}{5}Complete Row         = {4}</value>
+    <comment>This is the template for an error message, used by static method NameValueCollectionFromEmbbededList.</comment>
+  </data>
+  <data name="ERRMSG_CANNOT_PARSE" xml:space="preserve">
+    <value>ERROR: The CreateFormatString method cannot process the specified format string.{1}    Specified format string = {0}</value>
+    <comment>The CreateFormatString report helper method generates an exception report from this template.</comment>
+  </data>
+  <data name="ERRMSG_DUPE_KEY" xml:space="preserve">
+    <value>The key field in row {1} in embedded resource {0} is a duplicate.{4}Key value    = {2}{4}Complete row = {3}</value>
+    <comment>This is the template for an error message, used by static method NameValueCollectionFromEmbbededList.</comment>
+  </data>
+  <data name="ERRMSG_EMBEDDED_RESOURCE_NOT_FOUND" xml:space="preserve">
+    <value>Resource {0} cannot be found in assembly {1}.</value>
+    <comment>Method LoadBinaryResourceFromAnyAssembly formats a message from this template to report a missing resource.</comment>
+  </data>
+  <data name="ERRMSG_EMBEDDED_RESOURCE_READ_ERROR" xml:space="preserve">
+    <value>An error occurred while reading data from resources embedded in an assembly.{3}Assembly Full Name     = {0}{3}Internal Resource Name = {1}{3}I/O Error Message      = {2}{3}{3}The associated Inner Exception may contain additional clues.</value>
+    <comment>The LoadBinaryResourceFromAnyAssembly method constructs a message to accomapny exception reports.</comment>
+  </data>
+  <data name="ERRMSG_EMBEDDED_RESOURCE_READ_TRUNCATED" xml:space="preserve">
+    <value>An error occurred while reading a file from resources embedded in an assembly.{3}Internal Name = {0}{3}Expected File Length (bytes) = {1}{3}Bytes successfully read = {2}</value>
+    <comment>Method LoadBinaryResourceFromAnyAssembly formats a message from this template to report a read error.</comment>
+  </data>
+  <data name="ERRMSG_EMPTY_MAP" xml:space="preserve">
+    <value>Embedded key map {0} is empty.</value>
+    <comment>This is the template for an error message, used by static method NameValueCollectionFromEmbbededList.</comment>
+  </data>
+  <data name="ERRMSG_EMPTY_STRING_NEVER_VALID" xml:space="preserve">
+    <value>The empty string is never valid in this context.</value>
+    <comment>Created for use by string extension method EnumFromString (defined in WizardWrx.Core.dll), this message will probably find other uses sooner or later.</comment>
+  </data>
+  <data name="ERRMSG_FILE_IS_EMPTY" xml:space="preserve">
+    <value>Input file {0} is empty.</value>
+    <comment>Use this template to report that an input file is empty, substituting the file name for the token.</comment>
+  </data>
+  <data name="ERRMSG_FILE_NOT_FOUND" xml:space="preserve">
+    <value>Input file {0} cannot be found.</value>
+    <comment>Use this template to report that an input file cannot be found in the current user's security context, substituting the file name for the token.</comment>
+  </data>
+  <data name="ERRMSG_INTEGER2HEXSTR_INVALID_INPUT" xml:space="preserve">
+    <value>The type of the first argument, pintegralValue, is invalid.{2}Argument value = {0}{2}Argument type  = {1}{2}{2}Limitations of the underlying formatting engine{2}restrict this method to integral types.{2}</value>
+    <comment>The IntegerToHexStr method constructs the message for the ArgumentException exception that it throws when fed a non-integral type.</comment>
+  </data>
+  <data name="ERRMSG_INVALID_COMMAND_LINE" xml:space="preserve">
+    <value>At least one command line argument is invalid.</value>
+    <comment>Exit code 2 is now reserved for reporting invalid command line arguments.</comment>
+  </data>
+  <data name="ERRMSG_INVALID_FIELD_IN_INPUT_RECORD" xml:space="preserve">
+    <value>Input file {0}, record {1} is invalid.</value>
+    <comment>Use this message to report that a field in an input record is invalid. Substitute the name of the input file for the first token, and the record number or ID for the second.</comment>
+  </data>
+  <data name="ERRMSG_NULLREF_NEVER_VALID" xml:space="preserve">
+    <value>A null reference to a string is never valid in this context.</value>
+    <comment>Created for use by string extension method EnumFromString (defined in WizardWrx.Core.dll), this message will probably find other uses sooner or later, although, in many contexts, ERRMSG_REFERENCE_IS_NULL is a more useful message, since it has provisions for naming the argument or program variable.</comment>
+  </data>
+  <data name="ERRMSG_REFERENCE_IS_NULL" xml:space="preserve">
+    <value>Object {0} is a null reference.</value>
+    <comment>Use this message to report a null reference. Unlike its predecessor, ERRMSG_ARG_IS_NULL, this string has a substitution token through which to report the object name. Use the nameof() pseudo-function to get the name of the argument or internal variable.</comment>
+  </data>
+  <data name="ERRMSG_RUNTIME" xml:space="preserve">
+    <value>A run-time exception has occurred.</value>
+    <comment>Exit code 1 is reserved for reporting miscellaneous run-time exceptions.</comment>
+  </data>
+  <data name="ERRMSG_STRING_CONTAINS_ONLY_WHITESPACE" xml:space="preserve">
+    <value>The input string is invalid because it contains only whitespace characters.</value>
+    <comment>Use this string to report an exception when IsNullOrWhiteSpace returns TRUE after IsNullOrEmpty intercepts null references.</comment>
+  </data>
+  <data name="ERRMSG_SUCCESS" xml:space="preserve">
+    <value>The task completed successfully.</value>
+    <comment>This message is seldom written; it is a place holder for exit code zero in the table of error messages that is loaded into the state manager singleton.</comment>
+  </data>
+  <data name="MSG_BLANK_CAPS" xml:space="preserve">
+    <value>BLANK</value>
+    <comment>This is one of 18 strings from which to construct messages that I added to version 7.22.122 of the library.</comment>
+  </data>
+  <data name="MSG_BLANK_STRING" xml:space="preserve">
+    <value>[blank]</value>
+    <comment>Use this token to represent the empty string as the word "blank" in brackets. Contrast this with ERRMSG_NULLREF_NEVER_VALID and ERRMSG_ARG_IS_NULL_OR_EMPTY, both intended for use as the Message property of ArgumnetNullException exceptions.</comment>
+  </data>
+  <data name="MSG_DUMMY" xml:space="preserve">
+    <value>Dummy</value>
+    <comment>Added to version 7.24.126.</comment>
+  </data>
+  <data name="MSG_DUMMY_VALUE" xml:space="preserve">
+    <value>DummyValue</value>
+    <comment>Added to version 7.24.126.</comment>
+  </data>
+  <data name="MSG_INTEGER_EVENLY_DIVISIBLE_BY" xml:space="preserve">
+    <value>is evenly divisible by</value>
+    <comment>This is one of 18 strings from which to construct messages that I added to version 7.22.122 of the library.</comment>
+  </data>
+  <data name="MSG_INTEGER_IS_EVEN" xml:space="preserve">
+    <value>is even</value>
+    <comment>This is one of 18 strings from which to construct messages that I added to version 7.22.122 of the library.</comment>
+  </data>
+  <data name="MSG_INTEGER_IS_ODD" xml:space="preserve">
+    <value>is odd</value>
+    <comment>This is one of 18 strings from which to construct messages that I added to version 7.22.122 of the library.</comment>
+  </data>
+  <data name="MSG_IS" xml:space="preserve">
+    <value>is</value>
+    <comment>This is one of 18 strings from which to construct messages that I added to version 7.22.122 of the library.</comment>
+  </data>
+  <data name="MSG_IS_NOT" xml:space="preserve">
+    <value>is not</value>
+    <comment>This is one of 18 strings from which to construct messages that I added to version 7.22.122 of the library.</comment>
+  </data>
+  <data name="MSG_OBJECT_DOES_NOT_EXIST" xml:space="preserve">
+    <value>does not exist</value>
+    <comment>This is one of 18 strings from which to construct messages that I added to version 7.22.122 of the library.</comment>
+  </data>
+  <data name="MSG_OBJECT_EXISTS" xml:space="preserve">
+    <value>exists</value>
+    <comment>This is one of 18 strings from which to construct messages that I added to version 7.22.122 of the library.</comment>
+  </data>
+  <data name="MSG_OBJECT_IS_ABSENT" xml:space="preserve">
+    <value>is absent</value>
+    <comment>This is one of 18 strings from which to construct messages that I added to version 7.22.122 of the library.</comment>
+  </data>
+  <data name="MSG_OBJECT_IS_MISSING" xml:space="preserve">
+    <value>is missing</value>
+    <comment>This is one of 18 strings from which to construct messages that I added to version 7.22.122 of the library.</comment>
+  </data>
+  <data name="MSG_OBJECT_IS_PRESENT" xml:space="preserve">
+    <value>is present</value>
+    <comment>This is one of 18 strings from which to construct messages that I added to version 7.22.122 of the library.</comment>
+  </data>
+  <data name="MSG_OBJECT_REFERENCE_IS_NULL" xml:space="preserve">
+    <value>[null]</value>
+    <comment>Use this string to represent a null reference in output messages. Contrast this with ERRMSG_REFERENCE_IS_NULL, which has provisions for naming the argument or program variable.  See also MSG_STRING_IS_NULL_OR_EMPTY, for use in ArgumentNullException exception messages.</comment>
+  </data>
+  <data name="MSG_OBJECT_REFERENCE_IS_NULL_CAPS" xml:space="preserve">
+    <value>NULL</value>
+    <comment>This is one of 18 strings from which to construct messages that I added to version 7.22.122 of the library.</comment>
+  </data>
+  <data name="MSG_RESOURCE_LIST_BASENAME" xml:space="preserve">
+    <value>Location   = {0}</value>
+    <comment>ListResourcesInAssemblyByName next lists the basename of the resource.</comment>
+  </data>
+  <data name="MSG_RESOURCE_LIST_FQNAME" xml:space="preserve">
+    <value>Assembly Name  = {0}{1}</value>
+    <comment>ListResourcesInAssemblyByName opens its report with this message.</comment>
+  </data>
+  <data name="MSG_RESOURCE_LIST_ITEM_COUNT" xml:space="preserve">
+    <value># of Items = {0}{1}</value>
+    <comment>ListResourcesInAssemblyByName next shows the number of resources defined in the assembly, which are about to be listed.</comment>
+  </data>
+  <data name="MSG_RESOURCE_LIST_ITEM_DETAIL" xml:space="preserve">
+    <value>{0} # {1}: Name = {2}, Value = {3}</value>
+    <comment>Finally, ListResourcesInAssemblyByName lists each resource by name.</comment>
+  </data>
+  <data name="MSG_RESOURCE_LIST_NAMED_ITEM" xml:space="preserve">
+    <value>Embedded Resource # {0}: {1}</value>
+    <comment>ListResourcesInAssemblyByName uses this template to display the name of a named resource. Usually, there is one, at most, but I have assemblies that contain as many as three embedded resources.</comment>
+  </data>
+  <data name="MSG_RESOURCE_LIST_NAMES_END" xml:space="preserve">
+    <value>{0}    End of list{0}</value>
+    <comment>ListResourcesInAssemblyByName uses this template to format a message when it has displayed the name of the last embedded resource.</comment>
+  </data>
+  <data name="MSG_RESOURCE_LIST_NONE" xml:space="preserve">
+    <value>The specified assembly contains no embedded resources of any kind.</value>
+    <comment>ListResourcesInAssemblyByName displays this message when the specifieed assembly is devoid of embedded resources.</comment>
+  </data>
+  <data name="MSG_RESOURCE_LIST_NO_STRINGS" xml:space="preserve">
+    <value>The speicifed assembly contains no embedded string resources.</value>
+    <comment>ListResourcesInAssemblyByName displays this message when the specifieed assembly is devoid of embedded string resources.</comment>
+  </data>
+  <data name="MSG_STATUS_CODE" xml:space="preserve">
+    <value>{0} ({1:D} decimal)</value>
+    <comment>Use this method to specify a status code or HRESULT, showing both decimal and hexadecimal representations. A single item number is used twice, with different format strings, so that one argument feeds both. Alas, printf() and its kin cannot do this.</comment>
+  </data>
+  <data name="MSG_STRING_IS_EMPTY" xml:space="preserve">
+    <value>[empty]</value>
+    <comment>Use this token to represent the empty string as the word "empty" in brackets. See also MSG_BLANK_STRING and the more ambiguous MSG_STRING_IS_NULL_OR_EMPTY.</comment>
+  </data>
+  <data name="MSG_STRING_IS_NULL_OR_EMPTY" xml:space="preserve">
+    <value>[null or empty string]</value>
+    <comment>Use this string to represent a null reference or the empty string in output messages. Use MSG_OBJECT_REFERENCE_IS_NULL, MSG_STRING_IS_EMPTY, and MSG_BLANK_STRING to convey more specific information.</comment>
+  </data>
+  <data name="MSG_THE_EMPTY_STRING" xml:space="preserve">
+    <value>[empty string]</value>
+    <comment>Use this string to represent the empty string in output messages.</comment>
+  </data>
+  <data name="MSG_VALUE_IS_FALSE" xml:space="preserve">
+    <value>false</value>
+    <comment>This is one of 18 strings from which to construct messages that I added to version 7.22.122 of the library.</comment>
+  </data>
+  <data name="MSG_VALUE_IS_INVALID" xml:space="preserve">
+    <value>invalid</value>
+    <comment>Use this string to report that the value of a variable is invalid.</comment>
+  </data>
+  <data name="MSG_VALUE_IS_TRUE" xml:space="preserve">
+    <value>true</value>
+    <comment>This is one of 18 strings from which to construct messages that I added to version 7.22.122 of the library.</comment>
+  </data>
+  <data name="MSG_VALUE_IS_VALID" xml:space="preserve">
+    <value>valid</value>
+    <comment>Use this string to report that the value of a variable is valid.</comment>
+  </data>
+  <data name="REGISTRY_VALUE_TYPE_BINARY" xml:space="preserve">
+    <value>REG_BINARY</value>
+    <comment>Use these strings to describe the type of a Registry value.</comment>
+  </data>
+  <data name="REGISTRY_VALUE_TYPE_DWORD" xml:space="preserve">
+    <value>REG_DWORD</value>
+    <comment>Use these strings to describe the type of a Registry value.</comment>
+  </data>
+  <data name="REGISTRY_VALUE_TYPE_EXPAND" xml:space="preserve">
+    <value>REG_EXPAND_SZ</value>
+    <comment>Use these strings to describe the type of a Registry value.</comment>
+  </data>
+  <data name="REGISTRY_VALUE_TYPE_MULTI" xml:space="preserve">
+    <value>REG_MULTI_SZ</value>
+    <comment>Use these strings to describe the type of a Registry value.</comment>
+  </data>
+  <data name="REGISTRY_VALUE_TYPE_QWORD" xml:space="preserve">
+    <value>REG_QWORD</value>
+    <comment>Use these strings to describe the type of a Registry value.</comment>
+  </data>
+  <data name="RESOURCE_REPORT_LABELS" xml:space="preserve">
+    <value>ItemNbr\tName\tValue</value>
+    <comment>Static method ListResourcesInAssemblyByName generates the label row for a tab delimited report file from this template.</comment>
+  </data>
+  <data name="STACK_TRACE_ENTRY_PREFIX" xml:space="preserve">
+    <value>   at </value>
+    <comment>Each entry in the English-language string representation of a stack trace begins with this text. Note that it contains 3 leading spaces and one trailing space.</comment>
+  </data>
+  <data name="VALUE_IS_NULL" xml:space="preserve">
+    <value>[null]</value>
+    <comment>Added for StringTricks.TruncateValueToOneLine</comment>
+  </data>
+  <data name="VERSION_STRING_PART_BUILD_ABBR" xml:space="preserve">
+    <value>Bld.</value>
+    <comment>Use these strings as abbreviated labels for the four parts of a canonical version number string.</comment>
+  </data>
+  <data name="VERSION_STRING_PART_BUILD_LONG" xml:space="preserve">
+    <value>Build Number</value>
+    <comment>Use these strings as long labels for the four parts of a canonical version number string.</comment>
+  </data>
+  <data name="VERSION_STRING_PART_BUILD_SHORT" xml:space="preserve">
+    <value>Build</value>
+    <comment>Use these strings as short labels for the four parts of a canonical version number string.</comment>
+  </data>
+  <data name="VERSION_STRING_PART_MAJOR_ABBR" xml:space="preserve">
+    <value>Maj.</value>
+    <comment>Use these strings as abbreviated labels for the four parts of a canonical version number string.</comment>
+  </data>
+  <data name="VERSION_STRING_PART_MAJOR_LONG" xml:space="preserve">
+    <value>Major Version</value>
+    <comment>Use these strings as long labels for the four parts of a canonical version number string.</comment>
+  </data>
+  <data name="VERSION_STRING_PART_MAJOR_SHORT" xml:space="preserve">
+    <value>Major</value>
+    <comment>Use these strings as short labels for the four parts of a canonical version number string.</comment>
+  </data>
+  <data name="VERSION_STRING_PART_MINOR_ABBR" xml:space="preserve">
+    <value>Min.</value>
+    <comment>Use these strings as abbreviated labels for the four parts of a canonical version number string.</comment>
+  </data>
+  <data name="VERSION_STRING_PART_MINOR_LONG" xml:space="preserve">
+    <value>Minor Version</value>
+    <comment>Use these strings as long labels for the four parts of a canonical version number string.</comment>
+  </data>
+  <data name="VERSION_STRING_PART_MINOR_SHORT" xml:space="preserve">
+    <value>Minor</value>
+    <comment>Use these strings as short labels for the four parts of a canonical version number string.</comment>
+  </data>
+  <data name="VERSION_STRING_PART_REVNO_ABBR" xml:space="preserve">
+    <value>Rev.</value>
+    <comment>Use these strings as abbreviated labels for the four parts of a canonical version number string.</comment>
+  </data>
+  <data name="VERSION_STRING_PART_REVNO_LONG" xml:space="preserve">
+    <value>Revision</value>
+    <comment>Use these strings as long labels for the four parts of a canonical version number string. The values of this string and VERSION_STRING_PART_REVNO_SHORT are identical. Both exist by design, so that a numerical argument can select one of three groups, long, short, and abbreviated, for use in rendering the four parts of a version string.</comment>
+  </data>
+  <data name="VERSION_STRING_PART_REVNO_SHORT" xml:space="preserve">
+    <value>Revision</value>
+    <comment>Use these strings as long labels for the four parts of a canonical version number string. The values of this string and VERSION_STRING_PART_REVNO_LONG are identical. Both exist by design, so that a numerical argument can select one of three groups, long, short, and abbreviated, for use in rendering the four parts of a version string.</comment>
+  </data>
+</root>

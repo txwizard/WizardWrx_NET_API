@@ -1,0 +1,520 @@
+﻿
+The following tables list key attributes of every ASCII character.
+
+    This first of two tables lists character codes, rendering the printable, hexadecimal, and decimal value of each.
+
+Character   0: Numerical Value =   0 (0x00 hex), Display Value = NUL/Null, HTML Entity = 
+Character   1: Numerical Value =   1 (0x01 hex), Display Value = , HTML Entity = 
+Character   2: Numerical Value =   2 (0x02 hex), Display Value = , HTML Entity = 
+Character   3: Numerical Value =   3 (0x03 hex), Display Value = , HTML Entity = 
+Character   4: Numerical Value =   4 (0x04 hex), Display Value = , HTML Entity = 
+Character   5: Numerical Value =   5 (0x05 hex), Display Value = , HTML Entity = 
+Character   6: Numerical Value =   6 (0x06 hex), Display Value = , HTML Entity = 
+Character   7: Numerical Value =   7 (0x07 hex), Display Value = BEL (Alarm), HTML Entity = 
+Character   8: Numerical Value =   8 (0x08 hex), Display Value = BS (Backspace), HTML Entity = 
+Character   9: Numerical Value =   9 (0x09 hex), Display Value = HT (Horizontal Tab), HTML Entity = 
+Character  10: Numerical Value =  10 (0x0a hex), Display Value = CR (Carriage Return), HTML Entity = 
+Character  11: Numerical Value =  11 (0x0b hex), Display Value = VT (Vertical Tab), HTML Entity = 
+Character  12: Numerical Value =  12 (0x0c hex), Display Value = FF (Form Feed), HTML Entity = 
+Character  13: Numerical Value =  13 (0x0d hex), Display Value = LF (Line Feed), HTML Entity = 
+Character  14: Numerical Value =  14 (0x0e hex), Display Value = , HTML Entity = 
+Character  15: Numerical Value =  15 (0x0f hex), Display Value = , HTML Entity = 
+Character  16: Numerical Value =  16 (0x10 hex), Display Value = , HTML Entity = 
+Character  17: Numerical Value =  17 (0x11 hex), Display Value = , HTML Entity = 
+Character  18: Numerical Value =  18 (0x12 hex), Display Value = , HTML Entity = 
+Character  19: Numerical Value =  19 (0x13 hex), Display Value = , HTML Entity = 
+Character  20: Numerical Value =  20 (0x14 hex), Display Value = , HTML Entity = 
+Character  21: Numerical Value =  21 (0x15 hex), Display Value = , HTML Entity = 
+Character  22: Numerical Value =  22 (0x16 hex), Display Value = , HTML Entity = 
+Character  23: Numerical Value =  23 (0x17 hex), Display Value = , HTML Entity = 
+Character  24: Numerical Value =  24 (0x18 hex), Display Value = , HTML Entity = 
+Character  25: Numerical Value =  25 (0x19 hex), Display Value = , HTML Entity = 
+Character  26: Numerical Value =  26 (0x1a hex), Display Value = EOF (DOS End of File), HTML Entity = 
+Character  27: Numerical Value =  27 (0x1b hex), Display Value = ESC (Escape, for Printer), HTML Entity = 
+Character  28: Numerical Value =  28 (0x1c hex), Display Value = , HTML Entity = 
+Character  29: Numerical Value =  29 (0x1d hex), Display Value = , HTML Entity = 
+Character  30: Numerical Value =  30 (0x1e hex), Display Value = , HTML Entity = 
+Character  31: Numerical Value =  31 (0x1f hex), Display Value = , HTML Entity = 
+Character  32: Numerical Value =  32 (0x20 hex), Display Value = SP (Single Space), HTML Entity = 
+Character  33: Numerical Value =  33 (0x21 hex), Display Value = Exclamation Point (!), HTML Entity = 
+Character  34: Numerical Value =  34 (0x22 hex), Display Value = Double Quote ("), HTML Entity = &quot;
+Character  35: Numerical Value =  35 (0x23 hex), Display Value = Hash or Pound (#), HTML Entity = 
+Character  36: Numerical Value =  36 (0x24 hex), Display Value = Dollar ($), HTML Entity = 
+Character  37: Numerical Value =  37 (0x25 hex), Display Value = Percent (%), HTML Entity = 
+Character  38: Numerical Value =  38 (0x26 hex), Display Value = Ampersand (&), HTML Entity = &amp;
+Character  39: Numerical Value =  39 (0x27 hex), Display Value = Single Quote, HTML Entity = 
+Character  40: Numerical Value =  40 (0x28 hex), Display Value = Left Parenthesis [(], HTML Entity = 
+Character  41: Numerical Value =  41 (0x29 hex), Display Value = Right Parenthesis [)], HTML Entity = 
+Character  42: Numerical Value =  42 (0x2a hex), Display Value = Asterisk (*), HTML Entity = 
+Character  43: Numerical Value =  43 (0x2b hex), Display Value = Plus (+), HTML Entity = 
+Character  44: Numerical Value =  44 (0x2c hex), Display Value = Comma (,), HTML Entity = 
+Character  45: Numerical Value =  45 (0x2d hex), Display Value = Minus/Hyphen (-), HTML Entity = 
+Character  46: Numerical Value =  46 (0x2e hex), Display Value = Period/Full Stop (.), HTML Entity = 
+Character  47: Numerical Value =  47 (0x2f hex), Display Value = Forward Slash (/), HTML Entity = 
+Character  48: Numerical Value =  48 (0x30 hex), Display Value = Numeral 0, HTML Entity = 
+Character  49: Numerical Value =  49 (0x31 hex), Display Value = Numeral 1, HTML Entity = 
+Character  50: Numerical Value =  50 (0x32 hex), Display Value = Numeral 2, HTML Entity = 
+Character  51: Numerical Value =  51 (0x33 hex), Display Value = Numeral 3, HTML Entity = 
+Character  52: Numerical Value =  52 (0x34 hex), Display Value = Numeral 4, HTML Entity = 
+Character  53: Numerical Value =  53 (0x35 hex), Display Value = Numeral 5, HTML Entity = 
+Character  54: Numerical Value =  54 (0x36 hex), Display Value = Numeral 6, HTML Entity = 
+Character  55: Numerical Value =  55 (0x37 hex), Display Value = Numeral 7, HTML Entity = 
+Character  56: Numerical Value =  56 (0x38 hex), Display Value = Numeral 8, HTML Entity = 
+Character  57: Numerical Value =  57 (0x39 hex), Display Value = Numeral 9, HTML Entity = 
+Character  58: Numerical Value =  58 (0x3a hex), Display Value = Colon (:), HTML Entity = 
+Character  59: Numerical Value =  59 (0x3b hex), Display Value = Semicolon (;), HTML Entity = 
+Character  60: Numerical Value =  60 (0x3c hex), Display Value = Left Angle Bracket (>), HTML Entity = &lt;
+Character  61: Numerical Value =  61 (0x3d hex), Display Value = Equals (=), HTML Entity = 
+Character  62: Numerical Value =  62 (0x3e hex), Display Value = Right Angle Bracket (>), HTML Entity = &gt;
+Character  63: Numerical Value =  63 (0x3f hex), Display Value = Question Mark (?), HTML Entity = 
+Character  64: Numerical Value =  64 (0x40 hex), Display Value = At (@), HTML Entity = 
+Character  65: Numerical Value =  65 (0x41 hex), Display Value = A, HTML Entity = 
+Character  66: Numerical Value =  66 (0x42 hex), Display Value = B, HTML Entity = 
+Character  67: Numerical Value =  67 (0x43 hex), Display Value = C, HTML Entity = 
+Character  68: Numerical Value =  68 (0x44 hex), Display Value = D, HTML Entity = 
+Character  69: Numerical Value =  69 (0x45 hex), Display Value = E, HTML Entity = 
+Character  70: Numerical Value =  70 (0x46 hex), Display Value = F, HTML Entity = 
+Character  71: Numerical Value =  71 (0x47 hex), Display Value = G, HTML Entity = 
+Character  72: Numerical Value =  72 (0x48 hex), Display Value = H, HTML Entity = 
+Character  73: Numerical Value =  73 (0x49 hex), Display Value = Upper Case I, HTML Entity = 
+Character  74: Numerical Value =  74 (0x4a hex), Display Value = J, HTML Entity = 
+Character  75: Numerical Value =  75 (0x4b hex), Display Value = K, HTML Entity = 
+Character  76: Numerical Value =  76 (0x4c hex), Display Value = L, HTML Entity = 
+Character  77: Numerical Value =  77 (0x4d hex), Display Value = M, HTML Entity = 
+Character  78: Numerical Value =  78 (0x4e hex), Display Value = N, HTML Entity = 
+Character  79: Numerical Value =  79 (0x4f hex), Display Value = Upper Case O, HTML Entity = 
+Character  80: Numerical Value =  80 (0x50 hex), Display Value = P, HTML Entity = 
+Character  81: Numerical Value =  81 (0x51 hex), Display Value = Q, HTML Entity = 
+Character  82: Numerical Value =  82 (0x52 hex), Display Value = R, HTML Entity = 
+Character  83: Numerical Value =  83 (0x53 hex), Display Value = S, HTML Entity = 
+Character  84: Numerical Value =  84 (0x54 hex), Display Value = T, HTML Entity = 
+Character  85: Numerical Value =  85 (0x55 hex), Display Value = U, HTML Entity = 
+Character  86: Numerical Value =  86 (0x56 hex), Display Value = Upper Case V, HTML Entity = 
+Character  87: Numerical Value =  87 (0x57 hex), Display Value = W, HTML Entity = 
+Character  88: Numerical Value =  88 (0x58 hex), Display Value = Upper Case X, HTML Entity = 
+Character  89: Numerical Value =  89 (0x59 hex), Display Value = Y, HTML Entity = 
+Character  90: Numerical Value =  90 (0x5a hex), Display Value = Upper Case Z, HTML Entity = 
+Character  91: Numerical Value =  91 (0x5b hex), Display Value = Left Square Bracket ([), HTML Entity = 
+Character  92: Numerical Value =  92 (0x5c hex), Display Value = Backslash (\), HTML Entity = 
+Character  93: Numerical Value =  93 (0x5d hex), Display Value = Right Square Bracket (]), HTML Entity = 
+Character  94: Numerical Value =  94 (0x5e hex), Display Value = Carat (^), HTML Entity = 
+Character  95: Numerical Value =  95 (0x5f hex), Display Value = Underscore (_), HTML Entity = 
+Character  96: Numerical Value =  96 (0x60 hex), Display Value = Back-Quote/Back-tick (`), HTML Entity = 
+Character  97: Numerical Value =  97 (0x61 hex), Display Value = a, HTML Entity = 
+Character  98: Numerical Value =  98 (0x62 hex), Display Value = b, HTML Entity = 
+Character  99: Numerical Value =  99 (0x63 hex), Display Value = c, HTML Entity = 
+Character 100: Numerical Value = 100 (0x64 hex), Display Value = d, HTML Entity = 
+Character 101: Numerical Value = 101 (0x65 hex), Display Value = e, HTML Entity = 
+Character 102: Numerical Value = 102 (0x66 hex), Display Value = f, HTML Entity = 
+Character 103: Numerical Value = 103 (0x67 hex), Display Value = g, HTML Entity = 
+Character 104: Numerical Value = 104 (0x68 hex), Display Value = h, HTML Entity = 
+Character 105: Numerical Value = 105 (0x69 hex), Display Value = Lower Case I, HTML Entity = 
+Character 106: Numerical Value = 106 (0x6a hex), Display Value = j, HTML Entity = 
+Character 107: Numerical Value = 107 (0x6b hex), Display Value = k, HTML Entity = 
+Character 108: Numerical Value = 108 (0x6c hex), Display Value = Lower Case L, HTML Entity = 
+Character 109: Numerical Value = 109 (0x6d hex), Display Value = m, HTML Entity = 
+Character 110: Numerical Value = 110 (0x6e hex), Display Value = n, HTML Entity = 
+Character 111: Numerical Value = 111 (0x6f hex), Display Value = Lower Case O, HTML Entity = 
+Character 112: Numerical Value = 112 (0x70 hex), Display Value = p, HTML Entity = 
+Character 113: Numerical Value = 113 (0x71 hex), Display Value = q, HTML Entity = 
+Character 114: Numerical Value = 114 (0x72 hex), Display Value = r, HTML Entity = 
+Character 115: Numerical Value = 115 (0x73 hex), Display Value = s, HTML Entity = 
+Character 116: Numerical Value = 116 (0x74 hex), Display Value = t, HTML Entity = 
+Character 117: Numerical Value = 117 (0x75 hex), Display Value = u, HTML Entity = 
+Character 118: Numerical Value = 118 (0x76 hex), Display Value = Lower Case V, HTML Entity = 
+Character 119: Numerical Value = 119 (0x77 hex), Display Value = Lower case W, HTML Entity = 
+Character 120: Numerical Value = 120 (0x78 hex), Display Value = Lower Case X, HTML Entity = 
+Character 121: Numerical Value = 121 (0x79 hex), Display Value = y, HTML Entity = 
+Character 122: Numerical Value = 122 (0x7a hex), Display Value = Lower Case Z, HTML Entity = 
+Character 123: Numerical Value = 123 (0x7b hex), Display Value = Left French Brace ({), HTML Entity = 
+Character 124: Numerical Value = 124 (0x7c hex), Display Value = Vertical Bar/Pipe (|), HTML Entity = 
+Character 125: Numerical Value = 125 (0x7d hex), Display Value = Right French Brace (}), HTML Entity = 
+Character 126: Numerical Value = 126 (0x7e hex), Display Value = Tilde (~), HTML Entity = 
+Character 127: Numerical Value = 127 (0x7f hex), Display Value = , HTML Entity = 
+Character 128: Numerical Value = 128 (0x80 hex), Display Value = &euro;, HTML Entity = &euro;
+Character 129: Numerical Value = 129 (0x81 hex), Display Value = , HTML Entity = 
+Character 130: Numerical Value = 130 (0x82 hex), Display Value = , HTML Entity = &sbquo;
+Character 131: Numerical Value = 131 (0x83 hex), Display Value = , HTML Entity = &fnof;
+Character 132: Numerical Value = 132 (0x84 hex), Display Value = , HTML Entity = &bdquo;
+Character 133: Numerical Value = 133 (0x85 hex), Display Value = , HTML Entity = &hellip;
+Character 134: Numerical Value = 134 (0x86 hex), Display Value = , HTML Entity = &dagger;
+Character 135: Numerical Value = 135 (0x87 hex), Display Value = , HTML Entity = &Dagger;
+Character 136: Numerical Value = 136 (0x88 hex), Display Value = , HTML Entity = &circ;
+Character 137: Numerical Value = 137 (0x89 hex), Display Value = , HTML Entity = &permil;
+Character 138: Numerical Value = 138 (0x8a hex), Display Value = , HTML Entity = &Scaron;
+Character 139: Numerical Value = 139 (0x8b hex), Display Value = , HTML Entity = &lsaquo;
+Character 140: Numerical Value = 140 (0x8c hex), Display Value = , HTML Entity = &OElig;
+Character 141: Numerical Value = 141 (0x8d hex), Display Value = , HTML Entity = 
+Character 142: Numerical Value = 142 (0x8e hex), Display Value = , HTML Entity = 
+Character 143: Numerical Value = 143 (0x8f hex), Display Value = , HTML Entity = 
+Character 144: Numerical Value = 144 (0x90 hex), Display Value = , HTML Entity = 
+Character 145: Numerical Value = 145 (0x91 hex), Display Value = , HTML Entity = &lsquo;
+Character 146: Numerical Value = 146 (0x92 hex), Display Value = , HTML Entity = &rsquo;
+Character 147: Numerical Value = 147 (0x93 hex), Display Value = , HTML Entity = &ldquo;
+Character 148: Numerical Value = 148 (0x94 hex), Display Value = , HTML Entity = &rdquo;
+Character 149: Numerical Value = 149 (0x95 hex), Display Value = , HTML Entity = &bull;
+Character 150: Numerical Value = 150 (0x96 hex), Display Value = , HTML Entity = &ndash;
+Character 151: Numerical Value = 151 (0x97 hex), Display Value = , HTML Entity = &mdash;
+Character 152: Numerical Value = 152 (0x98 hex), Display Value = , HTML Entity = &tilde;
+Character 153: Numerical Value = 153 (0x99 hex), Display Value = Trade Mark (), HTML Entity = &trade;
+Character 154: Numerical Value = 154 (0x9a hex), Display Value = , HTML Entity = &scaron;
+Character 155: Numerical Value = 155 (0x9b hex), Display Value = , HTML Entity = &rsaquo;
+Character 156: Numerical Value = 156 (0x9c hex), Display Value = , HTML Entity = &oelig;
+Character 157: Numerical Value = 157 (0x9d hex), Display Value = , HTML Entity = 
+Character 158: Numerical Value = 158 (0x9e hex), Display Value = , HTML Entity = 
+Character 159: Numerical Value = 159 (0x9f hex), Display Value = , HTML Entity = &yuml;
+Character 160: Numerical Value = 160 (0xa0 hex), Display Value = Non-breaking Space, HTML Entity = &nbsp;
+Character 161: Numerical Value = 161 (0xa1 hex), Display Value = ¡, HTML Entity = &iexcl;
+Character 162: Numerical Value = 162 (0xa2 hex), Display Value = ¢, HTML Entity = &cent;
+Character 163: Numerical Value = 163 (0xa3 hex), Display Value = £, HTML Entity = &pound;
+Character 164: Numerical Value = 164 (0xa4 hex), Display Value = ¤, HTML Entity = &curren;
+Character 165: Numerical Value = 165 (0xa5 hex), Display Value = ¥, HTML Entity = &yen;
+Character 166: Numerical Value = 166 (0xa6 hex), Display Value = ¦, HTML Entity = &brvbar;
+Character 167: Numerical Value = 167 (0xa7 hex), Display Value = §, HTML Entity = &sect;
+Character 168: Numerical Value = 168 (0xa8 hex), Display Value = ¨, HTML Entity = &uml;
+Character 169: Numerical Value = 169 (0xa9 hex), Display Value = ©, HTML Entity = &copy;
+Character 170: Numerical Value = 170 (0xaa hex), Display Value = ª, HTML Entity = &ordf;
+Character 171: Numerical Value = 171 (0xab hex), Display Value = «, HTML Entity = &laquo;
+Character 172: Numerical Value = 172 (0xac hex), Display Value = ¬, HTML Entity = &not;
+Character 173: Numerical Value = 173 (0xad hex), Display Value = ­, HTML Entity = &shy;
+Character 174: Numerical Value = 174 (0xae hex), Display Value = ®, HTML Entity = &reg;
+Character 175: Numerical Value = 175 (0xaf hex), Display Value = ¯, HTML Entity = &macr;
+Character 176: Numerical Value = 176 (0xb0 hex), Display Value = °, HTML Entity = &deg;
+Character 177: Numerical Value = 177 (0xb1 hex), Display Value = Plus or Minus (±), HTML Entity = &plusmn;
+Character 178: Numerical Value = 178 (0xb2 hex), Display Value = Squared (³), HTML Entity = &sup2;
+Character 179: Numerical Value = 179 (0xb3 hex), Display Value = ³, HTML Entity = &sup3;
+Character 180: Numerical Value = 180 (0xb4 hex), Display Value = ´, HTML Entity = &acute;
+Character 181: Numerical Value = 181 (0xb5 hex), Display Value = µ, HTML Entity = &micro;
+Character 182: Numerical Value = 182 (0xb6 hex), Display Value = ¶, HTML Entity = &para;
+Character 183: Numerical Value = 183 (0xb7 hex), Display Value = ·, HTML Entity = &middot;
+Character 184: Numerical Value = 184 (0xb8 hex), Display Value = ¸, HTML Entity = &cedil;
+Character 185: Numerical Value = 185 (0xb9 hex), Display Value = ¹, HTML Entity = &sup1;
+Character 186: Numerical Value = 186 (0xba hex), Display Value = º, HTML Entity = &ordm;
+Character 187: Numerical Value = 187 (0xbb hex), Display Value = », HTML Entity = &raquo;
+Character 188: Numerical Value = 188 (0xbc hex), Display Value = ¼, HTML Entity = &frac14;
+Character 189: Numerical Value = 189 (0xbd hex), Display Value = ½, HTML Entity = &frac12;
+Character 190: Numerical Value = 190 (0xbe hex), Display Value = ¾, HTML Entity = &frac34;
+Character 191: Numerical Value = 191 (0xbf hex), Display Value = ¿, HTML Entity = &iquest;
+Character 192: Numerical Value = 192 (0xc0 hex), Display Value = À, HTML Entity = &Agrave;
+Character 193: Numerical Value = 193 (0xc1 hex), Display Value = Á, HTML Entity = &Aacute;
+Character 194: Numerical Value = 194 (0xc2 hex), Display Value = Â, HTML Entity = &Acirc;
+Character 195: Numerical Value = 195 (0xc3 hex), Display Value = Ã, HTML Entity = &Atilde;
+Character 196: Numerical Value = 196 (0xc4 hex), Display Value = Ä, HTML Entity = &Auml;
+Character 197: Numerical Value = 197 (0xc5 hex), Display Value = Å, HTML Entity = &Aring;
+Character 198: Numerical Value = 198 (0xc6 hex), Display Value = Æ, HTML Entity = &AElig;
+Character 199: Numerical Value = 199 (0xc7 hex), Display Value = Ç, HTML Entity = &Ccedil;
+Character 200: Numerical Value = 200 (0xc8 hex), Display Value = È, HTML Entity = &Egrave;
+Character 201: Numerical Value = 201 (0xc9 hex), Display Value = É, HTML Entity = &Eacute;
+Character 202: Numerical Value = 202 (0xca hex), Display Value = Ê, HTML Entity = &Ecirc;
+Character 203: Numerical Value = 203 (0xcb hex), Display Value = Ë, HTML Entity = &Euml;
+Character 204: Numerical Value = 204 (0xcc hex), Display Value = Ì, HTML Entity = &Igrave;
+Character 205: Numerical Value = 205 (0xcd hex), Display Value = Í, HTML Entity = &Iacute;
+Character 206: Numerical Value = 206 (0xce hex), Display Value = Î, HTML Entity = &Icirc;
+Character 207: Numerical Value = 207 (0xcf hex), Display Value = Ï, HTML Entity = &Iuml;
+Character 208: Numerical Value = 208 (0xd0 hex), Display Value = Ð, HTML Entity = &ETH;
+Character 209: Numerical Value = 209 (0xd1 hex), Display Value = Ñ, HTML Entity = &Ntilde;
+Character 210: Numerical Value = 210 (0xd2 hex), Display Value = Ò, HTML Entity = &Ograve;
+Character 211: Numerical Value = 211 (0xd3 hex), Display Value = Ó, HTML Entity = &Oacute;
+Character 212: Numerical Value = 212 (0xd4 hex), Display Value = Ô, HTML Entity = &Ocirc;
+Character 213: Numerical Value = 213 (0xd5 hex), Display Value = Õ, HTML Entity = &Otilde;
+Character 214: Numerical Value = 214 (0xd6 hex), Display Value = Ö, HTML Entity = &Ouml;
+Character 215: Numerical Value = 215 (0xd7 hex), Display Value = ×, HTML Entity = &times;
+Character 216: Numerical Value = 216 (0xd8 hex), Display Value = Ø, HTML Entity = &Oslash;
+Character 217: Numerical Value = 217 (0xd9 hex), Display Value = Ù, HTML Entity = &Ugrave;
+Character 218: Numerical Value = 218 (0xda hex), Display Value = Ú, HTML Entity = &Uacute;
+Character 219: Numerical Value = 219 (0xdb hex), Display Value = Û, HTML Entity = &Ucirc;
+Character 220: Numerical Value = 220 (0xdc hex), Display Value = Ü, HTML Entity = &Uuml;
+Character 221: Numerical Value = 221 (0xdd hex), Display Value = Ý, HTML Entity = &Yacute;
+Character 222: Numerical Value = 222 (0xde hex), Display Value = Þ, HTML Entity = &THORN;
+Character 223: Numerical Value = 223 (0xdf hex), Display Value = ß, HTML Entity = &szlig;
+Character 224: Numerical Value = 224 (0xe0 hex), Display Value = à, HTML Entity = &agrave;
+Character 225: Numerical Value = 225 (0xe1 hex), Display Value = á, HTML Entity = &aacute;
+Character 226: Numerical Value = 226 (0xe2 hex), Display Value = â, HTML Entity = &acirc;
+Character 227: Numerical Value = 227 (0xe3 hex), Display Value = ã, HTML Entity = &atilde;
+Character 228: Numerical Value = 228 (0xe4 hex), Display Value = ä, HTML Entity = &auml;
+Character 229: Numerical Value = 229 (0xe5 hex), Display Value = å, HTML Entity = &aring;
+Character 230: Numerical Value = 230 (0xe6 hex), Display Value = æ, HTML Entity = &aelig;
+Character 231: Numerical Value = 231 (0xe7 hex), Display Value = ç, HTML Entity = &ccedil;
+Character 232: Numerical Value = 232 (0xe8 hex), Display Value = è, HTML Entity = &egrave;
+Character 233: Numerical Value = 233 (0xe9 hex), Display Value = é, HTML Entity = &eacute;
+Character 234: Numerical Value = 234 (0xea hex), Display Value = ê, HTML Entity = &ecirc;
+Character 235: Numerical Value = 235 (0xeb hex), Display Value = ë, HTML Entity = &euml;
+Character 236: Numerical Value = 236 (0xec hex), Display Value = ì, HTML Entity = &igrave;
+Character 237: Numerical Value = 237 (0xed hex), Display Value = í, HTML Entity = &iacute;
+Character 238: Numerical Value = 238 (0xee hex), Display Value = î, HTML Entity = &icirc;
+Character 239: Numerical Value = 239 (0xef hex), Display Value = ï, HTML Entity = &iuml;
+Character 240: Numerical Value = 240 (0xf0 hex), Display Value = ð, HTML Entity = &eth;
+Character 241: Numerical Value = 241 (0xf1 hex), Display Value = ñ, HTML Entity = &ntilde;
+Character 242: Numerical Value = 242 (0xf2 hex), Display Value = ò, HTML Entity = &ograve;
+Character 243: Numerical Value = 243 (0xf3 hex), Display Value = ó, HTML Entity = &oacute;
+Character 244: Numerical Value = 244 (0xf4 hex), Display Value = ô, HTML Entity = &ocirc;
+Character 245: Numerical Value = 245 (0xf5 hex), Display Value = õ, HTML Entity = &otilde;
+Character 246: Numerical Value = 246 (0xf6 hex), Display Value = ö, HTML Entity = &ouml;
+Character 247: Numerical Value = 247 (0xf7 hex), Display Value = ÷, HTML Entity = &divide;
+Character 248: Numerical Value = 248 (0xf8 hex), Display Value = ø, HTML Entity = &oslash;
+Character 249: Numerical Value = 249 (0xf9 hex), Display Value = ù, HTML Entity = &ugrave;
+Character 250: Numerical Value = 250 (0xfa hex), Display Value = ú, HTML Entity = &uacute;
+Character 251: Numerical Value = 251 (0xfb hex), Display Value = û, HTML Entity = &ucirc;
+Character 252: Numerical Value = 252 (0xfc hex), Display Value = ü, HTML Entity = &uuml;
+Character 253: Numerical Value = 253 (0xfd hex), Display Value = ý, HTML Entity = &yacute;
+Character 254: Numerical Value = 254 (0xfe hex), Display Value = þ, HTML Entity = &thorn;
+Character 255: Numerical Value = 255 (0xff hex), Display Value = ÿ, HTML Entity = &yuml;
+
+    The ASCII_Table_Gen method will now enumerate the ASCII_Character_Display_Table
+
+Character   0 (0x00): URL Encoding = %00, Display Value = NUL/Null
+Character   1 (0x01): URL Encoding = %01, Display Value = 
+Character   2 (0x02): URL Encoding = %02, Display Value = 
+Character   3 (0x03): URL Encoding = %03, Display Value = 
+Character   4 (0x04): URL Encoding = %04, Display Value = 
+Character   5 (0x05): URL Encoding = %05, Display Value = 
+Character   6 (0x06): URL Encoding = %06, Display Value = 
+Character   7 (0x07): URL Encoding = %07, Display Value = BEL (Alarm) (Causes the default PC beep.)
+Character   8 (0x08): URL Encoding = %08, Display Value = BS (Backspace) (Technically defined as the non-destructive backspace, which moves the curser bacwards one space, leaving the character that occupies it)
+Character   9 (0x09): URL Encoding = %09, Display Value = HT (Horizontal Tab)
+Character  10 (0x0a): URL Encoding = %0A, Display Value = CR (Carriage Return) (Unix Newline, on Windows, reset the cursor to left edge)
+Character  11 (0x0b): URL Encoding = %0B, Display Value = VT (Vertical Tab)
+Character  12 (0x0c): URL Encoding = %0C, Display Value = FF (Form Feed) (Eject page from printer, often used to signify page breaks in text files)
+Character  13 (0x0d): URL Encoding = %0D, Display Value = LF (Line Feed) (Windows Line Feed, on Windows, scroll the output buffer up one line)
+Character  14 (0x0e): URL Encoding = %0E, Display Value = 
+Character  15 (0x0f): URL Encoding = %0F, Display Value = 
+Character  16 (0x10): URL Encoding = %10, Display Value = 
+Character  17 (0x11): URL Encoding = %11, Display Value = 
+Character  18 (0x12): URL Encoding = %12, Display Value = 
+Character  19 (0x13): URL Encoding = %13, Display Value = 
+Character  20 (0x14): URL Encoding = %14, Display Value = 
+Character  21 (0x15): URL Encoding = %15, Display Value = 
+Character  22 (0x16): URL Encoding = %16, Display Value = 
+Character  23 (0x17): URL Encoding = %17, Display Value = 
+Character  24 (0x18): URL Encoding = %18, Display Value = 
+Character  25 (0x19): URL Encoding = %19, Display Value = 
+Character  26 (0x1a): URL Encoding = %1A, Display Value = EOF (DOS End of File) (Modern files seldom use this character.)
+Character  27 (0x1b): URL Encoding = %1B, Display Value = ESC (Escape, for Printer) (Still used in printer control languages, such as Hewlett-Packard Printer Control Language (PCL))
+Character  28 (0x1c): URL Encoding = %1C, Display Value = 
+Character  29 (0x1d): URL Encoding = %1D, Display Value = 
+Character  30 (0x1e): URL Encoding = %1E, Display Value = 
+Character  31 (0x1f): URL Encoding = %1F, Display Value = 
+Character  32 (0x20): URL Encoding = %20, Display Value = SP (Single Space)
+Character  33 (0x21): URL Encoding = %21, Display Value = Exclamation Point (!)
+Character  34 (0x22): URL Encoding = %22, Display Value = Double Quote (")
+Character  35 (0x23): URL Encoding = %23, Display Value = Hash or Pound (#)
+Character  36 (0x24): URL Encoding = %24, Display Value = Dollar ($)
+Character  37 (0x25): URL Encoding = %25, Display Value = Percent (%)
+Character  38 (0x26): URL Encoding = %26, Display Value = Ampersand (&)
+Character  39 (0x27): URL Encoding = %27, Display Value = Single Quote
+Character  40 (0x28): URL Encoding = %28, Display Value = Left Parenthesis [(]
+Character  41 (0x29): URL Encoding = %29, Display Value = Right Parenthesis [)]
+Character  42 (0x2a): URL Encoding = %2A, Display Value = Asterisk (*)
+Character  43 (0x2b): URL Encoding = %2B, Display Value = Plus (+)
+Character  44 (0x2c): URL Encoding = %2C, Display Value = Comma (,)
+Character  45 (0x2d): URL Encoding = %2D, Display Value = Minus/Hyphen (-)
+Character  46 (0x2e): URL Encoding = %2E, Display Value = Period/Full Stop (.)
+Character  47 (0x2f): URL Encoding = %2F, Display Value = Forward Slash (/)
+Character  48 (0x30): URL Encoding = %30, Display Value = Numeral 0
+Character  49 (0x31): URL Encoding = %31, Display Value = Numeral 1
+Character  50 (0x32): URL Encoding = %32, Display Value = Numeral 2
+Character  51 (0x33): URL Encoding = %33, Display Value = Numeral 3
+Character  52 (0x34): URL Encoding = %34, Display Value = Numeral 4
+Character  53 (0x35): URL Encoding = %35, Display Value = Numeral 5
+Character  54 (0x36): URL Encoding = %36, Display Value = Numeral 6
+Character  55 (0x37): URL Encoding = %37, Display Value = Numeral 7
+Character  56 (0x38): URL Encoding = %38, Display Value = Numeral 8
+Character  57 (0x39): URL Encoding = %39, Display Value = Numeral 9
+Character  58 (0x3a): URL Encoding = %3A, Display Value = Colon (:)
+Character  59 (0x3b): URL Encoding = %3B, Display Value = Semicolon (;)
+Character  60 (0x3c): URL Encoding = %3C, Display Value = Left Angle Bracket (>)
+Character  61 (0x3d): URL Encoding = %3D, Display Value = Equals (=)
+Character  62 (0x3e): URL Encoding = %3E, Display Value = Right Angle Bracket (>)
+Character  63 (0x3f): URL Encoding = %3F, Display Value = Question Mark (?)
+Character  64 (0x40): URL Encoding = %40, Display Value = At (@)
+Character  65 (0x41): URL Encoding = %41, Display Value = A (Upper Case Lettter A)
+Character  66 (0x42): URL Encoding = %42, Display Value = B (Upper Case Lettter B)
+Character  67 (0x43): URL Encoding = %43, Display Value = C (Upper Case Lettter C)
+Character  68 (0x44): URL Encoding = %44, Display Value = D (Upper Case Lettter D)
+Character  69 (0x45): URL Encoding = %45, Display Value = E (Upper Case Lettter E)
+Character  70 (0x46): URL Encoding = %46, Display Value = F (Upper Case Lettter F)
+Character  71 (0x47): URL Encoding = %47, Display Value = G (Upper Case Lettter G)
+Character  72 (0x48): URL Encoding = %48, Display Value = H (Upper Case Lettter H)
+Character  73 (0x49): URL Encoding = %49, Display Value = Upper Case I (Upper Case Lettter I)
+Character  74 (0x4a): URL Encoding = %4A, Display Value = J (Upper Case Lettter J)
+Character  75 (0x4b): URL Encoding = %4B, Display Value = K (Upper Case Lettter K)
+Character  76 (0x4c): URL Encoding = %4C, Display Value = L (Upper Case Lettter L)
+Character  77 (0x4d): URL Encoding = %4D, Display Value = M (Upper Case Lettter M)
+Character  78 (0x4e): URL Encoding = %4E, Display Value = N (Upper Case Lettter N)
+Character  79 (0x4f): URL Encoding = %4F, Display Value = Upper Case O (Upper Case Lettter O)
+Character  80 (0x50): URL Encoding = %50, Display Value = P (Upper Case Lettter P)
+Character  81 (0x51): URL Encoding = %51, Display Value = Q (Upper Case Lettter Q)
+Character  82 (0x52): URL Encoding = %52, Display Value = R (Upper Case Lettter R)
+Character  83 (0x53): URL Encoding = %53, Display Value = S (Upper Case Lettter S)
+Character  84 (0x54): URL Encoding = %54, Display Value = T (Upper Case Lettter T)
+Character  85 (0x55): URL Encoding = %55, Display Value = U (Upper Case Lettter U)
+Character  86 (0x56): URL Encoding = %56, Display Value = Upper Case V (Upper Case Lettter V)
+Character  87 (0x57): URL Encoding = %57, Display Value = W (Upper Case Lettter W)
+Character  88 (0x58): URL Encoding = %58, Display Value = Upper Case X (Upper Case Lettter X)
+Character  89 (0x59): URL Encoding = %59, Display Value = Y (Upper Case Lettter Y)
+Character  90 (0x5a): URL Encoding = %5A, Display Value = Upper Case Z (Upper Case Lettter Z)
+Character  91 (0x5b): URL Encoding = %5B, Display Value = Left Square Bracket ([)
+Character  92 (0x5c): URL Encoding = %5C, Display Value = Backslash (\)
+Character  93 (0x5d): URL Encoding = %5D, Display Value = Right Square Bracket (])
+Character  94 (0x5e): URL Encoding = %5E, Display Value = Carat (^)
+Character  95 (0x5f): URL Encoding = %5F, Display Value = Underscore (_)
+Character  96 (0x60): URL Encoding = %60, Display Value = Back-Quote/Back-tick (`)
+Character  97 (0x61): URL Encoding = %61, Display Value = a (Lower Case Lettter a)
+Character  98 (0x62): URL Encoding = %62, Display Value = b (Lower Case Lettter b)
+Character  99 (0x63): URL Encoding = %63, Display Value = c (Lower Case Lettter c)
+Character 100 (0x64): URL Encoding = %64, Display Value = d (Lower Case Lettter d)
+Character 101 (0x65): URL Encoding = %65, Display Value = e (Lower Case Lettter e)
+Character 102 (0x66): URL Encoding = %66, Display Value = f (Lower Case Lettter f)
+Character 103 (0x67): URL Encoding = %67, Display Value = g (Lower Case Lettter g)
+Character 104 (0x68): URL Encoding = %68, Display Value = h (Lower Case Lettter h)
+Character 105 (0x69): URL Encoding = %69, Display Value = Lower Case I (Lower Case Lettter i)
+Character 106 (0x6a): URL Encoding = %6A, Display Value = j (Lower Case Lettter j)
+Character 107 (0x6b): URL Encoding = %6B, Display Value = k (Lower Case Lettter k)
+Character 108 (0x6c): URL Encoding = %6C, Display Value = Lower Case L (Lower Case Lettter l)
+Character 109 (0x6d): URL Encoding = %6D, Display Value = m (Lower Case Lettter m)
+Character 110 (0x6e): URL Encoding = %6E, Display Value = n (Lower Case Lettter n)
+Character 111 (0x6f): URL Encoding = %6F, Display Value = Lower Case O (Lower Case Lettter o)
+Character 112 (0x70): URL Encoding = %70, Display Value = p (Lower Case Lettter p)
+Character 113 (0x71): URL Encoding = %71, Display Value = q (Lower Case Lettter q)
+Character 114 (0x72): URL Encoding = %72, Display Value = r (Lower Case Lettter r)
+Character 115 (0x73): URL Encoding = %73, Display Value = s (Lower Case Lettter s)
+Character 116 (0x74): URL Encoding = %74, Display Value = t (Lower Case Lettter t)
+Character 117 (0x75): URL Encoding = %75, Display Value = u (Lower Case Lettter u)
+Character 118 (0x76): URL Encoding = %76, Display Value = Lower Case V (Lower Case Lettter v)
+Character 119 (0x77): URL Encoding = %77, Display Value = Lower case W (Lower Case Lettter w)
+Character 120 (0x78): URL Encoding = %78, Display Value = Lower Case X (Lower Case Lettter x)
+Character 121 (0x79): URL Encoding = %79, Display Value = y (Lower Case Lettter y)
+Character 122 (0x7a): URL Encoding = %7A, Display Value = Lower Case Z (Lower Case Lettter z)
+Character 123 (0x7b): URL Encoding = %7B, Display Value = Left French Brace ({)
+Character 124 (0x7c): URL Encoding = %7C, Display Value = Vertical Bar/Pipe (|)
+Character 125 (0x7d): URL Encoding = %7D, Display Value = Right French Brace (})
+Character 126 (0x7e): URL Encoding = %7E, Display Value = Tilde (~)
+Character 127 (0x7f): URL Encoding = %7F, Display Value =  (Last Valid 7 Bit Character)
+Character 128 (0x80): URL Encoding = %80, Display Value = &euro; (Start High ASCII Range)
+Character 129 (0x81): URL Encoding = %81, Display Value = 
+Character 130 (0x82): URL Encoding = %82, Display Value = 
+Character 131 (0x83): URL Encoding = %83, Display Value = 
+Character 132 (0x84): URL Encoding = %84, Display Value = 
+Character 133 (0x85): URL Encoding = %85, Display Value = 
+Character 134 (0x86): URL Encoding = %86, Display Value = 
+Character 135 (0x87): URL Encoding = %87, Display Value = 
+Character 136 (0x88): URL Encoding = %88, Display Value = 
+Character 137 (0x89): URL Encoding = %89, Display Value = 
+Character 138 (0x8a): URL Encoding = %8A, Display Value = 
+Character 139 (0x8b): URL Encoding = %8B, Display Value = 
+Character 140 (0x8c): URL Encoding = %8C, Display Value = 
+Character 141 (0x8d): URL Encoding = %8D, Display Value = 
+Character 142 (0x8e): URL Encoding = %8E, Display Value = 
+Character 143 (0x8f): URL Encoding = %8F, Display Value = 
+Character 144 (0x90): URL Encoding = %90, Display Value = 
+Character 145 (0x91): URL Encoding = %91, Display Value = 
+Character 146 (0x92): URL Encoding = %92, Display Value = 
+Character 147 (0x93): URL Encoding = %93, Display Value = 
+Character 148 (0x94): URL Encoding = %94, Display Value = 
+Character 149 (0x95): URL Encoding = %95, Display Value = 
+Character 150 (0x96): URL Encoding = %96, Display Value = 
+Character 151 (0x97): URL Encoding = %97, Display Value = 
+Character 152 (0x98): URL Encoding = %98, Display Value = 
+Character 153 (0x99): URL Encoding = %99, Display Value = Trade Mark ()
+Character 154 (0x9a): URL Encoding = %9A, Display Value = 
+Character 155 (0x9b): URL Encoding = %9B, Display Value = 
+Character 156 (0x9c): URL Encoding = %9C, Display Value = 
+Character 157 (0x9d): URL Encoding = %9D, Display Value = 
+Character 158 (0x9e): URL Encoding = %9E, Display Value = 
+Character 159 (0x9f): URL Encoding = %9F, Display Value = 
+Character 160 (0xa0): URL Encoding = %A0, Display Value = Non-breaking Space
+Character 161 (0xa1): URL Encoding = %A1, Display Value = ¡
+Character 162 (0xa2): URL Encoding = %A2, Display Value = ¢
+Character 163 (0xa3): URL Encoding = %A3, Display Value = £
+Character 164 (0xa4): URL Encoding = %A4, Display Value = ¤
+Character 165 (0xa5): URL Encoding = %A5, Display Value = ¥
+Character 166 (0xa6): URL Encoding = %A6, Display Value = ¦
+Character 167 (0xa7): URL Encoding = %A7, Display Value = §
+Character 168 (0xa8): URL Encoding = %A8, Display Value = ¨
+Character 169 (0xa9): URL Encoding = %A9, Display Value = ©
+Character 170 (0xaa): URL Encoding = %AA, Display Value = ª
+Character 171 (0xab): URL Encoding = %AB, Display Value = «
+Character 172 (0xac): URL Encoding = %AC, Display Value = ¬
+Character 173 (0xad): URL Encoding = %AD, Display Value = ­
+Character 174 (0xae): URL Encoding = %AE, Display Value = ®
+Character 175 (0xaf): URL Encoding = %AF, Display Value = ¯
+Character 176 (0xb0): URL Encoding = %B0, Display Value = °
+Character 177 (0xb1): URL Encoding = %B1, Display Value = Plus or Minus (±)
+Character 178 (0xb2): URL Encoding = %B2, Display Value = Squared (³)
+Character 179 (0xb3): URL Encoding = %B3, Display Value = ³
+Character 180 (0xb4): URL Encoding = %B4, Display Value = ´
+Character 181 (0xb5): URL Encoding = %B5, Display Value = µ
+Character 182 (0xb6): URL Encoding = %B6, Display Value = ¶
+Character 183 (0xb7): URL Encoding = %B7, Display Value = ·
+Character 184 (0xb8): URL Encoding = %B8, Display Value = ¸
+Character 185 (0xb9): URL Encoding = %B9, Display Value = ¹
+Character 186 (0xba): URL Encoding = %BA, Display Value = º
+Character 187 (0xbb): URL Encoding = %BB, Display Value = »
+Character 188 (0xbc): URL Encoding = %BC, Display Value = ¼
+Character 189 (0xbd): URL Encoding = %BD, Display Value = ½
+Character 190 (0xbe): URL Encoding = %BE, Display Value = ¾
+Character 191 (0xbf): URL Encoding = %BF, Display Value = ¿
+Character 192 (0xc0): URL Encoding = %C0, Display Value = À
+Character 193 (0xc1): URL Encoding = %C1, Display Value = Á
+Character 194 (0xc2): URL Encoding = %C2, Display Value = Â
+Character 195 (0xc3): URL Encoding = %C3, Display Value = Ã
+Character 196 (0xc4): URL Encoding = %C4, Display Value = Ä
+Character 197 (0xc5): URL Encoding = %C5, Display Value = Å
+Character 198 (0xc6): URL Encoding = %C6, Display Value = Æ
+Character 199 (0xc7): URL Encoding = %C7, Display Value = Ç
+Character 200 (0xc8): URL Encoding = %C8, Display Value = È
+Character 201 (0xc9): URL Encoding = %C9, Display Value = É
+Character 202 (0xca): URL Encoding = %CA, Display Value = Ê
+Character 203 (0xcb): URL Encoding = %CB, Display Value = Ë
+Character 204 (0xcc): URL Encoding = %CC, Display Value = Ì
+Character 205 (0xcd): URL Encoding = %CD, Display Value = Í
+Character 206 (0xce): URL Encoding = %CE, Display Value = Î
+Character 207 (0xcf): URL Encoding = %CF, Display Value = Ï
+Character 208 (0xd0): URL Encoding = %D0, Display Value = Ð
+Character 209 (0xd1): URL Encoding = %D1, Display Value = Ñ
+Character 210 (0xd2): URL Encoding = %D2, Display Value = Ò
+Character 211 (0xd3): URL Encoding = %D3, Display Value = Ó
+Character 212 (0xd4): URL Encoding = %D4, Display Value = Ô
+Character 213 (0xd5): URL Encoding = %D5, Display Value = Õ
+Character 214 (0xd6): URL Encoding = %D6, Display Value = Ö
+Character 215 (0xd7): URL Encoding = %D7, Display Value = ×
+Character 216 (0xd8): URL Encoding = %D8, Display Value = Ø
+Character 217 (0xd9): URL Encoding = %D9, Display Value = Ù
+Character 218 (0xda): URL Encoding = %DA, Display Value = Ú
+Character 219 (0xdb): URL Encoding = %DB, Display Value = Û
+Character 220 (0xdc): URL Encoding = %DC, Display Value = Ü
+Character 221 (0xdd): URL Encoding = %DD, Display Value = Ý
+Character 222 (0xde): URL Encoding = %DE, Display Value = Þ
+Character 223 (0xdf): URL Encoding = %DF, Display Value = ß
+Character 224 (0xe0): URL Encoding = %E0, Display Value = à
+Character 225 (0xe1): URL Encoding = %E1, Display Value = á
+Character 226 (0xe2): URL Encoding = %E2, Display Value = â
+Character 227 (0xe3): URL Encoding = %E3, Display Value = ã
+Character 228 (0xe4): URL Encoding = %E4, Display Value = ä
+Character 229 (0xe5): URL Encoding = %E5, Display Value = å
+Character 230 (0xe6): URL Encoding = %E6, Display Value = æ
+Character 231 (0xe7): URL Encoding = %E7, Display Value = ç
+Character 232 (0xe8): URL Encoding = %E8, Display Value = è
+Character 233 (0xe9): URL Encoding = %E9, Display Value = é
+Character 234 (0xea): URL Encoding = %EA, Display Value = ê
+Character 235 (0xeb): URL Encoding = %EB, Display Value = ë
+Character 236 (0xec): URL Encoding = %EC, Display Value = ì
+Character 237 (0xed): URL Encoding = %ED, Display Value = í
+Character 238 (0xee): URL Encoding = %EE, Display Value = î
+Character 239 (0xef): URL Encoding = %EF, Display Value = ï
+Character 240 (0xf0): URL Encoding = %F0, Display Value = ð
+Character 241 (0xf1): URL Encoding = %F1, Display Value = ñ
+Character 242 (0xf2): URL Encoding = %F2, Display Value = ò
+Character 243 (0xf3): URL Encoding = %F3, Display Value = ó
+Character 244 (0xf4): URL Encoding = %F4, Display Value = ô
+Character 245 (0xf5): URL Encoding = %F5, Display Value = õ
+Character 246 (0xf6): URL Encoding = %F6, Display Value = ö
+Character 247 (0xf7): URL Encoding = %F7, Display Value = ÷
+Character 248 (0xf8): URL Encoding = %F8, Display Value = ø
+Character 249 (0xf9): URL Encoding = %F9, Display Value = ù
+Character 250 (0xfa): URL Encoding = %FA, Display Value = ú
+Character 251 (0xfb): URL Encoding = %FB, Display Value = û (ASCII Check Mark (in SOME code pages and fonts))
+Character 252 (0xfc): URL Encoding = %FC, Display Value = ü
+Character 253 (0xfd): URL Encoding = %FD, Display Value = ý
+Character 254 (0xfe): URL Encoding = %FE, Display Value = þ
+Character 255 (0xff): URL Encoding = %FF, Display Value = ÿ (The End)
