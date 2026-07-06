@@ -2,6 +2,10 @@
 
 ## 2026‑07‑06
 
+`WizardWrx.ASCIIInfo` gets a build number icrement to satisfy the NuGet
+package specification generated for `WizardWrx.FormatStringEngine` 9.0.308.
+The build number of `WizardWrx.ASCIIInfo` is now 9.0.227.
+
 `WizardWrx.FormatStringEngine` gets a build number icrement to satisfy the NuGet
 package specification generated for `WizardWrx.Core` 9.0.402, published on
 04 July 2026. The build number of `WizardWrx.FormatStringEngine` is now 9.0.308.
