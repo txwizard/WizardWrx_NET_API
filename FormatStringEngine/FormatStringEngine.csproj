@@ -46,6 +46,10 @@
                    respect to the new target framework. This change accompanies
                    an API-wide target framework upgrade in which this library is
                    upgraded from 3.5 to 4.8.
+
+    2026/07/06 DAG Remove the PostBuildEvent, which we are abandoning in favor
+                   of real MSBuild targets because the PostBuildEvent and its
+                   twin, the PreBuildEvent, work only in Visual Studio.
     ============================================================================
 -->
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
@@ -143,10 +147,6 @@
   -->
   <PropertyGroup>
     <PreBuildEvent></PreBuildEvent>
-  </PropertyGroup>
-  <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
   </PropertyGroup>
   <Import Project="$(Custom_MSBuild_Targets)\WizardWrx_NuGet_Packages.TARGETS" Condition="Exists('$(Custom_MSBuild_Targets)\WizardWrx_NuGet_Packages.TARGETS')" />
 </Project>

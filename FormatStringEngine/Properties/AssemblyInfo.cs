@@ -23,6 +23,9 @@ using System.Runtime.InteropServices;
 //
 //  2020/09/20 DAG This build reflects updating the package copyright year from
 //                 2019 to 2020, which affects all assemblies in the solution.
+//
+//  2026/07/06 DAG Decrement the build number to force NuGet to build a missing
+//                 package 308.
 // =============================================================================
 
 // General Information about an assembly is controlled through the following
