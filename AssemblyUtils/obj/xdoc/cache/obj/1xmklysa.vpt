@@ -1,0 +1,10 @@
+id: AssemblyUtils
+language: CSharp
+name:
+  Default: AssemblyUtils
+qualifiedName:
+  Default: AssemblyUtils
+type: Assembly
+modifiers: {}
+items: []
+references: {}

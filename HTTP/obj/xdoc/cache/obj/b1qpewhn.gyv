@@ -1,0 +1,2850 @@
+id: WizardWrx.HTTP
+language: CSharp
+name:
+  Default: WizardWrx.HTTP
+qualifiedName:
+  Default: WizardWrx.HTTP
+type: Assembly
+modifiers: {}
+items:
+- id: WizardWrx.HTTP
+  commentId: N:WizardWrx.HTTP
+  language: CSharp
+  name:
+    CSharp: WizardWrx.HTTP
+    VB: WizardWrx.HTTP
+  nameWithType:
+    CSharp: WizardWrx.HTTP
+    VB: WizardWrx.HTTP
+  qualifiedName:
+    CSharp: WizardWrx.HTTP
+    VB: WizardWrx.HTTP
+  type: Namespace
+  assemblies:
+  - WizardWrx.HTTP
+  modifiers: {}
+  items:
+  - id: WizardWrx.HTTP.RequestEngine
+    commentId: T:WizardWrx.HTTP.RequestEngine
+    language: CSharp
+    name:
+      CSharp: RequestEngine
+      VB: RequestEngine
+    nameWithType:
+      CSharp: RequestEngine
+      VB: RequestEngine
+    qualifiedName:
+      CSharp: WizardWrx.HTTP.RequestEngine
+      VB: WizardWrx.HTTP.RequestEngine
+    type: Class
+    assemblies:
+    - WizardWrx.HTTP
+    namespace: WizardWrx.HTTP
+    source:
+      remote:
+        path: HTTP/RequestEngine.cs
+        branch: master
+        repo: https://github.com/txwizard/WizardWrx_NET_API
+      id: RequestEngine
+      path: ../HTTP/RequestEngine.cs
+      startLine: 53
+    summary: "\nInstances of this class export a single method that supports all five\nHTTP Request verbs.\n"
+    example: []
+    syntax:
+      content:
+        CSharp: public class RequestEngine
+        VB: Public Class RequestEngine
+    inheritance:
+    - System.Object
+    inheritedMembers:
+    - System.Object.ToString
+    - System.Object.Equals(System.Object)
+    - System.Object.Equals(System.Object,System.Object)
+    - System.Object.ReferenceEquals(System.Object,System.Object)
+    - System.Object.GetHashCode
+    - System.Object.GetType
+    - System.Object.MemberwiseClone
+    modifiers:
+      CSharp:
+      - public
+      - class
+      VB:
+      - Public
+      - Class
+    items:
+    - id: WizardWrx.HTTP.RequestEngine.REQUEST_EXPECTS_JSON_RESPONSE
+      commentId: F:WizardWrx.HTTP.RequestEngine.REQUEST_EXPECTS_JSON_RESPONSE
+      language: CSharp
+      name:
+        CSharp: REQUEST_EXPECTS_JSON_RESPONSE
+        VB: REQUEST_EXPECTS_JSON_RESPONSE
+      nameWithType:
+        CSharp: RequestEngine.REQUEST_EXPECTS_JSON_RESPONSE
+        VB: RequestEngine.REQUEST_EXPECTS_JSON_RESPONSE
+      qualifiedName:
+        CSharp: WizardWrx.HTTP.RequestEngine.REQUEST_EXPECTS_JSON_RESPONSE
+        VB: WizardWrx.HTTP.RequestEngine.REQUEST_EXPECTS_JSON_RESPONSE
+      type: Field
+      assemblies:
+      - WizardWrx.HTTP
+      namespace: WizardWrx.HTTP
+      source:
+        remote:
+          path: HTTP/RequestEngine.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: REQUEST_EXPECTS_JSON_RESPONSE
+        path: ../HTTP/RequestEngine.cs
+        startLine: 60
+      summary: "\nUse this constant to explicitly assert the default value of the last\nparameter to <xref href=\"WizardWrx.HTTP.RequestEngine.SendRequest%60%601(System.String%2cSystem.Action%7bNewtonsoft.Json.Linq.JObject%7d%2cWizardWrx.JsonSupport.JSON_Deserialized_Object%2cWizardWrx.HTTP.RequestEngine.HttpVerb%2cSystem.Boolean%2cSystem.String%2cSystem.String%2cSystem.Int32)\" data-throw-if-not-resolved=\"false\"></xref>,\n<code>pfExpectJSON</code>.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public const bool REQUEST_EXPECTS_JSON_RESPONSE = true
+          VB: Public Const REQUEST_EXPECTS_JSON_RESPONSE As Boolean = True
+        return:
+          type: System.Boolean
+      modifiers:
+        CSharp:
+        - public
+        - const
+        VB:
+        - Public
+        - Const
+      references:
+        ? WizardWrx.HTTP.RequestEngine.SendRequest``1(System.String,System.Action{Newtonsoft.Json.Linq.JObject},WizardWrx.JsonSupport.JSON_Deserialized_Object,WizardWrx.HTTP.RequestEngine.HttpVerb,System.Boolean,System.String,System.String,System.Int32)
+        : 
+    - id: WizardWrx.HTTP.RequestEngine.REQUEST_EXPECTS_OTHER_RESPONSE
+      commentId: F:WizardWrx.HTTP.RequestEngine.REQUEST_EXPECTS_OTHER_RESPONSE
+      language: CSharp
+      name:
+        CSharp: REQUEST_EXPECTS_OTHER_RESPONSE
+        VB: REQUEST_EXPECTS_OTHER_RESPONSE
+      nameWithType:
+        CSharp: RequestEngine.REQUEST_EXPECTS_OTHER_RESPONSE
+        VB: RequestEngine.REQUEST_EXPECTS_OTHER_RESPONSE
+      qualifiedName:
+        CSharp: WizardWrx.HTTP.RequestEngine.REQUEST_EXPECTS_OTHER_RESPONSE
+        VB: WizardWrx.HTTP.RequestEngine.REQUEST_EXPECTS_OTHER_RESPONSE
+      type: Field
+      assemblies:
+      - WizardWrx.HTTP
+      namespace: WizardWrx.HTTP
+      source:
+        remote:
+          path: HTTP/RequestEngine.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: REQUEST_EXPECTS_OTHER_RESPONSE
+        path: ../HTTP/RequestEngine.cs
+        startLine: 68
+      summary: "\nUse this constant to override the default value of the last\nparameter to <xref href=\"WizardWrx.HTTP.RequestEngine.SendRequest%60%601(System.String%2cSystem.Action%7bNewtonsoft.Json.Linq.JObject%7d%2cWizardWrx.JsonSupport.JSON_Deserialized_Object%2cWizardWrx.HTTP.RequestEngine.HttpVerb%2cSystem.Boolean%2cSystem.String%2cSystem.String%2cSystem.Int32)\" data-throw-if-not-resolved=\"false\"></xref>,\n<code>pfExpectJSON</code>.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public const bool REQUEST_EXPECTS_OTHER_RESPONSE = false
+          VB: Public Const REQUEST_EXPECTS_OTHER_RESPONSE As Boolean = False
+        return:
+          type: System.Boolean
+      modifiers:
+        CSharp:
+        - public
+        - const
+        VB:
+        - Public
+        - Const
+      references:
+        ? WizardWrx.HTTP.RequestEngine.SendRequest``1(System.String,System.Action{Newtonsoft.Json.Linq.JObject},WizardWrx.JsonSupport.JSON_Deserialized_Object,WizardWrx.HTTP.RequestEngine.HttpVerb,System.Boolean,System.String,System.String,System.Int32)
+        : 
+    - id: WizardWrx.HTTP.RequestEngine.Options
+      commentId: P:WizardWrx.HTTP.RequestEngine.Options
+      language: CSharp
+      name:
+        CSharp: Options
+        VB: Options
+      nameWithType:
+        CSharp: RequestEngine.Options
+        VB: RequestEngine.Options
+      qualifiedName:
+        CSharp: WizardWrx.HTTP.RequestEngine.Options
+        VB: WizardWrx.HTTP.RequestEngine.Options
+      type: Property
+      assemblies:
+      - WizardWrx.HTTP
+      namespace: WizardWrx.HTTP
+      source:
+        remote:
+          path: HTTP/RequestEngine.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: Options
+        path: ../HTTP/RequestEngine.cs
+        startLine: 115
+      summary: "\nThis immutable reference to a RequestOptions object is a concise way\nto attach options such as an OAuth access token and a method to get\na new token, along with a robust exception logging object that has\nmany configurable settings that determine how much detail it reports\nand how its reports are delivered.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public RequestOptions Options { get; }
+          VB: Public ReadOnly Property Options As RequestOptions
+        parameters: []
+        return:
+          type: WizardWrx.HTTP.RequestOptions
+      overload: WizardWrx.HTTP.RequestEngine.Options*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: WizardWrx.HTTP.RequestEngine.#ctor(System.String,System.String,System.Int32)
+      commentId: M:WizardWrx.HTTP.RequestEngine.#ctor(System.String,System.String,System.Int32)
+      language: CSharp
+      name:
+        CSharp: RequestEngine(String, String, Int32)
+        VB: RequestEngine(String, String, Int32)
+      nameWithType:
+        CSharp: RequestEngine.RequestEngine(String, String, Int32)
+        VB: RequestEngine.RequestEngine(String, String, Int32)
+      qualifiedName:
+        CSharp: WizardWrx.HTTP.RequestEngine.RequestEngine(System.String, System.String, System.Int32)
+        VB: WizardWrx.HTTP.RequestEngine.RequestEngine(System.String, System.String, System.Int32)
+      type: Constructor
+      assemblies:
+      - WizardWrx.HTTP
+      namespace: WizardWrx.HTTP
+      source:
+        remote:
+          path: HTTP/RequestEngine.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: .ctor
+        path: ../HTTP/RequestEngine.cs
+        startLine: 129
+      summary: "\nThe default constructor leaves the Options property null, which is\nOK for most use cases.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public RequestEngine(string memberName = "", string sourceFilePath = "", int sourceLineNumber = 0)
+          VB: Public Sub New(memberName As String = "", sourceFilePath As String = "", sourceLineNumber As Integer = 0)
+        parameters:
+        - id: memberName
+          type: System.String
+        - id: sourceFilePath
+          type: System.String
+        - id: sourceLineNumber
+          type: System.Int32
+      overload: WizardWrx.HTTP.RequestEngine.#ctor*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: WizardWrx.HTTP.RequestEngine.#ctor(WizardWrx.HTTP.RequestOptions,System.String,System.String,System.Int32)
+      commentId: M:WizardWrx.HTTP.RequestEngine.#ctor(WizardWrx.HTTP.RequestOptions,System.String,System.String,System.Int32)
+      language: CSharp
+      name:
+        CSharp: RequestEngine(RequestOptions, String, String, Int32)
+        VB: RequestEngine(RequestOptions, String, String, Int32)
+      nameWithType:
+        CSharp: RequestEngine.RequestEngine(RequestOptions, String, String, Int32)
+        VB: RequestEngine.RequestEngine(RequestOptions, String, String, Int32)
+      qualifiedName:
+        CSharp: WizardWrx.HTTP.RequestEngine.RequestEngine(WizardWrx.HTTP.RequestOptions, System.String, System.String, System.Int32)
+        VB: WizardWrx.HTTP.RequestEngine.RequestEngine(WizardWrx.HTTP.RequestOptions, System.String, System.String, System.Int32)
+      type: Constructor
+      assemblies:
+      - WizardWrx.HTTP
+      namespace: WizardWrx.HTTP
+      source:
+        remote:
+          path: HTTP/RequestEngine.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: .ctor
+        path: ../HTTP/RequestEngine.cs
+        startLine: 157
+      summary: "\nThis constructor initializes the Options property, which is not\nstrictly required for most use cases, and can be passed in as a\nRequestOptions constructor call, since the RequestOptions object is\na POCO that doesn&apos;t even need System; its only reference is to the\nWizardWrx.DLLConfigurationManager namespace, where the \nExceptionLogger lives.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public RequestEngine(RequestOptions pobjRequestOptions, string memberName = "", string sourceFilePath = "", int sourceLineNumber = 0)
+          VB: Public Sub New(pobjRequestOptions As RequestOptions, memberName As String = "", sourceFilePath As String = "", sourceLineNumber As Integer = 0)
+        parameters:
+        - id: pobjRequestOptions
+          type: WizardWrx.HTTP.RequestOptions
+          description: "\nWhen supplied, the RequestOptions object reference is stored in the\nOptions property, providing a read-only reference to everything but\nthe OAuth Access Token, which must, of course, be updateable because\naccess tokens are short-lived.\n"
+        - id: memberName
+          type: System.String
+        - id: sourceFilePath
+          type: System.String
+        - id: sourceLineNumber
+          type: System.Int32
+      overload: WizardWrx.HTTP.RequestEngine.#ctor*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: WizardWrx.HTTP.RequestEngine.GetDiagnosticHeadersDump(System.Uri,System.Boolean,System.String,System.String,System.Int32)
+      commentId: M:WizardWrx.HTTP.RequestEngine.GetDiagnosticHeadersDump(System.Uri,System.Boolean,System.String,System.String,System.Int32)
+      language: CSharp
+      name:
+        CSharp: GetDiagnosticHeadersDump(Uri, Boolean, String, String, Int32)
+        VB: GetDiagnosticHeadersDump(Uri, Boolean, String, String, Int32)
+      nameWithType:
+        CSharp: RequestEngine.GetDiagnosticHeadersDump(Uri, Boolean, String, String, Int32)
+        VB: RequestEngine.GetDiagnosticHeadersDump(Uri, Boolean, String, String, Int32)
+      qualifiedName:
+        CSharp: WizardWrx.HTTP.RequestEngine.GetDiagnosticHeadersDump(System.Uri, System.Boolean, System.String, System.String, System.Int32)
+        VB: WizardWrx.HTTP.RequestEngine.GetDiagnosticHeadersDump(System.Uri, System.Boolean, System.String, System.String, System.Int32)
+      type: Method
+      assemblies:
+      - WizardWrx.HTTP
+      namespace: WizardWrx.HTTP
+      source:
+        remote:
+          path: HTTP/RequestEngine.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: GetDiagnosticHeadersDump
+        path: ../HTTP/RequestEngine.cs
+        startLine: 202
+      summary: "\nGet a formatted list of the HTTP headers attached to the request.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public string GetDiagnosticHeadersDump(Uri requestUri, bool pfExpectJson, string memberName = "", string sourceFilePath = "", int sourceLineNumber = 0)
+          VB: Public Function GetDiagnosticHeadersDump(requestUri As Uri, pfExpectJson As Boolean, memberName As String = "", sourceFilePath As String = "", sourceLineNumber As Integer = 0) As String
+        parameters:
+        - id: requestUri
+          type: System.Uri
+          description: "\nSpecify the URL that will accompany the actual request when you call\nSendRequest.\n"
+        - id: pfExpectJson
+          type: System.Boolean
+          description: "\nSpecify the Boolean ExpectJSON flag that will accomapny the actual\nrequest when you call SendRequest.\n"
+        - id: memberName
+          type: System.String
+        - id: sourceFilePath
+          type: System.String
+        - id: sourceLineNumber
+          type: System.Int32
+        return:
+          type: System.String
+          description: "\nThe return value is a human-readable list of the HTTP headers that\nwill be attached to the actual request.\n"
+      overload: WizardWrx.HTTP.RequestEngine.GetDiagnosticHeadersDump*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: WizardWrx.HTTP.RequestEngine.SendRequest``1(System.String,System.Action{Newtonsoft.Json.Linq.JObject},WizardWrx.JsonSupport.JSON_Deserialized_Object,WizardWrx.HTTP.RequestEngine.HttpVerb,System.Boolean,System.String,System.String,System.Int32)
+      commentId: M:WizardWrx.HTTP.RequestEngine.SendRequest``1(System.String,System.Action{Newtonsoft.Json.Linq.JObject},WizardWrx.JsonSupport.JSON_Deserialized_Object,WizardWrx.HTTP.RequestEngine.HttpVerb,System.Boolean,System.String,System.String,System.Int32)
+      language: CSharp
+      name:
+        CSharp: SendRequest<T>(String, Action<JObject>, JSON_Deserialized_Object, RequestEngine.HttpVerb, Boolean, String, String, Int32)
+        VB: SendRequest(Of T)(String, Action(Of JObject), JSON_Deserialized_Object, RequestEngine.HttpVerb, Boolean, String, String, Int32)
+      nameWithType:
+        CSharp: RequestEngine.SendRequest<T>(String, Action<JObject>, JSON_Deserialized_Object, RequestEngine.HttpVerb, Boolean, String, String, Int32)
+        VB: RequestEngine.SendRequest(Of T)(String, Action(Of JObject), JSON_Deserialized_Object, RequestEngine.HttpVerb, Boolean, String, String, Int32)
+      qualifiedName:
+        CSharp: WizardWrx.HTTP.RequestEngine.SendRequest<T>(System.String, System.Action<Newtonsoft.Json.Linq.JObject>, WizardWrx.JsonSupport.JSON_Deserialized_Object, WizardWrx.HTTP.RequestEngine.HttpVerb, System.Boolean, System.String, System.String, System.Int32)
+        VB: WizardWrx.HTTP.RequestEngine.SendRequest(Of T)(System.String, System.Action(Of Newtonsoft.Json.Linq.JObject), WizardWrx.JsonSupport.JSON_Deserialized_Object, WizardWrx.HTTP.RequestEngine.HttpVerb, System.Boolean, System.String, System.String, System.Int32)
+      type: Method
+      assemblies:
+      - WizardWrx.HTTP
+      namespace: WizardWrx.HTTP
+      source:
+        remote:
+          path: HTTP/RequestEngine.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: SendRequest
+        path: ../HTTP/RequestEngine.cs
+        startLine: 379
+      summary: "\nCall the web API and process the result.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public (T tResult, string strStatus) SendRequest<T>(string pstrWebApiUrl, Action<JObject> pfunProcessResultCallback = null, JSON_Deserialized_Object pjSON_Deserialized = null, RequestEngine.HttpVerb penmVerb = RequestEngine.HttpVerb.POST, bool pfExpectJSON = true, string memberName = "", string sourceFilePath = "", int sourceLineNumber = 0)
+          VB: Public Function SendRequest(Of T)(pstrWebApiUrl As String, pfunProcessResultCallback As Action(Of JObject) = Nothing, pjSON_Deserialized As JSON_Deserialized_Object = Nothing, penmVerb As RequestEngine.HttpVerb = RequestEngine.HttpVerb.POST, pfExpectJSON As Boolean = True, memberName As String = "", sourceFilePath As String = "", sourceLineNumber As Integer = 0) As(tResult As T, strStatus As String)
+        parameters:
+        - id: pstrWebApiUrl
+          type: System.String
+          description: "\nURL of the web API to call (presumeed to return Json unless\nindicated otherwise)\n"
+        - id: pfunProcessResultCallback
+          type: System.Action{Newtonsoft.Json.Linq.JObject}
+          description: "\n<p>\nThis optional Action JObject reference points to the callback used\nto process the result of the call to the web API. This was intended\nfor processing JSON objects of assorted arbitrary shapes returned by\nvarious Microsoft Graph endpoints.\n</p>\n<p>\nNow that the routine is evolving to meet additional needs, it seemed\nwiser to abandon the void return type in favor of returning the\nresult in a more conventional fashion.\n</p>\n<p>\nThough it now returns in a more &quot;natural&quot; way, the callback remains\nrelevant for the Graph API because it allows a single entry point to\nprocess \n</p>\n"
+        - id: pjSON_Deserialized
+          type: WizardWrx.JsonSupport.JSON_Deserialized_Object
+          description: "\n<p>\nWhen present, the optional JSON_Deserialized_Object object is\nsyntactic sugar sprinkled over a standard string that is expected to\nhave passed a very cursory validity check.\n</p>\n<p>\nThis string is the payload required of all POST nad PUT requests.\n</p>\n<p>\nWhen this value is null, unless <code data-dev-comment-type=\"paramref\" class=\"paramref\">penmVerb</code> happens\nto be DELETE, the verb is coerced to GET, the only other verb that\ndispenses with a payload.\n</p>\n"
+        - id: penmVerb
+          type: WizardWrx.HTTP.RequestEngine.HttpVerb
+          description: "\n<p>\nThis optional member of the HttpVerb enumeration identifies the HTT\nverb to emit for the request. For backwards compatibility, its value\ndefaults to POST.\n</p>\n<p>\nWhen <code data-dev-comment-type=\"paramref\" class=\"paramref\">pjSON_Deserialized</code> is null, unless this value\nis DELETE, the verb is coerced to GET, the only other verb that can\nfunction without a payload.\n</p>\n"
+        - id: pfExpectJSON
+          type: System.Boolean
+          description: "\nBy default, we expect the returned string to be JSON, and use the\nJsonConvert.DeserializeObject method to return it as a JObject.\nOtherwise, the raw string is returned as is.\n"
+        - id: memberName
+          type: System.String
+        - id: sourceFilePath
+          type: System.String
+        - id: sourceLineNumber
+          type: System.Int32
+        typeParameters:
+        - id: T
+          description: "\n<p>\nSpecifies the expected return type of the Web API call.\n</p>\n<p>\nWhen pfExpectJSON is true, T must be either JObject or a type\nthat can be deserialized from the JSON response body.\n</p>\n<p>\nWhen pfExpectJSON is false, T may be:\n</p>\n<ul><li></li><li></li><li></li></ul>\n<p>\nThe method does not attempt to infer the correct type; the caller is\nresponsible for specifying a T that matches the expected response format.\n</p>\n"
+        return:
+          type: System.ValueTuple{{T},System.String}
+          description: "\n<p>\nThis routine was originally intended for use as part of a library\nthat interacts with the Microsoft Graph API and expects to return an\narbitrarily shaped object as a JObject, which it passed to the\ncallback routine <code data-dev-comment-type=\"paramref\" class=\"paramref\">pfunProcessResultCallback</code>.\n</p>\n<p>\nSince it is being pulled out of that class library so that it can be\napplied elsewhere, it is changed so that it returns whichever object\nit has, either JSON or an ordinary string. Hence, altough the return\ntype is specified as object, in practice, it is either a JObject or\na garden variety String.\n</p>\n"
+      overload: WizardWrx.HTTP.RequestEngine.SendRequest*
+      exceptions:
+      - type: Newtonsoft.Json.JsonException
+        commentId: T:Newtonsoft.Json.JsonException
+        description: "\nThrown when pfExpectJSON is true but the response body cannot be\ndeserialized into the requested type T or is not valid JSON.\n"
+      - type: System.InvalidOperationException
+        commentId: T:System.InvalidOperationException
+        description: "\nThrown when pfExpectJSON is false and T is incompatible with the\nnon‑JSON response mode. For example, this occurs when T is not\nstring or byte[] and the method has no defined conversion for the\nreturned content.\n"
+      - type: System.Exception
+        commentId: T:System.Exception
+        description: "\n<p>\nThrown when the Web API returns an error status code other than\nUnauthorized, or when token refresh fails after receiving a 401\nUnauthorized response, and possibly other circumstances. The \nexception message MAY include the HTTP status code and the response\ncontent for diagnostic purposes. This information is also made\navailable in due course via the LoggerCallback, if supplied in the\nRequestOptions.\n</p>\n<p>\nCallers are strongly encouraged to wrap this method in its own\ntry/catch block and be prepared to catch and handle the exceptions\nit may throw, especially if the caller is a long‑running process\nthat needs to be resilient in the face of transient errors and token\nexpiration.\n</p>\n"
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+      references:
+        Newtonsoft.Json.JsonException: 
+        System.InvalidOperationException: 
+        System.Exception: 
+    - id: WizardWrx.HTTP.RequestEngine.ParseQueryToDictionary(System.Uri)
+      commentId: M:WizardWrx.HTTP.RequestEngine.ParseQueryToDictionary(System.Uri)
+      language: CSharp
+      name:
+        CSharp: ParseQueryToDictionary(Uri)
+        VB: ParseQueryToDictionary(Uri)
+      nameWithType:
+        CSharp: RequestEngine.ParseQueryToDictionary(Uri)
+        VB: RequestEngine.ParseQueryToDictionary(Uri)
+      qualifiedName:
+        CSharp: WizardWrx.HTTP.RequestEngine.ParseQueryToDictionary(System.Uri)
+        VB: WizardWrx.HTTP.RequestEngine.ParseQueryToDictionary(System.Uri)
+      type: Method
+      assemblies:
+      - WizardWrx.HTTP
+      namespace: WizardWrx.HTTP
+      source:
+        remote:
+          path: HTTP/RequestEngine.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: ParseQueryToDictionary
+        path: ../HTTP/RequestEngine.cs
+        startLine: 758
+      summary: "\nExtract the Query from any URI into an IDictionary of name-value\npairs that can be URL encoded properly.\n"
+      remarks: "\nSince this method performs no logging, it is not necessary to pass\nin caller info parameters, and, in fact, they are not supported. If\nyou need to log the query values, call this method from a wrapper\nthat does support caller info parameters and logs the returned\ndictionary.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public static IDictionary<string, string> ParseQueryToDictionary(Uri puriToParse)
+          VB: Public Shared Function ParseQueryToDictionary(puriToParse As Uri) As IDictionary(Of String, String)
+        parameters:
+        - id: puriToParse
+          type: System.Uri
+          description: "\nPass in a reference to the System.Uri to process.\n"
+        return:
+          type: System.Collections.Generic.IDictionary{System.String,System.String}
+          description: "\nThe return value is the IDictionary populated with keys for each\nnamed value in the Query of <code data-dev-comment-type=\"paramref\" class=\"paramref\">puriToParse</code>. If the\nquery is empty or absent, the returned dictionary is empty.\n"
+      overload: WizardWrx.HTTP.RequestEngine.ParseQueryToDictionary*
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+  - id: WizardWrx.HTTP.RequestEngine.HttpVerb
+    commentId: T:WizardWrx.HTTP.RequestEngine.HttpVerb
+    language: CSharp
+    name:
+      CSharp: RequestEngine.HttpVerb
+      VB: RequestEngine.HttpVerb
+    nameWithType:
+      CSharp: RequestEngine.HttpVerb
+      VB: RequestEngine.HttpVerb
+    qualifiedName:
+      CSharp: WizardWrx.HTTP.RequestEngine.HttpVerb
+      VB: WizardWrx.HTTP.RequestEngine.HttpVerb
+    type: Enum
+    assemblies:
+    - WizardWrx.HTTP
+    namespace: WizardWrx.HTTP
+    source:
+      remote:
+        path: HTTP/RequestEngine.cs
+        branch: master
+        repo: https://github.com/txwizard/WizardWrx_NET_API
+      id: HttpVerb
+      path: ../HTTP/RequestEngine.cs
+      startLine: 76
+    summary: "\nThe HttpVerb enumeration identifies the HTTP verbs supported by the\nHttpClient object, and establishes which HttpClienti instance method\nCallWebApiAndProcessResultASync invokes.\n"
+    example: []
+    syntax:
+      content:
+        CSharp: public enum HttpVerb
+        VB: Public Enum HttpVerb
+    extensionMethods:
+    - WizardWrx.HTTP.RequestEngine.HttpVerb.WizardWrx.StringExtensions.RenderEvenWhenNull``1(System.String,System.String,System.IFormatProvider)
+    modifiers:
+      CSharp:
+      - public
+      - enum
+      VB:
+      - Public
+      - Enum
+    items:
+    - id: WizardWrx.HTTP.RequestEngine.HttpVerb.GET
+      commentId: F:WizardWrx.HTTP.RequestEngine.HttpVerb.GET
+      language: CSharp
+      name:
+        CSharp: GET
+        VB: GET
+      nameWithType:
+        CSharp: RequestEngine.HttpVerb.GET
+        VB: RequestEngine.HttpVerb.GET
+      qualifiedName:
+        CSharp: WizardWrx.HTTP.RequestEngine.HttpVerb.GET
+        VB: WizardWrx.HTTP.RequestEngine.HttpVerb.GET
+      type: Field
+      assemblies:
+      - WizardWrx.HTTP
+      namespace: WizardWrx.HTTP
+      source:
+        remote:
+          path: HTTP/RequestEngine.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: GET
+        path: ../HTTP/RequestEngine.cs
+        startLine: 81
+      summary: "\nThis value maps to the most basic verb, GET.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: GET = 0
+          VB: GET = 0
+        return:
+          type: WizardWrx.HTTP.RequestEngine.HttpVerb
+      modifiers:
+        CSharp:
+        - public
+        - const
+        VB:
+        - Public
+        - Const
+    - id: WizardWrx.HTTP.RequestEngine.HttpVerb.PATCH
+      commentId: F:WizardWrx.HTTP.RequestEngine.HttpVerb.PATCH
+      language: CSharp
+      name:
+        CSharp: PATCH
+        VB: PATCH
+      nameWithType:
+        CSharp: RequestEngine.HttpVerb.PATCH
+        VB: RequestEngine.HttpVerb.PATCH
+      qualifiedName:
+        CSharp: WizardWrx.HTTP.RequestEngine.HttpVerb.PATCH
+        VB: WizardWrx.HTTP.RequestEngine.HttpVerb.PATCH
+      type: Field
+      assemblies:
+      - WizardWrx.HTTP
+      namespace: WizardWrx.HTTP
+      source:
+        remote:
+          path: HTTP/RequestEngine.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: PATCH
+        path: ../HTTP/RequestEngine.cs
+        startLine: 87
+      summary: "\nThis value maps to the increasingly popular PATCH verb, usually used to\nupdate selected columns of a row in a database table.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: PATCH = 1
+          VB: PATCH = 1
+        return:
+          type: WizardWrx.HTTP.RequestEngine.HttpVerb
+      modifiers:
+        CSharp:
+        - public
+        - const
+        VB:
+        - Public
+        - Const
+    - id: WizardWrx.HTTP.RequestEngine.HttpVerb.POST
+      commentId: F:WizardWrx.HTTP.RequestEngine.HttpVerb.POST
+      language: CSharp
+      name:
+        CSharp: POST
+        VB: POST
+      nameWithType:
+        CSharp: RequestEngine.HttpVerb.POST
+        VB: RequestEngine.HttpVerb.POST
+      qualifiedName:
+        CSharp: WizardWrx.HTTP.RequestEngine.HttpVerb.POST
+        VB: WizardWrx.HTTP.RequestEngine.HttpVerb.POST
+      type: Field
+      assemblies:
+      - WizardWrx.HTTP
+      namespace: WizardWrx.HTTP
+      source:
+        remote:
+          path: HTTP/RequestEngine.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: POST
+        path: ../HTTP/RequestEngine.cs
+        startLine: 92
+      summary: "\nThis value maps to the most commonly used verb after GET.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: POST = 2
+          VB: POST = 2
+        return:
+          type: WizardWrx.HTTP.RequestEngine.HttpVerb
+      modifiers:
+        CSharp:
+        - public
+        - const
+        VB:
+        - Public
+        - Const
+    - id: WizardWrx.HTTP.RequestEngine.HttpVerb.PUT
+      commentId: F:WizardWrx.HTTP.RequestEngine.HttpVerb.PUT
+      language: CSharp
+      name:
+        CSharp: PUT
+        VB: PUT
+      nameWithType:
+        CSharp: RequestEngine.HttpVerb.PUT
+        VB: RequestEngine.HttpVerb.PUT
+      qualifiedName:
+        CSharp: WizardWrx.HTTP.RequestEngine.HttpVerb.PUT
+        VB: WizardWrx.HTTP.RequestEngine.HttpVerb.PUT
+      type: Field
+      assemblies:
+      - WizardWrx.HTTP
+      namespace: WizardWrx.HTTP
+      source:
+        remote:
+          path: HTTP/RequestEngine.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: PUT
+        path: ../HTTP/RequestEngine.cs
+        startLine: 98
+      summary: "\nThis value maps to the infrequently used PUT verb, usually used\nto update selected columns of a row in a database table.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: PUT = 3
+          VB: PUT = 3
+        return:
+          type: WizardWrx.HTTP.RequestEngine.HttpVerb
+      modifiers:
+        CSharp:
+        - public
+        - const
+        VB:
+        - Public
+        - Const
+    - id: WizardWrx.HTTP.RequestEngine.HttpVerb.DELETE
+      commentId: F:WizardWrx.HTTP.RequestEngine.HttpVerb.DELETE
+      language: CSharp
+      name:
+        CSharp: DELETE
+        VB: DELETE
+      nameWithType:
+        CSharp: RequestEngine.HttpVerb.DELETE
+        VB: RequestEngine.HttpVerb.DELETE
+      qualifiedName:
+        CSharp: WizardWrx.HTTP.RequestEngine.HttpVerb.DELETE
+        VB: WizardWrx.HTTP.RequestEngine.HttpVerb.DELETE
+      type: Field
+      assemblies:
+      - WizardWrx.HTTP
+      namespace: WizardWrx.HTTP
+      source:
+        remote:
+          path: HTTP/RequestEngine.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: DELETE
+        path: ../HTTP/RequestEngine.cs
+        startLine: 104
+      summary: "\nThis value maps to the dangerous DELETE verb, which is usually\nsent without a payload.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: DELETE = 4
+          VB: DELETE = 4
+        return:
+          type: WizardWrx.HTTP.RequestEngine.HttpVerb
+      modifiers:
+        CSharp:
+        - public
+        - const
+        VB:
+        - Public
+        - Const
+  - id: WizardWrx.HTTP.RequestOptions
+    commentId: T:WizardWrx.HTTP.RequestOptions
+    language: CSharp
+    name:
+      CSharp: RequestOptions
+      VB: RequestOptions
+    nameWithType:
+      CSharp: RequestOptions
+      VB: RequestOptions
+    qualifiedName:
+      CSharp: WizardWrx.HTTP.RequestOptions
+      VB: WizardWrx.HTTP.RequestOptions
+    type: Class
+    assemblies:
+    - WizardWrx.HTTP
+    namespace: WizardWrx.HTTP
+    source:
+      remote:
+        path: HTTP/RequestOptions.cs
+        branch: master
+        repo: https://github.com/txwizard/WizardWrx_NET_API
+      id: RequestOptions
+      path: ../HTTP/RequestOptions.cs
+      startLine: 13
+    summary: "\nInstances of this object represent options for configuring request\nbehavior, including provision of exception logging tooling and OAuth\ntoken retrieval methods.\n"
+    example: []
+    syntax:
+      content:
+        CSharp: public sealed class RequestOptions
+        VB: Public NotInheritable Class RequestOptions
+    inheritance:
+    - System.Object
+    inheritedMembers:
+    - System.Object.Equals(System.Object)
+    - System.Object.Equals(System.Object,System.Object)
+    - System.Object.ReferenceEquals(System.Object,System.Object)
+    - System.Object.GetHashCode
+    - System.Object.GetType
+    - System.Object.MemberwiseClone
+    modifiers:
+      CSharp:
+      - public
+      - sealed
+      - class
+      VB:
+      - Public
+      - NotInheritable
+      - Class
+    items:
+    - id: WizardWrx.HTTP.RequestOptions.HTTP_CONTENT_TYPE_JSON
+      commentId: F:WizardWrx.HTTP.RequestOptions.HTTP_CONTENT_TYPE_JSON
+      language: CSharp
+      name:
+        CSharp: HTTP_CONTENT_TYPE_JSON
+        VB: HTTP_CONTENT_TYPE_JSON
+      nameWithType:
+        CSharp: RequestOptions.HTTP_CONTENT_TYPE_JSON
+        VB: RequestOptions.HTTP_CONTENT_TYPE_JSON
+      qualifiedName:
+        CSharp: WizardWrx.HTTP.RequestOptions.HTTP_CONTENT_TYPE_JSON
+        VB: WizardWrx.HTTP.RequestOptions.HTTP_CONTENT_TYPE_JSON
+      type: Field
+      assemblies:
+      - WizardWrx.HTTP
+      namespace: WizardWrx.HTTP
+      source:
+        remote:
+          path: HTTP/RequestOptions.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: HTTP_CONTENT_TYPE_JSON
+        path: ../HTTP/RequestOptions.cs
+        startLine: 99
+      summary: "\nThis string constant specifies the HTTP content type for JSON payloads.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public const string HTTP_CONTENT_TYPE_JSON = "application/json"
+          VB: Public Const HTTP_CONTENT_TYPE_JSON As String = "application/json"
+        return:
+          type: System.String
+      modifiers:
+        CSharp:
+        - public
+        - const
+        VB:
+        - Public
+        - Const
+    - id: WizardWrx.HTTP.RequestOptions.HTTP_ACCEPT_WILDCARD
+      commentId: F:WizardWrx.HTTP.RequestOptions.HTTP_ACCEPT_WILDCARD
+      language: CSharp
+      name:
+        CSharp: HTTP_ACCEPT_WILDCARD
+        VB: HTTP_ACCEPT_WILDCARD
+      nameWithType:
+        CSharp: RequestOptions.HTTP_ACCEPT_WILDCARD
+        VB: RequestOptions.HTTP_ACCEPT_WILDCARD
+      qualifiedName:
+        CSharp: WizardWrx.HTTP.RequestOptions.HTTP_ACCEPT_WILDCARD
+        VB: WizardWrx.HTTP.RequestOptions.HTTP_ACCEPT_WILDCARD
+      type: Field
+      assemblies:
+      - WizardWrx.HTTP
+      namespace: WizardWrx.HTTP
+      source:
+        remote:
+          path: HTTP/RequestOptions.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: HTTP_ACCEPT_WILDCARD
+        path: ../HTTP/RequestOptions.cs
+        startLine: 105
+      summary: "\nLet&apos;s be really clear about the shape of the default Accept HTTP header.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public const string HTTP_ACCEPT_WILDCARD = "*/*"
+          VB: Public Const HTTP_ACCEPT_WILDCARD As String = "*/*"
+        return:
+          type: System.String
+      modifiers:
+        CSharp:
+        - public
+        - const
+        VB:
+        - Public
+        - Const
+    - id: WizardWrx.HTTP.RequestOptions.HTTP_NEVER_CACHE
+      commentId: F:WizardWrx.HTTP.RequestOptions.HTTP_NEVER_CACHE
+      language: CSharp
+      name:
+        CSharp: HTTP_NEVER_CACHE
+        VB: HTTP_NEVER_CACHE
+      nameWithType:
+        CSharp: RequestOptions.HTTP_NEVER_CACHE
+        VB: RequestOptions.HTTP_NEVER_CACHE
+      qualifiedName:
+        CSharp: WizardWrx.HTTP.RequestOptions.HTTP_NEVER_CACHE
+        VB: WizardWrx.HTTP.RequestOptions.HTTP_NEVER_CACHE
+      type: Field
+      assemblies:
+      - WizardWrx.HTTP
+      namespace: WizardWrx.HTTP
+      source:
+        remote:
+          path: HTTP/RequestOptions.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: HTTP_NEVER_CACHE
+        path: ../HTTP/RequestOptions.cs
+        startLine: 112
+      summary: "\nLet&apos;s also document for posterity the Cache-Control directive that\nsays &quot;don&apos;t.&quot;\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public const string HTTP_NEVER_CACHE = "no-cache"
+          VB: Public Const HTTP_NEVER_CACHE As String = "no-cache"
+        return:
+          type: System.String
+      modifiers:
+        CSharp:
+        - public
+        - const
+        VB:
+        - Public
+        - Const
+    - id: WizardWrx.HTTP.RequestOptions.HTTP_COMPRESSION_ALGS
+      commentId: F:WizardWrx.HTTP.RequestOptions.HTTP_COMPRESSION_ALGS
+      language: CSharp
+      name:
+        CSharp: HTTP_COMPRESSION_ALGS
+        VB: HTTP_COMPRESSION_ALGS
+      nameWithType:
+        CSharp: RequestOptions.HTTP_COMPRESSION_ALGS
+        VB: RequestOptions.HTTP_COMPRESSION_ALGS
+      qualifiedName:
+        CSharp: WizardWrx.HTTP.RequestOptions.HTTP_COMPRESSION_ALGS
+        VB: WizardWrx.HTTP.RequestOptions.HTTP_COMPRESSION_ALGS
+      type: Field
+      assemblies:
+      - WizardWrx.HTTP
+      namespace: WizardWrx.HTTP
+      source:
+        remote:
+          path: HTTP/RequestOptions.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: HTTP_COMPRESSION_ALGS
+        path: ../HTTP/RequestOptions.cs
+        startLine: 119
+      summary: "\nThe Microsoft .NET Framework supports only two of the common compression\nformats, gzip and deflate.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public const string HTTP_COMPRESSION_ALGS = "gzip, deflate"
+          VB: Public Const HTTP_COMPRESSION_ALGS As String = "gzip, deflate"
+        return:
+          type: System.String
+      modifiers:
+        CSharp:
+        - public
+        - const
+        VB:
+        - Public
+        - Const
+    - id: WizardWrx.HTTP.RequestOptions.ContentType
+      commentId: P:WizardWrx.HTTP.RequestOptions.ContentType
+      language: CSharp
+      name:
+        CSharp: ContentType
+        VB: ContentType
+      nameWithType:
+        CSharp: RequestOptions.ContentType
+        VB: RequestOptions.ContentType
+      qualifiedName:
+        CSharp: WizardWrx.HTTP.RequestOptions.ContentType
+        VB: WizardWrx.HTTP.RequestOptions.ContentType
+      type: Property
+      assemblies:
+      - WizardWrx.HTTP
+      namespace: WizardWrx.HTTP
+      source:
+        remote:
+          path: HTTP/RequestOptions.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: ContentType
+        path: ../HTTP/RequestOptions.cs
+        startLine: 158
+      summary: "\nThis read-only string property represents the value to specify as \nthe Content-Type HTTP header value. By default, this value is null,\nand the Content-Type header is omitted from requests. If a value is\nspecified for this property, it will be included as the Content-Type\nheader in HTTP requests made using the associated HTTP engine,\nallowing developers to indicate the media type of the request body\nand ensure that the server can correctly interpret the data being\nsent.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public string ContentType { get; }
+          VB: Public ReadOnly Property ContentType As String
+        parameters: []
+        return:
+          type: System.String
+      overload: WizardWrx.HTTP.RequestOptions.ContentType*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: WizardWrx.HTTP.RequestOptions.Logger
+      commentId: P:WizardWrx.HTTP.RequestOptions.Logger
+      language: CSharp
+      name:
+        CSharp: Logger
+        VB: Logger
+      nameWithType:
+        CSharp: RequestOptions.Logger
+        VB: RequestOptions.Logger
+      qualifiedName:
+        CSharp: WizardWrx.HTTP.RequestOptions.Logger
+        VB: WizardWrx.HTTP.RequestOptions.Logger
+      type: Property
+      assemblies:
+      - WizardWrx.HTTP
+      namespace: WizardWrx.HTTP
+      source:
+        remote:
+          path: HTTP/RequestOptions.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: Logger
+        path: ../HTTP/RequestOptions.cs
+        startLine: 166
+      summary: "\nThis read-only property returns an instance of ExceptionLogger for\nlogging exceptions encountered during the processing of HTTP\nrequests.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public ExceptionLogger Logger { get; }
+          VB: Public ReadOnly Property Logger As ExceptionLogger
+        parameters: []
+        return:
+          type: WizardWrx.DLLConfigurationManager.ExceptionLogger
+      overload: WizardWrx.HTTP.RequestOptions.Logger*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: WizardWrx.HTTP.RequestOptions.LogCallback
+      commentId: P:WizardWrx.HTTP.RequestOptions.LogCallback
+      language: CSharp
+      name:
+        CSharp: LogCallback
+        VB: LogCallback
+      nameWithType:
+        CSharp: RequestOptions.LogCallback
+        VB: RequestOptions.LogCallback
+      qualifiedName:
+        CSharp: WizardWrx.HTTP.RequestOptions.LogCallback
+        VB: WizardWrx.HTTP.RequestOptions.LogCallback
+      type: Property
+      assemblies:
+      - WizardWrx.HTTP
+      namespace: WizardWrx.HTTP
+      source:
+        remote:
+          path: HTTP/RequestOptions.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: LogCallback
+        path: ../HTTP/RequestOptions.cs
+        startLine: 188
+      summary: "\nThis read-only property returns a delegate that processes log\nmessages generated by the HTTP engine. The delegate is expected to\nhandle the log messages appropriately, such as by writing them to a\nlog file, displaying them in a console, or sending them to a logging\nservice. The additional parameters provide context about the source\nof the log message, including the member name, source file path, and\nline number where the log message was generated. This information can\nbe useful for debugging and tracing the flow of execution in the HTTP\nengine, allowing developers to identify the specific location in the\ncode where the log message originated. The use of CallerMemberName,\nCallerFilePath, and CallerLineNumber attributes allows the HTTP\nengine to automatically capture this contextual information without\nrequiring the caller to explicitly provide it, making it easier to\nimplement logging throughout the codebase. Overall, this delegate\nprovides a flexible and powerful mechanism for logging messages from\nthe HTTP engine while also capturing important contextual\ninformation for debugging purposes.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public RequestOptions.HttpEngineLogCallback LogCallback { get; }
+          VB: Public ReadOnly Property LogCallback As RequestOptions.HttpEngineLogCallback
+        parameters: []
+        return:
+          type: WizardWrx.HTTP.RequestOptions.HttpEngineLogCallback
+      overload: WizardWrx.HTTP.RequestOptions.LogCallback*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: WizardWrx.HTTP.RequestOptions.TokenGetter
+      commentId: P:WizardWrx.HTTP.RequestOptions.TokenGetter
+      language: CSharp
+      name:
+        CSharp: TokenGetter
+        VB: TokenGetter
+      nameWithType:
+        CSharp: RequestOptions.TokenGetter
+        VB: RequestOptions.TokenGetter
+      qualifiedName:
+        CSharp: WizardWrx.HTTP.RequestOptions.TokenGetter
+        VB: WizardWrx.HTTP.RequestOptions.TokenGetter
+      type: Property
+      assemblies:
+      - WizardWrx.HTTP
+      namespace: WizardWrx.HTTP
+      source:
+        remote:
+          path: HTTP/RequestOptions.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: TokenGetter
+        path: ../HTTP/RequestOptions.cs
+        startLine: 195
+      summary: "\nThis read-only property returns a delegate that retrieves OAuth Bearer\ntokens for inclusion in the Authorization header of HTTP requests.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public RequestOptions.OAuthTokenGetter TokenGetter { get; }
+          VB: Public ReadOnly Property TokenGetter As RequestOptions.OAuthTokenGetter
+        parameters: []
+        return:
+          type: WizardWrx.HTTP.RequestOptions.OAuthTokenGetter
+      overload: WizardWrx.HTTP.RequestOptions.TokenGetter*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: WizardWrx.HTTP.RequestOptions.AcceptHeaderValue
+      commentId: P:WizardWrx.HTTP.RequestOptions.AcceptHeaderValue
+      language: CSharp
+      name:
+        CSharp: AcceptHeaderValue
+        VB: AcceptHeaderValue
+      nameWithType:
+        CSharp: RequestOptions.AcceptHeaderValue
+        VB: RequestOptions.AcceptHeaderValue
+      qualifiedName:
+        CSharp: WizardWrx.HTTP.RequestOptions.AcceptHeaderValue
+        VB: WizardWrx.HTTP.RequestOptions.AcceptHeaderValue
+      type: Property
+      assemblies:
+      - WizardWrx.HTTP
+      namespace: WizardWrx.HTTP
+      source:
+        remote:
+          path: HTTP/RequestOptions.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: AcceptHeaderValue
+        path: ../HTTP/RequestOptions.cs
+        startLine: 202
+      summary: "\nWhen specified (not null), this string represents the value to \nspecify as the Accept HTTP header value.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public string AcceptHeaderValue { get; }
+          VB: Public ReadOnly Property AcceptHeaderValue As String
+        parameters: []
+        return:
+          type: System.String
+      overload: WizardWrx.HTTP.RequestOptions.AcceptHeaderValue*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: WizardWrx.HTTP.RequestOptions.AcceptEncodingValue
+      commentId: P:WizardWrx.HTTP.RequestOptions.AcceptEncodingValue
+      language: CSharp
+      name:
+        CSharp: AcceptEncodingValue
+        VB: AcceptEncodingValue
+      nameWithType:
+        CSharp: RequestOptions.AcceptEncodingValue
+        VB: RequestOptions.AcceptEncodingValue
+      qualifiedName:
+        CSharp: WizardWrx.HTTP.RequestOptions.AcceptEncodingValue
+        VB: WizardWrx.HTTP.RequestOptions.AcceptEncodingValue
+      type: Property
+      assemblies:
+      - WizardWrx.HTTP
+      namespace: WizardWrx.HTTP
+      source:
+        remote:
+          path: HTTP/RequestOptions.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: AcceptEncodingValue
+        path: ../HTTP/RequestOptions.cs
+        startLine: 209
+      summary: "\nWhen specified (not null), this string represents the value to \nspecify as the Accept-Encoding HTTP header value.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public string AcceptEncodingValue { get; }
+          VB: Public ReadOnly Property AcceptEncodingValue As String
+        parameters: []
+        return:
+          type: System.String
+      overload: WizardWrx.HTTP.RequestOptions.AcceptEncodingValue*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: WizardWrx.HTTP.RequestOptions.CacheControlValue
+      commentId: P:WizardWrx.HTTP.RequestOptions.CacheControlValue
+      language: CSharp
+      name:
+        CSharp: CacheControlValue
+        VB: CacheControlValue
+      nameWithType:
+        CSharp: RequestOptions.CacheControlValue
+        VB: RequestOptions.CacheControlValue
+      qualifiedName:
+        CSharp: WizardWrx.HTTP.RequestOptions.CacheControlValue
+        VB: WizardWrx.HTTP.RequestOptions.CacheControlValue
+      type: Property
+      assemblies:
+      - WizardWrx.HTTP
+      namespace: WizardWrx.HTTP
+      source:
+        remote:
+          path: HTTP/RequestOptions.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: CacheControlValue
+        path: ../HTTP/RequestOptions.cs
+        startLine: 216
+      summary: "\nWhen specified (not null), this string represents the value to \nspecify as the Cache-Control HTTP header value.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public string CacheControlValue { get; }
+          VB: Public ReadOnly Property CacheControlValue As String
+        parameters: []
+        return:
+          type: System.String
+      overload: WizardWrx.HTTP.RequestOptions.CacheControlValue*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: WizardWrx.HTTP.RequestOptions.CurrentOAuthToken
+      commentId: P:WizardWrx.HTTP.RequestOptions.CurrentOAuthToken
+      language: CSharp
+      name:
+        CSharp: CurrentOAuthToken
+        VB: CurrentOAuthToken
+      nameWithType:
+        CSharp: RequestOptions.CurrentOAuthToken
+        VB: RequestOptions.CurrentOAuthToken
+      qualifiedName:
+        CSharp: WizardWrx.HTTP.RequestOptions.CurrentOAuthToken
+        VB: WizardWrx.HTTP.RequestOptions.CurrentOAuthToken
+      type: Property
+      assemblies:
+      - WizardWrx.HTTP
+      namespace: WizardWrx.HTTP
+      source:
+        remote:
+          path: HTTP/RequestOptions.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: CurrentOAuthToken
+        path: ../HTTP/RequestOptions.cs
+        startLine: 223
+      summary: "\nThis read-only string property gets the current OAuth token,\nretrieving and caching it if necessary.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public string CurrentOAuthToken { get; set; }
+          VB: Public Property CurrentOAuthToken As String
+        parameters: []
+        return:
+          type: System.String
+      overload: WizardWrx.HTTP.RequestOptions.CurrentOAuthToken*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        - set
+        VB:
+        - Public
+    - id: WizardWrx.HTTP.RequestOptions.LoggerCallback
+      commentId: P:WizardWrx.HTTP.RequestOptions.LoggerCallback
+      language: CSharp
+      name:
+        CSharp: LoggerCallback
+        VB: LoggerCallback
+      nameWithType:
+        CSharp: RequestOptions.LoggerCallback
+        VB: RequestOptions.LoggerCallback
+      qualifiedName:
+        CSharp: WizardWrx.HTTP.RequestOptions.LoggerCallback
+        VB: WizardWrx.HTTP.RequestOptions.LoggerCallback
+      type: Property
+      assemblies:
+      - WizardWrx.HTTP
+      namespace: WizardWrx.HTTP
+      source:
+        remote:
+          path: HTTP/RequestOptions.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: LoggerCallback
+        path: ../HTTP/RequestOptions.cs
+        startLine: 278
+      summary: "\n<p>\nThis read-only property returns a delegate that receives log\nmessages from the HTTP engine to which this instance is attached.\n</p>\n<p>\nThe callback method is expected to handle the log messages\nappropriately, such as by writing them to a log file, displaying\nthem in a console, or sending them to a logging service. The\nadditional parameters provide context about the source of the\nlog message, including the member name, source file path, and\nline number where the log message was generated. This information\ncan be useful for debugging and tracing the flow of execution in the\nHTTP engine, allowing developers to identify the specific location\nin the code where the log message originated. The use of\nCallerMemberName, CallerFilePath, and CallerLineNumber attributes\nallows the HTTP engine to automatically capture this contextual\ninformation without requiring the caller to explicitly provide it,\nmaking it easier to implement logging throughout the codebase.\n</p>\n<p>\nThis delegate provides a flexible and powerful mechanism for\nlogging messages from the HTTP engine while also capturing\nimportant contextual information for debugging purposes.\n</p>\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public RequestOptions.HttpEngineLogCallback LoggerCallback { get; }
+          VB: Public ReadOnly Property LoggerCallback As RequestOptions.HttpEngineLogCallback
+        parameters: []
+        return:
+          type: WizardWrx.HTTP.RequestOptions.HttpEngineLogCallback
+      overload: WizardWrx.HTTP.RequestOptions.LoggerCallback*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: WizardWrx.HTTP.RequestOptions.RetryDelay
+      commentId: P:WizardWrx.HTTP.RequestOptions.RetryDelay
+      language: CSharp
+      name:
+        CSharp: RetryDelay
+        VB: RetryDelay
+      nameWithType:
+        CSharp: RequestOptions.RetryDelay
+        VB: RequestOptions.RetryDelay
+      qualifiedName:
+        CSharp: WizardWrx.HTTP.RequestOptions.RetryDelay
+        VB: WizardWrx.HTTP.RequestOptions.RetryDelay
+      type: Property
+      assemblies:
+      - WizardWrx.HTTP
+      namespace: WizardWrx.HTTP
+      source:
+        remote:
+          path: HTTP/RequestOptions.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: RetryDelay
+        path: ../HTTP/RequestOptions.cs
+        startLine: 293
+      summary: "\nThis read-only integer property specifies the delay, <code>in\nseconds</code>, between retry attempts for a request that fails due to\na transient error. The default value is <code>10</code>, which means that\nthe HTTP engine will wait for 10 seconds before attempting to retry\na failed request. This parameter allows developers to control the\ntiming of retry attempts, providing a mechanism for introducing a\ndelay between retries to avoid overwhelming the server or network\nwith rapid-fire requests. By adjusting the retry delay, developers\ncan optimize the balance between retrying failed requests and\navoiding excessive delays in the overall request processing.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public int RetryDelay { get; }
+          VB: Public ReadOnly Property RetryDelay As Integer
+        parameters: []
+        return:
+          type: System.Int32
+      overload: WizardWrx.HTTP.RequestOptions.RetryDelay*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: WizardWrx.HTTP.RequestOptions.RetryLimit
+      commentId: P:WizardWrx.HTTP.RequestOptions.RetryLimit
+      language: CSharp
+      name:
+        CSharp: RetryLimit
+        VB: RetryLimit
+      nameWithType:
+        CSharp: RequestOptions.RetryLimit
+        VB: RequestOptions.RetryLimit
+      qualifiedName:
+        CSharp: WizardWrx.HTTP.RequestOptions.RetryLimit
+        VB: WizardWrx.HTTP.RequestOptions.RetryLimit
+      type: Property
+      assemblies:
+      - WizardWrx.HTTP
+      namespace: WizardWrx.HTTP
+      source:
+        remote:
+          path: HTTP/RequestOptions.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: RetryLimit
+        path: ../HTTP/RequestOptions.cs
+        startLine: 307
+      summary: "\nThis read-only integer property specifies the maximum number of times\nto retry a request that fails due to a transient error, such as a\nnetwork issue or a server error. The default value is 10, which\nmeans that the HTTP engine will attempt to retry a failed request up\nto 10 times before giving up and returning an error to the caller.\nThis parameter allows developers to control the behavior of the HTTP\nengine in the face of transient errors, providing a mechanism for\nautomatically retrying requests that may succeed on subsequent\nattempts.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public int RetryLimit { get; }
+          VB: Public ReadOnly Property RetryLimit As Integer
+        parameters: []
+        return:
+          type: System.Int32
+      overload: WizardWrx.HTTP.RequestOptions.RetryLimit*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: WizardWrx.HTTP.RequestOptions.Timeout
+      commentId: P:WizardWrx.HTTP.RequestOptions.Timeout
+      language: CSharp
+      name:
+        CSharp: Timeout
+        VB: Timeout
+      nameWithType:
+        CSharp: RequestOptions.Timeout
+        VB: RequestOptions.Timeout
+      qualifiedName:
+        CSharp: WizardWrx.HTTP.RequestOptions.Timeout
+        VB: WizardWrx.HTTP.RequestOptions.Timeout
+      type: Property
+      assemblies:
+      - WizardWrx.HTTP
+      namespace: WizardWrx.HTTP
+      source:
+        remote:
+          path: HTTP/RequestOptions.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: Timeout
+        path: ../HTTP/RequestOptions.cs
+        startLine: 329
+      summary: "\n<p>\nThis integer specifies the Timeout in <code>seconds</code>.\n</p>\n<p>\nThe default value is 100,000 milliseconds (100 seconds).\nThe documentation for HttpClient.Timeout states that the default \nvalue is 100 seconds, and that the property is of type TimeSpan.\n</p>\n<p>\nWhen unitialized, the Timeout property behaves as if it had been set\nto the default value of 100 seconds, which is equivalent to 100,000\nmilliseconds.\n</p>\nThough the Timeout property supports setting an infinite timeout by\nsetting the property value to InfiniteTimeSpan, we do not support\nthat feature in this library, as it is generally not advisable to\nallow requests to hang indefinitely.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public int Timeout { get; }
+          VB: Public ReadOnly Property Timeout As Integer
+        parameters: []
+        return:
+          type: System.Int32
+      overload: WizardWrx.HTTP.RequestOptions.Timeout*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: WizardWrx.HTTP.RequestOptions.#ctor(WizardWrx.DLLConfigurationManager.ExceptionLogger,WizardWrx.HTTP.RequestOptions.OAuthTokenGetter,System.String,System.String,System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,WizardWrx.HTTP.RequestOptions.HttpEngineLogCallback)
+      commentId: M:WizardWrx.HTTP.RequestOptions.#ctor(WizardWrx.DLLConfigurationManager.ExceptionLogger,WizardWrx.HTTP.RequestOptions.OAuthTokenGetter,System.String,System.String,System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,WizardWrx.HTTP.RequestOptions.HttpEngineLogCallback)
+      language: CSharp
+      name:
+        CSharp: RequestOptions(ExceptionLogger, RequestOptions.OAuthTokenGetter, String, String, String, String, String, Int32, Int32, Int32, RequestOptions.HttpEngineLogCallback)
+        VB: RequestOptions(ExceptionLogger, RequestOptions.OAuthTokenGetter, String, String, String, String, String, Int32, Int32, Int32, RequestOptions.HttpEngineLogCallback)
+      nameWithType:
+        CSharp: RequestOptions.RequestOptions(ExceptionLogger, RequestOptions.OAuthTokenGetter, String, String, String, String, String, Int32, Int32, Int32, RequestOptions.HttpEngineLogCallback)
+        VB: RequestOptions.RequestOptions(ExceptionLogger, RequestOptions.OAuthTokenGetter, String, String, String, String, String, Int32, Int32, Int32, RequestOptions.HttpEngineLogCallback)
+      qualifiedName:
+        CSharp: WizardWrx.HTTP.RequestOptions.RequestOptions(WizardWrx.DLLConfigurationManager.ExceptionLogger, WizardWrx.HTTP.RequestOptions.OAuthTokenGetter, System.String, System.String, System.String, System.String, System.String, System.Int32, System.Int32, System.Int32, WizardWrx.HTTP.RequestOptions.HttpEngineLogCallback)
+        VB: WizardWrx.HTTP.RequestOptions.RequestOptions(WizardWrx.DLLConfigurationManager.ExceptionLogger, WizardWrx.HTTP.RequestOptions.OAuthTokenGetter, System.String, System.String, System.String, System.String, System.String, System.Int32, System.Int32, System.Int32, WizardWrx.HTTP.RequestOptions.HttpEngineLogCallback)
+      type: Constructor
+      assemblies:
+      - WizardWrx.HTTP
+      namespace: WizardWrx.HTTP
+      source:
+        remote:
+          path: HTTP/RequestOptions.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: .ctor
+        path: ../HTTP/RequestOptions.cs
+        startLine: 448
+      summary: "\nThe public constructor initializes both read-only properties of this\nclass, so that consumers of this class must make their choices about\nthese properties explicit.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public RequestOptions(ExceptionLogger plogger = null, RequestOptions.OAuthTokenGetter ptokenGetter = null, string pstrInitialOAuthToken = null, string pstrContentType = null, string pstrAcceptHeaderValue = "*/*", string pstrAcceptEncodingValue = null, string pstrCacheControlValue = "no-cache", int pintRetryLimit = 10, int pintRetryDelay = 10, int pintTimeout = 120, RequestOptions.HttpEngineLogCallback pdiLogCallback = null)
+          VB: Public Sub New(plogger As ExceptionLogger = Nothing, ptokenGetter As RequestOptions.OAuthTokenGetter = Nothing, pstrInitialOAuthToken As String = Nothing, pstrContentType As String = Nothing, pstrAcceptHeaderValue As String = "*/*", pstrAcceptEncodingValue As String = Nothing, pstrCacheControlValue As String = "no-cache", pintRetryLimit As Integer = 10, pintRetryDelay As Integer = 10, pintTimeout As Integer = 120, pdiLogCallback As RequestOptions.HttpEngineLogCallback = Nothing)
+        parameters:
+        - id: plogger
+          type: WizardWrx.DLLConfigurationManager.ExceptionLogger
+          description: "\nThe ExceptionLogger instance to be used for logging Exceptions is\noptional; if no object is supplied, no Exception logging happens\ninside the other methods exposed by this library.\n"
+        - id: ptokenGetter
+          type: WizardWrx.HTTP.RequestOptions.OAuthTokenGetter
+          description: "\nThe delegate that retrieves OAuth Bearer tokens for inclusion in the\nAuthorization header of HTTP requests is optional; if no delegate is\nprovided, requests proceed without Authorization headers.\n"
+        - id: pstrInitialOAuthToken
+          type: System.String
+          description: "\nThis optional parameter allows the caller to supply an initial OAuth\ntoken that the class caches for future use. If this parameter is \nnull and <code data-dev-comment-type=\"paramref\" class=\"paramref\">ptokenGetter</code> is not null, the class \nattempts to obtain a token the first time the property value is\nqueried.\n"
+        - id: pstrContentType
+          type: System.String
+          description: "\nThis optional string parameter sets the Content-Type HTTP header\nvalue for requests made using the associated HTTP engine. If this\nparameter is null, the Content-Type header is omitted from requests\nBy specifying a value for this parameter, developers can indicate\nthe media type of the request body, ensuring that the server can\ncorrectly interpret the data being sent. This allows for greater\nflexibility in handling different types of request payloads and can\nhelp prevent issues related to content negotiation between the\nclient and server.\n"
+        - id: pstrAcceptHeaderValue
+          type: System.String
+          description: "\nWhen specified, thiis string represents the value to include as the\nAccept HTTP header value. By default, the null value, &quot;/&quot;, is added.\n"
+        - id: pstrAcceptEncodingValue
+          type: System.String
+          description: "\nWhen specified, this string represents the value to include as the\nAccept-Encoding HTTP header value. By default, this value is null,\nand is, therefore, omitted.\n"
+        - id: pstrCacheControlValue
+          type: System.String
+          description: "\nWhen specified, this string represents the value to include as the\nCache-Control HTTP header value. The default  value is &quot;no-cache&quot;.\n"
+        - id: pintRetryLimit
+          type: System.Int32
+          description: "\nThis integer specifies the maximum number of times to retry a\nrequest that fails due to a transient error, such as a network issue\nor a server error. The default value is 10, which means that the HTTP\nengine will attempt to retry a failed request up to 10 times before\ngiving up and returning an error to the caller. This parameter allows\ndevelopers to control the behavior of the HTTP engine in the face of\ntransient errors, providing a mechanism for automatically retrying\nrequests that may succeed on subsequent attempts.\n"
+        - id: pintRetryDelay
+          type: System.Int32
+          description: "\nThis integer specifies the delay, <code>in seconds</code>, between retry\nattempts for a request that fails due to a transient error. The\ndefault value is <code>10</code>, which means that the HTTP engine will wait for\n10 seconds before attempting to retry a failed request. This\nparameter allows developers to control the timing of retry attempts,\nproviding a mechanism for introducing a delay between retries to\navoid overwhelming the server or network with rapid-fire requests.\nBy adjusting the retry delay, developers can optimize the balance\nbetween retrying failed requests and avoiding excessive delays in\nthe overall request processing.\n"
+        - id: pintTimeout
+          type: System.Int32
+          description: "\nThis integer specifies the timeout in <code>seconds</code> for HTTP\nrequests. The default value is 120, which means that the HTTP\nengine will wait for 120 seconds before timing out a request and \nreturning an error to the caller. This parameter allows developers\nto control the maximum amount of time that the HTTP engine will wait\nfor a response before giving up and returning an error. By adjusting\nthe timeout value, developers can optimize the balance between\nallowing sufficient time for requests to complete and avoiding\nexcessive delays in the overall request processing. Since it is\ngenerally inadvisable to set the timeout to an infinite value, as\nthis can lead to requests hanging indefinitely and potentially\ncausing issues with resource management and application performance,\nthis library does not support setting an infinite timeout and instead\nenforces a finite timeout value to ensure that requests are handled\nin a timely manner.\n"
+        - id: pdiLogCallback
+          type: WizardWrx.HTTP.RequestOptions.HttpEngineLogCallback
+          description: "\n<p>\nThis delegate is called to log messages from the HTTP engine. It is\noptional; if no delegate is provided, no logging occurs. \n</p>\n<p>\nIf logging is enabled, the delegate is expected to handle the log\nmessages appropriately, such as by writing them to a log file,\ndisplaying them in a console, or sending them to a logging service.\nThe additional parameters provide context about the source of the\nlog message, including the member name, source file path, and line\nnumber where the log message was generated. This information can be\nuseful for debugging and tracing the flow of execution in the HTTP\nengine, allowing developers to identify the specific location in the\ncode where the log message originated. The use of CallerMemberName,\nCaller FilePath, and CallerLineNumber attributes allows the HTTP\nengine to automatically capture this contextual information without\nrequiring the caller to explicitly provide it, making it easier to\nimplement logging throughout the codebase. Overall, this delegate\nprovides a flexible and powerful mechanism for logging messages from\nthe HTTP engine while also capturing important contextual\ninformation for debugging purposes.\n</p>\n"
+      overload: WizardWrx.HTTP.RequestOptions.#ctor*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: WizardWrx.HTTP.RequestOptions.ToString
+      commentId: M:WizardWrx.HTTP.RequestOptions.ToString
+      language: CSharp
+      name:
+        CSharp: ToString()
+        VB: ToString()
+      nameWithType:
+        CSharp: RequestOptions.ToString()
+        VB: RequestOptions.ToString()
+      qualifiedName:
+        CSharp: WizardWrx.HTTP.RequestOptions.ToString()
+        VB: WizardWrx.HTTP.RequestOptions.ToString()
+      type: Method
+      assemblies:
+      - WizardWrx.HTTP
+      namespace: WizardWrx.HTTP
+      source:
+        remote:
+          path: HTTP/RequestOptions.cs
+          branch: master
+          repo: https://github.com/txwizard/WizardWrx_NET_API
+        id: ToString
+        path: ../HTTP/RequestOptions.cs
+        startLine: 482
+      summary: "\nThis override of the ToString method provides a string\nrepresentation of the RequestOptions instance, including the values\nof its properties. The string is formatted in a way that allows\ndevelopers to easily understand the configuration of the\nRequestOptions instance, making it easier to debug and troubleshoot\nissues related to HTTP requests. The method uses helper functions to\nformat the injected object reference and delegate information,\nensuring that the output is clear and informative. Overall, this\nToString override provides a valuable tool for developers to gain\ninsights into the state of the RequestOptions instance and\nunderstand how it is configured for use with the HTTP engine.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public override string ToString()
+          VB: Public Overrides Function ToString As String
+        return:
+          type: System.String
+          description: "\nSee the summary for details on the content and format of the\nreturned string.\n"
+      overload: WizardWrx.HTTP.RequestOptions.ToString*
+      overridden: System.Object.ToString
+      modifiers:
+        CSharp:
+        - public
+        - override
+        VB:
+        - Public
+        - Overrides
+  - id: WizardWrx.HTTP.RequestOptions.HttpEngineLogCallback
+    commentId: T:WizardWrx.HTTP.RequestOptions.HttpEngineLogCallback
+    language: CSharp
+    name:
+      CSharp: RequestOptions.HttpEngineLogCallback
+      VB: RequestOptions.HttpEngineLogCallback
+    nameWithType:
+      CSharp: RequestOptions.HttpEngineLogCallback
+      VB: RequestOptions.HttpEngineLogCallback
+    qualifiedName:
+      CSharp: WizardWrx.HTTP.RequestOptions.HttpEngineLogCallback
+      VB: WizardWrx.HTTP.RequestOptions.HttpEngineLogCallback
+    type: Delegate
+    assemblies:
+    - WizardWrx.HTTP
+    namespace: WizardWrx.HTTP
+    source:
+      remote:
+        path: HTTP/RequestOptions.cs
+        branch: master
+        repo: https://github.com/txwizard/WizardWrx_NET_API
+      id: HttpEngineLogCallback
+      path: ../HTTP/RequestOptions.cs
+      startLine: 89
+    summary: "\nThis property represents the delegate signature for the\n<C>optional</C> callback method that receives log messages from the\nHTTP Request engine to which this instance is attached. The callback\nmethod is expected to handle the log message appropriately, such as\nby writing it to a log file, displaying it in a console, or sending\nit to a logging service. The additional parameters provide context\nabout the source of the log message, including the member name,\nsource file path, and line number where the log message was\ngenerated. This information can be useful for debugging and tracing\nthe flow of execution in the HTTP engine, allowing developers to\nidentify the specific location in the code where the log message\noriginated. The use of CallerMemberName, CallerFilePath, and\nCallerLineNumber attributes allows the HTTP engine to automatically\ncapture this contextual information without requiring the caller to\nexplicitly provide it, making it easier to implement logging\nthroughout the codebase. Overall, this delegate provides a flexible\nand powerful mechanism for logging messages from the HTTP engine\nwhile also capturing important contextual information for debugging\npurposes.\n"
+    example: []
+    syntax:
+      content:
+        CSharp: public delegate void HttpEngineLogCallback(string pstrLogMessage, string memberName = "", string sourceFilePath = "", int sourceLineNumber = 0);
+        VB: Public Delegate Sub HttpEngineLogCallback(pstrLogMessage As String, memberName As String = "", sourceFilePath As String = "", sourceLineNumber As Integer = 0)
+      parameters:
+      - id: pstrLogMessage
+        type: System.String
+        description: "\n<p>\nThis string represents the log message generated by the HTTP engine.\nThe content of the message can vary widely depending on the specific\nevents and actions taking place within the engine, such as the\ninitiation of a request, the receipt of a response, the occurrence\nof an error, or any other significant event that the engine deems\nworthy of logging. The message can include details about the request\nbeing processed, the response received, any exceptions encountered,\nor any other relevant information that can help developers under-\nstand the behavior of the HTTP engine and diagnose issues that may\narise during its operation. \n</p>\n<p>\nThe log message can be formatted in a way that is consistent with\nthe logging conventions used throughout the codebase, and may\ninclude timestamps, log levels, or other metadata to provide\nadditional context for the message. Overall, the log message\nparameter serves as a crucial means of communication between the\nHTTP engine and the logging system, allowing developers to gain\ninsights into the inner workings of the engine and troubleshoot any\nissues that may arise during its execution.\n</p>\n<p>\nAll messages begin with a prefix that identifies the call site of\nthe constructor or other method that reported it, so that log \nentries can be easily traced back to their origin.\n</p>\n<p>\nThe additional parameters, including memberName \n(<code data-dev-comment-type=\"paramref\" class=\"paramref\">memberName</code>), sourceFilePath\n(<code data-dev-comment-type=\"paramref\" class=\"paramref\">sourceFilePath</code>), and sourceLineNumber \n(<code data-dev-comment-type=\"paramref\" class=\"paramref\">sourceLineNumber</code>), provide valuable context\nabout the source of the log message. The memberName parameter\nindicates the name of the method or property where the log message\nwas generated within the HTTP engine, allowing developers to\npinpoint the specific location in the code that is responsible for\nthe log message. The sourceFilePath parameter provides the file path\nof the source code file where the log message originated, which can\nbe helpful for navigating to the relevant code when investigating\nissues. The sourceLineNumber parameter indicates the line number\nwithin the source code file where the log message was generated,\nproviding precise information about the location where the message\noriginated. Together, these parameters enable developers to quickly\nand efficiently trace the flow of execution within the HTTP engine\nand identify any potential issues or areas for improvement based on\nthe logged messages.\n</p>\n"
+      - id: memberName
+        type: System.String
+      - id: sourceFilePath
+        type: System.String
+      - id: sourceLineNumber
+        type: System.Int32
+    modifiers:
+      CSharp:
+      - public
+      - delegate
+      VB:
+      - Public
+      - Delegate
+    items: []
+  - id: WizardWrx.HTTP.RequestOptions.OAuthTokenGetter
+    commentId: T:WizardWrx.HTTP.RequestOptions.OAuthTokenGetter
+    language: CSharp
+    name:
+      CSharp: RequestOptions.OAuthTokenGetter
+      VB: RequestOptions.OAuthTokenGetter
+    nameWithType:
+      CSharp: RequestOptions.OAuthTokenGetter
+      VB: RequestOptions.OAuthTokenGetter
+    qualifiedName:
+      CSharp: WizardWrx.HTTP.RequestOptions.OAuthTokenGetter
+      VB: WizardWrx.HTTP.RequestOptions.OAuthTokenGetter
+    type: Delegate
+    assemblies:
+    - WizardWrx.HTTP
+    namespace: WizardWrx.HTTP
+    source:
+      remote:
+        path: HTTP/RequestOptions.cs
+        branch: master
+        repo: https://github.com/txwizard/WizardWrx_NET_API
+      id: OAuthTokenGetter
+      path: ../HTTP/RequestOptions.cs
+      startLine: 142
+    summary: "\nThis delegate signature represents a method that attempts to obtain an\nOAuth token and return it through an output parameter, along with the\nexisting true/false outcome.\n"
+    example: []
+    syntax:
+      content:
+        CSharp: public delegate bool OAuthTokenGetter(out string token, ExceptionLogger logger = null);
+        VB: Public Delegate Function OAuthTokenGetter(ByRef token As String, logger As ExceptionLogger = Nothing) As Boolean
+      parameters:
+      - id: token
+        type: System.String
+        description: "\nWhen this method returns, contains the retrieved OAuth token if\nsuccessful; otherwise, null.\n"
+      - id: logger
+        type: WizardWrx.DLLConfigurationManager.ExceptionLogger
+        description: "\nThis represents the optional logger object for recording exceptions\nthat arise during token retrieval.\n"
+      return:
+        type: System.Boolean
+        description: "\nThe delegated function returns true if the token was successfully\nobtained; otherwise, it returns false and the <code data-dev-comment-type=\"paramref\" class=\"paramref\">token</code>\nvalue is undefined. The supplied copy of the access token is for use\nby the HTTP access method; the object that exposes the OAuth Access\nToken Getter is responsible for stashing a copy in protectd storage.\n"
+    modifiers:
+      CSharp:
+      - public
+      - delegate
+      VB:
+      - Public
+      - Delegate
+    items: []
+references:
+  System:
+    name:
+      CSharp:
+      - name: System
+        nameWithType: System
+        qualifiedName: System
+        isExternal: true
+      VB:
+      - name: System
+        nameWithType: System
+        qualifiedName: System
+    isDefinition: true
+    commentId: N:System
+  System.Object:
+    name:
+      CSharp:
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      VB:
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+    isDefinition: true
+    parent: System
+    commentId: T:System.Object
+  System.Object.ToString:
+    name:
+      CSharp:
+      - id: System.Object.ToString
+        name: ToString
+        nameWithType: Object.ToString
+        qualifiedName: System.Object.ToString
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.ToString
+        name: ToString
+        nameWithType: Object.ToString
+        qualifiedName: System.Object.ToString
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.ToString
+  System.Object.Equals(System.Object):
+    name:
+      CSharp:
+      - id: System.Object.Equals(System.Object)
+        name: Equals
+        nameWithType: Object.Equals
+        qualifiedName: System.Object.Equals
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.Equals(System.Object)
+        name: Equals
+        nameWithType: Object.Equals
+        qualifiedName: System.Object.Equals
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.Equals(System.Object)
+  System.Object.Equals(System.Object,System.Object):
+    name:
+      CSharp:
+      - id: System.Object.Equals(System.Object,System.Object)
+        name: Equals
+        nameWithType: Object.Equals
+        qualifiedName: System.Object.Equals
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.Equals(System.Object,System.Object)
+        name: Equals
+        nameWithType: Object.Equals
+        qualifiedName: System.Object.Equals
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.Equals(System.Object,System.Object)
+  System.Object.ReferenceEquals(System.Object,System.Object):
+    name:
+      CSharp:
+      - id: System.Object.ReferenceEquals(System.Object,System.Object)
+        name: ReferenceEquals
+        nameWithType: Object.ReferenceEquals
+        qualifiedName: System.Object.ReferenceEquals
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.ReferenceEquals(System.Object,System.Object)
+        name: ReferenceEquals
+        nameWithType: Object.ReferenceEquals
+        qualifiedName: System.Object.ReferenceEquals
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  System.Object.GetHashCode:
+    name:
+      CSharp:
+      - id: System.Object.GetHashCode
+        name: GetHashCode
+        nameWithType: Object.GetHashCode
+        qualifiedName: System.Object.GetHashCode
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.GetHashCode
+        name: GetHashCode
+        nameWithType: Object.GetHashCode
+        qualifiedName: System.Object.GetHashCode
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.GetHashCode
+  System.Object.GetType:
+    name:
+      CSharp:
+      - id: System.Object.GetType
+        name: GetType
+        nameWithType: Object.GetType
+        qualifiedName: System.Object.GetType
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.GetType
+        name: GetType
+        nameWithType: Object.GetType
+        qualifiedName: System.Object.GetType
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.GetType
+  System.Object.MemberwiseClone:
+    name:
+      CSharp:
+      - id: System.Object.MemberwiseClone
+        name: MemberwiseClone
+        nameWithType: Object.MemberwiseClone
+        qualifiedName: System.Object.MemberwiseClone
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.MemberwiseClone
+        name: MemberwiseClone
+        nameWithType: Object.MemberwiseClone
+        qualifiedName: System.Object.MemberwiseClone
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.MemberwiseClone
+  ? WizardWrx.HTTP.RequestEngine.SendRequest``1(System.String,System.Action{Newtonsoft.Json.Linq.JObject},WizardWrx.JsonSupport.JSON_Deserialized_Object,WizardWrx.HTTP.RequestEngine.HttpVerb,System.Boolean,System.String,System.String,System.Int32)
+  : commentId: M:WizardWrx.HTTP.RequestEngine.SendRequest``1(System.String,System.Action{Newtonsoft.Json.Linq.JObject},WizardWrx.JsonSupport.JSON_Deserialized_Object,WizardWrx.HTTP.RequestEngine.HttpVerb,System.Boolean,System.String,System.String,System.Int32)
+  System.Boolean:
+    name:
+      CSharp:
+      - id: System.Boolean
+        name: Boolean
+        nameWithType: Boolean
+        qualifiedName: System.Boolean
+        isExternal: true
+      VB:
+      - id: System.Boolean
+        name: Boolean
+        nameWithType: Boolean
+        qualifiedName: System.Boolean
+        isExternal: true
+    isDefinition: true
+    parent: System
+    commentId: T:System.Boolean
+  WizardWrx.HTTP:
+    name:
+      CSharp:
+      - name: WizardWrx.HTTP
+        nameWithType: WizardWrx.HTTP
+        qualifiedName: WizardWrx.HTTP
+      VB:
+      - name: WizardWrx.HTTP
+        nameWithType: WizardWrx.HTTP
+        qualifiedName: WizardWrx.HTTP
+    isDefinition: true
+    commentId: N:WizardWrx.HTTP
+  WizardWrx.HTTP.RequestOptions:
+    name:
+      CSharp:
+      - id: WizardWrx.HTTP.RequestOptions
+        name: RequestOptions
+        nameWithType: RequestOptions
+        qualifiedName: WizardWrx.HTTP.RequestOptions
+      VB:
+      - id: WizardWrx.HTTP.RequestOptions
+        name: RequestOptions
+        nameWithType: RequestOptions
+        qualifiedName: WizardWrx.HTTP.RequestOptions
+    isDefinition: true
+    parent: WizardWrx.HTTP
+    commentId: T:WizardWrx.HTTP.RequestOptions
+  WizardWrx.HTTP.RequestEngine.Options*:
+    name:
+      CSharp:
+      - id: WizardWrx.HTTP.RequestEngine.Options*
+        name: Options
+        nameWithType: RequestEngine.Options
+        qualifiedName: WizardWrx.HTTP.RequestEngine.Options
+      VB:
+      - id: WizardWrx.HTTP.RequestEngine.Options*
+        name: Options
+        nameWithType: RequestEngine.Options
+        qualifiedName: WizardWrx.HTTP.RequestEngine.Options
+    isDefinition: true
+    commentId: Overload:WizardWrx.HTTP.RequestEngine.Options
+  System.String:
+    name:
+      CSharp:
+      - id: System.String
+        name: String
+        nameWithType: String
+        qualifiedName: System.String
+        isExternal: true
+      VB:
+      - id: System.String
+        name: String
+        nameWithType: String
+        qualifiedName: System.String
+        isExternal: true
+    isDefinition: true
+    parent: System
+    commentId: T:System.String
+  System.Int32:
+    name:
+      CSharp:
+      - id: System.Int32
+        name: Int32
+        nameWithType: Int32
+        qualifiedName: System.Int32
+        isExternal: true
+      VB:
+      - id: System.Int32
+        name: Int32
+        nameWithType: Int32
+        qualifiedName: System.Int32
+        isExternal: true
+    isDefinition: true
+    parent: System
+    commentId: T:System.Int32
+  WizardWrx.HTTP.RequestEngine.#ctor*:
+    name:
+      CSharp:
+      - id: WizardWrx.HTTP.RequestEngine.#ctor*
+        name: RequestEngine
+        nameWithType: RequestEngine.RequestEngine
+        qualifiedName: WizardWrx.HTTP.RequestEngine.RequestEngine
+      VB:
+      - id: WizardWrx.HTTP.RequestEngine.#ctor*
+        name: RequestEngine
+        nameWithType: RequestEngine.RequestEngine
+        qualifiedName: WizardWrx.HTTP.RequestEngine.RequestEngine
+    isDefinition: true
+    commentId: Overload:WizardWrx.HTTP.RequestEngine.#ctor
+  System.Uri:
+    name:
+      CSharp:
+      - id: System.Uri
+        name: Uri
+        nameWithType: Uri
+        qualifiedName: System.Uri
+        isExternal: true
+      VB:
+      - id: System.Uri
+        name: Uri
+        nameWithType: Uri
+        qualifiedName: System.Uri
+        isExternal: true
+    isDefinition: true
+    parent: System
+    commentId: T:System.Uri
+  WizardWrx.HTTP.RequestEngine.GetDiagnosticHeadersDump*:
+    name:
+      CSharp:
+      - id: WizardWrx.HTTP.RequestEngine.GetDiagnosticHeadersDump*
+        name: GetDiagnosticHeadersDump
+        nameWithType: RequestEngine.GetDiagnosticHeadersDump
+        qualifiedName: WizardWrx.HTTP.RequestEngine.GetDiagnosticHeadersDump
+      VB:
+      - id: WizardWrx.HTTP.RequestEngine.GetDiagnosticHeadersDump*
+        name: GetDiagnosticHeadersDump
+        nameWithType: RequestEngine.GetDiagnosticHeadersDump
+        qualifiedName: WizardWrx.HTTP.RequestEngine.GetDiagnosticHeadersDump
+    isDefinition: true
+    commentId: Overload:WizardWrx.HTTP.RequestEngine.GetDiagnosticHeadersDump
+  Newtonsoft.Json.JsonException:
+    commentId: T:Newtonsoft.Json.JsonException
+  System.InvalidOperationException:
+    commentId: T:System.InvalidOperationException
+  System.Exception:
+    commentId: T:System.Exception
+  System.ValueTuple{``0,System.String}:
+    name:
+      CSharp:
+      - id: System.ValueTuple`2
+        name: ValueTuple
+        nameWithType: ValueTuple
+        qualifiedName: System.ValueTuple
+        isExternal: true
+      - name: <
+        nameWithType: <
+        qualifiedName: <
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.String
+        name: String
+        nameWithType: String
+        qualifiedName: System.String
+        isExternal: true
+      - name: '>'
+        nameWithType: '>'
+        qualifiedName: '>'
+      VB:
+      - id: System.ValueTuple`2
+        name: ValueTuple
+        nameWithType: ValueTuple
+        qualifiedName: System.ValueTuple
+        isExternal: true
+      - name: '(Of '
+        nameWithType: '(Of '
+        qualifiedName: '(Of '
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.String
+        name: String
+        nameWithType: String
+        qualifiedName: System.String
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    commentId: T:System.ValueTuple{``0,System.String}
+  System.ValueTuple{{T},System.String}:
+    name:
+      CSharp:
+      - id: System.ValueTuple`2
+        name: ValueTuple
+        nameWithType: ValueTuple
+        qualifiedName: System.ValueTuple
+        isExternal: true
+      - name: <
+        nameWithType: <
+        qualifiedName: <
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.String
+        name: String
+        nameWithType: String
+        qualifiedName: System.String
+        isExternal: true
+      - name: '>'
+        nameWithType: '>'
+        qualifiedName: '>'
+      VB:
+      - id: System.ValueTuple`2
+        name: ValueTuple
+        nameWithType: ValueTuple
+        qualifiedName: System.ValueTuple
+        isExternal: true
+      - name: '(Of '
+        nameWithType: '(Of '
+        qualifiedName: '(Of '
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.String
+        name: String
+        nameWithType: String
+        qualifiedName: System.String
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: false
+    definition: System.ValueTuple{``0,System.String}
+    parent: System
+    commentId: T:System.ValueTuple{``0,System.String}
+  System.Action`1:
+    name:
+      CSharp:
+      - id: System.Action`1
+        name: Action
+        nameWithType: Action
+        qualifiedName: System.Action
+        isExternal: true
+      - name: <
+        nameWithType: <
+        qualifiedName: <
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+      - name: '>'
+        nameWithType: '>'
+        qualifiedName: '>'
+      VB:
+      - id: System.Action`1
+        name: Action
+        nameWithType: Action
+        qualifiedName: System.Action
+        isExternal: true
+      - name: '(Of '
+        nameWithType: '(Of '
+        qualifiedName: '(Of '
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    commentId: T:System.Action`1
+  System.Action{Newtonsoft.Json.Linq.JObject}:
+    name:
+      CSharp:
+      - id: System.Action`1
+        name: Action
+        nameWithType: Action
+        qualifiedName: System.Action
+        isExternal: true
+      - name: <
+        nameWithType: <
+        qualifiedName: <
+      - id: Newtonsoft.Json.Linq.JObject
+        name: JObject
+        nameWithType: JObject
+        qualifiedName: Newtonsoft.Json.Linq.JObject
+        isExternal: true
+      - name: '>'
+        nameWithType: '>'
+        qualifiedName: '>'
+      VB:
+      - id: System.Action`1
+        name: Action
+        nameWithType: Action
+        qualifiedName: System.Action
+        isExternal: true
+      - name: '(Of '
+        nameWithType: '(Of '
+        qualifiedName: '(Of '
+      - id: Newtonsoft.Json.Linq.JObject
+        name: JObject
+        nameWithType: JObject
+        qualifiedName: Newtonsoft.Json.Linq.JObject
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: false
+    definition: System.Action`1
+    parent: System
+    commentId: T:System.Action{Newtonsoft.Json.Linq.JObject}
+  WizardWrx.JsonSupport:
+    name:
+      CSharp:
+      - name: WizardWrx.JsonSupport
+        nameWithType: WizardWrx.JsonSupport
+        qualifiedName: WizardWrx.JsonSupport
+      VB:
+      - name: WizardWrx.JsonSupport
+        nameWithType: WizardWrx.JsonSupport
+        qualifiedName: WizardWrx.JsonSupport
+    isDefinition: true
+    commentId: N:WizardWrx.JsonSupport
+  WizardWrx.JsonSupport.JSON_Deserialized_Object:
+    name:
+      CSharp:
+      - id: WizardWrx.JsonSupport.JSON_Deserialized_Object
+        name: JSON_Deserialized_Object
+        nameWithType: JSON_Deserialized_Object
+        qualifiedName: WizardWrx.JsonSupport.JSON_Deserialized_Object
+      VB:
+      - id: WizardWrx.JsonSupport.JSON_Deserialized_Object
+        name: JSON_Deserialized_Object
+        nameWithType: JSON_Deserialized_Object
+        qualifiedName: WizardWrx.JsonSupport.JSON_Deserialized_Object
+    isDefinition: true
+    parent: WizardWrx.JsonSupport
+    commentId: T:WizardWrx.JsonSupport.JSON_Deserialized_Object
+  WizardWrx.HTTP.RequestEngine.HttpVerb:
+    name:
+      CSharp:
+      - id: WizardWrx.HTTP.RequestEngine.HttpVerb
+        name: RequestEngine.HttpVerb
+        nameWithType: RequestEngine.HttpVerb
+        qualifiedName: WizardWrx.HTTP.RequestEngine.HttpVerb
+      VB:
+      - id: WizardWrx.HTTP.RequestEngine.HttpVerb
+        name: RequestEngine.HttpVerb
+        nameWithType: RequestEngine.HttpVerb
+        qualifiedName: WizardWrx.HTTP.RequestEngine.HttpVerb
+    isDefinition: true
+    parent: WizardWrx.HTTP
+    commentId: T:WizardWrx.HTTP.RequestEngine.HttpVerb
+  WizardWrx.HTTP.RequestEngine.SendRequest*:
+    name:
+      CSharp:
+      - id: WizardWrx.HTTP.RequestEngine.SendRequest*
+        name: SendRequest
+        nameWithType: RequestEngine.SendRequest
+        qualifiedName: WizardWrx.HTTP.RequestEngine.SendRequest
+      VB:
+      - id: WizardWrx.HTTP.RequestEngine.SendRequest*
+        name: SendRequest
+        nameWithType: RequestEngine.SendRequest
+        qualifiedName: WizardWrx.HTTP.RequestEngine.SendRequest
+    isDefinition: true
+    commentId: Overload:WizardWrx.HTTP.RequestEngine.SendRequest
+  System.Collections.Generic.IDictionary`2:
+    name:
+      CSharp:
+      - id: System.Collections.Generic.IDictionary`2
+        name: IDictionary
+        nameWithType: IDictionary
+        qualifiedName: System.Collections.Generic.IDictionary
+        isExternal: true
+      - name: <
+        nameWithType: <
+        qualifiedName: <
+      - name: TKey
+        nameWithType: TKey
+        qualifiedName: TKey
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - name: TValue
+        nameWithType: TValue
+        qualifiedName: TValue
+      - name: '>'
+        nameWithType: '>'
+        qualifiedName: '>'
+      VB:
+      - id: System.Collections.Generic.IDictionary`2
+        name: IDictionary
+        nameWithType: IDictionary
+        qualifiedName: System.Collections.Generic.IDictionary
+        isExternal: true
+      - name: '(Of '
+        nameWithType: '(Of '
+        qualifiedName: '(Of '
+      - name: TKey
+        nameWithType: TKey
+        qualifiedName: TKey
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - name: TValue
+        nameWithType: TValue
+        qualifiedName: TValue
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    commentId: T:System.Collections.Generic.IDictionary`2
+  System.Collections.Generic:
+    name:
+      CSharp:
+      - name: System.Collections.Generic
+        nameWithType: System.Collections.Generic
+        qualifiedName: System.Collections.Generic
+        isExternal: true
+      VB:
+      - name: System.Collections.Generic
+        nameWithType: System.Collections.Generic
+        qualifiedName: System.Collections.Generic
+    isDefinition: true
+    commentId: N:System.Collections.Generic
+  System.Collections.Generic.IDictionary{System.String,System.String}:
+    name:
+      CSharp:
+      - id: System.Collections.Generic.IDictionary`2
+        name: IDictionary
+        nameWithType: IDictionary
+        qualifiedName: System.Collections.Generic.IDictionary
+        isExternal: true
+      - name: <
+        nameWithType: <
+        qualifiedName: <
+      - id: System.String
+        name: String
+        nameWithType: String
+        qualifiedName: System.String
+        isExternal: true
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.String
+        name: String
+        nameWithType: String
+        qualifiedName: System.String
+        isExternal: true
+      - name: '>'
+        nameWithType: '>'
+        qualifiedName: '>'
+      VB:
+      - id: System.Collections.Generic.IDictionary`2
+        name: IDictionary
+        nameWithType: IDictionary
+        qualifiedName: System.Collections.Generic.IDictionary
+        isExternal: true
+      - name: '(Of '
+        nameWithType: '(Of '
+        qualifiedName: '(Of '
+      - id: System.String
+        name: String
+        nameWithType: String
+        qualifiedName: System.String
+        isExternal: true
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.String
+        name: String
+        nameWithType: String
+        qualifiedName: System.String
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: false
+    definition: System.Collections.Generic.IDictionary`2
+    parent: System.Collections.Generic
+    commentId: T:System.Collections.Generic.IDictionary{System.String,System.String}
+  WizardWrx.HTTP.RequestEngine.ParseQueryToDictionary*:
+    name:
+      CSharp:
+      - id: WizardWrx.HTTP.RequestEngine.ParseQueryToDictionary*
+        name: ParseQueryToDictionary
+        nameWithType: RequestEngine.ParseQueryToDictionary
+        qualifiedName: WizardWrx.HTTP.RequestEngine.ParseQueryToDictionary
+      VB:
+      - id: WizardWrx.HTTP.RequestEngine.ParseQueryToDictionary*
+        name: ParseQueryToDictionary
+        nameWithType: RequestEngine.ParseQueryToDictionary
+        qualifiedName: WizardWrx.HTTP.RequestEngine.ParseQueryToDictionary
+    isDefinition: true
+    commentId: Overload:WizardWrx.HTTP.RequestEngine.ParseQueryToDictionary
+  WizardWrx.HTTP.RequestEngine:
+    name:
+      CSharp:
+      - id: WizardWrx.HTTP.RequestEngine
+        name: RequestEngine
+        nameWithType: RequestEngine
+        qualifiedName: WizardWrx.HTTP.RequestEngine
+      VB:
+      - id: WizardWrx.HTTP.RequestEngine
+        name: RequestEngine
+        nameWithType: RequestEngine
+        qualifiedName: WizardWrx.HTTP.RequestEngine
+    isDefinition: true
+    commentId: T:WizardWrx.HTTP.RequestEngine
+  WizardWrx.StringExtensions.RenderEvenWhenNull``1(``0,System.String,System.String,System.IFormatProvider):
+    name:
+      CSharp:
+      - id: WizardWrx.StringExtensions.RenderEvenWhenNull``1(``0,System.String,System.String,System.IFormatProvider)
+        name: RenderEvenWhenNull<T>
+        nameWithType: StringExtensions.RenderEvenWhenNull<T>
+        qualifiedName: WizardWrx.StringExtensions.RenderEvenWhenNull<T>
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.String
+        name: String
+        nameWithType: String
+        qualifiedName: System.String
+        isExternal: true
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.String
+        name: String
+        nameWithType: String
+        qualifiedName: System.String
+        isExternal: true
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.IFormatProvider
+        name: IFormatProvider
+        nameWithType: IFormatProvider
+        qualifiedName: System.IFormatProvider
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: WizardWrx.StringExtensions.RenderEvenWhenNull``1(``0,System.String,System.String,System.IFormatProvider)
+        name: RenderEvenWhenNull(Of T)
+        nameWithType: StringExtensions.RenderEvenWhenNull(Of T)
+        qualifiedName: WizardWrx.StringExtensions.RenderEvenWhenNull(Of T)
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.String
+        name: String
+        nameWithType: String
+        qualifiedName: System.String
+        isExternal: true
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.String
+        name: String
+        nameWithType: String
+        qualifiedName: System.String
+        isExternal: true
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.IFormatProvider
+        name: IFormatProvider
+        nameWithType: IFormatProvider
+        qualifiedName: System.IFormatProvider
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    commentId: M:WizardWrx.StringExtensions.RenderEvenWhenNull``1(``0,System.String,System.String,System.IFormatProvider)
+  WizardWrx:
+    name:
+      CSharp:
+      - name: WizardWrx
+        nameWithType: WizardWrx
+        qualifiedName: WizardWrx
+      VB:
+      - name: WizardWrx
+        nameWithType: WizardWrx
+        qualifiedName: WizardWrx
+    isDefinition: true
+    commentId: N:WizardWrx
+  WizardWrx.StringExtensions:
+    name:
+      CSharp:
+      - id: WizardWrx.StringExtensions
+        name: StringExtensions
+        nameWithType: StringExtensions
+        qualifiedName: WizardWrx.StringExtensions
+      VB:
+      - id: WizardWrx.StringExtensions
+        name: StringExtensions
+        nameWithType: StringExtensions
+        qualifiedName: WizardWrx.StringExtensions
+    isDefinition: true
+    parent: WizardWrx
+    commentId: T:WizardWrx.StringExtensions
+  ? WizardWrx.HTTP.RequestEngine.HttpVerb.WizardWrx.StringExtensions.RenderEvenWhenNull``1(System.String,System.String,System.IFormatProvider)
+  : name:
+      CSharp:
+      - id: WizardWrx.StringExtensions.RenderEvenWhenNull``1(System.String,System.String,System.IFormatProvider)
+        name: RenderEvenWhenNull<RequestEngine.HttpVerb>
+        nameWithType: StringExtensions.RenderEvenWhenNull<RequestEngine.HttpVerb>
+        qualifiedName: WizardWrx.StringExtensions.RenderEvenWhenNull<WizardWrx.HTTP.RequestEngine.HttpVerb>
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.String
+        name: String
+        nameWithType: String
+        qualifiedName: System.String
+        isExternal: true
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.String
+        name: String
+        nameWithType: String
+        qualifiedName: System.String
+        isExternal: true
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.IFormatProvider
+        name: IFormatProvider
+        nameWithType: IFormatProvider
+        qualifiedName: System.IFormatProvider
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: WizardWrx.StringExtensions.RenderEvenWhenNull``1(System.String,System.String,System.IFormatProvider)
+        name: RenderEvenWhenNull(Of RequestEngine.HttpVerb)
+        nameWithType: StringExtensions.RenderEvenWhenNull(Of RequestEngine.HttpVerb)
+        qualifiedName: WizardWrx.StringExtensions.RenderEvenWhenNull(Of WizardWrx.HTTP.RequestEngine.HttpVerb)
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.String
+        name: String
+        nameWithType: String
+        qualifiedName: System.String
+        isExternal: true
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.String
+        name: String
+        nameWithType: String
+        qualifiedName: System.String
+        isExternal: true
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.IFormatProvider
+        name: IFormatProvider
+        nameWithType: IFormatProvider
+        qualifiedName: System.IFormatProvider
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: false
+    definition: WizardWrx.StringExtensions.RenderEvenWhenNull``1(``0,System.String,System.String,System.IFormatProvider)
+    parent: WizardWrx.StringExtensions
+    commentId: M:WizardWrx.StringExtensions.RenderEvenWhenNull``1(``0,System.String,System.String,System.IFormatProvider)
+  WizardWrx.HTTP.RequestOptions.ContentType*:
+    name:
+      CSharp:
+      - id: WizardWrx.HTTP.RequestOptions.ContentType*
+        name: ContentType
+        nameWithType: RequestOptions.ContentType
+        qualifiedName: WizardWrx.HTTP.RequestOptions.ContentType
+      VB:
+      - id: WizardWrx.HTTP.RequestOptions.ContentType*
+        name: ContentType
+        nameWithType: RequestOptions.ContentType
+        qualifiedName: WizardWrx.HTTP.RequestOptions.ContentType
+    isDefinition: true
+    commentId: Overload:WizardWrx.HTTP.RequestOptions.ContentType
+  WizardWrx.DLLConfigurationManager:
+    name:
+      CSharp:
+      - name: WizardWrx.DLLConfigurationManager
+        nameWithType: WizardWrx.DLLConfigurationManager
+        qualifiedName: WizardWrx.DLLConfigurationManager
+      VB:
+      - name: WizardWrx.DLLConfigurationManager
+        nameWithType: WizardWrx.DLLConfigurationManager
+        qualifiedName: WizardWrx.DLLConfigurationManager
+    isDefinition: true
+    commentId: N:WizardWrx.DLLConfigurationManager
+  WizardWrx.DLLConfigurationManager.ExceptionLogger:
+    name:
+      CSharp:
+      - id: WizardWrx.DLLConfigurationManager.ExceptionLogger
+        name: ExceptionLogger
+        nameWithType: ExceptionLogger
+        qualifiedName: WizardWrx.DLLConfigurationManager.ExceptionLogger
+      VB:
+      - id: WizardWrx.DLLConfigurationManager.ExceptionLogger
+        name: ExceptionLogger
+        nameWithType: ExceptionLogger
+        qualifiedName: WizardWrx.DLLConfigurationManager.ExceptionLogger
+    isDefinition: true
+    parent: WizardWrx.DLLConfigurationManager
+    commentId: T:WizardWrx.DLLConfigurationManager.ExceptionLogger
+  WizardWrx.HTTP.RequestOptions.Logger*:
+    name:
+      CSharp:
+      - id: WizardWrx.HTTP.RequestOptions.Logger*
+        name: Logger
+        nameWithType: RequestOptions.Logger
+        qualifiedName: WizardWrx.HTTP.RequestOptions.Logger
+      VB:
+      - id: WizardWrx.HTTP.RequestOptions.Logger*
+        name: Logger
+        nameWithType: RequestOptions.Logger
+        qualifiedName: WizardWrx.HTTP.RequestOptions.Logger
+    isDefinition: true
+    commentId: Overload:WizardWrx.HTTP.RequestOptions.Logger
+  WizardWrx.HTTP.RequestOptions.HttpEngineLogCallback:
+    name:
+      CSharp:
+      - id: WizardWrx.HTTP.RequestOptions.HttpEngineLogCallback
+        name: RequestOptions.HttpEngineLogCallback
+        nameWithType: RequestOptions.HttpEngineLogCallback
+        qualifiedName: WizardWrx.HTTP.RequestOptions.HttpEngineLogCallback
+      VB:
+      - id: WizardWrx.HTTP.RequestOptions.HttpEngineLogCallback
+        name: RequestOptions.HttpEngineLogCallback
+        nameWithType: RequestOptions.HttpEngineLogCallback
+        qualifiedName: WizardWrx.HTTP.RequestOptions.HttpEngineLogCallback
+    isDefinition: true
+    parent: WizardWrx.HTTP
+    commentId: T:WizardWrx.HTTP.RequestOptions.HttpEngineLogCallback
+  WizardWrx.HTTP.RequestOptions.LogCallback*:
+    name:
+      CSharp:
+      - id: WizardWrx.HTTP.RequestOptions.LogCallback*
+        name: LogCallback
+        nameWithType: RequestOptions.LogCallback
+        qualifiedName: WizardWrx.HTTP.RequestOptions.LogCallback
+      VB:
+      - id: WizardWrx.HTTP.RequestOptions.LogCallback*
+        name: LogCallback
+        nameWithType: RequestOptions.LogCallback
+        qualifiedName: WizardWrx.HTTP.RequestOptions.LogCallback
+    isDefinition: true
+    commentId: Overload:WizardWrx.HTTP.RequestOptions.LogCallback
+  WizardWrx.HTTP.RequestOptions.OAuthTokenGetter:
+    name:
+      CSharp:
+      - id: WizardWrx.HTTP.RequestOptions.OAuthTokenGetter
+        name: RequestOptions.OAuthTokenGetter
+        nameWithType: RequestOptions.OAuthTokenGetter
+        qualifiedName: WizardWrx.HTTP.RequestOptions.OAuthTokenGetter
+      VB:
+      - id: WizardWrx.HTTP.RequestOptions.OAuthTokenGetter
+        name: RequestOptions.OAuthTokenGetter
+        nameWithType: RequestOptions.OAuthTokenGetter
+        qualifiedName: WizardWrx.HTTP.RequestOptions.OAuthTokenGetter
+    isDefinition: true
+    parent: WizardWrx.HTTP
+    commentId: T:WizardWrx.HTTP.RequestOptions.OAuthTokenGetter
+  WizardWrx.HTTP.RequestOptions.TokenGetter*:
+    name:
+      CSharp:
+      - id: WizardWrx.HTTP.RequestOptions.TokenGetter*
+        name: TokenGetter
+        nameWithType: RequestOptions.TokenGetter
+        qualifiedName: WizardWrx.HTTP.RequestOptions.TokenGetter
+      VB:
+      - id: WizardWrx.HTTP.RequestOptions.TokenGetter*
+        name: TokenGetter
+        nameWithType: RequestOptions.TokenGetter
+        qualifiedName: WizardWrx.HTTP.RequestOptions.TokenGetter
+    isDefinition: true
+    commentId: Overload:WizardWrx.HTTP.RequestOptions.TokenGetter
+  WizardWrx.HTTP.RequestOptions.AcceptHeaderValue*:
+    name:
+      CSharp:
+      - id: WizardWrx.HTTP.RequestOptions.AcceptHeaderValue*
+        name: AcceptHeaderValue
+        nameWithType: RequestOptions.AcceptHeaderValue
+        qualifiedName: WizardWrx.HTTP.RequestOptions.AcceptHeaderValue
+      VB:
+      - id: WizardWrx.HTTP.RequestOptions.AcceptHeaderValue*
+        name: AcceptHeaderValue
+        nameWithType: RequestOptions.AcceptHeaderValue
+        qualifiedName: WizardWrx.HTTP.RequestOptions.AcceptHeaderValue
+    isDefinition: true
+    commentId: Overload:WizardWrx.HTTP.RequestOptions.AcceptHeaderValue
+  WizardWrx.HTTP.RequestOptions.AcceptEncodingValue*:
+    name:
+      CSharp:
+      - id: WizardWrx.HTTP.RequestOptions.AcceptEncodingValue*
+        name: AcceptEncodingValue
+        nameWithType: RequestOptions.AcceptEncodingValue
+        qualifiedName: WizardWrx.HTTP.RequestOptions.AcceptEncodingValue
+      VB:
+      - id: WizardWrx.HTTP.RequestOptions.AcceptEncodingValue*
+        name: AcceptEncodingValue
+        nameWithType: RequestOptions.AcceptEncodingValue
+        qualifiedName: WizardWrx.HTTP.RequestOptions.AcceptEncodingValue
+    isDefinition: true
+    commentId: Overload:WizardWrx.HTTP.RequestOptions.AcceptEncodingValue
+  WizardWrx.HTTP.RequestOptions.CacheControlValue*:
+    name:
+      CSharp:
+      - id: WizardWrx.HTTP.RequestOptions.CacheControlValue*
+        name: CacheControlValue
+        nameWithType: RequestOptions.CacheControlValue
+        qualifiedName: WizardWrx.HTTP.RequestOptions.CacheControlValue
+      VB:
+      - id: WizardWrx.HTTP.RequestOptions.CacheControlValue*
+        name: CacheControlValue
+        nameWithType: RequestOptions.CacheControlValue
+        qualifiedName: WizardWrx.HTTP.RequestOptions.CacheControlValue
+    isDefinition: true
+    commentId: Overload:WizardWrx.HTTP.RequestOptions.CacheControlValue
+  WizardWrx.HTTP.RequestOptions.CurrentOAuthToken*:
+    name:
+      CSharp:
+      - id: WizardWrx.HTTP.RequestOptions.CurrentOAuthToken*
+        name: CurrentOAuthToken
+        nameWithType: RequestOptions.CurrentOAuthToken
+        qualifiedName: WizardWrx.HTTP.RequestOptions.CurrentOAuthToken
+      VB:
+      - id: WizardWrx.HTTP.RequestOptions.CurrentOAuthToken*
+        name: CurrentOAuthToken
+        nameWithType: RequestOptions.CurrentOAuthToken
+        qualifiedName: WizardWrx.HTTP.RequestOptions.CurrentOAuthToken
+    isDefinition: true
+    commentId: Overload:WizardWrx.HTTP.RequestOptions.CurrentOAuthToken
+  WizardWrx.HTTP.RequestOptions.LoggerCallback*:
+    name:
+      CSharp:
+      - id: WizardWrx.HTTP.RequestOptions.LoggerCallback*
+        name: LoggerCallback
+        nameWithType: RequestOptions.LoggerCallback
+        qualifiedName: WizardWrx.HTTP.RequestOptions.LoggerCallback
+      VB:
+      - id: WizardWrx.HTTP.RequestOptions.LoggerCallback*
+        name: LoggerCallback
+        nameWithType: RequestOptions.LoggerCallback
+        qualifiedName: WizardWrx.HTTP.RequestOptions.LoggerCallback
+    isDefinition: true
+    commentId: Overload:WizardWrx.HTTP.RequestOptions.LoggerCallback
+  WizardWrx.HTTP.RequestOptions.RetryDelay*:
+    name:
+      CSharp:
+      - id: WizardWrx.HTTP.RequestOptions.RetryDelay*
+        name: RetryDelay
+        nameWithType: RequestOptions.RetryDelay
+        qualifiedName: WizardWrx.HTTP.RequestOptions.RetryDelay
+      VB:
+      - id: WizardWrx.HTTP.RequestOptions.RetryDelay*
+        name: RetryDelay
+        nameWithType: RequestOptions.RetryDelay
+        qualifiedName: WizardWrx.HTTP.RequestOptions.RetryDelay
+    isDefinition: true
+    commentId: Overload:WizardWrx.HTTP.RequestOptions.RetryDelay
+  WizardWrx.HTTP.RequestOptions.RetryLimit*:
+    name:
+      CSharp:
+      - id: WizardWrx.HTTP.RequestOptions.RetryLimit*
+        name: RetryLimit
+        nameWithType: RequestOptions.RetryLimit
+        qualifiedName: WizardWrx.HTTP.RequestOptions.RetryLimit
+      VB:
+      - id: WizardWrx.HTTP.RequestOptions.RetryLimit*
+        name: RetryLimit
+        nameWithType: RequestOptions.RetryLimit
+        qualifiedName: WizardWrx.HTTP.RequestOptions.RetryLimit
+    isDefinition: true
+    commentId: Overload:WizardWrx.HTTP.RequestOptions.RetryLimit
+  WizardWrx.HTTP.RequestOptions.Timeout*:
+    name:
+      CSharp:
+      - id: WizardWrx.HTTP.RequestOptions.Timeout*
+        name: Timeout
+        nameWithType: RequestOptions.Timeout
+        qualifiedName: WizardWrx.HTTP.RequestOptions.Timeout
+      VB:
+      - id: WizardWrx.HTTP.RequestOptions.Timeout*
+        name: Timeout
+        nameWithType: RequestOptions.Timeout
+        qualifiedName: WizardWrx.HTTP.RequestOptions.Timeout
+    isDefinition: true
+    commentId: Overload:WizardWrx.HTTP.RequestOptions.Timeout
+  WizardWrx.HTTP.RequestOptions.#ctor*:
+    name:
+      CSharp:
+      - id: WizardWrx.HTTP.RequestOptions.#ctor*
+        name: RequestOptions
+        nameWithType: RequestOptions.RequestOptions
+        qualifiedName: WizardWrx.HTTP.RequestOptions.RequestOptions
+      VB:
+      - id: WizardWrx.HTTP.RequestOptions.#ctor*
+        name: RequestOptions
+        nameWithType: RequestOptions.RequestOptions
+        qualifiedName: WizardWrx.HTTP.RequestOptions.RequestOptions
+    isDefinition: true
+    commentId: Overload:WizardWrx.HTTP.RequestOptions.#ctor
+  WizardWrx.HTTP.RequestOptions.ToString*:
+    name:
+      CSharp:
+      - id: WizardWrx.HTTP.RequestOptions.ToString*
+        name: ToString
+        nameWithType: RequestOptions.ToString
+        qualifiedName: WizardWrx.HTTP.RequestOptions.ToString
+      VB:
+      - id: WizardWrx.HTTP.RequestOptions.ToString*
+        name: ToString
+        nameWithType: RequestOptions.ToString
+        qualifiedName: WizardWrx.HTTP.RequestOptions.ToString
+    isDefinition: true
+    commentId: Overload:WizardWrx.HTTP.RequestOptions.ToString

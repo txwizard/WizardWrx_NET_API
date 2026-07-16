@@ -1,0 +1,10 @@
+id: HTTP
+language: CSharp
+name:
+  Default: HTTP
+qualifiedName:
+  Default: HTTP
+type: Assembly
+modifiers: {}
+items: []
+references: {}

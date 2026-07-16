@@ -1,0 +1,515 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WizardWrx.JSONSupport</name>
+    </assembly>
+    <members>
+        <member name="T:WizardWrx.JSONSupport.JSON_Deserialized_Object">
+             <summary>
+             Instances of this class provide a lightweight, schema-aware façade over
+             a JSON payload. The class optionally sanitizes the input, validates 
+             required fields, and exposes a minimal set of typed accessors so callers
+             can retrieve field values without depending directly on JSON.NET, working
+             with JToken instances, or needing to expend the effort to parse the JSON
+             into a strongly-typed model when only a few fields are needed.
+             </summary>
+             <remarks>
+            	<para>
+             The typed getters intentionally cover only the canonical .NET types
+             that map cleanly and unambiguously to JSON: string, Boolean, 32-bit
+             integer, double-precision floating point, Guid, and DateTime. JSON does
+             not define numeric widths, temporal subtypes, or alternative Boolean
+             representations, so additional getters (such as byte, short, long,
+             float, DateOnly, DateTimeOffset, or truthy/falsy coercions) would not
+             provide meaningful additional capability. Callers who require more
+             specialized interpretations can retrieve the raw string value and apply
+             domain-specific parsing rules.
+            	</para>
+            	<para>
+             This design keeps the API surface minimal, deterministic, and
+             intention-revealing, while insulating callers from JSON.NET and
+             preserving the ability to evolve the internal representation in the
+             future.
+            	</para>
+             </remarks>
+             <example>
+             <para>
+             The following example shows a typical usage pattern for this class:
+             </para>
+            
+             <code>
+             // Raw JSON received from an external source.
+             string json = @&quot;
+             {
+                 &quot;id&quot;: &quot;c0a8012e-5f3c-4b8f-9b7a-2f4f0e9c1a12&quot;,
+                 &quot;name&quot;: &quot;Alice&quot;,
+                 &quot;age&quot;: 42,
+                 &quot;active&quot;: true,
+                 &quot;created&quot;: &quot;2024-10-12T14:30:00Z&quot;
+             }&quot;;
+            
+             // Define the fields that must be present.
+             var required = new[] { &quot;id&quot;, &quot;name&quot;, &quot;active&quot; };
+            
+             // Create the wrapper.
+             var wrapper = new JsonFieldAccessor(json, required);
+            
+             // Validate the payload.
+             var missing = wrapper.Validate(requireNonEmptyValues: true);
+             if (missing.Count > 0)
+             {
+                 Console.WriteLine(&quot;Missing or invalid fields:&quot;);
+                 foreach (var field in missing)
+                     Console.WriteLine(&quot;  &quot; + field);
+                 return;
+             }
+            
+             // Retrieve typed values.
+             Guid? id = wrapper.GetFieldValueAsGuid(&quot;id&quot;);
+             string name = wrapper.GetFieldValueAsString(&quot;name&quot;);
+             int? age = wrapper.GetFieldValueAsInt(&quot;age&quot;);
+             bool? active = wrapper.GetFieldValueAsBoolean(&quot;active&quot;);
+             DateTime? created = wrapper.GetFieldValueAsDateTime(&quot;created&quot;);
+            
+             Console.WriteLine($&quot;User {name} ({id})&quot;);
+             Console.WriteLine($&quot;Age: {age}&quot;);
+             Console.WriteLine($&quot;Active: {active}&quot;);
+             Console.WriteLine($&quot;Created: {created:u}&quot;);
+             </code>
+            
+             <para>
+             This example demonstrates validation, typed field retrieval, and the
+             absence of any dependency on JSON.NET in the calling code.
+             </para>
+            
+             <para>
+             The following example demonstrates how to handle optional fields:
+             </para>
+            
+             <code>
+             string json = @&quot;
+             {
+                 &quot;username&quot;: &quot;bob&quot;,
+                 &quot;email&quot;: &quot;bob@example.com&quot;,
+                 &quot;age&quot;: &quot;not-a-number&quot;,
+                 &quot;lastLogin&quot;: null
+             }&quot;;
+            
+             var required = new[] { &quot;username&quot; };
+             var wrapper = new JsonFieldAccessor(json, required);
+            
+             // Validate required fields only.
+             var missing = wrapper.Validate(requireNonEmptyValues: true);
+             if (missing.Count > 0)
+                 throw new InvalidOperationException(&quot;Required fields missing.&quot;);
+            
+             // Optional fields: callers decide how to interpret nulls.
+             string email = wrapper.GetFieldValueAsString(&quot;email&quot;);   // &quot;bob@example.com&quot;
+             int? age = wrapper.GetFieldValueAsInt(&quot;age&quot;);            // null (invalid integer)
+             DateTime? lastLogin = wrapper.GetFieldValueAsDateTime(&quot;lastLogin&quot;); // null
+            
+             Console.WriteLine($&quot;User: {email}, Age: {age}, Last Login: {lastLogin}&quot;);
+             </code>
+            
+             <para>
+             This example shows how optional fields naturally map to nullable return
+             values, allowing callers to apply their own fallback or defaulting logic.
+             </para>
+            
+             <para>
+             The following example shows how callers can apply domain-specific parsing
+             rules when the built-in typed accessors intentionally avoid coercions:
+             </para>
+            
+             <code>
+             string json = @&quot;
+             {
+                 &quot;enabled&quot;: &quot;yes&quot;,
+                 &quot;expires&quot;: &quot;2024-10-12T14:30:00-05:00&quot;,
+                 &quot;priority&quot;: &quot;high&quot;
+             }&quot;;
+            
+             var wrapper = new JsonFieldAccessor(json, Array.Empty&lt;string&gt;());
+            
+             // Built-in Boolean accessor returns null because &quot;yes&quot; is not a JSON Boolean.
+             bool? enabled = wrapper.GetFieldValueAsBoolean(&quot;enabled&quot;);   // null
+            
+             // Domain-specific truthy/falsy parsing.
+             string rawEnabled = wrapper.GetFieldValueAsString(&quot;enabled&quot;);
+             bool enabledFlag = rawEnabled?.Equals(&quot;yes&quot;, StringComparison.OrdinalIgnoreCase) == true;
+            
+             // Built-in DateTime accessor parses the timestamp but normalizes the offset.
+             DateTime? expires = wrapper.GetFieldValueAsDateTime(&quot;expires&quot;);
+            
+             // Domain-specific offset-preserving parsing.
+             string rawExpires = wrapper.GetFieldValueAsString(&quot;expires&quot;);
+             DateTimeOffset dto = DateTimeOffset.Parse(rawExpires);
+            
+             Console.WriteLine($&quot;Enabled: {enabledFlag}&quot;);
+             Console.WriteLine($&quot;Expires (DateTime): {expires}&quot;);
+             Console.WriteLine($&quot;Expires (DateTimeOffset): {dto}&quot;);
+             </code>
+            
+             <para>
+             This example illustrates how callers can retrieve the raw string when they
+             need to apply custom Boolean rules, preserve timezone offsets, or interpret
+             values according to domain-specific semantics.
+             </para>
+             </example>
+        </member>
+        <member name="P:WizardWrx.JSONSupport.JSON_Deserialized_Object.JSON">
+            <summary>
+            The raw (or sanitized) JSON text associated with this instance.
+            </summary>
+        </member>
+        <member name="P:WizardWrx.JSONSupport.JSON_Deserialized_Object.RequiredFields">
+            <summary>
+            Optional per-instance schema: field names that must be JSON strings
+            and are eligible for repair if unquoted.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.JSONSupport.JSON_Deserialized_Object.#ctor(System.String)">
+            <summary>
+            Construct with JSON only; no schema, no sanitizer.
+            </summary>
+            <param name="pstrJSON">
+            This string represents the JSON to be encapsulated by this instance.
+            No validation or sanitization is performed on this string by this
+            constructor; it is stored as-is. If the caller intends to perform
+            schema-aware sanitization, it should use the other constructor and
+            pass the appropriate parameters to enable that behavior.
+            </param>
+        </member>
+        <member name="M:WizardWrx.JSONSupport.JSON_Deserialized_Object.#ctor(System.String,System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            Construct with JSON and an optional schema; optionally sanitize immediately.
+            </summary>
+            <param name="pstrJSON">
+            JSON text as received (possibly malformed).
+            </param>
+            <param name="pastrRequiredFields">
+            Optional list of field names that must be JSON strings and may need repair.
+            </param>
+            <param name="pfSanitize">
+            When true, applies the schema-aware sanitizer immediately and parses eagerly.
+            </param>
+            <param name="pfSkipRequiredFieldCheck">
+            When true, causes the constructor to skip the check for required fields.
+            </param>
+        </member>
+        <member name="M:WizardWrx.JSONSupport.JSON_Deserialized_Object.AsJObject">
+            <summary>
+            Returns the JSON as a JObject, parsing lazily if needed.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.JSONSupport.JSON_Deserialized_Object.GetFieldValueAsBoolean(System.String)">
+            <summary>
+            Query the JSON object for a specific field and attempt to parse it
+            as a Boolean.
+            </summary>
+            <param name="pstrFieldName">
+            This string represents the name of the field for which to check.
+            </param>
+            <returns>
+            The return value is a nullable Boolean representing the value of the
+            field, or null if the field does not exist or cannot be parsed as a
+            Boolean.
+            </returns>
+            <remarks>
+            JSON has a native Boolean type, and JSON.NET preserves it directly, so this
+            accessor returns true or false only when the underlying token is a JSON
+            Boolean or a string that .NET recognizes as a Boolean literal (“true” or
+            “false”, case-insensitive). JSON.NET does not coerce other string values
+            to Boolean, and the .NET framework does not define truthy/falsy semantics
+            for values such as “yes”, “no”, “0”, or “1”. Callers who require more
+            flexible Boolean interpretation should retrieve the raw string and apply
+            domain-specific rules.
+            </remarks>
+        </member>
+        <member name="M:WizardWrx.JSONSupport.JSON_Deserialized_Object.GetFieldValueAsDateTime(System.String)">
+            <summary>
+            Query the JSON object for a specific field and attempt to parse it
+            as a DateTime.
+            </summary>
+            <param name="pstrFieldName">
+            This string represents the name of the field for which to check.
+            </param>
+            <returns>
+            The return value is a nullable DateTime representing the value of
+            the field, or null if the field does not exist or cannot be parsed
+            as a DateTime.
+            </returns>
+            <remarks>
+            <para>
+            This method provides the canonical double precision floating point
+            number accessor for this class.
+            </para>
+            <para>
+            This method retrieves the field value as a DateTime. Since JSON has
+            no native date or time type, and date values are represented as
+            strings. This method parses those strings using 
+            <see cref="M:System.DateTime.TryParse(System.String,System.DateTime@)"/>, which is 
+            sufficient for ingestion scenarios where the exact original offset
+            is not required and the primary goal is to obtain a usable DateTime
+            value.
+            </para>
+            <para>
+            A DateTimeOffset getter is intentionally omitted because JSON does not
+            guarantee the presence or meaning of timezone offsets, and callers who
+            require offset-preserving semantics can parse the raw string explicitly
+            using <see cref="M:System.DateTimeOffset.Parse(System.String)"/>.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:WizardWrx.JSONSupport.JSON_Deserialized_Object.GetFieldValueAsDouble(System.String)">
+            <summary>
+            Query the JSON object for a specific field and returns its value as
+            a double, or null if the field does not exist or cannot be parsed as
+            a double.
+            </summary>
+            <param name="pstrFieldName">
+            This string represents the name of the field for which to get the
+            value. The method will attempt to parse the value of this field as a
+            double.
+            </param>
+            <returns>
+            The return value is a nullable double representing the value of the field,
+            or null if the field does not exist or cannot be parsed as a double.
+            </returns>
+            <remarks>
+            <para>
+            This method provides the canonical double precision floating point
+            number accessor for this class.
+            </para>
+            <para>
+            JSON numeric values are represented internally as doubles, and every
+            valid float value is also representable as a double. Because double is
+            strictly a superset of float in both range and precision, there is no
+            scenario where a separate GetFieldValueAsFloat method would return a
+            meaningful result that this method cannot.
+            </para>
+            <para>
+            Callers who require a float can cast the returned double value.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:WizardWrx.JSONSupport.JSON_Deserialized_Object.GetFieldValueAsGuid(System.String)">
+            <summary>
+            Query the JSON object for a specific field and attempt to parse it
+            as a Guid.
+            </summary>
+            <param name="pstrFieldName">
+            This string represents the name of the field for which to get the
+            value. The method will attempt to parse the value of this field as a
+            Guid.
+            </param>
+            <returns>
+            The return value is a nullable Guid representing the value of the field,
+            or null if the field does not exist or cannot be parsed as a Guid.
+            </returns>
+            <remarks>
+            <para>
+            This method retrieves the field value as a Guid, which is a common
+            representation for identifiers in many JSON-based systems. JSON has no
+            native Guid type, so values are stored as strings and parsed here using
+            <see cref="M:System.Guid.TryParse(System.String,System.Guid@)"/>.
+            </para>
+            <para>
+            Additional identifier getters (such as UInt64 or custom ID formats)
+            are intentionally omitted, since callers with domain-specific
+            identifier requirements should interpret the raw string according to
+            their own rules.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:WizardWrx.JSONSupport.JSON_Deserialized_Object.GetFieldValueAsInt(System.String)">
+            <summary>
+            Query the JSON object for a specific field and return its value as
+            an integer, or null if the field does not exist or cannot be parsed
+            as a 32-bit signed integer.
+            </summary>
+            <param name="pstrFieldName">
+            This string represents the name of the field for which to check.
+            </param>
+            <returns>
+            The return value is a nullable integer representing the value of the field,
+            or null if the field does not exist or cannot be parsed as an integer.
+            </returns>
+            <remarks>
+            <para>
+            This method provides the canonical integer accessor for this class.
+            </para>
+            <para>
+            This method retrieves the field value as a 32-bit integer. JSON does
+            not define distinct numeric widths, and JSON.NET represents all
+            integer tokens internally as Int64. This method returns the value
+            only when it fits safely within the range of Int32. Smaller integer
+            types (byte, short) are subsets of Int32 and do not require separate
+            getters, since callers who need them can cast the returned value. 
+            </para>
+            <para>
+            A 64-bit integer getter is intentionally omitted because JSON does
+            not guarantee that numeric values fall within the precise range of
+            Int64. Callers who require 64-bit semantics should parse the raw
+            string explicitly, using <see cref="M:System.Int64.Parse(System.String)"/>.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:WizardWrx.JSONSupport.JSON_Deserialized_Object.GetFieldValueAsString(System.String)">
+            <summary>
+            Query the JSON object for a specific field and returns its value as
+            a string, or null if the field does not exist or is not a string.
+            </summary>
+            <param name="pstrFieldName">
+            This string represents the name of the field for which to check.
+            </param>
+            <returns>
+            The return value is a string representing the value of the field,
+            or null if the field does not exist or is not a string.
+            </returns>
+            <remarks>
+            <para>
+            This method provides the canonical string accessor for this class.
+            </para>
+            <para>
+            JSON string tokens map directly to .NET strings, and JSON does not
+            distinguish between different textual subtypes (such as char, multiline
+            text, or encoded binary). Additional getters for narrower textual types
+            would not add meaningful capability, since callers who require a more
+            specific representation can interpret or validate the returned string
+            as needed.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:WizardWrx.JSONSupport.JSON_Deserialized_Object.HasField(System.String)">
+            <summary>
+            Checks whether the JSON object contains a specific field.
+            </summary>
+            <param name="pstrFieldName">
+            This string represents the name of the field for which to check.
+            </param>
+            <returns>
+            The return value is True if the field exists; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.JSONSupport.JSON_Deserialized_Object.MaybeValid">
+            <summary>
+            Superficial structural check: non-empty and starts/ends with
+            expected delimiters.
+            </summary>
+            <remarks>
+            <para>
+            This method performs a superficial structural check on the JSON text.
+            It verifies that the JSON is non-empty and starts/ends with the expected
+            delimiters for either a JSON object or a JSON array.
+            </para>
+            <para>
+            Since the primary purpose of this class is to ensure that the JsonConvert method 
+            can safely parse the JSON, this check is intentionally superficial and does not
+            guarantee full JSON validity.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:WizardWrx.JSONSupport.JSON_Deserialized_Object.ParseTo``1">
+            <summary>
+            Deserializes the JSON into a strongly-typed model.
+            </summary>
+            <typeparam name="T">
+            Generic type parameter T identifies the strongly typed model against
+            which to parse the JObject.
+            </typeparam>
+            <returns>
+            If the method succeeds, it returns an instance of type T populated
+            with data from the JSON.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.JSONSupport.JSON_Deserialized_Object.Sanitize">
+            <summary>
+            Applies the schema-aware sanitizer to repair unquoted string values
+            for this instance's RequiredFields, mutating the JSON property.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.JSONSupport.JSON_Deserialized_Object.TryGetRaw(System.String,System.String@)">
+            <summary>
+            Attempts to retrieve the raw JSON value for a specific field.
+            </summary>
+            <param name="pstrFieldName">The name of the field to retrieve.</param>
+            <param name="pstrRawJson">The raw JSON value of the field, if found.</param>
+            <returns>True if the field exists; otherwise, false.</returns>
+        </member>
+        <member name="M:WizardWrx.JSONSupport.JSON_Deserialized_Object.Validate(System.Boolean)">
+            <summary>
+            <para>
+            Validate that the JSON object contains all required fields.
+            </para>
+            <para>
+            Optionally enforces that the values are non-empty (non-null, non-
+            whitespace).
+            </para>
+            <para>
+            Field name matching is case-insensitive.
+            </para>
+            </summary>
+            <param name="pfRequireNonEmptyValues">
+            This flag indicates whether to enforce that the required fields have non-
+            empty values. If <c>true</c>, then any required field that is either null
+            or a string consisting only of whitespace will be considered missing.
+            </param>
+            <returns>
+            This method returns a list of missing required fields. If the JSON
+            document is invalid, the list will contain a single entry "**Invalid
+            JSON**". If all required fields are present (and non-empty when
+            required), the returned list is empty.
+            </returns>
+        </member>
+        <member name="F:WizardWrx.JSONSupport.JSON_Deserialized_Object.GracefulNullAndMissingSettings">
+            <summary>
+            This static JsonSerializerSettings instance is configured to ignore
+            null values and missing members during deserialization, while
+            preserving default values and avoiding overwriting existing
+            collections. This configuration allows for graceful handling of JSON
+            payloads that may have nulls or missing fields without throwing
+            exceptions, while still maintaining the integrity of the
+            deserialized objects.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.JSONSupport.JSON_Deserialized_Object.ToString">
+            <summary>
+            This override of ToString returns the JSON text, or a placeholder if
+            the JSON is null or the empty string.
+            </summary>
+            <returns>
+            The return value is the JSON text, or a placeholder if the JSON is
+            null or the empty string.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.JSONSupport.JSON_Deserialized_Object.EnsureParsed">
+            <summary>
+            Ensure that the internal JObject is populated from the current JSON
+            string.
+            </summary>
+            <exception cref="T:Newtonsoft.Json.JsonException">
+            An exception of this type is thrown when the JSON string fails the
+            superficial validity check in MaybeValid, or when JObject.Parse fails due
+            to malformed JSON.
+            </exception>
+        </member>
+        <member name="M:WizardWrx.JSONSupport.JSON_Deserialized_Object.BuildRepairRegex(System.String[])">
+            <summary>
+            Build a schema-aware, value-agnostic, quote-aware regex for this instance,
+            or null if no required fields are supplied.
+            </summary>
+            <param name="pastrRequiredFields">
+            This array contains the field names that must exist as properties in
+            the JSON and are eligible for repair if unquoted. If null or empty,
+            the method returns null, indicating that no repair can be performed.
+            </param>
+            <returns>
+            The returned regex matches unquoted string values for the specified
+            field names, allowing for optional whitespace around the colon. If
+            no required fields are supplied, the method returns null, indicating
+            that repairs cannot be performed.
+            </returns>
+        </member>
+    </members>
+</doc>

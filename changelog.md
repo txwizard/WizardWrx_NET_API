@@ -1,5 +1,25 @@
 ﻿# WizardWrx .NET API Change Log
 
+## **[2026‑07‑16]
+
+### **WizardWrx.Core [9.0.404]**
+
+### **Namespace WizardWrx.Cryptography**
+
+- **Corrected SRI digest formatting** in the `PrefixedBase64String` output path.
+  The previous implementation emitted digests using the non‑standard form `SHA384_<base64>`, which violates the W3C Subresource Integrity specification.
+  Updated formatter now emits the required `sha384-<base64>` form, using a hyphen delimiter and the canonical lowercase algorithm identifier.
+  This restores browser compatibility and prevents script‑load failures caused by malformed integrity attributes.
+
+- See: [W3C Subresource Integrity Specification](https://github.com/w3c/webappsec-subresource-integrity/blob/master/spec_v1.markdown)
+
+- **Hardened hash‑algorithm prefix table** used by the digest formatter.
+  Replaced the mutable `Dictionary<DigestAlgorithm,string>` with a `static readonly ImmutableDictionary<DigestAlgorithm,string>` to guarantee immutability of SRI metadata.
+  This eliminates all mutation pathways and ensures prefix values remain constant for the lifetime of the application.
+
+- **Verified compatibility of supporting BCL extension packages** (`System.Memory`, `System.Buffers`, `System.Numerics.Vectors`, `System.Runtime.CompilerServices.Unsafe`).
+  All packages are already present in the dependency graph and pose no stability or runtime risks.
+
 ## 2026‑07‑06
 
 `WizardWrx.ASCIIInfo` gets a build number icrement to satisfy the NuGet

@@ -1,0 +1,10 @@
+id: FileComparer_UnitTests
+language: CSharp
+name:
+  Default: FileComparer_UnitTests
+qualifiedName:
+  Default: FileComparer_UnitTests
+type: Assembly
+modifiers: {}
+items: []
+references: {}

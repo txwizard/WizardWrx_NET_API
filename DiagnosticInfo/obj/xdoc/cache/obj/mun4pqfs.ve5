@@ -1,0 +1,10 @@
+id: DiagnosticInfo
+language: CSharp
+name:
+  Default: DiagnosticInfo
+qualifiedName:
+  Default: DiagnosticInfo
+type: Assembly
+modifiers: {}
+items: []
+references: {}

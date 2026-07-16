@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 
 namespace WizardWrx.Cryptography
 {
@@ -114,7 +115,7 @@ namespace WizardWrx.Cryptography
 				case OutputFormat.Base64String:
 					return Convert.ToBase64String ( abytDigest );
 				case OutputFormat.PrefixedBase64String:
-					return $"{s_dctHashAlgorithmPrefixes [ penmDigestAlgorithm ]}{SpecialStrings.UNDERSCORE_CHAR}{Convert.ToBase64String ( abytDigest )}";
+					return $"{s_dctHashAlgorithmPrefixes [ penmDigestAlgorithm ]}{SpecialStrings.HYPHEN}{Convert.ToBase64String ( abytDigest )}";
 				default:
 					return Core.ByteArrayFormatters.ByteArrayToHexDigitString ( abytDigest );
 			}   // switch ( penmOutputFormat )
@@ -125,15 +126,16 @@ namespace WizardWrx.Cryptography
 		/// This dictionary maps each DigestAlgorithm to its corresponding
 		/// string prefix, which is used when the output format is
 		/// PrefixedBase64String. The prefixes are derived from the names of the
-		/// hashing algorithms, and are followed by an underscore character..
+		/// hashing algorithms, and are followed by a hyphen
 		/// </summary>
-		static Dictionary<DigestAlgorithm , string> s_dctHashAlgorithmPrefixes = new Dictionary<DigestAlgorithm , string> ( )
+		/// <see href="https://github.com/w3c/webappsec-subresource-integrity/blob/master/spec_v1.markdown">webappsec-subresource-integrity</see>
+		private static readonly ImmutableDictionary<DigestAlgorithm , string> s_dctHashAlgorithmPrefixes = ImmutableDictionary.CreateRange ( new [ ]
 		{
-			{ DigestAlgorithm.MD5    , @"MD5" } ,
-			{ DigestAlgorithm.SHA1   , @"SHA1" } ,
-			{ DigestAlgorithm.SHA256 , @"SHA256" } ,
-			{ DigestAlgorithm.SHA384 , @"SHA384" } ,
-			{ DigestAlgorithm.SHA512 , @"SHA512" }
-		};  // static Dictionary<DigestAlgorithm , string> s_dctHashAlgorithmPrefixes
+			new KeyValuePair<DigestAlgorithm, string>(DigestAlgorithm.MD5,    "md5"),
+			new KeyValuePair<DigestAlgorithm, string>(DigestAlgorithm.SHA1,   "sha1"),
+			new KeyValuePair<DigestAlgorithm, string>(DigestAlgorithm.SHA256, "sha256"),
+			new KeyValuePair<DigestAlgorithm, string>(DigestAlgorithm.SHA384, "sha384"),
+			new KeyValuePair<DigestAlgorithm, string>(DigestAlgorithm.SHA512, "sha512")
+		} );    // private static readonly ImmutableDictionary<DigestAlgorithm , string> s_dctHashAlgorithmPrefixes
 	}   // public static class DigestFormatters
 }   // partial namespace WizardWrx.Cryptography

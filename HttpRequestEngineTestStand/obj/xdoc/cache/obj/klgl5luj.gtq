@@ -1,0 +1,10 @@
+id: HttpRequestEngineTestStand
+language: CSharp
+name:
+  Default: HttpRequestEngineTestStand
+qualifiedName:
+  Default: HttpRequestEngineTestStand
+type: Assembly
+modifiers: {}
+items: []
+references: {}
