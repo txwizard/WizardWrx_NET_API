@@ -1,5 +1,13 @@
 ﻿# WizardWrx .NET API Change Log
 
+## **[2026‑07‑26]
+
+### **WizardWrx.ConsoleStreams [9.0.334]**
+
+Move the MessageInColor class to the copybook directory, _COMMON_C#_Source, so
+that it can be used without dragging the rest of the library and its nontrivial
+dependency graph with it.
+
 ## **[2026‑07‑16]
 
 ### **WizardWrx.Core [9.0.404]**

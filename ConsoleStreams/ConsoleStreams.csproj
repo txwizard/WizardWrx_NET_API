@@ -63,6 +63,9 @@
     2022/07/10 DAG When I replaced wwBldNbrMgr with AssemblyInfoUtil, I put it
                    in the PostBuildEvent event instead of the PreBuildEvent
                    target.
+
+    2026/07/26 DAG Remove the compile include for MessageInColor.cs so that it
+                   can be moved to the `_COMMON_C#_Source` copybook directory.
     ============================================================================
 -->
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
@@ -112,13 +115,15 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\..\_COMMON_C#_Source\MessageInColor.cs">
+      <Link>MessageInColor.cs</Link>
+    </Compile>
     <Compile Include="..\ProductAssemblyInfo.cs">
       <Link>Properties\ProductAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="ConsoleColorPropertyDisplay.cs" />
     <Compile Include="DefaultErrorMessageColors.cs" />
     <Compile Include="ErrorMessagesInColor.cs" />
-    <Compile Include="MessageInColor.cs" />
     <Compile Include="StandardHandleInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -155,7 +160,8 @@
   </Target>
   -->
   <PropertyGroup>
-    <PreBuildEvent></PreBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PostBuildEvent>
@@ -163,4 +169,3 @@
   </PropertyGroup>
   <Import Project="$(Custom_MSBuild_Targets)\WizardWrx_NuGet_Packages.TARGETS" Condition="Exists('$(Custom_MSBuild_Targets)\WizardWrx_NuGet_Packages.TARGETS')" />
 </Project>
-

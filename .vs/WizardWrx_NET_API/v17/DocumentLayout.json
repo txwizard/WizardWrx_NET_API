@@ -3,24 +3,35 @@
   "WorkspaceRootPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{714F5BEE-4663-4B0C-8865-8A2165BF6BF2}|ConsoleStreams\\ConsoleStreams.csproj|d:\\source_code\\visual_studio\\projects\\_common_c#_source\\messageincolor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0F6C2CD-6DF3-48C8-BF8D-9C4B1510E5A4}|DLLServices2TestStand\\DLLServices2TestStand.csproj|D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\dllservices2teststand\\newclasstests_20140914.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0F6C2CD-6DF3-48C8-BF8D-9C4B1510E5A4}|DLLServices2TestStand\\DLLServices2TestStand.csproj|solutionrelative:dllservices2teststand\\newclasstests_20140914.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0F6C2CD-6DF3-48C8-BF8D-9C4B1510E5A4}|DLLServices2TestStand\\DLLServices2TestStand.csproj|D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\dllservices2teststand\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0F6C2CD-6DF3-48C8-BF8D-9C4B1510E5A4}|DLLServices2TestStand\\DLLServices2TestStand.csproj|solutionrelative:dllservices2teststand\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{70FCF204-A3E1-43E2-8D12-38C6C30763D8}|Solution Items{70FCF204-A3E1-43E2-8D12-38C6C30763D8}|D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\ChangeLog.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
       "RelativeMoniker": "D:0:0:{70FCF204-A3E1-43E2-8D12-38C6C30763D8}|Solution Items{70FCF204-A3E1-43E2-8D12-38C6C30763D8}|solutionrelative:ChangeLog.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B5282E82-D211-4BEA-BEBD-B2CC6E45BF5C}|Core\\Core.csproj|D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\core\\cryptography\\digestformatters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B5282E82-D211-4BEA-BEBD-B2CC6E45BF5C}|Core\\Core.csproj|d:\\source_code\\visual_studio\\projects\\wizardwrx_libs\\wizardwrx_net_api\\core\\cryptography\\digestformatters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B5282E82-D211-4BEA-BEBD-B2CC6E45BF5C}|Core\\Core.csproj|solutionrelative:core\\cryptography\\digestformatters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A0F6C2CD-6DF3-48C8-BF8D-9C4B1510E5A4}|DLLServices2TestStand\\DLLServices2TestStand.csproj|d:\\source_code\\visual_studio\\projects\\wizardwrx_libs\\wizardwrx_net_api\\dllservices2teststand\\newclasstests_20140914.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A0F6C2CD-6DF3-48C8-BF8D-9C4B1510E5A4}|DLLServices2TestStand\\DLLServices2TestStand.csproj|solutionrelative:dllservices2teststand\\newclasstests_20140914.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A0F6C2CD-6DF3-48C8-BF8D-9C4B1510E5A4}|DLLServices2TestStand\\DLLServices2TestStand.csproj|d:\\source_code\\visual_studio\\projects\\wizardwrx_libs\\wizardwrx_net_api\\dllservices2teststand\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A0F6C2CD-6DF3-48C8-BF8D-9C4B1510E5A4}|DLLServices2TestStand\\DLLServices2TestStand.csproj|solutionrelative:dllservices2teststand\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A0F6C2CD-6DF3-48C8-BF8D-9C4B1510E5A4}|DLLServices2TestStand\\DLLServices2TestStand.csproj|D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\dllservices2teststand\\digesttestcases.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0F6C2CD-6DF3-48C8-BF8D-9C4B1510E5A4}|DLLServices2TestStand\\DLLServices2TestStand.csproj|solutionrelative:dllservices2teststand\\digesttestcases.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B5282E82-D211-4BEA-BEBD-B2CC6E45BF5C}|Core\\Core.csproj|D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Core\\Cryptography\\DigestFile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B5282E82-D211-4BEA-BEBD-B2CC6E45BF5C}|Core\\Core.csproj|solutionrelative:Core\\Cryptography\\DigestFile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5282E82-D211-4BEA-BEBD-B2CC6E45BF5C}|Core\\Core.csproj|D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Core\\Cryptography\\DigestEngines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5282E82-D211-4BEA-BEBD-B2CC6E45BF5C}|Core\\Core.csproj|solutionrelative:Core\\Cryptography\\DigestEngines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B5282E82-D211-4BEA-BEBD-B2CC6E45BF5C}|Core\\Core.csproj|D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\core\\cryptography\\digeststring.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -37,14 +48,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{9F28CE35-C6A9-4E7B-ACD7-A39C9D5F7D27}|DigestEnginesTests\\FileCompareAndDigestEnginesTests.csproj|D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\digestenginestests\\digestcomparertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9F28CE35-C6A9-4E7B-ACD7-A39C9D5F7D27}|DigestEnginesTests\\FileCompareAndDigestEnginesTests.csproj|solutionrelative:digestenginestests\\digestcomparertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B5282E82-D211-4BEA-BEBD-B2CC6E45BF5C}|Core\\Core.csproj|D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Core\\Cryptography\\DigestEngines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5282E82-D211-4BEA-BEBD-B2CC6E45BF5C}|Core\\Core.csproj|solutionrelative:Core\\Cryptography\\DigestEngines.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A0F6C2CD-6DF3-48C8-BF8D-9C4B1510E5A4}|DLLServices2TestStand\\DLLServices2TestStand.csproj|D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\dllservices2teststand\\digesttestcases.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A0F6C2CD-6DF3-48C8-BF8D-9C4B1510E5A4}|DLLServices2TestStand\\DLLServices2TestStand.csproj|solutionrelative:dllservices2teststand\\digesttestcases.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9F28CE35-C6A9-4E7B-ACD7-A39C9D5F7D27}|DigestEnginesTests\\DigestEnginesTests.csproj|D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\digestenginestests\\digestcomparertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -77,11 +80,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 36,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "DigestComparerTests.cs",
               "DocumentMoniker": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\DigestEnginesTests\\DigestComparerTests.cs",
               "RelativeDocumentMoniker": "DigestEnginesTests\\DigestComparerTests.cs",
@@ -91,19 +94,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-04T07:02:09.933Z",
               "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ChangeLog.md",
-              "DocumentMoniker": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\changelog.md",
-              "RelativeDocumentMoniker": "changelog.md",
-              "ToolTip": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\changelog.md",
-              "RelativeToolTip": "changelog.md",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2026-07-16T08:25:36.011Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -178,33 +168,127 @@
               "Name": "ST:145:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:167:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:166:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:165:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:164:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:163:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:162:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:161:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:160:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:158:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:157:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:155:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:150:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "MessageInColor.cs",
+              "DocumentMoniker": "D:\\Source_Code\\Visual_Studio\\Projects\\_COMMON_C#_Source\\MessageInColor.cs",
+              "RelativeDocumentMoniker": "..\\..\\_COMMON_C#_Source\\MessageInColor.cs",
+              "ToolTip": "D:\\Source_Code\\Visual_Studio\\Projects\\_COMMON_C#_Source\\MessageInColor.cs",
+              "RelativeToolTip": "..\\..\\_COMMON_C#_Source\\MessageInColor.cs",
+              "ViewState": "AgIAAIUDAAAAAAAAAAAqwFQEAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T06:43:25.478Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ChangeLog.md",
+              "DocumentMoniker": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\changelog.md",
+              "RelativeDocumentMoniker": "changelog.md",
+              "ToolTip": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\changelog.md",
+              "RelativeToolTip": "changelog.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-07-16T08:25:36.011Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "NewClassTests_20140914.cs",
               "DocumentMoniker": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\DLLServices2TestStand\\NewClassTests_20140914.cs",
               "RelativeDocumentMoniker": "DLLServices2TestStand\\NewClassTests_20140914.cs",
               "ToolTip": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\DLLServices2TestStand\\NewClassTests_20140914.cs [Read Only]",
               "RelativeToolTip": "DLLServices2TestStand\\NewClassTests_20140914.cs [Read Only]",
-              "ViewState": "AgIAAGEDAAAAAAAAAAAmwGMDAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGEDAAAAAAAAAAAmwGoDAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-16T08:08:57.8Z",
               "EditorCaption": " [Read Only]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 7,
               "Title": "DigestEngines.cs",
               "DocumentMoniker": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Core\\Cryptography\\DigestEngines.cs",
               "RelativeDocumentMoniker": "Core\\Cryptography\\DigestEngines.cs",
               "ToolTip": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Core\\Cryptography\\DigestEngines.cs [Read Only]",
               "RelativeToolTip": "Core\\Cryptography\\DigestEngines.cs [Read Only]",
-              "ViewState": "AgIAAGYAAAAAAAAAAAAIwGwAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAACwBAAAAAAAAAAAswGwAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-01T10:23:46.971Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "FileComparer.cs",
               "DocumentMoniker": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Core\\FileComparer.cs",
               "RelativeDocumentMoniker": "Core\\FileComparer.cs",
@@ -216,19 +300,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "DigestFile.cs",
               "DocumentMoniker": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Core\\Cryptography\\DigestFile.cs",
               "RelativeDocumentMoniker": "Core\\Cryptography\\DigestFile.cs",
               "ToolTip": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Core\\Cryptography\\DigestFile.cs [Read Only]",
               "RelativeToolTip": "Core\\Cryptography\\DigestFile.cs [Read Only]",
-              "ViewState": "AgIAACUBAAAAAAAAAAAIwD4BAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADEBAAAAAAAAAAAwwD4BAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-01T01:12:25.472Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 5,
               "Title": "DigestTestCases.cs",
               "DocumentMoniker": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\DLLServices2TestStand\\DigestTestCases.cs",
               "RelativeDocumentMoniker": "DLLServices2TestStand\\DigestTestCases.cs",
@@ -241,7 +325,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "DigestString.cs",
               "DocumentMoniker": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Core\\Cryptography\\DigestString.cs",
               "RelativeDocumentMoniker": "Core\\Cryptography\\DigestString.cs",
@@ -253,20 +337,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DigestFormatters.cs",
-              "DocumentMoniker": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Core\\Cryptography\\DigestFormatters.cs",
-              "RelativeDocumentMoniker": "Core\\Cryptography\\DigestFormatters.cs",
-              "ToolTip": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Core\\Cryptography\\DigestFormatters.cs",
-              "RelativeToolTip": "Core\\Cryptography\\DigestFormatters.cs",
-              "ViewState": "AgIAAGsAAAAAAAAAAADwv4IAAACLAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-01T10:05:48.469Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\DLLServices2TestStand\\Program.cs",
               "RelativeDocumentMoniker": "DLLServices2TestStand\\Program.cs",
@@ -279,7 +350,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
+              "Title": "DigestFormatters.cs",
+              "DocumentMoniker": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Core\\Cryptography\\DigestFormatters.cs",
+              "RelativeDocumentMoniker": "Core\\Cryptography\\DigestFormatters.cs",
+              "ToolTip": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Core\\Cryptography\\DigestFormatters.cs [Read Only]",
+              "RelativeToolTip": "Core\\Cryptography\\DigestFormatters.cs [Read Only]",
+              "ViewState": "AgIAAGwAAAAAAAAAAAA3wIMAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T10:05:48.469Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "DigestComparer.cs",
               "DocumentMoniker": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Core\\Cryptography\\DigestComparer.cs",
               "RelativeDocumentMoniker": "Core\\Cryptography\\DigestComparer.cs",
@@ -291,7 +375,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "DigestComparerTests.cs",
               "DocumentMoniker": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\DigestEnginesTests\\DigestComparerTests.cs",
               "RelativeDocumentMoniker": "DigestEnginesTests\\DigestComparerTests.cs",
@@ -303,7 +387,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "ByteArrayBase64Converters.cs",
               "DocumentMoniker": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Core\\ByteArrayBase64Converters.cs",
               "RelativeDocumentMoniker": "Core\\ByteArrayBase64Converters.cs",
@@ -315,7 +399,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "DigestConstants.cs",
               "DocumentMoniker": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Core\\Cryptography\\DigestConstants.cs",
               "RelativeDocumentMoniker": "Core\\Cryptography\\DigestConstants.cs",
@@ -327,7 +411,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "DigestAlgorithm.cs",
               "DocumentMoniker": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Core\\Cryptography\\DigestAlgorithm.cs",
               "RelativeDocumentMoniker": "Core\\Cryptography\\DigestAlgorithm.cs",
@@ -339,7 +423,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Common.CS",
               "DocumentMoniker": "D:\\Source_Code\\Visual_Studio\\Projects\\_COMMON_C#_Source\\Common.CS",
               "RelativeDocumentMoniker": "..\\..\\_COMMON_C#_Source\\Common.CS",
@@ -351,7 +435,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "MessageDigests.cs",
               "DocumentMoniker": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Core\\Cryptography\\MessageDigests.cs",
               "RelativeDocumentMoniker": "Core\\Cryptography\\MessageDigests.cs",
