@@ -118,13 +118,14 @@
     <Compile Include="..\..\..\_COMMON_C#_Source\MessageInColor.cs">
       <Link>MessageInColor.cs</Link>
     </Compile>
+    <Compile Include="..\..\..\_COMMON_C#_Source\StandardHandleInfo.cs">
+      <Link>StandardHandleInfo.cs</Link>
+    </Compile>
     <Compile Include="..\ProductAssemblyInfo.cs">
       <Link>Properties\ProductAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="ConsoleColorPropertyDisplay.cs" />
     <Compile Include="DefaultErrorMessageColors.cs" />
     <Compile Include="ErrorMessagesInColor.cs" />
-    <Compile Include="StandardHandleInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

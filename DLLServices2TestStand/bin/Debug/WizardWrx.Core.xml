@@ -48,6 +48,15 @@
             </exception>
             
         </member>
+        <member name="F:WizardWrx.Shared.Common.DECIMAL_DIGITS_MIN">
+            <summary>
+            The static format string generator methods in this class test the
+            requested number of decimal points against this lower limit.
+            
+            If the specified number is less than this value, the methods behave
+            as if the default had been specified.
+            </summary>
+        </member>
         <member name="T:WizardWrx.Core.AgedFileInfo">
             <summary>
             This class extends a FileInfo object with a custom IComparable interface

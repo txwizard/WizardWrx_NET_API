@@ -6081,6 +6081,19 @@ references:
   isSpec: "True"
   fullName: WizardWrx.ConsoleStreams.MessageInColor.MessageInColor
   nameWithType: MessageInColor.MessageInColor
+- uid: WizardWrx.ConsoleStreams.MessageInColor.FormatStatusCode(System.Int32)
+  name: FormatStatusCode(Int32)
+  href: api/WizardWrx.ConsoleStreams.MessageInColor.html#WizardWrx_ConsoleStreams_MessageInColor_FormatStatusCode_System_Int32_
+  commentId: M:WizardWrx.ConsoleStreams.MessageInColor.FormatStatusCode(System.Int32)
+  fullName: WizardWrx.ConsoleStreams.MessageInColor.FormatStatusCode(System.Int32)
+  nameWithType: MessageInColor.FormatStatusCode(Int32)
+- uid: WizardWrx.ConsoleStreams.MessageInColor.FormatStatusCode*
+  name: FormatStatusCode
+  href: api/WizardWrx.ConsoleStreams.MessageInColor.html#WizardWrx_ConsoleStreams_MessageInColor_FormatStatusCode_
+  commentId: Overload:WizardWrx.ConsoleStreams.MessageInColor.FormatStatusCode
+  isSpec: "True"
+  fullName: WizardWrx.ConsoleStreams.MessageInColor.FormatStatusCode
+  nameWithType: MessageInColor.FormatStatusCode
 - uid: WizardWrx.ConsoleStreams.MessageInColor.MessageBackgroundColor
   name: MessageBackgroundColor
   href: api/WizardWrx.ConsoleStreams.MessageInColor.html#WizardWrx_ConsoleStreams_MessageInColor_MessageBackgroundColor

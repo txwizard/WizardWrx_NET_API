@@ -1246,6 +1246,18 @@
             (BackgroundColor property and ForegroundColor, respectively).
             </remarks>
         </member>
+        <member name="M:WizardWrx.ConsoleStreams.MessageInColor.FormatStatusCode(System.Int32)">
+            <summary>
+            Return a string representation of a status code, formatted as
+            hexadecimal, followed by the decimal format in parentheses.
+            </summary>
+            <param name="pintStatusCode">
+            Though intended for use with status codes, any integer will do.
+            </param>
+            <returns>
+            Return a string something like 0x000000ff (255 decimal).
+            </returns>
+        </member>
         <member name="T:WizardWrx.ConsoleStreams.MessageInColorConverter">
             <summary>
             Although its scope is public, the only practical use for this class is
@@ -1319,6 +1331,388 @@
             Although specified as object to meet the requirements of the base
             class, the actual return value is expected to be a System.string.
             </returns>
+        </member>
+        <member name="T:WizardWrx.ConsoleStreams.StandardHandleInfo">
+            <summary>
+            This static class provides type-safe managed methods to determine the
+            true redirection state of a standard console handle, including, if
+            applicable, learning the name of the file to which it is redirected.
+            </summary>
+            <remarks>
+            The standard properties on the Process (all versions) and Console
+            (version 4.5 and newer) objects report based solely on redirections
+            brought about by the Base Class Library. They completely ignore redirection
+            that happens in the shell, before the process started. Hence, to learn the
+            true redirection state requires a couple of Platform Invoke calls into the
+            Windows API, which this class provides through type-safe wrappers.
+            </remarks>
+        </member>
+        <member name="T:WizardWrx.ConsoleStreams.StandardHandleInfo.ConsoleModes">
+            <summary>
+            Use these flags to test the values returned by GetConsoleMode.
+            </summary>
+            <remarks>
+            In wincon.h, these are defined as symbolic constants, although there
+            is ample justification for rolling them into a bit-mapped
+            enumeration. I suspect the reason they aren't is that the change
+            would break too much legacy code.
+            
+            For the present, GetConsoleMode is called, but only for a side
+            effect; its return value is discarded.
+            
+            Though currently unused, the enumeration is reserved for future use.
+            
+            The summaries shown here for all but the last member of this
+            enumeration are quoted verbatim from the MSDN manual page of the
+            SetConsoleMode function cited below.
+            </remarks>
+            <see href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms686033(v=vs.85).aspx"/>
+        </member>
+        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.ConsoleModes.ENABLE_PROCESSED_INPUT">
+            <summary>
+            Characters written by the WriteFile or WriteConsole function or
+            echoed by the ReadFile or ReadConsole function are examined for
+            ASCII control sequences and the correct action is performed.
+            Backspace, tab, bell, carriage return, and line feed characters
+            are processed.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.ConsoleModes.ENABLE_LINE_INPUT">
+            <summary>
+            The ReadFile or ReadConsole function returns only when a
+            carriage return character is read. If this mode is disabled, the
+            functions return when one or more characters are available.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.ConsoleModes.ENABLE_ECHO_INPUT">
+            <summary>
+            Characters read by the ReadFile or ReadConsole function are
+            written to the active screen buffer as they are read. This mode
+            can be used only if the ENABLE_LINE_INPUT mode is also enabled.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.ConsoleModes.ENABLE_WINDOW_INPUT">
+            <summary>
+            User interactions that change the size of the console screen
+            buffer are reported in the console's input buffer. Information
+            about these events can be read from the input buffer by
+            applications using the ReadConsoleInput function, but not by
+            those using ReadFile or ReadConsole.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.ConsoleModes.ENABLE_MOUSE_INPUT">
+            <summary>
+            If the mouse pointer is within the borders of the console window
+            and the window has the keyboard focus, mouse events generated by
+            mouse movement and button presses are placed in the input buffer.
+            These events are discarded by ReadFile or ReadConsole, even when
+            this mode is enabled.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.ConsoleModes.ENABLE_INSERT_MODE">
+            <summary>
+            When enabled, text entered in a console window will be inserted
+            at the current cursor location and all text following that
+            location will not be overwritten. When disabled, all following
+            text will be overwritten.
+            
+            To enable this mode, use ENABLE_INSERT_MODE | ENABLE_EXTENDED_FLAGS.
+            
+            To disable this mode, use ENABLE_EXTENDED_FLAGS without this flag.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.ConsoleModes.ENABLE_QUICK_EDIT_MODE">
+            <summary>
+            This flag enables the user to use the mouse to select and edit
+            text.
+            
+            To enable this mode, use ENABLE_QUICK_EDIT_MODE | ENABLE_EXTENDED_FLAGS.
+            
+            To disable this mode, use ENABLE_EXTENDED_FLAGS without this flag.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.ConsoleModes.ENABLE_EXTENDED_FLAGS">
+            <summary>
+            Required to enable or disable extended flags.
+            
+            See ENABLE_INSERT_MODE and ENABLE_QUICK_EDIT_MODE.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.ConsoleModes.ENABLE_AUTO_POSITION">
+            <summary>
+            Though defined in WinCon.h, this flag is otherwise undocumented.
+            
+            My initial best guess is that it is related to the "Let system
+            position window" check box on the property sheet of a CMD.EXE
+            window, though I have yet to test this theory.
+            </summary>
+        </member>
+        <member name="T:WizardWrx.ConsoleStreams.StandardHandleInfo.ConsoleOutputModes">
+            <summary>
+            Use these flags with SetConsoleMode to control how long output lines
+            are handled.
+            </summary>
+            <remarks>
+            In wincon.h, these are defined as symbolic constants, although there
+            is ample justification for rolling them into a bit-mapped
+            enumeration. I suspect the reason they aren't is that the change
+            would break too much legacy code.
+            
+            For the present, SetConsoleMode is not called.
+            
+            Though currently unused, the enumeration is reserved for future use.
+            
+            The summaries shown here for all but the last member of this
+            enumeration are quoted verbatim from the MSDN manual page of the
+            SetConsoleMode function cited below.
+            </remarks>
+            <see href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms686033(v=vs.85).aspx"/>
+        </member>
+        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.ConsoleOutputModes.ENABLE_PROCESSED_OUTPUT">
+            <summary>
+            Characters written by the WriteFile or WriteConsole function or
+            echoed by the ReadFile or ReadConsole function are examined for
+            ASCII control sequences and the correct action is performed.
+            Backspace, tab, bell, carriage return, and line feed characters
+            are processed.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.ConsoleOutputModes.ENABLE_WRAP_AT_EOL_OUTPUT">
+            <summary>
+            When writing with WriteFile or WriteConsole or echoing with
+            ReadFile or ReadConsole, the cursor moves to the beginning of
+            the next row when it reaches the end of the current row. This
+            causes the rows displayed in the console window to scroll up
+            automatically when the cursor advances beyond the last row in
+            the window. It also causes the contents of the console screen
+            buffer to scroll up (discarding the top row of the console
+            screen buffer) when the cursor advances beyond the last row in
+            the console screen buffer. If this mode is disabled, the last
+            character in the row is overwritten with any subsequent
+            characters.
+            </summary>
+        </member>
+        <member name="T:WizardWrx.ConsoleStreams.StandardHandleInfo.StandardConsoleHandle">
+            <summary>
+            This enumeration defines the three valid values for an enumeration,
+            StandardConsoleHandle, the input argument type of methods
+            StandardHandleState and GetRedirectedFileName, both public methods,
+            and GetStandardHandle, currently private, but under consideration
+            for a promotion.
+            
+            The upper and lower values are for efficient boundary testing.
+            </summary>
+            <remarks>
+            Although the standard handles have well-known fixed values, each
+            OF WHICH HAS a corresponding symbolic constant defined in winbase.h,
+            they are nonstandard handle values (all three less than zero), which
+            would usually be interpreted as invalid handles. These values would
+            be unusual, though perfectly legal, enumeration values.
+            
+            Instead, I defined this enumeration, and provided a private method,
+            GetStandardHandle, that maps the enumeration to the corresponding 
+            standard handle constant by way of a simple lookup table that uses
+            the enumeration value, cast to integer, as its index. The returned
+            Windows handle value is a 32 or 64 bit positive integer, which that
+            function passes into GetStdHandle (via Platform Invoke), through
+            which it returns.
+            
+            This is one of two public enumerations that were ported from
+            StandardHandleState.H, the C/C++ header that defines the interfaces
+            that this class supersedes.
+            </remarks>
+        </member>
+        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.StandardConsoleHandle.Undefined">
+            <summary>
+            This member is both the uninitialized value of a variable of its
+            type and the lower limit of the range of valid values.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.StandardConsoleHandle.StandardInput">
+            <summary>
+            This member signifies a request to perform an operation on the
+            Standard Input stream, STDOUT, which corresponds to the Console.In
+            and System.Diagnostics.Process.StandardInput properties.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.StandardConsoleHandle.StandardOutput">
+            <summary>
+            This member signifies a request to perform an operation on the
+            Standard Output stream, STDIN, which corresponds to the Console.Out
+            and System.Diagnostics.Process.StandardOutput properties.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.StandardConsoleHandle.StandardError">
+            <summary>
+            This member signifies a request to perform an operation on the
+            Standard Output stream, STDERR, which corresponds to the Console.Error
+            and System.Diagnostics.Process.StandardError properties.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.StandardConsoleHandle.OutOfRange">
+            <summary>
+            This member is intended for bounds-checking values that are cast
+            to an integral type.
+            </summary>
+        </member>
+        <member name="T:WizardWrx.ConsoleStreams.StandardHandleInfo.StandardHandleState">
+            <summary>
+            This enumeration defines the two valid states and two defined error
+            states that may be returned by the StandardHandleState method, along
+            with a pair of values that may be returned to indicate one of two
+            error conditions.
+            </summary>
+            <remarks>
+            This is one of two public enumerations that were ported from
+            StandardHandleState.H, the C/C++ header that defines the interfaces
+            that this class supersedes.
+            </remarks>
+        </member>
+        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.StandardHandleState.Undetermined">
+            <summary>
+            This member is returned when the supplied StandardConsoleHandle
+            member is out of range.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.StandardHandleState.Attached">
+            <summary>
+            This member is returned when console stream that corresponds to
+            the specified StandardConsoleHandle member is attached to its
+            console.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.StandardHandleState.Redirected">
+            <summary>
+            This member is returned when console stream that corresponds to
+            the specified StandardConsoleHandle member is redirected to a
+            file.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.StandardHandleState.STATE_SYSTEM_ERROR">
+            <summary>
+            This member is returned when attempting to get the state of the
+            specified StandardConsoleHandle raised an exception.
+            </summary>
+        </member>
+        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.INVALID_HANDLE_VALUE">
+            <summary>
+            When a routine, such as GetStandardHandle cannot return a usable
+            file handle, this is the return value, cast to IntPtr, as is the
+            expected file handle.
+            </summary>
+            <remarks>
+            Were it not that IntPtr is a structure, INVALID_HANDLE_VALUE would
+            be defined as a public constant.
+            </remarks>
+        </member>
+        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.INVALID_MODULE_HANDLE">
+            <summary>
+            When a routine, such as GetModuleHandle cannot return a usable
+            module handle, this is the return value, cast to IntPtr, as is the
+            expected module handle.
+            </summary>
+            <remarks>
+            Were it not that IntPtr is a structure, INVALID_HANDLE_VALUE would
+            be defined as a public constant.
+            </remarks>
+        </member>
+        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.STD_HANDLE_UNDEFINED">
+            <summary>
+            This constant is a place holder to occupy the first slot in the 
+            standard handle mapping table, s_adwStdConsoleHandleIDs, which
+            corresponds to an uninitialized value.
+            </summary>
+        </member>
+        <member name="M:WizardWrx.ConsoleStreams.StandardHandleInfo.GetStandardHandleState(WizardWrx.ConsoleStreams.StandardHandleInfo.StandardConsoleHandle)">
+             <summary>
+             Get the redirection state of a specified standard console stream.
+             </summary>
+             <param name="penmStdHandleID">
+             Use a member of the StandardConsoleHandle enumeration to designate
+             the desired standard console stream.
+             </param>
+             <returns>
+             The return value is one of the following.
+             
+             StandardHandleState.Attached means that the specified stream is
+             attached to its console.
+             
+             StandardHandleState.Redirected means that the specified stream is
+             redirected.
+             
+             Call GetRedirectedFileName to get the fully qualified name of the
+             file to which it is redirected.
+             </returns>
+             <remarks>
+             In all versions of the framework, the following properties report
+             inaccurately on the true state of the console stream.
+             
+             - System.Diagnostics.Process.StartInfo.RedirectStandardInput ,
+             - System.Diagnostics.Process.StartInfo.RedirectStandardOutput ,
+             - System.Diagnostics.Process.StartInfo.RedirectStandardError ,
+            
+             The following properties, added in version 4.5, also report incorrectly.
+             
+             - Console.IsErrorRedirected
+             - Console.IsInputRedirected
+             - Console.IsOutputRedirected
+             
+             The above properties report inaccurately because their report is
+             based entirely on changes made by calls to methods on the Console
+             class. They exhibit no knowledge, whatsoever, of what the underlying
+             operating system does in response to shell commands to redirect one
+             or more of the standard console streams.
+             
+             On the other hand, since StandardHandleState gets its information 
+             from GetConsoleMode, a native Windows API routine, its report takes 
+             into account console stream redirections that are the result of
+             shell commands.
+             </remarks>
+        </member>
+        <member name="M:WizardWrx.ConsoleStreams.StandardHandleInfo.GetRedirectedFileName(WizardWrx.ConsoleStreams.StandardHandleInfo.StandardConsoleHandle)">
+            <summary>
+            Get the name of the file to which a specified standard handle is
+            redirected.
+            </summary>
+            <param name="penmStdHandleID">
+            Use a member of the StandardConsoleHandle enumeration to designate
+            the desired standard console stream.
+            </param>
+            <returns>
+            If the file is redirected, the returned string contains the fully
+            qualified name of the file to which it is redirected. If the handle
+            is attached to its console (that is, not redirected), the return
+            value is the empty string.
+            </returns>
+        </member>
+        <member name="M:WizardWrx.ConsoleStreams.StandardHandleInfo.GetWin32StatusCode">
+            <summary>
+            Get the last Win32 status code logged by Marshal.GetLastWin32Error.
+            </summary>
+            <returns>
+            The return value is the value returned by the last call to
+            Marshal.GetLastWin32Error.
+            </returns>
+            <remarks>
+            As is true of the other methods defined by this class, this method
+            is not yet thread-safe.
+            </remarks>
+        </member>
+        <member name="M:WizardWrx.ConsoleStreams.StandardHandleInfo.GetModuleHandle(System.String)">
+            <summary>
+            Though perhaps a tad less efficient than calling the like named
+            Windows API function, this method is a 100% managed approach to the
+            task of getting the instance handle (base address) of a module.
+            </summary>
+            <param name="pstrModuleName">
+            Specify the base name of the desired module. Omit the .DLL suffix.
+            </param>
+            <returns>
+            If a like named module exists in the collection of loaded modules,
+            its instance handle, which happens also to be its base address, is
+            returned. Otherwise, the return value is INVALID_MODULE_HANDLE.
+            </returns>
+            <see href="https://blogs.msdn.microsoft.com/oldnewthing/20041025-00/?p=37483"/>
         </member>
         <member name="T:WizardWrx.ConsoleStreams.DefaultErrorMessageColors">
             <summary>
@@ -2847,388 +3241,6 @@
             implementation ignores them, since it processes string
             representations of the System.Console.ConsoleColors enumerated type.
             </remarks>
-        </member>
-        <member name="T:WizardWrx.ConsoleStreams.StandardHandleInfo">
-            <summary>
-            This static class provides type-safe managed methods to determine the
-            true redirection state of a standard console handle, including, if
-            applicable, learning the name of the file to which it is redirected.
-            </summary>
-            <remarks>
-            The standard properties on the Process (all versions) and Console
-            (version 4.5 and newer) objects report based solely on redirections
-            brought about by the Base Class Library. They completely ignore redirection
-            that happens in the shell, before the process started. Hence, to learn the
-            true redirection state requires a couple of Platform Invoke calls into the
-            Windows API, which this class provides through type-safe wrappers.
-            </remarks>
-        </member>
-        <member name="T:WizardWrx.ConsoleStreams.StandardHandleInfo.ConsoleModes">
-            <summary>
-            Use these flags to test the values returned by GetConsoleMode.
-            </summary>
-            <remarks>
-            In wincon.h, these are defined as symbolic constants, although there
-            is ample justification for rolling them into a bit-mapped
-            enumeration. I suspect the reason they aren't is that the change
-            would break too much legacy code.
-            
-            For the present, GetConsoleMode is called, but only for a side
-            effect; its return value is discarded.
-            
-            Though currently unused, the enumeration is reserved for future use.
-            
-            The summaries shown here for all but the last member of this
-            enumeration are quoted verbatim from the MSDN manual page of the
-            SetConsoleMode function cited below.
-            </remarks>
-            <see href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms686033(v=vs.85).aspx"/>
-        </member>
-        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.ConsoleModes.ENABLE_PROCESSED_INPUT">
-            <summary>
-            Characters written by the WriteFile or WriteConsole function or
-            echoed by the ReadFile or ReadConsole function are examined for
-            ASCII control sequences and the correct action is performed.
-            Backspace, tab, bell, carriage return, and line feed characters
-            are processed.
-            </summary>
-        </member>
-        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.ConsoleModes.ENABLE_LINE_INPUT">
-            <summary>
-            The ReadFile or ReadConsole function returns only when a
-            carriage return character is read. If this mode is disabled, the
-            functions return when one or more characters are available.
-            </summary>
-        </member>
-        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.ConsoleModes.ENABLE_ECHO_INPUT">
-            <summary>
-            Characters read by the ReadFile or ReadConsole function are
-            written to the active screen buffer as they are read. This mode
-            can be used only if the ENABLE_LINE_INPUT mode is also enabled.
-            </summary>
-        </member>
-        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.ConsoleModes.ENABLE_WINDOW_INPUT">
-            <summary>
-            User interactions that change the size of the console screen
-            buffer are reported in the console's input buffer. Information
-            about these events can be read from the input buffer by
-            applications using the ReadConsoleInput function, but not by
-            those using ReadFile or ReadConsole.
-            </summary>
-        </member>
-        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.ConsoleModes.ENABLE_MOUSE_INPUT">
-            <summary>
-            If the mouse pointer is within the borders of the console window
-            and the window has the keyboard focus, mouse events generated by
-            mouse movement and button presses are placed in the input buffer.
-            These events are discarded by ReadFile or ReadConsole, even when
-            this mode is enabled.
-            </summary>
-        </member>
-        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.ConsoleModes.ENABLE_INSERT_MODE">
-            <summary>
-            When enabled, text entered in a console window will be inserted
-            at the current cursor location and all text following that
-            location will not be overwritten. When disabled, all following
-            text will be overwritten.
-            
-            To enable this mode, use ENABLE_INSERT_MODE | ENABLE_EXTENDED_FLAGS.
-            
-            To disable this mode, use ENABLE_EXTENDED_FLAGS without this flag.
-            </summary>
-        </member>
-        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.ConsoleModes.ENABLE_QUICK_EDIT_MODE">
-            <summary>
-            This flag enables the user to use the mouse to select and edit
-            text.
-            
-            To enable this mode, use ENABLE_QUICK_EDIT_MODE | ENABLE_EXTENDED_FLAGS.
-            
-            To disable this mode, use ENABLE_EXTENDED_FLAGS without this flag.
-            </summary>
-        </member>
-        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.ConsoleModes.ENABLE_EXTENDED_FLAGS">
-            <summary>
-            Required to enable or disable extended flags.
-            
-            See ENABLE_INSERT_MODE and ENABLE_QUICK_EDIT_MODE.
-            </summary>
-        </member>
-        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.ConsoleModes.ENABLE_AUTO_POSITION">
-            <summary>
-            Though defined in WinCon.h, this flag is otherwise undocumented.
-            
-            My initial best guess is that it is related to the "Let system
-            position window" check box on the property sheet of a CMD.EXE
-            window, though I have yet to test this theory.
-            </summary>
-        </member>
-        <member name="T:WizardWrx.ConsoleStreams.StandardHandleInfo.ConsoleOutputModes">
-            <summary>
-            Use these flags with SetConsoleMode to control how long output lines
-            are handled.
-            </summary>
-            <remarks>
-            In wincon.h, these are defined as symbolic constants, although there
-            is ample justification for rolling them into a bit-mapped
-            enumeration. I suspect the reason they aren't is that the change
-            would break too much legacy code.
-            
-            For the present, SetConsoleMode is not called.
-            
-            Though currently unused, the enumeration is reserved for future use.
-            
-            The summaries shown here for all but the last member of this
-            enumeration are quoted verbatim from the MSDN manual page of the
-            SetConsoleMode function cited below.
-            </remarks>
-            <see href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms686033(v=vs.85).aspx"/>
-        </member>
-        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.ConsoleOutputModes.ENABLE_PROCESSED_OUTPUT">
-            <summary>
-            Characters written by the WriteFile or WriteConsole function or
-            echoed by the ReadFile or ReadConsole function are examined for
-            ASCII control sequences and the correct action is performed.
-            Backspace, tab, bell, carriage return, and line feed characters
-            are processed.
-            </summary>
-        </member>
-        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.ConsoleOutputModes.ENABLE_WRAP_AT_EOL_OUTPUT">
-            <summary>
-            When writing with WriteFile or WriteConsole or echoing with
-            ReadFile or ReadConsole, the cursor moves to the beginning of
-            the next row when it reaches the end of the current row. This
-            causes the rows displayed in the console window to scroll up
-            automatically when the cursor advances beyond the last row in
-            the window. It also causes the contents of the console screen
-            buffer to scroll up (discarding the top row of the console
-            screen buffer) when the cursor advances beyond the last row in
-            the console screen buffer. If this mode is disabled, the last
-            character in the row is overwritten with any subsequent
-            characters.
-            </summary>
-        </member>
-        <member name="T:WizardWrx.ConsoleStreams.StandardHandleInfo.StandardConsoleHandle">
-            <summary>
-            This enumeration defines the three valid values for an enumeration,
-            StandardConsoleHandle, the input argument type of methods
-            StandardHandleState and GetRedirectedFileName, both public methods,
-            and GetStandardHandle, currently private, but under consideration
-            for a promotion.
-            
-            The upper and lower values are for efficient boundary testing.
-            </summary>
-            <remarks>
-            Although the standard handles have well-known fixed values, each
-            OF WHICH HAS a corresponding symbolic constant defined in winbase.h,
-            they are nonstandard handle values (all three less than zero), which
-            would usually be interpreted as invalid handles. These values would
-            be unusual, though perfectly legal, enumeration values.
-            
-            Instead, I defined this enumeration, and provided a private method,
-            GetStandardHandle, that maps the enumeration to the corresponding 
-            standard handle constant by way of a simple lookup table that uses
-            the enumeration value, cast to integer, as its index. The returned
-            Windows handle value is a 32 or 64 bit positive integer, which that
-            function passes into GetStdHandle (via Platform Invoke), through
-            which it returns.
-            
-            This is one of two public enumerations that were ported from
-            StandardHandleState.H, the C/C++ header that defines the interfaces
-            that this class supersedes.
-            </remarks>
-        </member>
-        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.StandardConsoleHandle.Undefined">
-            <summary>
-            This member is both the uninitialized value of a variable of its
-            type and the lower limit of the range of valid values.
-            </summary>
-        </member>
-        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.StandardConsoleHandle.StandardInput">
-            <summary>
-            This member signifies a request to perform an operation on the
-            Standard Input stream, STDOUT, which corresponds to the Console.In
-            and System.Diagnostics.Process.StandardInput properties.
-            </summary>
-        </member>
-        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.StandardConsoleHandle.StandardOutput">
-            <summary>
-            This member signifies a request to perform an operation on the
-            Standard Output stream, STDIN, which corresponds to the Console.Out
-            and System.Diagnostics.Process.StandardOutput properties.
-            </summary>
-        </member>
-        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.StandardConsoleHandle.StandardError">
-            <summary>
-            This member signifies a request to perform an operation on the
-            Standard Output stream, STDERR, which corresponds to the Console.Error
-            and System.Diagnostics.Process.StandardError properties.
-            </summary>
-        </member>
-        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.StandardConsoleHandle.OutOfRange">
-            <summary>
-            This member is intended for bounds-checking values that are cast
-            to an integral type.
-            </summary>
-        </member>
-        <member name="T:WizardWrx.ConsoleStreams.StandardHandleInfo.StandardHandleState">
-            <summary>
-            This enumeration defines the two valid states and two defined error
-            states that may be returned by the StandardHandleState method, along
-            with a pair of values that may be returned to indicate one of two
-            error conditions.
-            </summary>
-            <remarks>
-            This is one of two public enumerations that were ported from
-            StandardHandleState.H, the C/C++ header that defines the interfaces
-            that this class supersedes.
-            </remarks>
-        </member>
-        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.StandardHandleState.Undetermined">
-            <summary>
-            This member is returned when the supplied StandardConsoleHandle
-            member is out of range.
-            </summary>
-        </member>
-        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.StandardHandleState.Attached">
-            <summary>
-            This member is returned when console stream that corresponds to
-            the specified StandardConsoleHandle member is attached to its
-            console.
-            </summary>
-        </member>
-        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.StandardHandleState.Redirected">
-            <summary>
-            This member is returned when console stream that corresponds to
-            the specified StandardConsoleHandle member is redirected to a
-            file.
-            </summary>
-        </member>
-        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.StandardHandleState.STATE_SYSTEM_ERROR">
-            <summary>
-            This member is returned when attempting to get the state of the
-            specified StandardConsoleHandle raised an exception.
-            </summary>
-        </member>
-        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.INVALID_HANDLE_VALUE">
-            <summary>
-            When a routine, such as GetStandardHandle cannot return a usable
-            file handle, this is the return value, cast to IntPtr, as is the
-            expected file handle.
-            </summary>
-            <remarks>
-            Were it not that IntPtr is a structure, INVALID_HANDLE_VALUE would
-            be defined as a public constant.
-            </remarks>
-        </member>
-        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.INVALID_MODULE_HANDLE">
-            <summary>
-            When a routine, such as GetModuleHandle cannot return a usable
-            module handle, this is the return value, cast to IntPtr, as is the
-            expected module handle.
-            </summary>
-            <remarks>
-            Were it not that IntPtr is a structure, INVALID_HANDLE_VALUE would
-            be defined as a public constant.
-            </remarks>
-        </member>
-        <member name="F:WizardWrx.ConsoleStreams.StandardHandleInfo.STD_HANDLE_UNDEFINED">
-            <summary>
-            This constant is a place holder to occupy the first slot in the 
-            standard handle mapping table, s_adwStdConsoleHandleIDs, which
-            corresponds to an uninitialized value.
-            </summary>
-        </member>
-        <member name="M:WizardWrx.ConsoleStreams.StandardHandleInfo.GetStandardHandleState(WizardWrx.ConsoleStreams.StandardHandleInfo.StandardConsoleHandle)">
-             <summary>
-             Get the redirection state of a specified standard console stream.
-             </summary>
-             <param name="penmStdHandleID">
-             Use a member of the StandardConsoleHandle enumeration to designate
-             the desired standard console stream.
-             </param>
-             <returns>
-             The return value is one of the following.
-             
-             StandardHandleState.Attached means that the specified stream is
-             attached to its console.
-             
-             StandardHandleState.Redirected means that the specified stream is
-             redirected.
-             
-             Call GetRedirectedFileName to get the fully qualified name of the
-             file to which it is redirected.
-             </returns>
-             <remarks>
-             In all versions of the framework, the following properties report
-             inaccurately on the true state of the console stream.
-             
-             - System.Diagnostics.Process.StartInfo.RedirectStandardInput ,
-             - System.Diagnostics.Process.StartInfo.RedirectStandardOutput ,
-             - System.Diagnostics.Process.StartInfo.RedirectStandardError ,
-            
-             The following properties, added in version 4.5, also report incorrectly.
-             
-             - Console.IsErrorRedirected
-             - Console.IsInputRedirected
-             - Console.IsOutputRedirected
-             
-             The above properties report inaccurately because their report is
-             based entirely on changes made by calls to methods on the Console
-             class. They exhibit no knowledge, whatsoever, of what the underlying
-             operating system does in response to shell commands to redirect one
-             or more of the standard console streams.
-             
-             On the other hand, since StandardHandleState gets its information 
-             from GetConsoleMode, a native Windows API routine, its report takes 
-             into account console stream redirections that are the result of
-             shell commands.
-             </remarks>
-        </member>
-        <member name="M:WizardWrx.ConsoleStreams.StandardHandleInfo.GetRedirectedFileName(WizardWrx.ConsoleStreams.StandardHandleInfo.StandardConsoleHandle)">
-            <summary>
-            Get the name of the file to which a specified standard handle is
-            redirected.
-            </summary>
-            <param name="penmStdHandleID">
-            Use a member of the StandardConsoleHandle enumeration to designate
-            the desired standard console stream.
-            </param>
-            <returns>
-            If the file is redirected, the returned string contains the fully
-            qualified name of the file to which it is redirected. If the handle
-            is attached to its console (that is, not redirected), the return
-            value is the empty string.
-            </returns>
-        </member>
-        <member name="M:WizardWrx.ConsoleStreams.StandardHandleInfo.GetWin32StatusCode">
-            <summary>
-            Get the last Win32 status code logged by Marshal.GetLastWin32Error.
-            </summary>
-            <returns>
-            The return value is the value returned by the last call to
-            Marshal.GetLastWin32Error.
-            </returns>
-            <remarks>
-            As is true of the other methods defined by this class, this method
-            is not yet thread-safe.
-            </remarks>
-        </member>
-        <member name="M:WizardWrx.ConsoleStreams.StandardHandleInfo.GetModuleHandle(System.String)">
-            <summary>
-            Though perhaps a tad less efficient than calling the like named
-            Windows API function, this method is a 100% managed approach to the
-            task of getting the instance handle (base address) of a module.
-            </summary>
-            <param name="pstrModuleName">
-            Specify the base name of the desired module. Omit the .DLL suffix.
-            </param>
-            <returns>
-            If a like named module exists in the collection of loaded modules,
-            its instance handle, which happens also to be its base address, is
-            returned. Otherwise, the return value is INVALID_MODULE_HANDLE.
-            </returns>
-            <see href="https://blogs.msdn.microsoft.com/oldnewthing/20041025-00/?p=37483"/>
         </member>
         <member name="T:WizardWrx.ConsoleStreams.Properties.Resources">
             <summary>
