@@ -1,0 +1,149 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{70FCF204-A3E1-43E2-8D12-38C6C30763D8}|Solution Items{70FCF204-A3E1-43E2-8D12-38C6C30763D8}|D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\ChangeLog.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{70FCF204-A3E1-43E2-8D12-38C6C30763D8}|Solution Items{70FCF204-A3E1-43E2-8D12-38C6C30763D8}|solutionrelative:ChangeLog.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8782EA47-49FB-4EF3-BC40-48851A5DB2E5}|StandardHandleInfo\\StandardHandleInfo.csproj|d:\\source_code\\visual_studio\\projects\\_common_c#_source\\basicsysteminfodisplaymessages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8782EA47-49FB-4EF3-BC40-48851A5DB2E5}|StandardHandleInfo\\StandardHandleInfo.csproj|D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\standardhandleinfo\\standardhandleinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8782EA47-49FB-4EF3-BC40-48851A5DB2E5}|StandardHandleInfo\\StandardHandleInfo.csproj|solutionrelative:standardhandleinfo\\standardhandleinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5282E82-D211-4BEA-BEBD-B2CC6E45BF5C}|Core\\Core.csproj|D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\core\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5282E82-D211-4BEA-BEBD-B2CC6E45BF5C}|Core\\Core.csproj|solutionrelative:core\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78BB2C88-C5CE-4F0C-BE2A-713C8D1DE546}|UnmanagedLibrary\\UnmanagedLibrary.csproj|D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\unmanagedlibrary\\unmanagedlibrary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78BB2C88-C5CE-4F0C-BE2A-713C8D1DE546}|UnmanagedLibrary\\UnmanagedLibrary.csproj|solutionrelative:unmanagedlibrary\\unmanagedlibrary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{714F5BEE-4663-4B0C-8865-8A2165BF6BF2}|ConsoleStreams\\ConsoleStreams.csproj|D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\consolestreams\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{714F5BEE-4663-4B0C-8865-8A2165BF6BF2}|ConsoleStreams\\ConsoleStreams.csproj|solutionrelative:consolestreams\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:135:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:136:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:137:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:138:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ChangeLog.md",
+              "DocumentMoniker": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\changelog.md",
+              "RelativeDocumentMoniker": "changelog.md",
+              "ToolTip": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\changelog.md",
+              "RelativeToolTip": "changelog.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-10-29T12:05:54.738Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BasicSystemInfoDisplayMessages.cs",
+              "DocumentMoniker": "D:\\Source_Code\\Visual_Studio\\Projects\\_COMMON_C#_Source\\BasicSystemInfoDisplayMessages.cs",
+              "RelativeDocumentMoniker": "..\\..\\_COMMON_C#_Source\\BasicSystemInfoDisplayMessages.cs",
+              "ToolTip": "D:\\Source_Code\\Visual_Studio\\Projects\\_COMMON_C#_Source\\BasicSystemInfoDisplayMessages.cs",
+              "RelativeToolTip": "..\\..\\_COMMON_C#_Source\\BasicSystemInfoDisplayMessages.cs",
+              "ViewState": "AgIAALQAAAAAAAAAAAAAANoAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-05T10:41:16.502Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UnmanagedLibrary.cs",
+              "DocumentMoniker": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\UnmanagedLibrary\\UnmanagedLibrary.cs",
+              "RelativeDocumentMoniker": "UnmanagedLibrary\\UnmanagedLibrary.cs",
+              "ToolTip": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\UnmanagedLibrary\\UnmanagedLibrary.cs [Read Only]",
+              "RelativeToolTip": "UnmanagedLibrary\\UnmanagedLibrary.cs [Read Only]",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAD0AAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-05T10:26:16.725Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AssemblyInfo.cs",
+              "DocumentMoniker": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Core\\Properties\\AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "Core\\Properties\\AssemblyInfo.cs",
+              "ToolTip": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\Core\\Properties\\AssemblyInfo.cs",
+              "RelativeToolTip": "Core\\Properties\\AssemblyInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-05T10:24:02.024Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StandardHandleInfo.cs",
+              "DocumentMoniker": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\StandardHandleInfo\\StandardHandleInfo.cs",
+              "RelativeDocumentMoniker": "StandardHandleInfo\\StandardHandleInfo.cs",
+              "ToolTip": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\StandardHandleInfo\\StandardHandleInfo.cs",
+              "RelativeToolTip": "StandardHandleInfo\\StandardHandleInfo.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAAAFcAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-05T10:06:38.546Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AssemblyInfo.cs",
+              "DocumentMoniker": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\ConsoleStreams\\Properties\\AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "ConsoleStreams\\Properties\\AssemblyInfo.cs",
+              "ToolTip": "D:\\Source_Code\\Visual_Studio\\Projects\\WizardWrx_Libs\\WizardWrx_NET_API\\ConsoleStreams\\Properties\\AssemblyInfo.cs",
+              "RelativeToolTip": "ConsoleStreams\\Properties\\AssemblyInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-05T10:02:27.85Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -165,7 +165,6 @@
     <Compile Include="TimeZoneInfoExtensions.cs" />
     <Compile Include="TraceLogger.cs" />
     <Compile Include="UnconfiguredDLLSettings.cs" />
-    <Compile Include="UnmanagedLibrary.cs" />
     <Compile Include="Cryptography\DigestAlgorithm.cs" />
     <Compile Include="Cryptography\DigestConstants.cs" />
     <Compile Include="Cryptography\DigestEngines.cs" />
@@ -195,6 +194,10 @@
     <ProjectReference Include="..\FormatStringEngine\FormatStringEngine.csproj">
       <Project>{4d82458f-864f-494e-a537-1e89d6c8073c}</Project>
       <Name>FormatStringEngine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UnmanagedLibrary\UnmanagedLibrary.csproj">
+      <Project>{78bb2c88-c5ce-4f0c-be2a-713c8d1de546}</Project>
+      <Name>UnmanagedLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

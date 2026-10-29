@@ -118,9 +118,6 @@
     <Compile Include="..\..\..\_COMMON_C#_Source\MessageInColor.cs">
       <Link>MessageInColor.cs</Link>
     </Compile>
-    <Compile Include="..\..\..\_COMMON_C#_Source\StandardHandleInfo.cs">
-      <Link>StandardHandleInfo.cs</Link>
-    </Compile>
     <Compile Include="..\ProductAssemblyInfo.cs">
       <Link>Properties\ProductAssemblyInfo.cs</Link>
     </Compile>
@@ -147,6 +144,10 @@
     <ProjectReference Include="..\Core\Core.csproj">
       <Project>{b5282e82-d211-4bea-bebd-b2cc6e45bf5c}</Project>
       <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StandardHandleInfo\StandardHandleInfo.csproj">
+      <Project>{8782ea47-49fb-4ef3-bc40-48851a5db2e5}</Project>
+      <Name>StandardHandleInfo</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

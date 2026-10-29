@@ -1,5 +1,18 @@
 ﻿# WizardWrx .NET API Change Log
 
+## 2026-10-29
+
+### WizardWrx.FormatStringEngine [9.0.309]
+
+`WizardWrx.FormatStringEngine` was pulling in WizardWrx.AnyCSV.7.2.145, the last
+version of that package to have a strong name. WizardWrx.AnyCSV.9.0.157, the new
+version, is unsigned.
+
+Though this change tecnhically affects WizardWrx.Core, WizardWrx.ConsoleStreams,
+and WizardWrx.DllConfigurationManager, they should be OK as is, especially if
+your package manager is configured to always pull the latest of any dependent
+package.
+
 ## 2026-07-31
 
 ### WizardWrx.ConsoleStreams [9.0.335]

@@ -2,6 +2,9 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+using WizardWrx.ConsoleStreams;
+[assembly: TypeForwardedTo ( typeof ( StandardHandleInfo ) )]
+
 //
 //	----------------------------------------------------------------------------
 //	Revision History
@@ -32,6 +35,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription ( "Classes for Querying and Manipulating Console Streams" )]
 [assembly: AssemblyCulture ( "" )]
 
+
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid ( "57f0c693-d8b0-451b-87f4-a1cef5dfc78b" )]
 
@@ -45,5 +49,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyFileVersion ( "9.0.336.0" )]
-[assembly: AssemblyInformationalVersion ( "9.0.336" )]
+[assembly: AssemblyFileVersion ( "9.0.337.0" )]
+[assembly: AssemblyInformationalVersion ( "9.0.337" )]

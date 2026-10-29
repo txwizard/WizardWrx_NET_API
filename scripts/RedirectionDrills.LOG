@@ -1,0 +1,22 @@
+2018/09/05 12:50:35	BOJ F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\scripts\RedirectionDrills.CMD, version 1.03
+2018/09/05 12:50:35	Working Directory = F:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\Wizardwrx\scripts
+2018/09/05 12:50:35	Program File Name = C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\RedirectedStreamTester\bin\Debug\RedirectedStreamTester.exe
+2018/09/05 12:50:35	Script Logger Name = C:\bin\wwlogger.exe
+2018/09/05 12:50:35	THE_DRILL: NONE STDERR=D STDIN=D STDOUT=D
+2018/09/05 12:50:35	THE_DRILL: Task NONE - everything to console
+2018/09/05 12:50:35	THE_DRILL: Task NONE completed = exit code = 3
+2018/09/05 12:50:35	THE_DRILL: IN STDERR=D STDIN=R,STDIN.TXT STDOUT=D
+2018/09/05 12:50:36	THE_DRILL: Task IN - STDIN redirected, everything else to console
+2018/09/05 12:50:36	THE_DRILL: Task IN - STDIN redirected to STDIN.TXT
+2018/09/05 12:50:36	THE_DRILL: Task IN completed = exit code = 0
+2018/09/05 12:50:36	THE_DRILL: OUT STDERR=D STDIN=D STDOUT=R,STDOUT.TXT
+2018/09/05 12:50:36	THE_DRILL: Task OUT - STDOUT redirected, everything else to console
+2018/09/05 12:50:36	THE_DRILL: Task OUT - STDOUT redirected to a new STDOUT.TXT
+2018/09/05 12:50:36	THE_DRILL: Task OUT completed = exit code = 3
+2018/09/05 12:50:36	THE_DRILL: ERR STDERR=R,STDERR.TXT STDIN=D STDOUT=D
+2018/09/05 12:50:36	THE_DRILL: Task ERR - STDERR redirected, everything else to console
+2018/09/05 12:50:36	THE_DRILL: Task ERR - STDERR redirected to a new STDERR.TXT
+2018/09/05 12:50:36	THE_DRILL: Task ERR completed = exit code = 3
+2018/09/05 12:50:36	Executing ExportFromEventLog1Source.CMD via shell call
+2018/09/05 12:50:36	ExportFromEventLog1Source.CMD done
+2018/09/05 12:50:37	EOJ RedirectionDrills.CMD

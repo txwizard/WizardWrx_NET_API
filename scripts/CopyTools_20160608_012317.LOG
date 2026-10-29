@@ -1,0 +1,108 @@
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\Users\DAVE>"C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\scripts\CopyTools.CMD"
+BOJ C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\scripts\CopyTools.CMD
+
+Does C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\CreateFileWithRetry.dll specify a file name or directory name on the target (F = file, D = directory)? F
+C:\bin\CreateFileWithRetry.dll -> C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\CreateFileWithRetry.dll
+1 File(s) copied
+Does C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\FixedStringBuffers.dll specify a file name or directory name on the target (F = file, D = directory)? F
+C:\bin\FixedStringBuffers.dll -> C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\FixedStringBuffers.dll
+1 File(s) copied
+Does C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\P6CStringLib1.dll specify a file name or directory name on the target (F = file, D = directory)? F
+C:\bin\P6CStringLib1.dll -> C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\P6CStringLib1.dll
+1 File(s) copied
+Does C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\P6VersionInfo.dll specify a file name or directory name on the target (F = file, D = directory)? F
+C:\bin\P6VersionInfo.dll -> C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\P6VersionInfo.dll
+1 File(s) copied
+Does C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\ProcessInfo.dll specify a file name or directory name on the target (F = file, D = directory)? F
+C:\bin\ProcessInfo.dll -> C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\ProcessInfo.dll
+1 File(s) copied
+Does C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\SafeMemCpy.dll specify a file name or directory name on the target (F = file, D = directory)? F
+C:\bin\SafeMemCpy.dll -> C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\SafeMemCpy.dll
+1 File(s) copied
+Does C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WizardWrx.ApplicationHelpers.dll specify a file name or directory name on the target (F = file, D = directory)? F
+C:\bin\WizardWrx.ApplicationHelpers.dll -> C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WizardWrx.ApplicationHelpers.dll
+1 File(s) copied
+Does C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WizardWrx.ApplicationHelpers.pdb specify a file name or directory name on the target (F = file, D = directory)? F
+C:\bin\WizardWrx.ApplicationHelpers.pdb -> C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WizardWrx.ApplicationHelpers.pdb
+1 File(s) copied
+Does C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WizardWrx.ApplicationHelpers.xml specify a file name or directory name on the target (F = file, D = directory)? F
+C:\bin\WizardWrx.ApplicationHelpers.xml -> C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WizardWrx.ApplicationHelpers.xml
+1 File(s) copied
+Does C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WizardWrx.ConsoleAppAids.dll specify a file name or directory name on the target (F = file, D = directory)? F
+C:\bin\WizardWrx.ConsoleAppAids.dll -> C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WizardWrx.ConsoleAppAids.dll
+1 File(s) copied
+Does C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WizardWrx.ConsoleAppAids.pdb specify a file name or directory name on the target (F = file, D = directory)? F
+C:\bin\WizardWrx.ConsoleAppAids.pdb -> C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WizardWrx.ConsoleAppAids.pdb
+1 File(s) copied
+Does C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WizardWrx.ConsoleAppAids.xml specify a file name or directory name on the target (F = file, D = directory)? F
+C:\bin\WizardWrx.ConsoleAppAids.xml -> C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WizardWrx.ConsoleAppAids.xml
+1 File(s) copied
+Does C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WizardWrx.DateMath.dll specify a file name or directory name on the target (F = file, D = directory)? F
+C:\bin\WizardWrx.DateMath.dll -> C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WizardWrx.DateMath.dll
+1 File(s) copied
+Does C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WizardWrx.DateMath.pdb specify a file name or directory name on the target (F = file, D = directory)? F
+C:\bin\WizardWrx.DateMath.pdb -> C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WizardWrx.DateMath.pdb
+1 File(s) copied
+Does C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WizardWrx.DateMath.xml specify a file name or directory name on the target (F = file, D = directory)? F
+C:\bin\WizardWrx.DateMath.xml -> C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WizardWrx.DateMath.xml
+1 File(s) copied
+Does C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WizardWrx.SharedUtl2.dll specify a file name or directory name on the target (F = file, D = directory)? F
+C:\bin\WizardWrx.SharedUtl2.dll -> C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WizardWrx.SharedUtl2.dll
+1 File(s) copied
+Does C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WizardWrx.SharedUtl2.pdb specify a file name or directory name on the target (F = file, D = directory)? F
+C:\bin\WizardWrx.SharedUtl2.pdb -> C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WizardWrx.SharedUtl2.pdb
+1 File(s) copied
+Does C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WizardWrx.SharedUtl2.xml specify a file name or directory name on the target (F = file, D = directory)? F
+C:\bin\WizardWrx.SharedUtl2.xml -> C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WizardWrx.SharedUtl2.xml
+1 File(s) copied
+Does C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\wwBldNbrMgr.exe specify a file name or directory name on the target (F = file, D = directory)? F
+C:\bin\wwBldNbrMgr.exe -> C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\wwBldNbrMgr.exe
+1 File(s) copied
+Does C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\wwBldNbrMgr.exe.config specify a file name or directory name on the target (F = file, D = directory)? F
+C:\bin\wwBldNbrMgr.exe.config -> C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\wwBldNbrMgr.exe.config
+1 File(s) copied
+Does C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\wwBldNbrMgr.pdb specify a file name or directory name on the target (F = file, D = directory)? F
+C:\bin\wwBldNbrMgr.pdb -> C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\wwBldNbrMgr.pdb
+1 File(s) copied
+Does C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WWConAid.dll specify a file name or directory name on the target (F = file, D = directory)? F
+C:\bin\WWConAid.DLL -> C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WWConAid.dll
+1 File(s) copied
+Does C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WWDateLib.dll specify a file name or directory name on the target (F = file, D = directory)? F
+C:\bin\WWDatelib.dll -> C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WWDateLib.dll
+1 File(s) copied
+Does C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WWKernelLibWrapper.dll specify a file name or directory name on the target (F = file, D = directory)? F
+C:\bin\WWKernelLibWrapper.dll -> C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WWKernelLibWrapper.dll
+1 File(s) copied
+
+BOJ CopyTools.CMD
+
+
+C:\Users\DAVE>XCopyF.CMD C:\bin\Date2FN.exe "C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\Date2FN.exe" /f /v
+Does C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\Date2FN.exe specify a file name or directory name on the target (F = file, D = directory)? F
+C:\bin\Date2FN.exe -> C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\Date2FN.exe
+1 File(s) copied
+
+C:\Users\DAVE>XCopyF.CMD C:\bin\WWLogger.exe "C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WWLogger.exe" /f /v
+Does C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WWLogger.exe specify a file name or directory name on the target (F = file, D = directory)? F
+C:\bin\WWLOGGER.exe -> C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WWLogger.exe
+1 File(s) copied
+
+C:\Users\DAVE>XCopyF.CMD C:\bin\WWLoggerU.exe "C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WWLoggerU.exe" /f /v
+Does C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WWLoggerU.exe specify a file name or directory name on the target (F = file, D = directory)? F
+C:\bin\WWLOGGERU.exe -> C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WWLoggerU.exe
+1 File(s) copied
+
+C:\Users\DAVE>XCopyF.CMD C:\bin\WWPause.exe "C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WWPause.exe" /f /v
+Does C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WWPause.exe specify a file name or directory name on the target (F = file, D = directory)? F
+C:\bin\WWPause.exe -> C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WWPause.exe
+1 File(s) copied
+
+C:\Users\DAVE>XCopyF.CMD C:\bin\WWSleep.EXE "C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WWSleep.EXE" /f /v
+Does C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WWSleep.EXE specify a file name or directory name on the target (F = file, D = directory)? F
+C:\bin\wwsleep.EXE -> C:\Users\DAVE\Documents\Visual Studio 2013\Projects\WizardWrx_Libs\DLLServices2\tools\WWSleep.EXE
+1 File(s) copied
+
+C:\Users\DAVE>

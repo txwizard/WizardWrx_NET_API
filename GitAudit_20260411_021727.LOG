@@ -1,0 +1,24 @@
+=== Git Ignore Audit ===
+
+[1] Tracked files that SHOULD be ignored:
+  None
+
+[2] Ignored files that are NOT tracked (filtered):
+  None
+
+[3] Unexpected files in BuildTools:
+  None
+
+[4] Unexpected JS files in Test_Data:
+  None
+
+[5] BuildTools link status:
+  BuildTools is a directory link (reparse point).
+  BuildTools target: D:\Source_Code\Visual_Studio\Projects\SalesTalk\Source\salestalk\LeadLife\BuildTools
+  BuildTools target is outside the repository (valid).
+
+[6] Symbolic links found in repository:
+  None
+
+=== Audit Complete ===
+Log written to: GitAudit_20260411_021727.LOG

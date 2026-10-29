@@ -1,0 +1,31 @@
+=== Git Ignore Audit ===
+
+[1] Tracked files that SHOULD be ignored:
+  None
+
+[2] Ignored files that are NOT tracked (filtered):
+  None
+
+[3] Unexpected files in BuildTools:
+  None
+
+[4] Unexpected JS files in Test_Data:
+  D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\Agent_Recent_Phone_Calls.js
+  D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\CallMapGrid.js
+  D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\LeadLifeJSHelpersGlobals.js
+  D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\LeadLifeJSHelpersLib.js
+  D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\LeadLife_InputMask_Engine.js
+  D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\LLCommon.js
+  D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\Mobile_Index.js
+  D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\STT_VideoPlayer.js
+  D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\UploadFile.js
+  D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\Test_Data\Words2Actions_Recorder_Forms.js
+
+[5] BuildTools junction status:
+  BuildTools exists but is NOT a junction (type: Symlink).
+
+[6] Symbolic links found in repository:
+  D:\Source_Code\Visual_Studio\Projects\WizardWrx_Libs\WizardWrx_NET_API\BuildTools
+
+=== Audit Complete ===
+Log written to: GitAudit_20260411_015629.LOG
